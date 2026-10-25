@@ -1,0 +1,177 @@
+{
+ "_source": "Wardogs/Config/DefaultGame.ini in the paks (excerpt: data/Wardogs/Config/DefaultGame.excerpt.ini)",
+ "aiSubsystem": {
+  "BotNames": [
+   "Adam",
+   "Betty",
+   "Colin",
+   "Doris",
+   "Edward",
+   "Frankie",
+   "George",
+   "Hillary",
+   "Ian",
+   "Jane",
+   "Kirk",
+   "Laura"
+  ],
+  "NumInitialBots": 0
+ },
+ "economy": {
+  "priceModifiers": [
+   {
+    "faction": "Meta.Alignment.Faction.Alpha",
+    "item": "Id.Item.WEPN_033",
+    "kind": "Faction",
+    "multiplier": 0.0,
+    "target": "Specified"
+   },
+   {
+    "faction": "Meta.Alignment.Faction.Bravo",
+    "item": "Id.Item.A91",
+    "kind": "Faction",
+    "multiplier": 0.0,
+    "target": "Specified"
+   },
+   {
+    "faction": "Meta.Alignment.Faction.Charlie",
+    "item": "Id.Item.KH2002",
+    "kind": "Faction",
+    "multiplier": 0.0,
+    "target": "Specified"
+   },
+   {
+    "kind": "LosingFaction",
+    "multiplier": 80.0,
+    "scoreDifference": 40,
+    "target": "Global"
+   },
+   {
+    "kind": "Level",
+    "level": 8,
+    "levelRequirement": "LowerOrEqual",
+    "levelType": "Wardog",
+    "multiplier": 50.0,
+    "target": "Global"
+   },
+   {
+    "kind": "FirstPurchase",
+    "multiplier": 90.0,
+    "requiredTag": "Vendor.Discount.FirstPurchase",
+    "target": "Global"
+   }
+  ],
+  "refundBlockedContext": [
+   "Item.Ammo",
+   "Item.Attachment.Magazine"
+  ],
+  "refundModifier": 0.9,
+  "validRefundActions": [
+   "Meta.Progression.Resources.MatchScore.Purchased.Item",
+   "Meta.Progression.Resources.MatchScore.Purchased.Loadout"
+  ]
+ },
+ "gameModeSession": {
+  "OverrideStartingCash": -1,
+  "bAutoAssignFactions": false,
+  "bSkipDownedState": true
+ },
+ "gameSession": {
+  "HighestAllowedMaxPlayers": 100,
+  "LowestAllowedMaxPlayers": 60,
+  "ServerNameMaxLength": 64
+ },
+ "gameSettings": {
+  "DownedPlayerHitDetectionBoundsPadding": {
+   "X": 3.0,
+   "Y": 3.0,
+   "Z": 1.0
+  },
+  "GlobalInteractionTapTime": 0.15,
+  "MaxChatHistory": 250,
+  "MaxShooterDistanceOffset": 200.0,
+  "MaxSquadMembers": 0,
+  "PlayerHitDetectionBoundsPadding": {
+   "X": 2.5,
+   "Y": 2.5,
+   "Z": 1.0
+  },
+  "PronePlayerHitDetectionBoundsPadding": {
+   "X": 3.0,
+   "Y": 3.0,
+   "Z": 1.0
+  },
+  "ProximityChatMaxDist": 1500.0,
+  "SquadLimit": 0,
+  "TeamLocalChatMaxDist": 10000.0
+ },
+ "gameStateSession": {
+  "OverpopulatedTeamThresholdConfig": 2,
+  "bLockOverpopulatedTeamsConfig": false
+ },
+ "input": {
+  "mappingContexts": [
+   "IMC_PlayerController",
+   "IMC_MoverPlayer",
+   "IMC_PlayerAiming",
+   "IMC_DefaultVehicleInputs",
+   "IMC_LandVehicles_Driver",
+   "IMC_MountedGunnerInput",
+   "IMC_RotaryVehicles_Driver",
+   "IMC_TrackedVehicles_Driver",
+   "IMC_BaseWeapon",
+   "IMC_BuildTool",
+   "IMC_Fists",
+   "IMC_Inventory",
+   "IMC_Airplane_Driver",
+   "IMC_ProjectileCamera",
+   "IMC_BHSpectatorCamera",
+   "IMC_VehicleActiveReload",
+   "IMC_LadderClimbing",
+   "IMC_Player_BodyDrag",
+   "IMC_Player_Downed",
+   "IMC_Player_Falling",
+   "IMC_Player_NoClipping",
+   "IMC_Player_Parachuting",
+   "IMC_Player_Swimming",
+   "IMC_Tipping",
+   "IMC_Drone_Projectile",
+   "IMC_Interaction",
+   "IMC_UIKeybinds_Registration"
+  ],
+  "neverIgnore": [
+   "Input.NamedActions.Player.VOIP.PushToTalk.Proximity",
+   "Input.NamedActions.Player.VOIP.PushToTalk.Squad"
+  ],
+  "rebindExistingKeyMode": "OneActionPerKeyPerCategory"
+ },
+ "matchStates": {
+  "MatchState.Playing.Deathmatch": {
+   "MaxTime": 1800,
+   "ScoreLimit": 75
+  },
+  "MatchState.Playing.KOTH": {
+   "InactivityTimeoutSeconds": 0,
+   "MatchHardCapSeconds": 0,
+   "ScoreLimit": 100,
+   "ScorePeriod": 22.0
+  },
+  "MatchState.Playing.SniperShowdown": {
+   "KillLimit": 10,
+   "MaxTime": 1800
+  },
+  "MatchState.PostMatch": {
+   "MaxTime": 45.0
+  },
+  "MatchState.PreMatch.WaitingForPlayers.PlayerCount": {
+   "IgnoreFaction": "(TagName=Meta.Alignment.Faction.Default)",
+   "MaxTime": 10.0,
+   "MinimumRequiredPlayers": 60,
+   "MinimumRequiredPlayersInEditor": 1
+  },
+  "MatchState.PreMatch.WaitingForPlayers.ReadyUpKOTH": {
+   "MaxTime": 5.0,
+   "MinimumRequiredPlayers": 9
+  }
+ }
+}

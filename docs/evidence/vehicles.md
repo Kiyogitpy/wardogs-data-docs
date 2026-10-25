@@ -125,7 +125,7 @@ Sections are VehicleDamagePipeline sections; `L` numbers are its lines at
 
 | RVA | Role | Cited in | Verification status |
 |---|---|---|---|
-| `0x3A902D0` | Engine `DispatchBlockingHit`: builds the `OnComponentHit` hit for movement sweeps; cited as not traced (V-7) | §3.2 (L487), §7 (L869) | `corpus body` (cited as not traced; r6 T2-3) |
+| `0x3A902D0` | Engine `DispatchBlockingHit`: builds the `OnComponentHit` hit for movement sweeps; traced in round 8 (V-7, see [movement sweeps](round8-vehicle-sweep.md)) | §3.2 (L487), §7 (L869) | `corpus body` (cited as not traced; r6 T2-3) |
 | `0x3A90520` | Engine `DispatchPhysicsCollisionHit` (`AActor` slot 170): builds the physics-contact hit, `FaceIndex` 0, `MyItem` = the hitter's body index | §3.2 (L482), §7 (L869) | `[exe]`: row failed, the corpus row is misaligned at `0x3A90514`; see notes. [exe] `0x3A90520`–`0x3A906A6` (r6 T2-3, verifier-confirmed round 6) |
 | `0x3EAF060` | Builds a hit result from location, normal, actor and component only (memset first, so `FaceIndex`, `MyItem` and `Item` are 0); used for the `0x6F06EB0` back-blast hit and the radial synthetic hits | §3.2 (L471) | `corpus body`; [exe] memset at `0x3EAF08E` (r5 T3-1, verifier-confirmed round 5) |
 | `0x42D9EF0` | Fills a body info from an `FBodyInstance`: index = `InstanceBodyIndex` (`+0xC`), −1 with no body | §3.2 (L483), §7 (L869) | `corpus body`; [exe] `0x42D9F17`–`0x42D9F1A` (r6 T2-3, verifier-confirmed round 6) |
@@ -337,8 +337,13 @@ Sections are VehicleDamagePipeline sections; `L` numbers are its lines at
 
 ## 5. Open items
 
-- V-3, V-8 and V-10 are closed in round 6, and V-7 is closed for
-  physics contacts. V-6, V-7 (sweep-sourced hits, `0x3A902D0`) and V-9
-  stay open in
+- V-3, V-8 and V-10 are closed in round 6. V-7 is closed for physics
+  contacts (round 6) and for ordinary movement sweeps (`0x3A902D0`, round 8,
+  [movement-sweep write-up](round8-vehicle-sweep.md); round 39 settled the
+  earlier wording that left sweep-sourced hits open). What stays open under
+  V-7 is only a custom query that enables face indices, and an instanced
+  target whose item index could match a material slot by coincidence. V-6
+  (network authority) and V-9 (closed for the authored census only) stay as
+  listed in
   [VehicleDamagePipeline §7](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md#7-open-questions).
   A status table settles where the code is, not what it does.
