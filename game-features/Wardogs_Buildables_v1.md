@@ -104,7 +104,7 @@ Stages are progress thresholds from 0 to 1. A stage becomes visible when the bui
 | Small (`ID_SmallHammer`) | Slow Build Speed | 0.5 | 3 | `AM_FP_Small_Hammer_Use` | 1.27 | 0.24 | 0.567 | 150 |
 <!-- /buildable_tables -->
 
-**Derived**, if the loop section is the swing period and one `BuildAmount` is added per hit: Large 1.5 per 0.88 s (about 1.7 per second), Medium 1.0 per 0.57 s (about 1.76 per second), Small 0.5 per 0.57 s (about 0.88 per second). That puts Large and Medium about equal, although the shop text calls the Large hammer fast and the Medium hammer moderate. So either the swing period is not the loop length, or the scale of `BuildAmount` against the 0 to 1 stage progress is set elsewhere (the buildable's own build total is native and not decoded). The native defaults page lists `BuildAmount` 3.0 and `BuildAmountPerSecond` 3.0 for the separate extension class `UWDItemExtensionData_BuildBuildable`; whether the hammer path uses it is not traced. The large hammer also carries `DismantleRatePerSecond` 250, medium 200, small 150 (equal to the per-hit values).
+**Derived**, if the loop section is the swing period and one `BuildAmount` is added per hit: Large 1.5 per 0.88 s (about 1.7 per second), Medium 1.0 per 0.57 s (about 1.76 per second), Small 0.5 per 0.57 s (about 0.88 per second). That puts Large and Medium about equal, although the shop text calls the Large hammer fast and the Medium hammer moderate; so the hit rate is probably not the loop length (not native, not resolved). The scale of `BuildAmount` against the 0 to 1 stage progress is known since round 38 (**Native**, [section 13](#13-round-38-the-building-arithmetic)): a hit adds `BuildAmount / Cost` of the structure's progress, and the hammer path does use the `BuildAmount` field of `UWDItemExtensionData_BuildBuildable` (the hammer class derives from it; 3.0 is only the default for unset assets). The large hammer also carries `DismantleRatePerSecond` 250, medium 200, small 150 (equal to the per-hit values).
 
 - Most structures use 0, 0.25, 0.5, 0.75, 1. The Door uses 0, 0.3, 0.6, 0.8, 1 and the WoodBase uses 0, 0.2, 0.45, 0.7, 1.
 - Parts (floors, roofs, gate halves, door halves) have one stage at 1, so they appear complete.
@@ -209,7 +209,7 @@ Worked example (**Derived**): a Sandbag Wall has 735 health. A bullet entry of `
 Other facts:
 
 - Shared damage tint: all definitions that set `bUseCurveToUpdateHealthVisuals` use the curve [`C_DamageTintCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/C_DamageTintCurve.json) to tint the mesh as health drops (**Data**).
-- The Forward Operating Base has `Buildable.Damage.DoNotTakeDamage` set in an unnamed field next to its health (**Data**). How that interacts with its damage row and its 15,000 health is **not traced**.
+- The Forward Operating Base has `Buildable.Damage.DoNotTakeDamage` set in an unnamed field next to its health (**Data**). How that interacts with its damage row and its 15,000 health: no native code reads the field (round 38, [section 13](#13-round-38-the-building-arithmetic)); the effect is unknown.
 - The Door and the Gate have door destruction definitions ([Items page section 6.5](Wardogs_GameFeatures_Items_v2.md)) and breach effects (`NS_BuildableDoorBreach`, `NS_BuildableGateBreach`).
 - Buildables are a ruleset in the demolition system (`BH_Demolition_RS_Buildables`), see the [Demolition page](../content/Wardogs_Demolition_v2.md).  Which props accept it: [Demolition Assets, rulesets](../content/Wardogs_DemolitionAssets_v1.md).
 
@@ -477,10 +477,10 @@ Total: 206 files.
 
 ## 11. Open items
 
-- How `Cost` turns into Build Supplies spent, and how a hammer's `BuildAmount` scales against the stage progress (the per-hit amounts and swing times are in section 3; the progress arithmetic is native, thunks at `0x8593E80`, `0x8593FB0`, `0x85940E0`). Not touched in round 38.
+- Resolved in round 38 ([section 13](#13-round-38-the-building-arithmetic)): how `Cost` turns into Build Supplies and how `BuildAmount` scales against stage progress. Still open: the hammer's real swing period (seconds to build), the build cost scale `S` (live curve, 1.0 without it), and the effect of `Buildable.Damage.DoNotTakeDamage` on the FOB (no native reader found; the FOB Blueprint also overrides vitality health to 300).
 - `StackCheckOffset` and the unnamed (`_aaab...`) placement fields beyond what [section 14.2](#142-maxstack-and-placementflags) reads.
 - The native code of the Drill Rig hot zone effect (movement and resizing of the zone) and the native choice between the Placed and Placed-in-FOB cash tables ([section 14.6](#146-drill-rig-and-the-hot-zone-magnet), [14.7](#147-cash-rows-for-the-missing-structures-and-the-placed-tables)).
-- How `Buildable.Damage.DoNotTakeDamage` combines with the FOB damage row.
+- Whether destroying or dismantling a structure refunds supplies (no credit call found; `OnBuildableDestroyed` not decoded).
 - Hit-count tables per structure: a derived bound for four sources is in section 12.3; the exact tables need all matching damage entries (armor-piercing, hollow-point, calibers) and the instigator and target rules.
 
 Resolved in round 38 ([section 14](#14-round-38-additions)): `bOverridesFinalStage`, `MaxStack`, `PlacementFlags`, weak spots, the two Blueprint placement conditions, the Builder's Radio, the Drill Rig numbers and units, the missing cash rows, and the FOB spawn question.
@@ -539,6 +539,58 @@ The MG Nest buildable asset says 3,000 `MaxHealth`; the finished gun is the `STN
 | MG Nest (STN_06) | 8.0 | 1.0 + 1.0 | 200 Munitions | not set | 60 |
 
 The Stingray is bought, not reloaded: the drone reload scene reads "PURCHASE STINGRAY" with spare parts and cash. It and the Talon are lock-on weapons (`TargetingSetup`: air targets, `TimeToTarget` 2.0 s, `FireDelayAfterLock` 0.5 s; the Stingray fires only while locked).
+
+## 13. Round 38: the building arithmetic
+
+Evidence: static disassembly of the hammer hit path, see [round 38 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md). Labels: **Native** for the formulas, **Derived** for the table.
+
+- **Per hit (Native).** A hit adds `A / T` of the structure's progress, where `A = BuildAmount x build factor` and `T = Cost` (rounded, scaled by a live-curve value that is 1.0 when absent). The build factor is 1 except Barbed Wire 3.5, Camo Net Tent 3.5, Hotzone Magnet 2.0 and STN_02 1.25. A hit on a critical spot adds `BuildAmountWhenTargetIsHit / T` instead. Hits to build = `ceil(T / A)`.
+- **Supplies (Native).** `Cost` is spent a little per hit: about `A` Build Supplies per hit (whole supplies are taken, the fraction carries over), `Cost` in total whichever hammer builds. `PlacementCost` is a separate amount checked and charged at placement; it is 0 on every buildable in the data.
+- **Repair (Native).** On a finished structure the same hit restores `A x RepairSpeedMultiplier / T` of its maximum health, capped; unneeded supplies are refunded. `RepairSpeedMultiplier` is used only for finished structures.
+- **Unfinished structures (Native).** Damage lowers build progress by `damage / MaxHealth`; at 0 the structure is destroyed.
+- **Dismantle (Native).** Damage of type `Damage.Type.Dismantle`: 250 / 200 / 150 per hit (Large / Medium / Small), times 1.0 on your own structure and 0.5 on another owner's (key choice inferred). No supply refund was found.
+- **Extension class (Native).** The hammer's `BuildAmount` is the field of `UWDItemExtensionData_BuildBuildable`; its 3.0 default and `BuildAmountPerSecond` (continuous mode) are not used by the hammers.
+- **FOB (not resolved).** `Buildable.Damage.DoNotTakeDamage` is an `FName` on the data asset that no native function reads; the buildable damage path has no check for it. Whether the FOB takes damage is unknown.
+- **Not native.** The swing period: seconds below assume one hit per swing loop of the use montage.
+
+<!-- build_time_table -->
+| Structure | Tag | Build Supplies to finish (`T`) | Placement supplies | Build factor | Repair multiplier | Max health | Placed with | Hits S / M / L | Seconds S / M / L | Full repair hits S / M / L | Dismantle hits S / M / L (own) |
+|---|---|---:|---:|---:|---:|---:|---|---|---|---|---|
+| `DA_Buildable_AirRaidShelter` | `AirRaidShelter` | 200 | 0 | 1 | 6.7 | 5,000 | L | 400 / 200 / 134 | 226.8 / 113.4 / 118.3 | 60 / 30 / 20 | 34 / 25 / 20 |
+| `DA_Buildable_AirRaidShelter_Ceiling` | `AirRaidShelter.Ceiling` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_AirRaidShelter_Floor` | `AirRaidShelter.Floor` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_BarbedWire` | `BarbedWire` | 7 | 0 | 3.5 | 0.5 | 250 | SML | 4 / 2 / 2 | 2.3 / 1.1 / 1.8 | 9 / 5 / 3 | 2 / 2 / 1 |
+| `DA_Buildable_Door` | `Door` | 80 | 0 | 1 | 2 | 2,200 | ML | 160 / 80 / 54 | 90.7 / 45.4 / 47.7 | 80 / 40 / 27 | 15 / 11 / 9 |
+| `DA_Buildable_Door_DoorOnly` | `Door` | 22 | 0 | 1 | 1.5 | 500 | ML | 44 / 22 / 15 | 24.9 / 12.5 / 13.2 | 30 / 15 / 10 | 4 / 3 / 2 |
+| `DA_Buildable_Door_TopSegment` | `Door.TopSegment` | 22 | 0 | 1 | 1.5 | 500 | - | 44 / 22 / 15 | 24.9 / 12.5 / 13.2 | 30 / 15 / 10 | 4 / 3 / 2 |
+| `DA_Buildable_BremmerWall` | `BremmerWall` | 32 | 0 | 1 | 1.5 | 6,500 | L | 64 / 32 / 22 | 36.3 / 18.1 / 19.4 | 44 / 22 / 15 | 44 / 33 / 26 |
+| `DA_Buildable_Bunker` | `Bunker` | 200 | 0 | 1 | 6.7 | 5,000 | L | 400 / 200 / 134 | 226.8 / 113.4 / 118.3 | 60 / 30 / 20 | 34 / 25 / 20 |
+| `DA_Buildable_Bunker_Floor` | `Bunker.Floor` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_Bunker_Roof` | `Bunker.Roof` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_CamoNetTent` | `CamoNetTent` | 7 | 0 | 3.5 | 0.5 | 300 | SML | 4 / 2 / 2 | 2.3 / 1.1 / 1.8 | 9 / 5 / 3 | 2 / 2 / 2 |
+| `DA_Buildable_CrowsNest` | `CrowsNest` | 200 | 0 | 1 | 6.7 | 5,000 | L | 400 / 200 / 134 | 226.8 / 113.4 / 118.3 | 60 / 30 / 20 | 34 / 25 / 20 |
+| `DA_Buildable_CrowsNest_BaseFloor` | `CrowsNest.BaseFloor` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_CrowsNest_FirstFloor` | `CrowsNest.FirstFloor` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_CrowsNest_Roof` | `CrowsNest.Roof` | 10 | 0 | 1 | 0.7 | 2,250 | - | 20 / 10 / 7 | 11.3 / 5.7 / 6.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_FOB` | `FOB` | 30 | 0 | 1 | 2 | 15,000 | - | instant | instant | 30 / 15 / 10 | 100 / 75 / 60 |
+| `DA_Buildable_HBlock` | `HBlock` | 15 | 0 | 1 | 1 | 1,600 | SML | 30 / 15 / 10 | 17 / 8.5 / 8.8 | 30 / 15 / 10 | 11 / 8 / 7 |
+| `DA_Buildable_Gate` | `Gate` | 200 | 0 | 1 | 5.7 | 5,320 | ML | 400 / 200 / 134 | 226.8 / 113.4 / 118.3 | 71 / 36 / 24 | 36 / 27 / 22 |
+| `DA_Buildable_Gate_Left` | `Gate` | 85 | 0 | 1 | 5.7 | 5,320 | ML | 170 / 85 / 57 | 96.4 / 48.2 / 50.3 | 30 / 15 / 10 | 36 / 27 / 22 |
+| `DA_Buildable_Gate_Ramp` | `Gate.Ramp` | 85 | 0 | 1 | 5.7 | 6,500 | - | 170 / 85 / 57 | 96.4 / 48.2 / 50.3 | 30 / 15 / 10 | 44 / 33 / 26 |
+| `DA_Buildable_Gate_Right` | `Gate` | 85 | 0 | 1 | 5.7 | 5,320 | ML | 170 / 85 / 57 | 96.4 / 48.2 / 50.3 | 30 / 15 / 10 | 36 / 27 / 22 |
+| `DA_Buildable_HBlock_QuadWall` | `HBlockQuadWall` | 75 | 0 | 1 | 5 | 4,600 | ML | 150 / 75 / 50 | 85 / 42.5 / 44.1 | 30 / 15 / 10 | 31 / 23 / 19 |
+| `DA_Buildable_HotzoneMagnet` | `HotzoneMagnet` | 2750 | 0 | 2 | 150 | 2,500 | L | 2,750 / 1,375 / 917 | 1,559.2 / 779.6 / 809.7 | 19 / 10 / 7 | 17 / 13 / 10 |
+| `DA_Buildable_Radio` | `Radio` | 20 | 0 | 1 | 1.3 | 1,000 | SML | 40 / 20 / 14 | 22.7 / 11.3 / 12.4 | 31 / 16 / 11 | 7 / 5 / 4 |
+| `DA_Buildable_RefuelStation` | `RefuelStation` | 200 | 0 | 1 | 13.3 | 1,600 | L | 400 / 200 / 134 | 226.8 / 113.4 / 118.3 | 31 / 16 / 11 | 11 / 8 / 7 |
+| `DA_Buildable_RepairStation` | `RepairStation` | 200 | 0 | 1 | 13.3 | 1,600 | L | 400 / 200 / 134 | 226.8 / 113.4 / 118.3 | 31 / 16 / 11 | 11 / 8 / 7 |
+| `DA_Buildable_Shelter` | `SV_Shelter` | 250 | 0 | 1 | 1 | 2,250 | ML | 500 / 250 / 167 | 283.5 / 141.8 / 147.5 | 500 / 250 / 167 | 15 / 12 / 9 |
+| `DA_Buildable_SandbagWall` | `SandbagWall` | 15 | 0 | 1 | 1 | 735 | SML | 30 / 15 / 10 | 17 / 8.5 / 8.8 | 30 / 15 / 10 | 5 / 4 / 3 |
+| `DA_Buildable_TallHBlock` | `TallHBlock` | 22 | 0 | 1 | 1.5 | 2,250 | ML | 44 / 22 / 15 | 24.9 / 12.5 / 13.2 | 30 / 15 / 10 | 15 / 12 / 9 |
+| `DA_Buildable_TankTrap` | `TankTrap` | 22 | 0 | 1 | 1.5 | 4,500 | SML | 44 / 22 / 15 | 24.9 / 12.5 / 13.2 | 30 / 15 / 10 | 30 / 23 / 18 |
+| `DA_Buildable_WoodBase` | `WoodBase` | 15 | 0 | 1 | 1 | 735 | SML | 30 / 15 / 10 | 17 / 8.5 / 8.8 | 30 / 15 / 10 | 5 / 4 / 3 |
+
+Hammer constants used (`BuildAmount`, critical-spot amount, dismantle damage per hit, swing loop in seconds): Small 0.5, 3, 150, 0.567; Medium 1, 5, 200, 0.567; Large 1.5, 8, 250, 0.883.
+<!-- /build_time_table -->
 
 ## 14. Round 38 additions
 
