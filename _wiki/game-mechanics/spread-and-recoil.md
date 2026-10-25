@@ -47,7 +47,7 @@ Hip spread in degrees (half-angle), from standing still to full speed. Full spee
 
 The PKM uses the sniper values. Fully aimed, all of these are 0.
 
-The data stores these as one spread curve row for each class and stance (29 rows in all, including the mounted machine guns and the stable mount). Each row is a straight line from input 0 to input 1, and the stored numbers carry no unit in the curve table. The degree reading above comes from the spread pipeline page, not from this table. What the 0 to 1 input measures is not traced.
+The data stores these as one spread curve row for each class and stance (29 rows in all, including the mounted machine guns and the stable mount). Each row is a straight line from input 0 to input 1, and the stored numbers carry no unit in the curve table. The degree reading above comes from the spread pipeline page, not from this table. The 0 to 1 input is your current speed as a share of the full speed for your stance (4.0 m/s standing, 2.5 m/s crouched, 0.5 m/s prone), capped at 1: 0 when you are still, 1 at full speed or faster. A gun on a vehicle uses the first point of its row (input 0).
 
 Attachment multipliers on the spread:
 

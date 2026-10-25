@@ -17,7 +17,7 @@ description: "The Light and Heavy Drills: the battery-powered vehicle repair too
 | Repair speed | Light: moderate. Heavy: fastest |
 | Repair per application | 14.5 vehicle health (both) |
 | Repair rate | Light 19.3 per second (every 0.75 s); Heavy 29 per second (every 0.5 s) |
-| Battery use | 1.25 per second (both, item data; unit not stated) |
+| Battery use | 1.25 charges per second in the item data (both); the repair action spends 1 charge per swing |
 | **Availability** | |
 | Price | 600 (Light), 1,300 cash (Heavy) |
 | Unlock level | 1 (shop data) |
@@ -34,7 +34,7 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 ## How it works
 
 - Using a drill repairs a vehicle. The use continues until the drill's power is spent or the vehicle is full.
-- Both drills draw 1.25 battery per second in use, according to the item data. The unit is not stated.
+- The item data lists 1.25 for battery use per second on both drills, but the repair action itself spends 1 battery charge for each repair swing that lands (a Battery holds 100 charges). Which of the two is the real drain was not settled, see [Batteries](batteries.md) for the swing-based estimate.
 - Both have a reload action in the data. What it reloads is not yet known.
 - The item data gives each drill a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
 - The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value in the data.

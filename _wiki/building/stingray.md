@@ -46,7 +46,7 @@ The data does not give a windup time or a bullet speed that this article can che
 
 ### Targeting
 
-The Stingray is a lock-on weapon. Its target list covers air vehicles only, including the Little Bird family, the Havoc and the fixed-wing airplane. It takes 2.0 s to lock onto a target, and it fires 0.5 s after the lock. In the client code read, the lock only decides whether the weapon can fire.
+The Stingray is a lock-on weapon. Its target list covers air vehicles only, including the Little Bird family, the Havoc and the fixed-wing airplane. It takes 2.0 s to lock onto a target, and it fires 0.5 s after the lock. The lock only decides whether the weapon can fire. A target's flares do not clear it; they pull a guided missile that is already in flight toward a flare point (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
 
 ### Range table
 

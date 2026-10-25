@@ -44,7 +44,7 @@ The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigg
 
 ### Targeting
 
-The data gives the emplacement 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. In the client code read, a lock only decides whether a lock-on weapon can fire. The data does not link flares to it (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
+The data gives the emplacement 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. A lock only decides whether the weapon can fire. Flares do not clear a lock; they pull a missile that is already in flight toward a flare point beside the helicopter (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
 
 ## Use and timing
 

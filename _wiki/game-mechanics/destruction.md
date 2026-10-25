@@ -71,10 +71,11 @@ The minimum distances are attached to each explosion rule in the data. The data 
 
 A collision that can break a building piece or a decorative piece has to pass a force threshold: 1,200 for building pieces and 400 for decorative pieces. Damage from a type the data flags for destruction ignores these thresholds and breaks the piece whatever the force. Each is multiplied by 1,000 before the check, so the real thresholds are 1,200,000 and 400,000 in an internal value (speed times a scale). The game does not name a unit for it, so the thresholds are shown as raw values.
 
-Two curves in the data scale building destruction with an angle and with a distance. Their output is not stated, so the value they produce is **not yet known**:
+Two curves in the data rank destructible buildings by how much the player is looking at them. They do not change damage or what breaks. The game uses them to decide which nearby buildings to refresh first, so the ones that are close and in front of you are updated before the rest. A building's score is the angle curve value plus the distance curve value (the angle score is boosted while you look through a scope, and the distance is counted as shorter by the scope's zoom).
 
-- The angle curve starts at 0.7, falls to 0.2 at 90, and reaches 0 at 100. The angle unit is not stated.
-- The distance curve is 1.0 up to 2,000, falls to 0.5 at 50,000 and to 0.1 at 75,000. The distance unit is not stated.
+- The angle curve is the angle in degrees between where you are looking and the building. It starts at 0.7 straight ahead, falls to 0.2 at 90 degrees, and reaches 0 at 100 degrees.
+- The distance curve is 1.0 up to 2,000, falls to 0.5 at 50,000 and to 0.1 at 75,000. The distance is in the game's length unit, which is probably centimetres (20 m, 500 m and 750 m); the unit itself is not stated (inferred).
+- What the refresh itself changes on a building was not traced.
 
 World props and building pieces hold no health, hit count or fall time in the game files. The building pieces carry only a debris look and, for one piece, an indestructible flag. A piece breaks when a hit passes the force thresholds above, so there is no health to state.
 

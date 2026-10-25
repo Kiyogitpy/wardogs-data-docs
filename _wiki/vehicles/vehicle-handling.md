@@ -84,7 +84,7 @@ When an asset does not store a field, the game uses the value its class construc
 | Track mass | 600 | Tracked vehicles |
 | Sprocket mass | 64 | Tracked vehicles |
 
-The boost switch is off in the defaults and in every asset. The boost value is stored, but no boost effect is claimed here because the boost path was not traced.
+The boost switch is off in the defaults and in every asset, so no vehicle boosts. The stored boost value does have a path: when the switch is on and the boost input is held, the engine's torque scale is replaced by the boost value, and goes back to the normal scale when the input is released. With the switch off in every vehicle, the stored boost values never take effect.
 
 ### Driving and flight assists
 
@@ -138,9 +138,9 @@ The Ural's brake torque is listed for its three axles, with 38,000 on both the m
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | 65 | 1,800 at 1,400 | 7 | 30 | 50 |
 | [T-72B3](t-72b3.md) | 60 | 1,800 at 1,400 | 10 | Not set | 50 |
 
-The gear column counts the entries stored for each tracked vehicle. For the wheeled vehicles the last entry is reverse, but the tracked gear lists were not read, so whether their last entry is reverse is not confirmed, and the count may include it.
+The gear column counts the entries in the first, older gear list stored for each tracked vehicle. The game does not use that list while driving (see the engine curves below). The gear list it does use is shorter: the M113, SPH-2, L2A6 and Flakpanzer Gepard all use 5 entries (5, 0, 8, 6, 2.65), and the T-72B3 uses 5 entries (5, 0, 8, 6, 3.6). The entry with a ratio of 0 is neutral. The entries before it are reverse, so these tracked vehicles have one reverse gear (ratio 5) and three forward gears (8, 6, then 2.65 or 3.6), and the vehicle starts in the first forward gear. For the wheeled vehicles the last entry is reverse.
 
-The tank torque curves are the same for the SPH-2, L2A6, Gepard and T-72B3, and the M113 has its own curve. Tracked vehicles store a second engine curve with a peak of 1,400 at 1,911 RPM, which the data does not say is used alongside the first.
+The tank torque curves are the same for the SPH-2, L2A6, Gepard and T-72B3, and the M113 has its own curve. Tracked vehicles store a second engine curve with a peak of 1,400 at 1,911 RPM. This second curve is the one the game reads while driving: it is evaluated at the engine's current RPM and multiplied by the vehicle's torque multiplier. No use of the first curve was found, so the peak torque and gear columns above describe stored data that the tracked vehicles do not appear to use (inferred, a copy of that data at start-up was not ruled out).
 
 ### Helicopters
 

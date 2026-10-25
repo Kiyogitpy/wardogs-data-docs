@@ -34,8 +34,9 @@ The shop text lists the Infrared Range Finder as a variable infrared magnificati
 ## How it works
 
 - It is used by aiming, with the item's secondary input.
-- It has its own reload action in the data. The sources do not say what it reloads, so that is not yet known.
-- The item data sets its battery use to 0 per second, so the sources do not show it draining a battery. The audio data includes a low battery warning. What triggers it is not yet known.
+- Its reload action swaps in a new [Battery](batteries.md). The range finder has one battery slot and comes with a Battery loaded.
+- The item's own battery line says 0 per second, but the scope has its own drain rule. Raising the scope costs 3 charges, and then it costs 1 charge every 0.8 s (1.25 a second) while the scope stays up. A full Battery (100 charges) lasts about 78 s of use and a full High Capacity Battery (250 charges) about 198 s. These times come from the game's default settings and were not timed in play.
+- The low battery warning sound plays once, when 20 charges or fewer are left while the scope is up. That is about 16 s before the battery runs out. When the charges reach 0 the scope loses power (inferred).
 - While it is in use, maximum movement speed is halved.
 - The [Ghillie Body Suit](ghillie-body-suit.md) and [Ghillie Headwear](ghillie-headwear.md) hide the player from infrared range finders, according to their shop text.
 

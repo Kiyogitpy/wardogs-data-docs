@@ -38,7 +38,10 @@ The weights are in kilograms. The game stores item weight as a whole number 1,00
 
 - The drills use battery power while they work, at 1.25 per second in the item data.
 - The Defibrillator needs a battery to charge and to use, according to its shop text. See [Medical Items](medical-items.md).
-- The sources do not say how long a battery lasts in play, so that is not yet known.
+- A battery is a small magazine of charges. The Battery holds 100 charges and the High Capacity Battery holds 250, and a new one is full. Tools spend charges, and the Defibrillator uses 25 per discharge, so a Battery covers four discharges and a High Capacity Battery ten.
+- Each tool and the Defibrillator have one battery slot. Their reload action swaps in a new battery from your inventory, the same way a gun swaps a magazine, and a new tool comes with a battery loaded.
+- The drills spend 1 charge for each repair swing that lands (inferred). If every swing is a repair step, that is about 2 charges a second on the Heavy Drill (a step every 0.5 s) and about 1.3 a second on the Light Drill (every 0.75 s), so a Battery lasts about 50 s and 75 s of steady repair and a High Capacity Battery about 125 s and 190 s. These times were worked out from the data, not timed in play.
+- The [Infrared Range Finder](infrared-range-finder.md) also drains a battery while its scope is up: 3 charges when you raise it, then 1 charge every 0.8 s.
 
 ## Season 2 changes
 

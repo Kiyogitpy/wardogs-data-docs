@@ -62,7 +62,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How many rifle rounds destroy a Humvee?** About 715 to the body, or 129 through the fuel tank. Both counts are derived at point blank with full metal jacket, not measured in play ([Vehicle Guide](vehicle-guide.md)).
 
-**Do flares stop missiles?** The game files do not show it. An in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, but a search of the client found no rule that breaks a lock, and the data does not say how long a burst would last against a given launcher. A server-side effect is not ruled out ([Countermeasures and Flares](../vehicles/countermeasures-and-flares.md)).
+**Do flares stop missiles?** They can pull a guided missile off its target. For the 3.5 seconds they burn, a missile that is between the minimum and maximum flare distance (5 to 300 m on the Havoc) aims at a flare point beside the helicopter instead, and gives up its target when it gets within about 100 m of that point. They do not clear a lock. This is read from the game's code, not tested in play ([Countermeasures and Flares](../vehicles/countermeasures-and-flares.md)).
 
 **How do I refuel?** At a Refuel Station inside a Forward Operating Base. The Fast option restores 5% of the tank for 75 cash over 3 s, and the Max option restores up to 100% over 9 s. A Fuel Canister also refuels a vehicle ([Vehicle Guide](vehicle-guide.md), [Refuel and Repair Stations](../building/refuel-and-repair-stations.md)).
 
