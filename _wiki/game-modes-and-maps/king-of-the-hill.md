@@ -66,6 +66,7 @@ At the end of the match, factions are ranked and paid a flat placement bonus: 20
 - [Challenges](../progression-and-economy/challenges.md)
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)
 - [Sniper Showdown](sniper-showdown.md), which uses the same zone rules
+- [King of the Hill Guide](../guides/king-of-the-hill-guide.md), practical tips for the main maps
 
 ## Sources
 
