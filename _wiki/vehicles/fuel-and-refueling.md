@@ -28,22 +28,22 @@ A vehicle's fuel is set by its vendor stats. Fuel is refilled in three ways: a [
 
 ### Running out of fuel
 
-The data does not say what happens when a vehicle's fuel reaches zero, such as whether the engine stops or how quickly. That is not yet known.
+When a vehicle's fuel reaches zero, the server stops its engine. Whether the engine can be restarted before refuelling is not yet known.
 
 ### Fuel leaks
 
-The fuel tank has its own health and effect triggers. On the fixed-wing airplane, the fuel tank has three leak effects of 0.1, 0.4 and 0.5 per second. The data does not say which health threshold uses which leak rate. Other vehicles' fuel leak effects are not decoded in the data.
+Fuel tank damage makes the tank leak fuel, and the leak rate steps up as the tank loses health. On the fixed-wing airplane the tank leaks 0.1 per second below 90 percent tank health, 0.4 per second below 50 percent and 0.5 per second when the tank is destroyed. Other vehicles use their own steps. The heavy tanks reach 3.0 per second when destroyed, and the MH-6 and AH-6 family leak 0.1 per second below 10 percent and 0.75 per second when destroyed.
 
-Fuel tank health triggers sit at 90% (and 80%), 55% and 0% on several vehicles, and at 10% and 0% on the Little Bird family. What each trigger does is not fully decoded. The fuel tank also takes extra damage from some weapons, as explained in [Vehicle damage](vehicle-damage.md).
+Most vehicles set their first leak step at 90 or 80 percent of fuel tank health, a second at 50 or 55 percent and a third at 0 percent when the tank is destroyed. The fuel tank also takes extra damage from some weapons, as explained in [Vehicle damage](vehicle-damage.md).
 
 ### Refueling
 
-- **Fuel Canister.** A 40L Fuel Canister costs 150 cash and has 40 durability. The shop lists 25 fuel per use, while the item's timed refuel step adds 2.0 units every 0.75 s. How the two fit together is not confirmed. It is used until the can is empty or the vehicle is full. Canisters are filled for cash at world refuel points, see [Fuel Canister](../equipment/fuel-canister.md).
+- **Fuel Canister.** A 40L Fuel Canister costs 150 cash and has 40 durability. The shop's 25 fuel per use is not what the refuel action uses. The action adds 2.0 fuel every 0.75 s. It is used until the can is empty or the vehicle is full. Canisters are filled for cash at world refuel points, see [Fuel Canister](../equipment/fuel-canister.md).
 - **Refuel Station.** Built with the Large Hammer for 200 Build Supplies, with 1,600 HP. Only one can stand in each Forward Operating Base. It takes Fuel Supplies and must be inside the FOB radius to be used.
 - **Fuel Supplies.** Sold for 10 cash per lot of 50. A Fuel Supply Pallet costs 400 cash. The Refuel Station needs them to work.
 - **Refuel at base.** The in-game tip says vehicles can be refuelled by returning to your faction's safe zone or a FOB, and that this is not free.
 
-The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s for 1,500 cash. Each restock uses 5 Fuel Supplies. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the full figures. What an empty tank does to the vehicle is not known.
+The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s for 1,500 cash. Each restock uses 5 Fuel Supplies. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the full figures. A vehicle with an empty tank has its engine stopped, as described above.
 
 ## Numbers
 
@@ -104,3 +104,5 @@ Season 2 changed no fuel capacity or fuel economy value in the data.
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): Fuel Canister and supply prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Refuel Station restock rates and the Fuel Canister's timed refuel step.
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Empty-tank engine stop, fuel leak steps and canister refuel rate.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

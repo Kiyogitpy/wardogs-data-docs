@@ -14,8 +14,8 @@ description: "The Wrench: the cheapest vehicle repair tool, a slow hand repair f
 | Repairs | All vehicles |
 | Speed | Slow |
 | **Use** | |
-| Repair per application | +5 vehicle health (item data) |
-| Durability | 600 |
+| Repair rate | 10 vehicle health every 0.68 s (about 14.7 per second) |
+| Durability | 600 (vehicle health it can repair) |
 | **Availability** | |
 | Price | 180 cash |
 | Unlock level | 0 |
@@ -27,14 +27,13 @@ The Wrench is the basic hand tool for repairing vehicles. It can repair any vehi
 
 ## Overview
 
-The shop text describes the Wrench as a tool for manually repairing all vehicles at a slow repair speed. It is the cheapest of the three repair tools. The data gives the same repair amount for each repair tool, so the speed difference comes from the shop text, not from numbers.
+The shop text describes the Wrench as a tool for manually repairing all vehicles at a slow repair speed. It is the cheapest of the three repair tools. The Wrench is the slowest of the repair tools in the data: about 14.7 vehicle health per second, against 19.3 for the Light Drill and 29 for the Heavy Drill.
 
 ## How it works
 
-- Using the Wrench on a vehicle adds 5 vehicle health per application, according to the item data.
+- Each application repairs 10 vehicle health every 0.68 seconds, about 14.7 per second.
 - The use continues until the Wrench is empty or the vehicle is full.
-- Durability is 600 in the item data. What that number counts, such as uses or seconds, is not stated.
-- The time for each application is not yet known.
+- Durability 600 is the amount of vehicle health the Wrench can repair. A full Wrench restores 600 health in about 41 seconds (60 applications).
 
 The Wrench is different from the Mechanical Supplies. Those are the resource a Repair Station uses, as described on the [Supplies](supplies.md) page.
 
@@ -55,3 +54,5 @@ The Wrench is different from the Mechanical Supplies. Those are the resource a R
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price, unlock level, shop text, durability and health value
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the repair use and the use-until-empty rule
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): price change
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Repair per application, rate and durability meaning.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

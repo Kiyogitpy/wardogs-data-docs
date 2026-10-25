@@ -98,7 +98,8 @@ Helicopters and the airplane carry flares. The L2A6 carries smoke. Every other v
 
 Tips that follow from the numbers:
 
-- **Because each helicopter starts with only 2 flares, plan a flight around that count.** The item text says a flare use "deploys 3x bursts of flares", which does not match the 2 starting flares. The data does not say how the two fit together, and how flares are restocked is not yet known. See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
+- **Because each helicopter starts with only 2 flares, plan a flight around that count.** Each press uses one flare and then waits 5 seconds before the next. The "3 bursts" in the item text is not a count. How flares are restocked is not yet known. See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
+- **Because the helicopters have arcade assists, do not expect a manual climb to be unlimited.** Each helicopter limits its climb rate to 36 km/h and holds a hover when the collective is released. The Havoc alone also levels pitch and roll at low speed. See [Vehicle handling](../vehicles/vehicle-handling.md#driving-and-flight-assists).
 - **Because the in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, do not treat them as a shield.** The data does not say how long a burst breaks a lock.
 - **Because the in-game tip also says flying low stops certain launchers from locking on, low flight is a second defence.** The data does not say which launchers.
 - **Because the L2A6's smoke lasts 6 seconds in total (2 seconds fading in, 2 at full density, 2 fading out), it gives short cover.** The data does not say whether smoke affects lock-on weapons.
@@ -118,7 +119,7 @@ Refuel a vehicle at a Refuel Station inside a Forward Operating Base, or with a 
 Tips that follow from the numbers:
 
 - **Because Fast and Max cost the same per percent when Max fills the whole tank, choose Fast for a partial top-up.** Fast costs 15 cash per percent (75 for 5%), and Max costs 15 cash per percent only when it fills to 100% (1,500 for 100%) (derived). Whether a Max restock stops early when the tank is nearly full is not known.
-- **What an empty tank does is not in the data.** The data does not say whether the engine stops or how quickly. See [Fuel and refueling](../vehicles/fuel-and-refueling.md).
+- **When the fuel runs out, the engine stops.** The server stops the engine when a vehicle's fuel reaches zero. Whether it can be restarted before refuelling is not yet known. See [Fuel and refueling](../vehicles/fuel-and-refueling.md).
 
 ### Repair
 
@@ -128,13 +129,13 @@ Vehicle health is repaired with tools or at a Repair Station. The station restoc
 |---|---|---|---:|---|
 | Repair Station, Fast | Vehicles in the FOB radius | 5% of health | 3 s | 100 cash |
 | Repair Station, Max | Vehicles in the FOB radius | Up to 100% of health | 9 s | 2,000 cash |
-| [Wrench](../equipment/wrench.md) | Any vehicle | +5 HP | Not yet known | 180 cash |
-| [Light repair drill](../equipment/drills.md) | Vehicles | +5 HP | Moderate | 600 cash |
-| [Heavy repair drill](../equipment/drills.md) | Vehicles | +5 HP | Fastest | 1,300 cash |
+| [Wrench](../equipment/wrench.md) | Any vehicle | 10 HP | 0.68 s (about 14.7 HP per second) | 180 cash |
+| [Light repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.75 s (about 19.3 HP per second) | 600 cash |
+| [Heavy repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.5 s (29 HP per second) | 1,300 cash |
 
 Tips that follow from the numbers:
 
-- **Because a wrench or drill adds only 5 HP per use, a station is the practical way to repair a large vehicle.** A Humvee's 500 HP would take about 100 wrench uses from zero (derived), before any limit on tool uses, which is not yet known.
+- **Because a wrench or drill repairs only 10 to 14.5 HP per use, a station is the faster way to repair a large vehicle.** A Humvee's 500 HP would take about 50 wrench uses from zero (derived), about 34 seconds of repair. A full Wrench repairs 600 HP in about 41 seconds.
 - **Because a Humvee tyre deflates at about 41 HP, that is the first warning on a wheel.** The tyre deflates at 55% of its 75 HP. Season 2 raised the threshold from 50% to 55% on every wheeled axle. See [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md).
 - **Because repair tools work on any vehicle but the station only works inside the FOB radius, carry a wrench for field repairs.** The in-game tip says damage zones on a vehicle can be repaired with tools.
 

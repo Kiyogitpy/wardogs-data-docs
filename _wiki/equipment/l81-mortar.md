@@ -34,7 +34,7 @@ The mortar can hit targets from 132 m to 684 m away. It has one firing arc only,
 
 ### Weapon
 
-The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It reloads in 4.5 s and starts with 3 shells. A restock takes 150 Ammo Supplies. The data gives a windup time of 2.5 s before each shot.
+The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It reloads in 4.5 s and starts with 3 shells. A restock takes 150 Ammo Supplies, and the data does not store how many shells one restock gives, so the engine default of one is used (derived). The data gives a windup time of 2.5 s before each shot.
 
 ### Range and elevation
 

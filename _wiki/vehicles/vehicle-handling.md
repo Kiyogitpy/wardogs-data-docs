@@ -47,11 +47,23 @@ Tracked vehicles do not steer with wheels. They have a steering input response (
 
 ### Maximum incline
 
-Only tracked vehicles store a maximum incline in the handling data, at 50 degrees for each of them. The wheeled vehicles and helicopters do not store one in the handling tables, so their maximum incline is not yet known.
+Only tracked vehicles store a maximum incline in the handling data, at 50 degrees for each of them. The wheeled vehicles and helicopters have no maximum incline in the handling tables, so the data stores none for them.
 
 ### Torque split
 
 On wheeled vehicles, the torque split sets how much of the engine's pull goes to the front axle and how much to the rear. The Dune Buggy sends 85% to the rear, and the Humvee sends 60% to the rear. Some vehicles do not store a split.
+
+### Driving and flight assists
+
+Arcade assists correct the vehicle on its own. The data stores their settings, and the values below are shown as stored.
+
+- **Humvee and Wolf-110.** The two share the same assist settings: anti-roll 40 on both axles and a full-recovery speed of 120.
+- **Kodiak.** A drift assist with 5 at the front and 60 at the rear, and a full-recovery speed of 200.
+- **Ural.** Drift values of 2.5 at the front and 30 at the rear.
+- **Dune Buggy.** Lean up to 15 degrees and pitch up to 20 degrees, with drift values of 1 at the front and 1 at the rear.
+- **Helicopters.** All three helicopters (Havoc, MH-6 family and Z20 Lakota) limit their climb rate to 36 km/h, hold a hover when the collective is released, and set the collective to minus 1 on the ground. The Havoc alone also levels pitch and roll at low speed and resets pitch and roll to zero on the ground.
+- **Havoc switched-off assists.** Four Havoc assists are stored as disabled: the sink-rate limit, the yaw reset on the ground, the roll drag-overshoot prevention and the roll input damping.
+- **Tyre models.** The Bobcat, the Kodiak (and Pickup) and the Ural name a simple tyre model in the data. The Humvee, Dune Buggy and Wolf-110 name none.
 
 ### Season 2 changes
 
@@ -67,19 +79,19 @@ Sort by any column with the header.
 
 | Vehicle | Max speed (as stored) | Mass (as stored) | Peak torque (at RPM) | First gear | Torque split front / rear | Steer, front (deg) | Brake torque front / rear | Hand brake | Max incline (deg) |
 |---|---:|---:|---|---:|---|---:|---|---:|---|
-| [Bobcat](bobcat.md) | 75 | 250 | 33 at 5,000 | 4.2 | 0.6 / 0.4 | 35 | 1,800 / 1,250 | 8 | Not yet known |
-| [Kodiak](kodiak.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not yet known |
-| [Kodiak [Pickup]](kodiak-pickup.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not yet known |
-| [Kodiak [M249]](kodiak-m249.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not yet known |
-| [Humvee](humvee.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not yet known |
-| [Humvee [Minigun]](humvee-minigun.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not yet known |
-| [Humvee [M249]](humvee-m249.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not yet known |
-| [Dune Buggy](dune-buggy.md) | 130 | 550 | 475 at 5,500 | 4.8 | 0.15 / 0.85 | 40 | 4,000 / 13,000 | 50 | Not yet known |
-| [Ural](ural.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not yet known |
-| [Ural Defender](ural-defender.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not yet known |
-| [Ural Defender [M249]](ural-defender-m249.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not yet known |
-| [Wolf-110](wolf-110.md) | 129 | 3,200 | 1,500 at 1,650 | 3.7 | 0.3 / 0.7 | 35 | 5,500 / 9,000 | 80 | Not yet known |
-| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 129 | 3,200 | 1,500 at 1,650 | 3.7 | 0.3 / 0.7 | 35 | 5,500 / 9,000 | 80 | Not yet known |
+| [Bobcat](bobcat.md) | 75 | 250 | 33 at 5,000 | 4.2 | 0.6 / 0.4 | 35 | 1,800 / 1,250 | 8 | Not stored |
+| [Kodiak](kodiak.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not stored |
+| [Kodiak [Pickup]](kodiak-pickup.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not stored |
+| [Kodiak [M249]](kodiak-m249.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not stored |
+| [Humvee](humvee.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not stored |
+| [Humvee [Minigun]](humvee-minigun.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not stored |
+| [Humvee [M249]](humvee-m249.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not stored |
+| [Dune Buggy](dune-buggy.md) | 130 | 550 | 475 at 5,500 | 4.8 | 0.15 / 0.85 | 40 | 4,000 / 13,000 | 50 | Not stored |
+| [Ural](ural.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not stored |
+| [Ural Defender](ural-defender.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not stored |
+| [Ural Defender [M249]](ural-defender-m249.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not stored |
+| [Wolf-110](wolf-110.md) | 129 | 3,200 | 1,500 at 1,650 | 3.7 | 0.3 / 0.7 | 35 | 5,500 / 9,000 | 80 | Not stored |
+| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 129 | 3,200 | 1,500 at 1,650 | 3.7 | 0.3 / 0.7 | 35 | 5,500 / 9,000 | 80 | Not stored |
 
 The Ural's brake torque is listed for its three axles, with 38,000 on both the middle and rear axles. The Ural's torque curve has a scale of 2, so its numbers are larger than the other trucks' at the same RPM.
 
@@ -130,3 +142,5 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicles Reference](../../content/Wardogs_Vehicles_v2.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Driving and flight assist settings, tyre models and wheeled incline.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

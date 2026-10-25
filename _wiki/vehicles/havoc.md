@@ -73,6 +73,8 @@ The seats are a driver (pilot) seat and one gunner seat.
 
 ## Handling
 
+- Driving assists: the climb rate is limited to 36 km/h, the collective holds a hover when released, and the pitch and roll level out at low speed. Four assists are stored as switched off: the sink-rate limit, the yaw reset on the ground, the roll drag-overshoot prevention and the roll damping. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Rotor radius 600, maximum lift coefficient 1.8, and stall angle 40 degrees, as stored.
 - Translational lift of 20% between 24 and 34 m/s.
 - Maximum angular velocity 83 deg/s.

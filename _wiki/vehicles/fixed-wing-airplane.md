@@ -14,7 +14,7 @@ description: "Fixed-wing airplane with a driver seat and one passenger seat; the
 | Price | Not sold (no shop listing in the data) |
 | Unlock level | Not applicable |
 | Main health | 150 HP at start |
-| Top speed | Not yet known |
+| Top speed | Not stored (see Handling) |
 | Rifle damage taken (derived) | 7.5% |
 | Internal name | FWG_01 |
 {: .wiki-infobox }
@@ -29,7 +29,7 @@ The airplane has two seats, a driver and one passenger. Its damage rules are cop
 
 | Stat | Value |
 |---|---|
-| Max speed | Not yet known |
+| Max speed | Not stored (see Handling) |
 | Fuel | Fuel tank and fuel-leak effects (see below) |
 | Seats | 2 |
 | Mass override | 10,000 (as stored, unit not stated) |
@@ -47,6 +47,8 @@ Its damage rules are those of the Little Bird family, so rifle rounds do 7.5% of
 The airplane has no weapons. It has two seats: a driver seat and an active passenger seat.
 
 ## Handling
+
+- The data stores no top speed. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000) and drag, not from a speed limit.
 
 - Control surfaces: elevators up to 40 degrees each, ailerons and rudders up to 20 degrees, flaps up to 18 degrees, and an airbrake that can extend.
 - Retractable landing gear, with a nose wheel that steers up to 45 degrees.

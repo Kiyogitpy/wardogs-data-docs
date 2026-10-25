@@ -53,9 +53,9 @@ Main health is 400 HP, with the same engine, fuel tank and wheel health as the [
 
 | Weapon | Type | Rate | Effective range | Reload | Starting ammunition |
 |---|---|---:|---:|---:|---:|
-| M249 Machine Gun (ring turret) | Machine gun | Not yet known | Not yet known | 4.25 s | 0 (tracer) |
+| M249 Machine Gun (ring turret) | Machine gun | 850 rounds/min | 700 m | 4.25 s | 0 (tracer) |
 
-The data gives the reload time and the starting ammunition for this gun (none loaded at the start, tracer rounds). It does not give the rate of fire or the range, so those are not yet known.
+The gun fires 850 rounds/min out to 700 m. The data gives the reload time and the starting ammunition too (none loaded at the start, tracer rounds).
 
 ## Handling
 

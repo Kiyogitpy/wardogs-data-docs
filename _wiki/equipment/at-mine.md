@@ -37,7 +37,7 @@ For the mine that goes off on people, see [Claymore](claymore.md).
 
 ## How it works
 
-**Placing.** The mine is placed on the ground up to 4 m from the player, and the player moves at 40% speed while placing it.
+**Placing.** The mine is placed on the ground up to 4 m from the player, and the player moves at 40% speed while placing it. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone).
 
 **Arming.** The mine is armed 1 s after it is placed.
 

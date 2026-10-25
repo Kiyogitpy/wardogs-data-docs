@@ -12,7 +12,7 @@ description: "The Molotov: a thrown incendiary that bursts for 40 HP and leaves 
 | **General** | |
 | Type | Lethal, thrown incendiary (quick slot) |
 | How it is used | Thrown. Bursts and leaves a fire area |
-| Fuse | 5 s |
+| Fuse | Bursts on first impact; 5 s backstop |
 | Cookable | No |
 | **Blast and fire** | |
 | Burst damage at centre | 40 HP |
@@ -42,11 +42,11 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Throwing.** The Molotov has two throws. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s). Thrown contact adds 10 HP of impact damage.
 
-**Fuse.** The Molotov goes off 5 s after it is thrown. It cannot be cooked. The data also has it go off when its own 50 HP is used up. No impact trigger was found, so it does not appear to burst on contact.
+**Burst on impact.** A thrown Molotov bursts on its first impact. It is the only throwable set to do so. The 5 s fuse is only a backstop, for a Molotov that does not hit anything. It cannot be cooked.
 
 **Burst.** On detonation the Molotov does its burst damage, then starts a fire area.
 
-**Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The data does not give the spacing of the patches, so the total size of the fire is not known.
+**Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands.
 
 **Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. How it ends is not fully confirmed.
 
@@ -95,3 +95,5 @@ The Season 2 items data adds the Molotov, along with four other items, to the it
 - [Vehicle damage pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): how explosives are scaled against vehicles
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Molotov fire patches, fuse and damage rules.
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Impact burst and patch spiral.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

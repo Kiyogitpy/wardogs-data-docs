@@ -60,6 +60,8 @@ The Wolf-110 has no weapons. Its four seats are a driver and three active passen
 
 ## Handling
 
+- Driving assists: anti-roll 40 on both axles and a full-recovery speed of 120, the same as the Humvee. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Mass 3,200, hand brake 80, ABS 40 with a minimum speed of 22, and traction control 55, as stored.
 - Front steering of 35 degrees.
 - Torque split of 0.3 to the front and 0.7 to the rear.

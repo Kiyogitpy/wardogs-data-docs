@@ -12,8 +12,9 @@ description: "The Claymore: a placed anti-infantry mine that fires when a player
 | **General** | |
 | Type | Lethal, placed mine (anti-infantry) |
 | How it is used | Placed on the ground facing the area to cover |
-| Trigger | A player or vehicle in the trigger area in front |
+| Trigger | A moving living player or vehicle in the trigger area in front, with a clear line of sight |
 | Arming | 2 s after placement |
+| Placement | Not allowed in a safe zone |
 | Health | 1 HP |
 | **Blast** | |
 | Damage at centre | 150 HP |
@@ -37,16 +38,15 @@ For the mine that is aimed at vehicles, see [AT Mine](at-mine.md). Both are desc
 
 ## How it works
 
-**Placing.** The Claymore is placed on the ground up to 4 m from the player. The placement angle limit is 30. The data does not state the unit, and it is assumed to be degrees. While the Claymore is being placed, the player moves at 40% speed.
+**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The data stores a placement angle of 30, but the placement rules do not use it and its unit is not confirmed, so no angle limit is claimed. While the Claymore is being placed, the player moves at 40% speed.
 
 **Arming.** The Claymore is armed 2 s after it is placed. Until then its trigger is off.
 
 **Trigger.** The trigger is a box in front of the mine:
 
-- A player is a target when a check on the player's gameplay tag passes. The tag that counts is not yet known.
-- A vehicle is a target when it is moving faster than 0 km/h.
-- A teammate on the same side also sets it off, because the data does not exempt them.
-- Before it fires, the Claymore runs a line-of-sight check from the mine to the target.
+- A target must be alive and moving: a living player whose speed is above 0 sets it off, and so does a vehicle driver or passenger in a moving vehicle. A motionless target does not trigger it.
+- The check compares the placer's faction with the target's, so the data points to enemies as the targets. The data does not show how a teammate is handled.
+- The blast must reach the target. The Claymore runs a line-of-sight check to the target's damage points before it fires.
 
 **Being shot.** An explosion nearby sets the Claymore off. Other damage destroys it, because its health is 1 HP.
 
@@ -94,3 +94,5 @@ The Season 2 items data lists no change to the Claymore, and no change to its pr
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): Claymore actor values
 - [Vehicle damage pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): how explosives are scaled against vehicles
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
+- [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Claymore target, line-of-sight and placement rules.
+- [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

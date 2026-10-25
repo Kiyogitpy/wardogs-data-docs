@@ -60,6 +60,8 @@ The Z20 Lakota has no weapons. The seat with the pilot is labelled "Pilot". The 
 
 ## Handling
 
+- Driving assists: the climb rate is limited to 36 km/h and the collective holds a hover when released; the collective resets to minus 1 on the ground. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Rotor radius 800, maximum lift coefficient 5.75, and translational lift of 25% between 24 and 34 m/s, as stored.
 - Ground effect strength 30% with a 12 m falloff.
 - The main rotor's operating RPM is 270 and its critical low RPM is 180.

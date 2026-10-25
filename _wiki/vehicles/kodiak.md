@@ -60,6 +60,8 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 
 ## Handling
 
+- Driving assists: a drift assist with 5 at the front and 60 at the rear, and a full-recovery speed of 200. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+
 - Mass 2,750, hand brake 50, and front steering of 30 degrees.
 - ABS 30 with a minimum speed of 35, and traction control 55, as stored.
 - Engine torque curve runs from 0 to 9,000 RPM, with a torque scale of 0.6, as stored.
