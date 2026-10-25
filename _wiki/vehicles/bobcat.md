@@ -65,6 +65,8 @@ The Bobcat has no weapons. Its two seats are a driver and a passenger.
 - Engine idle 1,200 RPM, rev limit 7,000 RPM.
 - Tyre radius at the front 0.35 (as stored).
 
+**Steering and pedal tuning.** The data stores steer sensitivity 1.3, steer input gravity 1, a steering deadzone of 0.05, a steering assist of 20, throttle sensitivity 2 and brake sensitivity 1. It is the only wheeled set with a deadzone and an assist. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - A new 125 mm rocket rule adds +250%.
@@ -80,6 +82,7 @@ The Bobcat has no weapons. Its two seats are a driver and a passenger.
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

@@ -11,7 +11,7 @@ description: "The M67 Frag Grenade: a thrown blast grenade with a 4 second fuse,
 |---|---|
 | **General** | |
 | Type | Lethal, thrown (quick slot) |
-| How it is used | Thrown. Can be cooked (held before throwing) and thrown back |
+| How it is used | Thrown. Can be cooked (held before throwing). A throw-back is listed in the data but not confirmed in play |
 | Fuse | 4 s after the throw |
 | **Blast** | |
 | Damage at centre | 100 HP |
@@ -26,7 +26,7 @@ description: "The M67 Frag Grenade: a thrown blast grenade with a 4 second fuse,
 | Internal name | `Id.Item.M67Grenade` |
 {: .wiki-infobox }
 
-The M67 Frag Grenade is the standard hand grenade. It is thrown, goes off 4 seconds later, and does up to 100 HP to everyone close to the blast. Its damage stops at 10 m. It can also be thrown back before it goes off.
+The M67 Frag Grenade is the standard hand grenade. It is thrown, goes off 4 seconds later, and does up to 100 HP to everyone close to the blast. Its damage stops at 10 m. The data lists a throw-back, but a static reading suggests it may not be possible at all; see Fuse. That reading was not checked in game.
 
 ## Overview
 
@@ -36,7 +36,7 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 
 ## How it works
 
-**Fuse.** The grenade goes off 4 s after it is thrown. Holding it before the throw (cooking) is allowed, so a player can shorten the time left before it lands. The data allows the grenade to be thrown back.
+**Fuse.** The grenade goes off 4 s after it is thrown. Holding it before the throw (cooking) is allowed, so a player can shorten the time left before it lands. The data lists a back throw. By a static reading of the throw-back check, a grenade can be thrown back only while more than 5 s of its fuse is left, and the M67's fuse is 4 s, so the throw-back may not be possible as shipped. This reading was not checked in game, so treat the throw-back as unconfirmed.
 
 **Throw.** The data has three throws:
 
@@ -44,9 +44,11 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 |---|---:|---|
 | Overarm (primary) | 25 m/s (2,500 cm/s) | The longest throw |
 | Underarm (secondary) | 14 m/s (1,400 cm/s) | Short range |
-| Back throw | 18 m/s (1,800 cm/s) | Third throw action in the data; the data does not say when it is used |
+| Back throw | 18 m/s (1,800 cm/s) | Third throw action in the data; by the static reading in Fuse it may never be usable |
 
 **Contact.** A grenade that hits something before it goes off does 10 HP of thrown-contact damage.
+
+**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
 
 ## Damage
 
@@ -71,6 +73,8 @@ The data gives the number of centre hits a vehicle needs to lose its main health
 | [T-72B3](../vehicles/t-72b3.md) | 750 HP | 7 |
 | [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 6 |
 
+Against armour the plain frag grenade is weak. Its table entry is -60 % on the tanks, -15 to -45 % on the Humvee family, the Ural, the Kodiak and the Wolf-110, -20 % on the Havoc and +50 % on the Little Bird. Where an entry also needs the inner blast radius, the table marks it (+Inner); this page does not model that part.
+
 See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
 
 ## Season 2 changes
@@ -87,6 +91,7 @@ The Season 2 items data lists no change to the M67 Frag Grenade.
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the armour readings for the frag grenade and the throw-back caveat
 - [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): blast damage, radius, falloff, fuse and vehicle hit counts
 - [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): throw speeds and throw actions
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): name, price, unlock level and shop text

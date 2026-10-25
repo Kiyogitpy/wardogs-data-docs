@@ -29,7 +29,7 @@ Parts with their own health are the engine, fuel tank, wheels (or tracks on tank
 ### Damageable parts
 
 - **Engine.** Its own health pool. It has effect triggers at fixed health percentages.
-- **Fuel tank.** Its own health pool. Its triggers and the leak effect are covered in [Fuel and refueling](fuel-and-refueling.md).
+- **Fuel tank.** Its own health pool. Its triggers and the leak effect are covered in [Fuel and refueling](fuel-and-refueling.md). An empty tank stops the engine, and the engine cannot be restarted until the tank is refuelled (static reading, not checked in play).
 - **Tyres (wheeled vehicles).** Each wheel has its own pool, usually 75 HP.
 - **Tracks (tanks, the M113).** Each track has its own pool, usually 125 HP.
 - **Rotors (helicopters).** A main rotor and a tail rotor, each with its own pool.
@@ -106,7 +106,7 @@ Health pools per vehicle, as stored in the data. Sort by any column with the hea
 | [Heavy repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.5 s (29 HP per second) | 1,300 cash |
 | [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
 
-Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. Each restock uses 5 of them. The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
+Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. A full restock uses 5 of them. A Max restock is charged only for the share of health it restores: the 2,000 cash price is the full-health price, scaled down for a partial repair and rounded up to a multiple of 50 (static reading of the restock code, not checked in play). The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
 
 The in-game tips say that high impact damage zones on a vehicle can be repaired with repair tools, and that returning to base for repairs is not free.
 
@@ -127,6 +127,7 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 ## Sources
 
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
+- - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the empty-tank restart block and the Max repair charge rule
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): health pools and health triggers
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): wheel radius states
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the tyre states and deflate threshold

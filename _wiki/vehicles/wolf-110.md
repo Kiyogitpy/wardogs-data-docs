@@ -68,6 +68,8 @@ The Wolf-110 has no weapons. Its four seats are a driver and three active passen
 - Torque peak of 1,500 at 1,650 RPM, the largest of the wheeled vehicles' torque curves in the data.
 - Engine idle 700 RPM.
 
+**Steering and pedal tuning.** The data stores steer input gravity 2.6, throttle sensitivity 1.5 and brake sensitivity 6.5, and the brake reaches full at a tenth of pedal travel. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+
 ## Season 2 changes
 
 - Added in Season 2 with a price of 2,200 cash.
@@ -81,6 +83,7 @@ The Wolf-110 has no weapons. Its four seats are a driver and three active passen
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the wheeled steering and pedal tuning for this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

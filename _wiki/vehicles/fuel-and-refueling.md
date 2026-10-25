@@ -28,7 +28,7 @@ A vehicle's fuel is set by its vendor stats. Fuel is refilled in three ways: a [
 
 ### Running out of fuel
 
-When a vehicle's fuel reaches zero, the server stops its engine. Whether the engine can be restarted before refuelling is not yet known.
+When a vehicle's fuel reaches zero, the server stops its engine. A stopped engine cannot be restarted while the tank is empty, so refuel first. This comes from a static reading of the start check (the game was not run to test it): the check passes only once the tank holds fuel again.
 
 ### Fuel leaks
 
@@ -43,7 +43,7 @@ Most vehicles set their first leak step at 90 or 80 percent of fuel tank health,
 - **Fuel Supplies.** Sold for 10 cash per lot of 50. A Fuel Supply Pallet costs 400 cash. The Refuel Station needs them to work.
 - **Refuel at base.** The in-game tip says vehicles can be refuelled by returning to your faction's safe zone or a FOB, and that this is not free.
 
-The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s for 1,500 cash. Each restock uses 5 Fuel Supplies. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the full figures. A vehicle with an empty tank has its engine stopped, as described above.
+The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s. A Max restock charges only for what the tank receives: the listed cash cost is scaled by the share of the tank restored and rounded up to a multiple of 50 (1,500 cash for a full tank), and the Fuel Supplies used are the item's cost times the amount restored. A nearly full tank costs little, and a restock cannot give more fuel than the FOB has in stock. The [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md) page has the full figures. A vehicle with an empty tank has its engine stopped, as described above.
 
 ## Numbers
 
@@ -106,3 +106,4 @@ Season 2 changed no fuel capacity or fuel economy value in the data.
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Refuel Station restock rates and the Fuel Canister's timed refuel step.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Empty-tank engine stop, fuel leak steps and canister refuel rate.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the empty-tank restart block and the Refuel Max charge rule.

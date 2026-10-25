@@ -35,7 +35,7 @@ The M113 APC SV is listed in the entity text table under the names Lonestar, Man
 | Fuel economy | 5.7 (as stored) |
 | Seats | 10 |
 | Max incline | 50 degrees |
-| Countermeasures | Smoke (255 charges) |
+| Countermeasures | Smoke (255 charges; screen active for 16 s, usable again after 90 s) |
 
 ## Armor and damage
 
@@ -58,6 +58,8 @@ The M113 APC SV has no weapons. It has ten seats: a driver and nine passenger se
 - Tracked drive with a top speed of 71 and a maximum incline of 50 degrees.
 - The three faction versions share one configuration.
 
+**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive data, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
+
 ## Season 2 changes
 
 - A new 125 mm rocket rule adds -10%.
@@ -71,6 +73,7 @@ The M113 APC SV has no weapons. It has ten seats: a driver and nine passenger se
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen's 16 s active window and 90 s cooldown, and the other round 41 vehicle readings
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)

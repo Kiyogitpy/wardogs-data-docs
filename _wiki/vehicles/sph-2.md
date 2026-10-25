@@ -100,6 +100,8 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - Track rebound damping is shared across the tank family.
 - Steering input rises at 40 and falls at 80, as stored.
 
+**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive data, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
+
 ## Season 2 changes
 
 - A new 125 mm rocket rule adds +15%.

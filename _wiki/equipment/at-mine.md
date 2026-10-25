@@ -47,6 +47,10 @@ For the mine that goes off on people, see [Claymore](claymore.md).
 
 **Being shot.** Any damage sets the mine off except a thrown impact, so shooting an AT Mine detonates it.
 
+**Detonation.** The mine goes off once it has taken 50 damage. That is the default for placed explosives, and neither the Claymore nor the AT mine overrides it (static reading). Once it has gone off it is removed. Whether the 50 counts each hit or the running total was not checked in play.
+
+**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
+
 ## Damage
 
 ### To players
@@ -70,6 +74,8 @@ The data gives the number of centre hits a vehicle needs to lose its main health
 | [T-72B3](../vehicles/t-72b3.md) | 750 HP | 2 |
 | [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 2 |
 
+Against armour the AT mine is strong. Its table entry is +200 % on most vehicles (the Humvee, Kodiak, Dune Buggy, Bobcat, Havoc and Wolf-110), +145 % on the tanks and +250 % on the Ural. Each figure is the table's amount for the mine's source. The same vehicle row has other explosive and hit-location entries that also apply, so the total is not that figure alone.
+
 See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
 
 ## Season 2 changes
@@ -86,6 +92,7 @@ The Season 2 items data lists no change to the AT Mine, and no change to its pri
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the 50 damage detonation rule and the armour readings for the AT mine
 - [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): blast damage, radius, falloff and vehicle hit counts
 - [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): placement, trigger, arming delay and shot rules
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): name, price and unlock level

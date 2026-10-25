@@ -48,9 +48,9 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands.
 
-**Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. How it ends is not fully confirmed.
+**Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
 
-Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables give a teammate's Molotov fire no reduction (derived), so as far as those tables show, it hurts teammates in full. Whether the game mode turns off friendly damage elsewhere is not in these tables.
+Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. Whether the game mode turns off friendly damage elsewhere is not in these tables.
 
 ## Damage
 
@@ -88,6 +88,7 @@ The Season 2 items data adds the Molotov, along with four other items, to the it
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the fire field's 45 s life and the burning status ending on leaving the patch
 - [Fire, Smoke and Mines](../../game-features/Wardogs_FireAndUtility_v1.md): fire area, burning status, throws and fuse
 - [Explosives Reference](../../game-features/Wardogs_Explosives_v1.md): burst damage, radius, falloff and vehicle hit counts
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price and unlock level

@@ -71,7 +71,7 @@ The Season 2 values are the ones shown in the current data. The Season 2 notes s
 
 ### Parachutes and jumping
 
-The Basic and Sport parachutes are single-use items that a player deploys by hand after a long fall. The data gives a fall of 400 (unit not stated) before a parachute can open. The vehicle data gives no parachute to any aircraft: the parachute belongs to the on-foot character, so a helicopter or the airplane has none. See the [Parachutes](../equipment/parachutes.md) article.
+The Basic and Sport parachutes are single-use items that a player deploys by hand after a long fall. The data gives a fall of 400 (unit not stated) before a parachute can open. The vehicle data gives no parachute to any aircraft: the parachute belongs to the on-foot character, so a helicopter or the airplane has none. Opening a parachute needs the parachute item in your inventory, a parachute that is not already open, and enough clear space below you while you fall. You can cut a parachute only while it is open. See the [Parachutes](../equipment/parachutes.md) article.
 
 ## Numbers
 
@@ -124,6 +124,7 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the rules for opening and cutting a parachute
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): seat counts per stats sheet
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names

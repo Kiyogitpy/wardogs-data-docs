@@ -73,6 +73,12 @@ The "effective range" of 10,000 m on the stats sheet is not the real reach. The 
 
 The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mrad) and exactly the same travel times, but the Stingray lands 13 to 38 m further from -500 to 200 mrad (697 m against 684 m at the longest setting, 372 m against 340 m at 0 mrad). The two tables come together at the end: 3 m apart at 250 mrad and both 80 m at 300 mrad. The table gives no dial settings, and none are known for the Stingray, so a dial value for a given range is not known. The out-of-pattern travel time at -300 mrad (20.0 s) is also in the mortar's table. The travel times are read as seconds.
 
+### Drone projectile
+
+Each shot is a drone that flies out and detonates. Its collision box is about 93 by 92 by 38 cm, and its camera has a 50 degree field of view. The drone deals 120 damage in its blast, with a 10 m outer radius and a 5 m effective radius, a minimum explosive damage of 15 and a falloff of 0.45 between them. It also deals 100 blunt damage. The drone arms 0.1 s after launch. Its typical speed is 150 m/s, and under thrust it reaches 220 m/s. The data gives a maximum lifetime of 500 without a unit.
+
+Explosives against the Stingray's own damage entries: C4 does +300 % and IED +400 % (the table's amounts; the frag grenade entry is +0 %). Other entries on the same row apply too. See [Vehicle inputs and explosive effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 4.
+
 ## Use and timing
 
 The Stingray uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](buildables.md) page describes these rules.
@@ -102,6 +108,8 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the drone projectile numbers and the explosive entries for the Stingray
+- [Vehicle inputs and explosive effects (round 41 data)](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md): input tuning, drone projectile and explosive rows
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): Build Supplies cost, health, hammer and placement conditions
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the barrel's rate, fire mode, effective range and damage table
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): the UAV ammunition name

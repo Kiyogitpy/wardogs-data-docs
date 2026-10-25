@@ -28,7 +28,7 @@ Each vehicle has a top speed from its vendor stats. Its drive comes from a torqu
 
 ### Speed, torque and gears
 
-The torque curve is the engine's pull at each engine speed. A peak of 475 at 5,500 means the engine pulls hardest at 5,500 RPM on that vehicle. Gears multiply that pull. A low first gear (a big ratio) gives more push when starting, and a high top gear gives more speed.
+The torque curve is the engine's pull at each engine speed. A peak of 475 at 5,500 means the engine pulls hardest at 5,500 RPM on that vehicle. Gears multiply that pull. A low first gear (a big ratio) gives more push when starting, and a high top gear gives more speed. Tracked vehicles use the same kind of torque curve against engine RPM, with the curve running up to 5,000 RPM. The torque values carry no unit label.
 
 The data does not store a 0 to top speed time, so acceleration is shown here only through the torque and first gear numbers. The actual acceleration time is not yet known.
 
@@ -37,6 +37,21 @@ The data does not store a 0 to top speed time, so acceleration is shown here onl
 Each wheeled axle has a steering angle in degrees, and the front wheels steer. The steering curves in the data limit how far the wheel can turn as speed changes. The curves page reads these as less steering lock at higher speed. That reading is an inference from the curve shapes, not a confirmed rule.
 
 Tracked vehicles do not steer with wheels. They have a steering input response (how quickly the steer input rises and falls), which is the same on every tracked vehicle in the data.
+
+### Driving input tuning
+
+Each wheeled vehicle has its own input settings, which shape how the controls respond before the physics runs. The game does not label their units, so the figures are shown as stored.
+
+- **Steering sensitivity** scales the steer input: 2.5 on the Humvee, 1.3 on the Bobcat and 1.25 on the Dune Buggy. The Kodiak, Ural and Wolf-110 store none.
+- **Steer input gravity** is how fast the steering returns to centre when you release it. It is 1 on the Bobcat, 2.6 on the Wolf-110 and 2 on the Humvee, Dune Buggy, Ural and Kodiak.
+- **Steering deadzone and steering assist** are stored only for the Bobcat (a deadzone of 0.05 and an assist of 20). The other wheeled vehicles store no dead zone.
+- **Throttle and brake sensitivity** shape the pedals. Throttle is 2 on the Humvee and Bobcat, 1.75 on the Dune Buggy, 1.5 on the Wolf-110 and 1 on the Ural. Brake is 6.5 on the Humvee and Wolf-110, the highest values stored, 1.25 on the Dune Buggy and 1 on the Bobcat.
+- **Steer speed and steer limit curves** make steering lighter at speed. On every wheeled vehicle that stores them the steer-speed multiplier falls as the input rises. On the Bobcat it stays at 2.5 up to 41.5 and falls to 1 by 75, and its steering limit falls from 100 to 80. The input unit is not stated.
+- **Engagement curves** map pedal travel to throttle, brake and clutch. On most vehicles these are straight lines over the full travel, with the clutch held at zero for the first tenth of travel. On the Humvee and Wolf-110 the brake is already at full by a tenth of travel.
+
+The tracked, rotary and airplane controls store only input mapping and prompt lists, so the data has no tuning numbers for them.
+
+(Source: round 41 data, see [Vehicle inputs and explosive effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 1.)
 
 ### Braking
 
@@ -136,6 +151,7 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 
 ## Sources
 
+- [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the driving input tuning and the tracked torque curve range
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Curves](../../game-features/Wardogs_VehicleCurves_v1.md)
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): top speed and mass
