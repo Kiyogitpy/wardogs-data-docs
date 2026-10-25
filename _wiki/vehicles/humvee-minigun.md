@@ -64,6 +64,8 @@ The seats include a driver and passengers. The data does not say which seat fire
 
 Handling matches the base Humvee: mass 7,250, hand brake 80, front steering of 35 degrees, and the same torque split.
 
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+
 ## Season 2 changes
 
 - Price rose from 4,500 to 10,000 cash.
@@ -87,3 +89,5 @@ Handling matches the base Humvee: mass 7,250, hand brake 80, front steering of 3
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

@@ -69,6 +69,9 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 
 **Steering and pedal tuning.** The data stores steer sensitivity 2.5, steer input gravity 2, throttle sensitivity 2 and brake sensitivity 6.5, the highest brake value in the data, and the brake reaches full at a tenth of pedal travel. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
+- Torque scale is not stored; the game default of 1.0 applies.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+
 ## Season 2 changes
 
 - Torque split moved toward the rear wheels: the front share fell from 0.7 to 0.4, and the rear share rose from 0.3 to 0.6.
@@ -94,3 +97,5 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

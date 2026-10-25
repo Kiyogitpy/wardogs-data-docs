@@ -84,7 +84,7 @@ Falls, landings and parachutes:
 
 The fall speeds above assume the data's curve units are centimetres per second. The data does not confirm this.
 
-Leaving a moving vehicle can also hurt you. The damage ramps from 0 to 100 as the vehicle's speed input rises from 40 to 75; the unit of that input is not confirmed.
+Leaving a moving vehicle can also hurt you. The damage depends on the vehicle's speed in km/h at the moment you leave, and it is applied when you land. There is no damage at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h, and 100 at 75 km/h and above, with a straight line between those points. Below the vehicle's minimum speed for damage nothing is applied. That minimum is not in the exported data.
 
 ## Tips that follow from the numbers
 
@@ -115,3 +115,5 @@ Leaving a moving vehicle can also hurt you. The damage ramps from 0 to 100 as th
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
 - [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): stopping friction in every stance, and the slope curve input in degrees
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

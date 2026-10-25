@@ -26,6 +26,8 @@ The M113 APC SV is a ten-seat tracked armored personnel carrier. It comes in thr
 
 The M113 APC SV is listed in the entity text table under the names Lonestar, Manticore and Valkyra, each described as a 10-seat tracked vehicle. The data has no shop row for it, and does not say how players get one in a match.
 
+Its smoke countermeasure has 255 starting charges in the data. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The data does not say what sells or gives smoke charges.
+
 ## Stats
 
 | Stat | Value |
@@ -80,3 +82,5 @@ The M113 APC SV has no weapons. It has ten seats: a driver and nine passenger se
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

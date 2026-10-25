@@ -35,7 +35,7 @@ The server browser lists Deathmatch as a mode, but the data gives it no map name
 - **Health.** Players regenerate after 10 s without damage: 5 health per tick, up to full health. The amount comes from the game code; the tick interval of 1 s is derived from the component's setting.
 - **Ammunition.** Choosing a weapon gives you that weapon and four magazines. How many rounds start loaded is not in the data.
 - **Spawning.** You respawn at the spawn point furthest from all enemies. The choice is made by the game's code, not by a data table.
-- **Teams and win condition.** Two teams, Lonestar and Valkyra. The mode ends when a side reaches a score limit of 75 kills, or when the 30 minute time limit runs out. How many players each side may have is a server setting. Whether kills are counted per team or per player is not confirmed.
+- **Teams and win condition.** Two teams, Lonestar and Valkyra. Players choose their team; the server places nobody automatically. A team-balance lock can be switched on to refuse a team switch that would leave the target team 2 or more players larger than the smallest team. It is off by default. The mode ends when a side reaches a score limit of 75 kills, or when the 30 minute time limit runs out. How many players each side may have is a server setting. Whether kills are counted per team or per player is not confirmed.
 
 ## Rewards
 
@@ -60,3 +60,5 @@ Deathmatch has no mode-specific reward table in the sources. Kill cash applies: 
 - [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

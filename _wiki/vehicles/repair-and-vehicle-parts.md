@@ -40,7 +40,7 @@ Parts with their own health are the engine, fuel tank, wheels (or tracks on tank
 A tyre has three states in the data:
 
 1. **Intact.**
-2. **Deflated** when the wheel's health falls to 55% of its maximum or below. A 75 HP tyre deflates at about 41 HP or less. Season 1 used 50%, and Season 2 raised it to 55% on every wheeled axle.
+2. **Damaged** (deflated) when the wheel's health falls to 55% of its maximum or below. A 75 HP tyre deflates at about 41 HP or less. Season 1 used 50%, and Season 2 raised it to 55% on every wheeled axle.
 3. **Destroyed** when the wheel's health reaches zero.
 
 A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores the tyre radius for each state. On the Dune Buggy it falls from 0.45 m to 0.345 m and then to 0.26 m. A deflated tyre also adds 1.5 of wheel drag, cuts grip by 0.35 friction, pulls the steering toward the damaged side (0.125) and adds 0.05 braking. The data does not say how the smaller radius of a deflated or destroyed tyre affects the car beyond the collision shape.
@@ -137,3 +137,5 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Repair Station restock rates and the stored 13.33 multiplier.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Wrench and drill repair per application and rate, tyre deflation and fuel-tank leak steps.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the Wrench and drill timings and the fuel-tank health steps.
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

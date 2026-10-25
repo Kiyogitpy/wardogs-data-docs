@@ -33,7 +33,8 @@ Sniper Showdown runs on its own map entry in the server browser, Bakurani Outski
 - **Round end.** At the end of a round a countdown shows "Next Round in" minutes and seconds, then a scoreboard.
 - **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. A round ends at 10 kills or after 30 minutes. The game files do not describe what the leaderboard shows.
 - **Starting loadout.** Each player gets a Scout Backpack and a GGX 17 pistol at spawn.
-- **Factions.** The mode is free-for-all. Each player is given a faction from a pool, and how many factions the pool holds is not in the data.
+- **Factions.** The mode is free-for-all. The game prepares a pool of 100 single-player factions and puts each joining player on the non-default faction with the fewest members. With 100 players or fewer, everyone is alone on a faction.
+- **Loot points.** Each map has 150 sniper-only loot points, sorted into high-, middle- and low-value points. Kavkazi has 87 high, 21 middle and 42 low. North America has 69 high, 16 middle and 65 low. Russia has 79 high, 19 middle and 52 low.
 
 ## Rewards
 
@@ -56,3 +57,5 @@ The data does not list Sniper Showdown-specific cash or XP rewards. The general 
 - [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Mode rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/mode-rules.json)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

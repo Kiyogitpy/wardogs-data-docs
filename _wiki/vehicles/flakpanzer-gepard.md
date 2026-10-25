@@ -55,7 +55,7 @@ While its main body stands, the body sends 5% of each hit to the fuel tank. Rifl
 |---|---|---:|---:|---:|---:|
 | Duel 35 mm Oerlikon GDF cannons (twin) | Cannon | 1,100 rounds/min | 1,000 m | 4.0 s | None |
 
-The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6. Its smoke screen stays active for 16 seconds, and the Gepard can use smoke again 90 seconds after the first use. The data lists one starting charge; how charges come back is not yet known.
+The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6. Its smoke screen stays active for 16 seconds, and the Gepard can use smoke again 90 seconds after the first use. The data lists one starting charge. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The data does not say what sells or gives smoke charges.
 
 ## Handling
 
@@ -86,3 +86,5 @@ The seats are a driver and a gunner in the turret. The Gepard also carries a smo
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

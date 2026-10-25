@@ -121,7 +121,7 @@ The table assumes the target is at the same height as the gun. A target higher o
 - The CV Artillery Computer uses terrain heights for the same correction. Three logged shots at targets about 100 m higher landed within about 20 m.
 - Shots fired without a known height difference overshot by about 70 m on average.
 
-Hull tilt also changes where the shell lands. The dial reads the barrel's pitch against the world horizontal, so the hull's tilt is already part of the reading (derived from the game's code). The range function that the game uses for the dial takes only the dial value, with no hull pitch term, so the game does not correct the mils for tilt. Where the game adds the hull pitch to the sight was not located. In the simulator's comparison against real shots, adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. This suggests that the elevation is measured from the tilted hull, so park the SPH-2 level or correct for the slope. The SPH-2 has a tracked stabilisation that levels its hull on its own when it is still and on a slope of 20 degrees or less; switching it on takes 2.0 s. Whether the shot in play uses the levelled or the tilted hull is not confirmed.
+Hull tilt changes where the shell lands, and the game does not correct for it. The MIL pointer reads the turret's own elevation against its mounting, so it is measured from the hull, not from the horizon. On level ground the two are the same. The range function that the game uses for the dial takes only the dial value and adds the hull's pitch nowhere, and no place where the game does add it was found. In the simulator's comparison against real shots (an estimate), adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. So park the SPH-2 level, or add the hull's pitch to the setting by hand on a slope. The SPH-2 has a tracked stabilisation that levels its hull on its own when it is still and on a slope of 20 degrees or less; switching it on takes 2.0 s. Whether the shot in play uses the levelled or the tilted hull is not confirmed.
 
 ### Stabilizing the hull
 
@@ -159,10 +159,10 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 
 ## What is not known
 
-- The reason for the 16.8 mrad offset. The game's code measures the dial from a fixed launch-axis zero and adds 16.8 mrad, but the files do not say whether that offset is the gap between the barrel and the pivot, or how the zero relates to the hull. The dial values are the ones measured in game and checked against impacts, so use them.
+- The source of the 16.8 mrad offset. The 16.8 mil offset has no known source other than its stored value. The dial values are the ones measured in game and checked against impacts, so use them.
 - Why the game table's low-arc travel times run 0.5 to 1.6 s longer than the flight maths gives at the same elevation, while the high-arc times agree.
 
-- How the game handles hull tilt. The simulator's result suggests the elevation is measured from the tilted hull, but this is not confirmed.
+- Whether the game adds hull pitch anywhere in the shot. None of the code paths read so far does; the simulator's comparison is an estimate, not a measurement in game.
 - The high-arc height correction. The calculator's version is experimental and off by default.
 - The effect of wind. The simulator uses flat ground and no wind, and its median miss against 87 logged real shots was about 59 m. Treat the simulator's apex heights as estimates.
 - Why the stats sheet gives 10,000 m as the effective range when the measured reach is 2,629 m.
@@ -189,5 +189,7 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md): the comparison against 87 logged shots
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad), dial versus range table, firing altitude, Expensive shell
-- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's world pitch, the SPH-2 stabilized state and the Expensive shell's steering
+- [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's pitch reference (corrected in round 46), the SPH-2 stabilized state and the Expensive shell's steering
 - [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): the Expensive shell steers sideways only, input scaled by 0.02 per tick
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

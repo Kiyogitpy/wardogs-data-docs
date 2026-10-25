@@ -68,6 +68,8 @@ The Dune Buggy has no weapons. Its three seats are a driver and two passengers.
 
 **Steering and pedal tuning.** The data stores steer sensitivity 1.25, steer input gravity 2, throttle sensitivity 1.75 and brake sensitivity 1.25. Its steer-speed multiplier falls from 1.5 to 1 as the input rises. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+
 ## Season 2 changes
 
 - A new 125 mm rocket rule adds +250%.
@@ -90,3 +92,5 @@ The Dune Buggy has no weapons. Its three seats are a driver and two passengers.
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

@@ -90,6 +90,8 @@ The data includes two test areas that are not playable modes. A minimal test are
 
 The game's level files exist for the four main worlds and the test gym. The data lists the spawn areas for vehicles and for the test gym (see [Zone Layouts](zone-layouts.md)), but the buildings inside the maps have not been read, so they are not described here. Anything a player sees on a map beyond the zone, region and spawn data is not yet known.
 
+The playable areas are about 8.5 by 7.8 km on the Europe world, 11 by 11 km on Kavkazi, 10.5 by 9.2 km on North America and 13.2 by 13.2 km on Russia. The map data measures in centimetres (one world unit is 1 cm). On Europe, Kavkazi and North America the kill height is 1,500 m below the map's zero level; the data gives no kill height for Russia.
+
 The gym range has a moving target, which slides on a set path and takes 15 to 25 seconds to cross. See [Shooting Range](shooting-range.md).
 
 ## See also
@@ -108,3 +110,5 @@ The gym range has a moving target, which slides on a set path and takes 15 to 25
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

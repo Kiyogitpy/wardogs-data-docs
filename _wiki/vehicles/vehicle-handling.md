@@ -42,9 +42,9 @@ Tracked vehicles do not steer with wheels. They have a steering input response (
 
 Each wheeled vehicle has its own input settings, which shape how the controls respond before the physics runs. The game does not label their units, so the figures are shown as stored.
 
-- **Steering sensitivity** scales the steer input: 2.5 on the Humvee, 1.3 on the Bobcat and 1.25 on the Dune Buggy. The Kodiak, Ural and Wolf-110 store none.
+- **Steering sensitivity** scales the steer input: 2.5 on the Humvee, 1.3 on the Bobcat and 1.25 on the Dune Buggy. The Kodiak, Ural and Wolf-110 store none, so they use the game default of 5.0 (see Game defaults below).
 - **Steer input gravity** is how fast the steering returns to centre when you release it. It is 1 on the Bobcat, 2.6 on the Wolf-110 and 2 on the Humvee, Dune Buggy, Ural and Kodiak.
-- **Steering deadzone and steering assist** are stored only for the Bobcat (a deadzone of 0.05 and an assist of 20). The other wheeled vehicles store no dead zone.
+- **Steering deadzone and steering assist** are stored only for the Bobcat (a deadzone of 0.05 and an assist of 20). The other wheeled vehicles store no dead zone, so they use the game default of 0.01 and no assist.
 - **Throttle and brake sensitivity** shape the pedals. Throttle is 2 on the Humvee and Bobcat, 1.75 on the Dune Buggy, 1.5 on the Wolf-110 and 1 on the Ural. Brake is 6.5 on the Humvee and Wolf-110, the highest values stored, 1.25 on the Dune Buggy and 1 on the Bobcat.
 - **Steer speed and steer limit curves** make steering lighter at speed. On every wheeled vehicle that stores them the steer-speed multiplier falls as the input rises. On the Bobcat it stays at 2.5 up to 41.5 and falls to 1 by 75, and its steering limit falls from 100 to 80. The input unit is not stated.
 - **Engagement curves** map pedal travel to throttle, brake and clutch. On most vehicles these are straight lines over the full travel, with the clutch held at zero for the first tenth of travel. On the Humvee and Wolf-110 the brake is already at full by a tenth of travel.
@@ -66,7 +66,23 @@ Only tracked vehicles store a maximum incline in the handling data, at 50 degree
 
 ### Torque split
 
-On wheeled vehicles, the torque split sets how much of the engine's pull goes to the front axle and how much to the rear. The Dune Buggy sends 85% to the rear, and the Humvee sends 60% to the rear. Some vehicles do not store a split.
+On wheeled vehicles, the torque split sets how much of the engine's pull goes to the front axle and how much to the rear. The Dune Buggy sends 85% to the rear, and the Humvee sends 60% to the rear. Some vehicles do not store a split; for those the game default is 0.5 to the front and 0.5 to the rear.
+
+### Game defaults
+
+When an asset does not store a field, the game uses the value its class constructor writes. A missing field is the default, not zero. The defaults that matter for the blank cells in this article are below. They are the game's values, not stored in each vehicle's data.
+
+| Field | Game default | Used by |
+|---|---|---|
+| Idle RPM | 1,000 | Kodiak and Kodiak Pickup |
+| Torque scale | 1.0 | Bobcat, Humvee |
+| Steering sensitivity | 5.0 | Kodiak, Ural, Wolf-110 |
+| Steer dead zone | 0.01 | Wheeled vehicles that store none |
+| Axle torque share | 0.5 front, 0.5 rear | Kodiak, Ural |
+| Track mass | 600 | Tracked vehicles |
+| Sprocket mass | 64 | Tracked vehicles |
+
+The boost switch is off in the defaults and in every asset. The boost value is stored, but no boost effect is claimed here because the boost path was not traced.
 
 ### Driving and flight assists
 
@@ -95,16 +111,16 @@ Sort by any column with the header.
 | Vehicle | Max speed (as stored) | Mass (as stored) | Peak torque (at RPM) | First gear | Torque split front / rear | Steer, front (deg) | Brake torque front / rear | Hand brake | Max incline (deg) |
 |---|---:|---:|---|---:|---|---:|---|---:|---|
 | [Bobcat](bobcat.md) | 75 | 250 | 33 at 5,000 | 4.2 | 0.6 / 0.4 | 35 | 1,800 / 1,250 | 8 | Not stored |
-| [Kodiak](kodiak.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not stored |
-| [Kodiak [Pickup]](kodiak-pickup.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not stored |
-| [Kodiak [M249]](kodiak-m249.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | Not set | 30 | 8,000 / 14,000 | 50 | Not stored |
+| [Kodiak](kodiak.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | 0.5 / 0.5 (default) | 30 | 8,000 / 14,000 | 50 | Not stored |
+| [Kodiak [Pickup]](kodiak-pickup.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | 0.5 / 0.5 (default) | 30 | 8,000 / 14,000 | 50 | Not stored |
+| [Kodiak [M249]](kodiak-m249.md) | 154 | 2,750 | 475 at 5,500 | 6.0 | 0.5 / 0.5 (default) | 30 | 8,000 / 14,000 | 50 | Not stored |
 | [Humvee](humvee.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not stored |
 | [Humvee [Minigun]](humvee-minigun.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not stored |
 | [Humvee [M249]](humvee-m249.md) | 113.2 | 7,250 | 475 at 5,500 | 3.6 | 0.4 / 0.6 | 35 | 8,000 / 35,000 | 80 | Not stored |
 | [Dune Buggy](dune-buggy.md) | 130 | 550 | 475 at 5,500 | 4.8 | 0.15 / 0.85 | 40 | 4,000 / 13,000 | 50 | Not stored |
-| [Ural](ural.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not stored |
-| [Ural Defender](ural-defender.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not stored |
-| [Ural Defender [M249]](ural-defender-m249.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | Not set | 30 | 20,000 / 38,000 | 50 | Not stored |
+| [Ural](ural.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | 0.5 / 0.5 (default) | 30 | 20,000 / 38,000 | 50 | Not stored |
+| [Ural Defender](ural-defender.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | 0.5 / 0.5 (default) | 30 | 20,000 / 38,000 | 50 | Not stored |
+| [Ural Defender [M249]](ural-defender-m249.md) | 79 | 10,000 | 900 at 1,200 | 5.62 | 0.5 / 0.5 (default) | 30 | 20,000 / 38,000 | 50 | Not stored |
 | [Wolf-110](wolf-110.md) | 129 | 3,200 | 1,500 at 1,650 | 3.7 | 0.3 / 0.7 | 35 | 5,500 / 9,000 | 80 | Not stored |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 129 | 3,200 | 1,500 at 1,650 | 3.7 | 0.3 / 0.7 | 35 | 5,500 / 9,000 | 80 | Not stored |
 
@@ -132,7 +148,7 @@ The tank torque curves are the same for the SPH-2, L2A6, Gepard and T-72B3, and 
 | [AH-6R [Rockets]](ah-6r-rockets.md) | 350 | 722 |
 | [Z20 Lakota](z20-lakota.md) | 445 | 9,500 |
 
-Helicopters have a drag coefficient of 0.006 on every variant. Their steering, braking and torque values are not in the handling tables. The MH-6's mass of 722 is far below its collision mass of 1,200, and the data does not label the unit, so the two numbers cannot be compared directly.
+Helicopters have a drag coefficient of 0.006 on every variant. Their steering, braking and torque values are not in the handling tables. The MH-6's mass of 722 is far below its collision mass of 1,200, and the data does not label the unit, so the two numbers cannot be compared directly. The vehicle vendor labels top speeds in km/h, so the helicopter speeds above are km/h.
 
 ## Tips that follow from the numbers
 
@@ -160,3 +176,5 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Driving and flight assist settings, tyre models and wheeled incline.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

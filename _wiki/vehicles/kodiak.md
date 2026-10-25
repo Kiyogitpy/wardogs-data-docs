@@ -68,6 +68,9 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 
 **Steering and pedal tuning.** The data stores steer input gravity 2 and no other sensitivity values for this input set. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
+- Idle RPM is not stored; the game default of 1,000 applies. Steering sensitivity is not stored either; the game default of 5.0 applies.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+
 ## Season 2 changes
 
 - The wheel deflation threshold rose from 0.5 to 0.55 on the front and rear axles.
@@ -90,3 +93,5 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

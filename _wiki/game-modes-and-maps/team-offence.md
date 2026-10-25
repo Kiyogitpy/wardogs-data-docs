@@ -28,6 +28,7 @@ Team Offence adds its own challenges, a punish challenge, a voter challenge and 
 - **Vote outcomes.** The notices in the data are: offender punished, offender kicked, voter punish, voter kick, voter forgive, voter safe-zone forgive, and voter expired. A voter who leaves the safe zone before deciding records a "forgive by leave" vote, and a voter whose time runs out is recorded as having given up (voter expired).
 - **Vehicle crashes.** A vehicle crash can count as a team offence in the challenge data.
 - **Challenges.** The "Teamkill Voter" challenge tracks voting, and the "Team Offence Punish" challenge tracks the punish outcome.
+- **Numbers.** An offence stays relevant for 180 seconds. Once an offender reaches 15 points, a kick vote follows. A vote has a 60-second self-defence window. Punishment bans step up through 10 minutes, 25 minutes, 1 hour and 1 day. Forgiveness lasts 7 days. A 15-minute cooldown follows a rejected reward. A voter who leaves the safe zone before deciding is recorded as Forgive. These are the plugin's built-in defaults; the exported game config has no section for them.
 - **Team sizes and timers.** Not applicable: the plugin runs alongside other modes.
 
 ## Rewards
@@ -48,3 +49,5 @@ A forgive decision pays the voter 500 cash and no XP. A punished kill pays point
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

@@ -53,13 +53,13 @@ The default faction in the data uses the Manticore Forward Operating Base, so Ma
 
 - King of the Hill and the Shooting Range use three factions. The data says three teams are set up at the start of a match.
 - Deathmatch has two factions, the only mode in the sources with two.
-- Sniper Showdown is free-for-all. Each player is given a faction from a pool, and how many factions the pool holds is not in the data.
+- Sniper Showdown is free-for-all. The game prepares a pool of 100 single-player factions and puts each joining player on the one with the fewest members.
 
 ## What is not known
 
 - **What each faction is.** The data gives each faction a name, a colour and a logo: Lonestar is blue, Valkyra red and Manticore green. Backstory and any roleplay identity are not in the data.
 - **Signature rifles.** Each faction's signature rifle is free for that faction (the pairing is in the economy settings; the check that matches the buyer's faction was not decoded, so the rule is read from the setting's name): Lonestar has the [Bushmaster M17S](../weapons/bushmaster-m17s.md), Valkyra the [A-91](../weapons/a-91.md) and Manticore the [KH-2002](../weapons/kh-2002.md). The economy settings set the price of each to 0% for its own faction (see [Shops](../progression-and-economy/shops.md)). The data gives no separate price for the other factions. The data lists no other weapon or gear differences, which is not proof that none exist.
-- **Joining a faction.** How a player is placed into a faction in a normal match is not yet known. Deathmatch creates two factions, Lonestar and Valkyra; King of the Hill creates three.
+- **Joining a faction.** In Deathmatch, players choose between Lonestar and Valkyra themselves; the server places nobody automatically. Team-size locking is off by default. When it is on, a switch is refused if the target team would end up 2 or more players larger than the smallest team. King of the Hill creates three factions.
 
 ## See also
 
@@ -80,3 +80,5 @@ The default faction in the data uses the Manticore Forward Operating Base, so Ma
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)
 - [Round 44 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round44-econ-buildables.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

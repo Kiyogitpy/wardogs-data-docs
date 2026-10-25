@@ -36,13 +36,13 @@ The seat data names four roles. Every seat is one of them:
 - **Active passenger.** A passenger seat listed as active in the data.
 - **Passive passenger.** A passenger seat listed as passive in the data, as used on the M113 APC SV.
 
-The data gives only these names. What the difference between active and passive passengers does in play is not stated.
+The data gives only these names. Only the M113 APC SV's nine rear seats are passive passengers; every other passenger seat is active. The two roles differ only in their input and animation, and the passive seats use a different pose.
 
 ### Getting in, switching and leaving
 
 - **Enter.** Approach the vehicle and use the interaction prompt for Enter Vehicle.
 - **Switch seats.** Seats are chosen with F1 to F12 by default. The in-game tip says switching is not instant and takes a moment.
-- **Exit.** Open the interaction menu and press and hold the Exit Vehicle option.
+- **Exit.** Open the interaction menu and press and hold the Exit Vehicle option. Leaving a moving vehicle can hurt you: the damage depends on the speed in km/h when you leave, and is applied on landing. There is no damage at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h and 100 at 75 km/h and above, with a straight line between those points. The minimum speed for damage is not in the exported data.
 - **Unlock.** Purchased vehicles start locked. The owner can unlock them for a squad or for everyone, and teammates cannot enter until they are unlocked.
 
 The data does not describe ejecting a player from a vehicle.
@@ -135,3 +135,5 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Seat counts and the aircraft parachute question.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

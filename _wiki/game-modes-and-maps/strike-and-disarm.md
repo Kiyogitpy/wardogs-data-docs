@@ -38,6 +38,7 @@ Strike and Disarm is one of the three PvE missions in the data, alongside [Hunte
 - **Starting cash.** Each player starts the mission with 3,000 cash. The mission data sets no time limit.
 - **Map.** The Bakurani world (the data's name: Kavkazi), which all three PvE missions share.
 - **Objectives.** Upload the virus while keeping Lonestar soldiers away from the laptop, then board the extraction helicopter to leave the area.
+- **Vehicle spawners.** This mission has 5 vehicle spawners.
 
 ## Enemies
 
@@ -64,3 +65,5 @@ The mission has no reward table of its own. No payout for completing the mission
 - [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

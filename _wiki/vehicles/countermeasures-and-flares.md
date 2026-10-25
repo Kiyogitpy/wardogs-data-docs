@@ -31,7 +31,7 @@ Flares are an anti-air countermeasure. The item text says a flare use "deploys 3
 
 The in-game tip says flares "can be used to momentarily prevent heat-seeking projectiles from locking onto your helicopter". The same tip set gives a second way to stay hidden from some launchers: "flying low stops certain launchers being able to lock on to your vehicle".
 
-A search of the game code found no rule that makes a flare clear or break a missile lock. That does not show that flares do nothing against lock-on; it means no such rule was found. The data does not say how a flare burst would change the lock of a particular launcher, or how long a lock would be broken. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon, and the data does not say how flares interact with its targeting. See the [Talon 9K-SAM](../equipment/talon-9k-sam.md) article for the emplacement itself.
+A search of the game code found no rule that makes a flare clear or break a missile lock. That does not show that flares do nothing against lock-on; it means no such rule was found. The data does not say how a flare burst would change the lock of a particular launcher, or how long a lock would be broken. Missile lock against flares stays not confirmed. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon, and the data does not say how flares interact with its targeting. See the [Talon 9K-SAM](../equipment/talon-9k-sam.md) article for the emplacement itself.
 
 ### Smoke
 
@@ -39,7 +39,9 @@ Smoke is a sustained countermeasure. A vehicle's smoke screen stays active for 1
 
 ### Amounts and reloading
 
-Each flare-carrying vehicle has a starting count in the data, and each burst stays active for 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. Each press of the countermeasure key uses one flare from the vehicle's inventory and then starts a 5 second cooldown before the next press. The "3x bursts" line is item text only; no number in the data is 3 bursts. How flares are restocked is not yet known.
+Each flare-carrying vehicle has a starting count in the data, and each burst stays active for 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. Each press of the countermeasure key uses one flare from the vehicle's inventory and then starts a 5 second cooldown before the next press. The "3x bursts" line is item text only; no number in the data is 3 bursts.
+
+Flares are also an inventory item. The vehicle vendor sells them for 750 cash, one per purchase. A vehicle's flare count follows its inventory: buying or being given the item adds one flare, and each use removes one. Smoke charges follow the vehicle inventory in the same way (see the table notes below).
 
 ### Season 2 changes
 
@@ -61,7 +63,7 @@ Season 2 renamed the flares input to Fire Countermeasures. The key stays the sam
 | [T-72B3](t-72b3.md) | Smoke | 1 charge | Smoke screen active for 16 s, usable again after 90 s |
 | [M113 APC SV](m113-apc-sv.md) | Smoke | 255 charges | Smoke screen active for 16 s, usable again after 90 s |
 
-The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasure in their game systems data, like the L2A6 (one charge each on the Gepard and T-72B3, 255 on the M113). The charge counts are the starting values in the data; the load path that sets them was not traced, so they are read by analogy with the flares. The SPH-2 variant, the Kodiak, Humvee, Dune Buggy, Bobcat, Ural and Wolf-110 have none.
+The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasure in their game systems data, like the L2A6 (one charge each on the Gepard and T-72B3, 255 on the M113). The charge counts are the starting values in the data. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The data does not say what sells or gives smoke charges. The SPH-2 variant, the Kodiak, Humvee, Dune Buggy, Bobcat, Ural and Wolf-110 have none.
 
 ## Tips that follow from the numbers
 
@@ -92,3 +94,5 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): starting flare counts, active time and range bands for each flare-carrying vehicle.
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the flare data and the search for a lock-on rule
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the flare cooldown and countermeasure readings
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): the flare and smoke inventory handlers and the flare vendor row
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

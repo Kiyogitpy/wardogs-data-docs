@@ -209,7 +209,7 @@ Audio and language settings are covered on the [Settings and Input Actions](../.
 ## Tips that follow from the settings
 
 - Sprint is set to Toggle by default, so Left Shift switches sprinting on and off rather than being held.
-- Aim down sight (FOV) is set to Affected by default. With Affected, the aimed field of view follows your field of view setting at low magnification (below 3.25x). With Independent, the aimed field of view always uses a fixed base value.
+- Aim down sight (FOV) is set to Affected by default. With Affected, the aimed field of view starts from your field of view setting, so changing the slider also changes the scope view. With Independent, the aimed field of view always starts from a fixed 72 degrees, and the slider no longer changes the scope view. The aimed view is that base divided by the sight's magnification, so a 4x sight gives 22.5 degrees from the default 90. In Affected mode, a weapon whose value reaches 3.25 also uses 72 degrees. These rules come from the camera code and were not checked on screen. See [Sights and optics](../weapons/attachments-sights-and-optics.md).
 - **Chat distances.** Proximity chat reaches 1,500 and team chat 10,000 (units not stated in the data). The chat history keeps the last 250 messages.
 
 ## See also
@@ -225,3 +225,5 @@ Audio and language settings are covered on the [Settings and Input Actions](../.
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

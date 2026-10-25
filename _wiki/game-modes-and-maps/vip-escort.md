@@ -40,6 +40,7 @@ VIP Escort is one of the three PvE missions in the data, alongside [Hunter Kille
 - **Voice-over.** An intro of three lines, a success line and a failure line.
 - **Starting cash.** Each player starts the mission with 2,000 cash. The mission data sets no time limit.
 - **Map.** The Bakurani world (the data's name: Kavkazi), which all three PvE missions share.
+- **Vehicle spawners.** This mission has 6 vehicle spawners.
 
 ## Enemies
 
@@ -69,3 +70,5 @@ Other rewards follow the general rules; see [Cash and Rewards](../progression-an
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md) (the VIP loot table is new in Season 2)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

@@ -98,7 +98,7 @@ Helicopters and the airplane carry flares. The L2A6 carries smoke. Every other v
 
 Tips that follow from the numbers:
 
-- **Because each helicopter starts with only 2 flares, plan a flight around that count.** Each press uses one flare and then waits 5 seconds before the next. The "3 bursts" in the item text is not a count. How flares are restocked is not yet known. See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
+- **Because each helicopter starts with only 2 flares, plan a flight around that count.** Each press uses one flare and then waits 5 seconds before the next. The "3 bursts" in the item text is not a count. Flares are an inventory item: the vehicle vendor sells one for 750 cash, and buying or being given one adds a flare to the vehicle. See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
 - **Because the helicopters have arcade assists, do not expect a manual climb to be unlimited.** Each helicopter limits its climb rate to 36 km/h and holds a hover when the collective is released. The Havoc alone also levels pitch and roll at low speed. See [Vehicle handling](../vehicles/vehicle-handling.md#driving-and-flight-assists).
 - **Because the in-game tip says flares can "momentarily prevent" heat-seeking projectiles from locking on, do not treat them as a shield.** The data does not say how long a burst breaks a lock.
 - **Because the in-game tip also says flying low stops certain launchers from locking on, low flight is a second defence.** The data does not say which launchers.
@@ -159,6 +159,7 @@ Tips that follow from the numbers:
 - **Because the Kodiak and the Ural have no seat row, a rider in them gets no seat reduction in the data.** As far as the data shows, protection in those vehicles comes only from the player's own armor.
 - **Because purchased vehicles start locked, teammates cannot enter until the owner unlocks them for a squad or for everyone.** See [Seats and passengers](../vehicles/seats-and-passengers.md).
 - **Because switching seats takes a moment, a passenger should move before the fight, not during it.** The seats are chosen with F1 to F12 by default, and the in-game tip says switching is not instant.
+- **Because leaving a fast vehicle hurts, slow down before you jump out.** The damage depends on your speed in km/h when you leave and is applied on landing: none at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h and 100 at 75 km/h and above. See [Movement](../game-mechanics/movement.md).
 
 ## Sources
 
@@ -169,3 +170,5 @@ Tips that follow from the numbers:
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article
