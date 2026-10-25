@@ -53,8 +53,8 @@ The full comparison is in [Choosing Ammo](choosing-ammo.md) and [Armor](../game-
 - **Bandage:** +35 HP, about 5 seconds to use.
 - **Individual First Aid Kit:** +100 HP, about 5 seconds to use.
 - **Medical Bag:** heals 35 HP over 5 seconds on yourself, or 15 HP over 1.5 seconds on a teammate.
-- **Health does not regenerate on its own.** The data shows no natural healing for infantry outside the Deathmatch mode, and regeneration over time is not yet known.
-- **At 0 HP you are downed.** You have 360 seconds on the bleed-out timer, which drains at half speed, so about 12 minutes in total (derived from the player defaults). A teammate can revive you by holding for 20 seconds with no equipment.
+- **Health does not regenerate on its own.** No natural healing for infantry was found in the game code outside the Deathmatch mode.
+- **At 0 HP you are downed.** You have 360 seconds on the bleed-out timer, which drains at half speed, so about 12 minutes in total (derived from the player defaults). A teammate can revive you by holding for 20 seconds with no equipment, and you come back at 10 HP.
 - **Defibrillator:** revives a teammate to 35 HP after a 4 second charge, once it has a battery. You cannot use it while you are downed yourself.
 - **Giving up** ends the wait in 1.5 seconds. Use it only when no help is coming.
 
@@ -83,10 +83,9 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 
 ## What is not yet known
 
-- The health a bare-hands revive restores.
 - How the game settles a hit when the shooter and target see it differently.
 - The payout for every kind of spotted target.
-- The top speed while swimming.
+- The real revive time of a resuscitator, which is about 4 s by derivation from the item data.
 
 ## See also
 
@@ -107,3 +106,5 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 - [Medical and Healing](../../game-features/Wardogs_Medical_v1.md)
 - [Player Movement Numbers](../../content/Wardogs_PlayerMovement_v1.md)
 - [Weapon Spread, Accuracy and Shot Direction](../../pipelines/Wardogs_WeaponSpread_v1.md)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

@@ -24,14 +24,18 @@ A player walks at a base speed of 5.4 m/s, and each stance scales that speed. Sp
 
 ## How it works
 
-- **Speed by stance.** Standing walks at 80% of the base speed, crouched at 50%, and prone at 15%. Sprinting is 1.42 times the standing speed, and tactical sprinting is 1.55 times.
+- **Speed by stance.** Standing walks at 80% of the base speed, crouched at 50%, and prone at 15%. Sprinting is 1.42 times the standing speed, and tactical sprinting is 1.55 times. Both apply only while standing: crouching and going prone cannot sprint.
 - **Direction.** Walking backwards or sideways is 70% of the stance speed.
 - **Aiming down sights** halves your movement speed.
+- **Acceleration.** The speed builds up at a rate set per stance: 7 standing, 12 crouched and 19 prone, in the units of the movement data. Deceleration per stance is not known.
+- **Field of view.** The first-person field of view defaults to 106. A tactical sprint widens it briefly (by 5 on the base player pawn and 10 on the in-game pawn, derived from the curve).
+- **Shared keys.** The same key does different things in different modes. Space deploys the parachute while falling and jumps off a ladder. Shift slides down a ladder and fast-swims. G drags a body.
 - **Using a medical item** halves your movement speed while you use it.
 - **Weight class.** Your gear sets a speed scale: Light 95%, Medium 87.5%, and Heavy and Super heavy 80% of the normal speed.
 - **Slopes.** Ground speed changes slightly on slopes, by up to 10% at the steepest value in the data.
 - **Tactical sprint.** It drains stamina at 20 per second and needs at least 20% stamina to start. After a sprint, the player waits 0.8 s before sprinting again, or 0.6 s after a tactical sprint.
 - **Plain sprint.** No stamina cost for plain sprinting was found in the data. Only tactical sprint is limited by stamina.
+- **Swimming.** Swimming speed is capped at 250 in the movement data, and a fast swim doubles that cap to 500 while draining 20 stamina per second. The data does not state the unit; if it is centimetres per second, that is 2.5 m/s, or 5 m/s when fast swimming (derived). In the water the speed builds up at 4000 and stops at 500 (same unit).
 - **Stance changes.** Each change costs stamina from a pool of 100. Standing costs 20 and crouching 30 to change into, and going prone costs 50. The pool refills at 50 per second with no delay.
 - **Jumping.** A jump costs 50 stamina from a pool of 150. The pool refills at 50 per second, and you can jump again after 0.05 s.
 - **Leaning.** You can lean up to 30 degrees to the left and 35 degrees to the right. Leaning takes 0.55 s and coming back up takes 0.35 s.
@@ -52,8 +56,8 @@ Speed by stance, from the base walk speed of 5.4 m/s:
 | Stance | Walk | Sprint | Tactical sprint |
 |---|---:|---:|---:|
 | Standing | 4.3 m/s | 6.1 m/s | 6.6 m/s |
-| Crouched | 2.7 m/s | not yet known | not yet known |
-| Prone | 0.8 m/s | not yet known | not yet known |
+| Crouched | 2.7 m/s | none (no sprint) | none (no sprint) |
+| Prone | 0.8 m/s | none (no sprint) | none (no sprint) |
 
 Ladder speeds:
 
@@ -93,8 +97,7 @@ Leaving a moving vehicle can also hurt you. The damage ramps from 0 to 100 as th
 
 ## Not yet known
 
-- Crouched and prone sprint speeds.
-- The top speed while swimming. The data has acceleration but no speed cap.
+- The deceleration of each stance, and how the acceleration units map to metres per second.
 - What the slow-walk setting multiplies in play.
 - How much stamina a plain sprint uses, if any.
 
@@ -109,3 +112,5 @@ Leaving a moving vehicle can also hurt you. The damage ramps from 0 to 100 as th
 - [Player Movement Numbers](../../content/Wardogs_PlayerMovement_v1.md)
 - [Gameplay Effect Values](../../pipelines/Wardogs_GameplayEffect_Values_v1.md) (aiming, medical and weight-class multipliers)
 - [Season 2 player and movement changes](../../season-2-changes/player-movement.md) (parachutes)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

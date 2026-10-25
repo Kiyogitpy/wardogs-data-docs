@@ -11,14 +11,14 @@ description: "How vests and helmets reduce bullet damage, which body parts each 
 | Vests | Light 30%, Medium 40%, Heavy 50%, Super heavy 60% reduction |
 | Helmets | Light 30%, Medium 40%, Pilot 30%, Heavy 50%, Super heavy 60%, Tank 55% reduction |
 | Covers | Vests: torso. Helmets: head (and neck on the heavier helmets) |
-| Ghillie suit | Effect not yet known |
+| Ghillie suit | No protection and no durability; a set bonus with the headwear |
 {: .wiki-infobox }
 
 Armor is worn in two slots: a vest for the body and a helmet for the head. Each piece cuts the damage of a hit to the body parts it covers. The amount of protection depends on the armor class, and the ammo in the weapon changes how much of that protection applies. The full list of armor items is on [Body Armor](../../content/Wardogs_Items_v2.md).
 
 ## Overview
 
-The armor classes are Light, Medium, Heavy and Super heavy for vests, and the same four plus Pilot and Tank for helmets. A higher class blocks more damage. Each piece lasts for a set amount of durability, and the reduction does not fall as durability falls in the current data.
+The armor classes are Light, Medium, Heavy and Super heavy for vests, and the same four plus Pilot and Tank for helmets. A higher class blocks more damage. Each piece has a durability. A hit takes durability from it, and the piece breaks at 0. The reduction does not fall as the piece wears, because all four durability stages give the same reduction.
 
 ## How it works
 
@@ -27,7 +27,7 @@ The armor classes are Light, Medium, Heavy and Super heavy for vests, and the sa
 - A vest and a helmet never cover the same body part, so at any one place only one piece of armor applies.
 - The lower arms, hands, thighs, calves and feet are not covered by any armor.
 - Armor reduces bullet damage by its percentage. A Heavy vest (50%) turns a 27.3 upper-torso hit from an M4 into 13.6.
-- Ghillie suits and helmets do not have a reduction in the data, so their effect is not yet known.
+- Ghillie suits and headwear have no durability and give no protection. The armor damage table sets their armor damage to zero, and wearing both gives a set bonus to aiming and movement (see [Ghillie Body Suit](../equipment/ghillie-body-suit.md)).
 
 ## Numbers
 
@@ -93,3 +93,5 @@ For a guide to choosing ammo for each armor class, see [Choosing Ammo](../guides
 - [Damage rules](../../pipelines/Wardogs_DamagePipeline_v2.md) (armor reduction and ammo effects)
 - [Game Mechanics Reference](../../content/Wardogs_GameMechanics_v2.md) (armor and helmet rules)
 - [Weapon damage by location (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

@@ -24,12 +24,13 @@ Spotting has two events. A **target spotted** event happens when an enemy is mar
 ## How it works
 
 - **Marking.** A spotted target shows on the team map and as a marker in the world, so the team can see where it is.
+- **How long a spot lasts.** On infantry a spot takes 0.5 s to register, fades over 30 s and is kept for up to 180 s. Rotary and wheeled vehicles take 0.75 s to spot and stay spotted 60 s (180 s kept); tracked vehicles take 1.25 s and stay 90 s. Bases and buildings stay spotted for up to 3,600 s.
 - **Pay on spot.** Spotting pays between 15 and 275 cash. The spotter gets a share of the top amount, which is 20% of the 275 maximum.
 - **Pay on destroy.** Destroying a spotted target pays between 50 and 500 cash. The spotter gets 75% of the 500 maximum for the destroy.
 - **Assists.** Teammates who help with the spot or the destroy get their own share, set by a separate modifier.
 - **Repeats.** The data lowers the pay for a target type after repeated kills of that same type. The exact reduction per repeat is not yet known.
 - **Buildables.** In Season 2, buildable and stationary targets pay in proportion to how much they were built, so an unfinished buildable pays less.
-- **Recon skills.** Two skills change spotting. One increases how long it takes for enemies to spot you. The other increases how long enemies stay spotted after you spot them.
+- **Recon skills.** Two skills change spotting. One increases how long it takes for enemies to spot you. The other increases how long enemies stay spotted after you spot them. The spotted time is multiplied by 1.2 at skill level 2 and 1.4 at level 4.
 
 ## Numbers
 
@@ -58,7 +59,7 @@ Base payouts for each kind of target (vehicle, buildable, player and so on) are 
 
 ## Not yet known
 
-- How long a spot lasts before the Recon skills change it. The base duration is not in the spotting data.
+- How the spot times hold up in play. The values come from the spotting data; the game was not run to time them.
 - The base payout for every target type. It is in the challenge tables, not on this page.
 - The payout for spotting a player. The data has a calculator row but no lookup for it.
 - The exact reduction for repeat targets.
@@ -75,3 +76,5 @@ Base payouts for each kind of target (vehicle, buildable, player and so on) are 
 - [GameFeature: Spotting Reference](../../game-features/Wardogs_GameFeatures_Spotting_v2.md)
 - [Game Modes & Maps changes (Season 2)](../../season-2-changes/game-modes-maps.md)
 - [Player & Movement changes (Season 2)](../../season-2-changes/player-movement.md)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

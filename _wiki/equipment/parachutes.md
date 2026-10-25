@@ -15,7 +15,7 @@ description: "The Basic and Sport parachutes: when they can be opened, what the 
 | Weight | Basic 2.5, Sport 9 (unit not stated) |
 | **Use** | |
 | Steering | Basic: no. Sport: yes |
-| Opening time | 2.0 (unit not stated) |
+| Opening time | 2 s (Season 2 data) |
 | Opens after a fall of | 400 (unit not stated) |
 | Clearance above ground to open | 1,000 (unit not stated) |
 | **Availability** | |
@@ -35,10 +35,10 @@ Both parachutes sit in the Traversal slot of the shop and are listed under the U
 
 ### Opening
 
-- A parachute can only be deployed after a fall of at least 400. The data does not give the unit.
-- The player needs at least 1,000 clearance above the ground to open it. The data does not give the unit.
+- A parachute can only be deployed after a fall of at least 400, which is most likely 4 m (derived from the speed scale).
+- The player needs at least 1,000 clearance above the ground to open it, most likely 10 m (derived).
 - Opening takes 2.0. The data does not give the unit.
-- The game text says both versions reduce fall damage when deployed. The damage at each fall speed comes from a curve that is not in the data, so the exact figure is not yet known.
+- The game text says both versions reduce fall damage when deployed. The landing damage curve for a parachute runs from 0 at input 695 to 100 at 1,700, in a straight line (input unit not stated).
 
 ### Movement values
 
@@ -52,10 +52,12 @@ Both parachutes sit in the Traversal slot of the shop and are listed under the U
 | Pull-up drag | 0 | 400 |
 | Pull-up stamina used per second | 0 | 50 |
 | Pull-up stamina regained per second | 0 | 30 |
-| Horizontal speed cap | not exported | 2,200 |
-| Vertical speed cap | not exported | 3,000 |
+| Horizontal speed cap | 2,000 (class default) | 2,200 |
+| Vertical speed cap | 5,000 (class default) | 3,000 |
+| Roll speed | 1 | 2 (class default) |
+| Pull-up stamina pool | 0 | 100 (class default) |
 
-The units are not stated for any of these. The Basic Parachute has no glide, no pull-up and no stamina bar, which matches its shop text. The Sport Parachute's pull-up uses its stamina bar, which drains at 50 per second and refills at 30 per second.
+The data does not state units for any of these. The Basic version sets no speed caps, so the class defaults apply to it (2,000 horizontal and 5,000 vertical). The Sport version sets no roll speed or pull-up pool, so the class defaults (2 and 100) apply to it. The Basic Parachute has no glide, no pull-up and no stamina bar, which matches its shop text. The Sport Parachute's pull-up uses its stamina bar, which drains at 50 per second and refills at 30 per second.
 
 ## Season 2 changes
 
@@ -78,3 +80,5 @@ Both parachutes also gained three values in Season 2: a vertical drag coefficien
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, unlock level, shop text, weights
 - [Parachutes](../../game-features/Wardogs_GameFeatures_Parachutes_v2.md): movement values, vendor rows and the Season 02 update
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Traversal slot name
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

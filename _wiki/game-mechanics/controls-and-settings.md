@@ -41,6 +41,8 @@ The keys below are the defaults for keyboard and mouse. Some keys do different t
 | Drag a body | G |
 | Inspect the held item | I |
 
+Some keys do different things in different modes. Space deploys the parachute while falling and jumps off a ladder. Shift slides down a ladder and fast-swims. G drags a body.
+
 ### Combat
 
 | Action | Default key |
@@ -164,7 +166,11 @@ Each setting has a default. Some have an exact range; where the export does not 
 | Gamepad response curve | Standard | Linear, Standard, Classic or Dynamic |
 | Slow walk speed | Slow | Slow, Moderate or Fast |
 
+The gamepad look acceleration is a separate setting with three curves (Standard, Linear and Aggressive), a magnitude threshold, a pitch weight and a max multiplier. The data does not show how it relates to the gamepad response curve above.
+
 ### Field of view and view model
+
+The character's first-person field of view is set to 106 in the pawn data, while the Field of view setting below defaults to 90. Which one applies in play was not checked, because the game was not run.
 
 | Setting | Default | Range or options |
 |---|---|---|
@@ -212,3 +218,5 @@ Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) a
 - [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md)
 - [Default game settings (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/default-game-ini.json)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

@@ -45,7 +45,7 @@ With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor 
 | [Level 3 Armor](level-3-armor.md) | 50% | Torso (upper, middle, lower) | 250 |
 | [Level 4 Armor](level-4-armor.md) | 60% | Torso, pelvis, upper arms | 300 |
 
-The data gives four durability stages, and all four list the same reduction. How durability is used up is not yet known.
+Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
 
 ## Season 2 changes
 
@@ -67,3 +67,4 @@ The Season 2 data does not change Level 2 Armor.
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): slot and category names
 - [Body Armor](body-armor.md): the overview of all armor
+- [Round 40 medical, armour and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): durability per piece, the armour damage rule and the helmet weights

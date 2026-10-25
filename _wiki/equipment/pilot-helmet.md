@@ -12,7 +12,7 @@ description: "Vehicle-use helmet: 30% head damage reduction, muffles vehicle aud
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | Not yet known |
+| Weight | 1 |
 | **Protection** | |
 | Damage reduction | 30% |
 | Body parts covered | Head |
@@ -30,7 +30,7 @@ The Pilot Helmet protects the head with a 30% reduction, the same as the [Level 
 
 The Item Shop describes the Pilot Helmet as "Low Damage Reduction" and lists the two vehicle effects. The shop files it under "Vehicle Use" rather than "Armor". It is still an armor item in the item data, and it goes in the Helmet slot.
 
-The item data gives no weight, so the weight is not yet known. For all the vests and helmets, see [Body Armor](body-armor.md).
+The item data omits the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
@@ -47,7 +47,7 @@ With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 46.
 | **Pilot Helmet** | 30% | Head | 180 |
 | [Tank Helmet](tank-helmet.md) | 55% | Head and neck | 180 |
 
-The data gives four durability stages, and all four list the same reduction. How durability is used up is not yet known.
+Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
 
 The vehicle effects are not compared with a number in the data. How strong the audio muffling or the target highlight is, is not yet known.
 
@@ -72,3 +72,4 @@ The Season 2 data does not change the Pilot Helmet.
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor
+- [Round 40 medical, armour and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): durability per piece, the armour damage rule and the helmet weights

@@ -11,7 +11,7 @@ description: "How much health a player has, which body parts count for more, and
 | Max health | 100 HP |
 | Hit locations | 12 body parts |
 | Friendly fire | Bullet damage to a teammate is halved |
-| Health regeneration | No natural regeneration found in the data (see [Downed and Revive](downed-and-revive.md)) |
+| Health regeneration | None outside Deathmatch (none found in the game code; see [Downed and Revive](downed-and-revive.md)). Deathmatch: 5 health per tick after 10 s without damage |
 {: .wiki-infobox }
 
 Every infantry player starts with 100 HP. A hit takes health off that total, and the amount depends on the weapon and ammo, the part of the body that was hit, any armor covering that part, and how far the bullet travelled. This article covers the body parts. [Armor](armor.md), [Ballistics](ballistics.md) and [Penetration and Ricochet](penetration-and-ricochet.md) cover the other factors.
@@ -95,3 +95,5 @@ The same bullet does different damage to different weapons. A sniper rifle such 
 - [Game Mechanics Reference](../../content/Wardogs_GameMechanics_v2.md) (hit-location table)
 - [Weapon damage by location (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json)
 - [Infantry hitboxes (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/infantry-hitboxes.json)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

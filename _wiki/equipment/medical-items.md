@@ -38,8 +38,8 @@ Medical items heal the player who uses them, a teammate, or both, and some bring
 | Enox | 40 HP as decaying health | no | 450 (hidden in the shop) |
 | Adrenaline Pen | no heal; unlimited tactical sprint for 60 s | no | 250 |
 | Defibrillator | no | yes, to 35 HP | 1,600 |
-| Emergency Resuscitator | no | yes | 0 in the shop data |
-| Field Resuscitator | no | yes | 425 |
+| Emergency Resuscitator | no | yes, to 10 HP | 0 in the shop data |
+| Field Resuscitator | no | yes, to 10 HP | 425 |
 
 ## Effects
 
@@ -55,15 +55,15 @@ Medical items heal the player who uses them, a teammate, or both, and some bring
 | Heal teammate | 15 HP | 1.5 s (10 HP per second) | 2 |
 | Revive teammate | 50 HP after the revive | - | 10 |
 
-Healing stops if the user moves away, according to the in-game tutorial text. How durability is spent per second or per step is not yet known, so the uses per bag below assume one cost per use.
+Healing stops if the user moves away, according to the in-game tutorial text. The game charges the durability once per action, as a fixed amount (read from the game code), so the uses per bag below assume one cost per use.
 
-**Enox.** Gives 40 HP as decaying health, which is health above the normal 100 that fades over time. The pool holds 40 HP. How fast it fades is not yet known.
+**Enox.** Gives 40 HP as decaying health, which is health above the normal 100 that fades over time. The pool holds 40 HP. It fades 5 HP every 5 s until the pool is empty, so a full pool is gone after 40 s (read from the game code).
 
-**Adrenaline Pen.** Gives no healing. It gives unlimited tactical sprint stamina for 60 seconds and reduces the equipment weight class of what you carry. The item can be used on yourself in 2 s, and a teammate use takes 1.3 s. What the teammate use does to the teammate is not yet known.
+**Adrenaline Pen.** Gives no healing. It gives unlimited tactical sprint stamina for 60 seconds and reduces the equipment weight class of what you carry. The item can be used on yourself in 2 s, and a teammate use takes 1.3 s. A teammate who is alive gets the same 60 s unlimited tactical sprint.
 
 **Defibrillator.** Revives a downed teammate to 35 HP at once. It needs a battery: one discharge uses 25 battery charges, and the charge-up takes 4 s. It cannot be used while you yourself are downed. Batteries are in [Utility Items](utility-items.md).
 
-**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The health a teammate has after revival is not yet known. The use animation is 2.2 s, and the item keeps running until its container is empty or the target is full, which the data estimates at up to 44 s.
+**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate to 10 HP. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The use animation is 2.2 s, and the revive is applied once at its end, so the use takes about 4 s (derived).
 
 ### Downed and revive
 
@@ -72,29 +72,22 @@ When a player's health reaches zero, they go critical. If nobody revives them, t
 - The bleed-out timer starts at 360 s. In the normal critical state it drains at half speed, so a full timer lasts about 720 s (derived from the player defaults).
 - A player who gives up drains the timer at 240 times speed, so it ends in about 1.5 s.
 - A player who was revived and goes down again starts with at least 30 s.
-- A base revive with bare hands, with no equipment, holds for 20 s. Medic skills can shorten it.
+- A base revive with bare hands holds for 20 s and gives the teammate 10 HP. Medic skills can shorten it.
 - A critical player can be dragged by a friend, according to the tutorial text.
 
-Max health is 100 HP. The data shows no natural health regeneration for infantry outside the Deathmatch mode, so regeneration over time is not yet known.
+Max health is 100 HP. No natural health regeneration for infantry was found in the game code outside the Deathmatch mode, so healing comes from these items and from revives.
 
 ### Medic skills
 
 The Medic skill tree changes some of these numbers. Four skills have values in the data, covering three effects:
 
-- **Medkits have more uses.** The bag's usage rate multiplier drops from 1.0 to 0.6 as the skill levels up. How the game applies it to durability is not confirmed, so the figures below assume it scales the cost.
-- **Medical item swap speed.** Switching to a medical item gets faster, with the equip speed multiplied by 1.2 or 1.4 at the higher levels.
+- **Medkits have more uses.** The bag's usage rate multiplier drops from 1.0 to 0.6 as the skill levels up. The game code never reads it, so it does not appear to change the bag's durability cost.
+- **Medical item swap speed.** Switching to a medical item gets faster, with the equip speed multiplied by 1.2 or 1.4 at the higher levels. It covers the items tagged as medical, all of the list above except the Enox.
 - **Revive sprint boost.** After a revive, the reviver and the revived teammate each get a sprint and tactical sprint boost, at 1.2 or 1.4 times speed, for 5 s.
 
-Other Medic skills, such as faster healing and a longer bleed-out timer, have a description in the skill tree but no number in the data, so their effect is not yet known.
+The other Medic skills, such as faster healing and a longer bleed-out timer, have a description in the skill tree but no number in the game files, and no game code reads them, so their effect is not known.
 
-The effect on the Medical Bag, derived from the curve, is:
-
-| Skill level | Durability per self heal | Self heals per bag | Teammate heals per bag | Revives per bag |
-|---|---:|---:|---:|---:|
-| Base | 25 | 6 | 75 | 15 |
-| Top level | 15 | 10 | 125 | 25 |
-
-These figures assume one durability cost per use and that the curve scales that cost. Both are derived, not confirmed.
+With the fixed durability costs, the bag gives the same counts at every skill level: 6 self heals, 75 teammate heals or 15 revives (derived from the 150 durability and the cost per action).
 
 ## Use and timing
 
@@ -108,7 +101,7 @@ Times are the length of each item's use animation, taken from the data.
 | Enox | 2.2 s | not used on teammates | |
 | Adrenaline Pen | 2.0 s | 1.3 s | |
 | Defibrillator | 4 s charge | used to revive | Needs a battery |
-| Emergency and Field Resuscitator | runs until empty or target full | | Up to 44 s to empty, derived; whether a revive uses all of it is not yet known |
+| Emergency and Field Resuscitator | 2.2 s animation, one revive | | About 4 s in total, derived |
 
 While a bandage, First Aid Kit, Medical Bag, Adrenaline Pen or resuscitator is in use, maximum movement speed is halved, according to the data.
 
@@ -139,3 +132,5 @@ No change to healing amounts, use times or the downed rules is listed in the Sea
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the use actions each item has
 - [GameplayEffect values](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ge-values.json): what the use effects change
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): prices
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

@@ -32,13 +32,13 @@ The Bandage is the cheap, everyday heal. The shop describes it as healing a smal
 
 ## Effects
 
-- **Healing:** +35 HP per use, added to current health. The data gives one heal per use. When in the use animation the heal is applied is not yet known.
+- **Healing:** +35 HP per use, added to current health. The heal is applied once, when the use animation ends: about 5.2 s on yourself and 4.8 s on a teammate.
 - **Movement:** while a bandage is in use, maximum movement speed is halved. The same applies to the other medical items except the Enox.
 - **Bleeding:** the Bandage does not stop bleeding. The game has no damage-over-time bleeding to cure. The "bleed" in the game is the downed timer, described in [Downed and Revive](../game-mechanics/downed-and-revive.md).
 
 ### Medic skills
 
-The Medic skill "Self-healing speed" and "Teammate healing speed" are described as applying to all medical items. The data gives them no numbers, so how much faster the Bandage heals is not yet known.
+The Medic skill "Self-healing speed" and "Teammate healing speed" are described as applying to all medical items. No number for them exists in the game files, and no game code reads them, so how much faster the Bandage heals is not known.
 
 The "Item-switch speed (Medical Archetype)" skill makes switching to a medical item faster. Its equip speed multiplier is 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -74,3 +74,5 @@ No Season 2 change to the Bandage is listed in the data.
 - [Progression Tables](../../game-features/Wardogs_Progression_v1.md): Medic skills
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

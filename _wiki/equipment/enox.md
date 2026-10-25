@@ -32,13 +32,13 @@ The Enox is in the Medical category but is listed under Equipment in the shop. T
 ## Effects
 
 - **Healing:** +40 HP as decaying health. The decay pool holds up to 40 HP above the normal maximum. Healing is capped at the maximum plus the decay pool.
-- **Fading:** the decaying health fades over time, and damage also lowers it. The rate of fading is not yet known. The data suggests one reading (5 HP every 5 s, which would empty the pool in 40 s), but the data does not confirm it.
+- **Fading:** the decaying health fades over time, and damage also lowers it. Every 5 s the fade removes 5 HP, or what is left of the pool, until the pool is empty. A full 40 HP pool is therefore gone after 40 s (read from the game code).
 - **Movement:** the data lists no movement slow for the Enox.
 - **Bleeding:** the Enox does not stop bleeding. The game has no damage-over-time bleeding to cure.
 
 ### Medic skills
 
-The "Self-healing speed" skill is described as applying to all medical items. The data gives it no number, so its effect on the Enox is not yet known.
+The "Self-healing speed" skill is described as applying to all medical items. No number for them exists in the game files, and no game code reads them, so its effect on the Enox is not known. The item-switch skill does not cover the Enox.
 
 ## Use and timing
 
@@ -65,3 +65,5 @@ No Season 2 change to the Enox is listed in the data.
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the self-use action and its animation
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

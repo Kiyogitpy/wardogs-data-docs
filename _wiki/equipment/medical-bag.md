@@ -39,7 +39,7 @@ The bag is the item for teammate support. A teammate heal costs only 2 durabilit
 | Heal a teammate | 15 HP | 1.5 s | 10 HP/s | 2 |
 | Revive a teammate | 50 HP after the revive | not stated | not applicable | 10 |
 
-The rate column is the amount divided by the time. How the durability is spent (per second, per step or once per use) is not yet known. The table below assumes one durability cost per use.
+The rate column is the amount divided by the time. The game charges the durability once per action, as a fixed amount, not per second or per step (read from the game code). The table below uses that cost.
 
 - **Healing over time:** the tutorial text says the bag heals over time, and that healing stops if you move away.
 - **Movement:** maximum movement speed is halved while the bag is in use.
@@ -47,22 +47,22 @@ The rate column is the amount divided by the time. How the durability is spent (
 
 ### Medic skills
 
-The "Medkits have more uses" skill lowers the usage rate of the bag, and it only applies while you are using it. The data gives it four values:
+The "Medkits have more uses" skill has a usage multiplier in the data, which falls from 1 to 0.6 as the skill levels up. The data gives four values:
 
-| Skill level | Usage multiplier | Durability per self heal | Self heals per bag | Teammate heals per bag | Revives per bag |
-|---|---:|---:|---:|---:|---:|
-| 0 | 1 | 25 | 6 | 75 | 15 |
-| 2 | 0.8 | 20 | 7.5 | 94 | 19 |
-| 3 | 0.7 | 17.5 | 8.6 | 107 | 21 |
-| 4 | 0.6 | 15 | 10 | 125 | 25 |
+| Skill level | Usage multiplier |
+|---|---:|
+| 0 | 1 |
+| 2 | 0.8 |
+| 3 | 0.7 |
+| 4 | 0.6 |
 
-These counts are derived. They assume the multiplier scales the durability cost, which the data does not confirm. The "Medic bag" skill, which the skill tree describes as adding slots for medical items, has no numbers in the data, so its effect is not yet known.
+The game code never reads this multiplier, and it charges the same durability cost at every level. So the bag holds 6 self heals, 75 teammate heals or 15 revives at every level (derived from the fixed costs, 150 durability in total). Whether the server applies the skill is not known. The "Medic bag" skill, which the skill tree describes as adding slots for medical items, has no number in the game files and no code reads it, so its effect is not known.
 
 ## Use and timing
 
 The use animation lasts 7.4 s in the data, and it loops between about 1.5 s and 5.7 s. The heal runs until the target is full or the bag is empty, so the total time depends on how much health is missing. The "Medical item switch speed" skill also speeds up switching to the bag, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4.
 
-The bag can heal yourself only while Injured and alive, and it can heal a teammate who is Injured and alive. A revive needs a downed teammate.
+The bag can heal yourself only while Injured and alive, and it can heal a teammate who is Injured and alive. A revive needs a downed teammate. A hand revive has a 20 s hold (see Downed and Revive); the data gives no separate hold time for the bag's revive.
 
 ## Cost
 
@@ -88,3 +88,5 @@ The price of the Medical Bag fell from 2,000 cash in Season 1 to 1,800 cash in S
 - [Progression Tables](../../game-features/Wardogs_Progression_v1.md): Medic skills and curves
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): price change
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

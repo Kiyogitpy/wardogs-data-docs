@@ -9,7 +9,7 @@ description: "The six roles and their 62 skills: what each skill changes in play
 
 | Skills | |
 |---|---|
-| Roles | Assault (17 skills), Recon (17), Support (12), Medic (4), Pilot (6), Driver (6) |
+| Roles | Assault (17 skills), Recon (17), Support (12), Medic (4 with numbers, 23 nodes), Pilot (6), Driver (6) |
 | Total | 62 skills |
 | Unlock level and cost | Not in the game data: skills are not part of the unlock tree |
 | Internal name | Role skill tables (one per role, plus four plugin tables) |
@@ -107,3 +107,4 @@ The sources list no Season 2 changes to the skill tables. Season 2 did change th
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects

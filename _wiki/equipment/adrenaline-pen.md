@@ -38,11 +38,11 @@ The shop describes the pen as unlimited tactical sprint for a short time, with a
 - **Equipment weight:** the item reduces the equipment weight class by one step while the effect lasts.
 - **Camera:** the field of view widens by 5% while the effect is held. The widening is ignored while you are downed.
 - **Movement:** maximum movement speed is halved while the pen is in use.
-- **Stacking:** what happens if a second pen is used during the 60 s is not yet known. The data does not set a stack limit or a refresh rule for the effect.
+- **Stacking:** a second pen used during the 60 s does not add a second stack. The effect keeps one stack, and the second pen restarts the 60 s (derived from the effect's default settings in the game code).
 
 ### Medic skills
 
-The "Item-switch speed (Medical Archetype)" skill makes switching to the medical items faster, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4. The skill text covers the medical archetype. The data does not list the pen by name, so it is not confirmed which items the skill covers.
+The "Item-switch speed (Medical Archetype)" skill makes switching to the medical items faster, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4. It covers the items tagged as medical: the Medical Bag, Bandage, Individual First Aid Kit, Defibrillator, both Resuscitators and this pen. It does not cover the Enox.
 
 ## Use and timing
 
@@ -51,7 +51,7 @@ The "Item-switch speed (Medical Archetype)" skill makes switching to the medical
 | On yourself | 2.0 s |
 | On a teammate | 1.3 s |
 
-The times are the length of each use animation in the data. The self use requires you to be alive. The teammate use requires the teammate to be alive. What the teammate use does to the teammate is not yet known beyond the time, because the data does not list a teammate effect for it. The self and teammate pen uses block each other.
+The times are the length of each use animation in the data. The self use requires you to be alive. The teammate use requires the teammate to be alive. A teammate who is alive gets the same 60 s of unlimited tactical sprint, and nothing more. The self and teammate pen uses block each other.
 
 ## Cost
 
@@ -76,3 +76,5 @@ No Season 2 change to the pen is listed in the data.
 - [Progression Tables](../../game-features/Wardogs_Progression_v1.md): Medic skills
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

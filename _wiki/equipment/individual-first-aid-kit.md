@@ -36,7 +36,7 @@ The shop describes the kit as healing a teammate or yourself back to full health
 
 ### Medic skills
 
-The "Self-healing speed" and "Teammate healing speed" skills are described as applying to all medical items. The data gives them no numbers, so the effect on the kit's use time is not yet known.
+The "Self-healing speed" and "Teammate healing speed" skills are described as applying to all medical items. No number for them exists in the game files, and no game code reads them, so the effect on the kit's use time is not known.
 
 The "Item-switch speed (Medical Archetype)" skill makes switching to a medical item faster, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -72,3 +72,5 @@ No Season 2 change to the kit is listed in the data.
 - [Progression Tables](../../game-features/Wardogs_Progression_v1.md): Medic skills
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

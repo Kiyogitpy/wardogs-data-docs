@@ -78,3 +78,4 @@ No Season 2 change to the Defibrillator is listed in the data.
 - [Progression Tables](../../game-features/Wardogs_Progression_v1.md): Medic skills
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

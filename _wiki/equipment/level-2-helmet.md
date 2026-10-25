@@ -47,7 +47,7 @@ With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 39.
 | [Pilot Helmet](pilot-helmet.md) | 30% | Head | 180 |
 | [Tank Helmet](tank-helmet.md) | 55% | Head and neck | 180 |
 
-The data gives four durability stages, and all four list the same reduction. How durability is used up is not yet known.
+Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
 
 ## Season 2 changes
 
@@ -70,3 +70,4 @@ The Season 2 data does not change Level 2 Helmet.
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): slot and category names
 - [Body Armor](body-armor.md): the overview of all armor
+- [Round 40 medical, armour and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): durability per piece, the armour damage rule and the helmet weights

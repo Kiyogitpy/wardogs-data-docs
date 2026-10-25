@@ -10,7 +10,7 @@ description: "The conditions a player can feel in Wardogs: downed and bleed-out,
 |---|---|
 | Covers | Downed, bleed-out, burning, suppression, spotting, medical buffs, falls, weight and movement penalties |
 | Damage over time | None. Bleeding is the downed timer, not health loss |
-| Health regeneration | None found for infantry in the data |
+| Health regeneration | None outside Deathmatch (none found in the game code) |
 {: .wiki-infobox }
 
 A status effect is a temporary condition that changes how a player fights or moves. Some come from being hit, some from items, and some from the gear a player carries. Most are stored as gameplay effects with a multiplier, such as "movement at half speed", and the values in the data page for those effects are the source for the numbers below. Where a trigger or length is not in the data, it is marked as not yet known.
@@ -22,11 +22,11 @@ A status effect is a temporary condition that changes how a player fights or mov
 | Downed | Health reaches 0 | Cannot fight; waits for a revive | Bleed-out timer | Timer 360 s, drains at 0.5 per second |
 | Bleed-out | Downed timer running | Player dies and respawns at Headquarters | Ends when timer hits 0 | At least 30 s after a revive; 1.5 s after giving up |
 | Burning | Standing in Molotov fire | Fire damages players; screen goes blurred and dark | Fire lasts 45 s; burning ends on leaving the fire | 15 damage every 0.4 s |
-| Suppression | Enemy fire near you | Suppressed view and movement, strength not in the data | Not yet known | Helmets cut suppression to 32% or 20% |
-| Spotted | You spot an enemy | Enemy shows to your team on the mini and tactical maps | Not yet known | Spot marker fades over 3.0 s |
+| Suppression | Enemy fire near you | Screen effect; strength set per bullet class, no movement effect found | Screen effect fades at 0.4 of its rate (concussive 0.1, lasts 2 s) | Base values 0.2 to 0.9 by bullet class; helmets cut suppression to 32% or 20% |
+| Spotted | You spot an enemy | Enemy shows to your team on the mini and tactical maps | Infantry 30 s, kept up to 180 s; vehicles 60 to 90 s; bases up to 3,600 s | Spot on infantry takes 0.5 s; spot marker fades over 3.0 s |
 | Adrenaline | Using an Adrenaline Pen | Unlimited tactical sprint, lighter equipment class | 60 s | Camera field of view x1.05 |
 | Medical use | Using a medical item | Move at half speed while using it | While using | Speed x0.5 |
-| Enox boost | Using Enox | Extra health that drains over time | Not yet known | Pool of 40 health |
+| Enox boost | Using Enox | Extra health that drains over time | Until the pool is empty (40 s for a full pool) | Pool of 40 health, loses 5 health every 5 s |
 | Revive sprint boost | Reviving, or being revived by, a teammate | Faster sprint | 5 s | Speed x1.2 at skill level 2, x1.4 at level 4 |
 | Fall landing | Landing hard | Damage | Once per landing | 0 at input 670, 100 at 875, 200 at 1,080 |
 | Landing and action sway | Jump, landing, vault, mantle, stance change, end of tactical sprint | Weapon sway changes briefly | 2 s to 15 s | Jump 2 s, landing 10 s, mantle 10 s, vault 5 s, stance 5 s, tactical sprint end 15 s |
@@ -35,7 +35,7 @@ A status effect is a temporary condition that changes how a player fights or mov
 | Ghillie suit | Body suit and headwear both worn | Slower, quicker to aim, more sway | While worn | Aim time x0.8, aim sway x1.15 |
 | Barbed wire slow | Barbed wire (inferred from the effect name) | Movement cut to 7.5% of normal speed | Not set in the data | Speed x0.075 |
 | Door breach | Breaching a door | Movement ramps down and back up | 0.8 s | Ramp curve, not a fixed number |
-| Tinnitus | Not yet known | Audio state only | Not yet known | Tank helmet removes it, per the shop text |
+| Tinnitus | Nearby explosions and backblast | Audio only: a low-pass mix | About 1.2 s (1 s hold, 0.1 s fades; derived) | Tank Helmet removes it, per the shop text |
 
 ## Downed
 
@@ -51,15 +51,15 @@ Molotov fire creates a fire area that lasts 45 s. A player standing in it takes 
 
 ## Suppression
 
-Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. The strength of the suppression effect, how long it lasts and what it does to the view or movement are not in the data. The data does list three things that reduce it. Heavy helmets cut suppression to 32% and super-heavy helmets to 20%. The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
+Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value in the game data, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. No movement effect from suppression was found. The data does list three things that reduce it. Heavy helmets cut suppression to 32% and super-heavy helmets to 20%. The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
 
 ## Spotted
 
-Spotting an enemy with binoculars shows that enemy to your teammates on the mini and tactical maps and in the world. A spot marker fades over 3.0 s on the spatial tracker, and the on-screen spotting overlay fades 1.0 s after the spot. How long a spot lasts is not yet known. Two Recon skills multiply the spotted time and the spotting duration, but their values are not in the data. The data has no separate "marked" state: spotting is the marking. See [Spotting](spotting.md).
+Spotting an enemy with binoculars shows that enemy to your teammates on the mini and tactical maps and in the world. A spot marker fades over 3.0 s on the spatial tracker, and the on-screen spotting overlay fades 1.0 s after the spot. A spot on infantry takes 0.5 s, and the spot fades over 30 s and is kept up to 180 s. Vehicles stay spotted for 60 to 90 s, and bases and buildings up to 3,600 s. The Recon skills multiply the spotted time and the spotting duration by 1.2 at level 2 and 1.4 at level 4. The data has no separate "marked" state: spotting is the marking. See [Spotting](spotting.md).
 
 ## Adrenaline
 
-The Adrenaline Pen heals nothing. It gives unlimited tactical sprint for 60 s and lowers the equipment weight class by one step while active. The camera view widens slightly (x1.05) and that is ignored while the player is downed. The data does not say what happens if a second pen is used during the 60 s. Each player can carry up to three.
+The Adrenaline Pen heals nothing. It gives unlimited tactical sprint for 60 s and lowers the equipment weight class by one step while active. The camera view widens slightly (x1.05) and that is ignored while the player is downed. A second pen used during the 60 s keeps one stack and restarts the 60 s (derived from the effect's default settings). Each player can carry up to three.
 
 ## Medical use
 
@@ -67,7 +67,7 @@ Using any medical item (bandage, First Aid Kit, Medical Bag, Adrenaline Pen, res
 
 ## Enox boost
 
-Enox adds 40 health as a decaying pool. The pool is 40 health, and the decay rate is not confirmed in the data. A rough derived figure suggests it empties in about 40 s, but this is not confirmed in game.
+Enox adds 40 health as a decaying pool. Every 5 s the pool loses 5 health, or what is left of it, so a full pool is gone after 40 s. The amount and period are read from the game code; the game was not run to time it.
 
 ## Revive sprint boost
 
@@ -91,15 +91,12 @@ Aiming down sights halves movement speed. Wearing a Ghillie suit and Ghillie hea
 
 ## Barbed wire, door breach and tinnitus
 
-Barbed wire has an effect that sets movement to 7.5% of normal speed. The data does not say what applies it; the name points to barbed wire, but this was not traced, and the effect has no set duration. A door breach slows movement during a 0.8 s ramp. The data has a tinnitus audio state, but what triggers it and how long it lasts are not yet known. The Tank Helmet removes it, according to the shop text.
+Barbed wire has an effect that sets movement to 7.5% of normal speed. The data does not say what applies it; the name points to barbed wire, but this was not traced, and the effect has no set duration. A door breach slows movement during a 0.8 s ramp. Tinnitus is an audio state. Nearby explosions and backblast trigger it. It is a low-pass audio mix that holds for about 1 s, with 0.1 s fades, so it lasts about 1.2 s in total (derived). The Tank Helmet removes it, according to the shop text.
 
 ## Not yet known
 
-- How strong suppression is, how long it lasts, and what it does to the screen.
-- How long a spot lasts, and the Recon skill values.
-- Whether a second Adrenaline Pen extends the 60 s.
-- The Enox decay rate.
-- What "revived by an enemy" does. That state lasts 60 s, but what sets it was not traced.
+- How the suppression values turn into what a player sees in play; the game was not run.
+- What "revived by an enemy" does to the player. A resuscitator used on the other faction gives it, for 60 s; its effect on the player was not traced.
 - Whether a player's own fire or a teammate's fire hurts.
 
 ## See also
@@ -119,5 +116,8 @@ Barbed wire has an effect that sets movement to 7.5% of normal speed. The data d
 - [Player movement](../../content/Wardogs_PlayerMovement_v1.md)
 - [Gameplay Effect Values](../../pipelines/Wardogs_GameplayEffect_Values_v1.md)
 - [Gameplay effect values (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ge-values.json)
+- [Spotting, suppression and status data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/medical-status-r39.json)
 - [Frontend data tables (in-game tips)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

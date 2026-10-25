@@ -15,8 +15,8 @@ description: "A single-use revive item, limited to one per life, that revives a 
 | Uses | Single use |
 | Buy limit | One per life (shop data) |
 | **Effect** | |
-| Revives | A downed teammate; health after the revive not yet known |
-| Use time | 2.2 s animation; runs until its container is empty or the target is full |
+| Revives | A downed teammate, to 10 HP |
+| Use time | 2.2 s animation; the revive is applied once, about 4 s in total (derived) |
 | Effects while using | Maximum movement speed halved |
 | **Availability** | |
 | Price | Listed as 0 in the shop data |
@@ -33,8 +33,8 @@ The shop describes the item as a one-per-life emergency revive that revives team
 
 ## Effects
 
-- **Revive:** brings a downed teammate back. The health the teammate has after the revive is not yet known.
-- **Container:** the item holds 10 units, emptied at 1 unit every 4 s. The data gives 44 s to empty it (derived). Whether a revive needs all 10 units, or ends earlier, is not yet known.
+- **Revive:** brings a downed teammate back to 10 HP. One revive is applied and the item is used up. On a player from the other faction, the revived player also gets a 60 s effect (see [Status Effects](../game-mechanics/status-effects.md)).
+- **Container:** the item holds 10 units, emptied at 1 unit every 4 s. The revive is applied once when the use finishes, so the use takes about 4 s (derived). The container formula would give 44 s if all 10 units were stepped through, but the game does not do that.
 - **Movement:** maximum movement speed is halved while the item is in use.
 - **Bleeding:** the item does not stop bleeding. The game has no damage-over-time bleeding to cure.
 
@@ -44,7 +44,7 @@ The Medic skill for base revive speed covers only the bare-hands revive, not thi
 
 ## Use and timing
 
-The use animation is 2.2 s. The use keeps going until the container is empty or the teammate is full, so the total time is not yet known in full. The item can be used only on a teammate who is downed.
+The use animation is 2.2 s, and the revive is applied at the end of it, so the total time is about 4 s (derived). The item can be used only on a teammate who is downed.
 
 ## Cost
 
@@ -69,3 +69,5 @@ No Season 2 change to this item is listed in the data.
 - [Progression Tables](../../game-features/Wardogs_Progression_v1.md): Medic skills
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): the Medical category label
 - [Items and Equipment, Season 2](../../season-2-changes/items-equipment.md): checked for changes
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay and armour values

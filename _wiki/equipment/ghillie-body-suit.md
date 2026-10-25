@@ -2,7 +2,7 @@
 title: Ghillie Body Suit
 parent: "Equipment"
 group: "Armor"
-description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. The item data gives it no damage reduction."
+description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. It has no durability and gives no protection."
 ---
 
 # Ghillie Body Suit
@@ -14,9 +14,9 @@ description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. The it
 | Slot | Armor |
 | Weight | 1.5 |
 | **Protection** | |
-| Damage reduction | Not yet known (none in the item data) |
-| Body parts covered | None in the item data |
-| Durability | Not yet known |
+| Damage reduction | None |
+| Body parts covered | None |
+| Durability | None (no durability fragment) |
 | **Availability** | |
 | Price | 3,000 cash |
 | Unlock | None (unlock level 0) |
@@ -24,7 +24,7 @@ description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. The it
 | Internal name | `ID_GhillieArmor` (item `Id.Item.GhillieArmor`) |
 {: .wiki-infobox }
 
-The Ghillie Body Suit is camouflage that goes in the Armor slot. It must be worn with [Ghillie Headwear](ghillie-headwear.md). It removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. The item data gives it no damage reduction, so how much damage it stops is not yet known.
+The Ghillie Body Suit is camouflage that goes in the Armor slot. It must be worn with [Ghillie Headwear](ghillie-headwear.md). It removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. It gives no protection and has no durability.
 
 ## Overview
 
@@ -34,11 +34,11 @@ The Item Shop also lists a "Ghillie Body Suit (Dead)" at 3,500 cash. The data do
 
 ## Protection
 
-The item data gives the Ghillie Body Suit no damage reduction and no covered body parts. The damage tables on the Weapon Damage page treat it as no armor, because its real effect on damage is not determined in the data. How much protection it gives is not yet known.
+The suit has no durability, covers no body parts and gives no protection. The game's armor damage table sets the armor damage of this piece to zero, so it never reduces a hit and takes no armor damage (read from the game data; the game was not run to confirm it). The Weapon Damage page therefore treats it as no armor.
 
 | Piece | Damage reduction | Body parts covered | Durability |
 |---|---:|---|---:|
-| **Ghillie Body Suit** | Not yet known | None in the item data | Not yet known |
+| **Ghillie Body Suit** | None | None | None |
 | [Level 1 Armor](level-1-armor.md) | 30% | Torso (upper, middle, lower) | 200 |
 
 ## Effects when worn together
@@ -53,7 +53,7 @@ The suit and the headwear work as a pair. The effects below apply only when both
 | Move speed | 5% slower (multiplier 0.95) |
 | Jump velocity | 5% lower (multiplier 0.95) |
 
-The armor tables have rows for the suit and headwear tags, but the data does not show what they do to damage. The item data still gives no damage reduction.
+The armor damage table has rows for the suit and headwear tags that take their armor damage to zero, so the set takes no armor damage and gives no reduction.
 
 ## Season 2 changes
 
@@ -76,3 +76,4 @@ The Season 2 data does not list a change for the Ghillie Body Suit.
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): the combined effect of the Ghillie suit and headwear.
+- [Round 40 medical, armour and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): the armor damage rows and the set bonus values.

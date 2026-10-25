@@ -19,7 +19,7 @@ description: "The Medic role: 4 skills for medical items, medkit uses and sprint
 | Internal name | Meta.Role.Medic, DT_MedicSkills |
 {: .wiki-infobox }
 
-Medic is one of the six roles and has the fewest skills, four. Two skills tune medical items: the medic switches to them faster, and a medkit lasts more uses. The other two give a short sprint boost to the medic who has just revived a teammate and to the teammate who was revived. A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator.
+Medic is one of the six roles and has the fewest skills with numbers, four. Its tree has 23 nodes. The other 19 have no number in the game files and no game code reads them, so their effect is not known. Two skills tune medical items: the medic switches to them faster, and a medkit lasts more uses. The other two give a short sprint boost to the medic who has just revived a teammate and to the teammate who was revived. A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator.
 
 ## Overview
 
@@ -153,3 +153,5 @@ When a heal brings a downed player back, it pays 1,500 with a defibrillator or r
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
 - [Economy data: role unlock tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): heal timing, skill rows, durability costs and status effects
+- [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): revive health, decay, armour and critical state values

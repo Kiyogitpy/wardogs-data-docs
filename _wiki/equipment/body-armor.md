@@ -47,12 +47,12 @@ Each vest and helmet has its own article.
 
 | Item | Reduction | Covers | Durability | Weight | Price (cash) | Notes |
 |---|---:|---|---:|---:|---:|---|
-| Level 1 Helmet | 30% | Head | 80 | - | 200 | |
+| Level 1 Helmet | 30% | Head | 80 | 1 | 200 | |
 | Level 2 Helmet | 40% | Head | 100 | 1.6 | 500 | |
 | Level 3 Helmet | 50% | Head and neck | 180 | 3 | 2,000 | Low suppression reduction |
 | Level 4 Helmet | 60% | Head and neck | 200 | 4.5 | 4,500 | High suppression reduction; strongly muffles nearby sound |
-| Pilot Helmet | 30% | Head | 180 | - | not sold (data value 6,400) | Muffles vehicle audio; highlights target vehicles |
-| Tank Helmet | 55% | Head and neck | 180 | - | not sold (data value 5,000) | Muffles vehicle and infantry audio; removes suppression and tinnitus |
+| Pilot Helmet | 30% | Head | 180 | 1 | not sold (data value 6,400) | Muffles vehicle audio; highlights target vehicles |
+| Tank Helmet | 55% | Head and neck | 180 | 1 | not sold (data value 5,000) | Muffles vehicle and infantry audio; removes suppression and tinnitus |
 
 The Pilot and Tank helmets are marked as hidden in the shop data, so they do not appear in the shop listing. The data values are shown for reference.
 
@@ -81,15 +81,15 @@ Read the table as: a Level 3 vest turns a 27.3 HP upper-torso hit into 13.6 HP. 
 
 ### Durability
 
-Each armor piece has a durability value, and the data gives each one four durability stages. All four stages list the same reduction, so the data does not show protection dropping as the armor takes hits. How durability is used up is not yet known.
+Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
 
 ## Use and timing
 
-Armor vests go in the Armor slot and helmets in the Helmet slot. Tactical vests use a separate Tac-Vest slot, so they do not take up the Armor slot. The data has one Armor slot and one Helmet slot, so two armor vests or two helmets are not worn together. The data gives no time to put armor on or take it off, so that is not yet known.
+Armor vests go in the Armor slot and helmets in the Helmet slot. Tactical vests use a separate Tac-Vest slot, so they do not take up the Armor slot. The data has one Armor slot and one Helmet slot, so two armor vests or two helmets are not worn together. No put-on or take-off time for armor appears in the game data, so none is listed.
 
 ## Cost
 
-Prices are in the tables above. The Level 1 and Level 2 pieces cost 200 to 1,000 cash. The Level 4 vest costs 5,000 cash, and the Level 4 helmet 4,500 cash. The Ghillie Body Suit costs 3,000 cash, and the data gives no damage reduction for it or for the Ghillie headwear.
+Prices are in the tables above. The Level 1 and Level 2 pieces cost 200 to 1,000 cash. The Level 4 vest costs 5,000 cash, and the Level 4 helmet 4,500 cash. The Ghillie Body Suit costs 3,000 cash, and neither it nor the Ghillie headwear has durability or gives any protection.
 
 ## Season 2 changes
 
@@ -120,3 +120,4 @@ The Level 1 and Level 2 armor and helmets, and the Pilot and Tank helmets, did n
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, armor stages, weights and covered body parts
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): armor coverage by body part and the M4 damage table
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): armor reduction and price changes
+- [Round 40 medical, armour and movement evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): durability per piece, the armour damage rule and the helmet weights
