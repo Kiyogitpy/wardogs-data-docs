@@ -7,6 +7,8 @@ nav_exclude: true
 
 Static CL516586 review. Nothing was run. Native RVAs are for `WardogsClient-Win64-Shipping.restored.exe` (SHA-256 `a5c3db10...0cc37`), read from the decompiled corpus; constructor stores are decoded in `_tools/mode_rules.py` (raw 32-bit value and decoded number are checked there). Extractor output: `E:/Reverse_Engineer/wardogs_analysis/round39_modes/` (`hp/`, `ss/`, `bpd/` package dumps; `cfgc/`, `exc/`, `keep/`, `upall/` config copies). The repository copies are under `data/Wardogs/Config/` and the three plugin `Config/` folders. Machine-readable result: `assets/data/mode-rules.json` (`python -I _tools/mode_rules.py [--check]`).
 
+**Round 40 follow-up:** [round40-modes-ai-other.md](round40-modes-ai-other.md) works the OPEN items and **corrects** P2/P3: `DefaultGame.ini` overrides the native defaults (King of the Hill score limit 100 and period 22 s; Deathmatch and Sniper Showdown time limit 1800 s).
+
 Statuses: FOUND, NATIVE, SERVER, ABSENT as in the round 36 brief, plus **OPEN** for backlog items this pass did not reach (no search was made; they are listed so the next pass does not assume they were checked).
 
 ## New sources found this round
