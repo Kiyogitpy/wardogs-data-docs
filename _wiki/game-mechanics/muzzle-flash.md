@@ -30,7 +30,7 @@ The sizes below are in the game's own units, which are not given in metres or pi
 | M4 | 10 | 35 |
 | AK74 | 15 | 35 |
 | A-91 | 15 | 30 |
-| KH 2002 | 15 | 30 |
+| KH-2002 | 15 | 30 |
 | Galil | 15 | 52.5 |
 | FAL | 18 | 57 |
 | M500 | 30 | 50 |
@@ -42,7 +42,7 @@ The sizes below are in the game's own units, which are not given in metres or pi
 | M14, SVD, SKS (marksman rifles) | not set | 35 |
 | MK22, Mosin Nagant, SV98 | 25 | 37 to 40 |
 
-What this means in play: the FAL and Galil throw the largest rifle flash at other players, shotguns the largest at your own screen, and pistols such as the M1911 and the Glock 17 the smallest. Marksman rifles and sniper rifles have a long distant flash (300 for most, 350 for one sniper rifle), so they are the easiest to spot from far away.
+What this means in play: the FAL and Galil throw the largest rifle flash at other players, shotguns (tied with one sniper rifle) the largest at your own screen, and pistols such as the M1911 and the GGX 17 the smallest. Marksman rifles and sniper rifles have a long distant flash (300 for most, 350 for one sniper rifle), so they are the easiest to spot from far away.
 
 ## Suppressors and muzzle devices
 

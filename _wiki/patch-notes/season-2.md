@@ -28,7 +28,7 @@ Season 2 changed the weapons, damage rules, vehicles, items, modes and progressi
 - **Recoil patterns changed on four weapons,** including the SKS and SVD, with many of the pattern points moved. View kick was removed on the BMR-308, SKS and SVD, and rose on the MP5 from 1.1 to 1.15.
 - **Sniper rifles cycle faster after a shot.** The time before the SV98 can rechamber fell from 0.3 s to 0.08 s, and the AMR 50's from 0.24 s to 0.2 s.
 - **The Super-45 falls off with distance differently.** It gained two falloff points, at 100 m (0.4) and 150 m (0.3).
-- **Combat bow changed.** Its launch speed fell from 650 m/s to 160 m/s, arrows last 14 s instead of 30 s, penetration rose from 0.03 to 0.5, and its price rose from 800 to 1350.
+- **Compound Bow changed.** Its launch speed fell from 650 m/s to 160 m/s, arrows last 14 s instead of 30 s, penetration rose from 0.03 to 0.5, and its price rose from 800 to 1350.
 - **The MGL-40 fires slower.** Its muzzle velocity went from 100 m/s to 75 m/s.
 - **Vendor prices changed.** Some of the largest moves: AK74 down from 1,600 to 800, T-21 up from 600 to 1,200, Super-45 up from 2,600 to 5,600, AMP-9 up from 900 to 1,375, AMR 50 up from 8,800 to 14,800, MP5 up from 1,500 to 1,800, and FAL down from 6,500 to 6,000.
 - **Other weapon prices changed.** Deagle from 900 to 750, Galil from 2,200 to 2,000, GGX 18 from 800 to 1,000, MAAWS from 2,600 to 2,400, MGL-40 from 6,000 to 7,500, PKM from 4,500 to 4,100, RPG-7 from 2,000 to 1,800, BMR-308 from 6,000 to 6,250, and Scout Rifle TD from 1,100 to 1,200.
@@ -63,17 +63,17 @@ Full lists: [Vehicles changes](../../season-2-changes/vehicles.md).
 
 ## Items and equipment
 
-- **Parachutes open later and from a higher height.** The minimum fall before a parachute can be used rose from 1 m to 4 m. A parachute can now only open at least 10 m above the ground, and takes 2 s to open.
+- **Parachutes open later and from a higher height.** The minimum fall before a parachute can be used rose from 1 m to 4 m (most likely; the data stores 100 and 400 without a unit). A parachute can now only open at least 10 m above the ground (most likely; stored as 1,000), and takes 2 (unit not stated, probably seconds) to open.
 - **Parachute prices changed.** The Basic Parachute rose from 100 to 500, and the Sport Parachute fell from 1,000 to 700.
 - **Parachute landing damage reaches its maximum later.** Damage reaches 100 at a fall speed of 17 m/s, up from 11.1 m/s.
 - **Medical items and equipment changed in price.** Medical Bag down from 2,000 to 1,800, standard resuscitator down from 500 to 425, Heavy armor up from 2,000 to 2,500, Super heavy armor up from 4,000 to 5,000, Heavy helmet up from 1,500 to 2,000, Super heavy helmet up from 3,000 to 4,500.
 - **Optics changed in price.** Infrared rangefinder up from 1,200 to 3,200, rangefinder up from 400 to 1,450, monocular up from 150 to 350, and binoculars up from 75 to 180.
-- **Other item prices changed.** Wrench up from 150 to 180, and Crowbar down from 1,100 to 885.
-- **Crowbar durability rose from 5,000 to 7,000.**
+- **Other item prices changed.** Wrench up from 150 to 180, and Halligan Bar down from 1,100 to 885.
+- **Halligan Bar durability rose from 5,000 to 7,000.**
 - **Hammers build less per hit.** A Large Hammer's weak-spot build amount went from 10 to 8, and a Medium Hammer's from 6 to 5.
 - **30 mm ammunition stacks to 50 instead of 200.**
 - **Buildable costs fell.** Talon 9K-SAM from 1,000 to 650, Vanguard CIWS from 1,500 to 1,200.
-- **Other buildable costs rose.** Build Supplies went up for the Indirect Fire Shelter and the Shelter (100 to 200 each), Bunker (100 to 200), Recon Tower (100 to 200), Door (22 to 80), Gate (85 to 200), Bremer Wall (15 to 32), Stingray (150 to 650), and L81 mortar (150 to 600). The Drill Rig went from 2,250 to 2,750, and its fuel values changed: minimum fuel to run from 1,500 to 2,000, maximum fuel from 7,500 to 10,000, and run time per fuel unit from 0.05 to 0.03.
+- **Other buildable costs rose.** Build Supplies went up for the Indirect Fire Shelter (100 to 200), Bunker (100 to 200), Recon Tower (100 to 200), Door (22 to 80), Gate (85 to 200), Bremer Wall (15 to 32), Stingray (150 to 650), and L81 mortar (150 to 600). The Drill Rig went from 2,250 to 2,750, and its fuel values changed: minimum fuel to run from 1,500 to 2,000, maximum fuel from 7,500 to 10,000, and run time per fuel unit from 0.05 to 0.03.
 - **Ammo suppression values changed** for most calibres, including 5.56 mm base suppression from 0.12 to 0.3 and 45 ACP from 0.075 to 0.15. Other examples: .308 Winchester from 0.9 to 0.65, .50 cal from 1.0 to 0.75, and .50 AE from 0.5 to 0.32.
 
 Full lists: [Items & Equipment changes](../../season-2-changes/items-equipment.md).
@@ -81,9 +81,9 @@ Full lists: [Items & Equipment changes](../../season-2-changes/items-equipment.m
 ## Modes and rewards
 
 - **Team Offence was added as a new game mode,** with its own challenges and voting and punishment rules. [Hot Potato](../game-modes-and-maps/hot-potato.md) was also added: a pre-lobby mini-game with its own items, switched off by default, not a match mode. The shooting range also gained a tutorial, and Control Zone settings were added for Sniper Showdown and for the Africa and Russia layouts.
-- **Cash for spotting and destroying some vehicles changed.** For the L2A6's artillery variant, the Season 1 amounts of 1,500 and 8,000 were replaced by 400 and 1,200. The data does not say which amount is for spotting and which for destroying. Talon 9K-SAM spotting went from 200 to 75, and destroying a Vanguard CIWS went from 1,500 to 725.
+- **Cash for spotting and destroying some vehicles changed.** For the L2A6's artillery variant, the Season 1 amounts of 1,500 and 8,000 were replaced by 400 and 1,200. The data does not say which amount is for spotting and which for destroying. Talon 9K-SAM spotting went from 200 to 75 (the data has a second Talon row, 1,000 to 400, listed below), and spotting a Vanguard CIWS went from 1,500 to 725.
 - **Spotting rewards fell for more vehicles.** The Flakpanzer Gepard's cash went from 5,000 to 2,100, and the Talon 9K-SAM's from 1,000 to 400. XP for the Mortar and the Talon roughly halved (for example from 125 to 60). The XP reward for spotting an AT Mine and a Claymore doubled, from 2.5 to 5.0. The cash factor for a spotted target killed by enemies fell from 0.5 to 0.25 for players and most vehicles.
-- **Spotting pay range is unchanged.** Spotting still pays 15 to 275 cash, and destroying a spotted target 50 to 500.
+- **The general spotting pay range is unchanged.** In the match-score table, spotting still pays 15 to 275 cash and destroying a spotted target 50 to 500. The vehicle and buildable amounts above come from a separate challenge reward table, which is why they can be higher.
 - **Spotting challenges gained rows.** The calculator grew from 44 to 130 rows, with variant-level rows for each vehicle and new entries for buildables that scale with build progress.
 - **Vehicle destroyed rewards cover the new vehicles.** Destroying the T-72B3 pays a base 5,000 cash.
 - **Team kill tracking was removed** from the game feature data.

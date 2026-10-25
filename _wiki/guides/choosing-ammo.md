@@ -52,7 +52,7 @@ The GGX 17 pistol shows the same pattern, at lower damage:
 - **Pistol calibers** (9 mm, .45 ACP, .45 Colt) do not pass full metal jacket at Medium armor. They pass it at Heavy armor. The GGX 17 does 13.2 with armor-piercing and 12.7 with full metal jacket against a Heavy vest.
 - **The Deagle** (.50 AE) passes full metal jacket at Medium armor: 46.6 against 43.7.
 - **The Judge** does not pass full metal jacket at Medium armor (29.9 against 31.2), but does at Heavy armor (27.0 against 26.0).
-- **The .50 cal AMR 50** is the exception. Its arm class gives armor-piercing the same armor effect as full metal jacket, so armor-piercing never beats it. It still does the most damage of any round, at 166.3 to the upper torso with armor-piercing and no armor.
+- **The .50 cal AMR 50** is the exception. Its arm class gives armor-piercing the same armor effect as full metal jacket, so armor-piercing never beats it. With no armor its hollow point round (listed as Flesh Damage) does 415.8 to the upper torso, the most of the rounds checked, against 207.9 for full metal jacket and 166.3 for armor-piercing.
 
 ## Rules to remember
 

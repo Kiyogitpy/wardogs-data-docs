@@ -58,7 +58,7 @@ These rounds are fired by weapons. The figures are the explosion at the centre o
 | 84mm rocket | MAAWS | 100 HP | 4 m | 10 m | 120 HP |
 | 93mm rocket | RPG-7 | 110 HP | 2.5 m | 12 m | 120 HP |
 | 72mm rocket | 9K333 Verba | 200 HP | 2 m | 10.8 m | 120 HP |
-| Explosive Arrow | Combat bow | 150 HP | 2 m | 4 m | not listed |
+| Explosive Arrow | Compound Bow | 150 HP | 2 m | 4 m | not listed |
 
 The vehicle cannons, artillery and drone shells are on the [Explosives](../../game-features/Wardogs_Explosives_v1.md) data page. They are used by vehicles, not infantry.
 

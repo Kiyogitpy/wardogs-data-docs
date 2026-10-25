@@ -54,7 +54,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Do tracer rounds do more damage?** No. A tracer does the same damage as the plain round of the same type ([Choosing Ammo](choosing-ammo.md)).
 
-**Which round does the most damage?** The AMR 50 with armor-piercing does 166.3 to the upper torso with no armor, the most of any round in the data ([Choosing Ammo](choosing-ammo.md)).
+**Which round does the most damage?** The AMR 50 with hollow point (listed as Flesh Damage) does 415.8 to the upper torso with no armor, the most of the rounds checked. Its full metal jacket round does 207.9 and its armor-piercing round 166.3 ([Choosing Ammo](choosing-ammo.md)).
 
 ## Vehicles
 
@@ -114,7 +114,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Can I get a refund?** Yes. A refund pays 90% of the eligible amount, but it must be claimed within 20 score ticks ([Shops](../progression-and-economy/shops.md)).
 
-**What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top payout in the role table on Making Money. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
+**What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top payout in the role table on Making Money. Destroying an artillery tank also pays a 6,000 base, and the L2A6 artillery variant has a separate per-kill session value of 8,000 in Season 2, so no single figure is the biggest. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
 
 **What is Intel for?** Passive missions pay 100 to 500 Intel per tier. The data has no shop price, unlock or exchange that uses it ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
 
