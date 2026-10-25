@@ -36,7 +36,7 @@ A downed player is on the ground and cannot fight. Health does not drop any furt
 - **Reviving with a defibrillator.** A defibrillator revives the player instantly to 35 HP. It needs a battery and a 4 s charge. The user cannot use it while downed.
 - **Reviving with a Medical Bag.** A teammate can revive a player with a Medical Bag, restoring 50 HP and costing 10 durability.
 - **Reviving with a resuscitator.** Resuscitators revive faster than bare hands. Each one is a single use. The revive restores 10 HP and is applied once at the end of the 2.2 s use animation, so the use takes about 4 s (derived). If the downed player is on the other faction, the revived player also gets a 60 s effect marked as revived by an enemy (see [Status Effects](status-effects.md)).
-- **Revived again.** A player who is revived and then goes down again gets a bleed-out timer of at least 30 s. At half drain speed that is about 60 seconds.
+- **Revived again.** A player who is revived and then goes down again gets a bleed-out timer of at least 30 s. At half drain speed that is about 60 seconds. The data also stores a revive penalty value of 100 for this case, but no game code that reads it was found, so it has no known effect.
 - **Revive boost.** After a Medic reviews a teammate, both can get a short sprint speed boost for 5 seconds (see the skills table below).
 
 Health comes back from items and revives, not on its own. No natural regeneration was found for infantry outside Deathmatch in the game code.
@@ -95,3 +95,4 @@ The other Medic skills have names and descriptions in the skill tree, but no num
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md) (item names and costs)
 - [Round 39 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md): hand revive and resuscitator health, critical state
 - [Round 40 medical evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-medical-movement.md): critical state values, camera and bleed-out figures
+- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): the revive penalty value, with no known effect

@@ -22,7 +22,7 @@ description: "Magazines for the weapons in the data, with the aim time, recoil, 
 | Internal name | `Item.Attachment.Magazine` |
 {: .wiki-infobox }
 
-Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. The data lists 69 magazines. 46 of them change weapon numbers and 23 change nothing in the data.
+Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. The data lists 69 magazines. 46 of them change weapon numbers and 23 change nothing in the data. Tracer rounds load into the normal magazines for their caliber: loading checks the magazine and its caliber, not an ammo tag.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
 
@@ -140,4 +140,5 @@ No shop price changes for this category are listed in the Season 2 notes.
 - [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): display names, shop prices and component names.
 - [Gameplay Effect Values](../../pipelines/Wardogs_GameplayEffect_Values_v1.md): the modifier values behind each effect.
 - [weapon-loadouts.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json): slot, part and effect data.
+- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): the tracer loading rule.
 - [Season 2 changes: weapons and ammo](../../season-2-changes/weapons-ammo.md): Season 2 prices, new parts and sight values.

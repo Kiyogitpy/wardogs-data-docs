@@ -651,7 +651,7 @@ def ammo_page():
             "| Standard (FMJ) | The baseline round. | Baseline. | Baseline. |",
             "| Flesh Damage (HP) | Does more damage to unarmored targets. | About double the standard damage. | Much weaker than standard against every armor class. |",
             "| Armor Piercing (AP) | Built to get through armor. | About 0.8 times the standard damage. | Overtakes standard from Medium armor for rifle calibers, and from Heavy armor for pistol and SMG calibers. |",
-            "", "Tracer versions of each type do the same damage as their base type.", ""]
+            "", "Tracer versions of each type do the same damage as their base type. They load into the normal magazines for their caliber, since loading checks the magazine and its caliber, not an ammo tag.", ""]
     rifle = wdamage["A91"]
     body += ["## Torso damage by type: 5.56mm rifle example", "",
              "A-91 chambered in 5.56mm, upper torso hits:", "",
@@ -686,6 +686,7 @@ def ammo_page():
              f"- [ammo-availability.json]({GH}assets/data/ammo-availability.json)",
              "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md)",
              "- [Ammo (feature)](../../game-features/Wardogs_GameFeatures_Ammo_v2.md)",
+             "- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): tracer loading rule",
              ""]
     return "\n".join(body)
 

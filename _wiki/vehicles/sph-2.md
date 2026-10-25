@@ -37,7 +37,7 @@ The SPH-2 is sold in the vehicle vendor under land artillery, for 8,000 cash, an
 
 ## The gun
 
-The SPH-2 fires 155 mm shells from an L52 cannon. There are two kinds of shell, Expensive and Standard, and the vehicle starts with 10 Expensive and no Standard. The Expensive shell (19 kg) carries a camera that follows it in flight: the view stays with the shell, then detaches after a while and zooms out, with a 4 s fade. Only the Expensive shell can be steered after firing. The Standard shell (70 kg) has no camera, and the game's flight maths put its longest flight at about 810 m (simulator estimate), so it cannot produce the long ranges.
+The SPH-2 fires 155 mm shells from an L52 cannon. There are two kinds of shell, Expensive and Standard, and the vehicle starts with 10 Expensive and no Standard. The Expensive shell (19 kg) carries a camera that follows it in flight: the view stays with the shell, then detaches after a while and zooms out, with a 4 s fade. Only the Expensive shell can be steered after firing, and only sideways. The Standard shell (70 kg) has no camera, and the game's flight maths put its longest flight at about 810 m (simulator estimate), so it cannot produce the long ranges.
 
 Shells leave the barrel at 300 m/s and disappear after 40 s of flight. The barrel elevates from 2° to 80°, and the sight's MIL dial sets the elevation within the range shown in the infobox.
 
@@ -135,3 +135,4 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's world pitch, the SPH-2 stabilized state and the Expensive shell's steering
+- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): the Expensive shell steers sideways only

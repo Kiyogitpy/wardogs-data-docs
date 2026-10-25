@@ -49,7 +49,7 @@ Ammo penetration, from the ammo data:
 | Armor-piercing | 1.8 | 0 |
 | Armor-piercing tracer | 1.76 | 0 |
 
-The exit-speed setting controls how much speed a bullet keeps when it comes out the far side. The effective-range multiplier for each ammo type (hollow point 0.8, armor-piercing 1.2) scales the weapon's effective range in the bullet's setup. It does not change the bullet's speed. See [Ballistics](ballistics.md).
+The exit-speed setting controls how much speed a bullet keeps when it comes out the far side. Only penetration uses it. The effective-range multiplier for each ammo type (hollow point 0.8, armor-piercing 1.2) only moves the distance at which wind starts to act on the bullet. It does not change the bullet's speed or its penetration. See [Ballistics](ballistics.md).
 
 Ricochet chance by surface material (named surfaces in the data; unnamed surface types are left out):
 
@@ -108,3 +108,4 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 - [Hit Registration](../../pipelines/Wardogs_HitRegistration_v1.md)
 - [Round 39 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md): the exit-speed setting and the effective-range multiplier
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the direction of a ricochet, the angle factor and the speed kept after a bounce
+- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): the range multipliers (wind start only) and the exit-speed multiplier (penetration only)
