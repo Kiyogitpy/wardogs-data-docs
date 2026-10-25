@@ -32,7 +32,7 @@ The Wood base is a 735 HP structure that any hammer can build. It takes the same
 
 The Wood base costs 15 Build Supplies and has 735 HP. The export gives no display name for it, so this article uses the plain name "Wood base". It has no separate parts.
 
-Destroying an enemy Wood base pays 15 cash and 5 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone). The data also has Placed and Placed in FOB reward tables, but the game's lookup takes the first table that has a matching row (the Built table, checked first), so those two tables are never reached; this structure has no row of its own in any of them (read from the game code, assuming the usual table order; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) and the [round 47 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round47.md)).
+Destroying an enemy Wood base pays 15 cash and 5 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone). The data also has Built, Placed and Placed in FOB reward tables, and the game's lookup takes the first table that has a matching row (Built is checked first). But no code in the game client asks for these rows, so which amount is actually paid for a placement is decided outside the client, most likely by the game's servers; this structure has no row of its own in any of them (see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) and the [round 48 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md)).
 
 ## Building it
 
