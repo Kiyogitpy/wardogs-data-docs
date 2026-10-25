@@ -12,7 +12,7 @@ description: "The Binoculars: the cheapest recon optic, a low magnification view
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles |
-| Weight | 0.3 (unit not stated) |
+| Weight | 0.3 kg |
 | **Use** | |
 | Magnification | Low |
 | Movement while in use | Maximum speed halved |

@@ -11,7 +11,7 @@ description: "The Halligan Bar: a quick-slot tool that pries open doors and lock
 |---|---|
 | **General** | |
 | Type | Equipment, quick slot |
-| Weight | 2.8 (unit not stated) |
+| Weight | 2.8 kg |
 | Durability | 7,000 (Season 2); 7 uses, 1,000 per door or vehicle unlock |
 | **Use** | |
 | Pries open | Doors (not gates) |

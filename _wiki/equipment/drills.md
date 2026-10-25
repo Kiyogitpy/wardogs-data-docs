@@ -39,12 +39,12 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 - The item data gives each drill a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
 - The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value in the data.
 
-| Drill | Price (cash) | Weight | Grid | Melee value |
+| Drill | Price (cash) | Weight (kg) | Grid | Melee value |
 |---|---:|---:|---|---:|
 | Light Drill | 600 | 1.5 | 2 x 2 | 5 |
 | Heavy Drill | 1,300 | 6.9 | 3 x 2 | 10 |
 
-The weights are the item data values, and their unit is not stated.
+The weights are in kilograms, the unit the game shows for item weight.
 
 ## Season 2 changes
 

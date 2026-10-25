@@ -12,7 +12,7 @@ description: "The Basic and Sport parachutes: when they can be opened, what the 
 | **General** | |
 | Type | Traversal, single use |
 | Deploy | By hand only |
-| Weight | Basic 2.5, Sport 9 (unit not stated) |
+| Weight | Basic 2.5, Sport 9 kg |
 | **Use** | |
 | Steering | Basic: no. Sport: yes |
 | Opening time | 2 s (Season 2 data) |

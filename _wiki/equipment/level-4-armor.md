@@ -12,7 +12,7 @@ description: "Top vest tier: 60% damage reduction on the torso, pelvis and upper
 | **General** | |
 | Type | Vest |
 | Slot | Armor |
-| Weight | 18 |
+| Weight | 18 kg |
 | **Protection** | |
 | Damage reduction | 60% (65% in Season 1) |
 | Body parts covered | Torso (upper, middle, lower), pelvis and upper arms |

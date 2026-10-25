@@ -25,7 +25,7 @@ The range is a single playing state. It has no pre-match or post-match stages in
 ## Rules and objectives
 
 - **No score.** The range has no objective and no win condition in the data.
-- **Moving target.** The target has a fall of 0.5 seconds when it is knocked down. It has audio for popping up and for being knocked down. Its movement range is 15 to 25, but the data does not state the unit.
+- **Moving target.** The target has 1 health, so one hit knocks it down, and the damage it takes is multiplied by 3.5. It falls in 0.5 seconds. It slides between two points 1.5 m either side of its centre (the data gives 150, read as centimetres). It takes 15 to 25 seconds to cross to its far point, and the time is picked at random for each run (the data gives no unit; seconds is assumed). It has audio for popping up and for being knocked down.
 - **Layout.** The range's world layout is a separate data layer, and its contents are not in the sources.
 - **Teams.** The range uses the same three-faction setup as King of the Hill.
 - **Tutorial.** The tutorial is a separate feature that runs on top of the range. Its details are on its own data page.
@@ -46,3 +46,4 @@ The range has no cash or XP table. Practice on the range does not appear in the 
 - [ShootingRange tutorial game feature](../../game-features/Wardogs_GameFeatures_ShootingRangeTutorial_v2.md)
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md): the moving target values

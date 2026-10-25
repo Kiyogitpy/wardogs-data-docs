@@ -199,7 +199,12 @@ The character's first-person field of view is set to 106 in the pawn data, while
 | Killfeed filter | Show All | Show All, Show Squad Only, Show Self Only or Show Squad and Proximity |
 | Brightness | 2.2 (stored) | Shown 50 to 150 |
 
-Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) are in the data but are not covered here. Audio and language settings are covered on the [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md) page.
+Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) are in the data but are not covered here. Two numbers from the data are worth knowing:
+
+- **Texture streaming memory.** The texture streaming pool depends on the texture quality level: 1,280 MB at level 0, 2,048 MB at level 1, 3,072 MB at level 2 and 6,144 MB at level 3. These are the configured pool sizes for each level.
+- **Languages.** The game files hold text for 15 languages: English, German, Spanish, French, Italian, Japanese, Korean, Polish, Portuguese, Brazilian Portuguese, Russian, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese.
+
+Audio and language settings are covered on the [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md) page.
 
 ## Tips that follow from the settings
 

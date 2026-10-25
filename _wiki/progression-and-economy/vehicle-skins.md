@@ -52,7 +52,7 @@ Bobbleheads are vehicle cosmetics that fit a vehicle slot. The data has four of 
 | Helmet | Not sold | Not in the data |
 | A fourth bobblehead | Not sold | Not in the data (the data gives it no display name) |
 
-The data gives the bobbleheads no vehicle filter, so they are not limited to particular vehicles.
+The data gives the bobbleheads no vehicle filter, so they are not limited to particular vehicles. Bobbleheads sit on a soft spring with no damping, so they keep swinging after a jolt. This comes from the animation setup and has not been checked in play.
 
 ## Cost and unlocking
 

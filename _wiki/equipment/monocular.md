@@ -12,7 +12,7 @@ description: "The Monocular: a medium, variable magnification recon optic for sp
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles |
-| Weight | 0.28 (unit not stated) |
+| Weight | 0.28 kg |
 | **Use** | |
 | Magnification | Medium, variable |
 | Distance readout | None in the shop text |

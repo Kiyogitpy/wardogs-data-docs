@@ -31,13 +31,13 @@ Each vest is one step up from the last. The Small Tac Vest is the cheapest and o
 
 ## How it works
 
-| Vest | Price (cash) | Weight | Quick slots unlocked (shop text) | Reload and utility speed (shop text) |
+| Vest | Price (cash) | Weight (kg) | Quick slots unlocked (shop text) | Reload and utility speed (shop text) |
 |---|---:|---:|---|---|
 | Small Tac Vest | 100 | 0.82 | 5 and 6 | minor increase |
 | Medium Tac Vest | 250 | 1.65 | 5 to 8 | moderate increase |
 | Large Tac Vest | 400 | 3.6 | all | strong increase |
 
-The weights are the item data values, and their unit is not stated.
+The weights are in kilograms, the unit the game shows for item weight.
 
 Each vest has an equipped effect in the data. The shop describes its speed gains only in words, so the exact percentages are not yet known.
 

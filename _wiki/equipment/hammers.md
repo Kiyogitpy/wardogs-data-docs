@@ -13,7 +13,7 @@ description: "The Small, Medium and Large Hammers: the build tools that place an
 | Type | Build tool |
 | Build speed | Slow (Small), moderate (Medium), fast (Large) |
 | Structures | 7 (Small), 12 (Medium), 19 (Large) |
-| Weight | 0.32, 1.23, 3.18 (unit not stated) |
+| Weight | 0.32, 1.23, 3.18 kg |
 | **Use** | |
 | Build amount per hit | 0.5 (Small), 1 (Medium), 1.5 (Large) |
 | Build amount on a weak spot | 3 (Small), 5 (Medium), 8 (Large) |

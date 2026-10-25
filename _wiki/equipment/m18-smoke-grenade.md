@@ -38,7 +38,7 @@ The coloured signal grenades use the same smoke but also place a marker on the m
 
 **Fuse.** It releases its smoke 3 s after it is thrown.
 
-**Cloud.** The cloud lasts 120 s, then fades for 10 s before it is removed. A cloud that is already running when you arrive has lost the time it has already spent. The smoke stops at walls, so it does not pass through them.
+**Cloud.** The cloud lasts 120 s, then fades for 10 s before it is removed. A cloud that is already running when you arrive has lost the time it has already spent. The smoke stops at walls, so it does not pass through them. The smoke effect's default in the game files is 180 s with a 20 s fade in; the white grenade overrides that to 120 s. This is read from the files and was not seen in play.
 
 **Players in the cloud.** The data does not apply any game effect through the smoke. It does not hurt, heal or slow anyone in the cloud. The only effect found is on aim assist, as described above.
 
@@ -63,3 +63,4 @@ The Season 2 items data lists no change to the M18 Smoke Grenade, and no change 
 - [Explosive actor defaults](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json): throwable fuse values
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): the Season 2 check
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): what the smoke cloud affects in the code found.
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md): the smoke effect's default duration and fades.

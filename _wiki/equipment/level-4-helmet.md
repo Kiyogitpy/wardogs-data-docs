@@ -12,7 +12,7 @@ description: "Top helmet tier: 60% reduction for the head and neck, 200 durabili
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 4.5 |
+| Weight | 4.5 kg |
 | **Protection** | |
 | Damage reduction | 60% (65% in Season 1) |
 | Body parts covered | Head and neck |

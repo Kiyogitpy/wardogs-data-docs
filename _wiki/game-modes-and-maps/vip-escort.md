@@ -22,7 +22,7 @@ description: "A single-life PvE mission on the Bakurani world in which one rando
 
 VIP Escort is a PvE mission played against AI squads instead of other players. The mission follows a VIP, who has a tracker on the map and minimap. A player who dies stays out for the rest of the mission.
 
-VIP Escort is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title.
+VIP Escort is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title. The quest's own name in the data is a placeholder, "[PH] VIP Escort".
 
 ## Overview
 
@@ -32,6 +32,7 @@ VIP Escort is one of the three PvE missions in the data, alongside [Hunter Kille
 
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
 - **Player faction.** Set to the Valkyra faction.
+- **Downed players.** The mission switches off the rule that skips the downed state, so a player can be downed here, as in King of the Hill.
 - **VIP tracker.** The VIP has a persistent tracker on the tactical map and the minimap. The map marker is purple, and the VIP's health state is shown with its own icon for each vitality state.
 - **The VIP.** One random player is chosen as the VIP. The VIP is a player, not a soldier.
 - **Failure.** The mission fails 10 seconds after the VIP is critically wounded or disconnects.
@@ -63,6 +64,8 @@ Other rewards follow the general rules; see [Cash and Rewards](../progression-an
 - [PvE game feature](../../game-features/Wardogs_GameFeatures_PvE_v2.md)
 
 - [Round 36 AI and PvE evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)
+- [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
+- [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [AI game feature](../../game-features/Wardogs_GameFeatures_AI_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md) (the VIP loot table is new in Season 2)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)

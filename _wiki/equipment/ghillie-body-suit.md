@@ -12,7 +12,7 @@ description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. It has
 | **General** | |
 | Type | Camouflage suit |
 | Slot | Armor |
-| Weight | 1.5 |
+| Weight | 1.5 kg |
 | **Protection** | |
 | Damage reduction | None |
 | Body parts covered | None |
@@ -24,7 +24,7 @@ description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. It has
 | Internal name | `ID_GhillieArmor` (item `Id.Item.GhillieArmor`) |
 {: .wiki-infobox }
 
-The Ghillie Body Suit is camouflage that goes in the Armor slot. It must be worn with [Ghillie Headwear](ghillie-headwear.md). It removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. It gives no protection and has no durability.
+The Ghillie Body Suit is camouflage that goes in the Armor slot. It must be worn with [Ghillie Headwear](ghillie-headwear.md). It removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. It gives no protection and has no durability. The suit's strips sway on a soft spring (damping 0.25, stiffness 0.1), so they trail behind movement and settle slowly. This comes from the animation setup and has not been checked in play.
 
 ## Overview
 

@@ -29,12 +29,12 @@ The shop text lists two sizes. The Battery is a medium 20 V, 5 AH cell. The High
 
 ## How it works
 
-| Battery | Price (cash) | Weight | Capacity |
+| Battery | Price (cash) | Weight (kg) | Capacity |
 |---|---:|---:|---|
 | Battery | 150 | 0.63 | 20 V, 5 AH |
 | High Capacity Battery | 300 | 2 | 20 V, 15 AH |
 
-The weights are the item data values, and their unit is not stated.
+The weights are in kilograms, the unit the game shows for item weight.
 
 - The drills use battery power while they work, at 1.25 per second in the item data.
 - The Defibrillator needs a battery to charge and to use, according to its shop text. See [Medical Items](medical-items.md).
