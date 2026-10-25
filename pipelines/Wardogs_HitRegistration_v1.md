@@ -250,7 +250,7 @@ bodies are registered as query shapes is still [open](https://github.com/Kiyogit
 4. the object in the weak pointer at `inst+0x120`, if valid, with `AddIgnoredActor`. That pointer is the projectile's own actor (**Inferred**: the hit handler passes it to `GetOwningController(const AWDProjectile*)`, and the cue code uses it as the effect causer), so an actor-driven projectile does not block its own trace;
 5. when instance byte `+0x28D` is set (it is 1 after the constructor: word `0x0100` at `+0x28C`, `0x6B8E3C8`), `0x6F37750`
    runs a vehicle-related check (instigator's seated vehicle, a direction test against -0.8 and a gameplay-tag test through
-   the character's tag owner at `+0x620`) that can set `inst+0x129`; the consumer of that byte was not located.
+   the character's tag owner at `+0x620`) that can set `inst+0x129`. Round 40: the consumer of `inst+0x129` is `0x6F3B0E0`, which also needs `inst+0x25E` set and `inst+0x12A` clear, compares distances with the projectile stats `+0x2D4` and `+0x2D8` (`TravelDistanceWhizBy`, `DistanceToPlayerWhizBy`) and sets `inst+0x12A` once done. So `inst+0x129` / `+0x28D` belong to the **whiz-by presentation**, not to `IgnoreInstigatorVehicleTime` (static decompiler output, unreviewed).
 
 On the fire side, when a projectile's `IgnoreInstigatorVehicleTime` (stats `+0x2E4`) is greater than 0, the
 weapon fire path (`0x6B937D0`) appends the shooter's seated vehicle (`0x6E6EBA0`) to the spawn request's
@@ -767,7 +767,7 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python -I _tools/hit_registration_check.py
 6. **O-6: the array at `inst+0x130`.** Its writer and its exact meaning (§6.2).
 7. **O-7: `bIsHitScan`.** The meaning of the context byte at `+0x2DA` behind the flag (§3); whether any weapon bypasses the projectile subsystem.
 8. **O-8: impact cue tags and decal selection.** Names of the tag globals `0xD381600`, `0xD3815F0`, `0xD36C4A0`; the `GC_Weapon_Impact_C` graph (§8).
-9. **O-9: `IgnoreInstigatorVehicleTime`.** How the time limits the ignore after the spawn (`inst+0x129`, `inst+0x28D`) (§2.4).
+9. **O-9: `IgnoreInstigatorVehicleTime`.** How the time limits the ignore after the spawn (§2.4). Round 40: `inst+0x129` / `+0x28D` are whiz-by flags (consumer `0x6F3B0E0`), so they are not the answer; the stat is copied to spawn-request `+0xB0` (`0x6B8FD5A`) and no timing consumer was found.
 10. **O-10: `CustomHitResults` content** for infantry hits (§6.3).
 11. **O-11: settings consumers.** `MaxPelletCount`, `MaxConsecutiveFullRefundedSubsteps`, and the exit-deflection distribution (§4.4, §4.6).
 12. **O-12: `IWDDamageable` implementations.** The tag behind slot `+0x30`, slots `+0x38`, `+0x60`, `+0x68` for each actor type (§6.2, §4.1).

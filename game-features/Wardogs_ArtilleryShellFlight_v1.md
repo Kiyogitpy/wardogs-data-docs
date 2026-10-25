@@ -72,7 +72,7 @@ Result: world gravity is the UE default of -980.0 cm/s^2 (9.8 m/s^2 downward), t
 - How `TypicalSpeed`, `ThrustSpeed`, `Mass`, `DragModel` and `MaxProjectileLifetime` enter the mover: not known from data alone. The existence of a native range helper `WDArtilleryRangeLibrary::SimulateImpactDistance` (inputs: projectile stats, weapon stats, an air-density value) shows that range is simulated natively, but its body is not in the export.
 - Units of the data-asset fields: still the UE convention (cm, cm/s, kg as stored). Only the gravity value is confirmed against the engine config.
 - Whether the native mode constructors give non-zero default values for speed limits, drag or gravity scale: the Blueprints store none, so any such values live in native constructors and are not in this file.
-- No curve is fitted to calculator or in-game range data on this page. The relation between the range tables' milliradians and the sight's dial mils on the SPH-2 is not known (section 5).
+- No curve is fitted to calculator or in-game range data on this page. Round 40 resolved the relation between the SPH-2 range table and the dial: the table is the dial range function evaluated at its own `Milliradians` (section 5a).
 
 ## 5. `ArtilleryRangeData` tables (game range tables)
 
@@ -95,7 +95,21 @@ Comparison with the community calculator (`wardogs-calculator`, dial mils measur
 | L81 Mortar | -650.0 to -648.0, 17 rows | a constant shift of 650 (the calculator's rows are 150 to 850 mils; the game table's last two rows, 250 and 300 mrad, sit at 900 and 950 on that scale, outside the 150 to 850 sight limits) |
 | Stingray | none | the calculator has no Stingray table |
 
-The SPH-2 offset is not a unit conversion or a fixed shift, and its cause is not known. The calculator values were measured in game on the dial and checked against logged impacts (round 21), so the dial values are the ones to use for aiming.
+The SPH-2 offset is not a unit conversion or a fixed shift. Round 40 (section 5a) explains it: the dial range function adds the muzzle altitude, which the stored table does not. The calculator values were measured in game on the dial and checked against logged impacts (round 21), so the dial values are the ones to use for aiming.
+
+### 5a. The dial range function (round 40, static disassembly)
+
+`WDArtilleryRangeLibrary::SimulateImpactDistance` (exec thunk `0x69A0900`, body `0x761D180`) is a small flight simulation, not a table lookup. Read from the code ([round 40 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md)) and re-implemented in `python -I _tools/artillery_range_native.py`:
+
+| Term | Value |
+|---|---|
+| Elevation | `dial mil x 0.001 + 0.016808` rad: the true launch elevation is **16.808 mrad (0.963 degrees) above the dial reading** (constants `0x9AAFD68`, `0xB62DCCC`) |
+| Launch speed | `InitialBulletSpeed x 0.01` (300 m/s for the SPH-2) |
+| Gravity | 9.8 m/s2 |
+| Step | 10 ms, midpoint (two drag evaluations per step); runs until height <= 0, no interpolation, at most 100000 steps |
+| Drag | `Cd x (rho/2) x (pi/4 x d^2) x v^2 / m`, the same drag model as section 4, with the caller's air density and start altitude |
+
+With the Expensive 155 mm shell (`DragModel.Value` 2.5, 19 kg, 10.5 cm) and a 3 m start height this reproduces the 40 stored SPH-2 `ImpactDistance` rows to a mean absolute error of 5.1 m (maximum 29 m); without the 16.808 mrad term the mean error is 77 m. So the stored table is the dial range function evaluated at its own `Milliradians` column, i.e. the table's mrad **are dial mils**, not true barrel angles. The HUD passes the muzzle's altitude above sea level instead of 3 m: a higher start altitude lengthens the shot, so a given range needs fewer mils. With the same function a 2,000 m low-arc shot needs 250 mils from 3 m, 224 from 50 m and 197 from 100 m (simulated), which is the size and sign of the calculator difference above (about 50 mils); the calculator's altitude is not known, so this is Derived. The Standard 155 mm shell (`DragModel.Value` 80, 70 kg, 8.4 cm) run through the same function reaches only about 810 m at its best elevation (Derived), so the stored table is the Expensive shell's. The unit of the altitude argument was not confirmed (metres assumed).
 
 Comparison with `shell_sim.py` (Expensive shell, elevation = mrad / 1000 rad as degrees, 1 ms step), SPH-2 rows only:
 
@@ -116,7 +130,7 @@ So the game's high-arc travel times agree with the flight maths at the table's o
 
 Evidence: Blueprint bytecode of `W_Artillery_Reticle` (TNK_01) and `W_STN_03_Reticle` (STN_03), see the [round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md), sections 9 and 10.
 
-- The MIL scale pointer is `VehicleCrosshairViewModel.WeaponPitchBindable` (degrees, handler `OnTurretPitchUpdated`) times pi/180 times 1000, a true milliradian. What the angle is measured from is set in native code that was not located.
+- The MIL scale pointer is `VehicleCrosshairViewModel.WeaponPitchBindable` (degrees, handler `OnTurretPitchUpdated`) times pi/180 times 1000, a true milliradian. What the angle is measured from is set in native code that was not located (round 40: the range function adds 16.808 mrad to the dial value, section 5a; whether the pointer's own zero is the hull or the world horizontal is still open).
 - **SPH-2.** The scale spans the first to the last `Milliradians` of `ArtilleryRangeData` (20 to 1400). The distance printed on each tick is not the table's `ImpactDistance`: `UpdateDistanceText` calls `WDArtilleryRangeLibrary::SimulateImpactDistance(ProjectileStats, WeaponStats, mil, altitude above sea level, air density 1.2)`. `ImpactDistance` and `TravelTime` are never read by this widget, which explains the non-constant gap between the table and the dial in section 5.
 - **L81 Mortar.** The widget reads the table directly: the mil label is the row's `Milliradians` plus a hard-coded 650.0, and the distance label is the row's `ImpactDistance`. This is the exact +650.
 - **Mortar minimum range.** `W_STN_03_MainBarrel` limits the barrel to -29 to +15 degrees (-506 to +262 mrad, dial 144 to 912). The table's 300 mrad row (80 m) is beyond that, the 250 mrad row (110 m) is inside it. Linear interpolation at +262 mrad gives about 103 m (Derived). The community stop at 850 mils (200 mrad, 132 m) is below the data limit and is not explained by it.
