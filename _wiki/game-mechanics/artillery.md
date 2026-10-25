@@ -142,7 +142,7 @@ Two shells exist for the SPH-2. Both are the "155mm HE Shell" in the game.
 
 The Expensive camera follows the shell, then detaches and zooms out after a while, with a 4 s fade.
 
-The Expensive shell can also be steered after it leaves the barrel. The steering input is scaled to 0.02, and vertical input is ignored (the game's flag for the shell's flight, derived from its settings). The Standard shell has no steering. The stored range table was computed for the Expensive shell.
+The Expensive shell can also be steered after it leaves the barrel, but only sideways: vertical input is ignored (a static reading of the shell's settings). Each tick, the steering input is scaled by 0.02. The Standard shell has no steering. The stored range table was computed for the Expensive shell.
 
 All shells launch at 300 m/s and fall under gravity of 9.8 m/s². Air drag slows them a great deal. Without drag, the same launch would carry the shell about 9 km. With drag, the Expensive shell tops out near 2.6 km (simulator estimate). A shell disappears after 40 s of flight.
 
@@ -190,3 +190,4 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad), dial versus range table, firing altitude, Expensive shell
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the dial's world pitch, the SPH-2 stabilized state and the Expensive shell's steering
+- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): the Expensive shell steers sideways only, input scaled by 0.02 per tick

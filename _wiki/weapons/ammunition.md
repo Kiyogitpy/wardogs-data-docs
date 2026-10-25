@@ -15,7 +15,7 @@ Bullet weapons use one of four bullet types, and each has a tracer version that 
 | Flesh Damage (HP) | Does more damage to unarmored targets. | About double the standard damage. | Much weaker than standard against every armor class. |
 | Armor Piercing (AP) | Built to get through armor. | About 0.8 times the standard damage. | Overtakes standard from Medium armor for rifle calibers, and from Heavy armor for pistol and SMG calibers. |
 
-Tracer versions of each type do the same damage as their base type.
+Tracer versions of each type do the same damage as their base type. They load into the normal magazines for their caliber, since loading checks the magazine and its caliber, not an ammo tag.
 
 ## Torso damage by type: 5.56mm rifle example
 
@@ -63,3 +63,4 @@ Head hits follow the same pattern with higher numbers. Armor covers different bo
 - [ammo-availability.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ammo-availability.json)
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md)
 - [Ammo (feature)](../../game-features/Wardogs_GameFeatures_Ammo_v2.md)
+- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): tracer loading rule
