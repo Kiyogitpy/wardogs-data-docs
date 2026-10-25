@@ -36,12 +36,21 @@ The reward tables give 300 cash for placing a Gate and 500 cash for destroying a
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the Gate. The data does not say whether the part costs add to the 200.
+- **Cost:** 200 Build Supplies for the Gate, whichever hammer builds it. The data does not say whether the part costs add to the 200. Nothing is charged at placement.
 - **Hammers:** Medium or Large.
-- **Placement:** It must be inside a friendly Forward Operating Base radius. It also passes a ladder bounds check and a safe zone check, whose tests are not yet known. The Gate's parts can sit on surfaces with a maximum angle of 10. The data does not state the unit, which is most likely degrees.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 21, 19, 39 and 40 weak spots. What the weak spots do is not yet known.
-- **Parts:** The left half, right half and ramp are placed with the Gate. Each has one stage. Each uses the same damage numbers as the Gate.
-- **Build time:** Not yet known.
+- **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. The Gate's parts can sit on surfaces with a maximum angle of 10. The data does not state the unit, which is most likely degrees.
+- **Stack limit:** 1.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 21, 19, 39 and 40 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Parts:** When the Gate is finished, it turns into separate parts: the left half, the right half and the ramp. Each is its own buildable with its own health: each half has 5,320 HP and the ramp has 6,500 HP.
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | cannot place | 200 | 134 |
+| Hits to repair from zero health | 71 | 36 | 24 |
+| Hits to dismantle (your own) | 36 | 27 | 22 |
+
+The parts are not built on their own; they come with the finished Gate. Once separated, each half has 85 Build Supplies of cost and takes 10 repair hits from zero and 22 dismantle hits with the Large Hammer. The ramp, also 85 Build Supplies, takes 10 repair hits and 26 dismantle hits with the Large Hammer (Derived). The build count assumes normal hits, and hitting weak spots brings it down.
 
 ## What it does
 
@@ -85,3 +94,5 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Rewards](../../game-features/Wardogs_GameFeatures_Rewards_v2.md): the cash for closing a friendly base gate
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the build cost change
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

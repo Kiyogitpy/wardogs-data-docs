@@ -129,13 +129,15 @@ One field of the Forward Operating Base's data is set to "do not take damage". H
 
 ### Build stages
 
-A structure is built in stages from 0 to 100%, and each stage shows a new part of the structure. Most multi-stage structures have five stages, at 0, 25, 50, 75 and 100%. The Door uses 0, 30, 60, 80 and 100%, and the Wood base 0, 20, 45, 70 and 100%. Parts such as floors and roofs have only one stage. Earlier stages have weak spots, which are shown as marked points on the half-built structure. What the weak spots do is not yet known.
+A structure is built in stages from 0 to 100%, and each stage shows a new part of the structure. Most multi-stage structures have five stages, at 0, 25, 50, 75 and 100%. The Door uses 0, 30, 60, 80 and 100%, and the Wood base 0, 20, 45, 70 and 100%. Parts such as floors and roofs have only one stage. Earlier stages have weak spots, which are shown as marked points on the half-built structure; a hammer hit on one adds more progress (see [Weak spots](#weak-spots)).
+
+In the multi-part structures (Bunker, Door, Gate, Recon Tower, Indirect Fire Shelter and Hesco Wall), the last stage hands over to the finished parts. Each part is its own buildable with its own health, so a finished Bunker is several pieces, not one. This is **Derived** from the stage data.
 
 ## Use and timing
 
 ### Building
 
-Building needs Build Supplies and a hammer. Each hammer swing adds progress, and the hit that lands on a weak spot adds more:
+Building needs Build Supplies and a hammer. Each hammer hit adds progress: a normal hit adds the hammer's build amount divided by the structure's Build Supplies cost, so a structure takes fewer hits from a bigger hammer. A hit on a weak spot adds more (see [Weak spots](#weak-spots)):
 
 | Hammer | Build amount per hit | Build amount on a weak spot | Season 2 weak-spot amount |
 |---|---:|---:|---|
@@ -143,22 +145,47 @@ Building needs Build Supplies and a hammer. Each hammer swing adds progress, and
 | Medium | 1 | 5 | 6 became 5 |
 | Large | 1.5 | 8 | 10 became 8 |
 
-These are the amounts the data gives for each hit. How they add up to a finished structure is not yet known, so how long a full build takes is also not yet known. The shop text describes the hammers as slow, moderate and fast. Dismantling works at 150, 200 and 250 per second for the small, medium and large hammer.
+The number of hits to build, repair or dismantle each structure is in its article, in a "Building it" table, for each hammer. The total Build Supplies to finish a structure is its cost, whichever hammer builds it. Build Supplies are used up a little with each hit, so a finished structure has taken its full cost. Nothing is charged when the structure is placed.
+
+Some structures change the hit amount: Barbed Wire and Recon Tent count a hit 3.5 times as much, the Drill Rig 2 times and the Vanguard CIWS 1.25 times. The hit counts in the articles already include this.
+
+The shop text describes the hammers as slow, moderate and fast. The time one hit takes in play is not published, so build time in seconds is not given.
+
+### Repair and dismantle
+
+- **Repair:** on a finished structure, a hammer hit restores health instead of adding progress. It restores the hammer's build amount times the structure's repair multiplier. Repairing uses Build Supplies too, and any supplies not needed are returned. The repair multiplier differs by structure: 1 for most walls, 6.7 for the Bunker, Recon Tower and Indirect Fire Shelter, 13.3 for the Refuel and Repair Stations and 150 for the Drill Rig. Each article gives its repair hit count.
+- **Dismantle:** a hammer hit on your own structure does 150 (Small), 200 (Medium) or 250 (Large) damage. The data also sets half of that for a structure owned by someone else (the modifier name is read as "hostile"; this is inferred). Dismantling gives no Build Supplies back, as far as the data shows.
+- **Unfinished structures:** damage removes build progress in proportion to the structure's maximum health. At zero progress the structure is destroyed.
+
+### Weak spots
+
+Weak spots are marked points on a structure that is being built. They only matter for building, and only for hammers:
+
+- A hammer hit on a weak spot adds the larger build amount: 3, 5 or 8 for the Small, Medium and Large hammer, instead of 0.5, 1 or 1.5. That is 6, 5 and 5.3 times the normal hit, so a weak-spot hit builds about 5 to 6 times faster.
+- Bullets and melee hits cannot hit a weak spot, because the spot ignores them.
+- A spot is only offered when it is close to you: within 2.9 m of your view for the Small and Medium hammer, and 3.4 m for the Large hammer. The spots relocate on the structure as you build; how the next spot is chosen is not confirmed.
+- Weak spots have nothing to do with damage. No damage entry uses them, so a structure does not take more damage from a bullet or rocket because of its weak spots.
+- Barbed Wire and Recon Tent have their weak spots switched off, so every hit on them adds the normal amount.
+
+The hit counts in the structure articles assume every hit is a normal hit, and the repair and dismantle counts also ignore weak spots. Hitting weak spots brings the build count down. The repair and dismantle counts are derived from the hit amounts, not checked in play, and for a hammer that cannot place a structure they still show what that hammer's hit does.
 
 ### Placement
 
 - The build point must be within 6 m of the player.
 - Most structures must be placed inside a friendly Forward Operating Base radius. The exceptions are the small structures: Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog. Those cannot be placed inside an enemy base radius.
-- Builder's Radio: up to 4 per Forward Operating Base.
+- Safe zone: most structures cannot be placed within 3 m of a safe zone, and a player standing in a safe zone cannot place one at all. The articles say which structures have this check.
+- Ladder: most structures cannot be placed within 1 m of a ladder. The Drill Rig has no ladder or safe zone check.
+- Stacking: a structure can be placed on top of another buildable only if the one below is finished and allows it, and the stack can only be as high as the structure's stack limit. The limits are given per structure: 100 for the Barbed Wire, Recon Tent, Sandbag Wall, Hedgehog and stations, 6 for the Builder's Radio and most stationary weapons, 1 for the Forward Operating Base, Shelter and Gate, and 0 (no stacking) for the Recon Tower and the Drill Rig.
+- Builder's Radio: up to 4 per Forward Operating Base. It counts toward that limit.
 - Refuel Station and Repair Station: 1 per Forward Operating Base each.
 - Drill Rig: only inside a placement zone within a control zone.
 - The rules for placing the Forward Operating Base itself are not yet known.
 
 ### Drill Rig
 
-The Drill Rig needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 of run time, and it holds up to 10,000 fuel. The data gives a recharge time of 900 for the rig. The data does not state the units for these values, so the run time per fuel unit is not yet known in seconds.
+The Drill Rig is the buildable form of the map's hot zone magnet. It needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 s of run time, and it holds up to 10,000 fuel. The run time is therefore 60 s at the minimum and 300 s on a full tank. The recharge after a run is 900 s. Starting it is a 10 s hold within 2 m. These seconds are **Derived**: the data gives the numbers, and the timers in the Blueprints use them as seconds.
 
-What the Drill Rig does to the hot zone is not yet known.
+While it runs, the Drill Rig pulls the hot zone toward it. How the zone moves is not confirmed.
 
 ### Refuel and repair
 
@@ -166,7 +193,7 @@ The Refuel Station and Repair Station work with Fuel Supplies and Mechanical Sup
 
 ## Cost
 
-The cost column in the Structures table is the Build Supplies cost. The data does not yet show exactly when Build Supplies are taken, at placement or while building. Build Supplies are sold in lots of 50 for 10 cash a lot (0.2 cash per unit).
+The cost column in the Structures table is the Build Supplies cost, and it is the total a structure uses up, whichever hammer builds it. Build Supplies are used while the structure is built, not when it is placed. Build Supplies are sold in lots of 50 for 10 cash a lot (0.2 cash per unit).
 
 Hammers cost 2,400 cash (Large), 800 (Medium) and 100 (Small). The Forward Operating Base costs 7,500 cash.
 
@@ -226,3 +253,5 @@ Several entries in the buildable damage table changed by 5 to 17 percentage poin
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): hammer prices, build speed text and supply prices
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md): build cost, hammer and damage row changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy and the stationary weapons' health.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

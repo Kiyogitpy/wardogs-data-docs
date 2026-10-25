@@ -36,15 +36,23 @@ The Hesco Walls are three barriers: the Small Hesco Block, the Large Hesco Block
 | Hesco Block (Large) | Medium, Large | 22 | 2,250 | 200 | 100 |
 | Hesco Wall | Medium, Large | 75 | 4,600 | 500 | 125 |
 
-The game's UI name table gives all three the text "HBlock". This article uses the Hesco names from the asset list instead.
-
 ## Building it
 
-- **Cost:** See the table above.
+- **Cost:** See the table above. The cost is the same whichever hammer builds it, and nothing is charged at placement.
 - **Hammers:** The Small Hesco Block can be built with any hammer. The Large Block and the Hesco Wall need a Medium or Large Hammer.
-- **Placement:** All three must be inside a friendly Forward Operating Base radius. They also pass a ladder bounds check and a safe zone check, whose tests are not yet known.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress, for each variant. The Small Block has 5, 16, 16 and 16 weak spots at the first four stages. The Large Block has 6, 24, 24 and 32. The Hesco Wall has 8, 31, 34 and 69. What the weak spots do is not yet known.
-- **Build time:** Not yet known.
+- **Placement:** All three must be inside a friendly Forward Operating Base radius. None can be placed within 3 m of a safe zone or while standing in one, or within 1 m of a ladder.
+- **Stack limit:** 5 for the Small Block, 2 for the Large Block and the Hesco Wall.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress, for each variant. The Small Block has 5, 16, 16 and 16 weak spots at the first four stages. The Large Block has 6, 24, 24 and 32. The Hesco Wall has 8, 31, 34 and 69. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Parts:** The Hesco Wall is made of several blocks. When it is finished, it turns into separate Large Hesco Blocks, each with its own health. This is Derived from the stage data (see [Buildables](buildables.md#building)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small Block | Large Block | Hesco Wall |
+|---|---:|---:|---:|
+| Hits to build | 30 (Small), 15 (Medium), 10 (Large) | 22 (Medium), 15 (Large) | 75 (Medium), 50 (Large) |
+| Hits to repair from zero health | 30 / 15 / 10 | 15 (Medium), 10 (Large) | 15 (Medium), 10 (Large) |
+| Hits to dismantle (your own) | 11 / 8 / 7 | 12 (Medium), 9 (Large) | 23 (Medium), 19 (Large) |
+
+The columns for the Small Block read Small / Medium / Large hammer. The other two are Medium and Large only. The build counts assume normal hits, and hitting weak spots brings them down.
 
 ## What it does
 
@@ -92,3 +100,5 @@ The Season 2 data lists no change to the cost or health of any Hesco variant.
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

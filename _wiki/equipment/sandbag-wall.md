@@ -36,11 +36,20 @@ The reward tables give 100 cash for destroying an enemy Sandbag Wall. They give 
 
 ## Building it
 
-- **Cost:** 15 Build Supplies. See [Buildables](buildables.md) for how Build Supplies are bought.
+- **Cost:** 15 Build Supplies, whichever hammer builds it. Nothing is charged at placement. See [Buildables](buildables.md) for how Build Supplies are bought.
 - **Hammers:** Small, Medium or Large.
-- **Placement:** The Sandbag Wall is one of the four small structures (with the [Barbed Wire](barbed-wire.md), [Recon Tent](recon-tent.md) and [Hedgehog](hedgehog.md)). It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. Its other checks are a safe zone check and a ladder bounds check. What those two checks test is not yet known.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 14, 12, 10 and 8 weak spots, in that order. What the weak spots do is not yet known.
-- **Build time:** Not yet known. The data gives the amount added per hammer hit, but not how many hits a wall takes to finish.
+- **Placement:** The Sandbag Wall is one of the four small structures (with the [Barbed Wire](barbed-wire.md), [Recon Tent](recon-tent.md) and [Hedgehog](hedgehog.md)). It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 100.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 14, 12, 10 and 8 weak spots, in that order. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | 30 | 15 | 10 |
+| Hits to repair from zero health | 30 | 15 | 10 |
+| Hits to dismantle (your own) | 5 | 4 | 3 |
+
+The hits assume normal hits, not weak-spot hits. See [Buildables](buildables.md#building) for how the hit amounts work.
 
 ## What it does
 
@@ -85,3 +94,5 @@ The Season 2 data lists no change to the Sandbag Wall's cost or health. Season 2
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable damage table changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

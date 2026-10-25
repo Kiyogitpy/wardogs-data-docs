@@ -38,9 +38,11 @@ Each supply is sold in lots of 50 for 10 cash, which is 0.2 cash per unit. The l
 | Ammo Supplies | Reloads buildable weapons. An MG Nest turns FOB ammo supplies into rounds when reloaded | Inside the FOB radius |
 | Fuel Supplies | Refuels vehicles | At a Refuel Station, inside the FOB radius |
 | Mechanical Supplies | Repairs vehicles | At a Repair Station, inside the FOB radius |
-| Build Supplies | Builds all buildable structures | With any hammer, no FOB radius stated |
+| Build Supplies | Builds all buildable structures, and pays for repairs | With any hammer, while building. Nothing is charged at placement |
 
-The structures on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) page each have a supply cost. How that cost turns into supplies spent is not yet known.
+The structures on the [Buildables](../../game-features/Wardogs_Buildables_v1.md) page each have a supply cost. That cost is the total Build Supplies the structure uses up, whichever hammer builds it. The supplies are used a little with each hit, so a finished structure has used its whole cost. Nothing is charged at placement, as far as the data shows.
+
+Repairs use Build Supplies too, and any not needed are returned. Dismantling a structure gives no Build Supplies back, as far as the data shows. See [Buildables](buildables.md#repair-and-dismantle).
 
 ### Supply pallets
 
@@ -69,3 +71,5 @@ No Season 2 change to the supplies is listed in the data.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): prices, lot size, unlock level, shop text, weights, and the pallet prices
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): supply uses and Build Supplies rules
 - [Item Actions](../../content/Wardogs_ItemActions_v1.md): the use rules for supplies
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

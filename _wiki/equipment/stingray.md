@@ -75,7 +75,7 @@ The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mr
 
 ## Use and timing
 
-The Stingray uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder-bounds rule and a safe-zone rule. The [Buildables](buildables.md) page describes these rules.
+The Stingray uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](buildables.md) page describes these rules.
 
 Because the emplacement starts with no ammunition, the first use in a match depends on a restock. One restock gives one drone (derived: the data does not write a drone count per restock, so the engine's default of one is used). How long the drone reload takes in play is not known.
 
@@ -109,3 +109,5 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Stingray weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel.json): restock, ammunition and the 17-row range table (mrad, impact distance, travel time)
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings, the restock cost and the drone count.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

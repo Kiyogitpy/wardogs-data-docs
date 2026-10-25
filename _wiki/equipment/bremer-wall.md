@@ -36,11 +36,20 @@ The reward tables have no cash entry for the Bremer Wall.
 
 ## Building it
 
-- **Cost:** 32 Build Supplies. In Season 1 it cost 15.
+- **Cost:** 32 Build Supplies, whichever hammer builds it. In Season 1 it cost 15. Nothing is charged at placement.
 - **Hammers:** Large only.
-- **Placement:** It must be inside a friendly Forward Operating Base radius. It also passes a ladder bounds check and a safe zone check, whose tests are not yet known.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 15, 20, 15 and 19 weak spots. What the weak spots do is not yet known.
-- **Build time:** Not yet known.
+- **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 1.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 15, 20, 15 and 19 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | cannot place | cannot place | 22 |
+| Hits to repair from zero health | 44 | 22 | 15 |
+| Hits to dismantle (your own) | 44 | 33 | 26 |
+
+The Large Hammer is the only one that can place the Bremer Wall. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits.
 
 ## What it does
 
@@ -82,3 +91,5 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row and placement conditions
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the build cost change
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

@@ -36,12 +36,21 @@ The reward tables give 100 cash for destroying an enemy Door. They give no cash 
 
 ## Building it
 
-- **Cost:** 80 Build Supplies for the Door. Each part costs 22 Build Supplies. The data does not say whether the part costs add to the 80.
+- **Cost:** 80 Build Supplies for the Door, whichever hammer builds it. Each part costs 22 Build Supplies. The data does not say whether the part costs add to the 80. Nothing is charged at placement.
 - **Hammers:** Medium or Large.
-- **Placement:** It must be inside a friendly Forward Operating Base radius. It also passes a ladder bounds check and a safe zone check, whose tests are not yet known.
-- **Build stages:** Five, at 0, 30, 60, 80 and 100% of progress. The earlier stages have 12, 11, 15 and 11 weak spots. What the weak spots do is not yet known.
-- **Parts:** The door section and top section are placed with the Door. Each has one stage, so it appears complete when placed. Each part has 500 HP and uses the same damage numbers as the Door.
-- **Build time:** Not yet known.
+- **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 2.
+- **Build stages:** Five, at 0, 30, 60, 80 and 100% of progress. The earlier stages have 12, 11, 15 and 11 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Parts:** When the Door is finished, it turns into separate parts: a door section that closes, and a top section. Each is its own buildable with 500 HP and uses the same damage numbers as the Door.
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | cannot place | 80 | 54 |
+| Hits to repair from zero health | 80 | 40 | 27 |
+| Hits to dismantle (your own) | 15 | 11 | 9 |
+
+Each part on its own takes 15 repair hits from zero with the Medium Hammer or 10 with the Large Hammer, and 3 dismantle hits with the Medium Hammer or 2 with the Large Hammer (Derived). The build count assumes normal hits, and hitting weak spots brings it down.
 
 ## What it does
 
@@ -85,3 +94,5 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Rewards](../../game-features/Wardogs_GameFeatures_Rewards_v2.md): the cash for closing a friendly base door
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the build cost change
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

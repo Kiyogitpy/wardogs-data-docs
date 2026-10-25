@@ -36,12 +36,21 @@ The reward tables have no cash entry for placing a Recon Tower. They give 1,400 
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the tower. Each part costs 10 Build Supplies. The data does not say whether the part costs add to the 200.
+- **Cost:** 200 Build Supplies for the tower, whichever hammer builds it. Each part costs 10 Build Supplies. The data does not say whether the part costs add to the 200. Nothing is charged at placement.
 - **Hammers:** Large only.
-- **Placement:** The tower must be inside a friendly Forward Operating Base radius. It also passes a ladder bounds check and a safe zone check, whose tests are not yet known. The parts need a friendly base radius and a ladder bounds check.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 27, 47, 41 and 41 weak spots. What the weak spots do is not yet known.
-- **Parts:** The base floor, first floor and roof are placed with the tower. Each has one stage. Each uses the same damage numbers as the tower.
-- **Build time:** Not yet known.
+- **Placement:** The tower must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 0, so the tower cannot be placed on top of another buildable.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 27, 47, 41 and 41 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Parts:** When the tower is finished, it turns into separate parts: a base floor, a first floor and a roof, together with the Hesco Blocks and sandbag wall around them. Each part is its own buildable with its own health. The floor and roof parts each have 2,250 HP.
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | cannot place | cannot place | 134 |
+| Hits to repair from zero health | 60 | 30 | 20 |
+| Hits to dismantle (your own) | 34 | 25 | 20 |
+
+The Large Hammer is the only one that can place the tower. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits, and hitting weak spots brings it down.
 
 ## What it does
 
@@ -83,3 +92,5 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, parts, stages, damage row, placement conditions and cash rewards
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the build cost change
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

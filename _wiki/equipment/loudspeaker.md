@@ -38,7 +38,7 @@ The damage data files the Loudspeaker under the same table as the radio tower st
 
 ## Use and timing
 
-The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, the only stationary emplacement that has this choice. Its placement conditions check the Forward Operating Base bounds, a ladder-bounds rule and a safe-zone rule, the same as the other stationary emplacements. The [Buildables](buildables.md) page describes these rules.
+The Loudspeaker can be placed with a Medium Hammer as well as a Large Hammer, the only stationary emplacement that has this choice. Its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one), the same as the other stationary emplacements. The [Buildables](buildables.md) page describes these rules.
 
 ## Cost
 
@@ -66,3 +66,5 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the damage table for this emplacement
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost and damage table changes
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

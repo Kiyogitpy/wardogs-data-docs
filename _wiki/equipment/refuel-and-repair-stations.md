@@ -38,12 +38,21 @@ The reward tables have no cash entry for either station.
 
 ## Building it
 
-- **Cost:** 200 Build Supplies each.
+- **Cost:** 200 Build Supplies each, whichever hammer builds it. Nothing is charged at placement.
 - **Hammers:** Large only.
-- **Limit:** One Refuel Station and one Repair Station per Forward Operating Base.
-- **Placement:** Each must be inside a friendly Forward Operating Base radius. They also pass a ladder bounds check and a safe zone check, whose tests are not yet known.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The Refuel Station has 15, 14, 27 and 14 weak spots in its first four stages. The Repair Station has 16, 16, 16 and 15. What the weak spots do is not yet known.
-- **Build time:** Not yet known.
+- **Limit:** One Refuel Station and one Repair Station per Forward Operating Base. Each counts toward the base's limit.
+- **Placement:** Each must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 100.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The Refuel Station has 15, 14, 27 and 14 weak spots in its first four stages. The Repair Station has 16, 16, 16 and 15. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | cannot place | cannot place | 134 |
+| Hits to repair from zero health | 31 | 16 | 11 |
+| Hits to dismantle (your own) | 11 | 8 | 7 |
+
+The Large Hammer is the only one that can place a station. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits, and hitting weak spots brings it down. The repair hits are for a finished station; the repair multiplier is 13.3.
 
 ## What it does
 
@@ -96,3 +105,5 @@ The Season 2 data lists no change to either station's cost or health.
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md): the names of the FOB supply containers, including Fuel Supplies and Mechanical Supplies
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): restock amounts, times and costs for both stations, and the derived hits to destroy.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

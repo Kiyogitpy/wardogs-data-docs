@@ -1,7 +1,7 @@
 ---
 title: "Building a Base"
 parent: "Guides"
-description: "Build Supplies and the three hammers, why the Forward Operating Base comes first, what each structure costs and how much health it gives, the stationary emplacements compared, and how many hits each structure takes to destroy."
+description: "Build Supplies and the three hammers, why the Forward Operating Base comes first, what each structure costs and how much health it gives, how many hits each takes to build and to destroy, and the stationary emplacements compared."
 ---
 
 # Building a Base
@@ -12,7 +12,7 @@ Players build walls, stations and emplacements with hammers, and every structure
 
 Each hammer builds a set of structures, and the larger hammers do more progress per hit ([Hammers](../equipment/hammers.md), [Buildables](../equipment/buildables.md#overview)).
 
-| Hammer | Price (cash) | Build per hit | Build on a critical spot | Structures it can place |
+| Hammer | Price (cash) | Build per hit | Build on a weak spot | Structures it can place |
 |---|---:|---:|---:|---:|
 | Small | 100 | 0.5 | 3 | 7 |
 | Medium | 800 | 1 | 5 | 12 |
@@ -21,6 +21,37 @@ Each hammer builds a set of structures, and the larger hammers do more progress 
 Every hammer spends Build Supplies. Build Supplies sell in lots of 50 for 10 cash ([Supplies](../equipment/supplies.md)).
 
 ### Tips that follow from the numbers
+
+- **Same supplies, fewer hits.** A bigger hammer does not change what a structure costs in Build Supplies. It only changes how many hits it takes. A Sandbag Wall takes 30 hits with the Small Hammer, 15 with the Medium and 10 with the Large ([Buildables](../equipment/buildables.md#building)).
+- **Hit the weak spots to build 5 to 6 times faster.** A hit on a weak spot adds 3, 5 or 8 build progress (Small, Medium, Large) instead of 0.5, 1 or 1.5. Only a hammer can hit a weak spot, because bullets cannot. Barbed Wire and Recon Tent have their weak spots switched off ([Buildables](../equipment/buildables.md#weak-spots)).
+- **Weak spots are about building, not damage.** No damage entry in the data uses them, so a structure does not take more damage because it has them.
+- **Repair with the big hammer.** On a finished structure, each hit restores health at the hammer's build amount times the structure's repair multiplier, and the repair uses Build Supplies too. The Large Hammer needs fewer repair hits than the Small one for every structure in the data (see each article's "Building it" table).
+
+## How many hits to build
+
+Each hit adds the hammer's build amount divided by the structure's Build Supplies cost to its progress. The table gives the hits to finish each structure, with normal hits only. Seconds are not given, because the time for one hit in play is not published.
+
+| Structure | Build Supplies | Small hits | Medium hits | Large hits |
+|---|---:|---:|---:|---:|
+| Barbed Wire | 7 | 4 | 2 | 2 |
+| Recon Tent | 7 | 4 | 2 | 2 |
+| Sandbag Wall | 15 | 30 | 15 | 10 |
+| Wood base | 15 | 30 | 15 | 10 |
+| Hesco Block (Small) | 15 | 30 | 15 | 10 |
+| Builder's Radio | 20 | 40 | 20 | 14 |
+| Hedgehog | 22 | 44 | 22 | 15 |
+| Hesco Block (Large) | 22 | cannot place | 22 | 15 |
+| Hesco Wall | 75 | cannot place | 75 | 50 |
+| Shelter | 250 | cannot place | 250 | 167 |
+| Door | 80 | cannot place | 80 | 54 |
+| Gate | 200 | cannot place | 200 | 134 |
+| Bremer Wall | 32 | cannot place | cannot place | 22 |
+| Bunker, Recon Tower, Indirect Fire Shelter | 200 | cannot place | cannot place | 134 |
+| Refuel and Repair Stations | 200 | cannot place | cannot place | 134 |
+| Drill Rig | 2,750 | cannot place | cannot place | 917 |
+
+The Forward Operating Base has no hits: it is placed at once from its own item. Each structure's article has the repair and dismantle hits too.
+
 
 - The Large Hammer is the only hammer that places the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Drill Rig, Refuel Station and Repair Station ([Buildables](../equipment/buildables.md#overview)). Buy it if the base needs any of these.
 - The Large Hammer gives three times the build progress per hit of the Small Hammer (1.5 against 0.5) for 24 times the price (2,400 against 100). Derived from the table above.
@@ -152,3 +183,5 @@ Parts of larger structures, such as a Door's top section or a Bunker's floor, ha
 - Structures: [Barbed Wire](../equipment/barbed-wire.md), [Recon Tent](../equipment/recon-tent.md), [Sandbag Wall](../equipment/sandbag-wall.md), [Wood base](../equipment/wood-base.md), [Hesco Walls](../equipment/hesco-walls.md), [Builder's Radio](../equipment/builders-radio.md), [Hedgehog](../equipment/hedgehog.md), [Shelter](../equipment/shelter.md), [Door](../equipment/door.md), [Gate](../equipment/gate.md), [Bremer Wall](../equipment/bremer-wall.md), [Bunker](../equipment/bunker.md), [Recon Tower](../equipment/recon-tower.md), [Indirect Fire Shelter](../equipment/indirect-fire-shelter.md), [Refuel and Repair Stations](../equipment/refuel-and-repair-stations.md), [Drill Rig](../equipment/drill-rig.md)
 - Emplacements: [L81 Mortar](../equipment/l81-mortar.md), [Talon 9K-SAM](../equipment/talon-9k-sam.md), [Stingray](../equipment/stingray.md), [MG Nest](../equipment/mg-nest.md), [Vanguard CIWS](../equipment/vanguard-ciws.md), [Loudspeaker](../equipment/loudspeaker.md)
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), for the cash paid for destroying an enemy FOB and for placing one
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the Drill Rig settings

@@ -2,7 +2,7 @@
 title: "Hedgehog"
 parent: "Equipment"
 group: "Emplacements and buildables"
-description: "A tank trap obstacle built with any hammer from 22 Build Supplies, with 4,500 HP and a high cash reward for destroying an enemy one."
+description: "A heavy obstacle built with any hammer from 22 Build Supplies, with 4,500 HP and a high cash reward for destroying an enemy one."
 ---
 
 # Hedgehog
@@ -30,17 +30,26 @@ The Hedgehog is an obstacle that any hammer can build. It costs 22 Build Supplie
 
 ## Overview
 
-The Hedgehog costs 22 Build Supplies and has 4,500 HP. It has no separate parts. The export names it "TankTrap" internally and "Hedgehog" in the game, so this article uses "Hedgehog".
+The Hedgehog costs 22 Build Supplies and has 4,500 HP. It has no separate parts.
 
 The reward tables give 100 cash for placing a Hedgehog and 250 cash for destroying an enemy one.
 
 ## Building it
 
-- **Cost:** 22 Build Supplies.
+- **Cost:** 22 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
 - **Hammers:** Small, Medium or Large.
-- **Placement:** The Hedgehog is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It also passes a safe zone check and a ladder bounds check, whose tests are not yet known.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 3, 5, 6 and 7 weak spots. What the weak spots do is not yet known.
-- **Build time:** Not yet known.
+- **Placement:** The Hedgehog is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 100.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 3, 5, 6 and 7 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | 44 | 22 | 15 |
+| Hits to repair from zero health | 30 | 15 | 10 |
+| Hits to dismantle (your own) | 30 | 23 | 18 |
+
+The hits assume normal hits, not weak-spot hits. See [Buildables](buildables.md#building) for how the hit amounts work.
 
 ## What it does
 
@@ -83,3 +92,5 @@ The Season 2 data lists no change to the Hedgehog's cost or health.
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

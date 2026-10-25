@@ -36,11 +36,19 @@ The reward tables give 75 cash for destroying an enemy Recon Tent. They give no 
 
 ## Building it
 
-- **Cost:** 7 Build Supplies.
+- **Cost:** 7 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
 - **Hammers:** Small, Medium or Large.
-- **Placement:** The Recon Tent is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It also passes a safe zone check and a ladder bounds check, whose tests are not yet known.
-- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The data gives 5, 0, 6 and 29 weak spots for the first four stages. The second stage has none. What the weak spots do is not yet known.
-- **Build time:** Not yet known.
+- **Placement:** The Recon Tent is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 100.
+- **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress.
+- **Weak spots:** switched off. Its build stages do not use the hammer bonus, so each hit adds the normal amount, multiplied by its build factor of 3.5 (see [Buildables](buildables.md#building)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | 4 | 2 | 2 |
+| Hits to repair from zero health | 9 | 5 | 3 |
+| Hits to dismantle (your own) | 2 | 2 | 2 |
 
 ## What it does
 
@@ -82,3 +90,5 @@ The Season 2 data lists no change to the Recon Tent's cost or health.
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

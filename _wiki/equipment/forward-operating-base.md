@@ -39,10 +39,12 @@ The reward tables give 1,000 cash for placing a FOB and 5,000 cash for destroyin
 
 ## Building it
 
-- **Cost:** 7,500 cash from the shop. Its Build Supplies cost is 30. The data does not yet show when those supplies are taken.
+- **Cost:** 7,500 cash from the shop. Its Build Supplies cost is 30, and nothing is charged at placement.
 - **Hammer:** None. The FOB is placed from its own item.
-- **Placement:** It must pass the FOB placement check, a safe zone check and a ladder bounds check. The FOB's own placement rules beyond these checks are not yet known.
+- **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. Its own placement rules beyond these checks are not yet known.
 - **Build time:** Instant. The FOB has no build stages.
+- **Repair and dismantle:** The data gives hammer figures for the FOB: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as the data shows.
+- **Stack limit:** 1.
 - **Limits:** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios. See the [Refuel and Repair Stations](refuel-and-repair-stations.md) and [Builder's Radio](builders-radio.md) articles.
 - **Interactions:** Players can use the FOB's access interaction. A tap on keyboard or a hold on gamepad lets players use it, and several players can do so at once. Hacking takes a hold of 30 seconds by one player. The data says the hacking result is sent to the server. The rewards for hacking are on the [Rewards page](../../game-features/Wardogs_GameFeatures_Rewards_v2.md).
 
@@ -50,7 +52,7 @@ The reward tables give 1,000 cash for placing a FOB and 5,000 cash for destroyin
 
 The FOB anchors the building radius. Most structures must be inside a friendly FOB radius to be placed, and the FOB limits the number of Refuel Stations, Repair Stations and Builder's Radios. The FOB also holds supplies for players, and the data lists sounds for depositing Ammo, Build, Fuel and Mechanical Supplies.
 
-The data does not say whether the FOB acts as a spawn point. If it does, that comes from another feature, and that feature is not yet known from this data.
+The client game files hold no spawn data tied to the FOB, so nothing in them shows that it is a spawn point. The server side is not excluded by the data, so whether players can spawn at a FOB is not known.
 
 ## Durability
 
@@ -92,3 +94,5 @@ The Season 2 data lists no change to the Forward Operating Base's cost or health
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md): the names of the FOB supply containers
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

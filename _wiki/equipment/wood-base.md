@@ -32,15 +32,24 @@ The Wood base is a 735 HP structure that any hammer can build. It takes the same
 
 The Wood base costs 15 Build Supplies and has 735 HP. The export gives no display name for it, so this article uses the plain name "Wood base". It has no separate parts.
 
-The reward tables have no cash entry for the Wood base.
+The reward tables have no cash entry for the Wood base. They do have a one-cash default row, which the data does not confirm applies to it. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone) from the Placed-in-FOB resource, as far as the data shows; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
 
 ## Building it
 
-- **Cost:** 15 Build Supplies.
+- **Cost:** 15 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
 - **Hammers:** Small, Medium or Large.
-- **Placement:** It must be inside a friendly Forward Operating Base radius. It also passes a ladder bounds check and a safe zone check. What those two checks test is not yet known.
-- **Build stages:** Five, at 0, 20, 45, 70 and 100% of progress. The earlier stages have 16, 14 and 47 weak spots, and the 70% stage has 56. What the weak spots do is not yet known.
-- **Build time:** Not yet known.
+- **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
+- **Stack limit:** 4.
+- **Build stages:** Five, at 0, 20, 45, 70 and 100% of progress. The earlier stages have 16, 14 and 47 weak spots, and the 70% stage has 56. A hammer hit on a weak spot adds more progress (see [Buildables](buildables.md#weak-spots)).
+- **Build time:** Not published in seconds.
+
+| Building it | Small hammer | Medium hammer | Large hammer |
+|---|---:|---:|---:|
+| Hits to build | 30 | 15 | 10 |
+| Hits to repair from zero health | 30 | 15 | 10 |
+| Hits to dismantle (your own) | 5 | 4 | 3 |
+
+The hits assume normal hits, not weak-spot hits. See [Buildables](buildables.md#building) for how the hit amounts work.
 
 ## What it does
 
@@ -84,3 +93,5 @@ The Season 2 data lists no change to the Wood base's cost or health.
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row and placement conditions
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings

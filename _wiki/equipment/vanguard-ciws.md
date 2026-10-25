@@ -44,7 +44,7 @@ The emplacement starts with 500 rounds. A restock takes 250 Ammo Supplies and gi
 
 ## Use and timing
 
-The Vanguard uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder-bounds rule and a safe-zone rule. The [Buildables](buildables.md) page describes these rules.
+The Vanguard uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Buildables](buildables.md) page describes these rules.
 
 At 1,800 rounds/min, the starting 500 rounds last a short time. The data does not say how long one full magazine lasts in play, so that is not yet known.
 
@@ -77,3 +77,5 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md) and [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, bullet speed and damage table changes
 - [Vanguard weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/WeaponExtensions/WE_STN_02_Heavy_MainCannon.json): reload, restock and starting ammunition
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
+- [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
+- [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
