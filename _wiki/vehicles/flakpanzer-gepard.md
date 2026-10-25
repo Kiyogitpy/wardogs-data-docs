@@ -67,7 +67,7 @@ The seats are a driver and a gunner in the turret. The Gepard also carries a smo
 ## Season 2 changes
 
 - Price rose from 10,000 to 14,000 cash.
-- One damage rule changed from -75% to -85%, so those hits do less damage. The data does not say which calibre it covers.
+- One damage rule changed from -75% to -85%, so those hits do less damage. It is the 20 mm cannon rule, which covers the 20 mm guns such as the Vanguard CIWS (the entry's source is the 20x102 mm cannon).
 - A new 125 mm rocket rule adds +40%.
 - Two interaction points on the sides of the vehicle moved outward, from an offset of 40 to 85 (units not stated).
 - The vehicle item is wider in inventory (width 4 to 6).

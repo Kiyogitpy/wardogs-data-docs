@@ -94,8 +94,8 @@ Health pools per vehicle, as stored in the data. Sort by any column with the hea
 | [Ural](ural.md) | 700 | 400 | 400 | Six wheels 75 | None |
 | [Ural Defender](ural-defender.md) | 700 | 400 | 400 | Six wheels 75 | None |
 | [Ural Defender [M249]](ural-defender-m249.md) | 700 | 400 | 400 | Six wheels 75 | None |
-| [Wolf-110](wolf-110.md) | 500 | 400 | 400 | Not yet known | None |
-| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 500 | 400 | 400 | Not yet known | None |
+| [Wolf-110](wolf-110.md) | 500 | 400 | 400 | Wheels 75 | None |
+| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 500 | 400 | 400 | Wheels 75 | None |
 
 ### Repair tools and stations
 

@@ -48,7 +48,7 @@ def buildables():
             continue
         for o in dt.exports(f):
             p = o.get("Properties", {})
-            if o.get("Type") == "WDBuildableDataAsset" and "MaxHealth" in p:
+            if o.get("Type") in ("WDBuildableDataAsset", "WDBuildableHotZoneMagnetDataAsset") and "MaxHealth" in p:
                 row = None
                 for v in dt.walk(p, "TagName"):
                     if isinstance(v, str) and v.startswith("Meta.Damage.Buildable."):

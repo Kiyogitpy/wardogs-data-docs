@@ -105,7 +105,7 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 
 ## Season 2 changes
 
-- One damage rule changed from -75% to -85%, so those hits do less damage. The data does not say which calibre it covers.
+- One damage rule changed from -75% to -85%, so those hits do less damage. It is the 20 mm cannon rule, which covers the 20 mm guns such as the Vanguard CIWS (the entry's source is the 20x102 mm cannon).
 - A new 125 mm rocket rule adds +15%.
 - Track rebound damping rose from 12,000 to 17,000 across the tank family.
 - The vehicle item is wider in inventory (width 4 to 6).

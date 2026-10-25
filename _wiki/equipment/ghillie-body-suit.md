@@ -30,7 +30,7 @@ The Ghillie Body Suit is camouflage that goes in the Armor slot. It must be worn
 
 The shop groups the Ghillie Body Suit under "Camouflage". Its two listed effects are the removal of the death cam after a kill and protection from infrared range finders.
 
-The Item Shop also lists a "Ghillie Body Suit (Dead)" at 3,500 cash. The data does not say how it differs from this suit. For all the vests and helmets, see [Body Armor](body-armor.md).
+The Item Shop also lists a "Ghillie Body Suit (Dead)" at 3,500 cash. It is a separate item with the same effects and no durability. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 

@@ -88,11 +88,11 @@ For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardo
 
 ## Hits to destroy (point blank, derived)
 
-The Drill Rig's damage row is not in the structure table this page uses, so no hit counts are given here. The other structures' counts are in the [Buildables](../building.md#hits-to-destroy-point-blank-derived) article.
+The counts below use the Drill Rig's own damage row, the same way as every other structure. The other structures' counts are in the [Buildables](../building.md#hits-to-destroy-point-blank-derived) article.
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Drill Rig | 2,500 | not in the data | not in the data | not in the data | not in the data | not in the data | not in the data |
+| Drill Rig | 2,500 | 596 | 186 | 3 | 3 | 2 | 1 |
 
 ## Season 2 changes
 

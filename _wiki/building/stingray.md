@@ -84,7 +84,7 @@ Explosives against the Stingray's own damage entries: C4 does +300 % and IED +40
 
 The Stingray uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Building](../building.md) page describes these rules.
 
-Because the emplacement starts with no ammunition, the first use in a match depends on a restock. One restock gives one drone (derived: the data does not write a drone count per restock, so the engine's default of one is used). How long the drone reload takes in play is not known.
+Because the emplacement starts with no ammunition, the first use in a match depends on a restock. One restock gives one drone (derived: the data does not write a drone count per restock, so the engine's default of one is used). The Stingray has no reload step: its reload time is 0.0 s, with a 1.0 s delay at the start and at the end. The restock is a purchase scene ("Purchase Stingray"), and how long that scene lasts in play is not stored in the files.
 
 ## Destroying it
 

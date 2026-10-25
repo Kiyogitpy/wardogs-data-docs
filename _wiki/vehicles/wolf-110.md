@@ -39,7 +39,7 @@ The Wolf-110 is sold in the vehicle vendor under land transport, for 2,200 cash,
 
 ## Armor and damage
 
-Main health is 500 HP. The Wolf-110 has separate health for its engine (400 HP) and fuel tank (400 HP). The data does not give health pools for its wheels.
+Main health is 500 HP. The Wolf-110 has separate health for its engine (400 HP) and fuel tank (400 HP) and each wheel (75 HP).
 
 Rifle rounds do 5% of their damage against the hull. Hits to a wheel can destroy the vehicle faster than hits to the body.
 

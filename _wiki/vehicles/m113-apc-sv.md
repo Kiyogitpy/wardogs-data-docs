@@ -24,7 +24,7 @@ The M113 APC SV is a ten-seat tracked armored personnel carrier. It comes in thr
 
 ## Overview
 
-The M113 APC SV is listed in the entity text table under the names Lonestar, Manticore and Valkyra, each described as a 10-seat tracked vehicle. The data has no shop row for it, and does not say how players get one in a match.
+The M113 APC SV is listed in the entity text table under the names Lonestar, Manticore and Valkyra, each described as a 10-seat tracked vehicle. The data has no shop row for it. Players get one at the side's deployment board in the spawn area (see Vehicle spawns below).
 
 Its smoke countermeasure has 255 starting charges in the data. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The vehicle vendor sells smoke for 750 cash, one charge per purchase, the same as flares.
 

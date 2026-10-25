@@ -43,7 +43,7 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Throwing.** The Molotov has two throws. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s). Thrown contact adds 10 HP of impact damage.
 
-**Water.** When the Molotov goes off, the game reads the water depth at the point of impact from the map's water height grid. The data does not say how the fire responds to that depth.
+**Water.** When the Molotov goes off, the game reads the water depth at the point of impact from the map's water height grid. The explosion code uses that depth to decide what happens to the fire. The data does not give the result in play.
 
 **Burst on impact.** A thrown Molotov bursts on its first impact. It is the only throwable set to do so. The 5 s fuse is only a backstop, for a Molotov that does not hit anything. It cannot be cooked.
 

@@ -220,7 +220,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 | Bremer Wall | 6,500 | 1,161 | 362 | 11 | 19 | 7 | 5 |
 | Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 278 | 33 | 35 | 27 | 12 |
 | Refuel Station or Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 6 |
-| Drill Rig | 2,500 | not in the data | not in the data | not in the data | not in the data | not in the data | not in the data |
+| Drill Rig | 2,500 | 596 | 186 | 3 | 3 | 2 | 1 |
 | Forward Operating Base | 15,000 | 2,679 | 834 | 5 | 10 | 5 | 1 |
 
 ## Season 2 changes
