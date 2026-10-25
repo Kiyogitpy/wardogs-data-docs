@@ -10,6 +10,10 @@ import json
 import math
 import os
 import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import wiki_ttk  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 GH = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
@@ -603,7 +607,9 @@ def build_weapon(wid):
     else:
         out += ["The damage data pages do not compute body-part damage for launchers. The data treats the shot as an explosion; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]
 
-    # Recoil and spread (after Damage, before Ammunition)
+    # Time to kill (after Damage)
+    out += wiki_ttk.section_lines(code)
+    # Recoil and spread (after Time to kill, before Ammunition)
     out += recoil_section(wid, title, bool(dmg) and any(a.get("pellets") for a in dmg["ammo"])).rstrip("\n").split("\n") + [""]
     # Ammunition
     out += ["## Ammunition", ""]
@@ -654,7 +660,7 @@ def build_weapon(wid):
             "- [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): caliber and ammo names",
             f"- [weapon-loadouts.json]({GH}assets/data/weapon-loadouts.json): names, slots and effects",
             f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json): body-part and armor damage",
-            f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json): falloff curves",
+            f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json): falloff curves, also used for the time to kill table",
             f"- [weapon-capacity.json]({GH}assets/data/weapon-capacity.json): muzzle speed, effective range, chamber and magazine",
             f"- [Round 39 weapon evidence]({GH}docs/evidence/round39-weapons.md): launcher speeds and ranges, magazines, default rate",
             ""]
@@ -760,7 +766,8 @@ def hub_page(sections):
     body = ["# Weapons", "",
             "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher "
             "in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
-            "[Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections.", ""]
+            "[Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. "
+            "To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.", ""]
     for arch in CLASS_ORDER:
         if sections.get(arch):
             if arch == "Launcher":
@@ -770,6 +777,62 @@ def hub_page(sections):
                 head_rows = ["| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |",
                              "|---|---|---:|---|---:|"]
             body += [f"## {class_group(arch)}", ""] + head_rows + sections[arch] + [""]
+    return head + "\n".join(body)
+
+
+def comparison_page():
+    rows = []
+    for arch in CLASS_ORDER:
+        for wid in loadouts["weapons"]:
+            code = code_for(wid)
+            if code in SKIP or loadouts["items"][wid]["archetype"] != arch:
+                continue
+            c = wiki_ttk.comparison_cells(code)
+            if c is None:
+                continue
+            s = stats(wid)
+            title = page_title(wid)
+            cap = CAP.get(code) or {}
+            mag = (cap.get("magazine") or {}).get("capacity") or cap.get("rounds_held")
+            sp = SPRAY_BY_ITEM.get(wid)
+            season = sp["seasons"].get("s2") if sp else None
+            climb = f"{_path(season, 10)[1]:.1f}" if season and season.get("present") else "not yet known"
+            star = "*" if c["beyond100"] else ""
+
+            def kc(k):
+                return (f"{k[0]}{star}", f"{k[1]:.2f}{star}") if k else ("not reached", "not reached")
+            n0, t0 = kc(c["none"])
+            n3, t3 = kc(c["l3"])
+            cells = [f"[{title}]({slugify(title)}.md)", CLASS_NAME[arch], s["cal"], fmt_int(wdamage[code]["rpm"]),
+                     str(mag) if mag is not None else "not yet known", s["price"] or "not yet known",
+                     f"{c['dmg10']:.1f}", n0, t0, n3, t3, climb]
+            rows.append("| " + " | ".join(cells) + " |")
+    head = ("---\ntitle: \"Weapon Comparison\"\nparent: \"Weapons\"\ngroup: \"Reference\"\n"
+            "description: \"Every weapon in one sortable table: damage, shots and time to kill, fire rate, magazine, price and recoil.\"\n---\n\n")
+    body = ["# Weapon Comparison", "",
+            "One table for every weapon that fires bullets or shells. Click a column heading to sort. "
+            "Each weapon links to its article, which has the full damage, time to kill and recoil sections. Launchers are left out because the data treats their shots as explosions.", "",
+            "| Weapon | Class | Caliber | Fire rate (rounds/min) | Magazine (rounds) | Price | Upper-torso damage at 10 m (HP) | Shots, no armor, 100 m | TTK, no armor, 100 m (s) | Shots, Level 3 vest, 100 m | TTK, Level 3 vest, 100 m (s) | Recoil climb after 10 shots (degrees) |",
+            "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    body += rows
+    body += ["", "**How to read it**", "",
+             "- Damage and kill figures use the standard bullet (FMJ), or buckshot for shotguns, on upper-torso hits. Shotgun damage is the sum of all 8 pellets and assumes every pellet hits.",
+             "- Shots to kill are for a character with 100 HP: 100 divided by the damage per hit, rounded up. Time to kill (TTK) is (shots - 1) x 60 / fire rate, because the first shot fires at 0 s.",
+             "- A * marks a 100 m figure that is beyond the weapon's effective range, where damage falls with distance. Damage at 100 m uses the range falloff curve.",
+             "- A Level 3 vest cuts upper-torso damage by 50%. See [Body Armor](../equipment/body-armor.md) for all four levels.",
+             "- Recoil climb is how far the view rises over the first 10 shots of the Season 2 pattern, before attachments. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md).",
+             "- Everything is derived from game data. It assumes every shot hits, and it ignores reload, spread and recoil. Real fights take longer.", "",
+             "## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](../ammunition.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "",
+             "## Sources", "",
+             "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers",
+             "- [Weapon Shop and Parts](../../game-features/Wardogs_WeaponShop_v1.md): price",
+             "- [Spray Patterns Gallery](../../game-features/Wardogs_SprayPatterns_v1.md): recoil patterns",
+             f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json)",
+             f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json)",
+             f"- [weapon-capacity.json]({GH}assets/data/weapon-capacity.json): magazine and effective range",
+             f"- [spray-patterns.json]({GH}assets/data/spray-patterns.json)",
+             f"- [wiki_ttk.py]({GH}_tools/wiki_ttk.py): how the shots and times are computed",
+             ""]
     return head + "\n".join(body)
 
 
@@ -803,6 +866,8 @@ def main():
            "description: \"The parts that fit on weapons, the slots they go into and what each category changes.\"\n---\n\n") + attachments_page()
     with open(os.path.join(WIKI, "attachments.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(att)
+    with open(os.path.join(OUT, "weapon-comparison.md"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(comparison_page())
     with open(os.path.join(WIKI, "weapons.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(hub_page(sections))
     print(f"wrote {count} weapon articles, ammunition, attachments and the hub")

@@ -8,7 +8,7 @@ description: "Every player weapon, the ammunition they use and the attachments t
 
 # Weapons
 
-Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections.
+Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
 
 ## Assault rifles
 
