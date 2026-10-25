@@ -2,7 +2,7 @@
 title: "Fixed-wing airplane"
 parent: "Vehicles"
 group: "Aircraft"
-description: "Fixed-wing airplane with a driver seat and one passenger seat; the data has its flight model but no shop listing or display name."
+description: "An unfinished two-seat airplane: it has a flight model but no damage zones, no shop listing, no name and no yard that places it."
 ---
 
 # Fixed-wing airplane
@@ -11,20 +11,20 @@ description: "Fixed-wing airplane with a driver seat and one passenger seat; the
 |---|---|
 | Type | Airplane |
 | Seats | 2 (driver and one passenger seat) |
-| Price | Not sold (no shop listing in the data) |
+| Price | Not sold (no shop listing) |
 | Unlock level | Not applicable |
-| Main health | 150 HP at start |
+| Main health | 150 HP listed, but hits cannot damage it |
 | Top speed | Not stored (see Handling) |
 | Mass | 10,000 kg |
 | Rifle damage taken (derived) | 7.5% |
 | Internal name | FWG_01 |
 {: .wiki-infobox }
 
-The fixed-wing airplane is the only fixed-wing aircraft in the data. It has a full flight model with control surfaces, flaps, an airbrake and retractable landing gear. The data does not give it a display name, a shop row or a spawn rule, so this article describes it by what it is.
+The fixed-wing airplane is the only fixed-wing aircraft in the data, and it looks like an unfinished vehicle. It has a full flight model with control surfaces, flaps, an airbrake and retractable landing gear, but no name, no shop listing, no unlock, no damage zones and no yard that places it. This article describes it by what it is.
 
 ## Overview
 
-The airplane has two seats, a driver and one passenger. Its damage rules are copied from the Little Bird helicopter family, and its health and fuel setup are its own. The data does not show how players get one in a match.
+The airplane has two seats, a driver and one passenger. Its model still uses placeholder materials from a real-world jet. It was built far enough to fly, but the parts a player would meet in a match were never set up: nobody can buy or unlock it, it has no entry in the vehicle lists or kill rewards, and the data does not show whether a match ever places one.
 
 ## Stats
 
@@ -39,9 +39,11 @@ The airplane has two seats, a driver and one passenger. Its damage rules are cop
 
 ## Armor and damage
 
-The airplane starts with 150 HP. The data gives threshold triggers on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The data does not say which threshold drives which leak.
+The airplane lists 150 HP at start. The data gives threshold triggers on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The data does not say which threshold drives which leak.
 
-Its damage rules are those of the Little Bird family, so rifle rounds do 7.5% of their damage against the hull. The data does not simulate hits to destroy this airplane, so no hit counts are listed.
+Every other armed or armored vehicle splits its body into damage zones, such as the hull, engine and fuel tank. The airplane has none: no zones and no hit boxes on its model. A bullet, rocket or explosion that hits it finds no zone to damage, so the data gives it no way to lose health from enemy fire. The 150 HP and the thresholds therefore have nothing feeding them, and no hit counts are listed. Its damage rules are copied from the Little Bird family (rifle rounds would do 7.5% of their damage), but with no zones they never apply.
+
+Several weapons still list it as a valid lock-on target: the 9K333 Verba launcher and five emplaced weapons.
 
 ## Weapons and seats
 
@@ -65,7 +67,7 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 
 ## Vehicle spawns
 
-The airplane falls under the same general air tag as the helicopters, so the air vehicle yards on the four main maps could place it, but no yard names it and the data does not say whether it is ever placed (not known). See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The airplane falls under the same general air tag as the helicopters. 20 of the 21 air vehicle yards accept any air vehicle, so their rules would allow it, while the ground and light yards list it as excluded. No yard names it, and the data does not say whether it is ever placed (not known). See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -83,3 +85,4 @@ The airplane falls under the same general air tag as the helicopters, so the air
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of the airplane, in kilograms
 - [Round 42 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-vehicles-explosives.md): the airplane mass override value
+- [Round 53 fixed-wing evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round53-fixed-wing.md): no damage zones, no shop or unlock, yard rules, lock-on lists
