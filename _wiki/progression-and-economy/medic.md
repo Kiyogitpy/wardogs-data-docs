@@ -137,6 +137,7 @@ When a heal brings a downed player back, it pays 1,500 with a defibrillator or r
 
 ## See also
 
+- [Choosing a Role](../guides/choosing-a-role.md)
 - [Skills](skills.md)
 - [Cash and Rewards](cash-and-rewards.md)
 - [Medical Items](../equipment/medical-items.md)
