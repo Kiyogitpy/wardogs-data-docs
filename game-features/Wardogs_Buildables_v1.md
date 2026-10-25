@@ -108,8 +108,8 @@ Stages are progress thresholds from 0 to 1. A stage becomes visible when the bui
 
 - Most structures use 0, 0.25, 0.5, 0.75, 1. The Door uses 0, 0.3, 0.6, 0.8, 1 and the WoodBase uses 0, 0.2, 0.45, 0.7, 1.
 - Parts (floors, roofs, gate halves, door halves) have one stage at 1, so they appear complete.
-- The last stage has no weak spots (critical-hit spots) in every multi-stage definition. Earlier stages carry them, so a half-built structure has marked weak spots (what the weak spots do is **not traced** on this page).
-- `bOverridesFinalStage` is set on 6 definitions: Indirect Fire Shelter, Door, Bunker, Recon Tower, Gate and Hesco Wall (**Data**). What it changes is **not traced**. The Door and Recon Tower use `...ActorReplacing` spawner classes.
+- The last stage has no weak spots (critical-hit spots) in every multi-stage definition. Earlier stages carry them, so a half-built structure has marked weak spots. They are a hammer build bonus, not a damage multiplier ([section 14.3](#143-weak-spots-critical-hit-spots)); Barbed Wire and the Recon Tent have the spots in their stage files but turn the feature off (`bUsesCriticalHitSpots` false).
+- `bOverridesFinalStage` is set on 6 definitions: Indirect Fire Shelter, Door, Bunker, Recon Tower, Gate and Hesco Wall (**Data**). What it changes: the finished structure is assembled from separate sub-buildable actors that the last stage lists (floors, roofs, walls, door leaf, gate halves) instead of one mesh ([section 14.1](#141-boverridesfinalstage-and-the-actorreplacing-spawners)). All six use `...ActorReplacing` or composite spawner classes.
 - The Forward Operating Base has no stage file; it is `bInstantFinish` (**Data**).
 
 <!-- buildable_tables stages -->
@@ -227,11 +227,11 @@ All of this is **Data**. Global limits live in [`DA_BuildablePlacementData`](htt
 
 Per-structure rules are in the table that follows. Plain meaning:
 
-- **Placement conditions** are checked before a ghost turns valid. `SafeZonePlacementCondition` and `WithinLadderBoundsPlacementCondition` are Blueprint conditions (names only; what they test is **not traced**). `WDWithinFobBoundsPlacementCondition` means the spot must be inside a friendly FOB radius. `WDNotInsideEnemyFobBoundsPlacementCondition` forbids it inside an enemy FOB radius. `WDLimitedByFOBCondition` enforces the per-FOB limit. `WDFobPlacementCondition` is the FOB's own rule. `WDPlacementZoneCondition` and `WDWithinControlZonePlacementCondition` limit the Drill Rig to zones.
+- **Placement conditions** are checked before a ghost turns valid. `SafeZonePlacementCondition` and `WithinLadderBoundsPlacementCondition` are Blueprint conditions (what they test is in [section 14.4](#144-the-two-blueprint-placement-conditions)). `WDWithinFobBoundsPlacementCondition` means the spot must be inside a friendly FOB radius. `WDNotInsideEnemyFobBoundsPlacementCondition` forbids it inside an enemy FOB radius. `WDLimitedByFOBCondition` enforces the per-FOB limit. `WDFobPlacementCondition` is the FOB's own rule. `WDPlacementZoneCondition` and `WDWithinControlZonePlacementCondition` limit the Drill Rig to zones.
 - **Small structures** (Barbed Wire, Recon Tent, Sandbag Wall, Hedgehog) do not need a FOB. Every other structure except the FOB itself must be inside a FOB radius (**Derived**: from which conditions each definition lists).
-- **Max stack** is the `MaxStack` field. Its meaning (a placement count or a snap-stack height) is **not traced**; `0` is probably "no stack allowed" but this is unconfirmed.
+- **Max stack** is the `MaxStack` field. It is the stack-height limit when a structure is placed on top of another buildable, not a placement count; a `-` in the table above means the field is not serialized and the native default of 2 applies ([section 14.2](#142-maxstack-and-placementflags)).
 - **FOB limit** is the per-FOB count from [`DA_FOB_Ruleset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/ForwardOperatingBase/DA_FOB_Ruleset.json): Refuel Station 1, Repair Station 1, Builder's Radio 4.
-- `PlacementFlags` is 9 for almost every structure and 1 for the FOB. The bit meaning is **not traced**.
+- `PlacementFlags` is a bit set (`EWDPlacementFlags`): 1 AllowRotation, 2 CanBeBuiltOn, 4 CanPlaceVertically, 8 CanPlaceOnBuildables. It is serialized as 9 on 14 assets (small items, stationary weapons, Radio, stations, Drill Rig), as 1 on the FOB, and not serialized on 23 assets, where the native default 11 (1 + 2 + 8) applies ([section 14.2](#142-maxstack-and-placementflags)). The earlier wording "9 for almost every structure" counted only the serialized values.
 - Terrain: `MaximumValidSurfaceAngle` is 10 on the Gate parts; `MaxDepthUnderTerrain` lets a structure sink 30 to 200 into the ground; `bRequiresAllCornersOnSurface` is false and `bRotateWithSurface` is true on the small walls.
 
 <!-- buildable_tables placement -->
@@ -278,7 +278,7 @@ Per-structure rules are in the table that follows. Plain meaning:
 | Wall, block, trap, wire, tent | Cover and obstruction. No gameplay values beyond health and damage rules. | **Data** |
 | Door, Gate | Closeable doors with a breach effect. A closed FOB door pays cash (section 9). | **Data** |
 | Bunker, Recon Tower, Indirect Fire Shelter | Large multi-part structures (floor, roof, ceiling). Cash only for placing and destroying. | **Data** |
-| Builder's Radio | Up to 4 per FOB. Registers with the FOB (`bRegisterWithFOB`). Its function is **not traced**. | **Data** |
+| Builder's Radio | Up to 4 per FOB. Registers with the FOB (`bRegisterWithFOB`, counts toward the per-FOB limit). Plays music: a power toggle and seven stations ([section 14.5](#145-builders-radio)). | **Data** |
 | Refuel Station | Up to 1 per FOB. Registers with the FOB. A material tracker and a refuel start/stop sound exist. The Fuel Supplies item is described as "Resource Required to Refuel Vehicles. Requires FOB Radius to Use". The refuel rate is **not traced**. | **Data** |
 | Repair Station | Same shape as the Refuel Station, with Mechanical Supplies ("Resource Required to Repair Vehicles"). The repair rate is **not traced**. | **Data** |
 | Drill Rig (`HotzoneMagnet`) | Fuel-driven structure that works with a hot zone (settings below). | **Data** |
@@ -299,7 +299,7 @@ The Drill Rig has its own settings asset (`WDBuildableHotZoneMagnetDataAsset`), 
 | `FuelSuppliesResourceItemTag` | `Id.Item.FuelSupplies` |
 <!-- /buildable_tables -->
 
-Plain reading (**Derived**, units are not stated in the export): after placing there is a 15 second start delay, the rig needs at least 2,000 fuel to run, each fuel unit buys 0.03 of run time (probably seconds), it holds at most 10,000 fuel and it recharges for 900 (probably seconds). What the "magnet" does to the hot zone is **not traced**.
+Plain reading (**Derived**, units are not stated in the export): after placing there is a 15 second start delay, the rig needs at least 2,000 fuel to run, each fuel unit buys 0.03 of run time (probably seconds), it holds at most 10,000 fuel and it recharges for 900 (probably seconds). What the "magnet" does to the hot zone, and the units, are in [section 14.6](#146-drill-rig-and-the-hot-zone-magnet).
 
 ### Stationary weapons (`Vehicles/STN_*`)
 
@@ -392,14 +392,14 @@ The FOB is the anchor for most other structures. Facts (**Data**):
 - Sounds exist for deposits of Ammo, Build, Fuel and Mechanical supplies, pallets and supply crates, and for hack start, stop, success and fail (laptop and siren variants).
 - Cash for hacking and closing a FOB door is in the [Rewards page](Wardogs_GameFeatures_Rewards_v2.md).
 
-A spawn point is **not** found in this plugin. If the FOB acts as a spawn location, that comes from another feature and is **not traced**.
+A spawn point is **not** found in this plugin, and none was found elsewhere in the client data either ([section 14.8](#148-is-the-fob-a-spawn-point)).
 
 ## 9. Cash and XP
 
 Placing, building and destroying are paid through the reward system. The flat cash tables are `DT_Reward_Cash_BuildableBuilt`, `DT_Reward_Cash_BuildablePlaced`, `DT_Reward_Cash_BuildablePlacedInFOB` and, for destroying an enemy structure, the buildable rows of `DT_Reward_Cash_DeployableDestroyed`. All values are **Data**.
 
 - **Built** is a flat 1 cash (a placeholder-sized credit), so the real payout is **Placed**.
-- **Placed** pays the owner (owner modifier 1) and **Placed in FOB** pays 0 to the owner (owner modifier 0) with the same base. How the two tables are chosen between is **not traced**.
+- **Placed** pays the owner (owner modifier 1) and **Placed in FOB** pays 0 to the owner (owner modifier 0) with the same base. The seven structures that have no row are covered in [section 14.7](#147-cash-rows-for-the-missing-structures-and-the-placed-tables); how the tables are chosen is native and not read.
 - A friendly modifier of -0.75 applies to placed and destroyed rows.
 - Only 10 structures have a Placed value. The Sandbag Wall, Door, Recon Tower, Recon Tent and Drill Rig have a Destroyed value only. WoodBase and Shelter have no cash row in these tables.
 
@@ -477,13 +477,13 @@ Total: 206 files.
 
 ## 11. Open items
 
-- How `Cost` turns into Build Supplies spent, and how a hammer's `BuildAmount` scales against the stage progress (the per-hit amounts and swing times are in section 3; the progress arithmetic is native, thunks at `0x8593E80`, `0x8593FB0`, `0x85940E0`).
-- Meaning of `MaxStack`, `PlacementFlags`, `StackCheckOffset` and the unnamed (`_aaab...`) placement fields.
-- What `SafeZonePlacementCondition` and `WithinLadderBoundsPlacementCondition` test (Blueprint, not exported here).
-- Function of the Builder's Radio. (The Refuel and Repair Station rates were found in round 36: section 12.)
-- Cash rows for the Talon 9K-SAM, Loudspeaker, Vanguard CIWS, Stingray and MG Nest, and for WoodBase and Shelter. The stationary weapons' placement path through the hammer registry is not traced.
-- Whether the FOB spawns players, and how `Buildable.Damage.DoNotTakeDamage` combines with the FOB damage row.
+- How `Cost` turns into Build Supplies spent, and how a hammer's `BuildAmount` scales against the stage progress (the per-hit amounts and swing times are in section 3; the progress arithmetic is native, thunks at `0x8593E80`, `0x8593FB0`, `0x85940E0`). Not touched in round 38.
+- `StackCheckOffset` and the unnamed (`_aaab...`) placement fields beyond what [section 14.2](#142-maxstack-and-placementflags) reads.
+- The native code of the Drill Rig hot zone effect (movement and resizing of the zone) and the native choice between the Placed and Placed-in-FOB cash tables ([section 14.6](#146-drill-rig-and-the-hot-zone-magnet), [14.7](#147-cash-rows-for-the-missing-structures-and-the-placed-tables)).
+- How `Buildable.Damage.DoNotTakeDamage` combines with the FOB damage row.
 - Hit-count tables per structure: a derived bound for four sources is in section 12.3; the exact tables need all matching damage entries (armor-piercing, hollow-point, calibers) and the instigator and target rules.
+
+Resolved in round 38 ([section 14](#14-round-38-additions)): `bOverridesFinalStage`, `MaxStack`, `PlacementFlags`, weak spots, the two Blueprint placement conditions, the Builder's Radio, the Drill Rig numbers and units, the missing cash rows, and the FOB spawn question.
 
 ## 12. Round 36 additions
 
@@ -540,3 +540,92 @@ The MG Nest buildable asset says 3,000 `MaxHealth`; the finished gun is the `STN
 
 The Stingray is bought, not reloaded: the drone reload scene reads "PURCHASE STINGRAY" with spare parts and cash. It and the Talon are lock-on weapons (`TargetingSetup`: air targets, `TimeToTarget` 2.0 s, `FireDelayAfterLock` 0.5 s; the Stingray fires only while locked).
 
+## 14. Round 38 additions
+
+Evidence: cooked data and Blueprint bytecode read with the extractor (`dump` mode), the Dumper-7 headers in `sdk/raw`, and static reading of the decompiled native code. Nothing was run. Details, asset names and RVAs: [round 38 building data evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md). The per-structure values below are in [`assets/data/buildable-semantics.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/buildable-semantics.json), written by `python -I _tools/buildable_semantics.py` (`--check` asserts the key values).
+
+### 14.1 `bOverridesFinalStage` and the `...ActorReplacing` spawners
+
+**Data, Derived.** The six definitions with the flag are the six whose finished form is a composite: Indirect Fire Shelter, Door, Bunker, Recon Tower, Gate and Hesco Wall (quad wall). Each one has a spawner base class that derives from `WDActorReplacingBuildable` (`B_Buildable_AirRaidShelter_C`, `B_Buildable_Door_ActorReplacing_C`, `B_Buildable_Bunker_C`, `B_Buildable_CrowsNestActorReplacing_C`, `B_Buildable_Gate_ActorReplacing_C`, `B_Buildable_HBlock_QuadWall_C`; the Blueprints hold no logic of their own). The other structures use a `WDActorSpawningBuildable` subclass or a plain `B_Buildable_C`.
+
+What differs is the last stage. In every override definition the last stage's mesh list names `ActorToSpawn` sub-actors (separate buildable prefabs); structures without the flag have a single finished mesh and no sub-actors. Final-stage sub-actors:
+
+| Structure | Sub-actors listed by the last stage |
+|---|---|
+| Indirect Fire Shelter | shelter floor, shelter ceiling, one tall Hesco, one Hesco |
+| Door | door top segment, the Door actor (`B_Buildable_Door_C`) |
+| Bunker | tall Hesco, sandbag wall, Hesco, bunker roof, bunker floor |
+| Recon Tower | tall Hesco, sandbag wall, Hesco, tower roof, first floor, base floor |
+| Gate | left gate half, right gate half, Hesco gate ramp (rule `FinalOnly`) |
+| Hesco Wall (quad) | tall Hesco |
+
+So while the structure is built the stage meshes are previews (the placement rule is `PreviewOnly` for the mesh that carries the sub-actor), and at completion the sub-actors take over, each its own buildable with its own health and damage row (the parts are single-stage data assets such as `DA_Buildable_Bunker_Floor`). That the native code swaps preview for actors at completion is **Derived** from the field names (`EWDPlacementRules`: PreviewAndFinal, PreviewOnly, FinalOnly, FinalOnlyWithFoundations) and the class names; the swap itself is native and was not read. The native default of the flag is false (data asset constructor `0x8585020`, offset `0x290`).
+
+### 14.2 `MaxStack` and `PlacementFlags`
+
+**Native (static reading), enum from the SDK.**
+
+- `EWDPlacementFlags` (`BuildablesRuntime`): 1 AllowRotation, 2 CanBeBuiltOn, 4 CanPlaceVertically, 8 CanPlaceOnBuildables, 11 Default (a bit set).
+- Native defaults: `PlacementFlags` 11 (1 + 2 + 8) and `MaxStack` 2 (data asset constructor `0x8585020`). Serialized values: 9 (AllowRotation + CanPlaceOnBuildables) on 14 assets (Recon Tent, Sandbag Wall, Tank Trap, Radio, Refuel and Repair Station, Gate halves, Drill Rig and five of the six stationary weapons), 1 (AllowRotation only) on the FOB, and nothing on the other 23, where the default 11 applies. The earlier wording "9 for almost every structure" counted only serialized values.
+- Reader: the snap-on-top placement check `sub_1485C5390` (RVA `0x85C5390`). In order it requires: the new structure has bit 8; the buildable underneath has bit 2 (`sub_1485889A0`, RVA `0x85889A0`); the entity tag of each is allowed by the other's tag list; the lower buildable is complete (progress at least 1.0); `lower.StackHeight + 1 <= MaxStack` of the new structure; and the new support height stays within `SupportHeightLimit` of `DA_BuildablePlacementData` (1,500). Every failure returns its own reason tag.
+- So `MaxStack` is the stack-height limit for the structure being placed on top of other buildables (the one placed included), not a placement count. Examples: Barbed Wire, Recon Tent, Sandbag Wall, Tank Trap and both stations 100; Hesco block 5; MG Nest 5; Wood base 4; Radio and four stationary weapons 6; FOB, Gate, Shelter, Bremer Wall and Indirect Fire Shelter 1; Recon Tower parts, Drill Rig and Gate halves 0. Unset (`-` in the placement table) means the default 2.
+- Flag meaning per group: FOB (1) can be rotated, cannot be built on and cannot be placed on other buildables. The 9 group can be placed on buildables but nothing can be placed on them. The default 11 group (walls, Bunker and its parts, MG Nest, Door, Gate) can be both. `CanPlaceVertically` (4) is set on no asset and its reader was not found.
+- The two tag containers on the data asset (offsets `0x130` and `0x150`) are the allowed-neighbour lists used by the two tag checks: the Barbed Wire lists only itself, the Bremer Wall lists Barbed Wire and Sandbag Wall. **Derived** from the reader; which list is which direction was not separated.
+
+### 14.3 Weak spots (critical-hit spots)
+
+**Data, Blueprint bytecode, native defaults.** A weak spot is a **build-speed bonus for the hammer**, not a damage multiplier. `B_CriticalHitSpot` is an actor with a small box (extent taken from its decal, 6.4 x 12.8 x 12.8) that ignores every collision channel including projectiles and melee, so bullets cannot hit it; its tick only draws a debug sphere. The hammer item carries `WDItemExtensionData_CriticalHitSpotManager`, which shows a highlighted decal on the structure being built:
+
+| Hammer | Normal hit | Hit on the weak spot (`BuildAmountWhenTargetIsHit`) | Factor | Max distance from player view | Facing-away limit at spawn |
+|---|---:|---:|---:|---:|---:|
+| Small | 0.5 | 3 | 6 | 290 | 135 degrees |
+| Medium | 1 | 5 | 5 | 290 | 135 degrees |
+| Large | 1.5 | 8 | 5.3 | 340 | 135 degrees |
+
+Native defaults of the manager that the hammers do not override (constructor `0x85E0960`): `BuildAmountPerSecondWhenTargetIsTracked` 4.0 (continuous mode, while the aim stays on the spot), `CriticalHitSpotSpeed` 30, `CriticalHitSpotRotationLerpSpeed` 0.02, `CriticalHitSpotDistanceRequirementSquared` 4, relocation mode EyeLine, life span 0 and spawn delay 0. Spot colours: default `FFCF02`, highlighted `FFEFD1`. Each non-final stage lists its spot positions in its stage file (counts per stage are in the JSON); the last stage has none. The data-asset flag `bUsesCriticalHitSpots` defaults to true and is set false on Barbed Wire, Recon Tent and the part assets (so those two have spots in the stage files that are never shown). No damage-table row, Gameplay Effect or reward mentions weak spots (searched `data/` for CriticalSpot and CriticalHit).
+
+### 14.4 The two Blueprint placement conditions
+
+**Blueprint bytecode and native code (static).**
+
+| Condition | Test | Number |
+|---|---|---|
+| `B_SafeZonePlacementCondition` (`IsSatisfied`) | Fails with the warning tag `UI.Interactions.PlacementWarnings.InSafeZone` if the placing player carries any of the tags `State.Location.SafeZone.Alpha`, `.Bravo`, `.Charlie` or `.Hostile`. Otherwise it walks every `B_SafeZone` actor and fails if the closest point of that safe zone's trigger volume to the placement location is at most `MinDistanceToSafezone` away. | 300 Unreal units (3 m) |
+| `B_WithinLadderBoundsPlacementCondition` (native `WDWithinLadderBoundsPlacementCondition`, vtable slot `0x7725250`) | Runs a sphere overlap (trace tag `WDLadderPlacementCheck`) at the placement location and fails if any `WDMoverLadder` actor (class in `/Script/WDGame`) overlaps. | `BlockRadius` 100 Unreal units (1 m) |
+
+The safe-zone condition is listed on 25 of the 38 buildable data assets (the FOB has it; Bunker, Door, Gate and Drill Rig do not), the ladder condition on 37 (all but the Drill Rig). The Unreal unit is the centimetre.
+
+### 14.5 Builder's Radio
+
+**Data, Blueprint bytecode.** The Builder's Radio is a music radio. `B_Radio` has a world interactable with a power toggle and seven stations (`Interaction.Context.Buildables.Radio.Power`, `.Station1` to `.Station7`). The power interaction sets the station number to 0 (off) or back to the previous station; each station interaction sets the number; `B_Radio_AudioHandler` replicates `Curr Station Num` and `Prev Station Num`, starts the audio component with the trigger parameter `Play` and sets a timer for the next song. No spawn, call, supply drop or UI effect is in the Blueprints. `bRegisterWithFOB` makes the FOB count the radio toward its limit of 4 (the FOB component keeps a `TrackedBuildablesCount` against the ruleset's `LimitFOBBuildables`); placement must also be inside a friendly FOB radius. `B_Radio_World` is the same radio as a world prop (a `WDWorldRadioSpawnComponent` spawns it in the pre-lobby).
+
+### 14.6 Drill Rig and the hot zone magnet
+
+**Data and native defaults.** The `HotzoneMagnet` buildable is the buildable form of the map's hot zone magnet. Its settings, with the native default for what the asset does not set (data asset constructor `0x85E05D0`):
+
+| Setting | Asset value | Native default |
+|---|---:|---:|
+| `InitialDelayDuration` | 15 | 10 |
+| `HotZoneMagnetRechargeDuration` | 900 | 300 |
+| `HotZoneMagnetMinimumFuel` | 2,000 | 200 |
+| `HotZoneMagnetDurationPerFuel` | 0.03 | 0.3 |
+| `MaxFuel` | 10,000 | 1,000 |
+| `ActivateInteractionDuration` | not set | 10 |
+| `ActivateInteractionRange` / `FuelInteractionRange` | not set | 200 / 200 |
+| `ActivatedHotZoneMagnetSpeed` | not set | 5.0 |
+| `ActivatedHotZoneMagnetSizeMultiplier` | not set | (0.5, 0.5, 1.0) |
+| `HotZoneTowerRewardRange` (actor) | not set | 2,500 |
+
+**Units (Derived).** The delays and the recharge are seconds (the Blueprint drives timers with them and the HUD divides the remaining cooldown by the total). Run time is fuel times `DurationPerFuel`: the minimum 2,000 fuel gives 60 s and the full 10,000 fuel gives 300 s of activation. Fuel is the FOB's Fuel Supplies (`Id.Item.FuelSupplies`; the rig follows the FOB inventory, and the HUD strings read "FOB REQUIRED", "MIN FUEL", "INSUFFICIENT FUEL", "READY TO ACTIVATE", "DRILL ACTIVE"). Activation is an interaction held for 10 s within 200 units.
+
+**What it does.** The rig drives the session-wide `WDHotZoneMagnetGameStateComponent`, the same component that the map's tower and keypad puzzle uses (towers captured reveal a code; a wrong code costs `HotZoneMagnetCodeAttemptsTimePenalty` 30 s on `B_HotZoneMagnet`). The component keeps the active magnet number and location, a speed (native 3.0), a size multiplier (native (0.6, 0.6, 1.0)), an activation duration (Blueprint value 180 s, native 120) and a tower recharge (Blueprint value 900 s, native 150); the 900 matches the rig's own recharge. The reading is that, while a magnet is active, the hot zone (control zone) is drawn toward it at the configured speed and scaled by the size multiplier. Reward rows (cash table base): magnet activated 5,000, magnet destroyed 150 (200 for the instigator), tower captured 250 (1,000 hostile); the reward text says resources go to all friendly players within range of an activated magnet. **Not traced:** the native code that moves and resizes the zone, so the movement and shrink are read from the field names and HUD, not from a computation, and which of the two speed and size pairs (component or rig asset) applies to a rig is open.
+
+### 14.7 Cash rows for the missing structures, and the Placed tables
+
+**ABSENT as named rows; table choice is native.** None of the Talon 9K-SAM, Loudspeaker, Vanguard CIWS, Stingray, MG Nest, Wood Base or Shelter has a row in `DT_Reward_Cash_BuildableBuilt`, `...Placed` or `...PlacedInFOB`; all three tables hold the same 10 structures (HBlock, TallHBlock, Gate, FOB, HBlockQuadWall, Mortar, BarbedWire, TankTrap, AirRaidShelter, Bunker) and none of the seven is in a reward lookup or challenge table for placing. Each table has a `Meta.Progression.Context.DefaultReward` row: Built base 1 (owner 0.5, friendly 1), Placed base 1 (owner 1, friendly -1), Placed in FOB base 1 (owner 0, friendly -1). If the lookup falls back to that row for an unlisted structure the payout would be 1 cash; the fallback is native and not confirmed.
+
+How the tables are chosen: all are sources of one Data Registry, `DR_CashRewards` (registry type `CashRewards`, item struct `WDCustomRewardTableRow`), in this order: Built, Placed, Placed in FOB, ControlZoneReward, DeployableDestroyed, DeployedSupplyCrate, EndGameFactionReward, Heal, HotZoneMagnet, PlayerKill, Refuel, Repair, Revive, VehicleDestroyed, VehicleTransport. Built, Placed and Placed in FOB use the **same row names**, so a lookup by row name alone cannot tell them apart (stock Unreal returns the first source that has the id, which would be the 1-cash Built row). Which table a placement event reads was not found in the native code. The per-placement reward that is visible in data is `Challenges.Rewards.Buildables.SchematicPlaced` ("Wait For Schematic Placed In FOB Event"): a flat 10 times the zone modifier (control zone 1, hot zone 2) with no role resource, plus the resource `SchematicPlacedInFOBScore` of 5 cash (+5 inside a hot zone), neither depends on the structure type.
+
+### 14.8 Is the FOB a spawn point?
+
+**ABSENT in the client data (not excluded on the server).** Searched: every FOB Blueprint (`B_ForwardOperatingBase*`, `B_ForwardOperatingBaseComponent`, the three faction buildable and placement classes), the `WDForwardOperatingBaseComponent` and `WDFobWatchingCollisionBox` members in the SDK, the spawn tags and string tables in `data/`, and the spawn classes (`WDSpawnManager`, `WDSpawnVolume`, `WDSpawnQueryPoint`, `WDPlayerSpawnManagerComponent`), which are keyed by faction tag and map-placed query points and never reference the FOB. The only "spawn" the FOB Blueprints use is `WDBuildable_ActorSpawnLocation`, the anchor for the sub-actors a buildable spawns. The player-facing texts describe the FOB as a claim-territory and supply point ("Needed to Build Larger Structures", "Can hold Items & Resources", "Provides a Radius in Which Players Can Build"; "claim territory for your team"). Placement warnings: "Too close to another Forward Operating Base", "FOB build zones cannot overlap", "Can't Place In Enemy FOB Radius". `Vehicle.Variant.Land.Tracked.SpawnVehicle` is a separate vehicle class, not the FOB.
