@@ -80,7 +80,7 @@ Full lists: [Items & Equipment changes](../../season-2-changes/items-equipment.m
 
 ## Modes and rewards
 
-- **Two new game modes were added: Team Offence and Hot Potato.** Team Offence has its own challenges and voting and punishment rules. Hot Potato has its own items. The shooting range also gained a tutorial, and Control Zone settings were added for Sniper Showdown and for the Africa and Russia layouts.
+- **Team Offence was added as a new game mode,** with its own challenges and voting and punishment rules. [Hot Potato](../game-modes-and-maps/hot-potato.md) was also added: a pre-lobby mini-game with its own items, switched off by default, not a match mode. The shooting range also gained a tutorial, and Control Zone settings were added for Sniper Showdown and for the Africa and Russia layouts.
 - **Cash for spotting and destroying some vehicles changed.** For the L2A6's artillery variant, the Season 1 amounts of 1,500 and 8,000 were replaced by 400 and 1,200. The data does not say which amount is for spotting and which for destroying. Talon 9K-SAM spotting went from 200 to 75, and destroying a Vanguard CIWS went from 1,500 to 725.
 - **Spotting rewards fell for more vehicles.** The Flakpanzer Gepard's cash went from 5,000 to 2,100, and the Talon 9K-SAM's from 1,000 to 400. XP for the Mortar and the Talon roughly halved (for example from 125 to 60). The XP reward for spotting an AT Mine and a Claymore doubled, from 2.5 to 5.0. The cash factor for a spotted target killed by enemies fell from 0.5 to 0.25 for players and most vehicles.
 - **Spotting pay range is unchanged.** Spotting still pays 15 to 275 cash, and destroying a spotted target 50 to 500.
