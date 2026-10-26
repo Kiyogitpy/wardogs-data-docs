@@ -49,7 +49,7 @@ Infantry Only is King of the Hill with the heavier and armed vehicle packs disab
 | Wolf-110 [M2 Browning] | The armed Wolf |
 | Talon 9K SAM, Vanguard CIWS and Stingray | Buildable anti-air and counter-rocket emplacements |
 
-The unarmed Humvee, Kodiak, Ural, Wolf-110, Z20 Lakota and MH-6 are not on the removed list. They are separate vehicle packs that the mode does not switch off, and the Infantry Only rule itself is only a label for the server browser: no game code reads it to block vehicles (inferred from the code; the game was not run). So the unarmed vehicles can still spawn in Infantry Only.
+The unarmed Humvee, Kodiak, Ural, Wolf-110, Z20 Lakota and MH-6 are not on the removed list. They are separate vehicle packs that the mode does not switch off, and the Infantry Only rule itself is only a label for the server browser: no game code reads it to block vehicles (inferred from the code; the game was not run). Nothing in the game files stops the unarmed vehicles from spawning in Infantry Only, so they most likely still can, unless the server removes them.
 
 ## Other server options
 
