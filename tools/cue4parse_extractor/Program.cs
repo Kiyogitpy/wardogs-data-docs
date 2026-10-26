@@ -27,7 +27,7 @@ using Serilog;
 
 if (args.Length < 6)
 {
-    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|mesh|physics|collision|deobfuscate|recover-bp-types|recover-bp-names|recover-rigvm-types|recover-pcg-layout-types> [args...] [--names <usmap>]");
+    Console.WriteLine("usage: WdExtract <paksDir> <aesKeyFile> <usmap> <outDir> <oodleDll> <list|schema|findname|dump|textures|mesh|physics|collision|deobfuscate|recover-bp-types|recover-bp-names|recover-rigvm-types|recover-pcg-layout-types> [args...] [--names <usmap>]");
     return 1;
 }
 string paksDir = args[0], keyFile = args[1], usmap = args[2], outDir = args[3], oodle = args[4], mode = args[5];
@@ -194,7 +194,7 @@ if (mode == "findname")
     Console.WriteLine($"packages matching: {hits.Count}");
     return 0;
 }
-if (mode != "dump" && mode != "mesh" && mode != "physics" && mode != "collision") { Console.WriteLine($"unknown mode {mode}"); return 1; }
+if (mode != "dump" && mode != "textures" && mode != "mesh" && mode != "physics" && mode != "collision") { Console.WriteLine($"unknown mode {mode}"); return 1; }
 
 // dump, mesh, physics and collision share the known usmap patches (KnownPatches below).
 {
@@ -203,6 +203,7 @@ if (mode != "dump" && mode != "mesh" && mode != "physics" && mode != "collision"
     File.WriteAllLines(Path.Combine(outDir, "_usmap_patches.txt"), log);
 }
 var assets = rest.Count == 1 && File.Exists(rest[0]) ? File.ReadAllLines(rest[0]).Where(l => l.Trim().Length > 0).ToArray() : rest.ToArray();
+if (mode == "textures") return TextureMode.Run(provider, assets, outDir);
 if (mode == "mesh") return MeshMode.Run(provider, assets, outDir);
 if (mode == "physics") return PhysicsMode.Run(provider, assets, outDir);
 if (mode == "collision") return CollisionMode.Run(provider, assets, outDir);

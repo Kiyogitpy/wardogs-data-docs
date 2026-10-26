@@ -1318,6 +1318,20 @@ Six items have a `WDInventoryFragment_Attachment` whose `AttachmentData` is null
 | [`ID_TRGR_001`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Triggers/TRGR_001/Content/Data/ID_TRGR_001.json) | `Id.Item.TRGR_001` | RAK-1 Enhanced Trigger | `Item.Attachment.Trigger` |
 <!-- /attachment_tables -->
 
+## Icon textures (round 76)
+
+The icon textures every shop and inventory item references are extracted as PNG: 647 textures, 29 MB, in `assets/img/icons/<category>/<texture name>.png` (category = the texture's folder, for example `vendor-grips`, `vendor-magazines`, `vendor-muzzles`, `vendor-optics`, `vendor-weapons`, `attachments-3d`, `utility-3d`, `vehicles-3d`, `weapons-3d-equip`; textures outside the shared icon folder go to `other-*`). Each icon is at its native size (the largest are 512 px class; 52 are larger and kept as is). [`assets/data/item-icons.json`](../assets/data/item-icons.json) maps every item id and its display name (the `FriendlyName` the shop shows) to its `vendor` icon (the `UI.Icon.Vendor` tagged icon), its `inventory` icon (the first `UI.Icon.Inventory.*` tagged icon, else the fallback), the `fallback` icon, any other tagged icons, and `overrides`: the vendor-market `OverwrittenIcon` variations (for example the per-caliber magazine icons on `DT_WeaponMarket`). 653 items have an `Icons` struct and 37 vendor rows carry overrides; 183 icon rows have no `FriendlyName` in their entity row, so their name is empty.
+
+Regenerate (static extraction, no game run; `WdExtract` is built from `tools/cue4parse_extractor` with its new `textures` mode, which decodes the highest mip with CUE4Parse and writes PNG; copy CUE4Parse-Conversion's `Resources/Detex.dll` next to the exe, BC7 icons need it):
+
+```
+WdExtract <Paks> <aes key file> <usmap> <outdir> <Paks>/oo2core_9_win64.dll list ""            # -> <outdir>/files.txt
+python -I _tools/item_icons.py list files.txt icon-list.txt
+WdExtract <Paks> <aes key file> <usmap> <pngdir> <Paks>/oo2core_9_win64.dll textures icon-list.txt
+python -I _tools/item_icons.py build files.txt <pngdir>      # copies the PNGs, writes item-icons.json
+python -I _tools/item_icons.py --check                       # every referenced icon has a PNG
+```
+
 ## Unexplained and not traced
 
 - **Attachments with no effect.** Section 7 lists every item whose data names no effect. Counted in round 39: of 298 attachment fragments, 149 list no effect (21 of 32 grips, all 25 handguards, 23 of 69 magazines, 1 of 56 muzzles, 1 of 29 sights, all 37 stocks and all 41 barrels; no bipod). Magazine capacity acts through data, not code: it is the `MaxSlotAmountStackSize` of the magazine's `Item.Ammo` container (Items v2 section 2a). Whether the other parts act through code (the part model) is not traced.
