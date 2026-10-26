@@ -44,12 +44,14 @@ The view narrows along the weapon's aiming curve and eases toward its target at 
 
 The magnification number in the table above is not what you see on screen. The game narrows the view by dividing the viewing angle, not the size of the picture, so a sight's real picture magnification against the normal view is the tangent of half the normal angle divided by the tangent of half the aimed angle. The aimed angle is the starting angle divided by the sight's magnification, and the starting angle is your Field of view setting for low magnification sights but a fixed 72 degrees for sights of 3.25x and up. A 4x scope therefore aims at 72 / 4 = 18 degrees, which against a 90 degree normal view is about 6.3 times the size, not 4.
 
+The 3x-6x LPVO Short Dot is named "1x-6x" in its item data, but its zoom runs from 3 to 6.
+
 The table below uses the default settings: Field of view 90 and the Affected aiming mode. Variable zoom scopes are listed at both ends of their range. The combo sights are listed in both modes. A combo sight keeps the 72 degree start in its 1.2x reflex mode, so its reflex view is 60 degrees rather than 75. A scope that can zoom starts from 72 degrees across its whole range, even at its lowest zoom. The Leatherwood ART II at 3x is an example. These figures are derived from the camera code, not measured on screen. They hold at full aim, with no focus bonus, and the Independent aiming mode would put every sight on 72 degrees.
 
 | Sight | Magnification used | Starting angle (degrees) | Aimed view (degrees) | Effective magnification |
 |---|---:|---:|---:|---:|
-| 1x-6x LPVO Short Dot (highest zoom) | 6 | 72 | 12 | 9.51 |
-| 1x-6x LPVO Short Dot (lowest zoom) | 3 | 72 | 24 | 4.7 |
+| 3x-6x LPVO Short Dot (highest zoom) | 6 | 72 | 12 | 9.51 |
+| 3x-6x LPVO Short Dot (lowest zoom) | 3 | 72 | 24 | 4.7 |
 | 2.5x Combat Optic | 2.5 | 90 | 36 | 3.08 |
 | 3-6x Scope (highest zoom) | 6 | 72 | 12 | 9.51 |
 | 3-6x Scope (lowest zoom) | 3 | 72 | 24 | 4.7 |
