@@ -326,3 +326,86 @@ $lc-warn: #ffc79a;                        // the vehicle viewer's note colour
   color: $ue-text;
   font-size: 0.8rem;
 }
+
+// Class and class-level gate (beside the weapon picker) and its hint line.
+.vv-controls.lc-controls > .lc-field-gate { flex: 1 1 9rem; }
+.vv-controls.lc-controls > .lc-field-level { flex: 0 1 8rem; }
+.lc input[type="number"] {
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: $ue-white;
+  background: $ue-btn-grey;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-small;
+
+  &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  &:disabled { color: $ue-text-dim; background: $ue-panel; }
+}
+.main-content .lc-gate-hint { margin: -0.5rem 0 1rem; }
+
+// Sight and reticle, and the ammunition card: full width under the loadout.
+.lc-optics, .lc-ballistics { margin-top: 1rem; }
+.lc-sight { margin-top: 0.75rem; }
+.lc-sight-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: $ue-white;
+}
+.lc-sight-icon { width: 4rem; height: auto; }
+.lc-reticles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.6rem 0 0.25rem;
+}
+.main-content figure.lc-reticle {
+  margin: 0;
+  width: min(15rem, 100%);
+
+  figcaption { margin-top: 0.35rem; color: $ue-text-dim; font-size: 0.8rem; }
+}
+// The reticle images are black lines on transparent: shown on a light, glass-like disc.
+.lc-reticle-pane {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle, #e9ede4 0%, #cfd6c8 70%, #9aa395 100%);
+  border: 1px solid $ue-border-strong;
+
+  img { display: block; width: 100%; height: 100%; object-fit: contain; }
+}
+
+.vv-controls.lc-bal-controls { margin-bottom: 0.75rem; > .vv-field { flex: 1 1 10rem; } }
+.lc-bal-empty .lc-bal-controls, .lc-bal-empty .lc-scroll, .lc-bal-empty .lc-sub { display: none; }
+.main-content h3.lc-sub {
+  margin: 1rem 0 0.5rem;
+  color: $ue-text-dim;
+  font-size: 0.75rem !important;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+// Wide tables scroll inside their own box, never the page.
+.lc-scroll {
+  overflow-x: auto;
+  margin: 0 0 0.75rem;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+
+  &:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+}
+.main-content table.lc-btable {
+  width: 100%;
+  margin: 0;
+  font-size: 0.85rem;
+
+  th, td { padding: 0.4rem 0.7rem; white-space: nowrap; }
+  .lc-num { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody th { color: $ue-white; font-weight: 500; }
+  tbody tr.lc-row-on td, tbody tr.lc-row-on th { background: $lc-changed-bg; }
+  tbody tr.lc-row-on th { color: $lc-changed; }
+}
+.lc-reticle-lens .lc-reticle-pane { background: radial-gradient(circle, #2b3a33 0%, #18201c 75%, #0d110f 100%); }
