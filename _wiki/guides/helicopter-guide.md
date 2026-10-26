@@ -39,7 +39,7 @@ The Z20 Lakota [Miniguns] fires 1,500 rounds/min out to 1,500 m, with 150 starti
 | [9K333 Verba](../weapons/9k333-verba.md) | 2 s | 0.25 s | Helicopters and the airplane only | A launcher a player carries. Fires only while locked on. Costs 800, unlock level 1. |
 | [Talon 9K-SAM](../building/talon-9k-sam.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey, the Z20 Lakota family and the airplane | An emplacement. Fires only while locked on. |
 | [Stingray](../building/stingray.md) | 2.0 s | 0.5 s | Air vehicles only, including the Little Bird family and the Havoc | An emplacement that fires a drone. |
-| [MG Nest](../building/mg-nest.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey and the airplane | An emplacement. Fires only while locked on. |
+| [MG Nest](../building/mg-nest.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey and the airplane | An emplacement. Its weapon data has this lock-on block, but how a player-manned gun uses it is not shown in the data. |
 | [Vanguard CIWS](../building/vanguard-ciws.md) | Not stated | Not stated | The building guide says its target list is air vehicles only | The Vanguard page gives no lock-on timings. |
 
 Sources: the articles in the table, and [Building a Base](building-guide.md). The Huey is on the Talon and MG Nest lists. It has no article in this wiki.
