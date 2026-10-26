@@ -20,6 +20,7 @@ Sources:
   python -I _tools/loadout_builder_data.py          write the file
   python -I _tools/loadout_builder_data.py --check  exit 1 if the written file is stale
 """
+import glob
 import json
 import os
 import re
@@ -122,6 +123,33 @@ def build():
             it = item_by_asset.get(aid)
             e.update(kind="attachment", slot=wc.slot(it) if it else None)
         items[aid] = e
+
+    # Magazine capacity: the Item.Ammo container's MaxSlotAmountStackSize, as weapon_capacity_tables.py reads it.
+    import weapon_capacity_tables as wct
+    id_paths = {os.path.basename(p)[:-5]: p for p in glob.glob(os.path.join(ROOT, "data", "Wardogs", "**", "ID_*.json"), recursive=True)}
+    for aid, e in items.items():
+        if e.get("kind") == "attachment" and e.get("slot") == "Magazine" and aid in id_paths:
+            ammo = next((c for c in map(wct.cinfo, wct.containers(id_paths[aid])) if c["container"] == "Item.Ammo"), None)
+            e["capacity"] = ammo["stack"] if ammo else None
+
+    # Parts with no shop name (mostly default barrels, stocks, grips): "<owner> <slot>" from the item whose
+    # sub-slot starts with the part, else "<slot> <code>"; nameDerived marks the name as not the game's.
+    owners = {}
+    for oid, rec in loadouts["items"].items():
+        for s in rec.get("slots") or []:
+            if s.get("default"):
+                owners.setdefault(s["default"], []).append((oid, s["tag"]))
+    for aid, e in items.items():
+        if e["name"] and e["name"] != aid and not e["name"].startswith("ID_"):
+            continue
+        own = sorted(owners.get(aid, []), key=lambda o: str(items.get(o[0], {}).get("name") or o[0]))
+        slot_label = (own[0][1] if own else e.get("slot") or "Item.Part").rsplit(".", 1)[-1]
+        owner_name = own and items.get(own[0][0], {}).get("name")
+        if owner_name and not owner_name.startswith("ID_"):
+            e["name"] = f"{owner_name} {split_camel(slot_label).lower()}"
+        else:
+            e["name"] = f"{split_camel(slot_label)} {aid[3:]}"
+        e["nameDerived"] = True
 
     # slot membership from the Inventory.Slot.* context tags
     slots = {k: [] for k in SLOT_TAG}

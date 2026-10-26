@@ -107,7 +107,7 @@
 
   /* ---------- view ---------- */
 
-  var NS = "http://www.w3.org/2000/svg", AIM_H = 1.4, PERSON_H = 1.8, MAXSHOTS = 40;
+  var NS = "http://www.w3.org/2000/svg", AIM_H = 1.4, PERSON_H = 1.8, MAXSHOTS = 100;
   function el(tag, cls, text, parent) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -127,7 +127,7 @@
   function pt(sc, p) { return sc.X(p.x).toFixed(1) + "," + sc.Y(p.y).toFixed(1); }
 
   function mount(host, spray) {
-    var st = { spray: spray, in: null, found: null, shots: 30, dist: 50, run: null, timer: null };
+    var st = { spray: spray, in: null, found: null, shots: 30, dist: 15, run: null, timer: null };
     clear(host);
     host.classList.add("wdr");
     var head = el("div", "wdr-head", null, host);
@@ -336,7 +336,8 @@
         var prev = st.in && st.in.itemAsset;
         st.in = { itemAsset: o.itemAsset, vertical: o.vertical, horizontal: o.horizontal, stance: o.stance, focus: !!o.focus };
         st.found = findSeason(st.spray, o.itemAsset);
-        if (o.magazine != null && o.itemAsset !== prev) st.shots = Math.max(1, Math.min(MAXSHOTS, o.magazine | 0));
+        if (o.magazine != null && (o.itemAsset !== prev || o.magazine !== st.mag)) st.shots = Math.max(1, Math.min(MAXSHOTS, o.magazine | 0));
+        st.mag = o.magazine;
         if (o.itemAsset !== prev) stopFire(); else { if (st.timer) clearTimeout(st.timer); st.timer = null; st.run = null; fire.textContent = "Fire"; fire.classList.remove("is-on"); }
         render();
       },

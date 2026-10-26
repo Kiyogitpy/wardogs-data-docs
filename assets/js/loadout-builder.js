@@ -736,7 +736,10 @@
     els.recoilLead.textContent = "Spray pattern of " + nameOf(current().id) + " with this loadout: vertical recoil ×" + (v == null ? "?" : fmt(v)) +
       ", horizontal ×" + (h == null ? "?" : fmt(h)) + " (attachments, bipod and " + S.stance.toLowerCase() + " stance included).";
     try {
-      panel.update({ itemAsset: current().id, vertical: v == null ? 1 : v, horizontal: h == null ? 1 : h, stance: S.stance, focus: S.focus });
+      var mag = L.slots(model, current().lo).filter(function (x) { return x.tag === "Item.Attachment.Magazine" && x.choice != null; })[0];
+      var cap = mag && bi(mag.choice) ? bi(mag.choice).capacity : null;
+      panel.update({ itemAsset: current().id, vertical: v == null ? 1 : v, horizontal: h == null ? 1 : h, stance: S.stance, focus: S.focus,
+                     magazine: cap == null ? undefined : cap });
     } catch (e) { els.recoilLead.textContent = "The recoil plot could not be drawn (" + e.message + ")."; }
   }
 
