@@ -86,6 +86,7 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 - [Vehicle damage](vehicle-damage.md): how hits reach the vehicle
 - [Talon 9K-SAM](../building/talon-9k-sam.md): a fixed anti-air emplacement
 - [Vehicles](../vehicles.md): the full list of vehicles
+- [Helicopter Guide](../guides/helicopter-guide.md): flares, lock-on weapons and helicopter numbers in one place
 
 ## Sources
 

@@ -97,6 +97,7 @@ The reward tables list events, not roles. The events below are the ones that fit
 ## See also
 
 - [Choosing a Role](../guides/choosing-a-role.md)
+- [Helicopter Guide](../guides/helicopter-guide.md)
 - [Skills](skills.md)
 - [Driver](driver.md)
 - [Cash and Rewards](cash-and-rewards.md)
