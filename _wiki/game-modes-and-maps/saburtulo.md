@@ -118,7 +118,7 @@ Saburtulo has no list of zone regions, so the towers cannot be placed in a named
 
 ### In each team spawn area
 
-The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a small soccer pitch, 3 moving practice targets and a safe zone.
+The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a small soccer pitch, 3 moving practice targets and a safe zone. The invisible safe zone boxes are about 480 m tall; each safe zone is 800 m by 800 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 13.2 km by 13.2 km.
 
 Saburtulo is the one map here whose spawn areas have no free fuel point.
 
@@ -146,6 +146,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 ## Sources
 
+- [Boundaries and Safe Zones](boundaries-and-safe-zones.md)
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
 - [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md): also the cover material counts per map

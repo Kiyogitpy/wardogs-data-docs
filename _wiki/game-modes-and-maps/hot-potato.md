@@ -21,7 +21,7 @@ Hot Potato is a mini-game played in the pre-lobby, the waiting area before a mat
 
 ## Overview
 
-Hot Potato came in with Season 2 alongside [Team Offence](team-offence.md). The pre-lobby has other mini-games as well: the data's pre-lobby reward reasons name a shooting game and a soccer game.
+Hot Potato came in with Season 2 alongside [Team Offence](team-offence.md). The pre-lobby has other mini-games as well: the data's pre-lobby reward reasons name a shooting game and a soccer game. These are the moving practice targets (a hit pays points equal to its damage) and the soccer pitch (a goal pays 50, an assist 25) that stand in each team spawn area. See [Boundaries and Safe Zones](boundaries-and-safe-zones.md).
 
 ## Rules and objectives
 

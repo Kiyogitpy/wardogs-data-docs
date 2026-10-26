@@ -413,6 +413,32 @@ Heights are `LandscapeComponent.CachedLocalBox` min and max z, scaled by the lan
 
 No experience in this group names a zone configuration. Each world file holds one zone object (Bakurani config and Kavkazi region list; Europe config and region list), so the zone area is the main map's (inferred). The Bakurani region list holds MindoriVillage, MindoriHillside1 and MindorHillside2, about 0.9 km from the zone area centre; no region carries the name Tevza, Berlin or Paris.
 
+## 13. Play-area boundary and spawn safe zones (round 68)
+
+Static analysis only; nothing was run. Raw output is outside the repository. Summary data: [map-boundaries.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-boundaries.json). Evidence: [round68-boundaries.md](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round68-boundaries.md).
+
+**Boundary rectangle.** Each world's `WDWorldSettings` holds `bUseOutOfBounds` (true in all four worlds) and `PlayableBoundsExtent`, a 2D box (X and Y only, no height). Units are cm in the export; metres below.
+
+| Map (world) | X from / to (m) | Y from / to (m) | Size (km) | Round 67 play box inside it, gap W / E / S / N (m) | Kill Z (m) |
+|---|---|---|---|---|---|
+| Bakurani (Kavkazi) | -14,000 / -3,000 | -17,000 / -6,000 | 11.0 x 11.0 | 4,033 / 3,634 / 4,075 / 3,477 | -1,500 |
+| Ozeti (Europe) | -10,423 / -1,905 | -9,758 / -2,010 | 8.52 x 7.75 | 2,146 / 2,571 / 2,174 / 2,628 | -1,500 |
+| Zestafona (NorthAmerica) | -6,200 / 4,300 | -6,000 / 3,200 | 10.5 x 9.2 | 3,370 / 3,670 / 2,272 / 3,682 | -1,500 |
+| Saburtulo (Russia) | -6,600 / 6,600 | -6,600 / 6,600 | 13.2 x 13.2 | 5,540 / 5,913 / 5,767 / 5,784 (stand-in play box) | not set (engine default) |
+
+**Timers.** A character that is outside the rectangle, or that carries the hostile safe zone tag, runs a timer up at 1 s per second. The limit is 20 s (`B_WDMoverPlayerCharacter` value; native default 10 s). Back inside, the timer counts down at 1 s per second. At the limit the server kills the character. A vehicle uses the same test with a native default limit of 22 s (Blueprint overrides not read); at the limit the server calls a destroy-like call on its health component. The HUD shows "Return to the Combat Area" (message display length 5 s) and a countdown.
+
+**Safe zone actor.** `B_SafeZone_C` (parent `WDSafeZoneVolume`): faction tag, tag applied to the faction's players (`State.Location.SafeZone.<Faction>`), tag applied to other factions (`State.Location.SafeZone.Hostile`), no effects. The box is the default 32 cm half extent times the placed scale (inferred; the extent is not stored).
+
+| Map | Safe zones near the main spawn areas | Size (m wide x deep x tall) |
+|---|---|---|
+| Bakurani | 6 | 3 x 640 x 640 x 480, 3 x 480 x 480 x 480 |
+| Ozeti | 3 | 3 x 480 x 480 x 480 |
+| Zestafona | 3 | 3 x 480 x 480 x 480 |
+| Saburtulo | 3 | 3 x 800 x 800 x 480 |
+
+**Spawn-area extras.** Soccer pitch `B_WDSoccerField_C`: bounds box 40 x 30 x 10 m, two goal boxes (1 x 8 x 3 m) at 15.5 m from the centre, ball reset 3.0 s after the ball leaves the bounds box, goal award 50 (scorer) and 25 (assist) pre-lobby points. Moving target `B_MovingTarget_C`: health 1, crossing time 15 to 25 s, fall 0.5 s, award equal to the truncated damage of the hit as pre-lobby points (reason Shooting), none for melee or fists. 15 pitches and 45 targets in the four worlds.
+
 ## 9. Still Not Pulled / Limitations
 
 - **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.

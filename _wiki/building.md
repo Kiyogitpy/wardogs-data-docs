@@ -175,7 +175,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 
 - The build point must be within 6 m of the player.
 - Most structures must be placed inside a friendly Forward Operating Base radius. The exceptions are the small structures: Barbed Wire, Recon Tent, Sandbag Wall and Hedgehog. Those cannot be placed inside an enemy base radius.
-- Safe zone: most structures cannot be placed within 3 m of a safe zone, and a player standing in a safe zone cannot place one at all. The articles say which structures have this check.
+- Safe zone: most structures cannot be placed within 3 m of a safe zone, and a player standing in a safe zone cannot place one at all. The articles say which structures have this check. The size of the spawn safe zones is on [Boundaries and Safe Zones](game-modes-and-maps/boundaries-and-safe-zones.md).
 - Ladder: most structures cannot be placed within 1 m of a ladder. The Drill Rig has no ladder or safe zone check.
 - Stacking: a structure can be placed on top of another buildable only if the one below is finished and allows it, and the stack can only be as high as the structure's stack limit. The limits are given per structure: 100 for the Barbed Wire, Recon Tent, Sandbag Wall, Hedgehog and stations, 6 for the Builder's Radio and most stationary weapons, 1 for the Forward Operating Base, Shelter and Gate, and 0 (no stacking) for the Recon Tower and the Drill Rig.
 - Builder's Radio: up to 4 per Forward Operating Base. It counts toward that limit.

@@ -117,6 +117,7 @@ The gym range has a moving target, which slides on a set path and takes 15 to 25
 - [Control Zone](control-zone.md)
 - [Sniper Showdown](sniper-showdown.md)
 - [Deathmatch](deathmatch.md)
+- [Boundaries and Safe Zones](boundaries-and-safe-zones.md), the play area edge and the spawn safe zones
 
 ## Sources
 

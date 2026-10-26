@@ -1,0 +1,212 @@
+{
+ "_note": [
+  "Play-area boundary and spawn safe zone data, round 68. Static analysis only; nothing was run.",
+  "bounds: AWDWorldSettings.PlayableBoundsExtent (FBox2D, cm) and bUseOutOfBounds of each world package; KillZ is the world-settings value (cm). Margins are measured from the round 67 play box (zone regions plus 500 m; Saburtulo uses a stand-in box).",
+  "safe zone sizes: the placed B_SafeZone_C scale times the default box half extent of 32 cm (the box extent is not stored, so the engine default applies; the size is inferred from that default). Only safe zones within 200 m of a main-map spawn manager are counted as the map's own; others in a shared world file belong to other maps.",
+  "timers: pawn OutOfBoundsTimeLimit 20 s (B_WDMoverPlayerCharacter CDO, native default 10); vehicle OutOfBoundsTimeLimit native default 22 s (constructor 0x766B2B1, Blueprint overrides not read)."
+ ],
+ "timers": {
+  "character_limit_s": 20.0,
+  "character_native_default_s": 10.0,
+  "vehicle_limit_native_default_s": 22.0,
+  "decay": "1 s per second back inside",
+  "warning_message_display_s": 5.0
+ },
+ "maps": {
+  "Bakurani": {
+   "world": "Kavkazi",
+   "use_out_of_bounds": true,
+   "playable_bounds_m": {
+    "x_min": -14000,
+    "x_max": -3000,
+    "y_min": -17000,
+    "y_max": -6000
+   },
+   "playable_size_km": [
+    11.0,
+    11.0
+   ],
+   "play_box_m": {
+    "x_min": -9967,
+    "x_max": -6634,
+    "y_min": -12925,
+    "y_max": -9477
+   },
+   "play_box_basis": "zone regions plus 500 m",
+   "margin_m": {
+    "west": 4033,
+    "east": 3634,
+    "south": 4075,
+    "north": 3477
+   },
+   "kill_z_m": -1500,
+   "safe_zones_main_areas": 6,
+   "safe_zone_sizes_m_wide_x_deep_x_tall": {
+    "640 x 640 x 480": 3,
+    "480 x 480 x 480": 3
+   },
+   "safe_zone_by_faction": [
+    "Alpha",
+    "Alpha",
+    "Bravo",
+    "Bravo",
+    "Charlie",
+    "Charlie"
+   ],
+   "all_main_safe_zones_inside_playable_bounds": true
+  },
+  "Ozeti": {
+   "world": "Europe",
+   "use_out_of_bounds": true,
+   "playable_bounds_m": {
+    "x_min": -10423,
+    "x_max": -1905,
+    "y_min": -9758,
+    "y_max": -2010
+   },
+   "playable_size_km": [
+    8.52,
+    7.75
+   ],
+   "play_box_m": {
+    "x_min": -8277,
+    "x_max": -4476,
+    "y_min": -7584,
+    "y_max": -4638
+   },
+   "play_box_basis": "zone regions plus 500 m",
+   "margin_m": {
+    "west": 2146,
+    "east": 2571,
+    "south": 2174,
+    "north": 2628
+   },
+   "kill_z_m": -1500,
+   "safe_zones_main_areas": 3,
+   "safe_zone_sizes_m_wide_x_deep_x_tall": {
+    "480 x 480 x 480": 3
+   },
+   "safe_zone_by_faction": [
+    "Alpha",
+    "Bravo",
+    "Charlie"
+   ],
+   "all_main_safe_zones_inside_playable_bounds": true
+  },
+  "Zestafona": {
+   "world": "NorthAmerica",
+   "use_out_of_bounds": true,
+   "playable_bounds_m": {
+    "x_min": -6200,
+    "x_max": 4300,
+    "y_min": -6000,
+    "y_max": 3200
+   },
+   "playable_size_km": [
+    10.5,
+    9.2
+   ],
+   "play_box_m": {
+    "x_min": -2830,
+    "x_max": 630,
+    "y_min": -3728,
+    "y_max": -482
+   },
+   "play_box_basis": "zone regions plus 500 m",
+   "margin_m": {
+    "west": 3370,
+    "east": 3670,
+    "south": 2272,
+    "north": 3682
+   },
+   "kill_z_m": -1500,
+   "safe_zones_main_areas": 3,
+   "safe_zone_sizes_m_wide_x_deep_x_tall": {
+    "480 x 480 x 480": 3
+   },
+   "safe_zone_by_faction": [
+    "Alpha",
+    "Bravo",
+    "Charlie"
+   ],
+   "all_main_safe_zones_inside_playable_bounds": true
+  },
+  "Saburtulo": {
+   "world": "Russia",
+   "use_out_of_bounds": true,
+   "playable_bounds_m": {
+    "x_min": -6600,
+    "x_max": 6600,
+    "y_min": -6600,
+    "y_max": 6600
+   },
+   "playable_size_km": [
+    13.2,
+    13.2
+   ],
+   "play_box_m": {
+    "x_min": -1060,
+    "x_max": 687,
+    "y_min": -833,
+    "y_max": 816
+   },
+   "play_box_basis": "five magnets and the zone object plus 500 m (stand-in, no region list)",
+   "margin_m": {
+    "west": 5540,
+    "east": 5913,
+    "south": 5767,
+    "north": 5784
+   },
+   "kill_z_m": null,
+   "safe_zones_main_areas": 3,
+   "safe_zone_sizes_m_wide_x_deep_x_tall": {
+    "800 x 800 x 480": 3
+   },
+   "safe_zone_by_faction": [
+    "Alpha",
+    "Bravo",
+    "Charlie"
+   ],
+   "all_main_safe_zones_inside_playable_bounds": true
+  }
+ },
+ "soccer_pitch": {
+  "blueprint": "B_WDSoccerField_C",
+  "pitch_m": [
+   40,
+   30,
+   10
+  ],
+  "goal_box_m": [
+   1,
+   8,
+   3
+  ],
+  "goal_offset_from_centre_m": 15.5,
+  "ball_out_of_bounds_reset_s": 3.0,
+  "goal_award_scorer": 50,
+  "goal_award_assist": 25,
+  "award_type": "pre-lobby award (reason Soccer)",
+  "placed": {
+   "Bakurani world": 6,
+   "Ozeti world": 3,
+   "Zestafona world": 3,
+   "Saburtulo world": 3
+  }
+ },
+ "moving_target": {
+  "blueprint": "B_MovingTarget_C",
+  "health": 1.0,
+  "travel_time_s": [
+   15,
+   25
+  ],
+  "fall_time_s": 0.5,
+  "award": "truncated damage of the hit, pre-lobby award (reason Shooting)",
+  "no_award_for": [
+   "melee damage",
+   "fists or no weapon"
+  ],
+  "placed_per_spawn_area": 3
+ }
+}
