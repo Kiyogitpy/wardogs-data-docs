@@ -40,6 +40,7 @@ Sources for this table: [Cash and Rewards](../progression-and-economy/cash-and-r
 - **Repeat victims.** Each repeat kill on the same player pays 24% less, up to four repeats. Each streak kill adds 50 to the base, up to five ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#how-it-works)).
 - **Teamkills.** A teamkill pays a negative amount, so it costs cash ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#how-it-works)).
 - **Artillery inside a zone.** The same artillery kill pays 100 when the attacker is inside a zone, against 5,000 in the open ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#kills)).
+- **Spread your spots across target types.** Spotting the same kind of target again pays 50% less each time, and the third and later spot of that type pays nothing. The count most likely resets after 180 s (inferred). See [Spotting](../game-mechanics/spotting.md).
 - **Enemy structures.** Destroying a Bunker or an Indirect Fire Shelter pays 200 cash and 50 Role XP. Destroying an enemy claymore, C4 or anti-tank mine pays 100 each ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#spotting-supply-crates-and-buildables)).
 
 ### Tips that follow from the numbers
