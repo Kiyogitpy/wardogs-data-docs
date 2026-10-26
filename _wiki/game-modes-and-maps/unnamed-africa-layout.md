@@ -11,6 +11,7 @@ description: "The Kenya King of the Hill map, added in Season 2: a 550 m Control
 |---|---|
 | **General** | |
 | Map | Kenya |
+| Map area | Not in the data (no Africa map, minimap or map layer in the game files) |
 | Modes | King of the Hill |
 | **Zones** | |
 | Control Zone | 550 m across, 150 m tall |
@@ -24,7 +25,7 @@ The Kenya map is a King of the Hill map added in Season 2. Its zone set is label
 
 ## Overview
 
-The data holds one zone set labelled Africa, added in Season 2. It belongs to the Kenya King of the Hill entry, so the zone set and the map share the name Kenya. The data gives the layout and the map name, and nothing about the streets, buildings or spawn points. The Kenya entry enables only its own base map layer; no vehicle deployment board, yard or infantry spawn area was found for it in the game files.
+The data holds one zone set labelled Africa, added in Season 2. It belongs to the Kenya King of the Hill entry, so the zone set and the map share the name Kenya. The data gives the layout and the map name, and nothing about the streets, buildings or spawn points. The Kenya entry turns on a single map layer called Kenya, but the game files hold no map layer, world map or minimap named Kenya or Africa (checked across all map layers, world folders and minimap assets), so the size of the Kenya map and any list of zone regions cannot be stated. No vehicle deployment board, yard or infantry spawn area was found for it in the game files.
 
 ## Modes played here
 

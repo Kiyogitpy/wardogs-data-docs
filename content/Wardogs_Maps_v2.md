@@ -273,9 +273,27 @@ Four baked data assets, one per map. Each has the same shape: a world reference,
 
 ---
 
+## 10. Placed wall and building materials (round 65)
+
+Read from the cooked World Partition cell packages of the four worlds (`Content/Maps/Worlds/<World>/<World>/_Generated_/*.umap`, about 40,000 cells; static-mesh instances in `InstancedStaticMeshComponent`, `HierarchicalInstancedStaticMeshComponent`, `StaticMeshComponent` and spline-mesh exports). Each mesh's `StaticMaterials` slots (with any component `OverrideMaterials` applied) were followed through the material `Parent` chain to the first `PhysMaterial`. Full data: [`assets/data/map-cover-materials.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-cover-materials.json); method and caveats: [`docs/evidence/round65-open-questions.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round65-open-questions.md).
+
+A piece is one placed instance. Wall and building pieces are meshes under `Environment/Architecture`, `ExternalAssets`, `Props/Walls_and_Fences` and `Transport_Infrastructure/Road_Barriers`; HLOD proxies, foliage, landscape, roads, other props and the `WDTraversal` collision helper blocks are not counted. A piece is counted under every physical material its mesh uses (the rows add up to more than the total). `play` scope is the zone-region bounding box plus 500 m; Saburtulo has no region list, so only `world` scope exists for it.
+
+| Map (world) | Scope | Wall and building pieces | Built-up area (km) | Pieces with this physical material (top five) |
+|---|---|---:|---|---|
+| Bakurani (Kavkazi) | play | 109,586 | 7.8 x 7.7 | Wood 30,535, Concrete 25,274, Brick 24,195, Metal 23,380, Plaster 7,960 |
+| Ozeti (Europe) | play | 69,833 | 6.6 x 4.3 | Wood 21,921, Brick 16,523, Concrete 14,051, Metal 12,286, Plaster 5,370 |
+| Zestafona (NorthAmerica) | play | 98,745 | 6.7 x 5.9 | Metal 39,303, Concrete 28,672, Wood 17,185, Brick 12,525, Plaster 3,716 |
+| Saburtulo (Russia) | world | 189,545 | 5.0 x 4.6 | Concrete 60,809, Wood 49,790, Brick 49,470, Metal 31,000, Plaster 11,151 |
+
+The `none` entry (mesh decals with no physical material anywhere in their parent chain) is left out of the table. Component centres, not single instances, decide the `play` scope (an approximation). Buildings that break apart are produced by the demolition system at run time (`BHDemolitionCellProxyActor` cells are markers only), so their pieces are not in these counts.
+
+
+---
+
 ## 9. Still Not Pulled / Limitations
 
-- **Level (`.umap`) data.** Actor placement, spawn points, and gameplay rules are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
+- **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10). Other actor placement, spawn points, and gameplay rules are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
 - **Blueprint logic.** [`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in the export.
 - **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).

@@ -41,7 +41,7 @@ A zone layout is one Control Zone configuration: the size of the zone and its Ho
 ## Rules and objectives
 
 - **Placements.** A layout with alternatives has a selection weight on each placement. The layout a match uses is chosen in this order. First, the server's map rotation can name the placement for that map, and a named placement is used even if its weight is 0. Second, if nothing is named, a server queue of placements can be used, one per map load. Third, a placement is drawn at random by weight, and a placement with weight 0 is never drawn this way. On Bakurani the default has weight 2 and the other two have weight 1, so with the random draw the default is twice as likely. The example server rotation lists every placement the same number of times, including the weight 0 ones.
-- **Region sets.** Three layouts also have a list of named zone regions: Bakurani (60), Ozeti (55) and Zestafona (56). Each region has a weight, and the Hot Zone moves to a region drawn at random by weight. A region with weight 0 (the towers) is never drawn that way. The region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in places, which does not affect the draw. Saburtulo, Africa and the Sniper Showdown layouts have no region list in the data.
+- **Region sets.** Three layouts also have a list of named zone regions: Bakurani (60), Ozeti (55) and Zestafona (56). Each region has a weight, and the Hot Zone moves to a region drawn at random by weight. A region with weight 0 (the towers) is never drawn that way. The region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in places, which does not affect the draw. Saburtulo, Africa and the Sniper Showdown layouts have no region list in the data. The map files agree for the maps that exist: the zone object placed in the Saburtulo map and the Sniper Showdown zone objects placed in the Bakurani, North America and Russia maps have an empty region slot. For Kenya the game files hold no map at all.
 - **Hot Zone movement.** On the King of the Hill layouts the Hot Zone is placed at once at the start and then moves about every 25 seconds (the data value; a runtime factor scales it, and that factor's source was not identified). The default speed is 1.0 and the speed table runs from 0.75 to 2.0. On the Sniper Showdown layouts the first move and the delay between moves are both 0 seconds, the default speed is 1.5, and the speed table runs from 1.25 to 3.0. On the Sniper Showdown layouts the data gives no delay, so no timer holds the zone back; how often it moves in play was not measured.
 - **Hot Zone size.** The effective inner size of the Hot Zone is 95 percent of its listed extent on every layout except the test area. This is inferred from the field name.
 - **Spawn areas.** Vehicle deployment boards place vehicles in spawn areas that are set per faction in each world. The minimal test area has one player spawn area per faction, with 15 points spaced 1,200 apart (12 m if the unit is centimetres). Which spawn area a player uses on the main maps is not confirmed; see [King of the Hill](king-of-the-hill.md).
@@ -80,7 +80,7 @@ A zone layout is one Control Zone configuration: the size of the zone and its Ho
 - **Mode:** King of the Hill.
 - **Control Zone:** 550 m across, 150 m tall. **Hot Zone:** 85 m across, 150 m tall.
 - **Placements:** Hospital (weight 1), Bazaar, River and Hillside (weight 0 each). The data spells the placement names with "Sabartulo".
-- **Region set:** none in the data.
+- **Region set:** none in the data (the zone object placed in the map has an empty region slot).
 - **Hot Zone movement:** every 25 s, default speed 1.0.
 - **Internal name:** zone config Russia, server browser Moscow_KOTH_01, world Russia. Added in Season 2. The link to Moscow is by name and folder only (an inference from the names, not checked in game).
 
@@ -90,6 +90,7 @@ A zone layout is one Control Zone configuration: the size of the zone and its Ho
 - **Control Zone:** 350 m across, 170 m tall. **Hot Zone:** 75 m across, 170 m tall.
 - **Placements:** none. The zone is always in one spot.
 - **Region set:** none in the data.
+- **Map area:** shares the Bakurani world (about 16.3 km square on the minimap); the fixed spot is about 400 m east of the area Bakurani's zone regions cover.
 - **Hot Zone movement:** first move and move delay both 0 s, default speed 1.5, speed table 1.25 to 3.0.
 - **Internal name:** Sniper Showdown zone config Bakurani, server browser Bakurani_SniperShowdown_01.
 
@@ -104,6 +105,7 @@ The two Sniper Showdown layouts have no display name in the data. The title give
 - **Placements:** Default (weight 1). North, East and West (weight 0 each).
 - **Alternatives:** each alternative is a 500 m ellipse, 500 m tall, with an 85 m Hot Zone that is 500 m tall. That does not match the base layout.
 - **Region set:** none in the data.
+- **Map area:** not in the data. The game files hold no Africa or Kenya map, map layer or minimap.
 - **Hot Zone movement:** every 25 s, default speed 1.0.
 - **Season 2:** added.
 - **Internal name:** zone config Africa, with placements named after a region called Kenya.

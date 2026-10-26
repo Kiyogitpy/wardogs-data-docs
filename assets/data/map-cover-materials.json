@@ -1,0 +1,2257 @@
+{
+ "_note": [
+  "Placed wall and building pieces per map, read from the cooked World Partition cells (static mesh instances) of the world each map uses, with the mesh material slots (component overrides applied) resolved to a physical material through the material parent chain.",
+  "A piece is one placed instance of a static mesh. Wall and building pieces are meshes under Environment/Architecture, ExternalAssets, Props/Walls_and_Fences and Transport_Infrastructure/Road_Barriers. Distant-view (HLOD) proxies, foliage, landscape, roads, props and traversal-only collision blocks are not counted.",
+  "pieces_with_material counts pieces whose mesh has that physical material in at least one material slot, so a piece with two materials is counted under both and the rows add up to more than the total. slot_split_share divides each piece equally over its slots (slot surface areas are not in the data) and adds up to the total. \"none\" is a slot with no physical material set anywhere in its parent chain (mesh decals).",
+  "scope \"play\" keeps pieces whose component centre lies inside the bounding box of the map zone-region polygons plus 500 m on each side; scope \"world\" is the whole world package. Saburtulo has no region list, so only its world scope exists. Positions are in centimetres, world coordinates. Component centres are used, not individual instances (inferred approximation).",
+  "Built area is the 1st to 99th percentile of placed building positions (kilometres, world coordinates), not a measured map border.",
+  "Extractor method: round 65 (docs/evidence/round65-open-questions.md)."
+ ],
+ "maps": {
+  "Bakurani": {
+   "world_package": "Kavkazi",
+   "built_area_km": {
+    "x": [
+     -12.34,
+     -4.58
+    ],
+    "y": [
+     -15.03,
+     -7.3
+    ]
+   },
+   "zone_region_box_km": {
+    "x": [
+     -9.47,
+     -7.13
+    ],
+    "y": [
+     -12.43,
+     -9.98
+    ]
+   },
+   "play": {
+    "pieces": {
+     "building": 106793,
+     "wall": 2793
+    },
+    "pieces_total": 109586,
+    "meshes": 845,
+    "other_pieces_not_counted": 82715,
+    "pieces_with_material": {
+     "Wood": 30535,
+     "Concrete": 25274,
+     "Brick": 24195,
+     "Metal": 23380,
+     "Plaster": 7960,
+     "none": 7752,
+     "Rubber": 5413,
+     "Ceramic": 3743,
+     "Rock": 1587,
+     "Dirt": 1367,
+     "Glass": 520,
+     "Plastic": 212,
+     "MetalSolid": 187,
+     "Fabric": 110,
+     "MetalCorrugated": 36,
+     "Asphalt": 15,
+     "MetalGrate": 5,
+     "Paper": 5,
+     "MetalChainLink": 1
+    },
+    "slot_split_share": {
+     "Wood": 24011,
+     "Brick": 22474,
+     "Concrete": 21338,
+     "Metal": 16589,
+     "none": 7640,
+     "Rubber": 5252,
+     "Plaster": 4062,
+     "Ceramic": 3614,
+     "Rock": 1582,
+     "Dirt": 1310,
+     "Glass": 520,
+     "Plastic": 180,
+     "MetalSolid": 73,
+     "Fabric": 55,
+     "Asphalt": 12,
+     "MetalCorrugated": 10,
+     "Paper": 2,
+     "MetalGrate": 2,
+     "MetalChainLink": 1
+    },
+    "top_instances": {
+     "Concrete": [
+      [
+       "MI_ApartmentFloor_01a",
+       7500
+      ],
+      [
+       "MI_ApartmentWalls_01a",
+       6793
+      ],
+      [
+       "MI_Trim_Concrete_01",
+       2856
+      ],
+      [
+       "MI_Trim_Concrete_Dirty_01",
+       1408
+      ]
+     ],
+     "Metal": [
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       6187
+      ],
+      [
+       "MI_Metal_Corrugated_02a",
+       4535
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       3163
+      ],
+      [
+       "MI_RebarKit",
+       1921
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       2100
+      ],
+      [
+       "MI_TileFacade_01a",
+       990
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       638
+      ],
+      [
+       "MI_Tiles_Removed_Pool_01a",
+       10
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       110
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       77
+      ]
+     ],
+     "Wood": [
+      [
+       "MI_Trim_Interior_Wood_01",
+       11472
+      ],
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       11089
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       5405
+      ],
+      [
+       "MI_Trim_Exterior_Wood_01",
+       930
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       5379
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       29
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       5
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_HouseWalls_01a",
+       15421
+      ],
+      [
+       "MI_Brick_Mortar_01a",
+       13022
+      ],
+      [
+       "MI_HouseWalls_01c",
+       1895
+      ],
+      [
+       "MI_Tiling_Brick_01",
+       1065
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       1330
+      ],
+      [
+       "MI_Tiles_Stone_Church_02b",
+       132
+      ],
+      [
+       "MI_ChurchKit_Window_02a",
+       62
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       37
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       6184
+      ],
+      [
+       "MI_WallMoulding",
+       4148
+      ],
+      [
+       "MI_ApartmentSkirting",
+       804
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       666
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_WashingLine07",
+       105
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       105
+      ],
+      [
+       "MI_WashingLine05",
+       85
+      ],
+      [
+       "MI_TarpBox_02b",
+       5
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_SkirtingPlastic",
+       140
+      ],
+      [
+       "MI_Tiling_Plastic",
+       72
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       5
+      ]
+     ],
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       5
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       1209
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       55
+      ],
+      [
+       "MI_Rubble_01a",
+       49
+      ],
+      [
+       "MI_Landscape_BlendingNoTessellation",
+       27
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       15
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       313
+      ],
+      [
+       "MI_WindowFrame_Glass",
+       66
+      ],
+      [
+       "MI_Church_Glass_01a",
+       44
+      ],
+      [
+       "MI_WindowFrame_Glass_Ind_01",
+       24
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       36
+      ]
+     ],
+     "MetalChainLink": [
+      [
+       "MI_ChainLinkFence01a_Wire",
+       1
+      ]
+     ]
+    }
+   },
+   "world": {
+    "pieces": {
+     "building": 191648,
+     "wall": 11100
+    },
+    "pieces_total": 202748,
+    "meshes": 990,
+    "other_pieces_not_counted": 196867,
+    "pieces_with_material": {
+     "Wood": 58700,
+     "Metal": 48135,
+     "Brick": 43704,
+     "Concrete": 37104,
+     "none": 15641,
+     "Plaster": 14891,
+     "Rubber": 10930,
+     "Ceramic": 6760,
+     "Rock": 3294,
+     "Dirt": 1617,
+     "Glass": 957,
+     "MetalChainLink": 557,
+     "Plastic": 465,
+     "Fabric": 275,
+     "MetalSolid": 271,
+     "Asphalt": 47,
+     "MetalCorrugated": 36,
+     "Paper": 11,
+     "MetalGrate": 5
+    },
+    "slot_split_share": {
+     "Wood": 46025,
+     "Brick": 41641,
+     "Metal": 35577,
+     "Concrete": 31091,
+     "none": 15422,
+     "Rubber": 10693,
+     "Plaster": 7079,
+     "Ceramic": 6530,
+     "Rock": 3289,
+     "Dirt": 1506,
+     "Glass": 957,
+     "MetalChainLink": 542,
+     "Plastic": 419,
+     "Fabric": 173,
+     "MetalSolid": 104,
+     "Asphalt": 35,
+     "MetalCorrugated": 10,
+     "Paper": 6,
+     "MetalGrate": 2
+    },
+    "top_instances": {
+     "Concrete": [
+      [
+       "MI_ApartmentFloor_01a",
+       10135
+      ],
+      [
+       "MI_ApartmentWalls_01a",
+       6810
+      ],
+      [
+       "MI_Trim_Concrete_01",
+       3738
+      ],
+      [
+       "MI_Trim_Concrete_Plain_01a",
+       2768
+      ]
+     ],
+     "Metal": [
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       13675
+      ],
+      [
+       "MI_Metal_Corrugated_02a",
+       9324
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       4947
+      ],
+      [
+       "MI_Tiling_Corrugated_WPO_01",
+       3731
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       1216
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       222
+      ],
+      [
+       "MI_Rubble_01a",
+       99
+      ],
+      [
+       "MI_Landscape_Blending",
+       43
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       3747
+      ],
+      [
+       "MI_TileFacade_01a",
+       1830
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       1166
+      ],
+      [
+       "MI_Tiles_Removed_Pool_01a",
+       10
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       172
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       99
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_WashingLine07",
+       153
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       153
+      ],
+      [
+       "MI_WashingLine05",
+       124
+      ],
+      [
+       "MI_Fence_Tarp_01a",
+       45
+      ]
+     ],
+     "Wood": [
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       20614
+      ],
+      [
+       "MI_Trim_Interior_Wood_01",
+       20348
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       10941
+      ],
+      [
+       "MI_Trim_Exterior_Wood_01",
+       3203
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       10888
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       33
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       5
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01b",
+       2
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_HouseWalls_01a",
+       28653
+      ],
+      [
+       "MI_Brick_Mortar_01a",
+       21430
+      ],
+      [
+       "MI_HouseWalls_01c",
+       4059
+      ],
+      [
+       "MI_Tiling_Brick_01",
+       2189
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       2784
+      ],
+      [
+       "MI_Tiles_Stone_Church_02b",
+       264
+      ],
+      [
+       "MI_ChurchKit_Window_02a",
+       124
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       74
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       12795
+      ],
+      [
+       "MI_WallMoulding",
+       8534
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       834
+      ],
+      [
+       "MI_ApartmentSkirting",
+       804
+      ]
+     ],
+     "MetalChainLink": [
+      [
+       "MI_ChainLinkFence01a_Wire",
+       557
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       39
+      ],
+      [
+       "MI_Rubble_Tarp_01a",
+       8
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_SkirtingPlastic",
+       308
+      ],
+      [
+       "MI_Tiling_Plastic",
+       114
+      ],
+      [
+       "MI_Trim_Plastic_01",
+       43
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       313
+      ],
+      [
+       "MI_WindowFrame_Glass_Ind_02",
+       176
+      ],
+      [
+       "MMi_Glass",
+       115
+      ],
+      [
+       "MI_Church_Glass_01a",
+       88
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       5
+      ]
+     ],
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       11
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       36
+      ]
+     ]
+    }
+   }
+  },
+  "Ozeti": {
+   "world_package": "Europe",
+   "built_area_km": {
+    "x": [
+     -9.04,
+     -2.4
+    ],
+    "y": [
+     -8.17,
+     -3.89
+    ]
+   },
+   "zone_region_box_km": {
+    "x": [
+     -7.78,
+     -4.98
+    ],
+    "y": [
+     -7.08,
+     -5.14
+    ]
+   },
+   "play": {
+    "pieces": {
+     "building": 66641,
+     "wall": 3192
+    },
+    "pieces_total": 69833,
+    "meshes": 828,
+    "other_pieces_not_counted": 69015,
+    "pieces_with_material": {
+     "Wood": 21921,
+     "Brick": 16523,
+     "Concrete": 14051,
+     "Metal": 12286,
+     "Plaster": 5370,
+     "none": 5343,
+     "Rubber": 4265,
+     "Ceramic": 2269,
+     "Rock": 1083,
+     "Dirt": 745,
+     "Plastic": 304,
+     "Glass": 184,
+     "Paper": 177,
+     "MetalCorrugated": 72,
+     "MetalSolid": 64,
+     "Fabric": 39,
+     "Leaf": 13,
+     "Asphalt": 12,
+     "MetalGrate": 4
+    },
+    "slot_split_share": {
+     "Wood": 17308,
+     "Brick": 15545,
+     "Concrete": 11917,
+     "Metal": 8054,
+     "none": 5199,
+     "Rubber": 4086,
+     "Plaster": 2581,
+     "Ceramic": 2230,
+     "Rock": 1075,
+     "Dirt": 607,
+     "Plastic": 284,
+     "Glass": 183,
+     "Paper": 88,
+     "MetalSolid": 25,
+     "Fabric": 20,
+     "MetalCorrugated": 19,
+     "Leaf": 13,
+     "Asphalt": 10,
+     "MetalGrate": 1
+    },
+    "top_instances": {
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       177
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       667
+      ],
+      [
+       "MI_Rubble_01a",
+       40
+      ],
+      [
+       "MI_Landscape_BlendingNoTessellation",
+       16
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       9
+      ]
+     ],
+     "Concrete": [
+      [
+       "MI_ApartmentFloor_01a",
+       3720
+      ],
+      [
+       "MI_ApartmentWalls_01a",
+       2598
+      ],
+      [
+       "MI_Trim_Concrete_01",
+       2527
+      ],
+      [
+       "MI_Tiling_Stone_Wall_03",
+       1985
+      ]
+     ],
+     "Metal": [
+      [
+       "MI_Metal_Corrugated_02a",
+       3155
+      ],
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       2547
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       1520
+      ],
+      [
+       "MI_Tiling_Corrugated_WPO_01",
+       1309
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       4170
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       91
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       4
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       1386
+      ],
+      [
+       "MI_TileFacade_01a",
+       691
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       186
+      ],
+      [
+       "MI_SmoothBlackFlooring",
+       4
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_SkirtingPlastic",
+       197
+      ],
+      [
+       "MI_Trim_Plastic_01",
+       47
+      ],
+      [
+       "MI_Tiling_Plastic",
+       46
+      ],
+      [
+       "MI_Ozeti_Old_Stands_Seats_01a",
+       14
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       4
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       12
+      ]
+     ],
+     "Wood": [
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       7936
+      ],
+      [
+       "MI_Trim_Interior_Wood_01",
+       7838
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       4016
+      ],
+      [
+       "MI_Trim_Exterior_Wood_01",
+       714
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       37
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       27
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_HouseWalls_01a",
+       9641
+      ],
+      [
+       "MI_Brick_Mortar_01a",
+       8372
+      ],
+      [
+       "MI_HouseWalls_01c",
+       2423
+      ],
+      [
+       "MI_HouseWalls_01b",
+       902
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       117
+      ],
+      [
+       "MI_WindowFrame_Glass",
+       24
+      ],
+      [
+       "MI_Church_Glass_01a",
+       21
+      ],
+      [
+       "MI_Spotlight_Glass_01a",
+       19
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       962
+      ],
+      [
+       "MI_Tiles_Stone_Church_02b",
+       62
+      ],
+      [
+       "MI_ChurchKit_Window_02a",
+       22
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       17
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_WashingLine07",
+       37
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       37
+      ],
+      [
+       "MI_WashingLine05",
+       30
+      ],
+      [
+       "MI_TarpBox_02b",
+       2
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       4586
+      ],
+      [
+       "MI_WallMoulding",
+       3063
+      ],
+      [
+       "MI_ApartmentSkirting",
+       356
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       245
+      ]
+     ],
+     "Leaf": [
+      [
+       "MI_LeafScatter",
+       13
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       72
+      ]
+     ]
+    }
+   },
+   "world": {
+    "pieces": {
+     "building": 105468,
+     "wall": 8722
+    },
+    "pieces_total": 114190,
+    "meshes": 918,
+    "other_pieces_not_counted": 161370,
+    "pieces_with_material": {
+     "Wood": 37791,
+     "Brick": 26562,
+     "Metal": 20671,
+     "Concrete": 18867,
+     "none": 9215,
+     "Plaster": 8871,
+     "Rubber": 7156,
+     "Ceramic": 3973,
+     "Rock": 1959,
+     "MetalChainLink": 1229,
+     "Dirt": 789,
+     "Plastic": 392,
+     "Glass": 228,
+     "Paper": 177,
+     "MetalSolid": 133,
+     "MetalCorrugated": 72,
+     "Fabric": 59,
+     "Asphalt": 16,
+     "Leaf": 13,
+     "MetalGrate": 4
+    },
+    "slot_split_share": {
+     "Wood": 29966,
+     "Brick": 25412,
+     "Concrete": 15653,
+     "Metal": 13599,
+     "none": 9028,
+     "Rubber": 6946,
+     "Plaster": 4102,
+     "Ceramic": 3855,
+     "Rock": 1951,
+     "MetalChainLink": 1228,
+     "Dirt": 631,
+     "Plastic": 371,
+     "Glass": 227,
+     "Paper": 88,
+     "MetalSolid": 52,
+     "Fabric": 31,
+     "MetalCorrugated": 19,
+     "Leaf": 13,
+     "Asphalt": 13,
+     "MetalGrate": 1
+    },
+    "top_instances": {
+     "Wood": [
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       12921
+      ],
+      [
+       "MI_Trim_Interior_Wood_01",
+       12395
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       6879
+      ],
+      [
+       "MI_Trim_Exterior_Wood_01",
+       3275
+      ]
+     ],
+     "Metal": [
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       5540
+      ],
+      [
+       "MI_Metal_Corrugated_02a",
+       5536
+      ],
+      [
+       "MI_Tiling_Corrugated_WPO_01",
+       2290
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       2139
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       7056
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       96
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       4
+      ]
+     ],
+     "Concrete": [
+      [
+       "MI_ApartmentFloor_01a",
+       5163
+      ],
+      [
+       "MI_Trim_Concrete_01",
+       3266
+      ],
+      [
+       "MI_Tiling_Stone_Wall_03",
+       2686
+      ],
+      [
+       "MI_ApartmentWalls_01a",
+       2610
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_HouseWalls_01a",
+       15959
+      ],
+      [
+       "MI_Brick_Mortar_01a",
+       12721
+      ],
+      [
+       "MI_HouseWalls_01c",
+       3887
+      ],
+      [
+       "MI_HouseWalls_01b",
+       1640
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       82
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       51
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       2202
+      ],
+      [
+       "MI_TileFacade_01a",
+       1135
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       630
+      ],
+      [
+       "MI_SmoothBlackFlooring",
+       4
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       667
+      ],
+      [
+       "MI_Rubble_01a",
+       66
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       27
+      ],
+      [
+       "MI_Landscape_BlendingNoTessellation",
+       16
+      ]
+     ],
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       177
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_SkirtingPlastic",
+       281
+      ],
+      [
+       "MI_Tiling_Plastic",
+       50
+      ],
+      [
+       "MI_Trim_Plastic_01",
+       47
+      ],
+      [
+       "MI_Ozeti_Old_Stands_Seats_01a",
+       14
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       4
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       15
+      ],
+      [
+       "MI_Rubble_Tarp_01a",
+       1
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       7926
+      ],
+      [
+       "MI_WallMoulding",
+       5313
+      ],
+      [
+       "MI_ApartmentSkirting",
+       356
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       316
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       1696
+      ],
+      [
+       "MI_Tiles_Stone_Church_02b",
+       132
+      ],
+      [
+       "MI_ChurchKit_Window_02a",
+       62
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       37
+      ]
+     ],
+     "MetalChainLink": [
+      [
+       "MI_ChainLinkFence01a_Wire",
+       1229
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       117
+      ],
+      [
+       "MI_Church_Glass_01a",
+       44
+      ],
+      [
+       "MI_WindowFrame_Glass",
+       24
+      ],
+      [
+       "MI_Spotlight_Glass_01a",
+       19
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_WashingLine07",
+       53
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       53
+      ],
+      [
+       "MI_WashingLine05",
+       46
+      ],
+      [
+       "MI_TarpBox_02b",
+       3
+      ]
+     ],
+     "Leaf": [
+      [
+       "MI_LeafScatter",
+       13
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       72
+      ]
+     ]
+    }
+   }
+  },
+  "Zestafona": {
+   "world_package": "NorthAmerica",
+   "built_area_km": {
+    "x": [
+     -4.31,
+     2.39
+    ],
+    "y": [
+     -4.36,
+     1.53
+    ]
+   },
+   "zone_region_box_km": {
+    "x": [
+     -2.33,
+     0.13
+    ],
+    "y": [
+     -3.23,
+     -0.98
+    ]
+   },
+   "play": {
+    "pieces": {
+     "building": 97329,
+     "wall": 1416
+    },
+    "pieces_total": 98745,
+    "meshes": 986,
+    "other_pieces_not_counted": 87598,
+    "pieces_with_material": {
+     "Metal": 39303,
+     "Concrete": 28672,
+     "Wood": 17185,
+     "Brick": 12525,
+     "Plaster": 3716,
+     "none": 3660,
+     "Dirt": 2520,
+     "Rubber": 1997,
+     "Ceramic": 1788,
+     "Glass": 939,
+     "Rock": 552,
+     "Plastic": 317,
+     "MetalChainLink": 52,
+     "Fabric": 49,
+     "MetalSolid": 48,
+     "MetalCorrugated": 36,
+     "Paper": 32,
+     "Asphalt": 23,
+     "MetalGrate": 3
+    },
+    "slot_split_share": {
+     "Metal": 35090,
+     "Concrete": 24237,
+     "Wood": 14633,
+     "Brick": 10486,
+     "none": 3612,
+     "Dirt": 2459,
+     "Plaster": 2378,
+     "Rubber": 1929,
+     "Ceramic": 1771,
+     "Glass": 939,
+     "Rock": 552,
+     "Plastic": 256,
+     "MetalChainLink": 50,
+     "Fabric": 28,
+     "Asphalt": 20,
+     "MetalSolid": 17,
+     "Paper": 16,
+     "MetalCorrugated": 10,
+     "MetalGrate": 1
+    },
+    "top_instances": {
+     "Metal": [
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       17929
+      ],
+      [
+       "MI_Trim_Industrial_Girders_Clean",
+       7149
+      ],
+      [
+       "MI_Trim_Panels_01a",
+       3947
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       3681
+      ]
+     ],
+     "Concrete": [
+      [
+       "MI_ApartmentWalls_01a",
+       7907
+      ],
+      [
+       "MI_Trim_Concrete_Dirty_01",
+       4094
+      ],
+      [
+       "MI_ApartmentFloor_01a",
+       3163
+      ],
+      [
+       "MI_OfficeFloor_01a",
+       2880
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       2370
+      ],
+      [
+       "MI_Landscape_BlendingNoTessellation",
+       80
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       45
+      ],
+      [
+       "MI_Rubble_01a",
+       24
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Ind_01",
+       519
+      ],
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       156
+      ],
+      [
+       "MI_Spotlight_Glass_01a",
+       84
+      ],
+      [
+       "MI_WindowFrame_Glass_Ind_02",
+       79
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_Tiling_Plastic",
+       128
+      ],
+      [
+       "MI_SkirtingPlastic",
+       126
+      ],
+      [
+       "MI_Trim_Plastic_01",
+       63
+      ]
+     ],
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       32
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       1948
+      ],
+      [
+       "MI_WallMoulding",
+       1287
+      ],
+      [
+       "MI_ApartmentSkirting",
+       802
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       735
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       30
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       18
+      ]
+     ],
+     "MetalChainLink": [
+      [
+       "MI_ChainLinkFence01a_Wire",
+       52
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_WashingLine07",
+       39
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       39
+      ],
+      [
+       "MI_WashingLine05",
+       31
+      ],
+      [
+       "MI_TarpBox_02b",
+       7
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       1979
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       15
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       3
+      ]
+     ],
+     "Wood": [
+      [
+       "MI_Trim_Interior_Wood_01",
+       8132
+      ],
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       6292
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       1810
+      ],
+      [
+       "MI_ModKit_House_InteriorStairs",
+       359
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       410
+      ],
+      [
+       "MI_Tiles_Stone_Church_02b",
+       70
+      ],
+      [
+       "MI_ChurchKit_Window_02a",
+       40
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       20
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_Brick_Mortar_01a",
+       8448
+      ],
+      [
+       "MI_HouseWalls_01a",
+       5512
+      ],
+      [
+       "MI_HouseWalls_01c",
+       1292
+      ],
+      [
+       "MI_HouseWalls_01b",
+       492
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       1108
+      ],
+      [
+       "MI_TileFacade_01a",
+       595
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       74
+      ],
+      [
+       "MI_Soundproofed_Ceiling_01b",
+       8
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       3
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       12
+      ],
+      [
+       "MI_RVT_Asphalt_Poured_01a",
+       10
+      ],
+      [
+       "MI_Rubble_Tarp_01a",
+       1
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       36
+      ]
+     ]
+    }
+   },
+   "world": {
+    "pieces": {
+     "wall": 3801,
+     "building": 125610
+    },
+    "pieces_total": 129411,
+    "meshes": 1004,
+    "other_pieces_not_counted": 161971,
+    "pieces_with_material": {
+     "Metal": 47191,
+     "Concrete": 32857,
+     "Wood": 26429,
+     "Brick": 18998,
+     "none": 6103,
+     "Plaster": 5893,
+     "Rubber": 3643,
+     "Ceramic": 2803,
+     "Dirt": 2649,
+     "Glass": 1041,
+     "Rock": 990,
+     "Plastic": 413,
+     "MetalChainLink": 387,
+     "MetalCorrugated": 82,
+     "MetalSolid": 79,
+     "Fabric": 62,
+     "Paper": 32,
+     "Asphalt": 31,
+     "MetalGrate": 3
+    },
+    "slot_split_share": {
+     "Metal": 41195,
+     "Concrete": 27750,
+     "Wood": 22018,
+     "Brick": 16825,
+     "none": 6023,
+     "Rubber": 3558,
+     "Plaster": 3365,
+     "Ceramic": 2733,
+     "Dirt": 2572,
+     "Glass": 1041,
+     "Rock": 990,
+     "MetalChainLink": 384,
+     "Plastic": 350,
+     "Fabric": 36,
+     "MetalSolid": 28,
+     "Asphalt": 26,
+     "MetalCorrugated": 22,
+     "Paper": 16,
+     "MetalGrate": 1
+    },
+    "top_instances": {
+     "Metal": [
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       21256
+      ],
+      [
+       "MI_Trim_Industrial_Girders_Clean",
+       7633
+      ],
+      [
+       "MI_Trim_Panels_01a",
+       4662
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       3910
+      ]
+     ],
+     "Concrete": [
+      [
+       "MI_ApartmentWalls_01a",
+       8032
+      ],
+      [
+       "MI_Trim_Concrete_Dirty_01",
+       4638
+      ],
+      [
+       "MI_ApartmentFloor_01a",
+       4148
+      ],
+      [
+       "MI_OfficeFloor_01a",
+       2880
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       2386
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       137
+      ],
+      [
+       "MI_Landscape_BlendingNoTessellation",
+       82
+      ],
+      [
+       "MI_Rubble_01a",
+       41
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Ind_01",
+       576
+      ],
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       156
+      ],
+      [
+       "MI_WindowFrame_Glass_Ind_02",
+       107
+      ],
+      [
+       "MI_Spotlight_Glass_01a",
+       84
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_SkirtingPlastic",
+       214
+      ],
+      [
+       "MI_Tiling_Plastic",
+       136
+      ],
+      [
+       "MI_Trim_Plastic_01",
+       63
+      ]
+     ],
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       32
+      ]
+     ],
+     "MetalChainLink": [
+      [
+       "MI_ChainLinkFence01a_Wire",
+       387
+      ]
+     ],
+     "Wood": [
+      [
+       "MI_Trim_Interior_Wood_01",
+       10871
+      ],
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       9146
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       3511
+      ],
+      [
+       "MI_Trim_Exterior_Wood_01",
+       1441
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       3960
+      ],
+      [
+       "MI_WallMoulding",
+       2635
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       875
+      ],
+      [
+       "MI_ApartmentSkirting",
+       802
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       49
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       30
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_WashingLine07",
+       40
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       40
+      ],
+      [
+       "MI_WashingLine05",
+       32
+      ],
+      [
+       "MI_Fence_Tarp_01a",
+       10
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       18
+      ],
+      [
+       "MI_RVT_Asphalt_Poured_01a",
+       10
+      ],
+      [
+       "MI_Rubble_Tarp_01a",
+       3
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       3625
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       15
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       3
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       1598
+      ],
+      [
+       "MI_TileFacade_01a",
+       807
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       387
+      ],
+      [
+       "MI_Soundproofed_Ceiling_01b",
+       8
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       848
+      ],
+      [
+       "MI_Tiles_Stone_Church_02b",
+       70
+      ],
+      [
+       "MI_ChurchKit_Window_02a",
+       40
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       20
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_Brick_Mortar_01a",
+       11377
+      ],
+      [
+       "MI_HouseWalls_01a",
+       10712
+      ],
+      [
+       "MI_HouseWalls_01c",
+       1292
+      ],
+      [
+       "MI_Tiling_Brick_01",
+       850
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       3
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       82
+      ]
+     ]
+    }
+   }
+  },
+  "Saburtulo": {
+   "world_package": "Russia",
+   "built_area_km": {
+    "x": [
+     -3.22,
+     1.8
+    ],
+    "y": [
+     -2.23,
+     2.36
+    ]
+   },
+   "world": {
+    "pieces": {
+     "building": 184855,
+     "wall": 4690
+    },
+    "pieces_total": 189545,
+    "meshes": 1017,
+    "other_pieces_not_counted": 156802,
+    "pieces_with_material": {
+     "Concrete": 60809,
+     "Wood": 49790,
+     "Brick": 49470,
+     "Metal": 31000,
+     "none": 12264,
+     "Plaster": 11151,
+     "Rubber": 10035,
+     "Ceramic": 5715,
+     "Glass": 3061,
+     "Rock": 1650,
+     "Plastic": 1328,
+     "Dirt": 1051,
+     "Fabric": 729,
+     "MetalCorrugated": 359,
+     "MetalChainLink": 190,
+     "Paper": 126,
+     "MetalSolid": 118,
+     "Debris": 42,
+     "Asphalt": 23,
+     "MetalGrate": 5
+    },
+    "slot_split_share": {
+     "Concrete": 47549,
+     "Brick": 41824,
+     "Wood": 37308,
+     "Metal": 21505,
+     "none": 12083,
+     "Rubber": 9637,
+     "Ceramic": 5538,
+     "Plaster": 5533,
+     "Glass": 3044,
+     "Rock": 1630,
+     "Dirt": 851,
+     "Plastic": 843,
+     "Fabric": 340,
+     "MetalChainLink": 154,
+     "MetalCorrugated": 97,
+     "Paper": 63,
+     "MetalSolid": 47,
+     "Debris": 42,
+     "Asphalt": 18,
+     "MetalGrate": 2
+    },
+    "top_instances": {
+     "Metal": [
+      [
+       "MI_Trim_Industrial_Girders_Rusty",
+       7652
+      ],
+      [
+       "MI_Metal_Corrugated_02a",
+       4901
+      ],
+      [
+       "MI_Trim_Panels_01a",
+       4048
+      ],
+      [
+       "MI_Trim_Industrial_Painted_Metal_Rusty_02",
+       2827
+      ]
+     ],
+     "Concrete": [
+      [
+       "MI_ApartmentWalls_01a",
+       20981
+      ],
+      [
+       "MI_ApartmentFloor_01a",
+       16183
+      ],
+      [
+       "MI_Trim_Concrete_Plain_01a",
+       5071
+      ],
+      [
+       "MI_OfficeWalls_01a",
+       4384
+      ]
+     ],
+     "Dirt": [
+      [
+       "MI_TrashPiles",
+       759
+      ],
+      [
+       "MI_Landscape_BlendingNoTessellation",
+       84
+      ],
+      [
+       "MI_Rubble_01a",
+       71
+      ],
+      [
+       "MI_PrefabCollisions_01a",
+       68
+      ]
+     ],
+     "Ceramic": [
+      [
+       "MI_WindowFrame_uPVC",
+       3717
+      ],
+      [
+       "MI_TileFacade_01a",
+       1061
+      ],
+      [
+       "MI_SmoothBlackFlooring_01b",
+       724
+      ],
+      [
+       "MI_WindowFrame_uPVC_02",
+       133
+      ]
+     ],
+     "MetalSolid": [
+      [
+       "MI_ModKit04_ApartmentDoor_01a",
+       70
+      ],
+      [
+       "MI_ModKit04_ApartmentDoor_01b",
+       48
+      ]
+     ],
+     "MetalChainLink": [
+      [
+       "MI_ChainLinkFence01a_Wire",
+       190
+      ]
+     ],
+     "Wood": [
+      [
+       "MI_Trim_Interior_Painted_Wood_01",
+       16754
+      ],
+      [
+       "MI_Roof_Wood_01a",
+       14035
+      ],
+      [
+       "MI_Trim_Interior_Wood_01",
+       13026
+      ],
+      [
+       "MI_Trim_Exterior_Wood_01",
+       1889
+      ]
+     ],
+     "Brick": [
+      [
+       "MI_Brick_Mortar_01a",
+       29233
+      ],
+      [
+       "MI_HouseWalls_01a",
+       25326
+      ],
+      [
+       "MI_HouseWalls_01c",
+       3460
+      ],
+      [
+       "MI_HouseWalls_01b",
+       1804
+      ]
+     ],
+     "Rubber": [
+      [
+       "MI_Rubber_01a",
+       9987
+      ],
+      [
+       "MI_BitumenRoof_01a",
+       42
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01a",
+       5
+      ],
+      [
+       "MI_Studded_PVC_Flooring_01b",
+       1
+      ]
+     ],
+     "Fabric": [
+      [
+       "MI_Trim_Hospital_Fabric_02",
+       309
+      ],
+      [
+       "MI_Trim_Hospital_Fabric_01",
+       219
+      ],
+      [
+       "MI_WashingLine07",
+       181
+      ],
+      [
+       "MI_Rug_Medium_Small_01a",
+       181
+      ]
+     ],
+     "Rock": [
+      [
+       "Mi_ResidentialFoundations_01a",
+       1590
+      ],
+      [
+       "MI_Tiles_Stone_Church_02a",
+       34
+      ],
+      [
+       "MI_Marble_Floor_Tiles_01a",
+       20
+      ],
+      [
+       "MI_ChurchFoundations_01a",
+       6
+      ]
+     ],
+     "Plaster": [
+      [
+       "MI_Tiling_Plaster_02",
+       9133
+      ],
+      [
+       "MI_WallMoulding",
+       6279
+      ],
+      [
+       "MI_Plaster_Wear_02a",
+       989
+      ],
+      [
+       "MI_ApartmentSkirting",
+       756
+      ]
+     ],
+     "Plastic": [
+      [
+       "MI_Trim_Plastic_01",
+       801
+      ],
+      [
+       "MI_SkirtingPlastic",
+       294
+      ],
+      [
+       "MI_Tiling_Plastic",
+       233
+      ]
+     ],
+     "MetalGrate": [
+      [
+       "MI_Soundproofed_Ceiling_sl4qlkd_4K",
+       5
+      ]
+     ],
+     "Asphalt": [
+      [
+       "MI_Gravel_Tar_01a",
+       21
+      ],
+      [
+       "MI_Rubble_Tarp_01a",
+       2
+      ]
+     ],
+     "MetalCorrugated": [
+      [
+       "MI_Painted_Corrugated_01a",
+       359
+      ]
+     ],
+     "Paper": [
+      [
+       "MI_PaperDebris_01b",
+       126
+      ]
+     ],
+     "Glass": [
+      [
+       "MI_WindowFrame_Glass_Opaque",
+       2905
+      ],
+      [
+       "MMi_Glass",
+       41
+      ],
+      [
+       "MI_WindowFrame_Glass_Ind_02",
+       30
+      ],
+      [
+       "MI_WindowFrame_Glass",
+       26
+      ]
+     ],
+     "Debris": [
+      [
+       "MI_Road_Debris_sgvlofg_4K_02",
+       42
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

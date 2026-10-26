@@ -82,8 +82,8 @@ Each `DA_UI_<Map>` asset (`WDMinimapTextureData`) binds a virtual texture to wor
 | Map | Texture | SizeX (px) | WorldUnitsPerPixel | Bounds X (min → max) | Bounds Y (min → max) | UV max |
 |---|---|---|---|---|---|---|
 | Europe | `T_UI_Europe_VT` | 32,768 | not set | −1,616,000 → 16,000 | −1,616,000 → 16,000 | 1.0 |
-| NorthAmerica | `T_UI_NorthAmerica_VT` | 32,768 | not set | −819,200 → 819,200 | −819,200 → 819,200 | 1.0 |
-| Russia | `T_UI_Russia_VT` | 32,768 | not set | −1,632,000 → 0 | −2,040,000 → −408,000 | 1.0 |
+| NorthAmerica | `T_UI_NorthAmerica_VT` | 16,384 | 100 | −819,200 → 819,200 | −819,200 → 819,200 | 1.0 |
+| Russia | `T_UI_Russia_VT` | 16,384 | 100 | −816,000 → 816,000 | −816,000 → 816,000 | 1.0 |
 | Kavkazi | `T_UI_Kavkazi_VT` | 16,384 | 100 | −1,632,000 → 0 | −2,040,000 → −408,000 | 1.0 |
 | Gym_Minimal | `T_UI_Gym_Minimal_VT` | 9,803 | 51 | −250,001.7 → 249,998.5 | −245,100.0 → 254,900.0 | 0.598 |
 | PCGBuildAutomationTestLevel | `T_UI_PCGBuildAutomationTestLevel_VT` | 4,032 | not set | −100,800 → 100,800 | −100,800 → 100,800 | 0.984 |
@@ -91,7 +91,7 @@ Each `DA_UI_<Map>` asset (`WDMinimapTextureData`) binds a virtual texture to wor
 
 Z bounds are present on every map (for example Europe ±164,285.9; Shooting_Range_4 −30,000 → 30,000).
 
-**Derived, not stored:** where `SizeX` and the XY bounds are both present, bounds width ÷ SizeX gives the implied world units per pixel. Europe and Russia give about 49.8, Kavkazi about 99.6 (matching its stored 100), NorthAmerica and PCGBuildAutomationTestLevel exactly 50.0, and Gym_Minimal 51.0 (matching its stored 51). Europe and Russia have no stored `WorldUnitsPerPixel`, so the derived figure is the only one available.
+**Derived, not stored:** where `SizeX` and the XY bounds are both present, bounds width ÷ SizeX gives the implied world units per pixel. Europe gives about 49.8, Kavkazi about 99.6 (matching its stored 100), Russia exactly 99.6 (stored 100; corrected in round 65, the earlier row repeated the Kavkazi bounds), NorthAmerica exactly 100.0 (matching its stored 100; its row also said 32,768 px before round 65) and PCGBuildAutomationTestLevel exactly 50.0, and Gym_Minimal 51.0 (matching its stored 51). Europe has no stored `WorldUnitsPerPixel`, so the derived figure is the only one available.
 
 ---
 

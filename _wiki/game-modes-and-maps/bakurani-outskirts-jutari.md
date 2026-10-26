@@ -10,7 +10,7 @@ description: "The Sniper Showdown map named Bakurani Outskirts - Jutari: a 350 m
 | Bakurani Outskirts - Jutari | |
 |---|---|
 | **General** | |
-| Map area | Not in the data |
+| Map area | Shares the Bakurani world: about 16.3 km square (minimap bounds), with buildings over about 7.8 km by 7.7 km |
 | Modes | Sniper Showdown |
 | **Zones** | |
 | Control Zone | 350 m across, 170 m tall |
@@ -37,7 +37,8 @@ The Control Zone is 350 m across and 170 m tall, with a 75 m Hot Zone in its cen
 - **Hot Zone movement.** The data sets the first move and the delay between moves to 0 seconds. The data gives no delay between moves, so no timer holds the zone back; how often it moves in play was not measured.
 - **Speed.** The default move speed is 1.5. The speed table runs from 1.25 to 3.0, which is faster than the 0.75 to 2.0 table on the King of the Hill maps.
 - **Placements.** There are no alternative placements. The zone is always in the same spot.
-- **Zone regions.** The data has no region list for this zone.
+- **Zone regions.** The data has no region list for this zone. The Sniper Showdown zone placed in the Bakurani world has an empty region slot, and the Bakurani region list belongs to the King of the Hill zone only.
+- **Where it sits.** The fixed spot is inside the same world as [Bakurani](bakurani.md), about 400 m east of the edge of the area that Bakurani's zone regions cover (read from the placed zone object; the data gives the map no separate size).
 
 ## Layouts
 

@@ -110,7 +110,7 @@ Density by physical material (higher is harder to pass; a surface with no densit
 
 ## What is not yet known
 
-- The thickness and material of one particular wall, door or prop on a map. Thickness is measured live from the shape of the object when you shoot it, and the map files that place each object were not read, so no result can be given for a specific wall.
+- The thickness and material of one particular wall, door or prop on a map. Thickness is measured live from the shape of the object when you shoot it, so no result can be given for a specific wall. The map files were read for which materials the placed walls and buildings use, and the totals for each map are in its article: [Bakurani](../game-modes-and-maps/bakurani.md#cover-materials), [Ozeti](../game-modes-and-maps/ozeti.md#cover-materials), [Zestafona](../game-modes-and-maps/zestafona.md#cover-materials) and [Saburtulo](../game-modes-and-maps/saburtulo.md#cover-materials).
 
 ## See also
 

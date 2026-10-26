@@ -11,6 +11,7 @@ description: "The Zestafona King of the Hill map: a 500 m zone whose Hot Zone is
 |---|---|
 | **General** | |
 | Map area | About 16.4 km square (minimap bounds) |
+| Built-up area | About 6.7 km by 5.9 km (where buildings are placed) |
 | Modes | King of the Hill |
 | Vehicle spawns | 3 deployment boards and 12 vehicle yards (7 ground, 2 air, 3 light) and one extra air yard |
 | **Zones** | |
@@ -63,6 +64,23 @@ The side names follow the spawn vehicle that each area's yards list (Lonestar, V
 - **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). The deployment board's built-in respawn timers are 300 s, or 60 s for a losing side. They most likely time the side's spawn vehicle (inferred from their names). The data gives no return time for the other yard vehicles.
 - **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
 
+## Cover materials
+
+Most cover on Zestafona is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the part of the map around its zone regions (the area the Hot Zone can reach, plus 500 m on every side), which holds 98,745 of the 129,411 wall and building pieces placed on the whole map. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game files, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
+
+| Material | Pieces | Share of pieces | Mostly (from the material names) |
+|---|---:|---:|---|
+| Metal | 39,303 | 40% | girders, metal panels, painted metal |
+| Concrete | 28,672 | 29% | apartment walls, concrete trim, apartment floors |
+| Wood | 17,185 | 17% | wood trim, wooden roofs |
+| Brick | 12,525 | 13% | brick and mortar, house walls |
+| Plaster | 3,716 | 4% | plaster walls, wall mouldings, skirting boards |
+| Dirt | 2,520 | 3% | trash piles, rubble |
+| Rubber | 1,997 | 2% | rubber trim, roofing, flooring |
+| Ceramic | 1,788 | 2% | window frames, tiled facades, flooring |
+
+Total: 98,745 pieces (97,329 building pieces and 1,416 wall, fence and barrier pieces) from 986 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#zestafona).
@@ -83,7 +101,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
 - [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
-- [Maps and gym data](../../content/Wardogs_Maps_v2.md)
+- [Maps and gym data](../../content/Wardogs_Maps_v2.md): also the cover material counts per map
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [ControlZone regions](../../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)

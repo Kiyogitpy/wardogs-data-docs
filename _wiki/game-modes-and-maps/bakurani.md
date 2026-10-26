@@ -11,6 +11,7 @@ description: "The Bakurani King of the Hill map: zone sizes, the three zone plac
 |---|---|
 | **General** | |
 | Map area | About 16.3 km square (minimap bounds) |
+| Built-up area | About 7.8 km by 7.7 km (where buildings are placed) |
 | Modes | King of the Hill, two server browser entries |
 | Vehicle spawns | 3 deployment boards per entry; 13 vehicle yards in the first entry and 12 in the second |
 | **Zones** | |
@@ -73,6 +74,24 @@ The side names follow the spawn vehicle that each area's yards list (Lonestar, V
 - **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). The deployment board's built-in respawn timers are 300 s, or 60 s for a losing side. They most likely time the side's spawn vehicle (inferred from their names). The data gives no return time for the other yard vehicles.
 - **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
 
+## Cover materials
+
+Most cover on Bakurani is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the part of the map around its zone regions (the area the Hot Zone can reach, plus 500 m on every side), which holds 109,586 of the 202,748 wall and building pieces placed on the whole map. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game files, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
+
+| Material | Pieces | Share of pieces | Mostly (from the material names) |
+|---|---:|---:|---|
+| Wood | 30,535 | 28% | wood trim, wooden roofs |
+| Concrete | 25,274 | 23% | apartment floors, apartment walls, concrete trim |
+| Brick | 24,195 | 22% | house walls, brick and mortar |
+| Metal | 23,380 | 21% | girders, corrugated sheet, painted metal |
+| Plaster | 7,960 | 7% | plaster walls, wall mouldings, skirting boards |
+| Rubber | 5,413 | 5% | rubber trim, roofing, flooring |
+| Ceramic | 3,743 | 3% | window frames, tiled facades, flooring |
+| Rock | 1,587 | 1% | house foundations, church stonework |
+| Dirt | 1,367 | 1% | trash piles, rubble |
+
+Total: 109,586 pieces (106,793 building pieces and 2,793 wall, fence and barrier pieces) from 845 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#bakurani).
@@ -94,7 +113,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
 - [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
-- [Maps and gym data](../../content/Wardogs_Maps_v2.md)
+- [Maps and gym data](../../content/Wardogs_Maps_v2.md): also the cover material counts per map
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [ControlZone regions](../../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)

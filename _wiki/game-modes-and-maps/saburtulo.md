@@ -11,13 +11,14 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 |---|---|
 | **General** | |
 | Map area | About 16.3 km square (minimap bounds) |
+| Built-up area | About 5.0 km by 4.6 km (where buildings are placed) |
 | Modes | King of the Hill |
 | Vehicle spawns | 3 deployment boards and 11 vehicle yards (6 ground, 2 air, 3 light) and one extra air yard |
 | **Zones** | |
 | Control Zone | 550 m across, 150 m tall |
 | Hot Zone | 85 m across, 150 m tall |
 | Zone placements | 4 |
-| Zone regions | Not in the data |
+| Zone regions | None (the map's zone object has no region list) |
 | Internal name | Server browser Moscow_KOTH_01; zone config Russia; minimap folder Russia |
 {: .wiki-infobox }
 
@@ -45,7 +46,7 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 | River | 0 |
 | Hillside | 0 |
 
-- **Zone regions.** The data does not include a region list for this map, so where the zone can sit beyond these four placements is not known.
+- **Zone regions.** The data does not include a region list for this map. The zone object placed in the Saburtulo map files has an empty region slot, the Sniper Showdown zone placed there has none either, and the minimap data holds none, so where the zone can sit beyond these four placements is not known. Bakurani, Ozeti and Zestafona each have a list; this is the one King of the Hill map with a zone but no list.
 
 ## Vehicle spawns
 
@@ -62,6 +63,23 @@ The side names follow the spawn vehicle that each area's yards list (Lonestar, V
 - **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
 - **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). The deployment board's built-in respawn timers are 300 s, or 60 s for a losing side. They most likely time the side's spawn vehicle (inferred from their names). The data gives no return time for the other yard vehicles.
 - **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+
+## Cover materials
+
+Most cover on Saburtulo is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the whole map, because the data has no zone region list for it to narrow the count to the play area. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game files, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
+
+| Material | Pieces | Share of pieces | Mostly (from the material names) |
+|---|---:|---:|---|
+| Concrete | 60,809 | 32% | apartment walls, apartment floors, concrete trim |
+| Wood | 49,790 | 26% | wood trim, wooden roofs |
+| Brick | 49,470 | 26% | brick and mortar, house walls |
+| Metal | 31,000 | 16% | girders, corrugated sheet, metal panels |
+| Plaster | 11,151 | 6% | plaster walls, wall mouldings, skirting boards |
+| Rubber | 10,035 | 5% | rubber trim, roofing, flooring |
+| Ceramic | 5,715 | 3% | window frames, tiled facades, flooring |
+| Glass | 3,061 | 2% | window glass |
+
+Total: 189,545 pieces (184,855 building pieces and 4,690 wall, fence and barrier pieces) from 1,017 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
 ## Layouts
 
@@ -83,7 +101,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
 - [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
-- [Maps and gym data](../../content/Wardogs_Maps_v2.md)
+- [Maps and gym data](../../content/Wardogs_Maps_v2.md): also the cover material counts per map
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
 - [UI data (minimap bounds)](../../content/Wardogs_UI_v2.md)
