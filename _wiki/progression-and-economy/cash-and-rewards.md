@@ -9,7 +9,7 @@ description: "What each action pays in cash and role XP: kills, revives, heals, 
 
 | Cash and Rewards | |
 |---|---|
-| Currencies | Cash (starts at 10,000; 3,000 in Strike and Disarm, 2,000 in VIP Escort), Gold Bars (see [Cosmetics](cosmetics.md)) |
+| Currencies | Cash (table start 10,000; 3,000 in Strike and Disarm, 2,000 in VIP Escort; kept between matches on live servers), Gold Bars (see [Cosmetics](cosmetics.md)) |
 | XP | One role XP per role: Assault, Medic, Support, Recon, Pilot and Driver |
 | Mastery levels | 0 to 100 for each role, on one shared XP curve |
 | Internal name | Reward cash tables and the per-kill calculator |

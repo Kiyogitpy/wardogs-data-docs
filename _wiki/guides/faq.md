@@ -104,7 +104,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 ## Money and progression
 
-**How much cash do I start with?** You start with 10,000 cash in most modes (3,000 in Strike and Disarm, 2,000 in VIP Escort). In King of the Hill, points earned in the [pre-lobby](../game-modes-and-maps/pre-lobby.md) are paid on top as extra Cash, 1 for 1 up to 5,000, when the match starts. The loading-screen tip says cash carries over between matches, and a server setting, Persistent Progression, switches that on or off ([Currencies](../progression-and-economy/currencies.md)).
+**How much cash do I start with?** The game's table sets 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort). On live servers Cash is kept between matches, so your balance comes from your saved data online; 10,000 is the game's table value and most likely the first-time balance (inferred). In King of the Hill, points earned in the [pre-lobby](../game-modes-and-maps/pre-lobby.md) are added on top when the match starts, 1 cash per point up to 5,000.
 
 **How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate and it changes over time, so the rate is not in the game files (the exchange table in the files is empty). Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
 

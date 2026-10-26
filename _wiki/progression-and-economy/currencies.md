@@ -9,7 +9,7 @@ description: "The money in Wardogs: Cash, Gold Bars (bought with cash at the Gol
 
 | Currencies | |
 |---|---|
-| Cash | Starts at 10,000. Earned in matches and spent at vendors and on unlocks |
+| Cash | Table start 10,000, kept between matches on live servers. Earned in matches and spent at vendors and on unlocks |
 | Gold Bars | Start at 0. Exchanged for cash at the Gold Exchange, then spent on cosmetics |
 | Intel | Earned from passive missions. The data gives it no use |
 | Skill points | Reserved. Six per-role tags exist, and nothing grants or spends them |
@@ -29,7 +29,7 @@ The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is 
 
 ## Cash
 
-Cash is the main currency. It starts every player at 10,000 in the normal modes (3,000 in Strike and Disarm and 2,000 in VIP Escort), and players earn more during the match. The client's currency table sets this starting balance of 10,000. The game applies it itself when you join, only if the mode does not keep Cash between matches; on a networked server the default is to keep it, so a returning player's balance comes from saved data held online (see [Pre-lobby](../game-modes-and-maps/pre-lobby.md)). In King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are paid on top of it when the match starts, 1 Cash per point up to 5,000.
+Cash is the main currency. Its table starting balance is 10,000 in the normal modes (3,000 in Strike and Disarm and 2,000 in VIP Escort), and players earn more during the match. The client's currency table sets this starting balance of 10,000. The game applies it itself when you join, only if the mode does not keep Cash between matches; on a networked server the default is to keep it, so a returning player's balance comes from saved data held online (see [Pre-lobby](../game-modes-and-maps/pre-lobby.md)). In King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are paid on top of it when the match starts, 1 Cash per point up to 5,000.
 
 - **Earned.** Every action in a match pays cash, such as a kill, a revive or a heal. The amounts are in [Cash and Rewards](cash-and-rewards.md). The end-of-match bonus adds more on top, for the faction placed first, second or third.
 - **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). Vendor prices are changed by discounts there, and a refund returns 90% of the eligible amount. It also buys role unlocks in the unlock tree, and it can be exchanged for Gold Bars. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).

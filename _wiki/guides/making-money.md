@@ -10,7 +10,7 @@ Cash pays for nearly everything in Wardogs: gear, weapons, vehicles, role unlock
 
 ## Where cash comes from
 
-A player starts with 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort; in King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are added on top, 1 for 1 up to 5,000), and the loading-screen tip says cash carries over between matches ([Currencies](../progression-and-economy/currencies.md)). Each action pays a base amount from its reward table. The table below picks the biggest payers for each role. Role XP is a separate number and does not add cash.
+The game's table gives a player 10,000 cash to start (3,000 in Strike and Disarm, 2,000 in VIP Escort; in King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are added on top, 1 for 1 up to 5,000), and the loading-screen tip says cash carries over between matches ([Currencies](../progression-and-economy/currencies.md)). Each action pays a base amount from its reward table. The table below picks the biggest payers for each role. Role XP is a separate number and does not add cash. On live servers Cash is kept between matches, so your balance comes from your saved data online; 10,000 is the game's table value and most likely the first-time balance (inferred).
 
 | Role | Action | Base cash |
 |---|---|---:|
