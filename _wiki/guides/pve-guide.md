@@ -43,7 +43,7 @@ Tips that follow from the numbers:
 
 ## Hunter Killer
 
-Hunter Killer has a map, but its data is unfinished. It sets no soldiers, no objectives, no player faction and no starting cash. The mission has a quest with a start and an end and nothing between them.
+Hunter Killer has only a planning layer on the map, with text labels for a deploy point, a target and an exfil point, and no gameplay objects. Its data is unfinished. It sets no soldiers, no objectives, no player faction and no starting cash. The mission has a quest with a start and an end and nothing between them.
 
 Because the data gives nothing to plan for, this mission has no tips in this guide. The [Hunter Killer](../game-modes-and-maps/hunter-killer.md) article lists what is missing.
 
