@@ -17,10 +17,10 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 | **Gun** | |
 | Main gun | L52 cannon, 155 mm |
 | Shell | 155mm HE Shell |
-| Range | 780–2,629 m (measured) |
-| Elevation | 20–1,390 mils |
+| Range | 780 to 2,629 m (measured) |
+| Elevation | 20 to 1,390 mils |
 | Reload | 25.0 s |
-| Travel time | about 5.5–24 s low arc, 28–37 s high arc (game table) |
+| Travel time | about 5.5 to 24 s low arc, 28 to 37 s high arc (game table) |
 | **Durability** | |
 | Main health | 650 HP |
 | Top speed | 65 (as stored) |

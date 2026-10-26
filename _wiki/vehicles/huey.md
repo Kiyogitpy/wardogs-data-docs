@@ -28,7 +28,7 @@ The Huey is a helicopter that the game's rules name in many places, but whose ve
 
 ## Overview
 
-The Huey is the vehicle family the data calls ROT_01. It has two variants in the rules: a default one and one with mounted machine guns. The rules for the variants are identical wherever the data lists them, so nothing in the data separates one from the other except the name.
+The Huey is a helicopter family in the game data. It has two variants in the rules: a default one and one with mounted machine guns. The rules for the variants are identical wherever the data lists them, so nothing in the data separates one from the other except the name.
 
 The other helicopters in the vehicle vendor have their own vehicle files with a health total, seats, price, weapons and handling. The Huey has none of that in the data. The files that would hold it are missing, so it behaves like a vehicle that is half-listed: the systems that deal with vehicles after the fact (rewards, targeting, spotting and seat rules) know it, and the systems that define a vehicle do not. Whether a match ever places one is not shown. The one place that names it is a spawn yard, described below.
 
