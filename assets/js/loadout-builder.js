@@ -47,6 +47,13 @@
   /* ---------- data access ---------- */
 
   function weaponById(id) { return (model.weapons || []).filter(function (w) { return w.id === id; })[0] || null; }
+  // Sight entries are socket names (S_Aim01, S_Aim02, S_AimCanted1): shown as the sight they aim through.
+  function sightLabel(s) {
+    var m = /^S_Aim(Canted)?0*(\d+)$/.exec(String(s));
+    if (!m) return String(s);
+    if (m[1]) return m[2] === "1" ? "Canted sight" : "Canted sight " + m[2];
+    return m[2] === "1" ? "Main sight" : m[2] === "2" ? "Second sight" : "Sight " + m[2];
+  }
   function bi(id) { return (B && B.items && B.items[id]) || null; }
   function mi(id) { return (model.items && model.items[id]) || null; }
   function nameOf(id) { var b = bi(id), m = mi(id); return (b && b.name) || (m && m.display) || String(id); }
@@ -192,7 +199,7 @@
       var k = w[3], id;
       if (w[0] === "primary") id = kv.p === undefined ? ids0() : kv.p === "none" ? null : kv.p;
       else id = kv[k] || null;
-      if (id && slotIds(w[0]).indexOf(id) < 0) id = null;
+      if (id && slotIds(w[0]).indexOf(id) < 0) id = w[0] === "primary" ? ids0() : null;   // unknown id: the default primary
       S.slots[w[0]] = { id: id, lo: null };
       if (id && weaponById(id)) {
         var n = L.normalize(model, { weapon: id, items: pend[k].items, sight: pend[k].sight, stance: stances()[0], bipod: pend[k].bipod });
@@ -243,7 +250,7 @@
     if (!b) return "";
     if (b.price == null) return "—";
     var t = b.price === 0 ? "Free" : "$" + b.price.toLocaleString("en-US");
-    return b.priceHidden ? t + " · hidden" : t;
+    return b.priceHidden ? t + " · not on sale" : t;
   }
 
   function status(t) { els.status.textContent = t || ""; els.status.hidden = !t; }
@@ -343,7 +350,8 @@
     var b = el("button", "lb-tile" + (o.cls ? " " + o.cls : ""));
     b.type = "button";
     b.setAttribute("data-fid", fid);
-    b.setAttribute("aria-label", o.aria);
+    var locked = o.id && !allowed(o.id);
+    b.setAttribute("aria-label", locked ? o.aria.replace(/\. Change$/, ", locked at this class level. Change") : o.aria);
     b.appendChild(iconBox(o.id, "lb-tile-icon", o.name));
     var t = el("span", "lb-tile-text");
     t.appendChild(el("span", "lb-tile-slot", o.slot));
@@ -565,14 +573,14 @@
     if (sights.length > 1) {
       var sel = el("select"), dflt = model.defaultSight || "S_Aim01";
       sel.id = "lb-sight-entry";
-      var o0 = el("option", null, "Initial (" + dflt + ")");
+      var o0 = el("option", null, sightLabel(dflt) + " (initial)");
       o0.value = "";
       sel.appendChild(o0);
-      sights.forEach(function (x) { if (x.isDefault) return; var o = el("option", null, x.name); o.value = x.name; sel.appendChild(o); });
+      sights.forEach(function (x) { if (x.isDefault) return; var o = el("option", null, sightLabel(x.name)); o.value = x.name; sel.appendChild(o); });
       sel.value = lo.sight == null ? "" : lo.sight;
-      sel.setAttribute("aria-label", "Sight entry");
+      sel.setAttribute("aria-label", "Aiming sight");
       sel.addEventListener("change", function () { lo.sight = sel.value || null; update(true); });
-      controls.appendChild(field("Sight entry", sel));
+      controls.appendChild(field("Aiming sight", sel));
     }
     box.appendChild(controls);
   }
@@ -730,7 +738,8 @@
 
   function renderRecoil(res) {
     var card = els.recoilCard;
-    if (!panel) { card.hidden = true; return; }
+    // Launchers and the bow have no bullet model here (single shots, no ballistics): no spray panel either.
+    if (!panel || !(X && X.ballistics[current().id])) { card.hidden = true; return; }
     var v = finalOf(res, "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"), h = finalOf(res, "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier");
     card.hidden = false;
     els.recoilLead.textContent = "Spray pattern of " + nameOf(current().id) + " with this loadout: vertical recoil ×" + (v == null ? "?" : fmt(v)) +
@@ -761,7 +770,7 @@
     if (!X) return;
     var zoom = finalOf(res, "Attribute.Gameplay.Weapon.AdsZoomMultiplier"), aim = finalOf(res, "Attribute.Gameplay.Weapon.AimTime");
     box.appendChild(el("p", "lb-lead", "Aiming zoom ×" + (zoom == null ? "?" : fmt(zoom)) + ", ADS time " + (aim == null ? "?" : fmt(aim) + " s") +
-      ". Sight entry: " + entry + "."));
+      ". Aiming with: " + sightLabel(entry).toLowerCase() + "."));
     var ids = [c.id];
     L.slots(model, lo).forEach(function (s) { if (s.choice != null) ids.push(s.choice); });
     var sights = ids.filter(function (id) { var it = mi(id); return it && it.sights && it.sights.length; });
@@ -774,7 +783,7 @@
       var r = (X.reticles && X.reticles[id]) || {}, row = el("div", "lb-reticles");
       if (r.scope) row.appendChild(figure(r.scope, "Through the scope", nameOf(id) + " reticle through the scope"));
       var lens = r.entries && r.entries[entry];
-      if (lens) row.appendChild(figure(lens, "Lens reticle (" + entry + ")", nameOf(id) + " lens reticle", "lb-reticle-lens"));
+      if (lens) row.appendChild(figure(lens, "Lens reticle (" + sightLabel(entry).toLowerCase() + ")", nameOf(id) + " lens reticle", "lb-reticle-lens"));
       if (row.children.length) wrap.appendChild(row);
       else wrap.appendChild(el("p", "lb-hint", "No reticle image: this sight's reticle is built inside the game's material, with no texture to show."));
       box.appendChild(wrap);
@@ -856,7 +865,7 @@
     });
     els.balNote.textContent = "Target helmet and armor are the enemy's, not yours. Every shot hits the named part; no reload, spread or recoil. " +
       "Damage per shot comes from the weapon and the ammunition; attachments do not change it. Damage at a distance is the point-blank damage × the weapon's falloff curve × the bullet's speed loss to drag. " +
-      (er != null ? "* beyond the full-damage range. " : "") + "Armor covers the torso (level 4 also the pelvis and upper arm); a helmet covers the head and neck.";
+      (er != null ? "* beyond the full-damage range. " : "") + "Armor covers the torso (level 4 also the pelvis and upper arm); a helmet covers the head (level 3, level 4 and tank crew helmets also the neck).";
   }
 
   /* ---------- gate bar and update ---------- */
@@ -866,7 +875,7 @@
     WSLOTS.forEach(function (w) {
       var s = S.slots[w[0]];
       if (s.id && !allowed(s.id)) lockedAny.push(nameOf(s.id));
-      if (s.lo) L.slots(model, s.lo).forEach(function (x) { if (x.choice != null && !allowed(x.choice)) lockedAny.push(nameOf(x.choice)); });
+      if (s.lo) L.slots(model, s.lo).forEach(function (x) { if (x.choice != null && !x.isDefault && !allowed(x.choice)) lockedAny.push(nameOf(x.choice)); });
     });
     GEAR.forEach(function (g) { if (S.gear[g[0]] && !allowed(S.gear[g[0]])) lockedAny.push(nameOf(S.gear[g[0]])); });
     els.gateHint.textContent = !X ? "" : S.level == null

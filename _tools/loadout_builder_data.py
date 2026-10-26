@@ -148,8 +148,28 @@ def build():
         if owner_name and not owner_name.startswith("ID_"):
             e["name"] = f"{owner_name} {split_camel(slot_label).lower()}"
         else:
-            e["name"] = f"{split_camel(slot_label)} {aid[3:]}"
+            e["name"] = ""
+            e["slotWord"] = split_camel(slot_label).lower()
         e["nameDerived"] = True
+
+    # Internal codes inside names (dev names such as "WEPN_36 Evoly Grip", "Sig Spear (WEPN_037) ...") are
+    # dropped; a name left empty becomes "Alternative <slot> N", numbered per slot word.
+    code = re.compile(r"\(?\b[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)+\b\)?")
+    alt_n = {}
+    for aid in sorted(items):
+        e = items[aid]
+        word = e.pop("slotWord", None)
+        name = e["name"]
+        if name and code.search(name):
+            name = re.sub(r"^\((.*?)\)\s*", r"\1 ", code.sub("", name).strip()).strip()
+            name = re.sub(r"\s{2,}", " ", name)
+            e["nameDerived"] = True
+        if not name or name.lower() in ("barrel", "grip", "stock", "handguard", "magazine", "muzzle", "mag"):
+            word = word or (name or "part").lower()
+            alt_n[word] = alt_n.get(word, 0) + 1
+            name = f"Alternative {word} {alt_n[word]}"
+            e["nameDerived"] = True
+        e["name"] = name
 
     # slot membership from the Inventory.Slot.* context tags
     slots = {k: [] for k in SLOT_TAG}

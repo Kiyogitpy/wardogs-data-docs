@@ -189,7 +189,7 @@
       live.textContent = n + " shots: the view climbs " + fmt(last.y, 2) + " degrees and drifts " + fmt(last.x, 2) +
         " degrees; at " + sd + " m that is " + fmtLen(offsetM(last.y, sd)) + " up and " + fmtLen(offsetM(last.x, sd)) + " sideways.";
       cap2.textContent = "On a target " + sd + " m away";
-      note.textContent = "Expected path (mean of the random section); the band is the 10th to 90th percentile of 2000 simulated magazines. " +
+      note.textContent = "Expected path (mean of the random section); the band is the 10th to 90th percentile of 2000 simulated magazines, drawn over the shots the data simulates (at least 40). " +
         "Multipliers are the loadout's final values (stance and attachments included). No recovery between shots; independent of field of view and sensitivity.";
     }
 
@@ -225,7 +225,7 @@
       svg("text", { x: 11, y: (T + B) / 2, class: "wdr-axis", "text-anchor": "middle", transform: "rotate(-90 11 " + (T + B) / 2 + ")" }, g, "Pitch, degrees (up +)");
       svg("rect", { x: L, y: T, width: R - L, height: B - T, class: "wdr-frame" }, g);
       var i;
-      if (c.b) for (i = 0; i < n; i++) {
+      if (c.b) for (i = 0; i < Math.min(n, c.b.p10.length, c.b.p90.length); i++) {
         var a = c.b.p10[i], b = c.b.p90[i];
         svg("rect", { x: Math.min(sc.X(a.x), sc.X(b.x)), y: Math.min(sc.Y(a.y), sc.Y(b.y)), width: Math.max(1.5, Math.abs(sc.X(b.x) - sc.X(a.x))),
           height: Math.max(1.5, Math.abs(sc.Y(a.y) - sc.Y(b.y))), class: "wdr-band" }, g);
@@ -260,7 +260,7 @@
       var root = svg("svg", { viewBox: "0 0 " + TW + " " + TH, class: "wdr-svg", role: "img", focusable: "false" }, targ), d = st.dist;
       var X = [0], Y = [AIM_H], i;
       for (i = 0; i < n; i++) { X.push(offsetM(c.p[i].x, d)); Y.push(AIM_H + offsetM(c.p[i].y, d)); }
-      if (c.b) for (i = 0; i < n; i++) [c.b.p10[i], c.b.p90[i]].forEach(function (p) { X.push(offsetM(p.x, d)); Y.push(AIM_H + offsetM(p.y, d)); });
+      if (c.b) for (i = 0; i < Math.min(n, c.b.p10.length, c.b.p90.length); i++) [c.b.p10[i], c.b.p90[i]].forEach(function (p) { X.push(offsetM(p.x, d)); Y.push(AIM_H + offsetM(p.y, d)); });
       var xh = Math.max(0.6, Math.max.apply(null, X.map(Math.abs)) * 1.1);
       var y0 = Math.min(0, Math.min.apply(null, Y)) - 0.1, y1 = Math.max(PERSON_H + 0.15, Math.max.apply(null, Y)) + 0.1;
       var w = TW - TM.l - TM.r, h = TH - TM.t - TM.b, s = Math.min(w / (2 * xh), h / (y1 - y0));
@@ -283,7 +283,7 @@
       svg("rect", { x: PX(0.23), y: PY(1.48), width: s * 0.1, height: s * 0.6, rx: 2 }, p);
       svg("circle", { cx: PX(0), cy: PY(PERSON_H - 0.11), r: s * 0.11 }, p);
       svg("text", { x: PX(0.42), y: PY(PERSON_H) + 4, class: "wdr-tick" }, g, "1.8 m");
-      if (c.b) for (i = 0; i < n; i++) {
+      if (c.b) for (i = 0; i < Math.min(n, c.b.p10.length, c.b.p90.length); i++) {
         var a = c.b.p10[i], b = c.b.p90[i], ax = PX(offsetM(a.x, d)), bx = PX(offsetM(b.x, d)), ay = PY(AIM_H + offsetM(a.y, d)), by = PY(AIM_H + offsetM(b.y, d));
         svg("rect", { x: Math.min(ax, bx), y: Math.min(ay, by), width: Math.max(1.5, Math.abs(bx - ax)), height: Math.max(1.5, Math.abs(ay - by)), class: "wdr-band" }, g);
       }
@@ -337,6 +337,7 @@
         st.in = { itemAsset: o.itemAsset, vertical: o.vertical, horizontal: o.horizontal, stance: o.stance, focus: !!o.focus };
         st.found = findSeason(st.spray, o.itemAsset);
         if (o.magazine != null && (o.itemAsset !== prev || o.magazine !== st.mag)) st.shots = Math.max(1, Math.min(MAXSHOTS, o.magazine | 0));
+        else if (o.magazine == null && o.itemAsset !== prev) st.shots = 30;
         st.mag = o.magazine;
         if (o.itemAsset !== prev) stopFire(); else { if (st.timer) clearTimeout(st.timer); st.timer = null; st.run = null; fire.textContent = "Fire"; fire.classList.remove("is-on"); }
         render();

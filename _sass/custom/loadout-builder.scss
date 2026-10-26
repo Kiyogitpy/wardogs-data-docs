@@ -364,6 +364,7 @@ html:not(.js) .lb { display: none; }
 /* ---------- tables ---------- */
 
 .lb-scroll {
+  position: relative;             // keeps the absolutely placed .lb-sr text inside the scroller
   max-width: 100%;
   overflow-x: auto;
   border: 1px solid $ue-border;

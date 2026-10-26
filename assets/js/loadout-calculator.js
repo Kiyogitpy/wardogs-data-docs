@@ -576,7 +576,7 @@
     });
     els.balNote.textContent = "Every shot hits the named part; no reload, spread or recoil. Damage per shot comes from the weapon and the ammunition, and attachments do not change it. " +
       "Damage at a distance is the point-blank damage × the weapon's falloff curve × the bullet's speed loss to drag (Weapon Damage Falloff). " +
-      (er != null ? "* beyond the full-damage range. " : "") + "A vest covers the torso (level 4 also the pelvis and upper arm); a helmet covers the head and neck.";
+      (er != null ? "* beyond the full-damage range. " : "") + "A vest covers the torso (level 4 also the pelvis and upper arm); a helmet covers the head (level 3, level 4 and tank crew helmets also the neck).";
   }
 
   function fillBalControls() {
