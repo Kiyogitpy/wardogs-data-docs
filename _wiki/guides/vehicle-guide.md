@@ -159,7 +159,7 @@ Tips that follow from the numbers:
 - **Because the Kodiak and the Ural have no seat row, a rider in them gets no seat reduction in the data.** As far as the data shows, protection in those vehicles comes only from the player's own armor.
 - **Because purchased vehicles start locked, teammates cannot enter until the owner unlocks them for a squad or for everyone.** See [Seats and passengers](../vehicles/seats-and-passengers.md).
 - **Because switching seats takes a moment, a passenger should move before the fight, not during it.** The seats are chosen with F1 to F12 by default, and the in-game tip says switching is not instant.
-- **A destroyed deployment APC most likely comes back after 300 s (60 s for a side that is losing), so a side can lose its forward spawn for a few minutes.** The board also has a 600 s deploy cooldown per player. Both readings are inferred from the timer names. See [M113 APC SV](../vehicles/m113-apc-sv.md).
+- **A destroyed deployment APC comes back after 300 s (60 s for a side that is 15 or more score points behind the best other side), so a side can lose its forward spawn for a few minutes.** The board shows the time left. The board also has a 600 s deploy cooldown per player, which starts when that player deploys onto the APC. The APC is not out at all until one side has a score of 20. See [M113 APC SV](../vehicles/m113-apc-sv.md).
 - **Because leaving a fast vehicle hurts, slow down before you jump out.** The damage depends on your speed in km/h when you leave and is applied on landing: none at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h and 100 at 75 km/h and above. See [Movement](../game-mechanics/movement.md).
 
 ## Sources

@@ -143,7 +143,7 @@ The server browser lists four King of the Hill entries that the game files name 
 
 - **The zone area.** Bakurani's regions fill a box of about 2.3 km by 2.4 km, and Ozeti's a box of about 2.8 km by 1.9 km. The spawn distances are measured from the middle of that box, in straight lines. For comparison, the two Bakurani entries' own spawn areas are 3.8 km to 4.1 km from the middle of their zone area, and Ozeti's are 3.5 km to 4.0 km.
 - **Mindori.** Three Bakurani regions carry the name Mindori (Mindori Village and two hillsides). They lie about 0.9 km from the middle of the Bakurani zone area, so the name Mindori is not a separate area of the map. Two of Mindori's three spawn areas are shared with the first Bakurani entry.
-- **Tevza.** The entry names three spawn areas, but no spawn point in the map file is tied to any of them, and no region has its name. Three other spawn points in the file carry no layer at all, and whether any of them belongs to Tevza is not known. The data holds nothing that puts Tevza anywhere on the map.
+- **Tevza.** The entry names three spawn areas, but no spawn point in the map file is tied to any of them, and no region has its name. Three other spawn points in the file carry no layer at all, but they are the player spawn areas of the three co-operative missions (VIP Escort, Strike and Disarm and the example mission; their positions match exactly), so none belongs to Tevza. The data holds nothing that puts Tevza anywhere on the map.
 - **Berlin and Paris.** Both have their own spawn areas. Paris shares one with Ozeti.
 - **What differs between entries.** Only the spawn areas differ. How a server picks the zone placement for these entries is a server setting that is not in the game files.
 

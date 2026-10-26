@@ -12,7 +12,7 @@ description: "The waiting time before a King of the Hill match: the ways to earn
 | What it is | The wait in your team's spawn area before a match starts |
 | Where it is used | King of the Hill (the only mode that turns it on in the game files) |
 | Points to Cash | 1 point = 1 Cash, paid when the match starts |
-| Normal starting Cash | 10,000, with the points paid on top |
+| Normal starting Cash | 10,000 in the game's currency table, with the points paid on top (see Starting Cash below) |
 | Most you can bank | 5,000 points |
 | Free points | 150 when you arrive, then 250 every 60 seconds |
 | Ways to earn more | Hot Potato, the soccer pitch, the moving practice targets |
@@ -60,7 +60,7 @@ Points stop being accepted when the lobby is declared ready, or once 60 or more 
 
 ### Starting Cash
 
-Every player starts with 10,000 Cash, the starting balance in the currency table, and the server settings leave that value as it is. This is the same in every mode that uses the normal currency; the only different starting amounts in the files are the two co-operative missions (3,000 for Strike and Disarm, 2,000 for VIP Escort; see [Strike and Disarm](strike-and-disarm.md) and [VIP Escort](vip-escort.md)). The starting balance is not given at the moment the match starts. When it is applied (when you join, or when the match is set up) was not traced, so it is not known whether it appears before or after the pre-lobby. The pre-lobby points are the only Cash the start of the match adds.
+The starting balance in the game's currency table is 10,000 Cash. It is the same in every mode that uses the normal currency; the only different starting amounts in the files are the two co-operative missions (3,000 for Strike and Disarm, 2,000 for VIP Escort; see [Strike and Disarm](strike-and-disarm.md) and [VIP Escort](vip-escort.md)). The game applies this balance when you join, as your player data is set up, not when the match starts, so it is already there before the pre-lobby begins. It is applied only when the game mode does not keep Cash between matches. A networked server keeps it by default, so on those servers your Cash when you join comes from your saved player data on the online service, which the game files do not show; the 10,000 is then the table value and the first-time balance (inferred), not something the client hands out each match. The server settings file has an entry for overriding the starting Cash, but this version of the game has no such setting, so it does nothing. The pre-lobby points are the only Cash the start of the match adds.
 
 ## See also
 

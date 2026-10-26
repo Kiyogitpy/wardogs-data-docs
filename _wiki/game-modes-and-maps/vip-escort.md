@@ -37,7 +37,7 @@ VIP Escort is one of the three PvE missions in the data, alongside [Hunter Kille
 - **The VIP.** One random player is chosen as the VIP. The VIP is a player, not a soldier.
 - **Failure.** The mission fails 10 seconds after the VIP goes down (reaches the critical state). The countdown starts the moment the VIP drops and nothing stops it: a revive inside those 10 seconds does not cancel it, and the normal bleed-out time (see [Downed and Revive](../game-mechanics/downed-and-revive.md)) does not matter here. The VIP needs to stay on their feet.
 - **VIP disconnects.** This does not fail the mission. If the VIP leaves, the game picks another random player as the new VIP.
-- **Success.** The team must reach the extraction area with the VIP alive, then board the extraction helicopter. The helicopter is a Little Bird. It appears at the extraction point and flies a set route; the map layer holds one arrival path and one departure path.
+- **Success.** The team must reach the extraction area with the VIP alive, then board the extraction helicopter. The helicopter is a Little Bird. It appears at the extraction point and flies a set route; the map layer holds one arrival path and one departure path, so there is only one place it can come from. The mission always starts the Valkyra-tagged (Bravo) version of the helicopter, the same tag the players have; nothing chooses at random.
 - **Voice-over.** An intro of three lines, a success line and a failure line.
 - **Starting cash.** Each player starts the mission with 2,000 cash. The mission data sets no time limit.
 - **Map.** The Bakurani world (the data's name: Kavkazi), which all three PvE missions share.

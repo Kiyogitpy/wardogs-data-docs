@@ -494,7 +494,7 @@ Presets by fog density (thinnest first):
 
 ### 14c. Match start (what the `MatchState.Playing` subscribers do)
 
-See [`match-start.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/match-start.json). No subscriber teleports a player, resets health, clears inventory or sets the starting balance. The pre-lobby payout is the only Cash write. Base starting Cash is 10,000 (`DT_CurrenciesDefinitions`, session override -1); PvE scenarios set 3,000 (Strike and Disarm) and 2,000 (VIP Escort).
+See [`match-start.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/match-start.json). No subscriber teleports a player, resets health, clears inventory or sets the starting balance. The pre-lobby payout is the only Cash write. Base starting Cash is 10,000 (`DT_CurrenciesDefinitions`); it is applied at join, not at match start, and only when the mode does not keep Cash between matches (round 75, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md); the `OverrideStartingCash` ini line matches no property in this build); PvE scenarios set 3,000 (Strike and Disarm) and 2,000 (VIP Escort).
 
 ---
 

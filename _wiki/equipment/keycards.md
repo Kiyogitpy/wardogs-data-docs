@@ -2,7 +2,7 @@
 title: "Keycards"
 parent: "Equipment"
 group: "Utility"
-description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): quick-slot items with a use action, no shop price and no door in the data that takes them."
+description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): quick-slot items with a use action, no shop price, and no reader or door in the shipped maps that takes them."
 ---
 
 # Keycards
@@ -19,7 +19,7 @@ description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): 
 | Internal name | `Id.Item.KeyCard.Alpha.1` to `Id.Item.KeyCard.Charlie.2` |
 {: .wiki-infobox }
 
-Keycards are six quick-slot items, two for each of the three factions. Each has a use action, but the data names no door, reader or objective that accepts one. They look like a feature that is set up on the item side only.
+Keycards are six quick-slot items, two for each of the three factions. Each has a use action, but no door, reader, mission or Blueprint in the shipped game files accepts one. The game's code does contain a keycard reader (see Effects), but no map or mission places it, so the cards open nothing today.
 
 ## Overview
 
@@ -29,7 +29,9 @@ All six use the same held model, a generic universal tool, and the same one-hand
 
 ## Effects
 
-The item data records only the faction and the card number. It does not record what a card opens, what a reader checks, or what the use action changes. No door, building or mission file in the data names a keycard.
+The item data records only the faction and the card number. It does not record what a card opens or what the use action changes.
+
+The game's code has a reader object made for these cards: a wall reader with a scanner mesh and a trigger box, which can be linked to a door and to other readers it depends on. Using a card casts a short line 1 m ahead of you; if it hits a reader, the card is sent to the server, which compares the card's faction and its number with the ones the reader wants. The three possible results are success, wrong faction and wrong number. What a success does to the door was not read. No reader is placed in any map, mission layer or Blueprint, no door or quest names a card, and nothing derives from the reader, so none of this can happen in the current game files.
 
 ## Use and timing
 
@@ -52,6 +54,7 @@ None found.
 ## Sources
 
 - [Items (feature)](../../game-features/Wardogs_GameFeatures_Items_v2.md): the six keycard rows and the use action
+- [Round 75 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md): the reader in the code and the search for anything that uses it
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the keycard names in the entity text table
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the keycard animation sets
 - [Keycard item folder](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items/Keycard/Content/Data/Keycards)

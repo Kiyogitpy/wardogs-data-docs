@@ -141,7 +141,8 @@
  "starting_cash": {
   "base_default": 10000,
   "source": "DT_CurrenciesDefinitions Attribute.Meta.Currency.Cash InitialBalance (round 42)",
-  "session_override": "OverrideStartingCash = -1 in DefaultGame.ini (use the table value)",
+  "session_override": "OverrideStartingCash = -1 in DefaultGame.ini has no matching property in this build (round 75): it does nothing",
+  "applied_by": "0x6D61030 (round 75), at join when the player data is initialised, only when the game mode does not keep Cash between matches (bPersistCash false: standalone or editor); a networked server keeps it by default, so the balance comes from saved player data (SERVER)",
   "pve_scenarios": {
    "StrikeDisarm_01": 3000,
    "VIPEscort_01": 2000,
@@ -149,6 +150,6 @@
   },
   "other_modes": "no per-mode override found in the experience data (KOTH, Deathmatch, Sniper Showdown, Shooting Range); the table default applies",
   "set_at_match_start": false,
-  "status": "FOUND (value), NATIVE (the function that applies InitialBalance was not traced; it is not among the Playing subscribers)"
+  "status": "FOUND (value, function), NATIVE (condition), SERVER (live balance)"
  }
 }
