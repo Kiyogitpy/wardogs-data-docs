@@ -1,0 +1,217 @@
+{
+ "_note": [
+  "Round 70. Time of day, weather and fog per map. Static read of the BP_SkyActor placed in each world package, the nine PDA_LightSettings presets and the example server rotation. Nothing was run.",
+  "There is one BP_SkyActor per world (Kavkazi = Bakurani, Europe = Ozeti, NorthAmerica = Zestafona, Russia = Saburtulo) plus one in the gym. Its tick is off (class default), so nothing changes the light during a match by itself. No WDDynamicSky (the code class with a solar day cycle, moon and thunder), no WDTimeOfDayDataReplicated and no weather replication actor is named in any content package (findname over Wardogs/Content found only UltraDynamicSky texture names).",
+  "The sky actor stores a preset (DA_LightSettings). At begin play it asks the game state for the lighting scenarios and applies the preset whose title equals the replicated name (WDSky.CurrentPresetName; SetPreset(Name)). The server rotation entry has a Lighting field (ExampleStandaloneServerConfig.ini) with that title, so the lighting of a match is a server choice (SERVER); the stored preset is what the level shows when nothing else is set (inferred).",
+  "Sun height = minus the pitch of the directional light. Sun yaw is relative to the world axes; the data does not say which way is north.",
+  "Fog density is the Unreal exponential height fog density (per centimetre); only the ratio between presets is meaningful here. Start distance of the fog is stored on the level actor only; the presets set density, falloff and volumetric start where they list them and otherwise keep the actor value (inferred).",
+  "Rain: only DA_LightSettings_AfternoonOvercastRain (title DayLateRain) has rain settings (WD_HeavyRain) and turns the sun off. It is not in the example rotation."
+ ],
+ "maps": {
+  "Bakurani": {
+   "world": "Kavkazi",
+   "stored_preset": "DA_LightSettings_Midday_01",
+   "server_lighting_name": "DayClear",
+   "sun_height_deg": 43.8,
+   "sun_yaw_deg": -88.8,
+   "sun_intensity_on_actor": 200000.0,
+   "sun_temperature_k": 8000,
+   "actor_fog": {
+    "density": 0.009,
+    "height_falloff": 0.1,
+    "second_density": 0.002,
+    "start_distance_m": 20,
+    "volumetric_fog_start_m": 10
+   },
+   "sky_light_intensity": 0.7
+  },
+  "Zestafona": {
+   "world": "NorthAmerica",
+   "stored_preset": "DA_LightSettings_Midday_01",
+   "server_lighting_name": "DayClear",
+   "sun_height_deg": 43.8,
+   "sun_yaw_deg": -88.8,
+   "sun_intensity_on_actor": 200000.0,
+   "sun_temperature_k": 8000,
+   "actor_fog": {
+    "density": 0.009,
+    "height_falloff": 0.1,
+    "second_density": 0.002,
+    "start_distance_m": 20,
+    "volumetric_fog_start_m": 10
+   },
+   "sky_light_intensity": null
+  },
+  "Ozeti": {
+   "world": "Europe",
+   "stored_preset": "DA_LightSettings_Afternoon_01",
+   "server_lighting_name": "DayLateClear",
+   "sun_height_deg": 20.2,
+   "sun_yaw_deg": -157.0,
+   "sun_intensity_on_actor": null,
+   "sun_temperature_k": null,
+   "actor_fog": {
+    "density": 0.007,
+    "height_falloff": 0.25,
+    "second_density": 0.0005,
+    "start_distance_m": 100,
+    "volumetric_fog_start_m": null
+   },
+   "sky_light_intensity": null
+  },
+  "Saburtulo": {
+   "world": "Russia",
+   "stored_preset": "DA_LightSettings_Afternoon_01",
+   "server_lighting_name": "DayLateClear",
+   "sun_height_deg": 20.2,
+   "sun_yaw_deg": -157.0,
+   "sun_intensity_on_actor": null,
+   "sun_temperature_k": null,
+   "actor_fog": {
+    "density": 0.007,
+    "height_falloff": 0.25,
+    "second_density": 0.0005,
+    "start_distance_m": 100,
+    "volumetric_fog_start_m": null
+   },
+   "sky_light_intensity": null
+  }
+ },
+ "presets_by_fog_density": [
+  {
+   "asset": "DA_LightSettings_Sunset",
+   "server_lighting_name": "DayEndClear",
+   "plain_name": "Sunset, clear",
+   "sun_height_deg": 12.8,
+   "sun_intensity": 12000.0,
+   "fog_density": 0.0009,
+   "second_fog_density": 0.0002,
+   "fog_height_falloff": null,
+   "volumetric_fog_start_cm": null,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_Morning",
+   "server_lighting_name": "DayEarlyClear",
+   "plain_name": "Morning, clear",
+   "sun_height_deg": 10.1,
+   "sun_intensity": 6000.0,
+   "fog_density": 0.002,
+   "second_fog_density": 0.0001,
+   "fog_height_falloff": 0.1,
+   "volumetric_fog_start_cm": null,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_Afternoon_01",
+   "server_lighting_name": "DayLateClear",
+   "plain_name": "Late afternoon, clear",
+   "sun_height_deg": 20.2,
+   "sun_intensity": 60000.0,
+   "fog_density": 0.004,
+   "second_fog_density": 0.002,
+   "fog_height_falloff": null,
+   "volumetric_fog_start_cm": null,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_Sunrise",
+   "server_lighting_name": "DayStartClear",
+   "plain_name": "Sunrise, clear",
+   "sun_height_deg": 5.1,
+   "sun_intensity": 18000.0,
+   "fog_density": 0.007,
+   "second_fog_density": 0.003,
+   "fog_height_falloff": 0.6,
+   "volumetric_fog_start_cm": null,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_Midday_01",
+   "server_lighting_name": "DayClear",
+   "plain_name": "Midday, clear",
+   "sun_height_deg": 43.8,
+   "sun_intensity": 120000.0,
+   "fog_density": 0.009,
+   "second_fog_density": 0.002,
+   "fog_height_falloff": 0.1,
+   "volumetric_fog_start_cm": 1000.0,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_AfternoonOvercast",
+   "server_lighting_name": "DayLateGray",
+   "plain_name": "Late afternoon, overcast",
+   "sun_height_deg": 32.9,
+   "sun_intensity": 100.0,
+   "fog_density": 0.015,
+   "second_fog_density": 0.002,
+   "fog_height_falloff": 0.35,
+   "volumetric_fog_start_cm": null,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_AfternoonOvercastFog",
+   "server_lighting_name": "DayLateGrayFog",
+   "plain_name": "Late afternoon, overcast and foggy",
+   "sun_height_deg": 32.9,
+   "sun_intensity": 100.0,
+   "fog_density": 0.015,
+   "second_fog_density": 0.02,
+   "fog_height_falloff": 0.3,
+   "volumetric_fog_start_cm": 500.0,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_MorningFoggy",
+   "server_lighting_name": "DayEarlyFog",
+   "plain_name": "Morning, foggy",
+   "sun_height_deg": 10.1,
+   "sun_intensity": 6000.0,
+   "fog_density": 0.06,
+   "second_fog_density": null,
+   "fog_height_falloff": null,
+   "volumetric_fog_start_cm": null,
+   "rain": null,
+   "direct_sun_off": false
+  },
+  {
+   "asset": "DA_LightSettings_AfternoonOvercastRain",
+   "server_lighting_name": "DayLateRain",
+   "plain_name": "Late afternoon, heavy rain",
+   "sun_height_deg": 32.9,
+   "sun_intensity": 100.0,
+   "fog_density": 0.3,
+   "second_fog_density": 0.02,
+   "fog_height_falloff": 0.3,
+   "volumetric_fog_start_cm": 1500.0,
+   "rain": "WD_HeavyRain",
+   "direct_sun_off": true
+  }
+ ],
+ "example_rotation": {
+  "source": "data/Wardogs/Config/ServerConfigs/ExampleStandaloneServerConfig.ini",
+  "lighting_names_used": [
+   "DayClear",
+   "DayEarlyClear",
+   "DayEarlyFog",
+   "DayLateClear",
+   "DayLateGray",
+   "DayLateGrayFog"
+  ],
+  "note": "Each of Bakurani, Ozeti and Zestafona entries appears with each of the six names (4 times each). Saburtulo is not in the example. The rain, sunrise and sunset presets are not used."
+ },
+ "absent": {
+  "day_night_cycle": "no actor placed; the sky actor does not tick",
+  "dynamic_weather": "no weather actor placed; rain exists only as one preset",
+  "wind": "UWDWeatherSubsystem has wind range and air density setters (native); no placed source in the maps; value not read (NATIVE)",
+  "thunder": "WDTimeOfDayDataReplicated carries a thunder schedule; the class is not placed in any content package"
+ }
+}

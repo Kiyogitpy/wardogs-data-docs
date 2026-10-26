@@ -93,6 +93,24 @@ The Berlin, Paris and Mindori entries also have spawn areas of the same kind; th
 
 The server browser table has four further King of the Hill entries with no display name, and one Sniper Showdown layout (for North America) and one for Russia that are not matched to a name. The sources do not say where those are, so they are not described further.
 
+## Lighting presets
+
+The light on every map is a fixed setting. There is no day and night cycle and no weather that changes during a match, and nothing in the game files places a moving sun, a moon or storms on the main maps. Each map has a stored default, and a server owner can name a different preset for each map entry in the server rotation, so the same map can be played in different light. The example server file rotates six of the nine presets (all except sunrise, sunset and rain). Rain exists only in the heavy rain preset, which also removes direct sunlight; the example server file does not use it.
+
+| Name servers use | What it looks like | Sun height | Fog thickness (clear morning = 1) |
+|---|---|---:|---:|
+| DayEndClear | Sunset, clear, low orange sun | 12.8 degrees | 0.45 |
+| DayEarlyClear | Morning, clear, low sun | 10.1 degrees | 1 |
+| DayLateClear | Late afternoon, clear, low sun | 20.2 degrees | 2 |
+| DayStartClear | Sunrise, clear, sun near the horizon | 5.1 degrees | 3.5 |
+| DayClear | Midday, clear, high sun | 43.8 degrees | 4.5 |
+| DayLateGray | Late afternoon, overcast, no direct sun | 32.9 degrees | 7.5 |
+| DayLateGrayFog | Late afternoon, overcast, with a low fog layer | 32.9 degrees | 7.5 |
+| DayEarlyFog | Morning, foggy | 10.1 degrees | 30 |
+| DayLateRain | Late afternoon, heavy rain, no direct sun | 32.9 degrees | 1.5e+02 |
+
+The last column compares the fog density in each preset with the clear morning preset. The ratio is what matters; how far you can see in each is not stated in the files. The foggy morning is the thickest of the six in the example rotation. A low sun is hard to look into and throws long shadows, but the files do not say which way is north, so compass directions are not given here. Which preset a server runs is the server owner's choice.
+
 ## Season 2 changes
 
 - Season 2 added a shader warm-up list for the Saburtulo map. The Ozeti, Zestafona and Bakurani lists were updated. These lists are technical caches that prepare graphics before a match, not gameplay changes.
@@ -122,6 +140,8 @@ The gym range has a moving target, which slides on a set path and takes 15 to 25
 ## Sources
 
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md)
+- [Light and weather data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-light-weather.json)
+- [Round 70 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round70-maps-matchstart.md)
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [ControlZone regions](../../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)

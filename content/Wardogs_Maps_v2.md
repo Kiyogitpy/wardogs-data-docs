@@ -439,6 +439,66 @@ Static analysis only; nothing was run. Raw output is outside the repository. Sum
 
 **Spawn-area extras.** Soccer pitch `B_WDSoccerField_C`: bounds box 40 x 30 x 10 m, two goal boxes (1 x 8 x 3 m) at 15.5 m from the centre, ball reset 3.0 s after the ball leaves the bounds box, goal award 50 (scorer) and 25 (assist) pre-lobby points. Moving target `B_MovingTarget_C`: health 1, crossing time 15 to 25 s, fall 0.5 s, award equal to the truncated damage of the hit as pre-lobby points (reason Shooting), none for melee or fists. 15 pitches and 45 targets in the four worlds.
 
+## 14. Spawn distances, light and weather, match start (round 70)
+
+Static analysis only. Evidence: [`round70-maps-matchstart.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round70-maps-matchstart.md). Data: [`map-spawn-distances.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-spawn-distances.json), [`map-light-weather.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-light-weather.json), [`match-start.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/match-start.json).
+
+### 14a. Distance from each spawn area to the zone area and the nearest Hot Zone Magnet tower
+
+Straight-line metres on the map plane. Spawn position is the infantry spawn manager of the side's data layer (the middle of the spawn grid, inferred); the deployment board is within about 60 m of it. The zone area middle is the middle of the box around all zone regions (Saburtulo: the placed zone object, inferred).
+
+| Server browser entry | Spawn area | Team slot | To zone area middle (m) | To nearest tower (m) | Nearest tower |
+|---|---|---|---:|---:|---:|
+| Bakurani_KOTH_01 | Khevuli | Bravo | 3807 | 3501 | 4 |
+| Bakurani_KOTH_01 | Chuta | Charlie | 4131 | 3781 | 3 |
+| Bakurani_KOTH_01 | Baghi | Alpha | 3939 | 3607 | 5 |
+| Bakurani_KOTH_02 | Rachuri | Bravo | 3851 | 3525 | 4 |
+| Bakurani_KOTH_02 | Tavarshi | Charlie | 3822 | 3458 | 3 |
+| Bakurani_KOTH_02 | Sanavi | Alpha | 3895 | 3646 | 2 |
+| Madrid_KOTH_01 | Barcelona | Bravo | 4006 | 3375 | 3 |
+| Madrid_KOTH_01 | Malaga | Charlie | 3891 | 3717 | 1 |
+| Madrid_KOTH_01 | Granada | Alpha | 3522 | 3291 | 2 |
+| ED_Detroit_KOTH_01 | Austin | Bravo | 3927 | 3669 | 1 |
+| ED_Detroit_KOTH_01 | Boston | Alpha | 3729 | 3445 | 3 |
+| ED_Detroit_KOTH_01 | Chicago | Charlie | 3649 | 3396 | 2 |
+| Moscow_KOTH_01 | Rostokino | Bravo | 3867 | 3540 | 5 |
+| Moscow_KOTH_01 | Kuzminki | Alpha | 3932 | 3623 | 2 |
+| Moscow_KOTH_01 | Ramenki | Charlie | 3996 | 3653 | 4 |
+
+All fifteen spawn areas lie between 3.5 and 4.1 km from the middle of their zone area and between 3.3 and 3.8 km from the nearest tower. The three spawn areas of one entry differ from each other by at most 0.5 km.
+
+### 14b. Light and weather
+
+Each world holds one sky actor (`BP_SkyActor_C`) with a stored lighting preset (`DA_LightSettings_*`). Its tick is off, no day-cycle sky (`WDDynamicSky`), time-of-day or weather actor is placed in any content package, and rain exists only as one preset (`DayLateRain`). The lighting of a match is therefore a fixed preset, chosen by the server rotation (`Lighting` field of a rotation entry, SERVER). Stored defaults:
+
+| Map | Stored preset | Server name | Sun height (deg) | Fog density | Fog start (actor, m) |
+|---|---|---|---:|---:|---:|
+| Bakurani | DA_LightSettings_Midday_01 | DayClear | 43.8 | 0.009 | 20 |
+| Zestafona | DA_LightSettings_Midday_01 | DayClear | 43.8 | 0.009 | 20 |
+| Ozeti | DA_LightSettings_Afternoon_01 | DayLateClear | 20.2 | 0.007 | 100 |
+| Saburtulo | DA_LightSettings_Afternoon_01 | DayLateClear | 20.2 | 0.007 | 100 |
+
+Presets by fog density (thinnest first):
+
+| Server name | Plain name | Sun height (deg) | Sun intensity | Fog density | Rain |
+|---|---|---:|---:|---:|---|
+| DayEndClear | Sunset, clear | 12.8 | 12000 | 0.0009 | - |
+| DayEarlyClear | Morning, clear | 10.1 | 6000 | 0.002 | - |
+| DayLateClear | Late afternoon, clear | 20.2 | 60000 | 0.004 | - |
+| DayStartClear | Sunrise, clear | 5.1 | 18000 | 0.007 | - |
+| DayClear | Midday, clear | 43.8 | 120000 | 0.009 | - |
+| DayLateGray | Late afternoon, overcast | 32.9 | 100 | 0.015 | - |
+| DayLateGrayFog | Late afternoon, overcast and foggy | 32.9 | 100 | 0.015 | - |
+| DayEarlyFog | Morning, foggy | 10.1 | 6000 | 0.06 | - |
+| DayLateRain | Late afternoon, heavy rain | 32.9 | 100 | 0.3 | yes |
+
+### 14c. Match start (what the `MatchState.Playing` subscribers do)
+
+See [`match-start.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/match-start.json). No subscriber teleports a player, resets health, clears inventory or sets the starting balance. The pre-lobby payout is the only Cash write. Base starting Cash is 10,000 (`DT_CurrenciesDefinitions`, session override -1); PvE scenarios set 3,000 (Strike and Disarm) and 2,000 (VIP Escort).
+
+---
+
+
 ## 9. Still Not Pulled / Limitations
 
 - **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.

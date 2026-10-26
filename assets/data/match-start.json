@@ -1,0 +1,154 @@
+{
+ "_note": [
+  "Round 70. What the references to the MatchState.Playing tag (round 69 xr_playing.txt, 80 references in 60 functions plus one data reference) do. Static decompile of each function and of the callbacks it binds; callee bodies behind unnamed pointers were not followed.",
+  "Result: no function among them teleports a player, restores health, clears or grants inventory, or sets the starting balance. The only Cash write is the pre-lobby payout. This is ABSENT as a negative result over the functions read, not proof about code outside the list."
+ ],
+ "subscribers": [
+  {
+   "function": "AWDGameModeSession begin play (0x6D8FB30)",
+   "area": "game mode",
+   "effect": "Starts a repeating timer (CashReportIntervalSeconds, +0x4D0) while the state is Playing; each tick it logs every player's earned total (0x6D96E60). Other callbacks push player data to the online interface (0x6D97ED0) and send each controller a message (0x6D98170).",
+   "player_effect": "no player change",
+   "status": "FOUND"
+  },
+  {
+   "function": "AWDPlayerController (0x6D4D200, 0x6D51390, 0x6D56600)",
+   "area": "client UI",
+   "effect": "Switches the controller between two UI/camera state tags depending on whether the match is Playing.",
+   "player_effect": "no player change",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDSoccerField (0x76FFEF0)",
+   "area": "pre-lobby object",
+   "effect": "Destroys itself when playing (flag default true).",
+   "player_effect": "removed",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDTarget / WDMovingTarget (0x6A6F310)",
+   "area": "pre-lobby object",
+   "effect": "Destroys itself when playing (flag true on all 45 placed).",
+   "player_effect": "removed",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDHotPotatoComponent / SpawnComponent (0x86390B0, 0x8639660)",
+   "area": "pre-lobby object",
+   "effect": "Destroyed at match start.",
+   "player_effect": "removed",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDServerSeedingPreLobbyComponent (0x863ECC0, payout 0x8640D40)",
+   "area": "pre-lobby",
+   "effect": "Pays pending points as one Cash award, then destroys itself.",
+   "player_effect": "Cash +pending (cap 5000)",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDSpawnWall (0x77022D0, 0x7702350)",
+   "area": "world actor",
+   "effect": "Destroys itself when playing. No instance is named in any content or plugin package (findname).",
+   "player_effect": "none placed",
+   "status": "ABSENT"
+  },
+  {
+   "function": "WDFlyByManager (0x681DAF0)",
+   "area": "world actor",
+   "effect": "Subscribes to the playing state (jet fly-by manager); effect not read.",
+   "player_effect": "scenery",
+   "status": "NATIVE"
+  },
+  {
+   "function": "WDWorldRadioSpawnComponent (0x85F1630, OnMatchStarted)",
+   "area": "buildables",
+   "effect": "Clears a timer and destroys the component (round 69).",
+   "player_effect": "none",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDLootableComponent (0x855B880, OnMatchStateActivated)",
+   "area": "world",
+   "effect": "Loot spawning gated on the playing state; no loot actors are placed in the four maps (round 66).",
+   "player_effect": "none",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDDroppedItemSubsystem (0x6F0CD10, 0x6F0D0D0)",
+   "area": "items",
+   "effect": "Dropped-item upkeep starts/stops with the playing state; no clearing of held items found.",
+   "player_effect": "none",
+   "status": "NATIVE"
+  },
+  {
+   "function": "WDPlayerRefundComponent (0x6BE4BC0; payout 0x6BE56B0)",
+   "area": "economy",
+   "effect": "Refund handling is active only while Playing (a Cash award of the refundable amount).",
+   "player_effect": "none at start",
+   "status": "FOUND"
+  },
+  {
+   "function": "WDPlayerWagerComponent (0x6D132F0)",
+   "area": "economy",
+   "effect": "Wagers are evaluated only while Playing.",
+   "player_effect": "none at start",
+   "status": "NATIVE"
+  },
+  {
+   "function": "WDAssistanceRequestComponent (0x6B03780)",
+   "area": "player",
+   "effect": "Call-for-help requests gated on Playing.",
+   "player_effect": "none",
+   "status": "NATIVE"
+  },
+  {
+   "function": "WDSpawnFreeVehicleComponent (0x765F5E0, 0x765FE60)",
+   "area": "vehicles",
+   "effect": "Free vehicle spawning gated on Playing (name inferred from neighbour).",
+   "player_effect": "none",
+   "status": "NATIVE"
+  },
+  {
+   "function": "ControlZone game state / music / regions components (0x775C430, 0x775CB20, 0x8457B50, 0x7775950)",
+   "area": "zone",
+   "effect": "Zone spawning and music start once Playing.",
+   "player_effect": "zone appears",
+   "status": "FOUND"
+  },
+  {
+   "function": "UI view models (GameModeStatus, DeathmatchStatus) (0x776A200, 0x8494C30)",
+   "area": "client UI",
+   "effect": "Status HUD switches on.",
+   "player_effect": "no player change",
+   "status": "FOUND"
+  },
+  {
+   "function": "PvE spawners / vehicle spawner / scenario nodes (0x886BD80, 0x8898C70, 0x889E100, 0x8873CC0, 0x887EAF0)",
+   "area": "PvE",
+   "effect": "Spawner gating; not used by King of the Hill.",
+   "player_effect": "none for KOTH",
+   "status": "FOUND"
+  },
+  {
+   "function": "UWDMatchState_Playing_KOTH (0x775B550, slot 10 0x77697D0)",
+   "area": "match state",
+   "effect": "The only own override rounds a stored time value (+84); no player code.",
+   "player_effect": "none",
+   "status": "FOUND"
+  }
+ ],
+ "starting_cash": {
+  "base_default": 10000,
+  "source": "DT_CurrenciesDefinitions Attribute.Meta.Currency.Cash InitialBalance (round 42)",
+  "session_override": "OverrideStartingCash = -1 in DefaultGame.ini (use the table value)",
+  "pve_scenarios": {
+   "StrikeDisarm_01": 3000,
+   "VIPEscort_01": 2000,
+   "HunterKiller_01": null
+  },
+  "other_modes": "no per-mode override found in the experience data (KOTH, Deathmatch, Sniper Showdown, Shooting Range); the table default applies",
+  "set_at_match_start": false,
+  "status": "FOUND (value), NATIVE (the function that applies InitialBalance was not traced; it is not among the Playing subscribers)"
+ }
+}

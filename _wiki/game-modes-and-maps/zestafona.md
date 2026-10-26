@@ -15,6 +15,7 @@ description: "The Zestafona King of the Hill map: a 500 m zone whose Hot Zone is
 | Ground height in the play area | 44 m to 251 m on the game's height scale |
 | Built-up area | About 6.7 km by 5.9 km (where buildings are placed) |
 | Modes | King of the Hill |
+| Light and weather | Clear midday by default; no day and night cycle |
 | Vehicle spawns | 3 deployment boards and 12 vehicle yards (7 ground, 2 air, 3 light) and one extra air yard |
 | **Zones** | |
 | Control Zone | 500 m across, 500 m tall |
@@ -54,17 +55,23 @@ The Control Zone is 500 m across and 500 m tall. The Hot Zone is 85 m across and
 
 The Detroit entry uses three spawn areas: Boston (Lonestar side), Austin (Valkyra side) and Chicago (Manticore side). In total the match has 12 vehicle yards in the spawn areas (7 ground, 2 air, 3 light), 3 deployment boards and 61 vehicle slots, plus one more air yard that is not part of any spawn area.
 
-| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots |
-|---|---|---|---:|---:|---:|---:|---:|
-| Lonestar | Boston | Lonestar version | 2 | 0 | 1 | 15 | 68 |
-| Valkyra | Austin | Valkyra version | 2 | 1 | 1 | 22 | 60 |
-| Manticore | Chicago | Manticore version | 3 | 1 | 1 | 24 | 81 |
+| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots | From zone area middle | From nearest tower |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Lonestar | Boston | Lonestar version | 2 | 0 | 1 | 15 | 68 | 3,730 m | 3,440 m (tower 3) |
+| Valkyra | Austin | Valkyra version | 2 | 1 | 1 | 22 | 60 | 3,930 m | 3,670 m (tower 1) |
+| Manticore | Chicago | Manticore version | 3 | 1 | 1 | 24 | 81 | 3,650 m | 3,400 m (tower 2) |
+
+Distances are straight-line metres from the middle of each side's infantry spawn points to the middle of the zone area and to the nearest Hot Zone Magnet tower (see Where the towers stand below). The Hot Zone itself moves, so these are distances to the area it can reach, not to the zone at a given moment. The deployment board stands within about 60 m of the spawn point.
 
 The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). The Boston area has no air yard of its own. The Lonestar side instead uses one extra air yard placed in the base map (7 slots), which is the only yard in the game data that lists helicopters by family: the Havoc, the Little Bird family, the Huey and the Z20 Lakota family. That it belongs to the base map is inferred, because it sits outside every spawn area.
 
 - **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
 - **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). The deployment board's built-in respawn timers are 300 s, or 60 s for a losing side. They most likely time the side's spawn vehicle (inferred from their names). The data gives no return time for the other yard vehicles.
 - **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+
+## Light and weather
+
+Clear midday light by default: the sun stands about 44 degrees up, so shadows are short. Nothing changes during a match, because there is no day and night cycle and no changing weather. The server owner picks the lighting for each map entry from the presets on [Maps](maps.md#lighting-presets), so a server can run Zestafona in a foggy morning or an overcast afternoon instead. The map's own haze starts about 20 m from the viewer and is light (inferred; the chosen preset sets the final fog thickness).
 
 ## Cover materials
 

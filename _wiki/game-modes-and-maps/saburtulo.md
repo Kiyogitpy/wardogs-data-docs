@@ -15,6 +15,7 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 | Ground height in the play area | 132 m to 318 m on the game's height scale |
 | Built-up area | About 5.0 km by 4.6 km (where buildings are placed) |
 | Modes | King of the Hill |
+| Light and weather | Clear late afternoon by default; no day and night cycle |
 | Vehicle spawns | 3 deployment boards and 11 vehicle yards (6 ground, 2 air, 3 light) and one extra air yard |
 | **Zones** | |
 | Control Zone | 550 m across, 150 m tall |
@@ -54,17 +55,23 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 
 The Moscow entry uses three spawn areas: Kuzminki (Lonestar side), Rostokino (Valkyra side) and Ramenki (Manticore side). In total the match has 11 vehicle yards in the spawn areas (6 ground, 2 air, 3 light), 3 deployment boards and 68 vehicle slots, plus one more air yard in the Rostokino area that is tagged for the Lonestar side.
 
-| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots |
-|---|---|---|---:|---:|---:|---:|---:|
-| Lonestar | Kuzminki | Manticore version | 2 | 0 | 1 | 17 | 81 |
-| Valkyra | Rostokino | Valkyra version | 2 | 1 | 1 | 25 | 69 |
-| Manticore | Ramenki | Lonestar version | 2 | 1 | 1 | 26 | 76 |
+| Side | Spawn area | Deployment board | Ground yards | Air yards | Light yards | Vehicle slots | Infantry spawn spots | From zone area middle | From nearest tower |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Lonestar | Kuzminki | Manticore version | 2 | 0 | 1 | 17 | 81 | 3,930 m | 3,620 m (tower 2) |
+| Valkyra | Rostokino | Valkyra version | 2 | 1 | 1 | 25 | 69 | 3,870 m | 3,540 m (tower 5) |
+| Manticore | Ramenki | Lonestar version | 2 | 1 | 1 | 26 | 76 | 4,000 m | 3,650 m (tower 4) |
+
+Distances are straight-line metres from the middle of each side's infantry spawn points to the middle of the zone area and to the nearest Hot Zone Magnet tower (Saburtulo lists no zone regions, so the placed zone object stands in for the middle of the zone area (inferred); the five towers are the candidates). The Hot Zone itself moves, so these are distances to the area it can reach, not to the zone at a given moment. The deployment board stands within about 60 m of the spawn point. The boards tagged for Kuzminki and Ramenki stand in each other's areas, as noted above, so a board is paired by where it stands.
 
 The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). Two details look swapped in the data: the Kuzminki area (Lonestar side) holds a Manticore deployment board and the Ramenki area (Manticore side) holds a Lonestar board. Which team receives which spawn vehicle at run time is not known. The Rostokino area has no infantry spawn area in the dumped files.
 
 - **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
 - **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto a spawn vehicle, the deployment board's cooldown is 600 s (this value is stored; its start trigger was not traced). The deployment board's built-in respawn timers are 300 s, or 60 s for a losing side. They most likely time the side's spawn vehicle (inferred from their names). The data gives no return time for the other yard vehicles.
 - **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+
+## Light and weather
+
+Clear late afternoon light by default: the sun stands only about 20 degrees up, so shadows are long and the low sun comes from one fixed direction. Nothing changes during a match, because there is no day and night cycle and no changing weather. The server owner picks the lighting for each map entry from the presets on [Maps](maps.md#lighting-presets), so a server can run Saburtulo in another setting instead. The example server file does not list Saburtulo, so which presets it runs is not known. The map's own haze starts about 100 m from the viewer and is light (inferred; the chosen preset sets the final fog thickness).
 
 ## Cover materials
 

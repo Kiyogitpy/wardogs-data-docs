@@ -12,6 +12,7 @@ description: "The waiting time before a King of the Hill match: the ways to earn
 | What it is | The wait in your team's spawn area before a match starts |
 | Where it is used | King of the Hill (the only mode that turns it on in the game files) |
 | Points to Cash | 1 point = 1 Cash, paid when the match starts |
+| Normal starting Cash | 10,000, with the points paid on top |
 | Most you can bank | 5,000 points |
 | Free points | 150 when you arrive, then 250 every 60 seconds |
 | Ways to earn more | Hot Potato, the soccer pitch, the moving practice targets |
@@ -53,7 +54,13 @@ Points stop being accepted when the lobby is declared ready, or once 60 or more 
 - The soccer pitch, with its ball, and the moving practice targets are removed from the spawn areas. Goals and target hits cannot score once the match has begun.
 - The Hot Potato mini-game switches off. Whether a potato you are still holding is taken away was not checked; its fuse ends the chain anyway.
 - Your pre-lobby points are paid as Cash (above).
-- Nothing in the pre-lobby code moves you, heals you or changes your inventory. What the match itself does to players when it begins was not traced.
+- Nothing in the game files moves you when the match starts. The pre-lobby is played in your own team's spawn area, and the match begins with you where you stand (inferred from the absence of any such step; not seen in play).
+- Nothing heals you, refills your health or empties your inventory at that moment. Gear, ammunition and anything else you bought or picked up in the pre-lobby stay with you (inferred from the absence of any such step).
+- The other things that switch on with the start are the zone and its music, the on-screen match display, wagers, refunds and call-for-help requests, which only work once the match is playing. None of them changes the player.
+
+### Starting Cash
+
+Every player starts with 10,000 Cash, the starting balance in the currency table, and the server settings leave that value as it is. This is the same in every mode that uses the normal currency; the only different starting amounts in the files are the two co-operative missions (3,000 for Strike and Disarm, 2,000 for VIP Escort; see [Strike and Disarm](strike-and-disarm.md) and [VIP Escort](vip-escort.md)). The starting balance is not given at the moment the match starts. When it is applied (when you join, or when the match is set up) was not traced, so it is not known whether it appears before or after the pre-lobby. The pre-lobby points are the only Cash the start of the match adds.
 
 ## See also
 
@@ -65,6 +72,8 @@ Points stop being accepted when the lobby is declared ready, or once 60 or more 
 
 ## Sources
 
+- [Round 70 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round70-maps-matchstart.md)
+- [Match start data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/match-start.json)
 - [Round 69 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round69-prelobby.md)
 - [Round 68 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round68-boundaries.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)

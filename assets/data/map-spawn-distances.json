@@ -1,0 +1,312 @@
+{
+ "_note": [
+  "Round 70. Straight-line distance in metres on the map plane (x and y only) from each side's spawn area to the middle of the zone area and to the nearest Hot Zone Magnet tower. Static analysis only.",
+  "Spawn position = the infantry spawn manager actor of that side's data layer (vehicle-spawns.json, infantry_spawn_managers); the deployment board lies within about 60 m of it, except Saburtulo where the layer tags of the Kuzminki and Ramenki boards are swapped (round 51), so board columns are by data layer and the infantry manager columns are the reliable ones.",
+  "The infantry spawn grid is a set of spawn points around the manager; the manager position is used as the middle of the grid (inferred).",
+  "Zone area middle = map-magnets-extents.json zone_area_centre_m (box around all zone regions). Saburtulo has no region list, so the placed zone object (-181, -59) m stands in (inferred).",
+  "Faction slots follow vehicle-spawns.json experiences (team slot to data layer); the side names used on the wiki (Lonestar, Valkyra, Manticore) follow the deployment board class and are a separate, inferred pairing.",
+  "The Hot Zone moves during a match, so these are distances to the middle of the area it can reach, not to the zone itself."
+ ],
+ "rows": [
+  {
+   "entry": "Bakurani_KOTH_01",
+   "map": "Bakurani",
+   "faction_slot": "Bravo",
+   "spawn_area": "Khevuli",
+   "layer": "DL_KhevuliSpawn",
+   "infantry_spawn_manager_m": [
+    -4494,
+    -11143
+   ],
+   "to_zone_area_middle_m": 3807,
+   "to_nearest_magnet_tower_m": 3501,
+   "nearest_magnet_tower": 4,
+   "deployment_board_m": [
+    -4525,
+    -11109
+   ],
+   "board_to_zone_area_middle_m": 3777,
+   "board_to_nearest_magnet_tower_m": 3472
+  },
+  {
+   "entry": "Bakurani_KOTH_01",
+   "map": "Bakurani",
+   "faction_slot": "Charlie",
+   "spawn_area": "Chuta",
+   "layer": "DL_ChutaSpawn",
+   "infantry_spawn_manager_m": [
+    -12385,
+    -11818
+   ],
+   "to_zone_area_middle_m": 4131,
+   "to_nearest_magnet_tower_m": 3781,
+   "nearest_magnet_tower": 3,
+   "deployment_board_m": [
+    -12366,
+    -11798
+   ],
+   "board_to_zone_area_middle_m": 4108,
+   "board_to_nearest_magnet_tower_m": 3759
+  },
+  {
+   "entry": "Bakurani_KOTH_01",
+   "map": "Bakurani",
+   "faction_slot": "Alpha",
+   "spawn_area": "Baghi",
+   "layer": "DL_BaghiSpawn",
+   "infantry_spawn_manager_m": [
+    -7618,
+    -7322
+   ],
+   "to_zone_area_middle_m": 3939,
+   "to_nearest_magnet_tower_m": 3607,
+   "nearest_magnet_tower": 5,
+   "deployment_board_m": [
+    -7646,
+    -7339
+   ],
+   "board_to_zone_area_middle_m": 3917,
+   "board_to_nearest_magnet_tower_m": 3585
+  },
+  {
+   "entry": "Bakurani_KOTH_02",
+   "map": "Bakurani",
+   "faction_slot": "Bravo",
+   "spawn_area": "Rachuri",
+   "layer": "DL_RachuriSpawn",
+   "infantry_spawn_manager_m": [
+    -4490,
+    -11760
+   ],
+   "to_zone_area_middle_m": 3851,
+   "to_nearest_magnet_tower_m": 3525,
+   "nearest_magnet_tower": 4,
+   "deployment_board_m": [
+    -4553,
+    -11781
+   ],
+   "board_to_zone_area_middle_m": 3793,
+   "board_to_nearest_magnet_tower_m": 3466
+  },
+  {
+   "entry": "Bakurani_KOTH_02",
+   "map": "Bakurani",
+   "faction_slot": "Charlie",
+   "spawn_area": "Tavarshi",
+   "layer": "DL_TavarshiSpawn",
+   "infantry_spawn_manager_m": [
+    -10873,
+    -14029
+   ],
+   "to_zone_area_middle_m": 3822,
+   "to_nearest_magnet_tower_m": 3458,
+   "nearest_magnet_tower": 3,
+   "deployment_board_m": [
+    -10847,
+    -14014
+   ],
+   "board_to_zone_area_middle_m": 3794,
+   "board_to_nearest_magnet_tower_m": 3430
+  },
+  {
+   "entry": "Bakurani_KOTH_02",
+   "map": "Bakurani",
+   "faction_slot": "Alpha",
+   "spawn_area": "Sanavi",
+   "layer": "DL_SanaviSpawn",
+   "infantry_spawn_manager_m": [
+    -9706,
+    -7568
+   ],
+   "to_zone_area_middle_m": 3895,
+   "to_nearest_magnet_tower_m": 3646,
+   "nearest_magnet_tower": 2,
+   "deployment_board_m": [
+    -9665,
+    -7591
+   ],
+   "board_to_zone_area_middle_m": 3859,
+   "board_to_nearest_magnet_tower_m": 3612
+  },
+  {
+   "entry": "Madrid_KOTH_01",
+   "map": "Ozeti",
+   "faction_slot": "Bravo",
+   "spawn_area": "Barcelona",
+   "layer": "DL_BarcelonaSpawn",
+   "infantry_spawn_manager_m": [
+    -2393,
+    -6539
+   ],
+   "to_zone_area_middle_m": 4006,
+   "to_nearest_magnet_tower_m": 3375,
+   "nearest_magnet_tower": 3,
+   "deployment_board_m": [
+    -2424,
+    -6540
+   ],
+   "board_to_zone_area_middle_m": 3975,
+   "board_to_nearest_magnet_tower_m": 3344
+  },
+  {
+   "entry": "Madrid_KOTH_01",
+   "map": "Ozeti",
+   "faction_slot": "Charlie",
+   "spawn_area": "Malaga",
+   "layer": "DL_MalagaSpawn",
+   "infantry_spawn_manager_m": [
+    -9357,
+    -8611
+   ],
+   "to_zone_area_middle_m": 3891,
+   "to_nearest_magnet_tower_m": 3717,
+   "nearest_magnet_tower": 1,
+   "deployment_board_m": [
+    -9332,
+    -8593
+   ],
+   "board_to_zone_area_middle_m": 3859,
+   "board_to_nearest_magnet_tower_m": 3686
+  },
+  {
+   "entry": "Madrid_KOTH_01",
+   "map": "Ozeti",
+   "faction_slot": "Alpha",
+   "spawn_area": "Granada",
+   "layer": "DL_GranadaSpawn",
+   "infantry_spawn_manager_m": [
+    -7819,
+    -2898
+   ],
+   "to_zone_area_middle_m": 3522,
+   "to_nearest_magnet_tower_m": 3291,
+   "nearest_magnet_tower": 2,
+   "deployment_board_m": [
+    -7823,
+    -2933
+   ],
+   "board_to_zone_area_middle_m": 3492,
+   "board_to_nearest_magnet_tower_m": 3263
+  },
+  {
+   "entry": "ED_Detroit_KOTH_01",
+   "map": "Zestafona",
+   "faction_slot": "Bravo",
+   "spawn_area": "Austin",
+   "layer": "DL_AustinSpawn",
+   "infantry_spawn_manager_m": [
+    -4336,
+    -4329
+   ],
+   "to_zone_area_middle_m": 3927,
+   "to_nearest_magnet_tower_m": 3669,
+   "nearest_magnet_tower": 1,
+   "deployment_board_m": [
+    -4303,
+    -4295
+   ],
+   "board_to_zone_area_middle_m": 3880,
+   "board_to_nearest_magnet_tower_m": 3622
+  },
+  {
+   "entry": "ED_Detroit_KOTH_01",
+   "map": "Zestafona",
+   "faction_slot": "Alpha",
+   "spawn_area": "Boston",
+   "layer": "DL_BostonSpawn",
+   "infantry_spawn_manager_m": [
+    -1402,
+    1612
+   ],
+   "to_zone_area_middle_m": 3729,
+   "to_nearest_magnet_tower_m": 3445,
+   "nearest_magnet_tower": 3,
+   "deployment_board_m": [
+    -1368,
+    1560
+   ],
+   "board_to_zone_area_middle_m": 3675,
+   "board_to_nearest_magnet_tower_m": 3391
+  },
+  {
+   "entry": "ED_Detroit_KOTH_01",
+   "map": "Zestafona",
+   "faction_slot": "Charlie",
+   "spawn_area": "Chicago",
+   "layer": "DL_ChicagoSpawn",
+   "infantry_spawn_manager_m": [
+    2345,
+    -3308
+   ],
+   "to_zone_area_middle_m": 3649,
+   "to_nearest_magnet_tower_m": 3396,
+   "nearest_magnet_tower": 2,
+   "deployment_board_m": [
+    2313,
+    -3337
+   ],
+   "board_to_zone_area_middle_m": 3629,
+   "board_to_nearest_magnet_tower_m": 3375
+  },
+  {
+   "entry": "Moscow_KOTH_01",
+   "map": "Saburtulo",
+   "faction_slot": "Bravo",
+   "spawn_area": "Rostokino",
+   "layer": "DL_RostokinoSpawn",
+   "infantry_spawn_manager_m": [
+    1383,
+    -3595
+   ],
+   "to_zone_area_middle_m": 3867,
+   "to_nearest_magnet_tower_m": 3540,
+   "nearest_magnet_tower": 5,
+   "deployment_board_m": [
+    1408,
+    -3594
+   ],
+   "board_to_zone_area_middle_m": 3876,
+   "board_to_nearest_magnet_tower_m": 3549
+  },
+  {
+   "entry": "Moscow_KOTH_01",
+   "map": "Saburtulo",
+   "faction_slot": "Alpha",
+   "spawn_area": "Kuzminki",
+   "layer": "DL_KuzminkiSpawn",
+   "infantry_spawn_manager_m": [
+    2118,
+    3131
+   ],
+   "to_zone_area_middle_m": 3932,
+   "to_nearest_magnet_tower_m": 3623,
+   "nearest_magnet_tower": 2,
+   "deployment_board_m": [
+    -4127,
+    330
+   ],
+   "board_to_zone_area_middle_m": 3965,
+   "board_to_nearest_magnet_tower_m": 3623
+  },
+  {
+   "entry": "Moscow_KOTH_01",
+   "map": "Saburtulo",
+   "faction_slot": "Charlie",
+   "spawn_area": "Ramenki",
+   "layer": "DL_RamenkiSpawn",
+   "infantry_spawn_manager_m": [
+    -4160,
+    315
+   ],
+   "to_zone_area_middle_m": 3996,
+   "to_nearest_magnet_tower_m": 3653,
+   "nearest_magnet_tower": 4,
+   "deployment_board_m": [
+    2114,
+    3108
+   ],
+   "board_to_zone_area_middle_m": 3911,
+   "board_to_nearest_magnet_tower_m": 3602
+  }
+ ]
+}
