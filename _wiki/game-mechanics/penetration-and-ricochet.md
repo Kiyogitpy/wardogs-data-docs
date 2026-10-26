@@ -22,7 +22,7 @@ Most bullets stop at the first solid surface, and that surface absorbs the bulle
 
 ## How it works
 
-- **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below) and on the angle of the hit. Measured from the surface's normal (the line straight out of it), a head-on hit's chance is multiplied by 0.08, and a hit at 80 to 90 degrees, almost flat along the surface, by 0.92. A bullet that has slowed below a tenth of its launch speed cannot bounce. The data indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
+- **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below) and on the angle of the hit. Measured from the surface's normal (the line straight out of it), a head-on hit's chance is multiplied by 0.08, and a hit at 80 to 90 degrees, almost flat along the surface, by 0.92. A bullet that has slowed below a tenth of its launch speed cannot bounce. A bullet that can get through the surface easily also bounces less. The chance is cut by how much the bullet's ability to pass the surface exceeds the surface thickness: equal or less keeps the full chance, twice the thickness or more never bounces, and in between the chance is scaled down (derived from the game's code; the game was not run). So a round strong enough to pass through a thin surface by a margin of two will not ricochet off it. The data indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
 - **Penetration.** A bullet can pass through a surface only if it has enough energy left for that thickness. A steeper angle makes the surface look thicker, which makes passing harder. Armor-piercing rounds have the most penetration, and hollow points have very little.
 - **Speed after passing.** A bullet that passes through leaves slower. How much slower depends on the surface and the ammo.
 - **Damage at the next hit.** A bullet that has slowed does less damage when it hits something next, in proportion to the speed it has left.
@@ -34,7 +34,7 @@ A bounce is not a mirror reflection. The game picks the new direction at random,
 
 - **Random cone.** The new direction is picked at random within a cone of up to 40 degrees around the surface normal. Two bullets that hit the same spot can leave at different angles.
 - **Steeper than a mirror.** The sideways part of the bullet's speed is kept. The part that was driving it into the surface is turned around and multiplied by one plus a random factor. That factor is drawn between 0.2 and 10, with an average of about 5, for almost every bounce. A factor above 1 leaves steeper than a mirror, so most bounces do. About 1 bounce in 12 draws a factor under 1 and leaves lower than a mirror (derived, assuming the draws are spread evenly across the range).
-- **Speed after the bounce.** The bullet's speed is set back to what it was before the hit, then multiplied by a random factor that depends on the surface. Each material has its own range for this. The ranges are in the data pipeline and are not listed here.
+- **Speed after the bounce.** The bullet's speed is set back to what it was before the hit, then multiplied by a random factor that depends on the surface. Each material has its own range for this, listed in the last column of the table below. A bounce off ice keeps 50% to 85% of the speed; a bounce off most soft ground keeps 15% or less.
 
 ## Numbers
 
@@ -53,31 +53,31 @@ The exit-speed setting controls how much speed a bullet keeps when it comes out 
 
 Ricochet chance by surface material (named surfaces in the data; unnamed surface types are left out):
 
-| Surface | Ricochet chance |
-|---|---:|
-| Ice | 80% |
-| Marble | 65% |
-| Limestone | 60% |
-| Ceramic | 55% |
-| Rock | 50% |
-| Metal | 45% |
-| Gravel | 45% |
-| Debris | 40% |
-| Rubber | 40% |
-| Plastic | 40% |
-| Concrete | 35% |
-| Default (unspecified surface) | 30% |
-| Wood | 30% |
-| Brick | 25% |
-| Plaster | 20% |
-| Soil | 12% |
-| Mirror | 15% |
-| Glass | 10% |
-| Bulletproof glass | 10% |
-| Grass | 10% |
-| Snow | 3% |
-| Sand, fabric, paper | 2% |
-| Body, head, water, lava, leaves | 0% |
+| Surface | Ricochet chance | Speed kept after a bounce |
+|---|---:|---:|
+| Ice | 80% | 50% to 85% |
+| Marble | 65% | 35% to 60% |
+| Limestone | 60% | 25% to 50% |
+| Ceramic | 55% | 20% to 40% |
+| Rock | 50% | 35% to 55% |
+| Metal | 45% | 35% to 65% |
+| Gravel | 45% | 15% to 35% |
+| Debris | 40% | 15% to 50% |
+| Rubber | 40% | 10% to 25% |
+| Plastic | 40% | 20% to 45% |
+| Concrete | 35% | 25% to 50% |
+| Default (unspecified surface) | 30% | 25% to 45% |
+| Wood | 30% | 15% to 35% |
+| Brick | 25% | 15% to 35% |
+| Plaster | 20% | 15% to 35% |
+| Soil | 12% | 8% to 20% |
+| Mirror | 15% | 10% to 25% |
+| Glass | 10% | 15% to 40% |
+| Bulletproof glass | 10% | 15% to 40% |
+| Grass | 10% | 5% to 15% |
+| Snow | 3% | 3% to 10% |
+| Sand, fabric, paper | 2% | 3% to 10% (sand), 10% to 15% (fabric), 10% to 15% (paper) |
+| Body, head, water, lava, leaves | 0% | Not applicable |
 
 ## Tips that follow from the numbers
 
@@ -90,8 +90,6 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 
 - The materials and thicknesses of world walls, doors and props. The data has no material assigned to most world meshes, so no result can be given for a specific wall.
 - The unit of surface thickness.
-- The speed ranges kept after a bounce for each material, which are in the data pipeline but not listed here.
-- Whether a bullet with penetration 2 or more can ever ricochet. The data suggests not, but this has not been checked.
 
 ## See also
 

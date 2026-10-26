@@ -19,7 +19,7 @@ description: "The Bushmaster M17S assault rifle: fire rate, damage by body part,
 | Effective range | 300 m |
 | Standard magazine | STANAG 20 RND Magazine |
 | **Availability** |  |
-| Vendor price | 0 |
+| Vendor price | 0 (free for Lonestar players) |
 | Unlock level | 1 |
 | Internal name | WEPN_033 |
 {: .wiki-infobox }
@@ -184,6 +184,7 @@ Default parts: magazine (STANAG 20 RND Magazine).
 ## Cost and unlocking
 
 - Vendor price: 0. The data pages do not decode the currency, so the price is shown as a plain number.
+- Faction weapon: the weapon vendor lists it only for the Lonestar faction, at price 0 with a buy limit of one per life (the same limit field the Emergency Resuscitator uses for its one per life), and the economy settings also price it at 0 for that faction. A Lonestar player can therefore take it from the vendor for free at level 1 (inferred from the vendor and economy settings; the game was not run).
 - Unlock level: 1.
 
 ## Season 2 changes

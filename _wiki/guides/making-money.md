@@ -136,7 +136,7 @@ A selection of vendor prices, lowest first (the full list is on each weapon arti
 | Galil | 2,000 | [Galil](../weapons/galil.md) |
 | M4 | 2,800 | [M4](../weapons/m4.md) |
 
-Three weapons show a vendor price of 0 in the data: A-91, KH-2002 and Bushmaster M17S. Each is paired with one faction in the economy settings and is set to cost nothing for that faction (read from the setting's name, not traced in the game code), so the 0 is a discount rather than a missing price ([A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md), [Bushmaster M17S](../weapons/bushmaster-m17s.md)).
+Three weapons show a vendor price of 0 in the data: A-91, KH-2002 and Bushmaster M17S. They are the three faction rifles. The weapon vendor lists each one for a single faction (Valkyra, Manticore and Lonestar in that order), at price 0, from level 1, with a buy limit of one per life (the same limit field that the Emergency Resuscitator uses for its one per life), and the economy settings also price each at 0 for its own faction. So a player of that faction takes the rifle from the vendor for free, one at a time; it is not a missing price (inferred from the vendor and economy settings, not run in the game; whether a player of another faction can buy it is not shown, so the faction match is assumed). See [A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md) and [Bushmaster M17S](../weapons/bushmaster-m17s.md).
 
 Discounts stack. A Wardog level 8 or lower player pays half of the listed price, a first purchase costs 90%, and the faction that trails by 40 points pays 80% (inferred from field names). Derived: a first purchase by a player at level 8 or lower costs 45% of the listed price (0.5 x 0.9). See [Shops](../progression-and-economy/shops.md#how-it-works).
 

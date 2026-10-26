@@ -26,7 +26,7 @@ Cash pays for gear, weapons, vehicles and skills. Role XP raises a role's master
 - **Base value.** Each action has a base cash value from its reward table.
 - **Zone multiplier.** A reward can be multiplied when it happens in a Control Zone or a Hot Zone. A kill in a Hot Zone counts with a weight of 10, a kill in a Control Zone with a weight of 5. A kill in the enemy's own Hot Zone counts with weight 4, and in the enemy's own Control Zone with weight 2.
 - **Assists.** Assist credit is split between the player who did the damage and the assisters, by assist type: crew, logistics, revive, FOB-supplied, supply crate, and the general assist. A FOB-supplied assist is divided by the number of assisters.
-- **Repeat victims.** Each repeat kill on the same player pays 24% less, up to four repeats.
+- **Repeat victims.** Each repeat kill on the same player pays 24% less, up to four repeats. Spotting has its own, harsher rule: 50% less for each repeat, up to two (see [Spotting](../game-mechanics/spotting.md)).
 - **Kill streaks.** Each streak kill adds 50 to the base, up to five. Ending an enemy's streak pays 1.5 times. Revenge kills pay 2.0 times.
 - **Penalties.** A teamkill pays a negative amount. A kill on a player an enemy has just revived (for 60 s) is a "No Value Kill": cash is 0.01 times, and it pays no Role XP and no assist XP. Crew kills split the reward down by crew count (each extra crew member multiplies it by 0.8).
 - **Role XP.** For most events the role XP is the base value itself, without the zone and assist multipliers. Kill XP falls with repeat victims in the same way as kill cash.

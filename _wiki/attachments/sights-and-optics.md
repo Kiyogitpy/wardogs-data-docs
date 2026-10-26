@@ -28,11 +28,11 @@ Sights sit on the top slot of a weapon. The data lists 29 of them and 28 fit a w
 
 - ADS zoom: set to a fixed value on 29 sights, from 1.2 (red dots and holographic sights) to 6 (the 6-10x scope). The number is a magnification factor: 2.5 means the view is magnified 2.5 times (derived from the game's code, not checked on screen). The sight's sway is divided by it, so higher magnification steadies the view more.
 - Aim time: x0.85 to x1.2 (26 parts). This multiplies the time the weapon takes to come up to aim down the sights.
-- Minimum zeroing range: set to 10 to 100 on 18 sights. The data gives no unit.
-- Maximum zeroing range: set to 10 to 1000 on 18 sights. On 7 sights it follows the minimum zeroing range instead of a fixed value. The data gives no unit.
+- Minimum zeroing range: set to 10 to 100 on 18 sights. The data gives no unit; the game code treats the number as metres (derived).
+- Maximum zeroing range: set to 10 to 1000 on 18 sights. On 7 sights it follows the minimum zeroing range instead of a fixed value. The data gives no unit; the game code treats the number as metres (derived).
 - Character side: weapon sway stabilisation time is multiplied by 1 to 1.5 on 5 sights and set to 1.6 on 8 others.
 
-Zeroing range is the distance the sight is set for, bounded by the minimum and maximum.
+Zeroing range is the distance the sight is set for, bounded by the minimum and maximum. A weapon starts at the minimum, and the reset control returns it there (derived from the game's code; the game was not run).
 
 ### What the zoom does to the view
 

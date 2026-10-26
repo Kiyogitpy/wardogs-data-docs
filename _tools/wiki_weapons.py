@@ -34,6 +34,15 @@ loadouts = jload("assets/data/weapon-loadouts.json")
 EFFECTS = loadouts["effects"]  # GE name -> list of modifiers
 wdamage = {w["id"]: w for w in jload("assets/data/weapon-damage.json")["weapons"]}
 falloff_doc = jload("assets/data/weapon-damage-falloff.json")
+# Faction signature rifles: the economy settings price them at 0 for one faction (assets/data/price-modifiers.json),
+# and the weapon vendor lists them as faction-specific with a buy limit of one.
+FACTION_NAMES = {"Meta.Alignment.Faction.Alpha": "Lonestar", "Meta.Alignment.Faction.Bravo": "Valkyra",
+                 "Meta.Alignment.Faction.Charlie": "Manticore"}
+FACTION_WEAPONS = {}
+for _m in jload("assets/data/price-modifiers.json")["modifiers"]:
+    if _m["kind"] == "Faction" and _m.get("entityMultipliers") and all(x == 0 for x in _m["entityMultipliers"]):
+        for _e in _m["entities"]:
+            FACTION_WEAPONS[_e.split("Id.Item.", 1)[1]] = FACTION_NAMES[_m["faction"]]
 # muzzle speed, effective range (with its source), chamber and magazine per weapon, from the cooked export
 CAP = {w["id"].split("Id.Item.", 1)[1]: w for w in jload("assets/data/weapon-capacity.json")["weapons"]}
 # Some capacity rows are keyed by a friendly item name (for example Mosin) while the
@@ -554,7 +563,7 @@ def build_weapon(wid):
         ("Effective range", s["range"]),
         ("Standard magazine", s["mag_row"]),
         ("**Availability**", ""),
-        ("Vendor price", s["price"] or "not yet known"),
+        ("Vendor price", (s["price"] or "not yet known") + (f" (free for {FACTION_WEAPONS[code]} players)" if code in FACTION_WEAPONS else "")),
         ("Unlock level", s["unlock"] or "not yet known"),
         ("Internal name", code),
     ]
@@ -660,6 +669,7 @@ def build_weapon(wid):
     # Cost and unlocking
     out += ["## Cost and unlocking", "",
             f"- Vendor price: {s['price'] or 'not yet known'}. The data pages do not decode the currency, so the price is shown as a plain number.",
+            *([f"- Faction weapon: the weapon vendor lists it only for the {FACTION_WEAPONS[code]} faction, at price 0 with a buy limit of one per life (the same limit field the Emergency Resuscitator uses for its one per life), and the economy settings also price it at 0 for that faction. A {FACTION_WEAPONS[code]} player can therefore take it from the vendor for free at level 1 (inferred from the vendor and economy settings; the game was not run)."] if code in FACTION_WEAPONS else []),
             f"- Unlock level: {s['unlock'] or 'not yet known'}.", ""]
 
     # Season 2 changes

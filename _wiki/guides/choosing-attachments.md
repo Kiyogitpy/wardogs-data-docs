@@ -82,7 +82,7 @@ Sights do not change recoil or spread. They change zoom, aim time, zeroing range
 - **Mid zoom:** the 3x Tactical Prism Scope (740) gives zoom 3 and aim time x1.1. The Spitfire 3X (790) gives zoom 3, aim time x1.1 and sway stabilisation x1.35.
 - **Red dots:** most give zoom 1.2. The Compact P-1 Red Dot (480) gives zoom 1.2 with no aim change.
 - **Price range:** 200 to 1,800. 19 of the 29 sights have a shop price. The Frontier 2.5x-10x Precision Scope (1,800) is the most expensive.
-- The data gives no unit for zeroing range.
+- The data gives no unit for zeroing range. The game code treats it as metres (derived), and a weapon starts at the sight's minimum.
 
 ## Handguards
 

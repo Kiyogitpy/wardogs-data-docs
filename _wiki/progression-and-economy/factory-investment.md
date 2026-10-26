@@ -62,7 +62,7 @@ The first factory investment sets up three lines and six recipes. It is passive:
 | 4 | 20 | 4 | 20 |
 | 5 | 20 | 5 | 20 |
 
-The data also has a slot amount for each level. The investment does not use it, so its effect is not known. Levels above 5 keep the level 5 values.
+The data also has a slot amount for each level. The Zaystev Foundry's own upgrade list never uses it, so in practice every line keeps a slot amount of 1 (inferred: the game starts each of the three slot amounts at level 1). The game code does read it. When the factory is set up, the code takes the slot amount for each production line and makes that many slots for the line, so a slot amount is a count of slots per line, separate from the queue size (inferred from the code; the step that looks the value up could not be read). Levels above 5 keep the level 5 values.
 
 The investment starts with its upgrade at level 1 for each of the three queues and for storage.
 

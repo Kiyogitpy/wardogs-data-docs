@@ -18,7 +18,7 @@ description: "A buildable stationary emplacement whose ammunition is listed as U
 | Fire mode | Semi-automatic |
 | Rate | 50 rounds/min |
 | Effective range | 10,000 m (stats sheet; not the real reach) |
-| Range table | 80 to 697 m |
+| Range table | 80 to 697 m (in the files; nothing reads it) |
 | Reload | None (0.0 s; 1.0 s start and end delay) |
 | Starting ammunition | 0 |
 | Restock | 900 Mechanical Supplies and 5,000 cash, per drone |
@@ -50,7 +50,7 @@ The Stingray is a lock-on weapon. Its target list covers air vehicles only, incl
 
 ### Range table
 
-The "effective range" of 10,000 m on the stats sheet is not the real reach. The game files hold a range table for the barrel, the same kind of table the [L81 Mortar](l81-mortar.md) and the [SPH-2](../vehicles/sph-2.md) have. It has 17 rows. Each pairs a firing elevation in milliradians (mrad) with the distance the shot lands at and its travel time, and the table's shape is the mortar's, so the Stingray looks like a mortar-type emplacement with a reach of 80 to 697 m.
+The "effective range" of 10,000 m on the stats sheet is not the real reach. The game files hold a range table for the barrel, the same kind of table the [L81 Mortar](l81-mortar.md) and the [SPH-2](../vehicles/sph-2.md) have. It has 17 rows. Each pairs a firing elevation in milliradians (mrad) with the distance the shot lands at and its travel time, and the table's shape is the mortar's. It should not be read as the Stingray's reach: the mortar's and the SPH-2's aiming displays read their tables, but the Stingray has no such display, and no Blueprint or other game file reads this one (inferred; code that reads data in a way the files do not show was not excluded). The weapon fires a drone, not a shell on a fixed arc.
 
 | Range (m) | Game table (mrad) | Travel time (s) |
 |---:|---:|---:|
@@ -72,7 +72,7 @@ The "effective range" of 10,000 m on the stats sheet is not the real reach. The 
 | 113 | 250 | 22.4 |
 | 80 | 300 | 22.0 |
 
-The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mrad) and exactly the same travel times, but the Stingray lands 13 to 38 m further from -500 to 200 mrad (697 m against 684 m at the longest setting, 372 m against 340 m at 0 mrad). The two tables come together at the end: 3 m apart at 250 mrad and both 80 m at 300 mrad. The table gives no dial settings, and none are known for the Stingray, so a dial value for a given range is not known. The out-of-pattern travel time at -300 mrad (20.0 s) is also in the mortar's table. The travel times are read as seconds.
+The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mrad) and exactly the same travel times, but the Stingray lands 13 to 38 m further from -500 to 200 mrad (697 m against 684 m at the longest setting, 372 m against 340 m at 0 mrad). The two tables come together at the end: 3 m apart at 250 mrad and both 80 m at 300 mrad. The table gives no dial settings, and none are known for the Stingray, so a dial value for a given range is not known. The out-of-pattern travel time at -300 mrad (20.0 s) is also in the mortar's table. The travel times are read as seconds. Why the distances are longer is not stated in any file. As nothing reads the table, the most likely reading is that it is a copy of the mortar's table with its distances adjusted by hand and left unused (inferred).
 
 ### Drone projectile
 

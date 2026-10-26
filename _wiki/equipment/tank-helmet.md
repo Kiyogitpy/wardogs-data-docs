@@ -52,7 +52,7 @@ With M4 full-metal-jacket rounds:
 
 Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
 
-Suppression on the wearer is set per bullet class (0.2 for small pistol rounds to 0.9 for 120 mm and larger), and the shop text says the Tank Helmet removes it. How much the audio muffling reduces sound is not measured in the data.
+Suppression on the wearer is set per bullet class (0.2 for small pistol rounds to 0.9 for 120 mm and larger), and the shop text says the Tank Helmet removes it. The audio muffling is set in the game's audio mixes. In the driver or gunner seat of a tracked vehicle, vehicle sound is turned down to a volume setting of 0.63 (about 4 dB quieter) with a low-pass filter setting of 0.6, other players' footsteps get a filter setting of 0.6, other players' gunfire 0.7, and the ringing in the ears (tinnitus) sound is set to 0.50 (about 6 dB quieter). Anywhere else the helmet muffles everything a little, with a low-pass setting of 0.45 on most sounds and 0.5 on your own weapon, the same as the [Pilot Helmet](pilot-helmet.md) does. The filter settings run from 0 (most muffled) to 1 (not muffled) as far as the control names show, and the frequency they work out to is not in the files (inferred).
 
 ## Season 2 changes
 

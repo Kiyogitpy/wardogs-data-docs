@@ -2,7 +2,7 @@
 title: Pilot Helmet
 parent: "Equipment"
 group: "Armor"
-description: "Vehicle-use helmet: 30% head damage reduction, muffles vehicle audio, highlights target vehicles. Not sold in the shop."
+description: "Vehicle-use helmet: 30% head damage reduction, halves vehicle sound in a helicopter seat, highlights target vehicles. Not sold in the shop."
 ---
 
 # Pilot Helmet
@@ -49,7 +49,18 @@ With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 46.
 
 Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
 
-The vehicle effects are not compared with a number in the data. How strong the audio muffling or the target highlight is, is not yet known.
+## Vehicle effects
+
+The helmet has two states, and the game switches between them by where you sit.
+
+- **In a helicopter pilot or gunner seat.** Vehicle sound is turned down to about half volume (a setting of 0.50, which is about 6 dB quieter) and passed through a low-pass filter set to 0.4, which dulls the high tones. Both changes fade in and out over 0.1 s.
+- **Anywhere else.** The helmet muffles everything instead, a little: a low-pass setting of 0.45 on other players' gunfire, bullet whiz-by, impacts, vehicles, footsteps, ambience, dialogue and rain, and 0.5 on your own weapon. The volume is not changed.
+
+The filter settings run from 0 (most muffled) to 1 (not muffled), as far as the names of the audio controls show. The files hold only that setting, not the frequency it works out to, so how dull it sounds in Hz is not known (inferred).
+
+The target highlight has no strength setting. The game code that draws the on-screen target markers checks whether the helmet is in its helicopter state, and only then does it scan for targets (inferred from the code; the game was not run). So the highlight is on or off, not a number.
+
+The Tank Helmet uses the same system for tracked vehicles; see [Tank Helmet](tank-helmet.md).
 
 ## Season 2 changes
 

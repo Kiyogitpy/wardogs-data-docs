@@ -89,7 +89,7 @@ The M4 keeps full speed to 400 m. The GGX 17 is already at 0.80 by 200 m and 0.4
 
 - **Range is different for every weapon.** The MP5 does 25.4 at 100 m and 7.4 at 400 m, so it is a close-range weapon. The FAL still does 32.9 at 600 m.
 - **Sniper rifles hit hard at any distance.** The MK22 does 118.8 to the upper torso at 800 m. The AMR 50 does 207.9 at any distance in the table.
-- **Drop grows quickly at long range.** Even without drag, a bullet from an M4-class rifle falls about 1.6 m by 500 m. The data does not say how sights are set for a given range, so the sight setting for long shots is not yet known.
+- **Drop grows quickly at long range.** Even without drag, a bullet from an M4-class rifle falls about 1.6 m by 500 m. A weapon starts zeroed at the shortest zeroing range its sight allows, and the reset key returns it there. The zeroing controls then step the setting up or down inside the sight's own range (see [Sights and Optics](../attachments/sights-and-optics.md)), so a red dot with one fixed range stays put and a 6-10x scope can be raised up to 1,000. The game works out the matching sight angle itself while it runs (see [Spread and Recoil](spread-and-recoil.md)). The shortest zeroing range is the minimum the sight sets, 10 to 100 metres in the data (the game code multiplies the range by 100 to get centimetres, derived; the game was not run).
 - **Pistols lose damage quickly.** The GGX 17 falls from 25.4 at 50 m to 12.0 at 400 m.
 
 ## See also

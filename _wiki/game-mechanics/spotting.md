@@ -29,7 +29,7 @@ Spotting has two events. A **target spotted** event happens when an enemy is mar
 - **Pay on destroy.** Destroying a spotted target pays between 50 and 500 cash. The spotter gets 75% of the 500 maximum for the destroy.
 - **Role XP.** A spot pays 5 to 100 Role XP (25 for a player). Destroying a spotted target pays 5 to 500 (150 for a player). A target destroyed by the enemy pays a quarter of its cash and half its Role XP.
 - **Assists.** Teammates who help with the spot or the destroy get their own share, set by a separate modifier.
-- **Repeats.** The data lowers the pay for a target type after repeated kills of that same type. The exact reduction per repeat is not yet known.
+- **Repeats.** Spotting has its own repeat rule, harsher than the one for kills. Each repeat of the same kind of target pays 50% less than the one before, counted up to two repeats. The pay is the base times (1 minus 0.5 for each repeat counted), so by the reward formula the second spot of the same kind of target pays half and the third and later spots pay nothing. The same cut applies to the Role XP, to spotting and to the destroy that follows. The data keeps a 180 s cooldown with the repeat counter, which most likely means a repeat count starts again after 180 s without a repeat (inferred from the setting's name). Kills use a different rule (24% less per repeat, up to four repeats).
 - **Buildables.** In Season 2, buildable and stationary targets pay in proportion to how much they were built, so an unfinished buildable pays less.
 - **Recon skills.** Two skills change spotting. One increases how long it takes for enemies to spot you. The other increases how long enemies stay spotted after you spot them. The spotted time is multiplied by 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -49,21 +49,20 @@ Share of the top amount for the spotter:
 | Target spotted | 20% |
 | Spotted target destroyed | 75% |
 
-Base payouts for each kind of target (vehicle, buildable, player and so on) are on the challenge tables, and are not repeated here. The Season 2 change to them is listed on the [Season 2 Game Modes and Maps page](../../season-2-changes/game-modes-maps.md).
+The challenge tables give the base payout for each kind of target. For a player the base is 100 cash and 25 Role XP for a spot (half of that, 50 cash and 12.5 Role XP, when the spot only refreshes an existing one), and 400 cash and 150 Role XP when the spotted player is destroyed. Other targets run from 5 to 1,000 cash and 5 to 100 Role XP on a spot, and from 10 to 5,000 cash and 5 to 500 Role XP on a destroy; the rest are not repeated here. These challenge values differ from the match-score table above, and the files do not show which of the two the payout uses. The Season 2 change to them is listed on the [Season 2 Game Modes and Maps page](../../season-2-changes/game-modes-maps.md).
 
 ## Tips that follow from the numbers
 
 - **Spot first, then destroy.** The destroy event pays far more than the spot (a 75% share against 20%), so spotting a target and then destroying it earns the most.
 - **Spot high-value targets for the team.** Because the team sees the marker, a spot helps everyone even when the spotter does not get the kill.
 - **Pick the Recon skills that fit your role.** The increased time for enemies to spot you helps stay hidden, and the longer spotted time keeps targets on the map.
-- **Expect smaller pay for repeats.** Repeated spots of the same kind of target earn less each time.
+- **Expect smaller pay for repeats.** Spotting the same kind of target again halves the pay, and the third spot pays nothing, so spread your spots over different kinds of target.
 
 ## Not yet known
 
 - How the spot times hold up in play. The values come from the spotting data; the game was not run to time them.
 - The base payout for every target type. It is in the challenge tables, not on this page.
-- The payout for spotting a player. The data has its own cash and Role XP rows for spotting a player, which are not repeated on this page.
-- The exact reduction for repeat targets.
+- How the repeat counter is kept in play: which targets count as the same kind, and when it starts again. The reduction itself (50% a repeat, up to two) is known from the data.
 
 ## See also
 
