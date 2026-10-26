@@ -219,7 +219,7 @@
 
   function zoneTables(main) {
     return Array.prototype.filter.call(main.querySelectorAll("table"), function (table) {
-      if (!table.tHead || !table.tBodies[0]) return false;
+      if (!table.tHead || !table.tHead.rows[0] || !table.tBodies[0]) return false;   // a header the page fills later
       var heads = Array.prototype.map.call(table.tHead.rows[0].cells, function (c) { return c.textContent.trim(); });
       return heads[0] === "Row" && heads[1] === "Resource";
     });
