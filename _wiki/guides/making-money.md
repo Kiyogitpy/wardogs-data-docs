@@ -10,7 +10,7 @@ Cash pays for nearly everything in Wardogs: gear, weapons, vehicles, role unlock
 
 ## Where cash comes from
 
-A player starts with 10,000 cash, and the loading-screen tip says cash carries over between matches ([Currencies](../progression-and-economy/currencies.md)). Each action pays a base amount from its reward table. The table below picks the biggest payers for each role. Role XP is a separate number and does not add cash.
+A player starts with 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort; in King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are added on top, 1 for 1 up to 5,000), and the loading-screen tip says cash carries over between matches ([Currencies](../progression-and-economy/currencies.md)). Each action pays a base amount from its reward table. The table below picks the biggest payers for each role. Role XP is a separate number and does not add cash.
 
 | Role | Action | Base cash |
 |---|---|---:|
@@ -48,7 +48,7 @@ Sources for this table: [Cash and Rewards](../progression-and-economy/cash-and-r
 - An artillery kill in the open pays 5,000, which is 20 times a default kill at 250. The same artillery kill inside a zone pays 100.
 - A Hot Zone event pays 600 and a Control Zone event 150, so one Hot Zone event is worth four Control Zone events ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#zones-and-towers)).
 - A bare-hands revive pays 1,500, more than a revive with a defibrillator (1,000). ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#revives-and-heals)).
-- A Bandage costs 200 in the shop, and a heal with one pays the healer 400. An Individual First Aid Kit costs 800 and pays 1,000 for a heal ([Shops](../progression-and-economy/shops.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md#revives-and-heals)).
+- A Bandage costs 200 in the shop, and a heal with one pays the healer 400. An Individual First Aid Kit costs 800 and pays 1,000 for a heal, but not when you heal someone inside your own spawn safe zone, where heals, repairs and refuels pay 0 ([Shops](../progression-and-economy/shops.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md#revives-and-heals)).
 
 ### End-of-match bonus
 

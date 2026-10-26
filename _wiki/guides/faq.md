@@ -100,11 +100,11 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How does Sniper Showdown punish standing still?** If you stand within about 50 m of one spot for 90 s, you are revealed. A marker shows your position for 200 s, and a warning appears at 75 s ([Sniper Showdown](../game-modes-and-maps/sniper-showdown.md)).
 
-**What is Team Offence?** A Season 2 system for teamkills. An offence opens a player ballot, and the players vote to punish, kick or forgive the offender. Each ballot has a 180 s deadline, after which the voters' prompts close (inferred from the game code) ([Team Offence](../game-modes-and-maps/team-offence.md)).
+**What is Team Offence?** A Season 2 system for teamkills. An offence opens a player ballot, and the players vote to punish, kick or forgive the offender. Each ballot lasts 180 s; then the server removes the voters who have not decided and counts the rest, and the offender is punished only if the punish votes pass half of the total vote weight ([Team Offence](../game-modes-and-maps/team-offence.md)).
 
 ## Money and progression
 
-**How much cash do I start with?** You start with 10,000 cash. The loading-screen tip says cash carries over between matches, and a server setting, Persistent Progression, switches that on or off ([Currencies](../progression-and-economy/currencies.md)).
+**How much cash do I start with?** You start with 10,000 cash in most modes (3,000 in Strike and Disarm, 2,000 in VIP Escort). In King of the Hill, points earned in the [pre-lobby](../game-modes-and-maps/pre-lobby.md) are paid on top as extra Cash, 1 for 1 up to 5,000, when the match starts. The loading-screen tip says cash carries over between matches, and a server setting, Persistent Progression, switches that on or off ([Currencies](../progression-and-economy/currencies.md)).
 
 **How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate and it changes over time, so the rate is not in the game files (the exchange table in the files is empty). Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
 
@@ -130,7 +130,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How long does the VIP have before the mission fails?** In VIP Escort the mission fails 10 s after the VIP goes down (reaches the critical state). A revive does not stop that clock, so a downed VIP means a lost mission. If the VIP disconnects, the game picks a new VIP instead ([VIP Escort](../game-modes-and-maps/vip-escort.md), [PvE Guide](pve-guide.md)).
 
-**What does Hunter Killer include?** Its data is not finished. It sets no soldiers, objectives, player faction or starting cash, so the game files have no answer for them ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
+**What does Hunter Killer include?** Its data is not finished. Its map layer holds only text labels and scenery, and it sets no soldiers, objectives, player faction or starting cash, so the game files have no answer for them ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
 
 ## Sources
 

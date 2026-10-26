@@ -39,11 +39,11 @@ Tips that follow from the numbers:
 
 - **Because the VIP is marked on the minimap for the whole mission, the rest of the team can always see where the VIP is.** The marker is purple.
 - **Because the mission fails 10 seconds after the VIP goes down, a downed VIP is a lost mission.** A revive does not stop the 10-second clock, so keep the VIP out of fights rather than planning to revive them. If the VIP disconnects, the game picks another random player as the new VIP.
-- **Because the SV98 loot entry respawns after 10 seconds and the Fuel Canister entry does not, the rifle is the loot that comes back.** Both are placed at named marker points in the map, and the positions of those markers are not known. See [VIP Escort](../game-modes-and-maps/vip-escort.md).
+- **Because the SV98 loot entry respawns after 10 seconds and the Fuel Canister entry does not, the rifle is the loot that comes back.** The mission's loot markers carry only shared item names (Bandage, Weapon, Defib, Sniper, Armor, Helmet), so no marker for either of these two entries is placed in the map. See [VIP Escort](../game-modes-and-maps/vip-escort.md).
 
 ## Hunter Killer
 
-Hunter Killer has only a planning layer on the map, with text labels for a deploy point, a target and an exfil point, and no gameplay objects. Its data is unfinished. It sets no soldiers, no objectives, no player faction and no starting cash. The mission has a quest with a start and an end and nothing between them.
+Hunter Killer has only a planning layer on the map, with 16 hidden text labels (a deploy point, a target, an exfil point, guards and patrols) and 9 scenery actors, and no gameplay objects: no spawn area, soldier spawner, vendor, vehicle, objective or loot marker. Its data is unfinished. It sets no soldiers, no objectives, no player faction and no starting cash. The mission has a quest with a start and an end and nothing between them.
 
 Because the data gives nothing to plan for, this mission has no tips in this guide. The [Hunter Killer](../game-modes-and-maps/hunter-killer.md) article lists what is missing.
 

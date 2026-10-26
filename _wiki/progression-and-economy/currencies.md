@@ -29,7 +29,7 @@ The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is 
 
 ## Cash
 
-Cash is the main currency. It starts every player at 10,000, and players earn more during the match. The client's currency table sets this starting balance.
+Cash is the main currency. It starts every player at 10,000 in the normal modes (3,000 in Strike and Disarm and 2,000 in VIP Escort), and players earn more during the match. The client's currency table sets this starting balance. In King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are paid on top of it when the match starts, 1 Cash per point up to 5,000.
 
 - **Earned.** Every action in a match pays cash, such as a kill, a revive or a heal. The amounts are in [Cash and Rewards](cash-and-rewards.md). The end-of-match bonus adds more on top, for the faction placed first, second or third.
 - **Spent.** Cash buys gear, weapons, vehicles and supply crates from vendors, as listed on [Shops](shops.md). Vendor prices are changed by discounts there, and a refund returns 90% of the eligible amount. It also buys role unlocks in the unlock tree, and it can be exchanged for Gold Bars. In Season 2 the Humvee unlock for the Driver role rose from 25,000 to 75,000 cash. The first factory investment costs 200 cash (see [Factory Investment](factory-investment.md)).

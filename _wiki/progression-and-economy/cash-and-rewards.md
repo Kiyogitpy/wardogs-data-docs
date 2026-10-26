@@ -9,7 +9,7 @@ description: "What each action pays in cash and role XP: kills, revives, heals, 
 
 | Cash and Rewards | |
 |---|---|
-| Currencies | Cash (starts at 10,000), Gold Bars (see [Cosmetics](cosmetics.md)) |
+| Currencies | Cash (starts at 10,000; 3,000 in Strike and Disarm, 2,000 in VIP Escort), Gold Bars (see [Cosmetics](cosmetics.md)) |
 | XP | One role XP per role: Assault, Medic, Support, Recon, Pilot and Driver |
 | Mastery levels | 0 to 100 for each role, on one shared XP curve |
 | Internal name | Reward cash tables and the per-kill calculator |
@@ -62,7 +62,7 @@ The per-kill calculator uses a different base for each kill type: default 300, h
 | Individual First Aid Kit | 1,000 |
 | Medical Bag | 100 |
 
-When a heal is the one that brings a downed player back, it pays 1,500 with a defibrillator or resuscitator, and 1,200 with an Adrenaline Pen. Revives in a zone are multiplied by 1.2 to 2.0.
+When a heal is the one that brings a downed player back, it pays 1,500 with a defibrillator or resuscitator, and 1,200 with an Adrenaline Pen. Revives in a zone are multiplied by 1.2 to 2.0. Healing in your own team's spawn safe zone pays nothing (see [Boundaries and Safe Zones](../game-modes-and-maps/boundaries-and-safe-zones.md)); the same goes for repairing and refuelling there.
 
 ### Vehicles
 
