@@ -24,7 +24,7 @@ Season 2 changed the weapons, damage rules, vehicles, items, modes and progressi
 - **Sniper rifles hit harder on the body.** Their multipliers for the head, neck, upper torso, middle torso and pelvis rose by about a third, and upper arms by a quarter. The sniper head multiplier went from 3.2 to 4.27.
 - **Suppression values changed on many weapons.** Several weapons gained a suppression value, and others were adjusted. Examples: MK22 1.6, AMR 50 2.0, SV98 1.5, Mosin Nagant 1.5, Scout Rifle TD 1.5, M249 SAW 1.25, AK74 1.05, SKS 1.1, M4 0.95, PKM 0.9 (up from 0.45), SVD 0.8 (up from 0.4).
 - **Aim assist curves were removed.** Sixteen curves for hip-fire and reticle-edge aim assist were removed across assault rifles, LMGs, pistols, shotguns, SMGs and melee.
-- **Aim assist pulls and slows at a higher rate.** The pull and slow rates were set to 10 in and 8 out for every class except the RPG-7, which has no aim assist. The sniper reticle area was also widened.
+- **Aim assist pulls and slows at a higher rate.** The pull and slow rates were set to 10 in and 8 out for every class except the launchers (RPG-7, 9K333 Verba, MGL-40 and MAAWS), which have no aim assist. The sniper reticle area was also widened.
 - **Recoil patterns changed on four weapons,** including the SKS and SVD, with many of the pattern points moved. View kick was removed on the BMR-308, SKS and SVD, and rose on the MP5 from 1.1 to 1.15.
 - **Sniper rifles cycle faster after a shot.** The time before the SV98 can rechamber fell from 0.3 s to 0.08 s, and the AMR 50's from 0.24 s to 0.2 s.
 - **The Super-45 falls off with distance differently.** It gained two falloff points, at 100 m (0.4) and 150 m (0.3).

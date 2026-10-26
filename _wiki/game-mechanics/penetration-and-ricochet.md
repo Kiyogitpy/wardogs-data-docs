@@ -24,6 +24,9 @@ Most bullets stop at the first solid surface, and that surface absorbs the bulle
 
 - **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below) and on the angle of the hit. Measured from the surface's normal (the line straight out of it), a head-on hit's chance is multiplied by 0.08, and a hit at 80 to 90 degrees, almost flat along the surface, by 0.92. A bullet that has slowed below a tenth of its launch speed cannot bounce. A bullet that can get through the surface easily also bounces less. The chance is cut by how much the bullet's ability to pass the surface exceeds the surface thickness: equal or less keeps the full chance, twice the thickness or more never bounces, and in between the chance is scaled down (derived from the game's code; the game was not run). So a round strong enough to pass through a thin surface by a margin of two will not ricochet off it. The data indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
 - **Penetration.** A bullet can pass through a surface only if it has enough energy left for that thickness. A steeper angle makes the surface look thicker, which makes passing harder. Armor-piercing rounds have the most penetration, and hollow points have very little.
+- **Thickness.** Thickness is measured in the game's world units, which are centimetres (inferred from the engine). When a bullet hits a solid object, the game fires a short check straight on through it to find where the bullet would come out, and the distance in between is the thickness. If it finds no exit within about 2 m, the bullet cannot pass. Thin sheet surfaces such as glass use a stored thickness instead, multiplied by 10.
+- **Wall materials.** The material comes from the surface paint (the material applied to the wall mesh), not from the mesh itself. About 1,800 of the 3,150 material sets in the game name one of the physical materials in the table below, and the rest take it from a parent material. Of the 63 wall material sets, 40 are concrete, 10 brick, 4 metal, 1 wood and 1 plaster, and 7 inherit theirs. Across the 256 building material sets, 71 are concrete, 53 metal, 18 brick, 16 wood and 11 plaster.
+- **Density.** Each physical material has a density number, and the denser of the two sides a bullet crosses counts. A higher density makes the surface harder to pass.
 - **Speed after passing.** A bullet that passes through leaves slower. How much slower depends on the surface and the ammo.
 - **Damage at the next hit.** A bullet that has slowed does less damage when it hits something next, in proportion to the speed it has left.
 - **Flesh.** Body and head surfaces have no ricochet, so a bullet that hits a person does not bounce off them.
@@ -79,6 +82,25 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 | Sand, fabric, paper | 2% | 3% to 10% (sand), 10% to 15% (fabric), 10% to 15% (paper) |
 | Body, head, water, lava, leaves | 0% | Not applicable |
 
+Density by physical material (higher is harder to pass; a surface with no density set uses 1.0, inferred):
+
+| Material | Density |
+|---|---:|
+| Concrete | 8.5 |
+| Metal (plain, solid) | 7.0 |
+| Metal sheet | 7.85 |
+| Corrugated metal | 6.0 |
+| Brick | 5.2 |
+| Ceramic | 4.5 |
+| Plaster | 3.0 |
+| Rock | 3.0 |
+| Wood | 2.56 |
+| Fabric | 1.5 |
+| Plastic | 1.3 |
+| Weak metal | 2.0 |
+| Rubber | 0.7 |
+| Paper | 0.85 |
+
 ## Tips that follow from the numbers
 
 - **Armor-piercing is the choice for passing through cover.** At 1.8 penetration it passes through surfaces that stop full metal jacket. Hollow point almost never passes through anything at 0.1.
@@ -88,8 +110,7 @@ Ricochet chance by surface material (named surfaces in the data; unnamed surface
 
 ## What is not yet known
 
-- The materials and thicknesses of world walls, doors and props. The data has no material assigned to most world meshes, so no result can be given for a specific wall.
-- The unit of surface thickness.
+- The thickness and material of one particular wall, door or prop on a map. Thickness is measured live from the shape of the object when you shoot it, and the map files that place each object were not read, so no result can be given for a specific wall.
 
 ## See also
 

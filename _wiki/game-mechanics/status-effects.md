@@ -52,7 +52,14 @@ Molotov fire creates a fire area that lasts 45 s. A player standing in it takes 
 
 ## Suppression
 
-Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value in the game data, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. No movement effect from suppression was found. The data does list three things that reduce it. Heavy helmets carry a suppression multiplier of 0.32 and super-heavy helmets 0.2, which reads as cutting suppression to 32% and 20% (a reading of the effect data, not tested in play). The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
+Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value in the game data, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. Each hit near you raises a suppression strength between 0 and 1 (the bullet's value after the distance falloff, inferred) and that strength only drives two things: a screen effect and a camera shake. The data does list three things that reduce it. Heavy helmets carry a suppression multiplier of 0.32 and super-heavy helmets 0.2, which reads as cutting suppression to 32% and 20% (a reading of the effect data, not tested in play). The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
+
+What suppression does to you, in numbers:
+
+- **Screen effect.** It uses the same screen layer as damage (blur, darkening and fading of colour share one control set), with its own suppression control. How strong the blur looks at a given strength is not in the game files, so no blur percentage can be given.
+- **Camera shake from nearby fire.** It lasts 0.5 s. It shakes the camera sideways and forwards slightly (position strength 0.11), rolls and tilts it (rotation strength 0.45), wobbles the field of view by 0.9 and adds a colour fringe of 4.5.
+- **Camera shake from backblast and concussion.** It is stronger: rotation strength 2.0 with up to 8 degrees of pitch, 5 of yaw and 5 of roll, a field of view wobble of 6 and a colour fringe of 10, over 0.5 s with a 0.3 s fade out, followed by a 2 s darkening.
+- **No effect on aim or movement.** Nothing in the game's code reads the suppression strength to change your weapon sway, spread, recoil, aim speed or walking speed. Only the screen effect and the camera shake use it (read from the game's code, not tested in play).
 
 ## Spotted
 
@@ -96,7 +103,7 @@ Barbed wire has an effect that sets movement to 7.5% of normal speed. It is appl
 
 ## Not yet known
 
-- How the suppression values turn into what a player sees in play; the game was not run.
+- How strong the suppression blur and darkening look at a given strength. The screen effect's formula is not in the exported game files, and the game was not run.
 - Whether a rule outside the damage tables switches friendly fire off for fire.
 
 ## See also

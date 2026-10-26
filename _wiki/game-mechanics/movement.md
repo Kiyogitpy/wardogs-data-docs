@@ -27,14 +27,16 @@ A player walks at a base speed of 5.4 m/s, and each stance scales that speed. Sp
 - **Speed by stance.** Standing walks at 80% of the base speed, crouched at 50%, and prone at 15%. Sprinting is 1.42 times the standing speed, and tactical sprinting is 1.55 times. Both apply only while standing: crouching and going prone cannot sprint.
 - **Direction.** Walking backwards or sideways is 70% of the stance speed.
 - **Aiming down sights** halves your movement speed.
-- **Acceleration.** The speed builds up at a rate set per stance: 7 standing, 12 crouched and 19 prone, in the units of the movement data. Stopping has no stance-specific slowdown: the friction is 6.0 in every stance, so crouching or going prone does not make you stop faster or slower.
+- **Acceleration.** The speed builds up at a rate set per stance: 7 standing, 12 crouched and 19 prone. The number is a rate per second measured in target speeds, not a distance: each moment the game adds the acceleration times your target speed times the elapsed time to your speed in the direction you are steering, until you reach the target (a target below 1 m/s counts as 1 m/s here). So from a standstill you reach full walking speed in about 1 divided by the acceleration: roughly 0.14 s standing, 0.08 s crouched and 0.04 s prone (derived from the movement code, not timed in play).
+- **Stopping.** Stopping has no stance-specific slowdown: the friction is 6.0 in every stance, so crouching or going prone does not make you stop faster or slower. Each moment you lose 6 times your current speed per second (with the speed counted as at least 1 m/s), so stopping from a standing walk takes about 0.4 s (derived).
+- **Slow walk.** The slow-walk key does slow you. Slow, Moderate and Fast set a share of 0.2, 0.4 or 0.6, and the walking speed becomes the minimum speed (0.8 m/s) plus that share of the gap up to the stance's top speed. With a standing top speed of 4.3 m/s that is about 1.5, 2.2 or 2.9 m/s; crouched (2.7 m/s) about 1.2, 1.6 or 1.9 m/s; prone it makes no real difference (0.8 m/s). Sprinting ignores slow walk. With a partly tilted gamepad stick the same blend is used with the stick's tilt in place of the share, so a half tilt walks at the minimum plus half the gap (derived from the movement code; how it combines with the aim-down-sights and weight slowdowns was not traced, probably as a product, inferred).
 - **Field of view.** The first-person field of view defaults to 106. A tactical sprint widens it briefly (by 5 on the base player pawn and 10 on the in-game pawn, derived from the curve).
 - **Shared keys.** The same key does different things in different modes. Space deploys the parachute while falling and jumps off a ladder. Shift slides down a ladder and fast-swims. G drags a body.
 - **Using a medical item** halves your movement speed while you use it.
 - **Weight class.** Your gear sets a speed scale: Light 95%, Medium 87.5%, and Heavy and Super heavy 80% of the normal speed.
 - **Slopes.** Ground speed changes slightly on slopes, by up to 10% at the steepest value in the data. The slope curve takes the slope angle in degrees, weighted by a direction factor.
 - **Tactical sprint.** It drains stamina at 20 per second and needs at least 20% stamina to start. After a sprint, the player waits 0.8 s before sprinting again, or 0.6 s after a tactical sprint.
-- **Plain sprint.** No stamina cost for plain sprinting was found in the data. Only tactical sprint is limited by stamina.
+- **Plain sprint.** A plain sprint costs no stamina. The only stamina drain tied to the sprint states in the movement code is the tactical sprint's 20 per second; plain sprinting only has the short wait before you can start it again.
 - **Swimming.** Swimming speed is capped at 250 in the movement data, and a fast swim doubles that cap to 500 while draining 20 stamina per second. The data does not state the unit; if it is centimetres per second, that is 2.5 m/s, or 5 m/s when fast swimming (derived). In the water the speed builds up at 4000 and stops at 500 (same unit).
 - **Stance changes.** Each change costs stamina from a pool of 100. Standing costs 20 and crouching 30 to change into, and going prone costs 50. The pool refills at 50 per second with no delay.
 - **Jumping.** A jump costs 50 stamina from a pool of 150. The pool refills at 50 per second, and you can jump again after 0.05 s.
@@ -97,9 +99,7 @@ Leaving a moving vehicle can also hurt you. The damage depends on the vehicle's 
 
 ## Not yet known
 
-- How the acceleration units map to metres per second.
-- How the slow-walk setting changes speed. The data stores three input scales for it (0.2, 0.4 and 0.6), but the code that applies the chosen scale to walking speed was not found.
-- How much stamina a plain sprint uses, if any.
+- How the slow-walk speeds combine with the aim-down-sights and weight-class slowdowns. They probably multiply (inferred); the order was not traced.
 
 ## See also
 

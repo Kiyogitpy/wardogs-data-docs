@@ -285,7 +285,7 @@ Hands are placed on the body with IK at two sockets; the offset is in the game's
 
 ### 7e. RPG aim assist ([`DA_AimAssistSettings_RPG`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistSettings_RPG.json))
 
-Both pull modes are off and all reticle, range and pull values are zero, so the RPG-7 has aim assist switched off (the wiki article is Aim Assist).
+Both pull modes are off and all reticle, range and pull values are zero, so aim assist is switched off for every item that uses this asset: RPG-7, 9K333 Verba (Launcher_04), MGL-40 (MMGL), MAAWS (CGM4) and two test barrel launchers (round 62; the wiki article is Aim Assist).
 
 <!-- item_input_tables rpg -->
 | Field | Value |
