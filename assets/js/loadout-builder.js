@@ -13,6 +13,9 @@
   var S = null;                         // the build, see fresh()
   var pickerFid = null, pickerOnPick = null, pickerCfg = null, copyTimer = null, lastRes = null;
 
+  // Weapon sub-slots shown as tiles: [order, player label].
+  var SHOWN_SLOTS = { "Item.Attachment.Muzzle": [0, "Muzzle"], "Item.Attachment.Magazine": [1, "Magazine"],
+                      "Item.Attachment.Sight": [2, "Scope"], "Item.Attachment.Underbarrel": [3, "Foregrip"] };
   var WSLOTS = [["primary", "Primary", "1", "p"], ["sidearm", "Sidearm", "2", "s"], ["special", "Special item", "3", "x"]];
   var GEAR = [["helmet", "Helmet", "h"], ["armor", "Armor", "a"], ["vest", "Tac vest", "v"], ["backpack", "Backpack", "b"]];
   var PART_NAMES = { "Head": "Head", "Neck": "Neck", "Torso.Upper": "Upper torso", "Torso.Middle": "Middle torso",
@@ -384,11 +387,14 @@
         var subs = el("div", "lb-subs");
         subs.setAttribute("role", "group");
         subs.setAttribute("aria-label", w[1] + " attachments");
-        L.slots(model, s.lo).forEach(function (x) {
-          if (!(x.accepts && x.accepts.length)) return;    // chamber and magazine ammo: nothing fits
-          var label = x.label || L.slotLabel(x.tag), t = tile("a:" + slot + ":" + x.key, {
-            id: x.choice, name: x.choice ? nameOf(x.choice) : "", slot: label, cls: "lb-mini" + (x.depth ? " lb-mini-child" : ""),
-            aria: label + (x.depth && x.owner ? " on " + nameOf(x.owner) : "") + ": " + (x.choice ? nameOf(x.choice) : "empty") + ". Change",
+        // Only the four slots players change are shown; barrel, stock, pistol grip and handguard keep their
+        // defaults (still evaluated). The muzzle sits on the barrel, so it is a nested slot.
+        L.slots(model, s.lo).filter(function (x) { return SHOWN_SLOTS[x.tag] && x.accepts && x.accepts.length; })
+          .sort(function (a, b) { return SHOWN_SLOTS[a.tag][0] - SHOWN_SLOTS[b.tag][0]; })
+          .forEach(function (x) {
+          var label = SHOWN_SLOTS[x.tag][1], t = tile("a:" + slot + ":" + x.key, {
+            id: x.choice, name: x.choice ? nameOf(x.choice) : "", slot: label, cls: "lb-mini",
+            aria: label + ": " + (x.choice ? nameOf(x.choice) : "empty") + ". Change",
             open: function (opener) {
               openPicker({
                 title: w[1] + ": " + label, current: x.choice, empty: "Empty", emptyMeta: x["default"] == null ? "Default" : "",
@@ -404,7 +410,7 @@
           });
           t.title = label + (x.choice ? ": " + nameOf(x.choice) : ": empty");
           subs.appendChild(t);
-        });
+          });
         row.appendChild(subs);
       }
       box.appendChild(row);
