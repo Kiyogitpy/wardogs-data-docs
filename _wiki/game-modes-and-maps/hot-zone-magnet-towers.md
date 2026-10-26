@@ -48,7 +48,7 @@ Every King of the Hill map has a few numbered towers near the middle of the play
 ## Typing the code
 
 - **The keypad.** Each tower has a keypad with the keys 0 to 9, Clear and Enter. Each key press takes a 0.3 s tap, within 2.5 m.
-- **Where it works.** The keypad works on a tower that is not locked, not cooling down, and while no magnet runs. The game does not check which team holds that tower (inferred from the access check).
+- **Where it works.** The keypad works on a tower that is not locked, not cooling down, and while no magnet runs.
 - **Wrong codes.** Three wrong codes on one tower lock that tower's keypad for 30 seconds. After the lock ends the count starts again. The base game sets the lock at 5 s, and the shipped tower sets it to 30 s.
 
 ## The magnet
