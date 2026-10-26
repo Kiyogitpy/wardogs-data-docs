@@ -27,6 +27,10 @@ description: "The Zestafona King of the Hill map: a 500 m zone whose Hot Zone is
 
 Zestafona is a King of the Hill map whose Control Zone is 500 m across and 500 m tall. Its Hot Zone is 85 m across but 850 m tall, much taller than the zone around it. The zone has no cylinder shape in the data, so it is stored as a tall box (inferred from the missing field). It has four placements and 56 named zone regions, mostly industrial sites and rail sheds.
 
+![Zestafona map]({{ '/assets/img/maps/zestafona.jpg' | relative_url }})
+
+*Zestafona minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 3.1 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 5 km square, scale bar in the corner. The white outlines are the named zone regions; magenta circles are the three Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three spawn areas (Boston, Austin, Chicago). Marks drawn from placed-object positions; the overview below shows the whole map.*
+
 ## Overview
 
 Zestafona is played in [King of the Hill](king-of-the-hill.md) under one server browser entry, Detroit. Its zone and region files are stored under the North America folder, and the example server rotation pairs the Detroit entry with the Zestafona placements.
@@ -91,6 +95,10 @@ Most cover on Zestafona is made of the materials below. The counts are placed wa
 Total: 98,745 pieces (97,329 building pieces and 1,416 wall, fence and barrier pieces) from 986 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
 ## Size and ground height
+
+![Zestafona overview map]({{ '/assets/img/maps/zestafona-overview.jpg' | relative_url }})
+
+*Whole minimap (16.3 km square, orientation as in the game's minimap). The white box is the play box shown above; coloured dots are the three spawn areas (infantry spawn point middles).*
 
 The ground of this map is one square of 16.32 km by 16.32 km. Across the whole square the ground runs from 25 m to 707 m on the game's height scale. The play area is the box around every named zone region, plus 500 m on each side. It is the same box the cover and object counts on this page use. Inside it the ground runs from 44 m to 251 m.
 

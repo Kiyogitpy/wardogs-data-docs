@@ -27,6 +27,10 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 
 Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible zone placements. Its zone configuration, shader warm-up list and sight-blocker data were all added in Season 2. The data does not include a list of named zone regions for it, and it does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
+![Saburtulo map]({{ '/assets/img/maps/saburtulo.jpg' | relative_url }})
+
+*Saburtulo minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 1.7 m per pixel. The crop is a stand-in play box (the five towers and the zone object plus 500 m, with a further 500 m margin), about 2.75 km square, scale bar in the corner. The data has no zone regions for Saburtulo, so none are drawn. Magenta circles are the five Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three spawn areas (Kuzminki, Rostokino, Ramenki). Marks drawn from placed-object positions; the overview below shows the whole map.*
+
 ## Overview
 
 Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Moscow entry by name and folder only (an inference from the names, not checked in game). Its zone configuration is stored under the Russia files. Some data entries spell the placement names with "Sabartulo", which refers to the same placement set.
@@ -91,6 +95,10 @@ Most cover on Saburtulo is made of the materials below. The counts are placed wa
 Total: 189,545 pieces (184,855 building pieces and 4,690 wall, fence and barrier pieces) from 1,017 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
 ## Size and ground height
+
+![Saburtulo overview map]({{ '/assets/img/maps/saburtulo-overview.jpg' | relative_url }})
+
+*Whole minimap (16.3 km square, orientation as in the game's minimap). The white box is the play box shown above; coloured dots are the three spawn areas (infantry spawn point middles).*
 
 The ground of this map is one square of 16.32 km by 16.32 km. Across the whole square the ground runs from 83 m to 766 m on the game's height scale. Saburtulo has no list of zone regions, so the usual box (the regions plus 500 m) cannot be drawn. The play area above is a stand-in: the box around the five towers and the zone object, plus 500 m on each side. It is inferred and is not an edge the game enforces. Inside it the ground runs from 132 m to 318 m.
 

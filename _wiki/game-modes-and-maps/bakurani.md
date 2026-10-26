@@ -27,6 +27,10 @@ description: "The Bakurani King of the Hill map: zone sizes, the three zone plac
 
 Bakurani is the first King of the Hill map in the server browser, and it is the one with the most zone data. It has three alternative zone placements and 60 named zone regions, so the zone can appear in several parts of the map. The data does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
+![Bakurani map]({{ '/assets/img/maps/bakurani.jpg' | relative_url }})
+
+*Bakurani minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 2.8 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 4.3 km by 4.4 km, scale bar in the corner. The white outlines are the 60 named zone regions, with the five Hot Zone Magnet tower regions drawn heavier; magenta circles are the towers, numbered as in the table below. Arrows point toward the three spawn areas of the first server browser entry (Baghi, Khevuli, Chuta), which lie 3.8 to 4.1 km from the middle of the crop. Tower 5 has no region of its own in the data, and TOWER 7 is not placed. Marks drawn from placed-object positions; the overview below shows the whole map.*
+
 ## Overview
 
 Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browser lists it as two entries, both called Bakurani. They share the same map and rules and differ only in their spawn areas: the first uses the Khevuli, Chuta and Baghi areas, the second the Rachuri, Tavarshi and Sanavi areas. Both use the Bakurani name and loading screen art, and the Bakurani zone configuration.
@@ -102,6 +106,10 @@ Most cover on Bakurani is made of the materials below. The counts are placed wal
 Total: 109,586 pieces (106,793 building pieces and 2,793 wall, fence and barrier pieces) from 845 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
 ## Size and ground height
+
+![Bakurani overview map]({{ '/assets/img/maps/bakurani-overview.jpg' | relative_url }})
+
+*Whole minimap (16.3 km square, orientation as in the game's minimap). The white box is the play box shown above; coloured dots are the three spawn areas (infantry spawn point middles).*
 
 The ground of this map is one square of 16.32 km by 16.32 km. Across the whole square the ground runs from -1,008 m to 178 m on the game's height scale. The play area is the box around every named zone region, plus 500 m on each side. It is the same box the cover and object counts on this page use. Inside it the ground runs from -991 m to -278 m.
 

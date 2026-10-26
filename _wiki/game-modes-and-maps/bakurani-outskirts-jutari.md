@@ -22,6 +22,10 @@ description: "The Sniper Showdown map named Bakurani Outskirts - Jutari: a 350 m
 
 Bakurani Outskirts - Jutari is the Sniper Showdown map with a Bakurani name. Its Control Zone is 350 m across, smaller than the King of the Hill zones, and it has a single fixed spot rather than alternative placements. Its Hot Zone moves faster than the King of the Hill Hot Zones, with a default speed of 1.5.
 
+![Bakurani Outskirts - Jutari map]({{ '/assets/img/maps/jutari.jpg' | relative_url }})
+
+*Jutari spot on the Bakurani minimap, orientation as in the game's minimap (the data has no north). The crop is 1.5 km square at about 1 m per pixel (scale bar in the corner). The white circle is the 350 m Control Zone and the magenta circle the 75 m Hot Zone, drawn at the Sniper Showdown zone object. The map has no towers and no zone regions.*
+
 ## Overview
 
 The server browser lists this map as a Sniper Showdown entry, with the Bakurani loading screen art. The data links it to the Sniper Showdown zone configuration named Bakurani by name. The data does not describe its terrain, buildings or sniper positions.

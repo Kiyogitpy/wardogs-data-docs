@@ -27,6 +27,10 @@ description: "The Ozeti King of the Hill map: a 550 m zone with four placements,
 
 Ozeti is a King of the Hill map with a 550 m Control Zone and four possible zone placements. It has 55 named zone regions, almost all with weight 1. The data does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
+![Ozeti map]({{ '/assets/img/maps/ozeti.jpg' | relative_url }})
+
+*Ozeti minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 3 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 4.8 km by 3.9 km, scale bar in the corner. The white outlines are the 55 named zone regions; magenta circles are the four Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three Madrid spawn areas (Granada, Barcelona, Malaga); Malaga lies off the top-left corner. Marks drawn from placed-object positions; the overview below shows the whole map.*
+
 ## Overview
 
 Ozeti is played in [King of the Hill](king-of-the-hill.md) under one server browser entry, Madrid. Its zone configuration and regions are stored under the Europe files, and the example server rotation pairs the Madrid entry with the Ozeti placements.
@@ -92,6 +96,10 @@ Most cover on Ozeti is made of the materials below. The counts are placed wall a
 Total: 69,833 pieces (66,641 building pieces and 3,192 wall, fence and barrier pieces) from 828 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
 ## Size and ground height
+
+![Ozeti overview map]({{ '/assets/img/maps/ozeti-overview.jpg' | relative_url }})
+
+*Whole minimap (16.3 km square, orientation as in the game's minimap). The white box is the play box shown above; coloured dots are the three spawn areas (infantry spawn point middles).*
 
 The ground of this map is one square of 16.32 km by 16.32 km. Across the whole square the ground runs from -1,037 m to -275 m on the game's height scale. The play area is the box around every named zone region, plus 500 m on each side. It is the same box the cover and object counts on this page use. Inside it the ground runs from -988 m to -759 m.
 
