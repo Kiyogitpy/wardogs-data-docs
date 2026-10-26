@@ -12,7 +12,7 @@ description: "Default keyboard and mouse controls grouped by movement, combat, v
 | Default input | Keyboard and mouse (gamepad defaults are in the data, not listed here) |
 | Changing keys | One action per key in each category |
 | **Settings** | |
-| Mouse sensitivity | Default 0.4, shown range 0.1 to 2 |
+| Mouse sensitivity | Default 0.4 (stored; the slider shows about 0.73), shown range 0.1 to 2 |
 | Field of view | Default 90, range 60 to 120 |
 | Vehicle third-person field of view | Default 85, range 60 to 110 |
 | **Internal name** | IA_* input actions, DA_Setting_* settings |
@@ -146,7 +146,7 @@ Each setting has a default. Some have an exact range; where the export does not 
 
 | Setting | Default | Range or options |
 |---|---|---|
-| Sensitivity | 0.4 | 0.1 to 2 (shown range) |
+| Sensitivity | 0.4 (stored; the slider shows about 0.73) | 0.1 to 2 (shown range) |
 | Vertical axis multiplier | 1 | 0.01 to 5 |
 | Aim down sight (FOV) | Affected | Affected or Independent |
 | Sensitivity scaling mode | Relative | Relative or Legacy |
@@ -167,6 +167,45 @@ Each setting has a default. Some have an exact range; where the export does not 
 | Slow walk speed | Slow | Slow, Moderate or Fast |
 
 Two different gamepad curve settings exist in the data: the look acceleration curve (Standard, Linear or Aggressive, with its own threshold, pitch weight and max multiplier) and the gamepad response curve (Linear, Standard, Classic or Dynamic). The data does not show how the two relate.
+
+#### Mouse sensitivity formula
+
+This is derived from the game's code and settings files, not measured on screen. It covers mouse look on foot (hip fire and aiming down sights); vehicles use other multipliers.
+
+**Slider to stored value.** The Sensitivity slider is a rescaled value. The game stores a number from 0.1 to 1.0 and the slider shows it stretched to 0.1 to 2. With S for the stored value and d for the number the slider shows:
+
+- S = 0.1 + (d - 0.1) x 0.4737 (that is 0.9 / 1.9)
+- The default stored value is 0.4, which the slider shows as about 0.73.
+
+**Hip fire.** The view turns by the same amount left and right and up and down:
+
+- degrees per mouse count = 0.07 x S
+
+The 0.07 is the standard Unreal mouse scale from the game's input settings. The legacy 2.5 look scale is switched off, so nothing else is multiplied in. Mouse acceleration is off at its default of 0; if it is raised, each frame's movement is raised to the power 1 plus the acceleration value (0 to 0.05), which makes small movements slower than large ones.
+
+**Worked values (800 DPI).** One 360 degree turn takes 360 / (degrees per count) counts, which is 360 / (degrees per count) / DPI x 2.54 centimeters of mouse travel.
+
+| Slider shows | Stored S | Degrees per count | Counts per 360 | cm per 360 at 800 DPI |
+|---|---|---|---|---|
+| 0.1 | 0.100 | 0.0070 | 51,429 | 163.3 |
+| 0.4 | 0.242 | 0.0169 | 21,242 | 67.4 |
+| 0.5 | 0.289 | 0.0203 | 17,766 | 56.4 |
+| 0.73 (default) | 0.400 | 0.0280 | 12,857 | 40.8 |
+| 1.0 | 0.526 | 0.0368 | 9,771 | 31.0 |
+| 1.5 | 0.763 | 0.0534 | 6,739 | 21.4 |
+| 2.0 | 1.000 | 0.0700 | 5,143 | 16.3 |
+
+At other DPI values scale the last column by 800 / DPI.
+
+**Aiming down sights.** While aiming, two more factors multiply the hip value:
+
+- degrees per count = 0.07 x S x (ADS multiplier setting, default 1) x R
+
+R narrows the turn rate as the view zooms in. With the default Relative scaling mode, on a 16:9 screen and with Monitor matching distance at its default of 100, R is simply the aimed field of view divided by your normal field of view. In general R = atan(k x tan(aimed FOV / 2)) / atan(k x tan(FOV / 2)), where k is the Monitor matching distance divided by 100, times the screen's width to height ratio divided by 16/9. The Legacy mode uses the plain tangent ratio, tan(aimed FOV / 2) / tan(FOV / 2), which turns slower still. The aimed field of view is the one described under the Aim down sight setting below (72 degrees or your field of view, divided by the sight's magnification). The Sensitivity scaling transition setting decides how much of R applies while the sight is coming up: ADS Transition (default) applies it in proportion to how far the sight has come up, While Transitioning applies all of it as soon as aiming starts, Transition Finished applies it only once the sight is fully up, and Instant applies it while the aim button is held. Hip fire is not scaled.
+
+**Example: a 4x scope at the default settings.** The normal field of view is 90 and a 4x sight starts from 72, so the aimed field of view is 18 degrees and R = 18 / 90 = 0.2. At the default stored value that is 0.028 x 0.2 = 0.0056 degrees per count, or about 204 cm per 360 at 800 DPI (the hip value is 40.8). On a 21:9 screen R is about 0.22, and in Legacy mode about 0.16. A 2x sight in Affected mode gives R = 0.5, and a 10x scope gives 0.08.
+
+Two parts are inferred from how Unreal Engine normally behaves rather than read in the game's own code: that the 0.07 mouse scale is applied to the mouse in the game's input path, and the exact rule that stretches the stored value to the slider. If the first were wrong, every turn rate above would be 14 times faster. A separate Vertical axis multiplier setting exists, but no code that applies it to mouse look was found, so the figures above treat it as 1.
 
 ### Field of view and view model
 
