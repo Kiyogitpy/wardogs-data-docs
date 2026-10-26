@@ -103,7 +103,7 @@ Each yard also lists tags it **excludes**, which is how a generic tag such as th
 | `Air` | any air vehicle (every helicopter and the airplane, minus anything the volume excludes) | inferred |
 | `Air.Rotary.Havoc` | Havoc | inferred |
 | `Air.Rotary.Littlebird` | MH-6; AH-6M [Miniguns]; AH-6R [Rockets] | inferred |
-| `Air.Rotary.ROT_01` | Huey (no wiki article) | inferred |
+| `Air.Rotary.ROT_01` | Huey | inferred |
 | `Air.Rotary.ROT_04` | Z20 Lakota; Z20 Lakota [Miniguns] | inferred |
 | `Land` | any land vehicle | inferred |
 | `Land.Tracked` | any tracked vehicle (minus the excluded faction APCs) | inferred |

@@ -85,7 +85,7 @@ When a vehicle or a fixed gun is destroyed, it plays an explosion picked for its
 
 | Destroyed | Explosion |
 |---|---|
-| Helicopters: [Z-20 Lakota](../vehicles/z20-lakota.md) and the second helicopter in the data (its name is not on the wiki yet) | Helicopter |
+| Helicopters: [Z20 Lakota](../vehicles/z20-lakota.md) and the [Huey](../vehicles/huey.md) | Helicopter |
 | [Havoc](../vehicles/havoc.md) | Havoc |
 | [MH-6](../vehicles/mh-6.md) and its AH-6 variants | Little Bird |
 | [Fixed-wing airplane](../vehicles/fixed-wing-airplane.md) and the PzH 2000 self-propelled howitzer | Tank |

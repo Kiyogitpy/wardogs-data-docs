@@ -65,7 +65,7 @@ TAG_NAMES = {
     "Air": ["any air vehicle (every helicopter and the airplane, minus anything the volume excludes)"],
     "Air.Rotary.Havoc": ["Havoc"],
     "Air.Rotary.Littlebird": ["MH-6", "AH-6M [Miniguns]", "AH-6R [Rockets]"],
-    "Air.Rotary.ROT_01": ["Huey (no wiki article)"],
+    "Air.Rotary.ROT_01": ["Huey"],
     "Air.Rotary.ROT_04": ["Z20 Lakota", "Z20 Lakota [Miniguns]"],
     "Land": ["any land vehicle"],
     "Land.Tracked": ["any tracked vehicle (minus the excluded faction APCs)"],

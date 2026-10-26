@@ -58,8 +58,10 @@ SHOP = read("game-features/Wardogs_WeaponShop_v1.md")
 ROSTER = read("content/Wardogs_InfantryWeapons_Stats_v1.md")
 S2 = read("season-2-changes/weapons-ammo.md")
 
-# Compound Bow: no shop price and no stats in the data pages, so it has no article.
+# Compound Bow: not a firearm (no caliber, spray pattern or damage table). Its article is
+# hand-written (_wiki/weapons/compound-bow.md); the hub gets its row from BOW_ROWS below.
 SKIP = {"CombatBow"}
+BOW_ROWS = ["| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | 160 m/s | 1.4 s | 1350 |"]
 
 CLASS_NAME = {
     "AR": "Assault rifle", "DMR": "Marksman rifle", "LMG": "Light machine gun",
@@ -800,7 +802,7 @@ def hub_page(sections):
     head = ("---\ntitle: Weapons\nnav_order: 1\nwiki_hub: true\nhas_children: true\n"
             "description: \"Every player weapon, the ammunition they use and the attachments that change them.\"\n---\n\n")
     body = ["# Weapons", "",
-            "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher "
+            "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow "
             "in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
             "[Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. "
             "To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.", ""]
@@ -813,6 +815,7 @@ def hub_page(sections):
                 head_rows = ["| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |",
                              "|---|---|---:|---|---:|"]
             body += [f"## {class_group(arch)}", ""] + head_rows + sections[arch] + [""]
+    body += ["## Bows", "", "| Weapon | Ammunition | Arrow speed | Full draw | Item shop price |", "|---|---|---:|---:|---:|"] + BOW_ROWS + [""]
     return head + "\n".join(body)
 
 

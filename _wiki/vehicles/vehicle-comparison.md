@@ -11,7 +11,7 @@ description: "Every Wardogs vehicle's seats, price, health, speed, fuel, weapons
 |---|---|
 | **General** | |
 | Type | Reference |
-| Vehicles compared | 25 |
+| Vehicles compared | 26 |
 | Tables | Main comparison, hits to destroy, value for money |
 {: .wiki-infobox }
 
@@ -37,6 +37,7 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 | [AH-6R [Rockets]](ah-6r-rockets.md) | Combat helicopter (rockets) | 2 | 18,800 | 1 | 400 | 350 | 105 | B-13 Rocket Pods (two, 122 mm) | Flares, 2 | 7.5% | 722 |
 | [Z20 Lakota](z20-lakota.md) | Transport helicopter | 13 | 7,400 | 0 | 600 | 445 | 120 | None | Flares, 2 | 5% | 9,500 |
 | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Combat helicopter | 13 | 15,000 | 0 | 600 | 445 | 120 | M134D Minigun (two) | Flares, 2 | 5% | 9,500 |
+| [Huey](huey.md) | Helicopter (not in the shop) | Not stored | Not sold | Not applicable | Not stored | Not stored | Not stored | Mounted machine gun (second variant, no stats) | Not stored | Not stored | Not stored |
 | [SPH-2](sph-2.md) | Artillery armored vehicle | 3 | 8,000 | 1 | 650 | 65 | 105 | L52 Cannon (155 mm artillery) | None stated | 0% | - |
 | [L2A6](l2a6.md) | Heavy armored vehicle | 3 | 22,000 | 1 | 800 | 65 | 110 | L55A1 Cannon (120×570 mm), MG3A1 Coaxial Gun (.308 Win), M249 Machine Gun (mounted) | Smoke, count not stated | 0% | - |
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | Anti-air armored vehicle | 2 | 14,000 | 1 | 800 | 65 | 110 | Duel 35 mm Oerlikon GDF cannons (twin) | Smoke, 1 | 0% | - |
@@ -57,7 +58,7 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | SUV with machine gun | 5 | 7,800 | 0 | 500 | 129 | 60 | M2 Browning Machine Gun (ring turret) | None stated | 4.5% | - |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | Airplane | 2 | Not sold | Not applicable | 150 at start | Not stored | Not stated | None | Flares, 3 | 7.5% | 10,000 |
 
-Unlock levels and prices are the shop values. The M113 APC SV and the fixed-wing airplane have no shop listing in the data. The SPH-2 article gives no countermeasure for its variant, and the Kodiak family, Humvee family, Ural family, Wolf-110 family, Bobcat and Dune Buggy have none listed.
+Unlock levels and prices are the shop values. The M113 APC SV, the fixed-wing airplane and the Huey have no shop listing in the data, and the Huey has no stored stats at all, so it is left out of the hits-to-destroy and value tables. The SPH-2 article gives no countermeasure for its variant, and the Kodiak family, Humvee family, Ural family, Wolf-110 family, Bobcat and Dune Buggy have none listed.
 
 ## Hits to destroy
 

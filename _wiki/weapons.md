@@ -8,7 +8,7 @@ description: "Every player weapon, the ammunition they use and the attachments t
 
 # Weapons
 
-Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle and launcher in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
+Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
 
 ## Assault rifles
 
@@ -86,3 +86,9 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | [MAAWS](weapons/maaws.md) | 230 m/s | 400 m | 100 rounds/min | None, the chamber holds 1 (84mm) | 2400 |
 | [MGL-40](weapons/mgl-40.md) | 75 m/s | 400 m | 75 rounds/min | MMGL Internal Mag (6 rounds) | 7500 |
 | [RPG-7](weapons/rpg-7.md) | 100 m/s | 300 m | 100 rounds/min | None, the chamber holds 1 (93mm) | 1800 |
+
+## Bows
+
+| Weapon | Ammunition | Arrow speed | Full draw | Item shop price |
+|---|---|---:|---:|---:|
+| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | 160 m/s | 1.4 s | 1350 |

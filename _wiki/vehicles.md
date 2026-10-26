@@ -22,6 +22,7 @@ The numbers come from the data pages and are shown as stored. The data does not 
 | [AH-6R [Rockets]](vehicles/ah-6r-rockets.md) | Combat helicopter (rockets) | 2 | 18,800 | 400 | 350 | 7.5% |
 | [Z20 Lakota](vehicles/z20-lakota.md) | Transport helicopter | 13 | 7,400 | 600 | 445 | 5% |
 | [Z20 Lakota [Miniguns]](vehicles/z20-lakota-miniguns.md) | Combat helicopter | 13 | 15,000 | 600 | 445 | 5% |
+| [Huey](vehicles/huey.md) | Helicopter (not in the shop) | Not stored | Not sold | Not stored | Not stored | Not stored |
 
 ## Armored vehicles
 

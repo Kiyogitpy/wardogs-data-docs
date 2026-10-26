@@ -42,7 +42,7 @@ The Z20 Lakota [Miniguns] fires 1,500 rounds/min out to 1,500 m, with 150 starti
 | [MG Nest](../building/mg-nest.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey and the airplane | An emplacement. Its weapon data has this lock-on block, but how a player-manned gun uses it is not shown in the data. |
 | [Vanguard CIWS](../building/vanguard-ciws.md) | Not stated | Not stated | The building guide says its target list is air vehicles only | The Vanguard page gives no lock-on timings. |
 
-Sources: the articles in the table, and [Building a Base](building-guide.md). The Huey is on the Talon and MG Nest lists. It has no article in this wiki.
+Sources: the articles in the table, and [Building a Base](building-guide.md). The Huey is on the Talon and MG Nest lists. See the [Huey](../vehicles/huey.md) article.
 
 **Hits to destroy with explosives.** These counts are blasts inside the inner radius, worked out from the damage rules. They are not timed in play, and they assume full health with no repair. Source: [Anti-Vehicle Guide](anti-vehicle-guide.md#helicopters).
 
@@ -149,7 +149,7 @@ The MH-6 has no row in the Pilot tree. The vehicle vendor lists different unlock
 | Destroyed | Base cash |
 |---|---:|
 | MH-6 (Little Bird) | 800 |
-| Huey (in the reward table, not sold in any shop) | 1,200 |
+| [Huey](../vehicles/huey.md) (in the reward table, not sold in any shop) | 1,200 |
 | Havoc attack helicopter | 6,000 |
 
 The reward table lists no destroy payout for the Z20 Lakota. Source: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The Pilot page says most events give role XP equal to their base value.

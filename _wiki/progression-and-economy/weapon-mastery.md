@@ -55,7 +55,7 @@ These lists differ from the weapon classes used elsewhere on this wiki. The Gali
 | Vehicle type | Vehicles on the screen |
 |---|---|
 | Land Vehicle (5) | [SPH-2](../vehicles/sph-2.md) (artillery), [L2A6](../vehicles/l2a6.md) (heavy tank), [Kodiak](../vehicles/kodiak.md), [Bobcat](../vehicles/bobcat.md), Lonestar spawn vehicle |
-| Air Vehicle (3) | [Havoc](../vehicles/havoc.md), [MH-6](../vehicles/mh-6.md) (Little Bird), and a third helicopter that has no wiki article yet |
+| Air Vehicle (3) | [Havoc](../vehicles/havoc.md), [MH-6](../vehicles/mh-6.md) (Little Bird), and the [Huey](../vehicles/huey.md) |
 
 The Season 1 skin table names three weapons differently from this wiki. Its AX50 row is the AMR 50, its MP9 row is the AMP-9, and its Glock 17 row is the GGX 17. The mapping here is by item ID.
 
