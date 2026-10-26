@@ -36,9 +36,56 @@ Zeroing range is the distance the sight is set for, bounded by the minimum and m
 
 ### What the zoom does to the view
 
-The ADS zoom narrows the camera's view by the sight's magnification. At full aim the on-screen field of view is your base field of view divided by the magnification, so a 2.5x sight on a 90 degree base gives 36 degrees. This is a plain division of the angle. The base is your Field of view setting in the default Affected aiming mode, or 72 degrees in Independent mode (see [Controls and settings](../game-mechanics/controls-and-settings.md)). The Affected mode follows your setting only at low magnification: the setting's own description says "below 3.25x". A sight of 3.25x or more uses 72 degrees as its base in both modes, so a 4x sight gives 18 degrees whatever your Field of view setting is. The 3.25 value is the larger of two numbers: the weapon's aiming magnification, and the highest magnification the sight can reach. They differ only for variable-zoom scopes. The Leatherwood ART II, for example, is listed at 3x but zooms up to 9x, so it counts as 9x for this test and uses 72 degrees even when it is turned down to 3x. The Frontier 2.5x-10x Precision Scope counts as 10x. A sight that cannot zoom just uses its fixed magnification (read from the game's code, not tested on screen). Iron sights count as a magnification of 1.2 plus the focus bonus.
+The ADS zoom narrows the camera's view by the sight's magnification. At full aim the on-screen field of view is your base field of view divided by the magnification, so a 2.5x sight on a 90 degree base gives 36 degrees. This is a plain division of the angle. The base is your Field of view setting in the default Affected aiming mode, or 72 degrees in Independent mode (see [Controls and settings](../game-mechanics/controls-and-settings.md)). The Affected mode follows your setting only at low magnification: the setting's own description says "below 3.25x". A sight of 3.25x or more uses 72 degrees as its base in both modes, so a 4x sight gives 18 degrees whatever your Field of view setting is. The 3.25 value is the larger of two numbers: the weapon's aiming magnification, and the highest magnification the sight can reach. They differ only for variable-zoom scopes. The Leatherwood ART II, for example, is listed at 3x but zooms up to 9x, so it counts as 9x for this test and uses 72 degrees even when it is turned down to 3x. The Frontier 2.5x-10x Precision Scope counts as 10x. A sight that cannot zoom just uses its own fixed magnification: the minimum and maximum zoom some of these sights still carry in their data (Spitfire 3X, Tricon, CQ-2x, 3x Tactical Prism, 4x Combat Prism, PGO-7, the 6x scopes and the PU 91/30) are ignored for the test (read from the game's code, not tested on screen). Iron sights count as a magnification of 1.2 plus the focus bonus.
 
 The view narrows along the weapon's aiming curve and eases toward its target at the weapon's FOV interpolation speed, which is 20 per second unless the weapon sets its own. For weapons with that option set, the aimed view is never wider than the view you had before aiming; the data does not show which weapons set it. These rules come from reading the camera code and were not checked on screen.
+
+### Effective magnification
+
+The magnification number in the table above is not what you see on screen. The game narrows the view by dividing the viewing angle, not the size of the picture, so a sight's real picture magnification against the normal view is the tangent of half the normal angle divided by the tangent of half the aimed angle. The aimed angle is the starting angle divided by the sight's magnification, and the starting angle is your Field of view setting for low magnification sights but a fixed 72 degrees for sights of 3.25x and up. A 4x scope therefore aims at 72 / 4 = 18 degrees, which against a 90 degree normal view is about 6.3 times the size, not 4.
+
+The table below uses the default settings: Field of view 90 and the Affected aiming mode. Variable zoom scopes are listed at both ends of their range. The combo sights are listed in both modes. A combo sight keeps the 72 degree start in its 1.2x reflex mode, so its reflex view is 60 degrees rather than 75. A scope that can zoom starts from 72 degrees across its whole range, even at its lowest zoom. The Leatherwood ART II at 3x is an example. These figures are derived from the camera code, not measured on screen. They hold at full aim, with no focus bonus, and the Independent aiming mode would put every sight on 72 degrees.
+
+| Sight | Magnification used | Starting angle (degrees) | Aimed view (degrees) | Effective magnification |
+|---|---:|---:|---:|---:|
+| 1x-6x LPVO Short Dot (highest zoom) | 6 | 72 | 12 | 9.51 |
+| 1x-6x LPVO Short Dot (lowest zoom) | 3 | 72 | 24 | 4.7 |
+| 2.5x Combat Optic | 2.5 | 90 | 36 | 3.08 |
+| 3-6x Scope (highest zoom) | 6 | 72 | 12 | 9.51 |
+| 3-6x Scope (lowest zoom) | 3 | 72 | 24 | 4.7 |
+| 3x Tactical Prism Scope | 3 | 90 | 30 | 3.73 |
+| 4x Combat Prism Scope with Reflex (reflex mode) | 1.2 | 72 | 60 | 1.73 |
+| 4x Combat Prism Scope with Reflex (scope mode) | 4 | 72 | 18 | 6.31 |
+| 4x Elcan Spectr (reflex mode) | 1.2 | 72 | 60 | 1.73 |
+| 4x Elcan Spectr (scope mode) | 4 | 72 | 18 | 6.31 |
+| 4x Hybrid | 4 | 72 | 18 | 6.31 |
+| 6-10x Scope MOA (highest zoom) | 10 | 72 | 7.2 | 15.89 |
+| 6-10x Scope MOA (lowest zoom) | 6 | 72 | 12 | 9.51 |
+| 6-10x Scope MRAD (highest zoom) | 10 | 72 | 7.2 | 15.89 |
+| 6-10x Scope MRAD (lowest zoom) | 6 | 72 | 12 | 9.51 |
+| 6x Marksman Scope + Reflex (reflex mode) | 1.2 | 72 | 60 | 1.73 |
+| 6x Marksman Scope + Reflex (scope mode) | 6 | 72 | 12 | 9.51 |
+| 6x Precision Rifle Scope | 6 | 72 | 12 | 9.51 |
+| CantedIrons | 2 | 90 | 45 | 2.41 |
+| CGM4 Scope | 1.2 | 90 | 75 | 1.3 |
+| Compact P-1 Red Dot | 1.2 | 90 | 75 | 1.3 |
+| Compact T-2 Red Dot | 1.2 | 90 | 75 | 1.3 |
+| CQ-2x Prism Combat Scope | 2 | 90 | 45 | 2.41 |
+| Four Reticle Reflex | 1.2 | 90 | 75 | 1.3 |
+| Frontier 2.5x-10x Precision Scope (highest zoom) | 10 | 72 | 7.2 | 15.89 |
+| Frontier 2.5x-10x Precision Scope (lowest zoom) | 2.5 | 72 | 28.8 | 3.89 |
+| Holographic Sight | 1.2 | 90 | 75 | 1.3 |
+| Kobra Reflex | 1.2 | 90 | 75 | 1.3 |
+| Leatherwood ART II (highest zoom) | 9 | 72 | 8 | 14.3 |
+| Leatherwood ART II (lowest zoom) | 3 | 72 | 24 | 4.7 |
+| Mini Reflex Sight | 1.2 | 90 | 75 | 1.3 |
+| MMGL Sight | 1.2 | 90 | 75 | 1.3 |
+| OKP 7 Reflex | 1.2 | 90 | 75 | 1.3 |
+| PGO-7 | 2.8 | 90 | 32.1 | 3.47 |
+| PU 91/30 Scope | 3.5 | 72 | 20.6 | 5.51 |
+| Spitfire 3X | 3 | 90 | 30 | 3.73 |
+| Tricon 1.5x Compact Prism Scope | 1.5 | 90 | 60 | 1.73 |
+| Vektor Frenix-X Micro Reflex Sight | 1.2 | 90 | 75 | 1.3 |
 
 ## Parts
 

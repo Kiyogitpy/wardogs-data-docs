@@ -170,7 +170,7 @@ Two different gamepad curve settings exist in the data: the look acceleration cu
 
 ### Field of view and view model
 
-The character's first-person field of view is set to 106 in the pawn data, while the Field of view setting below defaults to 90. Which one applies in play was not checked, because the game was not run.
+The character's first-person camera is set to a field of view of 106 in its data, while the Field of view setting below defaults to 90. The game copies the setting onto the camera when it applies the player's field of view, so the 90 (or whatever the slider says) is the normal view you see and the 106 is only the asset's starting value (derived from the camera code, not checked on screen). The Third-person field of view setting is used the same way in vehicles.
 
 | Setting | Default | Range or options |
 |---|---|---|
@@ -209,7 +209,7 @@ Audio and language settings are covered on the [Settings and Input Actions](../.
 ## Tips that follow from the settings
 
 - Sprint is set to Toggle by default, so Left Shift switches sprinting on and off rather than being held.
-- Aim down sight (FOV) is set to Affected by default. With Affected, the aimed field of view starts from your field of view setting, so changing the slider also changes the scope view. With Independent, the aimed field of view always starts from a fixed 72 degrees, and the slider no longer changes the scope view. The aimed view is that base divided by the sight's magnification, so a 2.5x sight gives 36 degrees from the default 90. Even in Affected mode, a sight of 3.25x or more also starts from 72 degrees, as the setting's own description says ("below 3.25x"), so a 4x sight gives 18 degrees. For a variable-zoom scope the test uses its highest magnification. These rules come from the camera code and were not checked on screen; that the 72 degree rule belongs to this setting is inferred from the code, not traced. See [Sights and optics](../attachments/sights-and-optics.md).
+- Aim down sight (FOV) is set to Affected by default. With Affected, the aimed field of view starts from your field of view setting, so changing the slider also changes the scope view. With Independent, the aimed field of view always starts from a fixed 72 degrees, and the slider no longer changes the scope view. The aimed view is that base divided by the sight's magnification, so a 2.5x sight gives 36 degrees from the default 90. Even in Affected mode, a sight of 3.25x or more also starts from 72 degrees, as the setting's own description says ("below 3.25x"), so a 4x sight gives 18 degrees. For a variable-zoom scope the test uses its highest magnification. Because the angle is divided, the real picture magnification against the normal view is the tangent of half the normal angle divided by the tangent of half the aimed angle: a 4x sight on the default 90 gives 18 degrees, which is about 6.3 times the normal size, and a 2.5x sight gives 36 degrees, about 3.1 times. The sights page lists this effective magnification for every sight, derived from the camera code and not measured on screen. These rules come from the camera code and were not checked on screen; that the 72 degree rule belongs to this setting is inferred from the code, not traced. See [Sights and optics](../attachments/sights-and-optics.md).
 - **Chat distances.** Proximity chat reaches 1,500 and team chat 10,000 (units not stated in the data). The chat history keeps the last 250 messages.
 
 ## See also
