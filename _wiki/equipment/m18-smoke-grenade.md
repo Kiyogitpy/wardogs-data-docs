@@ -9,6 +9,7 @@ description: "The M18 Smoke Grenade in white and black: a thrown smoke cloud tha
 
 | M18 Smoke Grenade | |
 |---|---|
+| ![M18 Smoke Grenade](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_Smoke_Textured_Black_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Tactical, thrown smoke (quick slot) |
 | Variants | M18 Smoke Grenade: White, M18 Smoke Grenade: Black |

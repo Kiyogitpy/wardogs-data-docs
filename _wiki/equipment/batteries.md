@@ -9,6 +9,7 @@ description: "The Battery and High Capacity Battery: the power for the drills an
 
 | Batteries | |
 |---|---|
+| ![Batteries](../../assets/img/icons/utility-3d/t_ui_icon_drill_battery.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Resource, power cell |
 | Used by | Light and Heavy Drills, Defibrillator |

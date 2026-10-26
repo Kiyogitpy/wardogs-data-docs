@@ -10,6 +10,7 @@ description: "A small wire obstacle built with any hammer from 7 Build Supplies,
 
 | Barbed Wire | |
 |---|---|
+| ![Barbed Wire](../../assets/img/icons/other-buildables-barbedwire/T_UI_Buildable_BarbedWire.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Cover and obstruction |
 | Hammer | Small, Medium, Large |

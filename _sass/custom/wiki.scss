@@ -108,6 +108,39 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   }
 }
 
+// Item icon: first row of an infobox (`| ![Name](icon.png){: .wiki-infobox-img } | |`). The row is
+// shown as one centred block on a dark plate; the empty second cell is hidden.
+.main-content table.wiki-infobox tr:has(img.wiki-infobox-img) {
+  display: block;
+  background: $wiki-band-deep;
+  border-bottom: 1px solid $wiki-edge;
+  text-align: center;
+
+  td { display: block; border: 0; padding: 0.7rem 0.9rem; background: none; }
+  td:last-child { display: none; }
+}
+.main-content img.wiki-infobox-img {
+  display: inline-block;
+  max-width: min(220px, 100%);
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+}
+
+// 48px icon in the first column of a part or vehicle table (`{: .wiki-icon }`).
+.main-content img.wiki-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  padding: 2px;
+  background: $wiki-band-deep;
+  border: 1px solid $wiki-edge;
+  border-radius: $radius-small;
+}
+.main-content td:has(> img.wiki-icon) { width: 3.5rem; padding-top: 0.3rem; padding-bottom: 0.3rem; }
+
 // Sortable table headers (assets/js/wiki.js).
 .wiki .wiki-sort {
   all: unset;

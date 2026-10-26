@@ -9,6 +9,7 @@ description: "The basic healing item: 35 HP per use on yourself or a teammate, i
 
 | Bandage | |
 |---|---|
+| ![Bandage](../../assets/img/icons/utility-3d/T_UI_Vendor_Bandage.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, quick slot |
 | Carry limit | 5 |

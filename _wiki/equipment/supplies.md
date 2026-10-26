@@ -9,6 +9,7 @@ description: "Ammo, Fuel, Mechanical and Build Supplies: the resources that rear
 
 | Supplies | |
 |---|---|
+| ![Supplies](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_Munition_Supplies_Textured_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Logistics, resource |
 | Stack | 50 per item |

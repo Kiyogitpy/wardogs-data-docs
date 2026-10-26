@@ -9,6 +9,7 @@ description: "The AMP-9 submachine gun: fire rate, damage by body part, range fa
 
 | AMP-9 | |
 |---|---|
+| ![AMP-9](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_014.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Submachine gun |
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |

@@ -9,6 +9,7 @@ description: "Five-seat Humvee with a ring-mounted M249 machine gun, sold for 8,
 
 | Humvee [M249] | |
 |---|---|
+| ![Humvee M249](../../assets/img/icons/vehicles-3d/T_UI_Icon_Vehicle_Humvee_Gun.png){: .wiki-infobox-img } | |
 | Type | Light armored SUV with machine gun |
 | Seats | 5 |
 | Price | 8,500 cash |

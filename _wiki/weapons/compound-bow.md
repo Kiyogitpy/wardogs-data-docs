@@ -9,6 +9,7 @@ description: "The Compound Bow: a draw-and-release weapon with Broadhead and Ram
 
 | Compound Bow | |
 |---|---|
+| ![Compound Bow](../../assets/img/icons/weapons-3d-session/T_UI_Weapon_Bow_BC.png){: .wiki-infobox-img } | |
 | **General** | |
 | Class | Bow |
 | Ammunition | Broadhead Arrow, Rambo Explosive Arrow |

@@ -9,6 +9,7 @@ description: "Third vest tier: 50% damage reduction on the torso, 250 durability
 
 | Level 3 Armor | |
 |---|---|
+| ![Level 3 Armor](../../assets/img/icons/vendor-gear/T_UI_Vendor_Armor_003a.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Vest |
 | Slot | Armor |

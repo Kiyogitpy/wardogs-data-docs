@@ -9,6 +9,7 @@ description: "Vehicle-use helmet: 55% reduction for the head and neck, removes s
 
 | Tank Helmet | |
 |---|---|
+| ![Tank Helmet](../../assets/img/icons/vendor-gear/T_UI_Gear_TankHelmet.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |

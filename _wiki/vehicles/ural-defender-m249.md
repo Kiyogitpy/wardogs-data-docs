@@ -9,6 +9,7 @@ description: "Armored Ural Defender with a mounted M249 machine gun, sold for 9,
 
 | Ural Defender [M249] | |
 |---|---|
+| ![Ural Defender M249](../../assets/img/icons/vehicles-3d/T_UI_Vendor_URAL_3.png){: .wiki-infobox-img } | |
 | Type | Heavy truck with machine gun |
 | Seats | 3 on the stats sheet (5 seat setups in the seat data) |
 | Price | 9,500 cash |

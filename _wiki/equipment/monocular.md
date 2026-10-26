@@ -9,6 +9,7 @@ description: "The Monocular: a medium, variable magnification recon optic for sp
 
 | Monocular | |
 |---|---|
+| ![Monocular](../../assets/img/icons/utility-3d/T_UI_Vendor_Monocle_Temp.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles |

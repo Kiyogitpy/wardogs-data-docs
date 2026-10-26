@@ -9,6 +9,7 @@ description: "A non-healing item that gives unlimited tactical sprint for 60 s a
 
 | Adrenaline Pen | |
 |---|---|
+| ![Adrenaline Pen](../../assets/img/icons/utility-3d/T_UI_Item_Stim_BC.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, quick slot |
 | Carry limit | 3 |

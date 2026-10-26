@@ -10,6 +10,7 @@ description: "A large closeable gate built with a Medium or Large Hammer from 20
 
 | Gate | |
 |---|---|
+| ![Gate](../../assets/img/icons/other-buildables-hblock-gate-6x2/t_ui_icon_hesco_gate.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Closeable gate |
 | Hammer | Medium, Large |

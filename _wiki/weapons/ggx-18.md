@@ -9,6 +9,7 @@ description: "The GGX 18 pistol: fire rate, damage by body part, range falloff, 
 
 | GGX 18 | |
 |---|---|
+| ![GGX 18](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_032.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Pistol |
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |

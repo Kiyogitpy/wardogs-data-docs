@@ -43,64 +43,64 @@ Each device also stores a muzzle flash size and a sound cue. Only the stat chang
 
 Muzzle devices fit through a barrel, not straight onto the weapon. Fits lists the weapons whose barrel takes the device. Prices come from the Weapon Shop data.
 
-| Part | Fits | Shop price | Main effect |
-|---|---|---:|---|
-| .30 Cal SS Phosphate Muzzle Brake | M14 | 950 | vertical recoil x0.85; horizontal recoil x1.05; spread x0.88; aim time x1.05 |
-| .30 Cal Steel Black Flash Hider | M14 | 730 | aim time x0.97 |
-| .45 ACP Pistol Compensator | M1911 | 990 | vertical recoil x0.86; horizontal recoil x0.98; spread x0.98; aim time x1.03 |
-| .50 Cal Heavy Suppressor | AMR 50 | 1250 | vertical recoil x0.9; horizontal recoil x0.94; spread x0.9; aim time x1.12 |
-| 12 Gauge Suppressor | M500 | Not in shop data | vertical recoil x0.88; horizontal recoil x0.95; spread x0.92; aim time x1.1 |
-| 3 Prong Flash Hider | Galil, M249 SAW, M4, T-21 | 820 | spread x0.99; aim time x0.98 |
-| 3-Chamber Brake | Galil, M249 SAW, M4, T-21 | 1000 | vertical recoil x0.8; horizontal recoil x0.98; spread x0.96; aim time x1.06 |
-| AMP-9 9x19 Suppressor | AMP-9 | 1110 | vertical recoil x0.94; horizontal recoil x0.95; spread x0.92; aim time x1.08 |
-| AMP-9 Tactical Flash Hider | AMP-9 | 550 | spread x0.99; aim time x0.98 |
-| AMR 50 Cal Muzzle Brake | AMR 50 | 1380 | vertical recoil x0.8; horizontal recoil x0.92; spread x0.99; aim time x1.05 |
-| AR Multi-Caliber Suppressor | FAL, Galil, M249 SAW, M4, T-21 | 1200 | vertical recoil x0.88; horizontal recoil x0.93; spread x0.9; aim time x1.1 |
-| Ballista Brake | AK74, AMP-9, GGX 17, GGX 18, Galil, M4, MP5, PP-19 Bizon, PP-19 Vityaz, T-21 | 380 | vertical recoil x1.02; horizontal recoil x0.8; spread x0.95; aim time x1.04 |
-| Birdcage Flash Hider | AK74 | 600 | spread x0.99; aim time x0.98 |
-| BMR-308 Flash Hider | BMR-308 | 930 | spread x0.99; aim time x0.98 |
-| BMR-308 Suppressor | BMR-308 | 1080 | vertical recoil x0.95; horizontal recoil x0.96; spread x0.92; aim time x1.08 |
-| Clutch Lok Muzzle Brake | TCX-SPR | 1100 | vertical recoil x0.9; horizontal recoil x1.05; spread x0.9; aim time x1.02 |
-| Constrictor Brake | BMR-308, Evo-3 Ultra, FAL, MK22, Mosin Nagant, PKM, SKS, SV98, TCX-SPR | 760 | vertical recoil x1.01; horizontal recoil x0.83; spread x0.97; aim time x1.03 |
-| CQB 74 Brake | AK74 | Not in shop data | vertical recoil x0.8; horizontal recoil x0.97; spread x0.96; aim time x1.04 |
-| Cross Rifle Muzzle Brake | TCX-SPR | 780 | vertical recoil x0.92; horizontal recoil x0.94; spread x0.9; aim time x1.08 |
-| Deadeye Flash Hider | BMR-308, Evo-3 Ultra, FAL, MK22, Mosin Nagant, PKM, SKS, SV98, SVD, Scout Rifle TD, TCX-SPR | 400 | No stat change in data |
-| DTK-1 Brake | SKS | 810 | vertical recoil x0.8; horizontal recoil x0.9; spread x0.95; aim time x1.06 |
-| Dual Port Brake | AMP-9, GGX 17, GGX 18, MP5, PP-19 Bizon, PP-19 Vityaz | 720 | vertical recoil x0.82; horizontal recoil x0.96; spread x0.95; aim time x1.05 |
-| Eclipse Flash Hider | AMP-9, GGX 17, GGX 18, MP5, PP-19 Bizon, PP-19 Vityaz | 580 | spread x0.99; aim time x0.98 |
-| FAL Flash Hider | FAL | 1250 (hidden) | spread x0.97; aim time x0.98 |
-| Flow-Through .308 Suppressor | MK22 | 1020 | vertical recoil x0.96; horizontal recoil x0.97; spread x0.9; aim time x1.05 |
-| Full Choke | M500 | 1150 | aim time x1.02 |
-| Ghost LITE Muzzle Brake | Super-45 | 970 | vertical recoil x0.78; horizontal recoil x0.88; spread x0.98; aim time x1.04 |
-| GOL Multi-Caliber Suppressor | AMR 50, BMR-308, MK22, Mosin Nagant, SKS, SV98, SVD | Not in shop data | vertical recoil x0.84; horizontal recoil x0.9; spread x0.88; aim time x1.15 |
-| Hexagon 762 Suppressor | Mosin Nagant, PKM, SKS, SV98, SVD | Not in shop data | vertical recoil x0.82; horizontal recoil x0.9; spread x0.89; aim time x1.12 |
-| Hexagon Brake | Galil, M4, T-21 | 350 | vertical recoil x0.99; horizontal recoil x0.78; spread x0.96; aim time x1.05 |
-| Improved Cylinder Choke | M500 | 540 | aim time x1.02 |
-| M14 standard muzzle | M14 | No price in shop data | No stat change in data |
-| M500 Sabre Brake | M500 | 740 | vertical recoil x0.8; horizontal recoil x1.02; spread x0.95; aim time x1.07 |
-| MP5 Flash Hider | MP5 | 1150 (hidden) | spread x0.92; aim time x0.98 |
-| Orpheus Max Brake | M249 SAW, PKM | 980 | vertical recoil x0.74; horizontal recoil x0.9; spread x0.98; aim time x1.07 |
-| PBS-4 Suppressor | AK74 | Not in shop data | vertical recoil x0.86; horizontal recoil x0.92; spread x0.88; aim time x1.12 |
-| PP-19 Vityaz Flash Hider | PP-19 Vityaz | 750 | spread x0.99; aim time x0.98 |
-| PP-19-01 Vityaz 9x19 Suppressor | PP-19 Vityaz | 1290 | vertical recoil x0.97; horizontal recoil x0.97; spread x0.95; aim time x1.1 |
-| QD-5 Suppressor | MP5 | 1130 | vertical recoil x0.94; horizontal recoil x0.95; spread x0.9; aim time x1.08 |
-| QD-5 Suppressor | Evo-3 Ultra | No price in shop data | vertical recoil x0.94; horizontal recoil x0.95; spread x0.9; aim time x1.08 |
-| RC-556 Suppressor | Galil, M249 SAW, M4, T-21 | 1310 | vertical recoil x0.88; horizontal recoil x0.92; spread x0.88; aim time x1.12 |
-| SG Multi-Caliber Suppressor | AMP-9, GGX 17, GGX 18, M1911, MP5, PP-19 Bizon, PP-19 Vityaz, Super-45 | Not in shop data | vertical recoil x0.9; horizontal recoil x0.94; spread x0.91; aim time x1.08 |
-| Sig Default | TCX-SPR | No price in shop data | vertical recoil x0.94; horizontal recoil x0.95; spread x0.9; aim time x1.08 |
-| SL7i-BL Suppressor | Evo-3 Ultra | 1400 | vertical recoil x0.95; horizontal recoil x0.94; spread x0.9; aim time x1.1 |
-| Slicktap Brake | SKS | 940 | vertical recoil x0.8; horizontal recoil x1.03; spread x0.96; aim time x1.08 |
-| Slotted Flash Hider | PKM | 840 | spread x0.99; aim time x0.98 |
-| SRD762TI-QD | TCX-SPR | 1350 | vertical recoil x0.93; horizontal recoil x0.94; spread x0.9; aim time x1.1 |
-| SRVV Brake | Mosin Nagant, PKM, SV98, SVD | 1330 | vertical recoil x0.88; horizontal recoil x0.82; spread x0.95; aim time x1.05 |
-| STRELIX Suppressor | Scout Rifle TD | 1000 | vertical recoil x0.96; horizontal recoil x0.96; spread x0.93; aim time x1.04 |
-| Super-45 Flash Hider | Super-45 | 860 | spread x0.99; aim time x0.98 |
-| Suppressor T8L1 Scout | FAL | 1000 (hidden) | vertical recoil x0.96; horizontal recoil x0.96; spread x0.93; aim time x1.07 |
-| SVD 7.62x54R Brake | SVD | 650 | vertical recoil x0.82; horizontal recoil x0.98; spread x0.97; aim time x1.03 |
-| TGP-A Suppressor 5.45 | AK74 | Not in shop data | vertical recoil x0.9; horizontal recoil x0.94; spread x0.91; aim time x1.1 |
-| Three Port Brake | BMR-308, Evo-3 Ultra, FAL, MK22, TCX-SPR | 1040 | vertical recoil x0.78; horizontal recoil x0.96; spread x0.96; aim time x1.06 |
-| TopComp Brake | Galil, M249 SAW, M4, T-21 | 770 | vertical recoil x0.82; horizontal recoil x0.98; spread x0.96; aim time x1.05 |
-| Tread Brake | M249 SAW | 620 | vertical recoil x0.86; horizontal recoil x0.98; spread x0.97; aim time x1.03 |
+| | Part | Fits | Shop price | Main effect |
+|---|---|---|---:|---|
+| ![.30 Cal SS Phosphate Muzzle Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_071.png){: .wiki-icon } | .30 Cal SS Phosphate Muzzle Brake | M14 | 950 | vertical recoil x0.85; horizontal recoil x1.05; spread x0.88; aim time x1.05 |
+| ![.30 Cal Steel Black Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_072.png){: .wiki-icon } | .30 Cal Steel Black Flash Hider | M14 | 730 | aim time x0.97 |
+| ![.45 ACP Pistol Compensator](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_050.png){: .wiki-icon } | .45 ACP Pistol Compensator | M1911 | 990 | vertical recoil x0.86; horizontal recoil x0.98; spread x0.98; aim time x1.03 |
+| ![.50 Cal Heavy Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_049.png){: .wiki-icon } | .50 Cal Heavy Suppressor | AMR 50 | 1250 | vertical recoil x0.9; horizontal recoil x0.94; spread x0.9; aim time x1.12 |
+| ![12 Gauge Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_006.png){: .wiki-icon } | 12 Gauge Suppressor | M500 | Not in shop data | vertical recoil x0.88; horizontal recoil x0.95; spread x0.92; aim time x1.1 |
+| ![3 Prong Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MZL_013.png){: .wiki-icon } | 3 Prong Flash Hider | Galil, M249 SAW, M4, T-21 | 820 | spread x0.99; aim time x0.98 |
+| ![3-Chamber Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_027.png){: .wiki-icon } | 3-Chamber Brake | Galil, M249 SAW, M4, T-21 | 1000 | vertical recoil x0.8; horizontal recoil x0.98; spread x0.96; aim time x1.06 |
+| ![AMP-9 9x19 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_051.png){: .wiki-icon } | AMP-9 9x19 Suppressor | AMP-9 | 1110 | vertical recoil x0.94; horizontal recoil x0.95; spread x0.92; aim time x1.08 |
+| ![AMP-9 Tactical Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_052.png){: .wiki-icon } | AMP-9 Tactical Flash Hider | AMP-9 | 550 | spread x0.99; aim time x0.98 |
+| ![AMR 50 Cal Muzzle Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_048.png){: .wiki-icon } | AMR 50 Cal Muzzle Brake | AMR 50 | 1380 | vertical recoil x0.8; horizontal recoil x0.92; spread x0.99; aim time x1.05 |
+| ![AR Multi-Caliber Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_007.png){: .wiki-icon } | AR Multi-Caliber Suppressor | FAL, Galil, M249 SAW, M4, T-21 | 1200 | vertical recoil x0.88; horizontal recoil x0.93; spread x0.9; aim time x1.1 |
+| ![Ballista Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_020.png){: .wiki-icon } | Ballista Brake | AK74, AMP-9, GGX 17, GGX 18, Galil, M4, MP5, PP-19 Bizon, PP-19 Vityaz, T-21 | 380 | vertical recoil x1.02; horizontal recoil x0.8; spread x0.95; aim time x1.04 |
+| ![Birdcage Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_039.png){: .wiki-icon } | Birdcage Flash Hider | AK74 | 600 | spread x0.99; aim time x0.98 |
+| ![BMR-308 Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_055.png){: .wiki-icon } | BMR-308 Flash Hider | BMR-308 | 930 | spread x0.99; aim time x0.98 |
+| ![BMR-308 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_056.png){: .wiki-icon } | BMR-308 Suppressor | BMR-308 | 1080 | vertical recoil x0.95; horizontal recoil x0.96; spread x0.92; aim time x1.08 |
+| ![Clutch Lok Muzzle Brake](../../assets/img/icons/vendor-muzzles/T_UI_Weapons_MUZL_068.png){: .wiki-icon } | Clutch Lok Muzzle Brake | TCX-SPR | 1100 | vertical recoil x0.9; horizontal recoil x1.05; spread x0.9; aim time x1.02 |
+| ![Constrictor Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_022.png){: .wiki-icon } | Constrictor Brake | BMR-308, Evo-3 Ultra, FAL, MK22, Mosin Nagant, PKM, SKS, SV98, TCX-SPR | 760 | vertical recoil x1.01; horizontal recoil x0.83; spread x0.97; aim time x1.03 |
+| ![CQB 74 Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_015.png){: .wiki-icon } | CQB 74 Brake | AK74 | Not in shop data | vertical recoil x0.8; horizontal recoil x0.97; spread x0.96; aim time x1.04 |
+| ![Cross Rifle Muzzle Brake](../../assets/img/icons/vendor-muzzles/T_UI_Weapons_MUZL_067.png){: .wiki-icon } | Cross Rifle Muzzle Brake | TCX-SPR | 780 | vertical recoil x0.92; horizontal recoil x0.94; spread x0.9; aim time x1.08 |
+| ![Deadeye Flash Hider](../../assets/img/icons/attachments-3d/T_UI_MUZL_037.png){: .wiki-icon } | Deadeye Flash Hider | BMR-308, Evo-3 Ultra, FAL, MK22, Mosin Nagant, PKM, SKS, SV98, SVD, Scout Rifle TD, TCX-SPR | 400 | No stat change in data |
+| ![DTK-1 Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_028.png){: .wiki-icon } | DTK-1 Brake | SKS | 810 | vertical recoil x0.8; horizontal recoil x0.9; spread x0.95; aim time x1.06 |
+| ![Dual Port Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_019.png){: .wiki-icon } | Dual Port Brake | AMP-9, GGX 17, GGX 18, MP5, PP-19 Bizon, PP-19 Vityaz | 720 | vertical recoil x0.82; horizontal recoil x0.96; spread x0.95; aim time x1.05 |
+| ![Eclipse Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_037.png){: .wiki-icon } | Eclipse Flash Hider | AMP-9, GGX 17, GGX 18, MP5, PP-19 Bizon, PP-19 Vityaz | 580 | spread x0.99; aim time x0.98 |
+| ![FAL Flash Hider](../../assets/img/icons/attachments-3d/T_UI_MUZL_037.png){: .wiki-icon } | FAL Flash Hider | FAL | 1250 (hidden) | spread x0.97; aim time x0.98 |
+| ![Flow-Through .308 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_057.png){: .wiki-icon } | Flow-Through .308 Suppressor | MK22 | 1020 | vertical recoil x0.96; horizontal recoil x0.97; spread x0.9; aim time x1.05 |
+| ![Full Choke](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_045.png){: .wiki-icon } | Full Choke | M500 | 1150 | aim time x1.02 |
+| ![Ghost LITE Muzzle Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_047.png){: .wiki-icon } | Ghost LITE Muzzle Brake | Super-45 | 970 | vertical recoil x0.78; horizontal recoil x0.88; spread x0.98; aim time x1.04 |
+| ![GOL Multi-Caliber Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_004.png){: .wiki-icon } | GOL Multi-Caliber Suppressor | AMR 50, BMR-308, MK22, Mosin Nagant, SKS, SV98, SVD | Not in shop data | vertical recoil x0.84; horizontal recoil x0.9; spread x0.88; aim time x1.15 |
+| ![Hexagon 762 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_008.png){: .wiki-icon } | Hexagon 762 Suppressor | Mosin Nagant, PKM, SKS, SV98, SVD | Not in shop data | vertical recoil x0.82; horizontal recoil x0.9; spread x0.89; aim time x1.12 |
+| ![Hexagon Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_024.png){: .wiki-icon } | Hexagon Brake | Galil, M4, T-21 | 350 | vertical recoil x0.99; horizontal recoil x0.78; spread x0.96; aim time x1.05 |
+| ![Improved Cylinder Choke](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_044.png){: .wiki-icon } | Improved Cylinder Choke | M500 | 540 | aim time x1.02 |
+|  | M14 standard muzzle | M14 | No price in shop data | No stat change in data |
+| ![M500 Sabre Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_031.png){: .wiki-icon } | M500 Sabre Brake | M500 | 740 | vertical recoil x0.8; horizontal recoil x1.02; spread x0.95; aim time x1.07 |
+| ![MP5 Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_037.png){: .wiki-icon } | MP5 Flash Hider | MP5 | 1150 (hidden) | spread x0.92; aim time x0.98 |
+| ![Orpheus Max Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_029.png){: .wiki-icon } | Orpheus Max Brake | M249 SAW, PKM | 980 | vertical recoil x0.74; horizontal recoil x0.9; spread x0.98; aim time x1.07 |
+| ![PBS-4 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_009.png){: .wiki-icon } | PBS-4 Suppressor | AK74 | Not in shop data | vertical recoil x0.86; horizontal recoil x0.92; spread x0.88; aim time x1.12 |
+| ![PP-19 Vityaz Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_054.png){: .wiki-icon } | PP-19 Vityaz Flash Hider | PP-19 Vityaz | 750 | spread x0.99; aim time x0.98 |
+| ![PP-19-01 Vityaz 9x19 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_053.png){: .wiki-icon } | PP-19-01 Vityaz 9x19 Suppressor | PP-19 Vityaz | 1290 | vertical recoil x0.97; horizontal recoil x0.97; spread x0.95; aim time x1.1 |
+| ![QD-5 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_058.png){: .wiki-icon } | QD-5 Suppressor | MP5 | 1130 | vertical recoil x0.94; horizontal recoil x0.95; spread x0.9; aim time x1.08 |
+| ![QD-5 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_058.png){: .wiki-icon } | QD-5 Suppressor | Evo-3 Ultra | No price in shop data | vertical recoil x0.94; horizontal recoil x0.95; spread x0.9; aim time x1.08 |
+| ![RC-556 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_032.png){: .wiki-icon } | RC-556 Suppressor | Galil, M249 SAW, M4, T-21 | 1310 | vertical recoil x0.88; horizontal recoil x0.92; spread x0.88; aim time x1.12 |
+| ![SG Multi-Caliber Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_005.png){: .wiki-icon } | SG Multi-Caliber Suppressor | AMP-9, GGX 17, GGX 18, M1911, MP5, PP-19 Bizon, PP-19 Vityaz, Super-45 | Not in shop data | vertical recoil x0.9; horizontal recoil x0.94; spread x0.91; aim time x1.08 |
+|  | Sig Default | TCX-SPR | No price in shop data | vertical recoil x0.94; horizontal recoil x0.95; spread x0.9; aim time x1.08 |
+| ![SL7i-BL Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_058.png){: .wiki-icon } | SL7i-BL Suppressor | Evo-3 Ultra | 1400 | vertical recoil x0.95; horizontal recoil x0.94; spread x0.9; aim time x1.1 |
+| ![Slicktap Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_025.png){: .wiki-icon } | Slicktap Brake | SKS | 940 | vertical recoil x0.8; horizontal recoil x1.03; spread x0.96; aim time x1.08 |
+| ![Slotted Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_038.png){: .wiki-icon } | Slotted Flash Hider | PKM | 840 | spread x0.99; aim time x0.98 |
+| ![SRD762TI-QD](../../assets/img/icons/vendor-muzzles/T_UI_Weapons_MUZL_069.png){: .wiki-icon } | SRD762TI-QD | TCX-SPR | 1350 | vertical recoil x0.93; horizontal recoil x0.94; spread x0.9; aim time x1.1 |
+| ![SRVV Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_041.png){: .wiki-icon } | SRVV Brake | Mosin Nagant, PKM, SV98, SVD | 1330 | vertical recoil x0.88; horizontal recoil x0.82; spread x0.95; aim time x1.05 |
+| ![STRELIX Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_062.png){: .wiki-icon } | STRELIX Suppressor | Scout Rifle TD | 1000 | vertical recoil x0.96; horizontal recoil x0.96; spread x0.93; aim time x1.04 |
+| ![Super-45 Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_046.png){: .wiki-icon } | Super-45 Flash Hider | Super-45 | 860 | spread x0.99; aim time x0.98 |
+|  | Suppressor T8L1 Scout | FAL | 1000 (hidden) | vertical recoil x0.96; horizontal recoil x0.96; spread x0.93; aim time x1.07 |
+| ![SVD 7.62x54R Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_040.png){: .wiki-icon } | SVD 7.62x54R Brake | SVD | 650 | vertical recoil x0.82; horizontal recoil x0.98; spread x0.97; aim time x1.03 |
+| ![TGP-A Suppressor 5.45](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_010.png){: .wiki-icon } | TGP-A Suppressor 5.45 | AK74 | Not in shop data | vertical recoil x0.9; horizontal recoil x0.94; spread x0.91; aim time x1.1 |
+| ![Three Port Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_030.png){: .wiki-icon } | Three Port Brake | BMR-308, Evo-3 Ultra, FAL, MK22, TCX-SPR | 1040 | vertical recoil x0.78; horizontal recoil x0.96; spread x0.96; aim time x1.06 |
+| ![TopComp Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_014.png){: .wiki-icon } | TopComp Brake | Galil, M249 SAW, M4, T-21 | 770 | vertical recoil x0.82; horizontal recoil x0.98; spread x0.96; aim time x1.05 |
+| ![Tread Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_023.png){: .wiki-icon } | Tread Brake | M249 SAW | 620 | vertical recoil x0.86; horizontal recoil x0.98; spread x0.97; aim time x1.03 |
 
 ## Season 2 changes
 
@@ -110,31 +110,31 @@ New in Season 2: 9 parts: .30 Cal SS Phosphate Muzzle Brake, .30 Cal Steel Black
 
 Shop price changes (Season 1 to Season 2):
 
-| Part | Season 1 | Season 2 | Change |
-|---|---:|---:|---:|
-| .45 ACP Pistol Compensator | 1,030 | 990 | -40 (-3.9%) |
-| .50 Cal Heavy Suppressor | 1,420 | 1,250 | -170 (-12.0%) |
-| 3 Prong Flash Hider | 1,000 | 820 | -180 (-18.0%) |
-| 3-Chamber Brake | 1,080 | 1,000 | -80 (-7.4%) |
-| AMP-9 9x19 Suppressor | 1,130 | 1,110 | -20 (-1.8%) |
-| AMR 50 Cal Muzzle Brake | 1,600 | 1,380 | -220 (-13.8%) |
-| AR Multi-Caliber Suppressor | 400 | 1,200 | +800 (+200.0%) |
-| Birdcage Flash Hider | 900 | 600 | -300 (-33.3%) |
-| BMR-308 Flash Hider | 1,280 | 930 | -350 (-27.3%) |
-| BMR-308 Suppressor | 1,200 | 1,080 | -120 (-10.0%) |
-| DTK-1 Brake | 820 | 810 | -10 (-1.2%) |
-| Eclipse Flash Hider | 700 | 580 | -120 (-17.1%) |
-| Flow-Through .308 Suppressor | 1,120 | 1,020 | -100 (-8.9%) |
-| Full Choke | 1,400 | 1,150 | -250 (-17.9%) |
-| Orpheus Max Brake | 1,020 | 980 | -40 (-3.9%) |
-| PP-19 Vityaz Flash Hider | 800 | 750 | -50 (-6.2%) |
-| PP-19-01 Vityaz 9x19 Suppressor | 1,450 | 1,290 | -160 (-11.0%) |
-| QD-5 Suppressor | 1,170 | 1,130 | -40 (-3.4%) |
-| RC-556 Suppressor | 1,550 | 1,310 | -240 (-15.5%) |
-| Slotted Flash Hider | 960 | 840 | -120 (-12.5%) |
-| SRVV Brake | 1,470 | 1,330 | -140 (-9.5%) |
-| Super-45 Flash Hider | 1,050 | 860 | -190 (-18.1%) |
-| Three Port Brake | 1,180 | 1,040 | -140 (-11.9%) |
+| | Part | Season 1 | Season 2 | Change |
+|---|---|---:|---:|---:|
+| ![.45 ACP Pistol Compensator](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_050.png){: .wiki-icon } | .45 ACP Pistol Compensator | 1,030 | 990 | -40 (-3.9%) |
+| ![.50 Cal Heavy Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_049.png){: .wiki-icon } | .50 Cal Heavy Suppressor | 1,420 | 1,250 | -170 (-12.0%) |
+| ![3 Prong Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MZL_013.png){: .wiki-icon } | 3 Prong Flash Hider | 1,000 | 820 | -180 (-18.0%) |
+| ![3-Chamber Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_027.png){: .wiki-icon } | 3-Chamber Brake | 1,080 | 1,000 | -80 (-7.4%) |
+| ![AMP-9 9x19 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_051.png){: .wiki-icon } | AMP-9 9x19 Suppressor | 1,130 | 1,110 | -20 (-1.8%) |
+| ![AMR 50 Cal Muzzle Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_048.png){: .wiki-icon } | AMR 50 Cal Muzzle Brake | 1,600 | 1,380 | -220 (-13.8%) |
+| ![AR Multi-Caliber Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_007.png){: .wiki-icon } | AR Multi-Caliber Suppressor | 400 | 1,200 | +800 (+200.0%) |
+| ![Birdcage Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_039.png){: .wiki-icon } | Birdcage Flash Hider | 900 | 600 | -300 (-33.3%) |
+| ![BMR-308 Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_055.png){: .wiki-icon } | BMR-308 Flash Hider | 1,280 | 930 | -350 (-27.3%) |
+| ![BMR-308 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_056.png){: .wiki-icon } | BMR-308 Suppressor | 1,200 | 1,080 | -120 (-10.0%) |
+| ![DTK-1 Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_028.png){: .wiki-icon } | DTK-1 Brake | 820 | 810 | -10 (-1.2%) |
+| ![Eclipse Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_037.png){: .wiki-icon } | Eclipse Flash Hider | 700 | 580 | -120 (-17.1%) |
+| ![Flow-Through .308 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_057.png){: .wiki-icon } | Flow-Through .308 Suppressor | 1,120 | 1,020 | -100 (-8.9%) |
+| ![Full Choke](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_045.png){: .wiki-icon } | Full Choke | 1,400 | 1,150 | -250 (-17.9%) |
+| ![Orpheus Max Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_029.png){: .wiki-icon } | Orpheus Max Brake | 1,020 | 980 | -40 (-3.9%) |
+| ![PP-19 Vityaz Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_054.png){: .wiki-icon } | PP-19 Vityaz Flash Hider | 800 | 750 | -50 (-6.2%) |
+| ![PP-19-01 Vityaz 9x19 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_053.png){: .wiki-icon } | PP-19-01 Vityaz 9x19 Suppressor | 1,450 | 1,290 | -160 (-11.0%) |
+| ![QD-5 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_058.png){: .wiki-icon } | QD-5 Suppressor | 1,170 | 1,130 | -40 (-3.4%) |
+| ![RC-556 Suppressor](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_032.png){: .wiki-icon } | RC-556 Suppressor | 1,550 | 1,310 | -240 (-15.5%) |
+| ![Slotted Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_038.png){: .wiki-icon } | Slotted Flash Hider | 960 | 840 | -120 (-12.5%) |
+| ![SRVV Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_041.png){: .wiki-icon } | SRVV Brake | 1,470 | 1,330 | -140 (-9.5%) |
+| ![Super-45 Flash Hider](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_046.png){: .wiki-icon } | Super-45 Flash Hider | 1,050 | 860 | -190 (-18.1%) |
+| ![Three Port Brake](../../assets/img/icons/vendor-muzzles/T_UI_Vendor_MUZL_030.png){: .wiki-icon } | Three Port Brake | 1,180 | 1,040 | -140 (-11.9%) |
 
 ## See also
 

@@ -9,6 +9,7 @@ description: "Four-seat light armored SUV with no weapons, built for off-road tr
 
 | Humvee | |
 |---|---|
+| ![Humvee](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_transport_Humvee_Temp_512x512.png){: .wiki-infobox-img } | |
 | Type | Light armored SUV |
 | Seats | 4 |
 | Price | 3,000 cash |

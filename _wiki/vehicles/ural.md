@@ -9,6 +9,7 @@ description: "Heavy three-seat truck with no weapons and the heaviest mass of th
 
 | Ural | |
 |---|---|
+| ![Ural](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_URAL.png){: .wiki-infobox-img } | |
 | Type | Truck |
 | Seats | 3 |
 | Price | 5,000 cash |

@@ -9,6 +9,7 @@ description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range 
 
 | TCX-SPR | |
 |---|---|
+| ![TCX-SPR](../../assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_037.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Marksman rifle |
 | Caliber | [7.62x39mm](../ammunition/7-62x39mm.md) |

@@ -9,6 +9,7 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 
 | SPH-2 | |
 |---|---|
+| ![SPH-2](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_PVTank_Temp_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Artillery armored vehicle |
 | Seats | 3 on the stats sheet (2 seat setups in the seat data) |

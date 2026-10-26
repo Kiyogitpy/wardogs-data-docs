@@ -9,6 +9,7 @@ description: "The Light and Heavy Drills: the battery-powered vehicle repair too
 
 | Drills | |
 |---|---|
+| ![Drills](../../assets/img/icons/utility-3d/t_ui_icon_drill_medium.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Repair tool, specialist item |
 | Repairs | Vehicles |

@@ -10,6 +10,7 @@ description: "A heavy obstacle built with any hammer from 22 Build Supplies, wit
 
 | Hedgehog | |
 |---|---|
+| ![Hedgehog](../../assets/img/icons/other-buildables-tanktrap/T_UI_Buildable_TankTrap.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Cover and obstruction |
 | Hammer | Small, Medium, Large |

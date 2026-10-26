@@ -9,6 +9,7 @@ description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): 
 
 | Keycards | |
 |---|---|
+| ![Keycards](../../assets/img/icons/other-itemcard-textures/T_UI_Icon_Vendor_PurchaseTag_Icon.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Quick-slot item |
 | Cards | 6: Alpha Card 1, Alpha Card 2, Bravo Card 1, Bravo Card 2, Charlie Card 1, Charlie Card 2 |

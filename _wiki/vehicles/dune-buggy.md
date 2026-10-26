@@ -9,6 +9,7 @@ description: "Light three-seat buggy with a rear-biased drive and no weapons, so
 
 | Dune Buggy | |
 |---|---|
+| ![Dune Buggy](../../assets/img/icons/vehicles/T_UI_Icon_Vehicle_DuneBuggy_512x512.png){: .wiki-infobox-img } | |
 | Type | Buggy (ATV) |
 | Seats | 3 |
 | Price | 1,500 cash |

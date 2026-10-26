@@ -9,6 +9,7 @@ description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles 
 
 | Fuel Canister | |
 |---|---|
+| ![40L Fuel Canister](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_FuelCan_Textured_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Logistics, specialist item, vehicle fuel |
 | Size | 40 L |

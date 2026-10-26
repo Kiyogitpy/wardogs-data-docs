@@ -9,6 +9,7 @@ description: "The .50 Cal caliber: the weapons that fire it, its bullet types, h
 
 | .50 Cal | |
 |---|---|
+| ![.50 Cal](../../assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox__50-AE_FMJ.png){: .wiki-infobox-img } | |
 | **General** | |
 | Bullet types | Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP) (each with a tracer version) |
 | Weapons | 1 |

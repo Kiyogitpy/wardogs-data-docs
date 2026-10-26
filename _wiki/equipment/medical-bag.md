@@ -9,6 +9,7 @@ description: "The only healing item that works over time: it heals yourself or a
 
 | Medical Bag | |
 |---|---|
+| ![Medical Bag](../../assets/img/icons/utility-3d/t_ui_icon_medkit_128x128.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, specialist item |
 | Inventory size | 2 by 2 slots |

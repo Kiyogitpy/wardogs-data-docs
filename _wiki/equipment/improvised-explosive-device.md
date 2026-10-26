@@ -9,6 +9,7 @@ description: "The Improvised Explosive Device: a placed charge that a player set
 
 | Improvised Explosive Device | |
 |---|---|
+| ![Improvised Explosive Device](../../assets/img/icons/utility-3d/T_UI_Vendor_IED2.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Lethal, placed explosive with a remote trigger |
 | How it is used | Placed on the ground, then set off with its trigger |

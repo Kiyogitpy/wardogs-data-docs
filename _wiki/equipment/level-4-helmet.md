@@ -9,6 +9,7 @@ description: "Top helmet tier: 60% reduction for the head and neck, 200 durabili
 
 | Level 4 Helmet | |
 |---|---|
+| ![Level 4 Helmet](../../assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_004a.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |

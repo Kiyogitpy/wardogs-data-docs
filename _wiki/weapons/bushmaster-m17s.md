@@ -9,6 +9,7 @@ description: "The Bushmaster M17S assault rifle: fire rate, damage by body part,
 
 | Bushmaster M17S | |
 |---|---|
+| ![Bushmaster M17S](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_033.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Assault rifle |
 | Caliber | [5.56x45mm](../ammunition/5-56x45mm.md) |

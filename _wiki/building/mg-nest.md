@@ -10,6 +10,7 @@ description: "A buildable stationary machine gun firing .50 cal tracer rounds, b
 
 | MG Nest | |
 |---|---|
+| ![MG Nest](../../assets/img/icons/other-tacticalmap-textures/T_UI_MapTracker_Phalanx.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Stationary emplacement |
 | **Weapon** | |

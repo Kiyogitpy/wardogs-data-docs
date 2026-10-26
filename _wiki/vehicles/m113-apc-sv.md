@@ -9,6 +9,7 @@ description: "Ten-seat tracked armored personnel carrier that rifle fire cannot 
 
 | M113 APC SV | |
 |---|---|
+| ![M113 APC SV](../../assets/img/icons/other-trackers-textures/T_UI_MapTracker_SpawnVehicle.png){: .wiki-infobox-img } | |
 | Type | Armored personnel carrier (spawn vehicle) |
 | Seats | 10 (driver and 9 passengers) |
 | Price | Not sold (no shop listing in the data) |

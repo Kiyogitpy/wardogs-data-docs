@@ -10,6 +10,7 @@ description: "A large multi-part structure built only with the Large Hammer from
 
 | Bunker | |
 |---|---|
+| ![Bunker](../../assets/img/icons/other-buildables-sandbagwall/T_UI_Buildable_SandbagWall.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Multi-part structure |
 | Hammer | Large |

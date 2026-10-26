@@ -9,6 +9,7 @@ description: "The 9K333 Verba launcher: fire rate, damage by body part, range fa
 
 | 9K333 Verba | |
 |---|---|
+| ![9K333 Verba](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_025.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |

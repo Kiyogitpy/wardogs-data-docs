@@ -9,6 +9,7 @@ description: "The FAL assault rifle: fire rate, damage by body part, range fallo
 
 | FAL | |
 |---|---|
+| ![FAL](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_030.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Assault rifle |
 | Caliber | [.308 Win](../ammunition/308-win.md) |

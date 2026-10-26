@@ -9,6 +9,7 @@ description: "Six-seat transport helicopter with no weapons, the base model of t
 
 | MH-6 | |
 |---|---|
+| ![MH-6](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_ROT_03_Temp_512x512.png){: .wiki-infobox-img } | |
 | Type | Transport helicopter |
 | Seats | 6 |
 | Price | 6,250 cash |

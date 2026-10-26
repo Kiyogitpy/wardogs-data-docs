@@ -10,6 +10,7 @@ description: "Three Hesco barriers, the Small and Large Hesco Blocks and the Hes
 
 | Hesco Walls | |
 |---|---|
+| ![Hesco Walls](../../assets/img/icons/other-buildables-hblock/T_UI_Buildable_HBlock.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Cover and obstruction |
 | Hammer | Small, Medium or Large, by variant |

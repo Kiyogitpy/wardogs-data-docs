@@ -9,6 +9,7 @@ description: "The three Tac Vests: how many quick slots each one unlocks, how mu
 
 | Tac Vests | |
 |---|---|
+| ![Tac Vests](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_SmallWebbing_Textured_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Vest, quick slots |
 | Extra quick slots | 2 (Small), 4 (Medium), 6 (Large) |

@@ -10,6 +10,7 @@ description: "A closeable door built with a Medium or Large Hammer from 80 Build
 
 | Door | |
 |---|---|
+| ![Door](../../assets/img/icons/other-buildables-barrierdoor/T_UI_Buidable_Door_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Closeable door |
 | Hammer | Medium, Large |

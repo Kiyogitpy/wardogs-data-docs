@@ -9,6 +9,7 @@ description: "The largest single heal of the basic items: 100 HP per use, which 
 
 | Individual First Aid Kit | |
 |---|---|
+| ![Individual First Aid Kit](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_SuperBandage_Textured_128x128.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, quick slot |
 | Uses | One heal per item |

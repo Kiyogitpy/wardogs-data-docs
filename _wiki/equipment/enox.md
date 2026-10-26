@@ -9,6 +9,7 @@ description: "A self-only item that gives 40 HP as decaying health, above your n
 
 | Enox | |
 |---|---|
+| ![Enox](../../assets/img/icons/utility-3d/t_ui_icon_enox_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, equipment |
 | Uses | One use per item |

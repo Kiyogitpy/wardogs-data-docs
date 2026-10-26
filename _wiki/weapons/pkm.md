@@ -9,6 +9,7 @@ description: "The PKM light machine gun: fire rate, damage by body part, range f
 
 | PKM | |
 |---|---|
+| ![PKM](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_019.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Light machine gun |
 | Caliber | [7.62x54mm](../ammunition/7-62x54mm.md) |

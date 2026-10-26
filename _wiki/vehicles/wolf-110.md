@@ -9,6 +9,7 @@ description: "Four-seat SUV added in Season 2, with the strongest torque curve o
 
 | Wolf-110 | |
 |---|---|
+| ![Wolf-110](../../assets/img/icons/vehicles-3d/T_UI_Vendor_WHL_08.png){: .wiki-infobox-img } | |
 | Type | SUV |
 | Seats | 4 (driver and 3 passengers) |
 | Price | 2,200 cash |

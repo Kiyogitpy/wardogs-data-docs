@@ -9,6 +9,7 @@ description: "The Molotov: a thrown incendiary that bursts for 40 HP and leaves 
 
 | Molotov | |
 |---|---|
+| ![Molotov](../../assets/img/icons/utility-3d/T_UI_Utility_Molotov.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Lethal, thrown incendiary (quick slot) |
 | How it is used | Thrown. Bursts and leaves a fire area |

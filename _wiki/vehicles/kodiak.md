@@ -9,6 +9,7 @@ description: "Four-seat SUV with a driver and three passengers and no weapons, t
 
 | Kodiak | |
 |---|---|
+| ![Kodiak](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_Kodiak_Default.png){: .wiki-infobox-img } | |
 | Type | SUV |
 | Seats | 4 (driver and 3 passengers) |
 | Price | 2,500 cash |

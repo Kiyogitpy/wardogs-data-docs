@@ -9,6 +9,7 @@ description: "The Small, Medium and Large Hammers: the build tools that place an
 
 | Hammers | |
 |---|---|
+| ![Hammers](../../assets/img/icons/utility-3d/T_UI_Item_Hammer_1_BC.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Build tool |
 | Build speed | Slow (Small), moderate (Medium), fast (Large) |

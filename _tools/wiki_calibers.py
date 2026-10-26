@@ -12,6 +12,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import wiki_icons  # noqa: E402
 import wiki_weapons as W  # noqa: E402
 
 AMMO = W.jload("assets/data/ammo-availability.json")
@@ -276,7 +277,7 @@ def main():
               f"redirect_from: [\"/wiki/weapons/caliber-{legacy}/\"]\ndescription: \"{desc}\"\n---\n\n")
         path = os.path.join(out_dir, slug + ".md")
         with open(path, "w", encoding="utf-8", newline="\n") as f:
-            f.write(fm + W.rebase_links(body, "weapons", "ammunition"))
+            f.write(wiki_icons.inject(fm + W.rebase_links(body, "weapons", "ammunition"), path)[0])  # ammo box icon
     print(f"wrote {len(keys)} caliber articles")
 
 

@@ -13,6 +13,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import wiki_icons  # noqa: E402
 import wiki_ttk  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -885,8 +886,10 @@ def main():
         title, desc, text = build_weapon(wid)
         slug = slugify(title)
         arch = loadouts["items"][wid]["archetype"]
-        with open(os.path.join(OUT, slug + ".md"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(front_matter(title, desc, class_group(arch)) + text)
+        page = os.path.join(OUT, slug + ".md")
+        full = wiki_icons.inject(front_matter(title, desc, class_group(arch)) + text, page)[0]  # icon row
+        with open(page, "w", encoding="utf-8", newline="\n") as f:
+            f.write(full)
         s = stats(wid)
         if arch == "Launcher":
             row = (f"| [{title}](weapons/{slug}.md) | {s['speed']} | {s['range']} | {s['rpm']} | {s['mag_row']} "

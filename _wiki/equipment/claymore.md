@@ -9,6 +9,7 @@ description: "The Claymore: a placed anti-infantry mine that fires when a player
 
 | Claymore | |
 |---|---|
+| ![Claymore](../../assets/img/icons/utility-3d/t_ui_icon_claymore_512x512.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Lethal, placed mine (anti-infantry) |
 | How it is used | Placed on the ground facing the area to cover |

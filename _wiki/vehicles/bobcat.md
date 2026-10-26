@@ -9,6 +9,7 @@ description: "Two-seat quad bike, the cheapest wheeled vehicle in the vehicle ve
 
 | Bobcat | |
 |---|---|
+| ![Bobcat](../../assets/img/icons/vehicles-3d/T_UI_Icon_Vehicle_WHL_01_Bobcat_Textured_512x512.png){: .wiki-infobox-img } | |
 | Type | Light utility vehicle (quad bike) |
 | Seats | 2 |
 | Price | 500 cash |

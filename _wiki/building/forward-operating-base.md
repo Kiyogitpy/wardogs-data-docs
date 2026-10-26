@@ -10,6 +10,7 @@ description: "The base that players place to anchor building, costing 7,500 cash
 
 | Forward Operating Base | |
 |---|---|
+| ![Forward Operating Base](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_FOB_Textured_512x512_TEMP.png){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Base |
 | Hammer | None (placed from its own item) |

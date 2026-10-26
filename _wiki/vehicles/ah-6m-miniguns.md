@@ -9,6 +9,7 @@ description: "Small attack helicopter of the Little Bird family with two M134D m
 
 | AH-6M [Miniguns] | |
 |---|---|
+| ![AH-6M Miniguns](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_LittleBird_GUNS_BC.png){: .wiki-infobox-img } | |
 | Type | Combat helicopter (miniguns) |
 | Seats | 2 |
 | Price | 12,000 cash |

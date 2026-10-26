@@ -9,6 +9,7 @@ description: "The C4 Charge and its Remote Detonator: a charge that sticks to a 
 
 | C4 Charge | |
 |---|---|
+| ![C4 Charge](../../assets/img/icons/utility-3d/T_UI_Item_C4_BC.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Lethal, remote-detonated charge |
 | How it is used | Thrown at a surface, where it sticks. Set off with the Remote Detonator |

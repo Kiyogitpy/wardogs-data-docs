@@ -9,6 +9,7 @@ description: "Two-seat attack helicopter with a 30 mm autocannon and B-13 rocket
 
 | Havoc | |
 |---|---|
+| ![Havoc](../../assets/img/icons/vehicles-3d/T_UI_Vendor_Havoc.png){: .wiki-infobox-img } | |
 | Type | Combat helicopter |
 | Seats | 2 (pilot and gunner) |
 | Price | 28,000 cash |

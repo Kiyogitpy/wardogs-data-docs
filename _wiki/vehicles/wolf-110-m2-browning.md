@@ -9,6 +9,7 @@ description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun
 
 | Wolf-110 [M2 Browning] | |
 |---|---|
+| ![Wolf-110 M2 Browning](../../assets/img/icons/vehicles-3d/T_UI_Vendor_WHL_08_Gun.png){: .wiki-infobox-img } | |
 | Type | SUV with machine gun |
 | Seats | 5 |
 | Price | 7,800 cash |

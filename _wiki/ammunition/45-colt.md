@@ -9,6 +9,7 @@ description: "The .45 Colt caliber: the weapons that fire it, its bullet types, 
 
 | .45 Colt | |
 |---|---|
+| ![.45 Colt](../../assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_45-COLT_FMJ.png){: .wiki-infobox-img } | |
 | **General** | |
 | Bullet types | Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP) (each with a tracer version) |
 | Weapons | 1 |

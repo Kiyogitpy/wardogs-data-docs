@@ -9,6 +9,7 @@ description: "The .45 ACP caliber: the weapons that fire it, its bullet types, h
 
 | .45 ACP | |
 |---|---|
+| ![.45 ACP](../../assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_45-ACP_FMJ.png){: .wiki-infobox-img } | |
 | **General** | |
 | Bullet types | Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP) (each with a tracer version) |
 | Weapons | 2 |

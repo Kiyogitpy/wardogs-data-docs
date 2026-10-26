@@ -9,6 +9,7 @@ description: "The M249 SAW light machine gun: fire rate, damage by body part, ra
 
 | M249 SAW | |
 |---|---|
+| ![M249 SAW](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_009.png){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Light machine gun |
 | Caliber | [5.56x45mm](../ammunition/5-56x45mm.md) |

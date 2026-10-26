@@ -10,6 +10,7 @@ description: "A buildable stationary emplacement with a heavy mounted machine gu
 
 | Talon 9K-SAM | |
 |---|---|
+| ![Talon 9K-SAM](../../assets/img/icons/buildables/T_UI_Buidable_Mistral.png){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Stationary emplacement |
 | **Weapon** | |

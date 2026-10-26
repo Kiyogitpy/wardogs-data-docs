@@ -41,77 +41,77 @@ A multiplier below 1 lowers the stat and one above 1 raises it, so for recoil lo
 
 Each row is one magazine. Fits lists the weapons that accept it. Prices come from the Weapon Shop data; a magazine with no shop row reads Not in shop data.
 
-| Part | Fits | Shop price | Main effect |
-|---|---|---:|---|
-| A91 Standard Mag | No weapon | Not in shop data | No stat change in data |
-| AK74 30 RND Magazine | AK74 | Not in shop data | No stat change in data |
-| AK74 60 RND Magazine | AK74 | Not in shop data | aim time x1.19; vertical recoil x1.19; horizontal recoil x1.21; equip speed x0.93; aim sway scale x1.21 |
-| AK74 75 RND Drum Magazine | AK74 | Not in shop data | aim time x1.26; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
-| AMP-9 15 RND Magazine | AMP-9 | 30 | aim time x0.86; vertical recoil x0.83; horizontal recoil x0.83; equip speed x1.2 |
-| AMP-9 20 RND Magazine | AMP-9 | 70 | No stat change in data |
-| AMP-9 30 RND Magazine | AMP-9 | 100 | aim time x1.11; vertical recoil x1.12; horizontal recoil x1.14; equip speed x0.93; aim sway scale x1.23 |
-| AMP-9 50 RND Drum Magazine | AMP-9 | 180 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; attr3 x1.2; attr0 x1.2; attr1 x1.18; attr9 x0.93 |
-| AMR 50 10 RND Magazine | AMR 50 | 30 | aim time x1.06; equip speed x0.9 |
-| AMR 50 5 RND Magazine | AMR 50 | Not in shop data | No stat change in data |
-| AR Extended Mag | A-91, Bushmaster M17S, KH-2002, M4, T-21 | Not in shop data | No stat change in data |
-| Battery | No weapon | Not in shop data | No stat change in data |
-| C4 Charge | No weapon | Not in shop data | No stat change in data |
-| Combat Bow Standard Mag | No weapon | Not in shop data | No stat change in data |
-| Deagle 7 RND Magazine | Deagle | 50 | No stat change in data |
-| Evo-3 Ultra 50 RND Box | Evo-3 Ultra | 110 | No stat change in data |
-| FAL 10 RND Magazine | BMR-308, FAL | Not in shop data | aim time x0.85; vertical recoil x0.84; horizontal recoil x0.85; equip speed x1.24; aim sway scale x0.78 |
-| FAL 20 RND Magazine | BMR-308, FAL | 150 | No stat change in data |
-| FAL 30 RND Magazine | BMR-308, FAL | 250 | aim time x1.26; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
-| Galil 35 RND Magazine | Galil | 60 | No stat change in data |
-| Galil 50 RND Magazine | Galil | 110 | aim time x1.19; vertical recoil x1.19; horizontal recoil x1.21; equip speed x0.93; aim sway scale x1.21 |
-| GGX 17 RND Magazine | GGX 17, GGX 18 | Not in shop data | No stat change in data |
-| GGX 33 RND Magazine | GGX 17, GGX 18 | 70 | aim time x1.06; vertical recoil x1.02; horizontal recoil x1.04; equip speed x0.98; aim sway scale x1.12 |
-| GGX 50 RND Drum Magazine | GGX 17, GGX 18 | 110 | aim time x1.1; vertical recoil x1.04; horizontal recoil x1.07; equip speed x0.95; aim sway scale x1.25 |
-| Glock 17 Extended Mag | GGX 17, GGX 18 | Not in shop data | No stat change in data |
-| High Capacity Battery | No weapon | Not in shop data | No stat change in data |
-| Judge Bullet Cylinder | Judge | Not in shop data | No stat change in data |
-| KH2002 Extended Mag | No weapon | Not in shop data | No stat change in data |
-| KH2002 Standard Mag | No weapon | Not in shop data | No stat change in data |
-| 9K333 Verba Standard Mag | No weapon | Not in shop data | No stat change in data |
-| M14 10 RND Magazine | M14 | 60 | No stat change in data |
-| M14 20 RND Magazine | M14 | 110 | aim time x1.08; vertical recoil x1.07; horizontal recoil x1.05; equip speed x0.95; aim sway scale x1.08 |
-| M14 30 RND Magazine | M14 | 180 | aim time x1.2; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
-| M1911 10 RND Magazine | M1911 | 35 | aim time x1.06; vertical recoil x1.02; horizontal recoil x1.04; equip speed x0.98; aim sway scale x1.12 |
-| M1911 7 RND Magazine | M1911 | 20 | No stat change in data |
-| M249 100 RND Fabric Magazine | M249 SAW | 200 | No stat change in data |
-| M249 200 RND Box | M249 SAW | Not in shop data | aim time x1.2; vertical recoil x1.17; horizontal recoil x1.17; equip speed x0.93; aim sway scale x1.25 |
-| M4 Extended Mag | No weapon | Not in shop data | No stat change in data |
-| M4 Standard Mag | A-91, Bushmaster M17S, KH-2002, M4, T-21 | Not in shop data | No stat change in data |
-| M500 Internal Mag | M500 | Not in shop data | No stat change in data |
-| MK22 5 RND Magazine | MK22 | 30 | No stat change in data |
-| MK22 Standard Mag | MK22 | Not in shop data | aim time x1.06; equip speed x0.9; aim sway scale x1.12 |
-| MMGL Internal Mag | MGL-40 | Not in shop data | No stat change in data |
-| Mosin Standard Mag | Mosin Nagant | Not in shop data | No stat change in data |
-| MP43 Internal Mag | No weapon | Not in shop data | No stat change in data |
-| MP5 20 RND Magazine | MP5 | 70 | aim time x0.87; vertical recoil x0.87; horizontal recoil x0.88; equip speed x1.1; aim sway scale x0.81 |
-| MP5 30 RND Magazine | MP5 | 100 | No stat change in data |
-| MP5 50 RND Drum Magazine | MP5 | 230 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; aim sway scale x1.25 |
-| MP9 Extended Mag | AMP-9 | No price in shop data | No stat change in data |
-| PKM 100 RND Box | PKM | Not in shop data | aim time x1.1 |
-| PP-19 50 RND Vityaz Drum Magazine | PP-19 Vityaz | 200 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; aim sway scale x1.25 |
-| PP-19 Bizon 53 RND Magazine | PP-19 Bizon | 200 | No stat change in data |
-| PP-19 Vityaz 10 RND Magazine | PP-19 Vityaz | 25 | aim time x0.86; vertical recoil x0.83; horizontal recoil x0.83; equip speed x1.2; aim sway scale x0.78 |
-| PP-19 Vityaz 30 RND Magazine | PP-19 Vityaz | Not in shop data | No stat change in data |
-| SKS Extended Mag | SKS | Not in shop data | No stat change in data |
-| SKS Internal Mag | SKS | Not in shop data | No stat change in data |
-| STANAG 20 RND Magazine | A-91, Bushmaster M17S, KH-2002, M249 SAW, M4, T-21 | 10 | aim time x0.85; vertical recoil x0.84; horizontal recoil x0.85; equip speed x1.16; aim sway scale x0.78 |
-| STANAG 30 RND Magazine | A-91, Bushmaster M17S, KH-2002, M249 SAW, M4, T-21 | Not in shop data | equip speed x0.98 |
-| STANAG 60 RND Magazine | A-91, Bushmaster M17S, KH-2002, M249 SAW, M4, T-21 | 180 | aim time x1.19; vertical recoil x1.19; horizontal recoil x1.21; equip speed x0.93; aim sway scale x1.21 |
-| Super-45 13 RND Magazine | Super-45 | 30 | aim time x0.83; vertical recoil x0.83; horizontal recoil x0.83; equip speed x1.21; aim sway scale x0.77 |
-| Super-45 30 RND Magazine | Super-45 | 80 | No stat change in data |
-| Super-45 40 RND Drum Magazine | Super-45 | 280 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; aim sway scale x1.25 |
-| SV98 10 RND Magazine | SV98 | Not in shop data | No stat change in data |
-| SV98 Extended Mag | SV98 | Not in shop data | No stat change in data |
-| SVD 5 RND Magazine | SVD | 20 | No stat change in data |
-| SVDM Standard Magazine | SVD | Not in shop data | aim time x1.06; equip speed x0.9 |
-| TAR21 Standard Mag | No weapon | Not in shop data | No stat change in data |
-| TCX-SPR 28 RND Magazine | TCX-SPR | 50 | No stat change in data |
-| Unnamed magazine | No weapon | Not in shop data | No stat change in data |
+| | Part | Fits | Shop price | Main effect |
+|---|---|---|---:|---|
+|  | A91 Standard Mag | No weapon | Not in shop data | No stat change in data |
+| ![AK74 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_001.png){: .wiki-icon } | AK74 30 RND Magazine | AK74 | Not in shop data | No stat change in data |
+| ![AK74 60 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_016.png){: .wiki-icon } | AK74 60 RND Magazine | AK74 | Not in shop data | aim time x1.19; vertical recoil x1.19; horizontal recoil x1.21; equip speed x0.93; aim sway scale x1.21 |
+| ![AK74 75 RND Drum Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_015.png){: .wiki-icon } | AK74 75 RND Drum Magazine | AK74 | Not in shop data | aim time x1.26; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
+| ![AMP-9 15 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_061.png){: .wiki-icon } | AMP-9 15 RND Magazine | AMP-9 | 30 | aim time x0.86; vertical recoil x0.83; horizontal recoil x0.83; equip speed x1.2 |
+| ![AMP-9 20 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_052.png){: .wiki-icon } | AMP-9 20 RND Magazine | AMP-9 | 70 | No stat change in data |
+| ![AMP-9 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_043.png){: .wiki-icon } | AMP-9 30 RND Magazine | AMP-9 | 100 | aim time x1.11; vertical recoil x1.12; horizontal recoil x1.14; equip speed x0.93; aim sway scale x1.23 |
+| ![AMP-9 50 RND Drum Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_066.png){: .wiki-icon } | AMP-9 50 RND Drum Magazine | AMP-9 | 180 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; attr3 x1.2; attr0 x1.2; attr1 x1.18; attr9 x0.93 |
+| ![AMR 50 10 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_026.png){: .wiki-icon } | AMR 50 10 RND Magazine | AMR 50 | 30 | aim time x1.06; equip speed x0.9 |
+| ![AMR 50 5 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_SR04.png){: .wiki-icon } | AMR 50 5 RND Magazine | AMR 50 | Not in shop data | No stat change in data |
+|  | AR Extended Mag | A-91, Bushmaster M17S, KH-2002, M4, T-21 | Not in shop data | No stat change in data |
+| ![Battery](../../assets/img/icons/utility-3d/t_ui_icon_drill_battery.png){: .wiki-icon } | Battery | No weapon | Not in shop data | No stat change in data |
+| ![C4 Charge](../../assets/img/icons/utility-3d/T_UI_Item_C4_BC.png){: .wiki-icon } | C4 Charge | No weapon | Not in shop data | No stat change in data |
+|  | Combat Bow Standard Mag | No weapon | Not in shop data | No stat change in data |
+| ![Deagle 7 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_003.png){: .wiki-icon } | Deagle 7 RND Magazine | Deagle | 50 | No stat change in data |
+| ![Evo-3 Ultra 50 RND Box](../../assets/img/icons/vendor-magazines/T_UI_Weapons_MAGZ_067.png){: .wiki-icon } | Evo-3 Ultra 50 RND Box | Evo-3 Ultra | 110 | No stat change in data |
+| ![FAL 10 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_RFB.png){: .wiki-icon } | FAL 10 RND Magazine | BMR-308, FAL | Not in shop data | aim time x0.85; vertical recoil x0.84; horizontal recoil x0.85; equip speed x1.24; aim sway scale x0.78 |
+| ![FAL 20 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_006.png){: .wiki-icon } | FAL 20 RND Magazine | BMR-308, FAL | 150 | No stat change in data |
+| ![FAL 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_024.png){: .wiki-icon } | FAL 30 RND Magazine | BMR-308, FAL | 250 | aim time x1.26; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
+| ![Galil 35 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_005.png){: .wiki-icon } | Galil 35 RND Magazine | Galil | 60 | No stat change in data |
+| ![Galil 50 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_060.png){: .wiki-icon } | Galil 50 RND Magazine | Galil | 110 | aim time x1.19; vertical recoil x1.19; horizontal recoil x1.21; equip speed x0.93; aim sway scale x1.21 |
+| ![GGX 17 RND Magazine](../../assets/img/icons/attachments-3d/T_UI_Icon_Attachment_Cheap_Magazine_9mm_Textured_512x512.png){: .wiki-icon } | GGX 17 RND Magazine | GGX 17, GGX 18 | Not in shop data | No stat change in data |
+| ![GGX 33 RND Magazine](../../assets/img/icons/attachments-3d/T_UI_MAGZ_012.png){: .wiki-icon } | GGX 33 RND Magazine | GGX 17, GGX 18 | 70 | aim time x1.06; vertical recoil x1.02; horizontal recoil x1.04; equip speed x0.98; aim sway scale x1.12 |
+| ![GGX 50 RND Drum Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_011.png){: .wiki-icon } | GGX 50 RND Drum Magazine | GGX 17, GGX 18 | 110 | aim time x1.1; vertical recoil x1.04; horizontal recoil x1.07; equip speed x0.95; aim sway scale x1.25 |
+|  | Glock 17 Extended Mag | GGX 17, GGX 18 | Not in shop data | No stat change in data |
+| ![High Capacity Battery](../../assets/img/icons/utility-3d/t_ui_icon_drill_batteryLarge.png){: .wiki-icon } | High Capacity Battery | No weapon | Not in shop data | No stat change in data |
+|  | Judge Bullet Cylinder | Judge | Not in shop data | No stat change in data |
+|  | KH2002 Extended Mag | No weapon | Not in shop data | No stat change in data |
+|  | KH2002 Standard Mag | No weapon | Not in shop data | No stat change in data |
+|  | 9K333 Verba Standard Mag | No weapon | Not in shop data | No stat change in data |
+| ![M14 10 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Weapons_MAGZ_068.png){: .wiki-icon } | M14 10 RND Magazine | M14 | 60 | No stat change in data |
+| ![M14 20 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_071.png){: .wiki-icon } | M14 20 RND Magazine | M14 | 110 | aim time x1.08; vertical recoil x1.07; horizontal recoil x1.05; equip speed x0.95; aim sway scale x1.08 |
+| ![M14 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_070.png){: .wiki-icon } | M14 30 RND Magazine | M14 | 180 | aim time x1.2; vertical recoil x1.22; horizontal recoil x1.24; equip speed x0.93; aim sway scale x1.24 |
+| ![M1911 10 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_063.png){: .wiki-icon } | M1911 10 RND Magazine | M1911 | 35 | aim time x1.06; vertical recoil x1.02; horizontal recoil x1.04; equip speed x0.98; aim sway scale x1.12 |
+| ![M1911 7 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_002.png){: .wiki-icon } | M1911 7 RND Magazine | M1911 | 20 | No stat change in data |
+| ![M249 100 RND Fabric Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_062.png){: .wiki-icon } | M249 100 RND Fabric Magazine | M249 SAW | 200 | No stat change in data |
+| ![M249 200 RND Box](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_038.png){: .wiki-icon } | M249 200 RND Box | M249 SAW | Not in shop data | aim time x1.2; vertical recoil x1.17; horizontal recoil x1.17; equip speed x0.93; aim sway scale x1.25 |
+|  | M4 Extended Mag | No weapon | Not in shop data | No stat change in data |
+|  | M4 Standard Mag | A-91, Bushmaster M17S, KH-2002, M4, T-21 | Not in shop data | No stat change in data |
+|  | M500 Internal Mag | M500 | Not in shop data | No stat change in data |
+| ![MK22 5 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_034.png){: .wiki-icon } | MK22 5 RND Magazine | MK22 | 30 | No stat change in data |
+|  | MK22 Standard Mag | MK22 | Not in shop data | aim time x1.06; equip speed x0.9; aim sway scale x1.12 |
+|  | MMGL Internal Mag | MGL-40 | Not in shop data | No stat change in data |
+|  | Mosin Standard Mag | Mosin Nagant | Not in shop data | No stat change in data |
+|  | MP43 Internal Mag | No weapon | Not in shop data | No stat change in data |
+| ![MP5 20 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_064.png){: .wiki-icon } | MP5 20 RND Magazine | MP5 | 70 | aim time x0.87; vertical recoil x0.87; horizontal recoil x0.88; equip speed x1.1; aim sway scale x0.81 |
+| ![MP5 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_004.png){: .wiki-icon } | MP5 30 RND Magazine | MP5 | 100 | No stat change in data |
+| ![MP5 50 RND Drum Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_056.png){: .wiki-icon } | MP5 50 RND Drum Magazine | MP5 | 230 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; aim sway scale x1.25 |
+|  | MP9 Extended Mag | AMP-9 | No price in shop data | No stat change in data |
+| ![PKM 100 RND Box](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_LMG.png){: .wiki-icon } | PKM 100 RND Box | PKM | Not in shop data | aim time x1.1 |
+| ![PP-19 50 RND Vityaz Drum Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_046.png){: .wiki-icon } | PP-19 50 RND Vityaz Drum Magazine | PP-19 Vityaz | 200 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; aim sway scale x1.25 |
+| ![PP-19 Bizon 53 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Weapons_MAGZ_051.png){: .wiki-icon } | PP-19 Bizon 53 RND Magazine | PP-19 Bizon | 200 | No stat change in data |
+| ![PP-19 Vityaz 10 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_059.png){: .wiki-icon } | PP-19 Vityaz 10 RND Magazine | PP-19 Vityaz | 25 | aim time x0.86; vertical recoil x0.83; horizontal recoil x0.83; equip speed x1.2; aim sway scale x0.78 |
+| ![PP-19 Vityaz 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_PP19.png){: .wiki-icon } | PP-19 Vityaz 30 RND Magazine | PP-19 Vityaz | Not in shop data | No stat change in data |
+|  | SKS Extended Mag | SKS | Not in shop data | No stat change in data |
+|  | SKS Internal Mag | SKS | Not in shop data | No stat change in data |
+| ![STANAG 20 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_053.png){: .wiki-icon } | STANAG 20 RND Magazine | A-91, Bushmaster M17S, KH-2002, M249 SAW, M4, T-21 | 10 | aim time x0.85; vertical recoil x0.84; horizontal recoil x0.85; equip speed x1.16; aim sway scale x0.78 |
+| ![STANAG 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_Stanag.png){: .wiki-icon } | STANAG 30 RND Magazine | A-91, Bushmaster M17S, KH-2002, M249 SAW, M4, T-21 | Not in shop data | equip speed x0.98 |
+| ![STANAG 60 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_054.png){: .wiki-icon } | STANAG 60 RND Magazine | A-91, Bushmaster M17S, KH-2002, M249 SAW, M4, T-21 | 180 | aim time x1.19; vertical recoil x1.19; horizontal recoil x1.21; equip speed x0.93; aim sway scale x1.21 |
+| ![Super-45 13 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_057.png){: .wiki-icon } | Super-45 13 RND Magazine | Super-45 | 30 | aim time x0.83; vertical recoil x0.83; horizontal recoil x0.83; equip speed x1.21; aim sway scale x0.77 |
+| ![Super-45 30 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_008.png){: .wiki-icon } | Super-45 30 RND Magazine | Super-45 | 80 | No stat change in data |
+| ![Super-45 40 RND Drum Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_055.png){: .wiki-icon } | Super-45 40 RND Drum Magazine | Super-45 | 280 | aim time x1.2; vertical recoil x1.2; horizontal recoil x1.18; equip speed x0.93; aim sway scale x1.25 |
+| ![SV98 10 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_010.png){: .wiki-icon } | SV98 10 RND Magazine | SV98 | Not in shop data | No stat change in data |
+|  | SV98 Extended Mag | SV98 | Not in shop data | No stat change in data |
+| ![SVD 5 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Vendor_MAGZ_SVDM.png){: .wiki-icon } | SVD 5 RND Magazine | SVD | 20 | No stat change in data |
+|  | SVDM Standard Magazine | SVD | Not in shop data | aim time x1.06; equip speed x0.9 |
+|  | TAR21 Standard Mag | No weapon | Not in shop data | No stat change in data |
+| ![TCX-SPR 28 RND Magazine](../../assets/img/icons/vendor-magazines/T_UI_Weapons_MAGZ_069.png){: .wiki-icon } | TCX-SPR 28 RND Magazine | TCX-SPR | 50 | No stat change in data |
+|  | Unnamed magazine | No weapon | Not in shop data | No stat change in data |
 
 ## Parts that fit no weapon
 
