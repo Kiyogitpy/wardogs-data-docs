@@ -71,7 +71,21 @@ The M113 APC SV has no weapons. It has ten seats: a driver and nine passenger se
 
 ## Vehicle spawns
 
-Each side's spawn area has a deployment board that places this vehicle in the side's own version (Lonestar, Manticore or Valkyra): 3 boards per match on [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). Players deploy onto it from the board. Each board has 4 to 6 vehicle slots. In the Saburtulo data the Lonestar and Manticore boards sit in each other's spawn areas, and a few other mismatches between board and yard tags exist (see [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md)). The board's built-in defaults set a 300 s vehicle respawn timer, a 60 s timer tied by name to a losing side, and a 600 s deploy cooldown per player. A destroyed APC most likely returns after 300 s (60 s for a losing side), but the code that uses these timers has not been traced, so this is inferred.
+Each side's spawn area has a deployment board that places this vehicle in the side's own version (Lonestar, Manticore or Valkyra): 3 boards per match on [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). Players deploy onto it from the board. Each board has 4 to 6 vehicle slots. In the Saburtulo data the Lonestar and Manticore boards sit in each other's spawn areas, and a few other mismatches between board and yard tags exist (see [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md)). The board does not put the APC out until one side has reached a score of 20; before that it reads "Inactive Vehicle: Min Required Game Score: 20". A destroyed APC returns after 300 s, or after 60 s if the board's side is losing, meaning the best other side is ahead of it by 15 score points or more at the moment the APC is lost. The board shows the time left ("Spawn Vehicle will respawn in ..."). These timers time this APC only; a server setting can scale them (the base scale is 1). After a player deploys onto the APC, that player has a 600 s cooldown on that board ("Deployment on cooldown ..."). The numbers are the game's built-in defaults and the board Blueprint, read from the game's code.
+
+The board shows one reason at a time, the first that applies in this order:
+
+| Message on the board | When it shows |
+|---|---|
+| Spawn Vehicle will respawn in ... | The respawn countdown is running |
+| Inactive Vehicle: Min Required Game Score: 20 | There is no live APC and no side has a score of 20 yet |
+| No Active Spawn Vehicle | There is no APC |
+| Spawn Vehicle Radar Destroyed : Awaiting Repairs | The APC's radar health reached zero; it clears when the radar is repaired to 55 percent of its maximum |
+| Spawn vehicle is not in the control zone | The Control Zone rules report the APC outside the zone |
+| Spawn vehicle is moving | The APC is moving at 10 km/h or more |
+| No available seat | Every seat is taken |
+
+The "moving" message looks like a warning only, because the deploy check still accepts a player when it is the reason (read from the game's code, not seen in play). A message about too little vehicle health exists in the text table, but no rule in the game uses it, and the 30 percent health value stored on the board is never read. A player who is on cooldown, or who has not yet entered the control zone ("MAP OFFLINE... ENTER ZONE FOR DATA"), sees that message instead of the moving or seat messages.
 
 ## See also
 
@@ -81,6 +95,7 @@ Each side's spawn area has a deployment board that places this vehicle in the si
 ## Sources
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
+- [Round 75 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md): the deployment board's messages, timers and cooldown read from the game's code
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen's 16 s active window and 90 s cooldown, and the other round 41 vehicle readings
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
