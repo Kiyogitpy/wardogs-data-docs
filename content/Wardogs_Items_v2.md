@@ -599,6 +599,11 @@ The `Resources` folder holds 94 item definitions, almost all ammunition, plus 5 
 
 *Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 `.json`).*
 
+### Other assets (round 73)
+
+- [`CF_Animation_ADSOut_WEPN_029_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/ADS/WEPN_029/CF_Animation_ADSOut_WEPN_029_Curve.json): the Galil (WEPN_029) ADS-out blend. Two linear keys: time 0.55 gives 0, time 1.0 gives 1, so the blend does not start moving until 55 percent of the way through.
+- The M67 grenade, gold M67 and vehicle-barrel launcher test animation sets, and the Fists, Super Bandage and Rockets audio sets, are listed in [Animation](Wardogs_Animation_v2.md) (section 8) and [Audio](Wardogs_Audio_v2.md). The launcher ones live in a `VehicleBarrelLaunchersTests` folder and are test leftovers.
+
 ## Change log
 
 | Date | Change |

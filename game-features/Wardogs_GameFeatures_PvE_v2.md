@@ -143,3 +143,7 @@ Source: the World Partition cells of each scenario's external data layers and th
 - **VIP Escort flow:** `SQ_RandomPlayerMarkedForDeath` makes one random player the VIP; the mission fails 10 s after that player goes Critical or disconnects; success is reaching `ExtractionProximity` and boarding the helicopter.
 - **Time limit:** none in the quest data.
 - **VIP loot:** `Lootable.VIPEscort01.AK` is `Id.Item.SV98` x1 + `Id.Item.SV98Magazine` x1 (respawn 10 s, 15 initial points); the name "AK" is misleading.
+
+## 10. Base scenario config (round 73)
+
+[`DefaultBaseScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Config/DefaultBaseScenario.ini) sets two `WDScenarioStateComponent` values: `ScenarioPostMatchTimeoutDuration=15.0` (seconds before a finished scenario closes) and `PvEGameEndUiDelay=0.5` (seconds before the end-of-game UI).

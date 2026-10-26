@@ -58,3 +58,18 @@ The asset paths for each animation are in the export but are not repeated here.
 - **Animation asset paths.** The per-tag asset and montage references are in the export but not expanded in this pass.
 - **Pawn class.** `B_WDCore_MoverPlayerCharacter_C` is a Blueprint; its values are not in this folder.
 - **Aim-assist manager.** The target manager's values are in its Blueprint and in the BHAimAssist plugin doc.
+
+## 6. Other small plugin descriptors (round 73)
+
+Eight further `GameFeatureData` descriptors are one-purpose plugins. Values are as exported.
+
+| Descriptor | What it does |
+|---|---|
+| [`BHMotionWarping`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/BHMotionWarping/Content/BHMotionWarping.json) | Adds `BHMotionWarpingComponent` to `WDPlayerStateSession`, client and server |
+| [`CharacterCustomiser`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/CharacterCustomiser/Content/CharacterCustomiser.json) | One `AddWorldPartitionContent` action, data layer `EDL_CharacterCustomiser` |
+| [`CHRM_001`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Customization/Charms/CHRM_001/Content/CHRM_001.json) | The charm plugin: one `AddWorldPartitionContent` action, data layer `EDL_CHRM_001` |
+| [`DamageExporter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/DamageExporter/Content/DamageExporter.json) | No actions; scans `/DamageExporter/Data` for `BH.Item` (`BHInventoryItemDefinition`), cook rule Unknown. A developer export tool |
+| [`WDClientDebugFeature`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Developer/WDClientDebugFeature/Content/WDClientDebugFeature.json) | Adds `WDClientDebugComponent` to `WDPlayerController`, client and server. Developer tool |
+| [`DispatchMetricsGame`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/DispatchMetricsGame/Content/DispatchMetricsGame.json) | Adds `WDDispatchMetricsComponent` to `WDGameStateSession`, server only |
+| [`RegistryExporter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/RegistryExporter/Content/RegistryExporter.json) | Empty descriptor. A developer export tool |
+| [`ReportTracking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ReportTracking/Content/ReportTracking.json) | Adds `WDReportTrackingComponent` to `WDGameStateSession`, server only |

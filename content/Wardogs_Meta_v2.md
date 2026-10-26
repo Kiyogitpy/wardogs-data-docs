@@ -294,6 +294,8 @@ Gold-market entries are cosmetics: weapon skins, vehicle skins, a parachute skin
 | Id.Investment.DebugOne | Debug One Title | 100 (Cash) |
 | Id.Investment.DebugTwo | Debug Two Title | 200 (Cash) |
 
+Assets: [`DA_TestInvestmentOne`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Investments/DA_TestInvestmentOne.json) and [`DA_TestInvestmentTwo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Investments/DA_TestInvestmentTwo.json) (`WDInvestmentDefinition`, each with an empty `WDInvestmentCore` archetype). Map icons are borrowed UI textures (`T_UI_Icon_AddToSquad` and `T_UI_Icon_FiringMode_FullAuto_White_256`), and the second asset reuses the title text and text key for its description. Both are debug leftovers with no live use.
+
 [`DT_MockInvestments`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/MockInvestments/DT_MockInvestments.json) has one row (`Meta.MockInvestment.Definitions`) with two placeholder investments and one active ID, `Meta.MockInvestment.Bandage`:
 
 | Mock key | Item | Quantity | Cash cost | Wait (seconds) |

@@ -120,6 +120,10 @@ Override targets for [`Skin_ChocolateChip`](https://github.com/Kiyogitpy/wardogs
 - **`CPD` field meanings.** The UV, wear and mastery field names are as exported. Their effect on rendering is not confirmed.
 - **Component class** `WDActorSkinComponent` and the [`SkinsInSession`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/SkinsInSession/Content/SkinsInSession.json) runtime are only named here, not decoded.
 
+### Other assets (round 73)
+
+[`DA_SkindBadgeData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/SkinsInSession/Content/DA_SkindBadgeData.json) (misspelt as exported) is the `SkinDisplayBadgeData` asset listed above: one property, `BadgeMaterial = /Season01_SkinsAssets/Materials/MM_SkinsPreview`.
+
 ## Change log
 
 | Date | Change |

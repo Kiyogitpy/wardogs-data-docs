@@ -395,3 +395,18 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 - **Missing stats:** Judge and SKS (section 8).
 - **Units and meanings** of accuracy, deviation, focus energy, recoil relief, `TypicalSpeed`, `AimTime` and the zeroing values are inferred from property names.
 - **Outside this folder:** the `Content/Weapons` tree and the `GameMechanics` damage and reward tables are not covered here.
+
+## 11. Weapon plugin descriptors (round 73)
+
+Each weapon plugin has a `GameFeatureData` descriptor. Four of them carry nothing, and two add a data layer:
+
+| Descriptor | Contents |
+|---|---|
+| [`AR_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/AR/AR_02/Content/AR_02.json) | One `AddWorldPartitionContent` action pointing at data layer `EDL_AR_02` |
+| [`AR_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/AR/AR_03/Content/AR_03.json) | The same kind of action (`EDL_AR_03`) plus a scan of `/AR_03/Data` for `BH.Item` definitions, cook rule AlwaysCook |
+| [`AR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/AR/AR_04/Content/AR_04.json) | Empty: no actions, no scans |
+| [`AR_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/AR/AR_05/Content/AR_05.json) | Empty |
+| [`LMG_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_01/Content/LMG_01.json) | Empty |
+| [`Shotgun_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/Shotgun_01/Content/Shotgun_01.json) | Empty |
+
+The empty ones are shells; the weapon data lives in the item folders of the same plugin or in `Weapons/Platforms`. The animation and audio sets of the DMR (`AnimSet_RFB`, `ID_SVDM_Audio`), LMG (`AnimSet_LMG_02`), shotgun (`AnimSet_MP43`), pistol (`ID_Judge_Audio`), SMG (`ID_SMG_03_Audio`) and sniper (`ID_MK22_Audio`, `ID_SR_04_Audio`) plugins are in [Animation](../content/Wardogs_Animation_v2.md) and [Audio](../content/Wardogs_Audio_v2.md).

@@ -210,3 +210,7 @@ The purpose (where the AI teleports to) is inferred from the name and the tests.
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **The NorthAmerica Hot Zone height** (85,000 against 50,000) is reported as found and not interpreted.
 - The Gym config's Hot Zone sizing is not defined in this folder.
+
+## 10. Config file (round 73)
+
+[`DefaultControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Config/DefaultControlZone.ini) has one section, `WDControlZoneGameStateComponent`, with `ScorePerControlZoneTick=1`: one score point per zone tick.

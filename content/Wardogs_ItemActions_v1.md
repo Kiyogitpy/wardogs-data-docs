@@ -830,3 +830,7 @@ Plain reading of the main ones (**Derived** from the modifiers):
 - The two obfuscated booleans and `bRebufferAction` have no confirmed meaning.
 - Weapon, movement and UI actions have no data-side input binding in the exports; the character's mapping from input to action tags is **not traced**.
 - Animation lengths behind `AnimationLength` use times are in animation assets that are not decoded here.
+
+## Other assets (round 73)
+
+The ADS action asset is [`DA_Action_Ads`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Weapons/DA_Action_Ads.json). The exported file name spells it `Ads`; its object name is `DA_Action_ADS`, which is the name used in the tables above. Nothing in the file is missing from those rows.

@@ -498,3 +498,7 @@ Stationary platforms use `BHBaseVehicleConfigDataAsset` (no physics). They carry
 - **Vendor stat widgets.** `W_VehicleVendor_Stat_*` widget objects (Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons) are referenced by each stats asset but their display logic is not decoded.
 - **Ural asset mapping.** `Ural.Battle` points at [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) rather than the ArmouredBattle asset (section 3). Numbers are identical, so this is only a reference oddity.
 - **Localization.** Names come from string-table keys (`STRINGS_VehicleVendor_Stats`, `STRINGS_BuildTool`, `STRINGS_Bobblehead_Faction`). Only the source strings are shown, not localized text in other languages.
+
+## Other assets (round 73)
+
+[`DA_FWG_01_InputControls`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_InputControls.json) is the fixed-wing airplane's `MAirplaneInputControlsDataAsset`. Its only property is `DriverInputMappingContexts`, one entry: `IMC_Airplane_Driver`. The other vehicle families have richer input assets (see [Vehicle Assets](Wardogs_VehicleAssets_v1.md)).

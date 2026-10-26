@@ -572,6 +572,10 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 
 ---
 
+### Other assets (round 73)
+
+[`DA_Extras_Hyperlink`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Extras/DA_Extras_Hyperlink.json) is the single `WDUserSettingHyperlinkData` asset. Its only property is `Link = EWDUILink::PrivacyPolicy`, the target of the link row in the Extras settings. The URL itself is not in the data (it is resolved in code).
+
 ## Change log
 
 | Date | Change |
