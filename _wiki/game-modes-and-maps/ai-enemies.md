@@ -101,6 +101,14 @@ Each soldier keeps a detection level from 0 to 1 for each player it knows about.
 - **Behaviours in the missions.** Patrol sends soldiers along set routes in VIP Escort and Strike and Disarm. The besiege behaviour is added to the soldiers while the laptop hack runs. Search is included with Strike and Disarm, but no soldier or quest in the data uses it. Flee and the squad attack are example behaviours that no mission uses. A squad example includes a query that handles movement tokens, probably so squad members take turns moving.
 - **Action order.** Each soldier runs its behaviour in this order. First, if it is on Alert, it stops its current task, looks toward the stimulus and waits 2 s before it finds cover or peeks. Otherwise it takes a job when it has none, runs the goal of that job, and falls back to idling. It attacks only in Combat with line of sight to the player: it shoots from cover first, then moves along cover, and shoots in the open only when neither works. A burst is three rounds, and it reloads when its magazine is empty. Its target is refreshed every 1.5 seconds.
 
+## Layout
+
+The map layers of the missions place the soldiers one spawner each (inferred). In straight lines from the team's start:
+
+- **VIP Escort.** 95 spawners spread along the whole route: 26 within 1,000 m of the start, 34 at 1,000 to 2,000 m, 24 at 2,000 to 3,000 m and 11 beyond 3,000 m. 9 stand within 500 m of the extraction point. 16 patrol routes carry 31 riflemen. Nothing ties them to an area.
+- **Strike and Disarm.** 53 spawners, all 2,300 to 2,900 m from the start and clustered at the laptop: 13 of the 27 start soldiers stand within 100 m of it and the 26 wave soldiers 232 to 541 m away. 48 are tied to one compound area and 6 use the 4 patrol routes.
+- **Hunter Killer.** None; only labels. See the [Hunter Killer](hunter-killer.md) article.
+
 ## See also
 
 - [PvE Scenarios](pve-scenarios.md)
@@ -121,3 +129,4 @@ Each soldier keeps a detection level from 0 to 1 for each player it knows about.
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [AI detection model (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ai-detection.json)
 - [AI EQS queries (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/ai-eqs.json)
+- [Round 71 PvE layouts (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round71-pve-layouts.md): placed objects, positions and distances. Static analysis; positions are straight-line metres in the map frame.

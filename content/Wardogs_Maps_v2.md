@@ -336,7 +336,7 @@ Cells are `play / world`: `play` is the zone-region bounding box plus 500 m (the
 
 **Main-map spawn areas.** Spawn areas that hold a wager vendor within 150 m (an inferred rule: only the named map's areas have one; the rest of the world file serves the other maps): Bakurani 6, Ozeti 3, Zestafona 3, Saburtulo 3. Each such area holds one board, one equipment vendor, one vehicle vendor, one garage vendor and one wager vendor, and, with exceptions, one safe zone, one soccer pitch, three moving targets and one fuel point. Totals over those areas: Bakurani: deployment board 6, equipment vendor 6, fuel point 6, garage vendor 6, moving target 18, safe zone 5, soccer pitch 6, vehicle vendor 6, wager vendor 6; Ozeti: deployment board 3, equipment vendor 3, fuel point 3, garage vendor 3, moving target 9, safe zone 2, soccer pitch 2, vehicle vendor 3, wager vendor 3; Zestafona: deployment board 3, equipment vendor 3, fuel point 3, garage vendor 3, moving target 9, safe zone 3, soccer pitch 3, vehicle vendor 3, wager vendor 3; Saburtulo: deployment board 3, equipment vendor 3, garage vendor 3, moving target 9, safe zone 3, soccer pitch 3, vehicle vendor 3, wager vendor 3. No main-map spawn area lies inside the `play` box (Ozeti has one non-main area inside it).
 
-**Other buckets (not in the totals).** Bakurani (Kavkazi) world cells also hold PvE scenario layers: VIPEscort_01 (95 PvE AI spawners, 69 pre-placed buildables, 6 vehicle spawners, 2 quest points, an equipment vendor and a spawn area), StrikeDisarm_01 (54 AI spawners, 5 vehicle spawners, a laptop objective, 2 quest points, a ladder, vendors) and ScenarioExample (a quest area and a quest point). The Sniper Showdown layers add one zone object per world (Kavkazi, NorthAmerica, Russia). The shooting range and tutorial layers hold the `B_ShootingRange*` and `B_ShootingRangeTutorial*` actors and are not counted.
+**Other buckets (not in the totals).** Bakurani (Kavkazi) world cells also hold PvE scenario layers: VIPEscort_01 (95 PvE AI spawners, 69 pre-placed buildables, 6 vehicle spawners, 2 quest points, an equipment vendor and a spawn area), StrikeDisarm_01 (53 AI spawners plus one wave trigger, 5 vehicle spawners, a laptop objective, 2 quest points, a ladder, vendors) and ScenarioExample (a quest area and a quest point). The Sniper Showdown layers add one zone object per world (Kavkazi, NorthAmerica, Russia). The shooting range and tutorial layers hold the `B_ShootingRange*` and `B_ShootingRangeTutorial*` actors and are not counted.
 
 **Absent on all four maps.** Capture towers other than the Hot Zone Magnet, pre-placed static weapons or emplacements, ammo or supply pickup points, loot or crate actors, zip lines. The only free resupply object is the fuel point (`B_Item_RefuelComponent_C`: infinite fuel, free in spawn, `RefuelPerUpdate` 2, `PricePerLiter` 2), absent on Saburtulo. Barbed wire is a pre-placed `B_BarbedWire_Damage_Volume_C` trigger (flat player damage 8, vehicle damage 10 percent with a 15 percent floor, a slow effect).
 
@@ -498,6 +498,27 @@ See [`match-start.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/mai
 
 ---
 
+
+## 15. PvE scenario layouts (round 71)
+
+Read from the 110 cells of the PvE external data layers in the Kavkazi (Bakurani) world (VIPEscort_01 65 cells, StrikeDisarm_01 16, HunterKiller_01 28, ScenarioExample 1). Every placed actor was read with its root position (an attached actor takes the parent transform). Data: [`assets/data/pve-layouts.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/pve-layouts.json); method and statuses: [`docs/evidence/round71-pve-layouts.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round71-pve-layouts.md). Positions are metres in the world frame; distances are straight lines. Bakurani reference: zone area centre (-8301, -11201), play box x -9967..-6634, y -12925..-9477.
+
+| Item | VIP Escort | Strike and Disarm | Hunter Killer | Example |
+|---|---|---|---|---|
+| Player spawn area | 1 at (-7754, -7450) | 1 at (-12410, -9736), plus 15-point spawn volume | none | 1 at (-8890, -11355) |
+| Spawn area from play box | 2,027 m north | 2,443 m west | - | inside |
+| Objective | extraction trigger (-9417, -10365), 80 m marker | laptop (-10031, -10427), 200 m compound marker | none (labels only) | 1 overlap area, 17 m from spawn |
+| Helicopter paths | 1 entry, 1 exit | 1 entry, 1 exit (end marker (-9920, -10288)) | none | none |
+| Spawn to objective | 3,356 m | 2,478 m | - | 17 m |
+| Objective to end point | 51 m (trigger to helicopter point) | 177 m (laptop to end marker) | HVT label to exfil label 192 m | - |
+| AI spawners (one soldier each, inferred) | 95 (86 rifle, 5 marksman, 4 machine gun) | 53 (49 rifle, 4 sniper); 26 held for the wave | 0 | 0 |
+| Patrol routes | 16 (31 soldiers) | 4 (6 soldiers) | 0 | 0 |
+| Vehicle spawners | 6 | 5 | 0 | 0 |
+| Loot markers | 21 (shared tags, none for the VIP rows) | 0 | 0 | 0 |
+| Volumes | 1 navmesh volume, 1 trigger box | tether 1, target area 1, spawn 1, navmesh 1 | none | none |
+| Vendors | equipment 1 | equipment 1, vehicle 1 | none | equipment 1 |
+
+Notes. (a) The VIP of VIP Escort is a random player, so no VIP start is placed; the start is the spawn area. (b) The extraction point of VIP Escort and the end area of Strike and Disarm both lie inside the play box, 1.4 and 1.9 km from the zone area centre, in no named region polygon (nearest: Riverside Forest, 235 m and 736 m). The laptop is 64 m outside the play box, 799 m from Green Farmland. (c) Hunter Killer holds 16 hidden text labels (Deploy 1, HVT 1, Lieutenant 2, Guards 4, Patrol 7, Exfil 1) and 9 mesh actors; its HVT and exfil labels sit 78 and 79 m from the Strike and Disarm laptop and helicopter point (inferred reuse of one compound). (d) Soldiers per distance from the VIP Escort spawn: 26 within 1 km, 34 at 1 to 2 km, 24 at 2 to 3 km, 11 beyond 3 km. Strike and Disarm start group: 13 of 27 within 100 m of the laptop; the wave stands 232 to 541 m away. (e) The native body that creates the soldier (`TriggerAISpawn`) was not read (NATIVE).
 
 ## 9. Still Not Pulled / Limitations
 

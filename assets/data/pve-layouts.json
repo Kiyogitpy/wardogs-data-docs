@@ -1,0 +1,870 @@
+{
+ "_note": [
+  "PvE scenario layouts, round 71. Static analysis only; nothing was run. Source: the cooked external-data-layer cells of the three PvE scenarios and the example scenario in the Kavkazi (Bakurani) world, 110 cells, every placed actor read with the world position of its root component (an actor attached to another actor takes the parent transform).",
+  "Coordinates are metres in the world frame (cm / 100), the same frame as map-magnets-extents.json. Distances are straight-line on the ground plane, not route lengths; the route over roads is longer and is not in the data.",
+  "play_box = the Bakurani zone-regions box plus 500 m from map-magnets-extents.json (x -9967..-6634, y -12925..-9477). zone_area_centre = (-8301, -11201). Named regions are the polygons in DA_ControlZoneRegionsConfig_Kavkazi; \"inside_regions\" is empty when a point is in none of them.",
+  "AI: one placed spawner holds one SpawnConfig and no count field exists in the class (SDK AWDPveAISpawner), so one spawner is one soldier (inferred; the native TriggerAISpawn body was not read, NATIVE). The VIP of VIP Escort is a random player (quest logic), so there is no placed VIP start; the player spawn area is the start.",
+  "Status codes: FOUND, NATIVE, SERVER, ABSENT, PROTECTED. Evidence: docs/evidence/round71-pve-layouts.md."
+ ],
+ "world": "Kavkazi (Bakurani)",
+ "zone_area_centre_m": [
+  -8301,
+  -11201
+ ],
+ "play_box_m": {
+  "x_min": -9967,
+  "x_max": -6634,
+  "y_min": -12925,
+  "y_max": -9477
+ },
+ "scenarios": {
+  "VIPEscort_01": {
+   "cells": 65,
+   "counts": {
+    "BP_WDPvEAISpawner_C": 95,
+    "B_EquipmentVendor_C": 1,
+    "B_SpawnManager_C": 1,
+    "WDGameFrameworkComponentReceiver": 21,
+    "b_VehicleSpawner_C": 6,
+    "BP_PatrolRouteActor_C": 16,
+    "Actor": 2,
+    "NavMeshBoundsVolume": 1,
+    "SDQuestProxyPoint": 2,
+    "WorldPartitionAutoInstancedActor": 13,
+    "B_BuildablePrefab_HBlock_C": 62,
+    "B_PlacementBuildable_TankTrap_C": 5,
+    "TextRenderActor": 18,
+    "BP_NavigationInvokerActor_C": 4,
+    "TriggerBox": 1,
+    "BP_Splinetool_C": 16,
+    "B_PlacementBuildable_Bunker_C": 1,
+    "B_PlacementBuildable_ForwardOperatingBase_Manticore_C": 1
+   },
+   "points": [
+    {
+     "name": "player spawn (spawn manager)",
+     "x_m": -7754,
+     "y_m": -7450,
+     "inside_regions": [],
+     "nearest_region": "LUMBER FARMLANDS",
+     "nearest_region_edge_m": 2534,
+     "outside_play_box_m": 2027,
+     "from_zone_area_centre_m": 3791
+    },
+    {
+     "name": "extraction trigger (80 m marker radius)",
+     "x_m": -9417,
+     "y_m": -10365,
+     "inside_regions": [],
+     "nearest_region": "RIVERSIDE FOREST",
+     "nearest_region_edge_m": 235,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 1394
+    },
+    {
+     "name": "helicopter entry start",
+     "x_m": -9417,
+     "y_m": -10314,
+     "inside_regions": [],
+     "nearest_region": "RIVERSIDE FOREST",
+     "nearest_region_edge_m": 233,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 1425
+    },
+    {
+     "name": "scenario end proxy",
+     "x_m": -9397,
+     "y_m": -10360,
+     "inside_regions": [],
+     "nearest_region": "RIVERSIDE FOREST",
+     "nearest_region_edge_m": 215,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 1381
+    }
+   ],
+   "distances_m": {
+    "spawn_to_extraction_m": 3356,
+    "spawn_to_heli_start_m": 3312,
+    "spawn_to_scenario_end_m": 3342,
+    "heli_start_to_trigger_m": 51
+   },
+   "player_spawn_areas": 1,
+   "objective_sites": {
+    "extraction_trigger": 1,
+    "helicopter_entry_path": 1,
+    "helicopter_exit_path": 1,
+    "scenario_end_point": 1,
+    "vip_start": 0
+   },
+   "ai": {
+    "spawners": 95,
+    "configs": {
+     "AIC_Manticore_Rifleman": 86,
+     "AIC_Manticore_Marksman": 5,
+     "AIC_Manticore_Machinegunner": 4
+    },
+    "disable_auto": 0,
+    "tethered": 0,
+    "forced_patrol": 31,
+    "nearest_to_player_spawn_m": 370,
+    "farthest_from_player_spawn_m": 3283,
+    "nearest_to_objective_m": 203,
+    "clusters_250m": [
+     {
+      "count": 15,
+      "x_m": -8072,
+      "y_m": -8009,
+      "to_player_spawn_m": 643,
+      "to_objective_m": 2713,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 14,
+      "x_m": -8506,
+      "y_m": -8921,
+      "to_player_spawn_m": 1653,
+      "to_objective_m": 1706,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 11,
+      "x_m": -8240,
+      "y_m": -9544,
+      "to_player_spawn_m": 2150,
+      "to_objective_m": 1435,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 10,
+      "x_m": -8942,
+      "y_m": -8434,
+      "to_player_spawn_m": 1543,
+      "to_objective_m": 1988,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 8,
+      "x_m": -8915,
+      "y_m": -10207,
+      "to_player_spawn_m": 2992,
+      "to_objective_m": 526,
+      "inside_regions": [
+       "RIVERSIDE FOREST"
+      ],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 6,
+      "x_m": -8005,
+      "y_m": -7752,
+      "to_player_spawn_m": 392,
+      "to_objective_m": 2970,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 6,
+      "x_m": -8333,
+      "y_m": -8105,
+      "to_player_spawn_m": 874,
+      "to_objective_m": 2506,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 5,
+      "x_m": -9372,
+      "y_m": -10066,
+      "to_player_spawn_m": 3076,
+      "to_objective_m": 302,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 4,
+      "x_m": -8167,
+      "y_m": -9174,
+      "to_player_spawn_m": 1773,
+      "to_objective_m": 1726,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 3,
+      "x_m": -9201,
+      "y_m": -10384,
+      "to_player_spawn_m": 3271,
+      "to_objective_m": 216,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 2,
+      "x_m": -9110,
+      "y_m": -9405,
+      "to_player_spawn_m": 2379,
+      "to_objective_m": 1008,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 2,
+      "x_m": -8586,
+      "y_m": -8480,
+      "to_player_spawn_m": 1324,
+      "to_objective_m": 2059,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 2,
+      "x_m": -8963,
+      "y_m": -8787,
+      "to_player_spawn_m": 1802,
+      "to_objective_m": 1642,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 2,
+      "x_m": -8653,
+      "y_m": -9449,
+      "to_player_spawn_m": 2192,
+      "to_objective_m": 1192,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 2,
+      "x_m": -8808,
+      "y_m": -9892,
+      "to_player_spawn_m": 2660,
+      "to_objective_m": 770,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     },
+     {
+      "count": 2,
+      "x_m": -8186,
+      "y_m": -10132,
+      "to_player_spawn_m": 2717,
+      "to_objective_m": 1253,
+      "inside_regions": [
+       "LUMBER FARMLANDS"
+      ],
+      "nearest_region": "LUMBER FARMLANDS"
+     },
+     {
+      "count": 1,
+      "x_m": -8301,
+      "y_m": -8324,
+      "to_player_spawn_m": 1031,
+      "to_objective_m": 2326,
+      "inside_regions": [],
+      "nearest_region": "LUMBER FARMLANDS"
+     }
+    ]
+   },
+   "patrol_routes": 16,
+   "vehicle_spawners": [
+    {
+     "x_m": -8618,
+     "y_m": -9060,
+     "vehicle": "Kodiak.Pickup",
+     "faction": null,
+     "to_player_spawn_m": 1827
+    },
+    {
+     "x_m": -8186,
+     "y_m": -9603,
+     "vehicle": "Kodiak.Pickup",
+     "faction": null,
+     "to_player_spawn_m": 2196
+    },
+    {
+     "x_m": -8127,
+     "y_m": -7977,
+     "vehicle": "Kodiak.Default",
+     "faction": null,
+     "to_player_spawn_m": 646
+    },
+    {
+     "x_m": -7999,
+     "y_m": -8029,
+     "vehicle": "Bobcat.Default",
+     "faction": null,
+     "to_player_spawn_m": 628
+    },
+    {
+     "x_m": -8022,
+     "y_m": -7676,
+     "vehicle": "Bobcat.Default",
+     "faction": null,
+     "to_player_spawn_m": 350
+    },
+    {
+     "x_m": -8890,
+     "y_m": -8378,
+     "vehicle": "Bobcat.Default",
+     "faction": null,
+     "to_player_spawn_m": 1467
+    }
+   ],
+   "loot_markers": {
+    "total": 21,
+    "tags": {
+     "Lootable.Bandage": 12,
+     "Lootable.Sniper": 1,
+     "Lootable.Weapon": 3,
+     "Lootable.Defib.Cheap": 3,
+     "Lootable.Armor": 1,
+     "Lootable.Helmet": 1
+    },
+    "tagged_VIPEscort01": 0,
+    "groups": [
+     {
+      "group": "Template",
+      "markers": 1,
+      "centre_m": [
+       -7778,
+       -7493
+      ],
+      "to_player_spawn_m": [
+       50,
+       50
+      ],
+      "to_extraction_m_nearest": 3306,
+      "tags": {
+       "Lootable.Bandage": 1
+      }
+     },
+     {
+      "group": "Compound",
+      "markers": 8,
+      "centre_m": [
+       -8583,
+       -9032
+      ],
+      "to_player_spawn_m": [
+       1767,
+       1810
+      ],
+      "to_extraction_m_nearest": 1547,
+      "tags": {
+       "Lootable.Sniper": 1,
+       "Lootable.Weapon": 1,
+       "Lootable.Bandage": 4,
+       "Lootable.Defib.Cheap": 2
+      }
+     },
+     {
+      "group": "FirstHouse",
+      "markers": 4,
+      "centre_m": [
+       -8043,
+       -7710
+      ],
+      "to_player_spawn_m": [
+       384,
+       393
+      ],
+      "to_extraction_m_nearest": 2984,
+      "tags": {
+       "Lootable.Bandage": 3,
+       "Lootable.Armor": 1
+      }
+     },
+     {
+      "group": "LoggingCamp",
+      "markers": 2,
+      "centre_m": [
+       -8146,
+       -9602
+      ],
+      "to_player_spawn_m": [
+       2188,
+       2189
+      ],
+      "to_extraction_m_nearest": 1481,
+      "tags": {
+       "Lootable.Bandage": 2
+      }
+     },
+     {
+      "group": "BigRoadBlock",
+      "markers": 6,
+      "centre_m": [
+       -8111,
+       -7981
+      ],
+      "to_player_spawn_m": [
+       623,
+       664
+      ],
+      "to_extraction_m_nearest": 2694,
+      "tags": {
+       "Lootable.Weapon": 2,
+       "Lootable.Bandage": 2,
+       "Lootable.Defib.Cheap": 1,
+       "Lootable.Helmet": 1
+      }
+     }
+    ]
+   },
+   "buildables": {
+    "B_BuildablePrefab_HBlock_C": 62,
+    "B_PlacementBuildable_TankTrap_C": 5,
+    "B_PlacementBuildable_Bunker_C": 1,
+    "B_PlacementBuildable_ForwardOperatingBase_Manticore_C": 1,
+    "hblock_centroid_m": [
+     -8664,
+     -9394
+    ],
+    "hblock_x_range_m": [
+     -9412,
+     -8096
+    ],
+    "hblock_y_range_m": [
+     -10149,
+     -7940
+    ]
+   },
+   "volumes": {
+    "NavMeshBoundsVolume": [
+     -8630,
+     -8839
+    ]
+   },
+   "status": {
+    "objectives": "FOUND",
+    "vip_start": "ABSENT (a random player, quest logic)",
+    "player_spawn": "FOUND",
+    "ai": "FOUND",
+    "loot_VIPEscort01_rows": "ABSENT",
+    "vehicles": "FOUND",
+    "triggers": "FOUND"
+   }
+  },
+  "StrikeDisarm_01": {
+   "cells": 16,
+   "counts": {
+    "b_VehicleSpawner_C": 5,
+    "WorldPartitionAutoInstancedActor": 3,
+    "BP_Splinetool_C": 4,
+    "B_EquipmentVendor_C": 1,
+    "Actor": 4,
+    "B_SpawnManager_C": 1,
+    "B_VehicleVendor_C": 1,
+    "BP_NavigationInvokerActor_C": 1,
+    "BP_PatrolRouteActor_C": 4,
+    "BP_WDPvEAISpawner_C": 53,
+    "NavMeshBoundsVolume": 1,
+    "SDQuestProxyPoint": 2,
+    "WDAITetherVolume": 1,
+    "WDSpawnVolume": 1,
+    "WDTargetAreaVolume": 1,
+    "B_Mover_Ladder_BlockOut_C": 1,
+    "B_MultiAISpawner_C": 1,
+    "B_StrikeDisarm_LaptopObjective_C": 1
+   },
+   "points": [
+    {
+     "name": "player spawn (spawn manager)",
+     "x_m": -12410,
+     "y_m": -9736,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 3211,
+     "outside_play_box_m": 2443,
+     "from_zone_area_centre_m": 4363
+    },
+    {
+     "name": "laptop (disarm site)",
+     "x_m": -10031,
+     "y_m": -10427,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 799,
+     "outside_play_box_m": 64,
+     "from_zone_area_centre_m": 1895
+    },
+    {
+     "name": "compound marker (200 m radius)",
+     "x_m": -10025,
+     "y_m": -10424,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 797,
+     "outside_play_box_m": 58,
+     "from_zone_area_centre_m": 1891
+    },
+    {
+     "name": "helicopter entry start",
+     "x_m": -9920,
+     "y_m": -10238,
+     "inside_regions": [],
+     "nearest_region": "RIVERSIDE FOREST",
+     "nearest_region_edge_m": 738,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 1884
+    },
+    {
+     "name": "end marker / helicopter exit",
+     "x_m": -9920,
+     "y_m": -10288,
+     "inside_regions": [],
+     "nearest_region": "RIVERSIDE FOREST",
+     "nearest_region_edge_m": 736,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 1859
+    }
+   ],
+   "distances_m": {
+    "spawn_to_laptop_m": 2478,
+    "laptop_to_end_marker_m": 177,
+    "laptop_to_heli_start_m": 219,
+    "spawn_to_end_marker_m": 2551,
+    "spawn_to_compound_m": 2482,
+    "end_to_heli_start_m": 51
+   },
+   "player_spawn_areas": 1,
+   "objective_sites": {
+    "laptop": 1,
+    "helicopter_entry_path": 1,
+    "helicopter_exit_path": 1,
+    "end_marker": 1
+   },
+   "ai": {
+    "spawners": 53,
+    "configs": {
+     "AIC_Lonestar_Rifleman": 49,
+     "AIC_Lonestar_Sniper": 4
+    },
+    "disable_auto": 26,
+    "tethered": 48,
+    "forced_patrol": 6,
+    "nearest_to_player_spawn_m": 2282,
+    "farthest_from_player_spawn_m": 2934,
+    "nearest_to_objective_m": 17,
+    "clusters_250m": [
+     {
+      "count": 28,
+      "x_m": -10040,
+      "y_m": -10463,
+      "to_player_spawn_m": 2479,
+      "to_objective_m": 37,
+      "inside_regions": [],
+      "nearest_region": "GREEN FARMLAND"
+     },
+     {
+      "count": 16,
+      "x_m": -9844,
+      "y_m": -10803,
+      "to_player_spawn_m": 2779,
+      "to_objective_m": 420,
+      "inside_regions": [],
+      "nearest_region": "GREEN FARMLAND"
+     },
+     {
+      "count": 8,
+      "x_m": -10236,
+      "y_m": -10877,
+      "to_player_spawn_m": 2455,
+      "to_objective_m": 495,
+      "inside_regions": [],
+      "nearest_region": "GREEN FARMLAND"
+     },
+     {
+      "count": 1,
+      "x_m": -9774,
+      "y_m": -10112,
+      "to_player_spawn_m": 2662,
+      "to_objective_m": 406,
+      "inside_regions": [],
+      "nearest_region": "RIVERSIDE FOREST"
+     }
+    ]
+   },
+   "patrol_routes": 4,
+   "vehicle_spawners": [
+    {
+     "x_m": -9907,
+     "y_m": -10418,
+     "vehicle": "Kodiak.Pickup",
+     "faction": "Alpha",
+     "to_player_spawn_m": 2595
+    },
+    {
+     "x_m": -10081,
+     "y_m": -10561,
+     "vehicle": "Kodiak.Pickup",
+     "faction": "Alpha",
+     "to_player_spawn_m": 2471
+    },
+    {
+     "x_m": -12370,
+     "y_m": -9760,
+     "vehicle": "Kodiak.Pickup",
+     "faction": null,
+     "to_player_spawn_m": 47
+    },
+    {
+     "x_m": -10122,
+     "y_m": -10389,
+     "vehicle": "Kodiak.Pickup",
+     "faction": "Alpha",
+     "to_player_spawn_m": 2380
+    },
+    {
+     "x_m": -10167,
+     "y_m": -10380,
+     "vehicle": "Kodiak.Pickup",
+     "faction": "Alpha",
+     "to_player_spawn_m": 2334
+    }
+   ],
+   "loot_markers": {
+    "total": 0
+   },
+   "volumes": {
+    "WDAITetherVolume": [
+     -9934,
+     -10386
+    ],
+    "WDTargetAreaVolume": [
+     -10013,
+     -10451
+    ],
+    "WDSpawnVolume": [
+     -12411,
+     -9740
+    ],
+    "NavMeshBoundsVolume": [
+     -10965,
+     -10261
+    ],
+    "B_MultiAISpawner_C": [
+     -9847,
+     -10765
+    ]
+   },
+   "status": {
+    "objectives": "FOUND",
+    "player_spawn": "FOUND",
+    "ai": "FOUND",
+    "loot": "ABSENT",
+    "vehicles": "FOUND",
+    "volumes": "FOUND"
+   }
+  },
+  "ScenarioExample": {
+   "cells": 1,
+   "counts": {
+    "B_EquipmentVendor_C": 1,
+    "B_QuestOverlapArea_C": 1,
+    "B_QuestStateUpdatesTestActor_C": 1,
+    "B_SpawnManager_C": 1,
+    "SDQuestProxyPoint": 1
+   },
+   "points": [
+    {
+     "name": "spawn manager",
+     "x_m": -8890,
+     "y_m": -11355,
+     "inside_regions": [],
+     "nearest_region": "WEST HILL WOODS",
+     "nearest_region_edge_m": 26,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 609
+    },
+    {
+     "name": "quest overlap area",
+     "x_m": -8883,
+     "y_m": -11371,
+     "inside_regions": [],
+     "nearest_region": "WEST HILL WOODS",
+     "nearest_region_edge_m": 24,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 606
+    }
+   ],
+   "distances_m": {
+    "spawn_to_overlap_m": 17
+   },
+   "ai": {
+    "spawners": 0
+   },
+   "vehicle_spawners": [],
+   "loot_markers": {
+    "total": 0
+   },
+   "status": {
+    "all": "FOUND (a test stub: spawn area, vendor, one overlap area, one progress test actor, one position point)"
+   }
+  },
+  "HunterKiller_01": {
+   "cells": 28,
+   "counts": {
+    "TextRenderActor": 16
+   },
+   "auto_instanced_mesh_actors": 9,
+   "labels_m": {
+    "Patrol": [
+     [
+      -10096,
+      -10521
+     ],
+     [
+      -10477,
+      -10437
+     ],
+     [
+      -10518,
+      -10581
+     ],
+     [
+      -9718,
+      -10920
+     ],
+     [
+      -9555,
+      -10959
+     ],
+     [
+      -9996,
+      -10359
+     ],
+     [
+      -9869,
+      -10887
+     ]
+    ],
+    "Lieutenant Location": [
+     [
+      -10566,
+      -10492
+     ],
+     [
+      -9761,
+      -10783
+     ]
+    ],
+    "Guards": [
+     [
+      -10512,
+      -10503
+     ],
+     [
+      -9706,
+      -10802
+     ],
+     [
+      -9983,
+      -10436
+     ],
+     [
+      -10230,
+      -10876
+     ]
+    ],
+    "Exfil Location": [
+     [
+      -9999,
+      -10236
+     ]
+    ],
+    "HVT Location": [
+     [
+      -10103,
+      -10397
+     ]
+    ],
+    "Deploy Location": [
+     [
+      -10709,
+      -11254
+     ]
+    ]
+   },
+   "points": [
+    {
+     "name": "deploy label",
+     "x_m": -10709,
+     "y_m": -11254,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 1243,
+     "outside_play_box_m": 742,
+     "from_zone_area_centre_m": 2409
+    },
+    {
+     "name": "HVT label",
+     "x_m": -10103,
+     "y_m": -10397,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 872,
+     "outside_play_box_m": 136,
+     "from_zone_area_centre_m": 1973
+    },
+    {
+     "name": "exfil label",
+     "x_m": -9999,
+     "y_m": -10236,
+     "inside_regions": [],
+     "nearest_region": "RIVERSIDE FOREST",
+     "nearest_region_edge_m": 817,
+     "outside_play_box_m": 32,
+     "from_zone_area_centre_m": 1953
+    },
+    {
+     "name": "lieutenant label 0",
+     "x_m": -10566,
+     "y_m": -10492,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 1217,
+     "outside_play_box_m": 599,
+     "from_zone_area_centre_m": 2373
+    },
+    {
+     "name": "lieutenant label 1",
+     "x_m": -9761,
+     "y_m": -10783,
+     "inside_regions": [],
+     "nearest_region": "GREEN FARMLAND",
+     "nearest_region_edge_m": 367,
+     "outside_play_box_m": 0,
+     "from_zone_area_centre_m": 1519
+    }
+   ],
+   "distances_m": {
+    "deploy_to_hvt_m": 1050,
+    "hvt_to_exfil_m": 192,
+    "deploy_to_exfil_m": 1242,
+    "deploy_to_lieutenant_m": [
+     775,
+     1059
+    ]
+   },
+   "ai": {
+    "spawners": 0
+   },
+   "vehicle_spawners": [],
+   "loot_markers": {
+    "total": 0
+   },
+   "player_spawn_areas": 0,
+   "status": {
+    "placed_layer": "FOUND (16 text labels and mesh instances only)",
+    "gameplay_actors": "ABSENT",
+    "ai": "ABSENT",
+    "player_spawn": "ABSENT"
+   }
+  }
+ }
+}

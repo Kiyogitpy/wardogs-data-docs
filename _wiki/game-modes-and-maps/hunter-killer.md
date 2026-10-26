@@ -20,7 +20,7 @@ description: "A single-life PvE mission on the Bakurani world with no respawns. 
 | Internal name | HunterKiller_01 |
 {: .wiki-infobox }
 
-Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The mission data is unfinished: it has a map, but no soldiers, objectives or player faction are set.
+Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The mission data is unfinished: it has a map layer that holds only labels, and no soldiers, objectives or player faction are set.
 
 Hunter Killer is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title.
 
@@ -41,11 +41,19 @@ Hunter Killer is one of the three PvE missions in the data, alongside [Strike an
 
 ## Enemies
 
-No AI soldiers are placed on the map, so the mission has no enemies in the data. The map has placeholder labels such as Guards and Patrol, but no soldiers. The [AI enemies](ai-enemies.md) page describes the soldiers used in the other two PvE missions.
+No AI soldiers are placed on the map, so the mission has no enemies in the data. The map has placeholder labels such as Guards (4), Patrol (7) and Lieutenant Location (2), but no soldiers. The [AI enemies](ai-enemies.md) page describes the soldiers used in the other two PvE missions.
 
 ## Rewards
 
 The data has no reward table and no cash payout for this mission, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
+
+## Layout
+
+The mission has a placed layer in the Bakurani world, but it holds only developer labels and scenery, not game objects. There are 16 hidden text labels and 9 scenery actors. No spawn area, soldier spawner, vendor, vehicle spawner, objective or trigger is placed, and no loot marker.
+
+The labels sketch a plan: one "Deploy Location" (the team's start), one "HVT Location" (the target), two "Lieutenant Location" labels, 4 "Guards" labels, 7 "Patrol" labels and one "Exfil Location". The distances between them are about 1,050 m from the deploy label to the target, 192 m from the target to the exfil label and 1,240 m from deploy to exfil. The plan sits at the western edge of the Bakurani zone area: the deploy label is 740 m outside it, the target label 136 m outside and the exfil label 32 m outside.
+
+The target, exfil and one guard label lie 78 m, 79 m and 49 m from the laptop, helicopter point and compound of [Strike and Disarm](strike-and-disarm.md), and a lieutenant label 88 m from its wave trigger. This suggests (inferred) that Hunter Killer was sketched on the same compound and never built out.
 
 ## See also
 
@@ -64,3 +72,4 @@ The data has no reward table and no cash payout for this mission, so any payout 
 - [Round 41 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-modes-ai-other.md)
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md)
 - [Session-event reward lookups](../../content/Wardogs_RewardLookup_SessionEvents_v1.md)
+- [Round 71 PvE layouts (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round71-pve-layouts.md): placed objects, positions and distances. Static analysis; positions are straight-line metres in the map frame.
