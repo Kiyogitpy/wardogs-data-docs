@@ -11,6 +11,8 @@ description: "The Ozeti King of the Hill map: a 550 m zone with four placements,
 |---|---|
 | **General** | |
 | Map area | About 16.3 km square (minimap bounds) |
+| Play area | About 3.8 km by 2.95 km (zone regions plus 500 m on each side) |
+| Ground height in the play area | -988 m to -759 m on the game's height scale |
 | Built-up area | About 6.6 km by 4.3 km (where buildings are placed) |
 | Modes | King of the Hill |
 | Vehicle spawns | 3 deployment boards and 13 vehicle yards (7 ground, 3 air, 3 light) |
@@ -82,13 +84,19 @@ Most cover on Ozeti is made of the materials below. The counts are placed wall a
 
 Total: 69,833 pieces (66,641 building pieces and 3,192 wall, fence and barrier pieces) from 828 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
+## Size and ground height
+
+The ground of this map is one square of 16.32 km by 16.32 km. Across the whole square the ground runs from -1,037 m to -275 m on the game's height scale. The play area is the box around every named zone region, plus 500 m on each side. It is the same box the cover and object counts on this page use. Inside it the ground runs from -988 m to -759 m.
+
+The heights are read from the game's ground pieces, which are 510 m wide, so the real spread inside the box can be a little smaller. The height scale is the game's own and starts below zero on some maps, so only the difference between two heights means something. The box is 3.8 km by 2.95 km and the ground piece count that touches it is 54. Nothing here was measured in play.
+
 ## Placed objects
 
 These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Berlin and Paris use the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
 
 | Object | Around the zones | Whole map file | What it is |
 |---|---:|---:|---|
-| Hot Zone Magnet towers | 4 | 4 | Numbered 1 to 4. The King of the Hill [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md) belong to these (inferred from the shared name). |
+| Hot Zone Magnet towers | 4 | 4 | Numbered 1 to 4. These are the capture towers of the [tower system](hot-zone-magnet-towers.md) and the source of the [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md). Positions are under Where the towers stand. |
 | Doors you can open | 188 | 349 | Houses, apartments, garages. A garage door counts once. Doors can also be broken, see [Destruction](../game-mechanics/destruction.md). |
 | Ladders | 22 | 34 | Climbable with the ladder controls on [Movement](../game-mechanics/movement.md). |
 | Breakable windows | 1,425 | 2,358 | Single panes that smash when hit. |
@@ -96,6 +104,17 @@ These are the things the map file places for players to use or break. "Around th
 | Pre-placed barbed wire | 32 | 32 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
 | Water | 4 river sections, a swimming pool | 17 river sections, a swimming pool | Water you can swim in. |
 | Supply buildings | 1 | 1 | A kind of building. Its data shows no supply or pickup function. |
+
+### Where the towers stand
+
+The map names its zone regions, and each tower stands inside one of them. "The middle of the zone area" is the middle of the box around all regions. Distances are straight-line metres on the map, read from the game files. The region named Tower 2 has weight 0; the regions named Tower 1, 3 and 4 have weight 1, so the Hot Zone can land on them by the random draw. How a tower is captured is on [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
+
+| Tower | Region it stands in | From that region's middle | From the middle of the zone area |
+|---|---|---:|---:|
+| 1 | Tower 1 | 15 m | 238 m |
+| 2 | Tower 2 | 6 m | 426 m |
+| 3 | Tower 3 | 2 m | 632 m |
+| 4 | Tower 4 | 11 m | 526 m |
 
 ### In each team spawn area
 
@@ -105,7 +124,7 @@ The fuel point refuels vehicles without cost and does not run out (the data mark
 
 ### Not in the map files
 
-The map file holds no capture towers other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
+The map file holds no capture points other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
 
 ## Layouts
 
@@ -136,3 +155,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
 - [Placed objects per map (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json)
+- [Tower positions and map extents (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-magnets-extents.json)

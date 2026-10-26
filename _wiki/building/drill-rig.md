@@ -108,6 +108,7 @@ The counts below use the Drill Rig's own damage row, the same way as every other
 - [Building](../building.md): costs, hammers and placement for every structure
 - [Utility Items](../equipment/utility-items.md): the Fuel Supplies that the rig runs on
 - [Forward Operating Base](forward-operating-base.md): the base that the rig must be placed inside
+- [Hot Zone Magnet Towers](../game-modes-and-maps/hot-zone-magnet-towers.md): the numbered towers on each map that pull the Hot Zone with a code
 
 ## Sources
 

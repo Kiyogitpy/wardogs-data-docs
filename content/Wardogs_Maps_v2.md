@@ -344,6 +344,75 @@ Cells are `play / world`: `play` is the zone-region bounding box plus 500 m (the
 
 ---
 
+## 12. Hot Zone Magnet towers, map extents and server-browser-only entries (round 67)
+
+Static read of the same cooked cells as sections 10 and 11, the landscape components of the four worlds, the Hot Zone Magnet Blueprints and the native `HotZoneMagnetRuntime` module. Evidence and method: [`docs/evidence/round67-maps.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round67-maps.md). Data: [`assets/data/map-magnets-extents.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-magnets-extents.json). Positions are world metres (x, y, z) as stored, with no stated north.
+
+Round 66 inferred that the placed `B_HotZoneMagnet_C` actors are the capture towers behind the tower rewards; this section settles it from the Blueprint and the native class (`AWDHotZoneMagnet`).
+
+### 12a. Tower system values
+
+| Value | Setting | Source |
+|---|---|---|
+| Capture | Hold, 10.0 s, range 250 cm, one interactor at a time | `DA_HotzoneMagnet_Interactions` (`Interaction.Context.WorldFeatures.TowerControl`) |
+| Keypad key | Tap, 0.3 s, range 250 cm; keys 0 to 9, CLEAR, ENTER | `DA_HotzoneMagnetHitInput_Interactions`, `W_HotZoneMagnet_Keyboard` |
+| Code | One digit 0 to 9 per tower, drawn on the server at match start and again when the recharge timer ends | native `0x856D9A0` (static disassembly) |
+| Partial code | Digits shown for owned towers if the map has at least 4 towers, otherwise only when all towers are owned | static dword at RVA `0xCF377C8` = 4 in the restored image; `0x8573500` |
+| Wrong codes before a lock | 3 (`HotZoneMagnetCodeMaxAttempts`, constructor `0x8565CF0`) | native default |
+| Lock time | 30.0 s (Blueprint `HotZoneMagnetCodeAttemptsTimePenalty`; native default 5.0) | `B_HotZoneMagnet` |
+| Reward range | 8000 cm (`HotZoneTowerRewardRange`, constructor `0x8565CF0`) | native default |
+| Magnet active | 180 s (`ActivatedHotZoneMagnetDuration`) | `B_HotZoneMagnetGameStateComponent` |
+| Recharge | 900 s (`TowerControlRechargeDuration`), started when the magnet deactivates (`0x8570080`) | `B_HotZoneMagnetGameStateComponent` |
+| Hot Zone speed and size | 3.0 m/s, (0.6, 0.6, 1.0) | round 45 and 46 |
+| Switch-off by players | `bCanDeactivateMagnet` false (constructor) | native default |
+| Reward repeat cooldown | 180 s (`RepeatActionsCooldown` in `ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_TowerCaptured`) | cooked data |
+
+### 12b. Tower positions
+
+| Map | Tower | x (m) | y (m) | z (m) | Region it stands in | From region centre (m) | From zone area centre (m) |
+|---|---:|---:|---:|---:|---|---:|---:|
+| Bakurani | 1 | -8297 | -11041 | -917 | TOWER 1 | 2 | 160 |
+| Bakurani | 2 | -8627 | -11050 | -928 | TOWER 2 | 19 | 360 |
+| Bakurani | 3 | -8628 | -11398 | -927 | TOWER 3 | 18 | 382 |
+| Bakurani | 4 | -7990 | -11333 | -917 | TOWER 4 | 17 | 337 |
+| Bakurani | 5 | -8127 | -10892 | -926 | LUMBERYARD NORTH | 39 | 354 |
+| Ozeti | 1 | -6614 | -6102 | -911 | Tower 1 | 15 | 238 |
+| Ozeti | 2 | -6163 | -5742 | -925 | Tower 2 | 6 | 426 |
+| Ozeti | 3 | -5749 | -6183 | -903 | Tower 3 | 2 | 632 |
+| Ozeti | 4 | -6131 | -6577 | -887 | Tower 4 | 11 | 526 |
+| Zestafona | 1 | -1332 | -2223 | 109 | Tower 1 | 13 | 260 |
+| Zestafona | 2 | -903 | -2315 | 97 | Tower 2 | 17 | 288 |
+| Zestafona | 3 | -1175 | -1825 | 95 | Tower 3 | 12 | 289 |
+| Saburtulo | 1 | -108 | -145 | 176 | none (no region list) | - | 113 (from zone object) |
+| Saburtulo | 2 | 187 | 65 | 166 | none (no region list) | - | 389 (from zone object) |
+| Saburtulo | 3 | -362 | 316 | 155 | none (no region list) | - | 416 (from zone object) |
+| Saburtulo | 4 | -560 | -307 | 211 | none (no region list) | - | 452 (from zone object) |
+| Saburtulo | 5 | 8 | -333 | 164 | none (no region list) | - | 333 (from zone object) |
+
+Bakurani tower 5 stands in LUMBERYARD NORTH, 78 m from the centre of the small region TOWER 5 L; the region list also holds TOWER 7, where no tower is placed. The zone area centre is the centre of the bounding box of all region points: Bakurani (-8301, -11201), Ozeti (-6376, -6111), Zestafona (-1100, -2105).
+
+### 12c. Map extents
+
+| Map (world) | Landscape | Landscape pieces | Play box | Play box size (km) | Ground z in play box (m) | Ground z, whole landscape (m) |
+|---|---|---:|---|---|---|---|
+| Bakurani (Kavkazi) | 16.32 x 16.32 km | 256 of 1020 m | zone regions plus 500 m | 3.33 x 3.45 | -991 to -278 | -1008 to 178 |
+| Ozeti (Europe) | 16.32 x 16.32 km | 1024 of 510 m | zone regions plus 500 m | 3.8 x 2.95 | -988 to -759 | -1037 to -275 |
+| Zestafona (NorthAmerica) | 16.32 x 16.32 km | 1024 of 510 m | zone regions plus 500 m | 3.46 x 3.25 | 44 to 251 | 25 to 707 |
+| Saburtulo (Russia) | 16.32 x 16.32 km | 1024 of 510 m | five magnets and the zone object plus 500 m (stand-in, no region list) | 1.75 x 1.65 | 132 to 318 | 83 to 766 |
+
+Heights are `LandscapeComponent.CachedLocalBox` min and max z, scaled by the landscape actor scale and offset by its location (z = location z + scale z x local z). The check is that every placed tower lies inside the height range of the piece under it (Bakurani, Ozeti) or within about 16 m above it (Zestafona). Pieces are 1020 m wide on Bakurani and 510 m elsewhere, so a range is an outer bound for the box. Saburtulo has no region list; its box is the five towers and the zone object plus 500 m (a stand-in).
+
+### 12d. Server-browser-only entries
+
+| Entry | World | Spawn layers named in the experience | Distance of each placed spawn point from the zone area centre (m) |
+|---|---|---|---|
+| Mindori | Kavkazi | DL_KhevuliSpawn, DL_LiknisiSpawn, DL_BaghiSpawn | DL_KhevuliSpawn 3807, DL_LiknisiSpawn 2798, DL_BaghiSpawn 3939 |
+| Tevza | Kavkazi | DL_VostimiSpawn, DL_EdemiSpawn, DL_ShovliSpawn | DL_VostimiSpawn not placed, DL_EdemiSpawn not placed, DL_ShovliSpawn not placed |
+| Berlin | Europe | DL_StuttgartSpawn, DL_HanoverSpawn, DL_BremenSpawn | DL_StuttgartSpawn 1573, DL_HanoverSpawn 2358, DL_BremenSpawn 4378 |
+| Paris | Europe | DL_RennesSpawn, DL_CalaisSpawn, DL_GranadaSpawn | DL_RennesSpawn 4027, DL_CalaisSpawn 5278, DL_GranadaSpawn 3522 |
+
+No experience in this group names a zone configuration. Each world file holds one zone object (Bakurani config and Kavkazi region list; Europe config and region list), so the zone area is the main map's (inferred). The Bakurani region list holds MindoriVillage, MindoriHillside1 and MindorHillside2, about 0.9 km from the zone area centre; no region carries the name Tevza, Berlin or Paris.
+
 ## 9. Still Not Pulled / Limitations
 
 - **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.

@@ -11,6 +11,8 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 |---|---|
 | **General** | |
 | Map area | About 16.3 km square (minimap bounds) |
+| Play area | About 1.75 km by 1.65 km around the towers and the zone (stand-in, inferred) |
+| Ground height in the play area | 132 m to 318 m on the game's height scale |
 | Built-up area | About 5.0 km by 4.6 km (where buildings are placed) |
 | Modes | King of the Hill |
 | Vehicle spawns | 3 deployment boards and 11 vehicle yards (6 ground, 2 air, 3 light) and one extra air yard |
@@ -81,13 +83,19 @@ Most cover on Saburtulo is made of the materials below. The counts are placed wa
 
 Total: 189,545 pieces (184,855 building pieces and 4,690 wall, fence and barrier pieces) from 1,017 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
+## Size and ground height
+
+The ground of this map is one square of 16.32 km by 16.32 km. Across the whole square the ground runs from 83 m to 766 m on the game's height scale. Saburtulo has no list of zone regions, so the usual box (the regions plus 500 m) cannot be drawn. The play area above is a stand-in: the box around the five towers and the zone object, plus 500 m on each side. It is inferred and is not an edge the game enforces. Inside it the ground runs from 132 m to 318 m.
+
+The heights are read from the game's ground pieces, which are 510 m wide, so the real spread inside the box can be a little smaller. The height scale is the game's own and starts below zero on some maps, so only the difference between two heights means something. The box is 1.75 km by 1.65 km and the ground piece count that touches it is 20. Nothing here was measured in play.
+
 ## Placed objects
 
 These are the things the map file places for players to use or break. Saburtulo has no zone region list, so there is no "around the zones" area and only the whole file is counted. "Whole map file" counts everything in the file, and the Sniper Showdown layout for Russia uses the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
 
 | Object | Around the zones | Whole map file | What it is |
 |---|---:|---:|---|
-| Hot Zone Magnet towers | Not given | 5 | Numbered 1 to 5. The King of the Hill [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md) belong to these (inferred from the shared name). |
+| Hot Zone Magnet towers | Not given | 5 | Numbered 1 to 5. These are the capture towers of the [tower system](hot-zone-magnet-towers.md) and the source of the [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md). Positions are under Where the towers stand. |
 | Doors you can open | Not given | 536 | Houses, apartments, garages, offices, shops and a hospital. A garage door counts once. Doors can also be broken, see [Destruction](../game-mechanics/destruction.md). |
 | Ladders | Not given | 40 | Climbable with the ladder controls on [Movement](../game-mechanics/movement.md). |
 | Breakable windows | Not given | 2,687 | Single panes that smash when hit. |
@@ -95,6 +103,18 @@ These are the things the map file places for players to use or break. Saburtulo 
 | Pre-placed barbed wire | Not given | 52 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
 | Water | Not given | None | No water actor was found in the file. |
 | Supply buildings | Not given | 10 | A kind of building. Its data shows no supply or pickup function. |
+
+### Where the towers stand
+
+Saburtulo has no list of zone regions, so the towers cannot be placed in a named region. The table gives each tower's distance from the zone object the map places (the usual Hot Zone start). All five stand within about 0.5 km of it. How a tower is captured is on [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
+
+| Tower | Distance from the zone object |
+|---|---:|
+| 1 | 113 m |
+| 2 | 389 m |
+| 3 | 416 m |
+| 4 | 452 m |
+| 5 | 333 m |
 
 ### In each team spawn area
 
@@ -106,7 +126,7 @@ Vehicle yards and spawn spots are on the Vehicle spawns section above.
 
 ### Not in the map files
 
-The map file holds no capture towers other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
+The map file holds no capture points other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
 
 ## Layouts
 
@@ -136,3 +156,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
 - [Round 40 modes, AI and other evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md): Moscow name link (inference from names and folders)
 - [Placed objects per map (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json)
+- [Tower positions and map extents (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-magnets-extents.json)
