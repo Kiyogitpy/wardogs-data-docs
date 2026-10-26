@@ -363,7 +363,7 @@ $lc-warn: #ffc79a;                        // the vehicle viewer's note colour
 }
 .main-content figure.lc-reticle {
   margin: 0;
-  width: min(15rem, 100%);
+  width: unquote("min(15rem, 100%)");
 
   figcaption { margin-top: 0.35rem; color: $ue-text-dim; font-size: 0.8rem; }
 }

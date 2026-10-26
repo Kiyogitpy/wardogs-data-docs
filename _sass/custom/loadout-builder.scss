@@ -21,7 +21,8 @@ html:not(.js) .lb { display: none; }
 }
 
 .lb {
-  container: lb / inline-size;
+  container-name: lb;
+  container-type: inline-size;
   margin: 1.25rem 0 2.5rem;
   min-width: 0;
   font-size: 0.9rem;
@@ -130,10 +131,10 @@ html:not(.js) .lb { display: none; }
   gap: 1rem;
   align-items: start;
   &[hidden] { display: none; }
-
-  @container lb (min-width: 54rem) {
-    grid-template-columns: minmax(19rem, 23rem) minmax(0, 1fr);
-  }
+}
+// Top level, not nested: GitHub Pages compiles with Ruby Sass 3.7, which does not bubble unknown at-rules.
+@container lb (min-width: 54rem) {
+  .lb-layout { grid-template-columns: minmax(19rem, 23rem) minmax(0, 1fr); }
 }
 
 .lb-side, .lb-main {
@@ -418,7 +419,7 @@ html:not(.js) .lb { display: none; }
 .lb-reticles { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.6rem 0 0.25rem; }
 .main-content figure.lb-reticle {
   margin: 0;
-  width: min(15rem, 100%);
+  width: unquote("min(15rem, 100%)");
   figcaption { margin-top: 0.35rem; color: $ue-text-dim; font-size: 0.8rem; }
 }
 // Scope reticles are black lines (light disc); lens reticles are white (dark disc).
@@ -435,8 +436,8 @@ html:not(.js) .lb { display: none; }
 /* ---------- picker ---------- */
 
 dialog.lb-picker {
-  width: min(62rem, calc(100vw - 2rem));
-  max-height: min(48rem, calc(100vh - 2rem));
+  width: unquote("min(62rem, calc(100vw - 2rem))");
+  max-height: unquote("min(48rem, calc(100vh - 2rem))");
   padding: 1rem 1.1rem;
   color: $ue-text;
   background: $ue-panel;
