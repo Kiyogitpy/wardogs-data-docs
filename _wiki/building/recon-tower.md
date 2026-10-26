@@ -10,7 +10,7 @@ description: "A large multi-part tower built only with the Large Hammer from 200
 
 | Recon Tower | |
 |---|---|
-| ![Recon Tower](../../assets/img/icons/other-buildables-crowsnest/T_UI_Buidable_Crowsnest_BC.png){: .wiki-infobox-img } | |
+| ![Recon Tower]({{ '/assets/img/icons/other-buildables-crowsnest/T_UI_Buidable_Crowsnest_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Multi-part structure |
 | Hammer | Large |

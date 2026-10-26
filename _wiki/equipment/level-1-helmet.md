@@ -9,7 +9,7 @@ description: "Entry helmet: 30% head damage reduction, 80 durability, 200 cash, 
 
 | Level 1 Helmet | |
 |---|---|
-| ![Level 1 Helmet](../../assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_001a.png){: .wiki-infobox-img } | |
+| ![Level 1 Helmet]({{ '/assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_001a.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |

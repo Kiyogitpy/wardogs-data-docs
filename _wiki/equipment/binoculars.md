@@ -9,7 +9,7 @@ description: "The Binoculars: the cheapest recon optic, a low magnification view
 
 | Binoculars | |
 |---|---|
-| ![Binoculars](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_RangeFinder_Textured_512x512.png){: .wiki-infobox-img } | |
+| ![Binoculars]({{ '/assets/img/icons/utility-3d/T_UI_Icon_Utility_RangeFinder_Textured_512x512.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles |

@@ -9,7 +9,7 @@ description: "Camouflage suit for 3,000 cash, worn with Ghillie Headwear. It has
 
 | Ghillie Body Suit | |
 |---|---|
-| ![Ghillie Body Suit](../../assets/img/icons/utility-3d/T_UI_Icon_Ghillie_Body_BC.png){: .wiki-infobox-img } | |
+| ![Ghillie Body Suit]({{ '/assets/img/icons/utility-3d/T_UI_Icon_Ghillie_Body_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Camouflage suit |
 | Slot | Armor |

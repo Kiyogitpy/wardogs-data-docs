@@ -9,7 +9,7 @@ description: "The three backpacks with a sling: the Medium Backpack and Sling, t
 
 | Sling Backpacks | |
 |---|---|
-| ![Sling Backpacks](../../assets/img/icons/utility-3d/T_Temp_MediumSlingBackpack_Icon.png){: .wiki-infobox-img } | |
+| ![Sling Backpacks]({{ '/assets/img/icons/utility-3d/T_Temp_MediumSlingBackpack_Icon.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Backpack with sling slots |
 | Sling slots | 1 (Medium and Gunner), 2 (Arsenal) |

@@ -9,7 +9,7 @@ description: "Large 13-seat transport helicopter with no weapons, the helicopter
 
 | Z20 Lakota | |
 |---|---|
-| ![Z20 Lakota](../../assets/img/icons/vehicles/T_UI_VendorIcon_ROT_4.png){: .wiki-infobox-img } | |
+| ![Z20 Lakota]({{ '/assets/img/icons/vehicles/T_UI_VendorIcon_ROT_4.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Transport helicopter |
 | Seats | 13 |
 | Price | 7,400 cash |

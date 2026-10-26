@@ -10,7 +10,7 @@ description: "A large wall built only with the Large Hammer, from 32 Build Suppl
 
 | Bremer Wall | |
 |---|---|
-| ![Bremer Wall](../../assets/img/icons/buildables/T_UI_Buidable_Bremerwall.png){: .wiki-infobox-img } | |
+| ![Bremer Wall]({{ '/assets/img/icons/buildables/T_UI_Buidable_Bremerwall.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Cover and obstruction |
 | Hammer | Large |

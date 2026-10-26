@@ -9,7 +9,7 @@ description: "Small attack helicopter of the Little Bird family with two B-13 ro
 
 | AH-6R [Rockets] | |
 |---|---|
-| ![AH-6R Rockets](../../assets/img/icons/vehicles-3d/T_UI_Vendor_Littlebird_3.png){: .wiki-infobox-img } | |
+| ![AH-6R Rockets]({{ '/assets/img/icons/vehicles-3d/T_UI_Vendor_Littlebird_3.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Combat helicopter (rockets) |
 | Seats | 2 |
 | Price | 18,800 cash |

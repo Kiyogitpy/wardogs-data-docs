@@ -10,7 +10,7 @@ description: "A low cover wall built with any hammer from 15 Build Supplies, wit
 
 | Sandbag Wall | |
 |---|---|
-| ![Sandbag Wall](../../assets/img/icons/other-buildables-sandbagwall/T_UI_Buildable_SandbagWall.png){: .wiki-infobox-img } | |
+| ![Sandbag Wall]({{ '/assets/img/icons/other-buildables-sandbagwall/T_UI_Buildable_SandbagWall.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Cover and obstruction |
 | Hammer | Small, Medium, Large |

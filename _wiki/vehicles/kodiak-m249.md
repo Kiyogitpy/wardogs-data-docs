@@ -9,7 +9,7 @@ description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold fo
 
 | Kodiak [M249] | |
 |---|---|
-| ![Kodiak M249](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_Kodiak_MachineGun.png){: .wiki-infobox-img } | |
+| ![Kodiak M249]({{ '/assets/img/icons/vehicles-3d/T_UI_Vehicle_Kodiak_MachineGun.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | SUV with machine gun |
 | Seats | 5 |
 | Price | 6,750 cash |

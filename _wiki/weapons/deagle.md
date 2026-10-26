@@ -9,7 +9,7 @@ description: "The Deagle pistol: fire rate, damage by body part, range falloff, 
 
 | Deagle | |
 |---|---|
-| ![Deagle](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_027.png){: .wiki-infobox-img } | |
+| ![Deagle]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_027.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Pistol |
 | Caliber | [.50 AE](../ammunition/50-ae.md) |

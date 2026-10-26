@@ -9,7 +9,7 @@ description: "The MP5 submachine gun: fire rate, damage by body part, range fall
 
 | MP5 | |
 |---|---|
-| ![MP5](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_028.png){: .wiki-infobox-img } | |
+| ![MP5]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_028.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Submachine gun |
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |

@@ -9,7 +9,7 @@ description: "Three-seat protected version of the Ural heavy truck with no weapo
 
 | Ural Defender | |
 |---|---|
-| ![Ural Defender](../../assets/img/icons/vehicles-3d/T_UI_Vendor_URAL_2.png){: .wiki-infobox-img } | |
+| ![Ural Defender]({{ '/assets/img/icons/vehicles-3d/T_UI_Vendor_URAL_2.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Heavy truck (protected) |
 | Seats | 3 |
 | Price | 7,200 cash |

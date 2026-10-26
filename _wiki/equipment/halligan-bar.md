@@ -9,7 +9,7 @@ description: "The Halligan Bar: a quick-slot tool that pries open doors and lock
 
 | Halligan Bar | |
 |---|---|
-| ![Halligan Bar](../../assets/img/icons/utility-3d/T_UI_Vendor_Crowbar.png){: .wiki-infobox-img } | |
+| ![Halligan Bar]({{ '/assets/img/icons/utility-3d/T_UI_Vendor_Crowbar.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Equipment, quick slot |
 | Weight | 2.8 kg |

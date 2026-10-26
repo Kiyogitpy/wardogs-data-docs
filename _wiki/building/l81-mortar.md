@@ -10,7 +10,7 @@ description: "A buildable mortar emplacement with one firing arc and a range of 
 
 | L81 Mortar | |
 |---|---|
-| ![L81 Mortar](../../assets/img/icons/buildables/T_UI_Buidable_Mortor.png){: .wiki-infobox-img } | |
+| ![L81 Mortar]({{ '/assets/img/icons/buildables/T_UI_Buidable_Mortor.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Stationary mortar emplacement |
 | Arcs | One |

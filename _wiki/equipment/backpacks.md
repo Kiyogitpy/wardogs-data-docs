@@ -9,7 +9,7 @@ description: "The six standard backpacks and the Pouch: how many inventory slots
 
 | Backpacks | |
 |---|---|
-| ![Backpacks](../../assets/img/icons/utility-3d/T_UI_Item_Backpack_Pouch_BC.png){: .wiki-infobox-img } | |
+| ![Backpacks]({{ '/assets/img/icons/utility-3d/T_UI_Item_Backpack_Pouch_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Backpack, extra storage |
 | Slots | 6 (Pouch) to 24 (Ruck Backpack) |

@@ -9,7 +9,7 @@ description: "Two-seat tracked anti-air tank with twin 35 mm Oerlikon cannons, s
 
 | Flakpanzer Gepard | |
 |---|---|
-| ![Flakpanzer Gepard](../../assets/img/icons/vehicles-3d/T_UI_Vendor_Gepard.png){: .wiki-infobox-img } | |
+| ![Flakpanzer Gepard]({{ '/assets/img/icons/vehicles-3d/T_UI_Vendor_Gepard.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Anti-air armored vehicle |
 | Seats | 2 |
 | Price | 14,000 cash |

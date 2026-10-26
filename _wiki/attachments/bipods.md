@@ -42,15 +42,15 @@ Bipods are sold in the Weapon Shop, so most rows have a price. The Grip Pod has 
 
 | | Part | Fits | Shop price | Main effect |
 |---|---|---|---:|---|
-| ![Evo-3 Ultra Bipod](../../assets/img/icons/vendor-grips/T_UI_Weapons_FGRP_019.png){: .wiki-icon } | Evo-3 Ultra Bipod | Evo-3 Ultra | 1450 | No stat change in data |
+| ![Evo-3 Ultra Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Weapons_FGRP_019.png' | relative_url }}){: .wiki-icon } | Evo-3 Ultra Bipod | Evo-3 Ultra | 1450 | No stat change in data |
 |  | Grip Pod | AK74, AMP-9, Evo-3 Ultra, FAL, Galil, M249 SAW, M4, MP5, PP-19 Vityaz, Super-45, T-21, TCX-SPR | Not in shop data | vertical recoil x0.88; horizontal recoil x0.9; spread x0.94; aim time x1.1; equip speed x0.98; aim sway speed x0.95; aim sway horizontal x0.9; aim sway vertical x0.88; sway translation stabilise x0.78; sway rotation stabilise x0.6 |
-| ![M14 Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FRGP_020.png){: .wiki-icon } | M14 Bipod | M14 | 1480 | No stat change in data |
-| ![M249 Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png){: .wiki-icon } | M249 Bipod | M249 SAW | 1050 | No stat change in data |
-| ![PKM Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png){: .wiki-icon } | PKM Bipod | PKM | 1350 | No stat change in data |
-| ![Pro Tilt Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_009.png){: .wiki-icon } | Pro Tilt Bipod | AMR 50, BMR-308, MK22 | 1400 | No stat change in data |
-| ![SKS Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png){: .wiki-icon } | SKS Bipod | SKS | 810 | No stat change in data |
-| ![SV98 Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_009.png){: .wiki-icon } | SV98 Bipod | SV98 | 1250 | No stat change in data |
-| ![SVD Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png){: .wiki-icon } | SVD Bipod | SVD | 1120 | No stat change in data |
+| ![M14 Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FRGP_020.png' | relative_url }}){: .wiki-icon } | M14 Bipod | M14 | 1480 | No stat change in data |
+| ![M249 Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png' | relative_url }}){: .wiki-icon } | M249 Bipod | M249 SAW | 1050 | No stat change in data |
+| ![PKM Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png' | relative_url }}){: .wiki-icon } | PKM Bipod | PKM | 1350 | No stat change in data |
+| ![Pro Tilt Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_009.png' | relative_url }}){: .wiki-icon } | Pro Tilt Bipod | AMR 50, BMR-308, MK22 | 1400 | No stat change in data |
+| ![SKS Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png' | relative_url }}){: .wiki-icon } | SKS Bipod | SKS | 810 | No stat change in data |
+| ![SV98 Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_009.png' | relative_url }}){: .wiki-icon } | SV98 Bipod | SV98 | 1250 | No stat change in data |
+| ![SVD Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png' | relative_url }}){: .wiki-icon } | SVD Bipod | SVD | 1120 | No stat change in data |
 
 ## Season 2 changes
 
@@ -62,7 +62,7 @@ Shop price changes (Season 1 to Season 2):
 
 | | Part | Season 1 | Season 2 | Change |
 |---|---|---:|---:|---:|
-| ![SKS Bipod](../../assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png){: .wiki-icon } | SKS Bipod | 800 | 810 | +10 (+1.2%) |
+| ![SKS Bipod]({{ '/assets/img/icons/vendor-grips/T_UI_Vendor_FGRP_008.png' | relative_url }}){: .wiki-icon } | SKS Bipod | 800 | 810 | +10 (+1.2%) |
 
 The Season 2 notes also record bipod distance and ledge values whose min and max keys were swapped. The data page treats these as noise, so they are not listed here.
 

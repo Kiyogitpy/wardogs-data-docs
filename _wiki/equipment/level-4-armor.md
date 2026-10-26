@@ -9,7 +9,7 @@ description: "Top vest tier: 60% damage reduction on the torso, pelvis and upper
 
 | Level 4 Armor | |
 |---|---|
-| ![Level 4 Armor](../../assets/img/icons/vendor-gear/T_UI_Vendor_Armor_004a.png){: .wiki-infobox-img } | |
+| ![Level 4 Armor]({{ '/assets/img/icons/vendor-gear/T_UI_Vendor_Armor_004a.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Vest |
 | Slot | Armor |

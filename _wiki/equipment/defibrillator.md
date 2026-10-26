@@ -9,7 +9,7 @@ description: "The revive item that brings a downed teammate back at 35 HP after 
 
 | Defibrillator | |
 |---|---|
-| ![Defibrillator](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_Defib_512x512.png){: .wiki-infobox-img } | |
+| ![Defibrillator]({{ '/assets/img/icons/utility-3d/T_UI_Icon_Utility_Defib_512x512.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, quick slot |
 | Inventory size | 2 by 2 slots |

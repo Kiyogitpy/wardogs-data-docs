@@ -9,7 +9,7 @@ description: "Third helmet tier: 50% reduction for the head and neck, 180 durabi
 
 | Level 3 Helmet | |
 |---|---|
-| ![Level 3 Helmet](../../assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_003a.png){: .wiki-infobox-img } | |
+| ![Level 3 Helmet]({{ '/assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_003a.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |

@@ -9,7 +9,7 @@ description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold fo
 
 | Kodiak [Pickup] | |
 |---|---|
-| ![Kodiak Pickup](../../assets/img/icons/vehicles-3d/T_UI_Vehicle_Kodiak_Pickup.png){: .wiki-infobox-img } | |
+| ![Kodiak Pickup]({{ '/assets/img/icons/vehicles-3d/T_UI_Vehicle_Kodiak_Pickup.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Pickup |
 | Seats | 6 (driver, three inside passengers and two in the bed) |
 | Price | 3,000 cash |

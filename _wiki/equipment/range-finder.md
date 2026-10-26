@@ -9,7 +9,7 @@ description: "The Range Finder: a high, variable magnification recon optic that 
 
 | Range Finder | |
 |---|---|
-| ![Range Finder](../../assets/img/icons/utility-3d/t_ui_icon_rangefinder_1.png){: .wiki-infobox-img } | |
+| ![Range Finder]({{ '/assets/img/icons/utility-3d/t_ui_icon_rangefinder_1.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles, with an accurate distance |

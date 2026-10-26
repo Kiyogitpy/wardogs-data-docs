@@ -9,7 +9,7 @@ description: "The SKS marksman rifle: fire rate, damage by body part, range fall
 
 | SKS | |
 |---|---|
-| ![SKS](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_007.png){: .wiki-infobox-img } | |
+| ![SKS]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_007.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Marksman rifle |
 | Caliber | [7.62x39mm](../ammunition/7-62x39mm.md) |

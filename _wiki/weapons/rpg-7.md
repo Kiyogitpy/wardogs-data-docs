@@ -9,7 +9,7 @@ description: "The RPG-7 launcher: fire rate, damage by body part, range falloff,
 
 | RPG-7 | |
 |---|---|
-| ![RPG-7](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_022.png){: .wiki-infobox-img } | |
+| ![RPG-7]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_022.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |

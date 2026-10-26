@@ -10,7 +10,7 @@ description: "A music radio built with any hammer from 20 Build Supplies, with 1
 
 | Builder's Radio | |
 |---|---|
-| ![Builder's Radio](../../assets/img/icons/buildables/T_UI_Buidable_Radio.png){: .wiki-infobox-img } | |
+| ![Builder's Radio]({{ '/assets/img/icons/buildables/T_UI_Buidable_Radio.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Music radio |
 | Hammer | Small, Medium, Large |

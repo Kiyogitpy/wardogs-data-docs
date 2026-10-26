@@ -9,7 +9,7 @@ description: "The M67 Frag Grenade: a thrown blast grenade with a 4 second fuse,
 
 | M67 Frag Grenade | |
 |---|---|
-| ![M67 Frag Grenade](../../assets/img/icons/utility-3d/T_UI_Vendor_Grenade2.png){: .wiki-infobox-img } | |
+| ![M67 Frag Grenade]({{ '/assets/img/icons/utility-3d/T_UI_Vendor_Grenade2.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Lethal, thrown (quick slot) |
 | How it is used | Thrown. Can be cooked (held before throwing). Throwing one back never applies as shipped (from the game code, not tested in play) |

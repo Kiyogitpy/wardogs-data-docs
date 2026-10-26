@@ -9,7 +9,7 @@ description: "The MGL-40 launcher: fire rate, damage by body part, range falloff
 
 | MGL-40 | |
 |---|---|
-| ![MGL-40](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_012.png){: .wiki-infobox-img } | |
+| ![MGL-40]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_012.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |

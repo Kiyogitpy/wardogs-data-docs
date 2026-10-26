@@ -9,7 +9,7 @@ description: "The Super-45 submachine gun: fire rate, damage by body part, range
 
 | Super-45 | |
 |---|---|
-| ![Super-45](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_006.png){: .wiki-infobox-img } | |
+| ![Super-45]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_006.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Submachine gun |
 | Caliber | [.45 ACP](../ammunition/45-acp.md) |

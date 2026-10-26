@@ -9,7 +9,7 @@ description: "The Mosin Nagant sniper rifle: fire rate, damage by body part, ran
 
 | Mosin Nagant | |
 |---|---|
-| ![Mosin Nagant](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_017.png){: .wiki-infobox-img } | |
+| ![Mosin Nagant]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_017.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Sniper rifle |
 | Caliber | [7.62x54mm](../ammunition/7-62x54mm.md) |

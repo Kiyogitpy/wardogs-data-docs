@@ -10,7 +10,7 @@ description: "A small camouflage tent built with any hammer from 7 Build Supplie
 
 | Recon Tent | |
 |---|---|
-| ![Recon Tent](../../assets/img/icons/other-buildables-camonettent/T_UI_Buidable_camonettent_512x512_BC.png){: .wiki-infobox-img } | |
+| ![Recon Tent]({{ '/assets/img/icons/other-buildables-camonettent/T_UI_Buidable_camonettent_512x512_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Cover and obstruction |
 | Hammer | Small, Medium, Large |

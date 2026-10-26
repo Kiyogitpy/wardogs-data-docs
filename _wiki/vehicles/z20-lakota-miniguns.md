@@ -9,7 +9,7 @@ description: "Armed version of the Z20 Lakota helicopter with two M134D miniguns
 
 | Z20 Lakota [Miniguns] | |
 |---|---|
-| ![Z20 Lakota Miniguns](../../assets/img/icons/vehicles/T_UI_VendorIcon_ROT_4_MiniGun.png){: .wiki-infobox-img } | |
+| ![Z20 Lakota Miniguns]({{ '/assets/img/icons/vehicles/T_UI_VendorIcon_ROT_4_MiniGun.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Combat helicopter |
 | Seats | 13 |
 | Price | 15,000 cash |

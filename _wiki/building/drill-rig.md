@@ -10,7 +10,7 @@ description: "A fuel-powered rig built with the Large Hammer from 2,750 Build Su
 
 | Drill Rig | |
 |---|---|
-| ![Drill Rig](../../assets/img/icons/other-shared-textures/T_UI_WorkInProgress.png){: .wiki-infobox-img } | |
+| ![Drill Rig]({{ '/assets/img/icons/other-shared-textures/T_UI_WorkInProgress.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Fuel-powered rig |
 | Hammer | Large |

@@ -9,7 +9,7 @@ description: "Five-seat Humvee with a ring-mounted M134D minigun, the lowest rif
 
 | Humvee [Minigun] | |
 |---|---|
-| ![Humvee Minigun](../../assets/img/icons/vehicles-3d/T_UI_Icon_Vehicle_Humvee_Gun.png){: .wiki-infobox-img } | |
+| ![Humvee Minigun]({{ '/assets/img/icons/vehicles-3d/T_UI_Icon_Vehicle_Humvee_Gun.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Light armored SUV with minigun |
 | Seats | 5 (shop listing; one stats sheet lists 4) |
 | Price | 10,000 cash |

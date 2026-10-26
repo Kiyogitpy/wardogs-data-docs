@@ -9,7 +9,7 @@ description: "The Evo-3 Ultra light machine gun: fire rate, damage by body part,
 
 | Evo-3 Ultra | |
 |---|---|
-| ![Evo-3 Ultra](../../assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_036.png){: .wiki-infobox-img } | |
+| ![Evo-3 Ultra]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_036.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Light machine gun |
 | Caliber | [.308 Win](../ammunition/308-win.md) |

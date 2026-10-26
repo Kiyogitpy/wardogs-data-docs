@@ -10,7 +10,7 @@ description: "A buildable stationary emplacement with a fast automatic 20x102 mm
 
 | Vanguard CIWS | |
 |---|---|
-| ![Vanguard CIWS](../../assets/img/icons/buildables/T_UI_Buidable_Phalanx.png){: .wiki-infobox-img } | |
+| ![Vanguard CIWS]({{ '/assets/img/icons/buildables/T_UI_Buidable_Phalanx.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Stationary emplacement |
 | **Weapon** | |

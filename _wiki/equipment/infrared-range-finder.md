@@ -9,7 +9,7 @@ description: "The Infrared Range Finder: the most expensive recon optic, with in
 
 | Infrared Range Finder | |
 |---|---|
-| ![Infrared Range Finder](../../assets/img/icons/utility-3d/t_ui_icon_rangefinderIR.png){: .wiki-infobox-img } | |
+| ![Infrared Range Finder]({{ '/assets/img/icons/utility-3d/t_ui_icon_rangefinderIR.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Recon, specialist item |
 | Use | Spot enemy infantry and vehicles, with an accurate distance |

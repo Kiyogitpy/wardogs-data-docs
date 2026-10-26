@@ -10,7 +10,7 @@ description: "A large multi-part shelter built only with the Large Hammer from 2
 
 | Indirect Fire Shelter | |
 |---|---|
-| ![Indirect Fire Shelter](../../assets/img/icons/other-buildables-airraidshelter/T_UI_Buildable_AirRaidShelter_BC.png){: .wiki-infobox-img } | |
+| ![Indirect Fire Shelter]({{ '/assets/img/icons/other-buildables-airraidshelter/T_UI_Buildable_AirRaidShelter_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Category | Multi-part structure |
 | Hammer | Large |

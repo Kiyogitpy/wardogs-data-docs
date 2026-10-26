@@ -9,7 +9,7 @@ description: "Second helmet tier: 40% head damage reduction, 100 durability, 500
 
 | Level 2 Helmet | |
 |---|---|
-| ![Level 2 Helmet](../../assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_002a.png){: .wiki-infobox-img } | |
+| ![Level 2 Helmet]({{ '/assets/img/icons/vendor-gear/T_UI_Vendor_Helmet_002a.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |

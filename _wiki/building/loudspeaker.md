@@ -10,7 +10,7 @@ description: "A buildable stationary emplacement with no weapon in the game data
 
 | Loudspeaker | |
 |---|---|
-| ![Loudspeaker](../../assets/img/icons/buildables/T_UI_Buidable_Speaker.png){: .wiki-infobox-img } | |
+| ![Loudspeaker]({{ '/assets/img/icons/buildables/T_UI_Buidable_Speaker.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Stationary emplacement |
 | Weapon | None in the data |

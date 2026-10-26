@@ -10,7 +10,7 @@ description: "A buildable stationary emplacement whose ammunition is listed as U
 
 | Stingray | |
 |---|---|
-| ![Stingray](../../assets/img/icons/other-tacticalmap-textures/T_UI_MapTracker_Phalanx.png){: .wiki-infobox-img } | |
+| ![Stingray]({{ '/assets/img/icons/other-tacticalmap-textures/T_UI_MapTracker_Phalanx.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Stationary emplacement |
 | **Weapon** | |

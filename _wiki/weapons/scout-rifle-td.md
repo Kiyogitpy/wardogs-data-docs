@@ -9,7 +9,7 @@ description: "The Scout Rifle TD sniper rifle: fire rate, damage by body part, r
 
 | Scout Rifle TD | |
 |---|---|
-| ![Scout Rifle TD](../../assets/img/icons/vendor-weapons/T_UI_WEPN_035.png){: .wiki-infobox-img } | |
+| ![Scout Rifle TD]({{ '/assets/img/icons/vendor-weapons/T_UI_WEPN_035.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Sniper rifle |
 | Caliber | [5.56x45mm](../ammunition/5-56x45mm.md) |

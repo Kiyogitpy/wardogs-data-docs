@@ -9,7 +9,7 @@ description: "The Wrench: the cheapest vehicle repair tool, a slow hand repair f
 
 | Wrench | |
 |---|---|
-| ![Wrench](../../assets/img/icons/utility-3d/T_UI_Item_Repair_1_BC.png){: .wiki-infobox-img } | |
+| ![Wrench]({{ '/assets/img/icons/utility-3d/T_UI_Item_Repair_1_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Repair tool, quick slot |
 | Repairs | All vehicles |

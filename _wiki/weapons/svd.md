@@ -9,7 +9,7 @@ description: "The SVD marksman rifle: fire rate, damage by body part, range fall
 
 | SVD | |
 |---|---|
-| ![SVD](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_015.png){: .wiki-infobox-img } | |
+| ![SVD]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_015.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Marksman rifle |
 | Caliber | [7.62x54mm](../ammunition/7-62x54mm.md) |

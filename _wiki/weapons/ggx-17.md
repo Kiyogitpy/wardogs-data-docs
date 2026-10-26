@@ -9,7 +9,7 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 
 | GGX 17 | |
 |---|---|
-| ![GGX 17](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_010.png){: .wiki-infobox-img } | |
+| ![GGX 17]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_010.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Pistol |
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |

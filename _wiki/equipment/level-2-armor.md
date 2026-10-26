@@ -9,7 +9,7 @@ description: "Second vest tier: 40% damage reduction on the torso, 220 durabilit
 
 | Level 2 Armor | |
 |---|---|
-| ![Level 2 Armor](../../assets/img/icons/vendor-gear/T_UI_Vendor_Armor_002a.png){: .wiki-infobox-img } | |
+| ![Level 2 Armor]({{ '/assets/img/icons/vendor-gear/T_UI_Vendor_Armor_002a.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Vest |
 | Slot | Armor |

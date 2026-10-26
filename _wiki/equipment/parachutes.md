@@ -9,7 +9,7 @@ description: "The Basic and Sport parachutes: when they can be opened, what the 
 
 | Parachutes | |
 |---|---|
-| ![Parachutes](../../assets/img/icons/utility-3d/T_UI_Icon_Parachute_Basic.png){: .wiki-infobox-img } | |
+| ![Parachutes]({{ '/assets/img/icons/utility-3d/T_UI_Icon_Parachute_Basic.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Traversal, single use |
 | Deploy | By hand only |

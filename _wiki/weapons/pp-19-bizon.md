@@ -9,7 +9,7 @@ description: "The PP-19 Bizon submachine gun: fire rate, damage by body part, ra
 
 | PP-19 Bizon | |
 |---|---|
-| ![PP-19 Bizon](../../assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_31.png){: .wiki-infobox-img } | |
+| ![PP-19 Bizon]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_31.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Submachine gun |
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |

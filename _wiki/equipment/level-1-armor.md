@@ -9,7 +9,7 @@ description: "The lightest vest in the Armor group: 30% damage reduction on the 
 
 | Level 1 Armor | |
 |---|---|
-| ![Level 1 Armor](../../assets/img/icons/vendor-gear/T_UI_Vendor_Armor_001a.png){: .wiki-infobox-img } | |
+| ![Level 1 Armor]({{ '/assets/img/icons/vendor-gear/T_UI_Vendor_Armor_001a.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Vest |
 | Slot | Armor |

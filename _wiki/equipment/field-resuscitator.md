@@ -9,7 +9,7 @@ description: "A single-use revive item that revives a downed teammate faster tha
 
 | Field Resuscitator | |
 |---|---|
-| ![Field Resuscitator](../../assets/img/icons/utility-3d/t_ui_icon_enox_512x512.png){: .wiki-infobox-img } | |
+| ![Field Resuscitator]({{ '/assets/img/icons/utility-3d/t_ui_icon_enox_512x512.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, quick slot |
 | Inventory size | 1 by 2 slots |

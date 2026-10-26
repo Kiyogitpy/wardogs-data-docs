@@ -9,7 +9,7 @@ description: "The six coloured M18 Signal Grenades: each releases a column of co
 
 | M18 Signal Grenade | |
 |---|---|
-| ![M18 Signal Grenade](../../assets/img/icons/utility-3d/T_UI_Icon_Utility_Smoke_Textured_Yellow_512x512.png){: .wiki-infobox-img } | |
+| ![M18 Signal Grenade]({{ '/assets/img/icons/utility-3d/T_UI_Icon_Utility_Smoke_Textured_Yellow_512x512.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Tactical or logistics, thrown smoke with a map marker (quick slot) |
 | Variants | Six colours: Alert, Hostile, Friendly, Damaged Vehicle, Supply Request, Landing Zone |

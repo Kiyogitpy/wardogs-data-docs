@@ -9,7 +9,7 @@ description: "Vehicle-use helmet: 30% head damage reduction, halves vehicle soun
 
 | Pilot Helmet | |
 |---|---|
-| ![Pilot Helmet](../../assets/img/icons/vendor-gear/T_UI_Gear_PilotHelmet.png){: .wiki-infobox-img } | |
+| ![Pilot Helmet]({{ '/assets/img/icons/vendor-gear/T_UI_Gear_PilotHelmet.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |

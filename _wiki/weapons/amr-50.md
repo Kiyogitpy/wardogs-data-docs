@@ -9,7 +9,7 @@ description: "The AMR 50 sniper rifle: fire rate, damage by body part, range fal
 
 | AMR 50 | |
 |---|---|
-| ![AMR 50](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_024.png){: .wiki-infobox-img } | |
+| ![AMR 50]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_024.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Sniper rifle |
 | Caliber | [.50 Cal](../ammunition/50-cal.md) |

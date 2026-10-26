@@ -9,7 +9,7 @@ description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Sui
 
 | Ghillie Headwear | |
 |---|---|
-| ![Ghillie Headwear](../../assets/img/icons/utility-3d/T_UI_Icon_Ghillie_Helmet_BC.png){: .wiki-infobox-img } | |
+| ![Ghillie Headwear]({{ '/assets/img/icons/utility-3d/T_UI_Icon_Ghillie_Helmet_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Camouflage headwear |
 | Slot | Helmet |

@@ -9,7 +9,7 @@ description: "The 12 gauge caliber: the weapons that fire it, its bullet types, 
 
 | 12 gauge | |
 |---|---|
-| ![12 gauge](../../assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_12g_slug_green.png){: .wiki-infobox-img } | |
+| ![12 gauge]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_12g_slug_green.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Bullet types | Buckshot, Rifled slug |
 | Weapons | 2 |

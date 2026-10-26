@@ -9,7 +9,7 @@ description: "The Judge pistol: fire rate, damage by body part, range falloff, a
 
 | Judge | |
 |---|---|
-| ![Judge](../../assets/img/icons/weapons-3d-inventory/T_UI_Icon_Weapon_judge_Textured_512x256_inv.png){: .wiki-infobox-img } | |
+| ![Judge]({{ '/assets/img/icons/weapons-3d-inventory/T_UI_Icon_Weapon_judge_Textured_512x256_inv.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Pistol |
 | Caliber | [.45 Colt](../ammunition/45-colt.md) |

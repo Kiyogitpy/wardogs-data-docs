@@ -9,7 +9,7 @@ description: "The MAAWS launcher: fire rate, damage by body part, range falloff,
 
 | MAAWS | |
 |---|---|
-| ![MAAWS](../../assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_013.png){: .wiki-infobox-img } | |
+| ![MAAWS]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_013.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
 | Class | Launcher |
 | Caliber | None (explosive) |

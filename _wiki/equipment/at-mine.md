@@ -9,7 +9,7 @@ description: "The AT Mine: a placed anti-vehicle mine that fires when a moving v
 
 | AT Mine | |
 |---|---|
-| ![AT Mine](../../assets/img/icons/utility-3d/T_UI_Item_Mine_BC.png){: .wiki-infobox-img } | |
+| ![AT Mine]({{ '/assets/img/icons/utility-3d/T_UI_Item_Mine_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Lethal, placed mine (anti-vehicle) |
 | How it is used | Placed on the ground |

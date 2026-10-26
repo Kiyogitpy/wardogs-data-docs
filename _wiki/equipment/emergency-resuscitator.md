@@ -9,7 +9,7 @@ description: "A single-use revive item, limited to one per life, that revives a 
 
 | Emergency Resuscitator | |
 |---|---|
-| ![Emergency Resuscitator](../../assets/img/icons/utility-3d/t_ui_icon_enox_512x512.png){: .wiki-infobox-img } | |
+| ![Emergency Resuscitator]({{ '/assets/img/icons/utility-3d/t_ui_icon_enox_512x512.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** | |
 | Type | Medical, quick slot |
 | Inventory size | 1 by 2 slots |

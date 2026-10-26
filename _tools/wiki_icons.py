@@ -4,7 +4,7 @@ Matches every article under _wiki/ that has an infobox (a table ending in `{: .w
 to assets/data/item-icons.json: first by the backticked ids in the infobox "Internal name"
 row, then by the article title against the icon file's FriendlyName. The icon is the vendor
 texture, else the inventory (3D) one, else the fallback. It is written as the first body row
-of the table, `| ![Title](../../assets/img/icons/...png){: .wiki-infobox-img } | |`, and is
+of the table, `| ![Title]({{ '/assets/img/icons/...png' | relative_url }}){: .wiki-infobox-img } | |`, and is
 replaced in place on re-runs, so the tool is idempotent.
 
     python _tools/wiki_icons.py            # insert or update the image rows
@@ -84,13 +84,18 @@ def lookup(ids, title=None):
     return None
 
 
+def site_url(png):
+    """Liquid that resolves to the icon under the site's baseurl. Document-relative paths break
+    because a page at _wiki/x/y.md is served one folder deeper, at /wiki/x/y/."""
+    return "{{ '/" + png + "' | relative_url }}"
+
+
 def image_row(page_path, title, ids=(), key=None):
     """The markdown row for a page, or None. page_path is the article's own path."""
     png = lookup(ids, title)
     if not png:
         return None
-    rel = os.path.relpath(os.path.join(ROOT, png), os.path.dirname(os.path.abspath(page_path)))
-    rel = rel.replace(os.sep, "/")
+    rel = site_url(png)
     alt = title.replace("[", "").replace("]", "")
     return f"| ![{alt}]({rel}){{: .wiki-infobox-img }} | |"
 
@@ -162,6 +167,9 @@ def article_png(page_dir, target):
     m = re.search(r"^\| !\[[^\]]*\]\(([^)]+)\)\{: \.wiki-infobox-img \} \| \|", text, re.M)
     if not m:
         return None
+    lm = re.match(r"\{\{ '/([^']+)' \| relative_url \}\}", m.group(1))
+    if lm:
+        return lm.group(1)
     return os.path.relpath(os.path.normpath(os.path.join(os.path.dirname(path), m.group(1))), ROOT).replace(os.sep, "/")
 
 
@@ -203,7 +211,7 @@ def add_icon_columns(text, path):
                         name, png = m.group(1), article_png(page_dir, m.group(2))
                 if png:
                     any_icon = True
-                    rel = os.path.relpath(os.path.join(ROOT, png), page_dir).replace(os.sep, "/")
+                    rel = site_url(png)
                     alt = name.replace("[", "").replace("]", "")
                     body_rows.append(f"| ![{alt}]({rel}){{: .wiki-icon }} {r}")
                 else:
