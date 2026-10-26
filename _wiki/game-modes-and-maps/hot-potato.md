@@ -34,10 +34,11 @@ Hot Potato came in with Season 2 alongside [Team Offence](team-offence.md). The 
 
 ## Rewards
 
-The points from Hot Potato go into the same pre-lobby award as the other pre-lobby mini-games. The game's defaults give a first award of 150 points and a periodic award of 250 points every 60 seconds, with a cap of 5,000 points on the amount waiting for the match. When the match starts, the waiting points are paid as starting Cash, and the player gets a first-purchase discount (see [Shops](../progression-and-economy/shops.md)). The data does not show what the points buy beyond that.
+The points from Hot Potato go into the same pre-lobby award as the other pre-lobby mini-games. The game's defaults give a first award of 150 points and a periodic award of 250 points every 60 seconds, with a cap of 5,000 points on the amount waiting for the match. When the match starts, the waiting points are paid as starting Cash at one Cash per point, and the player gets a first-purchase discount (see [Shops](../progression-and-economy/shops.md)). Points are only paid to players who have been in the lobby for at least 15 seconds. The full rules are in [Pre-lobby](pre-lobby.md). The data does not show what the points buy beyond that.
 
 ## See also
 
+- [Pre-lobby](pre-lobby.md), how the points turn into Cash
 - [Team Offence](team-offence.md), the other Season 2 addition
 - [Factions](factions.md), each of which has its own Hot Potato item
 - [Maps](maps.md)

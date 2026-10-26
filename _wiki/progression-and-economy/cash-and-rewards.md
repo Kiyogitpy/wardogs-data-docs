@@ -29,6 +29,7 @@ Cash pays for gear, weapons, vehicles and skills. Role XP raises a role's master
 - **Repeat victims.** Each repeat kill on the same player pays 24% less, up to four repeats. Spotting has its own, harsher rule: 50% less for each repeat, up to two (see [Spotting](../game-mechanics/spotting.md)).
 - **Kill streaks.** Each streak kill adds 50 to the base, up to five. Ending an enemy's streak pays 1.5 times. Revenge kills pay 2.0 times.
 - **Penalties.** A teamkill pays a negative amount. A kill on a player an enemy has just revived (for 60 s) is a "No Value Kill": cash is 0.01 times, and it pays no Role XP and no assist XP. Crew kills split the reward down by crew count (each extra crew member multiplies it by 0.8).
+- **Pre-lobby points.** In King of the Hill, points earned while waiting for the match (up to 5,000) are paid as extra starting Cash at one Cash per point when the match starts. See [Pre-lobby](../game-modes-and-maps/pre-lobby.md).
 - **Role XP.** For most events the role XP is the base value itself, without the zone and assist multipliers. Kill XP falls with repeat victims in the same way as kill cash.
 
 ## Numbers
@@ -179,6 +180,7 @@ The unlock rows for each role are on its page, under Unlocks.
 - [Shops](shops.md)
 - [Control Zone](../game-modes-and-maps/control-zone.md)
 - [King of the Hill](../game-modes-and-maps/king-of-the-hill.md)
+- [Pre-lobby](../game-modes-and-maps/pre-lobby.md), where waiting points turn into extra starting Cash
 
 ## Sources
 

@@ -13,7 +13,7 @@ description: "Where the play area ends and what happens if you leave it, plus ho
 | Edge | A rectangle per map, measured on the ground plane only (no height limit) |
 | Warning | "Return to the Combat Area" with a countdown |
 | Countdown on foot | 20 s |
-| Countdown in a vehicle | 22 s (the game's default; the vehicle files were not checked for a different value) |
+| Countdown in a vehicle | 22 s (the game's default; the vehicle files do not change it) |
 | When it runs out | The character dies (inferred for vehicles: they are destroyed) |
 | Coming back in | The countdown runs down at the same speed |
 | **Spawn safe zones** | |
@@ -44,7 +44,7 @@ The "zone area" here is the box around all the map's named zone regions plus 500
 - **Countdown.** On foot you have 20 seconds. The game's own default is 10 seconds, but the player character in the data is set to 20.
 - **Coming back.** While you are inside the rectangle again, the timer counts down at the same speed it counted up. If you step out a second time, it continues from what is left rather than starting at zero (read from the game code, not timed in play).
 - **When it runs out.** The character dies. No damage over time, no health drain and no other penalty was found in the data.
-- **Vehicles.** Vehicles run the same check with the same rectangle. The default time limit in the game code is 22 seconds. When it runs out, the game calls something that looks like destroying the vehicle (inferred; the vehicle files were not checked for a different limit and the effect was not traced further).
+- **Vehicles.** Vehicles run the same check with the same rectangle. The default time limit in the game code is 22 seconds. When it runs out, the game calls something that looks like destroying the vehicle (inferred; the three vehicle files that carry the setting do not change the limit, and the effect was not traced further).
 - **Enemy safe zone.** Standing in an enemy team's spawn safe zone counts as being out of bounds. The screen says "HOSTILE SAFE ZONE" and the same countdown runs, so staying there for the full time ends in death.
 - **Sniper Showdown.** The mode adds the same out-of-bounds state when you are in neither the Control Zone nor the Hot Zone, so leaving both starts the 20-second countdown. See [Sniper Showdown](sniper-showdown.md).
 
@@ -88,21 +88,22 @@ Most team spawn areas hold a small soccer pitch (15 are placed in the four world
 
 - **A real ball.** A ball sits at the middle of the pitch. If it leaves the pitch box for 3 seconds, it is put back in the middle. After a goal the ball is reset too, with a goal effect and a reset effect.
 - **No score.** There is no scoreboard, team assignment or match end.
-- **Reward.** The last player to touch the ball before a goal gets 50 points, and the last player who passed it to them gets 25. They are pre-lobby points, the same kind that [Hot Potato](hot-potato.md) pays, which turn into starting Cash when the match begins (cap of 5,000). Whether goals still pay after the match has started was not traced.
+- **Reward.** The last player to touch the ball before a goal gets 50 points, and the last player who passed it to them gets 25. They are pre-lobby points, the same kind that [Hot Potato](hot-potato.md) pays, which turn into starting Cash when the match begins (cap of 5,000). The pitch is removed when the match starts, so goals cannot score after that. See [Pre-lobby](pre-lobby.md).
 - **Challenges.** No challenge or reward row names the pitch.
 
 ## Moving practice targets
 
 Each team spawn area holds 3 moving targets (45 are placed in the four world files, including some for other maps). Each target slides between two points, taking 15 to 25 seconds per crossing, and drops when it is hit.
 
-- **Reward.** A hit that is not a melee blow or a fist pays pre-lobby points equal to the damage of the hit, rounded down. A melee hit makes the hit count as failed. Points go to the player who shot, and become starting Cash at match start like the soccer points.
+- **Reward.** A hit that is not a melee blow or a fist pays pre-lobby points equal to the damage of the hit, rounded down. A melee hit makes the hit count as failed. Points go to the player who shot, and become starting Cash at match start like the soccer points. The targets are removed when the match starts.
 - **Challenges.** No challenge or reward row names the targets.
-- **Respawn.** A hit target falls in half a second and pops back up after a delay that was not recovered.
+- **Respawn.** A hit target falls in half a second and pops back up after a delay of 2 seconds.
 
 ## See also
 
 - [Maps](maps.md)
 - [Building](../building.md), for the placement checks near a safe zone
+- [Pre-lobby](pre-lobby.md), for how the points become Cash
 - [Hot Potato](hot-potato.md), for how pre-lobby points work
 - [Sniper Showdown](sniper-showdown.md), for the out-of-bounds rule in that mode
 - [Fuel and refueling](../vehicles/fuel-and-refueling.md)

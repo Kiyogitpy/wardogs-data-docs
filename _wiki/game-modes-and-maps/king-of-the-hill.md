@@ -29,7 +29,7 @@ Players earn cash and XP from the zone and from fights around it. Challenges suc
 ## Rules and objectives
 
 - **Factions.** Three teams are set up at the start of the match. The factions are named in the data as Lonestar, Valkyra and Manticore.
-- **Match flow.** A match goes through four stages: waiting for the world to load, waiting for enough players, playing, then post-match. The lobby needs 60 players and waits up to 10 seconds for them. If that does not fill, a 5 second ready-up step needs at least 9 players. The post-match screen lasts 45 seconds.
+- **Match flow.** A match goes through four stages: waiting for the world to load, waiting for enough players, playing, then post-match. The lobby needs 60 players and waits up to 10 seconds for them. If that does not fill, a 5 second ready-up step needs at least 9 players. The post-match screen lasts 45 seconds. The wait before the match is the [Pre-lobby](pre-lobby.md), where points earned turn into starting Cash.
 - **Scoring the zone.** A player counts toward capturing the zone only while alive. A critically wounded or dead player adds nothing. See [Control Zone](control-zone.md).
 - **Hot Zone.** Each Control Zone has a Hot Zone in its centre. The Hot Zone moves during the match. Kills and captures inside it pay more than in the outer zone.
 - **Hot Zone Magnet.** Players can build and activate a Hot Zone Magnet. While it is active, kills in the Hot Zone pay the highest multiplier in the game. Capturing hostile or neutral towers also counts. Each map also has numbered towers: a team captures towers to learn a secret code and types it on a tower keypad to pull the Hot Zone to that tower. See [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
@@ -65,6 +65,7 @@ At the end of the match, factions are ranked and paid a flat placement bonus: 20
 - [Maps](maps.md)
 - [Challenges](../progression-and-economy/challenges.md)
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)
+- [Pre-lobby](pre-lobby.md), the wait before the match
 - [Sniper Showdown](sniper-showdown.md), which uses the same zone rules
 - [King of the Hill Guide](../guides/king-of-the-hill-guide.md), practical tips for the main maps
 
