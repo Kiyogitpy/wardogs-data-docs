@@ -1,0 +1,522 @@
+// Loadout Builder (content/loadout-builder.md, assets/js/loadout-builder.js). Imported at the end of
+// custom.scss, so the $ue-* tokens are in scope. The site is dark only. Own classes (.lb-*): nothing here
+// depends on the vehicle viewer's styles.
+
+$lb-good: #6fdc8c;
+$lb-bad: #ff8d84;
+$lb-flat: #8fd3ff;
+$lb-warn: #ffc79a;
+$lb-focus: 2px solid $ue-blue;
+
+.js .lb-nojs { display: none; }
+html:not(.js) .lb { display: none; }
+
+// Wide page: the content column takes the room beside the sidebar, and phones keep a 16px gutter.
+.side-bar + .main:has(.lb) { max-width: none; }
+@media (max-width: 49.99rem) {
+  .main-content-wrap:has(.lb) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+.lb {
+  container: lb / inline-size;
+  margin: 1.25rem 0 2.5rem;
+  min-width: 0;
+  font-size: 0.9rem;
+}
+
+.lb-offscreen { position: fixed; left: -9999px; top: 0; }
+
+/* ---------- controls ---------- */
+
+.lb-btn {
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: $ue-white;
+  background: $ue-btn-grey;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-small;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) { background: $ue-btn-grey-hover; }
+  &:focus-visible { outline: $lb-focus; outline-offset: 2px; }
+  &:disabled { cursor: default; color: $ue-text-dim; background: $ue-panel; }
+}
+
+.lb-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+
+  .lb-field { flex: 0 1 12rem; }
+  .lb-field-level { flex-basis: 7rem; }
+  .lb-actions { display: flex; gap: 0.5rem; margin-left: auto; }
+}
+
+.lb-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+
+  > label, > .lb-label {
+    color: $ue-text-dim;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  select, input[type="number"], input[type="search"] {
+    width: 100%;
+    min-width: 0;
+    padding: 0.5rem 0.75rem;
+    font: inherit;
+    font-size: 0.9rem;
+    color: $ue-white;
+    background: $ue-panel;
+    border: 1px solid $ue-border-strong;
+    border-radius: $radius-small;
+    color-scheme: dark;
+
+    &:hover { border-color: $ue-text-dim; }
+    &:focus-visible { outline: $lb-focus; outline-offset: 2px; }
+    &:disabled { color: $ue-text-dim; }
+  }
+}
+
+.lb-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+  &[hidden] { display: none; }
+}
+
+.main-content .lb-hint {
+  margin: 0.4rem 0 0.8rem;
+  max-width: none;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  &:empty { display: none; }
+}
+.main-content .lb-warn { color: $lb-warn; }
+
+.main-content .lb-status {
+  margin: 0 0 1rem;
+  max-width: none;
+  padding: 0.5rem 0.9rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  font-size: 0.85rem;
+  &[hidden], &:empty { display: none; }
+}
+
+.lb-none { color: $ue-text-dim; }
+
+/* ---------- layout and cards ---------- */
+
+.lb-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  &[hidden] { display: none; }
+
+  @container lb (min-width: 54rem) {
+    grid-template-columns: minmax(19rem, 23rem) minmax(0, 1fr);
+  }
+}
+
+.lb-side, .lb-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.lb-card {
+  min-width: 0;
+  padding: 1rem 1.1rem 0.9rem;
+  background: $ue-panel;
+  border: 1px solid $ue-border;
+  border-radius: $radius-panel;
+  &[hidden] { display: none; }
+
+  .main-content & h2.lb-card-title {
+    margin: 0 0 0.7rem;
+    color: $ue-text-dim;
+    font-size: 0.75rem !important;   // the theme sizes h2 with !important
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .main-content & p { max-width: none; }
+  .main-content & h3.lb-sub {
+    margin: 1.2rem 0 0.4rem;
+    color: $ue-white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+}
+.main-content .lb-lead {
+  margin: 0 0 0.8rem;
+  max-width: none;
+  color: $ue-text-dim;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ---------- equipment tiles ---------- */
+
+.lb-slotrow {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  background: $ue-bg;
+  &.lb-slotrow-on { border-color: $ue-blue; }
+}
+
+.lb-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.5rem 0.65rem;
+  font: inherit;
+  text-align: left;
+  color: $ue-text;
+  background: $ue-panel-raised;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-small;
+  cursor: pointer;
+
+  &:hover { background: $ue-panel-hover; border-color: $ue-text-dim; }
+  &:focus-visible { outline: $lb-focus; outline-offset: 2px; }
+}
+.lb-tile-icon { width: 4.6rem; height: 3rem; flex: none; }
+.lb-tile-text { display: flex; flex-direction: column; min-width: 0; flex: 1; line-height: 1.3; }
+.lb-tile-slot { color: $ue-text-dim; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.lb-tile-name { color: $ue-white; font-weight: 600; overflow-wrap: anywhere; }
+.lb-tile-price { color: $ue-text-dim; font-size: 0.8rem; }
+.lb-tile-empty .lb-tile-name { color: $ue-text-dim; font-weight: 400; }
+.lb-tile-num {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.45rem;
+  color: $ue-text-dim;
+  font-size: 0.7rem;
+}
+.lb-tile-locked { border-color: $lb-warn; }
+.lb-tile-warn { position: absolute; right: 0.5rem; bottom: 0.3rem; color: $lb-warn; font-size: 0.7rem; }
+
+.lb-subs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.9rem, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+.lb-mini {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.15rem;
+  padding: 0.4rem 0.3rem 0.35rem;
+  text-align: center;
+  min-height: 4.9rem;
+
+  .lb-tile-icon { width: 100%; height: 2rem; }
+  .lb-tile-text { align-items: center; width: 100%; }
+  .lb-tile-slot { font-size: 0.62rem; letter-spacing: 0.03em; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lb-tile-name { font-size: 0.7rem; font-weight: 500; line-height: 1.15; max-height: 2.3em; overflow: hidden; }
+  .lb-tile-price { display: none; }
+  .lb-tile-warn { top: 0.15rem; right: 0.25rem; bottom: auto; font-size: 0.6rem; }
+}
+.lb-mini-child { border-left: 3px solid $ue-blue-deep; }
+
+.lb-gear {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.5rem;
+}
+.lb-tile-gear { .lb-tile-icon { width: 3.2rem; height: 2.4rem; } }
+
+.lb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: $ue-bg;
+  border-radius: 4px;
+
+  img { display: block; width: 100%; height: 100%; object-fit: contain; }
+}
+.lb-icon-none { color: $ue-text-dim; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; border: 1px dashed $ue-border-strong; }
+
+/* ---------- summary ---------- */
+
+.main-content dl.lb-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0 0 0.9rem;
+
+  dt { color: $ue-text-dim; }
+  dd { margin: 0; text-align: right; color: $ue-white; font-weight: 500; }
+  dd.lb-total { font-size: 1.15rem; font-weight: 700; }
+}
+.main-content ul.lb-break {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  max-width: none;
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+    gap: 0 0.6rem;
+    padding: 0.3rem 0;
+    border-top: 1px solid $ue-border;
+    margin: 0;
+  }
+  li.lb-break-sub { padding-left: 0.8rem; font-size: 0.85rem; }
+  .lb-break-slot { color: $ue-text-dim; font-size: 0.8rem; }
+  .lb-break-name { color: $ue-text; overflow-wrap: anywhere; }
+  .lb-break-price { color: $ue-white; text-align: right; white-space: nowrap; }
+}
+
+/* ---------- weapon card ---------- */
+
+.lb-whead { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+.lb-whead-icon { width: 8rem; height: 4.5rem; flex: none; }
+.main-content .lb-whead-text p { margin: 0; line-height: 1.3; }
+.main-content .lb-whead-name { color: $ue-white; font-size: 1.4rem; font-weight: 700; }
+.main-content .lb-whead-class { color: $ue-text-dim; }
+.main-content .lb-whead-sub { color: $ue-text-dim; font-size: 0.8rem; }
+
+.lb-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.lb-chip {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0.8rem;
+  background: $ue-bg;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+
+  .lb-chip-k { color: $ue-text-dim; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .lb-chip-v { color: $ue-white; font-weight: 600; }
+}
+
+.lb-wcontrols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: flex-end;
+  .lb-field select { min-width: 9rem; }
+}
+.lb-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.2rem;
+  cursor: pointer;
+  input { width: 1.1rem; height: 1.1rem; accent-color: $ue-blue; }
+  input:focus-visible { outline: $lb-focus; outline-offset: 2px; }
+}
+
+.lb-seg {
+  display: inline-flex;
+  max-width: 100%;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-small;
+  overflow: hidden;
+
+  button {
+    padding: 0.45rem 0.8rem;
+    font: inherit;
+    font-size: 0.85rem;
+    color: $ue-text;
+    background: $ue-panel;
+    border: 0;
+    border-left: 1px solid $ue-border-strong;
+    cursor: pointer;
+    white-space: normal;
+    &:first-child { border-left: 0; }
+    &:hover:not(:disabled) { background: $ue-panel-hover; }
+    &:focus-visible { outline: $lb-focus; outline-offset: -2px; }
+    &[aria-checked="true"] { color: $ue-white; background: $ue-blue-deep; font-weight: 600; }
+    &:disabled { cursor: default; color: $ue-text-dim; }
+    &:disabled[aria-checked="true"] { background: $ue-panel-raised; }
+  }
+}
+
+/* ---------- tables ---------- */
+
+.lb-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid $ue-border;
+  border-radius: $radius-small;
+  &:focus-visible { outline: $lb-focus; outline-offset: 2px; }
+}
+.main-content table.lb-table, .lb-table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.875rem;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th, td { padding: 0.45rem 0.8rem; min-width: 0; }
+  th[scope="row"] { color: $ue-white; font-weight: 500; white-space: nowrap; }
+  .lb-num { text-align: right; white-space: nowrap; }
+  .lb-strong { color: $ue-white; font-weight: 600; }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+  tr.lb-row-on td, tr.lb-row-on th { background: rgba(38, 187, 255, 0.1); }
+  .lb-from { color: $ue-text-dim; font-size: 0.8rem; min-width: 12rem; white-space: normal; }
+}
+.lb-from-item { display: block; }
+.lb-from-name { color: $ue-text; }
+.lb-from-val { font-variant-numeric: tabular-nums; }
+
+// Better and worse are marked by colour and by the words (visually hidden for screen readers).
+.lb-good { color: $lb-good; font-weight: 600; }
+.lb-bad { color: $lb-bad; font-weight: 600; }
+.lb-flat { color: $lb-flat; font-weight: 600; }
+.lb-pct { color: $ue-text-dim; font-size: 0.8rem; }
+.lb-dagger { color: $ue-text-dim; }
+.lb-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lb-table tr.lb-row-good th { box-shadow: inset 3px 0 $lb-good; }
+.lb-table tr.lb-row-bad th { box-shadow: inset 3px 0 $lb-bad; }
+.lb-table tr.lb-row-flat th { box-shadow: inset 3px 0 $lb-flat; }
+
+.main-content ul.lb-notes {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  max-width: none;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  &:empty { display: none; }
+}
+
+/* ---------- sight ---------- */
+
+.lb-sight { margin-bottom: 1rem; }
+.lb-sight-head { display: flex; align-items: center; gap: 0.7rem; }
+.lb-sight-icon { width: 4rem; height: 2.5rem; }
+.lb-reticles { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.6rem 0 0.25rem; }
+.main-content figure.lb-reticle {
+  margin: 0;
+  width: min(15rem, 100%);
+  figcaption { margin-top: 0.35rem; color: $ue-text-dim; font-size: 0.8rem; }
+}
+// Scope reticles are black lines (light disc); lens reticles are white (dark disc).
+.lb-reticle-pane {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle, #e9ede4 0%, #cfd6c8 70%, #9aa395 100%);
+  border: 1px solid $ue-border-strong;
+  img { display: block; width: 100%; height: 100%; object-fit: contain; }
+}
+.lb-reticle-lens .lb-reticle-pane { background: radial-gradient(circle, #2b3a33 0%, #18201c 75%, #0d110f 100%); }
+
+/* ---------- picker ---------- */
+
+dialog.lb-picker {
+  width: min(62rem, calc(100vw - 2rem));
+  max-height: min(48rem, calc(100vh - 2rem));
+  padding: 1rem 1.1rem;
+  color: $ue-text;
+  background: $ue-panel;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-panel;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.6);
+
+  &[open] { display: flex; flex-direction: column; }
+  &::backdrop { background: rgba(5, 5, 8, 0.72); }
+}
+.lb-picker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+
+  .lb-picker-title { margin: 0; font-size: 1.1rem; font-weight: 700; color: $ue-white; }
+}
+.lb-picker-search { margin-bottom: 0.25rem; }
+.lb-picker-body { min-height: 0; overflow-y: auto; padding: 0.15rem; }
+.main-content ul.lb-opt-list, ul.lb-opt-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  max-width: none;
+  list-style: none;
+  li { margin: 0; padding: 0; list-style: none; &::before { content: none; } }
+}
+.lb-opt-group-title.lb-opt-group-title {
+  margin: 0.6rem 0 0.4rem;
+  color: $ue-text-dim;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.lb-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  font: inherit;
+  text-align: left;
+  color: $ue-text;
+  background: $ue-panel-raised;
+  border: 1px solid $ue-border-strong;
+  border-radius: $radius-small;
+  cursor: pointer;
+
+  &:hover { background: $ue-panel-hover; border-color: $ue-text-dim; }
+  &:focus-visible { outline: $lb-focus; outline-offset: 2px; }
+  &[aria-pressed="true"] { border-color: $ue-blue; }
+  &.lb-locked { opacity: 0.5; cursor: not-allowed; filter: grayscale(1); }
+}
+.lb-opt-icon { width: 4rem; height: 2.6rem; flex: none; }
+.lb-opt-text { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.lb-opt-name { color: $ue-white; font-weight: 600; overflow-wrap: anywhere; line-height: 1.25; }
+.lb-opt-meta { color: $ue-text-dim; font-size: 0.8rem; }
+.lb-badges { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.15rem; }
+.lb-badge {
+  padding: 0.05rem 0.4rem;
+  font-size: 0.68rem;
+  color: $ue-text;
+  background: $ue-bg;
+  border: 1px solid $ue-border-strong;
+  border-radius: 999px;
+}
+.lb-badge-on { color: $ue-white; background: $ue-blue-deep; border-color: $ue-blue-deep; }
+.lb-badge-lock { color: $lb-warn; border-color: $lb-warn; }
+
+@media (max-width: 30rem) {
+  .lb-bar .lb-actions { margin-left: 0; width: 100%; }
+  .lb-bar .lb-field { flex: 1 1 8rem; }
+  .lb-whead-icon { width: 5.5rem; height: 3.4rem; }
+  .lb-whead-name.lb-whead-name { font-size: 1.15rem; }
+  ul.lb-opt-list { grid-template-columns: minmax(0, 1fr); }
+  .lb-seg { flex-wrap: wrap; }
+  .lb-wcontrols .lb-field { width: 100%; }
+}
