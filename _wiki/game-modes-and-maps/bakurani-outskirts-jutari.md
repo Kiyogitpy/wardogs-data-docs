@@ -40,6 +40,20 @@ The Control Zone is 350 m across and 170 m tall, with a 75 m Hot Zone in its cen
 - **Zone regions.** The data has no region list for this zone. The Sniper Showdown zone placed in the Bakurani world has an empty region slot, and the Bakurani region list belongs to the King of the Hill zone only.
 - **Where it sits.** The fixed spot is inside the same world as [Bakurani](bakurani.md), about 400 m east of the edge of the area that Bakurani's zone regions cover (read from the placed zone object; the data gives the map no separate size).
 
+## Placed objects
+
+This entry has no objects of its own. Its zone sits in the Bakurani map file, so the objects around it are Bakurani's. Taking an area of 850 m across, centred on the fixed zone spot (the zone's 350 m width plus 500 m on every side, the same margin the other map articles use), the file places the following. The counts were read from the game files, not checked in play.
+
+| Object | Count in that area |
+|---|---:|
+| Doors you can open (a garage door counts once) | 31 |
+| Ladders | 9 |
+| Breakable windows | 270 |
+| Destructible buildings | 37 |
+| Pre-placed barbed wire | 16 |
+
+The area holds no Hot Zone Magnet towers, no vendors, no deployment boards and no water. For what the objects are, see [Bakurani](bakurani.md#placed-objects).
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#bakurani-outskirts---jutari).

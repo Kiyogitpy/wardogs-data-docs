@@ -82,6 +82,31 @@ Most cover on Ozeti is made of the materials below. The counts are placed wall a
 
 Total: 69,833 pieces (66,641 building pieces and 3,192 wall, fence and barrier pieces) from 828 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
+## Placed objects
+
+These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Berlin and Paris use the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
+
+| Object | Around the zones | Whole map file | What it is |
+|---|---:|---:|---|
+| Hot Zone Magnet towers | 4 | 4 | Numbered 1 to 4. The King of the Hill [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md) belong to these (inferred from the shared name). |
+| Doors you can open | 188 | 349 | Houses, apartments, garages. A garage door counts once. Doors can also be broken, see [Destruction](../game-mechanics/destruction.md). |
+| Ladders | 22 | 34 | Climbable with the ladder controls on [Movement](../game-mechanics/movement.md). |
+| Breakable windows | 1,425 | 2,358 | Single panes that smash when hit. |
+| Destructible buildings | 247 | 354 | Single buildings that can be knocked down: houses, garages, warehouses and shops, plus a few larger ones. Doors and windows are counted on their own rows. |
+| Pre-placed barbed wire | 32 | 32 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
+| Water | 4 river sections, a swimming pool | 17 river sections, a swimming pool | Water you can swim in. |
+| Supply buildings | 1 | 1 | A kind of building. Its data shows no supply or pickup function. |
+
+### In each team spawn area
+
+The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a free fuel point, a small soccer pitch (2 of 3 areas), 3 moving practice targets and a safe zone (2 of 3 areas). None of these areas lies inside the zone area.
+
+The fuel point refuels vehicles without cost and does not run out (the data marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
+
+### Not in the map files
+
+The map file holds no capture towers other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#ozeti).
@@ -110,3 +135,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
+- [Placed objects per map (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json)

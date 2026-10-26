@@ -291,9 +291,62 @@ The `none` entry (mesh decals with no physical material anywhere in their parent
 
 ---
 
+## 11. Placed gameplay actors (round 66)
+
+Read from the same cooked World Partition cells as section 10 (`Content/Maps/Worlds/<World>/<World>/_Generated_/*.umap`, plus the GameFeatures external data layer cells of the same world, which hold the zone object, the Hot Zone Magnets and the PvE, range and Sniper Showdown content). Every export that is a placed actor (its outer is the persistent level) was recorded with its class and the root component `RelativeLocation`; child actors (single doors, windows) take the position of the parent building. Raw output is kept outside the repository. Full data: [`assets/data/map-gameplay-actors.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json); method, statuses and caveats: [`docs/evidence/round66-map-actors.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round66-map-actors.md). Spawn volumes, boards and infantry spawn spots per area are in [`assets/data/vehicle-spawns.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json) (round 51) and are not repeated; the board and spawn-area rows below are counts only.
+
+Cells are `play / world`: `play` is the zone-region bounding box plus 500 m (the section 10 scope), `world` is the whole world package (shared with other maps: Mindori, Tevza and Bakurani Outskirts - Jutari use the Kavkazi world, Berlin and Paris the Europe world). Saburtulo has no region list, so only `world` is given (`-` for play).
+
+| Class | Blueprint | Bakurani | Ozeti | Zestafona | Saburtulo |
+|---|---|---:|---:|---:|---:|
+| Hot Zone Magnet tower | `B_HotZoneMagnet_C` (`HotZoneTowerNumber` 1..N, external data layer cells of the HotZoneMagnet game feature) | 5 / 5 | 4 / 4 | 3 / 3 | - / 5 |
+| Zone object | `B_ControlZone_C` (ControlZone layer; the Europe world has two; the Sniper Showdown ones are in other buckets) | 1 / 1 | 1 / 2 | 1 / 1 | - / 1 |
+| Single door (child of a building) | `B_Door_C` | 180 / 376 | 150 / 250 | 76 / 144 | - / 303 |
+| Apartment door | `BP_InteractableDoor_Apartment_C` | 64 / 64 | 25 / 25 | 25 / 27 | - / 63 |
+| Balcony door | `BP_InteractableDoor_ApartmentBalcony_C` | 0 / 80 | 0 / 39 | 0 / 22 | - / 73 |
+| Apartment entrance door | `BP_InteractableDoor_ApartmentEntrance_C` | 4 / 22 | 2 / 12 | 2 / 76 | - / 8 |
+| Office door | `BP_InteractableDoor_Office_C` | 0 | 0 | 153 / 153 | - / 17 |
+| Shop door | `BP_InteractableDoor_Buisness_C`, `BP_Interactable_Commercial_Door_01a_L/R_C` | 0 | 0 | 0 | - / 10 |
+| Hospital door (leaf) | `BP_Interactable_HospitalDoor_01a_Left/Right_C` | 0 | 0 | 0 | - / 38 |
+| Wooden door | `BP_Interactable_Door_Wood_01a_C` | 0 | 0 | 0 | - / 2 |
+| Garage door leaf | `BP_Interactable_GarageDoor_01a_Left/Right_C` | 70 / 86 | 22 / 46 | 6 / 6 | - / 44 |
+| Ladder | `BP_Ladder_C`, `B_Mover_Ladder_BlockOut_C` | 54 / 100 | 22 / 34 | 88 / 98 | - / 40 |
+| Breakable window | `B_Smashable*_C` | 1,916 / 3,779 | 1,425 / 2,358 | 1,219 / 1,699 | - / 2,687 |
+| Destructible building | any actor carrying `BHDestructionBuildingEditorComponent`, doors excluded | 264 / 446 | 247 / 354 | 161 / 224 | - / 378 |
+| Demolition cell marker | `BHDemolitionCellProxyActor` | 152 / 373 | 118 / 249 | 144 / 343 | - / 251 |
+| Pre-placed barbed wire | `B_BarbedWire_Damage_Volume_C` | 33 / 161 | 32 / 32 | 41 / 73 | - / 52 |
+| Lake | `BP_WaterLake_C` | 3 / 3 | 0 | 0 | 0 |
+| River section | `BP_FluxSurface_River_C` | 6 / 23 | 4 / 17 | 3 / 14 | 0 |
+| Swimming pool building | `B_SwimPool_Building_01_C` | 0 | 1 / 1 | 0 | 0 |
+| Supply building | `B_SupplyBuilding_01/02(b)_C` | 0 | 1 / 1 | 1 / 3 | - / 10 |
+| Infantry spawn area | `B_SpawnManager_C` (all areas in the world file) | 0 / 7 | 1 / 8 | 0 / 3 | - / 3 |
+| Spawn safe zone | `B_SafeZone_C` | 0 / 7 | 1 / 8 | 0 / 3 | - / 3 |
+| Deployment board | `B_VehicleDeploymentBoard_*_C` | 0 / 7 | 1 / 8 | 0 / 3 | - / 3 |
+| Equipment vendor | `B_EquipmentVendor_C` | 0 / 7 | 1 / 8 | 0 / 3 | - / 3 |
+| Vehicle vendor | `B_VehicleVendor_C` | 0 / 7 | 1 / 8 | 0 / 3 | - / 3 |
+| Garage vendor | `B_GarageVendor_C`, `B_GarageVendor_01_C` | 0 / 7 | 1 / 8 | 0 / 3 | - / 3 |
+| Wager vendor | `B_WagerVendor_C` | 0 / 6 | 0 / 3 | 0 / 3 | - / 3 |
+| Free fuel point | `B_SpawnFuelItemRefill_C` | 0 / 6 | 0 / 3 | 0 / 3 | 0 |
+| Soccer pitch | `B_WDSoccerField_C` | 0 / 6 | 0 / 3 | 0 / 3 | - / 3 |
+| Moving practice target | `B_MovingTarget_C` | 0 / 18 | 0 / 9 | 0 / 9 | - / 9 |
+| Conversation point | `B_Conversation_Kaiser_Djinn_C` | 0 | 1 / 4 | 0 | 0 |
+| Mini digger prop | `BP_MiniDigger_01_C` | 0 | 0 | 2 / 2 | 0 |
+| Decorative vehicle prop (art) | `PropVehicle_C`, `BP_BasicVehicleProp_C` | 458 / 718 | 381 / 543 | 510 / 589 | - / 803 |
+| Fly-through trigger (art) | `B_FlyThroughTrigger_C` | 5 / 9 | 7 / 16 | 11 / 17 | 0 |
+
+**Main-map spawn areas.** Spawn areas that hold a wager vendor within 150 m (an inferred rule: only the named map's areas have one; the rest of the world file serves the other maps): Bakurani 6, Ozeti 3, Zestafona 3, Saburtulo 3. Each such area holds one board, one equipment vendor, one vehicle vendor, one garage vendor and one wager vendor, and, with exceptions, one safe zone, one soccer pitch, three moving targets and one fuel point. Totals over those areas: Bakurani: deployment board 6, equipment vendor 6, fuel point 6, garage vendor 6, moving target 18, safe zone 5, soccer pitch 6, vehicle vendor 6, wager vendor 6; Ozeti: deployment board 3, equipment vendor 3, fuel point 3, garage vendor 3, moving target 9, safe zone 2, soccer pitch 2, vehicle vendor 3, wager vendor 3; Zestafona: deployment board 3, equipment vendor 3, fuel point 3, garage vendor 3, moving target 9, safe zone 3, soccer pitch 3, vehicle vendor 3, wager vendor 3; Saburtulo: deployment board 3, equipment vendor 3, garage vendor 3, moving target 9, safe zone 3, soccer pitch 3, vehicle vendor 3, wager vendor 3. No main-map spawn area lies inside the `play` box (Ozeti has one non-main area inside it).
+
+**Other buckets (not in the totals).** Bakurani (Kavkazi) world cells also hold PvE scenario layers: VIPEscort_01 (95 PvE AI spawners, 69 pre-placed buildables, 6 vehicle spawners, 2 quest points, an equipment vendor and a spawn area), StrikeDisarm_01 (54 AI spawners, 5 vehicle spawners, a laptop objective, 2 quest points, a ladder, vendors) and ScenarioExample (a quest area and a quest point). The Sniper Showdown layers add one zone object per world (Kavkazi, NorthAmerica, Russia). The shooting range and tutorial layers hold the `B_ShootingRange*` and `B_ShootingRangeTutorial*` actors and are not counted.
+
+**Absent on all four maps.** Capture towers other than the Hot Zone Magnet, pre-placed static weapons or emplacements, ammo or supply pickup points, loot or crate actors, zip lines. The only free resupply object is the fuel point (`B_Item_RefuelComponent_C`: infinite fuel, free in spawn, `RefuelPerUpdate` 2, `PricePerLiter` 2), absent on Saburtulo. Barbed wire is a pre-placed `B_BarbedWire_Damage_Volume_C` trigger (flat player damage 8, vehicle damage 10 percent with a 15 percent floor, a slow effect).
+
+**Limits.** (a) Positions are actor roots; a child actor with no own location uses its parent building. (b) The `play` box is a rectangle, not the real zone shape. (c) Which cells belong to which of the maps sharing a world is not in the cells; the spawn-area attribution is inferred. (d) Water: only `BP_WaterLake_C` and `BP_FluxSurface_River_C` actors were counted; water drawn by the landscape or a material would not show (Saburtulo has none of either). (e) PvE and range cells are listed separately and are not part of a King of the Hill map.
+
+---
+
 ## 9. Still Not Pulled / Limitations
 
-- **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10). Other actor placement, spawn points, and gameplay rules are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
+- **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
 - **Blueprint logic.** [`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in the export.
 - **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).

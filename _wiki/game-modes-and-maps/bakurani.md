@@ -92,6 +92,30 @@ Most cover on Bakurani is made of the materials below. The counts are placed wal
 
 Total: 109,586 pieces (106,793 building pieces and 2,793 wall, fence and barrier pieces) from 845 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
+## Placed objects
+
+These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Mindori and Tevza (and Bakurani Outskirts - Jutari) use the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
+
+| Object | Around the zones | Whole map file | What it is |
+|---|---:|---:|---|
+| Hot Zone Magnet towers | 5 | 5 | Numbered 1 to 5. The King of the Hill [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md) belong to these (inferred from the shared name). |
+| Doors you can open | 283 | 585 | Houses, apartments, garages. A garage door counts once. Doors can also be broken, see [Destruction](../game-mechanics/destruction.md). |
+| Ladders | 54 | 100 | Climbable with the ladder controls on [Movement](../game-mechanics/movement.md). |
+| Breakable windows | 1,916 | 3,779 | Single panes that smash when hit. |
+| Destructible buildings | 264 | 446 | Single buildings that can be knocked down: houses, garages, warehouses and shops, plus a few larger ones. Doors and windows are counted on their own rows. |
+| Pre-placed barbed wire | 33 | 161 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
+| Water | 3 lakes, 6 river sections | 3 lakes, 23 river sections | Water you can swim in. |
+
+### In each team spawn area
+
+The file places 6 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a free fuel point, a small soccer pitch, 3 moving practice targets and a safe zone (5 of 6 areas). None of these areas lies inside the zone area.
+
+The fuel point refuels vehicles without cost and does not run out (the data marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
+
+### Not in the map files
+
+The map file holds no capture towers other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#bakurani).
@@ -121,3 +145,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
+- [Placed objects per map (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json)

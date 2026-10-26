@@ -81,6 +81,33 @@ Most cover on Saburtulo is made of the materials below. The counts are placed wa
 
 Total: 189,545 pieces (184,855 building pieces and 4,690 wall, fence and barrier pieces) from 1,017 different shapes. How hard each material is to shoot through is on [Penetration and Ricochet](../game-mechanics/penetration-and-ricochet.md), which lists a density for each one.
 
+## Placed objects
+
+These are the things the map file places for players to use or break. Saburtulo has no zone region list, so there is no "around the zones" area and only the whole file is counted. "Whole map file" counts everything in the file, and the Sniper Showdown layout for Russia uses the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
+
+| Object | Around the zones | Whole map file | What it is |
+|---|---:|---:|---|
+| Hot Zone Magnet towers | Not given | 5 | Numbered 1 to 5. The King of the Hill [tower and magnet rewards](../progression-and-economy/hot-zone-magnet-challenges.md) belong to these (inferred from the shared name). |
+| Doors you can open | Not given | 536 | Houses, apartments, garages, offices, shops and a hospital. A garage door counts once. Doors can also be broken, see [Destruction](../game-mechanics/destruction.md). |
+| Ladders | Not given | 40 | Climbable with the ladder controls on [Movement](../game-mechanics/movement.md). |
+| Breakable windows | Not given | 2,687 | Single panes that smash when hit. |
+| Destructible buildings | Not given | 378 | Single buildings that can be knocked down: houses, garages, warehouses and shops, plus a few larger ones. Doors and windows are counted on their own rows. |
+| Pre-placed barbed wire | Not given | 52 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
+| Water | Not given | None | No water actor was found in the file. |
+| Supply buildings | Not given | 10 | A kind of building. Its data shows no supply or pickup function. |
+
+### In each team spawn area
+
+The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a small soccer pitch, 3 moving practice targets and a safe zone.
+
+Saburtulo is the one map here whose spawn areas have no free fuel point.
+
+Vehicle yards and spawn spots are on the Vehicle spawns section above.
+
+### Not in the map files
+
+The map file holds no capture towers other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
+
 ## Layouts
 
 The zone layout for this map is described in full on [Zone Layouts](zone-layouts.md#saburtulo).
@@ -108,3 +135,4 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Zone selection rules (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/zone-selection.json)
 - [Round 40 modes, AI and other evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md): Moscow name link (inference from names and folders)
+- [Placed objects per map (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json)

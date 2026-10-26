@@ -1,0 +1,1489 @@
+{
+ "_note": [
+  "Placed gameplay actors per map, read from the cooked World Partition cell packages (Content/Maps/Worlds/<World>/<World>/_Generated_ and the GameFeatures external data layer cells for the same world), round 66. Static analysis only; the game was not run.",
+  "scope play = bounding box of the zone-region polygons plus 500 m (the round 65 scope); Saburtulo has no region list so only world exists. scope world = the whole world package (shared with other maps: Mindori and Tevza use the Bakurani world, Berlin and Paris the Ozeti world). jutari_zone_area = 850 m box around the Sniper Showdown zone object in the Bakurani world.",
+  "Positions: root component RelativeLocation of the placed actor (world coordinates, cm). Child actors (single doors, windows) take the position of the parent building actor they hang on. Classes in group art are listed for completeness and are not interactive.",
+  "other_buckets are actors in game-feature cells of PvE scenarios, the shooting range and tutorial, and Sniper Showdown; they are not part of the main map and are not in the play or world totals.",
+  "Spawn data (vehicle yards, boards, infantry spawn spots per area) is in vehicle-spawns.json (round 51) and is not repeated here."
+ ],
+ "absent": {
+  "capture towers other than the Hot Zone Magnet tower": "no tower, capture or flag actor class in any cell of the four worlds",
+  "pre-placed static weapons or emplacements": "no turret, emplacement, mortar, SAM or weapon-station actor class; buildable emplacements exist only as items players build",
+  "ammo or supply pickup points": "no ammo, supply-crate, pickup, loot or container actor class; the only resupply object is the free fuel point",
+  "zip lines": "no zip line, rope or cable-ride actor class (the cable spline tool is scenery)",
+  "objective actors on the main maps beyond the zone object and magnets": "Strike and Disarm laptop, Sniper Showdown quest points and PvE AI spawners sit in game-feature cells of Bakurani world only"
+ },
+ "maps": {
+  "Bakurani": {
+   "world_package": "Kavkazi",
+   "play_box_cm": [
+    -946720.1,
+    -713385.7,
+    -1242515.0,
+    -997663.0
+   ],
+   "classes": {
+    "barbed_wire_volume": {
+     "name": "Pre-placed barbed wire",
+     "group": "hazard",
+     "wiki": "_wiki/building/barbed-wire.md",
+     "blueprints": "B_BarbedWire_Damage_Volume_C: trigger volume; FlatPlayerDamage 8, vehicle 10 percent per hit down to a 15 percent floor, GE_Player_BarbedWireSlow; the same actor class the buildable wire registers",
+     "world": 161,
+     "play": 33,
+     "jutari_zone_area": 16
+    },
+    "demolition_cell_proxy": {
+     "name": "Demolition cell marker",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "BHDemolitionCellProxyActor: a cell marker with no mesh",
+     "world": 373,
+     "play": 152,
+     "jutari_zone_area": 48
+    },
+    "deployment_board": {
+     "name": "Deployment board",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/maps.md",
+     "blueprints": "B_VehicleDeploymentBoard_Lonestar/Manticore/Valkrya_C; see assets/data/vehicle-spawns.json (round 51), not repeated here",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "door_apartment": {
+     "name": "Apartment door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Apartment_C",
+     "world": 64,
+     "play": 64,
+     "jutari_zone_area": 0
+    },
+    "door_balcony": {
+     "name": "Balcony door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentBalcony_C",
+     "world": 80,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "door_entrance": {
+     "name": "Apartment entrance door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentEntrance_C",
+     "world": 22,
+     "play": 4,
+     "jutari_zone_area": 0
+    },
+    "door_garage": {
+     "name": "Garage door (leaf)",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_Interactable_GarageDoor_01a_Left/Right_C; one garage door is two leaves",
+     "world": 86,
+     "play": 70,
+     "jutari_zone_area": 8
+    },
+    "door_generic": {
+     "name": "Door (single door)",
+     "group": "door",
+     "wiki": "_wiki/building/door.md",
+     "blueprints": "B_Door_C; interactable (WDWorldInteractableComponent) and destructible; child of a building, position taken from the parent building",
+     "world": 376,
+     "play": 180,
+     "jutari_zone_area": 27
+    },
+    "flythrough_trigger": {
+     "name": "Fly-through trigger",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyThroughTrigger_C; camera or audio trigger",
+     "world": 9,
+     "play": 5,
+     "jutari_zone_area": 0
+    },
+    "fuel_crate": {
+     "name": "Free fuel point",
+     "group": "spawn area",
+     "wiki": "_wiki/vehicles/fuel-and-refueling.md",
+     "blueprints": "B_SpawnFuelItemRefill_C; B_Item_RefuelComponent_C source container: bHasInfiniteFuel true, bFreeInSpawn true, MaxFuel 40, RefuelPerUpdate 2, PricePerLiter 2",
+     "world": 6,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "ladder": {
+     "name": "Ladder",
+     "group": "traversal",
+     "wiki": null,
+     "blueprints": "BP_Ladder_C and B_Mover_Ladder_BlockOut_C; top interaction component; ladder no-build box",
+     "world": 100,
+     "play": 54,
+     "jutari_zone_area": 9
+    },
+    "moving_target": {
+     "name": "Moving practice target",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_MovingTarget_C (the Gym range target of Maps_v2 section 3); three per spawn area",
+     "world": 18,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "prop_vehicle": {
+     "name": "Decorative vehicle prop",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "PropVehicle_C / BP_BasicVehicleProp_C; parked vehicle art",
+     "world": 718,
+     "play": 458,
+     "jutari_zone_area": 30
+    },
+    "safe_zone": {
+     "name": "Spawn safe zone",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/team-offence.md",
+     "blueprints": "B_SafeZone_C; trigger box that applies the side safe-zone tag; its camera actor (B_SafeZoneCam_C) has the same count",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "safe_zone_camera": {
+     "name": "Safe zone camera",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SafeZoneCam_C",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "soccer_field": {
+     "name": "Soccer pitch",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/hot-potato.md",
+     "blueprints": "B_WDSoccerField_C; bounds box, two goal boxes, ball spawn, ResetBall/OnGoal; link to the pre-lobby soccer game is by name only (inferred)",
+     "world": 6,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "spawn_manager": {
+     "name": "Infantry spawn area",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SpawnManager_C; see vehicle-spawns.json",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "spawn_volume": {
+     "name": "Vehicle spawn volume",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "WDSpawnVolume; see vehicle-spawns.json",
+     "world": 34,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "vendor_equipment": {
+     "name": "Equipment vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_EquipmentVendor_C",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "vendor_garage": {
+     "name": "Garage vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_GarageVendor_C / B_GarageVendor_01_C",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "vendor_vehicle": {
+     "name": "Vehicle vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_VehicleVendor_C",
+     "world": 7,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "vendor_wager": {
+     "name": "Wager vendor",
+     "group": "spawn area",
+     "wiki": "_wiki/progression-and-economy/wagers.md",
+     "blueprints": "B_WagerVendor_C",
+     "world": 6,
+     "play": 0,
+     "jutari_zone_area": 0
+    },
+    "water_audio_spline": {
+     "name": "Water sound spline",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "WDWaterAudioSpline",
+     "world": 1,
+     "play": 1,
+     "jutari_zone_area": 0
+    },
+    "water_lake": {
+     "name": "Lake",
+     "group": "water",
+     "wiki": null,
+     "blueprints": "BP_WaterLake_C; pond material, box volume",
+     "world": 3,
+     "play": 3,
+     "jutari_zone_area": 0
+    },
+    "water_river": {
+     "name": "River section",
+     "group": "water",
+     "wiki": null,
+     "blueprints": "BP_FluxSurface_River_C; Flux water surface",
+     "world": 23,
+     "play": 6,
+     "jutari_zone_area": 0
+    },
+    "window_smashable": {
+     "name": "Breakable window",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "B_Smashable*_C window actors",
+     "world": 3779,
+     "play": 1916,
+     "jutari_zone_area": 270
+    },
+    "flyby": {
+     "name": "Fly-by spline",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyBy_Spline_C / B_FlyByManager_C",
+     "world": 7,
+     "play": 6,
+     "jutari_zone_area": 0
+    },
+    "hot_zone_magnet": {
+     "name": "Hot Zone Magnet tower",
+     "group": "objective",
+     "wiki": "_wiki/progression-and-economy/hot-zone-magnet-challenges.md",
+     "blueprints": "B_HotZoneMagnet_C; one per HotZoneTowerNumber 1..N; carries a code-entry interaction",
+     "world": 5,
+     "play": 5,
+     "jutari_zone_area": 0
+    },
+    "zone_object": {
+     "name": "Zone object",
+     "group": "objective",
+     "wiki": "_wiki/game-modes-and-maps/control-zone.md",
+     "blueprints": "B_ControlZone_C (host of the Control Zone and Hot Zone); round 65",
+     "world": 1,
+     "play": 1,
+     "jutari_zone_area": 0
+    },
+    "destructible_building": {
+     "name": "Destructible building",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "any building actor with a BHDestructionBuildingEditorComponent, doors excluded (doors are listed as doors)",
+     "world": 446,
+     "play": 264,
+     "jutari_zone_area": 37
+    }
+   },
+   "other_buckets": {
+    "pve_range": {
+     "ladder": 1,
+     "laptop_objective": 1,
+     "preplaced_buildable": 69,
+     "pve_ai_spawner": 149,
+     "quest_area": 1,
+     "sd_quest_point": 5,
+     "spawn_manager": 3,
+     "spawn_volume": 1,
+     "vehicle_spawner": 11,
+     "vendor_equipment": 3,
+     "vendor_vehicle": 1
+    },
+    "sniper_showdown": {
+     "zone_object": 1
+    }
+   },
+   "destructible_building_kinds_world": {
+    "B_Residential_Bungalow_01": 64,
+    "B_Residential_Bungalow_02": 62,
+    "B_Residential_Bungalow_03": 50,
+    "B_Residential_House_03": 34,
+    "B_Residential_House_01": 29,
+    "BP_Garage_Closed_02a": 28,
+    "B_Residential_House_04": 23,
+    "BP_Garage_Closed_01a": 21,
+    "BP_Garage_Openable_02a": 18,
+    "BP_Garage_Openable_01a": 17,
+    "BP_Garage_Closed_03a": 14,
+    "BP_Warehouse_Small_Hut_01a": 12,
+    "BP_Garage_Closed_03b": 11,
+    "BP_Garage_Openable_03a": 8,
+    "BP_Warehouse_Small_02a": 8,
+    "B_Residential_House_05": 7,
+    "B_Residential_House_Abandoned_01": 6,
+    "BP_Warehouse_Small_01a": 6,
+    "BP_Warehouse_Small_03a": 6,
+    "BP_Warehouse_Small_Hut_02a": 4,
+    "B_Apartment_Building_01_B": 2,
+    "B_Warehouse_02a": 2,
+    "BP_Warehouse_Scrapyard_01a": 2,
+    "B_Apartment_Building_01_A": 1,
+    "B_Apartment_Building_01_C": 1,
+    "B_MarketBuilding_02": 1,
+    "B_MarketBuilding_03": 1,
+    "B_MarketBuilding_06": 1,
+    "B_Residential_House_Madrid_03": 1,
+    "B_Shop_01": 1,
+    "B_Shop_02": 1,
+    "B_Shop_03": 1,
+    "BP_Market_Building_01a": 1,
+    "BP_MarketBuilding_04a": 1,
+    "BP_MarketBuilding_05a": 1
+   },
+   "door_total": {
+    "world": 628,
+    "play": 318,
+    "note": "garage doors count two leaves each"
+   },
+   "spawn_area_profile": {
+    "spawn_areas_in_world": 7,
+    "radius_m": 150,
+    "profiles": [
+     {
+      "areas": 5,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "fuel point": 1,
+       "garage vendor": 1,
+       "moving target": 3,
+       "safe zone": 1,
+       "soccer pitch": 1,
+       "vehicle vendor": 1,
+       "wager vendor": 1
+      }
+     },
+     {
+      "areas": 1,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "fuel point": 1,
+       "garage vendor": 1,
+       "moving target": 3,
+       "soccer pitch": 1,
+       "vehicle vendor": 1,
+       "wager vendor": 1
+      }
+     },
+     {
+      "areas": 1,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "garage vendor": 1,
+       "safe zone": 1,
+       "vehicle vendor": 1
+      }
+     }
+    ]
+   },
+   "main_spawn_areas": {
+    "areas": 6,
+    "rule": "spawn areas (infantry spawn manager) with a wager vendor within 150 m; inferred to be the areas of the named map, the other areas of the shared world belong to other maps",
+    "contents_total": {
+     "garage vendor": 6,
+     "soccer pitch": 6,
+     "deployment board": 6,
+     "moving target": 18,
+     "equipment vendor": 6,
+     "fuel point": 6,
+     "vehicle vendor": 6,
+     "wager vendor": 6,
+     "safe zone": 5
+    },
+    "areas_inside_play_box": 0
+   },
+   "door_total_adjusted": {
+    "world": 585,
+    "play": 283,
+    "note": "garage doors counted once per pair of leaves"
+   }
+  },
+  "Ozeti": {
+   "world_package": "Europe",
+   "play_box_cm": [
+    -777691.9,
+    -497578.6,
+    -708437.44,
+    -513757.06
+   ],
+   "classes": {
+    "barbed_wire_volume": {
+     "name": "Pre-placed barbed wire",
+     "group": "hazard",
+     "wiki": "_wiki/building/barbed-wire.md",
+     "blueprints": "B_BarbedWire_Damage_Volume_C: trigger volume; FlatPlayerDamage 8, vehicle 10 percent per hit down to a 15 percent floor, GE_Player_BarbedWireSlow; the same actor class the buildable wire registers",
+     "world": 32,
+     "play": 32
+    },
+    "conversation_npc": {
+     "name": "Conversation point",
+     "group": "other",
+     "wiki": null,
+     "blueprints": "B_Conversation_Kaiser_Djinn_C; Ozeti only",
+     "world": 4,
+     "play": 1
+    },
+    "demolition_cell_proxy": {
+     "name": "Demolition cell marker",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "BHDemolitionCellProxyActor: a cell marker with no mesh",
+     "world": 249,
+     "play": 118
+    },
+    "deployment_board": {
+     "name": "Deployment board",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/maps.md",
+     "blueprints": "B_VehicleDeploymentBoard_Lonestar/Manticore/Valkrya_C; see assets/data/vehicle-spawns.json (round 51), not repeated here",
+     "world": 8,
+     "play": 1
+    },
+    "door_apartment": {
+     "name": "Apartment door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Apartment_C",
+     "world": 25,
+     "play": 25
+    },
+    "door_balcony": {
+     "name": "Balcony door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentBalcony_C",
+     "world": 39,
+     "play": 0
+    },
+    "door_entrance": {
+     "name": "Apartment entrance door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentEntrance_C",
+     "world": 12,
+     "play": 2
+    },
+    "door_garage": {
+     "name": "Garage door (leaf)",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_Interactable_GarageDoor_01a_Left/Right_C; one garage door is two leaves",
+     "world": 46,
+     "play": 22
+    },
+    "door_generic": {
+     "name": "Door (single door)",
+     "group": "door",
+     "wiki": "_wiki/building/door.md",
+     "blueprints": "B_Door_C; interactable (WDWorldInteractableComponent) and destructible; child of a building, position taken from the parent building",
+     "world": 250,
+     "play": 150
+    },
+    "flythrough_trigger": {
+     "name": "Fly-through trigger",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyThroughTrigger_C; camera or audio trigger",
+     "world": 16,
+     "play": 7
+    },
+    "fuel_crate": {
+     "name": "Free fuel point",
+     "group": "spawn area",
+     "wiki": "_wiki/vehicles/fuel-and-refueling.md",
+     "blueprints": "B_SpawnFuelItemRefill_C; B_Item_RefuelComponent_C source container: bHasInfiniteFuel true, bFreeInSpawn true, MaxFuel 40, RefuelPerUpdate 2, PricePerLiter 2",
+     "world": 3,
+     "play": 0
+    },
+    "ladder": {
+     "name": "Ladder",
+     "group": "traversal",
+     "wiki": null,
+     "blueprints": "BP_Ladder_C and B_Mover_Ladder_BlockOut_C; top interaction component; ladder no-build box",
+     "world": 34,
+     "play": 22
+    },
+    "moving_target": {
+     "name": "Moving practice target",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_MovingTarget_C (the Gym range target of Maps_v2 section 3); three per spawn area",
+     "world": 9,
+     "play": 0
+    },
+    "prop_vehicle": {
+     "name": "Decorative vehicle prop",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "PropVehicle_C / BP_BasicVehicleProp_C; parked vehicle art",
+     "world": 543,
+     "play": 381
+    },
+    "safe_zone": {
+     "name": "Spawn safe zone",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/team-offence.md",
+     "blueprints": "B_SafeZone_C; trigger box that applies the side safe-zone tag; its camera actor (B_SafeZoneCam_C) has the same count",
+     "world": 8,
+     "play": 1
+    },
+    "safe_zone_camera": {
+     "name": "Safe zone camera",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SafeZoneCam_C",
+     "world": 8,
+     "play": 1
+    },
+    "soccer_field": {
+     "name": "Soccer pitch",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/hot-potato.md",
+     "blueprints": "B_WDSoccerField_C; bounds box, two goal boxes, ball spawn, ResetBall/OnGoal; link to the pre-lobby soccer game is by name only (inferred)",
+     "world": 3,
+     "play": 0
+    },
+    "spawn_manager": {
+     "name": "Infantry spawn area",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SpawnManager_C; see vehicle-spawns.json",
+     "world": 8,
+     "play": 1
+    },
+    "spawn_volume": {
+     "name": "Vehicle spawn volume",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "WDSpawnVolume; see vehicle-spawns.json",
+     "world": 41,
+     "play": 5
+    },
+    "supply_building": {
+     "name": "Supply building",
+     "group": "building",
+     "wiki": null,
+     "blueprints": "B_SupplyBuilding_01/02(b)_C: a destructible building model (live chunk data); no supply or pickup function found in its data",
+     "world": 1,
+     "play": 1
+    },
+    "vendor_equipment": {
+     "name": "Equipment vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_EquipmentVendor_C",
+     "world": 8,
+     "play": 1
+    },
+    "vendor_garage": {
+     "name": "Garage vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_GarageVendor_C / B_GarageVendor_01_C",
+     "world": 8,
+     "play": 1
+    },
+    "vendor_vehicle": {
+     "name": "Vehicle vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_VehicleVendor_C",
+     "world": 8,
+     "play": 1
+    },
+    "vendor_wager": {
+     "name": "Wager vendor",
+     "group": "spawn area",
+     "wiki": "_wiki/progression-and-economy/wagers.md",
+     "blueprints": "B_WagerVendor_C",
+     "world": 3,
+     "play": 0
+    },
+    "water_audio_spline": {
+     "name": "Water sound spline",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "WDWaterAudioSpline",
+     "world": 1,
+     "play": 0
+    },
+    "water_pool": {
+     "name": "Swimming pool building",
+     "group": "water",
+     "wiki": null,
+     "blueprints": "B_SwimPool_Building_01_C",
+     "world": 1,
+     "play": 1
+    },
+    "water_river": {
+     "name": "River section",
+     "group": "water",
+     "wiki": null,
+     "blueprints": "BP_FluxSurface_River_C; Flux water surface",
+     "world": 17,
+     "play": 4
+    },
+    "window_smashable": {
+     "name": "Breakable window",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "B_Smashable*_C window actors",
+     "world": 2358,
+     "play": 1425
+    },
+    "flyby": {
+     "name": "Fly-by spline",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyBy_Spline_C / B_FlyByManager_C",
+     "world": 7,
+     "play": 6
+    },
+    "hot_zone_magnet": {
+     "name": "Hot Zone Magnet tower",
+     "group": "objective",
+     "wiki": "_wiki/progression-and-economy/hot-zone-magnet-challenges.md",
+     "blueprints": "B_HotZoneMagnet_C; one per HotZoneTowerNumber 1..N; carries a code-entry interaction",
+     "world": 4,
+     "play": 4
+    },
+    "zone_object": {
+     "name": "Zone object",
+     "group": "objective",
+     "wiki": "_wiki/game-modes-and-maps/control-zone.md",
+     "blueprints": "B_ControlZone_C (host of the Control Zone and Hot Zone); round 65",
+     "world": 2,
+     "play": 1
+    },
+    "destructible_building": {
+     "name": "Destructible building",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "any building actor with a BHDestructionBuildingEditorComponent, doors excluded (doors are listed as doors)",
+     "world": 354,
+     "play": 247
+    }
+   },
+   "other_buckets": {},
+   "destructible_building_kinds_world": {
+    "BP_Garage_Closed_03a": 56,
+    "BP_Garage_Closed_03b": 35,
+    "B_Residential_Bungalow_03": 32,
+    "BP_Garage_Closed_02a": 27,
+    "B_Residential_Bungalow_02": 27,
+    "BP_Garage_Closed_01a": 26,
+    "B_Residential_Bungalow_01": 23,
+    "B_Residential_House_03": 17,
+    "B_Residential_House_Madrid_05": 14,
+    "BP_Garage_Openable_01a": 13,
+    "B_Residential_House_01": 13,
+    "B_Residential_Bungalow_Madrid_01": 8,
+    "B_Residential_Bungalow_Madrid_03": 8,
+    "B_Residential_House_Madrid_01": 8,
+    "B_Residential_House_Madrid_04": 7,
+    "B_Residential_Bungalow_Madrid_02": 6,
+    "B_Residential_House_05": 6,
+    "BP_Garage_Openable_02a": 5,
+    "BP_Garage_Openable_03a": 5,
+    "B_Shop_01": 2,
+    "B_Shop_02": 2,
+    "B_Shop_03": 2,
+    "BP_Warehouse_Small_01a": 2,
+    "BP_Warehouse_Small_03a": 2,
+    "B_Apartment_Building_Ozeti_01_B": 1,
+    "B_Apartment_Building_Ozeti_01_C": 1,
+    "B_Residential_House_Abandoned_01": 1,
+    "B_Residential_House_Madrid_03": 1,
+    "B_SupplyBuilding_02": 1,
+    "B_SwimPool_Building_01": 1,
+    "BP_Warehouse_Scrapyard_01a": 1,
+    "BP_Warehouse_Small_02a": 1
+   },
+   "door_total": {
+    "world": 372,
+    "play": 199,
+    "note": "garage doors count two leaves each"
+   },
+   "spawn_area_profile": {
+    "spawn_areas_in_world": 8,
+    "radius_m": 150,
+    "profiles": [
+     {
+      "areas": 5,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "garage vendor": 1,
+       "safe zone": 1,
+       "vehicle vendor": 1
+      }
+     },
+     {
+      "areas": 2,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "fuel point": 1,
+       "garage vendor": 1,
+       "moving target": 3,
+       "safe zone": 1,
+       "soccer pitch": 1,
+       "vehicle vendor": 1,
+       "wager vendor": 1
+      }
+     },
+     {
+      "areas": 1,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "fuel point": 1,
+       "garage vendor": 1,
+       "moving target": 3,
+       "vehicle vendor": 1,
+       "wager vendor": 1
+      }
+     }
+    ]
+   },
+   "main_spawn_areas": {
+    "areas": 3,
+    "rule": "spawn areas (infantry spawn manager) with a wager vendor within 150 m; inferred to be the areas of the named map, the other areas of the shared world belong to other maps",
+    "contents_total": {
+     "moving target": 9,
+     "fuel point": 3,
+     "safe zone": 2,
+     "equipment vendor": 3,
+     "garage vendor": 3,
+     "vehicle vendor": 3,
+     "wager vendor": 3,
+     "soccer pitch": 2,
+     "deployment board": 3
+    },
+    "areas_inside_play_box": 0
+   },
+   "door_total_adjusted": {
+    "world": 349,
+    "play": 188,
+    "note": "garage doors counted once per pair of leaves"
+   }
+  },
+  "Zestafona": {
+   "world_package": "NorthAmerica",
+   "play_box_cm": [
+    -233016.73,
+    12987.28,
+    -322819.8,
+    -98184.555
+   ],
+   "classes": {
+    "barbed_wire_volume": {
+     "name": "Pre-placed barbed wire",
+     "group": "hazard",
+     "wiki": "_wiki/building/barbed-wire.md",
+     "blueprints": "B_BarbedWire_Damage_Volume_C: trigger volume; FlatPlayerDamage 8, vehicle 10 percent per hit down to a 15 percent floor, GE_Player_BarbedWireSlow; the same actor class the buildable wire registers",
+     "world": 73,
+     "play": 41
+    },
+    "demolition_cell_proxy": {
+     "name": "Demolition cell marker",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "BHDemolitionCellProxyActor: a cell marker with no mesh",
+     "world": 343,
+     "play": 144
+    },
+    "deployment_board": {
+     "name": "Deployment board",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/maps.md",
+     "blueprints": "B_VehicleDeploymentBoard_Lonestar/Manticore/Valkrya_C; see assets/data/vehicle-spawns.json (round 51), not repeated here",
+     "world": 3,
+     "play": 0
+    },
+    "door_apartment": {
+     "name": "Apartment door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Apartment_C",
+     "world": 27,
+     "play": 25
+    },
+    "door_balcony": {
+     "name": "Balcony door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentBalcony_C",
+     "world": 22,
+     "play": 0
+    },
+    "door_entrance": {
+     "name": "Apartment entrance door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentEntrance_C",
+     "world": 76,
+     "play": 2
+    },
+    "door_garage": {
+     "name": "Garage door (leaf)",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_Interactable_GarageDoor_01a_Left/Right_C; one garage door is two leaves",
+     "world": 6,
+     "play": 6
+    },
+    "door_generic": {
+     "name": "Door (single door)",
+     "group": "door",
+     "wiki": "_wiki/building/door.md",
+     "blueprints": "B_Door_C; interactable (WDWorldInteractableComponent) and destructible; child of a building, position taken from the parent building",
+     "world": 144,
+     "play": 76
+    },
+    "door_office": {
+     "name": "Office door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Office_C",
+     "world": 153,
+     "play": 153
+    },
+    "flythrough_trigger": {
+     "name": "Fly-through trigger",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyThroughTrigger_C; camera or audio trigger",
+     "world": 17,
+     "play": 11
+    },
+    "fuel_crate": {
+     "name": "Free fuel point",
+     "group": "spawn area",
+     "wiki": "_wiki/vehicles/fuel-and-refueling.md",
+     "blueprints": "B_SpawnFuelItemRefill_C; B_Item_RefuelComponent_C source container: bHasInfiniteFuel true, bFreeInSpawn true, MaxFuel 40, RefuelPerUpdate 2, PricePerLiter 2",
+     "world": 3,
+     "play": 0
+    },
+    "ladder": {
+     "name": "Ladder",
+     "group": "traversal",
+     "wiki": null,
+     "blueprints": "BP_Ladder_C and B_Mover_Ladder_BlockOut_C; top interaction component; ladder no-build box",
+     "world": 98,
+     "play": 88
+    },
+    "mini_digger": {
+     "name": "Mini digger prop",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "BP_MiniDigger_01_C",
+     "world": 2,
+     "play": 2
+    },
+    "moving_target": {
+     "name": "Moving practice target",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_MovingTarget_C (the Gym range target of Maps_v2 section 3); three per spawn area",
+     "world": 9,
+     "play": 0
+    },
+    "prop_vehicle": {
+     "name": "Decorative vehicle prop",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "PropVehicle_C / BP_BasicVehicleProp_C; parked vehicle art",
+     "world": 589,
+     "play": 510
+    },
+    "safe_zone": {
+     "name": "Spawn safe zone",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/team-offence.md",
+     "blueprints": "B_SafeZone_C; trigger box that applies the side safe-zone tag; its camera actor (B_SafeZoneCam_C) has the same count",
+     "world": 3,
+     "play": 0
+    },
+    "safe_zone_camera": {
+     "name": "Safe zone camera",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SafeZoneCam_C",
+     "world": 3,
+     "play": 0
+    },
+    "soccer_field": {
+     "name": "Soccer pitch",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/hot-potato.md",
+     "blueprints": "B_WDSoccerField_C; bounds box, two goal boxes, ball spawn, ResetBall/OnGoal; link to the pre-lobby soccer game is by name only (inferred)",
+     "world": 3,
+     "play": 0
+    },
+    "spawn_manager": {
+     "name": "Infantry spawn area",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SpawnManager_C; see vehicle-spawns.json",
+     "world": 3,
+     "play": 0
+    },
+    "spawn_volume": {
+     "name": "Vehicle spawn volume",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "WDSpawnVolume; see vehicle-spawns.json",
+     "world": 16,
+     "play": 0
+    },
+    "supply_building": {
+     "name": "Supply building",
+     "group": "building",
+     "wiki": null,
+     "blueprints": "B_SupplyBuilding_01/02(b)_C: a destructible building model (live chunk data); no supply or pickup function found in its data",
+     "world": 3,
+     "play": 1
+    },
+    "vendor_equipment": {
+     "name": "Equipment vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_EquipmentVendor_C",
+     "world": 3,
+     "play": 0
+    },
+    "vendor_garage": {
+     "name": "Garage vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_GarageVendor_C / B_GarageVendor_01_C",
+     "world": 3,
+     "play": 0
+    },
+    "vendor_vehicle": {
+     "name": "Vehicle vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_VehicleVendor_C",
+     "world": 3,
+     "play": 0
+    },
+    "vendor_wager": {
+     "name": "Wager vendor",
+     "group": "spawn area",
+     "wiki": "_wiki/progression-and-economy/wagers.md",
+     "blueprints": "B_WagerVendor_C",
+     "world": 3,
+     "play": 0
+    },
+    "water_river": {
+     "name": "River section",
+     "group": "water",
+     "wiki": null,
+     "blueprints": "BP_FluxSurface_River_C; Flux water surface",
+     "world": 14,
+     "play": 3
+    },
+    "window_smashable": {
+     "name": "Breakable window",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "B_Smashable*_C window actors",
+     "world": 1699,
+     "play": 1219
+    },
+    "flyby": {
+     "name": "Fly-by spline",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyBy_Spline_C / B_FlyByManager_C",
+     "world": 7,
+     "play": 6
+    },
+    "hot_zone_magnet": {
+     "name": "Hot Zone Magnet tower",
+     "group": "objective",
+     "wiki": "_wiki/progression-and-economy/hot-zone-magnet-challenges.md",
+     "blueprints": "B_HotZoneMagnet_C; one per HotZoneTowerNumber 1..N; carries a code-entry interaction",
+     "world": 3,
+     "play": 3
+    },
+    "zone_object": {
+     "name": "Zone object",
+     "group": "objective",
+     "wiki": "_wiki/game-modes-and-maps/control-zone.md",
+     "blueprints": "B_ControlZone_C (host of the Control Zone and Hot Zone); round 65",
+     "world": 1,
+     "play": 1
+    },
+    "destructible_building": {
+     "name": "Destructible building",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "any building actor with a BHDestructionBuildingEditorComponent, doors excluded (doors are listed as doors)",
+     "world": 224,
+     "play": 161
+    }
+   },
+   "other_buckets": {
+    "sniper_showdown": {
+     "zone_object": 1
+    }
+   },
+   "destructible_building_kinds_world": {
+    "B_Residential_House_01": 23,
+    "BP_Garage_Closed_02a": 22,
+    "B_Residential_Bungalow_01": 21,
+    "B_Warehouse_02a": 20,
+    "B_Residential_Bungalow_03": 18,
+    "BP_Warehouse_Small_03a": 16,
+    "BP_Garage_Closed_01a": 11,
+    "B_Residential_House_05": 10,
+    "BP_Garage_Closed_03a": 10,
+    "B_Office_01_A": 9,
+    "B_Residential_Bungalow_02": 7,
+    "B_Warehouse_03a": 5,
+    "BP_Warehouse_04a": 5,
+    "B_Residential_House_04": 4,
+    "B_Shop_02": 4,
+    "BP_Garage_Closed_03b": 4,
+    "BP_Warehouse_Small_02a": 4,
+    "B_Residential_House_Abandoned_01": 3,
+    "B_Shop_03": 3,
+    "B_Warehouse_03b": 3,
+    "BP_Warehouse_Scrapyard_01a": 3,
+    "B_Shop_01": 2,
+    "B_SupplyBuilding_01": 2,
+    "BP_Factory_Awning_02a": 2,
+    "BP_Warehouse_Garage_01a": 2,
+    "BP_Warehouse_Small_Hut_01a": 2,
+    "B_SupplyBuilding_02": 1,
+    "B_Apartment_Building_01_A": 1,
+    "B_Apartment_Building_01_C": 1,
+    "B_Residential_House_03": 1,
+    "BP_Factory_Awning_01a": 1,
+    "BP_Garage_Openable_01a": 1,
+    "BP_Garage_Openable_02a": 1,
+    "BP_Garage_Openable_03a": 1,
+    "BP_Warehouse_Small_03b": 1
+   },
+   "door_total": {
+    "world": 428,
+    "play": 262,
+    "note": "garage doors count two leaves each"
+   },
+   "spawn_area_profile": {
+    "spawn_areas_in_world": 3,
+    "radius_m": 150,
+    "profiles": [
+     {
+      "areas": 3,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "fuel point": 1,
+       "garage vendor": 1,
+       "moving target": 3,
+       "safe zone": 1,
+       "soccer pitch": 1,
+       "vehicle vendor": 1,
+       "wager vendor": 1
+      }
+     }
+    ]
+   },
+   "main_spawn_areas": {
+    "areas": 3,
+    "rule": "spawn areas (infantry spawn manager) with a wager vendor within 150 m; inferred to be the areas of the named map, the other areas of the shared world belong to other maps",
+    "contents_total": {
+     "deployment board": 3,
+     "moving target": 9,
+     "soccer pitch": 3,
+     "equipment vendor": 3,
+     "garage vendor": 3,
+     "vehicle vendor": 3,
+     "safe zone": 3,
+     "fuel point": 3,
+     "wager vendor": 3
+    },
+    "areas_inside_play_box": 0
+   },
+   "door_total_adjusted": {
+    "world": 425,
+    "play": 259,
+    "note": "garage doors counted once per pair of leaves"
+   }
+  },
+  "Saburtulo": {
+   "world_package": "Russia",
+   "play_box_cm": null,
+   "classes": {
+    "barbed_wire_volume": {
+     "name": "Pre-placed barbed wire",
+     "group": "hazard",
+     "wiki": "_wiki/building/barbed-wire.md",
+     "blueprints": "B_BarbedWire_Damage_Volume_C: trigger volume; FlatPlayerDamage 8, vehicle 10 percent per hit down to a 15 percent floor, GE_Player_BarbedWireSlow; the same actor class the buildable wire registers",
+     "world": 52,
+     "play": null
+    },
+    "demolition_cell_proxy": {
+     "name": "Demolition cell marker",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "BHDemolitionCellProxyActor: a cell marker with no mesh",
+     "world": 251,
+     "play": null
+    },
+    "deployment_board": {
+     "name": "Deployment board",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/maps.md",
+     "blueprints": "B_VehicleDeploymentBoard_Lonestar/Manticore/Valkrya_C; see assets/data/vehicle-spawns.json (round 51), not repeated here",
+     "world": 3,
+     "play": null
+    },
+    "door_apartment": {
+     "name": "Apartment door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Apartment_C",
+     "world": 63,
+     "play": null
+    },
+    "door_balcony": {
+     "name": "Balcony door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentBalcony_C",
+     "world": 73,
+     "play": null
+    },
+    "door_entrance": {
+     "name": "Apartment entrance door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_ApartmentEntrance_C",
+     "world": 8,
+     "play": null
+    },
+    "door_garage": {
+     "name": "Garage door (leaf)",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_Interactable_GarageDoor_01a_Left/Right_C; one garage door is two leaves",
+     "world": 44,
+     "play": null
+    },
+    "door_generic": {
+     "name": "Door (single door)",
+     "group": "door",
+     "wiki": "_wiki/building/door.md",
+     "blueprints": "B_Door_C; interactable (WDWorldInteractableComponent) and destructible; child of a building, position taken from the parent building",
+     "world": 303,
+     "play": null
+    },
+    "door_hospital": {
+     "name": "Hospital door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_Interactable_HospitalDoor_01a_Left/Right_C",
+     "world": 38,
+     "play": null
+    },
+    "door_office": {
+     "name": "Office door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Office_C",
+     "world": 17,
+     "play": null
+    },
+    "door_shop": {
+     "name": "Shop door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_InteractableDoor_Buisness_C, BP_Interactable_Commercial_Door_01a_L/R_C",
+     "world": 10,
+     "play": null
+    },
+    "door_wood": {
+     "name": "Wooden door",
+     "group": "door",
+     "wiki": null,
+     "blueprints": "BP_Interactable_Door_Wood_01a_C",
+     "world": 2,
+     "play": null
+    },
+    "ladder": {
+     "name": "Ladder",
+     "group": "traversal",
+     "wiki": null,
+     "blueprints": "BP_Ladder_C and B_Mover_Ladder_BlockOut_C; top interaction component; ladder no-build box",
+     "world": 40,
+     "play": null
+    },
+    "moving_target": {
+     "name": "Moving practice target",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_MovingTarget_C (the Gym range target of Maps_v2 section 3); three per spawn area",
+     "world": 9,
+     "play": null
+    },
+    "prop_vehicle": {
+     "name": "Decorative vehicle prop",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "PropVehicle_C / BP_BasicVehicleProp_C; parked vehicle art",
+     "world": 803,
+     "play": null
+    },
+    "safe_zone": {
+     "name": "Spawn safe zone",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/team-offence.md",
+     "blueprints": "B_SafeZone_C; trigger box that applies the side safe-zone tag; its camera actor (B_SafeZoneCam_C) has the same count",
+     "world": 3,
+     "play": null
+    },
+    "safe_zone_camera": {
+     "name": "Safe zone camera",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SafeZoneCam_C",
+     "world": 3,
+     "play": null
+    },
+    "soccer_field": {
+     "name": "Soccer pitch",
+     "group": "spawn area",
+     "wiki": "_wiki/game-modes-and-maps/hot-potato.md",
+     "blueprints": "B_WDSoccerField_C; bounds box, two goal boxes, ball spawn, ResetBall/OnGoal; link to the pre-lobby soccer game is by name only (inferred)",
+     "world": 3,
+     "play": null
+    },
+    "spawn_manager": {
+     "name": "Infantry spawn area",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_SpawnManager_C; see vehicle-spawns.json",
+     "world": 3,
+     "play": null
+    },
+    "spawn_volume": {
+     "name": "Vehicle spawn volume",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "WDSpawnVolume; see vehicle-spawns.json",
+     "world": 15,
+     "play": null
+    },
+    "supply_building": {
+     "name": "Supply building",
+     "group": "building",
+     "wiki": null,
+     "blueprints": "B_SupplyBuilding_01/02(b)_C: a destructible building model (live chunk data); no supply or pickup function found in its data",
+     "world": 10,
+     "play": null
+    },
+    "vendor_equipment": {
+     "name": "Equipment vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_EquipmentVendor_C",
+     "world": 3,
+     "play": null
+    },
+    "vendor_garage": {
+     "name": "Garage vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_GarageVendor_C / B_GarageVendor_01_C",
+     "world": 3,
+     "play": null
+    },
+    "vendor_vehicle": {
+     "name": "Vehicle vendor",
+     "group": "spawn area",
+     "wiki": null,
+     "blueprints": "B_VehicleVendor_C",
+     "world": 3,
+     "play": null
+    },
+    "vendor_wager": {
+     "name": "Wager vendor",
+     "group": "spawn area",
+     "wiki": "_wiki/progression-and-economy/wagers.md",
+     "blueprints": "B_WagerVendor_C",
+     "world": 3,
+     "play": null
+    },
+    "window_smashable": {
+     "name": "Breakable window",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "B_Smashable*_C window actors",
+     "world": 2687,
+     "play": null
+    },
+    "flyby": {
+     "name": "Fly-by spline",
+     "group": "art",
+     "wiki": null,
+     "blueprints": "B_FlyBy_Spline_C / B_FlyByManager_C",
+     "world": 7,
+     "play": null
+    },
+    "hot_zone_magnet": {
+     "name": "Hot Zone Magnet tower",
+     "group": "objective",
+     "wiki": "_wiki/progression-and-economy/hot-zone-magnet-challenges.md",
+     "blueprints": "B_HotZoneMagnet_C; one per HotZoneTowerNumber 1..N; carries a code-entry interaction",
+     "world": 5,
+     "play": null
+    },
+    "zone_object": {
+     "name": "Zone object",
+     "group": "objective",
+     "wiki": "_wiki/game-modes-and-maps/control-zone.md",
+     "blueprints": "B_ControlZone_C (host of the Control Zone and Hot Zone); round 65",
+     "world": 1,
+     "play": null
+    },
+    "destructible_building": {
+     "name": "Destructible building",
+     "group": "destruction",
+     "wiki": "_wiki/game-mechanics/destruction.md",
+     "blueprints": "any building actor with a BHDestructionBuildingEditorComponent, doors excluded (doors are listed as doors)",
+     "world": 378,
+     "play": null
+    }
+   },
+   "other_buckets": {
+    "sniper_showdown": {
+     "zone_object": 1
+    }
+   },
+   "destructible_building_kinds_world": {
+    "B_Residential_Bungalow_03": 44,
+    "BP_Garage_Closed_03b": 28,
+    "B_Residential_Bungalow_01": 24,
+    "B_Residential_Bungalow_02": 24,
+    "BP_Garage_Closed_01a": 17,
+    "B_Shop_02": 16,
+    "B_Residential_House_Var_01": 13,
+    "BP_Garage_Closed_02a": 13,
+    "B_Residential_House_Var_04": 12,
+    "B_Residential_House_Var_05": 11,
+    "B_Comm_Highstreet_Base_02b": 10,
+    "B_Comm_Highstreet_Base_02d": 10,
+    "BP_Garage_Openable_02a": 10,
+    "B_Shop_01": 9,
+    "B_Residential_House_03": 9,
+    "BP_Garage_Closed_03a": 9,
+    "B_Comm_Highstreet_Base_01a": 8,
+    "B_Comm_Highstreet_Top_02a": 8,
+    "BP_Garage_Openable_01a": 7,
+    "B_Residential_House_01": 6,
+    "B_Residential_House_04": 6,
+    "B_Shop_03": 6,
+    "B_SupplyBuilding_02": 6,
+    "B_Warehouse_02a": 5,
+    "B_Residential_House_Var_03": 5,
+    "B_Comm_Highstreet_Top_Var_01a": 5,
+    "B_Comm_Highstreet_Base_02c": 5,
+    "B_Comm_Highstreet_Top_Var_02d": 5,
+    "B_Residential_House_05": 5,
+    "BP_Garage_Openable_03a": 5,
+    "B_Comm_Highstreet_Top_03a": 4,
+    "B_Comm_Highstreet_Top_04a": 3,
+    "B_Comm_Highstreet_Top_Var_02c": 3,
+    "B_WorkShopBuilding_01": 3,
+    "B_Residential_House_06": 2,
+    "B_Comm_Highstreet_Top_02e": 2,
+    "B_Comm_Highstreet_Base_02a": 2,
+    "B_Residential_House_05b": 2,
+    "B_Residential_House_Abandoned_01": 2,
+    "B_SupplyBuilding_01": 2,
+    "B_Apartment_Building_01_A": 1,
+    "B_Comm_Highstreet_Top_01a": 1,
+    "B_Comm_Highstreet_Top_02b": 1,
+    "B_HospitalBuilding_01a": 1,
+    "B_HospitalBuilding_01b": 1,
+    "B_HospitalBuilding_01c": 1,
+    "B_HospitalBuilding_01d": 1,
+    "B_Office_01_A": 1,
+    "B_SupplyBuilding_01b": 1,
+    "B_SupplyBuilding_02b": 1,
+    "BP_Warehouse_Small_03b": 1,
+    "BP_Warehouse_Small_01a": 1
+   },
+   "door_total": {
+    "world": 558,
+    "play": null,
+    "note": "garage doors count two leaves each"
+   },
+   "spawn_area_profile": {
+    "spawn_areas_in_world": 3,
+    "radius_m": 150,
+    "profiles": [
+     {
+      "areas": 3,
+      "contents": {
+       "deployment board": 1,
+       "equipment vendor": 1,
+       "garage vendor": 1,
+       "moving target": 3,
+       "safe zone": 1,
+       "soccer pitch": 1,
+       "vehicle vendor": 1,
+       "wager vendor": 1
+      }
+     }
+    ]
+   },
+   "main_spawn_areas": {
+    "areas": 3,
+    "rule": "spawn areas (infantry spawn manager) with a wager vendor within 150 m; inferred to be the areas of the named map, the other areas of the shared world belong to other maps",
+    "contents_total": {
+     "safe zone": 3,
+     "deployment board": 3,
+     "equipment vendor": 3,
+     "vehicle vendor": 3,
+     "moving target": 9,
+     "soccer pitch": 3,
+     "wager vendor": 3,
+     "garage vendor": 3
+    },
+    "areas_inside_play_box": null
+   },
+   "door_total_adjusted": {
+    "world": 536,
+    "play": null,
+    "note": "garage doors counted once per pair of leaves"
+   }
+  }
+ }
+}
