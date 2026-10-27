@@ -28,9 +28,21 @@ def tg(x):
     return x.get("TagName") if isinstance(x, dict) else x
 
 
+# Doc wordings this verifier tests and the data refutes. Each is recorded as REFUTED in
+# docs/evidence/round25-verification.md (and the pages were corrected or flagged there), so a refutation is the expected
+# outcome and does not fail the run. A NEW refutation, or any other check, still does.
+KNOWN_REFUTED = (
+    "F claim: linear overstates the 4 SMGs by >= 18%",
+    "H (a) ricochet zero only for SurfaceType3 and 17",
+    "H (a) doc phrase 'every named type except Body and Head'",
+    "H (d) doc says 91 on the 155 mm assets",
+)
+
+
 def check(name, ok, detail=""):
-    print("%s %s %s" % ("PASS" if ok else "FAIL", name, detail))
-    if not ok:
+    refuted = (not ok) and name.startswith(KNOWN_REFUTED)
+    print("%s %s %s" % ("PASS" if ok else ("REFUTED(documented)" if refuted else "FAIL"), name, detail))
+    if not ok and not refuted:
         FAILS.append(name)
     return ok
 

@@ -785,8 +785,12 @@ def blob_id(path):
 
 def data_tree():
     tree = git("rev-parse", "HEAD:data")
-    if tree is None:
-        return "unknown"
+    if tree is None:   # data/ is no longer tracked: keep the id recorded by the last export that could read it
+        try:
+            with open(JSON_OUT, encoding="utf-8") as f:
+                return json.load(f)["meta"]["source"]["data_tree"]
+        except (OSError, ValueError, KeyError):
+            return "unknown"
     return tree + ("+dirty" if git("status", "--porcelain", "--", "data") else "")
 
 

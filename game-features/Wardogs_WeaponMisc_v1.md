@@ -26,9 +26,9 @@ This page lists, with values, the weapon and item-folder assets whose names appe
 | `Weapons/Platforms` | 13 | 13 | 0 | 0 |
 | `Weapons/Launchers` | 6 | 2 | 2 | 2 |
 | `Items/Keycard` | 6 | 6 | 0 | 0 |
-| `Items/CombatBow` | 8 | 0 | 6 | 2 |
+| `Items/CombatBow` | 7 | 0 | 6 | 1 |
 | `Items/MusicTapes` | 9 | 0 | 9 | 0 |
-| **Total** | **42** | | | |
+| **Total** | **41** | | | |
 <!-- /weapon_misc_tables -->
 
 ## 2. Animation set entries
@@ -1094,7 +1094,6 @@ Platform sets `AnimSet_*` under `Weapons/Platforms` (the weapon each belongs to 
 | `IMC_Action_DrawBow` | key mapping | action `IA_Player_Holdable_PrimaryUse_Release`; key `LeftMouseButton`; modifiers none; triggers 0 |
 | `IMC_Action_DrawBow` | key mapping | action `IA_Player_Holdable_PrimaryUse_Release`; key `Gamepad_RightTriggerAxis`; modifiers IMC_Action_DrawBow:WDDeadZoneInputModifier_1; triggers 0 |
 | `IMC_Action_DrawBow` | dead-zone modifier `WDDeadZoneInputModifier_1` | type Axial; min setting `UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min`; max setting `UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max` |
-| `CF_DrawVelocityReleaseCurve` | float curve `CF_DrawVelocityReleaseCurve` | 2 keys: 0->0.05 (Cubic), 0.4->1 (Linear) |
 <!-- /weapon_misc_tables -->
 
 ## 6. Music tapes

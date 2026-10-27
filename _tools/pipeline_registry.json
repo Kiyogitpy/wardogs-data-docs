@@ -919,8 +919,7 @@
     "data",
     "assets/data/ge-values.json"
    ],
-   "notes": "--check round-trips the page values through compute()",
-   "known_fail": "1 of 1752 page cells does not round-trip through compute() on main today"
+   "notes": "--check round-trips the page values through compute()"
   },
   {
    "script": "weapon_misc_tables.py",
@@ -1068,7 +1067,7 @@
   {
    "script": "season_diff.py",
    "class": "generator",
-   "tier": "manual",
+   "tier": "core",
    "write": [
     "--write"
    ],
@@ -1076,15 +1075,15 @@
     "--check"
    ],
    "inputs": [
-    "S1 export (E:/wardogs_builds/season1/data",
-    " no longer on disk)"
+    "data",
+    "Season 1 export (E:/wardogs_builds/season1/data)"
    ],
-   "notes": "needs the Season 1 export; the diff step covers patch-to-patch diffs"
+   "notes": "compares the Season 1 export with data/ (Wardogs/Config JSON is skipped); output assets/data/season-diff and spray-patterns.json. For a new patch, season_diff.py --s1 <old> --s2 <new> --out DIR via `diff --full`"
   },
   {
    "script": "spray_patterns.py",
    "class": "generator",
-   "tier": "manual",
+   "tier": "core",
    "write": [
     "--write"
    ],
@@ -1092,10 +1091,10 @@
     "--check"
    ],
    "inputs": [
-    "S1 export (E:/wardogs_builds/season1/data",
-    " no longer on disk)"
+    "data",
+    "Season 1 export (E:/wardogs_builds/season1/data)"
    ],
-   "notes": "needs the Season 1 export"
+   "notes": "compares the Season 1 export with data/ (Wardogs/Config JSON is skipped); output assets/data/season-diff and spray-patterns.json. For a new patch, season_diff.py --s1 <old> --s2 <new> --out DIR via `diff --full`"
   },
   {
    "script": "ai_detection.py",
@@ -1295,8 +1294,7 @@
    "inputs": [
     "data"
    ],
-   "notes": "independent verifier; one known mismatch is documented (item H, 155 mm Havoc)",
-   "known_fail": "4 documented findings (item F 17.8% vs 18%, item H ricochet wording and the 155 mm Havoc value 91); exits 1 on main today"
+   "notes": "independent verifier; one known mismatch is documented (item H, 155 mm Havoc)"
   },
   {
    "script": "verify_weapon_damage.py",

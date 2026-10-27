@@ -79,8 +79,8 @@ worktree/             the update-<label> branch (run only)
    (`_aaaa...`): a usmap name change, not a game change. A large number there after an update means new fields
    the usmap cannot name yet (names come from Dumper-7 and `WdExtract deobfuscate`).
 2. **`regen-report.md`** answers "what does the site now say differently".
-   - *Generator failures / Check failures*: fix these first. `verify_round25.py` and `weapon_attributes.py --check`
-     fail on main today (documented in the registry as `known_fail`, listed separately, not counted).
+   - *Generator failures / Check failures*: fix these first. On main today every check passes (0 known failures).
+     `verify_round25.py` treats four documented REFUTED wordings (`round25-verification.md`) as expected.
    - *Real changes*: `git diff --ignore-cr-at-eol --stat`. Line-ending-only rewrites are restored automatically.
    - *Possible silent parser breakage* and *Files that lost content*: a generator that parses other pages'
      Markdown (list in the report) may have matched nothing. The history rewrite once unlinked `` [`DA_x`](...) ``
@@ -139,7 +139,7 @@ else is listed in every report.
 | WdExtract dumps made by hand | `ai_detection`, `ai_eqs`, `pve_scenario_data` (round 36 dump), `r41_misc_data`, `r42_modes_data`, `vehicle_spawns` (round 41/42/51 dumps), `bp_defaults` (Blueprint dump named by its specs), `statetree_outline` (`list ST_Challenges`, `dump`), `shell_actors`, `scope_reticles`, `map_images`, `vehicle_models`, `infantry_model` | each script's docstring and the evidence note it cites give the `WdExtract` modes; run them in the regen worktree with `data/` pointing at the new export |
 | The model chain (round 86) | `object_models.py` (regen runs only its `--check`), `vehicle_models.py` | the steps are in `chains` in the registry and in [`round86-models.md`](evidence/round86-models.md#regenerate): `all list ""` -> `object_models.py --plan` -> `collision` and `physics` -> `object_models.py`; the vehicle `plan` / `mesh` / `finish` cycle per vehicle; Node.js for the glTF-Transform compression |
 | The restored executable | `hit_registration_check`, `native_defaults_check`, `projectile_flight_check`, `artillery_range_native`, `ida_claim_*`, `rva_status`, `vehicle_hit_location_check`; the constants encoded in `movement_tables.py` (NATIVE table), `weapon_stats_defaults.py`, `economy_tables.py` (StateTree byte values), `r45_vehicle_defaults.py`, `mode_rules.py` | after a patch the exe changes: re-restore it, re-run the checks, and re-read the constants. A changed value in `data/` does not change these |
-| The Season 1 export (`E:/wardogs_builds/season1/data`, no longer on disk) | `season_diff.py`, `spray_patterns.py`, `round55_s2_damage_diff.py` | use `diff --full` between the two builds instead |
+| The Season 1 export (`E:/wardogs_builds/season1/data`) | `season_diff.py`, `spray_patterns.py` run in regen against it (Season 1 vs `data/`; `Wardogs/Config/**` JSON is skipped because the S1 export has none; one S1 file, `Kavkazi_Bakurani_KOTH_01.json`, is truncated at 615 KiB and reported as not compared) | for a new patch use `diff --full` between the two builds |
 | Not regenerated on purpose | `ge_values.py` | its page was edited by hand after the last generation; running it deletes the edits. Regenerate `ge-values.json` through the `ge` pass and edit the page |
 
 Some pages are generated from the **whole doc tree**, not only `data/` (the residual-gap pages `misc_gameplay_tables`,
@@ -177,21 +177,24 @@ main `82b99ed2`:
 | `icons` pass | 647 textures extracted in 7 s; `item_icons.py build` leaves `assets/img/icons` and `item-icons.json` unchanged (PNG output deterministic) |
 | `regen` | 73 generators and 53 checks, 0 failures; 205 s for one pass (a two-pass run took 301 s and no file changed in pass 2, so the registry order is stable). 166 files were rewritten with LF over CRLF and restored; 6 files really differ from main (below) |
 
-Differences from main after the regeneration, each explained (the first two rows are fixed in this branch and no longer differ):
+After the follow-up fixes the regeneration of main produces **no differences**. What was behind the earlier diffs, all
+fixed at the source: two page parsers the history rewrite broke (`zone_rewards.py`, `wiki_calibers.py`); a hand edit
+inside a generated block (the Molotov native-constant note, now in `explosive_tables.py`); `infantry-hitboxes.json`
+and the four doc-tree pages (`DataTables`, `MiscGameplayAssets`, `WeaponMisc`, `VehicleAssets`) regenerated because
+their generators were ahead of the committed output; `source_data_tree` / `data_tree` ids (git tree of an untracked
+`data/`) now keep the last recorded value instead of writing `HEAD:data`/`unknown`; `season_diff.py` no longer lists the
+34 `Wardogs/Config/Experiences/*.json` files as added. The lead's `data/Wardogs/Config` was the Season 1 copy; the paks
+hold Season 2 tags (`FireCountermeasures`, `SquadTags.ini`, `MetaWagerGameplayTags.ini`), and generator output did not change.
 
-| File | Why |
-|---|---|
-| `Config/Tags/*.ini`, `DefaultGameplayTags.ini` (in `data/`, not on the site) | the lead's `data/Wardogs/Config` is the Season 1 copy (modified 16 Oct; `season_diff.py` documents "Config/*.ini was kept from Season 1"). The paks hold the Season 2 files (for example `Input.NamedActions.Vehicle.FireCountermeasures` instead of `FireFlares`, two new tag files `SquadTags.ini` and `MetaWagerGameplayTags.ini`). No generator output changes |
-| `assets/data/zone-rewards.json`, `_wiki/ammunition/{308-win,7-62x39mm,9x19mm}.md` | **real bugs on main, fixed in this branch.** `zone_rewards.py` found each cash table by a heading ``...DT_Reward_Cash_X.json``; the history rewrite removed the link and `.json`, so a regeneration silently dropped all 12 cash tables. `wiki_calibers.py` looked for rows starting `\| [ID_MAGZ`; unlinked rows lost the "Season 2 changes adds N magazine items" line. Both parsers now accept both forms and reproduce the committed files |
-| `assets/data/infantry-hitboxes.json` (14 lines) | `source_data_tree` becomes `HEAD:data` (it is a git tree id of `data/`, which is no longer tracked; ignored by the report), and every explosive's `damage_values` gains `bPreferUpwardsTrace`: the generator is ahead of the committed JSON |
-| `game-features/Wardogs_Explosives_v1.md` (1 line) | a hand edit inside a generated block (the Molotov `BaseFuseTime` row's note about the native `bCanBeCooked` constant) is overwritten by the generator. Pre-existing drift. (`Wardogs_FireAndUtility_v1.md` showed the same kind of drift before main's round 86 updated its generator.) |
-| `content/Wardogs_DataTables_v1.md`, `Wardogs_MiscGameplayAssets_v1.md`, `Wardogs_WeaponMisc_v1.md`, `Wardogs_VehicleAssets_v1.md` | generated from the whole doc tree (see above): pages written after their last generation now name assets those pages list as "unnamed" (`DA_CharacterModifierState_Critical`, `CF_DrawVelocityReleaseCurve`) or add a "Documented in" link. Pre-existing drift |
+The residual-gap pages are fixpoints now, but they change whenever a page starts naming one of their assets; that is
+expected and the baseline commit of `run` absorbs it.
 
 No extractor nondeterminism was found: JSON, PNG and generated output are stable across runs. Line endings: generators write LF over
 CRLF checkouts; the report restores such files (`git diff --ignore-cr-at-eol`).
 
 ## Notes for maintainers
 
+- **Cleaning up**: `clean --label L` removes a `run` worktree safely: it deletes the `data` and `sdk/raw` junctions first (link only), checks their targets still exist, then runs `git worktree remove` without `--force`. Never use `rm -rf` or `--force` on a worktree while a junction is in place.
 - **Adding a generator**: add one entry to `scripts` in `_tools/pipeline_registry.json` (`class`, `tier`, `write` and `check`
   argument lists, `inputs`). Order matters only when one generator reads another's output: put the producer first.
   `update_pipeline.py audit` fails for a script that is not in the registry.

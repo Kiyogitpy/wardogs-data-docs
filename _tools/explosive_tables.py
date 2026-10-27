@@ -251,7 +251,9 @@ def t_fuses(rows):
     row("Smoke grenades, all 8 colours", "B_SmokeGrenade_Red", "BaseFuseTime", "`BaseFuseTime`",
         "every colour sets 3.0 (the native base is 5.0); the smoke then lasts `PostExplodeLifespan` 10 s on the grenade actor, the smoke itself 180 s by default (see Fire page)")
     row("Molotov (`Id.Item.Molotov`)", "B_Molotov", "BaseFuseTime", "`BaseFuseTime`",
-        "`B_Molotov` does not set it, so the grenade base class value stands; whether the Molotov bursts on impact or on the fuse is not traced")
+        "`B_Molotov` does not set it, so the grenade base class value stands; `bCanBeCooked` is also native (`+0x624` false, store `0x6CADCBB`, round 18; "
+        "the Molotov constructor `0x86A0200` runs the grenade base `0x6CADED0`, same zero at `0x6CADEEE`), so it cannot be cooked; "
+        "whether the Molotov bursts on impact or on the fuse is not traced")
     row("C4 charge (`Id.Item.C4Explosive`)", "B_ThrowableC4", "TimerBeforeExplosion", "`TimerBeforeExplosion` on the charge",
         "set on the actor; `B_ThrowableIED` inherits it")
     row("C4 detonator (`Id.Item.C4Trigger`)", "ID_C4_Trigger", "DelayTillExplosion", "`DelayTillExplosion` after the trigger press",

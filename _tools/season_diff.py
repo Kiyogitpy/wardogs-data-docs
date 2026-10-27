@@ -237,7 +237,12 @@ def list_json(root):
         for f in files:
             if f.endswith(".json"):
                 full = os.path.join(d, f)
-                out[os.path.relpath(full, root).replace(os.sep, "/")] = full
+                rel = os.path.relpath(full, root).replace(os.sep, "/")
+                # Wardogs/Config/** are packed config files (Experiences/*.json), not cooked assets. The Season 1 export
+                # never held them, so comparing would list every one as "added" (34 files) whenever data/ carries them.
+                if rel.startswith("Wardogs/Config/"):
+                    continue
+                out[rel] = full
     return out
 
 

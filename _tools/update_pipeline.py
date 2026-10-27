@@ -6,6 +6,7 @@
     python -I _tools/update_pipeline.py diff     --old A --new B    patch-diff.md / patch-diff.json in <root>/B
     python -I _tools/update_pipeline.py regen    --data DIR         run every generator against DIR, then the checks, then report
     python -I _tools/update_pipeline.py run      --label L          snapshot -> extract -> diff -> regen in a dedicated worktree
+    python -I _tools/update_pipeline.py clean    --label L          remove a run worktree safely (junctions first, no --force)
     python -I _tools/update_pipeline.py audit                       every _tools script is classified in pipeline_registry.json
 
 Standard library only. The game is never run and nothing is downloaded. The AES key is read from its file by the
@@ -150,10 +151,13 @@ def remove_link(p):
     """Remove a junction/symlink WITHOUT touching its target. Refuses anything that is a real directory."""
     if not (os.path.lexists(p) and is_link(p)):
         raise SystemExit("refusing to remove %s: not a link" % p)
+    target = link_target(p)
     try:
-        os.rmdir(p)           # a junction or directory symlink: removes the link only
+        os.rmdir(p)           # a junction or directory symlink: removes the link only (never shutil.rmtree, never git --force)
     except OSError:
         os.unlink(p)
+    if target and not os.path.isdir(target):
+        raise SystemExit("ALERT: %s vanished after removing the link %s" % (target, p))
 
 
 def make_link(p, target):
@@ -1103,6 +1107,37 @@ def cmd_run(args):
     return rc
 
 
+def cmd_clean(args):
+    """Remove a `run` worktree safely: drop its data/ and sdk/raw junctions first, check their targets survive,
+    then `git worktree remove` WITHOUT --force, then delete the branch if it is merged."""
+    env = config(args)
+    wt = os.path.abspath(args.worktree or os.path.join(env["builds_root"], args.label, "worktree"))
+    if not os.path.isdir(wt):
+        raise SystemExit("no worktree at %s" % wt)
+    if is_main_checkout(wt) or os.path.normcase(wt) == os.path.normcase(REPO):
+        raise SystemExit("refusing: %s is not a linked worktree you created with `run`" % wt)
+    targets = []
+    for rel in ("data", os.path.join("sdk", "raw")):
+        p = os.path.join(wt, rel)
+        if os.path.lexists(p) and is_link(p):
+            targets.append(link_target(p))
+            remove_link(p)
+            say("removed junction " + p)
+    for t in targets:
+        if not os.path.isdir(t):
+            raise SystemExit("ALERT: junction target %s is gone" % t)
+    _, br = git("rev-parse", "--abbrev-ref", "HEAD", cwd=wt)
+    rc, out = git("worktree", "remove", wt, cwd=REPO)
+    if rc:
+        raise SystemExit("git worktree remove refused (uncommitted work in it?): commit or inspect, then retry. Not forcing.")
+    say("removed worktree " + wt)
+    br = br.strip()
+    if br.startswith("update-"):
+        rc, _ = git("branch", "-d", br, cwd=REPO)
+        say("branch %s %s" % (br, "deleted" if rc == 0 else "kept (not merged; delete with git branch -D after checking)"))
+    return 0
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--config", help="JSON file overriding registry `environment` keys")
@@ -1115,9 +1150,10 @@ def main(argv=None):
     p.add_argument("--only"); p.add_argument("--skip"); p.add_argument("--no-assets", action="store_true")
     p = sub.add_parser("run"); p.add_argument("--label", required=True); p.add_argument("--old"); p.add_argument("--base", default="main"); p.add_argument("--worktree"); p.add_argument("--quick", action="store_true")
     p.add_argument("--force", action="store_true"); p.add_argument("--assets", action="store_true"); p.add_argument("--full", action="store_true"); p.add_argument("--passes", type=int, default=1); p.add_argument("--no-baseline", action="store_true", help="skip the baseline regen on the old export")
+    p = sub.add_parser("clean"); p.add_argument("--label"); p.add_argument("--worktree")
     sub.add_parser("audit")
     a = ap.parse_args(argv)
-    return {"snapshot": cmd_snapshot, "status": cmd_status, "extract": cmd_extract, "diff": cmd_diff, "regen": cmd_regen, "run": cmd_run, "audit": cmd_audit}[a.cmd](a)
+    return {"snapshot": cmd_snapshot, "status": cmd_status, "extract": cmd_extract, "diff": cmd_diff, "regen": cmd_regen, "run": cmd_run, "audit": cmd_audit, "clean": cmd_clean}[a.cmd](a)
 
 
 if __name__ == "__main__":
