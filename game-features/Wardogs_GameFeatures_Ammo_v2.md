@@ -92,7 +92,7 @@ Ammo-related data assets exist elsewhere in the data. Found in this pass:
 | `Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/` | Caliber multipliers per weapon archetype: `DT_InfantryData_ArchetypeCaliberModifiers` (new in Season 02). |
 | `Wardogs/Content/Audio/Events/UI/Inventory/AE_UI_Inventory_ExtractAmmo` and related | Ammo audio, including `AE_UI_Request_Ammo`, `AE_Comms_Request_Ammo`, `ID_LooseAmmoBox_Audio` |
 
-The `AmmoModifiers` assets are the most likely source of ammo *types* (armour-piercing, hollow-point, tracer). Their damage and behaviour values were not checked in this pass, since they sit outside the scope of this folder.
+The `AmmoModifiers` assets are the source of ammo *types* (armour-piercing, hollow-point, tracer), indexed by `DT_AmmoModifiers`. Their penetration, range, exit-speed and tracer values are in [Game Mechanics v2, section 2e](../content/Wardogs_GameMechanics_v2.md).
 
 ---
 
@@ -102,4 +102,4 @@ The `AmmoModifiers` assets are the most likely source of ammo *types* (armour-pi
 - **The EDL contents are not in the data.** Which actors, pickups, or spawn points each layer contains cannot be listed from here.
 - **The purpose of the numbered groups** (001 to 022) is not stated in the data. The numbering suggests separate zones or loot groups, but that is an inference.
 - **`AMMO_GLOBAL`** is named like a shared layer. Its contents are not visible here.
-- The `AmmoModifiers` data assets are identified by name only in this doc. Their contents were not decoded here; a dedicated pass over `Content/GameMechanics/DamageSystem/` would be needed for ammo values.
+- The `AmmoModifiers` data assets are identified by name only in this doc. Their values are tabled in [Game Mechanics v2, section 2e](../content/Wardogs_GameMechanics_v2.md).

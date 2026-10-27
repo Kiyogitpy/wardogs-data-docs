@@ -444,9 +444,9 @@ Three families, one curve per caliber:
 |---|---|---|
 | `CombineLooseAmmo/CR_CombineLooseAmmoCurve_<caliber>` | (0, 0.4–1.2) to (N, larger value) | 45ACP: (0, 0.4) (13, 1.9) (26, 3.8); 50Cal: (0, 1.2) (10, 7.0) (20, 14.0) |
 | `ExtractAmmo/CR_ExtractAmmoCurve_<caliber>` | (0, 0.3–0.8) to (N, larger value) | 308Win: (0, 0.3) (60, 20.0); 545mm: (0, 0.3) (200, 40.0) |
-| `LoadAmmo` family | not decoded in review | — |
+| `LoadAmmo` family | Loading time curves, described in [Ammo Packing](../game-features/Wardogs_AmmoPacking_v1.md) | — |
 
-The curve axis is not labelled in the data. The most likely reading is round count on the X axis and time or cost on the Y axis, but this is not verified.
+The X axis is the round count, and the packing time is curve(rounds) times a multiplier ([Ammo Packing](../game-features/Wardogs_AmmoPacking_v1.md), Derived).
 
 ---
 
@@ -473,7 +473,7 @@ Field map of `WDFactionData` (**Data**): `FactionName` is the Name column (a str
 | `BHPerspectiveData` (`DA_PlayerCharacterComponents`) | Keyed templates (e.g. `FirstPersonBodyMesh`, each a `SkeletalMeshComponent` template). Full key list not expanded. |
 | `WDWaveBreakerComponent` | Present, no exposed properties |
 | `WDCharacterMovementEffectsComponentConfigurationDataAsset` | Per-stance movement effects (`Stances`, `JumpGameplayCueTag`, `LandingGameplayCueTags`, `StanceTransitionEffects`, `MovementModeEffects`) |
-| `CurveFloat` (9) and `CurveVector` (4) in `Player/PlayerCharacter/Curves/` | Animation and camera curves (not decoded) |
+| `CurveFloat` (9) and `CurveVector` (4) in `Player/PlayerCharacter/Curves/` | Animation and camera curves; several are tabled in [Player Movement](Wardogs_PlayerMovement_v1.md) |
 | `Player/PlayerCharacter/MovementFeatures/Ladder/Curves` (3) | Ladder movement curves |
 
 ---
@@ -568,7 +568,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 - **Vendor weapon market.** The 37 rows in `DT_WeaponMarket` were summarised by price range only. Individual items were not listed.
 - **Empty vehicle market.** `DT_VehicleMarket` has 0 rows, so vehicle vendor prices are not in this export.
 - **Destruction chunk data.** Chunk IDs and mesh references in the destructible-building assets were counted, not expanded.
-- **Player curves.** The 9 `CurveFloat` and 4 `CurveVector` assets in `Player/PlayerCharacter/Curves/` were not decoded.
+- **Player curves.** Several of the `CurveFloat` and `CurveVector` assets in `Player/PlayerCharacter/Curves/` (landing, look acceleration, slope, damage) are tabled in [Player Movement](Wardogs_PlayerMovement_v1.md). The animation and camera uses of the rest are not decoded.
 - **Reward tables.** `Gamemode/Data/DT_CashRewards` (49 rows), `DT_Rewards` (78 rows), `DT_AssistCashRewards` (9), `DT_CashRewardModifiers` (9) and the `CashRewardsDataTable/` tree are covered in `Wardogs_Rewards_and_Progression_v2.md`, not here.
 - **EQS details.** The EQS query contents (generators, tests and scoring equations) were listed by name only.
 
