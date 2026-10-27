@@ -388,7 +388,7 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 ## 10. Still not pulled / limitations
 
 - **`GE_*` gameplay effects** (attachment stat changes, stance recoil modifiers, default attribute effects) are referenced but not in this folder. Numeric attachment effects are the largest gap.
-- **Curves:** ADS, recoil, view kick, sway and falloff curves are present as `EditorCurveData` keyframes inside `WDWeaponStatsData`, and as 7 `CurveFloat` objects. They are not decoded.
+- **Curves:** ADS, recoil, view kick, sway and falloff curves are present as `EditorCurveData` keyframes inside `WDWeaponStatsData`, and as 7 `CurveFloat` objects. The keyframes are tabled, with every key, in [Weapon Spread and Recoil Data](../content/Wardogs_WeaponSpreadRecoilData_v1.md) (ADS, recoil, view kick and sway); the distance falloff curve is in [Weapons v2](../content/Wardogs_Weapons_v2.md). The 7 standalone `CurveFloat` objects are not decoded.
 - **`WDItemInputBehavior_ActivateAction`** exports with empty payloads, so the action logic is not visible.
 - **Mutable parameters** (`MUT_MasterWeapon`) are listed by key only. Option lists and default textures are not summarized.
 - **Camera data** (`WDItemsmithDataFragment_CameraData`, 36) and **animation sets** (`BHAnimationSet`, 45) are counted but not decoded.

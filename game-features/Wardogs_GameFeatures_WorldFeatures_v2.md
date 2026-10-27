@@ -6,7 +6,7 @@ description: "What This Folder Holds, HotZoneMagnet, Lootable, SpawnZoneTest"
 ---
 
 # Wardogs — GameFeatures: WorldFeatures
-*Extracted from cooked game data (UE 5.7 export JSON). Source folder: `Plugins/GameFeatures/WorldFeatures/` — 31 JSON files. Values are raw export values. StateTree internals were summarised, not decoded.*
+*Extracted from cooked game data (UE 5.7 export JSON). Source folder: `Plugins/GameFeatures/WorldFeatures/` — 31 JSON files. Values are raw export values. StateTree internals of the challenge trees are in [Challenges](Wardogs_Challenges_v1.md).*
 
 ---
 
@@ -86,7 +86,7 @@ Three rows, each with a `Resources` list of cash and XP.
 
 The tower-capture reward drops as more of the last victims were involved (`LastVictimCount`, clamped to `LastVictimCountMax`), by `LastVictimReductionModifier` per victim. The `HostileModifier` scales it for hostile captures. The activate and deactivate rewards are plain `BaseReward`.
 
-The three `ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_*` StateTrees (`TowerCaptured`, `MagnetActivated`, `MagnetDeactivated`) drive these events. They are not decoded here.
+The three `ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_*` StateTrees (`TowerCaptured`, `MagnetActivated`, `MagnetDeactivated`) drive these events. Their events and conditions are tabled in [Challenges](Wardogs_Challenges_v1.md).
 
 ### 2d. Map trackers and tooltips
 
@@ -156,7 +156,7 @@ One GFD with no actions. It is a test pack and adds nothing.
 
 ## 6. Still not pulled / limitations
 
-- **StateTree logic.** The three challenge StateTrees and the full set of state nodes are summarised, not decoded. Triggers and conditions are not confirmed.
+- **StateTree logic.** The triggers and conditions of the three challenge StateTrees are tabled in [Challenges](Wardogs_Challenges_v1.md).
 - **Expression variables.** `LastVictimCount`, `LastVictimCountMax`, `LastVictimReductionModifier`, `HostileModifier` and `BaseReward` are named in the expression strings. Some of their literal values are in `DT_ChallengeRewards` in this folder. This page lists only the ones named in the Season 02 section.
 - **Interaction ranges.** `InteractionRange` is set on the interaction assets but its value was not extracted.
 - **Loot contents.** The full spawned item lists for each Lootable row are not decoded here.
