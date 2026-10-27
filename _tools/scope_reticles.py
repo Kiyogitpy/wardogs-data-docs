@@ -6,6 +6,10 @@
 widgets and the MI_ScopeReticleTempTextures_* materials; <png-dir> holds WdExtract `textures` output of the
 T_UI_*_Scope_SDF textures those materials name. Static extraction only, no game run.
 
+Sights whose reticle is not a texture are drawn by scope_reticles_procedural.py from the material parameters
+(items get "source": "procedural"; the cooked files hold no material graph, so those images are approximate, see
+docs/evidence/round84-procedural-reticles.md). One command regenerates every image and the JSON.
+
 Chain: DT_ScopeReticleTypes row (AllowedSubSlotItems = the scope's ItemId) -> WidgetClass W_ScopeReticle_*
 -> the material instance the widget draws -> its ScopeTexture parameter. Only the widgets drawn from such a
 texture get an image; the others (10x, MOA, Cross and the SGHT_0xx scopes) build their reticle procedurally in
@@ -19,10 +23,14 @@ assets/data/scope-reticles.json ({ItemId tag: {texture, png, widget, material}})
 import glob
 import json
 import os
+import re
 import sys
 
 import numpy as np
 from PIL import Image
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import scope_reticles_procedural as proc  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 OUT_IMG = os.path.join(ROOT, "assets", "img", "icons", "scope-reticles")
@@ -81,6 +89,28 @@ def main():
         text = open(wpath, encoding="utf-8").read()
         mat = next((m for m in mats if f"'{m}'" in text), None)
         if not mat:
+            # procedural widget: the full-screen image draws a material instance of a parametric master
+            mi = re.search(r"MaterialInstanceConstant'(MI_SGHT_\d+_Reticle)'", text)
+            if mi:
+                res = proc.render_mask(dump, mi.group(1))
+                if res:
+                    img, info = res
+                    rel = f"assets/img/icons/scope-reticles/{mi.group(1)}.png"
+                    note = proc.WITHDRAWN.get(mi.group(1))
+                    if note:
+                        if os.path.exists(os.path.join(ROOT, rel)):
+                            os.remove(os.path.join(ROOT, rel))
+                        for item in row["FilterRules"]["AllowedSubSlotItems"]:
+                            out[item] = {"png": None, "source": "procedural", "family": "mask", "widget": widget,
+                                         "material": mi.group(1), "master": info["master"], "row": tag,
+                                         "note": "not published: " + note}
+                        continue
+                    img.save(os.path.join(ROOT, rel), optimize=True)
+                    for item in row["FilterRules"]["AllowedSubSlotItems"]:
+                        out[item] = {"png": rel, "source": "procedural", "family": "mask", "widget": widget,
+                                     "material": mi.group(1), "master": info["master"], "row": tag,
+                                     "used": info["used"], "unused": info["unused"]}
+                    done[mi.group(1)] = rel
             continue
         m = mats[mat]
         rel = f"assets/img/icons/scope-reticles/{m['texture']}.png"
@@ -91,7 +121,19 @@ def main():
             render(src[0], m["width"], m["feather"]).save(os.path.join(ROOT, rel), optimize=True)
             done[m["texture"]] = rel
         for item in row["FilterRules"]["AllowedSubSlotItems"]:
-            out[item] = {"texture": m["texture"], "png": rel, "widget": widget, "material": mat, "row": tag}
+            out[item] = {"texture": m["texture"], "png": rel, "source": "texture", "widget": widget, "material": mat,
+                         "row": tag}
+    kobra = os.path.join(ROOT, "assets", "img", "icons", "other-sights-reticles", "T_Reticle_KobraSight_Greyscale.png")
+    for item, mi in proc.LENS_SIGHTS.items():
+        res = proc.render_lens(dump, mi, kobra)
+        if not res:
+            continue
+        img, info = res
+        rel = f"assets/img/icons/scope-reticles/{mi}.png"
+        img.save(os.path.join(ROOT, rel), optimize=True)
+        done[mi] = rel
+        out[item] = {"png": rel, "source": "procedural", "family": "lens", "material": mi, "kind": info["kind"],
+                     "used": info["used"], "color": list(info["color"])}
     with open(OUT_JSON, "w", encoding="utf-8", newline="\n") as f:
         json.dump({"_note": __doc__.strip().splitlines()[0], "items": out}, f, indent=1, sort_keys=True)
         f.write("\n")

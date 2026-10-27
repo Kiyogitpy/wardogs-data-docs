@@ -77,7 +77,11 @@ def build():
                 icons[item_id] = ref["png"]
         rec = {}
         if tag.lower() in scope_doc:
-            rec["scope"] = scope_doc[tag.lower()]["png"]
+            sc = scope_doc[tag.lower()]
+            if sc.get("png"):
+                rec["scope"] = sc["png"]
+                if sc.get("source") == "procedural":
+                    rec["scopeApprox"] = True  # drawn from material parameters, not a game texture
         for entry, _ in it.get("sights") or []:
             r = icons_doc.get(f"{tag}.{entry}")
             if r and (r.get("inventory") or {}).get("png"):
