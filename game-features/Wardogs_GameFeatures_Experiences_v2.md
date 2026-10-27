@@ -65,9 +65,9 @@ Experiences are complete game modes. Each one is a GameFeature pack that sets ma
 | `WDGameStateSession` | `WDSniperShowdownLastKillTrackerComponent` | Tracks last kill |
 | `WDGameStateSession` | `B_SniperShowdown_MusicController` | Music |
 | `WDGameModeSession` | `B_SniperShowdown_PlayerSpawnManagerComponent` | Spawns players |
-| `WDMoverPlayerCharacter` | `B_SniperShowdown_ExplodeComponent` | Explode on defeat (inferred) |
+| `WDMoverPlayerCharacter` | `B_SniperShowdown_ExplodeComponent` | Explodes the player's body 1.5 s after death (section 3c) |
 | `WDMoverPlayerCharacter` | `B_SniperShowdown_LoadoutComponent` | Loadout |
-| `WDMoverPlayerCharacter` | `B_SniperShowdown_OOBComponent` | Out-of-bounds handling |
+| `WDMoverPlayerCharacter` | `B_SniperShowdown_OOBComponent` | Puts a player outside both zones into the hostile-zone state (section 3c) |
 | `WDMoverPlayerCharacter` | `B_SniperShowdown_StillnessSpottingComponent` | Stillness-based spotting |
 | `WDControlZone` | `WDSniperShowdownControlZoneSeekerComponent` | Control zone seeking |
 
@@ -116,10 +116,40 @@ These three rows confirm the stillness mechanic: standing still reveals you; mov
 
 ---
 
+### 3c. Explode and out-of-bounds components (decoded, round 86)
+
+Both are Blueprint `ActorComponent` classes added to the player character. Their bytecode was exported with WdExtract and read with `kismet_listing.py` ([round 86 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round86-bp.md)).
+
+**`B_SniperShowdown_OOBComponent`** (**Bytecode**). It owns no timer and no damage. On begin play it binds to the character's gameplay-tag change event (`OnTagsChangedDynamic`) and unbinds on end play. On every tag change:
+
+| If the character | Then |
+|---|---|
+| has `State.Location.Objective.ControlZone` or `State.Location.Objective.Hotzone`, and has `State.Location.SafeZone.Hostile` | removes one count of `State.Location.SafeZone.Hostile` (`UpdateGameplayTag`, -1) |
+| has neither zone tag, and does not have `State.Location.SafeZone.Hostile` | adds one count of `State.Location.SafeZone.Hostile` (+1) |
+| any other combination | nothing |
+
+So leaving both zones gives the character the hostile-zone tag, and re-entering either zone removes it. The 20 s return countdown and the death that follow are not in this component: they come from whatever reacts to that tag (the out-of-bounds timer on the [boundaries and safe zones](../_wiki/game-modes-and-maps/boundaries-and-safe-zones.md) wiki page), which is native code or a GameplayEffect, not this Blueprint. The same tag also blocks building and mine placement, because the safe-zone placement conditions test for it (see [Buildables](Wardogs_Buildables_v1.md)). The component's class defaults also list `ItemsToStartWith` = `Id.Item.SmallBackpack`, `Id.Item.Glock17` (**Data**).
+
+**`B_SniperShowdown_ExplodeComponent`** (**Bytecode** and **Data**). It binds to the character's vitality `OnKilled` event. When the character dies, after `KismetSystemLibrary::Delay` of 1.5 s (ubergraph offset 15) it calls `GetDamageData` and `WDDamageSubsystem::SimulateRadialDamage` at the body's location (instigator controller read from the dead pawn; the dead pawn is in the ignore list), then the multicast `PlayExplosiveVFX`, which runs the gameplay cue `GameplayCue.Claymore.Explode` on the character. The damage values are class defaults:
+
+| Field | Value |
+|---|---:|
+| `BaseDamage` | 250 |
+| `ExplosiveRadius` | 500 |
+| `EffectiveExplosiveRadius` | 250 |
+| `MinimumExplosiveDamage` | 30 |
+| `ExplosiveDamageFallOff` | 0.5 |
+| `ExplosiveBluntDamage` | 100 |
+| `bCheckLOS`, `bPreferUpwardsTrace` | true, true |
+| Impulse | off (`bApplyImpulse` false) |
+| Damage tag (`DamageEntityData`) | `Meta.Damage.Explosive.Utility.Claymore` |
+
+The damage type tag handed to the subsystem is `Meta.Damage.DamageType.Explosive`. The blast is a Claymore-tagged explosion, so Claymore damage-table rules apply to it. The component replicates (`bReplicates` true).
+
 ## 5. Still not pulled / limitations
 
 - **Stillness thresholds.** The time or distance that defines "standing still" is in the `StillnessSpottingComponent`, which is in BP code and not in this folder.
-- **Explode and OOB rules.** The rules inside `ExplodeComponent` and `OOBComponent` are not decoded here.
+- **Out-of-bounds countdown and death.** The 20 s countdown that follows the hostile-zone tag is not in `OOBComponent` (section 3c); it is outside the Blueprints exported here.
 - **Music and timers.** Timer durations and music cues are not extracted.
 - **Leaderboard data.** Empty in the export.
 - **Unnamed keys.** Localised strings use `_aaa…` keys; their values are shown where the source string is present.

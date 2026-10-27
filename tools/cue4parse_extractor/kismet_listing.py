@@ -64,8 +64,15 @@ def e(x):
 
 def stmt(x):
     t = x['Token']
-    if t in ('EX_Let', 'EX_LetBool', 'EX_LetObj', 'EX_LetWeakObjPtr', 'EX_LetDelegate', 'EX_LetValueOnPersistentFrame'):
+    if t in ('EX_Let', 'EX_LetBool', 'EX_LetObj', 'EX_LetWeakObjPtr', 'EX_LetDelegate', 'EX_LetMulticastDelegate') and 'Variable' in x:
         return f"{e(x['Variable'])} = {e(x['Expression'])}"
+    if t == 'EX_LetValueOnPersistentFrame':
+        dp = x['DestinationProperty']
+        return f"frame.{dp.get('Property', {}).get('Name', '?')} = {e(x['AssignmentExpression'])}"
+    if t == 'EX_ComputedJump': return f"goto_computed({e(x['CodeOffsetExpression'])})"
+    if t == 'EX_BindDelegate': return f"bind {e(x['Delegate'])} -> {x['FunctionName']}({e(x['ObjectTerm'])})"
+    if t in ('EX_AddMulticastDelegate', 'EX_RemoveMulticastDelegate'):
+        return f"{t[3:-17]} {e(x['MulticastDelegate'])} <- {e(x['Delegate'])}"
     if t == 'EX_SetArray':
         return f"{e(x['AssigningProperty'])} = [{', '.join(e(p) for p in x['Elements'])}]"
     if t == 'EX_PushExecutionFlow': return f"push_flow -> @{x['PushingAddress']}"
@@ -88,5 +95,7 @@ for ex in d:
         out.append(f"    {p['Type']:<16} {p['Name']}  {fn(st) if st else ''}  [{p.get('PropertyFlags','')}]")
     out.append("--- bytecode (offset: statement):")
     for s in ex['ScriptBytecode']:
-        out.append(f"@{s.get('StatementIndex'):>5}: {stmt(s)}")
+        try: txt = stmt(s)
+        except (KeyError, TypeError): txt = '<' + s['Token'] + ' ' + json.dumps({k: v for k, v in s.items() if k != 'Token'})[:200] + '>'
+        out.append(f"@{s.get('StatementIndex'):>5}: {txt}")
 open(sys.argv[2], 'w', encoding='utf-8').write('\n'.join(out) + '\n')

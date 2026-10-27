@@ -41,7 +41,7 @@ The match waits in `WaitingForReadyUp` (not `WaitingForPlayerCount`) before it s
 
 | Host | Component | Role (from name) |
 |---|---|---|
-| `WDGameMode` | `B_DeathmatchSpawner` | Spawns players |
+| `WDGameMode` | `B_DeathmatchSpawner` | Spawns players (empty subclass of the native `WDDeathmatchPlayerSpawnManagerComponent`) |
 | `WDMoverCharacter` | `WDHealthRegenComponent` | Health regeneration |
 | `WDGameState` | `B_FactionSetup_CreateTwoTeams` | Two-team factions |
 | `WDMoverPlayerCharacter` | `WDDeathmatchWeaponSelectionComponent` | Weapon selection |
@@ -91,6 +91,6 @@ The UI scene row is `UI.Scene.Deathmatch.WeaponSelect`.
 
 - **Regen rate.** `WDHealthRegenComponent` values are not in this folder.
 - **Ammo amounts.** `WDLoadoutAmmoGenerationComponent` rules are not in this folder.
-- **Spawn logic.** `B_DeathmatchSpawner` is a Blueprint and is not decoded.
+- **Spawn logic.** `B_DeathmatchSpawner` was exported in round 86. It is an empty Blueprint subclass of the native `WDDeathmatchPlayerSpawnManagerComponent` (`/Script/DeathmatchRuntime`): no variables, no overrides, no class defaults, no bytecode. The spawn selection rules therefore run entirely in native code, which was not read.
 - **Status entry fields.** The view-model's data fields are not in the export.
 - **Weapon stats.** The weapons' own stats are in the Weapons folder, not here.
