@@ -38,7 +38,7 @@ WdExtract ... dump <files.txt>                                                  
 python tools/cue4parse_extractor/kismet_listing.py <in.json> <out.txt>
 ```
 
-`list` matches the start of the package file name, so the condition Blueprints are found with `list B_` and then filtered (`grep -E "PlacementCondition|B_Action_|..."`), not with a long name. The 211 selected packages (`E:/r86/work/bp/sel1.txt`, copied to `dump1/t86.txt`) went to `E:/r86/work/bp/dump1`; the 83 state trees to `E:/r86/work/bp/dump_st`.
+`list` matches the start of the package file name, so the condition Blueprints are found with `list B_` and then filtered (`grep -E "PlacementCondition|B_Action_|..."`), not with a long name. The 211 selected packages (`E:/r86/work/bp/sel1.txt`, copied to `dump1/t86.txt`) went to `E:/Reverse_Engineer/wardogs_analysis/round86_bp/dump1`; the 83 state trees to `E:/Reverse_Engineer/wardogs_analysis/round86_bp/dump_st`.
 
 `kismet_listing.py` was extended: it failed on `EX_LetValueOnPersistentFrame`, `EX_ComputedJump` and the delegate statements that every ubergraph uses, so the event-graph Blueprints (`B_Action_*`, the Sniper Showdown components) gave no output. It now renders them and falls back to a raw dump for an unknown statement.
 
@@ -53,9 +53,9 @@ Hits: stores in the constructor `0x86A0140` (250, 600, 150, 4 as in `native-defa
 ## Update pipeline (for the lead)
 
 ```
-python -I _tools/bp_defaults.py            # now reads two dump folders: DUMP_DIR (round 17) and DUMP_DIR_R86 (E:/r86/work/bp/dump1)
+python -I _tools/bp_defaults.py            # now reads two dump folders: DUMP_DIR (round 17) and DUMP_DIR_R86 (E:/Reverse_Engineer/wardogs_analysis/round86_bp/dump1)
 python -I _tools/bp_defaults.py --check
-python -I _tools/statetree_outline.py      # reads E:/r86/work/bp/dump_st, writes assets/data/challenge-statetrees.json
+python -I _tools/statetree_outline.py      # reads E:/Reverse_Engineer/wardogs_analysis/round86_bp/dump_st, writes assets/data/challenge-statetrees.json
 python -I _tools/statetree_tables.py --write | --check
 python -I _tools/action_tables.py --write | --check      # new modes bp_settings, buffers; --check is new
 python -I _tools/utility_throwable_tables.py --write
