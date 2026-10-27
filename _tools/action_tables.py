@@ -457,16 +457,41 @@ def montages_table():
     return "\n".join(out)
 
 
+def bp_settings_table():
+    """Class defaults of the B_Action_* Blueprints (assets/data/bp-defaults.json, topic actions; round 86)."""
+    out = ["| Action Blueprint | Field | Value | Unit |", "|---|---|---|---|"]
+    for e in bpd.topic_entries("actions"):
+        out.append("| `%s` | `%s` | %s | %s |" % (e["asset"], e["property"], bpd.fmt(e["value"]), e.get("unit") or ""))
+    return chr(10).join(out)
+
+
+def buffers_table():
+    """Every buffered-response entry (BufferType, BufferTime) grouped by type and time."""
+    groups = collections.defaultdict(lambda: collections.defaultdict(list))
+    for a in actions().values():
+        for r in a["p"].get("ActionResponseData", []):
+            for b in r["Value"].get("BufferedResponses", []):
+                groups[b["BufferType"].split("::")[1]][b["BufferTime"]].append((a["name"], b["ActionTag"]["TagName"]))
+    out = ["| Buffer type | Buffer time (s) | Entries | Actions that hold it |", "|---|---:|---:|---|"]
+    for typ in sorted(groups):
+        for t in sorted(groups[typ]):
+            rows = groups[typ][t]
+            names = sorted({n.replace("DA_Action_", "") for n, _ in rows})
+            shown = ", ".join("`%s`" % n for n in names[:8]) + (", ... (%d actions)" % len(names) if len(names) > 8 else "")
+            out.append("| %s | %g | %d | %s |" % (typ, t, len(rows), shown))
+    return chr(10).join(out)
+
+
 def render(mode):
     args = mode.split()
     if args[:1] == ["family"]:
         return family_table(args[1])
     return {"summary": summary_table, "fields": fields_table, "effects": effects_table,
             "appliables": appliables_table, "bindings": bindings_table, "unbound": unbound_table,
-            "montages": montages_table}[args[0]]()
+            "montages": montages_table, "bp_settings": bp_settings_table, "buffers": buffers_table}[args[0]]()
 
 
-def write_docs():
+def write_docs(check=False):
     path = os.path.join(ROOT, PAGE)
     if not os.path.exists(path):
         print(f"{PAGE}: not found, no tables written")
@@ -481,6 +506,9 @@ def write_docs():
         return nl.join([f"<!-- action_tables {mode} -->"] + res.split("\n") + ["<!-- /action_tables -->"])
 
     new, n = BLOCK.subn(regen, text)
+    if check:
+        print("up to date" if new == text else "DIFFERS")
+        sys.exit(0 if new == text else 1)
     if new != text:
         with open(path, "w", encoding="utf-8", newline="") as f:
             f.write(new)
@@ -490,7 +518,9 @@ def write_docs():
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
-    if "--write" in args:
+    if "--check" in args:
+        write_docs(check=True)
+    elif "--write" in args:
         write_docs()
     elif "--family" in args:
         print(family_table(args[args.index("--family") + 1]))

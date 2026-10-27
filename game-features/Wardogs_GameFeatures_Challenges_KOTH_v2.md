@@ -121,10 +121,149 @@ Observations:
 
 ---
 
+## 5.1 State tree logic (decoded, round 86)
+
+A compiled `StateTree` asset is not bytecode. It keeps its states, transitions, task and condition nodes (editor name and instance values) and its property bindings in flat arrays. [`_tools/statetree_outline.py`](../_tools/statetree_outline.py) resolves all 83 `ST_Challenges_*` trees (the 60 here plus the Hot Zone Magnet, Buildable, Spotting and Team Offence trees) into [`challenge-statetrees.json`](../assets/data/challenge-statetrees.json): per state its enter conditions, tasks and transitions, and every binding as `target <- source`. Native task and condition classes keep their code in the executable; what is read here is the wiring and the values.
+
+**Shape of every reward tree** (**Data**). A tree waits in `Wait For ... Event` for its `Event.StateTree.*` tag, then enters `Populate Context`. The gate there is a list of conditions (killer is not the victim, victim is a pawn, and so on). If it passes, a chain of small states each add one `Challenges.Context.*` tag to the challenge's context when their condition holds (the table below), then `Track Target Repeat Count` (task `Resolve Repeat Action Count`), `Calculate Reward` (task `Calculate Reward`, which succeeds or fails and ends the run on failure), `Update Reward XP Tags` and `Grant Reward`. Some trees then broadcast an assist event (crew, logistic, revive, FOB-supplied, supply crate) for the helpers. Every tree ends in `Complete When Done`, which returns to `Root` on the next tick.
+
+**Repeat-reward window** (**Data**). The evaluator `Get Repeat Actions Cooldown` holds `RepeatActionsCooldown` = 180 s in all 25 trees that use it (44 evaluator nodes), and `Resolve Repeat Action Count` receives it as its cooldown. The count it produces is the `RepeatCount` parameter, which `Calculate Reward` receives under the name `LastVictimCount` in 29 trees. That is the consumer of the repeated-target value on the reward-input side: the value is the number of recent rewards for the same target, with a 180 s window. How the reward formula (`Calculate Reward`, native) turns it into a smaller payout is not in the tree.
+
+**What feeds `Calculate Reward`** (**Data**, generated). The input names are the variables the reward formula can read; the right column is the tree parameter or evaluator bound to them. Inputs with no binding are set by a state task.
+
+<!-- statetree_tables inputs -->
+| Inputs to `Calculate Reward` | Bound from | Trees | Examples |
+|---|---|---:|---|
+| BaseRewardValue | Get Reward Resource Value | 16 | `KOTH_DestroyVehicleSection_Assist_LogisticAssist`, `KOTH_DestroyVehicleSection_Assist_ReviveAssist`, `KOTH_DestroyVehicleSection_LogisticAssist` |
+| CalculatedReward | CalculatedReward | 14 | `KOTH_DestroyVehicleSection_Assist_CrewAssist`, `KOTH_DestroyVehicleSection_Assist_SupplyCrateAssist`, `KOTH_DestroyVehicleSection_CrewAssist` |
+| LastVictimCount | RepeatCount | 8 | `Buildable_FOBDoorClosed`, `Buildable_FOBHacked`, `Crowbar_ForceOpenDoor` |
+| LastVictimCount, DistanceToTarget, KillStreak | RepeatCount | 6 | `KOTH_PlayerKill_Assist_FOBSuppliedAssist`, `KOTH_PlayerKill_Assist_LogisticAssist`, `KOTH_PlayerKill_Assist_ReviveAssist` |
+| BaseRewardValue, NumberOfAssisters | Get Reward Resource Value, NumberOfAssisters | 4 | `KOTH_DestroyVehicle_Assist_FOBSuppliedAssist`, `KOTH_DestroyVehicle_FOBSuppliedAssist`, `KOTH_PlayerKill_Assist_FOBSuppliedAssist` |
+| DamageDealthModifier, KillReward | Divide.Result, Get Reward Resource Value | 4 | `KOTH_PlayerKill_Assist`, `KOTH_PlayerKill_Assist_FOBSuppliedAssist`, `KOTH_PlayerKill_Assist_LogisticAssist` |
+| DamageFraction, FactionScoreDifference, KillStreak | Calculate Vehicle Damage Fraction.DamageFraction | 3 | `KOTH_DestroyVehicle_Assist_FOBSuppliedAssist`, `KOTH_DestroyVehicle_Assist_LogisticAssist`, `KOTH_DestroyVehicle_Assist_ReviveAssist` |
+| FactionScoreDifference, KillStreak | (set by a state task, not a parameter) | 3 | `KOTH_DestroyVehicle_FOBSuppliedAssist`, `KOTH_DestroyVehicle_LogisticAssist`, `KOTH_DestroyVehicle_ReviveAssist` |
+| HealFactor, LastVictimCount | HealFraction, RepeatCount | 3 | `KOTH_HealPlayer`, `KOTH_HealPlayer_LogisticAssist`, `KOTH_HealPlayer_ReviveAssist` |
+| LastVictimCount | (set by a state task, not a parameter) | 3 | `KOTH_DestroyVehicleSection_LogisticAssist`, `KOTH_DestroyVehicleSection_ReviveAssist`, `KOTH_RevivePlayer` |
+| BuildSuppliesConsumed | BuildSuppliesConsumed | 2 | `Buildable_BuildSuppliesConsumed` |
+| BuildSuppliesDeposited | BuildSuppliesDeposited | 2 | `Buildable_BuildSuppliesDeposited` |
+| LastVictimCount, DamageFraction | Calculate Vehicle Damage Fraction.DamageFraction | 2 | `KOTH_DestroyVehicleSection_Assist_LogisticAssist`, `KOTH_DestroyVehicleSection_Assist_ReviveAssist` |
+| PreTipValue | PreTipValue | 2 | `KOTH_PreTip` |
+| SupplyCrateValue | SupplyCrateValue | 2 | `KOTH_DestroySupplyCrate` |
+| TipAmount | Enter Event.Payload.CurrentStepAmount | 2 | `KOTH_Tip` |
+| BuildAmount | BuildAmount | 1 | `Buildable_Building` |
+| BuildCost | BuildCost | 1 | `Buildable_BuildingFinished` |
+| BuildProgress, TotalFOBSupplies | BuildingProgress, TotalFOBSupplies | 1 | `Buildable_BuildableDestroyed` |
+| CashSpent | MoneySpent | 1 | `Buildable_FOBOwnerPayed` |
+| DamageFraction, BuildProgress, TotalFOBSupplies | DamageFraction, BuildingProgress, TotalFOBSupplies | 1 | `Buildable_BuildableDestroyed_Assist` |
+| DamageFraction, FactionScoreDifference, KillStreak, CrewCount | Calculate Vehicle Damage Fraction.DamageFraction, Get Faction Score Difference.Difference, Get Players Match Stat.Value, Get Crew Members For Player Count.CrewCount | 1 | `KOTH_DestroyVehicle_Assist` |
+| DamageFraction, LastVictimCount, CrewCount | Calculate Vehicle Damage Fraction.DamageFraction, RepeatCount, Get Crew Members For Player Count.CrewCount | 1 | `KOTH_DestroyVehicleSection_Assist` |
+| ElapsedAirTime | ElapsedAirTime | 1 | `VehicleAirTime` |
+| FactionScoreDifference, KillStreak, CrewCount | Get Faction Score Difference.Difference, Get Players Match Stat.Value, Get Crew Members For Player Count.CrewCount | 1 | `KOTH_DestroyVehicle` |
+| LastVictimCount, CrewCount | TargetCount, Get Crew Members For Player Count.CrewCount | 1 | `KOTH_DestroyVehicleSection` |
+| LastVictimCount, DistanceToTarget, KillStreak, CrewCount | RepeatCount, Get Distance Between Actors.OutDistance, Get Players Match Stat.Value, Get Crew Members For Player Count.CrewCount | 1 | `KOTH_PlayerKill_Assist` |
+| LastVictimCount, DistanceToTarget, KillStreak, CrewCount | VictimCount, Get Distance Between Actors.OutDistance, Get Players Match Stat.Value, Get Crew Members For Player Count.CrewCount | 1 | `KOTH_PlayerKill` |
+| LastVictimCount, InteractionProgress | RepeatCount, InteractionProgress | 1 | `KOTH_RevivePlayerContributor` |
+| LastVictimCount, ScalarValue | RepeatCount, ScalarValue | 1 | `KOTH_Spotting_Added` |
+| MarkupMultiplier, PurchaseValue, LastVictimCount | MarkupMultiplier, PurchaseValue, VictimCount | 1 | `KOTH_PurchaseFromSupplyCrate` |
+| PlayerCount, PlayerStreak | Get Control Zone Player Count.PlayerCount, PlayerStreak | 1 | `KOTH_PlayerDelivered` |
+| PlayersSurvivedCount, ReturnStreak | PlayersSurvivedCount, ReturnStreak | 1 | `KOTH_SafeZoneEntered` |
+| RefuelAmount, CurrentFuel, MaxFuel, LastVictimCount | RefuelAmount, CurrentAmount, MaxAmount, RepeatCount | 1 | `KOTH_RefuelVehicle` |
+| RepeatActionCount | RepeatActionCount | 1 | `VehicleFlyThrough` |
+| ScalarValue | ScalarValue | 1 | `KOTH_Spotting_Removed` |
+| SupplyCrateValue, CrateStreak | SupplyCrateValue, CrateStreak | 1 | `Player_DeploySupplyCrate` |
+<!-- /statetree_tables -->
+
+**Context tags and their conditions** (**Data**, generated). A tag is added when the condition in the right column holds. Zone conditions are native condition classes (`Actor In Control Zone`, `Actor In Hot Zone`, `Hot Zone Magnet Active`); the tree supplies the actor and the wanted answer. `Float Compare` and `Integer Compare` rows show the operator, the constants and what is bound to the left side. Distances are Unreal units (centimetres).
+
+<!-- statetree_tables rules -->
+| Context tag | Added when | Trees |
+|---|---|---:|
+| `Challenges.Context.AirVehicleKill` | Actor Occupies Vehicle Condition(AcceptedVehicles Vehicle.Variant.Air.Rotary.Havoc.Default, Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns, Vehicle.Variant.Air.Rotary.Littlebird.RocketPods, Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns) and Tag Equal Condition(TagB State.Player.Vehicle.Role.Gunner) or Tag Equal Condition(TagB State.Player.Vehicle.Role.Driver) or Tag Equal Condition(TagB Attribute.Meta.XP.Role.Pilot) | 1 |
+| `Challenges.Context.AssaultKill` | Tag Equal Condition(TagB Attribute.Meta.XP.Role.Infantry) | 1 |
+| `Challenges.Context.Assist.TrackingVehicle` | Has Tag(Tag Meta.Progression.Resources.MatchScore.TrackingDestroyVehicle) | 1 |
+| `Challenges.Context.Buildables.BuildableOwner` | Object Equals | 2 |
+| `Challenges.Context.Buildables.BuildableOwner` | Bool Compare(bLeft False; bRight True) | 1 |
+| `Challenges.Context.Buildables.Dismantle` | Tag Equal Condition(TagB ID.Item.BuildTool.Hammer.Large) or Tag Equal Condition(TagB ID.Item.BuildTool.Hammer.Medium) or Tag Equal Condition(TagB ID.Item.BuildTool.Hammer.Small) or Has Tag(Tag Meta.Damage.DamageType.Dismantle) | 3 |
+| `Challenges.Context.Buildables.Dismantle` | Tag Equal Condition(TagB ID.Item.BuildTool.Hammer.Large) or Tag Equal Condition(TagB ID.Item.BuildTool.Hammer.Medium) or Tag Equal Condition(TagB ID.Item.BuildTool.Hammer.Small) or Has Tag(Tag Meta.Damage.DamageType.Dismantle) or Has Tag(Tag Challenges.Context.VehicleDismantled) | 2 |
+| `Challenges.Context.Buildables.Friendly` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Friendly) | 3 |
+| `Challenges.Context.Buildables.Friendly` | Object Is Valid | 1 |
+| `Challenges.Context.Buildables.InFOB` | Has Tag(Tag Buildable.BuildFinished.Context.InFOB) | 2 |
+| `Challenges.Context.Buildables.SchematicOwner` | Object Equals | 2 |
+| `Challenges.Context.CrewAssistPenalty` | Integer Compare(Greater; Left 0; Right 1; Left from Get Crew Members For Player Count.CrewCount) | 6 |
+| `Challenges.Context.ExplosiveKill` | Has Tag(TagContainer ID.Item.ATMine, Id.Item.C4Explosive, Id.Item.Claymore, Id.Item.IED.Explosive, Id.Item.Launcher_04, Id.Item.72mm, … (8 in all)) | 2 |
+| `Challenges.Context.ExplosiveKill` | Has Tag(TagContainer ID.Item.ATMine, Id.Item.C4Explosive, Id.Item.Claymore, Id.Item.IED.Explosive) | 1 |
+| `Challenges.Context.FreeVehicle` | Actor Has Matching GameplayTag(TagToMatch State.Vehicle.FreeVehicle) and Object Equals | 1 |
+| `Challenges.Context.FreeVehicle` | Actor Has Matching GameplayTag(TagToMatch State.Vehicle.FreeVehicle) and Object Equals or Object Equals | 1 |
+| `Challenges.Context.FriendlyKill` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Friendly) | 8 |
+| `Challenges.Context.Headshot` | Name Compare(Left None; Right Head) | 1 |
+| `Challenges.Context.Heal.BuffItem` | Has Tags(OtherContainer Id.Item.StimPen) | 3 |
+| `Challenges.Context.Heal.ReviveItem` | Has Tags(OtherContainer Id.Item.AdrenalinePen, Id.Item.Defibrillator) | 3 |
+| `Challenges.Context.HotZoneMagnet.Hostile` | not Tag Equal Condition | 1 |
+| `Challenges.Context.HotZoneMagnet.Instigator` | Object Equals | 3 |
+| `Challenges.Context.HotZoneMagnetActive` | Hot Zone Magnet Active(bMagnetEnabled True) | 47 |
+| `Challenges.Context.Instigator.InControlZone` | Actor In Control Zone(bInsideTheZone True) | 45 |
+| `Challenges.Context.Instigator.InHotZone` | Actor In Hot Zone(bInsideTheZone True) | 45 |
+| `Challenges.Context.Instigator.InSpawnVehicle` | Bool Compare(bLeft False; bRight True) and Float Compare(Less; Left 0.0; Right 0.0; Left from SpawnVehicleOwnerSetWorldTime; Right from Get Server World Time.ServerWorldTimeSeconds) | 2 |
+| `Challenges.Context.Instigator.InSpawnVehicle` | Bool Compare(bLeft False; bRight True) | 1 |
+| `Challenges.Context.Instigator.InSpawnVehicle` | Bool Compare(bLeft False; bRight True) and Tag Equal Condition(TagB Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar) or Tag Equal Condition(TagB Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore) or Tag Equal Condition(TagB Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra) and Tag Equal Condition(TagB State.Player.Vehicle.Role.Driver) | 1 |
+| `Challenges.Context.Instigator.InSpawnVehicle` | Has Tags(OtherContainer Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar, Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra, Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore) | 1 |
+| `Challenges.Context.Instigator.NotInVehicle` | not Actor Occupies Vehicle Condition | 9 |
+| `Challenges.Context.KillStreakStopped` | Integer Compare(Greater; Left 0; Right 6; Left from Get Players Match Stat.Value) | 1 |
+| `Challenges.Context.KilledByEnemy` | Bool Compare(bLeft False; bRight False) | 1 |
+| `Challenges.Context.KilledByFriendly` | Last Killer Hostility Condition(AcceptedValues ETeamAttitude::Friendly) | 1 |
+| `Challenges.Context.LastKiller` | Is Last Killer Condition | 2 |
+| `Challenges.Context.PrecisionArtilleryStrikeKill` | Actor In Control Zone(bInsideTheZone True) and Actor In Control Zone(bInsideTheZone False) and Actor Occupies Vehicle Condition(AcceptedVehicles Vehicle.Variant.Land.Tracked.TNK_01.Artillery) | 7 |
+| `Challenges.Context.PrecisionArtilleryStrikeKill` | Actor In Control Zone(bInsideTheZone True) and Actor In Control Zone(bInsideTheZone False) and Actor Occupies Vehicle Condition(AcceptedVehicles Vehicle.Variant.Land.Tracked.TNK_01.Artillery) or Actor Occupies Vehicle Condition(AcceptedVehicles Vehicle.Variant.Stationary.Mortar) | 1 |
+| `Challenges.Context.RessedByEnemy` | Actor Has Matching GameplayTag(TagToMatch State.Player.RessedByEnemy) | 2 |
+| `Challenges.Context.RevengeKill` | Is Last Killer Condition | 1 |
+| `Challenges.Context.SniperKill` | Has Tag(TagContainer Id.Item.MK22, Id.Item.Mosin, Id.Item.SR_04, Id.Item.SV98, Id.Item.RFB, Id.Item.SVDM, … (7 in all)) and Float Compare(GreaterOrEqual; Left 0.0; Right 30000.0; Left from Get Distance Between Actors.OutDistance) | 1 |
+| `Challenges.Context.SpawnVehicle` | Actor Has Matching GameplayTag(TagToMatch Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar) or Actor Has Matching GameplayTag(TagToMatch Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore) or Actor Has Matching GameplayTag(TagToMatch Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra) | 2 |
+| `Challenges.Context.SupplyCrateEmpty` | Bool Compare(bLeft False; bRight True) | 1 |
+| `Challenges.Context.TankKill` | Actor Occupies Vehicle Condition(AcceptedVehicles Vehicle.Variant.Land.Tracked.TNK_01.Artillery, Vehicle.Variant.Land.Tracked.TNK_01.Heavy) or Tag Equal Condition(TagB Id.Vehicle.WeaponExtension.TNK_01.Artillery) or Tag Equal Condition(TagB Id.Vehicle.WeaponExtension.TNK_01.Heavy) or Tag Equal Condition(TagB Id.Vehicle.Weapon.TNK_01.Turret.AntiAir) or Tag Equal Condition(TagB Id.Vehicle.Weapon.TNK_01.Turret.Artillery) or Tag Equal Condition(TagB Id.Vehicle.Weapon.TNK_01.Turret.Heavy) or Tag Equal Condition(TagB Id.Vehicle.Weapon.TNK_01.MountedMachineGun) or Tag Equal Condition(TagB Id.Vehicle.WeaponExtension.TNK_01.MountedMachineGun) or Tag Equal Condition(TagB Id.Vehicle.WeaponExtension.TNK_01.MachineGun) or Tag Equal Condition(TagB Id.Vehicle.WeaponExtension.TNK_01.Light) or Tag Equal Condition(TagB Id.Vehicle.WeaponExtension.TNK_01.AntiAir) | 1 |
+| `Challenges.Context.Target.FreeSpawn` | not Object Is Valid | 4 |
+| `Challenges.Context.Target.Friendly` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Friendly) | 6 |
+| `Challenges.Context.Target.Hostile` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Hostile) | 4 |
+| `Challenges.Context.Target.InControlZone` | Actor In Control Zone(bInsideTheZone True) | 41 |
+| `Challenges.Context.Target.InHotZone` | Actor In Hot Zone(bInsideTheZone True) | 41 |
+| `Challenges.Context.Target.InSafeZone` | Actor Has Matching GameplayTag(TagToMatch State.Location.SafeZone.Alpha) or Actor Has Matching GameplayTag(TagToMatch State.Location.SafeZone.Bravo) or Actor Has Matching GameplayTag(TagToMatch State.Location.SafeZone.Charlie) | 3 |
+| `Challenges.Context.Target.Neutral` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Neutral) | 4 |
+| `Challenges.Context.Target.Neutral` | Actor In Control Zone(bInsideTheZone False) and Float Compare(Greater; Left 0.0; Right 10000.0; Left from Get Actor Distance From Control Zone.Distance) | 1 |
+| `Challenges.Context.Target.Neutral` | Bool Compare(bLeft False; bRight True) | 1 |
+| `Challenges.Context.Target.Neutral` | Tag Equal Condition or not Tag Equal Condition(TagB Attribute.Meta.XP.Role.Driver) | 1 |
+| `Challenges.Context.Target.PlayerOwned` | Object Equals | 6 |
+| `Challenges.Context.Target.PlayerOwned` | Is Owner | 1 |
+| `Challenges.Rewards.Spotting.Refreshed` | Bool Compare(bLeft False; bRight True) | 1 |
+| `Meta.Progression.Context.Target.InControlZone` | Actor In Control Zone(bInsideTheZone True) | 1 |
+| `Meta.Progression.Context.Target.InHotZone` | Actor In Hot Zone(bInsideTheZone True) | 1 |
+| `Meta.Progression.Context.Target.InNoMansLand` | Actor In Control Zone(bInsideTheZone False) | 1 |
+| `Meta.Progression.Context.Vehicle.Buyer` | Object Equals and not Has Tag(TagContainer Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar, Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore, Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra) | 1 |
+| `Meta.Progression.Context.Vehicle.Faction.Friendly` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Friendly) | 2 |
+| `Meta.Progression.Context.Vehicle.Faction.Hostile` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Hostile) | 2 |
+| `Meta.Progression.Context.Vehicle.Faction.Neutral` | Actor Hostility Condition(AcceptedValues ETeamAttitude::Neutral) | 2 |
+<!-- /statetree_tables -->
+
+Numbers worth reading out of that table (**Data**): a sniper kill needs a kill made with one of the seven listed rifles (`MK22`, `Mosin`, `SR_04`, `SV98`, `RFB`, `SVDM`, `SKS`) at a distance of 30,000 or more (300 m); the kill-streak-stopped tag fires when a player's current-life kill count (`Analytics.Player.Kills.CurrentLife`) is greater than 6 (which player's state the tree reads is not resolved from the bindings); the crew-assist penalty tag fires when the crew count is greater than 1; the precision artillery strike needs the victim inside the Control Zone, the killer outside it and the killer in a `TNK_01.Artillery` tank or a stationary mortar. Control Zone and Hot Zone presence are tested twice in each family, once for the acting player (`Instigator.*`) and once for the target (`Target.*`), so the reward lookup can price the same kill differently inside and outside the objective.
+
+### Hot Zone Magnet trees
+
+The three trees under `WorldFeatures/HotZoneMagnet` are per-player trees that run on each player's challenge component when the magnet fires an event. They are the same shape as the other trees with a different gate (**Data**, generated table below).
+
+<!-- statetree_tables magnet -->
+| Tree | Event it waits for | Context tags it can add | Reward formula inputs |
+|---|---|---|---|
+| `KOTH_HotZoneMagnet_MagnetActivated` | `Event.StateTree.HotZoneMagnet.MagnetActivated` | `Challenges.Context.HotZoneMagnet.Instigator` | none |
+| `KOTH_HotZoneMagnet_MagnetDeactivated` | `Event.StateTree.HotZoneMagnet.MagnetDeactivated` | `Challenges.Context.HotZoneMagnet.Instigator` | none |
+| `KOTH_HotZoneMagnet_TowerCaptured` | `Event.StateTree.HotZoneMagnet.TowerCaptured` | `Challenges.Context.HotZoneMagnet.Instigator`, `Challenges.Context.HotZoneMagnet.Hostile` | LastVictimCount |
+<!-- /statetree_tables -->
+
+The `Populate Context` gate is four conditions joined by `And`: the player's pawn is inside the tower range of the magnet that fired (`Actor In Tower Range`, `bInsideTowerRange` true); the player's faction tag equals the faction tag of the event's `Interactor` (so only teammates of the capturing or activating player pass); the player is not `State.Player.Vitality.Critical`; and not `State.Player.Vitality.Dead`. Players who pass receive the role XP tag, and the interactor itself also gets `Challenges.Context.HotZoneMagnet.Instigator` (the tree compares its own player state with the interactor's). In the capture tree, `Challenges.Context.HotZoneMagnet.Hostile` is added when the tower had a previous owner (`PreviousFaction` is not `None`), so taking a tower from an enemy can pay differently from claiming a neutral one. The capture tree also passes the repeat count (`LastVictimCount`) for the magnet as the target, with the same 180 s window; the activation and deactivation trees have no formula inputs. The reward amounts for the three reward tags are in the shared reward tables, not in the trees.
+
+---
+
 ## 6. Limitations
 - Values for each `Challenges.Rewards.*` tag are not resolved in this doc. They live outside the folder.
-- Per-state logic (the actual calculation in `Calculate Reward`) is compiled StateTree bytecode. This doc names states and tags but does not decode the expressions.
+- The structure, conditions and bindings of every state tree are decoded in section 5.1. The reward arithmetic itself (`Calculate Reward`, `Resolve Repeat Action Count`, the zone and hostility conditions) is native code that the trees only call; its formulas are not in the trees.
 - `DT_Challenges_SessionEvents_KOTH` has 60 rows, but their `Rewards` and `Objectives` lists are empty. The reward amounts for each challenge are not visible from this folder.
 - The `DataRegistry` action lists 13 lookup registries, but not every state tree maps to a lookup. Some trees (the families in section 3 with no `Challenges.Rewards.*` tag, or only event tags) grant no reward through a lookup, and their reward path was not traced.
 - The `WDChallengeStateTreeSchema` objects carry no properties, so schema-level settings are not available.
-- The meaning of `Challenges.Context.*` tags is inferred from their names. Their runtime values were not checked.
+- The conditions that add each `Challenges.Context.*` tag are decoded in section 5.1. How the reward lookup uses a tag when pricing a reward is outside the trees.
