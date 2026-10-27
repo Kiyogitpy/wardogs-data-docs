@@ -191,7 +191,7 @@ for line in sec.splitlines():
 # ---- Infantry stats roster: rate fallback, keyed by weapon code ----
 roster_rate = {}
 for line in ROSTER.split("## 2. Raw properties", 1)[0].splitlines():
-    if not line.startswith("| [`DA_"):
+    if not line.startswith(("| [`DA_", "| `DA_")):
         continue
     c = [x.strip() for x in line.strip().strip("|").split("|")]
     if len(c) >= 6:
