@@ -36,7 +36,7 @@ Labels: **Data** is read straight from the export. **Derived** is worked out fro
 | `AttachmentType` | the slot tag the item belongs to (`Item.Attachment.Barrel`, ...) | the type groups of sections 5 and 6 |
 | `AppliedEffects` | gameplay effects applied to the weapon while the item is fitted | "Weapon-side modifiers" |
 | `AppliedCharacterEffects` | gameplay effects applied to the character holding the weapon | "Character-side modifiers" |
-| `SightsData` (sights) | one effect list per sight name | `Sight` lines |
+| `SightsData` (sights) | one effect list per sight name; every sight with its magnification, ADS FOV and fit is on [Sights and Optics](../content/Wardogs_Sights_v1.md) | `Sight` lines |
 | bipod lists (bipods) | unfolded and mounted lists for the weapon and the character | `Bipod` lines |
 | `bCanBeRemovedInGame`, `bDiscardWhenEmptyOnReload` | removal and reload flags | section 5 |
 | type-specific fields | reload animation rate (magazines), muzzle flash scale and cue tag (muzzles), stance limits (bipods) | "Other data", section 6.2 |

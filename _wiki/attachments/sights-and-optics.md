@@ -24,6 +24,8 @@ description: "Red dots, holographic sights, scopes and iron sights for the top o
 
 Sights sit on the top slot of a weapon. The data lists 29 of them and 28 fit a weapon. Every sight sets the weapon's ADS zoom, and most also change aim time and zeroing range. No sight changes recoil or spread in the data.
 
+Every sight with its magnification, aimed field of view, aim time, zeroing range, price, unlock level and fitting weapons is in the [Sights and Optics data page](../../content/Wardogs_Sights_v1.md).
+
 ## What they change
 
 - ADS zoom: set to a fixed value on 29 sights, from 1.2 (red dots and holographic sights) to 6 (the 6-10x scope). The number is a magnification factor: 2.5 means the view is magnified 2.5 times (derived from the game's code, not checked on screen). The sight's sway is divided by it, so higher magnification steadies the view more.
