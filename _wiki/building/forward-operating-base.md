@@ -43,7 +43,7 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 
 - **Cost:** 7,500 cash from the shop. Its Build Supplies cost is 30, and nothing is charged at placement.
 - **Hammer:** None. The FOB is placed from its own item.
-- **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. A new FOB also cannot be placed within about 42 m of another FOB. The exact shape of that check is not decoded.
+- **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. A new FOB also cannot be placed within about 42 m of another FOB. The check is a square box rather than a circle: a new FOB is refused when it is under 42 m from an existing one along both horizontal directions of that FOB (so up to about 59 m on a diagonal) and within 42 m in height, and the same test is run with the roles swapped. This is a static reading of the game code.
 - **Build time:** Instant. The FOB has no build stages.
 - **Repair and dismantle:** The data gives hammer figures for the FOB: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as the data shows.
 - **Stack limit:** 1.

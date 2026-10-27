@@ -194,6 +194,39 @@ It also activates `SDGameFeatureAction_ActivateSubsystem`.
 
 Note: `EQS_FindSearchLocation` has `BP_InfluenceEvaluator_AlertLocationGenerator_C` as its first export, not an EnvQuery. The count of 22 includes it.
 
+### 9.1 Query parameters (round 91)
+
+Generated from `assets/data/ai-eqs.json` by `python -I _tools/ai_eqs_table.py --write`. One row per query option. Distances and radii are Unreal units (centimetres). "AIConfigData(RadiusToSearchForCovers)", "WeaponData(MinAIRange)" and similar entries are values the query reads at run time from the AI configuration or the held weapon; the stored default is shown where there is one. "Dot2D min 0.8" is a facing test on the cosine of the angle (0.8 is about 37 degrees, 0.5 is 60 degrees, 0.4 is about 66 degrees). The scoring equation is applied to the test value; "x" is the scoring factor. These are data values only; how the behaviours pick between queries is Blueprint logic outside this export.
+
+<!-- ai_eqs_table params -->
+| Query | Option | Generator (Unreal units) | Tests (in listed order) |
+|---|---|---|---|
+| `EQS_BesiegeTakeOverMovementTokenHandling` | 1 | TokenRequests | WDInfluenceMapValue Score |
+| `EQS_FindBestPeekPointOfCurrentCover` | 1 | PeekPoints | WDCoverTrace Filter bool False |
+| `EQS_FindClosestCoverToQuerier` | 1 | Covers, CenterContext Querier, Radius 2000, OnlyFreeCovers True | Dot Filter Dot2D min 0.8 max 1; Pathfinding Score Range PathCost InverseLinear; Distance Minimum to SDAIGoalSquadMembers min 300 |
+| `EQS_FindCombatPositionCloserToTarget` | 1 | Donut, InnerRadius 200, OuterRadius AIConfigData(RadiusToSearchForCovers) (default 3000) | Pathfinding Filter; Distance Maximum to TargetEnemy min SDCompositeDataProvider(composite, ESDAICompositeOperation.Mul) max Distance(Querier, TargetEnemy) InverseLinear; Distance Filter Minimum to BP_AliveTeammates min 200 |
+| `EQS_FindCoverCloserToEnemy` | 1 | Covers, CenterContext Querier, Radius 3000, OnlyFreeCovers True, IncludeReservedByMe True | Dot Minimum Dot2D min 0.7 max 1 Square x0.5; Distance Score Minimum min WeaponData(MinAIRange) InverseLinear x0.5; WDCoverTrace Filter bool False; Distance Maximum to TargetEnemy min SDCompositeDataProvider(composite, ESDAICompositeOperation.Mul) (default 500) max WeaponData(MinAIRange) InverseLinear; Distance Filter Minimum to BP_AliveTeammates min 200; PathfindingBatch Filter |
+| `EQS_FindCoverInBesiegeArea` | 1 | Covers, CenterContext SDAIGoalTarget, Radius VolumeSize(SDAIGoalTarget), OnlyFreeCovers True | Volume Filter; WDInfluenceMapValue Maximum max 0.4 InverseLinear bool False; PathfindingBatch Filter; Distance Minimum to BP_FriendsMovementLocations min 200; Dot Filter Maximum Dot2D min 0.6 |
+| `EQS_FindCoverInBesiegeAreaClosest` | 1 | Covers, CenterContext SDAIGoalTarget, Radius VolumeSize(SDAIGoalTarget), OnlyFreeCovers True | Volume Filter; PathfindingBatch Filter; Distance Filter Minimum to BP_FriendsMovementLocations min 200 x0.6; Distance Score Minimum min 200 InverseLinear |
+| `EQS_FindCoverNearby` | 1 | Covers, CenterContext Querier, Radius AIConfigData(RadiusToSearchForCovers) (default 3000), OnlyFreeCovers True, IncludeReservedByMe True | Dot Minimum Dot2D min 0.5 max 1 Square x0.5; Distance Score InverseLinear; Distance Filter Minimum to BP_AliveTeammates min 200 |
+| `EQS_FindCoverTowardBesiegeTarget` | 1 | Covers, CenterContext SDAIGoalTarget, Radius VolumeSize(SDAIGoalTarget) (default 2000), OnlyFreeCovers True | Volume Filter; Dot Filter Minimum Dot2D min 0.6 max 1; PathfindingBatch Filter min 400; Distance Score Maximum to SDAIGoalTarget max GoalTarget(GoalToOwnerDistance) InverseLinear; Distance Minimum to BP_FriendsMovementLocations min 200 |
+| `EQS_FindCoverTowardGoalTarget` | 1 | Covers, CenterContext Querier, Radius 2000, OnlyFreeCovers True | Dot Filter Dot2D min 0.8 max 1; Pathfinding Score Range PathCost InverseLinear; Distance Filter Maximum to SDAIGoalTarget min 200 max GoalTarget(GoalToOwnerDistance) InverseLinear x4; Distance Minimum to SDAIGoalSquadMembers min 300 |
+| `EQS_FindCoverTowardsEnemy` | 1 | Covers, CenterContext Querier, Radius AIConfigData(RadiusToSearchForCovers) (default 3000), OnlyFreeCovers True, IncludeReservedByMe True | Dot Filter Minimum Dot2D min 0.4 max 1; Pathfinding Score Range PathCost InverseLinear x0.8; Distance Filter Minimum min 200; Distance Filter Minimum to BP_AliveTeammates min 200; Distance Filter Maximum to TargetEnemy max Distance(Querier, TargetEnemy) |
+| `EQS_FindFleePointFromGoalTarget` | 1 | Donut, ArcAngle 180 | Distance Score to SDAIGoalTarget |
+| `EQS_FindPeekPointToStimulus` | 1 | PeekPoints | - |
+| `EQS_FindPointAroundBesiegeTarget` | 1 | SD_Donut, Center SDAIGoalTarget, InnerRadius 200, OuterRadius VolumeSize(SDAIGoalTarget), DistanceBetweenPoints 500 | PathfindingBatch Filter min 100; Distance Score to SDAIGoalTarget InverseLinear; Distance Filter Minimum to BP_FriendsMovementLocations min 200; Volume Filter |
+| `EQS_FindPointCloseToBesiegeTarget` | 1 | SD_Donut, InnerRadius 1000, OuterRadius AIConfigData(RadiusToSearchForCovers), DistanceBetweenPoints 500 | PathfindingBatch Filter min 100; Distance Score to SDAIGoalTarget InverseLinear; Distance Filter Minimum to BP_FriendsMovementLocations min 100 |
+| `EQS_FindRandomPeekPoint` | 1 | PeekPoints | - |
+| `EQS_FindSearchLocation` | 1 | WDGenerateInfluenceLocations | Distance Score InverseLinear |
+| `EQS_FindShootPositionInTheOpen` | 1 | Donut, InnerRadius 0, OuterRadius AIConfigData(RadiusToSearchForCovers) (default 3000), NumberOfRings 4 | Trace Filter bool False; Pathfinding Score Range PathCost InverseLinear x0.5; Distance Maximum to TargetEnemy min SDCompositeDataProvider(composite, ESDAICompositeOperation.Mul) max WeaponData(MaxAIRange) InverseLinear; Distance Filter Minimum to BP_AliveTeammates min 200 |
+| `EQS_FindTarget` | 1 | WDThreatActors | GameplayTags |
+| `EQS_FindTarget` | 2 | WDThreatActors, SenseToUse AISense_Hearing | GameplayTags |
+| `EQS_FindTarget` | 3 | WDThreatActors, SenseToUse AISense_Damage | GameplayTags |
+| `EQS_LeapFrogTokenHandling` | 1 | TokenRequests | Distance Score Maximum to SDAIGoalTarget min 200 max provider |
+| `EQS_PatrolPoint` | 1 | ProjectedLocation | PathfindingBatch Filter min 0; Distance Minimum min 200 InverseLinear; Distance Score to BP_ClosestPointOnSplineFromItem InverseLinear x10 |
+| `EQS_PatrolPoint_Follower` | 1 | SD_Donut, Center SDAIMovementLocationWithinSquad, InnerRadius 1, OuterRadius 600, DistanceBetweenPoints 200 | PathfindingBatch Filter min 0; Distance Score Minimum Distance2D to SDAIMovementLocationWithinSquad min 20 InverseLinear |
+<!-- /ai_eqs_table -->
+
 ---
 
 ## 10. How Values Combine

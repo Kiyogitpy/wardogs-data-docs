@@ -28,7 +28,7 @@ Each caliber has its own time curve for each operation. A curve lists a time for
 - **Caliber.** The game looks up the curve for the round's caliber. If the ammunition has no curve of its own, such as a tracer, it uses the curve of its parent caliber, so tracer rounds use the plain caliber's curve. Only when the whole chain has no curve does a default curve apply.
 - **Round count.** The time is read at the number of rounds being moved.
 - **Magazine factor.** Each magazine has a load factor and an extract factor, and the curve's time is multiplied by the factor. Most magazines use 1.0, which leaves the curve's time unchanged.
-- **Combining.** Combining loose rounds adds two of these times together (derived from how the game calls the curves). Which magazine's factor goes with which term is not confirmed.
+- **Combining.** Combining loose rounds adds two of these times together (derived from how the game calls the curves). In a static reading of the code, the magazine rounds are taken from (the source) supplies the extract factor and the magazine they go into (the target) supplies the load factor.
 - **Unit.** The times are treated as seconds. This is inferred from how the game uses them as operation durations and has not been checked in play.
 
 ## Numbers
@@ -62,7 +62,6 @@ The round counts are examples. The magazine's capacity is not stored on the maga
 
 - Whether the times are seconds in play. The unit is inferred from how the game uses them.
 - How many rounds each magazine holds is set by the weapon's magazine slot, not by the magazine item, so this page does not list capacities. Each weapon article gives its own.
-- Which magazine's factor applies to which half of a combine.
 
 ## See also
 
