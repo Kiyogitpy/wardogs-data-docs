@@ -140,6 +140,64 @@ The 2000 KG light drag asset is shared by ROT_03 and its rocket-pod variant (ide
 Which settings field each native slot holds is inferred from how the value is used; the component constructor (`0x7665AC0`) confirms the order KML, idle threshold, RPML, then the boost multiplier, which differs from the SDK field order. The listed economy in the vendor stats equals 1/KML for most vehicles (Havoc 4.4, Humvee 3.3, Kodiak 2.9, Bobcat 2.2, Dune Buggy 5.0, Ural 4.0, M113 5.7, SPH-2 and L2A6 8.0, Gepard 10.0); the T-72B3 is the exception (vendor 8.5, 1/KML 6.96). The airplane sets no fuel settings at all.
 
 
+## 6. Per-vehicle gameplay settings and ramming
+
+These fields are read from cooked data. What each one does is read from its name (**Derived**) unless marked **Native**. `-` means the asset does not set the field. The same values are in [`assets/data/vehicle-gameplay-settings.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-gameplay-settings.json).
+
+### Abandonment, inventory, faction (`*GameplaySystems`)
+
+| Asset | Vehicle | Inactivity lifetime outside a safe zone (s) | Inventory accessible | Faction changes | Neutral after (s) |
+|---|---|---|---|---|---|
+| `DA_GameplaySystems_ROT_02` | Havoc | 90 | true | - | - |
+| `DA_GameplaySystems_ROT_03` | MH-6 / AH-6M / AH-6R | 10 | true | - | - |
+| `DA_ROT_04_GameplaySystems` | Z20 Lakota | - | true | - | - |
+| `DA_GameplaySystems_SPW` | M113 APC SV | - | true | - | - |
+| `DA_GameplaySystems_STN_01` | stationary emplacement | 30,000 (about 8.3 hours) | true | false | - |
+| `DA_GameplaySystems_STN_02` | stationary emplacement | 30,000 (about 8.3 hours) | true | false | - |
+| `DA_GameplaySystems_STN_03` | stationary emplacement | 30,000 (about 8.3 hours) | true | false | - |
+| `DA_GameplaySystems_STN_04` | stationary emplacement | - | - | false | 36,000 |
+| `DA_GameplaySystems_STN_05` | stationary emplacement | 30,000 (about 8.3 hours) | true | false | - |
+| `DA_GameplaySystems_STN_06` | stationary emplacement | 30,000 (about 8.3 hours) | true | false | - |
+| `DA_GameplaySystems_TNK_03` | Flakpanzer Gepard | - | true | - | - |
+| `DA_GameplaySystems_TNK_01_Artillery` | SPH-2 | - | true | - | - |
+| `DA_GameplaySystems_TNK_01_Heavy` | L2A6 | - | true | - | - |
+| `DA_GameplaySystems_TNK_04` | T-72B3 | - | true | - | - |
+| `DA_WHL_01_GameplaySystems` | Bobcat | - | - | - | - |
+| `DA_GameplaySystems_WHL_02` | Kodiak family | - | true | - | - |
+| `DA_GameplaySystems_WHL_05_Humvee` | Humvee family | - | true | - | - |
+| `DA_GameplaySystems_WHL_05_Humvee_Minigun` | Humvee family | - | true | - | - |
+| `DA_GameplaySystems_WHL_05_Humvee_RingTurret` | Humvee family | - | true | - | - |
+| `DA_GameplaySystems_WHL_06_DuneBuggy` | Dune Buggy | - | - | - | - |
+| `DA_GameplaySystems_WHL_07` | Ural family | - | true | - | - |
+| `DA_GameplaySystems_WHL_08` | Wolf-110 family | - | true | - | - |
+| `DA_FWG_01_GameplaySystems` | Fixed-wing airplane | - | - | - | - |
+
+`InactivityLifetimeOutSafeZone` is the only inactivity field any asset sets: Havoc 90 s, the MH-6 family 10 s, the stationary emplacements 30,000 s. The other vehicles keep the native default, which is not in the data. Reading the name, an unoccupied vehicle outside a safe zone is removed after that time (**Derived**; the removal itself was not traced). Every asset that sets `InventorySettings` makes the vehicle inventory accessible; the assets without it are stationary emplacement, Bobcat, Dune Buggy, Fixed-wing airplane. The M113 APC SV also sets an unnamed float of 0.1 there. `FactionSettings` appears only on the stationary emplacements: none changes faction (`bShouldFactionChange` false), and STN_04 turns neutral after 36,000 s. Every asset sets the same lock cue tag `GameplayCue.Vehicle.LockStateChange`, so locking has no per-vehicle setting here.
+
+**Same-faction-only occupants** (`bAllowSameFactionOccupantsOnly` true on the `WDVehicleInteractionsDataAsset`): `DA_VehicleInteractions_ROT_02`, `DA_VehicleInteractions_SPW`, `DA_VehicleInteractions_TNK_03`, `DA_VehicleInteractions_TNK_01_Artillery`, `DA_VehicleInteractions_TNK_01_Heavy`, `DA_VehicleInteractions_TNK_04` (6 of 28 interaction assets). On these a vehicle seats only players of one faction (**Derived** from the name); every other vehicle leaves it unset. `MaxInteractDistanceRadius` is set on one asset only.
+
+### Ramming (`WD_MVF_DestructionInvokerFragment`, one per platform asset)
+
+| Platform asset | Vehicle | Vehicle mass | Collision box size X x Y x Z (cm) | Box centre (cm) | Damage received per destroyed chunk | Counter-force multiplier | Velocity offset multiplier |
+|---|---|---|---|---|---|---|---|
+| `VP_ROT_02` | Havoc | 1,200 | 1,000 x 300 x 180 | 50, 0, 200 | 200 | 0 | 0.2 |
+| `VP_ROT_03` | MH-6 / AH-6M / AH-6R | 1,200 | 400 x 210 x 180 | 0, 0, 150 | 150 | 0 | 0.2 |
+| `VP_ROT_04` | Z20 Lakota | 1,200 | 1,000 x 300 x 240 | 50, 0, 220 | 200 | 0 | 0.2 |
+| `VP_SPW` | M113 APC SV | 2,000 | 675 x 286 x 198 | 0, 0, 152.1 | 3 | 3 | 0.25 |
+| `VP_TNK_01_AntiAir` | Flakpanzer Gepard | 1,900 | 675 x 286 x 198 | 0, 0, 152.1 | 3 | 5 | 0.25 |
+| `VP_TNK_01_Artillery` | SPH-2 | 1,900 | 675 x 286 x 198 | 0, 0, 152.1 | 3 | 5 | 0.25 |
+| `VP_TNK_01_Heavy` | L2A6 | 1,900 | 675 x 286 x 198 | 0, 0, 152.1 | 3 | 5 | 0.25 |
+| `VP_TNK_04` | T-72B3 | 1,900 | 675 x 286 x 198 | 0, 0, 152.1 | 3 | 5 | 0.25 |
+| `VP_WHL_01` | Bobcat | 400 | 225 x 100 x 90 | 0, 0, 97.5 | - | 0.5 | 0.2 |
+| `VP_WHL_02` | Kodiak family | 800 | 562.5 x 200 x 180 | 0, 0, 97.5 | - | - | 0.075 |
+| `VP_WHL_05` | Humvee family | 800 | 562.5 x 200 x 180 | 0, 0, 97.5 | - | - | 0.075 |
+| `VP_WHL_06_DuneBuggy` | Dune Buggy | 600 | 562.5 x 200 x 180 | 0, 0, 97.5 | - | - | 0.075 |
+| `VP_WHL_07` | Ural family | 800 | 900 x 330 x 250 | 0, 0, 97.5 | - | - | 0.075 |
+| `VP_WHL_08` | Wolf-110 family | 800 | 562.5 x 200 x 180 | 0, 0, 97.5 | - | - | 0.075 |
+
+The fragment gives a vehicle a box that breaks destructible geometry it runs into. Per the field names (**Derived**; no native reader traced): the vehicle takes `DamageRecievedWhenChunkDestroyed` damage for each destroyed chunk, `CounterForceMultiplier` pushes back against the impact, and `VelocityOffsetMultiplier` scales the speed the destroyed pieces inherit. A `-` is a field the asset does not set (a native default applies); `bPlayerCustomizable` is false on the platforms that set it.
+
+
 ## See also
 
 - [Vehicle parts and handling](Wardogs_VehicleHandling_v1.md)

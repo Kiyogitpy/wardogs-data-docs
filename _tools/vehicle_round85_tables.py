@@ -478,8 +478,82 @@ def page_config():
     out.append("\n**What the fields do.** The fuel component's tick (native `0x7666FA0`, round 85) subtracts `rate x dt + leak x dt` from the fuel attribute each frame while the owning vehicle's network role is 3 (`ROLE_Authority`: the drain runs only where the vehicle is authoritative, a host or server; round 88, static reading) and the component is not flagged off. The `rate` term is only added when the vehicle's `bIsEngineRunning` flag is set (round 88: the extra owner check of round 85 is that flag); the `leak` term does not depend on it, so a vehicle with its engine off still loses fuel to a leak. `rate` comes from `0x7665DB0`:\n")
     out.append("- Moving: `rate = speed(km/h) / 3600 / KML` litres per second, so a vehicle burns 1/KML litres per kilometre and `Max fuel x KML` kilometres is the range on a full tank (derived).\n- At or below the idle speed threshold (`IdleSpeedThreshold`, never set in the cooked assets; the constructor default is **1.0 km/h**, round 88) the rate switches from speed to the engine RPM, and divides by `RPML` instead of `KML`: `rate = RPM / 3600 / RPML` litres per second (**Native**, static reading). Wheeled vehicles read the engine RPM of their movement simulation; helicopters read a rotor or engine RPM from their rotary component; tracked vehicles and the airplane return 0, so they burn nothing while stopped or crawling at 1 km/h or less. Worked example (**Derived**): a Humvee idling at its 700 RPM idle setting with `RPML` 110 burns 700 / 3600 / 110 = 0.0018 L/s, about 0.11 L per minute, against about 5.6 L per minute at 100 km/h (100 / 3600 / 0.3 = 0.093 L/s); this assumes the simulation holds the engine at its idle RPM while stopped.\n- Other constructor defaults of the fuel settings (**Native**, `0x7665AC0`): `MaxFuel` 100, `KML` 1.0, `RPML` 1500, boost multiplier 1.5, and two further floats 20 and 95 that the rate does not use (one is presumably `LowFuelThreshold`). The cooked assets override `MaxFuel`, `KML` and `RPML` for most vehicles in the table above (a `-` there means the constructor default applies).\n- The rate is multiplied by the boost multiplier while boosting, and by a fuel-usage multiplier from character skills (`FuelUsageReduction`, see the Driver and Pilot skill tables).\n- `leak` is the stored fuel-leak value set by the fuel-tank damage effects (0.1 to 3.0 litres per second, see [Fuel and refueling](../_wiki/vehicles/fuel-and-refueling.md)).\n")
     out.append("\nWhich settings field each native slot holds is inferred from how the value is used; the component constructor (`0x7665AC0`) confirms the order KML, idle threshold, RPML, then the boost multiplier, which differs from the SDK field order. The listed economy in the vendor stats equals 1/KML for most vehicles (Havoc 4.4, Humvee 3.3, Kodiak 2.9, Bobcat 2.2, Dune Buggy 5.0, Ural 4.0, M113 5.7, SPH-2 and L2A6 8.0, Gepard 10.0); the T-72B3 is the exception (vendor 8.5, 1/KML 6.96). The airplane sets no fuel settings at all.\n")
+    out.append(settings_section())
     out.append("\n## See also\n\n- [Vehicle parts and handling](Wardogs_VehicleHandling_v1.md)\n- [Fixed-wing flight model](Wardogs_FixedWingFlightModel_v1.md)\n- [Fuel and refueling](../_wiki/vehicles/fuel-and-refueling.md)\n- [Refuel and Repair Stations](../_wiki/building/refuel-and-repair-stations.md)\n")
     return "\n".join(out) + "\n"
+
+
+# ---------------------------------------------------------------- V5-01: per-vehicle gameplay settings and ramming
+FAMILY = {"ROT_02": "Havoc", "ROT_03": "MH-6 / AH-6M / AH-6R", "ROT_04": "Z20 Lakota", "SPW": "M113 APC SV", "TNK_01_Artillery": "SPH-2",
+          "TNK_01_Heavy": "L2A6", "TNK_03": "Flakpanzer Gepard", "TNK_01_AntiAir": "Flakpanzer Gepard", "TNK_04": "T-72B3", "WHL_01": "Bobcat", "WHL_02": "Kodiak family",
+          "WHL_05": "Humvee family", "WHL_06": "Dune Buggy", "WHL_07": "Ural family", "WHL_08": "Wolf-110 family", "FWG_01": "Fixed-wing airplane",
+          "STN_01": "stationary emplacement", "STN_02": "stationary emplacement", "STN_03": "stationary emplacement", "STN_04": "stationary emplacement",
+          "STN_05": "stationary emplacement", "STN_06": "stationary emplacement"}
+SETTINGS_JSON = "assets/data/vehicle-gameplay-settings.json"
+
+
+def _family(name):
+    key = name
+    for a in ("DA_GameplaySystems_", "DA_VehicleInteractions_", "DA_", "VP_", "_GameplaySystems", "_VehicleInteractions"):
+        key = key.replace(a, "")
+    for k in sorted(FAMILY, key=len, reverse=True):
+        if key.startswith(k) or key.endswith(k):
+            return k, FAMILY[k]
+    return key, "-"
+
+
+def settings_data():
+    sysrows, introws, rams = {}, {}, {}
+    for p, e in veh_exports():
+        t, P = e.get("Type"), e.get("Properties") or {}
+        if t == "WDVehicleGameplayComponentsDataAsset":
+            fs = P.get("FactionSettings") or {}
+            sysrows[e["Name"]] = {"inactivity_lifetime_out_of_safe_zone_s": (P.get("InactivitySettings") or {}).get("InactivityLifetimeOutSafeZone"),
+                                  "inventory_accessible": (P.get("InventorySettings") or {}).get("bIsInventoryAccessible"),
+                                  "lock_cue_tag": ((P.get("LockSettings") or {}).get("VehicleLockGameplayCueTag") or {}).get("TagName"),
+                                  "should_faction_change": fs.get("bShouldFactionChange"), "set_neutral_faction_time_s": fs.get("SetNeutralFactionTime")}
+        elif t == "WDVehicleInteractionsDataAsset":
+            introws[e["Name"]] = {"same_faction_occupants_only": P.get("bAllowSameFactionOccupantsOnly"), "max_interact_distance_radius": P.get("MaxInteractDistanceRadius")}
+        elif t == "WD_MVF_DestructionInvokerFragment":
+            ext, ctr = P.get("VehicleCollisionExtents") or {}, P.get("VehicleCollisionCentre") or {}
+            rams[os.path.basename(p)[:-5]] = {"collision_centre_cm": [ctr.get("X"), ctr.get("Y"), ctr.get("Z")], "collision_extents_cm": [ext.get("X"), ext.get("Y"), ext.get("Z")],
+                                              "vehicle_mass": P.get("VehicleMass"), "damage_received_when_chunk_destroyed": P.get("DamageRecievedWhenChunkDestroyed"),
+                                              "counter_force_multiplier": P.get("CounterForceMultiplier"), "velocity_offset_multiplier": P.get("VelocityOffsetMultiplier"),
+                                              "player_customizable": P.get("bPlayerCustomizable")}
+    return {"gameplay_systems": sysrows, "interactions": introws, "destruction_invoker": rams,
+            "note": "Read from cooked exports; null means the asset does not set the field (a native default applies)."}
+
+
+def settings_json():
+    return json.dumps(settings_data(), indent=1, sort_keys=True) + "\n"
+
+
+def settings_section():
+    d = settings_data()
+    o = ["\n## 6. Per-vehicle gameplay settings and ramming\n",
+         "\nThese fields are read from cooked data. What each one does is read from its name (**Derived**) unless marked **Native**. `-` means the asset does not set the field. The same values are in [`assets/data/vehicle-gameplay-settings.json`](" + GH + SETTINGS_JSON + ").\n",
+         "\n### Abandonment, inventory, faction (`*GameplaySystems`)\n\n"]
+    rows = []
+    for n, r in d["gameplay_systems"].items():
+        fam = _family(n)[1]
+        life = r["inactivity_lifetime_out_of_safe_zone_s"]
+        rows.append([f"`{n}`", fam, (num(life) + (" (about 8.3 hours)" if life >= 30000 else "")) if life is not None else "-",
+                     num(r["inventory_accessible"]) if r["inventory_accessible"] is not None else "-",
+                     num(r["should_faction_change"]) if r["should_faction_change"] is not None else "-", num(r["set_neutral_faction_time_s"])])
+    o.append(table(["Asset", "Vehicle", "Inactivity lifetime outside a safe zone (s)", "Inventory accessible", "Faction changes", "Neutral after (s)"], rows))
+    same = [n for n, r in d["interactions"].items() if r["same_faction_occupants_only"]]
+    noinv = [_family(n)[1] for n, r in d["gameplay_systems"].items() if r["inventory_accessible"] is None]
+    o.append("\n\n`InactivityLifetimeOutSafeZone` is the only inactivity field any asset sets: Havoc 90 s, the MH-6 family 10 s, the stationary emplacements 30,000 s. The other vehicles keep the native default, which is not in the data. Reading the name, an unoccupied vehicle outside a safe zone is removed after that time (**Derived**; the removal itself was not traced). Every asset that sets `InventorySettings` makes the vehicle inventory accessible; the assets without it are " + ", ".join(noinv) + ". The M113 APC SV also sets an unnamed float of 0.1 there. `FactionSettings` appears only on the stationary emplacements: none changes faction (`bShouldFactionChange` false), and STN_04 turns neutral after 36,000 s. Every asset sets the same lock cue tag `GameplayCue.Vehicle.LockStateChange`, so locking has no per-vehicle setting here.\n")
+    o.append("\n**Same-faction-only occupants** (`bAllowSameFactionOccupantsOnly` true on the `WDVehicleInteractionsDataAsset`): " + ", ".join(f"`{n}`" for n in same) + f" ({len(same)} of {len(d['interactions'])} interaction assets). On these a vehicle seats only players of one faction (**Derived** from the name); every other vehicle leaves it unset. `MaxInteractDistanceRadius` is set on one asset only.\n")
+    o.append("\n### Ramming (`WD_MVF_DestructionInvokerFragment`, one per platform asset)\n\n")
+    rows = []
+    for n, r in d["destruction_invoker"].items():
+        ex, c = r["collision_extents_cm"], r["collision_centre_cm"]
+        rows.append([f"`{n}`", _family(n)[1], num(r["vehicle_mass"]), f"{num(ex[0])} x {num(ex[1])} x {num(ex[2])}", f"{num(c[0])}, {num(c[1])}, {num(c[2])}",
+                     num(r["damage_received_when_chunk_destroyed"]), num(r["counter_force_multiplier"]), num(r["velocity_offset_multiplier"])])
+    o.append(table(["Platform asset", "Vehicle", "Vehicle mass", "Collision box size X x Y x Z (cm)", "Box centre (cm)", "Damage received per destroyed chunk", "Counter-force multiplier", "Velocity offset multiplier"], rows))
+    o.append("\n\nThe fragment gives a vehicle a box that breaks destructible geometry it runs into. Per the field names (**Derived**; no native reader traced): the vehicle takes `DamageRecievedWhenChunkDestroyed` damage for each destroyed chunk, `CounterForceMultiplier` pushes back against the impact, and `VelocityOffsetMultiplier` scales the speed the destroyed pieces inherit. A `-` is a field the asset does not set (a native default applies); `bPlayerCustomizable` is false on the platforms that set it.\n")
+    return "".join(o)
 
 
 # ---------------------------------------------------------------- page C: turrets
@@ -601,6 +675,17 @@ def main():
             with open(path, "w", encoding="utf-8", newline="\n") as f:
                 f.write(text)
             print("wrote", rel, len(text.splitlines()), "lines")
+    jp = os.path.join(ROOT, SETTINGS_JSON)
+    jt = settings_json()
+    if mode == "--check":
+        old = open(jp, encoding="utf-8", newline="").read().replace("\r\n", "\n") if os.path.exists(jp) else ""
+        if old != jt:
+            print("stale:", SETTINGS_JSON)
+            stale += 1
+    else:
+        with open(jp, "w", encoding="utf-8", newline="\n") as f:
+            f.write(jt)
+        print("wrote", SETTINGS_JSON)
     if mode == "--check":
         sys.exit(1 if stale else 0)
 
