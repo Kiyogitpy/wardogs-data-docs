@@ -259,9 +259,9 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_ChallengeRewards_SessionEvents_Buildables` | 47 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](../docs/evidence/round38-building-data.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md) (+3) |
 | `DT_ChallengeRewards_SessionEvents_Crowbar` | 1 | `GF/Items/Crowbar/Rewards` | [items-equipment](../season-2-changes/items-equipment.md) |
 | `DT_ChallengeRewards_SessionEvents_HotZoneMagnet` | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](../docs/evidence/round38-building-data.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md) (+1) |
-| `DT_ChallengeRewards_SessionEvents_Shared` | 298 | `Meta/Challenges` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+10) |
+| `DT_ChallengeRewards_SessionEvents_Shared` | 298 | `Meta/Challenges` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+11) |
 | `DT_ChallengeRewards_SessionEvents_Spotting` | 130 | `GF/Spotting/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [round61-open-questions](../docs/evidence/round61-open-questions.md) (+3) |
-| `DT_ChallengeRewards_TeamOffence` | 2 | `GF/TeamOffence/Challenges` | [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [round43-econ-buildables](../docs/evidence/round43-econ-buildables.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
+| `DT_ChallengeRewards_TeamOffence` | 2 | `GF/TeamOffence/Challenges` | [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [round43-econ-buildables](../docs/evidence/round43-econ-buildables.md), [round88-nb](../docs/evidence/round88-nb.md) (+1) |
 
 #### BHUserSettingDataTableRow
 
@@ -671,7 +671,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_Rewards` | 78 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md) |
+| `DT_Rewards` | 78 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md) (+1) |
 | `DT_Rewards_Spotting` | 3 | `GF/Spotting/Data` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
 
 #### WDVoxBase
@@ -803,7 +803,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_CashRewards` | 49 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md) (+2) |
+| `DT_CashRewards` | 49 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md) (+3) |
 
 #### WDUIRadialWheelSlotTypeTableRow
 
@@ -905,7 +905,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_VehiclePropList` | 29 | `Environment/Blueprints/VehiclePropTooling` | [Wardogs_Environment_v2](../content/Wardogs_Environment_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [SDK](../docs/gap_resolution/SDK.md) |
+| `DT_VehiclePropList` | 29 | `Environment/Blueprints/VehiclePropTooling` | [Wardogs_Environment_v2](../content/Wardogs_Environment_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [round89-env](../docs/evidence/round89-env.md) (+1) |
 
 #### WDEmoteData
 
