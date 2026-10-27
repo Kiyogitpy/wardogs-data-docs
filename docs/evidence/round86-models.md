@@ -38,28 +38,27 @@ Totals: 46 objects in `assets/data/object-collision.json`, 44 GLBs (584 KiB mesh
 | Hammers, repair-tool meshes, held-item physics assets (`PA_Claymore`, `PA_M67_Grenade`, ...) | First-person item meshes, not world objects. |
 | `BP_Drone_Projectile` (STN_05) | The Blueprint is not in `data/`; the bp teammate owns Blueprint extraction. |
 
-## Extraction commands
+## Regenerate
 
-`WdExtract.exe` at `E:/Reverse_Engineer/wardogs_analysis/round76_icons/bin/` already has the `mesh`, `physics` and `collision` modes, so no rebuild was needed. Shorthand: `X <out> <mode> ...` stands for `WdExtract <Paks> <aes.txt> normal-order.usmap <out> <Paks>/oo2core_9_win64.dll <mode> ...`.
+`WdExtract.exe` at `E:/Reverse_Engineer/wardogs_analysis/round76_icons/bin/` already has the `mesh`, `physics` and `collision` modes. `X <out> <mode> ...` stands for `WdExtract <Paks> <aes.txt> normal-order.usmap <out> <Paks>/oo2core_9_win64.dll <mode> ...`. The input lists come from `object_models.py --plan` (buildable `MeshToPlacements` meshes mapped with `vehicle_meshes.package_map`, the item static meshes, the FOB meshes, and the crate, FWG_01, STN_05 and character `SK_`/`PA_` lists); the planned lists were diffed against the lists used in round 86 and are identical.
 
 ```
-X all list ""                                          # all/files.txt: every package
-# vehicle STN_05 (the same plan, mesh, finish cycle as every vehicle)
+X all list ""                                                          # all/files.txt
+python -I _tools/object_models.py --plan plan --files all/files.txt    # plan/collision_in.txt, plan/phys_in.txt
+X col2 collision plan/collision_in.txt
+X phys physics plan/phys_in.txt --names normal-order.usmap
+python -I _tools/object_models.py --collision col2/collision.json --physics phys/physics.json
+python -I _tools/object_models.py --check
+python -I _tools/object_models_check.py
+# vehicles (STN_05 shown; the same cycle as every vehicle)
 python -I tools/cue4parse_extractor/vehicle_meshes.py plan . all/files.txt vv stationary-stn-05
 X vv/stationary-stn-05 mesh vv/stationary-stn-05/_inputs.txt --names normal-order.usmap
 python -I tools/cue4parse_extractor/vehicle_meshes.py finish . vv stationary-stn-05
-python -I _tools/vehicle_models.py --meshes vv stationary-stn-05     # --meshes is the folder that holds <id>/manifest.json
+python -I _tools/vehicle_models.py --meshes vv stationary-stn-05       # --meshes: the folder holding <id>/manifest.json
 python -I _tools/damage_tables.py --json
-# buildable stage meshes, FOB meshes and deployable meshes: collision_in.txt = every MeshToPlacements key of the
-# definitions mapped to package paths with vehicle_meshes.package_map, plus the item meshes and the FOB meshes
-X col2 collision collision_in.txt
-# physics assets: PA_AmmoCrate_01, SK_SupplyCrate_*_Physics and their SK_ meshes, PA_FWG_01 + SK_FWG_01,
-# PA_STN_05 + SK_STN_05 (the character SK_ meshes were read only for their PhysicsAsset)
-X phys physics phys_in.txt --names normal-order.usmap
-python -I _tools/object_models.py --collision col2/collision.json --physics phys/physics.json
 ```
 
-Update rule: rebuild `collision_in.txt` when `data/` changes (stage meshes are read from the definitions); `python -I _tools/object_models.py --check` reports stale buildable stage tables.
+The character `SK_` meshes in `phys_in.txt` are read only for their `PhysicsAsset`; only the props' skeletal meshes place bodies.
 
 ## Checks run
 

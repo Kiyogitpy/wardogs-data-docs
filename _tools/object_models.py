@@ -22,6 +22,7 @@ static mesh (shared by its placements) with one primitive per collision element,
 meshopt by the pinned glTF-Transform CLI (Node.js needed); viewers supply a meshopt decoder.
 
     python -I _tools/object_models.py --collision <collision.json> --physics <physics.json> [--raw <dir>]
+    python -I _tools/object_models.py --plan <out-dir> --files <files.txt>   # writes collision_in.txt, phys_in.txt
     python -I _tools/object_models.py --check          # exit 1 when the written JSON is stale
 
 --collision is `WdExtract collision` run on the buildable and item static meshes, --physics `WdExtract physics`
@@ -415,6 +416,47 @@ def build_props(physics, raw_dir, records):
     return out
 
 
+# --- input lists for WdExtract ---------------------------------------------------------------------
+
+ITEM_DIRS = ("AT_mine", "Claymore", "IED", "C4", "Molotov", "SmokeGrenade", "FuelCanister")
+PHYS_PATTERNS = [
+    r"Characters/(NPC|First_Playable)/.*/SK_[^/]*$", r"Characters/Player/SK_DefaultCharacter$",
+    r"Characters/Default_PlayerMesh/TP/(PA_TPCharacter[^/]*|SK_TP_Male_000)$", r"Characters/Player/Parachute/SK[^/]*$",
+    r"Weapons/Utilities/AmmoCrate/PA_[^/]*$", r"FWG_01/Meshes/(PA|SK)_[^/]*$",
+    r"SupplyCrates.*/SK_SupplyCrate_[A-Za-z]*$", r"SupplyCrates.*_Physics$", r"SupplyCrate_Free_[A-Za-z]*$", r"STN_05/Content/Mesh/(SK|PA)_STN_05$"]
+FOB_RE = r"/(SM_Buildable_FOB_Stages|SM_FOB_Destroyed|SM_Foundation_FOB)[^/]*$"
+
+
+def plan(out_dir, files_txt):
+    """Write collision_in.txt (WdExtract collision) and phys_in.txt (WdExtract physics) from data/ and the package list."""
+    import re
+    sys.path.insert(0, os.path.join(ROOT, "tools", "cue4parse_extractor"))
+    import vehicle_meshes as vm
+    pm = vm.package_map(files_txt)
+    packages = open(files_txt, encoding="utf-8").read().split()
+    d = bt.load()
+    col, missing = set(), []
+    for rel, asset, typ, p in d["assets"]:
+        for st in bt.stage_list(d, p):
+            for item in st.get("MeshToPlacements", []):
+                key = item["Key"].split(".")[0].lower()
+                if key in pm:
+                    col.add(pm[key])
+                else:
+                    missing.append(item["Key"])
+    item_re = re.compile(r"/Items/(%s)/.*/SM_[^/]*$" % "|".join(ITEM_DIRS))
+    col |= {x for x in packages if item_re.search(x) or re.search(FOB_RE, x)}
+    phys = {x for x in packages if any(re.search(pat, x) for pat in PHYS_PATTERNS)}
+    # the Mutable preset skeletal meshes are read only for their PhysicsAsset: the first three, as in round 86
+    phys |= set(sorted(x for x in packages if re.search(r"Characters/Player/_Presets/.*/SK_[^/]*$", x))[:3])
+    os.makedirs(out_dir, exist_ok=True)
+    for name, items in (("collision_in.txt", col), ("phys_in.txt", phys)):
+        with open(os.path.join(out_dir, name), "w", encoding="utf-8", newline=chr(10)) as f:
+            f.write(chr(10).join(sorted(items)) + chr(10))
+    print(f"collision_in.txt: {len(col)} packages, phys_in.txt: {len(phys)} packages"
+          + (f"; {len(missing)} stage meshes not in the package list: {missing[:3]}" if missing else ""))
+
+
 # --- main -------------------------------------------------------------------------------------------
 
 GROUPS = [{"id": "buildables", "label": "Buildables and fortifications"},
@@ -438,6 +480,13 @@ def main():
             return v
         return None
 
+    plan_dir = opt("--plan")
+    if plan_dir:
+        files = opt("--files")
+        if not files or args:
+            sys.exit(__doc__)
+        plan(plan_dir, files)
+        return
     check = "--check" in args
     if check:
         args.remove("--check")
