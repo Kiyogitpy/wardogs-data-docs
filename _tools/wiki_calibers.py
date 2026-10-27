@@ -232,7 +232,7 @@ def build(key):
     s2 = []
     pat = re.compile(r"(?<![A-Za-z0-9])" + re.escape(key) + r"(?![A-Za-z0-9])")
     hits = [l for l in W.S2.splitlines() if pat.search(l)]
-    magazines = [l for l in hits if l.startswith("| [ID_MAGZ")]
+    magazines = [l for l in hits if re.match(r"\| \[?ID_MAGZ", l)]
     if magazines:
         s2.append(f"- The Season 2 changes page adds {len(magazines)} magazine "
                   f"{'item' if len(magazines) == 1 else 'items'} for this caliber's tracer rounds.")
