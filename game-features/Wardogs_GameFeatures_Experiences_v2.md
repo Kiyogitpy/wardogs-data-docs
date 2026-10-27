@@ -149,7 +149,7 @@ The damage type tag handed to the subsystem is `Meta.Damage.DamageType.Explosive
 ## 5. Still not pulled / limitations
 
 - **Stillness thresholds.** The time or distance that defines "standing still" is in the `StillnessSpottingComponent`, which is in BP code and not in this folder.
-- **Out-of-bounds countdown and death.** Found in native code in round 88 (section 3c: `0x6E78410`, death at `0x6E71400`, server side). Not checked: whether the Sniper Showdown world has `bUseOutOfBounds` on (it is a world-settings value of the map, not of the mode).
+- **Out-of-bounds countdown and death.** Found in native code in round 88 (section 3c: `0x6E78410`, death at `0x6E71400`, server side). The world setting is on: Sniper Showdown is a data layer inside the Kavkazi (Bakurani) world, not a world of its own, and that world's `WDWorldSettings` has `bUseOutOfBounds` true ([round 68 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round68-boundaries.md)). The world settings carry no time override; the only limit is the pawn's `OutOfBoundsTimeLimit` of 20 s.
 - **Music and timers.** Timer durations and music cues are not extracted.
 - **Leaderboard data.** Empty in the export.
 - **Unnamed keys.** Localised strings use `_aaa…` keys; their values are shown where the source string is present.
