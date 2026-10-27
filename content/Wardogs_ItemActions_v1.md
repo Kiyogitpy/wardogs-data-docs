@@ -827,9 +827,28 @@ Plain reading of the main ones (**Derived** from the modifiers):
 
 - How the action system evaluates the other response types natively (order, what `InterruptOnComplete` waits for) is **not traced**. The plain meanings in section 3 are **Derived**. The `Buffer` response, `FullBuffer` versus `PartialBuffer` and `bRebufferAction` are read statically in sections 10.2 and 10.3.
 - The two obfuscated booleans have no Blueprint reader at all (section 2), so their meaning can only come from native code, **not traced**.
-- Weapon, movement and UI actions have no data-side input binding in the exports; the character's mapping from input to action tags is **not traced**.
+- Weapon, movement and UI actions have no data-side input binding in the exports. Round 91 traced the native part (section 9.1): an action asks for an input tag with the `WaitForInput` node and its own `InputMappingContext`; which tag starts which action is Blueprint logic in the character and the action classes, which the exports do not contain (**NOT LOCATED**).
 - Animation lengths behind `AnimationLength` use times are in animation assets that are not decoded here.
 - Reload itself (`B_Action_Reload`, 252 KB of listing) was read for its buffering and activation test only; its ammo-transfer steps run in native inventory statics (`WDInventoryStatics::CanPerformReloadWithContext`) that were not read.
+
+### 9.1 Input to action: the native part (round 91, static reading)
+
+Chain as far as the exports and the executable show it. Key to input action: the input mapping contexts (`IMC_Player` and others, [GameMechanics section 5](Wardogs_GameMechanics_v2.md#5-input-playerplayercharacterinputs)) map each key to a `BHInputAction`, which carries an `InputTag` (`Input.NamedActions.*`). The action base class `UBHGameplayAction` holds a multicast delegate `OnInputTriggered(tag)` (offset `+0x28`) and its own `InputMappingContext` (`+0x50`). An action Blueprint waits for a tag with the `WaitForInput(action, tag)` async node (class `UBHGameplayAsyncAction_WaitForInput`, tag stored at `+120`, flag byte at `+128`): its activation (`0x5250200`) adds a delegate bound to the node's `OnInputTriggered` function to the action's list, and the function (`0x52694E0`) fires the node's `Triggered` output only when the tag it receives equals the stored tag. So a running action can react to a key while it runs (release, repeat); the public call that starts an action is `TryActivateAction(tag, context)` on the action system component, whose callers were not traced.
+
+Where the starting call is made is Blueprint logic (the character and the action classes) that the exports do not contain, so which tag starts which action is **NOT LOCATED** as a table. By name, 12 of the 98 input tags have an action tag with the same suffix. This is **Derived** from the names only:
+
+| Default key (keyboard / gamepad) | Input action | Input tag | Same-named action tag |
+|---|---|---|---|
+| Space / A | `IA_Player_Jump` | `Input.NamedActions.Player.Jump` | `Action.Player.Jump` |
+| C | `IA_Player_Crouch` | `Input.NamedActions.Player.Crouch` | `Action.Player.Crouch` |
+| Left Ctrl | `IA_Player_Prone` | `Input.NamedActions.Player.Prone` | `Action.Player.Prone` |
+| Left Shift (release trigger) / left stick | `IA_Player_Sprint_Toggle` | `Input.NamedActions.Player.Sprint` | `Action.Player.Sprint` |
+| Q / left bumper (aiming context) | `IA_Player_Lean_Left` | `Input.NamedActions.Player.Lean.Left` | `Action.Player.Lean.Left` |
+| E / right bumper (aiming context) | `IA_Player_Lean_Right` | `Input.NamedActions.Player.Lean.Right` | `Action.Player.Lean.Right` |
+| W A S D / left stick | `IA_Player_MoveDirectional` | `Input.NamedActions.Player.MoveDirectional` | `Action.Player.MoveDirectional` |
+| Left Shift / left stick (aiming context) | `IA_Player_Focus` | `Input.NamedActions.Player.Focus` | `Action.Player.Focus` |
+
+Also same-named without a default key in `IMC_Player`: `Player.Lean`, `Player.SlowWalk`, `Appliable.PrimaryUse`, `Appliable.SecondaryUse` (the last two are mapped by the item contexts, section 7). The other input tags (tactical sprint, ladder, parachute, downed, UI) have no same-named action tag. Source: [round 91 nat](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round91-nat.md).
 
 ---
 

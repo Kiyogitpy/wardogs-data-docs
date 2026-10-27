@@ -181,7 +181,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 - Builder's Radio: up to 4 per Forward Operating Base. It counts toward that limit.
 - Refuel Station and Repair Station: 1 per Forward Operating Base each.
 - Drill Rig: only inside a placement zone within a control zone.
-- A Forward Operating Base cannot be placed within about 42 m of another one. The exact shape of this check is not decoded.
+- A Forward Operating Base cannot be placed within about 42 m of another one. The check is a 42 m box around each FOB (square, so it reaches further on a diagonal, and it also includes height), not a circle; this is a static reading of the game code.
 
 ### Drill Rig
 
