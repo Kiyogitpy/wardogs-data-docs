@@ -70,26 +70,36 @@
   var HIDE = { ID_GhillieArmorDry: 1, ID_GhillieHelmetDry: 1 };
   function slotIds(key) { return ((B && B.slots && B.slots[key]) || []).filter(function (id) { return !HIDE[id]; }); }
 
-  /* ---------- class level gate (ported from loadout-calculator.js) ---------- */
+  /* ---------- level gates ---------- */
+
+  // DT_MetaTree_Roles has one tree per class plus the Wardog tree, which gates on the Wardog (career) level.
+  var WARDOG = "Wardog";
+  function classRoles() { return roles().filter(function (r) { return r !== WARDOG; }); }
 
   function unlockText(id) {
     var u = X && X.unlocks[id];
     if (!u) return "";
-    return Object.keys(u).sort().map(function (r) { return r + " L" + u[r][0]; }).join(", ");
+    return Object.keys(u).sort().map(function (r) { return r + " level " + u[r][0]; }).join(", ");
   }
-  // Items in no class tree are always allowed; with a class chosen only that class's tree counts, with "Any class" the lowest level.
+  // Items in no tree are always allowed. A Wardog tree item needs the Wardog level; a class tree item needs the
+  // class level, in that class's tree when a class is chosen, in any tree with "Any class". An unset level allows all.
   function allowed(id) {
     var u = X && X.unlocks[id];
-    if (!u || S.level == null) return true;
-    if (S.role) return !!u[S.role] && u[S.role][0] <= S.level;
-    return Object.keys(u).some(function (r) { return u[r][0] <= S.level; });
+    if (!u) return true;
+    return Object.keys(u).some(function (r) {
+      if (r === WARDOG) return S.wardog == null || u[r][0] <= S.wardog;
+      if (S.level == null) return true;
+      return (!S.role || r === S.role) && u[r][0] <= S.level;
+    });
   }
+  function gated() { return S.wardog != null || S.level != null; }
 
   /* ---------- build state ---------- */
 
   function fresh() {
     var s = { slots: {}, gear: {}, active: "primary", stance: stances()[0], focus: false,
-              role: S ? S.role : "", level: S ? S.level : null,
+              role: S ? S.role : "", level: S ? S.level : null, wardog: S ? S.wardog : null,
+              best: S ? S.best : { goal: "overall", skip: { "Item.Attachment.Sight": true } },
               bal: { ammo: null, helmet: "None", vest: "None", range: 0 } };
     WSLOTS.forEach(function (w) { s.slots[w[0]] = { id: null, lo: null }; });
     GEAR.forEach(function (g) { s.gear[g[0]] = null; });
@@ -147,11 +157,12 @@
      &p@<slot key>=<item|none>   a non-default attachment in that weapon's open sub-slot (s@…, x@… likewise)
      &p#sight=<entry>&p#bipod=<unfolded|mounted>   per weapon
      &h=&a=&v=&b=<id>   helmet, armor, tac vest, backpack
-     &on=<primary|sidearm|special>&stance=<Crouch|Prone>&focus=1&cls=<class>&lvl=<n>
+     &on=<primary|sidearm|special>&stance=<Crouch|Prone>&focus=1&wd=<Wardog level>&cls=<class>&lvl=<class level>
      &ammo=<id>&th=<target helmet class>&ta=<target armor class>&range=<metres>
      Only what differs from the default build is written. */
 
   function enc(s) { return encodeURIComponent(s); }
+  function levelOf(v) { var n = parseInt(v, 10); return n >= 1 ? Math.min(n, 150) : null; }
 
   function writeHash() {
     var p = [];
@@ -170,6 +181,7 @@
     if (S.active !== "primary") p.push("on=" + S.active);
     if (S.stance !== stances()[0]) p.push("stance=" + enc(S.stance));
     if (S.focus) p.push("focus=1");
+    if (S.wardog != null) p.push("wd=" + S.wardog);
     if (S.role) p.push("cls=" + enc(S.role));
     if (S.level != null) p.push("lvl=" + S.level);
     var ba = ballistics();
@@ -214,9 +226,10 @@
     if (WSLOTS.some(function (w) { return w[0] === kv.on; })) S.active = kv.on;
     if (stances().indexOf(kv.stance) >= 0) S.stance = kv.stance;
     S.focus = kv.focus === "1";
-    S.role = kv.cls && roles().indexOf(kv.cls) >= 0 ? kv.cls : "";
-    var lv = parseInt(kv.lvl, 10);
-    S.level = lv >= 1 ? Math.min(lv, 150) : null;
+    S.role = kv.cls && classRoles().indexOf(kv.cls) >= 0 ? kv.cls : "";
+    S.level = levelOf(kv.lvl);
+    S.wardog = levelOf(kv.wd);
+    if (kv.cls === WARDOG && S.wardog == null) { S.wardog = S.level; S.level = null; }   // links from before the Wardog level box
     S.bal.ammo = kv.ammo || null;
     S.bal.helmet = HELMETS.some(function (v) { return v[0] === kv.th; }) ? kv.th : "None";
     S.bal.vest = VESTS.some(function (v) { return v[0] === kv.ta; }) ? kv.ta : "None";
@@ -300,7 +313,7 @@
       if (ut) badges.appendChild(el("span", "lb-badge" + (locked ? " lb-badge-lock" : ""), (locked ? "Locked · " : "Unlocks ") + ut));
       if (badges.children.length) t.appendChild(badges);
       b.addEventListener("click", function () {
-        if (b.getAttribute("aria-disabled") === "true") { els.pickerCount.textContent = o.name + " is locked at this class level (" + ut + ")."; return; }
+        if (b.getAttribute("aria-disabled") === "true") { els.pickerCount.textContent = o.name + " is locked at your level (" + ut + ")."; return; }
         closePicker();
         cfg.onPick(o.id);
         focusFid(pickerFid);
@@ -335,7 +348,7 @@
     box.insertBefore(list, box.firstChild);
     if (!list.children.length) box.removeChild(list);
     els.pickerCount.textContent = shown + (shown === 1 ? " item" : " items") + (q ? " match" : "") +
-      (S.level != null ? ". Class level " + S.level + (S.role ? " " + S.role : "") + ": locked items are greyed out." : "");
+      (gated() ? ". " + gateText() + ": locked items are greyed out." : "");
     if (!shown && !(cfg.empty != null)) box.appendChild(el("p", "lb-none", "Nothing matches."));
   }
 
@@ -354,7 +367,7 @@
     b.type = "button";
     b.setAttribute("data-fid", fid);
     var locked = o.id && !allowed(o.id);
-    b.setAttribute("aria-label", locked ? o.aria.replace(/\. Change$/, ", locked at this class level. Change") : o.aria);
+    b.setAttribute("aria-label", locked ? o.aria.replace(/\. Change$/, ", locked at your level. Change") : o.aria);
     b.appendChild(iconBox(o.id, "lb-tile-icon", o.name));
     var t = el("span", "lb-tile-text");
     t.appendChild(el("span", "lb-tile-slot", o.slot));
@@ -463,7 +476,7 @@
     fact("Bag cells", bp && bp.grid ? bp.grid[0] * bp.grid[1] + " (" + bp.grid[0] + " × " + bp.grid[1] + ")" : S.gear.backpack ? "not known" : "none (no backpack)");
     box.appendChild(dl);
     var locked = lines.filter(function (l) { return !allowed(l.id); });
-    if (locked.length) box.appendChild(el("p", "lb-hint lb-warn", "Locked at this class level: " + locked.map(function (l) { return l.name; }).join(", ") + "."));
+    if (locked.length) box.appendChild(el("p", "lb-hint lb-warn", "Locked at your level: " + locked.map(function (l) { return l.name; }).join(", ") + "."));
     if (lines.length) {
       var ul = el("ul", "lb-break");
       lines.forEach(function (l) {
@@ -874,6 +887,173 @@
       (er != null ? "* beyond the full-damage range. " : "") + "Armor covers the torso (level 4 also the pelvis and upper arm); a helmet covers the head (level 3, level 4 and tank crew helmets also the neck).";
   }
 
+  /* ---------- best attachments ---------- */
+
+  // [goal, label, the Fitted value it lowers, or null for the overall score]
+  var GOALS = [["vertical", "Vertical recoil", "VerticalRecoilMultiplier"], ["horizontal", "Horizontal recoil", "HorizontalRecoilMultiplier"],
+               ["overall", "Overall", null]];
+  // Overall score: sum over the HANDLING values with a better direction of direction × weight × ln(Fitted / Base);
+  // weight 1, except equip and holster speed 0.25. Higher is better.
+  var OVERALL_W = { EquipSpeedMultiplier: 0.25, HolsterSpeedMultiplier: 0.25 };
+  var bestCache = { key: null, val: null };
+
+  function handlingOf(lo) {
+    var out = {};
+    L.evaluate(model, lo).weapon.forEach(function (r) { out[r.tag.split(".").pop()] = r; });
+    return out;
+  }
+  function overallScore(h) {
+    var s = 0;
+    HANDLING.forEach(function (d) {
+      var r = h[d[0]];
+      if (d[3] && r && r.base > 0 && r.final > 0) s += d[3] * (OVERALL_W[d[0]] || 1) * Math.log(r.final / r.base);
+    });
+    return s;
+  }
+  function goalScore(h) {
+    var attr = GOALS.filter(function (g) { return g[0] === S.best.goal; })[0][2];
+    if (!attr) return overallScore(h);
+    return h[attr] && h[attr].final != null ? -h[attr].final : -Infinity;
+  }
+  function better(a, b) {
+    for (var i = 0; i < a.length; i++) if (Math.abs(a[i] - b[i]) > 1e-9) return a[i] > b[i];
+    return false;
+  }
+  function bestSlots(lo) {
+    return L.slots(model, lo).filter(function (x) { return SHOWN_SLOTS[x.tag] && x.accepts && x.accepts.length; })
+      .sort(function (a, b) { return SHOWN_SLOTS[a.tag][0] - SHOWN_SLOTS[b.tag][0]; });
+  }
+
+  // Every combination of unlocked parts in the ticked slots (at most ~8,000, the M4), scored by the goal; ties go
+  // to the overall score, then fewer changes from what is equipped, then the lower price of the changed parts.
+  function searchBest(lo) {
+    var now = {}, keys = [], best = null, n = 0, picks = [];
+    bestSlots(lo).forEach(function (x) { now[x.key] = x.choice; if (!S.best.skip[x.tag]) keys.push(x.key); });
+    (function rec(l, i) {
+      if (i === keys.length) {
+        settle(l);
+        var h;
+        try { h = handlingOf(l); } catch (e) { return; }
+        n++;
+        var changes = 0, price = 0;
+        keys.forEach(function (k, j) {
+          if (picks[j] === now[k]) return;
+          changes++;
+          var b = picks[j] && bi(picks[j]);
+          if (b && b.price) price += b.price;
+        });
+        var sc = [goalScore(h), overallScore(h), -changes, -price];
+        if (!best || better(sc, best.sc)) best = { sc: sc, lo: l, h: h, picks: picks.slice() };
+        return;
+      }
+      var x = L.slots(model, l).filter(function (y) { return y.key === keys[i]; })[0];
+      if (!x) { picks[i] = null; rec(l, i + 1); return; }
+      var ids = x.accepts.filter(function (id) { return allowed(id) || id === x["default"]; });
+      if (x.tag !== "Item.Attachment.Magazine") ids.push(null);
+      ids.forEach(function (id) {
+        var nl;
+        try { nl = id === x.choice ? l : L.setItem(model, l, x.key, id); } catch (e) { return; }
+        picks[i] = id;
+        rec(nl, i + 1);
+      });
+    })(lo, 0);
+    return best && { lo: best.lo, h: best.h, n: n, keys: keys, now: now, picks: best.picks };
+  }
+
+  function renderBest(res) {
+    var box = els.best, slot = S.active, c = current(), lo = c.lo, shown = bestSlots(lo);
+    clear(box);
+    var controls = el("div", "lb-wcontrols");
+    controls.appendChild(field("Best for", seg("Best for", GOALS.map(function (g) { return [g[0], g[1]]; }), S.best.goal,
+      function (v) { S.best.goal = v; update(false); })));
+    var checks = el("div", "lb-best-slots");
+    checks.setAttribute("role", "group");
+    checks.setAttribute("aria-label", "Slots to choose");
+    shown.forEach(function (x) {
+      var lab = el("label", "lb-check"), cb = el("input");
+      cb.type = "checkbox";
+      cb.checked = !S.best.skip[x.tag];
+      cb.setAttribute("data-fid", "best:" + x.tag);
+      cb.addEventListener("change", function () { S.best.skip[x.tag] = !cb.checked; update(false); focusFid("best:" + x.tag); });
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(SHOWN_SLOTS[x.tag][1]));
+      checks.appendChild(lab);
+    });
+    controls.appendChild(field("Slots to choose", checks));
+    box.appendChild(controls);
+
+    var key = JSON.stringify([slot, lo.weapon, lo.items, lo.sight, lo.bipod, lo.stance, S.best, S.wardog, S.level, S.role]);
+    if (bestCache.key !== key) bestCache = { key: key, val: searchBest(lo) };
+    var r = bestCache.val;
+    if (!r || !r.keys.length) { box.appendChild(el("p", "lb-none", "Tick at least one slot to choose.")); return; }
+
+    var diff = r.keys.filter(function (k, j) { return r.picks[j] !== r.now[k]; }).length;
+    box.appendChild(el("p", "lb-lead", "Tried " + r.n.toLocaleString("en-US") + (r.n === 1 ? " combination" : " combinations") + " of the parts unlocked at " +
+      (gated() ? gateText() : "any level (set your levels above to limit it)") + ". " +
+      (diff ? diff + (diff === 1 ? " part differs" : " parts differ") + " from what is equipped." : "What is equipped is already the best for this goal.")));
+
+    var t1 = el("table", "lb-table lb-best-table"), tb1 = el("tbody");
+    t1.appendChild(el("caption", "lb-sr", "Equipped and best part for each chosen slot"));
+    var hr = el("tr");
+    ["Slot", "Equipped", "Best"].forEach(function (h) { var th = el("th", null, h); th.scope = "col"; hr.appendChild(th); });
+    var th1 = el("thead"); th1.appendChild(hr); t1.appendChild(th1);
+    r.keys.forEach(function (k, j) {
+      var x = shown.filter(function (y) { return y.key === k; })[0], same = r.picks[j] === r.now[k];
+      var tr = el("tr", same ? "" : "lb-row-good"), th = el("th", null, x ? SHOWN_SLOTS[x.tag][1] : k);
+      th.scope = "row";
+      tr.appendChild(th);
+      tr.appendChild(el("td", null, r.now[k] ? nameOf(r.now[k]) : "Empty"));
+      var td = el("td", same ? null : "lb-strong", r.picks[j] ? nameOf(r.picks[j]) : "Empty");
+      if (!same) td.appendChild(el("span", "lb-sr", " (change)"));
+      tr.appendChild(td);
+      tb1.appendChild(tr);
+    });
+    t1.appendChild(tb1);
+    var w1 = el("div", "lb-scroll"); w1.appendChild(t1); box.appendChild(w1);
+
+    var now = {}, t2 = el("table", "lb-table lb-best-table"), tb2 = el("tbody");
+    res.weapon.forEach(function (x) { now[x.tag.split(".").pop()] = x; });
+    t2.appendChild(el("caption", "lb-sr", "Handling values with what is equipped and with the best parts"));
+    hr = el("tr");
+    [["Value", ""], ["Equipped", "lb-num"], ["Best", "lb-num"]].forEach(function (h) { var th = el("th", h[1], h[0]); th.scope = "col"; hr.appendChild(th); });
+    var th2 = el("thead"); th2.appendChild(hr); t2.appendChild(th2);
+    HANDLING.forEach(function (d) {
+      var a = now[d[0]], b = r.h[d[0]];
+      if (!d[3] || !a || !b) return;
+      function val(v) { return v == null ? "—" : (d[2] === "×" ? "×" + fmt(v) : fmt(v) + d[2]); }
+      var tr = el("tr"), th = el("th", null, d[1]);
+      th.scope = "row";
+      tr.appendChild(th);
+      tr.appendChild(el("td", "lb-num", val(a.final)));
+      var td = el("td", "lb-num"), dv = b.final - a.final;
+      if (a.final != null && b.final != null && fmt(a.final) !== fmt(b.final)) {
+        var good = (dv < 0) === (d[3] < 0);
+        td.appendChild(el("span", good ? "lb-good" : "lb-bad", val(b.final)));
+        td.appendChild(el("span", "lb-sr", good ? " better" : " worse"));
+      } else td.appendChild(el("span", "lb-strong", val(b.final)));
+      tr.appendChild(td);
+      tb2.appendChild(tr);
+    });
+    t2.appendChild(tb2);
+    var w2 = el("div", "lb-scroll"); w2.appendChild(t2); box.appendChild(w2);
+
+    var go = el("button", "lb-btn lb-btn-primary", diff ? "Equip these" : "Already equipped");
+    go.type = "button";
+    go.disabled = !diff;
+    go.setAttribute("data-fid", "best:go");
+    go.addEventListener("click", function () {
+      S.slots[slot].lo = r.lo;
+      settle(r.lo);
+      update(true);
+      focusFid("best:go");
+    });
+    box.appendChild(go);
+    box.appendChild(el("p", "lb-hint", "Values use the stance and bipod chosen above. Overall adds up how much each value with a better direction " +
+      "improves on the weapon's base, in proportion (ln Fitted / Base): ADS time, vertical and horizontal recoil, spread and accuracy count fully, " +
+      "equip and holster speed a quarter. Barrel, stock, pistol grip and handguard stay as they are. Magazine capacity is not scored; " +
+      "ties go to fewer changes, then the cheaper parts."));
+  }
+
   /* ---------- gate bar and update ---------- */
 
   function renderGate() {
@@ -884,13 +1064,21 @@
       if (s.lo) L.slots(model, s.lo).forEach(function (x) { if (x.choice != null && !x.isDefault && !allowed(x.choice)) lockedAny.push(nameOf(x.choice)); });
     });
     GEAR.forEach(function (g) { if (S.gear[g[0]] && !allowed(S.gear[g[0]])) lockedAny.push(nameOf(S.gear[g[0]])); });
-    els.gateHint.textContent = !X ? "" : S.level == null
-      ? "Set a class level to grey out what that class has not unlocked yet. Items that no class tree lists are always available."
-      : (S.role || "Any class") + " at level " + S.level + ": locked items are greyed out in the pickers." +
+    els.gateHint.textContent = !X ? "" : !gated()
+      ? "Set your Wardog level and class level to grey out what you have not unlocked yet. Some items unlock with the Wardog level, " +
+        "the rest in a class tree; items that no tree lists are always available."
+      : gateText() + ": locked items are greyed out in the pickers." +
         (lockedAny.length ? " Equipped but locked: " + lockedAny.join(", ") + "." : "");
     els.gateHint.classList.toggle("lb-warn", lockedAny.length > 0);
     els.role.value = S.role;
     els.level.value = S.level == null ? "" : String(S.level);
+    els.wardog.value = S.wardog == null ? "" : String(S.wardog);
+  }
+  function gateText() {
+    var p = [];
+    if (S.wardog != null) p.push("Wardog level " + S.wardog);
+    if (S.level != null) p.push((S.role || "any class") + " level " + S.level);
+    return p.join(", ");
   }
 
   function update(hash) {
@@ -906,6 +1094,8 @@
     }
     lastRes = res;
     renderWeapon(res || { weapon: [] });
+    els.bestCard.hidden = !res || !bestSlots(c.lo).length;
+    if (!els.bestCard.hidden) renderBest(res);
     els.handlingCard.hidden = !res;
     els.recoilCard.hidden = !res || !panel;
     els.opticsCard.hidden = !res || !X;
@@ -954,12 +1144,13 @@
   function init() {
     var root = els.root = $("lb");
     if (!root) return;
-    ["status", "reset", "copy", "role", "level", "equip", "summary", "weapon", "picker", "layout"].forEach(function (k) { els[k] = $("lb-" + k); });
+    ["status", "reset", "copy", "role", "level", "wardog", "equip", "summary", "weapon", "picker", "layout"].forEach(function (k) { els[k] = $("lb-" + k); });
     els.gateHint = $("lb-gate-hint");
     els.handlingCard = $("lb-handling-card"); els.handlingRows = $("lb-handling-rows"); els.handlingSum = $("lb-handling-sum");
     els.charRows = $("lb-char-rows"); els.notes = $("lb-notes");
     els.recoilCard = $("lb-recoil-card"); els.recoilLead = $("lb-recoil-lead"); els.recoil = $("lb-recoil");
     els.opticsCard = $("lb-optics-card"); els.optics = $("lb-optics");
+    els.bestCard = $("lb-best-card"); els.best = $("lb-best");
     els.balCard = $("lb-ballistics-card"); els.balControls = root.querySelector("#lb-ballistics-card .lb-controls");
     ["ammo", "thelmet", "tarmor", "range"].forEach(function (k) { els[k] = $("lb-" + k); });
     els.balSummary = $("lb-bal-summary"); els.balNote = $("lb-bal-note");
@@ -985,17 +1176,14 @@
         any.value = "";
         clear(els.role);
         els.role.appendChild(any);
-        roles().forEach(function (r) { var o = el("option", null, r); o.value = r; els.role.appendChild(o); });
-        els.role.disabled = els.level.disabled = !X;
+        classRoles().forEach(function (r) { var o = el("option", null, r); o.value = r; els.role.appendChild(o); });
+        els.role.disabled = els.level.disabled = els.wardog.disabled = !X;
         els.copy.disabled = false;
         els.reset.disabled = false;
 
         els.role.addEventListener("change", function () { S.role = els.role.value; update(true); });
-        els.level.addEventListener("change", function () {
-          var v = parseInt(els.level.value, 10);
-          S.level = v >= 1 ? Math.min(v, 150) : null;
-          update(true);
-        });
+        els.level.addEventListener("change", function () { S.level = levelOf(els.level.value); update(true); });
+        els.wardog.addEventListener("change", function () { S.wardog = levelOf(els.wardog.value); update(true); });
         els.ammo.addEventListener("change", function () { S.bal.ammo = els.ammo.value; update(true); });
         els.thelmet.addEventListener("change", function () { S.bal.helmet = els.thelmet.value; update(true); });
         els.tarmor.addEventListener("change", function () { S.bal.vest = els.tarmor.value; update(true); });

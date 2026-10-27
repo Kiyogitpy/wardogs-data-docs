@@ -2,7 +2,7 @@
 title: "Loadout Builder"
 permalink: /loadout/
 parent: "Weapons & Ammo"
-description: "Build a loadout: weapon, attachments, sight, armor and bag within your class level, then see sway, recoil, every handling value, the reticle, and damage per body part and over distance"
+description: "Build a loadout within your Wardog level and class level, let it pick the best attachments for vertical recoil, horizontal recoil or overall, then see sway, recoil, every handling value, the reticle, and damage per body part and over distance"
 ---
 
 # Loadout Builder
@@ -11,6 +11,10 @@ description: "Build a loadout: weapon, attachments, sight, armor and bag within 
 
 <div class="lb" id="lb" markdown="0" data-base="{{ '/' | relative_url }}" data-builder="{{ '/assets/data/loadout-builder.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-json="{{ '/assets/data/weapon-loadouts.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-extras="{{ '/assets/data/loadout-extras.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-spray="{{ '/assets/data/spray-patterns.json' | relative_url }}?v={{ site.time | date: '%s' }}">
   <div class="lb-bar">
+    <div class="lb-field lb-field-level">
+      <label for="lb-wardog">Wardog level</label>
+      <input id="lb-wardog" type="number" min="1" max="150" step="1" inputmode="numeric" placeholder="Any" disabled>
+    </div>
     <div class="lb-field">
       <label for="lb-role">Class</label>
       <select id="lb-role" disabled><option>Any class</option></select>
@@ -41,6 +45,10 @@ description: "Build a loadout: weapon, attachments, sight, armor and bag within 
       <section class="lb-card" id="lb-weapon-card" aria-labelledby="lb-weapon-title">
         <h2 class="lb-card-title no_anchor" id="lb-weapon-title">Weapon</h2>
         <div id="lb-weapon"></div>
+      </section>
+      <section class="lb-card" id="lb-best-card" aria-labelledby="lb-best-title" hidden>
+        <h2 class="lb-card-title no_anchor" id="lb-best-title">Best attachments</h2>
+        <div id="lb-best"></div>
       </section>
       <section class="lb-card" id="lb-handling-card" aria-labelledby="lb-handling-title" hidden>
         <h2 class="lb-card-title no_anchor" id="lb-handling-title">Handling</h2>

@@ -513,6 +513,17 @@ dialog.lb-picker {
 .lb-badge-on { color: $ue-white; background: $ue-blue-deep; border-color: $ue-blue-deep; }
 .lb-badge-lock { color: $lb-warn; border-color: $lb-warn; }
 
+/* ---------- best attachments ---------- */
+
+.lb-best-slots { display: flex; flex-wrap: wrap; gap: 0 1rem; }
+.lb-best-table { margin-top: 0.75rem; }
+#lb-best > .lb-btn { margin-top: 0.9rem; }
+.lb-btn-primary:not(:disabled) {
+  background: $ue-blue-deep;
+  border-color: $ue-blue-deep;
+  &:hover { background: $ue-blue-deep; filter: brightness(1.12); }
+}
+
 @media (max-width: 30rem) {
   .lb-bar .lb-actions { margin-left: 0; width: 100%; }
   .lb-bar .lb-field { flex: 1 1 8rem; }
