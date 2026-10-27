@@ -49,14 +49,14 @@ The counts include 39 definitions in game-feature plugins (`Plugins/GameFeatures
 |---|---|---|
 | `ActionTag` | The action's identity (`Action.Weapon.Reload`). Items, input behaviors and the response rules all refer to actions by this tag. | **Data** |
 | `ActionContext` | Context flags (`Holdable`, `Weapon`, `Interaction`, `TwoHanded`, `OneHanded`, `Movement`, `UI`, `Emote`, `FollowProjectile`). They describe the action and are also the *categories* that `BlockCategories` and `InterruptCategories` rules name. | **Data** for values; category use is **Derived** |
-| `ActionClass` | The blueprint (or the native `WDGameplayAction`) that runs the action. Shown by class name only. The medical, throw, place and build `B_Action_*` blueprints were exported in round 17 (durations are the montage lengths in section 6.1); cancel logic inside them is not traced. | **Data** (class name); logic **not traced** |
+| `ActionClass` | The blueprint (or the native `WDGameplayAction`) that runs the action. Shown by class name only. The medical, throw, place and build `B_Action_*` blueprints were exported in round 17 (durations are the montage lengths in section 6.1). Round 86 exported the other 96 `B_Action_*` classes (weapons, movement, UI, vehicle tools) and read their bytecode: see [section 10](#10-action-blueprints-round-86). | **Data** (class name); logic: [section 10](#10-action-blueprints-round-86) |
 | `ActivationContextType` | A struct type carrying what the action needs when it starts (`WDAppliableItemActionContext` for item use, `WDEmoteActivationContext` for emotes, `BHTraversingActivationContextData` for vault and mantle). | **Data** |
 | `ActionResponseData` | The conflict rules, a map from a response type to lists (section 3). | **Data** |
 | `ActionEffects` (`WDActionDefinition` only) | GameplayEffects tied to the action by a key name (section 8). | **Data** |
 | `bInstantAction` | The action has no duration. Set on 6 assets (door use, jump, stop-sprint, stop-tac-sprint, toggle hands, throw swap). | **Data**; exact use **not traced** |
-| `bRebufferAction` | Set on `DA_Action_Chamber` only. | **Data**; meaning **not traced** (the name suggests it can be buffered again) |
+| `bRebufferAction` | Set on `DA_Action_Chamber` only. The Blueprint side is known: `B_Action_ChamberWeapon.BP_OnCancel` answers `Buffer` when the chamber is cancelled before its animation finishes, which asks the action system to queue the action again (section 10.2). The flag itself is read in native code. | **Data**; the link to `BP_OnCancel` is **Derived**; the native read is **not traced** |
 | `bConsumeAxisInputOnCompletion` | Set on `DA_Action_Vehicle_Weapon_ActiveReload` only. The name suggests the axis input is consumed when the action completes. | **Data** / **Derived** |
-| `_aaabhcpaaifhekodaalnj`, `_aaacbmicphngedjgincpn` | Two obfuscated booleans on the base class (SDK offsets `0xB9` and `0xBB`). The first is true on `DA_Action_UI_ChangeQuickSlot`; the second is never true. | **Data**; meaning **not traced** |
+| `_aaabhcpaaifhekodaalnj`, `_aaacbmicphngedjgincpn` | Two obfuscated booleans on the base class (SDK offsets `0xB9` and `0xBB`). The first is true on `DA_Action_UI_ChangeQuickSlot`; the second is never true. None of the 96 exported `B_Action_*` Blueprints references either field, so no Blueprint reads them. | **Data**; meaning **not traced** (native only) |
 
 **Fields that do not exist on the action.** The definition has no duration, cooldown, montage, item-consumption, granted-tag or input-binding field. Where those concepts exist in the data they are on other assets:
 
@@ -83,7 +83,7 @@ Each entry has a response type and up to six lists. The type decides how the lis
 | `BlockingStates` | This action cannot start while the character has one of the listed states (reload is refused when `Vitality.Critical` or `Vitality.Dead`). |
 | `InterruptCategories` | Like `Interrupt`, but by context flag (an emote cancels other emotes). |
 | `BlockCategories` | Like `Block`, but by context flag. |
-| `Buffer` | If the listed action is requested while this one runs, remember the request for `BufferTime` seconds. `FullBuffer` and `PartialBuffer` are the two buffer types; the difference is not traced. |
+| `Buffer` | If the listed action is requested while this one runs, remember the request for `BufferTime` seconds. `FullBuffer` and `PartialBuffer` are the two buffer types. How the system treats them differently is native and not traced; how the entries are used in the data is counted in section 10.3. |
 | `InterruptBuffered`, `InterruptAndBuffer`, `InterruptOnComplete` | Combinations of interrupt and buffer, or an interrupt tied to completion. |
 | `RequiredStates` | The character must have the listed state to start the action. |
 | `None` | Present but empty. |
@@ -825,11 +825,88 @@ Plain reading of the main ones (**Derived** from the modifiers):
 
 ## 9. Open items
 
-- The medical, throw, place and build `B_Action_*` blueprints were exported in round 17; their durations are the montage lengths in section 6.1. Cancel logic inside the actions is **not traced**, and the other `B_Action_*` blueprints (weapons, movement, UI) were not exported.
-- How the action system evaluates the response types (order, what `FullBuffer` versus `PartialBuffer` change, what `InterruptOnComplete` waits for) is **not traced**. The plain meanings in section 3 are **Derived**.
-- The two obfuscated booleans and `bRebufferAction` have no confirmed meaning.
+- How the action system evaluates the response types natively (order, what `FullBuffer` versus `PartialBuffer` change, what `InterruptOnComplete` waits for) is **not traced**. The plain meanings in section 3 are **Derived**; the data side of buffering is counted in section 10.3.
+- The two obfuscated booleans have no Blueprint reader at all (section 2), so their meaning can only come from native code, **not traced**.
 - Weapon, movement and UI actions have no data-side input binding in the exports; the character's mapping from input to action tags is **not traced**.
 - Animation lengths behind `AnimationLength` use times are in animation assets that are not decoded here.
+- Reload itself (`B_Action_Reload`, 252 KB of listing) was read for its buffering and activation test only; its ammo-transfer steps run in native inventory statics (`WDInventoryStatics::CanPerformReloadWithContext`) that were not read.
+
+---
+
+## 10. Action Blueprints (round 86)
+
+Round 86 exported every `B_Action_*` Blueprint (96 classes) with WdExtract and read the bytecode with `kismet_listing.py`. Nine of them carry no logic, only class defaults (seven `B_Action_OpenScene_*`, `B_Action_Vehicle_WeaponFire`, `B_Action_Vehicle_WeaponPreFire`). The rest are thin: they play an animation or audio cue, holster or equip the held item, apply a GameplayEffect, and report back to the action system. Distances, speeds and costs of movement live in the native mover and in the data assets of the earlier sections, not in these classes. The extraction commands are in the [round 86 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round86-bp.md).
+
+### 10.1 Class defaults
+
+Values the Blueprint classes set on themselves (**Data (Blueprint CDO)**, from [`bp-defaults.json`](../assets/data/bp-defaults.json), topic `actions`). Hold times are seconds; `DurabilityCost` is the durability change per use of the tool (negative = it loses durability).
+
+<!-- action_tables bp_settings -->
+| Action Blueprint | Field | Value | Unit |
+|---|---|---|---|
+| `B_Action_Bandage_Use` | `bCancelOnTargetLost` | true |  |
+| `B_Action_ChamberWeapon` | `bCanActivateDuringItemEquippingOnServer` | true |  |
+| `B_Action_Defibrillator` | `bCanActivateDuringItemEquippingOnServer` | true |  |
+| `B_Action_Enox_Use` | `bCancelOnTargetLost` | false |  |
+| `B_Action_ForceOpenDoor` | `DurabilityCost` | -1000 |  |
+| `B_Action_ForceOpenDoor` | `ForceOpenDoorHoldTime` | 6 | s |
+| `B_Action_ForceOpenDoor` | `ForceOpenGateHoldTime` | 10 | s |
+| `B_Action_ForceOpenDoor` | `bCancelOnTargetLost` | true |  |
+| `B_Action_ForceUnlockVehicle` | `DurabilityCost` | -1000 |  |
+| `B_Action_ForceUnlockVehicle` | `ForceOpenDoorHoldTime` | 5 | s |
+| `B_Action_ForceUnlockVehicle` | `bCancelOnTargetLost` | true |  |
+| `B_Action_FuelCan_Refuel` | `bCancelOnTargetLost` | true |  |
+| `B_Action_Mantling` | `HolsterHeight` | 115 |  |
+| `B_Action_MedKit_MultiUse` | `SimulatedReviveHealthTimer` | 50 | s |
+| `B_Action_MedKit_MultiUse` | `bCancelOnTargetLost` | false |  |
+| `B_Action_Melee` | `MeleeAction` | ((80, 60, 80), 25, 150) |  |
+| `B_Action_Resuscitator` | `bCancelOnTargetLost` | true |  |
+| `B_Action_Stance_Base` | `SubmersionTolerance` | 15 |  |
+| `B_Action_StimPen` | `DecayAmount_0` | 40 |  |
+| `B_Action_StimPen` | `ReviveHealth` | 5 |  |
+| `B_Action_ThrowExplosive` | `ThrowSettings` | (true, 1000, None, 1, 1, None, (0, 0, 0), (0, 0, 0), (0, 0, 0), 0.5, (None), (None), (None), (None)) |  |
+| `B_Action_VehicleRepairTool` | `bCancelOnTargetLost` | true |  |
+| `B_Action_Vehicle_Reload` | `ReloadSetupData` | (EWDVehicleWeaponReloadType::Segmented, false, 4, 0.2, 2.5, false, [] (empty), 2, 0.5, 0.5) |  |
+<!-- /action_tables -->
+
+- `B_Action_Melee.MeleeAction`: hit box 80 x 60 x 80, damage 25, trace distance 150 (cm). The weapon-specific melee data on the item can replace these.
+- `B_Action_Stance_Base.IsSubmergedInWater` (**Bytecode**): a character in water counts as submerged when `SubmersionTolerance` (15) plus the water immersion depth is greater than the eye height of the current stance.
+- `B_Action_Mantling`: a traversal whose `TraversalHeight` is greater than `HolsterHeight` (115 cm) switches on the high-mantle response set: while it runs, actions with the `Weapon` or `OneHanded` context are blocked and interrupted (`BP_HasConditionalResponses`, `BP_GatherConditionalResponses`). Shorter mantles do not.
+- `B_Action_Fall`: each simulation tick it reads `GetFallDistance`. Once the distance reaches `LongFallDistance` (80 cm), `bLongFall` is set and the long-fall response set applies: it interrupts ADS (and buffers it for 2 s, partial) and interrupts reload, chamber, slow walk, slow ladder climb and leaning, and blocks the three quick-slot change actions. On landing it applies `GE_Player_Landing` with the set-by-caller value `Action.Player.Fall` = the fall distance mapped from 0 to 1000 cm onto 1 to 10, clamped (`MapRangeClamped(FallDistance, 0, 1000, 1, 10)`, ubergraph offset 357). The effect's modifiers are in [GameplayEffect values](../pipelines/Wardogs_GameplayEffect_Values_v1.md).
+- `B_Action_UI_ChangeQuickSlot`: while it runs, the slot change is refused when the character carries `State.CharacterModifier.Climb`, and equip suppression applies to `Action.Player.Traversing.Climbing`.
+
+### 10.2 Chamber and reload buffering
+
+**`B_Action_ChamberWeapon`** (bytecode, functions `BP_CanActivate`, `BP_OnCancel`, `CheckInterrupt`, the ubergraph):
+
+1. It can start only when the magazine slot (`Item.Attachment.Magazine`) holds at least one `Item.Ammo` and the chamber slot (`Item.Attachment.Chamber`) is empty (`BP_CanActivate`, offsets 438 to 647).
+2. `bCanActivateDuringItemEquippingOnServer` is true: on the server it may start while the weapon is still being equipped.
+3. It plays the animation tag `Animation.Asset.Weapon.Chamber`. The animation notify named `Chamber` moves one round from the magazine's ammo slot to the chamber slot (a move operation of amount 1, ubergraph offsets 1124 to 1772). **SERVER**: that move is registered only when the code runs on a dedicated server and the pawn is not bot controlled (`IsDedicatedServer` and `IsBotControlled` tests at offsets 956 to 1110). Clients only set `bChamberComplete` and reset the reload state.
+4. The notify `RechamberComplete` sets `bRechamberComplete`. The action listens for the action events of `Action.Weapon.Fire` and `Action.Weapon.Reload`: a queued buffer (event type `BufferQueued`, and for reload also `BufferedActivation`) sets `bFireBufferQueued` or `bReloadQueued`, a cancellation or completion clears it. `CheckInterrupt` ends the action early (`Complete`, after `ResetReloadState`) as soon as `bRechamberComplete` is true and a fire or reload is queued, so the buffered shot or reload does not wait for the end of the animation.
+5. `BP_OnCancel` plays the audio event `Audio.Event.Weapon.Reload.Cancelled` for an external or interrupting cancel, and returns the response `Buffer` when the chamber was not yet complete (`None` otherwise, and on a rollback). That return value (`EBHGameplayActionCancellationResponse`: `None` or `Buffer`) is the Blueprint side of re-buffering: it asks the action system to queue the chamber action again. `DA_Action_Chamber` is the only definition with `bRebufferAction` set (section 2); the pairing is **Derived**, the flag's native reader is **not traced**.
+
+The same pattern appears elsewhere. `B_Action_Reload` keeps `bFireBufferQueued` and `bAdsBufferQueued`, so a shot or ADS request made during a reload is remembered and replayed. `B_Action_Sprint` and `B_Action_TacSprint` return `Buffer` from `BP_OnCancel` when the cancelling action is `Player.Traversing.Vaulting` and the cancellation is an interruption, so a sprint cut off by a vault is queued again. The bow pair checks the other action's buffer with `IsActionBufferedByTag`: `B_Action_BowDraw` refuses while `Action.Weapon.Bow.Reload` is buffered, and `B_Action_BowReload` acts on a buffered `Action.Weapon.Bow.Draw`.
+
+`B_Action_Reload.BP_CanActivate` is two checks: the reload is not blocked by a gamepad interaction (`WDInteractionStatics::IsGamepadInteractionBlockingReload`) and `WDInventoryStatics::CanPerformReloadWithContext` is true.
+
+### 10.3 `FullBuffer` and `PartialBuffer` in the data
+
+Every buffered-response entry in the 155 action definitions, grouped by type and time (**Data**, generated). The engine type is `EBHActionBufferType` (`FullBuffer` = 0, `PartialBuffer` = 1); each entry is a tag, a type and a time.
+
+<!-- action_tables buffers -->
+| Buffer type | Buffer time (s) | Entries | Actions that hold it |
+|---|---:|---:|---|
+| FullBuffer | -10 | 20 | `BowDraw`, `BowRelease`, `Chamber`, `Climbing_Cancel`, `Equip`, `Jump`, `Mantling`, `MeleeBash`, ... (12 actions) |
+| FullBuffer | 2 | 2 | `BowReload`, `Defibrillator_Reload` |
+| PartialBuffer | 0.5 | 4 | `Sprint`, `TacSprint` |
+| PartialBuffer | 0.6 | 1 | `Reload` |
+| PartialBuffer | 1 | 2 | `UI_ChangeQuickSlot` |
+| PartialBuffer | 2 | 11 | `BowDryFire`, `Fall`, `Jump`, `Reload`, `VehicleRepairTool_Reload` |
+| PartialBuffer | 3 | 9 | `Fall`, `Jump`, `MeleeBash`, `Vaulting` |
+| PartialBuffer | 5 | 7 | `Ladder`, `Swimming` |
+<!-- /action_tables -->
+
+What the table shows (**Derived**, no native proof): 20 of the 22 `FullBuffer` entries have a time of -10, a value that cannot be a duration, so the type seems to hold the request until the blocker ends instead of for a time. The other two `FullBuffer` entries (bow reload to bow draw, defibrillator reload to defibrillator use) are the paired actions that read each other's buffer. Every `PartialBuffer` entry has a positive time between 0.5 and 5 s. The native handling that separates the two types was not read.
 
 ## Other assets (round 73)
 
