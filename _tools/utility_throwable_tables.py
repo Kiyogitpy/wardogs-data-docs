@@ -309,6 +309,9 @@ def molotov_bp():
     roles = {"0x670": "scale of the patch offset from the impact point", "0x674": "scale of the patch offset from the impact point",
              "0x678": "patch count", "0x67C": "not matched to a use", "0x680": "scales a reduced count",
              "0x684": "copied into each spawned patch"}
+    # AWDMolotovFireField: read by the point-clustering function at RVA 0x86A0E20 (round 86, static read)
+    fire_roles = {"0x2D4": "horizontal merge radius of a fire cluster (cm)", "0x2D8": "vertical tolerance of a cluster (cm)",
+                  "0x2DC": "maximum number of clusters", "0x2D0": "no reader found in the field class code (not decoded)"}
     for asset, cls in (("B_Molotov", "AWDMolotovGrenade"), ("B_Molotov_FireField", "AWDMolotovFireField")):
         for e in bpd.topic_entries(TOPIC):
             if e["asset"] != asset or not e["property"].startswith("_aaa"):
@@ -317,7 +320,7 @@ def molotov_bp():
             out.append("| `%s` | `%s` | `+%s` | %s (%s) | %s | %s |" % (
                 asset, e["property"], "0x%X" % int(e["sdk_offset"], 16),
                 bpd.fmt(e["value"]), "Blueprint CDO" if e["resolved_from"] == "export" else "native, not set in the Blueprint",
-                bpd.fmt(nd) if nd is not None else "-", roles.get("0x%X" % int(e["sdk_offset"], 16), "not decoded") if cls == "AWDMolotovGrenade" else "not decoded"))
+                bpd.fmt(nd) if nd is not None else "-", (roles if cls == "AWDMolotovGrenade" else fire_roles).get("0x%X" % int(e["sdk_offset"], 16), "not decoded")))
     return "\n".join(out)
 
 

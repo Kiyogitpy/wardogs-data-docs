@@ -35,6 +35,9 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "data", "bp-defaults.json")
 DUMP_DIR = "E:/Reverse_Engineer/wardogs_analysis/round17_bp_defaults_20261022"
+# Round 86 dump: B_Action_*, placement conditions, Sniper Showdown components, spawner, Molotov Blueprints
+# (WdExtract list/dump, see docs/evidence/round86-bp.md). Searched after DUMP_DIR; the first file of a name wins.
+DUMP_DIR_R86 = "E:/r86/work/bp/dump1"
 SDK_DIR = "E:/Reverse_Engineer/wardogs_analysis/CppSDK/SDK"
 
 W = "Wardogs/"
@@ -198,6 +201,38 @@ for size, m in HAMMER_USE.items():
     S("buildables", "ID_%sHammer" % size, "DismantleRatePerHit", etype="WDItemExtensionData_BuildableDismantle")
 
 
+# ---- Round 86: action Blueprints, placement conditions, Sniper Showdown components ------------------------------
+# Hold times, cancel flags and thresholds that live on the B_Action_* Blueprint class defaults (the logic is in
+# docs/evidence/round86-bp.md). Topic "actions".
+for a, props in (
+    ("B_Action_ForceOpenDoor", ("ForceOpenDoorHoldTime", "ForceOpenGateHoldTime", "DurabilityCost", "bCancelOnTargetLost")),
+    ("B_Action_ForceUnlockVehicle", ("ForceOpenDoorHoldTime", "DurabilityCost", "bCancelOnTargetLost")),
+    ("B_Action_Melee", ("MeleeAction",)),
+    ("B_Action_Stance_Base", ("SubmersionTolerance",)),
+    ("B_Action_Mantling", ("HolsterHeight",)),
+    ("B_Action_StimPen", ("DecayAmount_0", "ReviveHealth")),
+    ("B_Action_MedKit_MultiUse", ("SimulatedReviveHealthTimer", "bCancelOnTargetLost")),
+    ("B_Action_Bandage_Use", ("bCancelOnTargetLost",)),
+    ("B_Action_Enox_Use", ("bCancelOnTargetLost",)),
+    ("B_Action_FuelCan_Refuel", ("bCancelOnTargetLost",)),
+    ("B_Action_Resuscitator", ("bCancelOnTargetLost",)),
+    ("B_Action_VehicleRepairTool", ("bCancelOnTargetLost",)),
+    ("B_Action_ChamberWeapon", ("bCanActivateDuringItemEquippingOnServer",)),
+    ("B_Action_Defibrillator", ("bCanActivateDuringItemEquippingOnServer",)),
+    ("B_Action_Vehicle_Reload", ("ReloadSetupData",)),
+    ("B_Action_ThrowExplosive", ("ThrowSettings",)),
+):
+    for p in props:
+        S("actions", a, p, unit="s" if "Time" in p or "Timer" in p else "")
+# Placement conditions (topic "placement"): the two condition classes shared by buildables, mines, Claymore and IED.
+S("placement", "B_SafeZonePlacementCondition", "MinDistanceToSafezone", unit="cm")
+S("placement", "B_WithinLadderBoundsPlacementCondition", "BlockRadius", unit="cm")
+# Sniper Showdown player components (topic "sniper_showdown").
+for p in ("ExplosionDamageValues", "DamageEntityData", "ExplodeGameplayCueTag"):
+    S("sniper_showdown", "B_SniperShowdown_ExplodeComponent", p)
+S("sniper_showdown", "B_SniperShowdown_OOBComponent", "ItemsToStartWith")
+
+
 # ---------------------------------------------------------------------------------------------------------------
 def load(path=OUT):
     with open(path, encoding="utf-8") as f:
@@ -230,21 +265,22 @@ def fmt(v):
 
 # ---------------------------------------------------------------------------------------------------------------
 class Index:
-    def __init__(self, root):
+    def __init__(self, roots):
         self.files = {}
-        for p in sorted(glob.glob(os.path.join(root, "**", "*.json"), recursive=True)):
-            stem = os.path.basename(p)[:-5]
-            if stem.startswith("_") or stem in ("manifest",):
-                continue
-            self.files.setdefault(stem, p)
         self._data = {}
         self.pkg = {}
-        for lf in glob.glob(os.path.join(root, "*.txt")):
-            if os.path.basename(lf).startswith("t") and os.path.basename(lf)[1:2].isdigit():
-                for line in open(lf, encoding="utf-8"):
-                    line = line.strip()
-                    if line:
-                        self.pkg.setdefault(line.rsplit("/", 1)[-1], line)
+        for root in ([roots] if isinstance(roots, str) else roots):
+            for p in sorted(glob.glob(os.path.join(root, "**", "*.json"), recursive=True)):
+                stem = os.path.basename(p)[:-5]
+                if stem.startswith("_") or stem in ("manifest",):
+                    continue
+                self.files.setdefault(stem, p)
+            for lf in glob.glob(os.path.join(root, "*.txt")):
+                if os.path.basename(lf).startswith("t") and os.path.basename(lf)[1:2].isdigit():
+                    for line in open(lf, encoding="utf-8"):
+                        line = line.strip()
+                        if line:
+                            self.pkg.setdefault(line.rsplit("/", 1)[-1], line)
 
     def data(self, stem):
         if stem not in self.files:
@@ -495,12 +531,13 @@ def build(dump):
 
 def main():
     args = sys.argv[1:]
-    dump = DUMP_DIR
+    dump = [DUMP_DIR, DUMP_DIR_R86]
     if "--dump" in args:
-        dump = args[args.index("--dump") + 1]
-    if not os.path.isdir(dump):
-        print("dump folder absent (%s): keeping the committed %s" % (dump, os.path.relpath(OUT, ROOT)))
-        return 0
+        dump = [args[i + 1] for i, a in enumerate(args) if a == "--dump"]
+    for d in dump:
+        if not os.path.isdir(d):
+            print("dump folder absent (%s): keeping the committed %s" % (d, os.path.relpath(OUT, ROOT)))
+            return 0
     entries, missing = build(dump)
     doc = {
         "meta": {
