@@ -19,6 +19,14 @@
   {
    "id": "props",
    "label": "Crates, aircraft and other physics assets"
+  },
+  {
+   "id": "doors",
+   "label": "Doors and windows"
+  },
+  {
+   "id": "projectiles",
+   "label": "Projectiles"
   }
  ],
  "objects": [
@@ -592,11 +600,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_AirRaidShelter",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_AirRaidShelter",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          7.383,
+          2.057,
+          7.295
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/airraidshelter.glb",
-   "notes": [],
-   "glb_bytes": 65964
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 66920
   },
   {
    "id": "airraidshelter-ceiling",
@@ -734,11 +772,71 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Temp_AirRaidShelterFloor",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_Temp_AirRaidShelterFloor",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          1.5,
+          2.272,
+          7.293
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.5,
+          2.272,
+          4.5
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.485,
+          2.272,
+          1.5
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.5,
+          2.272,
+          4.5
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.436,
+          2.272,
+          1.5
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/airraidshelter-floor.glb",
-   "notes": [],
-   "glb_bytes": 4232
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 7364
   },
   {
    "id": "barbedwire",
@@ -1464,11 +1562,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.4,
+          2.019,
+          1.378
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/door.glb",
-   "notes": [],
-   "glb_bytes": 20844
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 21844
   },
   {
    "id": "door-dooronly",
@@ -1530,11 +1658,39 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Doorway_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_Doorway_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          1.5,
+          1.93,
+          1.5
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/door-dooronly.glb",
-   "notes": [],
-   "glb_bytes": 3208
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 4148
   },
   {
    "id": "door-topsegment",
@@ -1580,11 +1736,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.4,
+          2.019,
+          1.378
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/door-topsegment.glb",
-   "notes": [],
-   "glb_bytes": 1848
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 2840
   },
   {
    "id": "bremmerwall",
@@ -1774,11 +1960,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.4,
+          2.019,
+          1.378
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/bremmerwall.glb",
-   "notes": [],
-   "glb_bytes": 8048
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 9044
   },
   {
    "id": "bunker",
@@ -2318,11 +2534,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Bunker",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Bunker",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          5.929,
+          1.948,
+          5.743
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/bunker.glb",
-   "notes": [],
-   "glb_bytes": 33732
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 34772
   },
   {
    "id": "bunker-floor",
@@ -2368,11 +2614,55 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Temp_BunkerFloor",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_Temp_BunkerFloor",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          3.0,
+          2.293,
+          5.968
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.461,
+          2.293,
+          1.5
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.493,
+          2.293,
+          3.0
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/bunker-floor.glb",
-   "notes": [],
-   "glb_bytes": 1700
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 3672
   },
   {
    "id": "bunker-roof",
@@ -3518,11 +3808,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_CrowsNest",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_CrowsNest",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 32,
+         "triangles": 34,
+         "extent_m": [
+          5.793,
+          1.948,
+          5.696
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/crowsnest.glb",
-   "notes": [],
-   "glb_bytes": 78512
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 79636
   },
   {
    "id": "crowsnest-basefloor",
@@ -3568,11 +3888,55 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Temp_CrowsNestBaseFloor",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_Temp_CrowsNestBaseFloor",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          1.616,
+          2.339,
+          1.497
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          3.0,
+          2.339,
+          2.972
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          1.566,
+          2.339,
+          1.475
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/crowsnest-basefloor.glb",
-   "notes": [],
-   "glb_bytes": 1740
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 3732
   },
   {
    "id": "crowsnest-firstfloor",
@@ -3785,35 +4149,136 @@
        "spawns_actor": null,
        "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
        "trace_flag": "default",
-       "profile": "BlockAll"
-      }
-     ]
-    },
-    {
-     "name": "Complete (Manticore)",
-     "progress": null,
-     "pieces": [
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": null,
+       "components": 1
+      },
       {
-       "mesh": "SM_Buildable_FOB_Stages_Manticore",
+       "mesh": "SM_FOB_InHand_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_FOB_InHand_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.485,
+          0.071,
+          0.608
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.485,
+          0.212,
+          0.608
+         ]
+        }
+       ],
+       "visible": true,
+       "component_profile": null,
+       "components": 1
+      },
+      {
+       "mesh": "SM_FOB_InHand_Decals_01a",
        "placements": 1,
        "spawns_actor": null,
        "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
        "trace_flag": "default",
-       "profile": "BlockAll"
-      }
-     ]
-    },
-    {
-     "name": "Complete (Valkyra)",
-     "progress": null,
-     "pieces": [
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": "WDSurfaces",
+       "components": 1
+      },
       {
-       "mesh": "SM_Buildable_FOB_Stages_Valkyra",
+       "mesh": "SM_Flag_01a",
        "placements": 1,
        "spawns_actor": null,
        "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
        "trace_flag": "default",
-       "profile": "BlockAll"
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": "WDSurfaces",
+       "components": 1
+      },
+      {
+       "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+       "placements": 13,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_PrefabCollision_Cube_1x1m_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          2.0,
+          2.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 13
+      },
+      {
+       "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_PrefabCollision_Cylinder_8Sides_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 28,
+         "extent_m": [
+          2.0,
+          2.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 1
+      },
+      {
+       "mesh": "SM_PrefabCollision_DirectionalRamp_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_PrefabCollision_DirectionalRamp_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.0,
+          1.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 1
       }
      ]
     },
@@ -3826,7 +4291,7 @@
        "placements": 1,
        "spawns_actor": null,
        "status": "ok",
-       "material": "S5|SM_FOB_Destroyed_Lonestar",
+       "material": "S3|SM_FOB_Destroyed_Lonestar",
        "profile": "BlockAll",
        "object_type": "ECC_WorldStatic",
        "trace_flag": "default",
@@ -3921,7 +4386,153 @@
           0.684
          ]
         }
-       ]
+       ],
+       "visible": false,
+       "component_profile": null,
+       "components": 1
+      }
+     ]
+    },
+    {
+     "name": "Complete (Manticore)",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Buildable_FOB_Stages_Manticore",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
+       "trace_flag": "default",
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": null,
+       "components": 1
+      },
+      {
+       "mesh": "SM_FOB_InHand_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S4|SM_FOB_InHand_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.485,
+          0.071,
+          0.608
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.485,
+          0.212,
+          0.608
+         ]
+        }
+       ],
+       "visible": true,
+       "component_profile": null,
+       "components": 1
+      },
+      {
+       "mesh": "SM_FOB_InHand_Decals_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
+       "trace_flag": "default",
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": "WDSurfaces",
+       "components": 1
+      },
+      {
+       "mesh": "SM_Flag_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
+       "trace_flag": "default",
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": "WDSurfaces",
+       "components": 1
+      },
+      {
+       "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+       "placements": 11,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S4|SM_PrefabCollision_Cube_1x1m_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          2.0,
+          2.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 11
+      },
+      {
+       "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S4|SM_PrefabCollision_Cylinder_8Sides_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 28,
+         "extent_m": [
+          2.0,
+          2.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 1
+      },
+      {
+       "mesh": "SM_PrefabCollision_Trapezium_1x1m_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S4|SM_PrefabCollision_Trapezium_1x1m_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.0,
+          0.3,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 1
       }
      ]
     },
@@ -3934,7 +4545,7 @@
        "placements": 1,
        "spawns_actor": null,
        "status": "ok",
-       "material": "S6|SM_FOB_Destroyed_Manticore",
+       "material": "S5|SM_FOB_Destroyed_Manticore",
        "profile": "BlockAll",
        "object_type": "ECC_WorldStatic",
        "trace_flag": "default",
@@ -4009,7 +4620,153 @@
           0.449
          ]
         }
-       ]
+       ],
+       "visible": false,
+       "component_profile": "Custom",
+       "components": 1
+      }
+     ]
+    },
+    {
+     "name": "Complete (Valkyra)",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Buildable_FOB_Stages_Valkyra",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
+       "trace_flag": "default",
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": null,
+       "components": 1
+      },
+      {
+       "mesh": "SM_FOB_InHand_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_FOB_InHand_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.485,
+          0.071,
+          0.608
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.485,
+          0.212,
+          0.608
+         ]
+        }
+       ],
+       "visible": true,
+       "component_profile": null,
+       "components": 1
+      },
+      {
+       "mesh": "SM_FOB_InHand_Decals_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
+       "trace_flag": "default",
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": "WDSurfaces",
+       "components": 1
+      },
+      {
+       "mesh": "SM_Flag_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "no simple collision primitives (any collision uses the render triangles, which are not published)",
+       "trace_flag": "default",
+       "profile": "BlockAll",
+       "visible": true,
+       "component_profile": "WDSurfaces",
+       "components": 1
+      },
+      {
+       "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+       "placements": 7,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_PrefabCollision_Cube_1x1m_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          2.0,
+          2.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 7
+      },
+      {
+       "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+       "placements": 2,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_PrefabCollision_Cylinder_8Sides_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 28,
+         "extent_m": [
+          2.0,
+          2.0,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 2
+      },
+      {
+       "mesh": "SM_PrefabCollision_Trapezium_1x1m_01a",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_PrefabCollision_Trapezium_1x1m_01a",
+       "profile": "WDTraversal",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.0,
+          0.3,
+          2.0
+         ]
+        }
+       ],
+       "visible": false,
+       "component_profile": "BlockAll",
+       "components": 1
       }
      ]
     },
@@ -4107,14 +4864,20 @@
           1.119
          ]
         }
-       ]
+       ],
+       "visible": false,
+       "component_profile": "Custom",
+       "components": 1
       }
      ]
     }
    ],
    "glb": "assets/models/objects/fob.glb",
-   "notes": [],
-   "glb_bytes": 18684
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data.",
+    "Placements are the Blueprint's component transforms (B_ForwardOperatingBase_<Faction>): the collision proxies are invisible BlockAll meshes; the faction stage mesh is the visible base and has no simple collision primitives."
+   ],
+   "glb_bytes": 36456
   },
   {
    "id": "hblock",
@@ -4264,11 +5027,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.4,
+          2.019,
+          1.378
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/hblock.glb",
-   "notes": [],
-   "glb_bytes": 5004
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 5996
   },
   {
    "id": "gate",
@@ -4672,11 +5465,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_HescoGate",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_HescoGate",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 20,
+         "extent_m": [
+          5.957,
+          1.315,
+          5.147
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/gate.glb",
-   "notes": [],
-   "glb_bytes": 17760
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 18252
   },
   {
    "id": "gate-left",
@@ -4701,12 +5524,41 @@
      "name": "Stage 5",
      "progress": 1.0,
      "pieces": []
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_HescoGate",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_HescoGate",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 20,
+         "extent_m": [
+          5.957,
+          1.315,
+          5.147
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
-   "glb": null,
+   "glb": "assets/models/objects/gate-left.glb",
    "notes": [
-    "No stage mesh of this definition has simple collision primitives to show."
-   ]
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 1836
   },
   {
    "id": "gate-ramp",
@@ -4754,11 +5606,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_HescoGate",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_HescoGate",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 20,
+         "extent_m": [
+          5.957,
+          1.315,
+          5.147
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/gate-ramp.glb",
-   "notes": [],
-   "glb_bytes": 1836
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 2320
   },
   {
    "id": "gate-right",
@@ -4783,12 +5665,41 @@
      "name": "Stage 5",
      "progress": 1.0,
      "pieces": []
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_HescoGate",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S2|SM_Foundation_HescoGate",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 16,
+         "triangles": 20,
+         "extent_m": [
+          5.957,
+          1.315,
+          5.147
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
-   "glb": null,
+   "glb": "assets/models/objects/gate-right.glb",
    "notes": [
-    "No stage mesh of this definition has simple collision primitives to show."
-   ]
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 1836
   },
   {
    "id": "hblock-quadwall",
@@ -4940,11 +5851,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_QuadWall",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_QuadWall",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          5.975,
+          2.002,
+          1.486
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/hblock-quadwall.glb",
-   "notes": [],
-   "glb_bytes": 9300
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 10296
   },
   {
    "id": "hotzonemagnet",
@@ -6378,11 +7319,51 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_HotzoneMagnet",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_HotzoneMagnet",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          3.466,
+          2.055,
+          3.732
+         ]
+        },
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.409,
+          2.055,
+          2.566
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/hotzonemagnet.glb",
-   "notes": [],
-   "glb_bytes": 73720
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 75428
   },
   {
    "id": "radio",
@@ -7382,11 +8363,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Radio",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Radio",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.857,
+          2.0,
+          1.396
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/radio.glb",
-   "notes": [],
-   "glb_bytes": 56636
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 57676
   },
   {
    "id": "refuelstation",
@@ -7800,11 +8811,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Mistral",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Mistral",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.629,
+          1.879,
+          2.703
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/refuelstation.glb",
-   "notes": [],
-   "glb_bytes": 15952
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 17000
   },
   {
    "id": "repairstation",
@@ -8359,11 +9400,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Mistral",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Mistral",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          2.629,
+          1.879,
+          2.703
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/repairstation.glb",
-   "notes": [],
-   "glb_bytes": 20504
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 21552
   },
   {
    "id": "shelter",
@@ -8697,11 +9768,63 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_SV_Shelter_FoundationPlaceholder",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_SV_Shelter_FoundationPlaceholder",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.4,
+          2.0,
+          0.4
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.4,
+          2.0,
+          0.4
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.4,
+          2.0,
+          0.4
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.4,
+          2.0,
+          0.4
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/shelter.glb",
-   "notes": [],
-   "glb_bytes": 19004
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 21496
   },
   {
    "id": "sandbagwall",
@@ -9011,11 +10134,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.4,
+          2.019,
+          1.378
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/tallhblock.glb",
-   "notes": [],
-   "glb_bytes": 5408
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 6392
   },
   {
    "id": "tanktrap",
@@ -9632,11 +10785,41 @@
        ]
       }
      ]
+    },
+    {
+     "name": "Foundation",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Foundation_Hesco",
+       "placements": 1,
+       "spawns_actor": null,
+       "status": "ok",
+       "material": "S6|SM_Foundation_Hesco",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.4,
+          2.019,
+          1.378
+         ]
+        }
+       ]
+      }
+     ]
     }
    ],
    "glb": "assets/models/objects/woodbase.glb",
-   "notes": [],
-   "glb_bytes": 19432
+   "notes": [
+    "The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code and not in the exported data."
+   ],
+   "glb_bytes": 20428
   },
   {
    "id": "at-mine",
@@ -10634,6 +11817,1861 @@
     }
    ],
    "glb_bytes": 6928
+  },
+  {
+   "id": "hblock-mesh",
+   "group": "props",
+   "name": "SM_HBlock (loose H-block mesh)",
+   "asset": "SM_HBlock",
+   "glb": "assets/models/objects/hblock-mesh.glb",
+   "facts": [],
+   "notes": [
+    "No data asset in the exports references this mesh (the H-block buildables use the SM_HESCO_* stage meshes). It is a single convex hull of about 1.5 m on each side with the BlockAll profile."
+   ],
+   "stages": [
+    {
+     "name": "Mesh",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_HBlock",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_HBlock",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          1.502,
+          1.502,
+          1.502
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1740
+  },
+  {
+   "id": "door-base-blueprint",
+   "group": "doors",
+   "name": "Door (base Blueprint)",
+   "asset": "D_Door",
+   "glb": "assets/models/objects/door-base-blueprint.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_Door"
+    ],
+    [
+     "Definition asset",
+     "D_Door"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_Door"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Wooden"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Vehicles can breach",
+     "no"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Door",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Door",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          2.677,
+          1.598
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1816
+  },
+  {
+   "id": "apartment-door",
+   "group": "doors",
+   "name": "Apartment door",
+   "asset": "D_InteractableDoor_Apartment",
+   "glb": "assets/models/objects/apartment-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_InteractableDoor_Apartment"
+    ],
+    [
+     "Definition asset",
+     "D_InteractableDoor_Apartment"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_Apartment_Door_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Apartment_Door_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Apartment_Door_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.061,
+          2.655,
+          1.6
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1888
+  },
+  {
+   "id": "apartment-balcony-door",
+   "group": "doors",
+   "name": "Apartment balcony door",
+   "asset": "D_InteractableDoor_ApartmentBalcony",
+   "glb": "assets/models/objects/apartment-balcony-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_InteractableDoor_ApartmentBalcony"
+    ],
+    [
+     "Definition asset",
+     "D_InteractableDoor_ApartmentBalcony"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_Apartment_BalconyDoor_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Wooden"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Apartment_BalconyDoor_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Apartment_BalconyDoor_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          2.68,
+          0.131
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          2.68,
+          0.131
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          0.141,
+          1.418
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 2932
+  },
+  {
+   "id": "apartment-entrance-door",
+   "group": "doors",
+   "name": "Apartment entrance door",
+   "asset": "D_InteractableDoor_ApartmentEntrance",
+   "glb": "assets/models/objects/apartment-entrance-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_InteractableDoor_ApartmentEntrance"
+    ],
+    [
+     "Definition asset",
+     "D_InteractableDoor_ApartmentEntrance"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_Apartment_EntranceDoor_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (native default)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Apartment_EntranceDoor_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Apartment_EntranceDoor_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.061,
+          2.655,
+          1.6
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1940
+  },
+  {
+   "id": "business-door",
+   "group": "doors",
+   "name": "Business door",
+   "asset": "D_InteractableDoor_Buisness",
+   "glb": "assets/models/objects/business-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_InteractableDoor_Buisness"
+    ],
+    [
+     "Definition asset",
+     "D_InteractableDoor_Buisness"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_DoorSolid_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_DoorSolid_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_DoorSolid_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.129,
+          2.7,
+          1.605
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1868
+  },
+  {
+   "id": "office-door",
+   "group": "doors",
+   "name": "Office door",
+   "asset": "D_InteractableDoor_Office",
+   "glb": "assets/models/objects/office-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_InteractableDoor_Office"
+    ],
+    [
+     "Definition asset",
+     "D_InteractableDoor_Office"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_DoorSolid_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_DoorSolid_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_DoorSolid_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.129,
+          2.7,
+          1.605
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1864
+  },
+  {
+   "id": "wood-and-pvc-door",
+   "group": "doors",
+   "name": "Wood and PVC door",
+   "asset": "D_InteractableDoor_WoodPVC",
+   "glb": "assets/models/objects/wood-and-pvc-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_InteractableDoor_WoodPVC"
+    ],
+    [
+     "Definition asset",
+     "D_InteractableDoor_WoodPVC"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_Apartment_BalconyDoor_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Wooden"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Apartment_BalconyDoor_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Apartment_BalconyDoor_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          2.68,
+          0.131
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          2.68,
+          0.131
+         ]
+        },
+        {
+         "type": "box",
+         "size_m": [
+          0.075,
+          0.141,
+          1.418
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 2916
+  },
+  {
+   "id": "commercial-door-left-leaf",
+   "group": "doors",
+   "name": "Commercial door, left leaf",
+   "asset": "D_Interactable_Commercial_Door_01a_L",
+   "glb": "assets/models/objects/commercial-door-left-leaf.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_Commercial_Door_01a_L"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_Commercial_Door_01a_L"
+    ],
+    [
+     "Mesh",
+     "SM_Commercial_Door_01a_L"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Commercial_Door_01a_L",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Commercial_Door_01a_L",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          1.604,
+          2.7,
+          0.091
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1828
+  },
+  {
+   "id": "commercial-door-right-leaf",
+   "group": "doors",
+   "name": "Commercial door, right leaf",
+   "asset": "D_Interactable_Commercial_Door_01a_R",
+   "glb": "assets/models/objects/commercial-door-right-leaf.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_Commercial_Door_01a_R"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_Commercial_Door_01a_R"
+    ],
+    [
+     "Mesh",
+     "SM_Commercial_Door_01a_R"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "not set (native default)"
+    ],
+    [
+     "Sprint push",
+     "not set (native default)"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 140 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Commercial_Door_01a_R",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Commercial_Door_01a_R",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          1.604,
+          2.7,
+          0.103
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1852
+  },
+  {
+   "id": "wooden-door",
+   "group": "doors",
+   "name": "Wooden door",
+   "asset": "D_Interactable_Door_Wood_01a",
+   "glb": "assets/models/objects/wooden-door.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_Door_Wood_01a"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_Door_Wood_01a"
+    ],
+    [
+     "Mesh",
+     "SM_ModKit04_DoorSolid_01b"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "250 cm (2.5 m)"
+    ],
+    [
+     "Sprint push",
+     "speed 26, angle 15"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 150 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_DoorSolid_01b",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_DoorSolid_01b",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.129,
+          2.7,
+          1.605
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1868
+  },
+  {
+   "id": "garage-door-left-leaf",
+   "group": "doors",
+   "name": "Garage door, left leaf",
+   "asset": "D_Interactable_GarageDoor_01a_Left",
+   "glb": "assets/models/objects/garage-door-left-leaf.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_GarageDoor_01a_Left"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_GarageDoor_01a_Left"
+    ],
+    [
+     "Mesh",
+     "SM_Garage_Door_01a_Unlocked_Left_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "not set (native default)"
+    ],
+    [
+     "Sprint push",
+     "not set (native default)"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 140 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Garage_Door_01a_Unlocked_Left_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Garage_Door_01a_Unlocked_Left_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.057,
+          2.517,
+          1.536
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1928
+  },
+  {
+   "id": "garage-door-right-leaf",
+   "group": "doors",
+   "name": "Garage door, right leaf",
+   "asset": "D_Interactable_GarageDoor_01a_Right",
+   "glb": "assets/models/objects/garage-door-right-leaf.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_GarageDoor_01a_Right"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_GarageDoor_01a_Right"
+    ],
+    [
+     "Mesh",
+     "SM_Garage_Door_01a_Unlocked_Right_01a"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "not set (native default)"
+    ],
+    [
+     "Sprint push",
+     "not set (native default)"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 140 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Garage_Door_01a_Unlocked_Right_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Garage_Door_01a_Unlocked_Right_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.057,
+          2.514,
+          1.536
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1932
+  },
+  {
+   "id": "hospital-door-left-leaf",
+   "group": "doors",
+   "name": "Hospital door, left leaf",
+   "asset": "D_Interactable_HospitalDoor_01a_Left",
+   "glb": "assets/models/objects/hospital-door-left-leaf.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_HospitalDoor_01a_Left"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_HospitalDoor_01a_Left"
+    ],
+    [
+     "Mesh",
+     "SM_Door_01a_L"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "not set (native default)"
+    ],
+    [
+     "Sprint push",
+     "not set (native default)"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 140 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Door_01a_L",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Door_01a_L",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          0.095,
+          2.673,
+          1.669
+         ]
+        },
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          0.092,
+          0.129,
+          0.413
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 2464
+  },
+  {
+   "id": "hospital-door-right-leaf",
+   "group": "doors",
+   "name": "Hospital door, right leaf",
+   "asset": "D_Interactable_HospitalDoor_01a_Right",
+   "glb": "assets/models/objects/hospital-door-right-leaf.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Interactable_HospitalDoor_01a_Right"
+    ],
+    [
+     "Definition asset",
+     "D_Interactable_HospitalDoor_01a_Right"
+    ],
+    [
+     "Mesh",
+     "SM_Door_01a_R"
+    ],
+    [
+     "Frame height",
+     "268 cm (2.68 m)"
+    ],
+    [
+     "Frame thickness",
+     "12 cm (0.12 m)"
+    ],
+    [
+     "Leaves in the definition",
+     "1 (Single)"
+    ],
+    [
+     "Sound material",
+     "Audio.Asset.Door.Metal"
+    ],
+    [
+     "Explosive breach, largest distance",
+     "not set (native default)"
+    ],
+    [
+     "Sprint push",
+     "not set (native default)"
+    ]
+   ],
+   "notes": [
+    "No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building (class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan tool spends durability per breach (see the equipment data). A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not in the exports.",
+    "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box (not drawn) sits at Y -80, Z 140 cm."
+   ],
+   "stages": [
+    {
+     "name": "Closed",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Door_01a_R",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Door_01a_R",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "UseSimpleAsComplex",
+       "shapes": [
+        {
+         "type": "convex",
+         "vertices": 8,
+         "triangles": 12,
+         "extent_m": [
+          0.095,
+          2.673,
+          1.669
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1844
+  },
+  {
+   "id": "smashable-window-master-template",
+   "group": "doors",
+   "name": "Smashable window (master template)",
+   "asset": "B_SmashableWindowMaster",
+   "glb": "assets/models/objects/smashable-window-master-template.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableWindowMaster"
+    ],
+    [
+     "Glass mesh",
+     "SM_BrokenWindow01_base"
+    ],
+    [
+     "Break threshold, airborne",
+     "0.8"
+    ],
+    [
+     "Break threshold, grounded",
+     "6"
+    ],
+    [
+     "Glass shards in the break effect",
+     "250"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces (4 components) are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_BrokenWindow01_base",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_BrokenWindow01_base",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.2,
+          0.2,
+          0.2
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1784
+  },
+  {
+   "id": "smashable-door-window",
+   "group": "doors",
+   "name": "Smashable door window",
+   "asset": "B_SmashableDoorWindow",
+   "glb": "assets/models/objects/smashable-door-window.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableDoorWindow"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Apartment_BalconyDoorGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.012,
+          2.499,
+          1.568
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1940
+  },
+  {
+   "id": "smashable-apartment-balcony-door-glass",
+   "group": "doors",
+   "name": "Smashable apartment balcony door glass",
+   "asset": "B_SmashableApartmentBalconyDoor",
+   "glb": "assets/models/objects/smashable-apartment-balcony-door-glass.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableApartmentBalconyDoor"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Apartment_BalconyDoorGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.012,
+          2.499,
+          1.568
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1968
+  },
+  {
+   "id": "smashable-apartment-balcony-window",
+   "group": "doors",
+   "name": "Smashable apartment balcony window",
+   "asset": "B_SmashableApartmentBalconyWindow",
+   "glb": "assets/models/objects/smashable-apartment-balcony-window.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableApartmentBalconyWindow"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Single_BalconyGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Single_BalconyGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Single_BalconyGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.012,
+          1.665,
+          1.091
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1912
+  },
+  {
+   "id": "smashable-apartment-double-window",
+   "group": "doors",
+   "name": "Smashable apartment double window",
+   "asset": "B_SmashableApartmentDoubleWindow",
+   "glb": "assets/models/objects/smashable-apartment-double-window.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableApartmentDoubleWindow"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Double_WindowGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is NoCollision. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Double_WindowGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Double_WindowGlass_01a",
+       "profile": "NoCollision",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.014,
+          1.97,
+          1.214
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1892
+  },
+  {
+   "id": "smashable-apartment-window",
+   "group": "doors",
+   "name": "Smashable apartment window",
+   "asset": "B_SmashableApartmentSingleWindow",
+   "glb": "assets/models/objects/smashable-apartment-window.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableApartmentSingleWindow"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Single_WindowGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Single_WindowGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Single_WindowGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.014,
+          1.97,
+          1.327
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1928
+  },
+  {
+   "id": "smashable-hospital-window",
+   "group": "doors",
+   "name": "Smashable hospital window",
+   "asset": "B_SmashableHospitalSingleWindow",
+   "glb": "assets/models/objects/smashable-hospital-window.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableHospitalSingleWindow"
+    ],
+    [
+     "Glass mesh",
+     "SM_Hospital_Corporate_WindowGlass_03a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces (4 components) are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_Hospital_Corporate_WindowGlass_03a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_Hospital_Corporate_WindowGlass_03a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.029,
+          3.234,
+          2.82
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1900
+  },
+  {
+   "id": "smashable-hospital-window-variant-03",
+   "group": "doors",
+   "name": "Smashable hospital window (variant 03)",
+   "asset": "B_SmashableHospitalSingleWindow_03",
+   "glb": "assets/models/objects/smashable-hospital-window-variant-03.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableHospitalSingleWindow_03"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Single_WindowGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces (4 components) are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Single_WindowGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Single_WindowGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.014,
+          1.97,
+          1.327
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1940
+  },
+  {
+   "id": "smashable-hospital-window-variant-04",
+   "group": "doors",
+   "name": "Smashable hospital window (variant 04)",
+   "asset": "B_SmashableHospitalSingleWindow_04",
+   "glb": "assets/models/objects/smashable-hospital-window-variant-04.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableHospitalSingleWindow_04"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Single_WindowGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces (4 components) are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Single_WindowGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Single_WindowGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.014,
+          1.97,
+          1.327
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1940
+  },
+  {
+   "id": "smashable-large-window",
+   "group": "doors",
+   "name": "Smashable large window",
+   "asset": "B_SmashableLargeWindow",
+   "glb": "assets/models/objects/smashable-large-window.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableLargeWindow"
+    ],
+    [
+     "Glass mesh",
+     "SM_ModKit04_Large_Window_Glass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_ModKit04_Large_Window_Glass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_ModKit04_Large_Window_Glass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.012,
+          3.304,
+          1.802
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1828
+  },
+  {
+   "id": "smashable-tower-window-3-m",
+   "group": "doors",
+   "name": "Smashable tower window (3 m)",
+   "asset": "B_SmashableWindow_Tower_01a",
+   "glb": "assets/models/objects/smashable-tower-window-3-m.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableWindow_Tower_01a"
+    ],
+    [
+     "Glass mesh",
+     "SM_TowerWindowGlass_01a"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_TowerWindowGlass_01a",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_TowerWindowGlass_01a",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.07,
+          2.218,
+          3.006
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1884
+  },
+  {
+   "id": "smashable-tower-window-6-m",
+   "group": "doors",
+   "name": "Smashable tower window (6 m)",
+   "asset": "B_SmashableWindow_Tower_01b",
+   "glb": "assets/models/objects/smashable-tower-window-6-m.glb",
+   "facts": [
+    [
+     "Blueprint",
+     "B_SmashableWindow_Tower_01b"
+    ],
+    [
+     "Glass mesh",
+     "SM_TowerWindowGlass_01b"
+    ],
+    [
+     "Break thresholds",
+     "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"
+    ]
+   ],
+   "notes": [
+    "A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets movement break thresholds, the only numbers stored.",
+    "The glass mesh's collision profile is BlockAll. Broken-remains pieces are effects and are not drawn."
+   ],
+   "stages": [
+    {
+     "name": "Intact",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "SM_TowerWindowGlass_01b",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|SM_TowerWindowGlass_01b",
+       "profile": "BlockAll",
+       "object_type": "ECC_WorldStatic",
+       "trace_flag": "default",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.07,
+          2.218,
+          6.086
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1884
+  },
+  {
+   "id": "drone-projectile",
+   "group": "projectiles",
+   "name": "Drone projectile (STN_05)",
+   "asset": "BP_Drone_Projectile",
+   "glb": "assets/models/objects/drone-projectile.glb",
+   "max_health": 50.0,
+   "damage_row": null,
+   "blast": {
+    "BaseDamage": 120.0,
+    "ExplosiveRadius": 1000.0,
+    "MinimumExplosiveDamage": 15.0,
+    "EffectiveExplosiveRadius": 500.0,
+    "ExplosiveDamageFallOff": 0.45,
+    "ExplosiveBluntDamage": 100.0,
+    "ImpulseValues": {
+     "bApplyImpulse": true,
+     "ImpulseScale": 2500.0,
+     "ImpulseZScale": 3500.0
+    }
+   },
+   "blast_source": "STN_05 DA_Drone_ProjectileData (damage tag Meta.Damage.Explosive.Drone)",
+   "facts": [
+    [
+     "Blueprint",
+     "BP_Drone_Projectile"
+    ],
+    [
+     "Collision",
+     "root box component, 93.2862 x 92 x 37.5432 cm"
+    ],
+    [
+     "Projectile data",
+     "DA_Drone_ProjectileData (arming delay 0.1 s, lifetime 500 s)"
+    ]
+   ],
+   "notes": [
+    "The health is the Blueprint's WDVitality component (base and max 50). The Blueprint has no damage-entity component, so no per-caliber damage row applies to the drone itself. The explosion shown is its warhead (DA_Drone_ProjectileData).",
+    "Only the root box is a collision component with a size in the Blueprint. The skeletal mesh SK_Drone_01 (scale 0.7, under the NetworkSmoothingComponent), the rotor, trail and first-person meshes are visual; the VFX meshes set the NoCollision profile."
+   ],
+   "stages": [
+    {
+     "name": "In flight",
+     "progress": null,
+     "pieces": [
+      {
+       "mesh": "Box Component",
+       "placements": 1,
+       "status": "ok",
+       "material": "S1|Box Component",
+       "shapes": [
+        {
+         "type": "box",
+         "size_m": [
+          0.92,
+          0.375,
+          0.933
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "glb_bytes": 1696
   }
  ]
 }

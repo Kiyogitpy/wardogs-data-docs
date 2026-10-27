@@ -2,14 +2,14 @@
 title: "Object Collision Viewer"
 redirect_from: ["/object-viewer.html", "/object-viewer"]
 parent: "Damage & Combat Systems"
-description: "Collision shapes of buildables, fortifications, placed explosives and crates, with their health and damage data"
+description: "Collision shapes of buildables, fortifications, the FOB, doors, smashable windows, the drone projectile, placed explosives and crates, with their health and damage data"
 ---
 
 # Object Collision Viewer
 
 *Data: [`assets/data/object-collision.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/object-collision.json), built by `python _tools/object_models.py`*
 
-The collision shapes of the things players build, place and drop, drawn as they are cooked in the game's files: boxes, spheres, capsules and convex hulls. Pick an object, then a build stage, and click a piece to see its shapes, collision profile and trace setting. The panel's summary shows the object's max health, its damage row, how bullets, melee, grenades, rockets, C4 and IEDs change the damage it takes, and, for placed explosives, the blast values.
+The collision shapes of the things players build, place, open, break and drop, drawn as they are cooked in the game's files: boxes, spheres, capsules and convex hulls. Pick an object, then a build stage, and click a piece to see its shapes, collision profile and trace setting. The panel's summary shows the object's max health, its damage row, how bullets, melee, grenades, rockets, C4 and IEDs change the damage it takes, and, for placed explosives, the blast values.
 
 Vehicles and stationary weapons are in the [Vehicle Hitbox Viewer](vehicle-viewer.md); soldiers are in the [Infantry Hitbox Viewer](infantry-viewer.md). Health and damage rows: [Buildables §4](../game-features/Wardogs_Buildables_v1.md#4-health-and-damage-rules); blast values: [Explosives](../game-features/Wardogs_Explosives_v1.md).
 
@@ -51,7 +51,11 @@ Vehicles and stationary weapons are in the [Vehicle Hitbox Viewer](vehicle-viewe
 
 - **Collision shapes only.** A buildable's stage meshes have no separate collision mesh; their collision is a set of simple shapes stored with the mesh. Those shapes are what the viewer draws, in the mesh's own frame, placed where the build stage places the mesh. No render geometry, texture or image is used.
 - **One stage at a time.** Each build stage swaps in its own meshes, so the stage selector shows that stage's shapes. A stage's decorative meshes (planks, crates, cables) are listed too; those without simple shapes are marked "no geometry".
-- **Missing geometry.** A mesh with no simple shapes would collide on its render triangles, which are not published here. The FOB's finished-stage meshes are in that group; its foundation and its destroyed-state hulls are shown. The FOB's meshes are placed at the origin, because their relative placement is not in the exported data.
+- **Missing geometry.** A mesh with no simple shapes would collide on its render triangles, which are not published here. Such a mesh is listed as "no geometry" (for example the FOB's visible stage mesh, which stands on invisible collision proxies, and the fuel canister).
+- **The FOB** is placed from its faction Blueprints (`B_ForwardOperatingBase_Lonestar`, `_Manticore`, `_Valkyra`): the finished base is a ground slab, pillars, a ramp and a flag mast built from invisible `BlockAll` boxes, cylinders and ramps, placed by the Blueprint's component transforms; the destroyed base is a separate set of convex hulls. The foundation stage is the definition's foundation mesh.
+- **Foundations.** Every buildable that spawns a foundation has a "Foundation" stage with that mesh, drawn at the buildable's origin. The exported data does not hold the foundation's placement; where the buildable has stage meshes, the foundation's footprint overlaps theirs and its centre sits about 1 m below the origin (checked for the 23 other buildables: 21 overlap; the two gate leaves have no stage meshes).
+- **Doors and windows.** The interactable doors (one mesh per leaf, in its closed position) and the smashable windows (the glass pane) are shown with their Blueprint facts: frame size, sound material, explosive breach distance, and for windows the break thresholds. Neither has a health value or a damage-table row in the exported data.
+- **Projectiles.** The STN_05 drone projectile collides as one box (its root component); the panel shows its health of 50 and the warhead's blast values.
 - **Props and aircraft** show the bodies of a physics asset on the skeletal mesh's reference pose, the way the infantry model is built.
 - **Placed explosives** show the item's static mesh. The Claymore's box is also its trace collision; the other meshes use the default trace setting.
 - **Other characters.** The one non-player combat mesh in the files, SK_Western_Mid, uses the player's physics asset (PA_TPCharacter_Simplified), so the [infantry model](infantry-viewer.md) covers it; the vendor, pilot and Rusalka NPC meshes name no physics asset.
