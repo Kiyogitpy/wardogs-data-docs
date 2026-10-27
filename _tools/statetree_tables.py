@@ -128,11 +128,7 @@ def main():
         return "<!-- statetree_tables %s -->\n%s\n<!-- /statetree_tables -->" % (m.group(1), MODES[m.group(1)](trees))
     new = BLOCK.sub(sub, text)
     if "--check" in args:   # line endings do not count: git may check the page out with CRLF
-        same = new.replace("
-", "
-") == text.replace("
-", "
-")
+        same = new.replace("\r\n", "\n") == text.replace("\r\n", "\n")
         print("up to date" if same else "DIFFERS")
         return 0 if same else 1
     if "--write" in args and new != text:
