@@ -37,7 +37,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_EntityData_Ext_Emotes` | 6 | `GF/Emotes/Season01_EmotesData/Data` | [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md), [Wardogs_GameFeatures_Emotes_v2](../game-features/Wardogs_GameFeatures_Emotes_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| `DT_EntityData_Ext_Emotes` | 6 | `GF/Emotes/Season01_EmotesData/Data` | [emotes](../_wiki/progression-and-economy/emotes.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md), [Wardogs_GameFeatures_Emotes_v2](../game-features/Wardogs_GameFeatures_Emotes_v2.md) (+1) |
 | `DT_EntityData_Ext_FGRP_006` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_006/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_EntityData_Ext_FGRP_007` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_007/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_EntityData_Ext_FGRP_008` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_008/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
@@ -53,7 +53,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_EntityData_Ext_FGRP_018` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_018/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_EntityData_Ext_FGRP_019` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_019/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_EntityData_Ext_FGRP_020` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_020/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
-| `DT_EntityData_Ext_Flares` | 1 | `GF/Vehicles/Flares/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| `DT_EntityData_Ext_Flares` | 1 | `GF/Vehicles/Flares/Data` | [round39-vehicles-explosives](../docs/evidence/round39-vehicles-explosives.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_EntityData_Ext_LMG_02` | 2 | `GF/Weapons/LMG/LMG_02/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_EntityData_Ext_MAGZ_002` | 1 | `GF/Weapons/Attachments/Magazines/MAGZ_002/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_EntityData_Ext_MAGZ_003` | 1 | `GF/Weapons/Attachments/Magazines/MAGZ_003/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
@@ -198,7 +198,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_EntityData_UI_Garage` | 2 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_EntityData_UI_GarageMarket_SupplyCrates` | 8 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_EntityData_UI_GoldExchange` | 1 | `UI/Features/Frontend/GoldExchange/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
-| `DT_EntityData_UI_Items` | 296 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| `DT_EntityData_UI_Items` | 296 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round40-vehicles-explosives](../docs/evidence/round40-vehicles-explosives.md), [Wardogs_AttachmentsPlatforms_v1](../game-features/Wardogs_AttachmentsPlatforms_v1.md) (+2) |
 | `DT_EntityData_UI_Keycards` | 6 | `GF/Items/Keycard/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_EntityData_UI_Misc` | 1 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_EntityData_UI_TNK01` | 12 | `GF/Vehicles/TNK_01/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -256,27 +256,27 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | `DT_ChallengeRewards_EndOfMatch` | 5 | `Meta/Challenges` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_ChallengeRewards_SessionEvents_Buildables` | 47 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Rewards_v2](../game-features/Wardogs_GameFeatures_Rewards_v2.md) (+1) |
+| `DT_ChallengeRewards_SessionEvents_Buildables` | 47 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](../docs/evidence/round38-building-data.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md) (+3) |
 | `DT_ChallengeRewards_SessionEvents_Crowbar` | 1 | `GF/Items/Crowbar/Rewards` | [items-equipment](../season-2-changes/items-equipment.md) |
-| `DT_ChallengeRewards_SessionEvents_HotZoneMagnet` | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
-| `DT_ChallengeRewards_SessionEvents_Shared` | 298 | `Meta/Challenges` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+4) |
-| `DT_ChallengeRewards_SessionEvents_Spotting` | 130 | `GF/Spotting/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md), [player-movement](../season-2-changes/player-movement.md) |
-| `DT_ChallengeRewards_TeamOffence` | 2 | `GF/TeamOffence/Challenges` | [game-modes-maps](../season-2-changes/game-modes-maps.md) |
+| `DT_ChallengeRewards_SessionEvents_HotZoneMagnet` | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](../docs/evidence/round38-building-data.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md) (+1) |
+| `DT_ChallengeRewards_SessionEvents_Shared` | 298 | `Meta/Challenges` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+11) |
+| `DT_ChallengeRewards_SessionEvents_Spotting` | 130 | `GF/Spotting/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [round61-open-questions](../docs/evidence/round61-open-questions.md) (+3) |
+| `DT_ChallengeRewards_TeamOffence` | 2 | `GF/TeamOffence/Challenges` | [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [round43-econ-buildables](../docs/evidence/round43-econ-buildables.md), [round88-nb](../docs/evidence/round88-nb.md) (+1) |
 
 #### BHUserSettingDataTableRow
 
-8 table(s), 390 rows, 4 named in docs. Expanded on [Settings and Inputs](../content/Wardogs_SettingsAndInputs_v1.md).
+8 table(s), 390 rows, 6 named in docs. Expanded on [Settings and Inputs](../content/Wardogs_SettingsAndInputs_v1.md).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | `DT_Itemsmith_Flair_Settings` | 2 | `GF/Itemsmith/UI/Flair/Data` | [Wardogs_GameFeatures_Itemsmith_v2](../game-features/Wardogs_GameFeatures_Itemsmith_v2.md) |
-| `DT_Settings_Accessibility` | 30 | `GameMechanics/Settings/Accessibility` | not named |
+| `DT_Settings_Accessibility` | 30 | `GameMechanics/Settings/Accessibility` | [round84-census-v4](../docs/evidence/round84-census-v4.md) |
 | `DT_Settings_Audio` | 22 | `GameMechanics/Settings/Audio` | not named |
-| `DT_Settings_Controls` | 121 | `GameMechanics/Settings/Controls` | [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| `DT_Settings_Controls` | 121 | `GameMechanics/Settings/Controls` | [round84-census-v4](../docs/evidence/round84-census-v4.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
 | `DT_Settings_Extra` | 1 | `GameMechanics/Settings/Extras` | not named |
-| `DT_Settings_General` | 25 | `GameMechanics/Settings/General` | [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| `DT_Settings_General` | 25 | `GameMechanics/Settings/General` | [round40-modes-ai-other](../docs/evidence/round40-modes-ai-other.md), [round58-open-questions](../docs/evidence/round58-open-questions.md), [round84-census-v4](../docs/evidence/round84-census-v4.md) (+1) |
 | `DT_Settings_Keybindings` | 146 | `GameMechanics/Settings/Keybindings` | [data-tables-tags](../season-2-changes/data-tables-tags.md) |
-| `DT_Settings_Video` | 43 | `GameMechanics/Settings/Video` | not named |
+| `DT_Settings_Video` | 43 | `GameMechanics/Settings/Video` | [round84-census-v4](../docs/evidence/round84-census-v4.md) |
 
 #### WDUIGameplayTagToTextTableRow
 
@@ -309,9 +309,9 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_RewardLookup_SessionEvent_BuildableDestroyed` | 36 | `GF/Rewards/BuildableRewards/Rewards/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Rewards_v2](../game-features/Wardogs_GameFeatures_Rewards_v2.md) |
+| `DT_RewardLookup_SessionEvent_BuildableDestroyed` | 36 | `GF/Rewards/BuildableRewards/Rewards/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
 | `DT_RewardLookup_SessionEvent_DestroySupplyCrate` | 10 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
-| `DT_RewardLookup_SessionEvent_DestroyVehicle` | 34 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
+| `DT_RewardLookup_SessionEvent_DestroyVehicle` | 34 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round53-fixed-wing](../docs/evidence/round53-fixed-wing.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
 | `DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist` | 28 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
 | `DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist` | 28 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
 | `DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist` | 28 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
@@ -344,7 +344,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_Ext_VendorData_MusicTape_09` | 1 | `GF/Items/MusicTapes/MusicTape_09/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_Ext_VendorData_MusicTape_11` | 1 | `GF/Items/MusicTapes/MusicTape_11/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
 | `DT_GarageMarket_SupplyCrates` | 8 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
-| `DT_GearMarket` | 13 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| `DT_GearMarket` | 13 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round43-econ-buildables](../docs/evidence/round43-econ-buildables.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) (+1) |
 | `DT_UtilityMarket` | 3 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_VehicleMarket` | 0 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) (+1) |
 | `DT_VehicleMarket_ROT_02` | 1 | `GF/Vehicles/ROT_02/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -393,8 +393,8 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_VendorData_Ext_FGRP_018` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_018/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_VendorData_Ext_FGRP_019` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_019/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_VendorData_Ext_FGRP_020` | 1 | `GF/Weapons/Attachments/Foregrips/FGRP_020/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
-| `DT_VendorData_Ext_Flares` | 1 | `GF/Vehicles/Flares/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
-| `DT_VendorData_Ext_FuelCanister` | 1 | `GF/Items/FuelCanister/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| `DT_VendorData_Ext_Flares` | 1 | `GF/Vehicles/Flares/Data` | [round39-vehicles-explosives](../docs/evidence/round39-vehicles-explosives.md), [round45-b](../docs/evidence/round45-b.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| `DT_VendorData_Ext_FuelCanister` | 1 | `GF/Items/FuelCanister/Data` | [round59-open-questions](../docs/evidence/round59-open-questions.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_VendorData_Ext_IED` | 1 | `GF/Items/IED/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | `DT_VendorData_Ext_MAGZ_002` | 1 | `GF/Weapons/Attachments/Magazines/MAGZ_002/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_VendorData_Ext_MAGZ_003` | 1 | `GF/Weapons/Attachments/Magazines/MAGZ_003/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
@@ -475,7 +475,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_VendorData_Ext_MUZL_072` | 1 | `GF/Weapons/Attachments/Muzzle/MUZL_072/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_VendorData_Ext_MedKit` | 1 | `GF/Items/MedKit/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
 | `DT_VendorData_Ext_Molotov` | 1 | `GF/Items/Molotov/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
-| `DT_VendorData_Ext_Parachutes` | 2 | `GF/Parachutes/Content` | [Wardogs_GameFeatures_Parachutes_v2](../game-features/Wardogs_GameFeatures_Parachutes_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [player-movement](../season-2-changes/player-movement.md) |
+| `DT_VendorData_Ext_Parachutes` | 2 | `GF/Parachutes/Content` | [round40-medical-movement](../docs/evidence/round40-medical-movement.md), [Wardogs_GameFeatures_Parachutes_v2](../game-features/Wardogs_GameFeatures_Parachutes_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) (+1) |
 | `DT_VendorData_Ext_Pistol_02` | 1 | `GF/Weapons/Pistols/Pistol_02/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_VendorData_Ext_RangeFinder` | 3 | `GF/Items/RangeFinder/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
 | `DT_VendorData_Ext_SGHT_009` | 1 | `GF/Weapons/Attachments/Sights/SGHT_009/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
@@ -507,9 +507,9 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_VendorData_Weapon_WEPN_031` | 1 | `GF/Weapons/Platforms/WEPN_031/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_VendorData_Weapon_WEPN_034` | 1 | `GF/Weapons/Platforms/WEPN_034/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_VendorData_Weapon_WEPN_037` | 1 | `GF/Weapons/Platforms/WEPN_037/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
-| `DT_WeaponMarket` | 37 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| `DT_WeaponMarket` | 37 | `GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round39-vehicles-explosives](../docs/evidence/round39-vehicles-explosives.md), [Wardogs_AttachmentsPlatforms_v1](../game-features/Wardogs_AttachmentsPlatforms_v1.md) (+3) |
 | `DT_WeaponVendor_EXT_AR_03` | 1 | `GF/Weapons/Platforms/WEPN_003/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
-| `DT_WeaponVendor_EXT_AR_04` | 1 | `GF/Weapons/Platforms/WEPN_004/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
+| `DT_WeaponVendor_EXT_AR_04` | 1 | `GF/Weapons/Platforms/WEPN_004/Data` | [round61-open-questions](../docs/evidence/round61-open-questions.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_WeaponVendor_EXT_LMG_01` | 1 | `GF/Weapons/Platforms/WEPN_009/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | `DT_WeaponVendor_EXT_Launcher_01` | 1 | `GF/Weapons/Platforms/WEPN_012/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | `DT_WeaponVendor_EXT_Launcher_02` | 1 | `GF/Weapons/Platforms/WEPN_013/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
@@ -553,7 +553,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ChallengesFeedActions` | 68 | `UI/Features/HUD/RewardFeed/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) |
+| `DT_ChallengesFeedActions` | 68 | `UI/Features/HUD/RewardFeed/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round57-open-questions](../docs/evidence/round57-open-questions.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) |
 | `DT_ChallengesFeedActions_Building` | 12 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_GameFeatures_Rewards_v2](../game-features/Wardogs_GameFeatures_Rewards_v2.md) |
 | `DT_ChallengesFeedActions_Crowbar` | 1 | `GF/Items/Crowbar/Rewards` | [items-equipment](../season-2-changes/items-equipment.md) |
 | `DT_ChallengesFeedActions_Spotting` | 3 | `GF/Spotting/Data/UI/RewardFeed` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
@@ -570,7 +570,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_CharacterSkillNodes_Data` | 131 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_Medical_v1](../game-features/Wardogs_Medical_v1.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_CharacterSkillNodes_Data` | 131 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round36-econ](../docs/evidence/round36-econ.md), [round39-medical-movement](../docs/evidence/round39-medical-movement.md) (+3) |
 
 #### WDCustomRewardTableRow
 
@@ -578,20 +578,20 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_Reward_Cash_BuildableBuilt` | 11 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Buildable` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| `DT_Reward_Cash_BuildableBuilt` | 11 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Buildable` | [round38-building-data](../docs/evidence/round38-building-data.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | `DT_Reward_Cash_BuildablePlaced` | 11 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Buildable` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | `DT_Reward_Cash_BuildablePlacedInFOB` | 11 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Buildable` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | `DT_Reward_Cash_ControlZoneReward` | 12 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 | `DT_Reward_Cash_DeployableDestroyed` | 25 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Deployable` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | `DT_Reward_Cash_DeployedSupplyCrate` | 6 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Deployable` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
-| `DT_Reward_Cash_EndGameFactionReward` | 4 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
+| `DT_Reward_Cash_EndGameFactionReward` | 4 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [round48](../docs/evidence/round48.md) |
 | `DT_Reward_Cash_Heal` | 8 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Heal` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
-| `DT_Reward_Cash_HotZoneMagnet` | 8 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/HotZoneMagnet` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
+| `DT_Reward_Cash_HotZoneMagnet` | 8 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/HotZoneMagnet` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md), [round66-map-actors](../docs/evidence/round66-map-actors.md) (+2) |
 | `DT_Reward_Cash_PlayerKill` | 3 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [index](../index.md) |
 | `DT_Reward_Cash_Refuel` | 1 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 | `DT_Reward_Cash_Repair` | 4 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 | `DT_Reward_Cash_Revive` | 6 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Revive` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
-| `DT_Reward_Cash_Spotting` | 4 | `GF/Spotting/Data/Rewards` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
+| `DT_Reward_Cash_Spotting` | 4 | `GF/Spotting/Data/Rewards` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [round48](../docs/evidence/round48.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
 | `DT_Reward_Cash_VehicleDestroyed` | 11 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
 | `DT_Reward_Cash_VehicleTransport` | 3 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 
@@ -641,15 +641,15 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_Challenges_SessionEvents_Buildables` | 11 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Rewards_v2](../game-features/Wardogs_GameFeatures_Rewards_v2.md) |
-| `DT_Challenges_SessionEvents_Crowbar` | 1 | `GF/Items/Crowbar/Rewards` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
-| `DT_Challenges_SessionEvents_KOTH` | 60 | `GF/Challenges_KOTH/Content` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
-| `DT_Challenges_SessionEvents_KOTH_HotZoneMagnet` | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
-| `DT_Challenges_SessionEvents_KOTH_Spotting` | 2 | `GF/Spotting/Data/Challenges` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md), [player-movement](../season-2-changes/player-movement.md) |
-| `DT_Challenges_SessionEvents_Shared` | 10 | `Meta/Challenges` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
-| `DT_Challenges_SessionEvents_TeamOffence` | 2 | `GF/TeamOffence/Challenges` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
-| `DT_PassiveMissionChallenges` | 15 | `Meta/Missions` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
-| `DT_WagerChallenges` | 4 | `Meta/Wagers` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_Challenges_SessionEvents_Buildables` | 11 | `GF/Rewards/BuildableRewards/Rewards` | [buildable-challenges](../_wiki/progression-and-economy/buildable-challenges.md), [round42-econ-buildables](../docs/evidence/round42-econ-buildables.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
+| `DT_Challenges_SessionEvents_Crowbar` | 1 | `GF/Items/Crowbar/Rewards` | [crowbar-challenges](../_wiki/progression-and-economy/crowbar-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
+| `DT_Challenges_SessionEvents_KOTH` | 60 | `GF/Challenges_KOTH/Content` | [king-of-the-hill-challenges](../_wiki/progression-and-economy/king-of-the-hill-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
+| `DT_Challenges_SessionEvents_KOTH_HotZoneMagnet` | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [hot-zone-magnet-challenges](../_wiki/progression-and-economy/hot-zone-magnet-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
+| `DT_Challenges_SessionEvents_KOTH_Spotting` | 2 | `GF/Spotting/Data/Challenges` | [spotting-challenges](../_wiki/progression-and-economy/spotting-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) (+1) |
+| `DT_Challenges_SessionEvents_Shared` | 10 | `Meta/Challenges` | [achievements](../_wiki/progression-and-economy/achievements.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+3) |
+| `DT_Challenges_SessionEvents_TeamOffence` | 2 | `GF/TeamOffence/Challenges` | [team-offence-challenges](../_wiki/progression-and-economy/team-offence-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
+| `DT_PassiveMissionChallenges` | 15 | `Meta/Missions` | [passive-missions](../_wiki/progression-and-economy/passive-missions.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+4) |
+| `DT_WagerChallenges` | 4 | `Meta/Wagers` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
 
 #### WDUIInteractionContextDataTableRow
 
@@ -671,7 +671,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_Rewards` | 78 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md) |
+| `DT_Rewards` | 78 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md) (+1) |
 | `DT_Rewards_Spotting` | 3 | `GF/Spotting/Data` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
 
 #### WDVoxBase
@@ -684,7 +684,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDUITrackerDataTableRow
 
-20 table(s), 75 rows, 14 named in docs. UI widget table, not expanded.
+20 table(s), 75 rows, 15 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
@@ -695,7 +695,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_TrackerData_Map_HotPotato` | 1 | `GF/HotPotato/Data/UI` | not named |
 | `DT_TrackerData_Map_HotZoneMagnet` | 2 | `GF/WorldFeatures/HotZoneMagnet/Data/UI/MapTrackers` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
 | `DT_TrackerData_Map_Scenario` | 2 | `GF/PvE/Scenarios/BaseScenario/UI/Trackers` | [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) |
-| `DT_TrackerData_Map_SmokeGrenade` | 1 | `GF/Items/SmokeGrenade/UI/Trackers/MapTrackers/Data` | not named |
+| `DT_TrackerData_Map_SmokeGrenade` | 1 | `GF/Items/SmokeGrenade/UI/Trackers/MapTrackers/Data` | [round39-vehicles-explosives](../docs/evidence/round39-vehicles-explosives.md) |
 | `DT_TrackerData_Map_SniperShowdown` | 3 | `GF/Experiences/SniperShowdown/UI` | [Wardogs_GameFeatures_Experiences_v2](../game-features/Wardogs_GameFeatures_Experiences_v2.md) |
 | `DT_TrackerData_Map_Spotting` | 1 | `GF/Spotting/Data/UI/Tracker/Map/Data` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
 | `DT_TrackerData_Minimap` | 17 | `UI/Features/HUD/Minimap/Widgets/Trackers/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_GameFeatures_Deathmatch_v2](../game-features/Wardogs_GameFeatures_Deathmatch_v2.md), [Wardogs_GameFeatures_ShootingRange_v2](../game-features/Wardogs_GameFeatures_ShootingRange_v2.md) |
@@ -736,16 +736,16 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_DriverSkills` | 6 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_InfantrySkills` | 17 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_MedicSkills` | 4 | `Meta/CharacterSkills` | [Wardogs_Medical_v1](../game-features/Wardogs_Medical_v1.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_PilotSkills` | 6 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_ReconSkills` | 13 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_DriverSkills` | 6 | `Meta/CharacterSkills` | [driver](../_wiki/progression-and-economy/driver.md), [round42-vehicles-explosives](../docs/evidence/round42-vehicles-explosives.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_InfantrySkills` | 17 | `Meta/CharacterSkills` | [assault](../_wiki/progression-and-economy/assault.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_MedicSkills` | 4 | `Meta/CharacterSkills` | [medic](../_wiki/progression-and-economy/medic.md), [round39-medical-movement](../docs/evidence/round39-medical-movement.md), [Wardogs_Medical_v1](../game-features/Wardogs_Medical_v1.md) (+1) |
+| `DT_PilotSkills` | 6 | `Meta/CharacterSkills` | [pilot](../_wiki/progression-and-economy/pilot.md), [round42-vehicles-explosives](../docs/evidence/round42-vehicles-explosives.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_ReconSkills` | 13 | `Meta/CharacterSkills` | [recon](../_wiki/progression-and-economy/recon.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Skills_C4` | 1 | `GF/Items/C4/Data/Skills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Skills_Lockpicking` | 1 | `GF/Vehicles/Lockpicking/Data/Skills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md), [Wardogs_GameplayEffectsPipeline_v1](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md) |
 | `DT_Skills_PrototypeMaskedScopes` | 1 | `GF/Items/PrototypeMaskedScopes/Data/Skills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Skills_Spotting` | 2 | `GF/Spotting/Data/Skills` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_SupportSkills` | 11 | `Meta/CharacterSkills` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_SupportSkills` | 11 | `Meta/CharacterSkills` | [support](../_wiki/progression-and-economy/support.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 
 #### WDDamageableEntityTableRow
 
@@ -753,11 +753,11 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_GlobalDamage_ArmorData` | 4 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round25-armor-coverage](../docs/evidence/round25-armor-coverage.md), [round25-verification](../docs/evidence/round25-verification.md) (+4) |
-| `DT_GlobalDamage_BuildableData` | 20 | `GF/Items/Buildables/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_Items_v2](../game-features/Wardogs_GameFeatures_Items_v2.md), [items-equipment](../season-2-changes/items-equipment.md) |
-| `DT_GlobalDamage_InfantryData` | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [damage](../docs/evidence/damage.md) (+7) |
+| `DT_GlobalDamage_ArmorData` | 4 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round25-armor-coverage](../docs/evidence/round25-armor-coverage.md), [round25-verification](../docs/evidence/round25-verification.md) (+8) |
+| `DT_GlobalDamage_BuildableData` | 20 | `GF/Items/Buildables/Data` | [round55-s2-infantry-damage](../docs/evidence/round55-s2-infantry-damage.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_Items_v2](../game-features/Wardogs_GameFeatures_Items_v2.md) (+1) |
+| `DT_GlobalDamage_InfantryData` | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [README](../README.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md) (+12) |
 | `DT_GlobalDamage_SupplyCrate` | 5 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) |
-| `DT_GlobalDamage_VehicleData` | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_Explosives_v1](../game-features/Wardogs_Explosives_v1.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) (+3) |
+| `DT_GlobalDamage_VehicleData` | 1 | `GameMechanics/DamageSystem/DamageDataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [round52-explosives-vs-vehicles](../docs/evidence/round52-explosives-vs-vehicles.md), [Wardogs_Explosives_v1](../game-features/Wardogs_Explosives_v1.md) (+5) |
 | `DT_GlobalDamage_VehicleData_ROT_02` | 1 | `GF/Vehicles/ROT_02/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [vehicles](../season-2-changes/vehicles.md) |
 | `DT_GlobalDamage_VehicleData_ROT_03` | 1 | `GF/Vehicles/ROT_03/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | `DT_GlobalDamage_VehicleData_ROT_04` | 1 | `GF/Vehicles/ROT_04/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -786,8 +786,8 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_LootableDataTable` | 52 | `GF/WorldFeatures/Lootable/Data` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
-| `DT_LootableDataTable_VIPEscort_01` | 2 | `GF/PvE/Scenarios/VIPEscort_01/Content` | [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
+| `DT_LootableDataTable` | 52 | `GF/WorldFeatures/Lootable/Data` | [round84-census-v4](../docs/evidence/round84-census-v4.md), [round85-loot](../docs/evidence/round85-loot.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) (+1) |
+| `DT_LootableDataTable_VIPEscort_01` | 2 | `GF/PvE/Scenarios/VIPEscort_01/Content` | [round36-ai](../docs/evidence/round36-ai.md), [round59-open-questions](../docs/evidence/round59-open-questions.md), [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) (+2) |
 
 #### WDWagerConditionDefinition
 
@@ -795,7 +795,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_WagerConditions` | 50 | `Meta/Wagers` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_WagerConditions` | 50 | `Meta/Wagers` | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+2) |
 
 #### WDResourceRewardTableRow
 
@@ -803,7 +803,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_CashRewards` | 49 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md) |
+| `DT_CashRewards` | 49 | `GameMechanics/Gamemode/Data` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md) (+3) |
 
 #### WDUIRadialWheelSlotTypeTableRow
 
@@ -864,16 +864,16 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_Bobblehead_Faction_Cosmetics` | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_Faction/Data` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_Bobblehead_Faction_Cosmetics` | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_Faction/Data` | [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Bobblehead_Grenade_Cosmetics` | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_Grenade/Data` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Bobblehead_HeavyHelmet_Cosmetics` | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_HeavyHelmet/Data` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Bobblehead_Warpup_Cosmetics` | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_Warpup/Data` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Cosmetics_Debug` | 0 | `Meta/Cosmetics` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_Cosmetics_FactionLogo` | 3 | `GF/Skins/FactionLogo_SkinsData/Data` | [Wardogs_GameFeatures_Skins_v2](../game-features/Wardogs_GameFeatures_Skins_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_Cosmetics_Season01_Emotes` | 3 | `GF/Emotes/Season01_EmotesData/Data` | [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md), [Wardogs_TreeRewardTrack_PlatformMastery_v1](../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md), [Wardogs_GameFeatures_Emotes_v2](../game-features/Wardogs_GameFeatures_Emotes_v2.md) (+1) |
-| `DT_Cosmetics_Season01_Skins` | 17 | `GF/Skins/Season01_SkinsData/Data` | [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md), [Wardogs_TreeRewardTrack_PlatformMastery_v1](../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md), [Wardogs_GameFeatures_Skins_v2](../game-features/Wardogs_GameFeatures_Skins_v2.md) (+1) |
-| `DT_Cosmetics_Season02_Skins` | 8 | `GF/Skins/Season02_SkinsData/Data` | [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md), [Wardogs_GameFeatures_Skins_v2](../game-features/Wardogs_GameFeatures_Skins_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) (+1) |
-| `DT_Cosmetics_Taxi` | 1 | `GF/Taxi_SkinsData/Data` | [Wardogs_GameFeatures_Taxi_SkinsData_v2](../game-features/Wardogs_GameFeatures_Taxi_SkinsData_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_Cosmetics_FactionLogo` | 3 | `GF/Skins/FactionLogo_SkinsData/Data` | [weapon-skins](../_wiki/progression-and-economy/weapon-skins.md), [Wardogs_GameFeatures_Skins_v2](../game-features/Wardogs_GameFeatures_Skins_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_Cosmetics_Season01_Emotes` | 3 | `GF/Emotes/Season01_EmotesData/Data` | [emotes](../_wiki/progression-and-economy/emotes.md), [season-01-cosmetics](../_wiki/progression-and-economy/season-01-cosmetics.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md) (+3) |
+| `DT_Cosmetics_Season01_Skins` | 17 | `GF/Skins/Season01_SkinsData/Data` | [season-01-cosmetics](../_wiki/progression-and-economy/season-01-cosmetics.md), [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [weapon-skins](../_wiki/progression-and-economy/weapon-skins.md) (+4) |
+| `DT_Cosmetics_Season02_Skins` | 8 | `GF/Skins/Season02_SkinsData/Data` | [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [weapon-skins](../_wiki/progression-and-economy/weapon-skins.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md) (+4) |
+| `DT_Cosmetics_Taxi` | 1 | `GF/Taxi_SkinsData/Data` | [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [Wardogs_GameFeatures_Taxi_SkinsData_v2](../game-features/Wardogs_GameFeatures_Taxi_SkinsData_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 
 #### RichImageRow
 
@@ -905,7 +905,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_VehiclePropList` | 29 | `Environment/Blueprints/VehiclePropTooling` | [Wardogs_Environment_v2](../content/Wardogs_Environment_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [SDK](../docs/gap_resolution/SDK.md) |
+| `DT_VehiclePropList` | 29 | `Environment/Blueprints/VehiclePropTooling` | [Wardogs_Environment_v2](../content/Wardogs_Environment_v2.md), [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [round89-env](../docs/evidence/round89-env.md) (+1) |
 
 #### WDEmoteData
 
@@ -913,7 +913,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_EmoteData` | 27 | `GameMechanics/Actions/Character` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemActions_v1](../content/Wardogs_ItemActions_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
+| `DT_EmoteData` | 27 | `GameMechanics/Actions/Character` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemActions_v1](../content/Wardogs_ItemActions_v1.md), [round45-b](../docs/evidence/round45-b.md) (+1) |
 
 #### WDGoldMarketItemTableRow
 
@@ -921,7 +921,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_GoldMarket` | 27 | `Meta/Collection` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_GoldMarket` | 27 | `Meta/Collection` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md), [round53-fixed-wing](../docs/evidence/round53-fixed-wing.md) (+2) |
 
 #### WDBoneDamageModifierData
 
@@ -929,7 +929,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_InfantryData_BoneDamageModifiers` | 20 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](../docs/evidence/damage.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+2) |
+| `DT_InfantryData_BoneDamageModifiers` | 20 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](../docs/evidence/damage.md), [round39-weapons](../docs/evidence/round39-weapons.md) (+4) |
 
 #### WDDeathmatchWeaponData
 
@@ -953,7 +953,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ExperienceServerBrowserTags` | 19 | `UI/Data/ServerBrowser` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| `DT_ExperienceServerBrowserTags` | 19 | `UI/Data/ServerBrowser` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round61-open-questions](../docs/evidence/round61-open-questions.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
 
 #### WDUIMaterialTrackerDataTableRow
 
@@ -980,7 +980,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_Challenges_Curves_PlayerKill` | 3 | `Meta/Challenges/RewardData/CurveTables` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | `DT_Challenges_Curves_PurchaseFromSupplyCrate` | 3 | `Meta/Challenges/RewardData/CurveTables` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
 | `DT_Challenges_Curves_VehicleAirborne` | 1 | `Meta/Challenges/RewardData/CurveTables` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| `DT_Meta_RewardScalingCurves` | 3 | `Meta/Rewards` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_Meta_RewardScalingCurves` | 3 | `Meta/Rewards` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round85-loot](../docs/evidence/round85-loot.md) (+1) |
 
 #### WDUIPopupTypeDataTableRow
 
@@ -1008,7 +1008,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ScopeReticleTypes` | 17 | `UI/Features/HUD/ScopeReticle/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| `DT_ScopeReticleTypes` | 17 | `UI/Features/HUD/ScopeReticle/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round84-procedural-reticles](../docs/evidence/round84-procedural-reticles.md) |
 
 #### RichTextStyleRow
 
@@ -1029,15 +1029,15 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDPostProcessEffect
 
-5 table(s), 15 rows, 4 named in docs. UI widget table, not expanded.
+5 table(s), 15 rows, 5 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | `DT_AlternativeCriticalCamera` | 1 | `GF/AlternativeCriticalCamera/Content` | [CROSS_REFERENCE](../docs/CROSS_REFERENCE.md), [CROSS_REF](../docs/gap_resolution/CROSS_REF.md), [Wardogs_GameFeatures_AlternativeCriticalCamera_v2](../game-features/Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md) |
-| `DT_PostProcessEffects` | 11 | `VFX/Postprocess` | [Wardogs_VFX_v2](../content/Wardogs_VFX_v2.md) |
+| `DT_PostProcessEffects` | 11 | `VFX/Postprocess` | [Wardogs_VFX_v2](../content/Wardogs_VFX_v2.md), [round39-medical-movement](../docs/evidence/round39-medical-movement.md), [round84-census-v4](../docs/evidence/round84-census-v4.md) |
 | `DT_PostProcessEffects_FOB` | 1 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | `DT_PostProcessEffects_Molotov` | 1 | `GF/Items/Molotov/Data` | [Wardogs_FireAndUtility_v1](../game-features/Wardogs_FireAndUtility_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
-| `DT_PostProcessEffects_StimPen` | 1 | `GF/Items/StimPen/Data` | not named |
+| `DT_PostProcessEffects_StimPen` | 1 | `GF/Items/StimPen/Data` | [round84-census-v4](../docs/evidence/round84-census-v4.md) |
 
 #### WDUIUserSettingDisplayDataTableRow
 
@@ -1061,7 +1061,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_InfantryData_ArchetypeCaliberModifiers` | 12 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [GOBJECTS_DAMAGE_ANALYSIS](../docs/GOBJECTS_DAMAGE_ANALYSIS.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+2) |
+| `DT_InfantryData_ArchetypeCaliberModifiers` | 12 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [GOBJECTS_DAMAGE_ANALYSIS](../docs/GOBJECTS_DAMAGE_ANALYSIS.md), [round55-s2-infantry-damage](../docs/evidence/round55-s2-infantry-damage.md) (+3) |
 
 #### WDAssistanceRequestData
 
@@ -1089,11 +1089,11 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDUIDeploymentBoardRejectionTableRow
 
-2 table(s), 12 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wduideploymentboardrejectiontablerow).
+2 table(s), 12 rows, 2 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wduideploymentboardrejectiontablerow).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_DeploymentRejectionReasons` | 11 | `UI/Features/DeploymentBoard/Data` | not named |
+| `DT_DeploymentRejectionReasons` | 11 | `UI/Features/DeploymentBoard/Data` | [round75-open-questions](../docs/evidence/round75-open-questions.md) |
 | `DT_DeploymentRejectionReasons_ControlZone` | 1 | `GF/ControlZone/UI/DeploymentBoard` | [Wardogs_GameFeatures_ControlZone_v2](../game-features/Wardogs_GameFeatures_ControlZone_v2.md) |
 
 #### WDUIServerBrowserMapTextureTableRow
@@ -1134,22 +1134,22 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ServerTestingProfiles` | 11 | `Tests/LoadTests/Data` | [Wardogs_Tests_v2](../content/Wardogs_Tests_v2.md) |
+| `DT_ServerTestingProfiles` | 11 | `Tests/LoadTests/Data` | [Wardogs_Tests_v2](../content/Wardogs_Tests_v2.md), [round40-modes-ai-other](../docs/evidence/round40-modes-ai-other.md), [round41-modes-ai-other](../docs/evidence/round41-modes-ai-other.md) |
 
 #### WDUIVehicleCrosshairDataTableRow
 
-8 table(s), 11 rows, 2 named in docs. UI widget table, not expanded.
+8 table(s), 11 rows, 8 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_VehicleCrosshair_ROT02` | 2 | `GF/Vehicles/ROT_02/DataTables` | not named |
-| `DT_VehicleCrosshair_STN01` | 0 | `GF/Vehicles/STN_01/DataTables` | not named |
-| `DT_VehicleCrosshair_STN06` | 0 | `GF/Vehicles/STN_06/DataTables` | [vehicles](../season-2-changes/vehicles.md) |
-| `DT_VehicleCrosshair_STN_02` | 1 | `GF/Vehicles/STN_02/DataTables` | not named |
-| `DT_VehicleCrosshair_STN_03` | 1 | `GF/Vehicles/STN_03/DataTable` | not named |
-| `DT_VehicleCrosshair_STN_05` | 1 | `GF/Vehicles/STN_05/DataTable` | not named |
-| `DT_VehicleCrosshair_TNK01` | 4 | `GF/Vehicles/TNK_01/DataTables` | not named |
-| `DT_VehicleCrosshair_TNK04` | 2 | `GF/Vehicles/TNK_04/DataTables` | [vehicles](../season-2-changes/vehicles.md) |
+| `DT_VehicleCrosshair_ROT02` | 2 | `GF/Vehicles/ROT_02/DataTables` | [round84-census-v4](../docs/evidence/round84-census-v4.md), [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
+| `DT_VehicleCrosshair_STN01` | 0 | `GF/Vehicles/STN_01/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
+| `DT_VehicleCrosshair_STN06` | 0 | `GF/Vehicles/STN_06/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md), [vehicles](../season-2-changes/vehicles.md) |
+| `DT_VehicleCrosshair_STN_02` | 1 | `GF/Vehicles/STN_02/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
+| `DT_VehicleCrosshair_STN_03` | 1 | `GF/Vehicles/STN_03/DataTable` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
+| `DT_VehicleCrosshair_STN_05` | 1 | `GF/Vehicles/STN_05/DataTable` | [round61-open-questions](../docs/evidence/round61-open-questions.md), [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
+| `DT_VehicleCrosshair_TNK01` | 4 | `GF/Vehicles/TNK_01/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
+| `DT_VehicleCrosshair_TNK04` | 2 | `GF/Vehicles/TNK_04/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 
 #### WDVehicleSeatDamageReductionData
 
@@ -1157,7 +1157,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_InfantryData_VehicleSeatDamageReduction` | 11 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](../docs/evidence/damage.md), [Wardogs_GameFeatures_Ammo_v2](../game-features/Wardogs_GameFeatures_Ammo_v2.md) (+2) |
+| `DT_InfantryData_VehicleSeatDamageReduction` | 11 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](../docs/evidence/damage.md), [round53-fixed-wing](../docs/evidence/round53-fixed-wing.md) (+3) |
 
 #### WDAchievementDefinition
 
@@ -1165,7 +1165,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_Achievements` | 10 | `Meta/Achievements` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_Achievements` | 10 | `Meta/Achievements` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
 
 #### WDReticleAssetInfo
 
@@ -1190,7 +1190,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_AssistCashRewards` | 9 | `GameMechanics/Gamemode/Data` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md) |
+| `DT_AssistCashRewards` | 9 | `GameMechanics/Gamemode/Data` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round48](../docs/evidence/round48.md), [round68-boundaries](../docs/evidence/round68-boundaries.md) |
 
 #### WDResourceRewardModifierTableRow
 
@@ -1198,7 +1198,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_CashRewardModifiers` | 9 | `GameMechanics/Gamemode/Data` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md) |
+| `DT_CashRewardModifiers` | 9 | `GameMechanics/Gamemode/Data` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round48](../docs/evidence/round48.md) |
 
 #### WDMetaTreeTableRow
 
@@ -1206,7 +1206,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_MetaTree_Roles` | 7 | `Meta/CharacterSkills` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_MetaTree_Roles` | 7 | `Meta/CharacterSkills` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_TreeRewardTrack_PlatformMastery_v1](../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md), [LOADOUT_BUILDER_HANDOFF](../docs/LOADOUT_BUILDER_HANDOFF.md) (+6) |
 
 #### WDUILevelTableRow
 
@@ -1222,7 +1222,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_InfantryData_AmmoTypeEffectivenessPen` | 6 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_DamagePipeline_v2](../pipelines/Wardogs_DamagePipeline_v2.md) |
+| `DT_InfantryData_AmmoTypeEffectivenessPen` | 6 | `GameMechanics/DamageSystem/DamageDataTables/DT_Helpers` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round42-modes-ai-other](../docs/evidence/round42-modes-ai-other.md), [Wardogs_DamagePipeline_v2](../pipelines/Wardogs_DamagePipeline_v2.md) |
 
 #### WDFactoryRecipe
 
@@ -1246,17 +1246,17 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_RoleMasteryDefinitions` | 6 | `Meta/Levels/Roles` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_RoleMasteryDefinitions` | 6 | `Meta/Levels/Roles` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_TreeRewardTrack_PlatformMastery_v1](../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md) (+3) |
 
 #### WDPlacementUiTextRecord
 
-3 table(s), 6 rows, 2 named in docs. UI widget table, not expanded.
+3 table(s), 6 rows, 3 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | `DT_ControlZone_PlacementDisplayTexts` | 1 | `GF/ControlZone/UI` | [Wardogs_GameFeatures_ControlZone_v2](../game-features/Wardogs_GameFeatures_ControlZone_v2.md) |
 | `DT_ForwardOperatingBase_PlacementDisplayTexts` | 2 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
-| `DT_PlacementDisplayTexts` | 3 | `UI/Features/HUD/Placement/Data` | not named |
+| `DT_PlacementDisplayTexts` | 3 | `UI/Features/HUD/Placement/Data` | [round68-boundaries](../docs/evidence/round68-boundaries.md) |
 
 #### FToolFont
 
@@ -1280,7 +1280,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_AmmoModifiers` | 5 | `GameMechanics/DamageSystem` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_DamagePipeline_v2](../pipelines/Wardogs_DamagePipeline_v2.md) |
+| `DT_AmmoModifiers` | 5 | `GameMechanics/DamageSystem` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round39-weapons](../docs/evidence/round39-weapons.md), [round84-census-v4](../docs/evidence/round84-census-v4.md) (+3) |
 
 #### WDPlayerIdentityRow
 
@@ -1304,7 +1304,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ClientTestingProfiles` | 4 | `Tests/LoadTests/Orchestrators/RandomScatter/Data` | [Wardogs_Tests_v2](../content/Wardogs_Tests_v2.md) |
+| `DT_ClientTestingProfiles` | 4 | `Tests/LoadTests/Orchestrators/RandomScatter/Data` | [Wardogs_Tests_v2](../content/Wardogs_Tests_v2.md), [round40-modes-ai-other](../docs/evidence/round40-modes-ai-other.md), [round41-modes-ai-other](../docs/evidence/round41-modes-ai-other.md) |
 
 #### WDDevMenuMapsDataTableRow
 
@@ -1322,7 +1322,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_FactionData` | 4 | `GameMechanics/Gamemode/Data` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md) |
+| `DT_FactionData` | 4 | `GameMechanics/Gamemode/Data` | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round84-census-v4](../docs/evidence/round84-census-v4.md) |
 
 #### WDPingTypeData
 
@@ -1365,7 +1365,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_WagerActions` | 4 | `Meta/Wagers` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_WagerActions` | 4 | `Meta/Wagers` | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+3) |
 
 #### WDClientHotConfigTableRow
 
@@ -1373,7 +1373,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ClientHotConfigs` | 3 | `Meta/ClientHotConfigs` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_ClientHotConfigs` | 3 | `Meta/ClientHotConfigs` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
 
 #### WDControlZoneContributionModifierTableRow
 
@@ -1406,7 +1406,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_CurrenciesDefinitions` | 2 | `Meta/CurrencyDefinitions` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| `DT_CurrenciesDefinitions` | 2 | `Meta/CurrencyDefinitions` | [currencies](../_wiki/progression-and-economy/currencies.md), [Wardogs_Maps_v2](../content/Wardogs_Maps_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+5) |
 
 #### WDUIIndicatorTableRow
 
@@ -1454,7 +1454,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_ExchangeDefinitions` | 1 | `Meta/ExchangeDefinitions` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md) |
+| `DT_ExchangeDefinitions` | 1 | `Meta/ExchangeDefinitions` | [currencies](../_wiki/progression-and-economy/currencies.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+1) |
 
 #### WDMetaSeasonDefinitionTableRow
 
@@ -1462,7 +1462,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_SeasonDefinitions` | 1 | `Meta` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md), [Wardogs_TreeRewardTrack_PlatformMastery_v1](../content/Wardogs_TreeRewardTrack_PlatformMastery_v1.md) |
+| `DT_SeasonDefinitions` | 1 | `Meta` | [season-01-cosmetics](../_wiki/progression-and-economy/season-01-cosmetics.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md) (+2) |
 
 #### WDMockInvestmentItemTableRow
 
@@ -1494,7 +1494,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_WagerObjectiveCatalog` | 1 | `Meta/Wagers` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_WagerObjectiveCatalog` | 1 | `Meta/Wagers` | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+2) |
 
 #### WDWagerPricingDefinition
 
@@ -1502,5 +1502,5 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| `DT_WagerPricing` | 1 | `Meta/Wagers` | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| `DT_WagerPricing` | 1 | `Meta/Wagers` | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](../docs/evidence/round36-econ.md) (+1) |
 <!-- /datatable_catalog -->

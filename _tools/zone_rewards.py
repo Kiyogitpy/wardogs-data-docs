@@ -170,7 +170,7 @@ def cash_labels(tables):
         lines = open(os.path.join(ROOT, doc), encoding="utf-8").read().splitlines()
         for i, line in enumerate(lines):
             if line.startswith("#"):
-                m = re.search(r"(DT_Reward_Cash_\w+)\.json", line)
+                m = re.search(r"(DT_Reward_Cash_\w+)(?:\.json)?", line)
                 table = m.group(1) if m else None
                 continue
             if not (table in tables and line.startswith("|") and i + 1 < len(lines)

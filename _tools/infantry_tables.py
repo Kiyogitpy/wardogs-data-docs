@@ -869,7 +869,13 @@ def build():
     if mdl:
         mdl["mapped_without_body"] = [b for b in bones if b not in bodies]
         mdl["bodies_without_mapping"] = [b for b in mdl["bodies"] if b not in bones]
-    tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
+    r = subprocess.run(["git", "rev-parse", "--verify", "-q", "HEAD:data"], cwd=ROOT, capture_output=True, text=True)
+    tree = r.stdout.strip() if r.returncode == 0 and r.stdout.strip() else None
+    if tree is None and os.path.exists(JSON_OUT):   # data/ is not tracked any more: keep the id of the last tracked export
+        try:
+            tree = json.load(open(JSON_OUT, encoding="utf-8"))["meta"].get("source_data_tree")
+        except (ValueError, KeyError, OSError):
+            tree = None
     srcs = sources()
     armor = [{k: a[k] for k in ("item", "tag", "kind", "covers", "max_durability", "reduction_pct", "stage_reductions",
                                 "entries", "custom_entries", "path")} for a in ARMOR_ITEMS]

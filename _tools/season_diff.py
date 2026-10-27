@@ -81,7 +81,7 @@ PERM_INSTANCES = []
 CANDS = None   # list when --named-candidates is given
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-S1_DEFAULT = "E:/r22/s1/data"
+S1_DEFAULT = "E:/wardogs_builds/season1/data"
 S2_DEFAULT = os.path.join(ROOT, "data")
 OUT_DIR = os.path.join(ROOT, "assets", "data", "season-diff")
 GENERATED_BY = "_tools/season_diff.py"
@@ -237,7 +237,12 @@ def list_json(root):
         for f in files:
             if f.endswith(".json"):
                 full = os.path.join(d, f)
-                out[os.path.relpath(full, root).replace(os.sep, "/")] = full
+                rel = os.path.relpath(full, root).replace(os.sep, "/")
+                # Wardogs/Config/** are packed config files (Experiences/*.json), not cooked assets. The Season 1 export
+                # never held them, so comparing would list every one as "added" (34 files) whenever data/ carries them.
+                if rel.startswith("Wardogs/Config/"):
+                    continue
+                out[rel] = full
     return out
 
 
@@ -1016,6 +1021,10 @@ def accept_rename(old, new):
 
 def build(s1_dir, s2_dir, log=print):
     files1, files2 = list_json(s1_dir), list_json(s2_dir)
+    # Windows paths are case-insensitive and the exporter takes the spelling from the paks (Audio/Wavs) while older
+    # exports spell it Audio/WAVs: pair on the case-folded path and keep the Season 1 spelling.
+    low1 = {k.lower(): k for k in files1}
+    files2 = {low1.get(k.lower(), k): v for k, v in files2.items()}
     common = sorted(set(files1) & set(files2))
     removed = sorted(set(files1) - set(files2))
     added = sorted(set(files2) - set(files1))

@@ -1,0 +1,1648 @@
+{
+ "_comment": "Registry for _tools/update_pipeline.py. Every _tools/*.py script is classified here; `audit` fails on an unclassified script, so a new generator from a merged branch is added in ONE place: the `scripts` list below. class: generator (writes site files) | checker | report | investigation | library. tier: core (data/ only, run by regen) | assets (needs a WdExtract pass; run only when its extract output exists) | manual (needs inputs the pipeline cannot make: old scratch dumps, the Season 1 export, exe analysis). write/check are argument lists ({dump}, {png}, {files}, {out} are filled from the extract tree); null means the script has no such mode. ads_*.py are one person's local files and are ignored.",
+ "version": 1,
+ "environment": {
+  "paks": "E:/Steam/steamapps/common/Wardogs/Wardogs/Content/Paks",
+  "aes_key_file": "E:/WardogsConversion/CueDump/aes.txt",
+  "usmap_cuedump": "E:/Reverse_Engineer/wardogs_analysis/data_docs_clone/wardogs-data-docs/mappings/5.7.4-516586+++Wardogs+Live-Wardogs.deobfuscated.v2.export.usmap",
+  "usmap_wdextract": "E:/Reverse_Engineer/wardogs_analysis/round8_propertybags_20261019/normal-order.usmap",
+  "wdextract_exe": "E:/Reverse_Engineer/wardogs_analysis/round76_icons/bin/WdExtract.exe",
+  "oo2core": "E:/Steam/steamapps/common/Wardogs/Wardogs/Content/Paks/oo2core_9_win64.dll",
+  "cue4parse_project": "E:/WardogsConversion/CUE4Parse/CUE4Parse/CUE4Parse.csproj",
+  "builds_root": "E:/wardogs_builds",
+  "steam_manifest": "E:/Steam/steamapps/appmanifest_1867240.acf",
+  "sdk_raw": "E:/Reverse_Engineer/wardogs_analysis/data_docs_clone/wardogs-data-docs/sdk/raw",
+  "dumper7_dir": "E:/Reverse_Engineer/tools/Dumper-7"
+ },
+ "baseline": {
+  "_comment": "CueDump on build 5.7.4-516586 with the v2 export usmap: 66,550 packages, 6,830 exported, 0 warnings, 0 errors. More warnings or errors than this on a new build means the usmap is stale.",
+  "usmap_build": "5.7.4-516586",
+  "cuedump_warnings": 0,
+  "cuedump_errored": 0,
+  "cuedump_exported_files": 6830
+ },
+ "config_keep": {
+  "_comment": "Raw files copied from the paks into data/ next to the CueDump JSON (the curated set the generators read). DefaultGame.ini is never copied: its whitelisted excerpt is written by default_game_ini.py. Config files in the paks that are not listed here are reported as 'new, not copied'.",
+  "files": [
+   "Wardogs/Config/DefaultGameplayTags.ini",
+   "Wardogs/Config/DefaultMatchState.ini",
+   "Wardogs/Plugins/GameFeatures/ControlZone/Config/DefaultControlZone.ini",
+   "Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Config/DefaultBaseScenario.ini",
+   "Wardogs/Plugins/GameFeatures/Vehicles/VehicleUtility/Config/DefaultVehicleUtility.ini",
+   "Wardogs/Plugins/GameFeatures/Deathmatch/Deathmatch.uplugin",
+   "Wardogs/Plugins/GameFeatures/HotPotato/HotPotato.uplugin",
+   "Wardogs/Plugins/GameFeatures/ServerSeeding/ServerSeeding.uplugin"
+  ],
+  "trees": [
+   "Wardogs/Config/ServerConfigs/",
+   "Wardogs/Config/Tags/",
+   "Wardogs/Config/Experiences/"
+  ],
+  "exclude": [
+   "Wardogs/Config/Experiences/Bundles/"
+  ]
+ },
+ "passes": [
+  {
+   "name": "files",
+   "tier": "core",
+   "wdextract": [
+    "list",
+    ""
+   ],
+   "produces": "files/files.txt",
+   "note": "every package path in the paks; input of the icons pass and of the model chain"
+  },
+  {
+   "name": "ge",
+   "tier": "core",
+   "wdextract": [
+    "list",
+    "GE_"
+   ],
+   "then": "dump",
+   "summary": "tools/cue4parse_extractor/ge_summary.py",
+   "copy_to": "assets/data/ge-values.json",
+   "note": "341 GE_* effects: list, dump, ge_summary.py -> ge-values.json (reproduces the committed file byte for byte)"
+  },
+  {
+   "name": "icons",
+   "tier": "assets",
+   "note": "item_icons.py list -> WdExtract textures -> item_icons.py build (PNG into assets/img/icons, item-icons.json)"
+  }
+ ],
+ "chains": [
+  {
+   "name": "models",
+   "enabled": false,
+   "note": "Branch r86-mdl is on main (docs/evidence/round86-models.md, section Regenerate). The pipeline does not run this chain: it needs a per-vehicle mesh cycle and Node.js (npx glTF-Transform). `X` = WdExtract <Paks> <key> normal-order.usmap <out> <oo2core>. Run the steps by hand in a regen worktree after `regen` (data/ must point at the new export).",
+   "steps": [
+    "X all list \"\"",
+    "python -I _tools/object_models.py --plan plan --files all/files.txt",
+    "X col2 collision plan/collision_in.txt",
+    "X phys physics plan/phys_in.txt --names normal-order.usmap",
+    "python -I _tools/object_models.py --collision col2/collision.json --physics phys/physics.json",
+    "python -I _tools/object_models.py --check",
+    "python -I _tools/object_models_check.py",
+    "python -I tools/cue4parse_extractor/vehicle_meshes.py plan . all/files.txt vv <vehicle-id>",
+    "X vv/<vehicle-id> mesh vv/<vehicle-id>/_inputs.txt --names normal-order.usmap",
+    "python -I tools/cue4parse_extractor/vehicle_meshes.py finish . vv <vehicle-id>",
+    "python -I _tools/vehicle_models.py --meshes vv <vehicle-id>",
+    "python -I _tools/damage_tables.py --json"
+   ]
+  }
+ ],
+ "scripts": [
+  {
+   "script": "default_game_ini.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "reads data/Wardogs/Config/DefaultGame.excerpt.ini (extract step writes it)"
+  },
+  {
+   "script": "ammo_availability.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "first: weapon_damage_tables --check compares with it"
+  },
+  {
+   "script": "weapon_damage_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--json"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/ammo-availability.json"
+   ]
+  },
+  {
+   "script": "weapon_damage_falloff.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--json"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "weapon_damage_locations.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--json"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "weapon_penetration.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/weapon-penetration.json"
+   ],
+   "notes": "Config block is reused from the committed JSON (packed DefaultGame values)"
+  },
+  {
+   "script": "weapon_damage_page.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "assets/data/weapon-damage.json"
+   ]
+  },
+  {
+   "script": "weapon_capacity_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--json"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "damage_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ],
+   "notes": "also writes assets/data/vehicle-hitboxes.json"
+  },
+  {
+   "script": "infantry_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "writes source_data_tree=git tree id of data/ (meaningless without a tracked data/; ignored by the report)"
+  },
+  {
+   "script": "structure_hits.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--json"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "round52_explosive_hits.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "weapon_stats_defaults.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "doc tables"
+   ],
+   "notes": "native defaults are encoded in the script (exe constants); fills doc cells",
+   "parses_pages": true
+  },
+  {
+   "script": "action_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data",
+    "assets/data/ge-values.json",
+    "assets/data/bp-defaults.json"
+   ]
+  },
+  {
+   "script": "aim_assist_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "ammo_packing_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "attachment_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/ge-values.json"
+   ]
+  },
+  {
+   "script": "build_time_table.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "check asserts key values"
+  },
+  {
+   "script": "buildable_semantics.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "buildable_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "challenge_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "datatable_catalog.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ],
+   "notes": "lists every DataTable; page depends on the other pages (residual-gap logic)",
+   "parses_pages": true
+  },
+  {
+   "script": "demolition_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "economy_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "StateTree parameter values are byte-read constants in the script; --check verifies GUID and SerialSize still match"
+  },
+  {
+   "script": "experience_config_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data/Wardogs/Config"
+   ]
+  },
+  {
+   "script": "explosive_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "item_input_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "item_shop_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "loadout_builder_data.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/item-icons.json"
+   ]
+  },
+  {
+   "script": "loadout_extras.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/scope-reticles.json"
+   ]
+  },
+  {
+   "script": "loot_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "medical_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data",
+    "assets/data/ge-values.json"
+   ]
+  },
+  {
+   "script": "meta_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "misc_gameplay_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "all pages"
+   ],
+   "notes": "residual-gap page: lists assets no other page names, so its output changes whenever any page changes",
+   "parses_pages": true
+  },
+  {
+   "script": "mode_rules.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data/Wardogs/Config"
+   ]
+  },
+  {
+   "script": "movement_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "native table is encoded in the script (exe constants)"
+  },
+  {
+   "script": "muzzle_flash_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "price_modifiers.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data/Wardogs/Config"
+   ]
+  },
+  {
+   "script": "pve_settings_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "all pages"
+   ],
+   "notes": "residual-gap page (see misc_gameplay_tables)",
+   "parses_pages": true
+  },
+  {
+   "script": "r45_misc_data.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "r45_vehicle_defaults.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "r46_guidance_data.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "recoil_table.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "resource_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "round39_medical_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "round40_medical_movement.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "settings_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "sight_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/ge-values.json"
+   ]
+  },
+  {
+   "script": "spread_recoil_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data",
+    "sdk/raw/WDGame_structs.hpp"
+   ],
+   "notes": "needs the SDK dump of the same build (sdk/raw junction); regenerate with Dumper-7 after a patch"
+  },
+  {
+   "script": "spread_table.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "tag_text_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "utility_throwable_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_asset_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "all pages"
+   ],
+   "notes": "residual-gap page (see misc_gameplay_tables)",
+   "parses_pages": true
+  },
+  {
+   "script": "vehicle_curve_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_part_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_round39_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_round40_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_round41_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_round85_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "vehicle_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "data"
+   ],
+   "notes": "prints sections 3 and 4 of the AllVehicles page; writes nothing (no write flag)"
+  },
+  {
+   "script": "vendor_flags.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "weapon_attributes.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/ge-values.json"
+   ],
+   "notes": "--check round-trips the page values through compute()"
+  },
+  {
+   "script": "weapon_misc_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "all pages"
+   ],
+   "notes": "residual-gap page (see misc_gameplay_tables)",
+   "parses_pages": true
+  },
+  {
+   "script": "weapon_ranged_fields.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "weapon_vendor_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "zone_rewards.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "parses_pages": true
+  },
+  {
+   "script": "zone_selection.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data/Wardogs/Config"
+   ]
+  },
+  {
+   "script": "spray_gallery.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": null,
+   "inputs": [
+    "assets/data/spray-patterns.json"
+   ]
+  },
+  {
+   "script": "wiki_calibers.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "assets/data",
+    "pages"
+   ],
+   "notes": "reads Markdown pages; run after the table generators",
+   "parses_pages": true
+  },
+  {
+   "script": "wiki_weapons.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "assets/data",
+    "pages"
+   ],
+   "notes": "reads TagDisplayText, WeaponShop and InfantryWeapons_Stats pages: parser, must run after them",
+   "parses_pages": true
+  },
+  {
+   "script": "wiki_icons.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "assets/data/item-icons.json"
+   ],
+   "parses_pages": true
+  },
+  {
+   "script": "wiki_ttk.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "assets/data"
+   ],
+   "notes": "verifies _wiki files against the data"
+  },
+  {
+   "script": "ge_values.py",
+   "class": "generator",
+   "tier": "manual",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "assets/data/ge-values.json"
+   ],
+   "notes": "SKIPPED by regen: the page was edited by hand after its last generation (front matter, links, ghillie section); running it overwrites those edits"
+  },
+  {
+   "script": "season_diff.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "Season 1 export (E:/wardogs_builds/season1/data)"
+   ],
+   "notes": "compares the Season 1 export with data/ (Wardogs/Config JSON is skipped); output assets/data/season-diff and spray-patterns.json. For a new patch, season_diff.py --s1 <old> --s2 <new> --out DIR via `diff --full`"
+  },
+  {
+   "script": "spray_patterns.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "Season 1 export (E:/wardogs_builds/season1/data)"
+   ],
+   "notes": "compares the Season 1 export with data/ (Wardogs/Config JSON is skipped); output assets/data/season-diff and spray-patterns.json. For a new patch, season_diff.py --s1 <old> --s2 <new> --out DIR via `diff --full`"
+  },
+  {
+   "script": "ai_detection.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round36_ai scratch dump"
+   ],
+   "notes": "WdExtract dump of the AI/PvE plugins (round 36)"
+  },
+  {
+   "script": "ai_eqs.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round36_ai scratch dump"
+   ]
+  },
+  {
+   "script": "pve_scenario_data.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "round36_ai scratch dump"
+   ]
+  },
+  {
+   "script": "r41_misc_data.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round41_modes scratch dump"
+   ]
+  },
+  {
+   "script": "r42_modes_data.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round42_modes scratch dump"
+   ]
+  },
+  {
+   "script": "vehicle_spawns.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round42_modes + round51 board dumps"
+   ]
+  },
+  {
+   "script": "bp_defaults.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round17 Blueprint dump + SDK"
+   ],
+   "notes": "WdExtract dump of the Blueprints named in the specs"
+  },
+  {
+   "script": "shell_actors.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [
+    "--dump",
+    "{dump}"
+   ],
+   "check": null,
+   "inputs": [
+    "Blueprint dump of the projectile actors"
+   ]
+  },
+  {
+   "script": "scope_reticles.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [
+    "{dump}",
+    "{png}"
+   ],
+   "check": null,
+   "inputs": [
+    "WdExtract dump + textures of the scope widgets/materials"
+   ]
+  },
+  {
+   "script": "item_icons.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [
+    "build",
+    "{files}",
+    "{out}"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "WdExtract list + textures"
+   ],
+   "notes": "pipeline pass \"icons\" runs list, textures, build"
+  },
+  {
+   "script": "vehicle_models.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "WdExtract mesh output + npx glTF-Transform"
+   ]
+  },
+  {
+   "script": "infantry_model.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "WdExtract physics output + npx glTF-Transform"
+   ]
+  },
+  {
+   "script": "map_images.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": null,
+   "inputs": [
+    "WdExtract textures of the minimaps"
+   ]
+  },
+  {
+   "script": "check_links.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "repo"
+   ],
+   "notes": "final gate: 0 broken links"
+  },
+  {
+   "script": "check_data_renames.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "two data/ exports"
+   ],
+   "notes": "proves a re-export changed only property names; use after a usmap change: --base <git rev of old data>"
+  },
+  {
+   "script": "infantry_regen_check.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "repo"
+   ]
+  },
+  {
+   "script": "verify_round25.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "data"
+   ],
+   "notes": "independent verifier; one known mismatch is documented (item H, 155 mm Havoc)"
+  },
+  {
+   "script": "verify_weapon_damage.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "assets/data/weapon-damage.json"
+   ]
+  },
+  {
+   "script": "round36_combat.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "hit_registration_check.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "restored exe"
+   ],
+   "notes": "byte facts in the exe; run against the new restored exe after a patch"
+  },
+  {
+   "script": "native_defaults_check.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "restored exe"
+   ]
+  },
+  {
+   "script": "projectile_flight_check.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "restored exe"
+   ]
+  },
+  {
+   "script": "artillery_range_native.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "restored exe"
+   ]
+  },
+  {
+   "script": "ida_claim_bytes.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "analysis exe images"
+   ]
+  },
+  {
+   "script": "ida_claim_exposure.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "analysis exe images"
+   ]
+  },
+  {
+   "script": "rva_status.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "decompiled corpus"
+   ]
+  },
+  {
+   "script": "vehicle_hit_location_check.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "native receipt (--native)"
+   ]
+  },
+  {
+   "script": "vehicle_impact_browser_check.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "Playwright + Chromium"
+   ]
+  },
+  {
+   "script": "vehicle_data_audit.py",
+   "class": "checker",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "cooked variants + viewer data"
+   ]
+  },
+  {
+   "script": "coverage_census.py",
+   "class": "report",
+   "tier": "core",
+   "write": null,
+   "check": [
+    "--json",
+    "{report}/coverage-census.json"
+   ],
+   "inputs": [
+    "data",
+    "pages"
+   ],
+   "notes": "new asset families not named in any page: the \"what to document after a patch\" list"
+  },
+  {
+   "script": "doc_coverage.py",
+   "class": "report",
+   "tier": "core",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "data",
+    "pages"
+   ]
+  },
+  {
+   "script": "round55_s2_damage_diff.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "S1 export"
+   ]
+  },
+  {
+   "script": "artillery_range_check.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "logged shots"
+   ]
+  },
+  {
+   "script": "artillery_range_tables.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "data"
+   ],
+   "notes": "compares ArtilleryRangeData with other sources"
+  },
+  {
+   "script": "ctor_defaults.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "restored exe"
+   ],
+   "notes": "one-off constructor decoder (needs RVA arguments)"
+  },
+  {
+   "script": "projectile_drag_survey.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "data"
+   ],
+   "notes": "prints the DragModel survey"
+  },
+  {
+   "script": "shell_sim.py",
+   "class": "library",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [],
+   "notes": "imported by artillery tools"
+  },
+  {
+   "script": "weapon_speed_scale.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "data"
+   ],
+   "notes": "prints a table"
+  },
+  {
+   "script": "scope_reticles_procedural.py",
+   "class": "library",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [],
+   "notes": "imported by scope_reticles"
+  },
+  {
+   "script": "vehicle_impact_metadata.py",
+   "class": "investigation",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": [
+    "reference-pose collision models"
+   ]
+  },
+  {
+   "script": "update_pipeline.py",
+   "class": "tool",
+   "tier": "core",
+   "write": null,
+   "check": null,
+   "inputs": [],
+   "notes": "this pipeline"
+  },
+  {
+   "script": "object_models.py",
+   "class": "generator",
+   "tier": "core",
+   "write": null,
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/object-models.json"
+   ],
+   "needs_chain": "models",
+   "notes": "regen runs --check only (buildable stage tables vs data/); the GLBs come from the models chain (registry `chains`), which needs WdExtract collision/physics output and Node.js"
+  },
+  {
+   "script": "object_models_check.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "data",
+    "assets/models"
+   ],
+   "notes": "add --browser for the Chromium run (Playwright, network)"
+  },
+  {
+   "script": "statetree_outline.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round86_bp/dump_st (WdExtract dump of the ST_Challenges StateTrees)"
+   ],
+   "notes": "recipe in its docstring: WdExtract list ST_Challenges, dump"
+  },
+  {
+   "script": "fx_data_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "map_height_grids.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "needs numpy and Pillow; also writes assets/img/maps/*-water-height.png"
+  },
+  {
+   "script": "statetree_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "assets/data/challenge-statetrees.json"
+   ],
+   "notes": "runs after statetree_outline.py"
+  }
+ ],
+ "script_globs": [
+  {
+   "glob": "_tools/*.js",
+   "class": "checker",
+   "tier": "manual",
+   "note": "Node.js vehicle-hit and viewer checks (cooked-mesh queries, browser). Not run by regen; run after the vehicle model chain."
+  },
+  {
+   "glob": "_tools/*.json",
+   "class": "library",
+   "tier": "manual",
+   "note": "fixtures read by the scripts"
+  }
+ ]
+}

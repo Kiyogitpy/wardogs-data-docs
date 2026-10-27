@@ -7,7 +7,7 @@ index on that side. For the buildable table it also prints the damage factor (da
 three cannon and shell sources get on every row in both seasons, using the round 42 evaluator
 (_tools/structure_hits.py: every matching entry multiplies by 1 + Amount/100).
 
-    python -I _tools/round55_s2_damage_diff.py [--s1 DIR]    # DIR = Season 1 data/ (default E:/r22/s1/data)
+    python -I _tools/round55_s2_damage_diff.py [--s1 DIR]    # DIR = Season 1 data/ (default E:/wardogs_builds/season1/data)
 
 Read-only. Needs the Season 1 export used by _tools/season_diff.py.
 """
@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import structure_hits as sh  # noqa: E402
 
 ROOT = sh.ROOT
-S1 = "E:/r22/s1/data"
+S1 = "E:/wardogs_builds/season1/data"
 if "--s1" in sys.argv:
     S1 = sys.argv[sys.argv.index("--s1") + 1]
 INF = "Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json"
