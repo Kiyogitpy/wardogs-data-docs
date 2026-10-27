@@ -171,7 +171,7 @@ Nose-wheel steering influence by forward speed (`Curve_FWG_01_NoseCenterWheel_St
 
 The assists are typed with helicopter categories (`EBHHeliAssistCategory::Core`, assist labels such as "Reduce pitch when exceeding GForce limit", "Stabilize after input released", "Engage when fully stopped"). See section 12.
 
-The lift and drag curve keys, the nose-wheel steering curve, the 22 auto-trim rows, every assist body (PID gains, damping, throttle change rates) and a derived speed envelope are in [Fixed-wing flight model](../game-features/Wardogs_FixedWingFlightModel_v1.md).
+The lift and drag curve keys, the nose-wheel steering curve, the 22 auto-trim rows, every assist body (PID gains, damping, throttle change rates) and the speed figures read from the auto-trim table are in [Fixed-wing flight model](../game-features/Wardogs_FixedWingFlightModel_v1.md).
 
 ---
 
