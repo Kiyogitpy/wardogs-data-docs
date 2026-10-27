@@ -54,7 +54,7 @@ Each step is a sub-command; `run` chains them. Labels name a build, for example 
 | 3. Extract | `extract --label L --assets` | `<root>/L/data/` (the CueDump export plus the curated config files and `DefaultGame.excerpt.ini`), `<root>/L/wdextract/` (file list, GE dump, icon PNGs), `extract-meta.json`, `extract.log` | about 105 s: CueDump 89 s (66,550 packages, 6,830 exported), config and passes about 15 s |
 | 4. Diff | `diff --old A --new B [--full]` | `<root>/B/patch-diff.md` and `.json`: added, removed and changed assets, counts and top changed fields per site area, hashed-name noise; `--full` also runs `season_diff.py --write` into `<root>/B/season-diff/` | 7 s for the 6,830-file export; `--full` is much longer |
 | 5. Regenerate | `regen --data <root>/L/data --repo <worktree>` | the site files, `regen-report.md` and `.json` | about 3 min (one pass), 5 min with `--passes 2` |
-| All | `run --label L [--old A] [--assets] [--full]` | everything above in a worktree `<root>/L/worktree` on branch `update-L` | extract 105 s + baseline regen about 3 min + regen about 3 min |
+| All | `run --label L [--old A] [--assets] [--full]` | everything above in a worktree `<root>/L/worktree` on branch `update-L` | 481 s end to end when nothing changed (extract 79 s, diff 3 s, baseline regen 202 s, regen 196 s); the final regen then reported 0 changed files |
 
 Run `audit` any time: it fails when a script in `_tools/` is missing from the registry.
 
