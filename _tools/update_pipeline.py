@@ -426,6 +426,10 @@ def cmd_extract(args):
     if os.path.exists(data) and not args.force:
         raise SystemExit("%s exists: pass --force to overwrite (a full extraction is ~80 s)" % data)
     if os.path.exists(data):
+        # only ever a real directory inside builds_root; never recurse through a link or outside the builds root
+        root_n = os.path.normcase(os.path.realpath(env["builds_root"]))
+        if is_link(data) or not os.path.normcase(os.path.realpath(data)).startswith(root_n + os.sep):
+            raise SystemExit("refusing to delete %s: it is a link or lies outside %s" % (data, env["builds_root"]))
         shutil.rmtree(data)
     if not os.path.exists(os.path.join(ldir, "manifest.json")):
         say("no manifest for %s yet: taking one" % label)
@@ -1116,6 +1120,9 @@ def cmd_clean(args):
         raise SystemExit("no worktree at %s" % wt)
     if is_main_checkout(wt) or os.path.normcase(wt) == os.path.normcase(REPO):
         raise SystemExit("refusing: %s is not a linked worktree you created with `run`" % wt)
+    _, br0 = git("rev-parse", "--abbrev-ref", "HEAD", cwd=wt)
+    if not (br0.strip().startswith("update-")):
+        raise SystemExit("refusing: %s is on branch %s, not an update-* branch made by `run`" % (wt, br0.strip()))
     targets = []
     for rel in ("data", os.path.join("sdk", "raw")):
         p = os.path.join(wt, rel)

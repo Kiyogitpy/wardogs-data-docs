@@ -1589,6 +1589,33 @@
    "notes": "recipe in its docstring: WdExtract list ST_Challenges, dump"
   },
   {
+   "script": "fx_data_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "map_height_grids.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ],
+   "notes": "needs numpy and Pillow; also writes assets/img/maps/*-water-height.png"
+  },
+  {
    "script": "statetree_tables.py",
    "class": "generator",
    "tier": "core",
