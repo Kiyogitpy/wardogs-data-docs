@@ -544,7 +544,7 @@ Water is driven by one simulation state per area (`PDA_FluxSimulationState_C`). 
 
 `Iteration` is a large integer (23,813 to 1,261,732) with no label in the export. `CaptureOffset` is a Z offset: Europe and Kavkazi states sit around -85,000 to -105,000 cm, and North America states are positive (+1,958 to +15,583 cm).
 
-`WDWaterHeightGridAsset` holds the height grid. `GridWidth` is 512 (most), 256, or 128, and `WorldSize` is in cm. Each grid links to one state through an unnamed field. The large arrays are binary and are not decoded here. `CP_River_Kavkazi` is the only surface preset (clarity 0.66; scattering, absorption, and overlay colours).
+`WDWaterHeightGridAsset` holds the height grid. `GridWidth` is 512 (most), 256, or 128, `GridHeight` is 128 to 512, and `WorldSize` is in cm. Each grid links to one state through an unnamed field. The `Heights` array is decoded in section 13b (round 89). `CP_River_Kavkazi` is the only surface preset (clarity 0.66; scattering, absorption, and overlay colours).
 
 Notes: 54 states exist, but only 40 have a height grid. The 14 `DA_Flux_NorthAmerica_*` states have no grid in this dump, and their velocity-encode field is missing too. They look incomplete or stored elsewhere.
 
@@ -609,48 +609,62 @@ Notes: 54 states exist, but only 40 have a height grid. The 14 `DA_Flux_NorthAme
 
 ### 13b. Height grids
 
-| Grid asset | Linked flux state | World size (X x Y) | Grid width | Origin (X, Y) |
-|---|---|---|---|---|
-| WHG_PDA_Europe_0000 | PDA_Europe_0000 | 102400 x 25600 | 512 | -641644, -597578 |
-| WHG_PDA_Europe_0001 | PDA_Europe_0001 | 102400 x 25600 | 512 | -736823, -594586 |
-| WHG_PDA_Europe_0002 | PDA_Europe_0002 | 102400 x 25600 | 512 | -836023, -600986 |
-| WHG_PDA_Europe_0003 | PDA_Europe_0003 | 102400 x 25600 | 512 | -932023, -612902 |
-| WHG_PDA_Europe_0004 | PDA_Europe_0004 | 102400 x 51200 | 512 | -546004, -597664 |
-| WHG_PDA_Europe_0005 | PDA_Europe_0005 | 102400 x 51200 | 512 | -465789, -554137 |
-| WHG_PDA_Europe_0006 | PDA_Europe_0006 | 102400 x 51200 | 512 | -369123, -554137 |
-| WHG_PDA_Europe_0009 | PDA_Europe_0009 | 204800 x 409600 | 256 | -809492, -1228796 |
-| WHG_PDA_Europe_0010 | PDA_Europe_0010 | 102400 x 102400 | 512 | -900281, -869988 |
-| WHG_PDA_Europe_0011 | PDA_Europe_0011 | 51200 x 102400 | 256 | -899565, -773345 |
-| WHG_PDA_Europe_0012 | PDA_Europe_0012 | 102400 x 102400 | 512 | -984911, -676597 |
-| WHG_PDA_Europe_0014 | PDA_Europe_0014 | 409600 x 204800 | 512 | -1378975, -611630 |
-| WHG_PDA_Europe_007 | PDA_Europe_007 | 51200 x 51200 | 256 | -293209, -596421 |
-| WHG_PDA_Europe_008 | PDA_Europe_008 | 102400 x 51200 | 512 | -262847, -638433 |
-| WHG_PDA_Europe_013 | PDA_Europe_013 | 204800 x 102400 | 512 | -192447, -708833 |
-| WHG_PDA_Europe_015 | PDA_Europe_015 | 409600 x 204800 | 512 | -1565973, -419722 |
-| WHG_PDA_Europe_016 | PDA_Europe_016 | 307200 x 307200 | 256 | -946844, -1518884 |
-| WHG_PDA_Flux_Bakurani_River_001 | PDA_Flux_Bakurani_River_001 | 102400 x 102400 | 512 | -684900, -1711400 |
-| WHG_PDA_Flux_Bakurani_River_East_000 | PDA_Flux_Bakurani_River_East_000 | 102400 x 102400 | 512 | -104200, -983700 |
-| WHG_PDA_Flux_Bakurani_River_East_001 | PDA_Flux_Bakurani_River_East_001 | 102400 x 102400 | 512 | -203000, -959400 |
-| WHG_PDA_Flux_Bakurani_River_East_002 | PDA_Flux_Bakurani_River_East_002 | 102400 x 102400 | 512 | -303100, -958800 |
-| WHG_PDA_Flux_Bakurani_River_East_003 | PDA_Flux_Bakurani_River_East_003 | 102400 x 102400 | 512 | -399200, -978600 |
-| WHG_PDA_Flux_Bakurani_River_East_004 | PDA_Flux_Bakurani_River_East_004 | 102400 x 102400 | 512 | -495100, -992100 |
-| WHG_PDA_Flux_Bakurani_River_East_005 | PDA_Flux_Bakurani_River_East_005 | 102400 x 102400 | 512 | -590200, -1045800 |
-| WHG_PDA_Flux_Bakurani_River_East_006 | PDA_Flux_Bakurani_River_East_006 | 102400 x 102400 | 512 | -686100, -1045800 |
-| WHG_PDA_Flux_Bakurani_River_East_007 | PDA_Flux_Bakurani_River_East_007 | 102400 x 102400 | 512 | -784000, -1045800 |
-| WHG_PDA_Flux_Bakurani_River_East_008 | PDA_Flux_Bakurani_River_East_008 | 102400 x 102400 | 512 | -883290, -1045800 |
-| WHG_PDA_Flux_Bakurani_River_RedSpawn_000 | PDA_Flux_Bakurani_River_RedSpawn_000 | 51200 x 102400 | 256 | -659300, -1617800 |
-| WHG_PDA_Flux_Bakurani_River_West_000 | PDA_Flux_Bakurani_River_West_000 | 102400 x 102400 | 512 | -1032000, -1059200 |
-| WHG_PDA_Flux_Bakurani_River_West_001 | PDA_Flux_Bakurani_River_West_001 | 102400 x 102400 | 512 | -1131000, -1002600 |
-| WHG_PDA_Flux_Bakurani_River_West_002 | PDA_Flux_Bakurani_River_West_002 | 102400 x 102400 | 512 | -1228400, -979500 |
-| WHG_PDA_Flux_Bakurani_River_West_003 | PDA_Flux_Bakurani_River_West_003 | 204800 x 102400 | 512 | -1430333, -935637 |
-| WHG_PDA_Flux_Bakurani_River_West_005 | PDA_Flux_Bakurani_River_West_005 | 102400 x 102400 | 512 | -1520300, -882400 |
-| WHG_PDA_Flux_Bakurani_River_West_006 | PDA_Flux_Bakurani_River_West_006 | 102400 x 102400 | 512 | -1590900, -874700 |
-| WHG_PDA_Flux_RedSpawn_001 | PDA_Flux_RedSpawn_001 | 102400 x 102400 | 512 | -755829, -1523956 |
-| WHG_PDA_Flux_RedSpawn_002 | PDA_Flux_RedSpawn_002 | 51200 x 102400 | 256 | -794464, -1446300 |
-| WHG_PDA_Flux_RedSpawn_003 | PDA_Flux_RedSpawn_003 | 102400 x 102400 | 512 | -864800, -1352900 |
-| WHG_PDA_Flux_River_CZ_000 | PDA_Flux_River_CZ_000 | 25600 x 102400 | 128 | -856760, -1259164 |
-| WHG_PDA_Flux_River_CZ_001 | PDA_Flux_River_CZ_001 | 51200 x 102400 | 256 | -897962, -1186900 |
-| WHG_PDA_Flux_River_CZ_002 | PDA_Flux_River_CZ_002 | 102400 x 102400 | 512 | -945450, -1097450 |
+**Decode (round 89, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round89-map.md)).** Each `WDWaterHeightGridAsset` stores a water surface height map, not ground height.
+
+- **Layout.** `Heights` holds `GridWidth` x `GridHeight` unsigned 16-bit values, row-major: row 0 is at world Y = `worldmin.Y`, and the row index runs toward +Y. The column index runs toward +X from `worldmin.X`. `worldmin` is the minimum corner (cm); `WorldSize` is the extent (cm). Cell size is `WorldSize.X / GridWidth` by `WorldSize.Y / GridHeight`: 200 cm in 34 of the 40 grids, 400 cm in 2, 800 cm in 3 and 1200 cm in 1. `worldmin` plus half of `WorldSize` equals the linked simulation state's `AreaLocation` X and Y in all 40.
+- **Sentinel.** 65535 means no water in the cell (dry). It is 84% to 98% of the cells, depending on the grid.
+- **Height.** Every other value `v` (0 to 65534) is `z = z0 + v / 65534 x (z1 - z0)` in cm, where `z0` and `z1` are the two unnamed doubles (`_aaaajahedjfgkemenmnfj`, `_aaaajbpajedfcbkcoihjn`): the lowest and the highest water surface in that grid. The smallest wet value is 0 and the largest 65534 in all 41 grids (40 here and the gym grid), which is why the range is normalised per grid. Both doubles lie inside the vertical extent of the linked state's box (`AreaLocation.Z - AreaSize.Z` to `AreaLocation.Z`) in all 41. Heights are on the game's own height scale (below zero on Europe and Kavkazi).
+- **Third unnamed field.** `_aaabflcohlopnaadhglfk` is the soft reference to the linked `PDA_FluxSimulationState_C` in all 40 (and in the gym grid).
+- **Result.** Bakurani (Kavkazi) has 23 grids, -1,015.95 m to -805.93 m. Ozeti (Europe) has 17 grids, -1,063.46 m to -883.03 m. North America (Zestafona) and Russia (Saburtulo) have no grids. Images and the full table: [Bakurani](../_wiki/game-modes-and-maps/bakurani.md#water-height), [Ozeti](../_wiki/game-modes-and-maps/ozeti.md#water-height), and `assets/data/map-height-grids.json`. Generated by `_tools/map_height_grids.py`.
+
+![Bakurani water surface height]({{ '/assets/img/maps/bakurani-water-height.png' | relative_url }})
+
+![Ozeti water surface height]({{ '/assets/img/maps/ozeti-water-height.png' | relative_url }})
+
+<!-- height-grids:begin -->
+| Grid asset | Map | Grid (W x H) | Cell (m) | Origin X, Y (m) | Size X x Y (m) | Water surface min to max (m) | Wet cells |
+|---|---|---|---|---|---|---|---|
+| WHG_PDA_Flux_Bakurani_River_001 | Bakurani | 512 x 512 | 2 | -6,849, -17,114 | 1,024 x 1,024 | -879.7 to -811.4 | 5,488 (2.1%) |
+| WHG_PDA_Flux_Bakurani_River_East_000 | Bakurani | 512 x 512 | 2 | -1,042, -9,837 | 1,024 x 1,024 | -914.9 to -895.0 | 4,277 (1.6%) |
+| WHG_PDA_Flux_Bakurani_River_East_001 | Bakurani | 512 x 512 | 2 | -2,030, -9,594 | 1,024 x 1,024 | -919.0 to -912.2 | 4,972 (1.9%) |
+| WHG_PDA_Flux_Bakurani_River_East_002 | Bakurani | 512 x 512 | 2 | -3,031, -9,588 | 1,024 x 1,024 | -931.0 to -918.7 | 4,394 (1.7%) |
+| WHG_PDA_Flux_Bakurani_River_East_003 | Bakurani | 512 x 512 | 2 | -3,992, -9,786 | 1,024 x 1,024 | -939.5 to -930.3 | 5,397 (2.1%) |
+| WHG_PDA_Flux_Bakurani_River_East_004 | Bakurani | 512 x 512 | 2 | -4,951, -9,921 | 1,024 x 1,024 | -948.1 to -938.5 | 7,842 (3.0%) |
+| WHG_PDA_Flux_Bakurani_River_East_005 | Bakurani | 512 x 512 | 2 | -5,902, -10,458 | 1,024 x 1,024 | -956.9 to -947.6 | 5,483 (2.1%) |
+| WHG_PDA_Flux_Bakurani_River_East_006 | Bakurani | 512 x 512 | 2 | -6,861, -10,458 | 1,024 x 1,024 | -965.5 to -956.1 | 5,514 (2.1%) |
+| WHG_PDA_Flux_Bakurani_River_East_007 | Bakurani | 512 x 512 | 2 | -7,840, -10,458 | 1,024 x 1,024 | -971.7 to -964.4 | 7,267 (2.8%) |
+| WHG_PDA_Flux_Bakurani_River_East_008 | Bakurani | 512 x 512 | 2 | -8,833, -10,458 | 1,024 x 1,024 | -976.2 to -971.1 | 5,126 (2.0%) |
+| WHG_PDA_Flux_Bakurani_River_RedSpawn_000 | Bakurani | 256 x 512 | 2 | -6,593, -16,178 | 512 x 1,024 | -886.0 to -864.5 | 7,806 (6.0%) |
+| WHG_PDA_Flux_Bakurani_River_West_000 | Bakurani | 512 x 512 | 2 | -10,320, -10,592 | 1,024 x 1,024 | -992.1 to -983.5 | 6,894 (2.6%) |
+| WHG_PDA_Flux_Bakurani_River_West_001 | Bakurani | 512 x 512 | 2 | -11,310, -10,026 | 1,024 x 1,024 | -993.3 to -990.3 | 9,086 (3.5%) |
+| WHG_PDA_Flux_Bakurani_River_West_002 | Bakurani | 512 x 512 | 2 | -12,284, -9,795 | 1,024 x 1,024 | -998.5 to -987.2 | 9,385 (3.6%) |
+| WHG_PDA_Flux_Bakurani_River_West_003 | Bakurani | 512 x 256 | 4 | -14,303, -9,356 | 2,048 x 1,024 | -1,009.9 to -999.7 | 5,155 (3.9%) |
+| WHG_PDA_Flux_Bakurani_River_West_005 | Bakurani | 512 x 512 | 2 | -15,203, -8,824 | 1,024 x 1,024 | -1,015.7 to -1,004.5 | 5,693 (2.2%) |
+| WHG_PDA_Flux_Bakurani_River_West_006 | Bakurani | 512 x 512 | 2 | -15,909, -8,747 | 1,024 x 1,024 | -1,016.0 to -1,010.3 | 18,277 (7.0%) |
+| WHG_PDA_Flux_RedSpawn_001 | Bakurani | 512 x 512 | 2 | -7,558, -15,240 | 1,024 x 1,024 | -923.0 to -805.9 | 12,832 (4.9%) |
+| WHG_PDA_Flux_RedSpawn_002 | Bakurani | 256 x 512 | 2 | -7,945, -14,463 | 512 x 1,024 | -934.7 to -895.1 | 5,852 (4.5%) |
+| WHG_PDA_Flux_RedSpawn_003 | Bakurani | 512 x 512 | 2 | -8,648, -13,529 | 1,024 x 1,024 | -959.4 to -914.6 | 8,200 (3.1%) |
+| WHG_PDA_Flux_River_CZ_000 | Bakurani | 128 x 512 | 2 | -8,568, -12,592 | 256 x 1,024 | -962.1 to -938.0 | 8,900 (13.6%) |
+| WHG_PDA_Flux_River_CZ_001 | Bakurani | 256 x 512 | 2 | -8,980, -11,869 | 512 x 1,024 | -990.4 to -949.5 | 9,971 (7.6%) |
+| WHG_PDA_Flux_River_CZ_002 | Bakurani | 512 x 512 | 2 | -9,454, -10,974 | 1,024 x 1,024 | -994.0 to -954.2 | 6,633 (2.5%) |
+| WHG_PDA_Europe_0000 | Ozeti | 512 x 128 | 2 | -6,416, -5,976 | 1,024 x 256 | -971.7 to -946.2 | 9,518 (14.5%) |
+| WHG_PDA_Europe_0001 | Ozeti | 512 x 128 | 2 | -7,368, -5,946 | 1,024 x 256 | -977.6 to -954.0 | 5,893 (9.0%) |
+| WHG_PDA_Europe_0002 | Ozeti | 512 x 128 | 2 | -8,360, -6,010 | 1,024 x 256 | -1,002.3 to -975.9 | 10,236 (15.6%) |
+| WHG_PDA_Europe_0003 | Ozeti | 512 x 128 | 2 | -9,320, -6,129 | 1,024 x 256 | -1,002.3 to -985.2 | 6,140 (9.4%) |
+| WHG_PDA_Europe_0004 | Ozeti | 512 x 256 | 2 | -5,460, -5,977 | 1,024 x 512 | -964.5 to -935.5 | 13,383 (10.2%) |
+| WHG_PDA_Europe_0005 | Ozeti | 512 x 256 | 2 | -4,658, -5,541 | 1,024 x 512 | -952.0 to -927.1 | 12,875 (9.8%) |
+| WHG_PDA_Europe_0006 | Ozeti | 512 x 256 | 2 | -3,691, -5,541 | 1,024 x 512 | -942.5 to -916.9 | 13,017 (9.9%) |
+| WHG_PDA_Europe_0009 | Ozeti | 256 x 512 | 8 | -8,095, -12,288 | 2,048 x 4,096 | -983.3 to -927.9 | 5,848 (4.5%) |
+| WHG_PDA_Europe_0010 | Ozeti | 512 x 512 | 2 | -9,003, -8,700 | 1,024 x 1,024 | -969.2 to -945.3 | 13,105 (5.0%) |
+| WHG_PDA_Europe_0011 | Ozeti | 256 x 512 | 2 | -8,996, -7,733 | 512 x 1,024 | -980.5 to -961.0 | 13,577 (10.4%) |
+| WHG_PDA_Europe_0012 | Ozeti | 512 x 512 | 2 | -9,849, -6,766 | 1,024 x 1,024 | -998.5 to -972.0 | 20,123 (7.7%) |
+| WHG_PDA_Europe_0014 | Ozeti | 512 x 256 | 8 | -13,790, -6,116 | 4,096 x 2,048 | -1,032.2 to -993.6 | 6,349 (4.8%) |
+| WHG_PDA_Europe_007 | Ozeti | 256 x 256 | 2 | -2,932, -5,964 | 512 x 512 | -937.5 to -911.9 | 8,551 (13.1%) |
+| WHG_PDA_Europe_008 | Ozeti | 512 x 256 | 2 | -2,628, -6,384 | 1,024 x 512 | -925.7 to -899.3 | 11,905 (9.1%) |
+| WHG_PDA_Europe_013 | Ozeti | 512 x 256 | 4 | -1,924, -7,088 | 2,048 x 1,024 | -928.8 to -883.0 | 5,747 (4.4%) |
+| WHG_PDA_Europe_015 | Ozeti | 512 x 256 | 8 | -15,660, -4,197 | 4,096 x 2,048 | -1,063.5 to -1,017.8 | 6,843 (5.2%) |
+| WHG_PDA_Europe_016 | Ozeti | 256 x 256 | 12 | -9,468, -15,189 | 3,072 x 3,072 | -960.4 to -919.9 | 5,054 (7.7%) |
+<!-- height-grids:end -->
 
 ### 13c. Surface preset
 
@@ -768,7 +782,7 @@ These four types are new to this doc. Their fields are not decoded here yet.
 
 - **Fluid Flux `Iteration`** (23,813 to 1,261,732 across states) has no label in the export. Its meaning (bake frame, simulation step, or version counter) is unknown.
 - **`AttenuationDistance`** (1000 on all 40 MicroBiomes that set it) and the other distance-like fields on MicroBiomes are not confirmed as cm cull or fade distances.
-- **Height grid arrays** (`WDWaterHeightGridAsset`) are binary data keyed by unnamed field names. Only metadata is reported here (world size, grid width, origin, linked state). Height values are not decoded.
+- **Height grid arrays** (`WDWaterHeightGridAsset`) are decoded in section 13b (round 89): the unnamed fields are the lowest and highest water surface and the linked state. Still open: which runtime code reads the grids (the decode was done from the data, not from native code), and what the 65535 sentinel is called in the engine.
   - **SDK (2026-10-16):** `UWDWaterHeightGridAsset` is a `UDataAsset` with 8 fields:
     - `worldmin` (`FVector2D`, 0x30) — origin
     - `WorldSize` (`FVector2D`, 0x40) — world size (cm, confirmed)

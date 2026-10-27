@@ -149,7 +149,9 @@ Two assets make up the water gym. The first is the fluid simulation state. The s
 |---|---|
 | WorldSize | 102400 x 102400 |
 | GridWidth | 512 |
-| Origin | (-51200, -51200), half the world size, so the grid is centred on the origin |
+| GridHeight | 512 |
+| Origin (`worldmin`) | (-51200, -51200), the minimum corner. Half the world size, so the grid is centred on the origin |
+| Cell size | 200 x 200 cm (1,024 m square) |
 | Sample array | 262,144 values (512 x 512), stored as unsigned 16-bit |
 | Linked asset | `PDA_Flux_Gym_Water` (the sim state in 4a) |
 
@@ -166,8 +168,10 @@ There are 5,413 distinct values in total, and the minimum is 0.
 
 **Notes**
 
-- 95.3% of the grid is exactly 65535, which is the maximum unsigned 16-bit value. That is most likely a "no water here" sentinel or the dry-ground value, with the remaining samples holding the actual water surface. This is inferred from the distribution. The export does not say what 65535 means, and it has not been decoded to world heights.
-- Two unnamed float values are stored under unnamed fields: -2216.76 and 2046.39. They are probably the minimum and maximum of the height range, but that is not verified. The export's `CaptureOffset` in 4a is -621.76, and the two values do not obviously relate to it.
+- **Decoded (round 89, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round89-map.md)).** 65535 means no water in the cell (95.3% here). Any other value `v` is a water surface height: `z = z0 + v / 65534 x (z1 - z0)` cm. `z0` = -2216.76 and `z1` = 2046.39 are the two unnamed doubles and are the lowest and highest water surface in the grid, -22.17 m to 20.46 m. The smallest wet value is 0 and the largest 65534, so the range is the full 16-bit span. The same layout applies to all 40 map grids, see [Environment, section 13b](Wardogs_Environment_v2.md#13b-height-grids). Rows are row-major with row 0 at world Y = -51,200 cm.
+- Both doubles lie inside the state's vertical extent: `AreaLocation.Z` 4178.24 minus `AreaSize.Z` 6400 is -2221.76, so `z0` is 5 cm above the bottom of the box, and `z1` is below the top at 4178.24. `CaptureOffset` -621.76 is `AreaLocation.Z` minus 0.75 x `AreaSize.Z`, the same relation as in every map state. A third unnamed field is the link to `PDA_Flux_Gym_Water`.
+
+![Water Gym water surface height]({{ '/assets/img/maps/gym-water-height.png' | relative_url }})
 
 ---
 
@@ -262,7 +266,10 @@ Four baked data assets, one per map. Each has the same shape: a world reference,
 **Notes**
 
 - `IsValid` is 1 in all four assets.
-- Each asset also holds a block of seven unnamed fields. Their values are not decoded here.
+- **Unnamed fields identified from their values (round 89, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round89-map.md))**, the same in all four assets:
+  - Top level: unnamed field 1 is the number of spheres (it equals the length of every per-sphere array below). Unnamed field 2 is the number of instance entries (it equals the length of the instance table). The world reference is a one-entry list of soft paths. The bounds box is a bit wider than the sphere centres in X and Y (22 to 65 cm) and much taller in Z.
+  - The seven-field block holds one entry per sphere in parallel arrays: the sphere centre (X, Y, Z) twice (two identical arrays), `SphereRadius` (148.5 to 222.8 cm), the squared radius (equal to `SphereRadius` squared to 1e-7), a `Start`/`Count` list whose entries are `Start` = sphere index and `Count` = 1 (a one-element range per sphere), and a second `Start`/`Count` list that is all zeros (empty ranges). A last table lists the instance entries: a running index, a cell (X, Y integers), a `MeshId` (1 to 7) and an `InstanceID`.
+  - What a sight blocker is for in play, how the instance table ties to the spheres, and what the empty second range list is for are not decoded (no native reader was traced).
 - The bounds use the same units as the other map data (presumed Unreal centimetres, as in section 2). The export does not state units.
 
 ## 8. How Values Combine
@@ -524,9 +531,9 @@ Notes. (a) The VIP of VIP Escort is a random player, so no VIP start is placed; 
 
 - **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in `Content/Maps`. Only the supporting assets are.
 - **Blueprint logic.** `B_MovingTarget` exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in the export.
-- **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified.
+- **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter is not verified.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
-- **Unnamed fields.** Several properties in the height grid, the warmup manifests, and the sight blocker assets are unnamed fields. Their values were read and reported, but their names are not known. Those values are cited by position and value only.
-- **Water height decoding.** The mapping from the 16-bit samples to world heights is not in the export. The sentinel reading of 65535 is an inference from the distribution.
+- **Unnamed fields.** Several properties in the warmup manifests and the sight blocker assets are unnamed fields (the height grid's three and the sight blockers' block are identified in sections 4b and 7). Their values were read and reported, but their names are not known. Those values are cited by position and value only.
+- **Water height decoding.** Done in round 89 (section 4b). The scale and the sentinel are derived from the data (all 41 grids agree, neighbouring grids match where they overlap); no native reader of the grid was traced.
 - **Vertex factory and material paths.** The manifests reference materials and vertex factories by path and class name. The materials themselves are in other categories.
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.

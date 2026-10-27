@@ -34,7 +34,7 @@ Resolution strategy: one authoritative units table in `docs/UNITS.md` that maps 
 
 ### [Wardogs_Maps_v2.md](Wardogs_Maps_v2.html)
 
-- **9. Still Not Pulled / Limitations**  →  _**Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified._
+- **9. Still Not Pulled / Limitations**  →  _**Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter is not verified. In the water height grids 65535 marks a dry cell (decoded in round 89, [Environment §13b](../../content/Wardogs_Environment_v2.md))._
 
 ### [Wardogs_MoverTesting_v2.md](Wardogs_MoverTesting_v2.html)
 

@@ -108,6 +108,43 @@ def fov_for(mag, base):
     return round(ang, 2), round(math.tan(math.radians(45)) / math.tan(math.radians(ang / 2)), 2)
 
 
+def handheld(builder):
+    """The binoculars, monocular and range finders: BH_PrototypeMaskedScopes_ExtensionData on the item actor fragment."""
+    import glob
+    out = []
+    pat = os.path.join(ROOT, "data/Wardogs/Plugins/GameFeatures/Items/*/Content/Data/ID_*.json")
+    for path in sorted(glob.glob(pat)):
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        if "BH_PrototypeMaskedScopes_ExtensionData_C" not in text:
+            continue
+        ext = None
+        for part in wa.EXPORT.split(text):
+            if part.strip().startswith("{"):
+                o = json.loads(part)
+                if o.get("Type") == "BH_PrototypeMaskedScopes_ExtensionData_C":
+                    ext = o.get("Properties") or {}
+        if ext is None:
+            continue
+        asset = os.path.basename(path)[:-5]
+        b = builder.get(asset) or {}
+        default, zmin, zmax = ext.get("DefaultAdsZoom"), ext.get("AdsZoomMin"), ext.get("AdsZoomMax")
+        test = max(x for x in (default, zmax) if x is not None)
+        base = INDEPENDENT_FOV if test >= TEST_LIMIT else BASE_FOV
+        widget = (ext.get("MaskedScopeWidgetClass") or {}).get("AssetPathName")
+        row = {"asset": asset, "name": b.get("name") or asset, "price": b.get("price"), "defaultZoom": default,
+               "zoomMin": zmin, "zoomMax": zmax, "baseFov": base,
+               "widget": os.path.basename(widget).split(".")[0] if widget else None,
+               "scopeCount": ext.get("MaskedScopeCount"), "action": (ext.get("ActionTag") or {}).get("TagName"),
+               "infrared": "WeightedBlendables" in ext}
+        for key, z in (("fovDefault", default), ("fovMin", zmin), ("fovMax", zmax)):
+            if z:
+                row[key] = list(fov_for(z, base))
+        out.append(row)
+    out.sort(key=lambda r: (r["price"] or 0, r["name"]))
+    return out
+
+
 def collect():
     data = wa.Data()
     builder = load_json("assets/data/loadout-builder.json")["items"]
@@ -167,7 +204,7 @@ def collect():
                      "testLimit": TEST_LIMIT, "rule": "ADS FOV = base / magnification; base = Field of view setting (default 90), "
                      "or 72 when the sight's test value is 3.25 or more; apparent zoom = tan(45) / tan(ADS FOV / 2)",
                      "evidence": [EVID + "round46-a.md", EVID + "round79-sight-zoom.md"]},
-            "sights": rows, "weapons": {w.asset: wname[w.asset] for w in weapons}}
+            "sights": rows, "handheld": handheld(builder), "weapons": {w.asset: wname[w.asset] for w in weapons}}
 
 
 # --- rendering ----------------------------------------------------------------------------------
@@ -241,7 +278,26 @@ def block_reticles(d):
     return "\n".join(out)
 
 
-BLOCKS = {"main": block_main, "fits": block_fits, "reticles": block_reticles}
+def block_handheld(d):
+    def zoom(r, key):
+        z = r.get(key)
+        return "not set" if z is None else f"{g(z)}x"
+
+    def fov(r, key):
+        f = r.get(key)
+        return "not set" if f is None else f"{g(f[0])}° ({g(f[1])}x)"
+    out = ["| Item | Price | Default zoom | Min zoom | Max zoom | ADS FOV at default | At min | At max | Overlay widget | Overlays | Id |",
+           "|---|---:|---:|---:|---:|---|---|---|---|---:|---|"]
+    for r in d["handheld"]:
+        name = r["name"]
+        price = f"${r['price']:,}" if r["price"] else ""
+        out.append(f"| {name} | {price} | {zoom(r, 'defaultZoom')} | {zoom(r, 'zoomMin')} | "
+                   f"{zoom(r, 'zoomMax')} | {fov(r, 'fovDefault')} | {fov(r, 'fovMin')} | {fov(r, 'fovMax')} | `{r['widget']}` | "
+                   f"{r['scopeCount'] if r['scopeCount'] is not None else 'not set'} | `{r['asset']}` |")
+    return "\n".join(out)
+
+
+BLOCKS = {"main": block_main, "fits": block_fits, "reticles": block_reticles, "handheld": block_handheld}
 
 
 def dump(obj):
@@ -251,7 +307,7 @@ def dump(obj):
 def read(path):
     try:
         with open(path, encoding="utf-8", newline="") as f:
-            return f.read()
+            return f.read().replace("\r\n", "\n")
     except FileNotFoundError:
         return None
 
