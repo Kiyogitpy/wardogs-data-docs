@@ -182,7 +182,7 @@ Each lookup has 51 rows and maps the spotted variant to its reward tag. Each row
 | `Spotting.*.MGNest` | `Vehicle.Variant.Stationary.MGNest` |
 
 Observations:
-- **51 reward tags**, one per lookup row, appear in each lookup. The `Player` target is not in either lookup. The player row must be selected by a different path, which was not traced.
+- **51 reward tags**, one per lookup row, appear in each lookup. The `Player` target is not in either lookup. It is paid through the fallback tag of the lookup step: `Lookup Reward Tag for Variant` in `ST_Challenges_SessionEvents_KOTH_Spotting_Added` has the filter tags `Vehicle.Variant`, `Id.Item` and `Id.Buildable` and the fallback reward tag `Challenges.Rewards.Spotting.Added.Player` (the `_Removed` tree uses `Challenges.Rewards.Spotting.Removed.Player`). A spotted player carries none of the three tag families, so the lookup has nothing to return and the fallback applies (**Derived** from the node's data; the task's code was not read).
 - Each reward tag now maps to a single variant tag. `MistralAA`, `Mortar` and `STN_05` have separate tags, and the Loudspeaker, Radio, RepairStation and RefuelStation buildables each have their own.
 
 ---
@@ -351,7 +351,7 @@ Read from the `BH_SpottingExtensionData` of each spotter item (**Data**; `Binocu
 ## 12. Limitations
 
 - **Base values for each target** are not in this folder. The `BaseReward` options name `DefaultReward`, `RefreshedReward` and `KilledByEnemyReward`, and their numbers are in the shared challenge tables covered by the v2 doc (section 15). Only the min and max match-score values (section 4a) are in this folder.
-- **The `Player` target** has a calculator row but no lookup row. The path that pays a spotted player was not traced.
+- **The `Player` target** has a calculator row but no lookup row. It is reached through the `FallbackRewardTag` of the lookup node (see section 5): `Challenges.Rewards.Spotting.Added.Player` and `...Removed.Player` (**Derived**).
 - **Meaning of `DestroyedByTeamModifier`** is taken from its option name `KilledByEnemyFactor`. Its direction (boost or penalty) was not checked.
 - **Zone and faction factor values** are not in this folder.
 - **The `Spotting` root bundle's widget element** and the gameplay cue path were not decoded in this pass.

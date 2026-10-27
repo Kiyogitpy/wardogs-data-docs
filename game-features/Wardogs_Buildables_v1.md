@@ -279,8 +279,8 @@ Per-structure rules are in the table that follows. Plain meaning:
 | Door, Gate | Closeable doors with a breach effect. A closed FOB door pays cash (section 9). | **Data** |
 | Bunker, Recon Tower, Indirect Fire Shelter | Large multi-part structures (floor, roof, ceiling). Cash only for placing and destroying. | **Data** |
 | Builder's Radio | Up to 4 per FOB. Registers with the FOB (`bRegisterWithFOB`, counts toward the per-FOB limit). Plays music: a power toggle and seven stations ([section 14.5](#145-builders-radio)). | **Data** |
-| Refuel Station | Up to 1 per FOB. Registers with the FOB. A material tracker and a refuel start/stop sound exist. The Fuel Supplies item is described as "Resource Required to Refuel Vehicles. Requires FOB Radius to Use". The refuel rate is **not traced**. | **Data** |
-| Repair Station | Same shape as the Refuel Station, with Mechanical Supplies ("Resource Required to Repair Vehicles"). The repair rate is **not traced**. | **Data** |
+| Refuel Station | Up to 1 per FOB. Registers with the FOB. A material tracker and a refuel start/stop sound exist. The Fuel Supplies item is described as "Resource Required to Refuel Vehicles. Requires FOB Radius to Use". The restock rates (Fast 5% in 3 s, Max up to 100% in 9 s) are on the [Refuel and Repair Stations](../_wiki/building/refuel-and-repair-stations.md) page; how fast a vehicle burns fuel is in [Vehicle config fields](Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). | **Data** |
+| Repair Station | Same shape as the Refuel Station, with Mechanical Supplies ("Resource Required to Repair Vehicles"). Restock rates: Fast 5% in 3 s, Max up to 100% in 9 s (see the station page above). | **Data** |
 | Drill Rig (`HotzoneMagnet`) | Fuel-driven structure that works with a hot zone (settings below). | **Data** |
 | Mortar, Loudspeaker, Talon 9K-SAM, Vanguard CIWS, Stingray, MG Nest | Stationary weapons. Entity names and cash rewards (Mortar only) are here; the buildable definitions are in the `Vehicles/STN_*` plugins (table below). | **Data** |
 
@@ -300,6 +300,21 @@ The Drill Rig has its own settings asset (`WDBuildableHotZoneMagnetDataAsset`), 
 <!-- /buildable_tables -->
 
 Plain reading (**Derived**, units are not stated in the export): after placing there is a 15 second start delay, the rig needs at least 2,000 fuel to run, each fuel unit buys 0.03 of run time (probably seconds), it holds at most 10,000 fuel and it recharges for 900 (probably seconds). What the "magnet" does to the hot zone, and the units, are in [section 14.6](#146-drill-rig-and-the-hot-zone-magnet).
+
+Other fields of the same asset (**Data**; round 85). All of them are placement and presentation data, not rules:
+
+| Field | Value | What it is |
+|---|---|---|
+| `HealthVisualsPercentageCurve` (with `bUseCurveToUpdateHealthVisuals` true) | `C_DamageTintCurve` | The shared damage tint curve; the mesh is tinted as health falls. Appearance only. |
+| `BuildingStageChangedVFX` | `NS_BuildStage_NoOffset` | The Niagara effect played when the build advances a stage. Appearance only. |
+| `NiagaraDataChannelAsset` | `NDC_Buildable` | The data channel that feeds the build effects. Appearance only. |
+| `ConstructedGameplayCueTag`, `DestroyedGameplayCueTag`, `PlacedGameplayCueTag`, and one unresolved-name cue field | `GameplayCue.Buildable.Constructed`, `.Destroyed`, `.Placed`; the unresolved field holds `GameplayCue.Buildable.Dismantle` | Cues fired for those events (the effects themselves are audio and visual). |
+| `PlacementFlags` | 9 | AllowRotation + CanPlaceOnBuildables (see section 14.2). |
+| `PlacePivotVerticalOffset`, `StartingPlacementRotationAngle` | 75, 90 | Ghost height offset and the starting rotation (degrees) of the placement preview. |
+| `FinalStageBoundingBox` | min (-208.5, -198.2, -60.3), max (231.0, 389.3, 2007.1) | Bounds of the finished rig in game units (cm); about 4.4 m x 5.9 m x 20.7 m. |
+| `SnapTransforms` | 2 entries, each a 90 degree yaw | Snap points used when the rig is placed on its foundation (`SM_Foundation_HotzoneMagnet`). |
+| `DamageEntityData` | `Meta.Damage.Buildable.BuildableHotzoneMagnet` | The damage-resistance entry listed in the damage table above. |
+
 
 ### Stationary weapons (`Vehicles/STN_*`)
 
@@ -676,7 +691,7 @@ The safe-zone condition is listed on 25 of the 38 buildable data assets (the FOB
 
 **ABSENT as named rows; table choice is native.** None of the Talon 9K-SAM, Loudspeaker, Vanguard CIWS, Stingray, MG Nest, Wood Base or Shelter has a row in `DT_Reward_Cash_BuildableBuilt`, `...Placed` or `...PlacedInFOB`; all three tables hold the same 10 structures (HBlock, TallHBlock, Gate, FOB, HBlockQuadWall, Mortar, BarbedWire, TankTrap, AirRaidShelter, Bunker) and none of the seven is in a reward lookup or challenge table for placing. Each table has a `Meta.Progression.Context.DefaultReward` row: Built base 1 (owner 0.5, friendly 1), Placed base 1 (owner 1, friendly -1), Placed in FOB base 1 (owner 0, friendly -1). If the lookup falls back to that row for an unlisted structure the payout would be 1 cash; the fallback is native and not confirmed.
 
-How the tables are chosen: all are sources of one Data Registry, `DR_CashRewards` (registry type `CashRewards`, item struct `WDCustomRewardTableRow`), in this order: Built, Placed, Placed in FOB, ControlZoneReward, DeployableDestroyed, DeployedSupplyCrate, EndGameFactionReward, Heal, HotZoneMagnet, PlayerKill, Refuel, Repair, Revive, VehicleDestroyed, VehicleTransport. Built, Placed and Placed in FOB use the **same row names**, so a lookup by row name alone cannot tell them apart (which source's row is cached for an id is decided by the registry's acquire order, which was not read: the lookup itself is one cache map keyed by the resolved id, [round 46](../docs/evidence/round46-b.md), item 4). Which table a placement event reads was not found in the native code. The per-placement reward that is visible in data is `Challenges.Rewards.Buildables.SchematicPlaced` ("Wait For Schematic Placed In FOB Event"): a flat 10 times the zone modifier (control zone 1, hot zone 2) with no role resource, plus the resource `SchematicPlacedInFOBScore` of 5 cash (+5 inside a hot zone), neither depends on the structure type.
+How the tables are chosen: all are sources of one Data Registry, `DR_CashRewards` (registry type `CashRewards`, item struct `WDCustomRewardTableRow`), in this order: Built, Placed, Placed in FOB, ControlZoneReward, DeployableDestroyed, DeployedSupplyCrate, EndGameFactionReward, Heal, HotZoneMagnet, PlayerKill, Refuel, Repair, Revive, VehicleDestroyed, VehicleTransport. Built, Placed and Placed in FOB use the **same row names**, so a lookup by row name alone cannot tell them apart (which source's row is cached for an id is decided by the registry's acquire order, which was not read: the lookup itself is one cache map keyed by the resolved id, [round 46](../docs/evidence/round46-b.md), item 4). The fill order was read in [round 48](../docs/evidence/round48.md): the registry fills its sources in the order listed above (Built first), so a request by row name alone would be answered by the Built table. The string `CashRewards` is not in the game executable (re-checked in round 85 on the restored executable: 0 hits, ANSI and UTF-16, while the neighbouring registry names `RewardFeed` and `LiveCurves` are there), so no client code requests these rows; the consumer is not in the client and which table pays a placement is decided where the client cannot see it (**SERVER**). Which table a placement event reads was not found in the native code. The per-placement reward that is visible in data is `Challenges.Rewards.Buildables.SchematicPlaced` ("Wait For Schematic Placed In FOB Event"): a flat 10 times the zone modifier (control zone 1, hot zone 2) with no role resource, plus the resource `SchematicPlacedInFOBScore` of 5 cash (+5 inside a hot zone), neither depends on the structure type.
 
 ### 14.8 Is the FOB a spawn point?
 

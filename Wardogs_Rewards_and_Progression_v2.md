@@ -190,6 +190,8 @@ Each `DT_Reward_Cash_*` row has a `base` cash value plus context modifiers appli
 | Captured a neutral tower (instigator) | 250 |
 | Near a neutral tower | 250 |
 
+All eight rows leave every modifier field at 1.0 (`FriendlyModifier`, `NeutralModifier`, `OwnerModifier`, `ModifierCZ`, `ModifierHZ`, `ModifierHZM`, the assist and crew modifiers and `InstigatorLocationRatioModifier`) except `TargetLocationRatioModifier`, which is 0.0, so the base value is paid as listed (**Data**). Row ids are `Meta.Progression.Context.MatchScore.MagnetActivatedInstigator`, `.MagnetActivated`, `.MagnetDestroyedInstigator`, `.MagnetDestroyed`, `.CapturedTowerInstigatorHostile`, `.CapturedTowerHostile`, `.CapturedTowerInstigator` and `.CapturedTower`. Whether the client or the server picks the row at payout is covered under the reward consumers in [round 85 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round85-loot.md).
+
 ### 6c. End-of-match faction placement (`DT_Reward_Cash_EndGameFactionReward`)
 
 | Placement | Base cash |

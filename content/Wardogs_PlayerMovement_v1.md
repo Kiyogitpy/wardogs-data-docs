@@ -24,7 +24,7 @@ description: "Speed per stance with native defaults, fall damage and gun-bob cur
 
 **Native.** `DA_GroundMovement` and `DA_BodyDragging_GroundMovement` are `BHGroundMovementData` assets. The export drops every property equal to the class default, and neither asset lists `MaxSpeed`, `Acceleration`, `MaxStopSpeed`, `SprintMaxSpeedScale` or `TacSprintMaxSpeedScale`. The `UBHGroundMovementData` constructor (vtable store at RVA `0x528352D`, default stores `0x5283574` to `0x52837EF`) writes them: `MaxSpeed` 536, `Acceleration` 7, `MaxStopSpeed` 100, `SprintMaxSpeedScale` 1.42, `TacSprintMaxSpeedScale` 1.55. Speeds are in Unreal units per second (cm/s).
 
-**Native.** `GetMaxSpeed(Stance)` is exec thunk `0x52AA1F0`, which calls `0x52919B0`. That reads `MaxSpeed` at `+0x4C` and, when the mover has a stance entry for the current stance, hands it to the stance's `MaxSpeedModifier` through a lambda (`0x52820C0` runs it). The lambda body is not decoded. **Derived:** the stance `Multiply` modifiers below are applied to the 536 base.
+**Native.** `GetMaxSpeed(Stance)` is exec thunk `0x52AA1F0`, which calls `0x52919B0`. That reads `MaxSpeed` at `+0x4C` and, when the mover has a stance entry for the current stance, hands it to the stance's `MaxSpeedModifier` through a lambda (`0x52820C0` runs it; the lambda is a trampoline to mode vtable slot 142, read in section 1d). **Derived:** the stance `Multiply` modifiers below are applied to the 536 base.
 
 <!-- movement_tables ground -->
 | Group | Property | Class default (Native) | `DA_GroundMovement` (Data) | `DA_BodyDragging_GroundMovement` (Data) | Value in use |
@@ -86,10 +86,50 @@ description: "Speed per stance with native defaults, fall damage and gun-bob cur
 | Crouch | 68 / 34 | 118 | 30 | Set 12 | Multiply 0.5 | **268** | - | - | not set |
 | Prone | 34 / 34 | 36 | 50 | Set 19 | Multiply 0.15 | **80.4** | - | - | 40 deg |
 
-Walk speed = MaxSpeed 536 (class default) x the stance multiplier. Sprint and tac sprint multiply that by SprintMaxSpeedScale 1.42 and TacSprintMaxSpeedScale 1.55 (class defaults). Sprint columns are given for Stand only; whether Crouch or Prone can sprint is not traced. `DA_BodyDragging_GroundMovement` has the same stance table except Crouch, which sets a 45 degree walkable slope.
+Walk speed = MaxSpeed 536 (class default) x the stance multiplier. Sprint and tac sprint multiply that by SprintMaxSpeedScale 1.42 and TacSprintMaxSpeedScale 1.55 (class defaults). Sprint columns are given for Stand only: the walk-speed code applies the sprint scales in Stand and no other stance (section 1d). `DA_BodyDragging_GroundMovement` has the same stance table except Crouch, which sets a 45 degree walkable slope.
 <!-- /movement_tables -->
 
-**Reading.** Prone walks at 80.4, which sits next to the exported `MinSpeed` of 80. **Derived:** that match supports reading the 0.15 as a multiplier on the 536 base. Direction scales then reduce speed again: back and strafe 0.7 of the stance speed (Data). **Not traced:** how sprint, slow walk, ADS and the gameplay-effect multipliers combine with the stance speed. The effect side is in [Gameplay Effect Values](../pipelines/Wardogs_GameplayEffect_Values_v1.md): `Movement.MaxSpeedMultiplier` is scaled by weight class (0.95 Light, 0.875 Medium, 0.8 Heavy and SuperHeavy), ADS (0.5 compound), barbed wire (0.075) and others; `Movement.SprintSpeedMultiplier` by the fists effect.
+**Reading.** Prone walks at 80.4, which sits next to the exported `MinSpeed` of 80. **Derived:** that match supports reading the 0.15 as a multiplier on the 536 base. Direction scales then reduce speed again: back and strafe 0.7 of the stance speed (Data). How sprint, slow walk, ADS and the gameplay-effect multipliers combine with the stance speed is in 1d below (round 85).
+
+### 1d. How the speed multipliers combine (round 85, static)
+
+Read from the decompiled ground-mode velocity code (`0x52867F0`, the walk-speed getter slot 142 `0x5291720` and its WD override `0x6DC1000`). Evidence: [round 85 notes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round85-inf.md). The tick asks the mode for a maximum speed (slot 142) and a minimum speed (slot 143, `0x52923C0`) and picks a speed between them:
+
+| Condition | Speed used (**Native**) |
+|---|---|
+| Sprinting or tactical sprinting | The maximum speed, whatever the stick deflection |
+| Not sprinting, stick at full deflection, slow walk on | Min + (Max - Min) x `SlowWalkSpeedSettings[setting]` (0.2, 0.4 or 0.6) |
+| Not sprinting, stick at full deflection, slow walk off | The maximum speed |
+| Not sprinting, stick partly deflected | Min + (Max - Min) x stick magnitude (0 to 1) |
+
+The maximum speed (WD slot 142) is built in this order:
+
+1. Base `MaxSpeed` 536, passed through the current stance's `MaxSpeedModifier` (blended with the previous stance while a stance change runs, section 7b).
+2. Stand only: times `SprintMaxSpeedScale` (1.42) when sprinting, or `TacSprintMaxSpeedScale` (1.55) when tactical sprinting, each also multiplied by the player's `Movement.SprintSpeedMultiplier` or `Movement.TacSprintSpeedMultiplier` attribute (WD slots 144 and 145). Any other stance, or Stand with neither flag, is multiplied by the mode float `+168` (1.0).
+3. Times the player's `Movement.MaxSpeedMultiplier` attribute (evaluator at WD mode `+272`, tag confirmed from its registration at `0x128C490`). This multiplies the whole result, sprint included.
+
+The minimum speed (`MinSpeed`, 80) is not multiplied by any attribute: slot 143 is the base-class function in the WD mode.
+
+Each attribute is the game-effect current value, `((Base + sum Add) x (1 + sum (Multiply - 1)) / D) x product MultiplyCompound + sum AddFinal` with base 1 ([Gameplay Effects Pipeline](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md), section 4.4). So effects marked compound in [Gameplay Effect Values](../pipelines/Wardogs_GameplayEffect_Values_v1.md) (weight class, ADS `GE_ADS` 0.5, the Ghillie suit 0.95, drawing a bow 0.9, using an appliable 0.5) multiply each other, while plain multipliers (the aiming and covert skill effects) add their offsets first. The stance multiplier and the attribute multiply together, so a Heavy load and ADS in a standing walk give 536 x 0.8 x 0.8 x 0.5.
+
+<!-- movement_tables combine -->
+| Case | Calculation | Speed (cm/s, Derived) |
+|---|---|---|
+| Stand, walk | 536 x 0.8 | **428.8** |
+| Stand, slow walk slow | 80 + (428.8 - 80) x 0.2 | **149.8** |
+| Stand, slow walk moderate | 80 + (428.8 - 80) x 0.4 | **219.5** |
+| Stand, slow walk fast | 80 + (428.8 - 80) x 0.6 | **289.3** |
+| Stand, sprint | 428.8 x 1.42 | **608.9** |
+| Stand, tactical sprint | 428.8 x 1.55 | **664.6** |
+| Crouch, walk | 536 x 0.5 | **268** |
+| Stand, walk, Heavy load | 428.8 x 0.8 | **343** |
+| Stand, sprint, Heavy load | 428.8 x 1.42 x 0.8 | **487.1** |
+| Stand, walk, ADS (`GE_ADS`) | 428.8 x 0.5 | **214.4** |
+| Stand, walk, ADS and Heavy load | 428.8 x 0.5 x 0.8 | **171.5** |
+| Crouch, walk, ADS | 268 x 0.5 | **134** |
+
+Heavy load is `GE_Player_Weight_Heavy` (`MaxSpeedMultiplier` x0.8 compound); ADS is `GE_ADS` (x0.5 compound). Both are compound, so they multiply. Slow walk is shown at full stick deflection with no sprint.
+<!-- /movement_tables -->
 
 ### 1c. Other modes
 
@@ -97,7 +137,7 @@ Walk speed = MaxSpeed 536 (class default) x the stance multiplier. Sprint and ta
 | Mode | Number | Value | Source |
 |---|---|---|---|
 | Ground, standing | MaxSpeed (cm/s) | 536 | Native default; stance multiplier in the stance table |
-| Ground | Slow walk scale (Slow / Moderate / Fast) | 0.2 / 0.4 / 0.6 | Data: `SlowWalkSpeedSettings`; what it multiplies is not traced |
+| Ground | Slow walk scale (Slow / Moderate / Fast) | 0.2 / 0.4 / 0.6 | Data: `SlowWalkSpeedSettings`; a blend factor between MinSpeed and the stance speed (section 1d) |
 | Ground | Jump velocity (cm/s) | 320 | Data |
 | Falling | Acceleration / MaxSpeed / MaxStopSpeed | 5 / 300 / 150 | Data: `DA_FallingMovement` |
 | Falling | AirFriction / AirControlPercentage | 1 / 0.2 | Data |
@@ -122,6 +162,9 @@ Swimming has an acceleration but no exported speed cap; the class default applie
 These come from the ground table in §1a; the notes explain what the rows are.
 
 - **Jump stamina (Data).** A jump costs 50 of a 150 pool that refills at 50 per second, with a 0.05 s cooldown between jumps. The class defaults were 100, 20, 5 and 0.5 s, so the asset made jumping far cheaper than the default. Jump velocity is 320 cm/s against a default of 500. Jump height is also scaled by `CRV_JumpHeightScalar` (in MoverTesting).
+- **Stance changes (Data, round 85).** `StanceTransitionSettings` in `DA_GroundMovement` sets the time of each change: Stand to Crouch 0.3 s, Crouch to Prone 0.4 s, Prone to Crouch 0.5 s, Crouch to Stand 0.3 s. The data has no entry for a direct Stand to Prone change.
+- **Landing and jumping curves (Data).** The curves behind `JumpHeightScalar`, `LandSlowdownFrictionScale` and `LandSlowdownFrictionScaleTime`, the stance speed and stamina curves, the lean curves and the climb and mantle speed and transition curves are tabled in [Mover Testing](Wardogs_MoverTesting_v2.md) section 4. `DA_FallingMovement` sets `bApplyImpartedMovementBaseVelocity` and all three axis flags true: a falling player keeps the velocity of the base (a vehicle or moving platform) they left. `DA_MantlingMovement` sets `bUseForwardOnlyLeftAndRight` false.
+- **Jump height (Not available).** The jump velocity is 320 cm/s, but the gravity value that turns it into a height is not in the exported data (neither `Config` nor the mover assets name a gravity), so no jump height is derived here.
 - **Stance stamina (Data and Native).** Each stance change costs the stance's value (Stand 20, Crouch 30, Prone 50) from a pool of 100 (class default, not exported) that refills at 50 per second with no delay (the class default was 30 per second and a 1 s delay). `StanceCooldown` 0.15 s. Transition times: Stand to Crouch 0.3 s, Crouch to Prone 0.4 s, Prone to Crouch 0.5 s, Crouch to Stand 0.3 s (Data).
 - **Tactical sprint stamina (Native).** It drains 20 per second (class default, not exported). `MinStartTacSprintPercentage` is 0.2 (Data; what it is a fraction of is not stated). `BlockSprintTime` 0.8 s and `BlockTacSprintTime` 0.6 s delay re-entering a sprint.
 - **Lean (Native and Data).** Maximum angles are 30 degrees left and 35 degrees right (class defaults, not exported). Lean takes 0.55 s and un-lean 0.35 s (Data). The lean trace radius is 10 and the collided un-lean speed 15. The curves that shape the transition are `CRV_Lean_*` in MoverTesting. The gameplay-effect side scales lean time (for example Heavy and SuperHeavy weight ×1.5).
@@ -503,7 +546,7 @@ Blink and twitch settings: BlinkCycleDuration 5, BlinkCycleRandomness 0.35, Blin
 ## 8. Open items
 
 - The thunk `0x5288D80` dispatches to mode vtable slot 142 (`0x5291720`, WD `0x6DC1000`). Round 40 read it: the stance `MaxSpeedModifier` is applied to `MaxSpeed` and blended across a stance change (section 7b), which confirms the stance times base-speed rule.
-- Sprint and tactical sprint scale the standing speed (section 7b). Where the slow-walk setting is applied, and the writer of the mode float `+168`, are not traced.
+- Sprint and tactical sprint scale the standing speed (section 7b); slow walk and the effect multipliers are read in section 1d. The mode float `+168` is set to 1.0 by the mode constructor (`0x5283BB0`) and no other writer was found, so it stays 1.
 - Units of the damage-curve inputs and of the slope curve input are not exported.
 - The consumers of `CRV_LandGunBob`, the look-acceleration curves and the ladder animation curves are not traced.
 - Modifier `Operation` for the stance acceleration values is absent from the export (class default, presumed Set), so the acceleration rows read Set 7, 12 and 19 under that assumption.

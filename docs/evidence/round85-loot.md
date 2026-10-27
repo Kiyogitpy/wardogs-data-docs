@@ -1,0 +1,36 @@
+# Round 85, teammate loot: loot, economy and rewards
+
+Static analysis only. Nothing was run. Items V4-01, V4-11, V4-12, V4-13, V4-20 of `BACKLOG-v4`. Executable reads use the restored executable (`WardogsClient-Win64-Shipping.restored.exe`) and the decompilation corpus (CL-516586); the installed shipping executable is protected and holds none of the names searched here (0 hits for `RewardFeed`, `Meta.Progression`, `Challenges.Rewards`), so a string search on it proves nothing. Addresses are RVAs.
+
+| Item | Status | Result |
+|---|---|---|
+| V4-01 Loot container spawn lists | FOUND | `DT_LootableDataTable` (52 rows) and the VIP Escort table (2 rows) are decoded into `assets/data/loot-tables.json` and the page `game-features/Wardogs_LootContainers_v1.md` by `_tools/loot_tables.py` (`--check`). 14 rows have several entries (weights turned into chances), 38 rows are single-item weapon or item pickups. Selection rules come from round 59 (native). |
+| V4-11 Hot Zone Magnet cash rows and buildable fields | FOUND | The eight reward rows were already listed with their bases; the page now also states that every modifier is 1.0 except `TargetLocationRatioModifier` 0.0, with the row ids. Buildable asset fields (`HealthVisualsPercentageCurve` = `C_DamageTintCurve`, `BuildingStageChangedVFX` = `NS_BuildStage_NoOffset`, cues, bounds, placement offsets, snap transforms) are added to the Buildables page. |
+| V4-12 Placed vs Placed-in-FOB selection | SERVER | The `RuntimeSources` filler was already found in round 48 (`0x46EBF30`, fills in `DataSources` order, so Built answers first for a bare row name). The registry type name `CashRewards` is absent from the restored executable (0 hits ANSI and UTF-16; `RewardFeed` has 18 and `LiveCurves` 13), so no client code requests the `Id.Buildable.*` rows. The consumer is outside the client; the choice is made where the client cannot see it. |
+| V4-13 PlayerCountXPScalar | FOUND | See section 1. |
+| V4-13 repeated-reward decay (`LastVictimCount`) | FOUND (variable), NOT TRACED (tracker task) | See section 2. |
+| V4-13 Spotting Player target | FOUND (Derived) | See section 3. |
+| V4-13 tags without formula row | NOT RESOLVED | Unchanged: no code path for paying a tag with no row was found (`ZoneEntry.SpawnVehicle`, `TeamOffence.*`). |
+| V4-20 Faction fields and own-faction check | FOUND | Fields were already in `Wardogs_GameMechanics_v2.md` section 8 (name, short name, team id, colours, block materials); the field map is now stated. The Faction price modifier check is decoded (section 4). |
+
+## 1. PlayerCountXPScalar consumer
+
+- Tag registration: `Challenges.Rewards.PlayerCountCashScalar` is stored in global `qword_14D36FD00` (`0x12AEB50`), `...MatchScoreScalar` in `qword_14D36FD10` (`0x12AEAB0`), `...PlayerCountXPScalar` in `qword_14D36FD08` (`0x12AEBF0`). Cash is `Attribute.Meta.Currency.Cash` in `qword_14D36B340` (`0x128B090`). No asset in the paks names the three scalar tags except `DT_Meta_RewardScalingCurves` (WdExtract `findname` over `Wardogs/Content` and `Wardogs/Plugins`: `PlayerCountXPScalar` only in that table), so only native code reads them.
+- Reader: `0x6CB9A40` (`float f(a1, resourceTag, tagContainer)`). It returns 1.0 early when the reward's tag container holds `Tipping.Tipper` (`qword_14D36B9B8`, registered `0x1293290`) or `Tipping.Receiver` (`qword_14D36B9C0`, registered by the neighbouring function). Otherwise it builds the key `{qword_14D36FC18, tag}` where the tag is the cash scalar when `resourceTag == Cash` and the XP scalar (`FD08`) for every other resource. `0x6CB90B0` looks the key up in the live-curves registry (the registry type global `FC18`, the same lookup round 38 used), then samples the returned `UCurveFloat` (`0x3E0DA70`) at a float returned by virtual slot `+2008` of an object reached from the reward target's owner (`+424`); the name of that value is not resolved (it is read as the player count from the property names `ScalingPlayerCountOverride` and `Message.Faction.Context.PlayerCount`, an inference).
+- Callers: `0x6CC2080` (the reward payout loop: `amount * scale(resource)` for each entry of the row, then it grants through `0x6CBA0A0`) and `0x776B360`.
+- `MatchScoreScalar` has its own reader `0x6CB9970` (curve sampled at a value from the owner `+432` object), 19 call sites.
+- Class: `UWDRewardSubsystem` (SDK) holds `ScalingPlayerCountOverride` (int), `bEnableScalingDiminishingRewards` (bool), `UniversalCashMultiplier`, `UniversalXPMultiplier`, `FactionCashMultipliers`, `FactionXPMultipliers`. The shipped `DefaultGame.ini` has no `WDRewardSubsystem` section (read from the paks, not committed), so these values are class defaults or server-side; they are SERVER-side/unread and not published.
+- Consequence for the data: `PlayerCountXPScalar` and `PlayerCountCashScalar` use the same asset, so XP and cash scale by the same curve.
+
+## 2. LastVictimCount
+
+- `0x861DB00` builds the calculator's variable map: it registers `DistanceToTarget`, `LastVictimCount` and `KillStreak` each with 0. A tree that does not set the variable pays with 0.
+- The setter is the state tree task chain `Track Target Repeat Count` -> `Resolve Repeat Action Count` (`WDSessionEventsResolveRepeatActionCountTask`, struct size 40). The task's execution was not located: the struct name is only referenced from a `.data` descriptor (`0xCE98AF8`), not from code that this pass could follow. The 180 s `RepeatActionsCooldown` meaning stays as in round 61 (inferred from the name).
+
+## 3. Spotting Player target
+
+`ST_Challenges_SessionEvents_KOTH_Spotting_Added` holds the node `Lookup Reward Tag for Variant` with `RegistryName = Challenges.SessionEvent.Spotting.Added`, `FilterTags = [Vehicle.Variant, Id.Item, Id.Buildable]` and `FallbackRewardTag = Challenges.Rewards.Spotting.Added.Player`. The `_Removed` tree has the `Removed.Player` fallback. A spotted player has none of the three tag families, so the lookup cannot return a variant and the fallback names the Player row. Derived from the node's data; the task body (`WDSessionEventsGetRewardTagFromRegistryTask`) was not read. All 16 trees that use this node and their fallbacks are in `Wardogs_Challenges_v1.md` section 7.
+
+## 4. Faction price modifier
+
+`WDEntityPriceModifier_Faction` (48 bytes) has its vtable at `0xB16C9C0`: slots 1 and 3 are the shared `0x6BE48D0` and `0x6BE4930`; slot 2 (applies) is `0x6BE4300`. It returns true when the base test `0x6BE4280` passes (for a `Specified` modifier: the entity holds the item tag), the context object is valid and the faction tag read from it equals the modifier's `Faction` (`+0x28`). The tag is produced by `0x6DAE470`, which resolves the object's faction reference at `+1440` (the same reference round 41 found on the player). So "own faction" is a live comparison of the buyer's faction with the row's faction, not a stored setting. The identity of the context object as the buyer is Derived from the call shape.
