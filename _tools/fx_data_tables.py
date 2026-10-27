@@ -79,7 +79,7 @@ def cell(v):
         if {"X", "Y", "Z"} <= set(v):
             return f"{num(v['X'])}, {num(v['Y'])}, {num(v['Z'])}"
         if {"X", "Y"} <= set(v):
-            return f"{num(v['X'])} to {num(v['Y'])}"
+            return f"{num(v['X'])}, {num(v['Y'])}"
     return str(v)
 
 

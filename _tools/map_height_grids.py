@@ -148,7 +148,7 @@ def build():
             pb = bounds[MAPS[key][1]]['play_box_m']
             bm = (pb['x_min'] * 100, pb['x_max'] * 100, pb['y_min'] * 100, pb['y_max'] * 100)
         label = MAPS[key][1] if key in MAPS else 'Water Gym'
-        im, s = render(gl, bm, f'{label}: water surface height (m)', PX_CM if key != 'gym' else 800)
+        im, s = render(gl, bm, f'{label}: water surface height (m)', PX_CM if key != 'gym' else 200)
         images[key] = im
         gs = [g for g, _ in gl]
         cells = sum(g['wet'] for g in gs)

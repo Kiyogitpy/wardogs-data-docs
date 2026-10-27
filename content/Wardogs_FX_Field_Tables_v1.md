@@ -72,40 +72,40 @@ One recipe per explosion. The first table holds the fireball, core and heat valu
 <!-- fx_data_tables explosions_b -->
 | Asset | Streaks | Streak size | Small streaks | Small streak size | Embers | Sparks | Debris | Debris scale | Shockwave | Shockwave size | Camera shake | Shake range |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `DA_BluntImpact` |  | 0.13 | 0 | 0.724 |  | 70 | 155 | 1 to 1 |  | 4 |  | 0 |
-| `DA_ComponentBurst_Small` |  | 1.463 | 0 | 0.284 |  | 0 | 10 | 1.5 to 1.5 | yes | 0.628 | `B_CameraShakeExplosion_Large_C` | 250 |
-| `DA_DebrisExplosion_LowTemp` | 5 | 0.9172 | 12 | 2.764 | 16 | 1500 | 200 | 3 to 3 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
-| `DA_Explosion_115mm` | 14 | 0.9482 |  | 0.62 |  |  | 500 | 1 to 1 | yes | 2.815 |  | 2000 |
-| `DA_Explosion_120x2230mm` | 20 | 1.135 | 8 | 1.4 | 20 | 250 | 600 | 1 to 1 | yes | 5 |  | 1500 |
+| `DA_BluntImpact` |  | 0.13 | 0 | 0.724 |  | 70 | 155 | 1, 1 |  | 4 |  | 0 |
+| `DA_ComponentBurst_Small` |  | 1.463 | 0 | 0.284 |  | 0 | 10 | 1.5, 1.5 | yes | 0.628 | `B_CameraShakeExplosion_Large_C` | 250 |
+| `DA_DebrisExplosion_LowTemp` | 5 | 0.9172 | 12 | 2.764 | 16 | 1500 | 200 | 3, 3 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_115mm` | 14 | 0.9482 |  | 0.62 |  |  | 500 | 1, 1 | yes | 2.815 |  | 2000 |
+| `DA_Explosion_120x2230mm` | 20 | 1.135 | 8 | 1.4 | 20 | 250 | 600 | 1, 1 | yes | 5 |  | 1500 |
 | `DA_Explosion_120x570mm` | 14 | 1.915 | 0 | 1.207 | 8 | 300 | 15 |  | yes | 6.5 | `B_CameraShakeExplosion_Large_C` | 2200 |
 | `DA_Explosion_120x800mm` | 14 | 1.915 | 0 | 1.207 | 8 | 300 | 15 |  | yes | 6.5 | `B_CameraShakeExplosion_Large_C` | 2200 |
-| `DA_Explosion_122mm` | 12 | 1.198 | 7 | 1.315 | 7 | 500 | 250 | 1 to 1 | yes | 4.524 | `B_CameraShakeExplosion_Large_C` | 3000 |
+| `DA_Explosion_122mm` | 12 | 1.198 | 7 | 1.315 | 7 | 500 | 250 | 1, 1 | yes | 4.524 | `B_CameraShakeExplosion_Large_C` | 3000 |
 | `DA_Explosion_125x570mm` | 14 | 1.915 | 0 | 1.207 | 8 | 300 | 15 |  | yes | 6.5 | `B_CameraShakeExplosion_Large_C` | 2200 |
-| `DA_Explosion_155mm` | 15 | 3.93 | 7 | 8.169 | 25 | 0 | 0 | 7 to 7 | yes | 15 | `B_CameraShake_Artillery_C` | 3750 |
-| `DA_Explosion_30mm` | 4 | 0.78 | 5 | 2.236 |  | 300 | 5 | 1 to 1 |  | 1 |  | 0 |
+| `DA_Explosion_155mm` | 15 | 3.93 | 7 | 8.169 | 25 | 0 | 0 | 7, 7 | yes | 15 | `B_CameraShake_Artillery_C` | 3750 |
+| `DA_Explosion_30mm` | 4 | 0.78 | 5 | 2.236 |  | 300 | 5 | 1, 1 |  | 1 |  | 0 |
 | `DA_Explosion_40mm` | 12 | 0.9879 | 8 | 1.659 |  | 500 | 25 |  | yes | 3 | `B_CameraShake_SmallBoom_C` | 1500 |
 | `DA_Explosion_72mm` | 5 | 0.722 |  | 0.668 | 8 | 300 | 50 |  | yes |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_84mm` | 10 | 0.82 | 25 | 1.064 | 8 | 400 | 5 | 1 to 1 | yes | 3 | `B_CameraShake_RPG_C` | 2000 |
-| `DA_Explosion_93mm` | 10 | 0.82 | 25 | 1.064 | 8 | 400 | 5 | 1 to 1 | yes | 3 | `B_CameraShake_RPG_C` | 2000 |
-| `DA_Explosion_ATMine` | 8 | 1.013 | 15 | 1.785 | 4 | 1500 | 20 | 3.252 to 3.252 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 2000 |
-| `DA_Explosion_Claymore` | 6 | 0.966 | 4 | 1.639 | 3 | 75 | 55 | 1 to 1 | yes | 5 | `B_CameraShake_SmallBoom_C` | 1500 |
+| `DA_Explosion_84mm` | 10 | 0.82 | 25 | 1.064 | 8 | 400 | 5 | 1, 1 | yes | 3 | `B_CameraShake_RPG_C` | 2000 |
+| `DA_Explosion_93mm` | 10 | 0.82 | 25 | 1.064 | 8 | 400 | 5 | 1, 1 | yes | 3 | `B_CameraShake_RPG_C` | 2000 |
+| `DA_Explosion_ATMine` | 8 | 1.013 | 15 | 1.785 | 4 | 1500 | 20 | 3.252, 3.252 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 2000 |
+| `DA_Explosion_Claymore` | 6 | 0.966 | 4 | 1.639 | 3 | 75 | 55 | 1, 1 | yes | 5 | `B_CameraShake_SmallBoom_C` | 1500 |
 | `DA_Explosion_Default` | 5 | 0.722 |  | 0.668 | 8 | 300 | 50 |  | yes |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_ExplosiveArrow` |  | 0.3 | 6 | 0.7311 |  | 35 | 5 | 1 to 1 | yes |  |  |  |
-| `DA_Explosion_Grenade` | 6 | 0.966 | 4 | 1.639 | 3 | 75 | 55 | 1 to 1 | yes | 3 | `B_CameraShake_SmallBoom_C` | 1500 |
-| `DA_Explosion_Helicopter` | 10 | 1.354 | 12 | 1 | 16 | 1500 | 155 | 1 to 1 | yes | 7 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_ExplosiveArrow` |  | 0.3 | 6 | 0.7311 |  | 35 | 5 | 1, 1 | yes |  |  |  |
+| `DA_Explosion_Grenade` | 6 | 0.966 | 4 | 1.639 | 3 | 75 | 55 | 1, 1 | yes | 3 | `B_CameraShake_SmallBoom_C` | 1500 |
+| `DA_Explosion_Helicopter` | 10 | 1.354 | 12 | 1 | 16 | 1500 | 155 | 1, 1 | yes | 7 | `B_CameraShakeExplosion_Large_C` | 5000 |
 | `DA_Explosion_Large` | 5 | 1.677 |  | 0.668 |  | 300 | 15 |  |  |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_LargeHelicopter` | 15 | 2.216 | 12 | 2.149 | 30 | 1100 | 300 | 3 to 3 | yes | 9 | `B_CameraShakeExplosion_Large_C` | 5000 |
-| `DA_Explosion_LargeVehicle` | 10 | 1.354 | 12 | 1 | 16 | 1500 | 155 | 1 to 1 |  | 7 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_LargeHelicopter` | 15 | 2.216 | 12 | 2.149 | 30 | 1100 | 300 | 3, 3 | yes | 9 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_LargeVehicle` | 10 | 1.354 | 12 | 1 | 16 | 1500 | 155 | 1, 1 |  | 7 | `B_CameraShakeExplosion_Large_C` | 5000 |
 | `DA_Explosion_Medium` | 5 | 0.722 |  | 0.668 | 8 | 300 | 50 |  |  |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_MediumWheeledVehicle` | 25 | 1.42 | 12 | 2.764 | 16 | 1500 | 155 | 3 to 3 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
-| `DA_Explosion_Medium_DebrisHeavyFireball` | 25 | 1.42 | 12 | 2.764 | 16 | 1500 | 155 | 3 to 3 |  | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_MediumWheeledVehicle` | 25 | 1.42 | 12 | 2.764 | 16 | 1500 | 155 | 3, 3 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_Medium_DebrisHeavyFireball` | 25 | 1.42 | 12 | 2.764 | 16 | 1500 | 155 | 3, 3 |  | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
 | `DA_Explosion_Medium_NoEmbers` | 5 | 0.722 |  | 0.668 |  | 300 | 0 |  |  |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_NoHangingSmoke` | 25 | 1.42 | 12 | 2.764 | 10 | 1500 | 165 | 3 to 3 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
-| `DA_Explosion_Small` | 3 | 0.642 | 6 | 0.668 |  | 300 | 25 | 1.5 to 1.5 |  |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_SmallWheeledVehicle` | 8 |  | 5 | 1.75 |  | 2000 |  | 1 to 1 |  |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_Explosion_Tank` | 25 | 1.703 | 8 | 3.678 | 24 | 1000 | 300 | 2 to 2 | yes | 4.818 | `B_CameraShakeExplosion_Large_C` | 4000 |
-| `DA_Explosion_VeryLarge` | 12 | 3.169 |  | 0.668 |  | 0 | 35 | 7 to 7 |  |  | `B_CameraShakeExplosion_Large_C` |  |
-| `DA_HeavyDebrisBurst_NoTemp` | 5 | 0.9172 | 12 | 2.764 | 2 | 1500 | 200 | 5 to 5 |  | 5 |  | 5000 |
+| `DA_Explosion_NoHangingSmoke` | 25 | 1.42 | 12 | 2.764 | 10 | 1500 | 165 | 3, 3 | yes | 5 | `B_CameraShakeExplosion_Large_C` | 5000 |
+| `DA_Explosion_Small` | 3 | 0.642 | 6 | 0.668 |  | 300 | 25 | 1.5, 1.5 |  |  | `B_CameraShakeExplosion_Large_C` |  |
+| `DA_Explosion_SmallWheeledVehicle` | 8 |  | 5 | 1.75 |  | 2000 |  | 1, 1 |  |  | `B_CameraShakeExplosion_Large_C` |  |
+| `DA_Explosion_Tank` | 25 | 1.703 | 8 | 3.678 | 24 | 1000 | 300 | 2, 2 | yes | 4.818 | `B_CameraShakeExplosion_Large_C` | 4000 |
+| `DA_Explosion_VeryLarge` | 12 | 3.169 |  | 0.668 |  | 0 | 35 | 7, 7 |  |  | `B_CameraShakeExplosion_Large_C` |  |
+| `DA_HeavyDebrisBurst_NoTemp` | 5 | 0.9172 | 12 | 2.764 | 2 | 1500 | 200 | 5, 5 |  | 5 |  | 5000 |
 | `DA_SmokeBurst_Small` |  | 0 |  | 0 |  | 0 | 0 |  |  | 0 |  | 0 |
 <!-- /fx_data_tables -->
 
@@ -223,7 +223,7 @@ A weapon recipe (`PDA_MuzzleFlash_C`) names its default muzzle device in the las
 | Recipe | Flash color (RGB, HDR) | Flash 1P | Flash 3P | Lifetime (s) | Frequency | Distant size | Distant max | Distant chance | Light intensity | Light color | Gas size | Gas amount | Gas lifetime (s) | Gas spread | Spark amount | Spark color | Spark spread | Default muzzle |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | `AssualtRifles/DA_MuzzleFlash_A91` | 175 / 74.5 / 18.2 | 15 | 30 | 0.05 |  | 90 | 200 |  |  |  |  |  |  |  |  |  |  | `DA_MF_A91_DefaultMuzzle` |
-| `AssualtRifles/DA_MuzzleFlash_AK74-M` | 175 / 74.5 / 18.2 | 15 | 35 | 0.05 |  | 90 | 200 |  | 100 |  | 120 |  | 0.4 to 0.6 |  | 1 to 3 | 5 / 2.55 / 0 |  | `DA_MF_AK74-M_Default` |
+| `AssualtRifles/DA_MuzzleFlash_AK74-M` | 175 / 74.5 / 18.2 | 15 | 35 | 0.05 |  | 90 | 200 |  | 100 |  | 120 |  | 0.4, 0.6 |  | 1, 3 | 5 / 2.55 / 0 |  | `DA_MF_AK74-M_Default` |
 | `AssualtRifles/DA_MuzzleFlash_Fal` | 175 / 74.5 / 18.2 | 18 | 57 | 0.05 |  | 100 | 250 |  |  |  |  |  |  |  |  |  |  | `DA_MF_WEPN_030_DefaultMuzzle` |
 | `AssualtRifles/DA_MuzzleFlash_Galil` | 175 / 74.5 / 18.2 | 15 | 52.5 | 0.05 |  | 90 | 200 |  |  |  |  |  |  |  |  |  |  | `DA_MF_WEPN_029_DefaultMuzzle` |
 | `AssualtRifles/DA_MuzzleFlash_KH2002` | 175 / 74.5 / 18.2 | 15 | 30 |  |  | 90 | 200 |  |  |  |  |  |  |  |  |  |  | `DA_MF_KH2002_DefaultMuzzle` |
@@ -235,25 +235,25 @@ A weapon recipe (`PDA_MuzzleFlash_C`) names its default muzzle device in the las
 | `DMR/DA_MuzzleFlash_RFB` | 175 / 74.5 / 18.2 |  | 35 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 |  |  |  |  |  |  |  | `DA_MF_RFB_DefaultMuzzle` |
 | `DMR/DA_MuzzleFlash_SKS` | 175 / 74.5 / 18.2 |  | 35 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 |  |  |  |  |  |  |  | `DA_MF_SKS_DefaultMuzzle` |
 | `DMR/DA_MuzzleFlash_SVDM` | 175 / 74.5 / 18.2 |  | 35 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 |  |  |  |  |  |  |  | `DA_MF_SVDM_DefaultMuzzle` |
-| `LMG/DA_MuzzleFlash_Evloys` | 175 / 74.5 / 18.2 |  | 38 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  | `DA_MF_M249_DefaultMuzzle` |
-| `LMG/DA_MuzzleFlash_M249` | 175 / 74.5 / 18.2 |  | 35 | 0.05 |  | 90 | 300 |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  | `DA_MF_M249_DefaultMuzzle` |
-| `LMG/DA_MuzzleFlash_PKM` | 175 / 74.5 / 18.2 |  | 38 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  | `DA_MF_M249_DefaultMuzzle` |
-| `SMG/DA_MuzzleFlash_MP5` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 | 0.5 |  |  |  |  |  |  | 0 to 2 |  |  |  |
-| `SMG/DA_MuzzleFlash_MP9` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 | 0.5 |  |  |  |  |  |  | 0 to 2 |  |  |  |
-| `SMG/DA_MuzzleFlash_SMG_03` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 |  |  |  |  |  |  |  | 0 to 2 |  |  |  |
-| `SMG/DA_MuzzleFlash_Vector` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 | 0.7 | 80 | 350 | 0.5 |  |  |  |  |  |  | 0 to 2 |  |  |  |
-| `SMG/DA_MuzzleFlash_WEPN_031` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 |  |  |  |  |  |  |  | 0 to 2 |  |  |  |
-| `Shotgun/DA_MuzzleFlash_M12G` | 175 / 74.5 / 18.2 | 30 | 50 | 0.05 |  | 100 | 150 |  |  |  | 130 | 5 | 0.5 to 0.75 | 60 | 2 to 5 |  |  | `DA_MF_M500_DefaultMuzzle` |
-| `Shotgun/DA_MuzzleFlash_MP43` | 175 / 74.5 / 18.2 | 30 | 50 | 0.05 |  | 150 | 150 |  |  |  | 130 | 5 | 0.5 to 0.75 | 60 | 2 to 5 |  |  |  |
-| `Sidearms/DA_MuzzleFlash_Deagle` | 175 / 74.5 / 18.2 | 25 | 35 | 0.05 |  | 130 | 150 |  |  |  | 100 | 6 | 0.25 to 1 | 40 | 5 to 10 | 5 / 2.55 / 0 |  |  |
-| `Sidearms/DA_MuzzleFlash_Glock17` | 175 / 74.5 / 18.2 | 10 | 20 | 0.05 |  | 80 | 150 |  |  |  |  |  | 0.4 to 0.75 |  |  |  |  |  |
-| `Sidearms/DA_MuzzleFlash_Judge` | 175 / 74.5 / 18.2 | 25 | 35 | 0.05 |  | 130 | 150 |  |  |  | 100 | 6 | 0.25 to 1 | 40 | 5 to 10 | 5 / 2.55 / 0 |  |  |
-| `Sidearms/DA_MuzzleFlash_M1911` | 175 / 74.5 / 18.2 | 10 | 20 | 0.05 |  | 80 | 150 |  |  |  |  |  | 0.4 to 0.75 |  |  |  |  |  |
-| `SniperRifles/DA_MuzzleFlash_MK22` | 175 / 74.5 / 18.2 | 25 | 40 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |
-| `SniperRifles/DA_MuzzleFlash_Mosin` | 175 / 74.5 / 18.2 | 25 | 40 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |
-| `SniperRifles/DA_MuzzleFlash_SR_04` | 175 / 74.5 / 18.2 | 30 | 40 | 0.06 |  | 100 | 350 |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |
-| `SniperRifles/DA_MuzzleFlash_SV98` | 175 / 74.5 / 18.2 | 25 | 37 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |
-| `SniperRifles/DA_MuzzleFlash_WEPN_035` | 175 / 74.5 / 18.2 | 25 | 40 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |
+| `LMG/DA_MuzzleFlash_Evloys` | 175 / 74.5 / 18.2 |  | 38 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `LMG/DA_MuzzleFlash_M249` | 175 / 74.5 / 18.2 |  | 35 | 0.05 |  | 90 | 300 |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `LMG/DA_MuzzleFlash_PKM` | 175 / 74.5 / 18.2 |  | 38 | 0.05 |  | 95 | 300 |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `SMG/DA_MuzzleFlash_MP5` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 | 0.5 |  |  |  |  |  |  | 0, 2 |  |  |  |
+| `SMG/DA_MuzzleFlash_MP9` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 | 0.5 |  |  |  |  |  |  | 0, 2 |  |  |  |
+| `SMG/DA_MuzzleFlash_SMG_03` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 |  |  |  |  |  |  |  | 0, 2 |  |  |  |
+| `SMG/DA_MuzzleFlash_Vector` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 | 0.7 | 80 | 350 | 0.5 |  |  |  |  |  |  | 0, 2 |  |  |  |
+| `SMG/DA_MuzzleFlash_WEPN_031` | 175 / 74.5 / 18.2 | 15 | 25 | 0.05 |  | 80 | 200 |  |  |  |  |  |  |  | 0, 2 |  |  |  |
+| `Shotgun/DA_MuzzleFlash_M12G` | 175 / 74.5 / 18.2 | 30 | 50 | 0.05 |  | 100 | 150 |  |  |  | 130 | 5 | 0.5, 0.75 | 60 | 2, 5 |  |  | `DA_MF_M500_DefaultMuzzle` |
+| `Shotgun/DA_MuzzleFlash_MP43` | 175 / 74.5 / 18.2 | 30 | 50 | 0.05 |  | 150 | 150 |  |  |  | 130 | 5 | 0.5, 0.75 | 60 | 2, 5 |  |  |  |
+| `Sidearms/DA_MuzzleFlash_Deagle` | 175 / 74.5 / 18.2 | 25 | 35 | 0.05 |  | 130 | 150 |  |  |  | 100 | 6 | 0.25, 1 | 40 | 5, 10 | 5 / 2.55 / 0 |  |  |
+| `Sidearms/DA_MuzzleFlash_Glock17` | 175 / 74.5 / 18.2 | 10 | 20 | 0.05 |  | 80 | 150 |  |  |  |  |  | 0.4, 0.75 |  |  |  |  |  |
+| `Sidearms/DA_MuzzleFlash_Judge` | 175 / 74.5 / 18.2 | 25 | 35 | 0.05 |  | 130 | 150 |  |  |  | 100 | 6 | 0.25, 1 | 40 | 5, 10 | 5 / 2.55 / 0 |  |  |
+| `Sidearms/DA_MuzzleFlash_M1911` | 175 / 74.5 / 18.2 | 10 | 20 | 0.05 |  | 80 | 150 |  |  |  |  |  | 0.4, 0.75 |  |  |  |  |  |
+| `SniperRifles/DA_MuzzleFlash_MK22` | 175 / 74.5 / 18.2 | 25 | 40 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |
+| `SniperRifles/DA_MuzzleFlash_Mosin` | 175 / 74.5 / 18.2 | 25 | 40 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |
+| `SniperRifles/DA_MuzzleFlash_SR_04` | 175 / 74.5 / 18.2 | 30 | 40 | 0.06 |  | 100 | 350 |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |
+| `SniperRifles/DA_MuzzleFlash_SV98` | 175 / 74.5 / 18.2 | 25 | 37 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |
+| `SniperRifles/DA_MuzzleFlash_WEPN_035` | 175 / 74.5 / 18.2 | 25 | 40 | 0.06 |  | 100 | 300 |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |
 <!-- /fx_data_tables -->
 
 ### Vehicle gun recipes
@@ -261,22 +261,22 @@ A weapon recipe (`PDA_MuzzleFlash_C`) names its default muzzle device in the las
 <!-- fx_data_tables flash_vehicles -->
 | Recipe | Niagara system | Distant system | Material | Flash color (RGB, HDR) | Flash 1P | Flash 3P | Lifetime (s) | Frequency | Distant size | Distant max | Distant chance | Light intensity | Light radius | Light color | Gas size | Gas amount | Gas lifetime (s) | Gas spread | Spark amount | Spark color | Spark spread | Socket | Spawn offset | Pooling | Default muzzle |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `ROT_01/DA_MuzzleFlash_ROT_01_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 |  |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |  |  |  |
-| `ROT_02/DA_MuzzleFlash_Cannon30mm` |  |  |  | 175 / 74.5 / 18.2 | 0.8 | 90 |  |  | 150 | 150 |  |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 | 0 to 0 |  | 50 |  |  |  |  |
+| `ROT_01/DA_MuzzleFlash_ROT_01_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 |  |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |  |  |  |
+| `ROT_02/DA_MuzzleFlash_Cannon30mm` |  |  |  | 175 / 74.5 / 18.2 | 0.8 | 90 |  |  | 150 | 150 |  |  |  |  | 120 | 3 | 0.4, 0.7 | 40 | 0, 0 |  | 50 |  |  |  |  |
 | `ROT_02/DA_MuzzleFlash_ROT_02_Rocket` | `NS_MF_Tank` | `NS_MF_Tank` |  | 175 / 74.5 / 18.2 | 10 |  |  | 0.8 |  |  | 0.8 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| `ROT_03/DA_MuzzleFlash_ROT_03_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 | 0.1 |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |  |  |  |
+| `ROT_03/DA_MuzzleFlash_ROT_03_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 | 0.1 |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |  |  |  |
 | `ROT_03/DA_MuzzleFlash_ROT_03_RocketPods` | `NS_MF_RocketPod` | `NS_MF_RocketPod` |  | 175 / 74.5 / 18.2 | 50 | 7.5 |  | 0.8 |  | 250 | 0.8 |  | 250 |  | 400 |  |  |  |  |  |  |  |  |  |  |
-| `ROT_04/DA_MuzzleFlash_ROT_04_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 |  |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |  |  |  |
+| `ROT_04/DA_MuzzleFlash_ROT_04_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 |  |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |  |  |  |
 | `STN03_Mortar/DA_MuzzleFlash_STN_03_MortarLaunch` | `NS_MF_Mortar` | `NS_MF_Mortar` |  | 175 / 74.5 / 18.2 | 50 | 7.5 |  | 0.8 |  | 250 | 0.8 |  | 250 |  | 400 |  |  |  |  |  |  |  |  |  |  |
-| `STN_06/DA_MuzzleFlash_STN_06_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 |  | 30 |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  |  |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `STN_06/DA_MuzzleFlash_STN_06_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 |  | 30 |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  |  |  |  | `DA_MF_M249_DefaultMuzzle` |
 | `TNK_01/Artillery/DA_MuzzleFlash_Artillery` | `NS_MF_Artillery` | `NS_MF_Artillery` |  | 175 / 74.5 / 18.2 | 10 |  |  | 0.8 |  |  | 0.8 |  |  |  |  |  |  |  |  |  |  |  |  |  | `DA_MF_M4_DefaultMuzzle` |
 | `TNK_01/Heavy/DA_MuzzleFlash_Heavy` | `NS_MF_Tank` | `NS_MF_Tank` |  | 175 / 74.5 / 18.2 | 10 |  |  | 0.8 |  |  | 0.8 |  |  |  |  |  |  |  |  |  |  |  |  |  | `DA_MF_M4_DefaultMuzzle` |
-| `TNK_01/Heavy/DA_MuzzleFlash_TankCoaxialGun` | `NS_MF_MasterLong` |  |  | 175 / 74.5 / 18.2 | 5 |  |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  | `S_CoaxialMuzzle` |  |  | `DA_MF_M249_DefaultMuzzle` |
-| `TNK_03_Gepard/DA_MuzzleFlash_Cannon35x228mm` | `NS_MF_GepardCannon` |  |  | 175 / 74.5 / 18.2 | 0.8 | 90 |  |  | 150 | 150 |  |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 | 0 to 0 |  | 50 |  | 67, 0, 0 | no |  |
+| `TNK_01/Heavy/DA_MuzzleFlash_TankCoaxialGun` | `NS_MF_MasterLong` |  |  | 175 / 74.5 / 18.2 | 5 |  |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  | `S_CoaxialMuzzle` |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `TNK_03_Gepard/DA_MuzzleFlash_Cannon35x228mm` | `NS_MF_GepardCannon` |  |  | 175 / 74.5 / 18.2 | 0.8 | 90 |  |  | 150 | 150 |  |  |  |  | 120 | 3 | 0.4, 0.7 | 40 | 0, 0 |  | 50 |  | 67, 0, 0 | no |  |
 | `TNK_04/DA_MuzzleFlash_TNK_04` | `NS_MF_Tank` | `NS_MF_Tank` |  | 175 / 74.5 / 18.2 | 10 |  |  | 0.8 |  |  | 0.8 |  |  |  |  |  |  |  |  |  |  |  |  |  | `DA_MF_M4_DefaultMuzzle` |
-| `TNK_04/DA_MuzzleFlash_TNK_04_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 |  | 30 |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  |  |  |  | `DA_MF_M249_DefaultMuzzle` |
-| `WHL_05/DA_MuzzleFlash_WHL_05_Minigun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 | 0.1 |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4 to 0.7 | 40 |  |  |  |  |  |  |  |
-| `WHL_08/DA_MuzzleFlash_WHL_08_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 |  | 30 |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4 to 0.6 | 40 | 2 to 3 |  |  |  |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `TNK_04/DA_MuzzleFlash_TNK_04_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 |  | 30 |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  |  |  |  | `DA_MF_M249_DefaultMuzzle` |
+| `WHL_05/DA_MuzzleFlash_WHL_05_Minigun` |  |  |  | 175 / 74.5 / 18.2 | 30 | 50 | 0.1 |  | 80 | 350 |  |  |  |  | 120 | 3 | 0.4, 0.7 | 40 |  |  |  |  |  |  |  |
+| `WHL_08/DA_MuzzleFlash_WHL_08_MountedMachineGun` |  |  |  | 175 / 74.5 / 18.2 |  | 30 |  |  | 50 |  |  |  |  | 0 / 0.226 / 1 | 120 |  | 0.4, 0.6 | 40 | 2, 3 |  |  |  |  |  | `DA_MF_M249_DefaultMuzzle` |
 <!-- /fx_data_tables -->
 
 ### Muzzle devices
@@ -291,38 +291,38 @@ A weapon recipe (`PDA_MuzzleFlash_C`) names its default muzzle device in the las
 | `DA_MF_M249_DefaultMuzzle` |  |  |  |  |  | 0.8 |  | 0.1 |  | 0 |  | yes | 8 | 5 |  | -1, 0, 0 |  |  |
 | `DA_MF_M4_DefaultMuzzle` |  | 20, 0, 0 |  |  | 1.5 | 0.75 |  | 0.1 |  | 0 |  | yes | 6 | 4 | 6 |  | -0.24 |  |
 | `DA_MF_M500_DefaultMuzzle` |  | 20, 0, -1 |  |  |  |  |  |  |  |  |  | yes |  |  |  |  |  |  |
-| `DA_MF_MUZL_013` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_032` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_037` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_038` | `SK_MZL_04` | 2, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_039` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.7 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_040` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` |  |  |  |  | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_041` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` |  |  |  |  | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_042` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.6 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 10 |  |  | -0.5 |  |
-| `DA_MF_MUZL_046` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.45 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_049` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.3 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_051` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_052` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_053` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_054` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.45 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_055` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_056` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_057` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_058` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_059` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_060` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.45 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_061` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_062` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.5 |  | 0.75 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_069` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_070` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MUZL_072` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MZL_04` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MZL_05` | `SK_MZL_05` | 20, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MZL_06` | `SK_MZL_04` |  | `MI_MuzzleFlash_01` | 0.5 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 | 0 |
-| `DA_MF_MZL_07` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MZL_08` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MZL_09` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
-| `DA_MF_MZL_10` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2 to 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_013` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_032` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_037` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_038` | `SK_MZL_04` | 2, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_039` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.7 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_040` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` |  |  |  |  | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_041` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` |  |  |  |  | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_042` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.6 | 0.7 |  | 0.85 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 10 |  |  | -0.5 |  |
+| `DA_MF_MUZL_046` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.45 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_049` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.3 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_051` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_052` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_053` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_054` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.45 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_055` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_056` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_057` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_058` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_059` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_060` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.45 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_061` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.7 |  | 0.85 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_062` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.5 | 0.5 |  | 0.75 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_069` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_070` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MUZL_072` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MZL_04` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MZL_05` | `SK_MZL_05` | 20, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MZL_06` | `SK_MZL_04` |  | `MI_MuzzleFlash_01` | 0.5 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 | 0 |
+| `DA_MF_MZL_07` | `SK_MZL_04` | 23, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 20 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MZL_08` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MZL_09` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.35 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
+| `DA_MF_MZL_10` | `SK_MZL_04` | 25, 0, 0 | `MI_MuzzleFlash_01` | 0.4 | 0.6 |  | 0.8 | 0.05 | 0.75 | 40 | 2, 3 | yes |  | 5 |  |  | -0.5 |  |
 | `DA_MF_NoAttachment` |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | `DA_MF_PWSCQB74` | `SK_PWSCQB74_Muzzle` |  | `MI_MuzzleFlash_01` |  | 0.6 | 0.4 | 0.8 | 0.1 |  | 50 |  | yes | 4 | 6 |  | -0.5, -1, 0 | -1 |  |
 | `DA_MF_RFB_DefaultMuzzle` |  |  | `MI_MuzzleFlash_01` | 1.5 |  |  |  | 0.1 |  |  |  |  | 8 | 10 |  | -10, 5, 0 | -0.5 |  |
