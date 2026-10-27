@@ -115,6 +115,16 @@ The ground of this map is one square of 16.32 km by 16.32 km. Across the whole s
 
 The heights are read from the game's ground pieces, which are 1020 m wide, so the real spread inside the box can be a little smaller. The height scale is the game's own and starts below zero on some maps, so only the difference between two heights means something. The box is 3.33 km by 3.45 km and the ground piece count that touches it is 16. Nothing here was measured in play.
 
+## Water height
+
+![Bakurani water surface height]({{ '/assets/img/maps/bakurani-water-height.png' | relative_url }})
+
+*Height of the water surface in the 23 river and lake sections of the map. Dry ground is dark. The white box is the play box. The map is drawn the same way as the minimap, with +Y running down.*
+
+The game stores the water of this map as 23 height grids that each cover a square or rectangle of ground. The grids together span about 15.9 km by 9.4 km and run from -1,016 m to -806 m on the game's height scale (the same scale as the ground heights above). Each grid cell is 2 m to 12 m wide; most are 2 m.
+
+The numbers are read straight from the game files. The water is flat on lakes and falls steadily along each river toward the low end, and neighbouring grids agree where they overlap, to within a few tens of centimetres. Per-grid figures are in the [water height table](../../content/Wardogs_Environment_v2.md#13b-height-grids).
+
 ## Placed objects
 
 These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Mindori and Tevza (and Bakurani Outskirts - Jutari) use the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
@@ -174,6 +184,8 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): boards, yards and infantry spawn areas per map
 - [Vehicle spawn data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-spawns.json)
 - [Maps and gym data](../../content/Wardogs_Maps_v2.md): also the cover material counts per map
+- [Environment data: water height grids](../../content/Wardogs_Environment_v2.md#13b-height-grids)
+- [Water height grids (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-height-grids.json)
 - [ControlZone game feature](../../game-features/Wardogs_GameFeatures_ControlZone_v2.md)
 - [ControlZone regions](../../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md)
 - [Frontend data tables (server browser list)](../../content/Wardogs_DataTables_Frontend_v1.md)
