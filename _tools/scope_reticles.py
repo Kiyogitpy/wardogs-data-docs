@@ -96,6 +96,15 @@ def main():
                 if res:
                     img, info = res
                     rel = f"assets/img/icons/scope-reticles/{mi.group(1)}.png"
+                    note = proc.WITHDRAWN.get(mi.group(1))
+                    if note:
+                        if os.path.exists(os.path.join(ROOT, rel)):
+                            os.remove(os.path.join(ROOT, rel))
+                        for item in row["FilterRules"]["AllowedSubSlotItems"]:
+                            out[item] = {"png": None, "source": "procedural", "family": "mask", "widget": widget,
+                                         "material": mi.group(1), "master": info["master"], "row": tag,
+                                         "note": "not published: " + note}
+                        continue
                     img.save(os.path.join(ROOT, rel), optimize=True)
                     for item in row["FilterRules"]["AllowedSubSlotItems"]:
                         out[item] = {"png": rel, "source": "procedural", "family": "mask", "widget": widget,

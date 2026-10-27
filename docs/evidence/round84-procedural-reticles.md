@@ -25,6 +25,15 @@ vector (`DotColor`, `CircleColor`, `CenterColor`, `EmissiveColor`), with HDR val
 Lines without a colour parameter are black, as in the texture images. The JSON marks these `"source": "procedural"`
 and lists the parameters used (`used`) and not used (`unused`); the 5 texture images keep `"source": "texture"` and are byte-identical.
 
+## Withdrawn images (follow-up)
+
+SGHT_026, 028, 029 and 030 are listed in `scope-reticles.json` with `"png": null`, `"source": "procedural"` and a `note`, and their
+PNGs are deleted: with the stored `*_Pos` values the sign/anchor convention changes the shape (026 stem crosses the ring, 028 ring lands below the dot,
+029 and 030 range ticks overlap the ring/flair post), and the shader that fixes it is not in the files. The generator still
+computes them (rows below describe that drawing) but publishes nothing. `loadout-extras.json` gets `"scopeApprox": true`
+next to `scope` for every published procedural image (SGHT_009, 025, 027, 031, 033, 036, 038), and both loadout pages add
+the caption "Approximate: drawn from the sight's material parameters; the game's shader is not in the files, so shapes and sizes may differ."
+
 ## Per sight
 
 Exact = the shape and its stored sizes come straight from a texture (the 5 texture scopes). Approximate = drawn from parameters.
@@ -45,6 +54,7 @@ Exact = the shape and its stored sizes come straight from a texture (the 5 textu
 
 | Sight | Why |
 |---|---|
+| SGHT_026, 028, 029, 030 | withdrawn, see above |
 | SGHT_034 PGO-7 | M_SGHT_034_Reticle draws a ballistic curve (`CurveStart_Y`, `CurveMid_*`, `CurveEnd_Y`) and number columns; grid box and crosses alone would not be the reticle, so nothing is shown |
 | SGHT_032 Frontier | its sizes are in mixed units (`Circle_Scale` 0.25, `FlairInnerCut_Height` 21.7, `FlairDashes_Width` 14) that need the shader to interpret |
 | SGHT_039, SGHT_040 | `FlareAngle`, `FlareGapSize`, `FlairCutWidth` and the flair width are in pixels with an angle; the flare geometry is not derivable from names |
@@ -55,10 +65,10 @@ Exact = the shape and its stored sizes come straight from a texture (the 5 textu
 
 ## Counts
 
-Sights in the Loadout Builder: 29. With a through-the-scope image: before 5, after 16. With any reticle image (adding the
-older Gunsmith lens images for 10x MRAD, 4x Hybrid, Eotech, Compact T-2): before 9, after 20.
+Sights in the Loadout Builder: 29. With a through-the-scope image: before 5, after 12. With any reticle image (adding the
+older Gunsmith lens images for 10x MRAD, 4x Hybrid, Eotech, Compact T-2): before 9, after 16.
 
 ## Checks
 
-`python -I _tools/scope_reticles.py E:/r84/work/ret/dump E:/r84/work/ret/png` (16 scopes, 15 images); `python -I _tools/loadout_extras.py --check`;
+`python -I _tools/scope_reticles.py E:/r84/work/ret/dump E:/r84/work/ret/png` (16 scopes, 11 images); `python -I _tools/loadout_extras.py --check`;
 `python -I _tools/check_links.py` (0 broken). Visual spot check of the new PNGs against the parameter values done on SGHT_009, 026, 028, 029, 031, 036, 027.

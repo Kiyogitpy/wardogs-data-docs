@@ -274,3 +274,12 @@ LENS_SIGHTS = {
     "Id.Item.SGHT_033": "MI_Optics_SGHT_033_Lens",
     "Id.Item.SGHT_038": "MI_Optics_SGHT_038_Lens",
 }
+
+# Mask reticles whose drawing depends on an unresolved sign/anchor convention of the *_Pos parameters (stem crossing the
+# ring, ring below the dot, range ticks overlapping the ring or flair posts): the sight is listed, but no image is published.
+WITHDRAWN = {
+    "MI_SGHT_026_Reticle": "the sign of RangeHeight_Pos is unresolved: the stem would cross the ring",
+    "MI_SGHT_028_Reticle": "the sign/anchor of CenterRing_Pos and CenterDot_Pos is unresolved: the ring lands below the dot",
+    "MI_SGHT_029_Reticle": "the sign/anchor of RangeHeight_Pos is unresolved: the range ticks overlap the ring and the flair post",
+    "MI_SGHT_030_Reticle": "the sign/anchor of RangeHeight_Pos is unresolved: the range ticks overlap the flair post",
+}
