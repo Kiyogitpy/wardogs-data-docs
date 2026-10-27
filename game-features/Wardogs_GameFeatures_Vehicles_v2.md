@@ -313,7 +313,7 @@ Each extension ties an item to its stats, ammo, reload timing and starting inven
 | Heavy Turret | TNK_04 | ID.Item.125x570mm | 4.0 | 1.0 | n/a | 9 | n/a |
 | Machine Gun | TNK_04 MachineGun | Id.Item.762x54mm | 4.25 | 1.0 | n/a | 300 (tracer) | n/a |
 
-Five extensions carry a restock count (the Restock column). The restock semantics and tag are not decoded.
+Five extensions carry a restock count (the Restock column). Only the five stationary weapons restock, from the FOB supply inventory (`bAllowsRestocking`; the amounts and the native default of 1 are in [round 40](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md), R40-8).
 
 ### 8c. Weapon data (`WDVehicleWeaponDataAsset`)
 
@@ -491,7 +491,7 @@ Stationary platforms use `BHBaseVehicleConfigDataAsset` (no physics). They carry
 - **Damage entries.** Damage tables are counted by operation. Each entry's `Amount`, requirements and priority are not summarized.
 - **Seat counts.** ROT_03 and ROT_04 base seat assets were not pulled. Pickup's extra 2 seats (6 stated vs 4 base) are unresolved.
 - **Wheel and surface curves.** The 116 `CurveFloat` objects, the per-surface audio and skid assets (`DA_Vehicle_Surface_*`, `DA_Vehicle_Skidding_*`, `DA_Vehicle_BrakingSurface_*`), and the wheel-level `MWheeledVehicleWheelDataAsset` friction values are tabled in [Vehicle Assets](Wardogs_VehicleAssets_v1.md) section 14. What `Values[0..2]` mean is unconfirmed.
-- **Control assist conditions.** The rotary control assist bodies and conditions (`BH*RotaryMovementControlAssist*` and related conditions, roughly 270 objects) are not decoded.
+- **Control assist conditions.** The helicopter control-assist objects and the wheeled arcade controls are tabled in [Vehicle control assists](Wardogs_VehicleControlAssists_v1.md). How each number maps to the feel of the vehicle is not traced.
 - **Audio and cues.** `WDGameplayCueEffect` (153), `WDAudioData` (88) and the Crosstalk audio event objects (about 130) are inventoried only.
 - **Input and camera.** `MWheeledVehicleInputDataAsset`, `MLandInputControlsDataAsset`, and the spring arm and camera behaviour assets are not tabled.
 - **Stationary stats.** STN_01 to STN_05 have no stats asset, so their MaxSpeed, fuel and seat values are not available.

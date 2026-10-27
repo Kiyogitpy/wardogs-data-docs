@@ -337,7 +337,7 @@ Steering, suspension and tracks
 
 - Which of `EngineData` and `DynamicsData` drives a tracked vehicle, and the unit of the torque and brake numbers, are not traced.
 - Gear order: **the last entry of `GearRatios` is the reverse gear**, applied with a negative sign; the forward gears are the entries before it ([round 46](../docs/evidence/round46-b.md), item 1). So WHL_01 (4.2, 2.8, 1.9, 1.5, 1.3, 6) has five forward gears and reverse 6.0, and the native default list (3.0, 5.0) is one forward gear and reverse 5.0.
-- `DA_ArcadeControls_*` are not decoded. The `FlightCharacteristics` scalars and control forces of the three helicopters, the air drag assets, the tracked wheel data and the config sub-fields are tabled in [Vehicle config fields](Wardogs_VehicleConfigFields_v1.md); the fixed-wing airplane's flight asset is in [Fixed-wing flight model](Wardogs_FixedWingFlightModel_v1.md).
+- `DA_ArcadeControls_*` are tabled in [Vehicle control assists](Wardogs_VehicleControlAssists_v1.md). The `FlightCharacteristics` scalars and control forces of the three helicopters, the air drag assets, the tracked wheel data and the config sub-fields are tabled in [Vehicle config fields](Wardogs_VehicleConfigFields_v1.md); the fixed-wing airplane's flight asset is in [Fixed-wing flight model](Wardogs_FixedWingFlightModel_v1.md).
 - Whether the boost switch (`bEnableBoost`, false in every wheeled asset) gates the stored boost scale is not traced.
 
 ---

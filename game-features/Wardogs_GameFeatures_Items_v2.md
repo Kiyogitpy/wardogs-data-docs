@@ -539,14 +539,14 @@ Ten tapes (01 to 09, and 11; the export has no tape 10). Each has a `BHEntityDat
 
 - **Buying:** the vendor `Price` is charged once per purchase and grants `Qty` units. Per-unit cost is `Price / Qty`.
 - **Placement:** a hammer lists the buildables it may place (section 6.1). The FOB ruleset then caps some buildables per FOB (section 6.4). The per-buildable material cost is not in this plugin.
-- **Damage on buildables:** for a given hit, the matching entries in section 6.3 apply. How several matching entries stack (additive or multiplicative) is not decoded, so no combined multiplier is given.
+- **Damage on buildables:** for a given hit, the matching entries in section 6.3 apply. How matching entries combine (each `Percentage_Ongoing` entry multiplies the running value, in the order of the selection) is read from the infantry hit path in [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic); this page gives no combined multiplier for buildables.
 
 ---
 
 ## 11. Still Not Pulled / Limitations
 
 - **Build costs.** `WDActorBuildSpawner` and `BuildingStagesDefinition` carry no material cost. The cost is the `Cost` field of the `WDBuildableDataAsset` export in each `DA_Buildable_*` file (33 files, e.g. AirRaidShelter 200).
-- **Damage modifier requirements.** Entries with instigator, target or hit-location requirements are not decoded. Their meaning and priority order are unknown.
+- **Damage modifier requirements.** Entries with instigator, target or hit-location requirements follow the matching rules in [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md#4-entry-selection) (read for the infantry hit path).
 - **`LevelToUnlock`.** Stored on vendor variations (values 0 or 1). The system that reads it is not in this folder, so its effect is unconfirmed.
 - **Sign and units.** The damage sign (section 6.3) and projectile speed and length units are inferred, not stated.
 - **Audio, animation, crosstalk and most UI widget data.** Counted in section 1 but not decoded. Firing audio, animation sets and HUD tracker layouts are not summarised.
