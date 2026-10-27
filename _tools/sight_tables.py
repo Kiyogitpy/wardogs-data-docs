@@ -158,7 +158,8 @@ def collect():
             "price": b.get("price"), "unlock": ({"tree": tree, "level": unl[tree][0], "cost": unl[tree][1]} if unl else None),
             "variableZoom": can, "storedAdsZoom": stored, "testValue": test, "baseFov": base,
             "entries": entries,
-            "reticles": {"entries": ret.get("entries") or {}, "scope": ret.get("scope") or (sc or {}).get("png")},
+            "reticles": {"entries": ret.get("entries") or {}, "scope": ret.get("scope") or (sc or {}).get("png"),
+                         "scopeApprox": bool(ret.get("scopeApprox") or (sc or {}).get("source") == "procedural")},
             "fits": [wname[a] for a in fits.get(it.asset, [])], "fitIds": fits.get(it.asset, []),
         })
     rows.sort(key=lambda r: (r["entries"][0]["magnification"] or 0, r["name"].lower()))
@@ -212,7 +213,7 @@ def block_main(d):
         icon = img(r["icon"], r["name"], 48) if r["icon"] else ""
         out.append("| " + " | ".join([
             icon, r["name"], mag_text(e), fov_text(e), e["aimTime"], zeroing_text(e["zeroing"]["min"], e["zeroing"]["max"]),
-            ents, f"{r['price']:,}" if r["price"] else "not in shop", lvl, cost, f"`{r['id']}`"]) + " |")
+            ents, f"${r['price']:,}" if r["price"] else "not in shop", lvl, cost, f"`{r['id']}`"]) + " |")
     return "\n".join(out)
 
 
@@ -235,7 +236,8 @@ def block_reticles(d):
         for k, p in r["reticles"]["entries"].items():
             out.append(f"| {r['name']} | {ENTRY_NAMES.get(k, k)} (HUD reticle) | {img(p, r['name'] + ' reticle', 96)} |")
         if r["reticles"]["scope"]:
-            out.append(f"| {r['name']} | Scope view overlay | {img(r['reticles']['scope'], r['name'] + ' scope view', 96)} |")
+            kind = "Scope view overlay" + (" (approximate, drawn from material parameters)" if r["reticles"]["scopeApprox"] else "")
+            out.append(f"| {r['name']} | {kind} | {img(r['reticles']['scope'], r['name'] + ' scope view', 96)} |")
     return "\n".join(out)
 
 
