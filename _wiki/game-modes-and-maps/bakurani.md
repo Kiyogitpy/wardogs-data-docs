@@ -121,7 +121,7 @@ The heights are read from the game's ground pieces, which are 1020 m wide, so th
 
 *Height of the water surface in the 23 river and lake sections of the map. Dry ground is dark. The white box is the play box. The map is drawn the same way as the minimap, with +Y running down.*
 
-The game stores the water of this map as 23 height grids that each cover a square or rectangle of ground. The grids together span about 15.9 km by 9.4 km and run from -1,016 m to -806 m on the game's height scale (the same scale as the ground heights above). Each grid cell is 2 m to 12 m wide; most are 2 m.
+The game stores the water of this map as 23 height grids that each cover a square or rectangle of ground. The grids together span about 15.9 km by 9.4 km and run from -1,016 m to -806 m on the game's height scale (the same scale as the ground heights above). Each grid cell is 2 m wide, except one grid at 4 m.
 
 The numbers are read straight from the game files. The water is flat on lakes and falls steadily along each river toward the low end, and neighbouring grids agree where they overlap, to within a few tens of centimetres. Per-grid figures are in the [water height table](../../content/Wardogs_Environment_v2.md#13b-height-grids).
 
