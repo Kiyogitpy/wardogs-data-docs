@@ -197,7 +197,7 @@ def unlock_text(r):
     if not u:
         return "no class gate", ""
     who = "Wardog level" if u["tree"] == "Wardog" else f"{u['tree']} level"
-    return f"{who} {u['level']}", f"{u['cost']:,}" if u["cost"] else "free"
+    return f"{who} {u['level']}", f"${u['cost']:,}" if u["cost"] else "free"
 
 
 def block_main(d):
