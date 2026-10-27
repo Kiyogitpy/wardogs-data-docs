@@ -54,6 +54,11 @@ VEHICLE_OF = {"DA_Buildable_MGNest": "stationary-mgnest", "DA_Buildable_MistralA
               "DA_Buildable_STN_02": "stationary-phalanx", "DA_Buildable_STN_03": "stationary-mortar",
               "DA_Buildable_STN_04": "stationary-radiotower", "DA_Buildable_STN_05": "stationary-stn-05"}
 
+# Buildables without a DisplayName and without an entity-table name: the parts of the Recon Tower (asset DA_Buildable_CrowsNest)
+# are named after the tower, as the player sees it in the shop.
+PIECE_NAMES = {"DA_Buildable_CrowsNest_BaseFloor": "Recon Tower base floor", "DA_Buildable_CrowsNest_FirstFloor": "Recon Tower first floor",
+               "DA_Buildable_CrowsNest_Roof": "Recon Tower roof"}
+
 # (id, name, static mesh, actor key in assets/data/explosive-actors.json, notes)
 DEPLOYABLES = [
     ("at-mine", "AT Mine", "SM_AT_mine", "AT mine",
@@ -326,7 +331,7 @@ def build_buildable(d, rel, asset, typ, p, bodies, raw_dir, records):
                               "trace_flag": b["trace_flag"], "shapes": [{"type": s["type"], **dims(s)} for s in b["shapes"]]})
             pieces.append(piece)
         stage_rec.append({"name": st["name"], "progress": st["progress"], "pieces": pieces})
-    rec = {"id": oid, "group": "buildables", "name": bt.display_name(d, p) or asset.replace("DA_Buildable_", ""),
+    rec = {"id": oid, "group": "buildables", "name": bt.display_name(d, p) or PIECE_NAMES.get(asset) or asset.replace("DA_Buildable_", ""),
            "asset": asset, "tag": bt.tag_of(p), "cost": p.get("Cost"), **damage_summary(d, p),
            "vehicle_viewer": VEHICLE_OF.get(asset), "stages": stage_rec, "glb": None, "notes": []}
     if not nodes:
@@ -498,6 +503,9 @@ def main():
                                       for p in s["pieces"]]} for s in o["stages"]]
                 for o in written["objects"] if o["group"] == "buildables"}
         bad = [k for k in fresh if have.get(k) != fresh[k]] + [k for k in have if k not in fresh]
+        names = {o["id"]: o["name"] for o in written["objects"] if o["group"] == "buildables"}
+        want = {slug(a): bt.display_name(d, p) or PIECE_NAMES.get(a) or a.replace("DA_Buildable_", "") for rel, a, typ, p in d["assets"]}
+        bad += [k + " (name)" for k in want if names.get(k) != want[k]]
         if bad:
             print("stale or missing in assets/data/object-collision.json:", ", ".join(sorted(set(bad))))
             sys.exit(1)

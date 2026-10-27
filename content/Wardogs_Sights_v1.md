@@ -126,3 +126,16 @@ Reticle images exist for the sights below; the list grows as more are extracted.
 | 6x Marksman Scope + Reflex | Scope view overlay (approximate, drawn from material parameters) | ![6x Marksman Scope + Reflex scope view]({{ '/assets/img/icons/scope-reticles/MI_SGHT_036_Reticle.png' | relative_url }}){: width="96" } |
 | 6x Precision Rifle Scope | Scope view overlay (approximate, drawn from material parameters) | ![6x Precision Rifle Scope scope view]({{ '/assets/img/icons/scope-reticles/MI_SGHT_031_Reticle.png' | relative_url }}){: width="96" } |
 <!-- /sight_tables -->
+
+## Handheld optics
+
+Binoculars, the monocular and the range finders are not sight attachments. Each carries a masked-scope extension (`BH_PrototypeMaskedScopes_ExtensionData`) that sets its zoom and the overlay widget. The ADS FOV follows the same rule as the sights above (base 72 degrees because the highest zoom is 3.25 or more). "not set" means the item leaves the field at the class default, which the export does not give; the Range Finder sets a minimum but no maximum. The infrared range finder also carries a post-process blend (`PPi_IR`) and a list of ghillie gear it ignores.
+
+<!-- sight_tables handheld -->
+| Item | Price | Default zoom | Min zoom | Max zoom | ADS FOV at default | At min | At max | Overlay widget | Overlays | Id |
+|---|---:|---:|---:|---:|---|---|---|---|---:|---|
+| Binoculars | $180 | 4x | not set | 4x | 18° (6.31x) | not set | 18° (6.31x) | `W_HUD_MaskedScope` | 2 | `ID_Binoculars_Standard` |
+| Monocular | $350 | 4x | 3x | 5x | 18° (6.31x) | 24° (4.7x) | 14.4° (7.92x) | `W_HUD_MaskedScope` | not set | `ID_Monocular` |
+| Range Finder | $1,450 | 4x | 2x | not set | 18° (6.31x) | 36° (3.08x) | not set | `W_HUD_MaskedScope` | not set | `ID_RangeFinder_Standard` |
+| Infrared Range Finder | $3,200 | 4x | 2x | 8x | 18° (6.31x) | 36° (3.08x) | 9° (12.71x) | `W_HUD_MaskedScope` | 2 | `ID_RangeFinder_Expensive` |
+<!-- /sight_tables -->

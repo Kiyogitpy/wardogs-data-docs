@@ -77,16 +77,24 @@ score = lastWeight * TargetScore_AssistWeight
 - `lastWeight` is the weight the same target had on the previous update (element `+108` of the 160-byte target record), or the default weight for a new target.
 - `viewDot` is the dot product of the camera's forward vector with the unit vector to the target (1 straight ahead). `distance` is camera to target, `range` is `TargetRange`, divided by the FOV scale when `bFOVReticleScaling` is on (it is off in every asset).
 - The constructor defaults (**Default**, from `0x6760E9E`) are: AssistWeight 10, ViewDot 50, ViewDotOffset 40, ViewDistance 0.25, RenderedRecently 1000. Assault rifle and SMG assets set `TargetScore_ViewDistance` to 1; every other class keeps 0.25. The RPG asset sets all five to 0.
-- The check before the last term is a native call (`0x43AAA8D0`) on the target's component. Its body is not in the decompiled corpus; the field name and the call shape fit a "was this component rendered recently" test (**Inferred**).
+- The check before the last term is the engine's "was this component rendered recently" test (`0x3AAA8D0`; round 85 wrote the address with the image base digit, `0x43AAA8D0`). The collector calls it with a tolerance of 0.2 s: a target counts as rendered when it was drawn within the last 0.2 s, or within the last frame if frames are slower than that (**Native**, static reading, round 88).
 - With these defaults a recently rendered target gets +1000, far above the other terms (the weight term is at most 10, the view terms at most 10 and 1), so a target on screen always outranks one that is not.
 
-After scoring, each target's weight is recomputed in `0x6766850`: it is `TargetWeightCurve` evaluated by the collecting component (clamped to 0 to 1), the weights are divided by their sum, and each is then floored at `MinAssistWeight` (0.125 in every asset; the constructor default is 0.25). The curve is the same asset for every class: 0 at key 0, 1 at key 0.01, then flat at 1. The argument the curve is evaluated at is not visible in the decompiled code (**not traced**).
+After scoring, each target's weight is recomputed in `0x6766850`: it is `TargetWeightCurve` evaluated at the target's fade timer (clamped to 0 to 1), the weights are divided by their sum, and each is then floored at `MinAssistWeight` (0.125 in every asset; the constructor default is 0.25). The curve is the same asset for every class: 0 at key 0, 1 at key 0.01, then flat at 1. The fade timer (**Native**, round 88) rises by the frame time while the target is eligible, up to the curve's last key time (0.01 s), and falls by the frame time to 0 when it is not. So a target reaches full weight 0.01 s after it becomes eligible and loses it again within 0.01 s: the curve is effectively an on/off switch, not a gradual fade.
 
 `StrengthScale` multiplies the final pull (`0x6765BF0`); only the RPG asset sets it (0).
 
 ## Unnamed settings floats (Data, partly Native)
 
-Seven floats in the settings asset have hashed names in the export. Their offsets are from the SDK. Melee omits `0x3B8` to `0x3C8`, so it keeps the constructor values (0.25, 0.25, 0.6, 1.0, 0.25). The two at `0x3B8` and `0x3BC` are the look and move input thresholds that gate the pull ([Items](Wardogs_Items_v2.md), section 9). `0x3B4` is read by the pull routine (`0x6765BF0`) in a ratio that is clamped to at most 10; the other four were not matched to a use (**not traced**).
+Seven floats in the settings asset have hashed names in the export. Their offsets are from the SDK. Melee omits `0x3B8` to `0x3C8`, so it keeps the constructor values (0.25, 0.25, 0.6, 1.0, 0.25). The two at `0x3B8` and `0x3BC` are the look and move input thresholds that gate the pull ([Items](Wardogs_Items_v2.md), section 9). All five other floats are read by the pull routine (`0x6765BF0`), traced in round 88 (**Native**, static reading; the sign conventions of the offsets were not checked):
+
+- `0x3B0`: a 0 to 1 blend factor. When the target moves against the player's look input on the second axis, the adjusted pull limit on that axis is blended back toward the unadjusted one: `adjusted = (adjusted - unadjusted) * f + unadjusted` (0 undoes the adjustment, 1 keeps it all).
+- `0x3B4`: a reference value for a counter-motion boost. The boost uses the ratio `0x3B4` divided by a view-scale component, limited to between 1 and 10, and is added to the look input when the target is moving against it.
+- `0x3C0`: a look-input radius. When the normalised look input is at least this large, the pull also looks at where the weighted centre of the targets sits relative to the reticle. A value of 0 or less switches that check off.
+- `0x3C4`: that offset threshold in degrees (yaw or pitch). Below it the check does nothing.
+- `0x3C8`: a 0 to 1 blend factor like `0x3B0`, applied per axis when the look input is at least `0x3C0` and pushes against an off-centre target (offset at least `0x3C4`).
+
+With the cooked values (0.25, 0.6, 0.75, 2.5 and 0.4), a player who flicks the stick hard (75 percent of full) away from a target that is at least 2.5 degrees off centre gets only 40 percent of the usual pull adjustment on that axis (the difference between the adjusted and unadjusted limit; what it feels like in play was not tested). The generated table below lists the per-class values.
 
 <!-- aim_assist hashed -->
 | Unnamed field | Settings offset | AR | LMG | SMG | Shotgun | SR | Pistol | Melee | RPG |
