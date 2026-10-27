@@ -42,7 +42,7 @@ import weapon_attributes as wa  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "data", "spray-patterns.json")
-S1_DEFAULT = "E:/r22/s1/data"
+S1_DEFAULT = "E:/wardogs_builds/season1/data"
 RUNS = 2000
 MIN_SHOTS = 40
 EXPORT = re.compile(r"^--- export:.*---\s*$", re.M)

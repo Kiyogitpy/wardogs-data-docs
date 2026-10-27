@@ -81,7 +81,7 @@ PERM_INSTANCES = []
 CANDS = None   # list when --named-candidates is given
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-S1_DEFAULT = "E:/r22/s1/data"
+S1_DEFAULT = "E:/wardogs_builds/season1/data"
 S2_DEFAULT = os.path.join(ROOT, "data")
 OUT_DIR = os.path.join(ROOT, "assets", "data", "season-diff")
 GENERATED_BY = "_tools/season_diff.py"
