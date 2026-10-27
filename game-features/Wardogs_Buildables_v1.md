@@ -104,6 +104,16 @@ Stages are progress thresholds from 0 to 1. A stage becomes visible when the bui
 | Small (`ID_SmallHammer`) | Slow Build Speed | 0.5 | 3 | `AM_FP_Small_Hammer_Use` | 1.27 | 0.24 | 0.567 | 150 |
 <!-- /buildable_tables -->
 
+Reach, dismantle and critical-spot constants per hammer (**Data**, `_tools/item_extension_tables.py`; distances in Unreal centimetres). The dismantle multiplier is applied by team attitude: Friendly 1.0, Neutral and Hostile 0.5. The Small hammer sets no trace distance; the Large and Medium hammers trace 275 cm. A critical spot may appear up to 290 cm (Medium, Small) or 340 cm (Large) from the player's view and up to 135 degrees away from the camera direction when it spawns.
+
+<!-- item_ext hammer -->
+| Hammer | Dismantle rate per second | Dismantle rate per hit | Dismantle trace distance (cm) | Dismantle multiplier by team attitude | Build amount on a critical-spot hit | Spot max distance from view (cm) | Spot max facing-away angle (degrees) |
+|---|---:|---:|---:|---|---:|---:|---:|
+| Large Hammer | 250 | 250 | 275 | Neutral x0.5, Hostile x0.5, Friendly x1 | 8 | 340 | 135 |
+| Medium Hammer | 200 | 200 | 275 | Neutral x0.5, Hostile x0.5, Friendly x1 | 5 | 290 | 135 |
+| Small Hammer | 150 | 150 | not set | Neutral x0.5, Hostile x0.5, Friendly x1 | 3 | 290 | 135 |
+<!-- /item_ext hammer -->
+
 **Derived**, if the loop section is the swing period and one `BuildAmount` is added per hit: Large 1.5 per 0.88 s (about 1.7 per second), Medium 1.0 per 0.57 s (about 1.76 per second), Small 0.5 per 0.57 s (about 0.88 per second). That puts Large and Medium about equal, although the shop text calls the Large hammer fast and the Medium hammer moderate; so the hit rate is probably not the loop length (not native, not resolved). The scale of `BuildAmount` against the 0 to 1 stage progress is known since round 38 (**Native**, [section 13](#13-round-38-the-building-arithmetic)): a hit adds `BuildAmount / Cost` of the structure's progress, and the hammer path does use the `BuildAmount` field of `UWDItemExtensionData_BuildBuildable` (the hammer class derives from it; 3.0 is only the default for unset assets). The large hammer also carries `DismantleRatePerSecond` 250, medium 200, small 150 (equal to the per-hit values).
 
 - Most structures use 0, 0.25, 0.5, 0.75, 1. The Door uses 0, 0.3, 0.6, 0.8, 1 and the WoodBase uses 0, 0.2, 0.45, 0.7, 1.

@@ -530,14 +530,16 @@ def example(d, start=20.0):
     etxt = f"{n(round(et, 2))} s (montage length, **Data**)" if et else "one use (seconds not traced)"
     out.append(f"| Bandage (self) | {k} | {btxt} | {k} of a stack of 5 | +{n(bandage)} each; the last one is clamped at max health |")
     out.append(f"| Individual First Aid Kit (self) | 1 | {itxt} | 1 kit | +100 clamps at max health |")
-    t = need / (m["HealSelfAmount"] / m["HealSelfDuration"])
-    dcost = need * m["HealSelfDurabilityCost"] / m["HealSelfAmount"]
-    out.append(f"| Medical Bag (self) | continuous | {n(t)} s | {n(dcost)} durability ({n(dcost / it['dur'] * 100)} % of 150) | assumes the 35 HP is spread evenly over 5 s and durability is spent in proportion; if cost is charged per full {n(m['HealSelfDuration'])} s step instead it is {n(math.ceil(need / m['HealSelfAmount']) * m['HealSelfDurabilityCost'])} |")
+    steps = math.ceil(need / m["HealSelfAmount"])
+    t = steps * m["HealSelfDuration"]
+    dcost = steps * m["HealSelfDurabilityCost"]
+    out.append(f"| Medical Bag (self) | {steps} steps | {n(t)} s ({steps} x {n(m['HealSelfDuration'])} s) | {n(dcost)} durability ({n(dcost / it['dur'] * 100)} % of 150) | one step every {n(m['HealSelfDuration'])} s heals {n(m['HealSelfAmount'])} and spends {n(m['HealSelfDurabilityCost'])} (**Bytecode**, round 91: repeating timer, durability charged per successful step); the last step is clamped at max health |")
     for tt, v in mults[1:]:
-        out.append(f"| Medical Bag (self), skill curve value {n(v)} | continuous | {n(t)} s | {n(dcost * v)} durability | assumes `UsageRateMultiplier` scales the cost (not traced) |")
-    t2 = need / (m["HealOtherAmount"] / m["HealOtherDuration"])
-    d2 = need * m["HealOtherDurabilityCost"] / m["HealOtherAmount"]
-    out.append(f"| Medical Bag (teammate) | continuous | {n(t2)} s | {n(d2)} durability | 10 HP/s, cheap per HP; heals stop if the user moves away (tutorial text) |")
+        out.append(f"| Medical Bag (self), skill curve value {n(v)} | {steps} steps | {n(t)} s | {n(dcost * v)} durability | assumes `UsageRateMultiplier` scales the cost (not traced) |")
+    steps2 = math.ceil(need / m["HealOtherAmount"])
+    t2 = steps2 * m["HealOtherDuration"]
+    d2 = steps2 * m["HealOtherDurabilityCost"]
+    out.append(f"| Medical Bag (teammate) | {steps2} steps | {n(t2)} s ({steps2} x {n(m['HealOtherDuration'])} s) | {n(d2)} durability | one step every {n(m['HealOtherDuration'])} s heals {n(m['HealOtherAmount'])} and spends {n(m['HealOtherDurabilityCost'])} (**Bytecode**, round 91); heals stop if the user moves away (tutorial text) |")
     out.append(f"| Enox | 1 | {etxt} | 1 | gives 40 health as decaying health, not permanent; the pool holds 40 (Blueprint `MaxDecayHealth`) |")
     out.append("| Natural regeneration | - | - | - | no infantry regen tick traced outside Deathmatch |")
     return "\n".join(out)
