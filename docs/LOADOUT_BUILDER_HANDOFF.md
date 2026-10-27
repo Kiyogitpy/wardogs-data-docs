@@ -99,7 +99,7 @@ need that.
   - 176 attachments have no vendor row (no price).
   - 87 have no icon (a letter tile is shown).
   - Many have no weight, so total weight is shown as "at least".
-- **Weapons without bullet data**: the bow, the Mosin Nagant and the launchers have no damage tables.
+- **Weapons without bullet data**: the bow and the launchers have no damage tables. (The Mosin Nagant was missing until 2026-10-27 only because its item tag is `Id.Item.Mosin`, not `Id.Item.WEPN_017`; `loadout_extras.py` now matches damage rows to `ID_<short name>` first.)
 - **Picker**: no arrow-key grid navigation (Tab only).
 - **Recoil target view**: the 1.4 m aim height is a presentation choice, not game data. A "zoom to player" toggle would help at long range.
 - **Hidden slots in old links**: an old shared link that changed a hidden slot (barrel, stock, grip, handguard) still loads it, but there is no tile to change it back.

@@ -91,7 +91,8 @@ def build():
     fall_by = {w["id"]: w for w in fall["weapons"]}
     ballistics = {}
     for w in dmg["weapons"]:
-        item_id = by_tag.get(("Id.Item." + w["id"]).lower())
+        # damage tables use the definition's short name (WEPN_017 -> ID_WEPN_017, whose tag is Id.Item.Mosin)
+        item_id = "ID_" + w["id"] if "ID_" + w["id"] in items else by_tag.get(("Id.Item." + w["id"]).lower())
         f = fall_by.get(w["id"])
         if not item_id or not f:
             continue
