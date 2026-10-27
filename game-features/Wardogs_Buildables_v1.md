@@ -331,7 +331,7 @@ Six vehicle plugins (`STN_01` to `STN_06`) each ship a `WDBuildableDataTableRow`
 | `STN_06` | `DT_Buildables_STN_06` | `Buildables_LargeHammer` | `Id.Buildable.MGNest` | `DA_Buildable_MGNest` | MG Nest | 650 | 3,000 | - | 5 | 5 | `Vehicle.Variant.Stationary.MGNest` | `WDWithinFobBoundsPlacementCondition`, `WithinLadderBoundsPlacementCondition`, `SafeZonePlacementCondition` |
 <!-- /buildable_tables -->
 
-Source: `WDBuildableDataTableRow` tables `DT_STN_01_Buildable_Data`, `DT_STN_02_Buildable_Data`, `DT_STN_03_Buildable_Data`, `DT_Buildables_STN_04`, `DT_STN_05_Buildable_Data` and `DT_Buildables_STN_06`. What the hammer does with these rows (the native placement path) is **not traced**.
+Source: `WDBuildableDataTableRow` tables `DT_STN_01_Buildable_Data`, `DT_STN_02_Buildable_Data`, `DT_STN_03_Buildable_Data`, `DT_Buildables_STN_04`, `DT_STN_05_Buildable_Data` and `DT_Buildables_STN_06`. What the hammer does with these rows (the native placement path) is **not traced**. The 400 unit reach and 30 degree angle of mines and Claymores (`WDItemExtensionData_Placeable`, [FireAndUtility section on placeables](Wardogs_FireAndUtility_v1.md)) are the same kind of native-only value: round 88 searched the executable for readers of both fields and found none, so they are still unlocated.
 
 ## 7. Names, descriptions and the vendor
 

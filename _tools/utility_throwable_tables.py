@@ -309,9 +309,9 @@ def molotov_bp():
     roles = {"0x670": "scale of the patch offset from the impact point", "0x674": "scale of the patch offset from the impact point",
              "0x678": "patch count", "0x67C": "not matched to a use", "0x680": "scales a reduced count",
              "0x684": "copied into each spawned patch"}
-    # AWDMolotovFireField: read by the point-clustering function at RVA 0x86A0E20 (round 86, static read)
+    # AWDMolotovFireField: +0x2D4/2D8/2DC read by the point-clustering function at RVA 0x86A0E20 (round 86); +0x2D0 read by 0x86A3D70 / 0x86A40E0 (round 88), both static reads
     fire_roles = {"0x2D4": "horizontal merge radius of a fire cluster (cm)", "0x2D8": "vertical tolerance of a cluster (cm)",
-                  "0x2DC": "maximum number of clusters", "0x2D0": "no reader found in the field class code (not decoded)"}
+                  "0x2DC": "maximum number of clusters", "0x2D0": "fire spread speed in cm per second (function 0x86A40E0; static read, round 88)"}
     for asset, cls in (("B_Molotov", "AWDMolotovGrenade"), ("B_Molotov_FireField", "AWDMolotovFireField")):
         for e in bpd.topic_entries(TOPIC):
             if e["asset"] != asset or not e["property"].startswith("_aaa"):

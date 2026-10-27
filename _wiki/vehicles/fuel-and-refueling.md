@@ -30,6 +30,10 @@ A vehicle's fuel is set by its vendor stats. Fuel is refilled in three ways: a [
 
 When a vehicle's fuel reaches zero, the server stops its engine. A stopped engine cannot be restarted while the tank is empty, so refuel first. This comes from a static reading of the start check (the game was not run to test it): the check passes only once the tank holds fuel again.
 
+### How fuel is used up
+
+The tank drains only while the engine is running, and the game works it out on the host or server, not on each player's PC. Driving at speed, the drain is the speed in km/h divided by 3,600 and by the vehicle's kilometres-per-litre figure, in litres per second. When a car or truck is stopped or crawling at 1 km/h or less, the drain switches to the engine speed (RPM) divided by 3,600 and by a second figure per vehicle, so an idling engine still burns a little. Tracked vehicles and the airplane use no fuel while stopped or crawling at 1 km/h or less. A leak drains fuel even with the engine off. This is a static reading of the code; the game was not run to test it.
+
 ### Fuel leaks
 
 Fuel tank damage makes the tank leak fuel, and the leak rate steps up as the tank loses health. On the fixed-wing airplane the tank leaks 0.1 per second below 90 percent tank health, 0.4 per second below 50 percent and 0.5 per second when the tank is destroyed. Other vehicles use their own steps. The heavy tanks reach 3.0 per second when destroyed, and the MH-6 and AH-6 family leak 0.1 per second below 10 percent and 0.75 per second when destroyed.

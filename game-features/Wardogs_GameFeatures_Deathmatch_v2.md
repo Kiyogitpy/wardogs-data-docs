@@ -91,6 +91,11 @@ The UI scene row is `UI.Scene.Deathmatch.WeaponSelect`.
 
 - **Regen rate.** `WDHealthRegenComponent` values are not in this folder.
 - **Ammo amounts.** `WDLoadoutAmmoGenerationComponent` rules are not in this folder.
-- **Spawn logic.** `B_DeathmatchSpawner` was exported in round 86. It is an empty Blueprint subclass of the native `WDDeathmatchPlayerSpawnManagerComponent` (`/Script/DeathmatchRuntime`): no variables, no overrides, no class defaults, no bytecode. The spawn selection rules therefore run entirely in native code, which was not read.
+- **Spawn logic.** `B_DeathmatchSpawner` was exported in round 86. It is an empty Blueprint subclass of the native `WDDeathmatchPlayerSpawnManagerComponent` (`/Script/DeathmatchRuntime`): no variables, no overrides, no class defaults, no bytecode. The spawn selection rules therefore run entirely in native code. Read statically in round 88 (restored executable; `WDDeathmatchPlayerSpawnManagerComponent` overrides two virtual functions):
+  - **Candidate points.** At start-up the component collects every `PlayerStart` actor in the level into its list (`0x8490260`).
+  - **Selection** (`0x8493480`, called with the spawning player). The game collects the pawns of all other players that are not spectators; when the match has two or more teams only pawns of other teams count, in a single-team match everyone counts. A point is skipped when it is already claimed by another spawning player or when the spawning pawn would not fit there (an overlap test, `0x6D73880`). Each remaining point is scored by the distance (3D, straight line) to the nearest counted enemy pawn, and the point with the **largest** score wins. A tie goes to the point that comes first in the list.
+  - **No randomness and no sight test.** The routine uses no random number and no line-of-sight or visibility check. Which point is chosen therefore depends only on where the enemies stand.
+  - **Claim.** The chosen point is marked as claimed by the spawning player (`0x6D73BA0`) and a repeating timer on the point (`AWDPlayerStart.ExpirationCheckInterval`, default 5 s) releases it once the claiming pawn has left or is gone. If no point passes the tests, the routine reports failure and the spawn falls back to whatever the caller does next (not traced).
+  All of this is a static reading and was not confirmed in play.
 - **Status entry fields.** The view-model's data fields are not in the export.
 - **Weapon stats.** The weapons' own stats are in the Weapons folder, not here.

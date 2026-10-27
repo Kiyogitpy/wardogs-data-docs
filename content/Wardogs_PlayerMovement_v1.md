@@ -105,7 +105,7 @@ Read from the decompiled ground-mode velocity code (`0x52867F0`, the walk-speed 
 The maximum speed (WD slot 142) is built in this order:
 
 1. Base `MaxSpeed` 536, passed through the current stance's `MaxSpeedModifier` (blended with the previous stance while a stance change runs, section 7b).
-2. Stand only: times `SprintMaxSpeedScale` (1.42) when sprinting, or `TacSprintMaxSpeedScale` (1.55) when tactical sprinting, each also multiplied by the player's `Movement.SprintSpeedMultiplier` or `Movement.TacSprintSpeedMultiplier` attribute (WD slots 144 and 145). Any other stance, or Stand with neither flag, is multiplied by the mode float `+168` (1.0).
+2. Stand only: times `SprintMaxSpeedScale` (1.42) when sprinting, or `TacSprintMaxSpeedScale` (1.55) when tactical sprinting, each also multiplied by the player's `Movement.SprintSpeedMultiplier` or `Movement.TacSprintSpeedMultiplier` attribute (WD slots 144 and 145). Any other stance, or Stand with neither flag, is multiplied by the mode float `+168` (1.0, a constant: nothing writes it after the constructor).
 3. Times the player's `Movement.MaxSpeedMultiplier` attribute (evaluator at WD mode `+272`, tag confirmed from its registration at `0x128C490`). This multiplies the whole result, sprint included.
 
 The minimum speed (`MinSpeed`, 80) is not multiplied by any attribute: slot 143 is the base-class function in the WD mode.
@@ -546,7 +546,7 @@ Blink and twitch settings: BlinkCycleDuration 5, BlinkCycleRandomness 0.35, Blin
 ## 8. Open items
 
 - The thunk `0x5288D80` dispatches to mode vtable slot 142 (`0x5291720`, WD `0x6DC1000`). Round 40 read it: the stance `MaxSpeedModifier` is applied to `MaxSpeed` and blended across a stance change (section 7b), which confirms the stance times base-speed rule.
-- Sprint and tactical sprint scale the standing speed (section 7b); slow walk and the effect multipliers are read in section 1d. The mode float `+168` is set to 1.0 by the mode constructor (`0x5283BB0`) and no other writer was found, so it stays 1.
+- Sprint and tactical sprint scale the standing speed (section 7b); slow walk and the effect multipliers are read in section 1d. The mode float `+168` is set to 1.0 by the mode constructor (`0x5283BB0`). Round 88 searched for any other writer: it is the first byte of an unreflected padding block of the ground mode, so no asset can set it, and no function in the vtables of the ground, body-dragging and WD ground modes stores to it (static reading). It stays 1.
 - Units of the damage-curve inputs and of the slope curve input are not exported.
 - The consumers of `CRV_LandGunBob`, the look-acceleration curves and the ladder animation curves are not traced.
 - Modifier `Operation` for the stance acceleration values is absent from the export (class default, presumed Set), so the acceleration rows read Set 7, 12 and 19 under that assumption.
