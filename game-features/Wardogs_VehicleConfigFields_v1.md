@@ -128,7 +128,7 @@ The 2000 KG light drag asset is shared by ROT_03 and its rocket-pod variant (ide
 | `DA_GameplaySystems_WHL_08` | 60 | 0.25 | 4 | 15 | 110 | - | - |
 | `DA_FWG_01_GameplaySystems` | - | - | - | - | - | - | - |
 
-**What the fields do.** The fuel component's tick (native `0x7666FA0`, round 85) subtracts `rate x dt + leak x dt` from the fuel attribute each frame while the owning vehicle is in state 3 (presumably the running state; the state names were not traced) and the component is not flagged off. `rate` comes from `0x7665DB0`:
+**What the fields do.** The fuel component's tick (native `0x7666FA0`, round 85) subtracts `rate x dt + leak x dt` from the fuel attribute each frame while the owning vehicle is in state 3 (presumably the running state; the state names were not traced) and the component is not flagged off. The `rate` term is only added when one more owner check passes (a native call that was not decoded); the `leak` term does not depend on it. `rate` comes from `0x7665DB0`:
 
 - Moving: `rate = speed(km/h) / 3600 / KML` litres per second, so a vehicle burns 1/KML litres per kilometre and `Max fuel x KML` kilometres is the range on a full tank (derived).
 - At or below the idle speed threshold the rate switches to a second per-vehicle reading (probably engine RPM, read through another virtual call) divided by `RPML` instead of `KML`; the threshold is a native field (`IdleSpeedThreshold`) the cooked assets never set, so its default is not known here.

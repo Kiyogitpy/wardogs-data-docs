@@ -184,7 +184,7 @@ The pitch assist samples one of 22 curves; the row names are `Gear_{0,1}_Thrust_
 | `Gear_0_Thrust_10` | 21 | 70 | 135 | -0.09 |
 | `Gear_0_Thrust_0` | 3 | - | - | -0.09 |
 
-The zero crossing is the airspeed where the assist asks for no pitch trim at that throttle, which is the speed the designers expected the airplane to hold level at that throttle. It rises from about 140 km/h at 10% to 430 km/h at 100% with the gear up (gear down: 140 to 430 km/h, a few km/h different). The full key list of every row is in the export; keys are 10 km/h apart or wider.
+The zero crossing is the airspeed where the assist asks for no pitch trim at that throttle, which is the speed the designers expected the airplane to hold level at that throttle. It rises from about 140 km/h at 10% to 430 km/h at 100% with the gear up (gear down: 135 to 430 km/h). At 100% the curve reaches zero at 430 and stays there until 440, which is the value the table column shows; at lower throttles the column is the point where the curve leaves zero. Which of the two row sets is the gear-up one is read from the row names (`Gear_1`) and was not confirmed in code. The full key list of every row is in the export; keys are 10 km/h apart or wider.
 
 
 ### 6b. Speed figures
