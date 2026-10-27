@@ -114,6 +114,7 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 - The Z20 Lakota gets seat protection for the first time in Season 2, with 25% against small and medium arms.
 - A vehicle with no seat protection row, such as the Kodiak or the Ural, has no seat reduction in the data.
 - The in-game tip says the passenger list shows who has a parachute.
+- The Havoc, M113 APC SV, Flakpanzer Gepard, SPH-2, L2A6 and T-72B3 are flagged in the data as seating players of one faction only. No other vehicle sets that flag. The setting is read from its name; the check itself was not traced.
 
 ## See also
 
@@ -128,6 +129,7 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): seat counts per stats sheet
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names
+- [Vehicle config fields](../../game-features/Wardogs_VehicleConfigFields_v1.md): the same-faction-only occupant flag, abandoned-vehicle lifetime and ramming settings per vehicle
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the seat protection table and how it applies
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): the seat reduction step
 - [Frontend, Server and Test Data](../../content/Wardogs_DataTables_Frontend_v1.md): the in-game vehicle tips

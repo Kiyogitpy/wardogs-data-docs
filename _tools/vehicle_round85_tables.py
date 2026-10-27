@@ -347,7 +347,7 @@ def page_fixed_wing():
     rows = ct["Rows"]
     out.append("\n## 6. Auto-trim table and speed figures\n")
     out.append("### 6a. Auto-trim table (`CurveTable_FWG_01_AutoTrimByAirspeedKmPH`)\n")
-    out.append("The pitch assist samples one of 22 curves; the row names are `Gear_{0,1}_Thrust_{0..100 step 10}`, so the curve is picked by landing-gear state and throttle in tens of percent (the pick rule is native and not decoded). Each curve maps airspeed in km/h to a pitch-control trim value (stored as shown, unit not stated). Every curve rises to +0.2 within 10 km/h, holds it up to a throttle-dependent speed, then falls through 0 and ends at -0.08 or -0.09 at 1200 km/h. The throttle-0 rows are flat at -0.09. All keys are linear.\n")
+    out.append("The pitch assist samples one of 22 curves; the row names are `Gear_{0,1}_Thrust_{0..100 step 10}`, so the curves are chosen by landing-gear state and throttle in tens of percent. **Native** (static reading, round 91): the game parses the row names at load (`Gear_` then a number, `Thrust_` then a number; the thrust number times 0.01 becomes the row's throttle key, 0 to 1) and keeps two lists sorted by that key. Each frame it reads the landing-gear state: Down uses the `Gear_0` list, Up uses the `Gear_1` list, and while the gear is retracting or extending it samples both lists and blends them by the gear travel fraction (the travel direction while in transit is inferred). Within a list the current engine thrust ratio (0 to 1) is looked up between the two nearest throttle keys, each of those two curves is read at the airspeed, and the two values are blended linearly by where the thrust ratio falls between the keys (below the lowest key or above the highest key the nearest row is used alone). So the table is interpolated in both throttle and airspeed, not looked up by a rounded row. The airspeed fed to the curves is the airplane's forward speed along its own forward axis, converted from centimeters per second to kilometers per hour by the engine's unit conversion, so the row keys are km/h. Each curve maps airspeed in km/h to a pitch-control trim value (stored as shown, unit not stated). Every curve rises to +0.2 within 10 km/h, holds it up to a throttle-dependent speed, then falls through 0 and ends at -0.08 or -0.09 at 1200 km/h. The throttle-0 rows are flat at -0.09. All keys are linear.\n")
     gear = {"Gear_1": "1", "Gear_0": "0"}
     trows = []
     cross = {}
@@ -362,7 +362,7 @@ def page_fixed_wing():
                           num(x, 0) if x is not None else "-",
                           num(r[-1]["Value"], 2)])
     out.append(table(["Row", "Keys", "Holds +0.2 up to (km/h)", "Falls to 0 at (km/h, derived)", "Value at 1200 km/h"], trows))
-    out.append("\nThe zero crossing is the airspeed where the assist asks for no pitch trim at that throttle, which is the speed the designers expected the airplane to hold level at that throttle. It rises from about 140 km/h at 10% to 430 km/h at 100% with the gear up (gear down: 135 to 430 km/h). At 100% the curve reaches zero at 430 and stays there until 440, which is the value the table column shows; at lower throttles the column is the point where the curve leaves zero. Which of the two row sets is the gear-up one is read from the row names (`Gear_1`) and was not confirmed in code. The full key list of every row is in the export; keys are 10 km/h apart or wider.\n")
+    out.append("\nThe zero crossing is the airspeed where the assist asks for no pitch trim at that throttle, which is the speed the designers expected the airplane to hold level at that throttle. It rises from about 140 km/h at 10% to 430 km/h at 100% with the gear up (gear down: 135 to 430 km/h). At 100% the curve reaches zero at 430 and stays there until 440, which is the value the table column shows; at lower throttles the column is the point where the curve leaves zero. `Gear_1` is the gear-up set and `Gear_0` the gear-down set (confirmed in the native reader above). The full key list of every row is in the export; keys are 10 km/h apart or wider.\n")
 
     out.append("\n### 6b. Speed figures\n")
     out.append("The data stores no top speed and no stall speed. The only speed figures it gives are the zero crossings read from the auto-trim table in 6a: the speed where no pitch trim is asked for, 140 km/h at 10% throttle and 430 km/h at 100% throttle with the gear up (135 and 430 km/h with the gear down). They are read from the table, not stored as a limit.\n")
@@ -374,7 +374,7 @@ def page_fixed_wing():
 CFG_HEAD = """---
 title: "Vehicle config fields"
 parent: "Vehicles"
-description: "Config sub-fields for wheeled, tracked and rotary vehicles, tracked wheel data, helicopter flight and drag assets, and the fuel settings (km per litre, idle burn, boost) for every vehicle."
+description: "Config sub-fields for wheeled, tracked and rotary vehicles, tracked wheel data, helicopter flight and drag assets, and the fuel settings (km per litre, idle burn, boost) for every vehicle, and the per-vehicle abandonment, occupant and ramming settings."
 ---
 
 # Vehicle config fields
