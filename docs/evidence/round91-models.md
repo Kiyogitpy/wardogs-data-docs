@@ -39,17 +39,17 @@ Items V5-06 and V5-07 of census v5 (`docs/evidence/round90-census-v5.md`). Build
 
 ## Regenerate
 
-`X <out> <mode> ...` stands for `WdExtract <Paks> <aes.txt> normal-order.usmap <out> <Paks>/oo2core_9_win64.dll <mode> ...` as in round 86.
+The extraction output the generators read is kept in `E:/Reverse_Engineer/wardogs_analysis/round91_models/` (`dump1` Blueprint dumps, `col4` collision, `phys4` physics, `plan`, `files.txt`); with no arguments `object_blueprints.py` and `object_models.py` read it. `X <out> <mode> ...` stands for `WdExtract <Paks> <aes.txt> normal-order.usmap <out> <Paks>/oo2core_9_win64.dll <mode> ...` as in round 86.
 
 ```
 X all list ""                                                         # all/files.txt
 python -I _tools/object_models.py --plan plan --files all/files.txt   # bp_in.txt (collision_in.txt is partial on the first pass)
-X bp dump plan/bp_in.txt                                              # Blueprint dumps
-python -I _tools/object_blueprints.py bp                              # assets/data/object-blueprints.json
+X dump1 dump plan/bp_in.txt                                              # Blueprint dumps
+python -I _tools/object_blueprints.py dump1                              # assets/data/object-blueprints.json
 python -I _tools/object_models.py --plan plan --files all/files.txt   # collision_in.txt complete
-X col collision plan/collision_in.txt
-X phys physics plan/phys_in.txt --names normal-order.usmap
-python -I _tools/object_models.py --collision col/collision.json --physics phys/physics.json
+X col4 collision plan/collision_in.txt
+X phys4 physics plan/phys_in.txt --names normal-order.usmap
+python -I _tools/object_models.py --collision col4/collision.json --physics phys4/physics.json
 python -I _tools/object_models.py --check
 python -I _tools/object_blueprints.py --check
 python -I _tools/object_models_check.py

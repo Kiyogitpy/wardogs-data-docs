@@ -756,6 +756,8 @@ def main():
         print(f"object-collision.json current: {len(have)} buildable stage tables match data/")
         return
     cpath, ppath = opt("--collision"), opt("--physics")
+    if not cpath and not ppath and not args:  # the permanent copy of the extraction output
+        cpath, ppath = obp.EXTRACT + "/col4/collision.json", obp.EXTRACT + "/phys4/physics.json"
     raw_dir = opt("--raw") or tempfile.mkdtemp(prefix="object_models_")
     if not cpath or not ppath or args:
         sys.exit(__doc__)

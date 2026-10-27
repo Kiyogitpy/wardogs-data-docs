@@ -5,7 +5,7 @@ The Blueprints are not in data/. They are dumped with `WdExtract dump` (the pack
 `object_models.py --plan`), and this script reads the dump folder and writes assets/data/object-blueprints.json,
 which _tools/object_models.py then reads. The JSON is committed; the dumps are not.
 
-    python -I _tools/object_blueprints.py <dump-dir>          # writes assets/data/object-blueprints.json
+    python -I _tools/object_blueprints.py [<dump-dir>]        # default round91_models/dump1; writes assets/data/object-blueprints.json
     python -I _tools/object_blueprints.py --check             # exit 1 when the JSON disagrees with data/
 
 What is read:
@@ -28,6 +28,9 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "assets", "data", "object-blueprints.json")
+# the permanent copy of the extraction output (not in the repository)
+EXTRACT = "E:/Reverse_Engineer/wardogs_analysis/round91_models"
+DEFAULT_DUMP = EXTRACT + "/dump1"
 DOORS_DIR = os.path.join(ROOT, "data", "Wardogs", "Content", "GameMechanics", "WorldInteractable", "Objects",
                          "EnvironmentalObjects", "Doors")
 
@@ -304,9 +307,9 @@ def main():
     if args == ["--check"]:
         check()
         return
-    if len(args) != 1:
+    if len(args) > 1:
         sys.exit(__doc__)
-    doc = build(args[0])
+    doc = build(args[0] if args else DEFAULT_DUMP)
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(doc, f, indent=1, ensure_ascii=False)
         f.write("\n")

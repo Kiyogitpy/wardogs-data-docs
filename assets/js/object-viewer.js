@@ -32,6 +32,13 @@
   function status(text) { els.status.textContent = text || ""; els.status.hidden = !text; }
 
   function current() { return data.objects.filter(function (o) { return o.id === state.id; })[0]; }
+  /* the finished stage: the first "Complete" stage, else the last one that is not a foundation or a destroyed state */
+  function finishedStage(o) {
+    var i, last = o.stages.length - 1;
+    for (i = 0; i < o.stages.length; i++) if (/^Complete/.test(o.stages[i].name || "")) return i;
+    for (i = o.stages.length - 1; i >= 0; i--) if (!/^(Foundation|Destroyed)/.test(o.stages[i].name || "")) return i;
+    return last;
+  }
   function stage() { var o = current(); return o && o.stages[state.stage]; }
 
   /* ---------- text ---------- */
@@ -300,7 +307,7 @@
   function setObject(id, stageIdx, fromHash) {
     var o = data.objects.filter(function (x) { return x.id === id; })[0] || data.objects[0];
     state.id = o.id;
-    state.stage = Math.max(0, Math.min(o.stages.length - 1, stageIdx == null ? o.stages.length - 1 : stageIdx));
+    state.stage = Math.max(0, Math.min(o.stages.length - 1, stageIdx == null ? finishedStage(o) : stageIdx));
     state.selected = null;
     els.object.value = o.id;
     fillStages();

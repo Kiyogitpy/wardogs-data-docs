@@ -30,6 +30,18 @@ def glb_json(path):
         return json.loads(fh.read(size))
 
 
+def finished_stage(o):
+    """The stage the viewer opens: the first "Complete" stage, else the last that is not a foundation or destroyed state."""
+    st = o["stages"]
+    for s in st:
+        if (s["name"] or "").startswith("Complete"):
+            return s
+    for s in reversed(st):
+        if not (s["name"] or "").startswith(("Foundation", "Destroyed")):
+            return s
+    return st[-1]
+
+
 def check_data():
     doc = json.load(open(os.path.join(ROOT, "assets", "data", "object-collision.json"), encoding="utf-8"))
     errors, files = [], set()
@@ -111,7 +123,7 @@ def check_browser(doc):
             for o in doc["objects"]:
                 pg.select_option("#ov-object", o["id"])
                 pieces = pg.evaluate("document.querySelectorAll('#ov-slots li').length")
-                if pieces != len(o["stages"][-1]["pieces"]):
+                if pieces != len(finished_stage(o)["pieces"]):
                     errors.append(f"{o['id']}: {pieces} list entries")
             pg.select_option("#ov-object", "sandbagwall")
             pg.wait_for_function("document.getElementById('ov-model').model", timeout=60000)
