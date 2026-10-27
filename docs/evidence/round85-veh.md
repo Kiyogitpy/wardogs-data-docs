@@ -16,7 +16,7 @@ Generator: `_tools/vehicle_round85_tables.py` (`--write`, `--check`) writes thre
 | V4-03 lift, drag, nose-steering curves | FOUND | section 3 (keys plus derived values every 2 to 5 degrees) |
 | V4-03 22-row auto-trim table | FOUND | section 6a (row, key count, plateau end, zero crossing, end value); full keys stay in the export |
 | V4-03 control assist stacks | FOUND | section 5 (PID gains, damping, throttle change rates, conditions) |
-| V4-03 derived speed envelope | FOUND, labelled derived | section 6b |
+| V4-03 speed figures | FOUND (auto-trim zero crossings published; physics envelope kept in evidence only) | section 6b |
 | V4-07 wheeled, tracked, rotary config sub-fields | FOUND | config page sections 1 to 3. Gameplay cue tags and prediction-settings internals are left to the export |
 | V4-07 `MTrackedVehicleWheelData` | FOUND | config page section 2 (spring rate, suspension length, wheel radius, incline angle, incline grip, lateral friction) |
 | V4-07 `BHRotaryFlightDataAsset`, `BHAirVehicleDragDataAsset` | FOUND | config page sections 3 and 4 |
@@ -29,14 +29,14 @@ Generator: `_tools/vehicle_round85_tables.py` (`--write`, `--check`) writes thre
 
 ## V4-03 derived speed envelope
 
-The data has no top speed or stall speed (round 39 said so; that stays true). The derived estimate is in the flight-model page section 6b with its formula and inputs. Method:
+The data has no top speed or stall speed (round 39 said so; that stays true). Lead decision: the physics figures below are NOT published on the pages (only here); the pages publish the auto-trim zero crossings (140 km/h at 10% throttle, 430 km/h at 100%, gear up), labelled as read from the table. The generator keeps `envelope()` for reproducing these numbers. Method:
 
 - Inputs: `MassOverride` 10,000 (read as kg), `MaxEngineThrust_n` 226,800 (read as N), `MainLiftMultiplier` 0.4, density 1.25 kg/m3 (`AirDensityAtSeaLevel` 0.00125 read as g/cm3), g 9.81 (assumed), airfoil areas and incidence angles from `DA_FWG_01_FlightCharacteristics`, lift and drag curves evaluated as Unreal rich curves (Bezier handles from the stored tangents and weights; script `rich curve` code in the generator).
 - Lift = q x 0.4 x sum(area x CL(alpha + incidence)) over the up-lifting airfoils (all but the airbrake, which is force 0 retracted, and the rudders, which lift sideways). Drag = q x sum(area x CD(alpha + incidence)) over the eleven non-airbrake airfoils. Body drag fields left out (their native formula is not decoded; read as cm2 they would add under 1%).
 - Result: the lift sum peaks at 14.9 degrees (area-weighted coefficient 207 m2), level stall about 99 km/h; drag equals full thrust near 880 km/h.
 - Cross-check: the auto-trim table zero crossing (speed with no pitch trim) is 140 km/h at 10% throttle and 430 km/h at 100% (gear up). The physics model puts the same throttles at 273 and 879 km/h. They disagree by about 2x; the page says so and treats 430 km/h as the designer-tuned figure and 880 km/h as an unvalidated upper bound. The disagreement could come from the unit readings, from the thrust being speed-dependent in native code, or from drag terms in native code; none can be tested without running the game.
 
-Neither number is a stored top speed; the wiki page says "closest the data comes to a cruise speed" for the auto-trim figure and "derived, with assumed units" for the physics figure.
+Neither number is a stored top speed.
 
 ## V4-14 native trace (static)
 
