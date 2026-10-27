@@ -279,8 +279,8 @@ Per-structure rules are in the table that follows. Plain meaning:
 | Door, Gate | Closeable doors with a breach effect. A closed FOB door pays cash (section 9). | **Data** |
 | Bunker, Recon Tower, Indirect Fire Shelter | Large multi-part structures (floor, roof, ceiling). Cash only for placing and destroying. | **Data** |
 | Builder's Radio | Up to 4 per FOB. Registers with the FOB (`bRegisterWithFOB`, counts toward the per-FOB limit). Plays music: a power toggle and seven stations ([section 14.5](#145-builders-radio)). | **Data** |
-| Refuel Station | Up to 1 per FOB. Registers with the FOB. A material tracker and a refuel start/stop sound exist. The Fuel Supplies item is described as "Resource Required to Refuel Vehicles. Requires FOB Radius to Use". The refuel rate is **not traced**. | **Data** |
-| Repair Station | Same shape as the Refuel Station, with Mechanical Supplies ("Resource Required to Repair Vehicles"). The repair rate is **not traced**. | **Data** |
+| Refuel Station | Up to 1 per FOB. Registers with the FOB. A material tracker and a refuel start/stop sound exist. The Fuel Supplies item is described as "Resource Required to Refuel Vehicles. Requires FOB Radius to Use". The restock rates (Fast 5% in 3 s, Max up to 100% in 9 s) are on the [Refuel and Repair Stations](../_wiki/building/refuel-and-repair-stations.md) page; how fast a vehicle burns fuel is in [Vehicle config fields](Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). | **Data** |
+| Repair Station | Same shape as the Refuel Station, with Mechanical Supplies ("Resource Required to Repair Vehicles"). Restock rates: Fast 5% in 3 s, Max up to 100% in 9 s (see the station page above). | **Data** |
 | Drill Rig (`HotzoneMagnet`) | Fuel-driven structure that works with a hot zone (settings below). | **Data** |
 | Mortar, Loudspeaker, Talon 9K-SAM, Vanguard CIWS, Stingray, MG Nest | Stationary weapons. Entity names and cash rewards (Mortar only) are here; the buildable definitions are in the `Vehicles/STN_*` plugins (table below). | **Data** |
 

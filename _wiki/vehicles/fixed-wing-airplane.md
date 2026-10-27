@@ -52,6 +52,7 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 ## Handling
 
 - The data stores no top speed. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000 kg) and drag, not from a speed limit.
+- The auto-trim table, which says what pitch trim the airplane needs at each speed, holds level flight at about 140 km/h at 10% throttle and about 430 km/h at full throttle (gear up). Both are read from the auto-trim table, not stored as a speed limit.
 
 - Control surfaces: elevators up to 40 degrees each, ailerons and rudders up to 20 degrees, flaps up to 18 degrees, and an airbrake that can extend.
 - Retractable landing gear, with a nose wheel that steers up to 45 degrees.
@@ -79,6 +80,7 @@ The airplane falls under the same general air tag as the helicopters. 20 of the 
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [Vehicles (reference)](../../content/Wardogs_Vehicles_v2.md)
+- [Fixed-wing flight model](../../game-features/Wardogs_FixedWingFlightModel_v1.md): curves, auto-trim table and the speed figures read from it
 - [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
