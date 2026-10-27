@@ -114,7 +114,7 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 - The Z20 Lakota gets seat protection for the first time in Season 2, with 25% against small and medium arms.
 - A vehicle with no seat protection row, such as the Kodiak or the Ural, has no seat reduction in the data.
 - The in-game tip says the passenger list shows who has a parachute.
-- The Havoc, M113 APC SV, Flakpanzer Gepard, SPH-2, L2A6 and T-72B3 are flagged in the data as seating players of one faction only. No other vehicle sets that flag. The setting is read from its name; the check itself was not traced.
+- The Havoc, M113 APC SV, Flakpanzer Gepard, SPH-2, L2A6 and T-72B3 are flagged in the data as seating players of one faction only. No other vehicle sets that flag. With it set, the enter check only lets a player in when the vehicle belongs to the player's faction or is neutral, and every player already seated must match the vehicle's faction.
 
 ## See also
 
