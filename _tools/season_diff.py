@@ -1021,6 +1021,10 @@ def accept_rename(old, new):
 
 def build(s1_dir, s2_dir, log=print):
     files1, files2 = list_json(s1_dir), list_json(s2_dir)
+    # Windows paths are case-insensitive and the exporter takes the spelling from the paks (Audio/Wavs) while older
+    # exports spell it Audio/WAVs: pair on the case-folded path and keep the Season 1 spelling.
+    low1 = {k.lower(): k for k in files1}
+    files2 = {low1.get(k.lower(), k): v for k, v in files2.items()}
     common = sorted(set(files1) & set(files2))
     removed = sorted(set(files1) - set(files2))
     added = sorted(set(files2) - set(files1))
