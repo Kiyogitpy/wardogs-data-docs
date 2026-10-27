@@ -175,16 +175,16 @@ main `82b99ed2`:
 | config copy | 63 files. Eight `Config/Tags` files and `DefaultGameplayTags.ini` differ from the lead's `data/`, and two tag files are new (see below) |
 | `ge` pass | 341 effects; `ge_summary.json` byte-identical to `assets/data/ge-values.json` |
 | `icons` pass | 647 textures extracted in 7 s; `item_icons.py build` leaves `assets/img/icons` and `item-icons.json` unchanged (PNG output deterministic) |
-| `regen` | 73 generators, 0 failures; about 3 min (2 passes: 5 min, no file changed in pass 2, so the registry order is stable) |
+| `regen` | 73 generators and 53 checks, 0 failures; 205 s for one pass (a two-pass run took 301 s and no file changed in pass 2, so the registry order is stable). 166 files were rewritten with LF over CRLF and restored; 6 files really differ from main (below) |
 
-Differences from main after the regeneration, each explained:
+Differences from main after the regeneration, each explained (the first two rows are fixed in this branch and no longer differ):
 
 | File | Why |
 |---|---|
 | `Config/Tags/*.ini`, `DefaultGameplayTags.ini` (in `data/`, not on the site) | the lead's `data/Wardogs/Config` is the Season 1 copy (modified 16 Oct; `season_diff.py` documents "Config/*.ini was kept from Season 1"). The paks hold the Season 2 files (for example `Input.NamedActions.Vehicle.FireCountermeasures` instead of `FireFlares`, two new tag files `SquadTags.ini` and `MetaWagerGameplayTags.ini`). No generator output changes |
 | `assets/data/zone-rewards.json`, `_wiki/ammunition/{308-win,7-62x39mm,9x19mm}.md` | **real bugs on main, fixed in this branch.** `zone_rewards.py` found each cash table by a heading ``...DT_Reward_Cash_X.json``; the history rewrite removed the link and `.json`, so a regeneration silently dropped all 12 cash tables. `wiki_calibers.py` looked for rows starting `\| [ID_MAGZ`; unlinked rows lost the "Season 2 changes adds N magazine items" line. Both parsers now accept both forms and reproduce the committed files |
 | `assets/data/infantry-hitboxes.json` (14 lines) | `source_data_tree` becomes `HEAD:data` (it is a git tree id of `data/`, which is no longer tracked; ignored by the report), and every explosive's `damage_values` gains `bPreferUpwardsTrace`: the generator is ahead of the committed JSON |
-| `game-features/Wardogs_Explosives_v1.md`, `Wardogs_FireAndUtility_v1.md` | hand edits inside generated blocks (the Molotov `BaseFuseTime` row's native-constant note; the `GE_MolotovBurning` native-defaults sentence) are overwritten by the generator. Pre-existing drift |
+| `game-features/Wardogs_Explosives_v1.md` (1 line) | a hand edit inside a generated block (the Molotov `BaseFuseTime` row's note about the native `bCanBeCooked` constant) is overwritten by the generator. Pre-existing drift. (`Wardogs_FireAndUtility_v1.md` showed the same kind of drift before main's round 86 updated its generator.) |
 | `content/Wardogs_DataTables_v1.md`, `Wardogs_MiscGameplayAssets_v1.md`, `Wardogs_WeaponMisc_v1.md`, `Wardogs_VehicleAssets_v1.md` | generated from the whole doc tree (see above): pages written after their last generation now name assets those pages list as "unnamed" (`DA_CharacterModifierState_Critical`, `CF_DrawVelocityReleaseCurve`) or add a "Documented in" link. Pre-existing drift |
 
 No extractor nondeterminism was found: JSON, PNG and generated output are stable across runs. Line endings: generators write LF over
