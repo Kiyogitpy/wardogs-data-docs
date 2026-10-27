@@ -1,0 +1,2542 @@
+{
+ "meta": {
+  "generator": "python -I _tools/sight_tables.py --write",
+  "baseFov": 90.0,
+  "independentFov": 72.0,
+  "testLimit": 3.25,
+  "rule": "ADS FOV = base / magnification; base = Field of view setting (default 90), or 72 when the sight's test value is 3.25 or more; apparent zoom = tan(45) / tan(ADS FOV / 2)",
+  "evidence": [
+   "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md",
+   "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round79-sight-zoom.md"
+  ]
+ },
+ "sights": [
+  {
+   "id": "ID_SGHT_033",
+   "itemId": "Id.Item.SGHT_033",
+   "name": "CGM4 Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_033.png",
+   "price": null,
+   "unlock": null,
+   "variableZoom": false,
+   "storedAdsZoom": 1.2,
+   "testValue": 1.2,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_033"
+     ],
+     "magnification": 1.2,
+     "aimTime": "no change",
+     "zeroing": {
+      "min": null,
+      "max": null
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_Optics_SGHT_033_Lens.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "MAAWS",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_CGM4",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_038",
+   "itemId": "Id.Item.SGHT_038",
+   "name": "Compact P-1 Red Dot",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Weapons_SGHT_038.png",
+   "price": 480,
+   "unlock": {
+    "tree": "Wardog",
+    "level": 21,
+    "cost": 12500
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.2,
+   "testValue": 1.2,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_038"
+     ],
+     "magnification": 1.2,
+     "aimTime": "no change",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_Optics_SGHT_038_Lens.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_RedDot",
+   "itemId": "Id.Item.BasicRedDot",
+   "name": "Compact T-2 Red Dot",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_013.png",
+   "price": 340,
+   "unlock": {
+    "tree": "Wardog",
+    "level": 17,
+    "cost": 5000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_RedDot"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x0.9",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {
+     "S_Aim01": "assets/img/icons/other-sights-reticles/T_Reticle_KobraSight_Greyscale.png"
+    },
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_016",
+   "itemId": "Id.Item.SGHT_016",
+   "name": "Four Reticle Reflex",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_016.png",
+   "price": 580,
+   "unlock": {
+    "tree": "Infantry",
+    "level": 22,
+    "cost": 10000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_016"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x0.85",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "Deagle",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_WEPN_027",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_EotechHoloSight",
+   "itemId": "Id.Item.EotechHoloSight",
+   "name": "Holographic Sight",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_005.png",
+   "price": null,
+   "unlock": {
+    "tree": "Medic",
+    "level": 6,
+    "cost": 20000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_EotechHoloSight"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x0.9",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 100.0
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {
+     "S_Aim01": "assets/img/icons/other-sights-reticles/T_Reticle_Holographic_Greyscale.png"
+    },
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_009",
+   "itemId": "Id.Item.SGHT_009",
+   "name": "Kobra Reflex",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_009.png",
+   "price": 520,
+   "unlock": {
+    "tree": "Wardog",
+    "level": 4,
+    "cost": 7500
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_009"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x0.85",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_SGHT_009_Reticle.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_025",
+   "itemId": "Id.Item.SGHT_025",
+   "name": "Mini Reflex Sight",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_025.png",
+   "price": 200,
+   "unlock": null,
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_025"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x1.02",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_SGHT_025_Reticle.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "GGX 18"
+   ],
+   "fitIds": [
+    "ID_WEPN_032"
+   ]
+  },
+  {
+   "id": "ID_SGHT_037",
+   "itemId": "Id.Item.SGHT_037",
+   "name": "MMGL Sight",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_037.png",
+   "price": null,
+   "unlock": null,
+   "variableZoom": false,
+   "storedAdsZoom": 1.2,
+   "testValue": 1.2,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_037"
+     ],
+     "magnification": 1.2,
+     "aimTime": "no change",
+     "zeroing": {
+      "min": null,
+      "max": null
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "MGL-40",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MMGL",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_023",
+   "itemId": "Id.Item.SGHT_023",
+   "name": "OKP 7 Reflex",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_023.png",
+   "price": 840,
+   "unlock": {
+    "tree": "Infantry",
+    "level": 26,
+    "cost": 30000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_023"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x0.85",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_027",
+   "itemId": "Id.Item.SGHT_027",
+   "name": "Vektor Frenix-X Micro Reflex Sight",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_027.png",
+   "price": 820,
+   "unlock": {
+    "tree": "Medic",
+    "level": 19,
+    "cost": 15000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.2,
+   "testValue": 1.2,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_027"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x0.87",
+     "zeroing": {
+      "min": null,
+      "max": {
+       "follows": "MinZeroingRange"
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      75.0,
+      75.0
+     ],
+     "apparent": [
+      1.3,
+      1.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_SGHT_027_Lens.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_026",
+   "itemId": "Id.Item.SGHT_026",
+   "name": "Tricon 1.5x Compact Prism Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_026.png",
+   "price": 650,
+   "unlock": {
+    "tree": "Wardog",
+    "level": 26,
+    "cost": 10000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 1.5,
+   "testValue": 1.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_026"
+     ],
+     "magnification": 1.5,
+     "aimTime": "x0.97",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 200.0
+      }
+     },
+     "zoomRange": [
+      1.5,
+      1.5
+     ],
+     "adsFov": [
+      60.0,
+      60.0
+     ],
+     "apparent": [
+      1.73,
+      1.73
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_CantedIrons",
+   "itemId": "Id.Item.CantedIrons",
+   "name": "CantedIrons",
+   "icon": "assets/img/icons/attachments-3d/T_UI_Icon_Attachment_RedDot_Textured_512x512.png",
+   "price": null,
+   "unlock": null,
+   "variableZoom": false,
+   "storedAdsZoom": 1.2,
+   "testValue": 1.2,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_AimCanted1",
+     "name": "Canted sight",
+     "effects": [
+      "GE_CantedIrons"
+     ],
+     "magnification": 2.0,
+     "aimTime": "set to 0.1 s",
+     "zeroing": {
+      "min": null,
+      "max": null
+     },
+     "zoomRange": [
+      2.0,
+      2.0
+     ],
+     "adsFov": [
+      45.0,
+      45.0
+     ],
+     "apparent": [
+      2.41,
+      2.41
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [],
+   "fitIds": []
+  },
+  {
+   "id": "ID_SGHT_028",
+   "itemId": "Id.Item.SGHT_028",
+   "name": "CQ-2x Prism Combat Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_028.png",
+   "price": 640,
+   "unlock": {
+    "tree": "Infantry",
+    "level": 12,
+    "cost": 15000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 2.0,
+   "testValue": 2.0,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_028"
+     ],
+     "magnification": 2.0,
+     "aimTime": "x1.05",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 300.0
+      }
+     },
+     "zoomRange": [
+      2.0,
+      2.0
+     ],
+     "adsFov": [
+      45.0,
+      45.0
+     ],
+     "apparent": [
+      2.41,
+      2.41
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_OPT_08",
+   "itemId": "Id.Item.OPT_08",
+   "name": "2.5x Combat Optic",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_008.png",
+   "price": null,
+   "unlock": {
+    "tree": "Infantry",
+    "level": 17,
+    "cost": 10000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 2.5,
+   "testValue": 2.5,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_OPT_08"
+     ],
+     "magnification": 2.5,
+     "aimTime": "x1.05",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 300.0
+      }
+     },
+     "zoomRange": [
+      2.5,
+      2.5
+     ],
+     "adsFov": [
+      36.0,
+      36.0
+     ],
+     "apparent": [
+      3.08,
+      3.08
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {
+     "S_Aim01": "assets/img/icons/other-sights-reticles/T_Reticle_KobraSight_Greyscale.png"
+    },
+    "scope": "assets/img/icons/scope-reticles/T_UI_2_5x_Scope_SDF.png",
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "AMP-9",
+    "MP5",
+    "PP-19 Bizon",
+    "PP-19 Vityaz",
+    "Super-45",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_MP9",
+    "ID_WEPN_028",
+    "ID_WEPN_031",
+    "ID_SMG_03",
+    "ID_Vector",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_032",
+   "itemId": "Id.Item.SGHT_032",
+   "name": "Frontier 2.5x-10x Precision Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_032.png",
+   "price": 1800,
+   "unlock": {
+    "tree": "Recon",
+    "level": 47,
+    "cost": 95000
+   },
+   "variableZoom": true,
+   "storedAdsZoom": 10.0,
+   "testValue": 10.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_032"
+     ],
+     "magnification": 2.5,
+     "aimTime": "x1.2",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 1000.0
+      }
+     },
+     "zoomRange": [
+      2.5,
+      10.0
+     ],
+     "adsFov": [
+      28.8,
+      7.2
+     ],
+     "apparent": [
+      3.89,
+      15.89
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_034",
+   "itemId": "Id.Item.SGHT_034",
+   "name": "PGO-7",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_034.png",
+   "price": 850,
+   "unlock": {
+    "tree": "Support",
+    "level": 12,
+    "cost": 10000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 2.8,
+   "testValue": 2.8,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_034"
+     ],
+     "magnification": 2.8,
+     "aimTime": "x1.15",
+     "zeroing": {
+      "min": {
+       "value": 10.0
+      },
+      "max": {
+       "value": 10.0
+      }
+     },
+     "zoomRange": [
+      2.8,
+      2.8
+     ],
+     "adsFov": [
+      32.14,
+      32.14
+     ],
+     "apparent": [
+      3.47,
+      3.47
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "RPG-7"
+   ],
+   "fitIds": [
+    "ID_RPG7"
+   ]
+  },
+  {
+   "id": "ID_6xScope",
+   "itemId": "Id.Item.6xScope",
+   "name": "3-6x Scope",
+   "icon": null,
+   "price": null,
+   "unlock": null,
+   "variableZoom": true,
+   "storedAdsZoom": 6.0,
+   "testValue": 6.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_6xScope",
+      "GE_6xScope_MainSight"
+     ],
+     "magnification": 3.0,
+     "aimTime": "+0.2 s",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 500.0
+      }
+     },
+     "zoomRange": [
+      3.0,
+      6.0
+     ],
+     "adsFov": [
+      24.0,
+      12.0
+     ],
+     "apparent": [
+      4.7,
+      9.51
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/T_UI_1-6x_Scope_SDF.png",
+    "scopeApprox": false
+   },
+   "fits": [
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_029",
+   "itemId": "Id.Item.SGHT_029",
+   "name": "3x Tactical Prism Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_029.png",
+   "price": 740,
+   "unlock": {
+    "tree": "Infantry",
+    "level": 33,
+    "cost": 15000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 3.0,
+   "testValue": 3.0,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_029"
+     ],
+     "magnification": 3.0,
+     "aimTime": "x1.1",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 300.0
+      }
+     },
+     "zoomRange": [
+      3.0,
+      3.0
+     ],
+     "adsFov": [
+      30.0,
+      30.0
+     ],
+     "apparent": [
+      3.73,
+      3.73
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_011",
+   "itemId": "Id.Item.SGHT_011",
+   "name": "3x-6x LPVO Short Dot",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_011.png",
+   "price": 860,
+   "unlock": {
+    "tree": "Recon",
+    "level": 11,
+    "cost": 15000
+   },
+   "variableZoom": true,
+   "storedAdsZoom": 6.0,
+   "testValue": 6.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_011",
+      "GE_SGHT_011_MainSight"
+     ],
+     "magnification": 3.0,
+     "aimTime": "x1.12",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 600.0
+      }
+     },
+     "zoomRange": [
+      3.0,
+      6.0
+     ],
+     "adsFov": [
+      24.0,
+      12.0
+     ],
+     "apparent": [
+      4.7,
+      9.51
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/T_UI_1-6x_Scope_SDF.png",
+    "scopeApprox": false
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_039",
+   "itemId": "Id.Item.SGHT_039",
+   "name": "Leatherwood ART II",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_039.png",
+   "price": 950,
+   "unlock": {
+    "tree": "Recon",
+    "level": 27,
+    "cost": 35000
+   },
+   "variableZoom": true,
+   "storedAdsZoom": 3.0,
+   "testValue": 9.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_039"
+     ],
+     "magnification": 3.0,
+     "aimTime": "x1.15",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 800.0
+      }
+     },
+     "zoomRange": [
+      3.0,
+      9.0
+     ],
+     "adsFov": [
+      24.0,
+      8.0
+     ],
+     "apparent": [
+      4.7,
+      14.3
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "M14"
+   ],
+   "fitIds": [
+    "ID_WEPN_034"
+   ]
+  },
+  {
+   "id": "ID_3xScope",
+   "itemId": "Id.Item.3xScope",
+   "name": "Spitfire 3X",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_024.png",
+   "price": 790,
+   "unlock": {
+    "tree": "Wardog",
+    "level": 31,
+    "cost": 25000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 3.0,
+   "testValue": 3.0,
+   "baseFov": 90.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_3xScope"
+     ],
+     "magnification": 3.0,
+     "aimTime": "x1.1",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 300.0
+      }
+     },
+     "zoomRange": [
+      3.0,
+      3.0
+     ],
+     "adsFov": [
+      30.0,
+      30.0
+     ],
+     "apparent": [
+      3.73,
+      3.73
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/T_UI_3x_Scope_SDF.png",
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_040",
+   "itemId": "Id.Item.SGHT_040",
+   "name": "PU 91/30 Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_040.png",
+   "price": 780,
+   "unlock": {
+    "tree": "Recon",
+    "level": 10,
+    "cost": 12500
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 3.5,
+   "testValue": 3.5,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_040"
+     ],
+     "magnification": 3.5,
+     "aimTime": "x1.15",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 800.0
+      }
+     },
+     "zoomRange": [
+      3.5,
+      3.5
+     ],
+     "adsFov": [
+      20.57,
+      20.57
+     ],
+     "apparent": [
+      5.51,
+      5.51
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "Mosin Nagant"
+   ],
+   "fitIds": [
+    "ID_WEPN_017"
+   ]
+  },
+  {
+   "id": "ID_SGHT_030",
+   "itemId": "Id.Item.SGHT_030",
+   "name": "4x Combat Prism Scope with Reflex",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_030.png",
+   "price": 880,
+   "unlock": {
+    "tree": "Support",
+    "level": 21,
+    "cost": 35000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 4.0,
+   "testValue": 4.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_030",
+      "GE_SGHT_030_MainSight"
+     ],
+     "magnification": 4.0,
+     "aimTime": "x1.1",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 400.0
+      }
+     },
+     "zoomRange": [
+      4.0,
+      4.0
+     ],
+     "adsFov": [
+      18.0,
+      18.0
+     ],
+     "apparent": [
+      6.31,
+      6.31
+     ]
+    },
+    {
+     "entry": "S_Aim02",
+     "name": "Second sight",
+     "effects": [
+      "GE_SGHT_030",
+      "GE_SGHT_030_TopSight"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x1.05",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 400.0
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      60.0,
+      60.0
+     ],
+     "apparent": [
+      1.73,
+      1.73
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": true
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_4xElcanSpectr",
+   "itemId": "Id.Item.4xElcanSpectr",
+   "name": "4x Elcan Spectr",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_001.png",
+   "price": null,
+   "unlock": {
+    "tree": "Infantry",
+    "level": 43,
+    "cost": 15000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 4.0,
+   "testValue": 4.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_4xElcanSpectr",
+      "GE_4xElcanSpectr_MainSight"
+     ],
+     "magnification": 4.0,
+     "aimTime": "x1.1",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 400.0
+      }
+     },
+     "zoomRange": [
+      4.0,
+      4.0
+     ],
+     "adsFov": [
+      18.0,
+      18.0
+     ],
+     "apparent": [
+      6.31,
+      6.31
+     ]
+    },
+    {
+     "entry": "S_Aim02",
+     "name": "Second sight",
+     "effects": [
+      "GE_4xElcanSpectr",
+      "GE_4xElcanSpectr_TopSight"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x1.05",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 400.0
+      }
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      60.0,
+      60.0
+     ],
+     "apparent": [
+      1.73,
+      1.73
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {
+     "S_Aim01": "assets/img/icons/other-sights-reticles/T_Reticle_4X_Hybrid_Greyscale.png",
+     "S_Aim02": "assets/img/icons/other-sights-reticles/T_Reticle_KobraSight_Greyscale.png"
+    },
+    "scope": "assets/img/icons/scope-reticles/T_UI_4x_Scope_SDF.png",
+    "scopeApprox": false
+   },
+   "fits": [
+    "AK74",
+    "FAL",
+    "Galil",
+    "M4",
+    "T-21",
+    "BMR-308",
+    "M14",
+    "SKS",
+    "SVD",
+    "TCX-SPR",
+    "Evo-3 Ultra",
+    "M249 SAW",
+    "PKM",
+    "M500",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_AK74M",
+    "ID_WEPN_030",
+    "ID_WEPN_029",
+    "ID_M4",
+    "ID_TAR21",
+    "ID_RFB",
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_WEPN_037",
+    "ID_WEPN_036",
+    "ID_M249",
+    "ID_LMG_02",
+    "ID_M500",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_4xHybrid",
+   "itemId": "Id.Item.HybridScope4x",
+   "name": "4x Hybrid",
+   "icon": "assets/img/icons/attachments-3d/T_UI_Icon_Attachment_4x_Optic_Textured_512x512.png",
+   "price": null,
+   "unlock": null,
+   "variableZoom": false,
+   "storedAdsZoom": 4.0,
+   "testValue": 4.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_4xHybrid"
+     ],
+     "magnification": 4.0,
+     "aimTime": "+0.35 s",
+     "zeroing": {
+      "min": null,
+      "max": null
+     },
+     "zoomRange": [
+      4.0,
+      4.0
+     ],
+     "adsFov": [
+      18.0,
+      18.0
+     ],
+     "apparent": [
+      6.31,
+      6.31
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {
+     "S_Aim01": "assets/img/icons/other-sights-reticles/T_Reticle_4X_Hybrid_Greyscale.png"
+    },
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_10xScopeMoa",
+   "itemId": "Id.Item.10xScopeMoa",
+   "name": "6-10x Scope MOA",
+   "icon": "assets/img/icons/attachments-3d/T_UI_Icon_Attachment_10x_Optic_Textured_512x512.png",
+   "price": null,
+   "unlock": {
+    "tree": "Recon",
+    "level": 19,
+    "cost": 45000
+   },
+   "variableZoom": true,
+   "storedAdsZoom": 10.0,
+   "testValue": 10.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_10xScope"
+     ],
+     "magnification": 6.0,
+     "aimTime": "x1.15",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 1000.0
+      }
+     },
+     "zoomRange": [
+      6.0,
+      10.0
+     ],
+     "adsFov": [
+      12.0,
+      7.2
+     ],
+     "apparent": [
+      9.51,
+      15.89
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_10xScope",
+   "itemId": "Id.Item.SniperScope10x",
+   "name": "6-10x Scope MRAD",
+   "icon": "assets/img/icons/attachments-3d/T_UI_Icon_Attachment_10x_Optic_Textured_512x512.png",
+   "price": null,
+   "unlock": {
+    "tree": "Recon",
+    "level": 28,
+    "cost": 40000
+   },
+   "variableZoom": true,
+   "storedAdsZoom": 10.0,
+   "testValue": 10.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_10xScope"
+     ],
+     "magnification": 6.0,
+     "aimTime": "x1.15",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 1000.0
+      }
+     },
+     "zoomRange": [
+      6.0,
+      10.0
+     ],
+     "adsFov": [
+      12.0,
+      7.2
+     ],
+     "apparent": [
+      9.51,
+      15.89
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {
+     "S_Aim01": "assets/img/icons/other-sights-reticles/T_Reticle_10X_Greyscale.png"
+    },
+    "scope": null,
+    "scopeApprox": false
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_036",
+   "itemId": "Id.Item.SGHT_036",
+   "name": "6x Marksman Scope + Reflex",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_036.png",
+   "price": 1650,
+   "unlock": {
+    "tree": "Recon",
+    "level": 43,
+    "cost": 75000
+   },
+   "variableZoom": false,
+   "storedAdsZoom": 6.0,
+   "testValue": 6.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_036",
+      "GE_SGHT_036_MainSight"
+     ],
+     "magnification": 6.0,
+     "aimTime": "x1.12",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 600.0
+      }
+     },
+     "zoomRange": [
+      6.0,
+      6.0
+     ],
+     "adsFov": [
+      12.0,
+      12.0
+     ],
+     "apparent": [
+      9.51,
+      9.51
+     ]
+    },
+    {
+     "entry": "S_Aim02",
+     "name": "Second sight",
+     "effects": [
+      "GE_SGHT_036",
+      "GE_SGHT_036_TopSight"
+     ],
+     "magnification": 1.2,
+     "aimTime": "x1.05",
+     "zeroing": {
+      "min": null,
+      "max": null
+     },
+     "zoomRange": [
+      1.2,
+      1.2
+     ],
+     "adsFov": [
+      60.0,
+      60.0
+     ],
+     "apparent": [
+      1.73,
+      1.73
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_SGHT_036_Reticle.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  },
+  {
+   "id": "ID_SGHT_031",
+   "itemId": "Id.Item.SGHT_031",
+   "name": "6x Precision Rifle Scope",
+   "icon": "assets/img/icons/vendor-optics/T_UI_Vendor_SGHT_031.png",
+   "price": 680,
+   "unlock": null,
+   "variableZoom": false,
+   "storedAdsZoom": 6.0,
+   "testValue": 6.0,
+   "baseFov": 72.0,
+   "entries": [
+    {
+     "entry": "S_Aim01",
+     "name": "Main sight",
+     "effects": [
+      "GE_SGHT_031",
+      "GE_SGHT_031_MainSight"
+     ],
+     "magnification": 6.0,
+     "aimTime": "x1.15",
+     "zeroing": {
+      "min": {
+       "value": 100.0
+      },
+      "max": {
+       "value": 600.0
+      }
+     },
+     "zoomRange": [
+      6.0,
+      6.0
+     ],
+     "adsFov": [
+      12.0,
+      12.0
+     ],
+     "apparent": [
+      9.51,
+      9.51
+     ]
+    }
+   ],
+   "reticles": {
+    "entries": {},
+    "scope": "assets/img/icons/scope-reticles/MI_SGHT_031_Reticle.png",
+    "scopeApprox": true
+   },
+   "fits": [
+    "M14",
+    "SKS",
+    "SVD",
+    "AMR 50",
+    "MK22",
+    "Scout Rifle TD",
+    "SV98"
+   ],
+   "fitIds": [
+    "ID_WEPN_034",
+    "ID_SKS",
+    "ID_SVDM",
+    "ID_SR_04",
+    "ID_MK22",
+    "ID_WEPN_035",
+    "ID_SV98"
+   ]
+  }
+ ],
+ "weapons": {
+  "ID_A91": "A-91",
+  "ID_AK74M": "AK74",
+  "ID_WEPN_033": "Bushmaster M17S",
+  "ID_WEPN_030": "FAL",
+  "ID_WEPN_029": "Galil",
+  "ID_KH2002": "KH-2002",
+  "ID_M4": "M4",
+  "ID_TAR21": "T-21",
+  "ID_CombatBow": "Compound Bow",
+  "ID_RFB": "BMR-308",
+  "ID_WEPN_034": "M14",
+  "ID_SKS": "SKS",
+  "ID_SVDM": "SVD",
+  "ID_WEPN_037": "TCX-SPR",
+  "ID_WEPN_036": "Evo-3 Ultra",
+  "ID_M249": "M249 SAW",
+  "ID_LMG_02": "PKM",
+  "ID_Launcher_04": "9K333 Verba",
+  "ID_CGM4": "MAAWS",
+  "ID_MMGL": "MGL-40",
+  "ID_RPG7": "RPG-7",
+  "ID_WEPN_027": "Deagle",
+  "ID_Glock17": "GGX 17",
+  "ID_WEPN_032": "GGX 18",
+  "ID_Judge": "Judge",
+  "ID_WEPN_026": "M1911",
+  "ID_MP9": "AMP-9",
+  "ID_WEPN_028": "MP5",
+  "ID_WEPN_031": "PP-19 Bizon",
+  "ID_SMG_03": "PP-19 Vityaz",
+  "ID_Vector": "Super-45",
+  "ID_M500": "M500",
+  "ID_MP43": "MP43",
+  "ID_SR_04": "AMR 50",
+  "ID_MK22": "MK22",
+  "ID_WEPN_017": "Mosin Nagant",
+  "ID_WEPN_035": "Scout Rifle TD",
+  "ID_SV98": "SV98"
+ }
+}

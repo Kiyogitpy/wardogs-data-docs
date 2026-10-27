@@ -485,7 +485,7 @@
       head.appendChild(el("strong", null, display(id)));
       wrap.appendChild(head);
       var r = X.reticles[id] || {}, row = el("div", "lc-reticles");
-      if (r.scope) row.appendChild(figure(r.scope, "Through the scope", display(id) + " reticle through the scope"));
+      if (r.scope) row.appendChild(figure(r.scope, "Through the scope" + (r.scopeApprox ? ". Approximate: drawn from the sight's material parameters; the game's shader is not in the files, so shapes and sizes may differ." : ""), display(id) + " reticle through the scope"));
       var lens = r.entries && r.entries[entry];
       if (lens) row.appendChild(figure(lens, "Lens reticle (" + entry + ")", display(id) + " lens reticle", "lc-reticle-lens"));
       if (row.children.length) wrap.appendChild(row);
