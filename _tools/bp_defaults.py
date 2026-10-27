@@ -37,7 +37,7 @@ OUT = os.path.join(ROOT, "assets", "data", "bp-defaults.json")
 DUMP_DIR = "E:/Reverse_Engineer/wardogs_analysis/round17_bp_defaults_20261022"
 # Round 86 dump: B_Action_*, placement conditions, Sniper Showdown components, spawner, Molotov Blueprints
 # (WdExtract list/dump, see docs/evidence/round86-bp.md). Searched after DUMP_DIR; the first file of a name wins.
-DUMP_DIR_R86 = "E:/r86/work/bp/dump1"
+DUMP_DIR_R86 = "E:/Reverse_Engineer/wardogs_analysis/round86_bp/dump1"
 SDK_DIR = "E:/Reverse_Engineer/wardogs_analysis/CppSDK/SDK"
 
 W = "Wardogs/"

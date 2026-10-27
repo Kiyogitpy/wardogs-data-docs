@@ -27,7 +27,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "data", "challenge-statetrees.json")
-DUMP_DIR = "E:/r86/work/bp/dump_st"
+DUMP_DIR = "E:/Reverse_Engineer/wardogs_analysis/round86_bp/dump_st"
 NONE = 65535
 
 
