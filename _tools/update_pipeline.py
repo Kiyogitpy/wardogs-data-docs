@@ -777,7 +777,9 @@ def real_diff(repo):
     git("update-index", "-q", "--refresh", cwd=repo)
     _, names = git("diff", "--name-only", "-z", cwd=repo)
     names = [n for n in names.split("\0") if n]
-    real, eol, noise = [], [], []
+    # `git status` lists CRLF-checkout files rewritten with LF as modified although `git diff` sees nothing: restore those too
+    dirty = [p for st, p in git_status_paths(repo) if st.strip() == "M" and p not in names]
+    real, eol, noise = [], list(dirty), []
     for n in names:
         rc, _ = git("diff", "--ignore-cr-at-eol", "--quiet", "--", n, cwd=repo)
         if rc == 0:
@@ -997,7 +999,8 @@ def cmd_regen(args):
         L += ["## Generators that parse Markdown pages", "", "Their output depends on page text, not only on data/: " + ", ".join("`%s`" % p for p in parsers), ""]
     L += ["## Generators without a check mode (%d)" % len(nocheck), "", ", ".join("`%s`" % n for n in nocheck), "",
           "## Not refreshed by regen", "", "Generators that need inputs the pipeline did not produce (hand-run extraction, see docs/UPDATE_PIPELINE.md):", ""]
-    L += ["- `%s` (%s)" % (e["script"], "; ".join(e["inputs"])) for e in skipped_assets] + [""]
+    L += ["- `%s` (%s)" % (e["script"], "; ".join(e["inputs"])) for e in skipped_assets]
+    L += ["- `%s` (only --check ran; the %s chain rewrites its output, see registry `chains`)" % (e["script"], e["needs_chain"]) for e in reg["scripts"] if e.get("needs_chain")] + [""]
     man = [e for e in reg["scripts"] if e["tier"] == "manual" and e["class"] in ("generator", "checker")]
     L += ["Manual-tier generators/checkers (exe analysis, Season 1 export): " + ", ".join("`%s`" % e["script"] for e in man), ""]
     if unclassified:

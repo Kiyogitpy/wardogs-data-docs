@@ -75,8 +75,7 @@
   {
    "name": "models",
    "enabled": false,
-   "requires_script": "_tools/object_models.py",
-   "note": "Branch r86-mdl (docs/evidence/round86-models.md, section Regenerate). Enable when the branch is on main: `X` = WdExtract <Paks> <key> normal-order.usmap <out> <oo2core>.",
+   "note": "Branch r86-mdl is on main (docs/evidence/round86-models.md, section Regenerate). The pipeline does not run this chain: it needs a per-vehicle mesh cycle and Node.js (npx glTF-Transform). `X` = WdExtract <Paks> <key> normal-order.usmap <out> <oo2core>. Run the steps by hand in a regen worktree after `regen` (data/ must point at the new export).",
    "steps": [
     "X all list \"\"",
     "python -I _tools/object_models.py --plan plan --files all/files.txt",
@@ -1550,6 +1549,61 @@
    "check": null,
    "inputs": [],
    "notes": "this pipeline"
+  },
+  {
+   "script": "object_models.py",
+   "class": "generator",
+   "tier": "core",
+   "write": null,
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "assets/data/object-models.json"
+   ],
+   "needs_chain": "models",
+   "notes": "regen runs --check only (buildable stage tables vs data/); the GLBs come from the models chain (registry `chains`), which needs WdExtract collision/physics output and Node.js"
+  },
+  {
+   "script": "object_models_check.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": [
+    "data",
+    "assets/models"
+   ],
+   "notes": "add --browser for the Chromium run (Playwright, network)"
+  },
+  {
+   "script": "statetree_outline.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round86_bp/dump_st (WdExtract dump of the ST_Challenges StateTrees)"
+   ],
+   "notes": "recipe in its docstring: WdExtract list ST_Challenges, dump"
+  },
+  {
+   "script": "statetree_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "assets/data/challenge-statetrees.json"
+   ],
+   "notes": "runs after statetree_outline.py"
   }
  ],
  "script_globs": [
