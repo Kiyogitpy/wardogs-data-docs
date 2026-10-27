@@ -58,6 +58,16 @@ def check_data():
         for n in g["nodes"][1:]:
             if "mesh" not in n:
                 errors.append(f"{o['id']}: node {n.get('name')} has no mesh")
+    ids = [o["id"] for o in doc["objects"]]
+    if len(ids) != len(set(ids)):
+        errors.append("duplicate object ids")
+    groups = {g["id"] for g in doc["groups"]}
+    for o in doc["objects"]:
+        if o["group"] not in groups:
+            errors.append(f"{o['id']}: group {o['group']} is not listed")
+    for g in ("doors", "projectiles"):
+        if not any(o["group"] == g for o in doc["objects"]):
+            errors.append(f"no object in group {g}")
     on_disk = {f for f in os.listdir(os.path.join(ROOT, "assets", "models", "objects")) if f.endswith(".glb")}
     if on_disk != files:
         errors.append(f"GLBs on disk and in the data differ: {sorted(on_disk ^ files)}")

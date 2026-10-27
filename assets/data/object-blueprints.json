@@ -1,0 +1,3651 @@
+{
+ "meta": {
+  "generator": "python -I _tools/object_blueprints.py <dump-dir>",
+  "build": "++Wardogs+Live-CL-516586",
+  "frame": "Unreal centimetres (X forward, Y right, Z up); rotation quaternions (x, y, z, w) in Unreal's frame",
+  "note": "Transforms are Unreal FTransform compositions of the Blueprint's relative transforms along the SCS parent chain."
+ },
+ "fob": {
+  "LoneStar": {
+   "blueprint": "B_ForwardOperatingBase_LoneStar",
+   "components": [
+    {
+     "component": "SM_Buildable_FOB_Stages_Lonestar",
+     "mesh": "SM_Buildable_FOB_Stages_Lonestar",
+     "mesh_package": "/Buildables/Data/Buildables/ForwardOperatingBase/Meshes/SM_Buildable_FOB_Stages_Lonestar",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       10.972
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       10.972
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": null,
+     "scs": true
+    },
+    {
+     "component": "DestroyedMesh",
+     "mesh": "SM_FOB_Destroyed_Lonestar",
+     "mesh_package": "/Buildables/Data/Buildables/ForwardOperatingBase/Destroyed/SM_FOB_Destroyed_Lonestar",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": false,
+     "profile": null,
+     "scs": false
+    },
+    {
+     "component": "SM_FOB_InHand_01a",
+     "mesh": "SM_FOB_InHand_01a",
+     "mesh_package": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_01a",
+     "parent": "DestroyedMesh",
+     "relative": {
+      "translation_cm": [
+       -128.726,
+       -8.432,
+       104.096
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -128.726,
+       -8.432,
+       104.096
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": null,
+     "scs": true
+    },
+    {
+     "component": "SM_FOB_InHand_01a1",
+     "mesh": "SM_FOB_InHand_Decals_01a",
+     "mesh_package": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_Decals_01a",
+     "parent": "DestroyedMesh",
+     "relative": {
+      "translation_cm": [
+       -128.726,
+       -8.432,
+       104.096
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -128.726,
+       -8.432,
+       104.096
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": "WDSurfaces",
+     "scs": true
+    },
+    {
+     "component": "SM_Flag_01a",
+     "mesh": "SM_Flag_01a",
+     "mesh_package": "/Game/Environment/Props/Military/Towers/Meshes/SM_Flag_01a",
+     "parent": "DestroyedMesh",
+     "relative": {
+      "translation_cm": [
+       92.539,
+       61.822,
+       1174.313
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.92388,
+       0.382683
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       92.539,
+       61.822,
+       1174.313
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.92388,
+       0.382683
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": "WDSurfaces",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       18.772,
+       57.057,
+       261.011
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.01008,
+       0.999949
+      ],
+      "scale": [
+       0.27339,
+       0.3275,
+       1.40719
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       38.483,
+       113.543,
+       58.632
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.01008,
+       0.999949
+      ],
+      "scale": [
+       0.56045,
+       0.65172,
+       0.40643
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       -16.755
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.05,
+       1.99,
+       0.28883
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       -16.755
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.05,
+       1.99,
+       0.28883
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a10",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       -61.061,
+       68.191,
+       148.14
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.06949,
+       0.997583
+      ],
+      "scale": [
+       0.20107,
+       0.09735,
+       0.52245
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -125.176,
+       135.701,
+       26.032
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.06949,
+       0.997583
+      ],
+      "scale": [
+       0.4122,
+       0.19372,
+       0.1509
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a11",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       46.011,
+       12.807,
+       231.246
+      ],
+      "rotation_xyzw": [
+       0.344338,
+       -0.004087,
+       0.938771,
+       0.011141
+      ],
+      "scale": [
+       0.44595,
+       0.33046,
+       1.08618
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       94.323,
+       25.486,
+       50.035
+      ],
+      "rotation_xyzw": [
+       0.344338,
+       -0.004087,
+       0.938771,
+       0.011141
+      ],
+      "scale": [
+       0.91419,
+       0.65762,
+       0.31372
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a12",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       -49.398,
+       70.717,
+       148.14
+      ],
+      "rotation_xyzw": [
+       -0.006498,
+       -0.006197,
+       0.690137,
+       0.723623
+      ],
+      "scale": [
+       0.19087,
+       0.09735,
+       0.52245
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -101.266,
+       140.726,
+       26.032
+      ],
+      "rotation_xyzw": [
+       -0.006498,
+       -0.006197,
+       0.690137,
+       0.723623
+      ],
+      "scale": [
+       0.39128,
+       0.19372,
+       0.1509
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a13",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       57.534,
+       -49.732,
+       228.462
+      ],
+      "rotation_xyzw": [
+       0.523059,
+       -0.036077,
+       0.851508,
+       0.006412
+      ],
+      "scale": [
+       0.33313,
+       0.31694,
+       1.08618
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       117.946,
+       -98.968,
+       49.231
+      ],
+      "rotation_xyzw": [
+       0.523059,
+       -0.036077,
+       0.851508,
+       0.006412
+      ],
+      "scale": [
+       0.68293,
+       0.6307,
+       0.31372
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a14",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       3.005,
+       -14.554,
+       659.337
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.466126,
+       0.884718
+      ],
+      "scale": [
+       0.14336,
+       0.17364,
+       1.05003
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       6.161,
+       -28.962,
+       173.679
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.466126,
+       0.884718
+      ],
+      "scale": [
+       0.29389,
+       0.34555,
+       0.30328
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a2",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       -36.774,
+       8.733,
+       252.106
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.002835,
+       0.999996
+      ],
+      "scale": [
+       0.42364,
+       0.49351,
+       1.63285
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -75.388,
+       17.379,
+       56.06
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.002835,
+       0.999996
+      ],
+      "scale": [
+       0.86845,
+       0.98209,
+       0.47161
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a3",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       10.61,
+       9.267,
+       567.183
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.001256,
+       0.999999
+      ],
+      "scale": [
+       0.19547,
+       0.42915,
+       1.40719
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       21.75,
+       18.442,
+       147.062
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.001256,
+       0.999999
+      ],
+      "scale": [
+       0.40071,
+       0.85401,
+       0.40643
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a4",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       -5.281,
+       -18.408,
+       465.894
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.687588,
+       0.726101
+      ],
+      "scale": [
+       0.26938,
+       0.36945,
+       0.92758
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -10.826,
+       -36.631,
+       117.808
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.687588,
+       0.726101
+      ],
+      "scale": [
+       0.55224,
+       0.7352,
+       0.26791
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a5",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       44.055,
+       -50.664,
+       303.645
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.992968,
+       0.118381
+      ],
+      "scale": [
+       0.18328,
+       0.33046,
+       2.64515
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       90.313,
+       -100.821,
+       70.946
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.992968,
+       0.118381
+      ],
+      "scale": [
+       0.37572,
+       0.65762,
+       0.76399
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a6",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       7.328,
+       26.254,
+       757.866
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.588068,
+       0.808812
+      ],
+      "scale": [
+       0.14967,
+       0.17364,
+       0.65059
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       15.022,
+       52.245,
+       202.137
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.588068,
+       0.808812
+      ],
+      "scale": [
+       0.30682,
+       0.34555,
+       0.18791
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a8",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       54.706,
+       18.872,
+       2280.021
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.10654,
+       0.08357,
+       20.14038
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       112.147,
+       37.555,
+       641.776
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.2184,
+       0.16631,
+       5.81708
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cylinder_8Sides_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       -19.03,
+       82.183,
+       141.943
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.085293,
+       0.996356
+      ],
+      "scale": [
+       0.13366,
+       0.13366,
+       0.7719
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -39.012,
+       163.545,
+       24.242
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.085293,
+       0.996356
+      ],
+      "scale": [
+       0.27401,
+       0.26599,
+       0.22294
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a9",
+     "mesh": "SM_PrefabCollision_DirectionalRamp_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_DirectionalRamp_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "relative": {
+      "translation_cm": [
+       -23.155,
+       -60.257,
+       172.678
+      ],
+      "rotation_xyzw": [
+       -0.006449,
+       -0.170547,
+       0.985294,
+       0.008238
+      ],
+      "scale": [
+       0.54604,
+       0.32133,
+       1.63285
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -47.467,
+       -119.911,
+       33.119
+      ],
+      "rotation_xyzw": [
+       -0.006449,
+       -0.170547,
+       0.985294,
+       0.008238
+      ],
+      "scale": [
+       1.11937,
+       0.63944,
+       0.47161
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    }
+   ]
+  },
+  "Manticore": {
+   "blueprint": "B_ForwardOperatingBase_Manticore",
+   "components": [
+    {
+     "component": "SM_Buildable_FOB_Stages_Manticore",
+     "mesh": "SM_Buildable_FOB_Stages_Manticore",
+     "mesh_package": "/Buildables/Data/Buildables/ForwardOperatingBase/Meshes/SM_Buildable_FOB_Stages_Manticore",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       -1.777,
+       -2.243,
+       -11.971
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -1.777,
+       -2.243,
+       -11.971
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": null,
+     "scs": true
+    },
+    {
+     "component": "DestroyedMesh",
+     "mesh": "SM_FOB_Destroyed_Manticore",
+     "mesh_package": "/Buildables/Data/Buildables/ForwardOperatingBase/Destroyed/SM_FOB_Destroyed_Manticore",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": false,
+     "profile": "Custom",
+     "scs": false
+    },
+    {
+     "component": "SM_FOB_InHand_01a",
+     "mesh": "SM_FOB_InHand_01a",
+     "mesh_package": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       -159.206,
+       -23.279,
+       97.581
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -159.206,
+       -23.279,
+       97.581
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": null,
+     "scs": true
+    },
+    {
+     "component": "SM_FOB_InHand_01a1",
+     "mesh": "SM_FOB_InHand_Decals_01a",
+     "mesh_package": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_Decals_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       -159.206,
+       -23.279,
+       97.581
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -159.206,
+       -23.279,
+       97.581
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": "WDSurfaces",
+     "scs": true
+    },
+    {
+     "component": "SM_Flag_01a1",
+     "mesh": "SM_Flag_01a",
+     "mesh_package": "/Game/Environment/Props/Military/Towers/Meshes/SM_Flag_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       91.307,
+       100.313,
+       1164.044
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.91145,
+       0.411412
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       91.307,
+       100.313,
+       1164.044
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.91145,
+       0.411412
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": "WDSurfaces",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       -13.68
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.01928,
+       2.02,
+       0.3
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       -13.68
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.01928,
+       2.02,
+       0.3
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       61.952,
+       -36.748,
+       227.946
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.32395,
+       0.49505,
+       2.30181
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       125.098,
+       -74.231,
+       54.704
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.65415,
+       1.0,
+       0.69054
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a10",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       20.67,
+       32.331,
+       489.115
+      ],
+      "rotation_xyzw": [
+       0.00088,
+       0.001122,
+       -0.704237,
+       0.709963
+      ],
+      "scale": [
+       0.1081,
+       0.05677,
+       0.40018
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       41.738,
+       65.309,
+       133.055
+      ],
+      "rotation_xyzw": [
+       0.00088,
+       0.001122,
+       -0.704237,
+       0.709963
+      ],
+      "scale": [
+       0.21829,
+       0.11467,
+       0.12005
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a2",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       0.475,
+       -61.772,
+       273.737
+      ],
+      "rotation_xyzw": [
+       -0.186601,
+       -0.00932,
+       -0.006443,
+       0.98237
+      ],
+      "scale": [
+       0.30456,
+       0.20162,
+       2.67843
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.96,
+       -124.779,
+       68.441
+      ],
+      "rotation_xyzw": [
+       -0.186601,
+       -0.00932,
+       -0.006443,
+       0.98237
+      ],
+      "scale": [
+       0.615,
+       0.40727,
+       0.80353
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a3",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -52.366,
+       -37.414,
+       230.955
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.20384,
+       0.51489,
+       2.02054
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -105.742,
+       -75.577,
+       55.607
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.41161,
+       1.04009,
+       0.60616
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a4",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -10.114,
+       40.706,
+       257.124
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.711833,
+       0.702348
+      ],
+      "scale": [
+       0.223,
+       0.39619,
+       2.02054
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -20.423,
+       82.226,
+       63.457
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.711833,
+       0.702348
+      ],
+      "scale": [
+       0.4503,
+       0.8003,
+       0.60616
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a5",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -40.304,
+       -7.375,
+       466.469
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.711833,
+       0.702348
+      ],
+      "scale": [
+       0.17261,
+       0.26206,
+       1.89177
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -81.385,
+       -14.898,
+       126.261
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.711833,
+       0.702348
+      ],
+      "scale": [
+       0.34855,
+       0.52936,
+       0.56753
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a6",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -47.502,
+       -66.319,
+       506.868
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.213186,
+       0.977012
+      ],
+      "scale": [
+       0.13441,
+       0.12177,
+       1.16253
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -95.919,
+       -133.965,
+       138.38
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.213186,
+       0.977012
+      ],
+      "scale": [
+       0.27142,
+       0.24598,
+       0.34876
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a7",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       8.332,
+       -53.01,
+       208.239
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.10386,
+       0.20687,
+       2.02054
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       16.824,
+       -107.079,
+       48.792
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.20972,
+       0.41788,
+       0.60616
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a8",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -76.369,
+       -10.536,
+       234.191
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.700829,
+       0.713329
+      ],
+      "scale": [
+       0.16256,
+       0.14992,
+       1.81706
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -154.211,
+       -21.282,
+       56.577
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.700829,
+       0.713329
+      ],
+      "scale": [
+       0.32825,
+       0.30285,
+       0.54512
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a9",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       56.993,
+       39.46,
+       2141.513
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.09381,
+       0.08416,
+       19.64187
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       115.086,
+       79.709,
+       628.774
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.001373,
+       0.999999
+      ],
+      "scale": [
+       0.18942,
+       0.17,
+       5.89256
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cylinder_8Sides_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -16.044,
+       -57.896,
+       217.923
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.17969,
+       0.17969,
+       1.58641
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -32.398,
+       -116.949,
+       51.697
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.36285,
+       0.36298,
+       0.47592
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Trapezium_1x1m_01a",
+     "mesh": "SM_PrefabCollision_Trapezium_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Trapezium_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       91.811
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.84509,
+       0.90623,
+       10.86985
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       13.863
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.70647,
+       1.83058,
+       3.26095
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    }
+   ]
+  },
+  "Valkyra": {
+   "blueprint": "B_ForwardOperatingBase_Valkyra",
+   "components": [
+    {
+     "component": "SM_Buildable_FOB_Stages_Valkyra",
+     "mesh": "SM_Buildable_FOB_Stages_Valkyra",
+     "mesh_package": "/Buildables/Data/Buildables/ForwardOperatingBase/Meshes/SM_Buildable_FOB_Stages_Valkyra",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       -0.713,
+       -0.211,
+       1.605
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -0.713,
+       -0.211,
+       1.605
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": null,
+     "scs": true
+    },
+    {
+     "component": "DestroyedMesh",
+     "mesh": "SM_FOB_Destroyed_Valkyra",
+     "mesh_package": "/Buildables/Data/Buildables/ForwardOperatingBase/Destroyed/SM_FOB_Destroyed_Valkyra",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": false,
+     "profile": "Custom",
+     "scs": false
+    },
+    {
+     "component": "StaticMesh23",
+     "mesh": "SM_FOB_InHand_01a",
+     "mesh_package": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       -150.708,
+       -9.371,
+       103.903
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -150.708,
+       -9.371,
+       103.903
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": null,
+     "scs": true
+    },
+    {
+     "component": "StaticMesh27",
+     "mesh": "SM_FOB_InHand_Decals_01a",
+     "mesh_package": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_Decals_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       -150.708,
+       -9.371,
+       103.903
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -150.708,
+       -9.371,
+       103.903
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.707107,
+       0.707107
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": "WDSurfaces",
+     "scs": true
+    },
+    {
+     "component": "SM_Flag_01a",
+     "mesh": "SM_Flag_01a",
+     "mesh_package": "/Game/Environment/Props/Military/Towers/Meshes/SM_Flag_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       149.997,
+       56.897,
+       1173.87
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.332809,
+       0.942994
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       149.997,
+       56.897,
+       1173.87
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.332809,
+       0.942994
+      ],
+      "scale": [
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "visible": true,
+     "profile": "WDSurfaces",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": null,
+     "relative": {
+      "translation_cm": [
+       1.191,
+       0.0,
+       -16.576
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.02998,
+       2.01515,
+       0.28878
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       1.191,
+       0.0,
+       -16.576
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.02998,
+       2.01515,
+       0.28878
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a1",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       60.381,
+       -54.536,
+       316.746
+      ],
+      "rotation_xyzw": [
+       0.020875,
+       -0.706799,
+       0.020875,
+       0.706799
+      ],
+      "scale": [
+       0.32709,
+       0.5602,
+       2.48831
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       123.764,
+       -109.899,
+       74.895
+      ],
+      "rotation_xyzw": [
+       0.020875,
+       -0.706799,
+       0.020875,
+       0.706799
+      ],
+      "scale": [
+       0.66399,
+       1.1289,
+       0.71858
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a2",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -57.694,
+       -11.554,
+       272.759
+      ],
+      "rotation_xyzw": [
+       0.020875,
+       -0.706799,
+       0.020875,
+       0.706799
+      ],
+      "scale": [
+       0.2725,
+       0.3942,
+       2.48831
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -115.926,
+       -23.282,
+       62.192
+      ],
+      "rotation_xyzw": [
+       0.020875,
+       -0.706799,
+       0.020875,
+       0.706799
+      ],
+      "scale": [
+       0.55317,
+       0.79437,
+       0.71858
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a3",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       55.412,
+       -53.303,
+       626.179
+      ],
+      "rotation_xyzw": [
+       0.020875,
+       -0.706799,
+       0.020875,
+       0.706799
+      ],
+      "scale": [
+       0.19894,
+       0.4769,
+       1.58882
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       113.676,
+       -107.414,
+       164.254
+      ],
+      "rotation_xyzw": [
+       0.020875,
+       -0.706799,
+       0.020875,
+       0.706799
+      ],
+      "scale": [
+       0.40384,
+       0.96102,
+       0.45882
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a4",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -15.938,
+       43.937,
+       461.048
+      ],
+      "rotation_xyzw": [
+       -0.470482,
+       -0.52787,
+       -0.470482,
+       0.52787
+      ],
+      "scale": [
+       0.21894,
+       0.35181,
+       1.58882
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -31.162,
+       88.539,
+       116.567
+      ],
+      "rotation_xyzw": [
+       -0.470482,
+       -0.52787,
+       -0.470482,
+       0.52787
+      ],
+      "scale": [
+       0.44444,
+       0.70896,
+       0.45882
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a5",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       57.299,
+       18.873,
+       2148.924
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.08131,
+       0.09462,
+       21.97174
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       117.506,
+       38.033,
+       603.996
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.16506,
+       0.19067,
+       6.34506
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cube_1x1m_01a6",
+     "mesh": "SM_PrefabCollision_Cube_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cube_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -59.629,
+       45.509,
+       272.759
+      ],
+      "rotation_xyzw": [
+       -0.001615,
+       0.707105,
+       -0.001615,
+       -0.707105
+      ],
+      "scale": [
+       0.37296,
+       0.2576,
+       2.48831
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       -119.855,
+       91.708,
+       62.192
+      ],
+      "rotation_xyzw": [
+       -0.001615,
+       0.707105,
+       -0.001615,
+       -0.707105
+      ],
+      "scale": [
+       0.75711,
+       0.5191,
+       0.71858
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cylinder_8Sides_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       18.512,
+       -80.941,
+       234.762
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.123016,
+       0.992405
+      ],
+      "scale": [
+       0.20888,
+       0.2125,
+       2.16933
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       38.77,
+       -163.108,
+       51.219
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.123016,
+       0.992405
+      ],
+      "scale": [
+       0.42402,
+       0.42823,
+       0.62646
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Cylinder_8Sides_01a1",
+     "mesh": "SM_PrefabCollision_Cylinder_8Sides_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Cylinder_8Sides_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       68.132,
+       65.679,
+       234.311
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.132672,
+       0.99116
+      ],
+      "scale": [
+       0.1886,
+       0.19223,
+       2.14905
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       139.498,
+       132.352,
+       51.089
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       -0.132672,
+       0.99116
+      ],
+      "scale": [
+       0.38286,
+       0.38737,
+       0.62061
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    },
+    {
+     "component": "SM_PrefabCollision_Trapezium_1x1m_01a",
+     "mesh": "SM_PrefabCollision_Trapezium_1x1m_01a",
+     "mesh_package": "/Game/WorldBuilding/Prefab_Collisions/SM_PrefabCollision_Trapezium_1x1m_01a",
+     "parent": "SM_PrefabCollision_Cube_1x1m_01a",
+     "relative": {
+      "translation_cm": [
+       -0.587,
+       0.0,
+       57.4
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       0.997,
+       1.00434,
+       18.0748
+      ]
+     },
+     "world": {
+      "translation_cm": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "rotation_xyzw": [
+       0.0,
+       0.0,
+       0.0,
+       1.0
+      ],
+      "scale": [
+       2.0239,
+       2.0239,
+       5.21969
+      ]
+     },
+     "visible": false,
+     "profile": "BlockAll",
+     "scs": true
+    }
+   ]
+  }
+ },
+ "doors": [
+  {
+   "blueprint": "B_Door",
+   "definition": "D_Door",
+   "decorator": "D_Decorator_Door",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Wooden",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": false,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_Door",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Door",
+   "mesh_center_cm": [
+    -80.706,
+    3.75,
+    135.001
+   ],
+   "chunk": {
+    "translation_cm": [
+     4.348,
+     -1.232,
+     -4.977
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_InteractableDoor_Apartment",
+   "definition": "D_InteractableDoor_Apartment",
+   "decorator": "D_Decorator_InteractableDoor_Apartment",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": null,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_Apartment_Door_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Apartment_Door_01a",
+   "mesh_center_cm": [
+    -79.863,
+    3.219,
+    134.896
+   ],
+   "chunk": {
+    "translation_cm": [
+     3.403,
+     -1.786,
+     -0.252
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_InteractableDoor_ApartmentBalcony",
+   "definition": "D_InteractableDoor_ApartmentBalcony",
+   "decorator": "D_Decorator_InteractableDoor_ApartmentBalcony",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": 168.0,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Wooden",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_Apartment_BalconyDoor_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Apartment_BalconyDoor_01a",
+   "mesh_center_cm": [
+    -83.986,
+    3.75,
+    136.548
+   ],
+   "chunk": {
+    "translation_cm": [
+     3.858,
+     -0.686,
+     0.522
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_InteractableDoor_ApartmentEntrance",
+   "definition": "D_InteractableDoor_ApartmentEntrance",
+   "decorator": "D_Decorator_InteractableDoor_ApartmentEntrance",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": null,
+   "frame_width_cm": null,
+   "chunk_configuration": null,
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_Apartment_EntranceDoor_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Apartment_EntranceDoor_01a",
+   "mesh_center_cm": [
+    -79.863,
+    3.219,
+    134.896
+   ],
+   "chunk": {
+    "translation_cm": [
+     3.717,
+     0.565,
+     -0.177
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_InteractableDoor_Buisness",
+   "definition": "D_InteractableDoor_Buisness",
+   "decorator": "D_Decorator_InteractableDoor_Apartment",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": null,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_DoorSolid_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_DoorSolid_01a",
+   "mesh_center_cm": [
+    -79.112,
+    -5.047,
+    134.999
+   ],
+   "chunk": {
+    "translation_cm": [
+     -4.597,
+     -0.786,
+     -0.252
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_InteractableDoor_Office",
+   "definition": "D_InteractableDoor_Office",
+   "decorator": "D_Decorator_InteractableDoor_Apartment",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": null,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_DoorSolid_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_DoorSolid_01a",
+   "mesh_center_cm": [
+    -79.112,
+    -5.047,
+    134.999
+   ],
+   "chunk": {
+    "translation_cm": [
+     -4.597,
+     -0.786,
+     -0.252
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_InteractableDoor_WoodPVC",
+   "definition": "D_InteractableDoor_WoodPVC",
+   "decorator": "D_Decorator_InteractableDoor_WoodPVC",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": 168.0,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Wooden",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_Apartment_BalconyDoor_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Apartment_BalconyDoor_01a",
+   "mesh_center_cm": [
+    -83.986,
+    3.75,
+    136.548
+   ],
+   "chunk": {
+    "translation_cm": [
+     3.858,
+     -0.686,
+     0.522
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_Commercial_Door_01a_L",
+   "definition": "D_Interactable_Commercial_Door_01a_L",
+   "decorator": "D_Decorator_InteractableDoor_Apartment",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": null,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_Commercial_Door_01a_L",
+   "mesh_package": "/Game/Environment/Architecture/Commercial/Hospital/Doors/SM_Commercial_Door_01a_L",
+   "mesh_center_cm": [
+    -10.989,
+    -79.665,
+    135.0
+   ],
+   "chunk": {
+    "translation_cm": [
+     12.554,
+     0.665,
+     -0.252
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_Commercial_Door_01a_R",
+   "definition": "D_Interactable_Commercial_Door_01a_R",
+   "decorator": "D_Decorator_Interactable_HospitalDoor_01a_Right",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {},
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": null,
+   "sprint_push": null,
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     140.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_Commercial_Door_01a_R",
+   "mesh_package": "/Game/Environment/Architecture/Commercial/Hospital/Doors/SM_Commercial_Door_01a_R",
+   "mesh_center_cm": [
+    -10.989,
+    80.218,
+    135.0
+   ],
+   "chunk": {
+    "translation_cm": [
+     -12.08,
+     -0.514,
+     -0.252
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     1.0,
+     0.0
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_Door_Wood_01a",
+   "definition": "D_Interactable_Door_Wood_01a",
+   "decorator": "D_Decorator_InteractableDoor_Apartment",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": null,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {
+    "Explosive": 250.0
+   },
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": 60.0,
+   "sprint_push": {
+    "DoorPushSpeedMax": 26.0,
+    "DoorPushSpeedMaxAngle": 15.0
+   },
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     150.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_ModKit04_DoorSolid_01b",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_DoorSolid_01b",
+   "mesh_center_cm": [
+    -78.988,
+    -5.152,
+    134.999
+   ],
+   "chunk": {
+    "translation_cm": [
+     -4.857,
+     0.665,
+     -0.252
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_GarageDoor_01a_Left",
+   "definition": "D_Interactable_GarageDoor_01a_Left",
+   "decorator": "D_Decorator_Interactable_GarageDoor_01a_Left",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {},
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": null,
+   "sprint_push": null,
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     140.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_Garage_Door_01a_Unlocked_Left_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/Garages/Meshes/SM_Garage_Door_01a_Unlocked_Left_01a",
+   "mesh_center_cm": [
+    -75.728,
+    -2.053,
+    128.598
+   ],
+   "chunk": {
+    "translation_cm": [
+     4.297,
+     -1.206,
+     -3.626
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_GarageDoor_01a_Right",
+   "definition": "D_Interactable_GarageDoor_01a_Right",
+   "decorator": "D_Decorator_Interactable_GarageDoor_01a_Right",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {},
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": null,
+   "sprint_push": null,
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     140.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_Garage_Door_01a_Unlocked_Right_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/Garages/Meshes/SM_Garage_Door_01a_Unlocked_Right_01a",
+   "mesh_center_cm": [
+    -77.999,
+    0.448,
+    128.652
+   ],
+   "chunk": {
+    "translation_cm": [
+     -6.495,
+     -157.903,
+     -0.692
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     -0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_HospitalDoor_01a_Left",
+   "definition": "D_Interactable_HospitalDoor_01a_Left",
+   "decorator": "D_Decorator_Interactable_HospitalDoor_01a_Left",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {},
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": null,
+   "sprint_push": null,
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     140.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_Door_01a_L",
+   "mesh_package": "/Game/Environment/Props/Commercial/Doors/SM_Door_01a_L",
+   "mesh_center_cm": [
+    -82.638,
+    4.7,
+    134.479
+   ],
+   "chunk": {
+    "translation_cm": [
+     3.297,
+     -1.206,
+     -3.626
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     0.935,
+     1.0,
+     0.96875
+    ]
+   },
+   "chunks": 1
+  },
+  {
+   "blueprint": "BP_Interactable_HospitalDoor_01a_Right",
+   "definition": "D_Interactable_HospitalDoor_01a_Right",
+   "decorator": "D_Decorator_Interactable_HospitalDoor_01a_Right",
+   "frame_height_cm": 268.0,
+   "frame_thickness_cm": 12.0,
+   "frame_width_cm": null,
+   "chunk_configuration": "Single",
+   "audio_material": "Audio.Asset.Door.Metal",
+   "max_breach_distances_cm": {},
+   "can_vehicles_breach": null,
+   "push_radius_buffer_cm": null,
+   "sprint_push": null,
+   "interaction_box": {
+    "location_cm": [
+     0.0,
+     -80.0,
+     140.0
+    ],
+    "scale": [
+     1.25,
+     1.25,
+     1.25
+    ]
+   },
+   "mesh": "SM_Door_01a_R",
+   "mesh_package": "/Game/Environment/Props/Commercial/Doors/SM_Door_01a_R",
+   "mesh_center_cm": [
+    82.447,
+    4.749,
+    134.491
+   ],
+   "chunk": {
+    "translation_cm": [
+     -6.495,
+     2.097,
+     -0.692
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     -0.707107,
+     0.707107
+    ],
+    "scale": [
+     0.935,
+     1.0,
+     0.96875
+    ]
+   },
+   "chunks": 1
+  }
+ ],
+ "windows": [
+  {
+   "blueprint": "B_SmashableWindowMaster",
+   "mesh": "SM_BrokenWindow01_base",
+   "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_BrokenWindow01_base",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     -95.175
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ],
+    "scale": [
+     0.075,
+     13.0,
+     9.5
+    ]
+   },
+   "y_forward_mesh": null,
+   "airborne_break_threshold": 0.8,
+   "grounded_break_threshold": 6.0,
+   "smashed_lifespan": 0.0,
+   "glass_shard_amount": 250.0,
+   "broken_remains": [
+    {
+     "mesh": "SM_VFX_WindowPiece01",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece01",
+     "profile": "NoCollision"
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece02",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece02",
+     "profile": "NoCollision"
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece03",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece03",
+     "profile": "NoCollision"
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece04",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece04",
+     "profile": "NoCollision"
+    }
+   ]
+  },
+  {
+   "blueprint": "B_SmashableDoorWindow",
+   "mesh": "SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+   "relative": {
+    "translation_cm": [
+     3.75,
+     84.0,
+     -136.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableApartmentBalconyDoor",
+   "mesh": "SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/Door/SM_ModKit04_Apartment_BalconyDoorGlass_01a",
+   "relative": {
+    "translation_cm": [
+     3.75,
+     84.0,
+     -136.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableApartmentBalconyWindow",
+   "mesh": "SM_ModKit04_Single_BalconyGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/WindowFrames/SM_ModKit04_Single_BalconyGlass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableApartmentDoubleWindow",
+   "mesh": "SM_ModKit04_Double_WindowGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/WindowFrames/SM_ModKit04_Double_WindowGlass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableApartmentSingleWindow",
+   "mesh": "SM_ModKit04_Single_WindowGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/WindowFrames/SM_ModKit04_Single_WindowGlass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableHospitalSingleWindow",
+   "mesh": "SM_Hospital_Corporate_WindowGlass_03a",
+   "mesh_package": "/Game/Environment/Architecture/Commercial/Hospital/Walls/SM_Hospital_Corporate_WindowGlass_03a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": [
+    {
+     "mesh": "SM_VFX_WindowPiece01b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece01b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece02b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece02b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece03b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece03b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece04b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece04b",
+     "profile": null
+    }
+   ]
+  },
+  {
+   "blueprint": "B_SmashableHospitalSingleWindow_03",
+   "mesh": "SM_ModKit04_Single_WindowGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/WindowFrames/SM_ModKit04_Single_WindowGlass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.47565,
+     1.9509,
+     1.7019
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": [
+    {
+     "mesh": "SM_VFX_WindowPiece01b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece01b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece02b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece02b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece03b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece03b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece04b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece04b",
+     "profile": null
+    }
+   ]
+  },
+  {
+   "blueprint": "B_SmashableHospitalSingleWindow_04",
+   "mesh": "SM_ModKit04_Single_WindowGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/WindowFrames/SM_ModKit04_Single_WindowGlass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     2.17097,
+     1.9509,
+     1.69194
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": [
+    {
+     "mesh": "SM_VFX_WindowPiece01b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece01b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece02b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece02b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece03b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece03b",
+     "profile": null
+    },
+    {
+     "mesh": "SM_VFX_WindowPiece04b",
+     "mesh_package": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/SmashableWindow/Meshes/SM_VFX_WindowPiece04b",
+     "profile": null
+    }
+   ]
+  },
+  {
+   "blueprint": "B_SmashableLargeWindow",
+   "mesh": "SM_ModKit04_Large_Window_Glass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Residential/ModularKit_04/WindowFrames/SM_ModKit04_Large_Window_Glass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableWindow_Tower_01a",
+   "mesh": "SM_TowerWindowGlass_01a",
+   "mesh_package": "/Game/Environment/Architecture/Military/Towers/Meshes/SM_TowerWindowGlass_01a",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  },
+  {
+   "blueprint": "B_SmashableWindow_Tower_01b",
+   "mesh": "SM_TowerWindowGlass_01b",
+   "mesh_package": "/Game/Environment/Architecture/Military/Towers/Meshes/SM_TowerWindowGlass_01b",
+   "relative": {
+    "translation_cm": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation_xyzw": [
+     0.0,
+     0.0,
+     0.707107,
+     0.707107
+    ],
+    "scale": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "y_forward_mesh": true,
+   "airborne_break_threshold": null,
+   "grounded_break_threshold": null,
+   "smashed_lifespan": null,
+   "glass_shard_amount": null,
+   "broken_remains": []
+  }
+ ],
+ "drone": {
+  "blueprint": "BP_Drone_Projectile",
+  "box_half_extent_cm": [
+   46.64308,
+   46.0,
+   18.7716
+  ],
+  "box_is_root": true,
+  "base_health": 50.0,
+  "max_health": 50.0,
+  "skeletal_mesh": "SK_Drone_01",
+  "skeletal_mesh_relative": {
+   "translation_cm": [
+    15.14,
+    0.0,
+    -11.18
+   ],
+   "rotation_xyzw": [
+    0.0,
+    0.0,
+    -0.707107,
+    0.707107
+   ],
+   "scale": [
+    0.7,
+    0.7,
+    0.7
+   ]
+  },
+  "mesh_parent": "NetworkSmoothingComponent (a SceneComponent attached to the box)",
+  "projectile_data": "STN_05/Content/Data/Projectile/DA_Drone_ProjectileData"
+ }
+}
