@@ -32,6 +32,13 @@
   function status(text) { els.status.textContent = text || ""; els.status.hidden = !text; }
 
   function current() { return data.objects.filter(function (o) { return o.id === state.id; })[0]; }
+  /* the finished stage: the first "Complete" stage, else the last one that is not a foundation or a destroyed state */
+  function finishedStage(o) {
+    var i, last = o.stages.length - 1;
+    for (i = 0; i < o.stages.length; i++) if (/^Complete/.test(o.stages[i].name || "")) return i;
+    for (i = o.stages.length - 1; i >= 0; i--) if (!/^(Foundation|Destroyed)/.test(o.stages[i].name || "")) return i;
+    return last;
+  }
   function stage() { var o = current(); return o && o.stages[state.stage]; }
 
   /* ---------- text ---------- */
@@ -76,6 +83,7 @@
       row(dl, "Explosion", num(b.BaseDamage) + " damage, radius " + num(b.ExplosiveRadius / 100) + " m (full damage inside " +
         num(b.EffectiveExplosiveRadius / 100) + " m), minimum " + num(b.MinimumExplosiveDamage));
     }
+    (o.facts || []).forEach(function (f) { row(dl, f[0], f[1]); });
     body.appendChild(dl);
     (o.notes || []).forEach(function (n) { body.appendChild(el("p", "vv-note", n)); });
     var links = el("p", "vv-links");
@@ -83,7 +91,11 @@
       links.appendChild(link("Wardogs_Buildables_v1.html#4-health-and-damage-rules", "Buildables: health and damage"));
       links.appendChild(document.createTextNode(" · "));
     }
-    if (o.group === "deployables") {
+    if (o.group === "doors") {
+      links.appendChild(link("Wardogs_HitRegistration_v1.html", "Hit registration"));
+      links.appendChild(document.createTextNode(" · "));
+    }
+    if (o.group === "deployables" || o.group === "projectiles") {
       links.appendChild(link("Wardogs_Explosives_v1.html", "Explosives"));
       links.appendChild(document.createTextNode(" · "));
     }
@@ -101,6 +113,8 @@
     row(dl, o.group === "props" ? "Body (bone)" : "Static mesh", code(p.mesh));
     if (p.placements != null) row(dl, "Placements", String(p.placements));
     if (p.profile) row(dl, "Collision profile", code(p.profile) );
+    if (p.component_profile) row(dl, "Component profile in the Blueprint", code(p.component_profile));
+    if (p.visible === false) row(dl, "Visible in game", "no (collision proxy)");
     if (p.object_type) row(dl, "Object type", p.object_type);
     if (p.physics_type) row(dl, "Physics type", p.physics_type);
     if (p.trace_flag) row(dl, "Trace collision", p.trace_flag);
@@ -293,7 +307,7 @@
   function setObject(id, stageIdx, fromHash) {
     var o = data.objects.filter(function (x) { return x.id === id; })[0] || data.objects[0];
     state.id = o.id;
-    state.stage = Math.max(0, Math.min(o.stages.length - 1, stageIdx == null ? o.stages.length - 1 : stageIdx));
+    state.stage = Math.max(0, Math.min(o.stages.length - 1, stageIdx == null ? finishedStage(o) : stageIdx));
     state.selected = null;
     els.object.value = o.id;
     fillStages();

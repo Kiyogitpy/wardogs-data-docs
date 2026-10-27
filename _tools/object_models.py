@@ -11,6 +11,10 @@ collision geometry; no render mesh, texture or image is read or written. Three s
   (the FOB's stage meshes, the fuel canister, the C4 detonator) collides on its render triangles, which
   are not published; it is listed in the data file without geometry.
 * Deployables (AT mine, Claymore, IED, C4, Molotov, smoke grenade): the item's static mesh body, the same way.
+* Blueprint-placed objects (round 91, assets/data/object-blueprints.json from _tools/object_blueprints.py): the FOB's faction
+  Blueprints (component transforms resolved along the SCS parent chain), interactable doors and smashable windows (the mesh of the
+  door's BHDestruction definition placed by its chunk transform; the window mesh by the Blueprint's relative transform) and the
+  STN_05 drone projectile (its root box). Every definition's FoundationStaticMesh is a "Foundation" stage drawn at the origin.
 * Props with a physics asset (ammo crate, supply crates, the FWG_01 airplane, STN_05's skeletal mesh): the
   bodies of the PhysicsAsset on the skeletal mesh's reference pose, as the infantry model does.
 
@@ -22,7 +26,7 @@ static mesh (shared by its placements) with one primitive per collision element,
 meshopt by the pinned glTF-Transform CLI (Node.js needed); viewers supply a meshopt decoder.
 
     python -I _tools/object_models.py --collision <collision.json> --physics <physics.json> [--raw <dir>]
-    python -I _tools/object_models.py --plan <out-dir> --files <files.txt>   # writes collision_in.txt, phys_in.txt
+    python -I _tools/object_models.py --plan <out-dir> --files <files.txt>   # writes collision_in.txt, phys_in.txt, bp_in.txt
     python -I _tools/object_models.py --check          # exit 1 when the written JSON is stale
 
 --collision is `WdExtract collision` run on the buildable and item static meshes, --physics `WdExtract physics`
@@ -34,6 +38,7 @@ _tools/object_models_check.py).
 import json
 import math
 import os
+import re
 import sys
 import tempfile
 
@@ -43,6 +48,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import buildable_tables as bt  # noqa: E402
 import infantry_model as im  # noqa: E402
+import object_blueprints as obp  # noqa: E402
 
 ROOT = bt.ROOT
 OUT_DIR = os.path.join(ROOT, "assets", "models", "objects")
@@ -265,22 +271,56 @@ def damage_summary(d, p):
 
 
 IDENTITY_T = {"Rotation": IDENT, "Translation": {"X": 0.0, "Y": 0.0, "Z": 0.0}, "Scale3D": {"X": 1.0, "Y": 1.0, "Z": 1.0}}
-# The FOB definition has no stages asset: its foundation is DA_Buildable_FOB.FoundationStaticMesh and its faction
-# meshes are named in the Blueprint (not in data/), so they are listed here from the package names. Placed at the
-# actor origin; the relative placement is not in data/.
-FOB_PIECES = [("Foundation", ["SM_Foundation_FOB"]),
-              ("Complete (Lonestar)", ["SM_Buildable_FOB_Stages_Lonestar"]),
-              ("Complete (Manticore)", ["SM_Buildable_FOB_Stages_Manticore"]),
-              ("Complete (Valkyra)", ["SM_Buildable_FOB_Stages_Valkyra"]),
-              ("Destroyed (Lonestar)", ["SM_FOB_Destroyed_Lonestar"]),
-              ("Destroyed (Manticore)", ["SM_FOB_Destroyed_Manticore"]),
-              ("Destroyed (Valkyra)", ["SM_FOB_Destroyed_Valkyra"])]
+FOUNDATION_NOTE = ("The foundation mesh is drawn at the buildable's origin: where the game spawns it relative to the buildable is native code "
+                   "and not in the exported data.")
+# Extra facts about a piece that come from a Blueprint component (FOB): (asset, stage index, mesh) -> {...}
+PIECE_EXTRA = {}
+
+
+def ft_dict(t):
+    """A transform record of assets/data/object-blueprints.json -> the Rotation/Translation/Scale3D dict the stage tables use."""
+    x, y, z = t["translation_cm"]
+    qx, qy, qz, qw = t["rotation_xyzw"]
+    sx, sy, sz = t["scale"]
+    return {"Rotation": {"X": qx, "Y": qy, "Z": qz, "W": qw}, "Translation": {"X": x, "Y": y, "Z": z}, "Scale3D": {"X": sx, "Y": sy, "Z": sz}}
+
+
+def foundation_name(p):
+    f = p.get("FoundationStaticMesh")
+    return f["AssetPathName"].rsplit(".", 1)[1] if f else None
+
+
+def fob_stages(p):
+    """The FOB definition has no stages asset. Each faction Blueprint (B_ForwardOperatingBase_<Faction>, dumped with WdExtract and
+    read by _tools/object_blueprints.py) places its meshes with SCS component transforms: the finished base is the faction's stage mesh
+    (render only), the invisible BlockAll collision proxies (prefab cubes, cylinders, ramps), the flag and the carried model; the
+    destroyed base is the inherited DestroyedMesh component. The foundation is the definition's FoundationStaticMesh."""
+    doc = obp.load()
+    out = []
+    for fac, rec in doc["fob"].items():
+        for state, pick in (("Complete", lambda c: c["component"] != "DestroyedMesh"), ("Destroyed", lambda c: c["component"] == "DestroyedMesh")):
+            meshes, order = {}, []
+            for c in rec["components"]:
+                if pick(c) and c["mesh"]:
+                    if c["mesh"] not in meshes:
+                        meshes[c["mesh"]] = []
+                        order.append(c["mesh"])
+                    meshes[c["mesh"]].append(c)
+            idx = len(out) + 1  # the foundation stage comes first
+            for m in order:
+                PIECE_EXTRA[("DA_Buildable_FOB", idx, m)] = {
+                    "visible": any(c["visible"] for c in meshes[m]), "component_profile": meshes[m][0]["profile"],
+                    "components": len(meshes[m])}
+            out.append({"name": f"{state} ({fac.replace('LoneStar', 'Lonestar')})", "progress": None,
+                        "meshes": [(m, [ft_dict(c["world"]) for c in meshes[m]], None) for m in order]})
+    return out
 
 
 def buildable_stages(d, p, asset=None):
     """[{name, progress, meshes: [(mesh name, [placement transform], actor)]}] from the definition's stages."""
     if asset == "DA_Buildable_FOB":
-        return [{"name": n, "progress": None, "meshes": [(m, [IDENTITY_T], None) for m in ms]} for n, ms in FOB_PIECES]
+        out = [{"name": "Foundation", "progress": None, "meshes": [(foundation_name(p), [IDENTITY_T], None)]}]
+        return out + fob_stages(p)
     out = []
     for st in bt.stage_list(d, p):
         meshes = []
@@ -289,6 +329,8 @@ def buildable_stages(d, p, asset=None):
             placements = [pl["RelativeTransform"] for pl in item["Value"].get("Placements", [])]
             meshes.append((name, placements, (item["Value"].get("ActorToSpawn") or {}).get("ObjectName")))
         out.append({"name": st.get("StageName"), "progress": st.get("RequiredBuildingProgress"), "meshes": meshes})
+    if foundation_name(p):
+        out.append({"name": "Foundation", "progress": None, "meshes": [(foundation_name(p), [IDENTITY_T], None)]})
     return out
 
 
@@ -329,11 +371,17 @@ def build_buildable(d, rel, asset, typ, p, bodies, raw_dir, records):
                     nodes.append((f"{mat_name}#{pi}", key, len(materials) - 1, tr, q, sc, {"stage": si, "mesh": mesh}))
                 piece.update({"status": "ok", "material": mat_name, "profile": b["profile"], "object_type": b["object_type"],
                               "trace_flag": b["trace_flag"], "shapes": [{"type": s["type"], **dims(s)} for s in b["shapes"]]})
+            piece.update(PIECE_EXTRA.get((asset, si - 1, mesh), {}))
             pieces.append(piece)
         stage_rec.append({"name": st["name"], "progress": st["progress"], "pieces": pieces})
     rec = {"id": oid, "group": "buildables", "name": bt.display_name(d, p) or PIECE_NAMES.get(asset) or asset.replace("DA_Buildable_", ""),
            "asset": asset, "tag": bt.tag_of(p), "cost": p.get("Cost"), **damage_summary(d, p),
            "vehicle_viewer": VEHICLE_OF.get(asset), "stages": stage_rec, "glb": None, "notes": []}
+    if foundation_name(p):
+        rec["notes"].append(FOUNDATION_NOTE)
+    if asset == "DA_Buildable_FOB":
+        rec["notes"].append("Placements are the Blueprint's component transforms (B_ForwardOperatingBase_<Faction>): the collision proxies are invisible "
+                            "BlockAll meshes; the faction stage mesh is the visible base and has no simple collision primitives.")
     if not nodes:
         rec["notes"].append("No stage mesh of this definition has simple collision primitives to show.")
     else:
@@ -421,6 +469,162 @@ def build_props(physics, raw_dir, records):
     return out
 
 
+
+# --- doors, windows, projectiles and loose meshes (round 91) -----------------------------------------
+
+DOOR_NAMES = {
+    "B_Door": "Door (base Blueprint)", "BP_InteractableDoor_Apartment": "Apartment door", "BP_InteractableDoor_ApartmentBalcony": "Apartment balcony door",
+    "BP_InteractableDoor_ApartmentEntrance": "Apartment entrance door", "BP_InteractableDoor_Buisness": "Business door",
+    "BP_InteractableDoor_Office": "Office door", "BP_InteractableDoor_WoodPVC": "Wood and PVC door",
+    "BP_Interactable_Commercial_Door_01a_L": "Commercial door, left leaf", "BP_Interactable_Commercial_Door_01a_R": "Commercial door, right leaf",
+    "BP_Interactable_Door_Wood_01a": "Wooden door", "BP_Interactable_GarageDoor_01a_Left": "Garage door, left leaf",
+    "BP_Interactable_GarageDoor_01a_Right": "Garage door, right leaf", "BP_Interactable_HospitalDoor_01a_Left": "Hospital door, left leaf",
+    "BP_Interactable_HospitalDoor_01a_Right": "Hospital door, right leaf"}
+WINDOW_NAMES = {
+    "B_SmashableWindowMaster": "Smashable window (master template)", "B_SmashableDoorWindow": "Smashable door window",
+    "B_SmashableApartmentBalconyDoor": "Smashable apartment balcony door glass", "B_SmashableApartmentBalconyWindow": "Smashable apartment balcony window",
+    "B_SmashableApartmentDoubleWindow": "Smashable apartment double window", "B_SmashableApartmentSingleWindow": "Smashable apartment window",
+    "B_SmashableHospitalSingleWindow": "Smashable hospital window", "B_SmashableHospitalSingleWindow_03": "Smashable hospital window (variant 03)",
+    "B_SmashableHospitalSingleWindow_04": "Smashable hospital window (variant 04)", "B_SmashableLargeWindow": "Smashable large window",
+    "B_SmashableWindow_Tower_01a": "Smashable tower window (3 m)", "B_SmashableWindow_Tower_01b": "Smashable tower window (6 m)"}
+# static meshes with simple collision that no data asset places (id, name, mesh, notes)
+LOOSE_MESHES = [("hblock-mesh", "SM_HBlock (loose H-block mesh)", "SM_HBlock",
+                 ["No data asset in the exports references this mesh (the H-block buildables use the SM_HESCO_* stage meshes). It is a "
+                  "single convex hull of about 1.5 m on each side with the BlockAll profile."])]
+
+DOOR_BREACH_DEFAULT = ("A door Blueprint that does not set a value keeps the native default of the AWDDoor class, which is not "
+                       "in the exports.")
+
+
+def mesh_piece(mesh, b, placements, mat, **extra):
+    """The piece record for a mesh with a collision export entry (or without)."""
+    piece = {"mesh": mesh, "placements": placements}
+    if b is None:
+        piece["status"] = "mesh not in the collision export"
+    elif not b["shapes"]:
+        piece["status"] = "no simple collision primitives (any collision uses the render triangles, which are not published)"
+        piece.update({"trace_flag": b["trace_flag"], "profile": b["profile"]})
+    else:
+        piece.update({"status": "ok", "material": mat, "profile": b["profile"], "object_type": b["object_type"], "trace_flag": b["trace_flag"],
+                      "shapes": [{"type": s["type"], **dims(s)} for s in b["shapes"]]})
+    piece.update(extra)
+    return piece
+
+
+def trs_of(t):
+    return node_trs(ft_dict(t))
+
+
+def build_one_mesh_object(oid, group, name, asset, mesh, b, t, raw_dir, records, stage_name, facts, notes, **rec_extra):
+    """An object that is one static mesh placed by one transform t (a blueprint transform record, or None for the origin)."""
+    mat = f"S1|{mesh}"
+    rec = {"id": oid, "group": group, "name": name, "asset": asset, "glb": None, "facts": facts, "notes": notes, **rec_extra,
+           "stages": [{"name": stage_name, "progress": None, "pieces": [mesh_piece(mesh, b, 1, mat)]}]}
+    if b is not None and b["shapes"]:
+        tr, q, sc = trs_of(t) if t else ([0, 0, 0], [0, 0, 0, 1], [1, 1, 1])
+        finish(rec, oid, {mesh: prim_meshes(b["shapes"], mesh)}, [mat], [(f"{mat}#0", mesh, 0, tr, q, sc, {"stage": 1, "mesh": mesh})],
+               {"object": oid, "source": asset}, raw_dir, records)
+    else:
+        rec["notes"].append("The mesh has no simple collision primitives: any collision uses its render triangles, which are not published.")
+    return rec
+
+
+def cm(v):
+    return f"{v:g} cm ({v / 100:g} m)"
+
+
+def name_slug(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def build_doors(doc, bodies, raw_dir, records):
+    out = []
+    for dr in doc["doors"]:
+        bp, mesh = dr["blueprint"], dr["mesh"]
+        b = bodies.get(mesh)
+        facts = [["Blueprint", bp], ["Definition asset", dr["definition"]], ["Mesh", mesh], ["Frame height", cm(dr["frame_height_cm"])]]
+        if dr["frame_thickness_cm"] is not None:
+            facts.append(["Frame thickness", cm(dr["frame_thickness_cm"])])
+        facts.append(["Leaves in the definition", f"{dr['chunks']} ({dr['chunk_configuration'] or 'native default'})"])
+        facts.append(["Sound material", dr["audio_material"]])
+        br = dr["max_breach_distances_cm"]
+        facts.append(["Explosive breach, largest distance", cm(br["Explosive"]) if "Explosive" in br else "not set (native default)"])
+        if dr["can_vehicles_breach"] is not None:
+            facts.append(["Vehicles can breach", "yes" if dr["can_vehicles_breach"] else "no"])
+        facts.append(["Sprint push", "speed %g, angle %g" % (dr["sprint_push"]["DoorPushSpeedMax"], dr["sprint_push"]["DoorPushSpeedMaxAngle"])
+                      if dr["sprint_push"] else "not set (native default)"])
+        notes = ["No health value and no damage-table row for this door is in the exported data. A door is a BHDestruction building "
+                 "(class AWDDoor, one chunk) that opens and swings; players breach it by sprinting, melee, explosives or vehicles, and the Halligan "
+                 "tool spends durability per breach (see the equipment data). " + DOOR_BREACH_DEFAULT,
+                 "Closed position: the definition's chunk transform places the mesh (pivot at the hinge). The interaction trigger box "
+                 "(not drawn) sits at Y %g, Z %g cm." % (dr["interaction_box"]["location_cm"][1], dr["interaction_box"]["location_cm"][2])]
+        out.append(build_one_mesh_object(name_slug(DOOR_NAMES[bp]), "doors", DOOR_NAMES[bp], dr["definition"], mesh, b, dr["chunk"], raw_dir, records,
+                                         "Closed", facts, notes))
+    return out
+
+
+def build_windows(doc, bodies, raw_dir, records):
+    out = []
+    for w in doc["windows"]:
+        bp, mesh = w["blueprint"], w["mesh"]
+        b = bodies.get(mesh)
+        facts = [["Blueprint", bp], ["Glass mesh", mesh]]
+        if w["airborne_break_threshold"] is not None:
+            facts.append(["Break threshold, airborne", "%g" % w["airborne_break_threshold"]])
+            facts.append(["Break threshold, grounded", "%g" % w["grounded_break_threshold"]])
+        else:
+            facts.append(["Break thresholds", "not set in this Blueprint (native defaults of AWDSmashableWindow, not in the exports)"])
+        if w["glass_shard_amount"] is not None:
+            facts.append(["Glass shards in the break effect", "%g" % w["glass_shard_amount"]])
+        rem = len(w["broken_remains"])
+        notes = ["A smashable window has no health value and no damage-table row in the exported data. The class has Normal, Damaged and "
+                 "Smashed states and reacts to a hit on its mesh (an OnWindowMeshHit event with the impact impulse); the master Blueprint sets "
+                 "movement break thresholds, the only numbers stored.",
+                 "The glass mesh's collision profile %s. Broken-remains pieces%s are effects and are not drawn." % (
+                     ("is " + b["profile"]) if b else "is unknown", (" (%d components)" % rem) if rem else "")]
+        out.append(build_one_mesh_object(name_slug(WINDOW_NAMES[bp]), "doors", WINDOW_NAMES[bp], bp, mesh, b, w["relative"], raw_dir, records,
+                                         "Intact", facts, notes))
+    return out
+
+
+def build_drone(doc, raw_dir, records):
+    dr = doc["drone"]
+    proj = strip_dump(os.path.join(ROOT, "data", "Wardogs", "Plugins", "GameFeatures", "Vehicles", "STN_05", "Content", "Data",
+                                   "Projectile", "DA_Drone_ProjectileData.json"))
+    ps = proj["Properties"]["ProjectileStats"]
+    ex, ey, ez = dr["box_half_extent_cm"]
+    shapes = shapes_of({"BoxElems": [{"Center": {"X": 0.0, "Y": 0.0, "Z": 0.0}, "X": 2 * ex, "Y": 2 * ey, "Z": 2 * ez}]})
+    mesh = "Box Component"
+    rec = {"id": "drone-projectile", "group": "projectiles", "name": "Drone projectile (STN_05)", "asset": dr["blueprint"], "glb": None,
+           "max_health": dr["max_health"], "damage_row": None, "blast": ps["DamageValues"],
+           "blast_source": "STN_05 DA_Drone_ProjectileData (damage tag %s)" % ps["DamageEntityData"]["Tag"]["TagName"],
+           "facts": [["Blueprint", dr["blueprint"]], ["Collision", "root box component, %s x %s x %s cm" % tuple("%g" % (2 * v) for v in (ex, ey, ez))],
+                     ["Projectile data", "DA_Drone_ProjectileData (arming delay %g s, lifetime %g s)" % (ps["ArmingDelay"], ps["MaxProjectileLifetime"])]],
+           "notes": ["The health is the Blueprint's WDVitality component (base and max 50). The Blueprint has no damage-entity component, so no "
+                     "per-caliber damage row applies to the drone itself. The explosion shown is its warhead (DA_Drone_ProjectileData).",
+                     "Only the root box is a collision component with a size in the Blueprint. The skeletal mesh SK_Drone_01 (scale 0.7, under the "
+                     "NetworkSmoothingComponent), the rotor, trail and first-person meshes are visual; the VFX meshes set the NoCollision profile."],
+           "stages": [{"name": "In flight", "progress": None, "pieces": [{
+               "mesh": mesh, "placements": 1, "status": "ok", "material": f"S1|{mesh}",
+               "shapes": [{"type": s["type"], **dims(s)} for s in shapes]}]}]}
+    finish(rec, rec["id"], {mesh: prim_meshes(shapes, mesh)}, [f"S1|{mesh}"],
+           [(f"S1|{mesh}#0", mesh, 0, [0, 0, 0], [0, 0, 0, 1], [1, 1, 1], {"stage": 1, "mesh": mesh})],
+           {"object": rec["id"], "source": dr["blueprint"]}, raw_dir, records)
+    return [rec]
+
+
+def strip_dump(path):
+    """A data/ export (a header line, then JSON, one object or a list): the first object that has Properties."""
+    text = open(path, encoding="utf-8").read()
+    v = json.loads(text[min(i for i in (text.find("{"), text.find("[")) if i >= 0):])
+    return v[0] if isinstance(v, list) else v
+
+
+def build_loose(bodies, raw_dir, records):
+    return [build_one_mesh_object(oid, "props", name, mesh, mesh, bodies.get(mesh), None, raw_dir, records, "Mesh", [], list(notes))
+            for oid, name, mesh, notes in LOOSE_MESHES]
+
+
 # --- input lists for WdExtract ---------------------------------------------------------------------
 
 ITEM_DIRS = ("AT_mine", "Claymore", "IED", "C4", "Molotov", "SmokeGrenade", "FuelCanister")
@@ -432,8 +636,19 @@ PHYS_PATTERNS = [
 FOB_RE = r"/(SM_Buildable_FOB_Stages|SM_FOB_Destroyed|SM_Foundation_FOB)[^/]*$"
 
 
+def blueprint_mesh_packages(doc):
+    """Every static mesh package the Blueprint records name (FOB components, door meshes, window meshes)."""
+    out = set()
+    for f in doc["fob"].values():
+        out |= {c["mesh_package"] for c in f["components"] if c["mesh_package"]}
+    out |= {d["mesh_package"] for d in doc["doors"]}
+    for w in doc["windows"]:
+        out.add(w["mesh_package"])
+    return out
+
+
 def plan(out_dir, files_txt):
-    """Write collision_in.txt (WdExtract collision) and phys_in.txt (WdExtract physics) from data/ and the package list."""
+    """Write collision_in.txt (WdExtract collision), phys_in.txt (WdExtract physics) and bp_in.txt (WdExtract dump) from data/ and the package list."""
     import re
     sys.path.insert(0, os.path.join(ROOT, "tools", "cue4parse_extractor"))
     import vehicle_meshes as vm
@@ -450,23 +665,52 @@ def plan(out_dir, files_txt):
                 else:
                     missing.append(item["Key"])
     item_re = re.compile(r"/Items/(%s)/.*/SM_[^/]*$" % "|".join(ITEM_DIRS))
-    col |= {x for x in packages if item_re.search(x) or re.search(FOB_RE, x)}
+    col |= {x for x in packages if item_re.search(x) or re.search(FOB_RE, x) or re.search(r"/SM_HBlock$", x)}
+    # foundations: every definition's FoundationStaticMesh (round 91)
+    for rel, asset, typ, p in d["assets"]:
+        f = p.get("FoundationStaticMesh")
+        if f:
+            key = f["AssetPathName"].rsplit(".", 1)[0].lower()
+            if key in pm:
+                col.add(pm[key])
+            else:
+                missing.append(f["AssetPathName"])
+    # Blueprint-placed meshes (FOB, doors, windows): the packages named in assets/data/object-blueprints.json, which
+    # `object_blueprints.py <dump-dir>` writes from the dump of bp_in.txt. Absent on the first pass.
+    bp_note = ""
+    if os.path.exists(obp.OUT):
+        for pkg in blueprint_mesh_packages(obp.load()):
+            if pkg.lower() in pm:
+                col.add(pm[pkg.lower()])
+            else:
+                missing.append(pkg)
+    else:
+        bp_note = "; object-blueprints.json not found: run the dump of bp_in.txt and object_blueprints.py, then plan again"
+    bp = {x for x in packages if re.search(obp.BP_PACKAGE_RE, x)}
+    unique = {}
+    for x in bp:
+        unique.setdefault(x.rsplit("/", 1)[1], []).append(x)
+    dup = {k: v for k, v in unique.items() if len(v) > 1}
+    if dup:
+        sys.exit(f"Blueprint names in more than one package: {dup}")
     phys = {x for x in packages if any(re.search(pat, x) for pat in PHYS_PATTERNS)}
     # the Mutable preset skeletal meshes are read only for their PhysicsAsset: the first three, as in round 86
     phys |= set(sorted(x for x in packages if re.search(r"Characters/Player/_Presets/.*/SK_[^/]*$", x))[:3])
     os.makedirs(out_dir, exist_ok=True)
-    for name, items in (("collision_in.txt", col), ("phys_in.txt", phys)):
+    for name, items in (("collision_in.txt", col), ("phys_in.txt", phys), ("bp_in.txt", bp)):
         with open(os.path.join(out_dir, name), "w", encoding="utf-8", newline=chr(10)) as f:
             f.write(chr(10).join(sorted(items)) + chr(10))
-    print(f"collision_in.txt: {len(col)} packages, phys_in.txt: {len(phys)} packages"
-          + (f"; {len(missing)} stage meshes not in the package list: {missing[:3]}" if missing else ""))
+    print(f"collision_in.txt: {len(col)} packages, phys_in.txt: {len(phys)} packages, bp_in.txt: {len(bp)} Blueprints"
+          + (f"; {len(missing)} meshes not in the package list: {missing[:3]}" if missing else "") + bp_note)
 
 
 # --- main -------------------------------------------------------------------------------------------
 
 GROUPS = [{"id": "buildables", "label": "Buildables and fortifications"},
           {"id": "deployables", "label": "Deployables and placed explosives"},
-          {"id": "props", "label": "Crates, aircraft and other physics assets"}]
+          {"id": "props", "label": "Crates, aircraft and other physics assets"},
+          {"id": "doors", "label": "Doors and windows"},
+          {"id": "projectiles", "label": "Projectiles"}]
 
 
 def data_tables(d):
@@ -512,6 +756,8 @@ def main():
         print(f"object-collision.json current: {len(have)} buildable stage tables match data/")
         return
     cpath, ppath = opt("--collision"), opt("--physics")
+    if not cpath and not ppath and not args:  # the permanent copy of the extraction output
+        cpath, ppath = obp.EXTRACT + "/col4/collision.json", obp.EXTRACT + "/phys4/physics.json"
     raw_dir = opt("--raw") or tempfile.mkdtemp(prefix="object_models_")
     if not cpath or not ppath or args:
         sys.exit(__doc__)
@@ -527,6 +773,14 @@ def main():
         objects.append(build_buildable(d, rel, asset, typ, p, bodies, raw_dir, records))
     objects += build_deployables(bodies, actors, raw_dir, records)
     objects += build_props(physics, raw_dir, records)
+    bpdoc = obp.load()
+    objects += build_loose(bodies, raw_dir, records)
+    objects += build_doors(bpdoc, bodies, raw_dir, records)
+    objects += build_windows(bpdoc, bodies, raw_dir, records)
+    objects += build_drone(bpdoc, raw_dir, records)
+    ids = [o["id"] for o in objects]
+    if len(ids) != len(set(ids)):
+        sys.exit("duplicate object ids: " + ", ".join(sorted({i for i in ids if ids.count(i) > 1})))
     for old in os.listdir(OUT_DIR):
         if old.endswith(".glb") and old[:-4] not in records:
             os.remove(os.path.join(OUT_DIR, old))

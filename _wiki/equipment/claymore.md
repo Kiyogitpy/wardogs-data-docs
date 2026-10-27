@@ -39,7 +39,7 @@ For the mine that is aimed at vehicles, see [AT Mine](at-mine.md). Both are desc
 
 ## How it works
 
-**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The data stores a placement angle of 30, but the placement scripts in the game files do not test an angle, so no angle limit is claimed. While the Claymore is being placed, the player moves at 40% speed.
+**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The data stores a placement angle of 30. A static reading of the game's placement code shows it compares the slope of the surface you aim at (the angle between the surface normal and straight up, in degrees) with that number, so a surface steeper than 30 degrees from level is refused. The reach is the same 4 m line from your view, plus a small allowance for the Claymore's own size. While the Claymore is being placed, the player moves at 40% speed.
 
 **Arming.** The Claymore is armed 2 s after it is placed. Until then its trigger is off.
 

@@ -1629,6 +1629,48 @@
     "assets/data/challenge-statetrees.json"
    ],
    "notes": "runs after statetree_outline.py"
+  },
+  {
+   "script": "item_extension_tables.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data"
+   ]
+  },
+  {
+   "script": "ai_eqs_table.py",
+   "class": "generator",
+   "tier": "core",
+   "write": [
+    "--write"
+   ],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "assets/data/ai-eqs.json"
+   ]
+  },
+  {
+   "script": "object_blueprints.py",
+   "class": "generator",
+   "tier": "assets",
+   "write": [],
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "round91_models/dump1 (WdExtract dump of the door, window, FOB and drone Blueprints; list in object_models.py --plan bp_in.txt)"
+   ],
+   "needs_chain": "models",
+   "notes": "regen runs --check only (door definitions vs data/); writes assets/data/object-blueprints.json from the dump; recipe in docs/evidence/round91-models.md"
   }
  ],
  "script_globs": [

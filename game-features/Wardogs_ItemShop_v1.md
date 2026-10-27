@@ -612,7 +612,139 @@ Rows of the feature-plugin entity tables that no vendor row on this page uses: s
 | `DT_InteractionContexts_Lootable` | `Interaction.Context.WorldFeatures.Lootable.Swap` | Loot Item | - | - |
 <!-- /item_shop_tables entities -->
 
-## 9. Open items
+## 9. Item extension fields
+
+The item definitions carry a few extension fields that the shop tables above do not print. They are exported by `_tools/item_extension_tables.py` (`--check` for staleness). All values are **Data** from the `ID_*` files; the last column of the armour table links each piece to the damage rules that name its context tag (**Data**, the rule tables are read in [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md) sections 3 to 6).
+
+### 9.1 Armour pieces and their damage rows
+
+Every armour and helmet item carries a `DamageContextTag`. A rule row that lists that tag as a target requirement applies to hits on a wearer of the piece. In the last column `Infantry` is `DT_GlobalDamage_InfantryData` (rules on health damage) and `Armor` is `DT_GlobalDamage_ArmorData` (rules on armour-durability events; the Ghillie rows there are -10000 and -1000 percent). `none` means no rule row names the tag: the Level 2 Helmet, Pilot Helmet and Tank Helmet are named by no tag rule; their protection is the durability stages in section 2.
+
+<!-- item_ext armor -->
+| Item | Item id | Damage context tag | Covered hit locations | Durability | Damage rule rows that name the tag (table #entry: source, operation, amount) |
+|---|---|---|---|---:|---|
+| Ghillie Body Suit | `Id.Item.GhillieArmor` | `Meta.Damage.Armor.Ghillie` | - | - | Armor #7: any source, Ongoing % -10000 |
+| Ghillie Body Suit (Dead) | `Id.Item.GhillieArmor.Dead` | `Meta.Damage.Armor.Ghillie` | - | - | Armor #7: any source, Ongoing % -10000 |
+| Ghillie Headwear | `Id.Item.GhillieHelmet` | `Meta.Damage.Helmet.Ghillie` | - | - | Armor #6: any source, Ongoing % -1000 |
+| Ghillie Headwear (Dead) | `Id.Item.GhillieHelmet.Dead` | `Meta.Damage.Helmet.Ghillie` | - | - | Armor #6: any source, Ongoing % -1000 |
+| Level 3 Armor | `Id.Item.HeavyArmor` | `Meta.Damage.Armor.Heavy` | Torso.Lower, Torso.Middle, Torso.Upper | 250 | Infantry #26: Bullet.Arrow, Ongoing % -10; Infantry #104: Explosive.Rocket, Ongoing % -35; Infantry #128: Bullet.50Cal, Ongoing % -10 |
+| Level 3 Helmet | `Id.Item.HeavyHelmet` | `Meta.Damage.Helmet.Heavy` | Head, Neck | 180 | Infantry #30: Bullet.Arrow, Ongoing % -10; Infantry #130: Bullet.50Cal, Ongoing % -10 |
+| Level 1 Armor | `Id.Item.LightArmor` | `Meta.Damage.Armor.Light` | Torso.Lower, Torso.Middle, Torso.Upper | 200 | Infantry #102: Explosive.Rocket, Ongoing % -15 |
+| Level 1 Helmet | `Id.Item.LightHelmet` | `Meta.Damage.Helmet.Light` | Head | 80 | Infantry #29: Bullet.Arrow, Ongoing % 0 |
+| Level 2 Armor | `Id.Item.MediumArmor` | `Meta.Damage.Armor.Medium` | Torso.Lower, Torso.Middle, Torso.Upper | 220 | Infantry #103: Explosive.Rocket, Ongoing % -25 |
+| Level 2 Helmet | `Id.Item.MediumHelmet` | `Meta.Damage.Helmet.Medium` | Head | 100 | none |
+| Pilot Helmet | `Id.Item.PilotHelmet` | `Meta.Damage.Helmet.Pilot` | Head | 180 | none |
+| Level 4 Armor | `Id.Item.SuperHeavyArmor` | `Meta.Damage.Armor.SuperHeavy` | Torso.Lower, Torso.Middle, Torso.Upper, Pelvis, Arm.Upper | 300 | Infantry #27: Bullet.Arrow, Ongoing % -34; Infantry #84: Bullet.12g.7mmBuckshot, Ongoing % -40; Infantry #105: Explosive, Ongoing % -50; Infantry #106: Explosive.Utility.Molotov, Ongoing % -30; Infantry #129: Bullet.50Cal, Ongoing % -12.5 |
+| Level 4 Helmet | `Id.Item.SuperHeavyHelmet` | `Meta.Damage.Helmet.SuperHeavy` | Head, Neck | 200 | Infantry #31: Bullet.Arrow, Ongoing % -34; Infantry #88: Bullet.12g.RifledSlug, Ongoing % -12; Infantry #131: Bullet.50Cal, Ongoing % -20; Infantry #136: Bullet+AmmoModifier.ArmorPiercing+Weapon.Sniper, Ongoing % -20 |
+| Tank Helmet | `Id.Item.TankHelmet` | `Meta.Damage.Helmet.Tank` | Head, Neck | 180 | none |
+<!-- /item_ext armor -->
+
+### 9.2 Throwables
+
+`bDropOnInterrupt` is the throw item's reaction when its use is interrupted. The two remote triggers name the charge they use up (`ItemToConsume`): the C4 trigger consumes the C4 charge and the IED trigger consumes the IED charge.
+
+<!-- item_ext throwable -->
+| Item | Item id | Drops when interrupted (`bDropOnInterrupt`) | Item consumed on throw (`ItemToConsume`) |
+|---|---|---|---|
+| M67 Frag Grenade | `Id.Item.M67Grenade` | not set | - |
+| Gold Frag Grenade | `Id.Item.GoldM67Grenade` | not set | - |
+| [key `Items.HotPotato`] | `Id.Item.HotPotato.Alpha` | no | - |
+| HotPotato Bravo | `Id.Item.HotPotato.Bravo` | no | - |
+| HotPotato Charlie | `Id.Item.HotPotato.Charlie` | no | - |
+| Remote Detonator | `Id.Item.C4Trigger` | no | `Id.Item.C4Explosive` |
+| Improvised Explosive Device | `Id.Item.IED.Trigger` | no | `Id.Item.IED.Explosive` |
+| [key `Items.Throwable.Molotov`] | `Id.Item.Molotov` | no | - |
+| M18 Smoke Grenade: Black | `ID.Item.SmokeGrenade.Black` | no | - |
+| M18  Signal Grenade: Friendly | `ID.Item.SmokeGrenade.Blue` | no | - |
+| M18  Signal Grenade: Supply Request | `ID.Item.SmokeGrenade.Green` | no | - |
+| M18  Signal Grenade: Damaged Vehicle | `ID.Item.SmokeGrenade.Orange` | no | - |
+| M18  Signal Grenade: Landing Zone | `ID.Item.SmokeGrenade.Purple` | no | - |
+| M18  Signal Grenade: Hostile | `ID.Item.SmokeGrenade.Red` | no | - |
+| M18 Smoke Grenade: White | `ID.Item.SmokeGrenade.White` | no | - |
+| M18  Signal Grenade: Alert | `ID.Item.SmokeGrenade.Yellow` | no | - |
+<!-- /item_ext throwable -->
+
+### 9.3 Launcher and bow fields
+
+<!-- item_ext ranged_misc -->
+| Item | Item id | Dropped after use (`bDropAfterUse`) | Fire charge time (`FireChargeTime`, s) |
+|---|---|---|---:|
+| 9K333 Verba | `Id.Item.Launcher_04` | yes | 0.5 |
+
+| Item | Item id | Full draw time (s) | Wait before completion (s) | Draw FOV shift type | FOV delta curve (time: value) |
+|---|---|---:|---:|---|---|
+| Compound Bow | `Id.Item.CombatBow` | 1.4 | 0.33 | ActiveCurve | 0: 0, 0.25: 0, 0.5: 1.02 |
+<!-- /item_ext ranged_misc -->
+
+### 9.4 Appliable extras
+
+Only three appliable items set these fields; every other appliable (bandages, stim pen, medical bag) leaves them unset.
+
+<!-- item_ext appliable -->
+| Item | Item id | Consume animation tag | Animation plays before consume | Extra data |
+|---|---|---|---|---|
+| Enox | `ID.Item.Enox.Standard` | `Animation.Asset.Appliable.SecondaryUse` | yes | `DecayHealAmount` 40 |
+| Emergency Resuscitator | `Id.Item.Resuscitator.Cheap` | `Animation.Asset.Appliable.PrimaryUse.Release` | - | - |
+| Field Resuscitator | `Id.Item.Resuscitator.Standard` | `Animation.Asset.Appliable.PrimaryUse.Release` | - | - |
+<!-- /item_ext appliable -->
+
+### 9.5 Keycards
+
+Six cards, two per faction, with the alignment tag and the number exactly as exported. Note that `Id.Item.KeyCard.Bravo.1` carries card number 2, the same as `Bravo.2` (the Alpha and Charlie `.1` cards carry 1). No reader or door in the shipped data names a card, so which doors a card opens is not in the game files (ABSENT; the reader class is native, see the [Keycard evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md)).
+
+<!-- item_ext keycard -->
+| Item | Item id | Alignment tag | Faction | Card number |
+|---|---|---|---|---:|
+| Alpha Card | `Id.Item.KeyCard.Alpha.1` | `Meta.Alignment.Faction.Alpha` | Alpha | 1 |
+| Alpha Card | `Id.Item.KeyCard.Alpha.2` | `Meta.Alignment.Faction.Alpha` | Alpha | 2 |
+| Bravo Card | `Id.Item.KeyCard.Bravo.1` | `Meta.Alignment.Faction.Bravo` | Bravo | 2 |
+| Bravo Card | `Id.Item.KeyCard.Bravo.2` | `Meta.Alignment.Faction.Bravo` | Bravo | 2 |
+| Charlie Card | `Id.Item.KeyCard.Charlie.1` | `Meta.Alignment.Faction.Charlie` | Charlie | 1 |
+| Charlie Card | `Id.Item.KeyCard.Charlie.2` | `Meta.Alignment.Faction.Charlie` | Charlie | 2 |
+<!-- /item_ext keycard -->
+
+### 9.6 Dropped item boxes and throwing force
+
+`bOverrideDroppedBoxExtent` replaces the box that the item uses on the ground. The box values are exported as shown, in Unreal centimetres (**Derived**: whether they are half or full extents was not tested). Forty-five items override it.
+
+<!-- item_ext droppable -->
+| Box X | Box Y | Box Z | Items | Item names |
+|---:|---:|---:|---:|---|
+| 23.2 | 30.4 | 44.6 | 4 | Arsenal Backpack + 2 Slings, Gunner Backpack + Sling, Halftrack Backpack, Ruck Backpack |
+| 15.4 | 23.7 | 28.2 | 3 | Assault Backpack, Field Backpack, Operator Backpack |
+| 5 | 25 | 30 | 3 | Ghillie Body Suit, Ghillie Body Suit (Dead), Level 3 Armor |
+| 13 | 20 | 21 | 2 | Pouch, Scout Backpack |
+| 12 | 22 | 22 | 2 | Medium Tac Vest, Small Tac Vest |
+| 11 | 20 | 25 | 2 | Level 1 Armor, Level 2 Armor |
+| 2 | 5.159992 | 3.6 | 2 | Battery, High Capacity Battery |
+| 15 | 27.7 | 18.2 | 2 | Fuel Supplies, Mechanical Supplies |
+| 14 | 11 | 35 | 2 | Halligan Bar, Large Hammer |
+| 5.5 | 6.197502 | 15.41051 | 2 | C4 Charge, Improvised Explosive Device |
+| 3.5 | 6.387502 | 10.359856 | 2 | Improvised Explosive Device, Remote Detonator |
+| 5 | 6 | 7.6 | 2 | Emergency Resuscitator, Field Resuscitator |
+| 15 | 16 | 22 | 2 | Basic Parachute, Sport Parachute |
+| 15 | 23 | 24 | 1 | Large Tac Vest |
+| 4 | 8 | 10.5382 | 1 | Individual First Aid Kit |
+| 12 | 30 | 25 | 1 | AT Mine |
+| 5 | 40 | 45 | 1 | Level 4 Armor |
+| 6.5 | 15 | 15 | 1 | Binoculars |
+| 18 | 23 | 33 | 1 | Forward Operating Base |
+| 20 | 27.7 | 18.2 | 1 | Ammo Supplies |
+| 4 | 9 | 11 | 1 | Small Hammer |
+| 5.5 | 16 | 16 | 1 | Claymore |
+| 14 | 9.4 | 39.75655 | 1 | Defibrillator |
+| 12 | 14 | 18 | 1 | Medical Bag |
+| 4 | 13 | 12 | 1 | Infrared Range Finder |
+| 4.5 | 1.225693 | 10.675034 | 1 | Adrenaline Pen |
+| 8 | 26.75324 | 10.081821 | 1 | Heavy Drill |
+| 5.5 | 3.6 | 14.8 | 1 | Wrench |
+
+| Item | Item id | Throwing force when dropped (`ThrowingForce`) |
+|---|---|---:|
+| Large Hammer | `ID.Item.BuildTool.Hammer.Large` | 300 |
+<!-- /item_ext droppable -->
+
+## 10. Open items
 
 - Heal rates, explosion damage and radius, and the vehicle statistics are not on the item definitions. They sit in action data, gameplay effects, thrown or placed actors and vehicle stats assets, and are not decoded on this page.
 - "Weight" and "inventory size" are exported values; units and the way the inventory grid uses them are not traced.

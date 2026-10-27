@@ -56,7 +56,7 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play).
 
-Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. Whether the game mode turns off friendly damage elsewhere is not in these tables.
+Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. The fire has no check for who threw it either, so standing in your own fire hurts you as much as an enemy. Whether the game mode turns off friendly damage elsewhere is not in these tables.
 
 ## Damage
 

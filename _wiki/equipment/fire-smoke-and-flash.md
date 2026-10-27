@@ -93,7 +93,7 @@ Notes from the data:
 - The AT Mine checks for vehicles every 0.1 s, and ignores everything else.
 - The Claymore's trigger area is in front of it. Players must have a matching tag to count as a target.
 - The C4 charge and Improvised Explosive Device charge stick to the surface they hit. A charge whose owner is no longer valid is removed after a 5 s check, without a blast.
-- Placement distance for the mines and Claymore is 400 units, which is about 4 m. The placement angle limit is 30, which the data reads as degrees; this is assumed.
+- Placement distance for the mines and Claymore is 400 units, which is about 4 m. The placement angle limit is 30 degrees of surface slope: a static reading of the placement code compares the angle of the surface you aim at (measured from straight up) with that number, and refuses a steeper one.
 
 ### Throwing
 
