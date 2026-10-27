@@ -103,7 +103,32 @@ The Medical Bag (`ID.Item.MedKit.Standard`) has its own extension data instead o
 | key 4: 0.6 | 15 | 1.2 | 6 | 10 | 125 | 25 |
 <!-- /medical_tables -->
 
-The rate columns are Derived: amount divided by duration. How the engine spends durability (per second, per step or once per use) is blueprint (`Auth_ReduceDurability` is a ProcessEvent stub) and not traced, so the "per kit" columns assume one durability cost per use. The skill table assumes the multiplier scales the cost: the skill text says "more uses" and the multiplier falls from 1 to 0.6, which fits, but the code that reads `Attribute.Gameplay.Item.UsageRateMultiplier` is not traced.
+The rate columns are Derived: amount divided by duration. How durability is spent is settled in round 91 (**Bytecode**, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round91-itm.md)): the Medical Bag heals in discrete steps on a repeating timer, and each step that actually heals spends its durability cost once, so the "per kit" columns above (75 other heals, 6 self heals) count steps, not seconds. The skill table assumes the multiplier scales the cost: the skill text says "more uses" and the multiplier falls from 1 to 0.6, which fits, but the code that reads `Attribute.Gameplay.Item.UsageRateMultiplier` is not traced.
+
+### 4.1 Healing a teammate: application steps (round 91)
+
+**Bytecode** (`B_Action_Appliable_Base` and `B_Action_MedKit_MultiUse` listings; the Medical Bag is a container appliable, `bContainerAppliable` true, `ContainerData.UpdateTime` 0, interaction method `UntilItemEmptyOrTargetFull`):
+
+1. When the use starts (`OnInteractionStarted`) the base class sets a **looping timer** (`K2_SetTimerDelegate`, looping true, no initial delay) bound to `DoTimedApplication`. The period is `UpdateTime` when that is above 0, otherwise the progress-wheel time. `B_Action_MedKit_MultiUse` sets the progress-wheel time to `HealOtherDuration` (1.5 s) when healing a teammate, so the period is **1.5 s**; the first step lands 1.5 s after the use starts, not at the start.
+2. Each timer tick runs `HandleApplication`, which calls `ForceHandleApplication` on the server only. It heals the target by `HealOtherAmount` (15, no overheal) through the vitality component. If the heal returned more than 0, the bag spends `HealOtherDurabilityCost` (2) durability once, then plays an end-of-step audio cue on the target (for a teammate; the self-heal branch skips the cue). If the heal returned 0 the step costs nothing.
+3. A step that heals nothing because the target is already at full health ends the use (`OnInteractionFinished`, which clears the timer and completes the action). A cancel of the action clears the timer (`BP_OnCancel`); what raises the cancel (releasing the button, moving away) is native input handling and was not read.
+4. There is no extra heal when the use finishes: the base class only runs `HandleApplication` on finish for non-container items, and the Medical Bag is a container item.
+
+So durability is spent **per successful 15-health step** (2 each), not per second and not per use. The same loop runs for self-healing in `B_Action_MedKit_SecondaryUse` with `HealSelfAmount` 35, `HealSelfDuration` 5 s and `HealSelfDurabilityCost` 25: one 35-health step every 5 s, 25 durability each. Reviving is a single event: `OnInteractionFinished` revives the target with 50 health and spends 10 durability; the progress-wheel time is `HealOtherDuration + (ReviveOtherHealthAmount / HealOtherAmount) x HealOtherDuration` = 6.5 s (**Derived**). The 10 durability is spent in both cases. If the revived player is on the other faction (`AreActorsOfSameFaction` false) the bag also applies `GE_Player_RessedByEnemy` to them (its values were not read).
+
+Steps for a teammate missing a given amount of health (**Derived** from the **Data** values above; what ends the use when the bag's durability reaches 0 is the native "until item empty" rule and was not traced):
+
+<!-- item_ext medbag -->
+| Health the teammate is missing | Application steps (ceil(missing / 15)) | Seconds to heal (steps x 1.5) | Durability spent (steps x 2) | Share of the bag's 150 durability |
+|---:|---:|---:|---:|---:|
+| 15 | 1 | 1.5 | 2 | 1.3 % |
+| 30 | 2 | 3 | 4 | 2.7 % |
+| 45 | 3 | 4.5 | 6 | 4.0 % |
+| 60 | 4 | 6 | 8 | 5.3 % |
+| 100 | 7 | 10.5 | 14 | 9.3 % |
+
+A full bag (150 durability) pays for 75 steps, so at most 1125 health at 112.5 s of continuous healing (Derived; what the engine does when durability runs out mid-use was not traced).
+<!-- /item_ext medbag -->
 
 ## 5. GameplayEffects applied by medical items and skills
 
@@ -190,11 +215,11 @@ Start at 20 health, goal 100 (assumed max health, **Native** default; need 80). 
 |---|---|---|---|---|
 | Bandage (self) | 3 | 3 x 5.23 s = 15.7 s (montage length, **Data**) | 3 of a stack of 5 | +35 each; the last one is clamped at max health |
 | Individual First Aid Kit (self) | 1 | 4.73 s (the heal lands at the `Heal` notify; montage 5.23 s, **Data**) | 1 kit | +100 clamps at max health |
-| Medical Bag (self) | continuous | 11.43 s | 57.14 durability (38.1 % of 150) | assumes the 35 HP is spread evenly over 5 s and durability is spent in proportion; if cost is charged per full 5 s step instead it is 75 |
-| Medical Bag (self), skill curve value 0.8 | continuous | 11.43 s | 45.71 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
-| Medical Bag (self), skill curve value 0.7 | continuous | 11.43 s | 40 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
-| Medical Bag (self), skill curve value 0.6 | continuous | 11.43 s | 34.29 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
-| Medical Bag (teammate) | continuous | 8 s | 10.67 durability | 10 HP/s, cheap per HP; heals stop if the user moves away (tutorial text) |
+| Medical Bag (self) | 3 steps | 15 s (3 x 5 s) | 75 durability (50 % of 150) | one step every 5 s heals 35 and spends 25 (**Bytecode**, round 91: repeating timer, durability charged per successful step); the last step is clamped at max health |
+| Medical Bag (self), skill curve value 0.8 | 3 steps | 15 s | 60 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
+| Medical Bag (self), skill curve value 0.7 | 3 steps | 15 s | 52.5 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
+| Medical Bag (self), skill curve value 0.6 | 3 steps | 15 s | 45 durability | assumes `UsageRateMultiplier` scales the cost (not traced) |
+| Medical Bag (teammate) | 6 steps | 9 s (6 x 1.5 s) | 12 durability | one step every 1.5 s heals 15 and spends 2 (**Bytecode**, round 91); heals stop if the user moves away (tutorial text) |
 | Enox | 1 | 2.17 s (montage length, **Data**) | 1 | gives 40 health as decaying health, not permanent; the pool holds 40 (Blueprint `MaxDecayHealth`) |
 | Natural regeneration | - | - | - | no infantry regen tick traced outside Deathmatch |
 <!-- /medical_tables -->
@@ -219,7 +244,7 @@ Open (not traced after round 39):
 
 - What reads `BleedOutRevivePenaltyOffset` (no reader found in round 40 either; `CriticalReviveHoldThreshold` is the hold time of the revive interaction context).
 - Enox decay per tick: settled in round 40 (section 11b): `min(DecayMagnitude, pool)` = 5 every 5 s.
-- How many application steps the Medical Bag makes while healing a teammate (base-class timing).
+- Medical Bag application steps while healing a teammate: settled in round 91 (section 4.1): one 15-health step per 1.5 s, 2 durability per successful step.
 - The 19 Medic skill nodes without a data row: nothing in the client reads them (see section 10).
 
 ## 10. Round 39 findings

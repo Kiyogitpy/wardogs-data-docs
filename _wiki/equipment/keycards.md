@@ -24,7 +24,7 @@ Keycards are six quick-slot items, two for each of the three factions. Each has 
 
 ## Overview
 
-The six cards are Alpha Card 1, Alpha Card 2, Bravo Card 1, Bravo Card 2, Charlie Card 1 and Charlie Card 2. Each card carries a faction and a card number (1 or 2). The faction tags Alpha, Bravo and Charlie are the three team slots. In the spawn data they pair with Lonestar, Valkyra and Manticore (inferred; see [Factions](../game-modes-and-maps/factions.md)).
+The six cards are Alpha Card 1, Alpha Card 2, Bravo Card 1, Bravo Card 2, Charlie Card 1 and Charlie Card 2. Each card carries a faction and a card number (1 or 2). The data gives Bravo Card 1 the card number 2, the same as Bravo Card 2, while the Alpha and Charlie 1 cards carry number 1. The faction tags Alpha, Bravo and Charlie are the three team slots. In the spawn data they pair with Lonestar, Valkyra and Manticore (inferred; see [Factions](../game-modes-and-maps/factions.md)).
 
 All six use the same held model, a generic universal tool, and the same one-handed use animation. They can be dropped as a world item. The use action cannot start while the player is critically hurt or dead.
 

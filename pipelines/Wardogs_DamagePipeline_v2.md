@@ -465,6 +465,28 @@ every entry that passes, not just the first.
    `PriorityIndex` replaced by the category index (§5); the source entry
    index is kept separately.
 
+### 4.1 Worked selection: the Molotov fire event
+
+**Derived** (round 91, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round91-itm.md)). The sustained Molotov fire reaches `ModifyDamage` through `SimpleDamageActorWithInstigatorController` (section 1.1) with the damage type tag `Meta.Damage.DamageType.Enviroment` as the source, the thrower's controller as the instigator, and a synthetic hit with no bone. Running the four steps above over the exported rule tables for that source:
+
+1. Step 1 drops the empty entries.
+2. Step 2 (alignment) is moot: the event reads Hostile against an enemy and Friendly against a teammate or the thrower (section 6.4 of Hit Registration), and no kept entry that the source reaches carries an alignment requirement.
+3. Step 3 (tag requirements) is the filter that matters. Every kept entry of the infantry, vehicle, buildable and supply-crate tables has at least one source requirement, and none of those requirements is `Enviroment` or one of its parents (`Meta.Damage.DamageType`, `Meta.Damage`, `Meta`).
+4. Step 4 (hit location) is never reached for the same reason.
+
+<!-- item_ext molotov -->
+| Rule table (`DT_GlobalDamage_*`) | Entries | Dropped by the empty-entry test | Kept entries with no source requirement | Entries with a Friendly, Hostile or Neutral requirement | Entries whose source requirements the fire's source tag meets | Of those, with an alignment requirement |
+|---|---:|---:|---:|---:|---:|---:|
+| `ArmorData` | 29 | 0 | 4 | 0 | 4 | 0 |
+| `InfantryData` | 146 | 60 | 0 | 2 | 0 | 0 |
+| `VehicleData` | 10 | 6 | 0 | 0 | 0 | 0 |
+| `BuildableData` | 422 | 68 | 0 | 0 | 0 | 0 |
+| `SupplyCrate` | 7 | 0 | 0 | 0 | 0 | 0 |
+| 21 per-vehicle tables (`VehicleData_*`) | 665 | 84 | 0 | 0 | 0 | 0 |
+<!-- /item_ext molotov -->
+
+The Armor table's four entries without a source requirement act on armour-durability events, which the simple path does not raise (round 8, **Native**: the simple event is built without the general armor hook). Result: no rule modifies the 15 player damage or the fire event at all, whether the target is hostile, friendly or the thrower. The two Friendly entries (#8 `Bullet` -50, #9 `LargeHammer` -70) do not apply. Entry 106 (`Explosive.Utility.Molotov` against `Armor.SuperHeavy`, -30) names the burst's source tag and not the fire's. The assumption behind the whole table is that the event's source container holds only the passed damage tag; the native builder `0x6F09210` was not re-read for extra source context tags.
+
 ## 5. Ordering
 
 **Native** (`0x6BB8970`, `0x6BB61A0`). The category lookup returns the

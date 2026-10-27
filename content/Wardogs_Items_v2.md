@@ -265,7 +265,7 @@ Vests give no container of their own; their capacity comes from the quick-slot c
 
 Input behaviour is shared: the primary-use input (`Input.NamedActions.Appliable.PrimaryUse`) maps to `WDItemInputBehavior_ActivateAppliableAction` with `Action.Appliable.Bandage.PrimaryUse`, secondary use maps to `...SecondaryUse`, and the completion action is bound to the same two uses. Inspection (`Action.Item.Inspect`) is bound on the item too. The shared key set is `IMC_Appliable` (section 11).
 
-Other consumable item (not decoded further): `Placeables/AmmoCrate/ID_AmmoCrate` (2x2 grid, a `WDItemExtensionData_Placeable` with collision size, placeable class and init data). Those three values are present in the dump but were not extracted.
+Placeable item: `Placeables/AmmoCrate/ID_AmmoCrate` (2x2 grid, a `WDItemExtensionData_Placeable`). Collision size 0.85 x 0.85 x 0.85, placeable class `B_AmmoCrate_C`, init data start and maximum health 100 and lifetime 20 s (round 91; see [Fire, Smoke and Mines section 5.1b](../game-features/Wardogs_FireAndUtility_v1.md)).
 
 ---
 
@@ -482,7 +482,7 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
     - `FBHAimAssistTargetData` struct (0xA0 bytes): Dumper-7 was unable to resolve any inner field names — remains opaque via static means
   - Per-asset `_aaa…` keys are Blueprint-generated property names that even Dumper-7 could not symbolicate against; resolving each would require per-asset context.
 - **Display names missing on 14 items.** Some have no `DisplayName`, and where a `DisplayName` exists only the `SourceString` is shown; the localization table is not dumped.
-- **Holdable and placeable details not decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data were not extracted.
+- **Holdable details only partly decoded.** Holdable mesh, animation and crosshair fields are only partly summarised. The ammo crate's placeable class and init data are now on the Fire, Smoke and Mines page (section 5.1b).
 - **Full throw and consumable action data.** The `AppliableActionData` and `ThrowActions` arrays are present but only partly decoded (required states, velocity curve references).
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Aim-assist RPG and SR zeros.** Several fields are 0 or absent for RPG and SR. The dump does not say whether those classes are intentionally unassisted.
