@@ -560,7 +560,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
   - 4 of 7 "Emote flag" bools remain Dumper-unresolved; 2 are resolved to `bHolsterWeapon` + `PlayRate`.
   - **SDK (2026-10-16) — seat-reduction arrays (2h):** see [`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md#84-vehicleseatdamagereduction-occupant-protection-table) — the arrays belong to `UB_VehicleSeatDamageReduction_C` (one of 4 damage modifier blueprints), reading per-seat `FGameplayTag → float` map from a DataTable at runtime.
   - Arm-class arrays (2d) and action fields are not yet matched to a specific SDK struct; follow-up pass needed.
-- **Operation semantics.** `Percentage_Ongoing` is the operation name on the modification entries. Its exact formula (additive, multiplicative, applied per tick or once) is not decoded.
+- **Operation semantics.** `Percentage_Ongoing` is the operation name on the modification entries. Its formula is in [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic): the amount is a percentage of the running value, added to it.
 - **Arm-class naming.** `Meta.Damage.Arms.Small/Medium/High/Special` is the tag family used. Its meaning as armour class or penetration tier is an inference.
 - **Units.** Projectile speed, radius and mass units are not verified against the engine.
 - **Controller configs.** `Settings/Controls/ControllerConfigs/` (13 files) and the 106 `BHPlayerMappableKeySettings` default keys were only partially decoded. Default key-to-action bindings are in `IMC_*` DefaultKeyMappings, which were counted but not expanded.

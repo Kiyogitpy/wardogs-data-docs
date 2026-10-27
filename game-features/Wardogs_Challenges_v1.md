@@ -675,7 +675,7 @@ Trees named by a challenge row but absent from the export: none.
 
 ## 11. Not traced
 
-- **Native.** Nothing on this page is read from the game code. What raises `Event.StateTree.PlayerKill`, `Event.StateTree.DestroyVehicle` and the rest, the `Calculate Reward` and `Grant Reward` tasks, and the schema class `WDChallengeStateTreeSchema` are not decompiled here.
+- **Native.** Nothing on this page is read from the game code (the reward evaluator is read in [round 88](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round88-nb.md)). What raises `Event.StateTree.PlayerKill`, `Event.StateTree.DestroyVehicle` and the rest, the `Calculate Reward` and `Grant Reward` tasks, and the schema class `WDChallengeStateTreeSchema` are not decompiled here.
 - The cash tables under `CashRewardsDataTable` use `Meta.Progression.Context.*` and `Vehicle.Variant.*` keys, not `Challenges.Rewards.*` tags. Whether a `Calculate Reward` node reads them is not traced (some formulas call their base value a game value, `CalculatedReward`). The formula rows carry their own literal base values, and those are the only amounts joined on this page.
 - Trees whose reward tag is bound at run time (for example `PlayerKill`) cannot be joined; section 6 lists them.
 - Wager target values, the reward-feed text (`DT_ChallengesFeedActions*`) and the curve tables (`DT_Challenges_Curves_*`) are not covered here.
