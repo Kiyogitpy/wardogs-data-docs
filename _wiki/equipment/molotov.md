@@ -50,7 +50,7 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Burst.** On detonation the Molotov does its burst damage, then starts a fire area.
 
-**Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands.
+**Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands. The fire does not appear all at once: it spreads out from the first patch at 2000 cm per second, so the farthest patch of the 15 lights about an eighth of a second after the first (read from the game code, not timed in play).
 
 **Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
 
