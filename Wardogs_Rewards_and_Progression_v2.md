@@ -400,6 +400,15 @@ Reward = (1 − min(LastVictimCount,4) × 0.24)
 
 Net effect: a long-range artillery kill on a streaking player inside an active Hot Zone Magnet, ending their streak, stacks almost every bonus multiplier simultaneously — by far the highest-value kill in the game. A teamkill or a kill on someone an enemy medic just rezzed is deliberately punished into near-zero or negative reward.
 
+**How the game evaluates a row (Native, static reading, round 88).** The arithmetic above is all in the data; the game's own code is a generic evaluator that runs the row's formula and adds no term of its own ([round 88 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round88-nb.md), section 1). It works in four steps:
+
+1. The reward task fills a small input table: `DistanceToTarget`, `LastVictimCount` and `KillStreak`, each 0 until a state tree sets it.
+2. Each formula name (`BaseReward`, `InstigatorZoneModifier` and so on) is a selector. The first option in the list whose tag condition matches the challenge's context tags wins; if none matches, the selector's default option is used. A row's `ConditionalExpressions` work the same way: the first one that matches replaces the default expression.
+3. The formula runs in double precision. Division by a value of 1e-8 or less is an error, not infinity. `clamp(x, lo, hi)` is `max(min(x, hi), lo)`.
+4. A result of 1e-8 or less in absolute value pays nothing. Any other result is cut to a whole number toward zero (349.9 pays 349, and the negative friendly-fire result stays negative).
+
+A reward tag with no row in any `DT_ChallengeRewards_*` table pays nothing through this path and raises no error. 17 of the 54 tags the state trees name have no row (for example `Tip.Heal`, `RepairVehicle`, `ZoneEntry.SpawnVehicle`, `VehicleDestroyed` and the `Assist.VehicleDestroyed` pair); the full list is in the evidence page. Some are base tags whose variants have rows.
+
 ---
 
 ## 16. What Was Wrong in v1 (honesty note)
