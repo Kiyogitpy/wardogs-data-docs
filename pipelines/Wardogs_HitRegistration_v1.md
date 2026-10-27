@@ -431,9 +431,13 @@ consumer offsets quoted in §4.2–4.4 are `+0x2A0` plus the SDK field offsets o
 | `ExitDeflectionPenetrationEffectivenessRange` | X = 5.0, Y = 0.5 | §4.4 |
 | `ExitDeflectionAngleRange` | 0°–7.5° | §4.4 |
 | `ImpactIgnoreAngleClasses` | `WDMoverCharacter`, `WDTargetDummy` | §4.2 |
-| `MaxPelletCount` | 16 | consumer not traced (O-11) |
-| `MaxConsecutiveFullRefundedSubsteps` | 10 | consumer not traced (O-11) |
+| `MaxPelletCount` | 16 | Native: pellet normaliser `P = clamp(N / 16, 0, 1) x factors` in `0x6C25660` ([Weapon Spread](Wardogs_WeaponSpread_v1.md) section 11); it does not cap how many pellets spawn |
+| `MaxConsecutiveFullRefundedSubsteps` | 10 | Native: projectile sub-step loop `0x6F3CB80` reads the subsystem copy at `+0x440`; after 10 sub-steps in a row that use no time, the remaining time of that update is dropped (see below) |
 | `PenetrationPhysMatIgnoreList` | `PM_MetalChainLink`, `PM_GlassBulletProof`, `PM_Glass`, `PM_Glass_1cm`, `PM_VehicleCC_GlassBulletProof`, `PM_VehicleCC_Glass_Solid`, `PM_VehicleCC_Glass`, `PM_VehicleCC_ArmoredGlass`, `PM_VehicleCC_Reinforced_GlassBulletProof`, `PM_VehicleCC_StrongGlass`, `PM_Body`, `PM_Head`, `PM_VehicleCC_Glass_Humvee` | §4.1 step 6: such a penetration is not written to the penetration history bitmap (the velocity loss still happens) |
+
+**Sub-step limit (Native, round 85).** `UWDProjectileSubsystem` copies `ProjectileSystemSettings` into itself at start-up (`0x6F37C00` calls `0x6F2C180` with the game settings at `+0x458`, so the subsystem fields sit at `+0x2A0 + offset`: `MaxConsecutiveFullRefundedSubsteps` at `+0x440`, `SimulationFrameRate` at `+0x444`). The step loop `0x6F3CB80` runs one sub-step (`0x6F3C060`) at a time on the time still to simulate. If a sub-step leaves the remaining time unchanged (it used none of it, for example a surface test that was refunded), a counter goes up; a sub-step that uses time resets it to 0. When the counter passes 10 the remaining time of that update is set to 0, so the projectile stops for that update instead of looping. The limit only guards against endless zero-time loops.
+
+**Pellet normaliser (Native, round 85).** `0x6C25660` builds the pellet directions: `P = clamp(N / MaxPelletCount, 0, 1) x (AmmunitionFactor x ChokeFactor)`, with a guard that gives 0 or 1 when `MaxPelletCount` is 0. It then loops over all `N` pellets, so `MaxPelletCount` 16 does not cap the pellet count; it only decides how many pellets go to the choked inner cone.
 
 Per surface type (`PenetrationPhysMatExitSpeedModifiers`, `PhysMatRicochetProbabilities`,
 `PhysMatRicochetRestitutionCoefficient`; the names are the `+PhysicalSurfaces` entries of the packed `DefaultEngine.ini`
@@ -794,7 +798,7 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python -I _tools/hit_registration_check.py
 8. **O-8: impact cue tags and decal selection.** Tags resolved in round 41 (§8). Open: the `GC_Weapon_Impact_C` graph.
 9. **O-9: `IgnoreInstigatorVehicleTime`.** Closed in round 41: a flag test only (§2.4).
 10. **O-10: `CustomHitResults`.** Closed in round 41: one hit per physics body crossed by the bullet segment (§6.3).
-11. **O-11: settings consumers.** `MaxPelletCount`, `MaxConsecutiveFullRefundedSubsteps`, and the exit-deflection distribution (§4.4, §4.6).
+11. **O-11: settings consumers.** `MaxPelletCount` and `MaxConsecutiveFullRefundedSubsteps` are closed in round 85 (see the table in §4.6 and [round 85 notes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round85-inf.md)). Open: the exit-deflection distribution (§4.4).
 12. **O-12: `IWDDamageable` implementations.** The tag behind slot `+0x30`, slots `+0x38`, `+0x60`, `+0x68` for each actor type (§6.2, §4.1).
 13. **O-13: runtime.** Nothing here was observed running; the trace shape and channel are static readings of the call site, and the stock Unreal definitions
     used for field names and `ENetMode` are assumptions about the engine build (UE 5.7).

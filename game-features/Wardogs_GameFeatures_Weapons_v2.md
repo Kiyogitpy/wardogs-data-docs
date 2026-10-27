@@ -87,8 +87,8 @@ Notes on the layout:
 | WDAudioData | 38 | Sound list per weapon (and one for the vehicle machine gun) |
 | WDItemsmithDataFragment_CameraData | 36 | Gunsmith camera framing |
 | WDWeaponStatsData | 36 | Ballistics, recoil, aim sway, ADS curves (`DA_*_Stats`) |
-| CurveFloat | 7 | Standalone float curves (not decoded here) |
-| WDInventoryFragment_TransferTime | 1 | Item fragment, present once (on `Launcher_04`); not decoded here |
+| CurveFloat | 7 | Standalone float curves: five bipod camera-offset curves and two ADS curves, keys in [Ranged Weapon Item Fields](../content/Wardogs_RangedWeaponFields_v1.md) |
+| WDInventoryFragment_TransferTime | 1 | Item fragment, present once (on `Launcher_04`): `TransferTime` 3.5 s ([Ranged Weapon Item Fields](../content/Wardogs_RangedWeaponFields_v1.md)) |
 
 ---
 
@@ -349,7 +349,7 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 
 **Attachment type tags are inconsistent:** two of three triggers (`TRGR_002`, `TRGR_003`) are tagged `Item.Attachment.Handguard`. Four stocks in `Handguards` are tagged `Item.Attachment.Stock`. Two pistol grips and one trigger have no attachment type. The effect of this on slot fitting is not verified.
 
-**Multiple vendor variations:** magazine vendor rows hold 7 variations each. The first is shown (`bShowInVendor = true`) and the rest are hidden price points. For example, `MAGZ_002` shows 20 and hides 27, 27, 30, 30, 34, 34. The hidden variations are not decoded.
+**Multiple vendor variations:** magazine vendor rows hold 7 variations each. The first is shown (`bShowInVendor = true`) and the rest are hidden price points. For example, `MAGZ_002` shows 20 and hides 27, 27, 30, 30, 34, 34. The hidden variations are the per-ammunition-type prices, tabled in [Ranged Weapon Item Fields](../content/Wardogs_RangedWeaponFields_v1.md).
 
 **Weight:** attachments range from 0.03 (sights) to 2.2 (magazines). Foregrips range 0.08 to 0.79.
 
@@ -388,7 +388,7 @@ Every vendor-priced attachment carries a `GE_*` gameplay effect in `AppliedEffec
 ## 10. Still not pulled / limitations
 
 - **`GE_*` gameplay effects** (attachment stat changes, stance recoil modifiers, default attribute effects) are referenced but not in this folder. Numeric attachment effects are the largest gap.
-- **Curves:** ADS, recoil, view kick, sway and falloff curves are present as `EditorCurveData` keyframes inside `WDWeaponStatsData`, and as 7 `CurveFloat` objects. They are not decoded.
+- **Curves:** ADS, recoil, view kick, sway and falloff curves are present as `EditorCurveData` keyframes inside `WDWeaponStatsData`, and as 7 `CurveFloat` objects. The curve keys are tabled in [Ranged Weapon Item Fields](../content/Wardogs_RangedWeaponFields_v1.md) (standalone curves) and [Weapon Spread and Recoil Data](../content/Wardogs_WeaponSpreadRecoilData_v1.md) (the rest).
 - **`WDItemInputBehavior_ActivateAction`** exports with empty payloads, so the action logic is not visible.
 - **Mutable parameters** (`MUT_MasterWeapon`) are listed by key only. Option lists and default textures are not summarized.
 - **Camera data** (`WDItemsmithDataFragment_CameraData`, 36) and **animation sets** (`BHAnimationSet`, 45) are counted but not decoded.
