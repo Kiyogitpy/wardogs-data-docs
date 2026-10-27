@@ -6,7 +6,7 @@ description: "What This Plugin Holds, Audio, Controls, General"
 ---
 
 # Wardogs — Plugin: BHFramework
-*Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/BHFramework/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHFramework) — 47 JSON files, all under [`Content/Settings/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHFramework/Content/Settings). These are user-setting definitions (`BHUserSetting*`). Values are the export's defaults and ranges.*
+*Extracted from cooked game data (UE 5.7 export JSON). Source folder: `Plugins/BHFramework/` — 47 JSON files, all under `Content/Settings/`. These are user-setting definitions (`BHUserSetting*`). Values are the export's defaults and ranges.*
 
 ---
 
@@ -136,7 +136,7 @@ Setting counts by folder:
 ## 8. Still not pulled / limitations
 
 - **Enum labels.** Discrete settings store raw values (for example `0`, `1`, `251`). The labels (what each value means) come from the `BHUserSettingEnumDiscreteValues` sub-exports keyed by localised strings. The labels were not resolved in this pass, so the raw values above are shown as-is.
-  - **SDK (2026-10-16):** [`UBHUserSettingEnumDiscreteValues`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHUserSettings_classes.hpp#L713) exposes a single property: `TMap<FName, FText> NamedValues` at offset `0x0080`. The `FName` key is the enum tag (e.g. the raw integer rendered as a name), and the `FText` is the localised display label. Inherits from `UBHUserSettingIntDiscreteValues`. Resolution of labels requires reading each specific setting asset's `NamedValues` map contents from `data/` — tractable in a follow-up pass with a CUE4Parse re-run.
+  - **SDK (2026-10-16):** `UBHUserSettingEnumDiscreteValues` exposes a single property: `TMap<FName, FText> NamedValues` at offset `0x0080`. The `FName` key is the enum tag (e.g. the raw integer rendered as a name), and the `FText` is the localised display label. Inherits from `UBHUserSettingIntDiscreteValues`. Resolution of labels requires reading each specific setting asset's `NamedValues` map contents from `data/` — tractable in a follow-up pass with a CUE4Parse re-run.
 - **Localised labels.** Yes/No, On/Off and the setting names are localised strings. Only the keys are in the export.
 - **Dynamic defaults.** How the dynamic default is picked for display, resolution, device and upscaling is in the runtime code.
 - **Gamepad button and axis mappings.** The tag values are defaults. The full mapping tables are in the gamepad config sub-exports and were not expanded.

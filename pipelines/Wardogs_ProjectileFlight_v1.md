@@ -117,9 +117,9 @@ and `0x6BBA900` returns the base stats when the tag is 0. Constructor defaults o
 
 | Quantity | Value | Source |
 |---|---:|---|
-| 155 mm artillery `InitialBulletSpeed` | 30000 cm/s (300 m/s) | **Data**, [`DA_TNK_01_Artillery_Weapon_Stats`](../data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json) |
-| `ArtilleryBarrelTest` `InitialBulletSpeed` | 46400 cm/s | **Data**, [`DA_ArtilleryBarrelTest_Stats`](../data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json) |
-| 155 mm `TypicalSpeed` | 15000 cm/s (150 m/s) | **Data**, [`DA_155mm_Standard_ProjectileData`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData.json) |
+| 155 mm artillery `InitialBulletSpeed` | 30000 cm/s (300 m/s) | **Data**, `DA_TNK_01_Artillery_Weapon_Stats` |
+| `ArtilleryBarrelTest` `InitialBulletSpeed` | 46400 cm/s | **Data**, `DA_ArtilleryBarrelTest_Stats` |
+| 155 mm `TypicalSpeed` | 15000 cm/s (150 m/s) | **Data**, `DA_155mm_Standard_ProjectileData` |
 | 155 mm `ThrustSpeed` | 22000 (unused, see §6.1) | **Data** |
 
 So the artillery shell leaves the barrel at 300 m/s while its own
@@ -281,7 +281,7 @@ Cd(v) = DragModel.Value * Curve[row](|v| in m/s)
 ```
 
 The row is `DragModel.Curve.RowName` in
-[`CT_Projectile_DragCoefficients`](../data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json),
+`CT_Projectile_DragCoefficients`,
 whose `Time` axis is therefore **m/s** (the G7 and G1 rows rise sharply at 274–366
 on that axis, which is where the speed of sound sits). The 155 mm assets use
 row `GC (Cylinder)`: 0.71 at 0, 0.66 at 150, 1.10 at 300, 1.60 at 600.

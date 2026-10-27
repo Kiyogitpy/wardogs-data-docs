@@ -107,18 +107,18 @@ a compatibility-state calculation, not an observed inventory-add or reload
 write. The caller enters this SupportedCaliber branch only when
 `0x7690210` returns null (`0x7436EC2–0x7436F20`). Its other branch compares
 the candidate tag with a weapon extension's configured `AmmoTag` at data
-asset `+0x15C` (`0x76449C0`; [SDK](../../sdk/raw/WDGame_classes.hpp#L46648)).
+asset `+0x15C` (`0x76449C0`; SDK).
 
 The candidate input is an `ABHBaseVehiclePawn`: `0x7436B8E` calls
 `0x53CAE20`, which returns pawn `VehicleSeatComponent +0x758` (SDK
-[`Mechanized_classes.hpp`](../../sdk/raw/Mechanized_classes.hpp#L491)).
+`Mechanized_classes.hpp`).
 The query resolves an inventory item definition through that seat and a
 ranged-weapon extension. The extension is validated against
 `WDItemExtensionData_RangedWeapon` (`0x7436C3F–0x7436CAB`), and its
 `WeaponStats +0x98` data asset is loaded at `0x7436CB1`. Call `0x17E78D0`
 returns asset `+0x38`, exactly the embedded `FWDWeaponStats` that owns
-`SupportedCaliber` ([SDK](../../sdk/raw/WDGame_classes.hpp#L36753),
-[extension layout](../../sdk/raw/WDGame_classes.hpp#L39741)).
+`SupportedCaliber` (SDK,
+extension layout).
 
 If the item definition has a valid `BHInventoryFragment_SubSlotSupport`,
 the function walks its `Containers +0x48` as 0x110-byte
@@ -130,12 +130,12 @@ at RVA `0xD36C2E0` is initialized from literal `"Item.Ammo"` by
 (record `+0x30`, count `+0x38`) and asks `0x6BBD780(stats, &tag)` for each.
 Any true result yields true for this state query. The 0x110-byte record
 and nested filter offsets match
-[`FBHContainerSetup`](../../sdk/raw/BHInventory_structs.hpp#L372) and
-[`FBHSupportFilter`](../../sdk/raw/BHInventory_structs.hpp#L241).
+`FBHContainerSetup` and
+`FBHSupportFilter`.
 
 Only when the subslot-support fragment is absent/invalid does the function
 fall back at `0x7436DA3–0x7436DC3` to the item definition's **explicit**
-`ItemContext +0x38` tags ([SDK](../../sdk/raw/BHInventory_classes.hpp#L162)),
+`ItemContext +0x38` tags (SDK),
 testing each through the same helper. A valid fragment whose `Item.Ammo`
 container yields no match returns false; it does not enter the fallback.
 Because `0x6BBD780` searches configured SupportedCaliber tags and their

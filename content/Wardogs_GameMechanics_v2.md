@@ -6,23 +6,23 @@ description: "Folder Map, Damage System, Projectiles, Action Definitions"
 ---
 
 # Wardogs — Game Mechanics Reference
-*Extracted from cooked game data under [`Content/GameMechanics`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics) (467 files, 898 export blocks, UE 5.7 build `++Wardogs+Live-CL-516586`). Numbers are the raw values stored in the DataAssets and DataTables. Where the meaning of a field is inferred or unknown, the doc says so.*
+*Extracted from cooked game data under `Content/GameMechanics` (467 files, 898 export blocks, UE 5.7 build `++Wardogs+Live-CL-516586`). Numbers are the raw values stored in the DataAssets and DataTables. Where the meaning of a field is inferred or unknown, the doc says so.*
 
-> **Scope note:** The cash and reward tables ([`Gamemode/Data/DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json), [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json), [`DT_AssistCashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_AssistCashRewards.json), [`DT_CashRewardModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewardModifiers.json), and everything under [`Gamemode/Data/CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable)) are covered in **`Wardogs_Rewards_and_Progression_v2.md`**. This doc does not repeat them. Note that [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json) and [`DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) are the stale placeholder layer described in that doc.
+> **Scope note:** The cash and reward tables (`Gamemode/Data/DT_CashRewards`, `DT_Rewards`, `DT_AssistCashRewards`, `DT_CashRewardModifiers`, and everything under `Gamemode/Data/CashRewardsDataTable/`) are covered in **`Wardogs_Rewards_and_Progression_v2.md`**. This doc does not repeat them. Note that `DT_Rewards` and `DT_CashRewards` are the stale placeholder layer described in that doc.
 
 ---
 
 ## Season 02 update (2026-10-15)
 
 - **Files:** 20 added and 1 removed (486 files, was 467).
-- **Added:** [`DA_125x570mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/125x570mm/DA_125x570mm_ProjectileData.json) (base damage 150, explosion radius 750, mass 23.0); 6 `CR_SuppressionCurve_*` curves; 2 action definitions ([`DA_Action_AccessLooting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/UI/DA_Action_AccessLooting.json), [`DA_Action_AccessWagerVendor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/UI/DA_Action_AccessWagerVendor.json)); 8 door and decorator assets; [`DT_PingTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/Pings/DT_PingTypes.json); [`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json); [`CRV_DamageIndicator_IntensityResponse`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_DamageIndicator_IntensityResponse.json).
-- **Removed:** `AR_SuppressionCurve` (the 545mm projectile now uses [`CR_SuppressionCurve_Medium`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_Medium.json)).
+- **Added:** `DA_125x570mm_ProjectileData` (base damage 150, explosion radius 750, mass 23.0); 6 `CR_SuppressionCurve_*` curves; 2 action definitions (`DA_Action_AccessLooting`, `DA_Action_AccessWagerVendor`); 8 door and decorator assets; `DT_PingTypes`; `DT_InfantryData_ArchetypeCaliberModifiers`; `CRV_DamageIndicator_IntensityResponse`.
+- **Removed:** `AR_SuppressionCurve` (the 545mm projectile now uses `CR_SuppressionCurve_Medium`).
 - **Projectile base damage:** 308Winchester 60 → 45, 50Cal 107 → 90, 762mm 42 → 34, 762x54mm 55 → 44.
 - **Projectile mass:** 35x228mm 0.15 → 0.375.
-- **Bone multipliers:** AR torso upper 1.0 → 0.885; Sniper head 3.2 → 4.2667; DMR head 2.5 → 2.45; LMG head 2.3 → 2.35; CombatBow torso upper 1.9 → 2.07; Minigun head 2.5 → 1.25 (neck 0.98). New turret rows [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) and `HMG.MWSY_001`.
+- **Bone multipliers:** AR torso upper 1.0 → 0.885; Sniper head 3.2 → 4.2667; DMR head 2.5 → 2.45; LMG head 2.3 → 2.35; CombatBow torso upper 1.9 → 2.07; Minigun head 2.5 → 1.25 (neck 0.98). New turret rows `STN_06` and `HMG.MWSY_001`.
 - **Armour and helmet:** new rule for Bullet from Sniper against the High arm class, +28% (Armor).
 - **Infantry rules:** RifledSlug vs Armor −13% → −30%. New rules: Molotov vs SuperHeavy −30%, Arrow vs Heavy −10% and SuperHeavy −34%, 50Cal per-location rules.
-- **Vehicle seat reduction:** ROT_01 and Littlebird Small/Medium −50% → −25%, High −20% → −15%. New [`ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/ROT_04.json) row with the same values as ROT_01.
+- **Vehicle seat reduction:** ROT_01 and Littlebird Small/Medium −50% → −25%, High −20% → −15%. New `ROT_04` row with the same values as ROT_01.
 - **Vendors:** AttachmentMarket `MZL_04` price 1800.0 → 1450.0 (it was the table's highest price in Season 1; the highest price in Season 2 is 1500.0 on `FGP_04`, unchanged). Nine of 17 rows changed price. GearMarket LargeBackpack 2400 → 1600, LargeSlingBackpack 3500 → 2400, ExtraLargeSlingBackpack 5000 → 4000. WeaponMarket gains `125x570mm` ammo at 210.
 - **Destructibles:** building definitions 8 → 14, decorators 7 → 9.
 - **Action definitions:** `BHActionDefinition` 98 → 100 (UI folder 15 → 17).
@@ -37,20 +37,20 @@ Full before/after list: [Season 2 Changes → Damage & Combat Systems]({{ '/seas
 
 | Folder | Blocks (approx.) | What it holds |
 |---|---|---|
-| `Actions/` | ~117 | Action definitions (`BHActionDefinition` 100, `WDActionDefinition` 16) with tags, activation context and action class. Also [`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json). |
-| [`DamageSystem/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem) | ~14 | Damage categories, ammo modifiers, bone/hit-location multipliers, armour and helmet rules, vehicle-seat reduction, hit-location maps. |
+| `Actions/` | ~117 | Action definitions (`BHActionDefinition` 100, `WDActionDefinition` 16) with tags, activation context and action class. Also `DT_EmoteData`. |
+| `DamageSystem/` | ~14 | Damage categories, ammo modifiers, bone/hit-location multipliers, armour and helmet rules, vehicle-seat reduction, hit-location maps. |
 | `Gamemode/` | ~32 | Reward tables (see the rewards doc), `WDFactionData` (4 factions), scalar reward curves, EQS spawn queries. |
 | `Inventory/` | ~78 | Projectile stats (`WDProjectileData`, 32 assets), suppression curves, inventory operation rules, mag-packing curves. |
-| [`Player/PlayerCharacter/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter) | ~138 | Enhanced Input (`BHInputAction` 98, `InputMappingContext` 20, key settings 106), trigger and modifier classes, camera and perspective components, movement audio/effects config. |
+| `Player/PlayerCharacter/` | ~138 | Enhanced Input (`BHInputAction` 98, `InputMappingContext` 20, key settings 106), trigger and modifier classes, camera and perspective components, movement audio/effects config. |
 | `Settings/` | ~67 | User-setting definitions (numeric, discrete, presets, buttons) in 7 settings DataTables, plus controller configs. |
-| [`WorldInteractable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable) | ~38 | Vendor markets (4 DataTables), destructible door/building definitions, target dummy blueprint. |
-| `AI/`, [`Communication/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Communication), [`GameplayEffects/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/GameplayEffects) | ~13 | Blackboard, EQS queries, AI services curve, assistance-request DataTable, tagged gameplay effects, curve table. |
+| `WorldInteractable/` | ~38 | Vendor markets (4 DataTables), destructible door/building definitions, target dummy blueprint. |
+| `AI/`, `Communication/`, `GameplayEffects/` | ~13 | Blackboard, EQS queries, AI services curve, assistance-request DataTable, tagged gameplay effects, curve table. |
 
 ---
 
 ## 2. Damage System
 
-### 2a. Damage Categories ([`DA_GlobalDamage_Categories`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json))
+### 2a. Damage Categories (`DA_GlobalDamage_Categories`)
 
 Used as `PriorityCategory` on modification entries. Entries sort by the zero-based index of their category in this list ([DamagePipeline §5](../pipelines/Wardogs_DamagePipeline_v2.md#5-ordering)).
 
@@ -69,7 +69,7 @@ Used as `PriorityCategory` on modification entries. Entries sort by the zero-bas
 | 11 | `Meta.Damage.Category.Penetration` |
 | 12 | `Meta.Damage.Category.Friendly` |
 
-### 2b. Hit Locations ([`DA_GlobalDamage_HitLocations_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json))
+### 2b. Hit Locations (`DA_GlobalDamage_HitLocations_Player`)
 
 The skeleton bone names map to 12 hit-location classes. These classes are the columns of the bone table in 2c.
 
@@ -94,7 +94,7 @@ Bodies in the viewer's baseline physics asset `PA_TPCharacter_Simplified`: 20 bo
 
 The asset also has 2 `DamageImpactRemap` entries: `spine_01` is remapped to `pelvis`, and `spine_05` to `spine_04`. The remap is not used for damage. Damage looks up the hit bone as traced (`0x6F01BB0`, called with `FHitResult.BoneName` by the armor hook `0x6B52A40`, by `0x6EF8DE0` and by three more damage-side callers; none applies the remap), so a hit on the `spine_05` body is `Torso.Upper`. A sixth caller, `AWDMoverPlayerCharacter` slot 330 (`0x6E830E0`), does not remap either; its role is not traced. The remap (`0x6F01530` → `0x6BB8D40`) is applied in two other places: when a ragdoll starts, to choose the body that receives the hit impulse (`0x6EF8460`); and in the character anim instance (`0x6A7AC00`, `0x6A7B2C0`), which remaps first and then looks up the hit location for the hit-reaction animation (so there `spine_05` gives `Torso.Middle`).
 
-### 2c. Bone Damage Multipliers ([`DT_InfantryData_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json))
+### 2c. Bone Damage Multipliers (`DT_InfantryData_BoneDamageModifiers`)
 
 Each row is keyed by a source-context tag: `Universal`, 18 weapon tags (`Meta.Damage.Weapon.*`, shortened below) and `Meta.Damage.DamageType.Melee`. Values are the per-hit-location multiplier. The `DamageType.Melee` row is never used for a melee-only source, because the bone entries (5, 7, 10) need a Bullet, ExplosiveBlunt or Cannon source ([DamagePipeline §3.1](../pipelines/Wardogs_DamagePipeline_v2.md#31-the-custom-entries)). The `Universal` row is not a fallback: every hit multiplies the `Universal` value by the value from the source's weapon row (1.0 when no row matches), as traced in [DamagePipeline §7.1](../pipelines/Wardogs_DamagePipeline_v2.md#71-b_bonedamagemodifiers_c-entries-5-7-10).
 
@@ -121,9 +121,9 @@ Each row is keyed by a source-context tag: `Universal`, 18 weapon tags (`Meta.Da
 | Vehicle.HelicopterCannon | 3.2 | 3.2 | 1.8 | 1.8 | 1.8 | 1.3 | 1.2 | 1.2 | 1.2 | 1.2 | 1.2 | 1.2 |
 | Vehicle.HelicopterRocket | 1.5 | 1.5 | 1.0 | 0.6 | 0.6 | 0.6 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 | 0.8 |
 
-Head and neck are equal in every row except `Vehicle.Turret.Minigun`, where the neck value is lower. The [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) and `HMG.MWSY_001` turret rows are new in this update.
+Head and neck are equal in every row except `Vehicle.Turret.Minigun`, where the neck value is lower. The `STN_06` and `HMG.MWSY_001` turret rows are new in this update.
 
-### 2d. Ammo Type Penetration Effectiveness ([`DT_InfantryData_AmmoTypeEffectivenessPen`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json))
+### 2d. Ammo Type Penetration Effectiveness (`DT_InfantryData_AmmoTypeEffectivenessPen`)
 
 | Ammo tag | Modifier | Per-arm-class values (Small / Medium / High / Special) |
 |---|---|---|
@@ -136,7 +136,7 @@ Head and neck are equal in every row except `Vehicle.Turret.Minigun`, where the 
 
 The per-arm keys use the `Meta.Damage.Arms.*` tag family. The name "Arms" is what the data uses; it is most likely an armour-class or penetration-tier axis, but that is not confirmed.
 
-### 2e. Ammo Modifier Assets ([`DamageSystem/AmmoModifiers/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/AmmoModifiers), index in [`DT_AmmoModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DT_AmmoModifiers.json))
+### 2e. Ammo Modifier Assets (`DamageSystem/AmmoModifiers/`, index in `DT_AmmoModifiers`)
 
 Each asset multiplies the listed attribute on the projectile when that ammo tag is active.
 
@@ -148,9 +148,9 @@ Each asset multiplies the listed attribute on the projectile when that ammo tag 
 | HollowPoint.Tracer | 0.1 | 0.8 | 0.15 | 1.0 |
 | Tracer | 1.0 | 1.0 | 0.075 | 1.0 |
 
-The index asset [`DT_AmmoModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DT_AmmoModifiers.json) maps each tag to its `DA_AmmoModifier_*` asset (5 rows, all five listed above).
+The index asset `DT_AmmoModifiers` maps each tag to its `DA_AmmoModifier_*` asset (5 rows, all five listed above).
 
-### 2f. Infantry Damage Modification Rules ([`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json), row `Meta.Damage.Infantry`)
+### 2f. Infantry Damage Modification Rules (`DT_GlobalDamage_InfantryData`, row `Meta.Damage.Infantry`)
 
 The row has 146 entries. Most are no-op rows (60 entries with no requirements and 0% change). The table below lists the non-trivial unique rules. Values are percentage changes. Negative is a reduction.
 
@@ -191,7 +191,7 @@ The row has 146 entries. Most are no-op rows (60 entries with no requirements an
 
 Two entries (8 and 9) use the `Friendly` alignment; the melee armor entry (144) has none. Entries run in category order, then by index ([DamagePipeline §5](../pipelines/Wardogs_DamagePipeline_v2.md#5-ordering)). Each delta is added to a running amount: `Percentage_Starting` deltas are taken from the starting amount, so they add; `Percentage_Ongoing` deltas from the running amount, so they multiply ([DamagePipeline §6](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic)). The −75% and −50% shown for custom-operation rows are literals the evaluator ignores; the custom operation computes the change ([DamagePipeline §6](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic), §7).
 
-### 2g. Armour and Helmet Rules ([`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json))
+### 2g. Armour and Helmet Rules (`DT_GlobalDamage_ArmorData`)
 
 | Row | Entries | Effect as recorded |
 |---|---|---|
@@ -199,11 +199,11 @@ Two entries (8 and 9) use the `Friendly` alignment; the melee armor entry (144) 
 | `Meta.Damage.Helmet.Ghillie` | 6 | Same pattern as the Ghillie armour row |
 | `Meta.Damage.Armor` | 9 | Bullet −60%, Explosive −85%, Melee −50% (Armor); Bullet from Sniper vs High arm class +28% (Armor, new); Bullet+Penetrate 0% (Penetration); Bullet+HollowPoint −30% (AmmoModifier); 7mmBuckshot −80% (AmmoModifier); target Ghillie −10000% (Armor) |
 | `Meta.Damage.Helmet` | 8 | Bullet −60%, Explosive −85% (Armor); Bullet from Sniper vs High arm class +28% (Armor, new); Bullet+HollowPoint −30%; Bullet+ArmorPiercing +30% (AmmoModifier); Bullet+Penetrate 0%; 7mmBuckshot −80% (AmmoModifier); target Ghillie −1000% (Armor) |
-| `Meta.Damage.Vehicle` (in [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) family) | 10 | Mostly 0% or no-op; HollowPoint ±40%; Ricochet 0% |
+| `Meta.Damage.Vehicle` (in `DT_GlobalDamage_InfantryData` family) | 10 | Mostly 0% or no-op; HollowPoint ±40%; Ricochet 0% |
 
 **Unclear:** the Ghillie rows set −100% on most sources, and the `Meta.Damage.Armor` row sets −10000% against the Ghillie tag. Whether this is intended as full immunity or a placeholder should be checked in game.
 
-### 2h. Vehicle Seat Damage Reduction ([`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json))
+### 2h. Vehicle Seat Damage Reduction (`DT_InfantryData_VehicleSeatDamageReduction`)
 
 Each row is a vehicle variant. Its entries give `State.Player.Vehicle.SeatDamageReduction` by arm class. Values are percentage reductions applied to a player seated in that vehicle.
 
@@ -215,36 +215,36 @@ Each row is a vehicle variant. Its entries give `State.Player.Vehicle.SeatDamage
 | Air.Rotary.Littlebird (Default, RocketPods, MountedMachineGuns) | −25% | −15% | — |
 | Land.Wheeled.Humvee (Default, MachineGun, Minigun) | −70% | −40% | — |
 
-The Havoc is the only seat row with a Special entry. The Humvee, Littlebird and ROT_01 rows are identical across their variants. [`ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/ROT_04.json) is new in this update.
+The Havoc is the only seat row with a Special entry. The Humvee, Littlebird and ROT_01 rows are identical across their variants. `ROT_04` is new in this update.
 
 ### 2i. Hit-Location Asset for Infantry Damage
 
-[`DA_GlobalDamage_HitLocations_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json) holds the bone-to-class map in 2b; the damage subsystem picks it by the hit actor's class (`ClassToHitLocations`, `0x6F01BB0`). Where the `ClassToHitLocations` keys are registered is unverified (only one hit-location asset exists). The bone table in 2c is keyed by the damage-type tag, and each row uses the 12 classes.
+`DA_GlobalDamage_HitLocations_Player` holds the bone-to-class map in 2b; the damage subsystem picks it by the hit actor's class (`ClassToHitLocations`, `0x6F01BB0`). Where the `ClassToHitLocations` keys are registered is unverified (only one hit-location asset exists). The bone table in 2c is keyed by the damage-type tag, and each row uses the 12 classes.
 
 ---
 
-### 2j. Archetype Caliber Modifiers ([`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json), new)
+### 2j. Archetype Caliber Modifiers (`DT_InfantryData_ArchetypeCaliberModifiers`, new)
 
-Each row is a weapon archetype with a `CaliberModifiers` map (caliber tag → multiplier; the export's `_aaabapbnbhiopifeenjml`), read by `B_ArchetypeCaliberModifiers` with a one-level parent fallback ([DamagePipeline §7.2](../pipelines/Wardogs_DamagePipeline_v2.md#72-b_archetypecalibermodifiers_c-entry-6), [§8.2](../pipelines/Wardogs_DamagePipeline_v2.md#82-archetypecalibermodifiers-weapon-type--caliber)). Rows: `AR`, `DMR`, `LMG`, `Sniper`, `Pistol`, `SMG`, `Shotgun`, [`CombatBow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/CombatBow.json), `HMG.MWSY_001`, `Vehicle.Turret.MachineGun`, `Vehicle.Turret.Minigun` and `Vehicle.Turret.STN_06`. The Bullet calibre rule in 2f (entry 6) is its reader. The values are not listed here.
+Each row is a weapon archetype with a `CaliberModifiers` map (caliber tag → multiplier; the export's `_aaabapbnbhiopifeenjml`), read by `B_ArchetypeCaliberModifiers` with a one-level parent fallback ([DamagePipeline §7.2](../pipelines/Wardogs_DamagePipeline_v2.md#72-b_archetypecalibermodifiers_c-entry-6), [§8.2](../pipelines/Wardogs_DamagePipeline_v2.md#82-archetypecalibermodifiers-weapon-type--caliber)). Rows: `AR`, `DMR`, `LMG`, `Sniper`, `Pistol`, `SMG`, `Shotgun`, `CombatBow`, `HMG.MWSY_001`, `Vehicle.Turret.MachineGun`, `Vehicle.Turret.Minigun` and `Vehicle.Turret.STN_06`. The Bullet calibre rule in 2f (entry 6) is its reader. The values are not listed here.
 
 ### 2k. Suppression Curves (`Inventory/CR_SuppressionCurve_*`, new)
 
-Six shared `CurveFloat` assets, all in [`Inventory/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Inventory). Each projectile's `SuppressionData.DistanceFalloffCurve` points at one of them. They replace the removed `AR_SuppressionCurve`.
+Six shared `CurveFloat` assets, all in `Inventory/`. Each projectile's `SuppressionData.DistanceFalloffCurve` points at one of them. They replace the removed `AR_SuppressionCurve`.
 
 | Curve | Projectiles that reference it |
 |---|---|
-| [`CR_SuppressionCurve_Small`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_Small.json) | 9mm, 45ACP, 45Colt, 50AE, 7mmBuckshot |
-| [`CR_SuppressionCurve_Medium`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_Medium.json) | 545mm, 556mm, 762mm, 12g RifledSlug |
-| [`CR_SuppressionCurve_Large`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_Large.json) | 308Winchester, 762x54mm |
-| [`CR_SuppressionCurve_Special`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_Special.json) | 20x102mm, 30mm, 35x228mm, 50Cal |
-| [`CR_SuppressionCurve_GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_GrenadeLauncher.json) | 40mm |
-| [`CR_SuppressionCurve_Rocket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/CR_SuppressionCurve_Rocket.json) | 70mm, 72mm, 84mm, 93mm, 120x570mm, 120x800mm, 122mm, 122mm HAVOC, 155mm Expensive |
+| `CR_SuppressionCurve_Small` | 9mm, 45ACP, 45Colt, 50AE, 7mmBuckshot |
+| `CR_SuppressionCurve_Medium` | 545mm, 556mm, 762mm, 12g RifledSlug |
+| `CR_SuppressionCurve_Large` | 308Winchester, 762x54mm |
+| `CR_SuppressionCurve_Special` | 20x102mm, 30mm, 35x228mm, 50Cal |
+| `CR_SuppressionCurve_GrenadeLauncher` | 40mm |
+| `CR_SuppressionCurve_Rocket` | 70mm, 72mm, 84mm, 93mm, 120x570mm, 120x800mm, 122mm, 122mm HAVOC, 155mm Expensive |
 
 The 125x570mm, 155mm Standard (and its `_SB` variants), 338 Norman Magnum, 762x51mm and TV-guided missile assets do not reference an external suppression curve.
 
 ---
 
-## 3. Projectiles ([`Inventory/Equipment/Caliber/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber), 32 `WDProjectileData` assets)
+## 3. Projectiles (`Inventory/Equipment/Caliber/`, 32 `WDProjectileData` assets)
 
 The values are raw UE fields; units (cm, cm/s, kg) are confirmed in [Projectile Flight §9](../pipelines/Wardogs_ProjectileFlight_v1.md#9-units). `Speed` is `TypicalSpeed`, which is **not** the launch speed: the launch speed is the weapon's `InitialBulletSpeed`, and `TypicalSpeed` is a reference speed used by suppression (see [Projectile Flight §2](../pipelines/Wardogs_ProjectileFlight_v1.md#2-launch-velocity)). `Thrust` is `ThrustSpeed`, an acceleration in cm/s² along the velocity that applies only when `bShouldThrust` is set, not a sustained speed ([§6](../pipelines/Wardogs_ProjectileFlight_v1.md#6-thrust-fuel-and-wind)). `Drag` is the curve row; the model is in [§5](../pipelines/Wardogs_ProjectileFlight_v1.md#5-drag). Blank means the field is not set on the asset.
 
@@ -286,7 +286,7 @@ The values are raw UE fields; units (cm, cm/s, kg) are confirmed in [Projectile 
 Notes:
 - Explosive rounds (rockets, grenades, artillery) carry a `DamageEntityData` tag (e.g. `Meta.Damage.Explosive.Rocket.155mm`). Bullets use `Meta.Damage.Bullet.<caliber>`.
 - Rockets and cannon rounds set an unnamed field to False. Ricochet angles are `MinImpactAngleForRicochet` in degrees.
-- The `Drag` column is the `DragModel` row in [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json) (GC Cylinder, G1 Flat Bottom, G7 Boat Tail, GL Blunt Nose, GA Pellet).
+- The `Drag` column is the `DragModel` row in `CT_Projectile_DragCoefficients` (GC Cylinder, G1 Flat Bottom, G7 Boat Tail, GL Blunt Nose, GA Pellet).
 - Many 155mm and 120mm variants are duplicated across `_SB` (Sandbox) assets with different radii or mass. The Sandbox variant is a separate asset, not an override.
 
 ---
@@ -301,8 +301,8 @@ Each action carries an `ActionTag`, an `ActionClass` (blueprint), an `Activation
 
 | Folder | Context | Count | Examples (tag) |
 |---|---|---|---|
-| [`Actions/Appliables/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Actions/Appliables) | WDAppliableItemActionContext | 4 | Appliable.PrimaryUse [Holdable, TwoHanded]; Appliable.SecondaryUse [Interaction, Holdable, TwoHanded] |
-| [`Appliables/Bandage/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Actions/Appliables/Bandage) | WDAppliableItemActionContext | 2 | Appliable.Bandage.PrimaryUse [Holdable, Interaction, TwoHanded]; Bandage.SecondaryUse [Holdable, TwoHanded] |
+| `Actions/Appliables/` | WDAppliableItemActionContext | 4 | Appliable.PrimaryUse [Holdable, TwoHanded]; Appliable.SecondaryUse [Interaction, Holdable, TwoHanded] |
+| `Appliables/Bandage/` | WDAppliableItemActionContext | 2 | Appliable.Bandage.PrimaryUse [Holdable, Interaction, TwoHanded]; Bandage.SecondaryUse [Holdable, TwoHanded] |
 | `Character/` | WDEmoteActivationContext | 27 | `Action.Player.Emote.*` (26 emotes using `B_Action_Emote_C`) plus `Surrender_Drop` [Emote] |
 | `Interaction/` | None / custom | 4 | Player.UseDoor, Player.Tracker, Player.Door.Breach, Player.Scene.VehicleAdmin |
 | `Melee/` | WDGenericItemActionContext | 2 | Player.Melee.PrimaryUse and SecondaryUse [Holdable, TwoHanded, Weapon] |
@@ -311,18 +311,18 @@ Each action carries an `ActionTag`, an `ActionClass` (blueprint), an `Activation
 | `Revive/` | Various | 2 | Player.Revive [Interaction, TwoHanded]; Player.RequestRevive |
 | `UI/` | Mixed | 17 | Access inventory, tactical map, chatbox, radial wheel, ping wheel, equipment/garage/vehicle vendors, access looting and wager vendor (new), quick-slot change, ping and remove-ping, toggle hands |
 | `Vehicle/` | None / Vehicle contexts | 1 | Vehicle.Movement [Movement] |
-| [`Vehicle/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Actions/Vehicle/Weapons) | WDVehicleWeaponActionContext | 7 | Vehicle.Weapon.Fire, PreFire, ADS, Reload, ActiveReload, Vehicle.Horn, Vehicle.ChangeStabilizingState |
+| `Vehicle/Weapons/` | WDVehicleWeaponActionContext | 7 | Vehicle.Weapon.Fire, PreFire, ADS, Reload, ActiveReload, Vehicle.Horn, Vehicle.ChangeStabilizingState |
 | `Weapons/` | WDGenericItemActionContext / None | 26 | Weapon.Fire, Weapon.Reload, Weapon.ADS, Weapon.ChamberRound, Weapon.CycleFireMode, Weapon.CycleSights, Weapon.Zeroing.Increase/Decrease/Reset, Weapon.Bipod.Mount/ToggleFold, Weapon.MeleeBash, Throw.Primary/Back/Swap, Player.Lean.Left/Right, Player.Focus, Item.Inspect, Equipment.Change |
 
-[`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json) has 27 rows. `PlayRate` ranges from 0.95 to 1.2 (most at 1.0). Some rows set `Surrender_Drop` to a different flag.
+`DT_EmoteData` has 27 rows. `PlayRate` ranges from 0.95 to 1.2 (most at 1.0). Some rows set `Surrender_Drop` to a different flag.
 
 ---
 
-## 5. Input ([`Player/PlayerCharacter/Inputs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs))
+## 5. Input (`Player/PlayerCharacter/Inputs/`)
 
 | Item | Count | Notes |
 |---|---|---|
-| `BHInputAction` | 98 | 61 in `Inputs/`, 33 in [`Inputs/PlayerController/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController), 4 in [`TaggedActions/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions) |
+| `BHInputAction` | 98 | 61 in `Inputs/`, 33 in `Inputs/PlayerController/`, 4 in `TaggedActions/` |
 | Value types | 81 None (bool), 15 Axis1D, 2 Axis2D | |
 | `InputMappingContext` | 20 | IMC_Player, IMC_PlayerAiming, IMC_Emote, IMC_Inventory, IMC_Interaction, IMC_LadderClimbing, IMC_Player_Downed, IMC_Player_Parachuting, IMC_Player_Swimming, IMC_Tipping, IMC_UIKeybinds_Registration, and others |
 | `BHPlayerMappableKeySettings` | 106 | Per-action rebinding slots (`SlotContext` on 40) |
@@ -338,9 +338,9 @@ Notable thresholds:
 | Hold, one-shot 0.3 s | 0.3 | Infantry BumperLeaner |
 | Tap | — | Quick-slot 0–9, next/previous item, next/previous weapon (`TapReleaseTimeThreshold` set on one) |
 
-Input-side modifiers include `WDDeadZoneInputModifier` (10), `InputModifierSwizzleAxis` (9), `InputModifierNegate` (7), `WDAimAssistInputModifier` (1, filter [`DA_AimAssistFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistFilter.json)), `WDResponseCurveTypeModifier` (1), and `WDApplyAxisConfig` (8).
+Input-side modifiers include `WDDeadZoneInputModifier` (10), `InputModifierSwizzleAxis` (9), `InputModifierNegate` (7), `WDAimAssistInputModifier` (1, filter `DA_AimAssistFilter`), `WDResponseCurveTypeModifier` (1), and `WDApplyAxisConfig` (8).
 
-The controller configs in [`Settings/Controls/ControllerConfigs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Controls/ControllerConfigs) (Infantry, GroundVehicle, HeavyVehicle, Helicopter) map these actions per device. Their contents were only partially decoded (see section 13).
+The controller configs in `Settings/Controls/ControllerConfigs/` (Infantry, GroundVehicle, HeavyVehicle, Helicopter) map these actions per device. Their contents were only partially decoded (see section 13).
 
 ---
 
@@ -392,7 +392,7 @@ Discrete settings include `Accessibility.HUD_Visibility` (default index 1, value
 
 ## 7. Inventory Operation Rules and Mag Packing (`Inventory/`)
 
-### 7a. Custom operation rules ([`DA_CustomOperationRules`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/DA_CustomOperationRules.json), 17 rules)
+### 7a. Custom operation rules (`DA_CustomOperationRules`, 17 rules)
 
 Each rule matches a drag/drop between inventory slots and performs a custom operation.
 
@@ -433,10 +433,10 @@ The numbers in the table are from the previous export. In the current asset the 
 
 ### 7c. Load-ammo and transfer rules
 
-- `WDCustomInventoryOperationRule_LoadAmmo` (2 rules) point to [`DA_InventoryMagPackingData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/InventoryMagPacking/DA_InventoryMagPackingData.json).
+- `WDCustomInventoryOperationRule_LoadAmmo` (2 rules) point to `DA_InventoryMagPackingData`.
 - `WDCustomInventoryOperationRule_Transfer` (1 rule): `DefaultTransferTime` = 0.5 s. Equipment containers are `Inventory.Slot.Primary`, `Secondary`, `Sidearm`, `Specialist`, and others.
 
-### 7d. Mag packing curves ([`InventoryMagPacking/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Inventory/InventoryMagPacking), 37 `CurveFloat` plus [`DA_InventoryMagPackingData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/InventoryMagPacking/DA_InventoryMagPackingData.json))
+### 7d. Mag packing curves (`InventoryMagPacking/`, 37 `CurveFloat` plus `DA_InventoryMagPackingData`)
 
 Three families, one curve per caliber:
 
@@ -450,7 +450,7 @@ The curve axis is not labelled in the data. The most likely reading is round cou
 
 ---
 
-## 8. Factions ([`Gamemode/Data/DataAssets/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DataAssets), [`DT_FactionData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_FactionData.json))
+## 8. Factions (`Gamemode/Data/DataAssets/`, `DT_FactionData`)
 
 | Tag | Name | Short | Colour | Squad colour | Team ID | Safe zone tag |
 |---|---|---|---|---|---|---|
@@ -463,64 +463,64 @@ Each faction has block-colour materials (`MI_WDPlayerBlue` for Alpha, `MI_WDPlay
 
 ---
 
-## 9. Player Character Components ([`Player/PlayerCharacter/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter))
+## 9. Player Character Components (`Player/PlayerCharacter/`)
 
 | Component | Values |
 |---|---|
 | `WDFirstPersonCameraComponent` | FieldOfView **106.0**, OrthoWidth 512, `bAutoCalculateOrthoPlanes` false |
-| `BHPerspectiveData` ([`DA_PlayerCharacterComponents`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.json)) | Keyed templates (e.g. `FirstPersonBodyMesh`, each a `SkeletalMeshComponent` template). Full key list not expanded. |
+| `BHPerspectiveData` (`DA_PlayerCharacterComponents`) | Keyed templates (e.g. `FirstPersonBodyMesh`, each a `SkeletalMeshComponent` template). Full key list not expanded. |
 | `WDWaveBreakerComponent` | Present, no exposed properties |
 | `WDCharacterMovementEffectsComponentConfigurationDataAsset` | Per-stance movement effects (`Stances`, `JumpGameplayCueTag`, `LandingGameplayCueTags`, `StanceTransitionEffects`, `MovementModeEffects`) |
-| `CurveFloat` (9) and `CurveVector` (4) in [`Player/PlayerCharacter/Curves/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves) | Animation and camera curves (not decoded) |
-| [`Player/PlayerCharacter/MovementFeatures/Ladder/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves) (3) | Ladder movement curves |
+| `CurveFloat` (9) and `CurveVector` (4) in `Player/PlayerCharacter/Curves/` | Animation and camera curves (not decoded) |
+| `Player/PlayerCharacter/MovementFeatures/Ladder/Curves` (3) | Ladder movement curves |
 
 ---
 
-## 10. Destructible Objects ([`WorldInteractable/Objects/EnvironmentalObjects/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects))
+## 10. Destructible Objects (`WorldInteractable/Objects/EnvironmentalObjects/`)
 
 | Asset type | Count | Notes |
 |---|---|---|
-| `BHDestructionBuildingDefinitionDataAsset` | 14 | One per door or garage type (six added in this update: [`D_InteractableDoor_Buisness`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_InteractableDoor_Buisness.json), [`D_Interactable_Commercial_Door_01a_L`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_Commercial_Door_01a_L.json)/`_R`, [`D_Interactable_Door_Wood_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_Door_Wood_01a.json), `D_Interactable_HospitalDoor_01a_L`/`_R`): [`D_Door`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Door.json), [`D_InteractableDoor_Apartment`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_InteractableDoor_Apartment.json), `_ApartmentBalcony`, `_ApartmentEntrance`, `_Office`, `_WoodPVC`, [`D_Interactable_GarageDoor_01a_Left`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_GarageDoor_01a_Left.json), `_Right`. Each has 1 required mesh, 1 chunk-data entry and 1 chunk lookup. |
-| `BHDestructionBuildingDecoratorDefinitionDataAsset` | 9 | Decorators (`D_Decorator_Interactable_HospitalDoor_01a_L`/`_R` added in this update) ([`D_Decorator_Door`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Decorator_Door.json), `D_Decorator_InteractableDoor_*`) each with a `SaveID` GUID. |
-| [`B_TargetDummy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/TargetDummy/B_TargetDummy.json) (blueprint) | 1 | Damage entity tag `Meta.Damage.Infantry`, vitality and inventory components. Hit-decay timers and armour toggles (`SetHelmetArmour`, `SetVestArmour`). Test asset. |
+| `BHDestructionBuildingDefinitionDataAsset` | 14 | One per door or garage type (six added in this update: `D_InteractableDoor_Buisness`, `D_Interactable_Commercial_Door_01a_L`/`_R`, `D_Interactable_Door_Wood_01a`, `D_Interactable_HospitalDoor_01a_L`/`_R`): `D_Door`, `D_InteractableDoor_Apartment`, `_ApartmentBalcony`, `_ApartmentEntrance`, `_Office`, `_WoodPVC`, `D_Interactable_GarageDoor_01a_Left`, `_Right`. Each has 1 required mesh, 1 chunk-data entry and 1 chunk lookup. |
+| `BHDestructionBuildingDecoratorDefinitionDataAsset` | 9 | Decorators (`D_Decorator_Interactable_HospitalDoor_01a_L`/`_R` added in this update) (`D_Decorator_Door`, `D_Decorator_InteractableDoor_*`) each with a `SaveID` GUID. |
+| `B_TargetDummy` (blueprint) | 1 | Damage entity tag `Meta.Damage.Infantry`, vitality and inventory components. Hit-decay timers and armour toggles (`SetHelmetArmour`, `SetVestArmour`). Test asset. |
 
 ---
 
-## 11. AI and EQS (`AI/`, [`Gamemode/Objects/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Objects))
+## 11. AI and EQS (`AI/`, `Gamemode/Objects/`)
 
 | Asset | Contents |
 |---|---|
-| [`BB_Enemy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/AI/BB_Enemy.json) (BlackboardData) | 8 keys: EnemyActor, HasLineOfSight, MoveGoal, SelfActor, TargetActor, Pressure, HasTeleportedToAO, SOClaimHandle |
-| [`EQS_FindDeploymentBoard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.json) | Deployment-board search (1 option) |
-| [`EQS_FindNewFiringPosition`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/AI/EQS/EQS_FindNewFiringPosition.json) | Firing-position search (1 option) |
-| [`EQS_SpawnQuery_800`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.json) and [`EQS_SpawnQuery_800_Bravo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800_Bravo.json) | Spawn query, 800 units, with overlap test (2 each in [`Gamemode/Objects`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Objects)) |
-| [`CRV_EnemyDistancePressure`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/AI/Services/CRV_EnemyDistancePressure.json) (CurveFloat) | Pressure falls from 1.0 at 0 to 0.0 at 3000 |
+| `BB_Enemy` (BlackboardData) | 8 keys: EnemyActor, HasLineOfSight, MoveGoal, SelfActor, TargetActor, Pressure, HasTeleportedToAO, SOClaimHandle |
+| `EQS_FindDeploymentBoard` | Deployment-board search (1 option) |
+| `EQS_FindNewFiringPosition` | Firing-position search (1 option) |
+| `EQS_SpawnQuery_800` and `EQS_SpawnQuery_800_Bravo` | Spawn query, 800 units, with overlap test (2 each in `Gamemode/Objects`) |
+| `CRV_EnemyDistancePressure` (CurveFloat) | Pressure falls from 1.0 at 0 to 0.0 at 3000 |
 
 ---
 
 ## 12. Assistance Requests, Vendors and Emotes
 
-### 12a. Assistance requests ([`Communication/AssistanceRequests/DT_AssistanceRequests`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/AssistanceRequests/DT_AssistanceRequests.json), 12 rows)
+### 12a. Assistance requests (`Communication/AssistanceRequests/DT_AssistanceRequests`, 12 rows)
 
 Rows: Ammo, Backup, Refueling, Healing, Repair, Revive, Pickup, Dropoff, Getout, SquadInvite, GetIn, Supplies. Each row has a `RequestClass` (`WDAssistanceRequest_*`), an `EventFeedTag`, `Duration`, `GameplayCueDuration`, distance limits for team events and spatial icons, and `CancelWhenEnteringVitalityStates`. The `bOnlyShowEventFeedToInvolvedPlayers` flag is true for the Repair, Revive, Dropoff and GetIn rows and false for Getout.
 
-### 12b. Vendor markets ([`WorldInteractable/NPCs/Vendor/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor))
+### 12b. Vendor markets (`WorldInteractable/NPCs/Vendor/`)
 
 | Table | Rows | Price range (cash) | Notes |
 |---|---|---|---|
-| [`VendorEquipment/DT_WeaponMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_WeaponMarket.json) | 37 (155 price variations) | 0–1050 | Magazines, weapons, sizes; Alpha and Bravo faction-specific items. `125x570mm` ammo (210) added in this update |
-| [`VendorEquipment/DT_AttachmentMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_AttachmentMarket.json) | 17 | 380–1500 | Optics, muzzles, grips (e.g. `SniperScope10x` 1200, `EotechHoloSight` 620, `RK6ForeGrip` 380). `MZL_04` was 1800 (now 1450) |
-| [`VendorEquipment/DT_GearMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_GearMarket.json) | 13 | 0–15000 | Vests (Small 100, Medium 250, Large 400), backpacks (Small 350 to ExtraLargeSling 4000; LargeBackpack 1600, LargeSlingBackpack 2400) |
-| [`VendorEquipment/DT_UtilityMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_UtilityMarket.json) | 3 | 200–800 | Bandage 200, SuperBandage 800, M67Grenade 200 |
-| [`VendorVehicles/DT_VehicleMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles/DT_VehicleMarket.json) | 0 | — | Empty in this export |
+| `VendorEquipment/DT_WeaponMarket` | 37 (155 price variations) | 0–1050 | Magazines, weapons, sizes; Alpha and Bravo faction-specific items. `125x570mm` ammo (210) added in this update |
+| `VendorEquipment/DT_AttachmentMarket` | 17 | 380–1500 | Optics, muzzles, grips (e.g. `SniperScope10x` 1200, `EotechHoloSight` 620, `RK6ForeGrip` 380). `MZL_04` was 1800 (now 1450) |
+| `VendorEquipment/DT_GearMarket` | 13 | 0–15000 | Vests (Small 100, Medium 250, Large 400), backpacks (Small 350 to ExtraLargeSling 4000; LargeBackpack 1600, LargeSlingBackpack 2400) |
+| `VendorEquipment/DT_UtilityMarket` | 3 | 200–800 | Bandage 200, SuperBandage 800, M67Grenade 200 |
+| `VendorVehicles/DT_VehicleMarket` | 0 | — | Empty in this export |
 
 Each row has `VendorItemVariations` with `Price`, `LevelToUnlock`, `Amount`, `LifeTimeBuyLimit` and optional faction lock.
 
-### 12c. Emote data ([`Actions/Character/DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json), 27 rows)
+### 12c. Emote data (`Actions/Character/DT_EmoteData`, 27 rows)
 
 Each row has a `PlayRate` (0.95 to 1.2) and several boolean flags whose names are unnamed fields. `Surrender_Drop` is the only row with a flag set to true in the first flag column.
 
-### 12d. Ping and hit-marker types ([`Communication/Pings/DT_PingTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/Pings/DT_PingTypes.json), 4 rows, new)
+### 12d. Ping and hit-marker types (`Communication/Pings/DT_PingTypes`, 4 rows, new)
 
 Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates`, `Communication.AssistanceRequest` and `Trackers.Type.HitMarker`. Row struct `WDPingTypeData`.
 
@@ -528,9 +528,9 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 
 ## 13. Curves and Scalar Modifiers (summary)
 
-- **Gamemode/Data/ScalarModifiers** (6 curves): [`CF_Reward_Assist_DamagePlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/ScalarModifiers/Assists/CF_Reward_Assist_DamagePlayer.json) and `DamageVehicle` ramp 0→1 over input 0–1. [`CF_Reward_HealPlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/ScalarModifiers/Heal/CF_Reward_HealPlayer.json) ramps 0.25 to 1.0 over input 0–1.0. [`CF_Reward_ReviveHealPlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/ScalarModifiers/Heal/CF_Reward_ReviveHealPlayer.json) 0→0.2 at 0.4, 1.0 at 1.0. [`CF_Reward_Build`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/ScalarModifiers/Buildables/CF_Reward_Build.json) and [`CF_Reward_SupplyCrateItemPurchase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/ScalarModifiers/SupplyCratePurchase/CF_Reward_SupplyCrateItemPurchase.json) are identity curves (output equals input) across ±1,000,000. These scale rewards; the reward tables are in the rewards doc.
+- **Gamemode/Data/ScalarModifiers** (6 curves): `CF_Reward_Assist_DamagePlayer` and `DamageVehicle` ramp 0→1 over input 0–1. `CF_Reward_HealPlayer` ramps 0.25 to 1.0 over input 0–1.0. `CF_Reward_ReviveHealPlayer` 0→0.2 at 0.4, 1.0 at 1.0. `CF_Reward_Build` and `CF_Reward_SupplyCrateItemPurchase` are identity curves (output equals input) across ±1,000,000. These scale rewards; the reward tables are in the rewards doc.
 - **Inventory/InventoryMagPacking** (37 curves): see 7d.
-- **Total curves in folder:** 66 `CurveFloat` assets plus 1 `CurveTable` ([`GameplayEffects/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/GameplayEffects/Curves)) and 4 `CurveVector`.
+- **Total curves in folder:** 66 `CurveFloat` assets plus 1 `CurveTable` (`GameplayEffects/Curves`) and 4 `CurveVector`.
 
 ---
 
@@ -547,7 +547,7 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 ## 15. Still Not Pulled / Limitations
 
 - **Unnamed fields.** Many struct fields have no readable name and are called unnamed fields here. These are the arm-class arrays in 2d, the seat-reduction arrays in 2h, the `Emote` flags in 12c, and some action fields. Their meaning was inferred from neighbouring values and is not confirmed.
-  - **SDK (2026-10-16) — Emote flags (12c):** [`FWDEmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_structs.hpp#L14430) is a 0x30-byte struct (inherits from `FBHGameplayTaggedTableRow`) with 8 fields:
+  - **SDK (2026-10-16) — Emote flags (12c):** `FWDEmoteData` is a 0x30-byte struct (inherits from `FBHGameplayTaggedTableRow`) with 8 fields:
     - `_aaaakmaiagceginhpgeoe` (bool, 0x10) — unresolved flag #1
     - `_aaaamcjgaokphjebecjic` (bool, 0x11) — unresolved flag #2
     - `PlayRate` (float, 0x14) — animation playback rate ✓
@@ -561,20 +561,20 @@ Rows: `Communication.Ping`, `Communication.Ping.Type.Context.Map.MarkCoordinates
 - **Operation semantics.** `Percentage_Ongoing` is the operation name on the modification entries. Its exact formula (additive, multiplicative, applied per tick or once) is not decoded.
 - **Arm-class naming.** `Meta.Damage.Arms.Small/Medium/High/Special` is the tag family used. Its meaning as armour class or penetration tier is an inference.
 - **Units.** Projectile speed, radius and mass units are not verified against the engine.
-- **Controller configs.** [`Settings/Controls/ControllerConfigs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Controls/ControllerConfigs) (13 files) and the 106 `BHPlayerMappableKeySettings` default keys were only partially decoded. Default key-to-action bindings are in `IMC_*` DefaultKeyMappings, which were counted but not expanded.
+- **Controller configs.** `Settings/Controls/ControllerConfigs/` (13 files) and the 106 `BHPlayerMappableKeySettings` default keys were only partially decoded. Default key-to-action bindings are in `IMC_*` DefaultKeyMappings, which were counted but not expanded.
 - **Infantry rules.** The 146-entry `Meta.Damage.Infantry` row was aggregated to unique rules (86 unique, 60 no-op). Not every unique rule is listed in 2f.
-- **Vendor weapon market.** The 37 rows in [`DT_WeaponMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_WeaponMarket.json) were summarised by price range only. Individual items were not listed.
-- **Empty vehicle market.** [`DT_VehicleMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles/DT_VehicleMarket.json) has 0 rows, so vehicle vendor prices are not in this export.
+- **Vendor weapon market.** The 37 rows in `DT_WeaponMarket` were summarised by price range only. Individual items were not listed.
+- **Empty vehicle market.** `DT_VehicleMarket` has 0 rows, so vehicle vendor prices are not in this export.
 - **Destruction chunk data.** Chunk IDs and mesh references in the destructible-building assets were counted, not expanded.
-- **Player curves.** The 9 `CurveFloat` and 4 `CurveVector` assets in [`Player/PlayerCharacter/Curves/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves) were not decoded.
-- **Reward tables.** [`Gamemode/Data/DT_CashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewards.json) (49 rows), [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json) (78 rows), [`DT_AssistCashRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_AssistCashRewards.json) (9), [`DT_CashRewardModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewardModifiers.json) (9) and the [`CashRewardsDataTable/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable) tree are covered in `Wardogs_Rewards_and_Progression_v2.md`, not here.
+- **Player curves.** The 9 `CurveFloat` and 4 `CurveVector` assets in `Player/PlayerCharacter/Curves/` were not decoded.
+- **Reward tables.** `Gamemode/Data/DT_CashRewards` (49 rows), `DT_Rewards` (78 rows), `DT_AssistCashRewards` (9), `DT_CashRewardModifiers` (9) and the `CashRewardsDataTable/` tree are covered in `Wardogs_Rewards_and_Progression_v2.md`, not here.
 - **EQS details.** The EQS query contents (generators, tests and scoring equations) were listed by name only.
 
 ---
 
 ### Other assets (round 73)
 
-[`DA_Extras_Hyperlink`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Extras/DA_Extras_Hyperlink.json) is the single `WDUserSettingHyperlinkData` asset. Its only property is `Link = EWDUILink::PrivacyPolicy`, the target of the link row in the Extras settings. The URL itself is not in the data (it is resolved in code).
+`DA_Extras_Hyperlink` is the single `WDUserSettingHyperlinkData` asset. Its only property is `Link = EWDUILink::PrivacyPolicy`, the target of the link row in the Extras settings. The URL itself is not in the data (it is resolved in code).
 
 ## Change log
 

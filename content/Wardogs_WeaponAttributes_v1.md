@@ -156,7 +156,7 @@ Each weapon's default loadout (sub-slot: item), the effects applied to it in the
 
 #### A-91 (ID_A91)
 
-Item `Id.Item.A91`, [`ID_A91.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json).
+Item `Id.Item.A91`, `ID_A91.json`.
 
 - **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_A91Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Prone`.
@@ -178,7 +178,7 @@ Item `Id.Item.A91`, [`ID_A91.json`](https://github.com/Kiyogitpy/wardogs-data-do
 
 #### AK74 (ID_AK74M)
 
-Item `Id.Item.AK74M`, [`ID_AK74M.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/ID_AK74M.json).
+Item `Id.Item.AK74M`, `ID_AK74M.json`.
 
 - **Loadout:** Magazine: `ID_AK74M_Mag_Standard`; Stock: `ID_AK74MStock`; Grip: `ID_AK74MPistolGrip`; Barrel: `ID_AK74MBarrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -200,7 +200,7 @@ Item `Id.Item.AK74M`, [`ID_AK74M.json`](https://github.com/Kiyogitpy/wardogs-dat
 
 #### Bushmaster M17S (ID_WEPN_033)
 
-Item `Id.Item.WEPN_033`, [`ID_WEPN_033.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/ID_WEPN_033.json).
+Item `Id.Item.WEPN_033`, `ID_WEPN_033.json`.
 
 - **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_BARL_044`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -222,7 +222,7 @@ Item `Id.Item.WEPN_033`, [`ID_WEPN_033.json`](https://github.com/Kiyogitpy/wardo
 
 #### FAL (ID_WEPN_030)
 
-Item `Id.Item.WEPN_030`, [`ID_WEPN_030.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json).
+Item `Id.Item.WEPN_030`, `ID_WEPN_030.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_006`; Barrel: `ID_BARL_007`; Grip: `ID_PGRP_003`; Stock: `ID_STOK_005`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -246,7 +246,7 @@ Item `Id.Item.WEPN_030`, [`ID_WEPN_030.json`](https://github.com/Kiyogitpy/wardo
 
 #### Galil (ID_WEPN_029)
 
-Item `Id.Item.WEPN_029`, [`ID_WEPN_029.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/ID_WEPN_029.json).
+Item `Id.Item.WEPN_029`, `ID_WEPN_029.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_005`; Stock: `ID_STOK_013`; Grip: `ID_PGRP_010`; Barrel: `ID_BARL_006`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -268,7 +268,7 @@ Item `Id.Item.WEPN_029`, [`ID_WEPN_029.json`](https://github.com/Kiyogitpy/wardo
 
 #### KH-2002 (ID_KH2002)
 
-Item `Id.Item.KH2002`, [`ID_KH2002.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/ID_KH2002.json).
+Item `Id.Item.KH2002`, `ID_KH2002.json`.
 
 - **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_KH2002Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -290,7 +290,7 @@ Item `Id.Item.KH2002`, [`ID_KH2002.json`](https://github.com/Kiyogitpy/wardogs-d
 
 #### M4 (ID_M4)
 
-Item `Id.Item.M4`, [`ID_M4.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json).
+Item `Id.Item.M4`, `ID_M4.json`.
 
 - **Loadout:** Magazine: `ID_556STANAG_Mag_Standard`; Grip: `ID_M4Grip`; Stock: `ID_M4Stock`; Barrel: `ID_M4Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -314,7 +314,7 @@ Item `Id.Item.M4`, [`ID_M4.json`](https://github.com/Kiyogitpy/wardogs-data-docs
 
 #### T-21 (ID_TAR21)
 
-Item `Id.Item.TAR21`, [`ID_TAR21.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/ID_TAR21.json).
+Item `Id.Item.TAR21`, `ID_TAR21.json`.
 
 - **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_Tar21Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -338,7 +338,7 @@ Item `Id.Item.TAR21`, [`ID_TAR21.json`](https://github.com/Kiyogitpy/wardogs-dat
 
 #### Compound Bow (ID_CombatBow)
 
-Item `Id.Item.CombatBow`, [`ID_CombatBow.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/ID_CombatBow.json).
+Item `Id.Item.CombatBow`, `ID_CombatBow.json`.
 
 - **Loadout:** no attachments.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
@@ -360,7 +360,7 @@ Item `Id.Item.CombatBow`, [`ID_CombatBow.json`](https://github.com/Kiyogitpy/war
 
 #### BMR-308 (ID_RFB)
 
-Item `Id.Item.RFB`, [`ID_RFB.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json).
+Item `Id.Item.RFB`, `ID_RFB.json`.
 
 - **Loadout:** Magazine: `ID_RFB_Mag_Standard`; Barrel: `ID_RFBBarrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
@@ -384,7 +384,7 @@ Item `Id.Item.RFB`, [`ID_RFB.json`](https://github.com/Kiyogitpy/wardogs-data-do
 
 #### M14 (ID_WEPN_034)
 
-Item `Id.Item.WEPN_034`, [`ID_WEPN_034.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/ID_WEPN_034.json).
+Item `Id.Item.WEPN_034`, `ID_WEPN_034.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_068`; Stock: `ID_STOK_059`; Barrel: `ID_BARL_047`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
@@ -406,7 +406,7 @@ Item `Id.Item.WEPN_034`, [`ID_WEPN_034.json`](https://github.com/Kiyogitpy/wardo
 
 #### SKS (ID_SKS)
 
-Item `Id.Item.SKS`, [`ID_SKS.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json).
+Item `Id.Item.SKS`, `ID_SKS.json`.
 
 - **Loadout:** Magazine: `ID_SKS_Mag_Internal`; Handguard: `ID_SKSHandguard`; Barrel: `ID_SKSBarrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
@@ -430,7 +430,7 @@ Item `Id.Item.SKS`, [`ID_SKS.json`](https://github.com/Kiyogitpy/wardogs-data-do
 
 #### SVD (ID_SVDM)
 
-Item `Id.Item.SVDM`, [`ID_SVDM.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM.json).
+Item `Id.Item.SVDM`, `ID_SVDM.json`.
 
 - **Loadout:** Magazine: `ID_SVDM_Mag_Standard`; Handguard: `ID_SVDMHandguard`; Stock: `ID_SVDMStock`; Barrel: `ID_SVDMBarrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
@@ -452,7 +452,7 @@ Item `Id.Item.SVDM`, [`ID_SVDM.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### TCX-SPR (ID_WEPN_037)
 
-Item `Id.Item.WEPN_037`, [`ID_WEPN_037.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json).
+Item `Id.Item.WEPN_037`, `ID_WEPN_037.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_069`; Handguard: `ID_HNDG_054`; Grip: `ID_PGRP_043`; Stock: `ID_STOK_060`; Barrel: `ID_BARL_048`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -476,7 +476,7 @@ Item `Id.Item.WEPN_037`, [`ID_WEPN_037.json`](https://github.com/Kiyogitpy/wardo
 
 #### Evo-3 Ultra (ID_WEPN_036)
 
-Item `Id.Item.WEPN_036`, [`ID_WEPN_036.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/ID_WEPN_036.json).
+Item `Id.Item.WEPN_036`, `ID_WEPN_036.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_067`; Grip: `ID_PGRP_042`; Stock: `ID_STOK_058`; Barrel: `ID_BARL_046`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
@@ -498,7 +498,7 @@ Item `Id.Item.WEPN_036`, [`ID_WEPN_036.json`](https://github.com/Kiyogitpy/wardo
 
 #### M249 SAW (ID_M249)
 
-Item `Id.Item.M249`, [`ID_M249.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json).
+Item `Id.Item.M249`, `ID_M249.json`.
 
 - **Loadout:** Magazine: `ID_M249_Mag_Standard`; Stock: `ID_M249Stock`; Barrel: `ID_M249Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_LMG_Standing`.
@@ -522,7 +522,7 @@ Item `Id.Item.M249`, [`ID_M249.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### PKM (ID_LMG_02)
 
-Item `Id.Item.LMG_02`, [`ID_LMG_02.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02.json).
+Item `Id.Item.LMG_02`, `ID_LMG_02.json`.
 
 - **Loadout:** Magazine: `ID_LMG_02_Magazine_Standard`; Grip: `ID_LMG_02PistolGrip`; Stock: `ID_LMG_02Stock`; Barrel: `ID_LMG_02Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_LMG_Standing`.
@@ -546,7 +546,7 @@ Item `Id.Item.LMG_02`, [`ID_LMG_02.json`](https://github.com/Kiyogitpy/wardogs-d
 
 #### 9K333 Verba (ID_Launcher_04)
 
-Item `Id.Item.Launcher_04`, [`ID_Launcher_04.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json).
+Item `Id.Item.Launcher_04`, `ID_Launcher_04.json`.
 
 - **Loadout:** no attachments.
 - **Stance (Stand):** no stance effect.
@@ -567,7 +567,7 @@ Item `Id.Item.Launcher_04`, [`ID_Launcher_04.json`](https://github.com/Kiyogitpy
 
 #### MAAWS (ID_CGM4)
 
-Item `Id.Item.CGM4`, [`ID_CGM4.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json).
+Item `Id.Item.CGM4`, `ID_CGM4.json`.
 
 - **Loadout:** Sight: `ID_SGHT_033`.
 - **Sight:** `ID_SGHT_033` `S_Aim01`.
@@ -590,7 +590,7 @@ Item `Id.Item.CGM4`, [`ID_CGM4.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### MGL-40 (ID_MMGL)
 
-Item `Id.Item.MMGL`, [`ID_MMGL.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/ID_MMGL.json).
+Item `Id.Item.MMGL`, `ID_MMGL.json`.
 
 - **Loadout:** Sight: `ID_SGHT_037`; Magazine: `ID_MMGL_Mag_Internal`; Barrel: `ID_MMGLBarrel`; Handguard: `ID_MMGLHandguard`; Grip: `ID_MMGLGrip`; Stock: `ID_MMGLStock`.
 - **Sight:** `ID_SGHT_037` `S_Aim01`.
@@ -613,7 +613,7 @@ Item `Id.Item.MMGL`, [`ID_MMGL.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### RPG-7 (ID_RPG7)
 
-Item `Id.Item.RPG7`, [`ID_RPG7.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json).
+Item `Id.Item.RPG7`, `ID_RPG7.json`.
 
 - **Loadout:** no attachments.
 - **Stance (Stand):** no stance effect.
@@ -637,7 +637,7 @@ Item `Id.Item.RPG7`, [`ID_RPG7.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### Deagle (ID_WEPN_027)
 
-Item `Id.Item.WEPN_027`, [`ID_WEPN_027.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/ID_WEPN_027.json).
+Item `Id.Item.WEPN_027`, `ID_WEPN_027.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_003`; Barrel: `ID_BARL_004`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
@@ -659,7 +659,7 @@ Item `Id.Item.WEPN_027`, [`ID_WEPN_027.json`](https://github.com/Kiyogitpy/wardo
 
 #### GGX 17 (ID_Glock17)
 
-Item `Id.Item.Glock17`, [`ID_Glock17.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/ID_Glock17.json).
+Item `Id.Item.Glock17`, `ID_Glock17.json`.
 
 - **Loadout:** Magazine: `ID_Glock17_Mag_Standard`; Barrel: `ID_Glock17Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
@@ -681,7 +681,7 @@ Item `Id.Item.Glock17`, [`ID_Glock17.json`](https://github.com/Kiyogitpy/wardogs
 
 #### GGX 18 (ID_WEPN_032)
 
-Item `Id.Item.WEPN_032`, [`ID_WEPN_032.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/ID_WEPN_032.json).
+Item `Id.Item.WEPN_032`, `ID_WEPN_032.json`.
 
 - **Loadout:** Magazine: `ID_Glock17_Mag_Standard`; Barrel: `ID_Glock17Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
@@ -703,7 +703,7 @@ Item `Id.Item.WEPN_032`, [`ID_WEPN_032.json`](https://github.com/Kiyogitpy/wardo
 
 #### Judge (ID_Judge)
 
-Item `Id.Item.Judge`, [`ID_Judge.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/ID_Judge.json).
+Item `Id.Item.Judge`, `ID_Judge.json`.
 
 - **Loadout:** Magazine: `ID_Judge_Mag_Internal`; Grip: `ID_JudgePistolgrip`; Barrel: `ID_JudgeBarrel`.
 - **Stance (Stand):** no stance effect.
@@ -725,7 +725,7 @@ Item `Id.Item.Judge`, [`ID_Judge.json`](https://github.com/Kiyogitpy/wardogs-dat
 
 #### M1911 (ID_WEPN_026)
 
-Item `Id.Item.WEPN_026`, [`ID_WEPN_026.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/ID_WEPN_026.json).
+Item `Id.Item.WEPN_026`, `ID_WEPN_026.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_002`; Barrel: `ID_BARL_003`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
@@ -749,7 +749,7 @@ Item `Id.Item.WEPN_026`, [`ID_WEPN_026.json`](https://github.com/Kiyogitpy/wardo
 
 #### AMP-9 (ID_MP9)
 
-Item `Id.Item.MP9`, [`ID_MP9.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/ID_MP9.json).
+Item `Id.Item.MP9`, `ID_MP9.json`.
 
 - **Loadout:** Magazine: `ID_MP9_Mag_Standard`; Barrel: `ID_MP9Barrel`; Stock: `ID_MP9Stock`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
@@ -771,7 +771,7 @@ Item `Id.Item.MP9`, [`ID_MP9.json`](https://github.com/Kiyogitpy/wardogs-data-do
 
 #### MP5 (ID_WEPN_028)
 
-Item `Id.Item.WEPN_028`, [`ID_WEPN_028.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/ID_WEPN_028.json).
+Item `Id.Item.WEPN_028`, `ID_WEPN_028.json`.
 
 - **Loadout:** Magazine: `ID_MAGZ_004`; Stock: `ID_STOK_003`; Barrel: `ID_BARL_005`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
@@ -793,7 +793,7 @@ Item `Id.Item.WEPN_028`, [`ID_WEPN_028.json`](https://github.com/Kiyogitpy/wardo
 
 #### PP-19 Bizon (ID_WEPN_031)
 
-Item `Id.Item.WEPN_031`, [`ID_WEPN_031.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/ID_WEPN_031.json).
+Item `Id.Item.WEPN_031`, `ID_WEPN_031.json`.
 
 - **Loadout:** Handguard: `ID_HNDG_055`; Magazine: `ID_MAGZ_051`; Grip: `ID_SMG_03PistolGrip`; Stock: `ID_SMG_03Stock`; Barrel: `ID_BARL_049`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
@@ -815,7 +815,7 @@ Item `Id.Item.WEPN_031`, [`ID_WEPN_031.json`](https://github.com/Kiyogitpy/wardo
 
 #### PP-19 Vityaz (ID_SMG_03)
 
-Item `Id.Item.SMG_03`, [`ID_SMG_03.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03.json).
+Item `Id.Item.SMG_03`, `ID_SMG_03.json`.
 
 - **Loadout:** Magazine: `ID_SMG_03_Mag_Standard`; Grip: `ID_SMG_03PistolGrip`; Stock: `ID_SMG_03Stock`; Barrel: `ID_SMG_03Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
@@ -837,7 +837,7 @@ Item `Id.Item.SMG_03`, [`ID_SMG_03.json`](https://github.com/Kiyogitpy/wardogs-d
 
 #### Super-45 (ID_Vector)
 
-Item `Id.Item.Vector`, [`ID_Vector.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/ID_Vector.json).
+Item `Id.Item.Vector`, `ID_Vector.json`.
 
 - **Loadout:** Magazine: `ID_Vector_Mag_Standard`; Stock: `ID_VectorStock`; Barrel: `ID_VectorBarrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
@@ -861,7 +861,7 @@ Item `Id.Item.Vector`, [`ID_Vector.json`](https://github.com/Kiyogitpy/wardogs-d
 
 #### M500 (ID_M500)
 
-Item `Id.Item.M500`, [`ID_M500.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/ID_M500.json).
+Item `Id.Item.M500`, `ID_M500.json`.
 
 - **Loadout:** Magazine: `ID_M12G_Mag_Internal`; Stock: `ID_M500Stock`; Barrel: `ID_M500Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Shotgun_Standing`.
@@ -883,7 +883,7 @@ Item `Id.Item.M500`, [`ID_M500.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### MP43 (ID_MP43)
 
-Item `Id.Item.MP43`, [`ID_MP43.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/ID_MP43.json).
+Item `Id.Item.MP43`, `ID_MP43.json`.
 
 - **Loadout:** Handguard: `ID_MP43Handguard`; Stock: `ID_MP43Stock`; Barrel: `ID_MP43Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Shotgun_Standing`.
@@ -907,7 +907,7 @@ Item `Id.Item.MP43`, [`ID_MP43.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### AMR 50 (ID_SR_04)
 
-Item `Id.Item.SR_04`, [`ID_SR_04.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json).
+Item `Id.Item.SR_04`, `ID_SR_04.json`.
 
 - **Loadout:** Magazine: `ID_SR_04_Mag_Standard`; Handguard: `ID_SR_04Handguard`; Stock: `ID_SR_04Stock`; Barrel: `ID_SR_04Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
@@ -931,7 +931,7 @@ Item `Id.Item.SR_04`, [`ID_SR_04.json`](https://github.com/Kiyogitpy/wardogs-dat
 
 #### MK22 (ID_MK22)
 
-Item `Id.Item.MK22`, [`ID_MK22.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json).
+Item `Id.Item.MK22`, `ID_MK22.json`.
 
 - **Loadout:** Magazine: `ID_MK22_Mag_Standard`; Grip: `ID_MK22Grip`; Stock: `ID_MK22Stock`; Barrel: `ID_MK22Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
@@ -955,7 +955,7 @@ Item `Id.Item.MK22`, [`ID_MK22.json`](https://github.com/Kiyogitpy/wardogs-data-
 
 #### Mosin Nagant (ID_WEPN_017)
 
-Item `Id.Item.Mosin`, [`ID_WEPN_017.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json).
+Item `Id.Item.Mosin`, `ID_WEPN_017.json`.
 
 - **Loadout:** Magazine: `ID_Mosin_MagInternal`; Barrel: `ID_MosinBarrel`; Stock: `ID_MosinStock`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
@@ -977,7 +977,7 @@ Item `Id.Item.Mosin`, [`ID_WEPN_017.json`](https://github.com/Kiyogitpy/wardogs-
 
 #### Scout Rifle TD (ID_WEPN_035)
 
-Item `Id.Item.WEPN_035`, [`ID_WEPN_035.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json).
+Item `Id.Item.WEPN_035`, `ID_WEPN_035.json`.
 
 - **Loadout:** Stock: `ID_STOK_057`; Barrel: `ID_BARL_045`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
@@ -1001,7 +1001,7 @@ Item `Id.Item.WEPN_035`, [`ID_WEPN_035.json`](https://github.com/Kiyogitpy/wardo
 
 #### SV98 (ID_SV98)
 
-Item `Id.Item.SV98`, [`ID_SV98.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98.json).
+Item `Id.Item.SV98`, `ID_SV98.json`.
 
 - **Loadout:** Magazine: `ID_SV98_Mag_Standard`; Stock: `ID_SV98Stock`; Barrel: `ID_SV98Barrel`.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.

@@ -24,7 +24,6 @@ import bp_defaults as bpd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = "game-features/Wardogs_Buildables_v1.md"
-REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/"
 PLUGIN = "Wardogs/Plugins/GameFeatures/Items/Buildables/Content/"
 DATA = PLUGIN + "Data/"
 CASH = "Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/"
@@ -46,7 +45,7 @@ def n(x):
 
 
 def link(rel, label=None):
-    return f"[`{label or os.path.basename(rel)[:-5]}`]({REPO}{rel})"
+    return f"`{label or os.path.basename(rel)[:-5]}`"
 
 
 def cls(obj):

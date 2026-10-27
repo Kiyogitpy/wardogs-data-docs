@@ -29,12 +29,10 @@ import shutil
 import struct
 import subprocess
 import sys
-from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ge_values import OPS, SRC, num, short  # noqa: E402
 
-BLOB = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = os.path.join(ROOT, "content/Wardogs_WeaponAttributes_v1.md")
 BLOCK = re.compile(r"<!-- BEGIN weapon_attributes -->\r?\n.*?<!-- END weapon_attributes -->", re.S)
@@ -600,7 +598,7 @@ def page(data):
             out += [f"### {archetype}", ""]
         loadout, apps, char, attrs, flags = results[w.key]
         out += [f"#### {heading(w)}", ""]
-        out.append(f"Item `{w.item_id}`, [`{os.path.basename(w.path)}`]({BLOB}{quote(w.path)}).")
+        out.append(f"Item `{w.item_id}`, `{os.path.basename(w.path)}`.")
         out.append("")
         lo = [f"{short_slot(t)}: `{it.asset}`" for t, it in loadout.attachments()]
         out.append("- **Loadout:** " + ("; ".join(lo) if lo else "no attachments") + ".")

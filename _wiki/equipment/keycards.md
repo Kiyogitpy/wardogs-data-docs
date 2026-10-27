@@ -58,4 +58,4 @@ None found.
 - [Round 75 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md): the reader in the code and the search for anything that uses it
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the keycard names in the entity text table
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the keycard animation sets
-- [Keycard item folder](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items/Keycard/Content/Data/Keycards)
+- Keycard item folder

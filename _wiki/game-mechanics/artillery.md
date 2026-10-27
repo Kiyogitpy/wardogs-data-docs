@@ -183,7 +183,7 @@ The stats sheet gives the SPH-2 gun an "effective range" of 10,000 m. That is no
 - [SPH-2](../vehicles/sph-2.md)
 - [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): dial settings, arcs, ranges and height correction
 - [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer) (MIT licence): map coordinates, compass and bearing readings, and terrain height correction
-- [SPH-2 weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json): the game table (elevation, impact distance, travel time)
+- SPH-2 weapon data: the game table (elevation, impact distance, travel time)
 - [artillery_range_tables.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/artillery_range_tables.py): prints the game tables and compares them with the dial readings and the simulator
 - [shell_sim.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_sim.py): flight simulator for the apex heights and miss estimates
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md): the comparison against 87 logged shots

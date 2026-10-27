@@ -6,9 +6,9 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 ---
 
 # Wardogs — Gameplay Tag Definitions
-*Extracted from the game's packed config files ([`Wardogs/Config/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config)). Source copies are in `data/Wardogs/Config/`. Each entry is a `GameplayTagList` line.*
+*Extracted from the game's packed config files (`Wardogs/Config/`). Source copies are in `data/Wardogs/Config/`. Each entry is a `GameplayTagList` line.*
 
-> **Scope:** the tag names and dev comments defined in [`DefaultGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/DefaultGameplayTags.ini) and [`Config/Tags/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config/Tags). Engine tags are not included. How tags match at runtime is engine logic and is not in these files.
+> **Scope:** the tag names and dev comments defined in `DefaultGameplayTags.ini` and `Config/Tags/`. Engine tags are not included. How tags match at runtime is engine logic and is not in these files.
 
 ---
 
@@ -16,25 +16,25 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 
 | File | Tags |
 |---|---|
-| [`DefaultGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/DefaultGameplayTags.ini) | 3470 |
-| [`Tags/AudioGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/AudioGameplayTags.ini) | 2392 |
-| [`Tags/ChallengesGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/ChallengesGameplayTags.ini) | 383 |
-| [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) | 19 |
-| [`Tags/GameplayCueTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/GameplayCueTags.ini) | 369 |
-| [`Tags/GameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/GameplayTags.ini) | 3 |
-| [`Tags/InputTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/InputTags.ini) | 229 |
-| [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) | 14 |
-| [`Tags/Meta/MetaAttributeGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaAttributeGameplayTags.ini) | 46 |
-| [`Tags/Meta/MetaChallengeGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaChallengeGameplayTags.ini) | 34 |
-| [`Tags/Meta/MetaContextGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaContextGameplayTags.ini) | 2 |
-| [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) | 10 |
-| [`Tags/Meta/MetaInvestmentGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaInvestmentGameplayTags.ini) | 1 |
-| [`Tags/Meta/MetaMissionGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaMissionGameplayTags.ini) | 3 |
-| [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) | 7 |
-| [`Tags/Meta/MetaRoleGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRoleGameplayTags.ini) | 160 |
-| [`Tags/Meta/MetaSkillGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaSkillGameplayTags.ini) | 2 |
-| [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) | 11 |
-| [`Tags/VehicleGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/VehicleGameplayTags.ini) | 27 |
+| `DefaultGameplayTags.ini` | 3470 |
+| `Tags/AudioGameplayTags.ini` | 2392 |
+| `Tags/ChallengesGameplayTags.ini` | 383 |
+| `Tags/EntityTags.ini` | 19 |
+| `Tags/GameplayCueTags.ini` | 369 |
+| `Tags/GameplayTags.ini` | 3 |
+| `Tags/InputTags.ini` | 229 |
+| `Tags/LiveCurveTags.ini` | 14 |
+| `Tags/Meta/MetaAttributeGameplayTags.ini` | 46 |
+| `Tags/Meta/MetaChallengeGameplayTags.ini` | 34 |
+| `Tags/Meta/MetaContextGameplayTags.ini` | 2 |
+| `Tags/Meta/MetaDamageGameplayTags.ini` | 10 |
+| `Tags/Meta/MetaInvestmentGameplayTags.ini` | 1 |
+| `Tags/Meta/MetaMissionGameplayTags.ini` | 3 |
+| `Tags/Meta/MetaRewardGameplayTags.ini` | 7 |
+| `Tags/Meta/MetaRoleGameplayTags.ini` | 160 |
+| `Tags/Meta/MetaSkillGameplayTags.ini` | 2 |
+| `Tags/UserInterfaceAudioTags.ini` | 11 |
+| `Tags/VehicleGameplayTags.ini` | 27 |
 
 ---
 
@@ -3512,7 +3512,7 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `World.City` |  | `DefaultGameplayTags.ini` |
 | `World.Entire` |  | `DefaultGameplayTags.ini` |
 | `World.Spawn` |  | `DefaultGameplayTags.ini` |
-| `Audio.Ambience.Birds` | Tag for driving birds soundscape palette | [`Tags/AudioGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/AudioGameplayTags.ini) |
+| `Audio.Ambience.Birds` | Tag for driving birds soundscape palette | `Tags/AudioGameplayTags.ini` |
 | `Audio.Ambience.Birds.FarOnly` |  | `Tags/AudioGameplayTags.ini` |
 | `Audio.Ambience.BranchSnaps` |  | `Tags/AudioGameplayTags.ini` |
 | `Audio.Ambience.Bugs.Flies` |  | `Tags/AudioGameplayTags.ini` |
@@ -5903,7 +5903,7 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `Audio.Vox.Exertion.Vaulting.Slow` |  | `Tags/AudioGameplayTags.ini` |
 | `Audio.Vox.Exertion.Vaulting.Slow.Stop` |  | `Tags/AudioGameplayTags.ini` |
 | `Context.Build.SupplyPallet` |  | `Tags/AudioGameplayTags.ini` |
-| `Challenges.Context.AirVehicleKill` |  | [`Tags/ChallengesGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/ChallengesGameplayTags.ini) |
+| `Challenges.Context.AirVehicleKill` |  | `Tags/ChallengesGameplayTags.ini` |
 | `Challenges.Context.Assist.RevivePlayer` |  | `Tags/ChallengesGameplayTags.ini` |
 | `Challenges.Context.Assist.TrackingVehicle` |  | `Tags/ChallengesGameplayTags.ini` |
 | `Challenges.Context.Assist.VehicleDamage` |  | `Tags/ChallengesGameplayTags.ini` |
@@ -6284,26 +6284,26 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `Meta.Challenge.SessionEvents.ControlZonePresence` |  | `Tags/ChallengesGameplayTags.ini` |
 | `Meta.Challenge.SessionEvents.ZoneEntry` |  | `Tags/ChallengesGameplayTags.ini` |
 | `Meta.Challenge.SessionEvents.ZonePresence` |  | `Tags/ChallengesGameplayTags.ini` |
-| `Id.Buildable.AirRaidShelter` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.AirRaidShelter.Ceiling` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.AirRaidShelter.Floor` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.BarbedWire` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.Bunker` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.Bunker.Floor` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.Bunker.Roof` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.CrowsNest` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.CrowsNest.BaseFloor` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.CrowsNest.FirstFloor` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.CrowsNest.Roof` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.HotzoneMagnet` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.RefuelStation` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Buildable.RepairStation` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Character.Kristopher` | Tutorial NPC identity used by achievement detection | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `Id.Item.BrowningMG` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `UI.RadialWheel.BuildTool.SlotType.AirRaidShelter` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `UI.RadialWheel.BuildTool.SlotType.Bunker` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `UI.RadialWheel.BuildTool.SlotType.HotzoneMagnet` |  | [`Tags/EntityTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/EntityTags.ini) |
-| `GameplayCue.AssistanceRequest.AcknowledgedRequest` |  | [`Tags/GameplayCueTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/GameplayCueTags.ini) |
+| `Id.Buildable.AirRaidShelter` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.AirRaidShelter.Ceiling` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.AirRaidShelter.Floor` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.BarbedWire` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.Bunker` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.Bunker.Floor` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.Bunker.Roof` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.CrowsNest` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.CrowsNest.BaseFloor` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.CrowsNest.FirstFloor` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.CrowsNest.Roof` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.HotzoneMagnet` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.RefuelStation` |  | `Tags/EntityTags.ini` |
+| `Id.Buildable.RepairStation` |  | `Tags/EntityTags.ini` |
+| `Id.Character.Kristopher` | Tutorial NPC identity used by achievement detection | `Tags/EntityTags.ini` |
+| `Id.Item.BrowningMG` |  | `Tags/EntityTags.ini` |
+| `UI.RadialWheel.BuildTool.SlotType.AirRaidShelter` |  | `Tags/EntityTags.ini` |
+| `UI.RadialWheel.BuildTool.SlotType.Bunker` |  | `Tags/EntityTags.ini` |
+| `UI.RadialWheel.BuildTool.SlotType.HotzoneMagnet` |  | `Tags/EntityTags.ini` |
+| `GameplayCue.AssistanceRequest.AcknowledgedRequest` |  | `Tags/GameplayCueTags.ini` |
 | `GameplayCue.AssistanceRequest.Ammo` |  | `Tags/GameplayCueTags.ini` |
 | `GameplayCue.AssistanceRequest.Backup` |  | `Tags/GameplayCueTags.ini` |
 | `GameplayCue.AssistanceRequest.Dropoff` |  | `Tags/GameplayCueTags.ini` |
@@ -6671,10 +6671,10 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `GameplayCue.Weapon.Reload` |  | `Tags/GameplayCueTags.ini` |
 | `GameplayCue.Weapon.RocketProjectile` |  | `Tags/GameplayCueTags.ini` |
 | `GameplayCue.Weapon.Swing` |  | `Tags/GameplayCueTags.ini` |
-| `Attribute.Gameplay.Item.UsageRateMultiplier` | A multiplier that affects how much of an item's durability should be used when being used. | [`Tags/GameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/GameplayTags.ini) |
-| `Demolition.Zone.Distant` |  | [`Tags/GameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/GameplayTags.ini) |
-| `Demolition.Zone.Important` |  | [`Tags/GameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/GameplayTags.ini) |
-| `Input.Default.Interact` |  | [`Tags/InputTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/InputTags.ini) |
+| `Attribute.Gameplay.Item.UsageRateMultiplier` | A multiplier that affects how much of an item's durability should be used when being used. | `Tags/GameplayTags.ini` |
+| `Demolition.Zone.Distant` |  | `Tags/GameplayTags.ini` |
+| `Demolition.Zone.Important` |  | `Tags/GameplayTags.ini` |
+| `Input.Default.Interact` |  | `Tags/InputTags.ini` |
 | `Input.Default.Movement.Look.X` |  | `Tags/InputTags.ini` |
 | `Input.Default.Movement.Look.Y` |  | `Tags/InputTags.ini` |
 | `Input.Default.UI.Scene.Action.Minimap.Zoom.In` |  | `Tags/InputTags.ini` |
@@ -6902,21 +6902,21 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `UserSettings.Controls.Mouse.Axis.Y.Invert.Vehicle.Air.Missile` |  | `Tags/InputTags.ini` |
 | `UserSettings.Controls.VehicleBehavior.Vehicle.Missile.Mouse` |  | `Tags/InputTags.ini` |
 | `UserSettings.Controls.VehicleBehavior.Vehicle.Weapon.Sensitivity` |  | `Tags/InputTags.ini` |
-| `LiveCurves.Challenges.SessionEvents.BuildableDestroyedAssist.DamageFraction` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.DestroyVehicle.FactionScoreDifference` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.EndOfMatch` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.EndOfMatch.CashEarned` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.HealPlayer.HealPlayer` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.HealPlayer.ReviveHealPlayer` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.PlayerDelivered.PlayerCount` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.PlayerKill.DistanceScalar` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.PlayerKill.DistanceScalar.Artillery` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.PlayerKill.KillAssist` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.PurchaseFromSupplyCrate.XP` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `LiveCurves.Challenges.SessionEvents.VehicleAirborne.ElapsedAirTime` |  | [`Tags/LiveCurveTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/LiveCurveTags.ini) |
-| `Attribute.Meta.XP.Platform.Bobcat` |  | [`Tags/Meta/MetaAttributeGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaAttributeGameplayTags.ini) |
+| `LiveCurves.Challenges.SessionEvents.BuildableDestroyedAssist.DamageFraction` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.DestroyVehicle.FactionScoreDifference` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.EndOfMatch` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.EndOfMatch.CashEarned` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.HealPlayer.HealPlayer` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.HealPlayer.ReviveHealPlayer` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.PlayerDelivered.PlayerCount` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.PlayerKill.DistanceScalar` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.PlayerKill.DistanceScalar.Artillery` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.PlayerKill.KillAssist` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.PurchaseFromSupplyCrate.XP` |  | `Tags/LiveCurveTags.ini` |
+| `LiveCurves.Challenges.SessionEvents.VehicleAirborne.ElapsedAirTime` |  | `Tags/LiveCurveTags.ini` |
+| `Attribute.Meta.XP.Platform.Bobcat` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
 | `Attribute.Meta.XP.Platform.Havoc` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
 | `Attribute.Meta.XP.Platform.Huey` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
 | `Attribute.Meta.XP.Platform.Kodiak` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
@@ -6962,7 +6962,7 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `Attribute.Meta.Currency.SkillPoint.Role.Pilot` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
 | `Attribute.Meta.Currency.SkillPoint.Role.Recon` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
 | `Attribute.Meta.Currency.SkillPoint.Role.Support` |  | `Tags/Meta/MetaAttributeGameplayTags.ini` |
-| `Achievement.Combat.DefibrillatorKill` | Unlocks on a kill with the defibrillator. | [`Tags/Meta/MetaChallengeGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaChallengeGameplayTags.ini) |
+| `Achievement.Combat.DefibrillatorKill` | Unlocks on a kill with the defibrillator. | `Tags/Meta/MetaChallengeGameplayTags.ini` |
 | `Achievement.Combat.LongShot` | Unlocks on a kill from at least the row's distance. | `Tags/Meta/MetaChallengeGameplayTags.ini` |
 | `Achievement.Combat.RicochetKill` | Unlocks on a kill from a ricocheted projectile. | `Tags/Meta/MetaChallengeGameplayTags.ini` |
 | `Achievement.Economy.LoadoutSpend` | Unlocks when a single loadout purchase reaches the row's threshold. | `Tags/Meta/MetaChallengeGameplayTags.ini` |
@@ -6996,30 +6996,30 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `Meta.Challenge.SessionEvents.Destroy.Throwable` |  | `Tags/Meta/MetaChallengeGameplayTags.ini` |
 | `Meta.Challenge.SessionEvents.PlayerKill` |  | `Tags/Meta/MetaChallengeGameplayTags.ini` |
 | `Meta.Challenge.SessionEvents.PlayerKill.Assist` |  | `Tags/Meta/MetaChallengeGameplayTags.ini` |
-| `Meta.Context.Platform.Weapon` |  | [`Tags/Meta/MetaContextGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaContextGameplayTags.ini) |
-| `Meta.Context.Platform.Vehicle` |  | [`Tags/Meta/MetaContextGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaContextGameplayTags.ini) |
-| `Meta.Damage.Bullet.308Win` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Bullet.45Colt` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.Crowbar` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.Fists` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.LargeDrill` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.LargeHammer` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.MediumDrill` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.MediumHammer` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Utility.SmallHammer` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Meta.Damage.Weapon.Sniper.Mosin` |  | [`Tags/Meta/MetaDamageGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaDamageGameplayTags.ini) |
-| `Id.Investment.Factory01` |  | [`Tags/Meta/MetaInvestmentGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaInvestmentGameplayTags.ini) |
-| `Mission.Passive.EarnAnyRoleXp` |  | [`Tags/Meta/MetaMissionGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaMissionGameplayTags.ini) |
-| `Mission.Passive.EarnCash` |  | [`Tags/Meta/MetaMissionGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaMissionGameplayTags.ini) |
-| `Mission.Passive.TimePlayed` |  | [`Tags/Meta/MetaMissionGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaMissionGameplayTags.ini) |
-| `Meta.Rewards.Modifier.DestroyedVehicleType` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Rewards.Modifier.Transport.VehicleType` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Rewards.Modifier.Transport.VehicleTypeCZ` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Rewards.Modifier.Transport.VehicleTypeHZ` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Rewards.Modifier.TransportAssist.VehicleType` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Rewards.Modifier.VehicleKill.VehicleType` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Rewards.SessionEvents.PlayerKill` |  | [`Tags/Meta/MetaRewardGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRewardGameplayTags.ini) |
-| `Meta.Role.Driver` |  | [`Tags/Meta/MetaRoleGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaRoleGameplayTags.ini) |
+| `Meta.Context.Platform.Weapon` |  | `Tags/Meta/MetaContextGameplayTags.ini` |
+| `Meta.Context.Platform.Vehicle` |  | `Tags/Meta/MetaContextGameplayTags.ini` |
+| `Meta.Damage.Bullet.308Win` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Bullet.45Colt` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.Crowbar` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.Fists` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.LargeDrill` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.LargeHammer` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.MediumDrill` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.MediumHammer` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Utility.SmallHammer` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Meta.Damage.Weapon.Sniper.Mosin` |  | `Tags/Meta/MetaDamageGameplayTags.ini` |
+| `Id.Investment.Factory01` |  | `Tags/Meta/MetaInvestmentGameplayTags.ini` |
+| `Mission.Passive.EarnAnyRoleXp` |  | `Tags/Meta/MetaMissionGameplayTags.ini` |
+| `Mission.Passive.EarnCash` |  | `Tags/Meta/MetaMissionGameplayTags.ini` |
+| `Mission.Passive.TimePlayed` |  | `Tags/Meta/MetaMissionGameplayTags.ini` |
+| `Meta.Rewards.Modifier.DestroyedVehicleType` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Rewards.Modifier.Transport.VehicleType` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Rewards.Modifier.Transport.VehicleTypeCZ` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Rewards.Modifier.Transport.VehicleTypeHZ` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Rewards.Modifier.TransportAssist.VehicleType` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Rewards.Modifier.VehicleKill.VehicleType` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Rewards.SessionEvents.PlayerKill` |  | `Tags/Meta/MetaRewardGameplayTags.ini` |
+| `Meta.Role.Driver` |  | `Tags/Meta/MetaRoleGameplayTags.ini` |
 | `Meta.Role.Driver.AimDownSightSpeed.MountedGun` |  | `Tags/Meta/MetaRoleGameplayTags.ini` |
 | `Meta.Role.Driver.AutoRepair` |  | `Tags/Meta/MetaRoleGameplayTags.ini` |
 | `Meta.Role.Driver.DebugTag1` | DEBUG TAG | `Tags/Meta/MetaRoleGameplayTags.ini` |
@@ -7179,20 +7179,20 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 | `Meta.Role.Support.VerticalRecoil.LMG` |  | `Tags/Meta/MetaRoleGameplayTags.ini` |
 | `Meta.Role.Support.VerticalRecoil.Shotgun` |  | `Tags/Meta/MetaRoleGameplayTags.ini` |
 | `Meta.Role.Support.WeaponSwitchSpeed` |  | `Tags/Meta/MetaRoleGameplayTags.ini` |
-| `Meta.Skill.Revive.Instigator` |  | [`Tags/Meta/MetaSkillGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaSkillGameplayTags.ini) |
-| `Meta.Skill.Revive.Target` |  | [`Tags/Meta/MetaSkillGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/Meta/MetaSkillGameplayTags.ini) |
-| `UI.Audio.Frontend.Start.PressStart` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.Inventory.Close` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.Inventory.Open` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.RewardFeed.CashComboAdd` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.RewardFeed.CashComboBank` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.Vendor.Close` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.Vendor.Open` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.Vendor.Purchased` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.BuildTool.Hover` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.BuildTool.Select` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `UI.Audio.SpatialTracker.OwningPing` |  | [`Tags/UserInterfaceAudioTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/UserInterfaceAudioTags.ini) |
-| `Vehicle.Variant.Air.Airplane.FWG.Default` |  | [`Tags/VehicleGameplayTags.ini`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Tags/VehicleGameplayTags.ini) |
+| `Meta.Skill.Revive.Instigator` |  | `Tags/Meta/MetaSkillGameplayTags.ini` |
+| `Meta.Skill.Revive.Target` |  | `Tags/Meta/MetaSkillGameplayTags.ini` |
+| `UI.Audio.Frontend.Start.PressStart` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.Inventory.Close` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.Inventory.Open` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.RewardFeed.CashComboAdd` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.RewardFeed.CashComboBank` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.Vendor.Close` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.Vendor.Open` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.Vendor.Purchased` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.BuildTool.Hover` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.BuildTool.Select` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `UI.Audio.SpatialTracker.OwningPing` |  | `Tags/UserInterfaceAudioTags.ini` |
+| `Vehicle.Variant.Air.Airplane.FWG.Default` |  | `Tags/VehicleGameplayTags.ini` |
 | `Vehicle.Variant.Air.Rotary.Littlebird.Default` | Default Littlebird variant | `Tags/VehicleGameplayTags.ini` |
 | `Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns` | Attack Littlebird variant | `Tags/VehicleGameplayTags.ini` |
 | `Vehicle.Variant.Air.Rotary.Littlebird.RocketPods` |  | `Tags/VehicleGameplayTags.ini` |

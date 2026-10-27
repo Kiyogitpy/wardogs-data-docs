@@ -18,8 +18,8 @@ client and server component flags set. This registration depends on that
 feature's activation. The SDK exposes
 `WDLoadoutAmmoGenerationComponent.Server_SetupLoadoutByTag` with an `ItemTag`
 reference and `AWDPlayerStateSession* PlayerState` argument
-([class](../../sdk/raw/DeathmatchRuntime_classes.hpp#L372),
-[parameters](../../sdk/raw/DeathmatchRuntime_parameters.hpp#L29)).
+(class,
+parameters).
 
 The reflected function trampoline `0x84966B0` dispatches through virtual
 offset `+0x4F8`. The component constructor at `0x848B6A2` installs

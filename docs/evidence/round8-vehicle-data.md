@@ -15,13 +15,13 @@ in their rotor destructible group. In each platform export, follow
 
 | Asset | Group | Entry | mesh | complex surface registration |
 |---|---|---|---|---|
-| [`VP_ROT_02.json`](../../data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Platforms/VP_ROT_02.json) | `[0]` Main | `[0]` `...Rotor.Main.Base` | `SM_ROT_02_Main_Rotor_Hub` | true, `ComplexSurface.Group.Default` |
+| `VP_ROT_02.json` | `[0]` Main | `[0]` `...Rotor.Main.Base` | `SM_ROT_02_Main_Rotor_Hub` | true, `ComplexSurface.Group.Default` |
 | same | `[0]` Main | `[1]` `...Rotor.Main.Blades` | `SM_ROT_02_Main_Rotor_Blades` | true, `ComplexSurface.Group.Default` |
 | same | `[1]` Tail | `[0]` `...Rotor.Tail.Base` | `SM_ROT_02_Rear_Rotor` | true, `ComplexSurface.Group.Default` |
 | same | `[1]` Tail | `[1]` `...Rotor.Tail.Blades` | `SM_ROT_02_Rear_Rotor_Blades` | true, `ComplexSurface.Group.Default` |
-| [`VP_ROT_03.json`](../../data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Platform/VP_ROT_03.json) | `[0]` Main | `[0]` Base; `[1]` Blades | `SM_ROT_03_MainRotor`; `SM_ROT_03_MainRotorBlades` | both true, Default |
+| `VP_ROT_03.json` | `[0]` Main | `[0]` Base; `[1]` Blades | `SM_ROT_03_MainRotor`; `SM_ROT_03_MainRotorBlades` | both true, Default |
 | same | `[1]` Tail | `[0]` Base; `[1]` Blades | `SM_ROT_03_RearRotor`; `SM_ROT_03_RearRotor_Blades` | both true, Default |
-| [`VP_ROT_04.json`](../../data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Platforms/VP_ROT_04.json) | `[0]` Main | `[2]` Base; `[0]` Blades | `SM_ROT_04_MainRotor`; `SM_ROT_04_RotorBlades` | both true, Default |
+| `VP_ROT_04.json` | `[0]` Main | `[2]` Base; `[0]` Blades | `SM_ROT_04_MainRotor`; `SM_ROT_04_RotorBlades` | both true, Default |
 | same | `[1]` Tail | `[2]` Base; `[0]` Blades | `SM_ROT_04_RearRotor_`; `SM_ROT_04_RearRotor_Blades` | both true, Default |
 
 Each `MeshTag` is under the stated `DestructibleMeshGroupTag` (`Vehicle.DestructibleMesh.Rotor.Main` or `.Tail`). Hub/base entries use `MVCT_QueryProxy`; blade entries use `WDRotorCollision`. The `*.Spin` entries are separate: `SM_RotorSpeedmesh`, `bRegisterComplexSurface: false`, `SurfaceGroup: None`, and `NoCollision`. Do not describe those spin meshes as blades.
@@ -61,7 +61,7 @@ default-value blocker. Later runtime mutation remains untraced.
 
 No `bEnablePartialAttachments` field appears in the exported STN_06 vehicle
 data tree (`data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/`). In
-[`VP_STN_06_Turret.json`](../../data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Parts/VP_STN_06_Turret.json),
+`VP_STN_06_Turret.json`,
 the skeletal component export `UObject / MVF_SkeletalMesh_0.Properties.ComponentSettings`
 has `AttachQuery: {SourceId: "Chassis", SocketName: "S_GunMount"}` and tag
 `TurretSkeleton`; the gun-proxy static mesh export
@@ -83,9 +83,9 @@ actual STN_06 attachment remains unknown.
 ### Native owner and attachment gate follow-up
 
 The SDK resolves the property owner and inheritance chain. In
-[`sdk/raw/ModularVehicles_structs.hpp`](../../sdk/raw/ModularVehicles_structs.hpp),
+`sdk/raw/ModularVehicles_structs.hpp`,
 `FModularVehicleAttachManager::bEnablePartialAttachments` is at struct offset
-`0x08`. [`sdk/raw/ModularVehicles_classes.hpp`](../../sdk/raw/ModularVehicles_classes.hpp)
+`0x08`. `sdk/raw/ModularVehicles_classes.hpp`
 places `AModularVehicle::AttachManager` at `0x4A8`. The native class path is
 `AWDStationaryVehicle : AMStationaryVehicle : ABHBaseVehiclePawn :
 AModularVehicle` (`WDGame_classes.hpp`, `Mechanized_classes.hpp`); the STN_06

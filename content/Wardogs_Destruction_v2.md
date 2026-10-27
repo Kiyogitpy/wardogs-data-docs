@@ -6,7 +6,7 @@ description: "Assets at a Glance, Normal Building Lookup, Anonymous Building Loo
 ---
 
 # Wardogs — Destruction Reference
-*Extracted from cooked game data (JSON export, [`Wardogs/Content/Destruction/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Destruction), 4 source files: 2 mesh-to-prefab lookup assets, 2 curves). Parsed with a Python script. Values are the raw exported values.*
+*Extracted from cooked game data (JSON export, `Wardogs/Content/Destruction/`, 4 source files: 2 mesh-to-prefab lookup assets, 2 curves). Parsed with a Python script. Values are the raw exported values.*
 
 > **Scope note:** this folder is small. It holds the mesh-to-prefab lookup tables that tell the engine which building mesh swaps to which destruction prefab, and two score curves. It has no damage thresholds, debris counts or collapse timings.
 
@@ -15,16 +15,16 @@ description: "Assets at a Glance, Normal Building Lookup, Anonymous Building Loo
 ## Season 02 update (2026-10-15)
 
 - **No files added or removed,** and no values in this folder's four files changed.
-- **Garage assets** ([`Environment/Architecture/Residential/Garages`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Architecture/Residential/Garages), 14 files) changed only in an internal save identifier. This doc does not cover them, so no values are listed here.
+- **Garage assets** (`Environment/Architecture/Residential/Garages`, 14 files) changed only in an internal save identifier. This doc does not cover them, so no values are listed here.
 
 ## 1. Assets at a Glance
 
 | Asset | Type | Entries / keys | What it does |
 |---|---|---|---|
-| [`DA_NormalBuilding_MeshToPrefabLookup`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/DA_NormalBuilding_MeshToPrefabLookup.json) | `BHDestructionMeshToPrefabLookupDataAsset` | 63 | Maps building meshes to destruction prefab classes (all 63 mapped) |
-| [`DA_AnonymousBuilding_MeshToPrefabLookup`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/DA_AnonymousBuilding_MeshToPrefabLookup.json) | `BHDestructionMeshToPrefabLookupDataAsset` | 23 | Lists street and prop meshes. **No prefab is mapped** for any of the 23 |
-| [`CF_DestructionBuildingAngleScore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/CF_DestructionBuildingAngleScore.json) | `CurveFloat` | 3 keys | Score as a function of an angle-like input (time axis 0–100) |
-| [`CF_DestructionBuildingDistanceScore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/CF_DestructionBuildingDistanceScore.json) | `CurveFloat` | 3 keys | Score as a function of distance (time axis 2,000–75,000) |
+| `DA_NormalBuilding_MeshToPrefabLookup` | `BHDestructionMeshToPrefabLookupDataAsset` | 63 | Maps building meshes to destruction prefab classes (all 63 mapped) |
+| `DA_AnonymousBuilding_MeshToPrefabLookup` | `BHDestructionMeshToPrefabLookupDataAsset` | 23 | Lists street and prop meshes. **No prefab is mapped** for any of the 23 |
+| `CF_DestructionBuildingAngleScore` | `CurveFloat` | 3 keys | Score as a function of an angle-like input (time axis 0–100) |
+| `CF_DestructionBuildingDistanceScore` | `CurveFloat` | 3 keys | Score as a function of distance (time axis 2,000–75,000) |
 
 Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
 
@@ -51,7 +51,7 @@ Each `LookUp` entry is `Key` (the source static mesh) → `Value` (a prefab clas
 | ApartmentEntrance | 1 | ModKit04_Entrance_A |
 | CompressorUnit | 1 | CompressorUnit_01a |
 
-Source meshes come from [`Environment/Architecture/Residential/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Architecture/Residential) (59 entries), `Environment/Props/Walls_and_Fences/` (3, the low-wall set) and one `Industrial` entry.
+Source meshes come from `Environment/Architecture/Residential/` (59 entries), `Environment/Props/Walls_and_Fences/` (3, the low-wall set) and one `Industrial` entry.
 
 Naming irregularity to check:
 - `SM_ModKit04_Roof_Panel_Short_4m_A` maps to `CP_ModKit04_Roof_Panel_Corner_Short_2m1` (a 4 m panel mapped to a 2 m corner prefab with a `1` suffix). It may be a copy-paste error in the lookup, or an intentional fallback. The export does not say.
@@ -79,7 +79,7 @@ These are street objects (signs, poles, benches, bins, a cone). Their absence fr
 
 Both are `CurveFloat` assets with cubic interpolation. Keys are listed as time → value.
 
-### 4a. [`CF_DestructionBuildingAngleScore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/CF_DestructionBuildingAngleScore.json)
+### 4a. `CF_DestructionBuildingAngleScore`
 
 | Time | Value |
 |---|---|
@@ -89,7 +89,7 @@ Both are `CurveFloat` assets with cubic interpolation. Keys are listed as time �
 
 The score drops from 0.7 to 0.2 across 0–90 and reaches 0 at 100. The time unit is not stated. The 0–100 range suggests degrees, but the export does not confirm it.
 
-### 4b. [`CF_DestructionBuildingDistanceScore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Destruction/CF_DestructionBuildingDistanceScore.json)
+### 4b. `CF_DestructionBuildingDistanceScore`
 
 | Time | Value |
 |---|---|

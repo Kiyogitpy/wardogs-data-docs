@@ -6,18 +6,18 @@ description: "Layout and File Counts, Named Input Actions, Input Contexts and Ke
 ---
 
 # Wardogs: GameFeatures Itemsmith Reference
-*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Itemsmith) (117 files, one folder: `Content`). Itemsmith is the paint, decal and attachment customisation screen. Numbers are read from the export; anything not confirmed is marked.*
+*Source: exported JSON under `Wardogs/Plugins/GameFeatures/Itemsmith` (117 files, one folder: `Content`). Itemsmith is the paint, decal and attachment customisation screen. Numbers are read from the export; anything not confirmed is marked.*
 
 ---
 
 ## Season 02 update (2026-10-15)
 
 - **No files added or removed;** the file counts below are unchanged.
-- **[`DA_Itemsmith_ItemPaintData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/ItemPaint/Data/DA_Itemsmith_ItemPaintData.json)** (the flair item-paint screen, section 7) gained settings in this update:
+- **`DA_Itemsmith_ItemPaintData`** (the flair item-paint screen, section 7) gained settings in this update:
   - a warning popup for an empty favourites list (`UI.Popup.EmptyFavoritePaints`);
   - `MaxFavouritePaintsToShow` = 5;
   - camera mode `EItemsmithCameraMode::FixedSideOn`, with a focus offset of (0, 20, 7);
-  - input mapping context [`IMC_Itemsmith_FlairItemPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_FlairItemPaint.json) at priority 11;
+  - input mapping context `IMC_Itemsmith_FlairItemPaint` at priority 11;
   - a screen title (`Itemsmith.Flair.WeaponPaint.Title`) and `bShowBlueprintNameAsSubtitle` = true.
   The layout of this asset is not decoded in this doc.
 
@@ -121,13 +121,13 @@ Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-c
 | IA_ZoomIn | Input.NamedActions.ItemSmith.ZoomIn | Axis1D | no |
 | IA_ZoomOut | Input.NamedActions.ItemSmith.ZoomOut | Axis1D | no |
 
-**Probable export or authoring error:** [`IA_SelectReticle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_SelectReticle.json) is tagged `Input.NamedActions.ItemSmith.ScalePreview.Up`, the same tag as [`IA_ScalePreviewUp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IA_ScalePreviewUp.json). Reticle selection and preview scaling would then share one action name. This is flagged, not confirmed.
+**Probable export or authoring error:** `IA_SelectReticle` is tagged `Input.NamedActions.ItemSmith.ScalePreview.Up`, the same tag as `IA_ScalePreviewUp`. Reticle selection and preview scaling would then share one action name. This is flagged, not confirmed.
 
 ---
 
 ## 3. Input Contexts and Key Bindings
 
-12 `InputMappingContext` assets. Each binding lists its keyboard and gamepad keys together. The [`IMC_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith.json) context holds 38 mappings, the largest.
+12 `InputMappingContext` assets. Each binding lists its keyboard and gamepad keys together. The `IMC_Itemsmith` context holds 38 mappings, the largest.
 
 | Context | Action | Keys |
 |---|---|---|
@@ -205,7 +205,7 @@ Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-c
 
 ## 4. Paint Palette
 
-[`DT_Itemsmith_Flair_BasicPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_BasicPaint.json) has 60 rows: 12 hues by 5 tiers (the numeric suffix, shown below as Tier 1 to Tier 5). Each row has a `PaintName` (display string) and a `HexadecimalValue` (no `#`). The camo table [`DT_Itemsmith_Flair_CamoBasicPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_CamoBasicPaint.json) has the same 60 keys under the `Itemsmith.Colour.Camo.` prefix.
+`DT_Itemsmith_Flair_BasicPaint` has 60 rows: 12 hues by 5 tiers (the numeric suffix, shown below as Tier 1 to Tier 5). Each row has a `PaintName` (display string) and a `HexadecimalValue` (no `#`). The camo table `DT_Itemsmith_Flair_CamoBasicPaint` has the same 60 keys under the `Itemsmith.Colour.Camo.` prefix.
 
 | Hue | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Tier 5 |
 |---|---|---|---|---|---|
@@ -228,7 +228,7 @@ Camo table check: 60 of 60 camo entries share the same hex value as the basic en
 
 ## 5. Flair Masks
 
-[`DT_Itemsmith_Flair_Masks`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_Masks.json) (`WDFlairMaskInfo`): six masks used to shape paint or decal application.
+`DT_Itemsmith_Flair_Masks` (`WDFlairMaskInfo`): six masks used to shape paint or decal application.
 
 | Mask | Asset tag | Display name | Hidden on UI |
 |---|---|---|---|
@@ -243,12 +243,12 @@ Camo table check: 60 of 60 camo entries share the same hex value as the basic en
 
 ## 6. Flair Settings
 
-Two user settings for paint, both `BHUserSettingDataTableRow` entries in [`DT_Itemsmith_Flair_Settings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_Settings.json):
+Two user settings for paint, both `BHUserSettingDataTableRow` entries in `DT_Itemsmith_Flair_Settings`:
 
 | Setting tag | Type asset | Option values |
 |---|---|---|
-| `Flair.Paint.Settings.Finish` | [`DA_Itemsmith_Flair_Setting_Finish_Discrete`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/PaintSelect/Data/DA_Itemsmith_Flair_Setting_Finish_Discrete.json) (`BHUserSettingDiscreteData`) | Points to a `BHUserSettingEnumDiscreteValues` asset (not exported in this folder) |
-| `Flair.Paint.Settings.Wear` | [`DA_Itemsmith_Flair_Setting_Wear_Discrete`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/PaintSelect/Data/DA_Itemsmith_Flair_Setting_Wear_Discrete.json) (`BHUserSettingDiscreteData`) | Points to a `BHUserSettingEnumDiscreteValues` asset (not exported in this folder) |
+| `Flair.Paint.Settings.Finish` | `DA_Itemsmith_Flair_Setting_Finish_Discrete` (`BHUserSettingDiscreteData`) | Points to a `BHUserSettingEnumDiscreteValues` asset (not exported in this folder) |
+| `Flair.Paint.Settings.Wear` | `DA_Itemsmith_Flair_Setting_Wear_Discrete` (`BHUserSettingDiscreteData`) | Points to a `BHUserSettingEnumDiscreteValues` asset (not exported in this folder) |
 
 The names are `Finish` and `Wear`, which suggests a surface finish and a wear/weathering level. The option values are not in the export, so the choices themselves are unknown.
 
@@ -308,16 +308,16 @@ The `WDUI*` and related widget-data assets that drive the Itemsmith screens. Nam
 | DT_Itemsmith_Flair_Masks | WDFlairMaskInfo | 6 |
 | DT_Itemsmith_Flair_Settings | BHUserSettingDataTableRow | 2 |
 
-Tag-to-text table [`DT_GameplayTagToText_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_GameplayTagToText_Itemsmith.json) maps 36 keys to display text. Keys include the archetype tags, for example AR, DMR, Grenade, Launcher, LMG, Melee, Pistol, Shotgun, SMG, Sniper, Itemsmith.Flair.WeaponPaint.Title, Input.NamedActions.ItemSmith.ExpandStats, Input.NamedActions.ItemSmith.CollapseStats, Itemsmith.Rename.NameExists, Itemsmith.Rename.EnterName, Itemsmith.Rename.NameTooShort, Attachment.Barrel, Attachment.CantedSight, Attachment.Chamber, Attachment.Charm, Attachment.Grip, Attachment.Handguard, Attachment.Mag, Attachment.Magazine, Attachment.MountLeft, Attachment.MountRight, Attachment.MountTop, Attachment.MountUnder, Attachment.Muzzle, Attachment.Pistolgrip, Attachment.Receiver, Attachment.Sight, Attachment.SightMount, Attachment.Bipod, Attachment.Stock, Attachment.Underbarrel. Their display strings are in the `Text` field, which is not expanded here.
+Tag-to-text table `DT_GameplayTagToText_Itemsmith` maps 36 keys to display text. Keys include the archetype tags, for example AR, DMR, Grenade, Launcher, LMG, Melee, Pistol, Shotgun, SMG, Sniper, Itemsmith.Flair.WeaponPaint.Title, Input.NamedActions.ItemSmith.ExpandStats, Input.NamedActions.ItemSmith.CollapseStats, Itemsmith.Rename.NameExists, Itemsmith.Rename.EnterName, Itemsmith.Rename.NameTooShort, Attachment.Barrel, Attachment.CantedSight, Attachment.Chamber, Attachment.Charm, Attachment.Grip, Attachment.Handguard, Attachment.Mag, Attachment.Magazine, Attachment.MountLeft, Attachment.MountRight, Attachment.MountTop, Attachment.MountUnder, Attachment.Muzzle, Attachment.Pistolgrip, Attachment.Receiver, Attachment.Sight, Attachment.SightMount, Attachment.Bipod, Attachment.Stock, Attachment.Underbarrel. Their display strings are in the `Text` field, which is not expanded here.
 
 ---
 
 ## 9. Wiring
 
-- `BHGameFeatureAction_AddInputContextMapping` ([`Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Itemsmith.json)) adds the Itemsmith input contexts (action name `Input.NamedActions.ItemSmith.*`).
-- [`IMC_Itemsmith_PlayerController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Input/IMC_Itemsmith_PlayerController.json) (`BHPlayerMappableKeySettings`) makes the bindings remappable.
-- [`DT_PopupTypes_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_PopupTypes_Itemsmith.json) defines one popup type, `UI.Popup.Type.Itemsmith.Rename`. Its rename data asset is [`DA_Itemsmith_RenameItem`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/RenameItem/Data/DA_Itemsmith_RenameItem.json).
-- [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json) and `DT_TestingGroundSceneData` define the Itemsmith scene and its testing-ground pause. The testing-ground scene is [`DA_TestingGroundSceneData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/TestingGround/Data/DA_TestingGroundSceneData.json).
+- `BHGameFeatureAction_AddInputContextMapping` (`Itemsmith`) adds the Itemsmith input contexts (action name `Input.NamedActions.ItemSmith.*`).
+- `IMC_Itemsmith_PlayerController` (`BHPlayerMappableKeySettings`) makes the bindings remappable.
+- `DT_PopupTypes_Itemsmith` defines one popup type, `UI.Popup.Type.Itemsmith.Rename`. Its rename data asset is `DA_Itemsmith_RenameItem`.
+- `DT_SceneData_Frontend_Itemsmith` and `DT_TestingGroundSceneData` define the Itemsmith scene and its testing-ground pause. The testing-ground scene is `DA_TestingGroundSceneData`.
 
 ---
 
@@ -327,6 +327,6 @@ Tag-to-text table [`DT_GameplayTagToText_Itemsmith`](https://github.com/Kiyogitp
 - **Widget layouts** (`WDUI*` data) are listed by name only. Their fields, colours and navigation graph are not decoded.
 - **Input value types** are blank for most actions. The default is not confirmed.
 - **Paint and camo names** are the display strings in the rows; the in-game localisation keys are not expanded.
-- **`CurveFloat` [`C_PreviewWeaponExplosionCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/Preview/Gunsmith/C_PreviewWeaponExplosionCurve.json)** is referenced as a preview curve but its keys are not decoded.
+- **`CurveFloat` `C_PreviewWeaponExplosionCurve`** is referenced as a preview curve but its keys are not decoded.
 - **Actual paint application rules** (which paints a gun accepts, mastery gating, cost) are not in this folder.
 

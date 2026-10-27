@@ -339,18 +339,18 @@ Non-zero input values in state tree instance data. Other scalar changes in these
 
 | Asset | Type | What it is |
 |---|---|---|
-| [CRV_Challenges_Curves_DeploySupplyCrate_XP](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_DeploySupplyCrate_XP.json) | CurveFloat | Supply crate deploy XP curve |
-| [CRV_Challenges_Curves_DestroySupplyCrate_Cash](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_DestroySupplyCrate_Cash.json) | CurveFloat | Supply crate destroy cash curve |
-| [DT_WagerActions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerActions.json) | DataTable | Wager action table |
-| [DT_WagerChallenges](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerChallenges.json) | DataTable | Wager objective challenge table |
-| [DT_WagerConditions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerConditions.json) | DataTable | Wager condition table |
-| [DT_WagerObjectiveCatalog](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerObjectiveCatalog.json) | DataTable | Wager objective catalogue |
-| [DT_WagerPricing](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerPricing.json) | DataTable | Wager stake pricing table |
-| [ST_Challenges_Challenge_PassengersDelivered](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_PassengersDelivered.json) | StateTree | Passengers delivered challenge state tree |
-| [ST_Challenges_Challenge_RewardedKills](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedKills.json) | StateTree | Rewarded kills challenge state tree |
-| [ST_Challenges_Challenge_RewardedRevives](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedRevives.json) | StateTree | Rewarded revives challenge state tree |
-| [ST_Challenges_Challenge_RewardedVehiclesDestroyed](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedVehiclesDestroyed.json) | StateTree | Rewarded vehicles destroyed challenge state tree |
-| [ST_Challenges_SessionEvents_Buildable_FOBDoorClosed](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed.json) | StateTree | FOB door closed session event state tree |
+| CRV_Challenges_Curves_DeploySupplyCrate_XP | CurveFloat | Supply crate deploy XP curve |
+| CRV_Challenges_Curves_DestroySupplyCrate_Cash | CurveFloat | Supply crate destroy cash curve |
+| DT_WagerActions | DataTable | Wager action table |
+| DT_WagerChallenges | DataTable | Wager objective challenge table |
+| DT_WagerConditions | DataTable | Wager condition table |
+| DT_WagerObjectiveCatalog | DataTable | Wager objective catalogue |
+| DT_WagerPricing | DataTable | Wager stake pricing table |
+| ST_Challenges_Challenge_PassengersDelivered | StateTree | Passengers delivered challenge state tree |
+| ST_Challenges_Challenge_RewardedKills | StateTree | Rewarded kills challenge state tree |
+| ST_Challenges_Challenge_RewardedRevives | StateTree | Rewarded revives challenge state tree |
+| ST_Challenges_Challenge_RewardedVehiclesDestroyed | StateTree | Rewarded vehicles destroyed challenge state tree |
+| ST_Challenges_SessionEvents_Buildable_FOBDoorClosed | StateTree | FOB door closed session event state tree |
 
 UI data (count only): 2 added assets are Wager UI tables. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks&q=Wagers).
 

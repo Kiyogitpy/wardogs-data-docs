@@ -6,7 +6,7 @@ description: "Layout and File Counts, Item Roster, Vendor Prices, Projectiles"
 ---
 
 # Wardogs: GameFeatures Items Reference
-*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Items`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Items) (541 files, 25 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
+*Source: exported JSON under `Wardogs/Plugins/GameFeatures/Items` (541 files, 25 item folders). Numbers are read from the export; anything not confirmed is marked as unclear.*
 
 > **Scope note:** this covers the Items plugin only. Firearms, vehicles and the global reward/economy tables live in other plugins or Content folders and are not in this doc.
 
@@ -14,7 +14,7 @@ description: "Layout and File Counts, Item Roster, Vendor Prices, Projectiles"
 
 ## Season 02 update (2026-10-15)
 
-- **New item: Molotov** (new [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) folder). Vendor price 340 (`Utility.Type.Offensive`, unlock level 1), footprint 1 x 2. See sections 1, 2, 3 and 7.
+- **New item: Molotov** (new `Molotov` folder). Vendor price 340 (`Utility.Type.Offensive`, unlock level 1), footprint 1 x 2. See sections 1, 2, 3 and 7.
 - **New armor: Pilot Helmet** (vendor 6400) and **Tank Helmet** (vendor 5000), both `Gear.VehicleUse`, footprint 2 x 2.
 - **New music tape: MusicTape_11** ("Blue (Da Ba Dee) - Eiffel 65", price 100). There is no tape 10 in the export, so the set is 01 to 09 plus 11.
 - **Vendor price changes (old -> new):** Level 3 Armor 2000 -> 2500; Level 4 Armor 4000 -> 5000; Level 3 Helmet 1500 -> 2000; Level 4 Helmet 3000 -> 4500; Binoculars 75 -> 180; C4 Remote Detonator 550 -> 650; Compound Bow 800 -> 1350; Halligan Bar 1100 -> 885; Field Resuscitator 500 -> 425; Medical Bag 2000 -> 1800; Monocular 150 -> 350; Range Finder 400 -> 1450; Infrared Range Finder 1200 -> 3200; Wrench 150 -> 180.
@@ -25,7 +25,7 @@ description: "Layout and File Counts, Item Roster, Vendor Prices, Projectiles"
 - **Hammer lists grew:** Small Hammer 6 -> 7, Medium Hammer 10 -> 12, Large Hammer 17 -> 19 (see section 6.1).
 - **Damage modifiers:** most buildables gained damage modifier entries (for example FOB 21 -> 23, Radio 21 -> 22). The columns shown in section 6.3 are unchanged.
 - **Removed:** `DA_Significance_Buildable`, `DA_Significance_Evaluator_Buildable` and `DA_UI_BuildablePlacementData`. Destruction definition IDs were also re-issued for the door and gate definitions (section 6.5).
-- **New action:** `Action.RangeFinder.Reload` ([`DA_Action_RangeFinder_Reload`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/RangeFinder/Content/Data/Actions/DA_Action_RangeFinder_Reload.json)). The Crowbar folder also gained four challenge reward files, which this doc does not cover.
+- **New action:** `Action.RangeFinder.Reload` (`DA_Action_RangeFinder_Reload`). The Crowbar folder also gained four challenge reward files, which this doc does not cover.
 - **File count:** 495 -> 541 files (49 added, 3 removed). Item folders 24 -> 25.
 
 Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-changes/items-equipment.html' | relative_url }}).
@@ -406,7 +406,7 @@ Vendor and inventory tie-in: Small Hammer `100` (2x1 footprint), Medium Hammer `
 | TankTrap | B_Buildable_C | 5 | 0.0, 0.25, 0.5, 0.75, 1.0 | 220.0 x 220.0 x 200.0 |
 | WoodBase | B_Buildable_C | 5 | 0.0, 0.2, 0.45, 0.7, 1.0 | 150.0 x 150.0 x 37.5 |
 
-### 6.3 Damage modifiers on buildables ([`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json))
+### 6.3 Damage modifiers on buildables (`DT_GlobalDamage_BuildableData`)
 
 Each buildable row holds a list of `DamageModificationEntries`. The matrix shows the `Amount` of the entry that matches a source damage tag only (no instigator or target requirement). Every shown entry uses operation `Percentage_Ongoing`. Negative is read as reduced damage and positive as increased damage. **This sign reading is inferred** from the amounts (e.g. `-80` on bullets and `+1400` on FOB rockets); the export does not state it.
 
@@ -550,6 +550,6 @@ Ten tapes (01 to 09, and 11; the export has no tape 10). Each has a `BHEntityDat
 - **`LevelToUnlock`.** Stored on vendor variations (values 0 or 1). The system that reads it is not in this folder, so its effect is unconfirmed.
 - **Sign and units.** The damage sign (section 6.3) and projectile speed and length units are inferred, not stated.
 - **Audio, animation, crosstalk and most UI widget data.** Counted in section 1 but not decoded. Firing audio, animation sets and HUD tracker layouts are not summarised.
-- **Placeholder assets.** [`Injector`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Injector/Content/Injector.json) has only a `GameFeatureData` shell with no properties. [`Landmine`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Landmine/Content/Landmine.json) has a `GameFeatureData` with an asset scan for `BH.Item` and no item data.
+- **Placeholder assets.** `Injector` has only a `GameFeatureData` shell with no properties. `Landmine` has a `GameFeatureData` with an asset scan for `BH.Item` and no item data.
 - **Mortar, Phalanx, Talon 9K-SAM, Loudspeaker.** These buildables have roster rows here but no hammer, spawner or stages data in this folder.
 

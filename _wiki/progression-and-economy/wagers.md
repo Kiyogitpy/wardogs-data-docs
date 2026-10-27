@@ -167,7 +167,7 @@ The data lists no XP or item reward for the four wager challenges. The cash payo
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
-- [Wager challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerChallenges.json) (JSON)
-- [Wager pricing table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerPricing.json) (JSON)
+- Wager challenge table (JSON)
+- Wager pricing table (JSON)
 - [Economy data: wagers](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

@@ -6,7 +6,7 @@ description: "What This Folder Holds, Investment Definition, Production Lines, R
 ---
 
 # Wardogs — GameFeatures: FactoryInvestment_01
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/FactoryInvestment_01/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment_01) — 3 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/FactoryInvestment_01/` — 3 JSON files.*
 
 ---
 
@@ -26,9 +26,9 @@ The first factory investment (investment ID `Id.Investment.Factory01`; the displ
 
 | File | Type | Role |
 |---|---|---|
-| [`Content/FactoryInvestment_01.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment_01/Content/FactoryInvestment_01.json) | GameFeatureData + registry action | Adds the recipe table into `FactoryRecipes` |
-| [`Content/Data/DA_FactoryInvestment_01.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment_01/Content/Data/DA_FactoryInvestment_01.json) | `WDFactoryInvestment` (+ `WDInvestmentDefinition`) | Lines, upgrades, and the investment definition |
-| [`Content/Data/DT_Factory01_Recipes.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment_01/Content/Data/DT_Factory01_Recipes.json) | DataTable (`WDFactoryRecipe`) | Six recipes |
+| `Content/FactoryInvestment_01.json` | GameFeatureData + registry action | Adds the recipe table into `FactoryRecipes` |
+| `Content/Data/DA_FactoryInvestment_01.json` | `WDFactoryInvestment` (+ `WDInvestmentDefinition`) | Lines, upgrades, and the investment definition |
+| `Content/Data/DT_Factory01_Recipes.json` | DataTable (`WDFactoryRecipe`) | Six recipes |
 
 ---
 
@@ -58,7 +58,7 @@ Each line can make only the two recipes listed for it.
 
 ---
 
-## 4. Recipes ([`DT_Factory01_Recipes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment_01/Content/Data/DT_Factory01_Recipes.json))
+## 4. Recipes (`DT_Factory01_Recipes`)
 
 All six share the same timing and discount.
 
@@ -79,7 +79,7 @@ The recipes are weapons and optics. Lines 1 and 2 hold weapons (AK74M, M4 on lin
 
 ## 5. Upgrades
 
-Four upgrade entries. Each has a value and a curve from the base [`CT_Factory_UpgradeValues`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment/Content/Data/CT_Factory_UpgradeValues.json) table in the FactoryInvestment doc.
+Four upgrade entries. Each has a value and a curve from the base `CT_Factory_UpgradeValues` table in the FactoryInvestment doc.
 
 | Upgrade tag | Curve row | Value |
 |---|---|---|

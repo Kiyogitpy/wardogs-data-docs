@@ -6,16 +6,16 @@ description: "Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water 
 ---
 
 # Wardogs — Maps & Gym Data Reference
-*Extracted from the cooked JSON export under [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps) (12 files, 48 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
+*Extracted from the cooked JSON export under `Content/Maps` (12 files, 48 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
 
-> **Scope note:** this is the supporting data for the test gyms ([`Gyms/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/Gyms)) and the per-map shader warmup manifests ([`PSOWarming/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/PSOWarming)). The actual level layouts, actor placement, and gameplay rules are not in the export.
+> **Scope note:** this is the supporting data for the test gyms (`Gyms/`) and the per-map shader warmup manifests (`PSOWarming/`). The actual level layouts, actor placement, and gameplay rules are not in the export.
 
 ---
 
 ## Season 02 update (2026-10-15)
 
 - **New sight blocker assets:** four `DA_SightBlockers_*` files for Europe, North America, Russia and Kavkazi. See [section 7](#7-sight-blockers-wdsightblockerbakedataasset).
-- **New warmup manifest:** [`Russia_Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Russia_Moscow_KOTH_01.json) (1,132 graphics PSOs, 74 compute PSOs).
+- **New warmup manifest:** `Russia_Moscow_KOTH_01` (1,132 graphics PSOs, 74 compute PSOs).
 - **Kavkazi manifest is complete:** 867 graphics PSOs and 117 compute PSOs. The previous file stopped partway through the compute list, so the old 2,528 graphics count is withdrawn. See [section 6](#6-kavkazi_bakurani_koth_01-manifest).
 - **Graphics PSO counts:** Madrid 1,639 to 1,053. Detroit 1,870 to 1,000. Kavkazi 2,528 to 867.
 - **Compute PSO counts:** Madrid 6 to 83. Detroit 76 to 79.
@@ -34,22 +34,22 @@ Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-c
 
 | File | Export type | What it is |
 |---|---|---|
-| [`Gyms/Minimal/DT_Gym_Minimal_GridTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Minimal/DT_Gym_Minimal_GridTest.json) | `WDAutomationWorldGridData` | Grid of capture cells over the minimal test gym |
-| [`Gyms/Range/Assets/B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) | `BlueprintGeneratedClass` ([`B_MovingTarget_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json)) | Moving shooting-range target actor |
-| [`Gyms/Water/PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) | `PDA_FluxSimulationState_C` | Fluid simulation settings and texture references for the water gym |
-| [`Gyms/Water/WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json) | `WDWaterHeightGridAsset` | Water height grid (512 x 512 samples) for the water gym |
-| [`PSOWarming/Europe_Madrid_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Europe_Madrid_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Madrid KOTH map |
-| [`PSOWarming/NorthAmerica_Detroit_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/NorthAmerica_Detroit_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Detroit KOTH map |
-| [`PSOWarming/Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Bakurani KOTH map (see section 6) |
-| [`PSOWarming/Russia_Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Russia_Moscow_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Moscow KOTH map |
-| [`SightBlockers/Europe/DA_SightBlockers_Europe`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/Europe/DA_SightBlockers_Europe.json) | `WDSightBlockerBakedDataAsset` | Sight blocker data for the Europe map (section 7) |
-| [`SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica.json) | `WDSightBlockerBakedDataAsset` | Sight blocker data for the North America map (section 7) |
-| [`SightBlockers/Russia/DA_SightBlockers_Russia`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/Russia/DA_SightBlockers_Russia.json) | `WDSightBlockerBakedDataAsset` | Sight blocker data for the Russia map (section 7) |
-| [`SightBlockers/kavkazi/DA_SightBlockers_Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/kavkazi/DA_SightBlockers_Kavkazi.json) | `WDSightBlockerBakedDataAsset` | Sight blocker data for the Kavkazi map (section 7) |
+| `Gyms/Minimal/DT_Gym_Minimal_GridTest` | `WDAutomationWorldGridData` | Grid of capture cells over the minimal test gym |
+| `Gyms/Range/Assets/B_MovingTarget` | `BlueprintGeneratedClass` (`B_MovingTarget_C`) | Moving shooting-range target actor |
+| `Gyms/Water/PDA_Flux_Gym_Water` | `PDA_FluxSimulationState_C` | Fluid simulation settings and texture references for the water gym |
+| `Gyms/Water/WHG_PDA_Flux_Gym_Water` | `WDWaterHeightGridAsset` | Water height grid (512 x 512 samples) for the water gym |
+| `PSOWarming/Europe_Madrid_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Madrid KOTH map |
+| `PSOWarming/NorthAmerica_Detroit_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Detroit KOTH map |
+| `PSOWarming/Kavkazi_Bakurani_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Bakurani KOTH map (see section 6) |
+| `PSOWarming/Russia_Moscow_KOTH_01` | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Moscow KOTH map |
+| `SightBlockers/Europe/DA_SightBlockers_Europe` | `WDSightBlockerBakedDataAsset` | Sight blocker data for the Europe map (section 7) |
+| `SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica` | `WDSightBlockerBakedDataAsset` | Sight blocker data for the North America map (section 7) |
+| `SightBlockers/Russia/DA_SightBlockers_Russia` | `WDSightBlockerBakedDataAsset` | Sight blocker data for the Russia map (section 7) |
+| `SightBlockers/kavkazi/DA_SightBlockers_Kavkazi` | `WDSightBlockerBakedDataAsset` | Sight blocker data for the Kavkazi map (section 7) |
 
 ---
 
-## 2. Minimal Grid Test ([`DT_Gym_Minimal_GridTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Minimal/DT_Gym_Minimal_GridTest.json))
+## 2. Minimal Grid Test (`DT_Gym_Minimal_GridTest`)
 
 | Field | Value |
 |---|---|
@@ -67,7 +67,7 @@ Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-c
 
 ---
 
-## 3. Shooting-Range Moving Target ([`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json))
+## 3. Shooting-Range Moving Target (`B_MovingTarget`)
 
 The moving target is a blueprint actor. The export includes its class defaults, its components, its one timeline, and the names of its functions. The function bodies (graph logic) are not in the export, so only the data is documented here.
 
@@ -77,7 +77,7 @@ The moving target is a blueprint actor. The export includes its class defaults, 
 |---|---|---|
 | Health | 1.0 | Units not stated |
 | DamageIncrease | 3.5 | Units and meaning not stated |
-| TimeToReachTargetRange | Min 15, Max 25 | Likely seconds (inferred from name). The range is consumed by [`GetTimeToReachTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) |
+| TimeToReachTargetRange | Min 15, Max 25 | Likely seconds (inferred from name). The range is consumed by `GetTimeToReachTarget` |
 | StartingLocation | (0, 0, 0) | |
 | bReplicates | True | |
 | RemoteRole | `ROLE_SimulatedProxy` | |
@@ -99,23 +99,23 @@ The moving target is a blueprint actor. The export includes its class defaults, 
 
 | Item | Value |
 |---|---|
-| Timeline name | `TargetFall` (template [`TargetFall_Template`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json)) |
+| Timeline name | `TargetFall` (template `TargetFall_Template`) |
 | TimelineLength | 0.5 |
 | Track | `FallRate` on `CurveFloat_0` |
 | Curve keys | (t 0.0, value 0.0) to (t 0.5, value 1.0), cubic interpolation, auto tangents |
-| Bound functions | [`TargetFall__UpdateFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TargetFall__FinishedFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) |
+| Bound functions | `TargetFall__UpdateFunc`, `TargetFall__FinishedFunc` |
 
 The fall plays out over half a second. The rate curve goes from 0 to 1 over the length of the timeline.
 
 ### 3d. Function list
 
-[`SetMovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`GetTimeToReachTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`OnMovingTargetUpdated`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`ReceiveDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`Knockdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`Popup`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`Play pop up audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`Play Knock Down Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), `ReceiveBeginPlay`, [`ExecuteUbergraph_B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TargetFall__UpdateFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json), [`TargetFall__FinishedFunc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json).
+`SetMovingTarget`, `GetTimeToReachTarget`, `OnMovingTargetUpdated`, `TakeDamage`, `ReceiveDamage`, `Knockdown`, `Popup`, `Play pop up audio`, `Play Knock Down Audio`, `ReceiveBeginPlay`, `ExecuteUbergraph_B_MovingTarget`, `TargetFall__UpdateFunc`, `TargetFall__FinishedFunc`.
 
 Function names only. The export has no graph nodes, so the actual formula for time-to-target or the damage math is not in the export.
 
 ---
 
-## 4. Water Gym ([`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) and [`WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json))
+## 4. Water Gym (`PDA_Flux_Gym_Water` and `WHG_PDA_Flux_Gym_Water`)
 
 Two assets make up the water gym. The first is the fluid simulation state. The second is a precomputed height grid.
 
@@ -151,7 +151,7 @@ Two assets make up the water gym. The first is the fluid simulation state. The s
 | GridWidth | 512 |
 | Origin | (-51200, -51200), half the world size, so the grid is centred on the origin |
 | Sample array | 262,144 values (512 x 512), stored as unsigned 16-bit |
-| Linked asset | [`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) (the sim state in 4a) |
+| Linked asset | `PDA_Flux_Gym_Water` (the sim state in 4a) |
 
 **Sample distribution (from the array)**
 
@@ -185,10 +185,10 @@ Each manifest has the same structure:
 
 | Manifest | Experience name | World | Graphics PSOs | Compute PSOs | Status |
 |---|---|---|---|---|---|
-| [`Europe_Madrid_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Europe_Madrid_KOTH_01.json) | Madrid_KOTH_01 | `/Game/Maps/Worlds/Europe/Europe` | 1,053 | 83 | Complete |
-| [`NorthAmerica_Detroit_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/NorthAmerica_Detroit_KOTH_01.json) | Detroit_KOTH_01 | `/Game/Maps/Worlds/NorthAmerica/NorthAmerica` | 1,000 | 79 | Complete |
-| [`Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) | Bakurani_KOTH_01 | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | 867 | 117 | Complete, see section 6 |
-| [`Russia_Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Russia_Moscow_KOTH_01.json) | Moscow_KOTH_01 | `/Game/Maps/Worlds/Russia/Russia` | 1,132 | 74 | Complete |
+| `Europe_Madrid_KOTH_01` | Madrid_KOTH_01 | `/Game/Maps/Worlds/Europe/Europe` | 1,053 | 83 | Complete |
+| `NorthAmerica_Detroit_KOTH_01` | Detroit_KOTH_01 | `/Game/Maps/Worlds/NorthAmerica/NorthAmerica` | 1,000 | 79 | Complete |
+| `Kavkazi_Bakurani_KOTH_01` | Bakurani_KOTH_01 | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | 867 | 117 | Complete, see section 6 |
+| `Russia_Moscow_KOTH_01` | Moscow_KOTH_01 | `/Game/Maps/Worlds/Russia/Russia` | 1,132 | 74 | Complete |
 
 The experience name for the Kavkazi file is `Bakurani_KOTH_01`, which differs from the file name. The Russia file's experience name is `Moscow_KOTH_01`. The file name and the experience name are both kept as they appear in the export.
 
@@ -254,10 +254,10 @@ Four baked data assets, one per map. Each has the same shape: a world reference,
 
 | File | World | Bounds Min (X, Y, Z) | Bounds Max (X, Y, Z) | Unnamed field 1 | Unnamed field 2 |
 |---|---|---|---|---|---|
-| [`SightBlockers/Europe/DA_SightBlockers_Europe`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/Europe/DA_SightBlockers_Europe.json) | `/Game/Maps/Worlds/Europe/Europe` | -729935.1, -673922.44, -110735.72 | -546697.2, -548435.56, -71294.94 | 3125 | 384 |
-| [`SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica.json) | `/Game/Maps/Worlds/NorthAmerica/NorthAmerica` | -181848.62, -287751.4, -48359.086 | -55560.918, -131958.1, 55640.914 | 2880 | 185 |
-| [`SightBlockers/Russia/DA_SightBlockers_Russia`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/Russia/DA_SightBlockers_Russia.json) | `/Game/Maps/Worlds/Russia/Russia` | -90184.53, -84857.62, -38785.887 | 59737.117, 55525.145, 72420.54 | 4833 | 708 |
-| [`SightBlockers/kavkazi/DA_SightBlockers_Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/kavkazi/DA_SightBlockers_Kavkazi.json) | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | -888067.25, -1175312.1, -114160.0 | -758231.7, -1046870.4, -76160.0 | 4546 | 813 |
+| `SightBlockers/Europe/DA_SightBlockers_Europe` | `/Game/Maps/Worlds/Europe/Europe` | -729935.1, -673922.44, -110735.72 | -546697.2, -548435.56, -71294.94 | 3125 | 384 |
+| `SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica` | `/Game/Maps/Worlds/NorthAmerica/NorthAmerica` | -181848.62, -287751.4, -48359.086 | -55560.918, -131958.1, 55640.914 | 2880 | 185 |
+| `SightBlockers/Russia/DA_SightBlockers_Russia` | `/Game/Maps/Worlds/Russia/Russia` | -90184.53, -84857.62, -38785.887 | 59737.117, 55525.145, 72420.54 | 4833 | 708 |
+| `SightBlockers/kavkazi/DA_SightBlockers_Kavkazi` | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | -888067.25, -1175312.1, -114160.0 | -758231.7, -1046870.4, -76160.0 | 4546 | 813 |
 
 **Notes**
 
@@ -522,8 +522,8 @@ Notes. (a) The VIP of VIP Escort is a random player, so no VIP start is placed; 
 
 ## 9. Still Not Pulled / Limitations
 
-- **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps). Only the supporting assets are.
-- **Blueprint logic.** [`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in the export.
+- **Level (`.umap`) data.** Round 65 read the placed static meshes of the four world maps (section 10) and round 66 the placed gameplay actors (section 11). Gameplay rules and the Blueprint graphs are not in `Content/Maps`. Only the supporting assets are.
+- **Blueprint logic.** `B_MovingTarget` exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not in the export.
 - **Units and meaning.** Health (1.0), DamageIncrease (3.5), the grid bounds, and the simulation values have no units in the export. The `Iteration` counter and the sample meaning of 65535 in the height grid are not verified.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Unnamed fields.** Several properties in the height grid, the warmup manifests, and the sight blocker assets are unnamed fields. Their values were read and reported, but their names are not known. Those values are cited by position and value only.

@@ -46,4 +46,4 @@ The forgive reward is cash only. The voter's decision decides whether it is paid
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the forgive cash, and the punish points on the reward expression.
 - [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md): the minimum of 1 point in the punish expression, applied before the flagged division.
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
-- [Team Offence challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/DT_Challenges_SessionEvents_TeamOffence.json) (JSON)
+- Team Offence challenge table (JSON)

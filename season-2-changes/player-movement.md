@@ -141,8 +141,8 @@ The UI tracker assets (DA_Tracker_* and DA_MaterialTrackerData_Spotting) have 13
 
 | Asset | Type | Identification |
 |---|---|---|
-| [CRV_DamageIndicator_IntensityResponse](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_DamageIndicator_IntensityResponse.json) | CurveFloat | 1 exports |
-| [DT_PingTypes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/Pings/DT_PingTypes.json) | DataTable | 1 exports |
+| CRV_DamageIndicator_IntensityResponse | CurveFloat | 1 exports |
+| DT_PingTypes | DataTable | 1 exports |
 
 ## Removed in Season 2 (0 assets)
 

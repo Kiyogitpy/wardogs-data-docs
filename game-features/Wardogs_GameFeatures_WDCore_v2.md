@@ -6,7 +6,7 @@ description: "What This Folder Holds, Components, Pawn Data Scan, Animation Set"
 ---
 
 # Wardogs — GameFeatures: WDCore
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WDCore/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WDCore) — 3 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WDCore/` — 3 JSON files.*
 
 ---
 
@@ -16,9 +16,9 @@ The core player-character pack. It sets the player pawn data for the mover chara
 
 | File | Type | Role |
 |---|---|---|
-| [`Content/WDCore.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/WDCore.json) | GameFeatureData + component action | Adds the aim-assist manager, scans pawn data |
-| [`Content/Character/WDCore_PlayerData.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/WDCore_PlayerData.json) | `WDPawnData` | Player pawn: `B_WDCore_MoverPlayerCharacter_C` |
-| [`Content/Character/AnimSet_MoverCharacter.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/AnimSet_MoverCharacter.json) | `BHAnimationSet` | Animation set for the mover character |
+| `Content/WDCore.json` | GameFeatureData + component action | Adds the aim-assist manager, scans pawn data |
+| `Content/Character/WDCore_PlayerData.json` | `WDPawnData` | Player pawn: `B_WDCore_MoverPlayerCharacter_C` |
+| `Content/Character/AnimSet_MoverCharacter.json` | `BHAnimationSet` | Animation set for the mover character |
 
 ---
 
@@ -32,11 +32,11 @@ The core player-character pack. It sets the player pawn data for the mover chara
 
 ## 3. Pawn Data Scan
 
-The pack scans `BH.PawnData` (base `BHPawnData`) in `/WDCore/Character`. The only pawn data in the folder is [`WDCore_PlayerData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/WDCore_PlayerData.json).
+The pack scans `BH.PawnData` (base `BHPawnData`) in `/WDCore/Character`. The only pawn data in the folder is `WDCore_PlayerData`.
 
 ---
 
-## 4. Animation Set ([`AnimSet_MoverCharacter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/AnimSet_MoverCharacter.json))
+## 4. Animation Set (`AnimSet_MoverCharacter`)
 
 Six animation tags, each mapped to a base asset with first-person and third-person variants:
 
@@ -65,11 +65,11 @@ Eight further `GameFeatureData` descriptors are one-purpose plugins. Values are 
 
 | Descriptor | What it does |
 |---|---|
-| [`BHMotionWarping`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/BHMotionWarping/Content/BHMotionWarping.json) | Adds `BHMotionWarpingComponent` to `WDPlayerStateSession`, client and server |
-| [`CharacterCustomiser`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/CharacterCustomiser/Content/CharacterCustomiser.json) | One `AddWorldPartitionContent` action, data layer `EDL_CharacterCustomiser` |
-| [`CHRM_001`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Customization/Charms/CHRM_001/Content/CHRM_001.json) | The charm plugin: one `AddWorldPartitionContent` action, data layer `EDL_CHRM_001` |
-| [`DamageExporter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/DamageExporter/Content/DamageExporter.json) | No actions; scans `/DamageExporter/Data` for `BH.Item` (`BHInventoryItemDefinition`), cook rule Unknown. A developer export tool |
-| [`WDClientDebugFeature`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Developer/WDClientDebugFeature/Content/WDClientDebugFeature.json) | Adds `WDClientDebugComponent` to `WDPlayerController`, client and server. Developer tool |
-| [`DispatchMetricsGame`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/DispatchMetricsGame/Content/DispatchMetricsGame.json) | Adds `WDDispatchMetricsComponent` to `WDGameStateSession`, server only |
-| [`RegistryExporter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/RegistryExporter/Content/RegistryExporter.json) | Empty descriptor. A developer export tool |
-| [`ReportTracking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ReportTracking/Content/ReportTracking.json) | Adds `WDReportTrackingComponent` to `WDGameStateSession`, server only |
+| `BHMotionWarping` | Adds `BHMotionWarpingComponent` to `WDPlayerStateSession`, client and server |
+| `CharacterCustomiser` | One `AddWorldPartitionContent` action, data layer `EDL_CharacterCustomiser` |
+| `CHRM_001` | The charm plugin: one `AddWorldPartitionContent` action, data layer `EDL_CHRM_001` |
+| `DamageExporter` | No actions; scans `/DamageExporter/Data` for `BH.Item` (`BHInventoryItemDefinition`), cook rule Unknown. A developer export tool |
+| `WDClientDebugFeature` | Adds `WDClientDebugComponent` to `WDPlayerController`, client and server. Developer tool |
+| `DispatchMetricsGame` | Adds `WDDispatchMetricsComponent` to `WDGameStateSession`, server only |
+| `RegistryExporter` | Empty descriptor. A developer export tool |
+| `ReportTracking` | Adds `WDReportTrackingComponent` to `WDGameStateSession`, server only |

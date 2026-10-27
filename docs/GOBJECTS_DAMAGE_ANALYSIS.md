@@ -49,7 +49,7 @@ Confirmed native/Blueprint classes in the GObjects runtime dump:
 **Interpretation:** this is the caliber→multiplier lookup map on each
 row of the ArchetypeCaliberModifiers data table. The map is keyed by
 caliber `FGameplayTag` and values are `float` multipliers. (See
-[`data/.../DT_InfantryData_ArchetypeCaliberModifiers.json`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json)
+`data/.../DT_InfantryData_ArchetypeCaliberModifiers.json`
 rows.)
 
 The sibling struct `WDBoneDamageModifierData` names this same map
@@ -98,7 +98,7 @@ object system.
 | `0xB8` | `Alignment` | EnumProperty (`EWDDamageAlignment`) |
 | `0xBC` | `HitLocation` | StructProperty (`FGameplayTag`) |
 
-Matches [`sdk/raw/WDGame_structs.hpp`](../sdk/raw/WDGame_structs.hpp) line 4646.
+Matches `sdk/raw/WDGame_structs.hpp` line 4646.
 
 ### 3.2 `WDDamageSubsystem` (Class `0x180D`)
 
@@ -124,7 +124,7 @@ which systems bind to it is not established by the dump.
 | `0x40` | `RootDamageTag` | StructProperty |
 
 The `DamageCategoriesDataAsset` reference confirms
-[`data/.../DA_GlobalDamage_Categories.json`](../data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json)
+`data/.../DA_GlobalDamage_Categories.json`
 is the authoritative category list.
 
 ## 4. Blueprint modifier internals (local-variable names)
@@ -136,7 +136,7 @@ algorithm shape per modifier **without the binary decompilation step**.
 ### 4.1 `B_ArchetypeCaliberModifiers_C.GetModificationAmount` (Function `0x16CDD`)
 
 Property field: `DataTable` at `0x28` (ObjectProperty, holds reference to
-[`DT_InfantryData_ArchetypeCaliberModifiers`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json)).
+`DT_InfantryData_ArchetypeCaliberModifiers`).
 
 Function locals (parameter block):
 
@@ -272,6 +272,6 @@ these.
 - [`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md) — damage pipeline (being audited by triage AI)
 - [`docs/RESTORED_EXE_VALIDATION.md`](RESTORED_EXE_VALIDATION.md) — exe + idmap byte-level match
 - [`docs/evidence/damage.md`](evidence/damage.md) — the IDA trace brief, the failed first pass and the restored-exe trace, merged, with a status for every cited RVA
-- [`sdk/raw/`](../sdk/raw/) — Dumper-7 CppSDK (static view)
+- `sdk/raw/` — Dumper-7 CppSDK (static view)
 - [`mappings/`](../mappings/) — IDA + usmap mappings
 - GObjects dumps (local-only, 16MB + 25MB — not committed due to size): `wardogs_analysis/GObjects-Dump*.txt`

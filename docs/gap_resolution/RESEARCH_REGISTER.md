@@ -30,7 +30,7 @@ proposed resolution path, status.
 | 3 | `Wardogs_Characters_v2.md` | 5. Still Not Pulled / Limitations | **Kawaii runtime settings.** The constraint stiffness and damping are not in these assets. Only the bone pairs and compl | TBD | TBD | OPEN |
 | 4 | `Wardogs_Environment_v2.md` | 16. Still not pulled / limitations | **North America fluid states** ([`DA_Flux_NorthAmerica_000`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/da | TBD | TBD | OPEN |
 | 5 | `Wardogs_GameFeatures_AccountWatermark_v2.md` | 4. Still not pulled / limitations | **Runtime text.** The formatted text comes from the string table at runtime. | TBD | TBD | OPEN |
-| 6 | `Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md` | 5. How Values Combine | [`CriticalFadeCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Alterna | TBD | TBD | OPEN |
+| 6 | `Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md` | 5. How Values Combine | `CriticalFadeCurve` | TBD | TBD | OPEN |
 | 7 | `Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md` | 6. Still not pulled / limitations | **Offset units.** The offsets are in the export's native units (Unreal cm is assumed, not confirmed). | TBD | TBD | OPEN |
 | 8 | `Wardogs_GameFeatures_Challenges_KOTH_v2.md` | 6. Limitations | The meaning of `Challenges.Context.*` tags is inferred from their names. Their runtime values were not checked. | TBD | TBD | OPEN |
 | 9 | `Wardogs_GameFeatures_ControlZoneRegions_v2.md` | 8. Limitations | **Weight meaning is not confirmed.** The files say what the weights are (default and per-alternator) but not how the gam | TBD | TBD | OPEN |

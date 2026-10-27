@@ -348,18 +348,18 @@ Showing 40 of 50. Browser link: {{ '/season-2-changes/all-changes.html' | relati
 
 | Asset | Type | Path |
 |---|---|---|
-| [DT_EntityData_UI_GoldExchange](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/GoldExchange/Data/DT_EntityData_UI_GoldExchange.json) | DataTable | DT_EntityData_UI_GoldExchange.json |
-| [DT_SceneData_Match_ShootingRange](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | DataTable | DT_SceneData_Match_ShootingRange.json |
-| [DT_SceneData_Match_Wagers](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) | DataTable | DT_SceneData_Match_Wagers.json |
-| [DT_SquadIntents](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/ContextDrawer/Tabs/Party/Data/DT_SquadIntents.json) | DataTable | DT_SquadIntents.json |
-| [D_Decorator_Interactable_HospitalDoor_01a_Left](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Decorator_Interactable_HospitalDoor_01a_Left.json) | BHDestructionBuildingDecoratorDefinitionDataAsset | D_Decorator_Interactable_HospitalDoor_01a_Left.json |
-| [D_Decorator_Interactable_HospitalDoor_01a_Right](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Decorator_Interactable_HospitalDoor_01a_Right.json) | BHDestructionBuildingDecoratorDefinitionDataAsset | D_Decorator_Interactable_HospitalDoor_01a_Right.json |
-| [D_InteractableDoor_Buisness](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_InteractableDoor_Buisness.json) | BHDestructionBuildingDefinitionDataAsset | D_InteractableDoor_Buisness.json |
-| [D_Interactable_Commercial_Door_01a_L](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_Commercial_Door_01a_L.json) | BHDestructionBuildingDefinitionDataAsset | D_Interactable_Commercial_Door_01a_L.json |
-| [D_Interactable_Commercial_Door_01a_R](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_Commercial_Door_01a_R.json) | BHDestructionBuildingDefinitionDataAsset | D_Interactable_Commercial_Door_01a_R.json |
-| [D_Interactable_Door_Wood_01a](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_Door_Wood_01a.json) | BHDestructionBuildingDefinitionDataAsset | D_Interactable_Door_Wood_01a.json |
-| [D_Interactable_HospitalDoor_01a_Left](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_HospitalDoor_01a_Left.json) | BHDestructionBuildingDefinitionDataAsset | D_Interactable_HospitalDoor_01a_Left.json |
-| [D_Interactable_HospitalDoor_01a_Right](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/Doors/D_Interactable_HospitalDoor_01a_Right.json) | BHDestructionBuildingDefinitionDataAsset | D_Interactable_HospitalDoor_01a_Right.json |
+| DT_EntityData_UI_GoldExchange | DataTable | DT_EntityData_UI_GoldExchange.json |
+| DT_SceneData_Match_ShootingRange | DataTable | DT_SceneData_Match_ShootingRange.json |
+| DT_SceneData_Match_Wagers | DataTable | DT_SceneData_Match_Wagers.json |
+| DT_SquadIntents | DataTable | DT_SquadIntents.json |
+| D_Decorator_Interactable_HospitalDoor_01a_Left | BHDestructionBuildingDecoratorDefinitionDataAsset | D_Decorator_Interactable_HospitalDoor_01a_Left.json |
+| D_Decorator_Interactable_HospitalDoor_01a_Right | BHDestructionBuildingDecoratorDefinitionDataAsset | D_Decorator_Interactable_HospitalDoor_01a_Right.json |
+| D_InteractableDoor_Buisness | BHDestructionBuildingDefinitionDataAsset | D_InteractableDoor_Buisness.json |
+| D_Interactable_Commercial_Door_01a_L | BHDestructionBuildingDefinitionDataAsset | D_Interactable_Commercial_Door_01a_L.json |
+| D_Interactable_Commercial_Door_01a_R | BHDestructionBuildingDefinitionDataAsset | D_Interactable_Commercial_Door_01a_R.json |
+| D_Interactable_Door_Wood_01a | BHDestructionBuildingDefinitionDataAsset | D_Interactable_Door_Wood_01a.json |
+| D_Interactable_HospitalDoor_01a_Left | BHDestructionBuildingDefinitionDataAsset | D_Interactable_HospitalDoor_01a_Left.json |
+| D_Interactable_HospitalDoor_01a_Right | BHDestructionBuildingDefinitionDataAsset | D_Interactable_HospitalDoor_01a_Right.json |
 
 ## Removed in Season 2
 

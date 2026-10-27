@@ -84,7 +84,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): Build Supplies cost, health, hammer and placement conditions for the stationary weapons
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the gun's rate, fire mode, effective range and damage table
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md) and [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, reload, restock and damage table changes
-- [Talon weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun.json): reload, restock and ammunition
+- Talon weapon extension data: reload, restock and ammunition
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings for the Talon.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic

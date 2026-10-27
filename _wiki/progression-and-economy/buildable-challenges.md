@@ -81,6 +81,6 @@ The sources list no Season 2 changes for these rows.
 ## Sources
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
-- [Buildable challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json) (JSON)
-- [Buildable reward formulas](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) (JSON)
+- Buildable challenge table (JSON)
+- Buildable reward formulas (JSON)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

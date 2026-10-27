@@ -109,14 +109,14 @@ component: `lea rdx,[rbx+0x98]` at `0x6C67E4B`, call `0x6B18E30` at
 `+0xE0`/`+0xE8`/`+0x108`. It is not the damage-applying path.
 
 The data asset
-[`DA_Action_Melee_PrimaryUse`](../../data/Wardogs/Content/GameMechanics/Actions/Melee/DA_Action_Melee_PrimaryUse.json)
+`DA_Action_Melee_PrimaryUse`
 references `B_Action_Melee`; the secondary-use definition references the
 same class. The
-[`MeleeBash` action](../../data/Wardogs/Content/GameMechanics/Actions/Weapons/DA_Action_MeleeBash.json)
+`MeleeBash` action
 references `B_Action_MeleeBash`.
-[`ID_Fists`](../../data/Wardogs/Content/Items/Weapons/Fists/ID_Fists.json)
+`ID_Fists`
 stores 25 damage for each primary/secondary setting.
-[`ID_Crowbar`](../../data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/ID_Crowbar.json)
+`ID_Crowbar`
 stores 100 damage and explicitly selects
 `B_WDItemExtension_ItemMelee`. Its utility tag therefore belongs to the
 extension path, while `B_Action_Melee` uses the held item ID instead.

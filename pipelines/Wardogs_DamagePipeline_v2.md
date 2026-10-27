@@ -334,7 +334,7 @@ foot branches and all gather conditions remain outside that closure.
 ## 2. The data passed to custom operations
 
 `FWDModifyDamageData`, declared in
-[`sdk/raw/WDGame_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_structs.hpp#L4646). The
+`sdk/raw/WDGame_structs.hpp`. The
 GObjects dump's runtime property offsets match the SDK field for field.
 
 ```cpp
@@ -354,7 +354,7 @@ struct FWDModifyDamageData final {
 ```
 
 The operation interface,
-[`UWDCustomDamageModificationOperation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp#L36507):
+`UWDCustomDamageModificationOperation`:
 
 ```cpp
 float GetModificationAmount(const FWDModifyDamageData& ModifyDamageData,
@@ -377,7 +377,7 @@ entries in §3 have no effect on the result.
 
 ## 3. Rule tables
 
-**Data.** [`DT_GlobalDamage_InfantryData`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json),
+**Data.** `DT_GlobalDamage_InfantryData`,
 row `Meta.Damage.Infantry`, row struct `FWDDamageableEntityTableRow`.
 Its `DamageModificationEntries` array has **146 entries**:
 
@@ -429,11 +429,11 @@ Zero-based indexes. Blueprint classes live under
 
 | Table | Row struct | Contents |
 |---|---|---|
-| [`DT_GlobalDamage_VehicleData`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | `FWDDamageableEntityTableRow` | Vehicle rules; see [VehicleDamagePipeline](Wardogs_VehicleDamagePipeline_v1.md) |
-| [`DT_GlobalDamage_ArmorData`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) | `FWDDamageableEntityTableRow` | Four armor/helmet rule rows |
-| [`DA_GlobalDamage_Categories`](../data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json) | DataAsset | The 12 ordered category tags (§5) |
-| [`DA_GlobalDamage_HitLocations_Player`](../data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json) | DataAsset | Hit-location tags and bone mapping |
-| [`DT_AmmoModifiers`](../data/Wardogs/Content/GameMechanics/DamageSystem/DT_AmmoModifiers.json) | `FWDAmmoModifierTableRow` | Five ammo-tag → data-asset rows |
+| `DT_GlobalDamage_VehicleData` | `FWDDamageableEntityTableRow` | Vehicle rules; see [VehicleDamagePipeline](Wardogs_VehicleDamagePipeline_v1.md) |
+| `DT_GlobalDamage_ArmorData` | `FWDDamageableEntityTableRow` | Four armor/helmet rule rows |
+| `DA_GlobalDamage_Categories` | DataAsset | The 12 ordered category tags (§5) |
+| `DA_GlobalDamage_HitLocations_Player` | DataAsset | Hit-location tags and bone mapping |
+| `DT_AmmoModifiers` | `FWDAmmoModifierTableRow` | Five ammo-tag → data-asset rows |
 
 ## 4. Entry selection
 
@@ -602,7 +602,7 @@ the operations below say what they look for.
 ### 7.1 `B_BoneDamageModifiers_C` (entries 5, 7, 10)
 
 **Bytecode.** Table: class variable `DataTable`, default
-[`DT_InfantryData_BoneDamageModifiers`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json);
+`DT_InfantryData_BoneDamageModifiers`;
 row struct `WDBoneDamageModifierData`, map `HitLocations`.
 
 ```text
@@ -628,7 +628,7 @@ infantry locations, so this only affects hit locations outside those 12.
 ### 7.2 `B_ArchetypeCaliberModifiers_C` (entry 6)
 
 **Bytecode.** Table: class variable `DataTable`, default
-[`DT_InfantryData_ArchetypeCaliberModifiers`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json);
+`DT_InfantryData_ArchetypeCaliberModifiers`;
 row struct `WDArchetypeCaliberDamageModifierData`, map `CaliberModifiers`
 (the export's `_aaabapbnbhiopifeenjml`).
 
@@ -647,7 +647,7 @@ caliber in the source tag. There is no `Universal` row here.
 ### 7.3 `B_AmmoTypeEffectiveness_C` (entries 138–141)
 
 **Bytecode.** Table: a hard-coded reference to
-[`DT_InfantryData_AmmoTypeEffectivenessPen`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json),
+`DT_InfantryData_AmmoTypeEffectivenessPen`,
 not a class variable; row struct `WDAmmoTypeEffectivenessData`, fields
 `Modifier` and `ArmsClassOverrides` (the export's
 `_aaabcfjheicbfejiaihii`; `_aaabckamhakccdhbomlfj…` before 2026-10-18).
@@ -691,7 +691,7 @@ FMJ. Helmets use the same arithmetic with their own `R` (§7.5).
 ### 7.4 `B_VehicleSeatDamageReduction_C` (entry 145)
 
 **Bytecode.** Table: a function-local reference to
-[`DT_InfantryData_VehicleSeatDamageReduction`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json).
+`DT_InfantryData_VehicleSeatDamageReduction`.
 Rows hold `DamageSourceGroups[]`, each with `DamageSources` (arms tags)
 and `VehicleSeats` (seat tag → percent); the export names `DamageSources` and
 `VehicleSeats` and shows `DamageSourceGroups` as the hashed
@@ -716,7 +716,7 @@ example `-70` on a Humvee gives ×0.30 and `-25` on a Littlebird gives
 
 The only native custom operation. Vtable `0xB322140`; its slot 86 override
 is `0x6BB7E10` (the base slot returns 0). Declaration
-[`WDGame_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp#L36557).
+`WDGame_classes.hpp`.
 
 **Native.** Given the event and the running amount `C`:
 
@@ -753,7 +753,7 @@ durability does not change the reduction in the current data:
 | `ID_TankHelmet` | `Meta.Damage.Helmet.Tank` | 180 | 55 | Head, neck |
 | Ghillie armor/helmets | `….Ghillie` | — | 0 (no stages) | — |
 
-Source: [`Items/Armor/Content/Data/`](../data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/).
+Source: `Items/Armor/Content/Data/`.
 
 **Derived.** Entries 142–143 apply this to explosive-blunt hits on helmet
 and armor targets, and entry 144 to melee hits on armor targets. A
@@ -1025,7 +1025,7 @@ names the operation that consumes it.
 
 ### 8.1 BoneDamageModifiers (hit-location table)
 
-[`DT_InfantryData_BoneDamageModifiers`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json)
+`DT_InfantryData_BoneDamageModifiers`
 has 20 rows, each with 12 hit locations. Row `Universal`:
 
 | Hit location (`Meta.Damage.HitLocation.Infantry.*`) | Value |
@@ -1063,7 +1063,7 @@ Interactive: the [Infantry Hitbox Viewer](infantry-viewer.md) shows these hit lo
 
 ### 8.2 ArchetypeCaliberModifiers (weapon type × caliber)
 
-[`DT_InfantryData_ArchetypeCaliberModifiers`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json),
+`DT_InfantryData_ArchetypeCaliberModifiers`,
 rows keyed by weapon archetype, each a caliber → value map. Calibers
 below shorten `Meta.Damage.Bullet.*`.
 
@@ -1077,7 +1077,7 @@ in the export.
 
 ### 8.3 AmmoTypeEffectivenessPen (ammo type)
 
-[`DT_InfantryData_AmmoTypeEffectivenessPen`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json),
+`DT_InfantryData_AmmoTypeEffectivenessPen`,
 six rows:
 
 | Row (`Meta.Damage.AmmoModifier.*`) | `Modifier` |
@@ -1091,11 +1091,11 @@ six rows:
 
 Both ArmorPiercing rows also carry an arms-class map: `Meta.Damage.Arms.Small`
 0.7, `Medium` 0.6, `High` 0.5, `Special` 1.0. Related data assets live in
-[`AmmoModifiers/`](../data/Wardogs/Content/GameMechanics/DamageSystem/AmmoModifiers/).
+`AmmoModifiers/`.
 
 ### 8.4 VehicleSeatDamageReduction (occupant protection table)
 
-[`DT_InfantryData_VehicleSeatDamageReduction`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json):
+`DT_InfantryData_VehicleSeatDamageReduction`:
 11 vehicle-variant rows with values grouped by arms class, keyed by
 `State.Player.Vehicle.SeatDamageReduction`. There are no explicit
 driver/gunner/passenger rows. Variant names omit `Vehicle.Variant.`;
@@ -1130,7 +1130,7 @@ is a percentage change, so -25 gives ×0.75 and -90 gives ×0.10.
 | O-6 | End-to-end number for one concrete hit | **Closed for bullets** (§7.6–7.9): every ammo type, armored or not, by distance. The speed scale after drag is computed per weapon in §7.8 (round 41, `_tools/weapon_speed_scale.py`) but is not folded into the stored tables (the drag model itself is in [Projectile Flight](Wardogs_ProjectileFlight_v1.md)) |
 | O-7 | The health write | **Closed** (§10). Network authority stays open: role checks are visible in code, but server behaviour cannot be observed statically. Security-relevant findings go through [`SECURITY.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/SECURITY.md), not this document |
 | O-8 | Which branch of `0x6B92900` runs for a back-blast: `0x6F042A0` (traced hits) or `0x6F06EB0` (synthetic hits, [VehicleDamagePipeline §3.2](Wardogs_VehicleDamagePipeline_v1.md#32-from-a-hit-triangle-to-a-section)) | **Closed** (§1.1): the shooter's seat (`0x6E6EBA0`). On foot `0x6F042A0` traces the cone; seated in a vehicle `0x6F06EB0` hits that vehicle's occupants, and the vehicle takes the self-damage map directly |
-| O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** [`DA_122_mm_HAVOC_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` ([`DA_122mm_ProjectileData.json`](../data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json): Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
+| O-9 | `122mm.Havoc` blast radii look swapped | **Closed for the reviewed default mapping.** `DA_122_mm_HAVOC_ProjectileData.json` sets `EffectiveExplosiveRadius` 600 above `ExplosiveRadius` 300 (`BaseDamage` 300, `ExplosiveDamageFallOff` 0.6). Under §1.1 that would mean full damage to 600 and none beyond, and it is the only one of 11 rounds with the radii this way. The bounded package-name and executable searches found no firing consumer; the reviewed ROT_02/ROT_03 default ammo item instead references plain `Item.Caliber.122mm` (`DA_122mm_ProjectileData.json`: Base 100, E 200, R 600, FallOff 1.0). The [loaded-item trace](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-weapon-context.md) verifies that default mapping; other runtime actions are not ruled out by these negative searches. |
 
 ## 10. From damage to health (characters)
 
@@ -1240,10 +1240,10 @@ The restored image carries the UTF-16LE build marker
 
 ### SDK
 
-- [`WDGame_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp): operation base (L36507), `PlayerArmorDurability` (L36557), `UWDGlobalDamageSystem` (L36482), `UWDDamageSubsystem::ModifyDamage` (L44447)
-- [`WDGame_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_structs.hpp): `FWDModifyDamageData` (L4646), `FWDDamageModification` (L4870), `FWDDamageModificationEntry` (L4887), `EWDDamageModificationOperation` (L1683), `FWDDamageModificationDebugData` (L11152)
-- Blueprint declarations: [`B_BoneDamageModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_BoneDamageModifiers_classes.hpp), [`B_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_ArchetypeCaliberModifiers_classes.hpp), [`B_AmmoTypeEffectiveness`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_AmmoTypeEffectiveness_classes.hpp), [`B_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/B_VehicleSeatDamageReduction_classes.hpp)
-- [`WDGame_functions.cpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_functions.cpp#L48948): generated `ModifyDamage` `ProcessEvent` wrapper, not the implementation
+- `WDGame_classes.hpp`: operation base (L36507), `PlayerArmorDurability` (L36557), `UWDGlobalDamageSystem` (L36482), `UWDDamageSubsystem::ModifyDamage` (L44447)
+- `WDGame_structs.hpp`: `FWDModifyDamageData` (L4646), `FWDDamageModification` (L4870), `FWDDamageModificationEntry` (L4887), `EWDDamageModificationOperation` (L1683), `FWDDamageModificationDebugData` (L11152)
+- Blueprint declarations: `B_BoneDamageModifiers`, `B_ArchetypeCaliberModifiers`, `B_AmmoTypeEffectiveness`, `B_VehicleSeatDamageReduction`
+- `WDGame_functions.cpp`: generated `ModifyDamage` `ProcessEvent` wrapper, not the implementation
 
 ### Related reference docs
 

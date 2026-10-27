@@ -8,14 +8,14 @@ description: "Reward track card, track and panel data, Platform Mastery rewards"
 # Wardogs — TreeRewardTrack & Platform Mastery Reward Reference
 *Extracted from the game's data assets. Covers the battle-pass/progression-tree UI data assets and the cross-role Platform Mastery reward data asset.*
 
-> **Finding:** [`DA_TreeRewardTrack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.json), [`DA_TreeRewardTrackCard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.json), and [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) are **UI structure/template assets** — view-model class bindings, localized string-table text (labels like "{Cost} to Unlock", "Completed"), and icon tags. They do **not** contain the actual per-level cosmetic/item unlock schedule (which item unlocks at which level/cost). **Follow-up resolved:** the actual Season 1 cosmetic content list lives in [`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json) and [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json) (`Plugins/GameFeatures/{Skins,Emotes}/Season01_*Data/Content/Data/`) — see `Wardogs_Season01_CosmeticUnlocks_v1.md`. The level/XP *gating* for the track itself (`DT_SeasonDefinitions.SeasonDefinitions`) is an **empty array** in this build — the season-number→date/XP-bracket schedule has not been authored yet in this closed-beta build; only `CurrentSeasonNumber: 1` is set.
+> **Finding:** `DA_TreeRewardTrack`, `DA_TreeRewardTrackCard`, and `DA_TreeRewardTrackPanel` are **UI structure/template assets** — view-model class bindings, localized string-table text (labels like "{Cost} to Unlock", "Completed"), and icon tags. They do **not** contain the actual per-level cosmetic/item unlock schedule (which item unlocks at which level/cost). **Follow-up resolved:** the actual Season 1 cosmetic content list lives in `DT_Cosmetics_Season01_Skins` and `DT_Cosmetics_Season01_Emotes` (`Plugins/GameFeatures/{Skins,Emotes}/Season01_*Data/Content/Data/`) — see `Wardogs_Season01_CosmeticUnlocks_v1.md`. The level/XP *gating* for the track itself (`DT_SeasonDefinitions.SeasonDefinitions`) is an **empty array** in this build — the season-number→date/XP-bracket schedule has not been authored yet in this closed-beta build; only `CurrentSeasonNumber: 1` is set.
 
 ---
 
 ## Season 02 update (2026-10-15)
 
-- [`DA_TreeRewardTrack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.json) `RewardTextFormat`: key `4CBAAE17…` → `TreeRewardTrack.RewardTextFormat`; table `STRINGS_Progression` is now set as its `TableId`.
-- [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) `XPTextFormat` and `LockedLevelXPTextFormat`: keys `206BF79D…` → `TreeRewardTrackPanel.XPTextFormat` and `7D5C8577…` → `TreeRewardTrackPanel.LockedLevelXPTextFormat`; both now reference `STRINGS_Progression`.
+- `DA_TreeRewardTrack` `RewardTextFormat`: key `4CBAAE17…` → `TreeRewardTrack.RewardTextFormat`; table `STRINGS_Progression` is now set as its `TableId`.
+- `DA_TreeRewardTrackPanel` `XPTextFormat` and `LockedLevelXPTextFormat`: keys `206BF79D…` → `TreeRewardTrackPanel.XPTextFormat` and `7D5C8577…` → `TreeRewardTrackPanel.LockedLevelXPTextFormat`; both now reference `STRINGS_Progression`.
 - Source strings are unchanged.
 
 Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
@@ -25,13 +25,13 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 ## Round 36 findings (platform mastery and the reward track)
 
 - **What the reward track shows.** The Progression scene's tree reward track ("// Level {Level} Unlockable Items", "{Cost} to Unlock", "{Experience}XP Required") draws the role unlock tree `DT_MetaTree_Roles`: each node is an item or vehicle with a role level and a cash cost. `DT_RoleMasteryDefinitions` lists 101 levels (0 to 100) for each of the six roles with an empty `Rewards` array on every level, so there is no separate reward per level. The rows are in [`economy.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (`roleUnlocks`).
-- **Platform mastery membership.** [`DA_UI_PlatformMastery_SceneData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_SceneData.json) lists the platforms of each mastery type: `UI.Meta.Mastery.Weapon` (AssaultRifle 5, LMG 2, MarksmanRifle 3, Shotgun 2, SMG 3, Sniper 4, Pistol 2, Launcher 4 = 25 weapons) and `UI.Meta.Mastery.Vehicle` (LandVehicle 5, AirVehicle 3 = 8 vehicles). Platform mastery therefore has a vehicle half as well as a weapon half.
+- **Platform mastery membership.** `DA_UI_PlatformMastery_SceneData` lists the platforms of each mastery type: `UI.Meta.Mastery.Weapon` (AssaultRifle 5, LMG 2, MarksmanRifle 3, Shotgun 2, SMG 3, Sniper 4, Pistol 2, Launcher 4 = 25 weapons) and `UI.Meta.Mastery.Vehicle` (LandVehicle 5, AirVehicle 3 = 8 vehicles). Platform mastery therefore has a vehicle half as well as a weapon half.
 - **No XP, level or reward data.** `Attribute.Meta.XP.Platform.*` tags exist for 26 weapons and 8 vehicles and `GE_Meta_ResourceChange` has a SetByCaller modifier for each, but `PlatformXPTag` is `None` on all 628 entity-data rows, no reward row or table names a platform XP tag, and the content types the backend serves (`EPragma_CustomGameData_DataArray_TypeType`) have no platform mastery type. The mastery view models are UI shells (`WDUIPlatformMastery*`). Status: absent from the client data; see [round 36 economy](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md#1-weapon-platform-mastery).
 - **Season definitions.** `DT_SeasonDefinitions` is empty here, but the backend has a season type (`Pragma_Content_SeasonDefinition`: number, name, optional expiry timestamp) delivered by `GetVersionedGameData`, so the live schedule is a server value.
 
 ---
 
-## 1. [`DA_TreeRewardTrackCard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.json) (`WDUIUnlockTreeData`)
+## 1. `DA_TreeRewardTrackCard` (`WDUIUnlockTreeData`)
 
 ### 1a. Package
 - **Package:** `Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.uasset`
@@ -66,7 +66,7 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 
 ---
 
-## 2. [`DA_TreeRewardTrack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.json) (`WDUITreeRewardTrackData`)
+## 2. `DA_TreeRewardTrack` (`WDUITreeRewardTrackData`)
 
 ### 2a. Package
 - **Package:** `Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.uasset`
@@ -130,7 +130,7 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 
 ---
 
-## 3. [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) (`WDUITreeRewardTrackPanelData`)
+## 3. `DA_TreeRewardTrackPanel` (`WDUITreeRewardTrackPanelData`)
 
 ### 3a. Package
 - **Package:** `Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.uasset`
@@ -209,7 +209,7 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 
 ---
 
-## 4. [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json) (`WDUIPlatformMasteryRewardData`)
+## 4. `DA_UI_PlatformMastery_RewardData` (`WDUIPlatformMasteryRewardData`)
 
 ### 4a. Package
 - **Package:** `Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.uasset`
@@ -255,7 +255,7 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 
 ## 5. How the values combine
 
-- **Shared card:** [`DA_TreeRewardTrack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrack/Data/DA_TreeRewardTrack.json) and [`DA_TreeRewardTrackPanel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel.json) both point at [`DA_TreeRewardTrackCard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.json) (as `UnlockCardViewModelParams` in the panel). The card's cost text (`{Cost} to Unlock`), icon tag and "Completed" state are the shared template for the cards the track shows. Which rows use it is not stated in these assets.
+- **Shared card:** `DA_TreeRewardTrack` and `DA_TreeRewardTrackPanel` both point at `DA_TreeRewardTrackCard` (as `UnlockCardViewModelParams` in the panel). The card's cost text (`{Cost} to Unlock`), icon tag and "Completed" state are the shared template for the cards the track shows. Which rows use it is not stated in these assets.
 - **Two "unlocked" labels:** the panel's `ActiveText` (key `Text.Active`) reads "Unlocked", and its `UnlockedText` (key `Text.Unlocked`) reads "Completed". The card uses the same `Text.Unlocked` key for its "Completed" text.
 - **Progress strings:** the panel formats XP as `{CurrentLevelXP}/{MaxLevelXP}XP` for the current level and `{RequiredLevelXP}XP` for locked levels. The track supplies "Level {Level} Required", "{Experience}XP Required" and "No Rewards Available" as alternative text. Which of these shows in which state is not stated in the assets.
 - **Season gating:** the level/XP thresholds that gate the track are not in these assets. See the Finding above.
@@ -266,7 +266,7 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 ## 6. Still not pulled / limitations
 
 - **Per-level cosmetic schedule:** not in these assets. The Season 1 cosmetic content list is in `Wardogs_Season01_CosmeticUnlocks_v1.md`; its "Honest gap" note explains that `DT_SeasonDefinitions.SeasonDefinitions` is empty in this build, so which battle-pass level unlocks which item has not been authored yet.
-- **Mastery rewards:** no per-role reward entries appear in [`DA_UI_PlatformMastery_RewardData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_RewardData.json) as extracted here.
+- **Mastery rewards:** no per-role reward entries appear in `DA_UI_PlatformMastery_RewardData` as extracted here.
 - **Hashed keys:** several keys (for example `10B5F07C…`) are not localization keys: none of the 121 `STRINGS_*` tables pulled contain them. They look like Blueprint property names. Their meaning is not resolved in this doc.
 - **Localized text:** the asset listing has no other-locale copies of the string tables, so only the source strings exist in this data.
 

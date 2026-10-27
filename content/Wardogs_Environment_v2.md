@@ -6,9 +6,9 @@ description: "Inventory and folder map, How the vegetation and PCG data combines
 ---
 
 # Wardogs — Environment & PCG Reference
-*Extracted from cooked game data ([`Wardogs/Content/Environment/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment), 419 JSON exports, UE 5.7). Values are the raw asset values. Positions and distances are Unreal units (cm) unless noted. Parsed with a Python script that strips the export header, normalises GUID-suffixed property names, and groups by folder and type.*
+*Extracted from cooked game data (`Wardogs/Content/Environment/`, 419 JSON exports, UE 5.7). Values are the raw asset values. Positions and distances are Unreal units (cm) unless noted. Parsed with a Python script that strips the export header, normalises GUID-suffixed property names, and groups by folder and type.*
 
-> **Scope note:** this covers only [`Content/Environment`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment). Every `.json` in the folder was parsed (0 errors). Items marked *inferred* are guesses from names and value ranges. The export does not say what they mean.
+> **Scope note:** this covers only `Content/Environment`. Every `.json` in the folder was parsed (0 errors). Items marked *inferred* are guesses from names and value ranges. The export does not say what they mean.
 
 ---
 
@@ -16,12 +16,12 @@ description: "Inventory and folder map, How the vegetation and PCG data combines
 
 - **Inventory:** 363 → 419 JSON exports. 46 MicroBiome, layer, cluster, scatter, spline and prop assets are new (section 15a). Headings count them, but the catalogue rows above list only the earlier assets.
 - **New families:** `DA_GroundDetail_C` (7), `DA_GroundProxies_C` (1), `PDA_RVTD_C` (1) and `WDRainAppearance` (1), listed in section 15b.
-- **[`DA_LightSettings_AfternoonOvercast`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/DA_LightSettings_AfternoonOvercast.json) and `_AfternoonOvercastFog`:** sun intensity 20000 → 100 (overkill too). AfternoonOvercast sun temperature 7600 → 7000.
-- **[`DA_LightSettings_Morning`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/DA_LightSettings_Morning.json):** sun intensity 9000 → 6000, fog density 0.004 → 0.002, lower hemisphere 500 → 300 (overkill 250 → 700), auto-exposure brightness 8.5 / 9.5 → 9 / 9.4.
-- **[`DA_LightSettings_MorningFoggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/DA_LightSettings_MorningFoggy.json):** sun intensity 35000 → 6000, fog density 0.01 → 0.06 (overkill same), lower hemisphere 500 → 300 (overkill 100 → 400), auto-exposure brightness 9 / 10 → 9.2 / 9.5, second fog density no longer set.
-- **[`DA_LightSettings_AfternoonOvercast`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/DA_LightSettings_AfternoonOvercast.json) and `_AfternoonOvercastFog`:** sky light 0.7 no longer set (shown as `-`). AfternoonOvercast base colour contrast 1.2 no longer set.
-- **[`DA_FencePost_Wood_Tall_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_FencePost_Wood_Tall_01.json):** position Y min/max -2 → 0.
-- **[`DA_Fence_TallWoodWall_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_TallWoodWall_02.json):** distance 202 no longer set (shown as `-`). **[`DA_Pillar_Church_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Pillar_Church_01.json):** collision no longer set (shown as `-`).
+- **`DA_LightSettings_AfternoonOvercast` and `_AfternoonOvercastFog`:** sun intensity 20000 → 100 (overkill too). AfternoonOvercast sun temperature 7600 → 7000.
+- **`DA_LightSettings_Morning`:** sun intensity 9000 → 6000, fog density 0.004 → 0.002, lower hemisphere 500 → 300 (overkill 250 → 700), auto-exposure brightness 8.5 / 9.5 → 9 / 9.4.
+- **`DA_LightSettings_MorningFoggy`:** sun intensity 35000 → 6000, fog density 0.01 → 0.06 (overkill same), lower hemisphere 500 → 300 (overkill 100 → 400), auto-exposure brightness 9 / 10 → 9.2 / 9.5, second fog density no longer set.
+- **`DA_LightSettings_AfternoonOvercast` and `_AfternoonOvercastFog`:** sky light 0.7 no longer set (shown as `-`). AfternoonOvercast base colour contrast 1.2 no longer set.
+- **`DA_FencePost_Wood_Tall_01`:** position Y min/max -2 → 0.
+- **`DA_Fence_TallWoodWall_02`:** distance 202 no longer set (shown as `-`). **`DA_Pillar_Church_01`:** collision no longer set (shown as `-`).
 
 Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
 
@@ -37,23 +37,23 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 | `PDA_MBLayer_C` | 43 | `PCG/MicroBiomes/*/Layers`, `Foliage/Biomes/*/Layers` |
 | `WDWaterHeightGridAsset` | 40 | `Water/FluidFlux/{Europe, Kavkazi}` |
 | `PDA_SplinePCG_C` | 57 | `PCG/Kavkazi/DataAssets/Splines/*` |
-| `PDA_VehicleProp_C` | 34 | [`Blueprints/VehiclePropTooling`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling) |
-| `PDA_ClusterPCG_C` | 34 | [`PCG/Kavkazi/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters), `Foliage/*/DataAssets/Clusters` |
-| `PDA_MBScatter_C` | 13 | `Foliage/*`, [`PCG/MicroBiomes/Scatter`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Scatter) |
-| `PDA_LightSettings_C` | 9 | [`Lighting/DataAssets/Presets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets) |
-| `BHDestructionBuildingDefinitionDataAsset` | 7 | [`Architecture/Residential/Garages/BPs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Architecture/Residential/Garages/BPs) |
-| `BHDestructionBuildingDecoratorDefinitionDataAsset` | 7 | [`Architecture/Residential/Garages/BPs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Architecture/Residential/Garages/BPs) |
-| `CurveLinearColor` | 2 | [`Landscape/Materials/Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi) |
-| `DataTable` | 2 | [`Blueprints/VehiclePropTooling`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling), [`PCG/Runtime`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Runtime) |
-| `CurveLinearColorAtlas` | 1 | [`Landscape/Materials/Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi) |
-| `PDA_FluxSurfacePreset_C` | 1 | [`Water/FluidFlux/Surface`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Water/FluidFlux/Surface) |
-| `DA_GroundDetail_C` | 7 | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| `DA_GroundProxies_C` | 1 | [`PCG/GroundDetail`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail) |
-| `PDA_RVTD_C` | 1 | [`PCG/RVTD/DataAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/RVTD/DataAssets) |
-| `WDRainAppearance` | 1 | [`Lighting/DataAssets/Presets/Weather`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/Weather) |
+| `PDA_VehicleProp_C` | 34 | `Blueprints/VehiclePropTooling` |
+| `PDA_ClusterPCG_C` | 34 | `PCG/Kavkazi/DataAssets/Clusters`, `Foliage/*/DataAssets/Clusters` |
+| `PDA_MBScatter_C` | 13 | `Foliage/*`, `PCG/MicroBiomes/Scatter` |
+| `PDA_LightSettings_C` | 9 | `Lighting/DataAssets/Presets` |
+| `BHDestructionBuildingDefinitionDataAsset` | 7 | `Architecture/Residential/Garages/BPs` |
+| `BHDestructionBuildingDecoratorDefinitionDataAsset` | 7 | `Architecture/Residential/Garages/BPs` |
+| `CurveLinearColor` | 2 | `Landscape/Materials/Kavkazi` |
+| `DataTable` | 2 | `Blueprints/VehiclePropTooling`, `PCG/Runtime` |
+| `CurveLinearColorAtlas` | 1 | `Landscape/Materials/Kavkazi` |
+| `PDA_FluxSurfacePreset_C` | 1 | `Water/FluidFlux/Surface` |
+| `DA_GroundDetail_C` | 7 | `PCG/GroundDetail/GroundDetailData` |
+| `DA_GroundProxies_C` | 1 | `PCG/GroundDetail` |
+| `PDA_RVTD_C` | 1 | `PCG/RVTD/DataAssets` |
+| `WDRainAppearance` | 1 | `Lighting/DataAssets/Presets/Weather` |
 | **Total** | **419** | |
 
-Top-level folder file counts: [`Water/FluidFlux`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Water/FluidFlux) 95, [`PCG/MicroBiomes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/MicroBiomes) 87, [`PCG/Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi) 91, [`Blueprints/VehiclePropTooling`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling) 35, `Foliage` 71, `Architecture` 14, `Lighting` 10, `Geology` 3, `Landscape` 3, `PCG/GroundDetail` 8, `PCG/RVTD` 1, [`PCG/Runtime`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Runtime) 1.
+Top-level folder file counts: `Water/FluidFlux` 95, `PCG/MicroBiomes` 87, `PCG/Kavkazi` 91, `Blueprints/VehiclePropTooling` 35, `Foliage` 71, `Architecture` 14, `Lighting` 10, `Geology` 3, `Landscape` 3, `PCG/GroundDetail` 8, `PCG/RVTD` 1, `PCG/Runtime` 1.
 
 Size note: `WHG_*` height grids are the largest files (up to about 3.7 MB each, 40 files). Everything else is under 15 KB.
 
@@ -134,7 +134,7 @@ Each entry in `Layers` is a struct with the fields below. Counts are over all 14
 
 | Field | What the data shows | Notes |
 |---|---|---|
-| `Enabled` | 136 on, 9 off | Disabled entries: [`MB_Forest_Interior_Sparse`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Forest/MicroBiomes/MB_Forest_Interior_Sparse.json) (MBL_Forest_Undergrowth), [`MB_Woodland_TreeLine`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Woodland/MicroBiomes/MB_Woodland_TreeLine.json) (MBL_Woodland_Undergrowth), [`MB_Deciduous_Interior_DensePlayspace`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Deciduous/MB_Deciduous_Interior_DensePlayspace.json) (MBL_Woodland_Trees_Ferns_NoCol), [`MB_Deciduous_Spline_Dense`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Deciduous/MB_Deciduous_Spline_Dense.json) (MBL_Rocks_Medium), [`MB_Pine_Interior_Dense_Playspace`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/MB_Pine_Interior_Dense_Playspace.json) and [`MB_Pine_Interior_Sparse_Playspace`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/MB_Pine_Interior_Sparse_Playspace.json) (MBL_Pine_06m), [`MB_Spline_BushesNoCol`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Plants/MB_Spline_BushesNoCol.json) (3 entries: MBL_Deciduous_08mTrees, MBL_Deciduous_Saplings, MBL_Rocks_Medium). |
+| `Enabled` | 136 on, 9 off | Disabled entries: `MB_Forest_Interior_Sparse` (MBL_Forest_Undergrowth), `MB_Woodland_TreeLine` (MBL_Woodland_Undergrowth), `MB_Deciduous_Interior_DensePlayspace` (MBL_Woodland_Trees_Ferns_NoCol), `MB_Deciduous_Spline_Dense` (MBL_Rocks_Medium), `MB_Pine_Interior_Dense_Playspace` and `MB_Pine_Interior_Sparse_Playspace` (MBL_Pine_06m), `MB_Spline_BushesNoCol` (3 entries: MBL_Deciduous_08mTrees, MBL_Deciduous_Saplings, MBL_Rocks_Medium). |
 | `AreaOfInfluence` | Most common: 100 (20 entries), 300 (17), 400 (12), 200 (12), 1000 (11), 600 (8), 150 (8), 500 (8) | Unit assumed cm (Unreal default). Not confirmed. |
 | `Density` | Most common: 1.0 (44), 0.5 (28), 0.6 (14), 0.3 (11), 0.01 (10), 0.8 (9), 0.04 (7), 0.4 (5) | Relative placement density for that layer within the biome. Inferred from name and range. |
 | `AreaDensityThreshold` | 0.0 (105), 0.1 (30), -1.0 (6), 0.2 (3), -0.3 (1) | Gate on the biome's area-density value. Inferred. |
@@ -145,7 +145,7 @@ Each entry in `Layers` is a struct with the fields below. Counts are over all 14
 | `IgnoreTransformOffsets` | true on 1 entry | |
 | `RVTDataAsset` | never set (0 of 145) | Runtime virtual texture hook is unused in this dump. |
 
-Worked example, [`MB_Pine_Treeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/MB_Pine_Treeline.json) (4 entries, all enabled): [`MBL_Pine_06mClose`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/Layers/MBL_Pine_06mClose.json) (AreaOfInfluence 1800, Density 0.5, threshold -1.0, invert on), [`MBL_Pine_SaplingsClose`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/Layers/MBL_Pine_SaplingsClose.json) (100, 0.5, threshold 0.0, invert on), [`MBL_BushesCloseEdge`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Plants/Layers/MBL_BushesCloseEdge.json) (100, 0.3, threshold 0.0, invert off), [`MBL_BushesCloseEdge_NoCol`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Plants/Layers/MBL_BushesCloseEdge_NoCol.json) (100, 0.6, threshold 0.0, invert off). The first entry has a very large influence radius and the other three are small.
+Worked example, `MB_Pine_Treeline` (4 entries, all enabled): `MBL_Pine_06mClose` (AreaOfInfluence 1800, Density 0.5, threshold -1.0, invert on), `MBL_Pine_SaplingsClose` (100, 0.5, threshold 0.0, invert on), `MBL_BushesCloseEdge` (100, 0.3, threshold 0.0, invert off), `MBL_BushesCloseEdge_NoCol` (100, 0.6, threshold 0.0, invert off). The first entry has a very large influence radius and the other three are small.
 
 ---
 
@@ -290,7 +290,7 @@ Low-density ground-detail passes used by clusters through `Scatterers`. All 12 `
 
 ## 7. Standalone cluster PCG (`PDA_ClusterPCG_C`, 34 assets)
 
-Self-contained scatter definitions that bypass the MicroBiome chain. Most sit in [`PCG/Kavkazi/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters) (fence posts, crop-field weeds, hedges). `StaticMeshes` is a weighted list; each entry can be `isModular` and carries optional `Twigs`, `Leaves`, and `Ivy` sub-meshes. `ScatterGridSize` and `ScatterGridCellsSize` are the point-grid dimensions (cm). `MaxNumOfScatterPts` caps points per cell. `Seed` is a fixed random seed. 18 of 22 assets share the seed `1301486335`, which looks like a copy-pasted default (inferred, not verified). Their random placement will therefore be correlated.
+Self-contained scatter definitions that bypass the MicroBiome chain. Most sit in `PCG/Kavkazi/DataAssets/Clusters` (fence posts, crop-field weeds, hedges). `StaticMeshes` is a weighted list; each entry can be `isModular` and carries optional `Twigs`, `Leaves`, and `Ivy` sub-meshes. `ScatterGridSize` and `ScatterGridCellsSize` are the point-grid dimensions (cm). `MaxNumOfScatterPts` caps points per cell. `Seed` is a fixed random seed. 18 of 22 assets share the seed `1301486335`, which looks like a copy-pasted default (inferred, not verified). Their random placement will therefore be correlated.
 
 ### 7a. Catalogue
 
@@ -371,7 +371,7 @@ Spline-driven placement for fences, walls, curbs, guardrails, tree lines, and em
 
 ---
 
-## 9. Grass settings ([`DT_GrassSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Runtime/DT_GrassSettings.json))
+## 9. Grass settings (`DT_GrassSettings`)
 
 A DataTable with row struct `GrassLayerInfo`. Five rows, one per grass layer. Each row has a `ScatterMaskChannel` (which RGBA channel of a mask texture it reads; the texture is not named in the export), a threshold and softness, the grass mesh, density, random and spatial noise, and scale ranges. All five rows share `LayerSeed = 42`.
 
@@ -394,11 +394,11 @@ A DataTable with row struct `GrassLayerInfo`. Five rows, one per grass layer. Ea
 
 ---
 
-## 10. Vehicle props (`PDA_VehicleProp_C`, 34 assets, plus [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json))
+## 10. Vehicle props (`PDA_VehicleProp_C`, 34 assets, plus `DT_VehiclePropList`)
 
-Wrecks and parked vehicles built from modular meshes. `BaseMesh` is the chassis. `BaseGlassMesh`, `WheelMeshPrimary`, and `LoadMesh`/`CabinMesh`/`RoofMesh` add parts. `BaseColor`, `CabinColor`, `LoadColor`, and `WheelColor` are colour palettes (hex). `Wheel Uniform Scale` is set on 25 assets (0.67 to 1.025). The [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) DataTable maps 29 row names to assets through an enum value.
+Wrecks and parked vehicles built from modular meshes. `BaseMesh` is the chassis. `BaseGlassMesh`, `WheelMeshPrimary`, and `LoadMesh`/`CabinMesh`/`RoofMesh` add parts. `BaseColor`, `CabinColor`, `LoadColor`, and `WheelColor` are colour palettes (hex). `Wheel Uniform Scale` is set on 25 assets (0.67 to 1.025). The `DT_VehiclePropList` DataTable maps 29 row names to assets through an enum value.
 
-Coverage check: 4 vehicle assets are **not** in [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json): [`DA_VehicleProp_Destroyed_Car_02a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DA_VehicleProp_Destroyed_Car_02a.json), [`DA_VehicleProp_Destroyed_CivilianCar02_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DA_VehicleProp_Destroyed_CivilianCar02_01a.json), [`DA_VehicleProp_Ozeti_Van`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DA_VehicleProp_Ozeti_Van.json), and [`DA_VehicleProp_Truck_GasTank`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DA_VehicleProp_Truck_GasTank.json). All 29 list references resolve to a file that exists. Enum values are cooked as `NewEnumeratorN`, so the list shows the index as exported.
+Coverage check: 4 vehicle assets are **not** in `DT_VehiclePropList`: `DA_VehicleProp_Destroyed_Car_02a`, `DA_VehicleProp_Destroyed_CivilianCar02_01a`, `DA_VehicleProp_Ozeti_Van`, and `DA_VehicleProp_Truck_GasTank`. All 29 list references resolve to a file that exists. Enum values are cooked as `NewEnumeratorN`, so the list shows the index as exported.
 
 ### 10a. Catalogue
 
@@ -521,7 +521,7 @@ Overkill variants (sun / sky light / fog density):
 
 ## 12. Landscape colour curves
 
-Two `CurveLinearColor` assets and one atlas that packs them. [`CA_Landscape`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/CA_Landscape.json) (`CurveLinearColorAtlas`) lists [`VC_Stratus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_Stratus.json) and [`VC_GrassTint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_GrassTint.json) and has `ImportedSize` 256 x 2. Each curve stores one float curve per channel. [`VC_Stratus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_Stratus.json) uses R, G, and B (11 keys each), with A empty. [`VC_GrassTint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_GrassTint.json) uses all four channels (3 keys each). The export does not say which landscape material samples them; that is inferred from the names.
+Two `CurveLinearColor` assets and one atlas that packs them. `CA_Landscape` (`CurveLinearColorAtlas`) lists `VC_Stratus` and `VC_GrassTint` and has `ImportedSize` 256 x 2. Each curve stores one float curve per channel. `VC_Stratus` uses R, G, and B (11 keys each), with A empty. `VC_GrassTint` uses all four channels (3 keys each). The export does not say which landscape material samples them; that is inferred from the names.
 
 ### 12a. Curves
 
@@ -544,7 +544,7 @@ Water is driven by one simulation state per area (`PDA_FluxSimulationState_C`). 
 
 `Iteration` is a large integer (23,813 to 1,261,732) with no label in the export. `CaptureOffset` is a Z offset: Europe and Kavkazi states sit around -85,000 to -105,000 cm, and North America states are positive (+1,958 to +15,583 cm).
 
-`WDWaterHeightGridAsset` holds the height grid. `GridWidth` is 512 (most), 256, or 128, and `WorldSize` is in cm. Each grid links to one state through an unnamed field. The large arrays are binary and are not decoded here. [`CP_River_Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Water/FluidFlux/Surface/CP_River_Kavkazi.json) is the only surface preset (clarity 0.66; scattering, absorption, and overlay colours).
+`WDWaterHeightGridAsset` holds the height grid. `GridWidth` is 512 (most), 256, or 128, and `WorldSize` is in cm. Each grid links to one state through an unnamed field. The large arrays are binary and are not decoded here. `CP_River_Kavkazi` is the only surface preset (clarity 0.66; scattering, absorption, and overlay colours).
 
 Notes: 54 states exist, but only 40 have a height grid. The 14 `DA_Flux_NorthAmerica_*` states have no grid in this dump, and their velocity-encode field is missing too. They look incomplete or stored elsewhere.
 
@@ -698,52 +698,52 @@ Files added in the 2026-10-15 update. The catalogue tables in sections 3 to 11 s
 
 | Asset | Type | Folder |
 |---|---|---|
-| [`DA_VehicleProp_Ambulance_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DA_VehicleProp_Ambulance_01a.json) | `PDA_VehicleProp_C` | [`Blueprints/VehiclePropTooling`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling) |
-| [`MBL_Farm_FIeld_Grass_Tall_Transition`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Farm/Layers/MBL_Farm_FIeld_Grass_Tall_Transition.json) | `PDA_MBLayer_C` | [`Foliage/Biomes/Farm/Layers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Biomes/Farm/Layers) |
-| [`MBL_Farm_Field_Brambles_Transition`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Farm/Layers/MBL_Farm_Field_Brambles_Transition.json) | `PDA_MBLayer_C` | [`Foliage/Biomes/Farm/Layers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Biomes/Farm/Layers) |
-| [`MB_Farm_Field_Edge`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Farm/MicroBiomes/MB_Farm_Field_Edge.json) | `PDA_MicroBiome_C` | [`Foliage/Biomes/Farm/MicroBiomes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Biomes/Farm/MicroBiomes) |
-| [`MB_Woodland_TreeLine_Bushes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Woodland/MicroBiomes/MB_Woodland_TreeLine_Bushes.json) | `PDA_MicroBiome_C` | [`Foliage/Biomes/Woodland/MicroBiomes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Biomes/Woodland/MicroBiomes) |
-| [`MB_Woodland_TreeLine_Saplings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Biomes/Woodland/MicroBiomes/MB_Woodland_TreeLine_Saplings.json) | `PDA_MicroBiome_C` | [`Foliage/Biomes/Woodland/MicroBiomes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Biomes/Woodland/MicroBiomes) |
-| [`MBC_Bush_Bramble_Patch_3m_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Bushes/Bramble/DataAssets/Clusters/MBC_Bush_Bramble_Patch_3m_01a.json) | `PDA_MBCluster_C` | [`Foliage/Bushes/Bramble/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Bushes/Bramble/DataAssets/Clusters) |
-| [`MBS_Bush_Bramble_Strands`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Bushes/Bramble/DataAssets/Scatters/MBS_Bush_Bramble_Strands.json) | `PDA_MBScatter_C` | [`Foliage/Bushes/Bramble/DataAssets/Scatters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Bushes/Bramble/DataAssets/Scatters) |
-| [`MBC_Grass_Field_Tall_Transition`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Grass/Field/DataAssets/Clusters/MBC_Grass_Field_Tall_Transition.json) | `PDA_MBCluster_C` | [`Foliage/Grass/Field/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Grass/Field/DataAssets/Clusters) |
-| [`MBC_Tree_Ash_Sapling_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Trees/Ash/DataAssets/Clusters/MBC_Tree_Ash_Sapling_01a.json) | `PDA_MBCluster_C` | [`Foliage/Trees/Ash/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Trees/Ash/DataAssets/Clusters) |
-| [`MBC_Tree_Oak_Field_02a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Trees/Oak/DataAssets/Clusters/MBC_Tree_Oak_Field_02a.json) | `PDA_MBCluster_C` | [`Foliage/Trees/Oak/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Trees/Oak/DataAssets/Clusters) |
-| [`MBC_Pine_04m`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Foliage/Trees/Pine/DataAssets/Clusters/MBC_Pine_04m.json) | `PDA_MBCluster_C` | [`Foliage/Trees/Pine/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Foliage/Trees/Pine/DataAssets/Clusters) |
-| [`DA_LightSettings_AfternoonOvercastRain`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/DA_LightSettings_AfternoonOvercastRain.json) | `PDA_LightSettings_C` | [`Lighting/DataAssets/Presets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets) |
-| [`DA_Cluster_Weeds_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/DA_Cluster_Weeds_02.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters) |
-| [`DA_Cluster_Weeds_Spline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/DA_Cluster_Weeds_Spline.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters) |
-| [`DA_FencePost_GasPipe_400_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_FencePost_GasPipe_400_01.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_FencePost_StoneRetainingWall_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_FencePost_StoneRetainingWall_01.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Fence_Chainlink_Post_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Fence_Chainlink_Post_01.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Fence_Metal_Residential_Pillar_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Fence_Metal_Residential_Pillar_03.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Fence_Metal_Residential_Pillar_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Fence_Metal_Residential_Pillar_04.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Fence_Metal_Residential_Pillar_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Fence_Metal_Residential_Pillar_05.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Fence_Tarp_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Fence_Tarp_01.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Pillar_ChurchExt_01b`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Pillar_ChurchExt_01b.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Pillar_ChurchExt_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Pillar_ChurchExt_02.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_Wall_Plaster_Residential_Pillar_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts/DA_Wall_Plaster_Residential_Pillar_01.json) | `PDA_ClusterPCG_C` | [`PCG/Kavkazi/DataAssets/Clusters/Fence_Posts`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Clusters/Fence_Posts) |
-| [`DA_ConcreteBarrier_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_ConcreteBarrier_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Ditch_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Ditch_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_ChainLink_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_ChainLink_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Concrete_Large_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Concrete_Large_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_CorrugatedMetal_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_CorrugatedMetal_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_HescoSmall_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_HescoSmall_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_HescoTall_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_HescoTall_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Large_BoxHedge_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Large_BoxHedge_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Low_Concrete_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Low_Concrete_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Med_BoxHedge_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Med_BoxHedge_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Metal_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Metal_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Metal_Residential_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Metal_Residential_03.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Metal_Residential_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Metal_Residential_04.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_Metal_Residential_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_Metal_Residential_05.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_StoneRetainingWall_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_StoneRetainingWall_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Fence_TallWoodWall_Damaged_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Fence_TallWoodWall_Damaged_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Wall_ChurchExt_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Wall_ChurchExt_02.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`DA_Wall_Plaster_Residential_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall/DA_Wall_Plaster_Residential_01.json) | `PDA_SplinePCG_C` | [`PCG/Kavkazi/DataAssets/Splines/Wall`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/Kavkazi/DataAssets/Splines/Wall) |
-| [`MBC_Pine_06mFiller`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/Clusters/MBC_Pine_06mFiller.json) | `PDA_MBCluster_C` | [`PCG/MicroBiomes/Pine/Clusters`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/Clusters) |
-| [`MBL_Pine_04m_Edge`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/Layers/MBL_Pine_04m_Edge.json) | `PDA_MBLayer_C` | [`PCG/MicroBiomes/Pine/Layers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/Layers) |
-| [`MB_Pine_Spline_Dense_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/MB_Pine_Spline_Dense_02.json) | `PDA_MicroBiome_C` | [`PCG/MicroBiomes/Pine`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine) |
+| `DA_VehicleProp_Ambulance_01a` | `PDA_VehicleProp_C` | `Blueprints/VehiclePropTooling` |
+| `MBL_Farm_FIeld_Grass_Tall_Transition` | `PDA_MBLayer_C` | `Foliage/Biomes/Farm/Layers` |
+| `MBL_Farm_Field_Brambles_Transition` | `PDA_MBLayer_C` | `Foliage/Biomes/Farm/Layers` |
+| `MB_Farm_Field_Edge` | `PDA_MicroBiome_C` | `Foliage/Biomes/Farm/MicroBiomes` |
+| `MB_Woodland_TreeLine_Bushes` | `PDA_MicroBiome_C` | `Foliage/Biomes/Woodland/MicroBiomes` |
+| `MB_Woodland_TreeLine_Saplings` | `PDA_MicroBiome_C` | `Foliage/Biomes/Woodland/MicroBiomes` |
+| `MBC_Bush_Bramble_Patch_3m_01a` | `PDA_MBCluster_C` | `Foliage/Bushes/Bramble/DataAssets/Clusters` |
+| `MBS_Bush_Bramble_Strands` | `PDA_MBScatter_C` | `Foliage/Bushes/Bramble/DataAssets/Scatters` |
+| `MBC_Grass_Field_Tall_Transition` | `PDA_MBCluster_C` | `Foliage/Grass/Field/DataAssets/Clusters` |
+| `MBC_Tree_Ash_Sapling_01a` | `PDA_MBCluster_C` | `Foliage/Trees/Ash/DataAssets/Clusters` |
+| `MBC_Tree_Oak_Field_02a` | `PDA_MBCluster_C` | `Foliage/Trees/Oak/DataAssets/Clusters` |
+| `MBC_Pine_04m` | `PDA_MBCluster_C` | `Foliage/Trees/Pine/DataAssets/Clusters` |
+| `DA_LightSettings_AfternoonOvercastRain` | `PDA_LightSettings_C` | `Lighting/DataAssets/Presets` |
+| `DA_Cluster_Weeds_02` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters` |
+| `DA_Cluster_Weeds_Spline` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters` |
+| `DA_FencePost_GasPipe_400_01` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_FencePost_StoneRetainingWall_01` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Fence_Chainlink_Post_01` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Fence_Metal_Residential_Pillar_03` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Fence_Metal_Residential_Pillar_04` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Fence_Metal_Residential_Pillar_05` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Fence_Tarp_01` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Pillar_ChurchExt_01b` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Pillar_ChurchExt_02` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_Wall_Plaster_Residential_Pillar_01` | `PDA_ClusterPCG_C` | `PCG/Kavkazi/DataAssets/Clusters/Fence_Posts` |
+| `DA_ConcreteBarrier_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Ditch_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_ChainLink_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Concrete_Large_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_CorrugatedMetal_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_HescoSmall_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_HescoTall_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Large_BoxHedge_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Low_Concrete_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Med_BoxHedge_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Metal_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Metal_Residential_03` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Metal_Residential_04` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_Metal_Residential_05` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_StoneRetainingWall_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Fence_TallWoodWall_Damaged_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Wall_ChurchExt_02` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `DA_Wall_Plaster_Residential_01` | `PDA_SplinePCG_C` | `PCG/Kavkazi/DataAssets/Splines/Wall` |
+| `MBC_Pine_06mFiller` | `PDA_MBCluster_C` | `PCG/MicroBiomes/Pine/Clusters` |
+| `MBL_Pine_04m_Edge` | `PDA_MBLayer_C` | `PCG/MicroBiomes/Pine/Layers` |
+| `MB_Pine_Spline_Dense_02` | `PDA_MicroBiome_C` | `PCG/MicroBiomes/Pine` |
 
 ### 15b. Added families (10)
 
@@ -751,16 +751,16 @@ These four types are new to this doc. Their fields are not decoded here yet.
 
 | Asset | Type | Folder |
 |---|---|---|
-| [`WD_HeavyRain`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/Weather/WD_HeavyRain.json) | `WDRainAppearance` | [`Lighting/DataAssets/Presets/Weather`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Lighting/DataAssets/Presets/Weather) |
-| [`AdditionalGroundMeshes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/AdditionalGroundMeshes.json) | `DA_GroundProxies_C` | [`PCG/GroundDetail`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail) |
-| [`GD_AsphaltPatches`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_AsphaltPatches.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`GD_Ivy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_Ivy.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`GD_Leaves`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_Leaves.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`GD_NettlesEdge`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_NettlesEdge.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`GD_Paper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_Paper.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`GD_PotHoles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_PotHoles.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`GD_RubbleEdges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData/GD_RubbleEdges.json) | `DA_GroundDetail_C` | [`PCG/GroundDetail/GroundDetailData`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/GroundDetail/GroundDetailData) |
-| [`DA_RVTD_Forest_001`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/RVTD/DataAssets/DA_RVTD_Forest_001.json) | `PDA_RVTD_C` | [`PCG/RVTD/DataAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/PCG/RVTD/DataAssets) |
+| `WD_HeavyRain` | `WDRainAppearance` | `Lighting/DataAssets/Presets/Weather` |
+| `AdditionalGroundMeshes` | `DA_GroundProxies_C` | `PCG/GroundDetail` |
+| `GD_AsphaltPatches` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `GD_Ivy` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `GD_Leaves` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `GD_NettlesEdge` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `GD_Paper` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `GD_PotHoles` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `GD_RubbleEdges` | `DA_GroundDetail_C` | `PCG/GroundDetail/GroundDetailData` |
+| `DA_RVTD_Forest_001` | `PDA_RVTD_C` | `PCG/RVTD/DataAssets` |
 
 ---
 
@@ -769,7 +769,7 @@ These four types are new to this doc. Their fields are not decoded here yet.
 - **Fluid Flux `Iteration`** (23,813 to 1,261,732 across states) has no label in the export. Its meaning (bake frame, simulation step, or version counter) is unknown.
 - **`AttenuationDistance`** (1000 on all 40 MicroBiomes that set it) and the other distance-like fields on MicroBiomes are not confirmed as cm cull or fade distances.
 - **Height grid arrays** (`WDWaterHeightGridAsset`) are binary data keyed by unnamed field names. Only metadata is reported here (world size, grid width, origin, linked state). Height values are not decoded.
-  - **SDK (2026-10-16):** [`UWDWaterHeightGridAsset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/WDGame_classes.hpp#L33691) is a `UDataAsset` with 8 fields:
+  - **SDK (2026-10-16):** `UWDWaterHeightGridAsset` is a `UDataAsset` with 8 fields:
     - `worldmin` (`FVector2D`, 0x30) — origin
     - `WorldSize` (`FVector2D`, 0x40) — world size (cm, confirmed)
     - `GridWidth` (`int32`, 0x50) — grid X dim
@@ -779,20 +779,20 @@ These four types are new to this doc. Their fields are not decoded here yet.
     - `_aaabflcohlopnaadhglfk` (`FSoftObjectPath`, 0x68) — unresolved; **this is likely the "linked state" field** the doc references (points to a `PDA_FluxSimulationState_C`)
     - `Heights` (`TArray<FNone_>`, 0x88) — the binary height data
   - The two unresolved `double` fields are candidates for min/max height clip, scale factor, or sea-level offset; symbolic names remain unresolved via SDK, could be inferred by reading values across all 40 asset instances.
-- **North America fluid states** ([`DA_Flux_NorthAmerica_000`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Water/FluidFlux/NorthAmerica/DA_Flux_NorthAmerica_000.json) to `_013`, 14 assets) have no matching height grid in this dump and no `EncodeVelocityMax`. Their runtime role is unclear.
+- **North America fluid states** (`DA_Flux_NorthAmerica_000` to `_013`, 14 assets) have no matching height grid in this dump and no `EncodeVelocityMax`. Their runtime role is unclear.
 - **Missing scale defaults.** Where a cluster, scatter, or PCG asset has no `ScaleMin` (shown as `?`), the engine default applies. That default is not in the export.
-- **Enum names** in [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) are cooked as `NewEnumeratorN`. Only the index is shown.
+- **Enum names** in `DT_VehiclePropList` are cooked as `NewEnumeratorN`. Only the index is shown.
 - **Four vehicle assets are unlisted** (see section 10). Whether they are spawned another way is not in this folder.
-- **Usage links are not in the export.** It does not say which landscape material samples [`VC_Stratus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_Stratus.json), [`VC_GrassTint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Landscape/Materials/Kavkazi/VC_GrassTint.json), or the atlas, nor which mask texture the grass `ScatterMaskChannel` reads.
+- **Usage links are not in the export.** It does not say which landscape material samples `VC_Stratus`, `VC_GrassTint`, or the atlas, nor which mask texture the grass `ScatterMaskChannel` reads.
 - **Unit assumptions.** Distances are assumed to be Unreal cm. Sun `Intensity` is assumed to be lux. Neither is stated in the export.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **`_Overkill` light presets.** Their purpose is not confirmed.
-- **Sampling of raw files.** Most values come from the script's normalised output. Raw JSON was spot-checked for [`MB_Pine_Treeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/PCG/MicroBiomes/Pine/MB_Pine_Treeline.json) and [`CP_River_Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Water/FluidFlux/Surface/CP_River_Kavkazi.json), and the headers of several other assets.
+- **Sampling of raw files.** Most values come from the script's normalised output. Raw JSON was spot-checked for `MB_Pine_Treeline` and `CP_River_Kavkazi`, and the headers of several other assets.
 - **Not in this folder.** The landscape material, the PCG graphs that consume these data assets, the mesh-material overrides, and the `BP_Interactable_GarageDoor_*` blueprints live elsewhere in the dump and are not covered here.
 
 ---
 
-*Source folder: [`Wardogs/Content/Environment/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment) (read-only). Generated by parsing all 419 JSON exports.*
+*Source folder: `Wardogs/Content/Environment/` (read-only). Generated by parsing all 419 JSON exports.*
 
 ## 17. Engine default assets (round 73)
 
@@ -800,10 +800,10 @@ Engine-side assets exported with the game. They are stock or near-stock and carr
 
 | Asset | What it is |
 |---|---|
-| [`C_Sky_Cloud_Color`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Engine/Content/EngineSky/C_Sky_Cloud_Color.json) | `CurveLinearColor`, 6 keys per RGB channel from time -0.79 to 0.81: R 0.054 to 0.929, G 0.059 to 0.947, B 0.065 to 1.0. Cloud tint |
-| [`C_Sky_Horizon_Color`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Engine/Content/EngineSky/C_Sky_Horizon_Color.json) | `CurveLinearColor`, 6 keys per channel from -0.99 to 0.45: R 0.048 to 0.92, G 0.052 to 1.322, B 0.075 to 2.0 (values above 1 are HDR). Horizon tint |
-| [`C_Sky_Zenith_Color`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Engine/Content/EngineSky/C_Sky_Zenith_Color.json) | `CurveLinearColor`, 7 keys per channel from -0.95 to 0.47: R 0 to 0.023, G 0 to 0.049, B 0 to 0.12. Zenith tint |
-| [`FloatCurve_WaterBodyIsland`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Engine/Plugins/Experimental/Water/Content/Curves/FloatCurve_WaterBodyIsland.json) | Water plugin default `CurveFloat`: (0.05, 0), (0.1, 0.9), (1.0, 1.0). Island falloff shape |
-| [`DefaultPaperTerrainMaterial`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Engine/Plugins/2D/Paper2D/Content/DefaultPaperTerrainMaterial.json) | Paper2D default terrain material: one rule, body sprite `DummySprite`, angle 0 to 360, collision on. Unused by a 3D game |
+| `C_Sky_Cloud_Color` | `CurveLinearColor`, 6 keys per RGB channel from time -0.79 to 0.81: R 0.054 to 0.929, G 0.059 to 0.947, B 0.065 to 1.0. Cloud tint |
+| `C_Sky_Horizon_Color` | `CurveLinearColor`, 6 keys per channel from -0.99 to 0.45: R 0.048 to 0.92, G 0.052 to 1.322, B 0.075 to 2.0 (values above 1 are HDR). Horizon tint |
+| `C_Sky_Zenith_Color` | `CurveLinearColor`, 7 keys per channel from -0.95 to 0.47: R 0 to 0.023, G 0 to 0.049, B 0 to 0.12. Zenith tint |
+| `FloatCurve_WaterBodyIsland` | Water plugin default `CurveFloat`: (0.05, 0), (0.1, 0.9), (1.0, 1.0). Island falloff shape |
+| `DefaultPaperTerrainMaterial` | Paper2D default terrain material: one rule, body sprite `DummySprite`, angle 0 to 360, collision on. Unused by a 3D game |
 
 The alpha channel of the sky curves has no keys. The engine animation-compression defaults are in [Animation](Wardogs_Animation_v2.md) section 8b.

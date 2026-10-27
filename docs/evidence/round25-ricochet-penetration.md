@@ -126,7 +126,7 @@ meaning of the ratio gate in item 2, and what sets the usability flag in item 1
 
 ## 4. Ammo variants and what the files give per surface type
 
-Ammo modifier assets ([`AmmoModifiers/`](../../data/Wardogs/Content/GameMechanics/DamageSystem/AmmoModifiers)):
+Ammo modifier assets (`AmmoModifiers/`):
 
 | Modifier | E (penetration effectiveness) | p (exit-speed) | Effective range | Tracer |
 |---|---:|---:|---:|---:|

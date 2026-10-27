@@ -27,7 +27,6 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = "content/Wardogs_PlayerMovement_v1.md"
-REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/"
 PLAYER = "Wardogs/Content/GameMechanics/Player/"
 SETTINGS = "Wardogs/Content/MoverTesting/Settings/"
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
@@ -83,7 +82,7 @@ def exports(rel):
 
 
 def link(rel, label=None):
-    return f"[`{label or os.path.basename(rel)[:-5]}`]({REPO}{rel})"
+    return f"`{label or os.path.basename(rel)[:-5]}`"
 
 
 def n(x, nd=4):

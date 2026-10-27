@@ -9,22 +9,22 @@ description: "All 45 weapon stat assets, ADS curves, full raw property export"
 
 *Corrects the v2 doc's note that main rifle/SMG/LMG/sniper stat tables "are not in this folder" — they live under `Plugins/GameFeatures/Weapons/{Platforms/WEPN_xxx,DMR,LMG,Launchers,Shotgun,SMG,Sniper}/Content/Data/DA_<Name>_Stats.uasset`, one GameFeature plugin per weapon platform, same pattern as the Vehicles plugins. The 8 utility/test weapons from the v2 doc (`Content/Weapons/.../Data/`) are separate and not re-listed here.*
 
-> **Scope:** `WDWeaponStatsData` stat assets only (`DA_*_Stats`). Item definitions, vendor rows and `GE_*` effects are not covered here; see the v2 doc. The first eight assets live under `Content/Weapons`, and the rest under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons).
+> **Scope:** `WDWeaponStatsData` stat assets only (`DA_*_Stats`). Item definitions, vendor rows and `GE_*` effects are not covered here; see the v2 doc. The first eight assets live under `Content/Weapons`, and the rest under `Plugins/GameFeatures/Weapons`.
 >
-> **Correction to v2:** this doc gives the full package path of each of the 45 stats assets, including the main rifle, SMG, LMG and sniper tables under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons). The v2 Weapons doc (`Wardogs_Weapons_v2.md`, scope note) says the main AR, SMG, LMG, shotgun and pistol stat tables are "not in this folder" (`Content/Weapons`). That is correct for that folder; the tables live under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons).
+> **Correction to v2:** this doc gives the full package path of each of the 45 stats assets, including the main rifle, SMG, LMG and sniper tables under `Plugins/GameFeatures/Weapons`. The v2 Weapons doc (`Wardogs_Weapons_v2.md`, scope note) says the main AR, SMG, LMG, shotgun and pistol stat tables are "not in this folder" (`Content/Weapons`). That is correct for that folder; the tables live under `Plugins/GameFeatures/Weapons`.
 
 ---
 
 ## Season 02 update (2026-10-15)
 
-- **New stats assets (5):** [`DA_WEPN_031_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json), [`DA_WEPN_034_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json), [`DA_WEPN_036_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json), [`DA_WEPN_037_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json), and [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json) (vehicle-mounted; accuracy 16.0, no RPM field).
-- **Moved stats asset (1, not removed):** `DA_Mosin_Stats` was renamed `DA_WEPN_017_Stats` and moved from `Plugins/GameFeatures/Weapons/Sniper/Mosin` to `Plugins/GameFeatures/Weapons/Platforms/WEPN_017` (WeaponId `Id.Item.Mosin`, RPM 46.0 and accuracy 0.78, the same in both seasons). Its only value change is a new `SuppressionMultiplier` of 1.5. The asset is [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json).
-- **Recoil pattern reworked on [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json):** all 20 pattern entries changed. Entry 0 Y: 0.95 -> 2.375, entry 19 Y: 1.05 -> 2.625; X values now include negatives (entry 0 X: -0.055 -> -0.025538). The DMR recoil pass also touches [`DA_RFB_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.json) and [`DA_SVDM_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.json).
+- **New stats assets (5):** `DA_WEPN_031_Stats`, `DA_WEPN_034_Stats`, `DA_WEPN_036_Stats`, `DA_WEPN_037_Stats`, and `DA_MWSY_001_Heavy_MountedMachineGun_Stats` (vehicle-mounted; accuracy 16.0, no RPM field).
+- **Moved stats asset (1, not removed):** `DA_Mosin_Stats` was renamed `DA_WEPN_017_Stats` and moved from `Plugins/GameFeatures/Weapons/Sniper/Mosin` to `Plugins/GameFeatures/Weapons/Platforms/WEPN_017` (WeaponId `Id.Item.Mosin`, RPM 46.0 and accuracy 0.78, the same in both seasons). Its only value change is a new `SuppressionMultiplier` of 1.5. The asset is `DA_WEPN_017_Stats`.
+- **Recoil pattern reworked on `DA_SKS_Stats`:** all 20 pattern entries changed. Entry 0 Y: 0.95 -> 2.375, entry 19 Y: 1.05 -> 2.625; X values now include negatives (entry 0 X: -0.055 -> -0.025538). The DMR recoil pass also touches `DA_RFB_Stats` and `DA_SVDM_Stats`.
 - **`SuppressionMultiplier` added or changed:** SVDM 0.4 -> 0.8, LMG_02 0.45 -> 0.9. New values: SKS 1.1, M2Browning 0.8, AK74M 1.05, M4 0.95, M249 1.25, Vector 0.8, SV98 1.5, WEPN_035 1.5, WEPN_017 (Mosin) 1.5, MK22 1.6, SR_04 2.0.
 - **`ViewKickMagnitudeMultiplier` removed:** SKS (was 1.1), RFB (was 1.15), SVDM (was 0.7). WEPN_028 changed 1.1 -> 1.15.
 - **ADS stabilization rates:** the `AdsStabilizeCooldownRate` and `AdsStabilizeExitGracePeriod` entries were unnamed in the first Season 02 export; the v2 usmap names them again (2026-10-18). Their values did not change (SV98 2.5, MK22 2.5, SR_04 3.0). The earlier export also gave the name `AdsStabilizeCooldownRate` to the sight-sway rotation length limit (`_aaabiaflojcopmfgdolfd`, 14.0 on all three), which is where 14.0 came from.
-- **[`DA_MMGL_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.json) `InitialBulletSpeed`:** 10000.0 -> 7500.0.
-- **[`DA_Vector_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.json) distance falloff curve:** Season 1 had four keys, (0, 1.0), (5000, 1.0), (7000, 0.6) and (120000, 0.2). Season 2 keeps all four and inserts two, (10000, 0.4) and (15000, 0.3), so the curve now has six keys in time order.
+- **`DA_MMGL_Stats` `InitialBulletSpeed`:** 10000.0 -> 7500.0.
+- **`DA_Vector_Stats` distance falloff curve:** Season 1 had four keys, (0, 1.0), (5000, 1.0), (7000, 0.6) and (120000, 0.2). Season 2 keeps all four and inserts two, (10000, 0.4) and (15000, 0.3), so the curve now has six keys in time order.
 - **Unchanged:** RPM, fire modes and accuracy for all existing stats assets.
 - **Roster:** 40 -> 45 stats assets (40 unchanged in count after the Mosin asset was renamed, + 5 added: WEPN_031, WEPN_034, WEPN_036, WEPN_037 and `DA_MWSY_001_Heavy_MountedMachineGun_Stats`). No asset was removed.
 
@@ -39,59 +39,59 @@ Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-chan
 
 | Asset | Package | WeaponId | RPM | Fire modes | Accuracy |
 |---|---|---|---|---|---|
-| [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json) | `Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.uasset` | ID.Item.BuildTool | 600 (class default) | none (class default) | 1 (class default) |
-| [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json) | `Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.uasset` | Id.Item.SKS | 420.0 | SemiAutomatic | 0.73 |
-| [`DA_Fists_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.json) | `Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.uasset` | Id.Item.Fists | 300.0 | SemiAutomatic | 1 (class default) |
-| [`DA_Judge_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json) | `Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.uasset` | Id.Item.Judge | 200.0 | SemiAutomatic | 3.49 |
-| [`DA_AT4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats.json) | `Wardogs/Content/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats.uasset` | Id.Item.AT4 | 100.0 | SemiAutomatic | 1 (class default) |
-| [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json) | `Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.uasset` | Id.Item.ArtilleryBarrelTest | 150.0 | SemiAutomatic | 1 (class default) |
-| [`DA_TankBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.json) | `Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.uasset` | Id.Item.LeapordBarrel | 100.0 | SemiAutomatic | 70.0 |
-| [`DA_M2Browning_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.json) | `Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.uasset` | Id.Item.BrowningMG | 500.0 | Automatic | 1 (class default) |
-| [`DA_GrenadeLauncher_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json) | `Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.uasset` | — | 75.0 | SemiAutomatic | 1 (class default) |
-| [`DA_RFB_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.uasset` | Id.Item.RFB | 450.0 | SemiAutomatic | 0.69 |
-| [`DA_SVDM_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.uasset` | Id.Item.SVDM | 480.0 | SemiAutomatic | 0.45 |
-| [`DA_LMG_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.uasset` | Id.Item.LMG_02 | 600 (class default) | Automatic, SemiAutomatic | 2.5 |
-| [`DA_Launcher_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.uasset` | Id.Item.Launcher_04 | 100.0 | SemiAutomatic | 1 (class default) |
-| [`DA_RPG7_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.uasset` | Id.Item.RPG7 | 100.0 | SemiAutomatic | 3.0 |
-| [`DA_AK74M_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.uasset` | Id.Item.AK74M | 650.0 | Automatic, SemiAutomatic | 0.825 |
-| [`DA_M4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.uasset` | Id.Item.M4 | 800.0 | Automatic, SemiAutomatic | 0.84 |
-| [`DA_KH2002_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.uasset` | Id.Item.KH2002 | 700.0 | SemiAutomatic, Burst | 1.5 |
-| [`DA_A91_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.uasset` | Id.Item.A91 | 700.0 | SemiAutomatic, Burst | 1.5 |
-| [`DA_TAR21_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.uasset` | Id.Item.TAR21 | 750.0 | Automatic, SemiAutomatic | 0.87 |
-| [`DA_Vector_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.uasset` | Id.Item.Vector | 1200.0 | Automatic, SemiAutomatic | 2.0 |
-| [`DA_SV98_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.uasset` | Id.Item.SV98 | 46.0 | SemiAutomatic | 0.56 |
-| [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.uasset` | Id.Item.M249 | 850.0 | Automatic, SemiAutomatic | 4.3 |
-| [`DA_Glock17_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.uasset` | Id.Item.Glock17 | 600 (class default) | SemiAutomatic | 3.49 |
-| [`DA_M12G_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.uasset` | Id.Item.M500 | 120.0 | SemiAutomatic | 1.5 |
-| [`DA_MMGL_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.uasset` | Id.Item.MMGL | 75.0 | SemiAutomatic | 20.0 |
-| [`DA_CGM4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.uasset` | Id.Item.CGM4 | 100.0 | SemiAutomatic | 2.5 |
-| [`DA_MP9_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.uasset` | Id.Item.MP9 | 900.0 | Automatic, SemiAutomatic | 2.1 |
-| [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.uasset` | Id.Item.Mosin | 46.0 | SemiAutomatic | 0.78 |
-| [`DA_WEPN_026_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.uasset` | Id.Item.WEPN_026 | 430.0 | SemiAutomatic | 2.0 |
-| [`DA_WEPN_027_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.uasset` | Id.Item.WEPN_027 | 267.0 | SemiAutomatic | 0.84 |
-| [`DA_WEPN_028_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.uasset` | Id.Item.WEPN_028 | 800.0 | Automatic, SemiAutomatic | 1.16 |
-| [`DA_WEPN_029_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.uasset` | Id.Item.WEPN_029 | 650.0 | Automatic, SemiAutomatic | 0.73 |
-| [`DA_WEPN_030_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.uasset` | Id.Item.WEPN_030 | 650.0 | Automatic, SemiAutomatic | 0.58 |
-| [`DA_WEPN_031_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.uasset` | Id.Item.WEPN_031 | 700.0 | Automatic, SemiAutomatic | 1.3 |
-| [`DA_WEPN_032_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.uasset` | Id.Item.WEPN_032 | 1200.0 | Automatic, SemiAutomatic | 2.0 |
-| [`DA_WEPN_033_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.uasset` | Id.Item.TAR21 | 700.0 | SemiAutomatic, Burst | 1.5 |
-| [`DA_WEPN_034_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.uasset` | Id.Item.WEPN_034 | 700.0 | SemiAutomatic, Automatic | 0.73 |
-| [`DA_WEPN_035_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.uasset` | Id.Item.WEPN_035 | 46.0 | SemiAutomatic | 1.5 |
-| [`DA_WEPN_036_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.uasset` | Id.Item.WEPN_036 | 700.0 | Automatic, SemiAutomatic | 0.73 |
-| [`DA_WEPN_037_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.uasset` | Id.Item.WEPN_037 | 800.0 | Automatic, SemiAutomatic | 0.58 |
-| [`DA_SMG_03_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.uasset` | Id.Item.SMG_03 | 800.0 | Automatic, SemiAutomatic | 1.3 |
-| [`DA_MP43_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.uasset` | Id.Item.MP43 | 900.0 | SemiAutomatic | 3.08 |
-| [`DA_MK22_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.uasset` | Id.Item.MK22 | 46.0 | SemiAutomatic | 0.16 |
-| [`DA_SR_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.uasset` | Id.Item.SR_04 | 41.5 | SemiAutomatic | 0.11 |
-| [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json) | `Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.uasset` | Id.Item.MWSY_001.MountedMachineGun | 600 (class default) | Automatic | 16.0 |
+| `DA_BuildTool_Stats` | `Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.uasset` | ID.Item.BuildTool | 600 (class default) | none (class default) | 1 (class default) |
+| `DA_SKS_Stats` | `Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.uasset` | Id.Item.SKS | 420.0 | SemiAutomatic | 0.73 |
+| `DA_Fists_Stats` | `Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.uasset` | Id.Item.Fists | 300.0 | SemiAutomatic | 1 (class default) |
+| `DA_Judge_Stats` | `Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.uasset` | Id.Item.Judge | 200.0 | SemiAutomatic | 3.49 |
+| `DA_AT4_Stats` | `Wardogs/Content/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats.uasset` | Id.Item.AT4 | 100.0 | SemiAutomatic | 1 (class default) |
+| `DA_ArtilleryBarrelTest_Stats` | `Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.uasset` | Id.Item.ArtilleryBarrelTest | 150.0 | SemiAutomatic | 1 (class default) |
+| `DA_TankBarrelTest_Stats` | `Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.uasset` | Id.Item.LeapordBarrel | 100.0 | SemiAutomatic | 70.0 |
+| `DA_M2Browning_Stats` | `Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.uasset` | Id.Item.BrowningMG | 500.0 | Automatic | 1 (class default) |
+| `DA_GrenadeLauncher_Stats` | `Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.uasset` | — | 75.0 | SemiAutomatic | 1 (class default) |
+| `DA_RFB_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.uasset` | Id.Item.RFB | 450.0 | SemiAutomatic | 0.69 |
+| `DA_SVDM_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.uasset` | Id.Item.SVDM | 480.0 | SemiAutomatic | 0.45 |
+| `DA_LMG_02_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.uasset` | Id.Item.LMG_02 | 600 (class default) | Automatic, SemiAutomatic | 2.5 |
+| `DA_Launcher_04_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.uasset` | Id.Item.Launcher_04 | 100.0 | SemiAutomatic | 1 (class default) |
+| `DA_RPG7_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.uasset` | Id.Item.RPG7 | 100.0 | SemiAutomatic | 3.0 |
+| `DA_AK74M_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.uasset` | Id.Item.AK74M | 650.0 | Automatic, SemiAutomatic | 0.825 |
+| `DA_M4_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.uasset` | Id.Item.M4 | 800.0 | Automatic, SemiAutomatic | 0.84 |
+| `DA_KH2002_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.uasset` | Id.Item.KH2002 | 700.0 | SemiAutomatic, Burst | 1.5 |
+| `DA_A91_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.uasset` | Id.Item.A91 | 700.0 | SemiAutomatic, Burst | 1.5 |
+| `DA_TAR21_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.uasset` | Id.Item.TAR21 | 750.0 | Automatic, SemiAutomatic | 0.87 |
+| `DA_Vector_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.uasset` | Id.Item.Vector | 1200.0 | Automatic, SemiAutomatic | 2.0 |
+| `DA_SV98_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.uasset` | Id.Item.SV98 | 46.0 | SemiAutomatic | 0.56 |
+| `DA_M249_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.uasset` | Id.Item.M249 | 850.0 | Automatic, SemiAutomatic | 4.3 |
+| `DA_Glock17_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.uasset` | Id.Item.Glock17 | 600 (class default) | SemiAutomatic | 3.49 |
+| `DA_M12G_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.uasset` | Id.Item.M500 | 120.0 | SemiAutomatic | 1.5 |
+| `DA_MMGL_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.uasset` | Id.Item.MMGL | 75.0 | SemiAutomatic | 20.0 |
+| `DA_CGM4_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.uasset` | Id.Item.CGM4 | 100.0 | SemiAutomatic | 2.5 |
+| `DA_MP9_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.uasset` | Id.Item.MP9 | 900.0 | Automatic, SemiAutomatic | 2.1 |
+| `DA_WEPN_017_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.uasset` | Id.Item.Mosin | 46.0 | SemiAutomatic | 0.78 |
+| `DA_WEPN_026_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.uasset` | Id.Item.WEPN_026 | 430.0 | SemiAutomatic | 2.0 |
+| `DA_WEPN_027_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.uasset` | Id.Item.WEPN_027 | 267.0 | SemiAutomatic | 0.84 |
+| `DA_WEPN_028_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.uasset` | Id.Item.WEPN_028 | 800.0 | Automatic, SemiAutomatic | 1.16 |
+| `DA_WEPN_029_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.uasset` | Id.Item.WEPN_029 | 650.0 | Automatic, SemiAutomatic | 0.73 |
+| `DA_WEPN_030_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.uasset` | Id.Item.WEPN_030 | 650.0 | Automatic, SemiAutomatic | 0.58 |
+| `DA_WEPN_031_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.uasset` | Id.Item.WEPN_031 | 700.0 | Automatic, SemiAutomatic | 1.3 |
+| `DA_WEPN_032_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.uasset` | Id.Item.WEPN_032 | 1200.0 | Automatic, SemiAutomatic | 2.0 |
+| `DA_WEPN_033_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.uasset` | Id.Item.TAR21 | 700.0 | SemiAutomatic, Burst | 1.5 |
+| `DA_WEPN_034_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.uasset` | Id.Item.WEPN_034 | 700.0 | SemiAutomatic, Automatic | 0.73 |
+| `DA_WEPN_035_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.uasset` | Id.Item.WEPN_035 | 46.0 | SemiAutomatic | 1.5 |
+| `DA_WEPN_036_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.uasset` | Id.Item.WEPN_036 | 700.0 | Automatic, SemiAutomatic | 0.73 |
+| `DA_WEPN_037_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.uasset` | Id.Item.WEPN_037 | 800.0 | Automatic, SemiAutomatic | 0.58 |
+| `DA_SMG_03_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.uasset` | Id.Item.SMG_03 | 800.0 | Automatic, SemiAutomatic | 1.3 |
+| `DA_MP43_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.uasset` | Id.Item.MP43 | 900.0 | SemiAutomatic | 3.08 |
+| `DA_MK22_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.uasset` | Id.Item.MK22 | 46.0 | SemiAutomatic | 0.16 |
+| `DA_SR_04_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.uasset` | Id.Item.SR_04 | 41.5 | SemiAutomatic | 0.11 |
+| `DA_MWSY_001_Heavy_MountedMachineGun_Stats` | `Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.uasset` | Id.Item.MWSY_001.MountedMachineGun | 600 (class default) | Automatic | 16.0 |
 
 Notes:
 
-- Columns come from each asset's raw block in section 2: `WeaponId.TagName`, `RoundsPerMinute`, `SupportedFireModes` and `WeaponStats.WeaponAccuracy.AccuracyValue`. Only [`DA_SR_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.json) was checked against its raw block.
+- Columns come from each asset's raw block in section 2: `WeaponId.TagName`, `RoundsPerMinute`, `SupportedFireModes` and `WeaponStats.WeaponAccuracy.AccuracyValue`. Only `DA_SR_04_Stats` was checked against its raw block.
 - A cell marked `(class default)` is a property the asset omits. The export drops properties equal to the class default, so the cell shows the `FWDWeaponStats` constructor value (RVA `0x699E6C0`; for example `RoundsPerMinute` 600, `AccuracyValue` 1.0, empty `SupportedFireModes`). See the Native note in [Weapons v2 section 3](../game-features/Wardogs_GameFeatures_Weapons_v2.md#3-per-weapon-ballistics-from-the-linked-wdweaponstatsdata). `DA_BuildTool_Stats` is not a firearm; its defaults are listed for completeness only. `—` in the WeaponId column of `DA_GrenadeLauncher_Stats` means the property is absent; the default tag (global at RVA `0xD2692F8`) was not decoded.
-- [`DA_GrenadeLauncher_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json) has no WeaponId in the table.
-- `Id.Item.TAR21` is the WeaponId of both [`DA_TAR21_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.json) (WEPN_005) and [`DA_WEPN_033_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.json).
-- [`DA_M12G_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.json) carries WeaponId `Id.Item.M500`, and [`DA_TankBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.json) carries `Id.Item.LeapordBarrel`.
+- `DA_GrenadeLauncher_Stats` has no WeaponId in the table.
+- `Id.Item.TAR21` is the WeaponId of both `DA_TAR21_Stats` (WEPN_005) and `DA_WEPN_033_Stats`.
+- `DA_M12G_Stats` carries WeaponId `Id.Item.M500`, and `DA_TankBarrelTest_Stats` carries `Id.Item.LeapordBarrel`.
 - Accuracy and RPM values are shown as exported; units are not stated in this file.
 
 ---
@@ -100,7 +100,7 @@ Notes:
 
 Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 
-### [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json)
+### `DA_BuildTool_Stats`
 - **Package:** `Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.uasset`
 
 ```
@@ -111,7 +111,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json)
+### `DA_SKS_Stats`
 - **Package:** `Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.uasset`
 
 ```
@@ -523,7 +523,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_Fists_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.json)
+### `DA_Fists_Stats`
 - **Package:** `Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.uasset`
 
 ```
@@ -597,7 +597,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_Judge_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json)
+### `DA_Judge_Stats`
 - **Package:** `Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.uasset`
 
 ```
@@ -851,7 +851,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_AT4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats.json)
+### `DA_AT4_Stats`
 - **Package:** `Wardogs/Content/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats.uasset`
 
 ```
@@ -901,7 +901,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json)
+### `DA_ArtilleryBarrelTest_Stats`
 - **Package:** `Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.uasset`
 
 ```
@@ -934,7 +934,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_TankBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.json)
+### `DA_TankBarrelTest_Stats`
 - **Package:** `Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.uasset`
 
 ```
@@ -963,7 +963,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_M2Browning_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.json)
+### `DA_M2Browning_Stats`
 - **Package:** `Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.uasset`
 
 ```
@@ -1160,7 +1160,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_GrenadeLauncher_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.json)
+### `DA_GrenadeLauncher_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/DA_GrenadeLauncher_Stats.uasset`
 
 ```
@@ -1238,7 +1238,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_RFB_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.json)
+### `DA_RFB_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/DA_RFB_Stats.uasset`
 
 ```
@@ -2111,7 +2111,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_SVDM_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.json)
+### `DA_SVDM_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/DA_SVDM_Stats.uasset`
 
 ```
@@ -2962,7 +2962,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_LMG_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json)
+### `DA_LMG_02_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.uasset`
 
 ```
@@ -4079,7 +4079,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_Launcher_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.json)
+### `DA_Launcher_04_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.uasset`
 
 ```
@@ -4911,7 +4911,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_RPG7_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.json)
+### `DA_RPG7_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.uasset`
 
 ```
@@ -5753,7 +5753,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_AK74M_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.json)
+### `DA_AK74M_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.uasset`
 
 ```
@@ -6733,7 +6733,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_M4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.json)
+### `DA_M4_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.uasset`
 
 ```
@@ -7726,7 +7726,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_KH2002_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.json)
+### `DA_KH2002_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DA_KH2002_Stats.uasset`
 
 ```
@@ -8698,7 +8698,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_A91_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.json)
+### `DA_A91_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DA_A91_Stats.uasset`
 
 ```
@@ -9651,7 +9651,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_TAR21_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.json)
+### `DA_TAR21_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/DA_TAR21_Stats.uasset`
 
 ```
@@ -10627,7 +10627,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_Vector_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.json)
+### `DA_Vector_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/DA_Vector_Stats.uasset`
 
 ```
@@ -11771,7 +11771,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_SV98_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.json)
+### `DA_SV98_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/DA_SV98_Stats.uasset`
 
 ```
@@ -12588,7 +12588,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json)
+### `DA_M249_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.uasset`
 
 ```
@@ -13557,7 +13557,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_Glock17_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.json)
+### `DA_Glock17_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/DA_Glock17_Stats.uasset`
 
 ```
@@ -14327,7 +14327,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_M12G_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.json)
+### `DA_M12G_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.uasset`
 
 ```
@@ -15194,7 +15194,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_MMGL_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.json)
+### `DA_MMGL_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/DA_MMGL_Stats.uasset`
 
 ```
@@ -15887,7 +15887,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_CGM4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.json)
+### `DA_CGM4_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.uasset`
 
 ```
@@ -16672,7 +16672,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_MP9_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.json)
+### `DA_MP9_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/DA_MP9_Stats.uasset`
 
 ```
@@ -17665,7 +17665,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json)
+### `DA_WEPN_017_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.uasset`
 
 ```
@@ -18462,7 +18462,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_026_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.json)
+### `DA_WEPN_026_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/DA_WEPN_026_Stats.uasset`
 
 ```
@@ -19241,7 +19241,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_027_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.json)
+### `DA_WEPN_027_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/DA_WEPN_027_Stats.uasset`
 
 ```
@@ -20125,7 +20125,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_028_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.json)
+### `DA_WEPN_028_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/DA_WEPN_028_Stats.uasset`
 
 ```
@@ -21147,7 +21147,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_029_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.json)
+### `DA_WEPN_029_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/DA_WEPN_029_Stats.uasset`
 
 ```
@@ -22096,7 +22096,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_030_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.json)
+### `DA_WEPN_030_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/DA_WEPN_030_Stats.uasset`
 
 ```
@@ -23008,7 +23008,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_031_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json)
+### `DA_WEPN_031_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.uasset`
 
 ```
@@ -24035,7 +24035,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_032_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.json)
+### `DA_WEPN_032_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/DA_WEPN_032_Stats.uasset`
 
 ```
@@ -25013,7 +25013,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_033_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.json)
+### `DA_WEPN_033_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/DA_WEPN_033_Stats.uasset`
 
 ```
@@ -25988,7 +25988,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_034_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json)
+### `DA_WEPN_034_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.uasset`
 
 ```
@@ -26683,7 +26683,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_035_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.json)
+### `DA_WEPN_035_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/DA_WEPN_035_Stats.uasset`
 
 ```
@@ -27510,7 +27510,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_036_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json)
+### `DA_WEPN_036_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.uasset`
 
 ```
@@ -28670,7 +28670,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_WEPN_037_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json)
+### `DA_WEPN_037_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.uasset`
 
 ```
@@ -29672,7 +29672,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_SMG_03_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.json)
+### `DA_SMG_03_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.uasset`
 
 ```
@@ -30699,7 +30699,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_MP43_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.json)
+### `DA_MP43_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/DA_MP43_Stats.uasset`
 
 ```
@@ -31550,7 +31550,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_MK22_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.json)
+### `DA_MK22_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.uasset`
 
 ```
@@ -32378,7 +32378,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 }
 ```
 
-### [`DA_SR_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.json)
+### `DA_SR_04_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.uasset`
 
 ```
@@ -33208,7 +33208,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 
 ---
 
-### [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json)
+### `DA_MWSY_001_Heavy_MountedMachineGun_Stats`
 - **Package:** `Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.uasset`
 
 ```
@@ -33285,7 +33285,7 @@ Complete export for each of the 45 `WDWeaponStatsData` assets, in roster order.
 
 The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. Each table lists the exported key Time and Value pairs; interpolation modes and tangents are not shown.
 
-### [`CF_AimSway_Stabilization_PlayerSpeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/CF_AimSway_Stabilization_PlayerSpeed.json)
+### `CF_AimSway_Stabilization_PlayerSpeed`
 - **Keys:** 7  
 - **Referenced by:** 28 stats assets
 
@@ -33299,7 +33299,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 581.0 | 0.78 |
 | 669.0 | 1.0 |
 
-### [`CF_AimSway_Stabilization_PlayerSpeed_SR`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/CF_AimSway_Stabilization_PlayerSpeed_SR.json)
+### `CF_AimSway_Stabilization_PlayerSpeed_SR`
 - **Keys:** 7  
 - **Referenced by:** 5 stats assets
 
@@ -33313,7 +33313,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 581.0 | 0.994917 |
 | 669.0 | 1.0 |
 
-### [`CF_AssaultRifle_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_AssaultRifle_ADS_Curve.json)
+### `CF_AssaultRifle_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 7 stats assets
 
@@ -33323,7 +33323,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_DMR_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_DMR_ADS_Curve.json)
+### `CF_DMR_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 3 stats assets
 
@@ -33333,7 +33333,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_LMG_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_LMG_ADS_Curve.json)
+### `CF_LMG_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 2 stats assets
 
@@ -33343,7 +33343,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_Launcher_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Launcher_ADS_Curve.json)
+### `CF_Launcher_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 4 stats assets
 
@@ -33353,7 +33353,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_Pistol_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Pistol_ADS_Curve.json)
+### `CF_Pistol_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 3 stats assets
 
@@ -33363,7 +33363,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_SMG_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_SMG_ADS_Curve.json)
+### `CF_SMG_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 6 stats assets
 
@@ -33373,7 +33373,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_Shotgun_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Shotgun_ADS_Curve.json)
+### `CF_Shotgun_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 2 stats assets
 
@@ -33383,7 +33383,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_SniperRifles_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_SniperRifles_ADS_Curve.json)
+### `CF_SniperRifles_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 4 stats assets
 
@@ -33393,7 +33393,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.5 | 0.0 |
 | 1.0 | 1.0 |
 
-### [`CF_WEPN_029_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/CF_WEPN_029_ADS_Curve.json)
+### `CF_WEPN_029_ADS_Curve`
 - **Keys:** 3  
 - **Referenced by:** 1 stats assets
 
@@ -33403,7 +33403,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 | 0.29432473 | -3.1927236e-09 |
 | 1.0 | 1.0 |
 
-### [`CF_WEPN_030_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/CF_WEPN_030_ADS_Curve.json)
+### `CF_WEPN_030_ADS_Curve`
 - **Keys:** 2  
 - **Referenced by:** 1 stats assets
 
@@ -33416,7 +33416,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 
 ## 4. How the values combine
 
-- The roster row for each asset is read from that asset's block in section 2. Checked on [`DA_SR_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/DA_SR_04_Stats.json): `WeaponId.TagName` gives `Id.Item.SR_04`, `RoundsPerMinute` gives `41.5`, `SupportedFireModes` gives `EWDFireMode::SemiAutomatic`, and `AccuracyValue` gives `0.11`. The other rows were not re-checked against their blocks.
+- The roster row for each asset is read from that asset's block in section 2. Checked on `DA_SR_04_Stats`: `WeaponId.TagName` gives `Id.Item.SR_04`, `RoundsPerMinute` gives `41.5`, `SupportedFireModes` gives `EWDFireMode::SemiAutomatic`, and `AccuracyValue` gives `0.11`. The other rows were not re-checked against their blocks.
 - Fire modes are shown comma-separated in the table when an asset lists more than one.
 - WeaponId is not unique: `Id.Item.TAR21` appears on two assets. This file does not say whether the game treats them as one weapon or two.
 - The link from a ranged weapon to its stats asset is described in the v2 doc (`WDItemExtensionData_RangedWeapon` names the `WDWeaponStatsData`). This file does not re-verify that link.
@@ -33427,7 +33427,7 @@ The 12 `CurveFloat` assets that `ExternalCurve` entries in section 2 point to. E
 
 - **Unnamed fields.** Some properties are listed without a readable name, such as `_aaabimbpohdlmnphjbidm` (mostly `1.0`; the focus-drain window, see Weapons §5a). Their meaning is not stated in the data.
 - **Units.** The export does not state units for RPM, accuracy or curve values.
-- **Scope mismatch with v2.** v2 section 2 counts 33 ranged weapons; this doc lists 40 `WDWeaponStatsData` assets, including non-ranged entries such as [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json). The two lists are not reconciled here.
+- **Scope mismatch with v2.** v2 section 2 counts 33 ranged weapons; this doc lists 40 `WDWeaponStatsData` assets, including non-ranged entries such as `DA_BuildTool_Stats`. The two lists are not reconciled here.
 - **Unresolved provenance.** The first eight rows use `Content/Weapons` paths. Whether they are the same set as v2's utility/test weapons is not established.
 
 ## Change log

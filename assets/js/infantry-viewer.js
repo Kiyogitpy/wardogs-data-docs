@@ -84,7 +84,7 @@
     "with the mean of its two scaled radii; query/channel filters still apply.";
   var REMAP_NOTE = "animation and ragdoll only; not used for damage (0x6BB8D40)";
 
-  var REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/";   // data/ is browsed on GitHub
+  var REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/";   // data/ and sdk/ are local only, not on GitHub
 
   var root, data, base, els = {};
   var zones = {}, zoneOrder = {}, bonesBy = {}, entries = [], ntById = {};
@@ -785,11 +785,11 @@
 
   function isPath(v) { return typeof v === "string" && /^(data|assets|sdk|mappings|_tools)\//.test(v); }
 
-  // "data/....json: Field.Path" -> a GitHub link to the file, then the field.
+  // "data/....json: Field.Path" -> the file, then the field. Files outside data/ and sdk/ link to GitHub.
   function pathNode(v) {
     var cut = v.indexOf(": "), file = cut < 0 ? v : v.slice(0, cut), span = el("span", "iv-path");
-    var a = el("a");
-    a.href = REPO + file;
+    var a = el(/^(data|sdk)\//.test(file) ? "code" : "a");
+    if (a.tagName === "A") a.href = REPO + file;
     a.appendChild(breakable(file.replace(/^data\/Wardogs\//, "").split("/").join(".").replace(/\.json$/, "")));
     a.setAttribute("aria-label", file);
     span.appendChild(a);

@@ -96,7 +96,7 @@ The Huey is named directly in one air yard on the Zestafona map: the extra air y
 - [VFX](../../content/Wardogs_VFX_v2.md): the mounted machine gun muzzle flash
 - [Meta](../../content/Wardogs_Meta_v2.md): the Pilot mounted-gun skills
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md): the destroy reward
-- [Vehicle destroy reward table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_VehicleDestroyed.json): base 1,200 and the zone multipliers
-- [Seat damage reduction table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json): the -25 and -15 rows
-- [Air vehicle demolition rules](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/Vehicles/BH_Demolition_RS_AirVehicles.json): the Huey rule set
+- Vehicle destroy reward table: base 1,200 and the zone multipliers
+- Seat damage reduction table: the -25 and -15 rows
+- Air vehicle demolition rules: the Huey rule set
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md): the reserved platform XP tag

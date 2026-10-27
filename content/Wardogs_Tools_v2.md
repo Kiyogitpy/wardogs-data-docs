@@ -6,7 +6,7 @@ description: "File Map, Text Styles"
 ---
 
 # Wardogs: Tools Data Reference
-*Extracted from cooked game data ([`Wardogs/Content/Tools`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Tools), 1 file). Editor UI text styles, not gameplay data.*
+*Extracted from cooked game data (`Wardogs/Content/Tools`, 1 file). Editor UI text styles, not gameplay data.*
 
 > **Scope:** one editor-UI text-style table. It is used by the editor tooling and does not affect the game.
 
@@ -20,7 +20,7 @@ description: "File Map, Text Styles"
 
 ---
 
-## 2. Text Styles ([`DT_ToolsTextAppearance`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Tools/_EditorUILibrary/_Core/Font/DT_ToolsTextAppearance.json))
+## 2. Text Styles (`DT_ToolsTextAppearance`)
 
 | Style row | Enum entry | Font asset | Typeface | Size | Colour |
 |---|---|---|---|---|---|

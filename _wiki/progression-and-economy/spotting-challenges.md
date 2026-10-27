@@ -41,6 +41,6 @@ The sources list no Season 2 changes for these challenges.
 
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md)
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), section 3
-- [Spotting cash rewards](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Rewards/DT_Reward_Cash_Spotting.json) (JSON)
-- [Spotting challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) (JSON)
+- Spotting cash rewards (JSON)
+- Spotting challenge table (JSON)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

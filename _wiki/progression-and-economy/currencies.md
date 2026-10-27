@@ -104,9 +104,9 @@ The full list of skins and emotes is in [Weapon Skins](weapon-skins.md), [Vehicl
 - [Challenges](../../game-features/Wardogs_Challenges_v1.md), for the Intel rewards
 - [Factory investment](../../game-features/Wardogs_GameFeatures_FactoryInvestment_01_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
-- [Loading screen tips](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Data/DT_LoadingScreenTips.json), the persistent cash tip
+- Loading screen tips, the persistent cash tip
 - [Economy data: currencies, exchange and Gold Market](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
-- [Currency definitions (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions.json)
+- Currency definitions (JSON)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Round 42 economy and buildables evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): expiry (P18), carry-over (P15) and Intel spend path (P13)

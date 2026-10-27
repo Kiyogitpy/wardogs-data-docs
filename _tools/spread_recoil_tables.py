@@ -37,7 +37,6 @@ CTOR = 0x699E6C0
 MEMSET, FCURVE_CTOR, VCURVE_CTOR = 0x98F8026, 0x3DFB270, 0x699DD90
 STRUCTS = os.path.join(ROOT, "sdk", "raw", "WDGame_structs.hpp")
 BEGIN, END = "<!-- spread_recoil_tables -->", "<!-- /spread_recoil_tables -->"
-BLOB = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
 NON_INFANTRY = re.compile(r"Vehicles|VehicleWeaponry|Stationary|Gunsmith|BarrelTest|BuildTool|Fists")
 
 ENUMS = {
@@ -501,7 +500,7 @@ def fmt_keys(keys):
 
 
 def link(w):
-    return f"[`{w['label']}`]({BLOB}{w['path']})"
+    return f"`{w['label']}`"
 
 
 def table(head, rows, align=None):
@@ -771,7 +770,7 @@ def render(spec, defaults, weapons, spread_rows, sight_rows, unmapped, native):
     rows = []
     for s in sight_rows:
         sd, st, co = s["swayDistance"], s["stabilisation"], s["cameraOffset"]
-        rows.append([f"[`{s['item']}`]({BLOB}{s['path']})", f"`{s['sight']}`",
+        rows.append([f"`{s['item']}`", f"`{s['sight']}`",
                      (num(sd["value"]) if sd["override"] else "—") + (" (per weapon: " + ", ".join(f"{k.split('.')[-1]} {num(v)}" for k, v in sd["perWeapon"].items()) + ")" if sd["perWeapon"] else ""),
                      ", ".join(f"{k.split('.')[-1]}: translation {num(v['WeaponTranslationStabilizationSwayCurveMultiplier'])}, rotation {num(v['WeaponRotationStabilizationSwayCurveMultiplier'])}"
                                for k, v in st["perArchetype"].items()) or ("override, no multipliers" if st["override"] else "—"),

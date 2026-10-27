@@ -21,9 +21,9 @@ health group is destroyed. Main and tail are independent selectors. The
 a separate damage hit surface.
 
 The group identity is a destructible mesh tag, **not** the collision surface
-group. The cooked [ROT_02](../../data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Platforms/VP_ROT_02.json),
-[ROT_03](../../data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Platform/VP_ROT_03.json), and
-[ROT_04](../../data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Platforms/VP_ROT_04.json)
+group. The cooked ROT_02,
+ROT_03, and
+ROT_04
 each give the Main group `Vehicle.DestructibleMesh.Rotor.Main` with Base,
 Blades, and Spin mesh tags, and the Tail group the matching `.Tail` tags.
 Each group's `AttributeUpdateRule` selects its matching
@@ -44,7 +44,7 @@ Native linkage:
    `DestructibleMeshGroups` at `+0x110`. Thus the cooked hub and blade entries
    survive as native group members, rather than merely sharing an export
    nesting level. Layouts match
-   [Mechanized_structs.hpp](../../sdk/raw/Mechanized_structs.hpp#L972).
+   Mechanized_structs.hpp.
 2. The attribute-update callback at `0x76A36B0` finds that exact group tag
    through `0x532D180` (machine code `0x532D180–0x532D1B0` scans the
    `+0x110` array). When selected health reaches `<= 0`, it calls
@@ -53,7 +53,7 @@ Native linkage:
    `0x532DCB0(damageModel, rule.AttributeTag) * rule.RepairThreshold`.
    `0x533B4C0` writes the group's `bIsDestroyed` byte at entry `+0x28`, marks
    replication dirty, and processes group rules via `0x5334F80`. The rule
-   fields match [WDGame_structs.hpp](../../sdk/raw/WDGame_structs.hpp#L13445).
+   fields match WDGame_structs.hpp.
 3. The destroyed-visibility binding at `0x53C1490` finds the same group tag
    (`0x53C14E2` calls `0x532D180`) and computes initial visibility as
    `!group.bIsDestroyed && !vehicle.bIsVehicleDestroyed`

@@ -15,20 +15,24 @@ anchors. Rerun after a data update:
 
     python _tools/vehicle_tables.py
 """
+import glob
 import json
 import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = os.path.join(ROOT, "content/Wardogs_AllVehicles_Stats_Damage_v1.md")
-REPO_DATA = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/"
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
-HEADING = re.compile(r"^### (.*\]\(" + re.escape(REPO_DATA) + r"(\S+?\.json)\))$", re.M)
-ASSET = re.compile(r"^(?:### |\| )(\[`DA_\w+`\]\(" + re.escape(REPO_DATA) + r"(\S+?\.json)\))", re.M)
+HEADING = re.compile(r"^### (.*`(\w+)`)$", re.M)
+ASSET = re.compile(r"^(?:### |\| )(`(DA_\w+)`)", re.M)
 
 
-def exports(rel):
-    with open(os.path.join(ROOT, "data", rel), encoding="utf-8") as f:
+def exports(name):
+    """Exports of the one dump file named <name>.json under data/."""
+    paths = glob.glob(os.path.join(ROOT, "data", "**", name + ".json"), recursive=True)
+    if len(paths) != 1:
+        raise SystemExit(f"{name}: {len(paths)} files in data/")
+    with open(paths[0], encoding="utf-8") as f:
         return [json.loads(part) for part in EXPORT.split(f.read())[1:]]
 
 
@@ -99,7 +103,7 @@ def section3(body):
     for block in blocks[1:]:
         m = HEADING.match(block)
         if not m:
-            raise SystemExit("section 3 heading without a data link: " + block.splitlines()[0])
+            raise SystemExit("section 3 heading without an asset name: " + block.splitlines()[0])
         package = next(l for l in block.splitlines() if l.startswith("- **Package:**"))
         out += ["### " + m.group(1), package] + damage_table(m.group(2)) + [""]
     return "\n".join(out).rstrip("\n") + "\n\n"
@@ -128,7 +132,7 @@ def section4(body):
         "vendor stat rows it shows, in its own order, and the string-table keys behind its "
         "Weaponry and Countermeasures names (`STRINGS_VehicleVendor_Stats`, without the "
         "`VehicleStats.Equipment.` prefix). The stat rows are `W_VehicleVendor_Stat_*` widgets "
-        "with no values of their own. Asset names link to the full export.", "",
+        "with no values of their own.", "",
         "| Asset | Vendor stat rows, in order | Weaponry keys | Countermeasure keys |",
         "|---|---|---|---|", *rows, "", "---", "", ""])
 

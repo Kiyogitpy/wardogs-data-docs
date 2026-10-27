@@ -43,7 +43,7 @@ unreviewed decompiler output), **SDK**, **Data**, **Open**.
 
 ### 1.1 `UBHGameplayEffect` (0x270 bytes)
 
-**SDK**, [`BHGameplayEffects_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayEffects_classes.hpp):
+**SDK**, `BHGameplayEffects_classes.hpp`:
 
 | Offset | Field | Type | Notes |
 |---|---|---|---|
@@ -148,12 +148,12 @@ from the paks: 341 packages, the 338 SDK classes plus
 
 **Data.**
 
-- [`DA_CharacterEffectPresets`](../data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json):
+- `DA_CharacterEffectPresets`:
   one row, `GameplayCue.Door.Breach` → `GE_DoorBreach_C`, 1 stack.
-- [`DA_DefaultPlayerEffects`](../data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_DefaultPlayerEffects.json):
+- `DA_DefaultPlayerEffects`:
   one row, `Skill.DoorBreach` → `GE_GrantSkill_DoorBreach_C`, 1 stack.
   When it is applied (for example on spawn) is not traced.
-- [`DA_CharacterModifierState_StimulantEffects`](../data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json)
+- `DA_CharacterModifierState_StimulantEffects`
   is not an effect catalog. It is a `WDCharacterModifierStateDefinition`:
   an FOV camera modifier (×1.05) gated on
   `State.Player.Stimulant.UnlimitedTacSprint` and ignored while
@@ -396,7 +396,7 @@ and settle on its final value.
 
 ## 9. Cross-references
 
-- [`BHGameplayEffects_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayEffects_classes.hpp), [`BHGameplayEffects_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayEffects_structs.hpp), [`BHGameplayPrediction_classes.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/BHGameplayPrediction_classes.hpp), `sdk/raw/GE_*_classes.hpp` (338 files)
+- `BHGameplayEffects_classes.hpp`, `BHGameplayEffects_structs.hpp`, `BHGameplayPrediction_classes.hpp`, `sdk/raw/GE_*_classes.hpp` (338 files)
 - [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the rule pipeline and the character health write (§10)
 - [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md): vehicle sections, which reduce `Attribute.Gameplay.Health.*` attributes
 - [`Wardogs_GameplayTags_v1.md`](../content/Wardogs_GameplayTags_v1.md): tag catalog

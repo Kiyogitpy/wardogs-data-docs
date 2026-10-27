@@ -198,7 +198,7 @@ The one cooked path from combat state into the cone is an effect on `Character.W
 | MountedMachineGun | 1 → 2 (single row) | | |
 | StableMountedMachineGun | 0.5 → 1 (single row) | | |
 
-Source: [`CT_Weapon_Spread.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) (29 rows).
+Source: `CT_Weapon_Spread.json` (29 rows).
 Every infantry weapon uses its own class for all three stances (§12). The PKM (`LMG_02`) uses the Sniper rows.
 
 ---

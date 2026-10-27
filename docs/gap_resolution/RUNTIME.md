@@ -32,7 +32,7 @@ Each entry below should be moved to [`RESEARCH_REGISTER.md`](RESEARCH_REGISTER.m
 
 ### [Wardogs_Environment_v2.md](Wardogs_Environment_v2.html)
 
-- **16. Still not pulled / limitations** — _**North America fluid states** ([`DA_Flux_NorthAmerica_000`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Water/FluidFlux/NorthAmerica/DA_Flux_NorthAmerica_000.json) to `_013`, 14 assets) have no matching height grid in this dump and no `EncodeVelocityMax`. Their runtime role is unclear._
+- **16. Still not pulled / limitations** — _**North America fluid states** (`DA_Flux_NorthAmerica_000` to `_013`, 14 assets) have no matching height grid in this dump and no `EncodeVelocityMax`. Their runtime role is unclear._
 
 ### [Wardogs_GameFeatures_AccountWatermark_v2.md](Wardogs_GameFeatures_AccountWatermark_v2.html)
 
@@ -40,7 +40,7 @@ Each entry below should be moved to [`RESEARCH_REGISTER.md`](RESEARCH_REGISTER.m
 
 ### [Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md](Wardogs_GameFeatures_AlternativeCriticalCamera_v2.html)
 
-- **5. How Values Combine** — _[`CriticalFadeCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CriticalFadeCurve.json) and the 30-second `FadeTime` on the darken modifier control how the screen darkens. Priority 126 on the darken modifier is the highest priority in this set. Higher priority is assumed to win; not verified._
+- **5. How Values Combine** — _`CriticalFadeCurve` and the 30-second `FadeTime` on the darken modifier control how the screen darkens. Priority 126 on the darken modifier is the highest priority in this set. Higher priority is assumed to win; not verified._
 - **6. Still not pulled / limitations** — _**Offset units.** The offsets are in the export's native units (Unreal cm is assumed, not confirmed)._
 
 ### [Wardogs_GameFeatures_Challenges_KOTH_v2.md](Wardogs_GameFeatures_Challenges_KOTH_v2.html)

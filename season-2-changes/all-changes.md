@@ -15,7 +15,7 @@ The text filter matches asset names and paths, property paths (including `Export
 
 Some properties have no known name in either export, and the two seasons give them different placeholder names. When each side has exactly one such property of the same shape, the two are compared and the row is marked **matched by position**; treat those rows as likely, not certain.
 
-<div class="sd" id="sd" data-sd-browser data-sd-base="{{ '/assets/data/season-diff/' | relative_url }}" data-gh="https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/" markdown="0">
+<div class="sd" id="sd" data-sd-browser data-sd-base="{{ '/assets/data/season-diff/' | relative_url }}" markdown="0">
   <p class="sd-note">Loading changes…</p>
 </div>
 

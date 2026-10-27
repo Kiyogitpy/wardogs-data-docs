@@ -90,7 +90,7 @@ Resolution workflow per gap:
 
 ### [Wardogs_Maps_v2.md](Wardogs_Maps_v2.html)
 
-- **9. Still Not Pulled / Limitations**  →  _**Blueprint logic.** [`B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not_
+- **9. Still Not Pulled / Limitations**  →  _**Blueprint logic.** `B_MovingTarget` exports its function names, variables, and components, but not the graph nodes. The time-to-target formula and the damage response are not_
 
 ### [Wardogs_Meta_v2.md](Wardogs_Meta_v2.html)
 

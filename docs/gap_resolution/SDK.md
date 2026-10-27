@@ -24,7 +24,7 @@ Resolution workflow per gap:
 ### [Wardogs_Environment_v2.md](Wardogs_Environment_v2.html)
 
 - **16. Still not pulled / limitations**  →  _**Height grid arrays** (`WDWaterHeightGridAsset`) are binary data keyed by unnamed field names. Only metadata is reported here (world size, grid width, origin, linked state). Height values are not decoded._
-- **16. Still not pulled / limitations**  →  _**Enum names** in [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) are cooked as `NewEnumeratorN`. Only the index is shown._
+- **16. Still not pulled / limitations**  →  _**Enum names** in `DT_VehiclePropList` are cooked as `NewEnumeratorN`. Only the index is shown._
 
 ### [Wardogs_ExternalAssets_v2.md](Wardogs_ExternalAssets_v2.html)
 

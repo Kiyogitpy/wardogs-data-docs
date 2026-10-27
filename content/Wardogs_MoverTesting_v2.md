@@ -19,11 +19,11 @@ description: "Character movement settings: ground, falling, parachute, climbing,
 
 | Folder | Files | Export types | Contents |
 |---|---|---|---|
-| [`CharacterModifierStates/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/MoverTesting/CharacterModifierStates) | 18 | `WDCharacterModifierStateDefinition` | State-driven camera locks, camera modifiers, and character modifiers |
+| `CharacterModifierStates/` | 18 | `WDCharacterModifierStateDefinition` | State-driven camera locks, camera modifiers, and character modifiers |
 | `Settings/` | 19 | `BHGroundMovementData` (x2), `WDFallingData`, `WDParachuteData`, `BHClimbingData`, `BHMantlingData`, `BHVaultingData`, `WDTraversingData` (x3), `BHLadderClimbingData`, `BHMoverSwimmingDataAsset`, `BHMoverModeData_NoClip`, `BHPawnMoverModeData`, `WDBipodMountingData`, `WDBodyDraggingData`, `WDMoverWeightData`, `WDRagdollMovementData`, `WDVehicleData` | Per-mode movement tuning |
-| `Curves/` (+ `Breathing/`, [`CrashLanding/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/MoverTesting/Curves/CrashLanding), `Doors/`, `Falling/`, [`Leaning/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/MoverTesting/Curves/Leaning), [`Traversing/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/MoverTesting/Curves/Traversing)) | 39 | `CurveFloat` (21), `CurveVector` (16), `CurveTable` (2) | Curves that drive lean, stance, traversal, falling, and camera |
-| [`Blueprints/Ladders/LadderData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/MoverTesting/Blueprints/Ladders/LadderData) | 1 | `PDA_LadderData_C` | Ladder mesh set |
-| `Input/` | 1 | `InputMappingContext` | Player key bindings ([`IMC_MoverPlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Input/IMC_MoverPlayer.json)) |
+| `Curves/` (+ `Breathing/`, `CrashLanding/`, `Doors/`, `Falling/`, `Leaning/`, `Traversing/`) | 39 | `CurveFloat` (21), `CurveVector` (16), `CurveTable` (2) | Curves that drive lean, stance, traversal, falling, and camera |
+| `Blueprints/Ladders/LadderData/` | 1 | `PDA_LadderData_C` | Ladder mesh set |
+| `Input/` | 1 | `InputMappingContext` | Player key bindings (`IMC_MoverPlayer`) |
 
 Totals: 18 + 19 + 39 + 1 + 1 = **78**. The 39 curve assets split as 21 float curves (`CurveFloat`, including the 9 at the Curves root), 16 vector curves (including the six stance-transition curves at the root), and 2 curve tables.
 
@@ -94,11 +94,11 @@ Transition time is 0 for both. The Emote_FullBody variant uses the same modifier
 **Other modifiers**
 
 - **AnimationFrustum:** a quaternion rotation of (0, 0, 0.707, 0.707), which is a 90 degree turn about Z.
-- **CrashLanding:** three curves. `OffsetCurve` = [`CRV_CrashLandingOffset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Curves/CrashLanding/CRV_CrashLandingOffset.json), `OffsetScalarCurve` = [`CRV_CrashLandingScalar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Curves/CrashLanding/CRV_CrashLandingScalar.json), `TimeToPlayCurve` = [`CRV_CrashLandingTime`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Curves/CrashLanding/CRV_CrashLandingTime.json).
+- **CrashLanding:** three curves. `OffsetCurve` = `CRV_CrashLandingOffset`, `OffsetScalarCurve` = `CRV_CrashLandingScalar`, `TimeToPlayCurve` = `CRV_CrashLandingTime`.
 - **Stance:** a map of six `(From, To)` stance pairs to `CurveVector` transition offsets (section 4).
 - **Lean:** interpolation speed 15.
 - **NetMask 3** is set on the CameraPitch, CrashLanding, Lean, Stance, and Vehicle modifiers. It is a replication mask (inferred from the name).
-- **Referenced but not in this folder:** [`CRV_LandingPunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LandingPunishment_Damage.json) (used by the falling settings) and [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) (used by the parachute settings) are referenced from section 3 but are not among the 39 curve files.
+- **Referenced but not in this folder:** `CRV_LandingPunishment_Damage` (used by the falling settings) and `CRV_ParachutePunishment_Damage` (used by the parachute settings) are referenced from section 3 but are not among the 39 curve files.
 
 ---
 
@@ -106,7 +106,7 @@ Transition time is 0 for both. The Emote_FullBody variant uses the same modifier
 
 ### 3a. Ground movement (two assets, shared shape)
 
-| Parameter | [`DA_GroundMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_GroundMovement.json) | [`DA_BodyDragging_GroundMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_BodyDragging_GroundMovement.json) |
+| Parameter | `DA_GroundMovement` | `DA_BodyDragging_GroundMovement` |
 |---|---|---|
 | MinSpeed | 80 | 80 |
 | Friction | 6 | 6 |
@@ -126,7 +126,7 @@ Transition time is 0 for both. The Emote_FullBody variant uses the same modifier
 | StanceCooldown / StanceStaminaRegenPerSecond | 0.15 / 50 | 0.15 / 50 |
 | ProneSweepDistance | 125 | - |
 | bValidateProneFeetLocation | False | - |
-| InputMappingContext | - | [`IMC_Player_BodyDrag`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_BodyDrag.json) |
+| InputMappingContext | - | `IMC_Player_BodyDrag` |
 
 **Stance table (both ground assets, identical)**
 
@@ -157,7 +157,7 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 
 ### 3c. Falling and parachute
 
-**[`DA_FallingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_FallingMovement.json) (`WDFallingData`)**
+**`DA_FallingMovement` (`WDFallingData`)**
 
 | Parameter | Value |
 |---|---|
@@ -167,13 +167,13 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 | FallingFloorTraceDistance | 1,000,000 |
 | bStayBasedInAir | True |
 | Impart base velocity (X, Y, Z) | True, True, True |
-| Landing damage lookup | [`CRV_LandingPunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LandingPunishment_Damage.json) |
+| Landing damage lookup | `CRV_LandingPunishment_Damage` |
 | Landing damage type | `WDFallDamageType` |
-| Air-control curve | [`CRF_Falling_SurfaceAngleToAirControl`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Curves/Falling/CRF_Falling_SurfaceAngleToAirControl.json) |
-| Push-off curve | [`CRF_Falling_SurfaceAngleToPushOffForce`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Curves/Falling/CRF_Falling_SurfaceAngleToPushOffForce.json) |
-| InputMappingContext | [`IMC_Player_Falling`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Falling.json) |
+| Air-control curve | `CRF_Falling_SurfaceAngleToAirControl` |
+| Push-off curve | `CRF_Falling_SurfaceAngleToPushOffForce` |
+| InputMappingContext | `IMC_Player_Falling` |
 
-**[`DA_ParachuteMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_ParachuteMovement.json) (`WDParachuteData`)**
+**`DA_ParachuteMovement` (`WDParachuteData`)**
 
 | Parameter | Value |
 |---|---|
@@ -184,13 +184,13 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 | SwingForceMultiplier | 5 |
 | PullUpStaminaUsagePerSecond / PullUpStaminaRegenPerSecond | 50 / 30 |
 | MinFallHeightBeforeAbleToParachute | 100 |
-| Velocity damage lookup | [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) |
+| Velocity damage lookup | `CRV_ParachutePunishment_Damage` |
 | Velocity damage type | `WDFallDamageType` |
 | ParachutingFloorTraceDistance | 1,000,000 |
 
 ### 3d. Traversal: climbing, mantling, vaulting
 
-**[`DA_ClimbingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_ClimbingMovement.json) (`BHClimbingData`)**
+**`DA_ClimbingMovement` (`BHClimbingData`)**
 
 | Parameter | Value |
 |---|---|
@@ -202,7 +202,7 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 | Scale-over animations | `A_TP_Rifle_Climb_Still_Scaling_180`, `A_TP_Rifle_Climb_Still_OnTop_180` |
 | Montage choosers | `CHT_Traversal_Climbing_ThirdPerson` (plus `_RM_On` and `_RM_Off` root-motion variants) |
 
-**[`DA_MantlingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_MantlingMovement.json) (`BHMantlingData`)**
+**`DA_MantlingMovement` (`BHMantlingData`)**
 
 | Parameter | Value |
 |---|---|
@@ -217,7 +217,7 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 | bUseForwardOnlyHeight / ForwardOnlyHeight | True / 127.5 |
 | Montage choosers | `CHT_Traversal_Mantling_ThirdPerson` (plus `_RM_On` / `_RM_Off`) |
 
-**[`DA_VaultingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_VaultingMovement.json) (`BHVaultingData`)**
+**`DA_VaultingMovement` (`BHVaultingData`)**
 
 | Parameter | Value |
 |---|---|
@@ -231,11 +231,11 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 
 | Asset | First-person montage chooser |
 |---|---|
-| [`DA_WDClimbingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_WDClimbingMovement.json) | `CHT_Traversal_Climbing_FirstPerson` |
-| [`DA_WDMantlingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_WDMantlingMovement.json) | `CHT_Traversal_Mantling_FirstPerson` |
-| [`DA_WDVaultingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_WDVaultingMovement.json) | `CHT_Traversal_Vaulting_FirstPerson` |
+| `DA_WDClimbingMovement` | `CHT_Traversal_Climbing_FirstPerson` |
+| `DA_WDMantlingMovement` | `CHT_Traversal_Mantling_FirstPerson` |
+| `DA_WDVaultingMovement` | `CHT_Traversal_Vaulting_FirstPerson` |
 
-### 3e. Ladder ([`DA_LadderClimbingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_LadderClimbingMovement.json), `BHLadderClimbingData`)
+### 3e. Ladder (`DA_LadderClimbingMovement`, `BHLadderClimbingData`)
 
 | Parameter | Value |
 |---|---|
@@ -244,24 +244,24 @@ Each stance also has acceleration and max-speed modifiers (`BHFloatModifier_Oper
 | ClimbDown max / min speed / acceleration | 160 / 40 / 500 |
 | SlideDownSpeed / SlideDownAcceleration | 320 / 1000 |
 | JumpOffForce | 300 |
-| Transition curves (indices 1 to 4) | 1: [`CRV_LMF_Ladder_ClimbOntoAnimation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOntoAnimation.json) (0.25 s); 2: [`CRV_LMF_Ladder_ClimbOntoFromTopAnimation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOntoFromTopAnimation.json) (0.75 s); 3: [`CRV_LMF_Ladder_ClimbOntoAnimation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOntoAnimation.json) (0.25 s); 4: [`CRV_LMF_Ladder_ClimbOffAtTopAnimation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOffAtTopAnimation.json) (1.0 s) |
-| InputMappingContext | [`IMC_LadderClimbing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IMC_LadderClimbing.json) |
+| Transition curves (indices 1 to 4) | 1: `CRV_LMF_Ladder_ClimbOntoAnimation` (0.25 s); 2: `CRV_LMF_Ladder_ClimbOntoFromTopAnimation` (0.75 s); 3: `CRV_LMF_Ladder_ClimbOntoAnimation` (0.25 s); 4: `CRV_LMF_Ladder_ClimbOffAtTopAnimation` (1.0 s) |
+| InputMappingContext | `IMC_LadderClimbing` |
 
 Index 0 is not present in the export. The four entries are as listed.
 
 ### 3f. Swimming, no-clip, vehicle, weight, ragdoll
 
-**[`DA_SwimmingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_SwimmingMovement.json) (`BHMoverSwimmingDataAsset`)**
+**`DA_SwimmingMovement` (`BHMoverSwimmingDataAsset`)**
 
 | Parameter | Value |
 |---|---|
 | WaterAcceleration | 4000 |
 | InputDeceleration | 500 |
-| InputMappingContext | [`IMC_Player_Swimming`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Swimming.json) |
+| InputMappingContext | `IMC_Player_Swimming` |
 
-**[`DA_NoClipMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_NoClipMovement.json) (`BHMoverModeData_NoClip`)**: one property, the InputMappingContext [`IMC_Player_NoClipping`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_NoClipping.json).
+**`DA_NoClipMovement` (`BHMoverModeData_NoClip`)**: one property, the InputMappingContext `IMC_Player_NoClipping`.
 
-**[`DA_VehicleMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_VehicleMovement.json) (`WDVehicleData`)**
+**`DA_VehicleMovement` (`WDVehicleData`)**
 
 | Parameter | Value |
 |---|---|
@@ -269,7 +269,7 @@ Index 0 is not present in the export. The four entries are as listed.
 | LeaveForceCompleteActionTags | Binoculars.ADS, RangeFinder.ADS, Weapon.ADS |
 | HitValidationBoundsMultiplier | 2 |
 
-**[`DA_CharacterWeight`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_CharacterWeight.json) (`WDMoverWeightData`)**
+**`DA_CharacterWeight` (`WDMoverWeightData`)**
 
 | Class (tag) | MinWeight | Gameplay effect |
 |---|---|---|
@@ -281,7 +281,7 @@ Index 0 is not present in the export. The four entries are as listed.
 
 The weight unit is not stated.
 
-**[`DA_WDRagdollMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_WDRagdollMovement.json) (`WDRagdollMovementData`)**
+**`DA_WDRagdollMovement` (`WDRagdollMovementData`)**
 
 | Parameter | Value |
 |---|---|
@@ -295,7 +295,7 @@ The weight unit is not stated.
 
 The bone lists are hashed keys, but their values are readable. One list has 12 bones: pelvis, spine_02, spine_03, spine_04, upperarm_r, lowerarm_r, upperarm_l, lowerarm_l, thigh_l, calf_l, thigh_r, calf_r. A second has upper arms and thighs, and a third has feet and calves. A value of 200 is stored under a hashed key and is not named.
 
-**Empty assets (no properties exported):** [`DA_BipodMountingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_BipodMountingMovement.json) (`WDBipodMountingData`) and [`DA_DummyMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_DummyMovement.json) (`BHPawnMoverModeData`).
+**Empty assets (no properties exported):** `DA_BipodMountingMovement` (`WDBipodMountingData`) and `DA_DummyMovement` (`BHPawnMoverModeData`).
 
 ---
 
@@ -362,7 +362,7 @@ The bone lists are hashed keys, but their values are readable. One list has 12 b
 
 ---
 
-## 5. Input Map ([`IMC_MoverPlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Input/IMC_MoverPlayer.json), 26 mappings)
+## 5. Input Map (`IMC_MoverPlayer`, 26 mappings)
 
 | Action | Keys (keyboard / gamepad) | Notes |
 |---|---|---|
@@ -385,7 +385,7 @@ The bone lists are hashed keys, but their values are readable. One list has 12 b
 
 ---
 
-## 6. Ladder Data ([`DA_Ladder_Industrial`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Blueprints/Ladders/LadderData/DA_Ladder_Industrial.json), `PDA_LadderData_C`)
+## 6. Ladder Data (`DA_Ladder_Industrial`, `PDA_LadderData_C`)
 
 | Part | Mesh |
 |---|---|
@@ -402,14 +402,14 @@ The middle and bottom segments share one mesh. This is a single ladder variant (
 - **State modifiers.** A state applies when its conditions pass (section 2). Its camera locks then limit how far the camera can move from the body. Pitch and yaw lock angles are the limits. Smoothing curves ease the lock on and off. Priority presumably decides which state wins when several are active, but the export does not say so. It has priorities for 12 states only, and the rule for ties is not in the dump.
 - **Stamina.** Jumping costs 50 from a 150 pool, regenerating at 50 per second, with a 0.05 s cooldown. Each stance carries a `StanceStaminaCost` of 20 (stand), 30 (crouch), or 50 (prone); how that cost is charged is not stated. Parachute pull-up costs 50 per second and regenerates at 30. These are all tied to the same stamina pool.
 - **Ground vs body drag.** The body-drag asset (section 3a) reuses the base ground numbers and adds a backward strafe scale of 0.35. It drops the sprint block timers (`BlockSprintTime`, `BlockTacSprintTime`) and the prone feet check. Body dragging is therefore not a separate speed model. It is the ground model with a different input map and different rules around sprinting.
-- **Falling and parachute.** Landing damage comes from a curve keyed by impact speed ([`CRV_LandingPunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LandingPunishment_Damage.json), [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json)). Air control and push-off are set per surface angle ([`CRF_Falling_SurfaceAngleToAirControl`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Curves/Falling/CRF_Falling_SurfaceAngleToAirControl.json), `..._PushOffForce`).
+- **Falling and parachute.** Landing damage comes from a curve keyed by impact speed (`CRV_LandingPunishment_Damage`, `CRV_ParachutePunishment_Damage`). Air control and push-off are set per surface angle (`CRF_Falling_SurfaceAngleToAirControl`, `..._PushOffForce`).
 - **Weight.** Each weight class applies one gameplay effect (`GE_Player_Weight_*`) once the character's weight passes its threshold. The effects themselves are not in this category.
 
 ---
 
 ## 8. Still Not Pulled / Limitations
 
-- **Empty assets.** [`DA_BipodMountingMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_BipodMountingMovement.json) and [`DA_DummyMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_DummyMovement.json) have no exported properties. Their values, if any, are not in the dump.
+- **Empty assets.** `DA_BipodMountingMovement` and `DA_DummyMovement` have no exported properties. Their values, if any, are not in the dump.
 - **Empty stance curves.** Four of six stance-transition curves have no keys in the export (section 4b). Their intended camera motion cannot be read from this dump.
 - **Priority semantics.** Priority values exist on 12 states, and their ordering is not documented in the export. Whether a higher number wins, and how ties are broken, is not confirmed.
 - **Description mismatch.** The `VehicleCritical` state's description reads "critical/dead state and in a vehicle", but its state query lists only `State.Player.Vitality.Critical`. The export does not contain a Dead tag there. The discrepancy is noted as exported.

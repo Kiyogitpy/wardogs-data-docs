@@ -106,7 +106,7 @@ the end.
 
 **Data.** 21 files under `Plugins/GameFeatures/Vehicles/<CODE>/Content/DataTables/`
 (`DataTable/` for STN_03 and STN_05), plus the generic
-[`DT_GlobalDamage_VehicleData`](../data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json).
+`DT_GlobalDamage_VehicleData`.
 "Selectable" excludes entries the collector skips (no requirements and
 amount 0, damage doc §4).
 
@@ -726,8 +726,8 @@ Sections are keyed by attribute tags (`Attribute.Gameplay.Health.*`).
 
 **Native** (`0x53205D0` ApplyDamageToSection, `0x5339DD0`
 RerouteDamageInternal). Structures:
-[`FVehicleHealthSection`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/Mechanized_structs.hpp#L523) and
-[`FVehicleDamageRouting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/Mechanized_structs.hpp#L511).
+`FVehicleHealthSection` and
+`FVehicleDamageRouting`.
 
 ```cpp
 struct FVehicleHealthSection final {       // 0x140
@@ -1014,7 +1014,7 @@ Every row has a `Meta.Damage.Bullet` rule.
 - [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md): the shared rule pipeline (§1–6)
 - [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md): per-vehicle stats and the damage tables entry by entry
 - [`Wardogs_GameFeatures_Vehicles_v2.md`](../game-features/Wardogs_GameFeatures_Vehicles_v2.md): vehicle game-feature loadouts
-- [`sdk/raw/Mechanized_structs.hpp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/sdk/raw/Mechanized_structs.hpp): `FVehicleDamageRouting` (L511), `FVehicleHealthSection` (L523)
+- `sdk/raw/Mechanized_structs.hpp`: `FVehicleDamageRouting` (L511), `FVehicleHealthSection` (L523)
 - [`docs/evidence/vehicles.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/vehicles.md): evidence behind the native addresses, with a verification status for every RVA this page cites
 
 ## Change log

@@ -2,19 +2,18 @@
 
 [![Repo](https://img.shields.io/badge/repo-Kiyogitpy%2Fwardogs--data--docs-blue?logo=github)](https://github.com/Kiyogitpy/wardogs-data-docs)
 [![Site](https://img.shields.io/badge/pages-live-brightgreen)](https://kiyogitpy.github.io/wardogs-data-docs/)
-[![Scope](https://img.shields.io/badge/scope-defensive%20research-informational)](docs/SCOPE.md)
 [![License](https://img.shields.io/badge/license-CC--BY--SA--4.0%20%2F%20MIT-lightgrey)](LICENSE)
 
-Comprehensive reference documentation for **Wardogs** (Bulkhead, published by Team17,
-UE 5.7, build `++Wardogs+Live-CL-516586`): every number, table, curve
-and asset the game ships with, extracted from cooked data and
-cross-referenced to the UE class hierarchy.
+Reference documentation for the game data of **Wardogs** (Bulkhead, published by Team17,
+UE 5.7, build `++Wardogs+Live-CL-516586`): the numbers, tables, curves
+and rules behind weapons, vehicles, items, progression, game modes and
+maps, read from the game's cooked data and tied to the engine classes
+that use it.
 
-- **Repository:** <https://github.com/Kiyogitpy/wardogs-data-docs>
 - **Live site:** <https://kiyogitpy.github.io/wardogs-data-docs/>
-- **Scope + intent:** [`docs/INTENT.md`](docs/INTENT.md) · [`docs/SCOPE.md`](docs/SCOPE.md)
-- **Methodology:** [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
-- **Security disclosure:** [`SECURITY.md`](SECURITY.md)
+- **Repository:** <https://github.com/Kiyogitpy/wardogs-data-docs>
+- **How the data is read:** [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
+- **What the docs cover:** [`docs/INTENT.md`](docs/INTENT.md) · [`docs/SCOPE.md`](docs/SCOPE.md)
 
 ---
 
@@ -22,45 +21,44 @@ cross-referenced to the UE class hierarchy.
 
 | Path | Contents |
 |---|---|
-| `*.md` (top-level) | 75 per-category reference docs (weapons, vehicles, items, game mechanics, UI, VFX, audio, animation, maps, meta, etc.) |
-| `data/Wardogs/` | Cooked data exports (JSON, parsed from `.uasset` via CUE4Parse) |
-| `sdk/` | CppSDK dump from Dumper-7 — UE class hierarchy mapping |
-| `mappings/` | Cooked-data `.usmap` and documentation of the sole external IDA map |
-| `docs/` | Scope, methodology, intent — project framing docs |
-| `tools/` | Research instrumentation (access-controlled; see `tools/README.md`) |
-| `_includes/`, `_sass/`, `assets/` | Jekyll theme for the GitHub Pages site |
-| `SECURITY.md` | Responsible disclosure policy |
-| `CONTRIBUTING.md` | How to contribute |
-| `LICENSE` | CC-BY-SA 4.0 for docs; MIT for any code |
+| `content/`, `game-features/`, `plugins/`, `pipelines/` | Per-category reference docs (weapons, vehicles, items, game mechanics, UI, maps, meta, and more) |
+| `season-2-changes/` | Season 1 → Season 2 changes |
+| `_wiki/` | Player-facing wiki pages |
+| `assets/data/` | Generated JSON behind the site's tables and viewers |
+| `_tools/` | Python generators that build the tables and JSON from a local export |
+| `tools/` | The C# extractor (CUE4Parse) and its notes |
+| `mappings/` | Notes on the `.usmap` / `.idmap` mappings (the map files themselves are not committed) |
+| `sdk/` | Notes and a package index for the Dumper-7 class dump (the dump itself is not committed) |
+| `docs/` | Methodology, units, evidence notes per research round |
+| `_includes/`, `_layouts/`, `_sass/` | Jekyll theme for the GitHub Pages site |
 
-## Project scope and posture
+### What is not in this repo
 
-**One line:** This is a defensive-research and documentation project.
-The goal is a complete code↔data cross-reference of the game,
-published as a public artifact, with any security findings routed to
-the responsible vendor (Bulkhead/Team17 for the game, Embark for
-Elytra) through responsible disclosure.
+The raw game exports (`data/`) and the Dumper-7 header dump (`sdk/raw/`)
+are generated locally from an owned copy of the game and are not
+published: they are the game's own material. The docs cite assets by
+name and path (for example
+`Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json`), so anyone with the game can
+produce the same files with the extractor in `tools/` and check a value.
 
-**It is NOT a cheat development project.** See
-[`docs/SCOPE.md`](docs/SCOPE.md) for the detailed scope statement and
-what's in and out.
+## How it was built
 
-**Posture clarifier:** DMA FPGA cards cost $300-500 and are
-undetectable by Elytra. If the goal here were cheating, the author
-would have bought one. The fact that this is a software-only,
-locally-run, publicly-documented effort tied to responsible
-disclosure is itself the scope signal.
+1. **Extract.** CUE4Parse reads the game's `.pak`/`.utoc` files and writes each
+   cooked asset as JSON ([`tools/`](tools/)).
+2. **Map the code.** Dumper-7, run once against the author's own local
+   copy of the game, produces the UE class hierarchy (classes, properties,
+   offsets). It names the fields in the cooked data and connects assets
+   to the native classes that read them.
+3. **Read the binary.** Static analysis of the shipping executable in IDA
+   fills in native defaults and formulas that the data does not hold
+   (how multipliers combine, how damage resolves).
+4. **Generate.** The scripts in [`_tools/`](_tools/) turn the local
+   export into the tables and JSON on the site, so a new game build
+   is a rerun, not a rewrite.
 
-## Reading order
-
-New to the project:
-1. [`docs/INTENT.md`](docs/INTENT.md) — why this exists
-2. [`docs/SCOPE.md`](docs/SCOPE.md) — what's in and what's out
-3. [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) — how we work
-4. [`index.md`](index.md) — the public data docs landing page
-
-Security disclosure:
-- [`SECURITY.md`](SECURITY.md) — how we handle findings
+Apart from that one class dump, the work reads files on disk and an
+offline binary; nothing runs against online matches. Details in
+[`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
 
 ## Target build
 
@@ -71,31 +69,30 @@ Security disclosure:
 | Engine | Unreal Engine 5.7 |
 | Build | `++Wardogs+Live-CL-516586` |
 | Platform | PC (Steam AppID 1867240) |
-| Anti-cheat | Elytra (Embark's in-house kernel-level anti-cheat, also used in THE FINALS / ARC Raiders) |
 | Season | Season 02 (data as of 2026-10-15) |
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md). Short version: new
-data-doc contributions welcome, cheat-adjacent contributions
-rejected, security findings go to [`SECURITY.md`](SECURITY.md)
-disclosure channel not public PRs.
+Corrections and new data pages are welcome. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md). If you find something that looks
+like a security problem in the game, report it to the developer rather
+than in a public issue; [`SECURITY.md`](SECURITY.md) says how.
 
 ## Attribution
 
 - **Wardogs** © Bulkhead Ltd, published by Team17
-- **Elytra** anti-cheat © Embark Studios AB
 - **Unreal Engine 5.7** © Epic Games
-- Community tooling: Dumper-7, IDAExecFunctionsImporter, CUE4Parse,
-  FModel, IDA Pro
+- Community tooling: CUE4Parse, FModel, Dumper-7, IDA Pro
+
+This is an unofficial fan project, not affiliated with or endorsed by
+Bulkhead or Team17.
 
 ## License
 
 - **Documentation** (`*.md` files, data analysis, methodology):
   [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- **Code** (`tools/`, scripts, parsers): MIT License
-- **Cooked data** (`data/`): subject to Wardogs EULA; redistributed
-  here under fair-use research exemption for commentary and analysis.
-  The author owns a legitimate copy of the game.
+- **Code** (`_tools/`, `tools/`, site scripts): MIT License
+- **Game names, values and asset names** quoted in the docs belong to
+  their owners and are quoted for reference and commentary.
 
 Full text in [`LICENSE`](LICENSE).

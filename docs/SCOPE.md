@@ -2,119 +2,58 @@
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
-What this project does and doesn't cover. Read in conjunction with
+What this project covers and what it leaves out. Read with
 [`INTENT.md`](INTENT.md).
 
-This repository is a **documentation project**. It contains reference docs
-for Wardogs' cooked data and static code paths, plus the mappings and SDK
-dumps needed to read them. It is not a tooling repository: no runtime
-agents, loaders, or instrumentation are published here.
+This repository is a **data documentation project**: reference pages
+for Wardogs' game data, the native code that reads it, and the
+scripts that generate the pages.
 
 ## In scope
 
-### Data documentation
+### Game data
 
-- Every cooked data asset in `Wardogs/Content/` and
+- Cooked data assets in `Wardogs/Content/` and
   `Wardogs/Plugins/GameFeatures/`
-- Every property on every DataAsset / DataTable the game ships
-- Every curve and lookup table
-- Season-by-season diffs
+- DataAsset and DataTable properties, curves and lookup tables
+- Season-by-season changes
 - Cross-references between related assets
 
-### Static reverse engineering
+### Code behind the data
 
-- Disassembly of `WardogsClient-Win64-Shipping.exe` using IDA Pro
-  and the community `.idmap` / `.usmap` mappings documented in
-  [`../mappings/`](../mappings/)
-- CppSDK generation via Dumper-7
-- Function-level documentation of code paths that consume the
-  documented data assets
-- Formula documentation ("how multipliers combine", "how damage
-  resolves", etc.) via static disassembly of an owned, offline image
+- The UE class hierarchy from a Dumper-7 class dump, used to name
+  fields and link assets to native classes
+- Static analysis of the shipping executable in IDA, using the
+  mappings described in [`../mappings/`](../mappings/), for native
+  defaults and formulas the data does not hold ("how multipliers
+  combine", "how damage resolves")
 
-All RE here is static: reading a binary and its mappings on disk. No
-game process is executed or attached to for the documentation in this
-repo.
+### Generators
 
-### Security findings pipeline
+- Scripts that turn a local export into the tables and JSON on the
+  site (`_tools/`)
+- The extractor that produces that export (`tools/`)
 
-- Private tracking of security-relevant findings
-- Coordinated disclosure to the responsible vendor (Bulkhead/Team17, or Embark for Elytra)
-- Public write-up only after remediation (see
-  [`../SECURITY.md`](../SECURITY.md))
+## Not published
 
-## Out of scope — hard limits
+- **Raw game exports** (`data/`) and the **class dump** (`sdk/raw/`).
+  They are generated locally from an owned copy of the game. Pages
+  cite assets by name and path.
+- **Game binaries, pak files, keys and mapping files.**
+- **Programs that act on a running game**: no loaders, injectors,
+  memory readers or overlays.
 
-### Tooling and instrumentation
+## Out of scope
 
-- No runtime agents, memory-access primitives, loaders, or injectors
-  are published in this repository
-- Any private instrumentation used to produce or verify documentation
-  stays out of this repo: single-operator, on the author's own
-  hardware with an owned copy of the game, offline or in sessions where
-  no other player can join or share the session
-- This repo ships documentation, not programs
+- Tools for gaining an advantage in online play
+- Anything that runs against live matches with other players; any
+  observation behind a page is done offline or in sessions no one
+  else can join
+- Asset extraction for use in other games or products
+- Paid access of any kind: docs are CC BY-SA 4.0, code is MIT
 
-### Cheat tooling
+## Security issues
 
-- No ESP overlay (DirectX hook, WPF window, external renderer, ANY)
-- No aimbot / triggerbot / aim correction applied to live input
-- No wall-hack, no map hack, no radar
-- No tool whose only use is in-game advantage over other players
-
-### Distribution
-
-- Nothing in this repo is packaged for general consumption
-- No installer, no auto-updater, no one-click bypass
-- Not shared on marketplaces, Discord cheat scenes, or similar
-
-### Online multiplayer with real players
-
-- Any observation that informs this documentation must run offline or
-  in isolated sessions. Server-connected tutorials are permitted only
-  when there is no possibility of other players joining or sharing the
-  session.
-- If that isolation is uncertain, do not proceed. Controlling a lobby
-  alone does not establish isolation.
-- There is no live-matchmaking exception, including read-only
-  observation.
-
-### Monetization
-
-- No paid tier for "undetected cheats"
-- No Patreon, no subscription, no commercial access control
-- Documentation is CC-BY-SA 4.0 (free, with attribution)
-- Code is MIT (free, open)
-
-### Competing products
-
-- Nothing extracted here goes into a competing game or engine
-- No wholesale asset extraction for use in other projects
-- Documentation is for understanding, not for cloning
-
-## Soft limits — case-by-case
-
-Some topics are judgment calls. Default posture:
-
-### Memory offsets
-
-- Documenting the UE actor structure with offsets (e.g.,
-  `ACharacter.Health` is at offset `0x4B0` on CL-516586) is in
-  scope — it's structural documentation
-- Publishing a self-contained script that reads live memory from
-  a specific offset without any surrounding context (plain
-  cheat recipe) is out of scope
-
-### Automation of RE tasks
-
-- A script that parses cooked data or a static binary to help build
-  the data docs: in scope
-- A script that reads or acts on a live game process to produce
-  in-game advantage: out of scope
-
-## When in doubt
-
-Ask: "If the vendor's security team read this contribution tomorrow,
-would they thank me or sue me?" If the answer isn't clearly
-"thank me", route it through [`../SECURITY.md`](../SECURITY.md)
-instead of publishing it.
+A data project sometimes turns up something that looks like a
+security problem in the game. Those are reported to the developer, not
+published here. See [`../SECURITY.md`](../SECURITY.md).

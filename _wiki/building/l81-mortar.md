@@ -110,7 +110,7 @@ The Build Supplies cost is taken from the [Building](../building.md) article, wh
 - [Building](../building.md): build cost, health and hammer (stationary weapons table)
 - [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys (MIT licence): range, one arc and dial settings, measured in game
 - [artillery_range_tables.py](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/artillery_range_tables.py): prints the table and compares it with the dial readings
-- [Mortar weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json): the 17-row range table (mrad, impact distance, travel time), reload, restock, windup and starting shells
+- Mortar weapon extension data: the 17-row range table (mrad, impact distance, travel time), reload, restock, windup and starting shells
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the mortar's rate and damage table
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost, restock, windup and damage table changes
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link

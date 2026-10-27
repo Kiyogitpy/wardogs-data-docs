@@ -86,7 +86,7 @@ this offset. Other possible writers are not exhaustively traced.
 
 The `a2` input to `0x6E6B670` is an `FHitResult`, whose
 `Component` weak pointer is at `+0xD8` and `BoneName` at `+0xF0`
-([SDK layout](../../sdk/raw/Engine_structs.hpp#L9537)). Helper `0x6E6D580`
+(SDK layout). Helper `0x6E6D580`
 uses those two fields to request the hit component's named body. If that
 body supplies a finite, valid box and transform, the helper uses its
 body-specific local box and transform. If the body is absent, its box is
@@ -111,8 +111,8 @@ matrix path for negative scales. The caller transforms the character box
 into that hit-body/component coordinate frame and forms its enclosing
 axis-aligned box. Thus the hit box and transformed character box are
 intersected in one frame. SDK layouts for `FBox3d` and
-`FBoxSphereBounds3d` are [here](../../sdk/raw/CoreUObject_structs.hpp#L1081)
-and [here](../../sdk/raw/CoreUObject_structs.hpp#L1136).
+`FBoxSphereBounds3d` are here
+and here.
 
 Let `Hmin/Hmax` be the scaled hit box and `Cmin/Cmax` the transformed
 character AABB. The native comparisons before `0x6E6BC3D` test for
@@ -154,9 +154,9 @@ the shipped `FMoverTimeStep` layout.
    The same copied record is later broadcast on component `+0xE0`
    (`0x520439E–0x52043B5`), which the shipped SDK identifies as
    `OnPostSimulationTick(const FMoverTimeStep&)`
-   ([Mover_classes.hpp:252](../../sdk/raw/Mover_classes.hpp#L252)).
+   (Mover_classes.hpp:252).
    This independently identifies the record type. The shipped
-   [FMoverTimeStep](../../sdk/raw/Mover_structs.hpp#L123) names ServerFrame
+   FMoverTimeStep names ServerFrame
    at `+0`, BaseSimTimeMs at `+4`, and float StepMs at `+8`.
 2. `0x51FAC7B–0x51FAC95` loads that sixth-argument pointer and copies its
    16-byte block into local `rsp+0x78`. At each iteration,

@@ -20,7 +20,6 @@ import json
 import os
 import re
 import sys
-from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import weapon_attributes as wa  # noqa: E402
@@ -28,7 +27,6 @@ from ge_values import OPS, num, short  # noqa: E402
 
 ROOT = wa.ROOT
 PAGE = "game-features/Wardogs_AttachmentsPlatforms_v1.md"
-BLOB = wa.BLOB
 BLOCK = re.compile(r"<!-- attachment_tables (\w+) -->\r?\n.*?<!-- /attachment_tables -->", re.S)
 ARCH_DIR = "data/Wardogs/Content/Items/Attachments/Archetypes"
 HIDE_CTX = {"item.context.equippable"}
@@ -110,7 +108,7 @@ def fits(d):
 # --- helpers ------------------------------------------------------------------------------------
 
 def link(item, label=None):
-    return f"[`{label or item.asset}`]({BLOB}{quote(item.path)})"
+    return f"`{label or item.asset}`"
 
 
 def tname(d, tag):
@@ -229,7 +227,7 @@ def archetypes(d):
     cnt = collections.Counter(it.att_type for it in d.attachments)
     out = ["| Archetype asset | Slot tag | Attach bone | Category | Attachment items of this type |", "|---|---|---|---|---:|"]
     for path, name, tag, bone, cat in d.archetypes:
-        out.append(f"| [`{name}`]({BLOB}{quote(path)}) | `{tag}` | `{bone}` | {cat or '(not serialized)'} | {cnt.get(tag, 0)} |")
+        out.append(f"| `{name}` | `{tag}` | `{bone}` | {cat or '(not serialized)'} | {cnt.get(tag, 0)} |")
     extra = sorted(t for t in cnt if t not in {a[2] for a in d.archetypes})
     if extra:
         out.append("")
@@ -474,7 +472,7 @@ def nullfrag(d):
             objs = [json.loads(p) for p in wa.EXPORT.split(f.read()) if p.strip()]
         p = next(o for o in objs if o.get("Type") == "BHInventoryItemDefinition")["Properties"]
         dn = (p.get("DisplayName") or {}).get("LocalizedString") or ""
-        out.append(f"| [`{name}`]({BLOB}{quote(rel)}) | `{p['ItemId']['TagName']}` | {esc(dn) or '(blank)'} | "
+        out.append(f"| `{name}` | `{p['ItemId']['TagName']}` | {esc(dn) or '(blank)'} | "
                    + ", ".join(f"`{t}`" for t in p.get("ItemContext", []) if t.lower() not in HIDE_CTX) + " |")
     return "\n".join(out)
 

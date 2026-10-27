@@ -833,4 +833,4 @@ Plain reading of the main ones (**Derived** from the modifiers):
 
 ## Other assets (round 73)
 
-The ADS action asset is [`DA_Action_Ads`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Weapons/DA_Action_Ads.json). The exported file name spells it `Ads`; its object name is `DA_Action_ADS`, which is the name used in the tables above. Nothing in the file is missing from those rows.
+The ADS action asset is `DA_Action_Ads`. The exported file name spells it `Ads`; its object name is `DA_Action_ADS`, which is the name used in the tables above. Nothing in the file is missing from those rows.

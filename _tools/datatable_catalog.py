@@ -25,7 +25,6 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
-REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
 BLOCK = re.compile(r"<!-- datatable_catalog ([^>]+?) -->\r?\n.*?<!-- /datatable_catalog -->", re.S)
 INDEX_PAGE = "content/Wardogs_DataTables_v1.md"
@@ -309,7 +308,7 @@ def block_index():
                   f"{len(ts)} table(s), {nrows} rows, {len(ts) - undoc} named in docs. {disposition(s)}.", ""]
         lines += ["| Table | Rows | Folder | Documented in |", "|---|---|---|---|"]
         for t in ts:
-            link = f"[`{t['name']}`]({REPO}{t['path']})"
+            link = f"`{t['name']}`"
             pages = ment[t["name"]]
             shown = ", ".join(f"[{os.path.basename(p)[:-3]}](../{p})" for p in pages[:3])
             if len(pages) > 3:

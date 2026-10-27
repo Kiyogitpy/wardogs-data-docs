@@ -6,7 +6,7 @@ description: "What This Folder Holds, Feature Actions, Infantry Critical State, 
 ---
 
 # Wardogs — GameFeatures: AlternativeCriticalCamera
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/AlternativeCriticalCamera/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera) — 8 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/AlternativeCriticalCamera/` — 8 JSON files.*
 
 ---
 
@@ -16,14 +16,14 @@ The "critical" death-state camera: when a player is critically hurt, the view da
 
 | File | Type | Role |
 |---|---|---|
-| [`AlternativeCriticalCamera.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/AlternativeCriticalCamera.json) | GameFeatureData + actions | Adds the modifier states and the post-process registry |
-| [`DA_CharacterModifierState_AlternateCritical.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DA_CharacterModifierState_AlternateCritical.json) | WDCharacterModifierStateDefinition | Infantry critical camera (5 exports) |
-| [`DA_CharacterModifierState_AlternateVehicleCritical.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DA_CharacterModifierState_AlternateVehicleCritical.json) | WDCharacterModifierStateDefinition | Vehicle critical camera (4 exports) |
-| [`DT_AlternativeCriticalCamera.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) | DataTable | Post-process effect registry, no rows |
-| [`CriticalFadeCurve.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CriticalFadeCurve.json) | CurveFloat | Fade curve for the critical effect (role inferred from name) |
-| [`CRV_PanToKiller.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CRV_PanToKiller.json) | CurveFloat | Pan-to-killer location alpha |
-| [`CRV_PanToKilled.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CRV_PanToKilled.json) | CurveFloat | Pan-to-killed interpolation speed |
-| [`CRV_RotateToKiller.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CRV_RotateToKiller.json) | CurveFloat | Rotation alpha to the killer |
+| `AlternativeCriticalCamera.json` | GameFeatureData + actions | Adds the modifier states and the post-process registry |
+| `DA_CharacterModifierState_AlternateCritical.json` | WDCharacterModifierStateDefinition | Infantry critical camera (5 exports) |
+| `DA_CharacterModifierState_AlternateVehicleCritical.json` | WDCharacterModifierStateDefinition | Vehicle critical camera (4 exports) |
+| `DT_AlternativeCriticalCamera.json` | DataTable | Post-process effect registry, no rows |
+| `CriticalFadeCurve.json` | CurveFloat | Fade curve for the critical effect (role inferred from name) |
+| `CRV_PanToKiller.json` | CurveFloat | Pan-to-killer location alpha |
+| `CRV_PanToKilled.json` | CurveFloat | Pan-to-killed interpolation speed |
+| `CRV_RotateToKiller.json` | CurveFloat | Rotation alpha to the killer |
 
 ---
 
@@ -32,11 +32,11 @@ The "critical" death-state camera: when a player is critically hurt, the view da
 | Action | Effect |
 |---|---|
 | `WDGameFeatureAction_AddCharacterModifierStates` | Adds the two state definitions with `bOverrideExistingState` true |
-| `GameFeatureAction_DataRegistrySource` | Adds [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) to the `PostProcessEffectsData` registry (client and server) |
+| `GameFeatureAction_DataRegistrySource` | Adds `DT_AlternativeCriticalCamera` to the `PostProcessEffectsData` registry (client and server) |
 
 ---
 
-## 3. Infantry Critical State ([`DA_CharacterModifierState_AlternateCritical`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DA_CharacterModifierState_AlternateCritical.json))
+## 3. Infantry Critical State (`DA_CharacterModifierState_AlternateCritical`)
 
 | Field | Value |
 |---|---|
@@ -64,9 +64,9 @@ Camera modifiers in this state:
 |---|---|
 | RotationInterpSpeed | 100.0 |
 | RelativeLocation | (0, 0, 235) |
-| ToKillerPanLocationAlphaCurve | [`CRV_PanToKiller`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CRV_PanToKiller.json) |
-| ToKilledPanInterpSpeedCurve | [`CRV_PanToKilled`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CRV_PanToKilled.json) |
-| ToKillerPanRotationAlphaCurve | [`CRV_RotateToKiller`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CRV_RotateToKiller.json) |
+| ToKillerPanLocationAlphaCurve | `CRV_PanToKiller` |
+| ToKilledPanInterpSpeedCurve | `CRV_PanToKilled` |
+| ToKillerPanRotationAlphaCurve | `CRV_RotateToKiller` |
 | PostProcessEffects | `PostProcessEffect.DeathState.Killcam` |
 | CauseQuery (what caused death) | `Id.Item.Claymore`, `ID.Item.ATMine`, `Id.Vehicle.WeaponExtension.TNK_01.Artillery` |
 
@@ -74,7 +74,7 @@ The cause query means the pan only runs when the killing cause is one of these. 
 
 ---
 
-## 4. Vehicle Critical State ([`DA_CharacterModifierState_AlternateVehicleCritical`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DA_CharacterModifierState_AlternateVehicleCritical.json))
+## 4. Vehicle Critical State (`DA_CharacterModifierState_AlternateVehicleCritical`)
 
 | Field | Value |
 |---|---|
@@ -91,7 +91,7 @@ The vehicle variant uses tighter locks (30 degrees on both yaw and pitch, agains
 ## 5. How Values Combine
 
 - The critical state activates when `State.Player.Vitality.Critical` is set, and the pan modifier only fires for a matching cause.
-- [`CriticalFadeCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/CriticalFadeCurve.json) and the 30-second `FadeTime` on the darken modifier control how the screen darkens. Priority 126 on the darken modifier is the highest priority in this set. Higher priority is assumed to win; not verified.
+- `CriticalFadeCurve` and the 30-second `FadeTime` on the darken modifier control how the screen darkens. Priority 126 on the darken modifier is the highest priority in this set. Higher priority is assumed to win; not verified.
 - `bOverrideExistingState` is true, so this pack replaces any existing critical state of the same tag.
 
 ---
@@ -100,6 +100,6 @@ The vehicle variant uses tighter locks (30 degrees on both yaw and pitch, agains
 
 - **Curve values.** The four CurveFloat assets are present, but their key values were not extracted in this pass.
 - **Offset units.** The offsets are in the export's native units (Unreal cm is assumed, not confirmed).
-- **Post-process effect.** The [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) registry has no rows in this export; the `PostProcessEffect.DeathState.Killcam` tag is resolved elsewhere.
+- **Post-process effect.** The `DT_AlternativeCriticalCamera` registry has no rows in this export; the `PostProcessEffect.DeathState.Killcam` tag is resolved elsewhere.
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Critical trigger.** What sets `State.Player.Vitality.Critical` is in the character systems, not this folder.

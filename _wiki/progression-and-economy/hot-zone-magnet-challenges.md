@@ -47,6 +47,6 @@ The sources list no Season 2 changes for these challenges.
 
 - [Rewards and progression](../../Wardogs_Rewards_and_Progression_v2.md), section 6b for the magnet and tower cash
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
-- [Hot Zone Magnet challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) (JSON)
+- Hot Zone Magnet challenge table (JSON)
 - [Round 67 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round67-maps.md): the capture rule and the 80 m reward range.
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

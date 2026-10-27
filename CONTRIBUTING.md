@@ -2,9 +2,8 @@
 
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
-Thanks for your interest. This repository is a defensive-research
-documentation project — see [`docs/SCOPE.md`](docs/SCOPE.md) before
-contributing.
+Thanks for your interest. This repository documents Wardogs' game
+data. See [`docs/SCOPE.md`](docs/SCOPE.md) before contributing.
 
 ## What contributions are welcome
 
@@ -19,11 +18,13 @@ contributing.
   static disassembly or SDK structure (cite the function RVA or
   SDK class)
 
-### ✅ SDK and mapping improvements
+### ✅ Class and mapping notes
 
-- Updated Dumper-7 outputs matching a new game build
-- IDA mapping (`.idmap`) refreshes for new builds
+- Notes on classes and fields from a newer game build
 - SDK class ↔ data doc cross-reference additions
+
+Raw exports, class dumps and mapping files are not committed; cite
+assets and classes by name instead.
 
 ### ✅ Tooling for the research pipeline
 
@@ -32,33 +33,27 @@ contributing.
 - CUE4Parse configuration improvements
 - Test data for the parsers
 
-### ✅ Methodology and framing docs
+### ✅ Methodology docs
 
 - Scope clarifications
 - Methodology refinements
-- Threat model updates for the research instrumentation
 
 ## What contributions are NOT welcome
 
-### ❌ Cheat-adjacent code
+### ❌ Code that acts on a running game
 
-- ESP overlay implementations
-- Aimbot or triggerbot logic
-- Networked distribution of research tooling
-- Automated gameplay-modifying scripts
-- Any tool whose output is "undetected in-game advantage"
+Overlays, aim or input automation, memory readers, loaders, or
+anything else meant for an advantage in online play.
 
-### ❌ Public security findings before coordinated disclosure
+### ❌ Raw game files
 
-Any security-relevant finding (server trust, replication,
-serialization, validator gaps, etc.) goes through
-[`SECURITY.md`](SECURITY.md), not a public PR.
+Pak files, keys, raw exports or class dumps. Cite the asset or class
+by name and path instead.
 
-### ❌ Workaround removal of the game's protection layer for distribution
+### ❌ Open security issues
 
-Documenting how the protection layer works at an architectural level: fine. Publishing a one-click bypass
-tool that would let others cheat: not fine. The distinction is in
-[`docs/SCOPE.md`](docs/SCOPE.md).
+A possible security problem in the game goes to the developer, not a
+public PR. See [`SECURITY.md`](SECURITY.md).
 
 ## PR workflow
 
@@ -67,8 +62,8 @@ tool that would let others cheat: not fine. The distinction is in
 3. For doc changes: ensure the "Still Not Pulled / Limitations"
    section at the bottom of the doc stays accurate (either resolve
    the item you address, or leave it)
-4. For code changes: ensure the research-tooling threat model still
-   applies (see `tools/README.md` if the tool is in scope)
+4. For generator changes: rerun the script and commit the regenerated
+   page or JSON with it
 5. Open the PR with a clear description of what you changed and why
 6. The author will review and merge
 
@@ -95,7 +90,7 @@ Keep it civil, keep it technical, keep it on-topic. The project is
 small enough that there's no formal CoC yet, but the above still
 applies:
 
-- No harassment of Bulkhead, Team17, Embark, their employees, or any other party
+- No harassment of Bulkhead, Team17, their employees, or any other party
 - No doxxing, no personal attacks
 - Technical disagreement is fine; keep it to the technical content
 

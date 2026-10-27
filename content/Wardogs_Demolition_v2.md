@@ -6,7 +6,7 @@ description: "Asset Families, Demolition Assets, Component Settings, Remnant Mes
 ---
 
 # Wardogs — Demolition Reference
-*Extracted from cooked game data (JSON export, [`Wardogs/Content/Demolition/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Demolition), 86 source files: 39 demolition assets, 9 component settings, 19 remnant-mesh assets, 19 rulesets). Parsed with a Python script. The 19 ruleset files each contain several `--- export:` blocks and were split on those headers. Values are the raw exported values.*
+*Extracted from cooked game data (JSON export, `Wardogs/Content/Demolition/`, 86 source files: 39 demolition assets, 9 component settings, 19 remnant-mesh assets, 19 rulesets). Parsed with a Python script. The 19 ruleset files each contain several `--- export:` blocks and were split on those headers. Values are the raw exported values.*
 
 > **How the parts link:** each `BHDemolitionDataAsset` (one per destructible prop) points at one **component settings** asset (rendering/collision), one **ruleset** (which damage sources or vehicles may demolish it), one or more **remnant mesh** assets (what is left behind), plus VFX, a crosstalk audio tag, and fragment physics.
 
@@ -22,7 +22,7 @@ description: "Asset Families, Demolition Assets, Component Settings, Remnant Mes
 - **Mesh counts:** `Bollard_Metal_01` 1 → 2; `Fences_Concrete_01` 4 → 6 (the two plaster remnant sets are added to it).
 - **Bushes_Flora and Saplings:** ruleset `Everything` → `EverythingAndMolotov` (adds `Meta.Damage.Molotov`, minimum distance 300).
 - **Fences_Wood_01_A and Fences_Wood_01_B:** ruleset `LargeAndMediumVehiclesAndExplosions` → `LargeAndMediumVehiclesExplosionsAndBuildables`.
-- **Rulesets:** `Everything` now also includes [`Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Buildables.json); new [`Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Buildables.json) ruleset (single buildable rule).
+- **Rulesets:** `Everything` now also includes `Buildables`; new `Buildables` ruleset (single buildable rule).
 - **Vehicle rules:** AirVehicles 6 → 8 entries (ROT_04), TrackedVehicles 7 → 8 (TNK_04.Default), WheeledVehicles 11 → 13 (WHL_08), LargeWheeledVehicles 9 → 11 (WHL_08), LargeAndMediumWheeledVehicles 10 → 12 (WHL_08).
 
 Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
@@ -32,9 +32,9 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 | Family | Count | Type | Path |
 |---|---|---|---|
 | Demolition assets | 39 | `BHDemolitionDataAsset` | `Demolition/` |
-| Component settings | 9 | `BHDemolitionComponentSettings` | [`Demolition/ComponentSettings/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Demolition/ComponentSettings) |
-| Remnant mesh sets | 19 | `BHDemolitionRemnantMeshesAsset` | [`Demolition/Remnants/DA/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Demolition/Remnants/DA) |
-| Rulesets | 19 | `BHDemolitionRuleset` plus rule sub-objects | [`Demolition/RuleSets/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Demolition/RuleSets) (`Explosions/`, `Vehicles/`) |
+| Component settings | 9 | `BHDemolitionComponentSettings` | `Demolition/ComponentSettings/` |
+| Remnant mesh sets | 19 | `BHDemolitionRemnantMeshesAsset` | `Demolition/Remnants/DA/` |
+| Rulesets | 19 | `BHDemolitionRuleset` plus rule sub-objects | `Demolition/RuleSets/` (`Explosions/`, `Vehicles/`) |
 
 ---
 
@@ -102,14 +102,14 @@ Each setting sets instance culling, Nanite and shadow-cache behaviour, plus a co
 | Setting | Instance start / end cull | Ray tracing | WPO disable dist | Nanite pixel-prog dist / screen size | Shadow cache | bGenerateHitEvents | Collision profile |
 |---|---|---|---|---|---|---|---|
 | `DA_Demolition_CS_Default` | 201,000 / 201,100 | true | - | - | - | - | BHDemolition |
-| [`DA_Demolition_CS_ConcreteWalls_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_ConcreteWalls_01.json) | 201,000 / 201,100 | true | - | - | - | **true** | BHDemolition |
-| [`DA_Demolition_CS_Default_Tank`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_Tank.json) | 201,000 / 201,100 | true | - | - | - | **true** | BHDemolition |
-| [`DA_Demolition_CS_Default_ChainLink`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_ChainLink.json) | 201,000 / 201,100 | true | - | - | - | - | BHDemolitionChainlinkFence |
-| [`DA_Demolition_CS_Default_Bushes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_Bushes.json) | 201,000 / 201,100 | - | 2,000 | 2,000 / 1.0 | Static | - | BHDemolitionBushes |
-| [`DA_CS_Saplings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_CS_Saplings.json) | 201,000 / 201,100 | - | 2,000 | 2,000 / 1.0 | Static | - | BHDemolitionFlora |
-| [`DA_Demolition_CS_Fences`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Fences.json) | 201,000 / 201,100 | true | 10,000 | 10,000 / 0.5 | Static | **true** | BHDemolition |
-| [`DA_Demolition_CS_ShadowCacheStatic`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_ShadowCacheStatic.json) | 201,000 / 201,100 | true | - | - | Static | - | BHDemolition |
-| [`DA_Demolition_CS_Signage_Metal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Signage_Metal.json) | 201,000 / 201,100 | true | - | - | - | - | BHDemolition |
+| `DA_Demolition_CS_ConcreteWalls_01` | 201,000 / 201,100 | true | - | - | - | **true** | BHDemolition |
+| `DA_Demolition_CS_Default_Tank` | 201,000 / 201,100 | true | - | - | - | **true** | BHDemolition |
+| `DA_Demolition_CS_Default_ChainLink` | 201,000 / 201,100 | true | - | - | - | - | BHDemolitionChainlinkFence |
+| `DA_Demolition_CS_Default_Bushes` | 201,000 / 201,100 | - | 2,000 | 2,000 / 1.0 | Static | - | BHDemolitionBushes |
+| `DA_CS_Saplings` | 201,000 / 201,100 | - | 2,000 | 2,000 / 1.0 | Static | - | BHDemolitionFlora |
+| `DA_Demolition_CS_Fences` | 201,000 / 201,100 | true | 10,000 | 10,000 / 0.5 | Static | **true** | BHDemolition |
+| `DA_Demolition_CS_ShadowCacheStatic` | 201,000 / 201,100 | true | - | - | Static | - | BHDemolition |
+| `DA_Demolition_CS_Signage_Metal` | 201,000 / 201,100 | true | - | - | - | - | BHDemolition |
 
 Cull distances are in the same engine units as the rest of the export (probably cm, so about 2 km; not confirmed).
 
@@ -141,13 +141,13 @@ Each remnant set holds `RemnantMeshes` entries, each with a `NearMesh` and a `Fa
 | RM_Fences_SmallConcrete_01_C | 1 | SM_RemnantNear_Low_Wall_Right_01 |
 | DA_RM_Fences_Wood_01_A | 3 | SM_RemnantNear_Fence_Wood_Wall_01a, _01b, _01c |
 
-(Remnant asset names keep the `DA_Demolition_RM_` prefix except the wood set, which is [`DA_RM_Fences_Wood_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fences_Wood_01_A.json).)
+(Remnant asset names keep the `DA_Demolition_RM_` prefix except the wood set, which is `DA_RM_Fences_Wood_01_A`.)
 
 ---
 
 ## 5. Rulesets
 
-Every ruleset except [`BH_Demolition_RS_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/BH_Demolition_RS_Buildables.json) is an OR of its children. No `And` or `Not` rule types appear in the export. Ruleset names reference other rulesets, so the composed trees are shown below.
+Every ruleset except `BH_Demolition_RS_Buildables` is an OR of its children. No `And` or `Not` rule types appear in the export. Ruleset names reference other rulesets, so the composed trees are shown below.
 
 ### 5a. Composition
 
@@ -201,8 +201,8 @@ Vehicle paths are `Vehicle.Variant.<Air|Land>.<Type>.<Model>.<Variant>` tags.
 ## 7. Observations
 
 - The ruleset names suggest a tiering: `Everything` is the broadest, and the `Tanks…` and `LargeAndMedium…` sets cover a narrower range of sources. The export does not say which tier is meant to be harder to demolish.
-- `LampPost_01` and `TelephonePole_Concrete_01` use component settings from [`/Game/Developers/Celesteneukirchen/Demolition/Settings/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Developers/Celesteneukirchen/Demolition/Settings) (a developer folder), not the main `ComponentSettings` path. Their values may differ from the main copies. This was not compared.
-- `Fences_Wood_01_A` and `Fences_Wood_01_B` share one remnant asset, [`DA_RM_Fences_Wood_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fences_Wood_01_A.json), which uses the `DA_RM_` prefix rather than `DA_Demolition_RM_` like the other remnant sets.
+- `LampPost_01` and `TelephonePole_Concrete_01` use component settings from `/Game/Developers/Celesteneukirchen/Demolition/Settings/` (a developer folder), not the main `ComponentSettings` path. Their values may differ from the main copies. This was not compared.
+- `Fences_Wood_01_A` and `Fences_Wood_01_B` share one remnant asset, `DA_RM_Fences_Wood_01_A`, which uses the `DA_RM_` prefix rather than `DA_Demolition_RM_` like the other remnant sets.
 
 ---
 

@@ -162,15 +162,15 @@ Most of these are object references and rule indexes. The full list is in the br
 
 | Asset | Type | Identification |
 |---|---|---|
-| [DA_Demolition_Fences_Metal_03](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Metal_03.json) | BHDemolitionDataAsset | 1 exports |
-| [DA_Demolition_RM_Fence_Metal_Residential_03_01_A](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fence_Metal_Residential_03_01_A.json) | BHDemolitionRemnantMeshesAsset | 1 exports |
-| [DA_Demolition_RM_Fences_Plaster_Residential_01_A](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_Plaster_Residential_01_A.json) | BHDemolitionRemnantMeshesAsset | 1 exports |
-| [DA_Demolition_RM_Fences_Plaster_Residential_Pillar_01_A](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_Plaster_Residential_Pillar_01_A.json) | BHDemolitionRemnantMeshesAsset | 1 exports |
-| [BH_Demolition_RS_Buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/BH_Demolition_RS_Buildables.json) | BHDemolitionRuleset | 2 exports |
-| [BH_Demolition_RS_EverythingAndMolotov](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/BH_Demolition_RS_EverythingAndMolotov.json) | BHDemolitionRuleset | 6 exports |
-| [BH_Demolition_RS_LargeAndMediumVehiclesExplosionsAndBuildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/BH_Demolition_RS_LargeAndMediumVehiclesExplosionsAndBuildables.json) | BHDemolitionRuleset | 4 exports |
-| [BH_Demolition_RS_Molotov](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/Explosions/BH_Demolition_RS_Molotov.json) | BHDemolitionRuleset | 2 exports |
-| [DT_InfantryData_ArchetypeCaliberModifiers](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json) | DataTable | 1 exports |
+| DA_Demolition_Fences_Metal_03 | BHDemolitionDataAsset | 1 exports |
+| DA_Demolition_RM_Fence_Metal_Residential_03_01_A | BHDemolitionRemnantMeshesAsset | 1 exports |
+| DA_Demolition_RM_Fences_Plaster_Residential_01_A | BHDemolitionRemnantMeshesAsset | 1 exports |
+| DA_Demolition_RM_Fences_Plaster_Residential_Pillar_01_A | BHDemolitionRemnantMeshesAsset | 1 exports |
+| BH_Demolition_RS_Buildables | BHDemolitionRuleset | 2 exports |
+| BH_Demolition_RS_EverythingAndMolotov | BHDemolitionRuleset | 6 exports |
+| BH_Demolition_RS_LargeAndMediumVehiclesExplosionsAndBuildables | BHDemolitionRuleset | 4 exports |
+| BH_Demolition_RS_Molotov | BHDemolitionRuleset | 2 exports |
+| DT_InfantryData_ArchetypeCaliberModifiers | DataTable | 1 exports |
 
 ## Removed in Season 2 (0 assets)
 

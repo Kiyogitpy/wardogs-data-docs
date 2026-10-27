@@ -9,10 +9,12 @@ data).
 
 ## Status
 
-**Committed:** 3653 files across 1807 packages (70 MB).
+The dump itself (3653 files across 1807 packages, 70 MB, under `raw/`) is
+generated locally and **not committed**: it describes the game's own code.
+This folder keeps the notes and the package index.
 
-- [`raw/`](raw/) — raw Dumper-7 output (one `.hpp` / `.cpp` per package)
-- [`INDEX.md`](INDEX.md) — auto-generated package index by category
+- `raw/` — raw Dumper-7 output (one `.hpp` / `.cpp` per package), local only
+- [`INDEX.md`](INDEX.md) — package index by category
 
 ## What's here
 
@@ -72,7 +74,7 @@ pipeline. Short version:
 2. Load Dumper-7 into the process
 3. Dumper-7 walks `GUObjectArray` and `GNames` to produce the C++ headers
 4. Validate against known offsets from `.idmap` in `../mappings/`
-5. Commit the generated headers under `sdk/raw/`
+5. Keep the generated headers under `sdk/raw/` (gitignored)
 
 ## Build target
 

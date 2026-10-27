@@ -73,4 +73,4 @@ Vehicle guns have their own recipes. Rocket launchers, the tank main guns and ar
 
 - [Muzzle Flashes (data page)](../../content/Wardogs_MuzzleFlashes_v1.md): every ammo, muzzle device, weapon and vehicle gun value
 - [VFX](../../content/Wardogs_VFX_v2.md)
-- [MuzzleFlashes folder](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/VFX/Weapons/MuzzleFlashes)
+- MuzzleFlashes folder

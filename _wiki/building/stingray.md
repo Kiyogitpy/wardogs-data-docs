@@ -120,7 +120,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the barrel's rate, fire mode, effective range and damage table
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): the UAV ammunition name
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost and damage table changes
-- [Stingray weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel.json): restock, ammunition and the 17-row range table (mrad, impact distance, travel time)
+- Stingray weapon data: restock, ammunition and the 17-row range table (mrad, impact distance, travel time)
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): lock-on timings, the restock cost and the drone count.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic

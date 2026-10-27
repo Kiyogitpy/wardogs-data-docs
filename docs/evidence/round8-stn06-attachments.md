@@ -30,7 +30,7 @@ The inheritance chain's constructors are `ABHBaseVehiclePawn` `0x53B86F0`
 `0x53B9FF0`). Bounded machine-instruction inspection of those three complete
 constructor bodies found no direct store to `+0x4B0` or replacement of
 `AttachManager` at `+0x4A8`.
-[`VP_STN_06.json`](../../data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Platforms/VP_STN_06.json)
+`VP_STN_06.json`
 selects native `/Script/WDGame.WDStationaryVehicle` as its
 `ImplementationClass`. The exported STN_06 content tree has no
 `bEnablePartialAttachments` override. Thus its native class default retains

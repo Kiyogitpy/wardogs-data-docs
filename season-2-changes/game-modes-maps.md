@@ -73,26 +73,26 @@ B_MovingTarget has 28 entries added, 5 removed, 2 changed and 1 resequenced. Mos
 
 | Asset | Type | What it is |
 |---|---|---|
-| [AnimSet_HotPotato](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/Data/AnimSet_HotPotato.json) | BHAnimationSet | Hot Potato animation set |
-| [DA_ControlZone_Config_Africa](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Africa.json) | WDControlZoneConfigDataAsset | Control zone config, Africa |
-| [DA_ControlZone_Config_Russia](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Russia.json) | WDControlZoneConfigDataAsset | Control zone config, Russia |
-| [DA_ControlZoneConfig_SniperShowdown_NorthAmerica](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_NorthAmerica.json) | WDControlZoneConfigDataAsset | Control zone config, Sniper Showdown, North America |
-| [DA_ControlZoneConfig_SniperShowdown_Russia](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_Russia.json) | WDControlZoneConfigDataAsset | Control zone config, Sniper Showdown, Russia |
-| [DA_SightBlockers_Europe](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/Europe/DA_SightBlockers_Europe.json) | WDSightBlockerBakedDataAsset | Sight blocker map data, Europe |
-| [DA_SightBlockers_Kavkazi](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/kavkazi/DA_SightBlockers_Kavkazi.json) | WDSightBlockerBakedDataAsset | Sight blocker map data, Kavkazi |
-| [DA_SightBlockers_NorthAmerica](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/NorthAmerica/DA_SightBlockers_NorthAmerica.json) | WDSightBlockerBakedDataAsset | Sight blocker map data, North America |
-| [DA_SightBlockers_Russia](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/SightBlockers/Russia/DA_SightBlockers_Russia.json) | WDSightBlockerBakedDataAsset | Sight blocker map data, Russia |
-| [DT_ChallengeRewards_TeamOffence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/DT_ChallengeRewards_TeamOffence.json) | DataTable | Team offence challenge rewards |
-| [DT_Challenges_SessionEvents_TeamOffence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/DT_Challenges_SessionEvents_TeamOffence.json) | DataTable | Team offence session event challenges |
-| [HotPotato](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/HotPotato.json) | GameFeatureData | Hot Potato game mode (game feature data) |
-| [ID_HotPotato_Alpha](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/Data/Items/ID_HotPotato_Alpha.json) | BHInventoryItemDefinition | Hot Potato item (Alpha) |
-| [ID_HotPotato_Bravo](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/Data/Items/ID_HotPotato_Bravo.json) | BHInventoryItemDefinition | Hot Potato item (Bravo) |
-| [ID_HotPotato_Charlie](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/Data/Items/ID_HotPotato_Charlie.json) | BHInventoryItemDefinition | Hot Potato item (Charlie) |
-| [Russia_Moscow_KOTH_01](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Russia_Moscow_KOTH_01.json) | WDPSOWarmupDataAsset | Map shader warm-up data, Moscow KOTH |
-| [ServerSeeding](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ServerSeeding/Content/ServerSeeding.json) | GameFeatureData | Server seeding feature (game feature data) |
-| [ST_Challenges_SessionEvents_TeamOffencePunish](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/ST_Challenges_SessionEvents_TeamOffencePunish.json) | StateTree | Team offence punish challenge state tree |
-| [ST_Challenges_SessionEvents_TeamOffenceVoter](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/ST_Challenges_SessionEvents_TeamOffenceVoter.json) | StateTree | Team offence voter challenge state tree |
-| [TeamOffence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/TeamOffence.json) | GameFeatureData | Team offence game mode (game feature data) |
+| AnimSet_HotPotato | BHAnimationSet | Hot Potato animation set |
+| DA_ControlZone_Config_Africa | WDControlZoneConfigDataAsset | Control zone config, Africa |
+| DA_ControlZone_Config_Russia | WDControlZoneConfigDataAsset | Control zone config, Russia |
+| DA_ControlZoneConfig_SniperShowdown_NorthAmerica | WDControlZoneConfigDataAsset | Control zone config, Sniper Showdown, North America |
+| DA_ControlZoneConfig_SniperShowdown_Russia | WDControlZoneConfigDataAsset | Control zone config, Sniper Showdown, Russia |
+| DA_SightBlockers_Europe | WDSightBlockerBakedDataAsset | Sight blocker map data, Europe |
+| DA_SightBlockers_Kavkazi | WDSightBlockerBakedDataAsset | Sight blocker map data, Kavkazi |
+| DA_SightBlockers_NorthAmerica | WDSightBlockerBakedDataAsset | Sight blocker map data, North America |
+| DA_SightBlockers_Russia | WDSightBlockerBakedDataAsset | Sight blocker map data, Russia |
+| DT_ChallengeRewards_TeamOffence | DataTable | Team offence challenge rewards |
+| DT_Challenges_SessionEvents_TeamOffence | DataTable | Team offence session event challenges |
+| HotPotato | GameFeatureData | Hot Potato game mode (game feature data) |
+| ID_HotPotato_Alpha | BHInventoryItemDefinition | Hot Potato item (Alpha) |
+| ID_HotPotato_Bravo | BHInventoryItemDefinition | Hot Potato item (Bravo) |
+| ID_HotPotato_Charlie | BHInventoryItemDefinition | Hot Potato item (Charlie) |
+| Russia_Moscow_KOTH_01 | WDPSOWarmupDataAsset | Map shader warm-up data, Moscow KOTH |
+| ServerSeeding | GameFeatureData | Server seeding feature (game feature data) |
+| ST_Challenges_SessionEvents_TeamOffencePunish | StateTree | Team offence punish challenge state tree |
+| ST_Challenges_SessionEvents_TeamOffenceVoter | StateTree | Team offence voter challenge state tree |
+| TeamOffence | GameFeatureData | Team offence game mode (game feature data) |
 
 UI data (count only): 9 added assets, including the Team Offence prompt and Hot Potato tracker data. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=game-modes-maps&q=TeamOffence).
 

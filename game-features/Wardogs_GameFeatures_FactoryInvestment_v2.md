@@ -6,7 +6,7 @@ description: "What This Folder Holds, Recipe Registry, Upgrade Values"
 ---
 
 # Wardogs — GameFeatures: FactoryInvestment
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/FactoryInvestment/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment) — 2 JSON files. The Factory 01 investment is in the FactoryInvestment_01 doc.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/FactoryInvestment/` — 2 JSON files. The Factory 01 investment is in the FactoryInvestment_01 doc.*
 
 ---
 
@@ -16,8 +16,8 @@ The shared factory-investment base: the upgrade-value curve table that every fac
 
 | File | Type | Role |
 |---|---|---|
-| [`Content/FactoryInvestment.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment/Content/FactoryInvestment.json) | GameFeatureData + registry action | Registers the factory recipe registry |
-| [`Content/Data/CT_Factory_UpgradeValues.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment/Content/Data/CT_Factory_UpgradeValues.json) | CurveTable | Upgrade values by level |
+| `Content/FactoryInvestment.json` | GameFeatureData + registry action | Registers the factory recipe registry |
+| `Content/Data/CT_Factory_UpgradeValues.json` | CurveTable | Upgrade values by level |
 
 ---
 
@@ -32,7 +32,7 @@ The registry asset `DR_FactoryRecipes` is referenced but is not in this folder. 
 
 ---
 
-## 3. Upgrade Values ([`CT_Factory_UpgradeValues`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/FactoryInvestment/Content/Data/CT_Factory_UpgradeValues.json))
+## 3. Upgrade Values (`CT_Factory_UpgradeValues`)
 
 Three rows. Each row is a curve with a constant interpolation mode; the key time is the upgrade level.
 

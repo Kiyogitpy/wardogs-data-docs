@@ -99,7 +99,7 @@ The SPH-2's L52 fires 155 mm shells at 50 rounds/min with a 10,000 m range. The 
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the vehicle weapon stats (rate, effective range) and damage table changes
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): damage entries, gamepad sensitivity and cost changes
 - [Vehicle weapon articles](ah-6m-miniguns.md): the per-vehicle weapon tables this page collects, each linked from the table above
-- [Vehicle weapon extension data](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Vehicles): reload, restock and starting ammunition for each weapon
+- Vehicle weapon extension data: reload, restock and starting ammunition for each weapon
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Round 39 and 40 evidence: machine gun rates and ranges, restock rules.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): vehicle-mounted gun spread and its easing

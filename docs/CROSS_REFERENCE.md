@@ -18,8 +18,8 @@ canonical doc where `<Thing>` IS covered.
 
 | Referenced in | Example reference | Defined in |
 |---|---|---|
-| `Wardogs_GameFeatures_Parachutes_v2.md` | `CRV_ParachutePunishment_Damage` | Raw curve values: [`data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/`](data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/) — covered contextually in [`Wardogs_GameMechanics_v2.md`](../content/Wardogs_GameMechanics_v2.md) and [`Wardogs_Characters_v2.md`](../content/Wardogs_Characters_v2.md) |
-| `Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md` | `CT_Weapon_Spread` | Full curve-table values in [`data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json`](data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json); used by weapons documented in [`Wardogs_InfantryWeapons_Stats_v1.md`](../content/Wardogs_InfantryWeapons_Stats_v1.md), [`Wardogs_Weapons_v2.md`](../content/Wardogs_Weapons_v2.md), and the game-features weapon docs |
+| `Wardogs_GameFeatures_Parachutes_v2.md` | `CRV_ParachutePunishment_Damage` | Raw curve values: `data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/` — covered contextually in [`Wardogs_GameMechanics_v2.md`](../content/Wardogs_GameMechanics_v2.md) and [`Wardogs_Characters_v2.md`](../content/Wardogs_Characters_v2.md) |
+| `Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md` | `CT_Weapon_Spread` | Full curve-table values in `data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json`; used by weapons documented in [`Wardogs_InfantryWeapons_Stats_v1.md`](../content/Wardogs_InfantryWeapons_Stats_v1.md), [`Wardogs_Weapons_v2.md`](../content/Wardogs_Weapons_v2.md), and the game-features weapon docs |
 
 ### `DA_*` — DataAssets
 

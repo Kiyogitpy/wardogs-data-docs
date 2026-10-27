@@ -66,5 +66,5 @@ The server browser also tags No Rebuy, No Return To Spawn, No Vault, No Player L
 - [Experience Configs](../../game-features/Wardogs_ExperienceConfigs_v1.md): every definition, the Hardcore flags and the Infantry Only list
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md)
 - [Frontend data tables](../../content/Wardogs_DataTables_Frontend_v1.md)
-- [KOTH_Hardcore.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/KOTH_Hardcore.json)
-- [KOTH_InfantryOnly.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/KOTH_InfantryOnly.json)
+- KOTH_Hardcore.json
+- KOTH_InfantryOnly.json

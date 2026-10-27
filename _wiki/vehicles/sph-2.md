@@ -137,7 +137,7 @@ The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [wardogs-calculator by apollyon-sys (MIT)](https://github.com/apollyon-sys/wardogs-calculator), measured in game: maximum range, minimum range, and the firing table mils
 - [CV Artillery Computer by Kiyogitpy (MIT)](https://github.com/Kiyogitpy/cv-artillery-computer), measured on the game screen at 2560x1440: gun sight instruments and map readout
-- [SPH-2 weapon data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json), from the game files: the range table with travel times
+- SPH-2 weapon data, from the game files: the range table with travel times
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md), estimated: the high-arc apex and the flight simulator's miss against real shots
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude

@@ -117,7 +117,8 @@ The game patches regularly. Each patch:
 
 ## Reproducibility
 
-Everything in `data/*.json` comes from the game's own cooked paks,
+Everything in the local `data/*.json` export (not committed; the docs
+cite its files by path) comes from the game's own cooked paks,
 exported with CUE4Parse and the build's usmap
 (`5.7.4-516586+++Wardogs+Live-Wardogs.usmap`). The exporter behind the
 gameplay effect values and the Blueprint bytecode is packaged in
@@ -143,7 +144,6 @@ generated parts of the docs from `data/` and `assets/data/`:
 | `ge_values.py` | The Gameplay Effect Values page, from `assets/data/ge-values.json` |
 | `vehicle_tables.py` | Sections 3 and 4 of the all-vehicle stats page |
 | `zone_rewards.py` | `assets/data/zone-rewards.json`: reward values with no zone, a zone and a priority zone, for the site's zone switch |
-| `link_sources.py` | Links asset names in the docs to their source JSON |
 | `check_links.py` | Fails on broken cross-references (files, anchors, `§` numbers) |
 
 After a data update: rerun the generators, then `check_links.py`.

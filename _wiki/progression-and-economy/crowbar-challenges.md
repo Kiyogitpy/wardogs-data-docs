@@ -39,4 +39,4 @@ The sources list no Season 2 changes for this challenge.
 ## Sources
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
-- [Crowbar challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_Challenges_SessionEvents_Crowbar.json) (JSON)
+- Crowbar challenge table (JSON)

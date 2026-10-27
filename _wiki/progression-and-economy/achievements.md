@@ -70,7 +70,7 @@ The data lists no cash, role XP or item for any achievement. The reward is the S
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
-- [Achievement table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) (JSON)
-- [Shared session-event challenges](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) (JSON)
+- Achievement table (JSON)
+- Shared session-event challenges (JSON)
 - [Economy data: achievements](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
 - [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)

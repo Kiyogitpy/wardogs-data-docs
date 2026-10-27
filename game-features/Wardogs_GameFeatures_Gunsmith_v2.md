@@ -6,7 +6,7 @@ description: "Plugin Inventory, Root Game Feature, Frontend and Dev Map, Scene"
 ---
 
 # Wardogs — Gunsmith Game Feature Reference
-*Extracted from cooked game data ([`Wardogs/Plugins/GameFeatures/Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Gunsmith), 18 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
+*Extracted from cooked game data (`Wardogs/Plugins/GameFeatures/Gunsmith`, 18 JSON files, all parsed). Build `++Wardogs+Live-CL-516586`, UE 5.7.*
 
 > **What this is:** the weapon-customisation mode (reticles, optics, attachments, flair) built on the shared **Itemsmith** UI framework, the same base as Vehiclesmith. Almost all of it is UI configuration: pages, browser lists, reticle definitions, accuracy display and textures. The weapon balance numbers (damage, RPM, recoil) are **not** in this plugin. Those live on the weapon items elsewhere.
 
@@ -15,7 +15,7 @@ description: "Plugin Inventory, Root Game Feature, Frontend and Dev Map, Scene"
 ## Season 02 update (2026-10-15)
 
 - **No files added or removed.** The one changed file is the popup table below.
-- **Popup options** ([`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json)) went from 0 rows to 5:
+- **Popup options** (`DT_GunsmithPopupOptions`) went from 0 rows to 5:
   - `UI.Popup.SaveBlueprint`: Info, Cancel / OK.
   - `UI.Popup.DeleteBlueprint`: Warning, "Do you wish to permanently delete this blueprint?" ("This cannot be undone"), Cancel / OK.
   - `UI.Popup.RenameItem`: Itemsmith rename type, RENAME / Cancel.
@@ -28,15 +28,15 @@ Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-chan
 
 | Group | Assets | Role |
 |---|---|---|
-| Root | [`Content/Gunsmith.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/Gunsmith.json) (`GameFeatureData` + 2 actions) | Adds the player component and data registry sources |
-| Scene | [`Content/UI/Data/DA_GunsmithScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/DA_GunsmithScene.json), [`Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | Gunsmith scene root and frontend entry |
-| Build | [`Content/UI/Build/Data/DA_Gunsmith_Build`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Build/Data/DA_Gunsmith_Build.json) | Build page settings |
-| Reticle picker | [`Content/UI/ReticleNodeFocus/Data/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/ReticleNodeFocus/Data) ([`DA_Gunsmith_ReticleNodeFocus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.json), `..._BrowserList`, `..._BrowserItem`, [`DT_Gunsmith_Reticles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/ReticleNodeFocus/Data/DT_Gunsmith_Reticles.json)) | Reticle browser and reticle definitions |
-| Optics | [`Content/UI/OpticAdjust/Data/DA_Gunsmith_OpticAdjust`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/OpticAdjust/Data/DA_Gunsmith_OpticAdjust.json) | Optic rail adjustment slider |
-| Sub-nodes | [`Content/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus.json) | Sight sub-node bindings |
-| Stats | [`Content/UI/Shared/Stats/Data/DA_Gunsmith_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/Data/DA_Gunsmith_Stats.json), [`Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.json) | Accuracy display and expanded accuracy |
-| Entities (UI) | `Content/UI/Data/Entities/` ([`DT_Gunsmith_EntityData_UI_DecalTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_DecalTextures.json), `..._PaintMaskTextures`, `..._PaintMasteryTextures`, `..._ReticleTextures`, [`DT_Gunsmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_DevMenuMaps.json)) | Texture and map entries |
-| Popups | [`Content/UI/Data/Popups/DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) | Popup options, **5 rows** |
+| Root | `Content/Gunsmith.json` (`GameFeatureData` + 2 actions) | Adds the player component and data registry sources |
+| Scene | `Content/UI/Data/DA_GunsmithScene`, `Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith` | Gunsmith scene root and frontend entry |
+| Build | `Content/UI/Build/Data/DA_Gunsmith_Build` | Build page settings |
+| Reticle picker | `Content/UI/ReticleNodeFocus/Data/` (`DA_Gunsmith_ReticleNodeFocus`, `..._BrowserList`, `..._BrowserItem`, `DT_Gunsmith_Reticles`) | Reticle browser and reticle definitions |
+| Optics | `Content/UI/OpticAdjust/Data/DA_Gunsmith_OpticAdjust` | Optic rail adjustment slider |
+| Sub-nodes | `Content/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus` | Sight sub-node bindings |
+| Stats | `Content/UI/Shared/Stats/Data/DA_Gunsmith_Stats`, `Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy` | Accuracy display and expanded accuracy |
+| Entities (UI) | `Content/UI/Data/Entities/` (`DT_Gunsmith_EntityData_UI_DecalTextures`, `..._PaintMaskTextures`, `..._PaintMasteryTextures`, `..._ReticleTextures`, `DT_Gunsmith_DevMenuMaps`) | Texture and map entries |
+| Popups | `Content/UI/Data/Popups/DT_GunsmithPopupOptions` | Popup options, **5 rows** |
 
 ---
 
@@ -54,8 +54,8 @@ The Gunsmith runtime attaches its controller component to the player controller 
 
 | Registry | Table |
 |---|---|
-| `DevMenuMapsData` | [`DT_Gunsmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_DevMenuMaps.json) |
-| `UISceneData_Frontend` | [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) |
+| `DevMenuMapsData` | `DT_Gunsmith_DevMenuMaps` |
+| `UISceneData_Frontend` | `DT_SceneData_Frontend_Gunsmith` |
 
 ---
 
@@ -63,12 +63,12 @@ The Gunsmith runtime attaches its controller component to the player controller 
 
 | Table | Row | Value |
 |---|---|---|
-| [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | `UI.Scene.Frontend.Gunsmith` | Input mode UI; reset focus on enter true; block back false; focusable true; should preload false |
-| [`DT_Gunsmith_DevMenuMaps`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_DevMenuMaps.json) | `DevMaps.Gunsmith` | Map `/Gunsmith/Maps/Gunsmith_Main_P` ("Gunsmith") |
+| `DT_SceneData_Frontend_Gunsmith` | `UI.Scene.Frontend.Gunsmith` | Input mode UI; reset focus on enter true; block back false; focusable true; should preload false |
+| `DT_Gunsmith_DevMenuMaps` | `DevMaps.Gunsmith` | Map `/Gunsmith/Maps/Gunsmith_Main_P` ("Gunsmith") |
 
 ---
 
-## 4. Scene ([`DA_GunsmithScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/DA_GunsmithScene.json))
+## 4. Scene (`DA_GunsmithScene`)
 
 ### 4a. Map layers and family
 
@@ -111,7 +111,7 @@ The count is how many shared scene widgets the page asks for. The `Build` page h
 
 ---
 
-## 5. Build Page ([`DA_Gunsmith_Build`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Build/Data/DA_Gunsmith_Build.json))
+## 5. Build Page (`DA_Gunsmith_Build`)
 
 | Field | Value |
 |---|---|
@@ -123,7 +123,7 @@ The count is how many shared scene widgets the page asks for. The `Build` page h
 
 ## 6. Reticles
 
-### 6a. Reticle definitions ([`DT_Gunsmith_Reticles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/ReticleNodeFocus/Data/DT_Gunsmith_Reticles.json), 10 rows)
+### 6a. Reticle definitions (`DT_Gunsmith_Reticles`, 10 rows)
 Row type `WDReticleAssetInfo`. Each row has `ExclusivityTags` (scope types that cannot coexist with it), a flair tag, a texture asset, and `bInitiallyLocked` (false on all 10).
 
 | Reticle | Flair tag | Texture | Exclusive with (abridged) |
@@ -141,7 +141,7 @@ Row type `WDReticleAssetInfo`. Each row has `ExclusivityTags` (scope types that 
 
 Pattern: the 10x-class reticles exclude the 10x and hybrid scopes; the red-dot family excludes the other red dots and the holographic sight.
 
-### 6b. Reticle textures ([`DT_Gunsmith_EntityData_UI_ReticleTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_ReticleTextures.json), 17 rows)
+### 6b. Reticle textures (`DT_Gunsmith_EntityData_UI_ReticleTextures`, 17 rows)
 The 10 reticle rows above, plus 4 rows keyed by scope item id and sight state (`Id.Item.SniperScope10x.S_Aim01`, `Id.Item.OPT_08.S_Aim01`, `Id.Item.4xElcanSpectr.S_Aim01`, `Id.Item.HybridScope4x.S_Aim01`).
 
 ### 6c. Reticle browser
@@ -150,7 +150,7 @@ The 10 reticle rows above, plus 4 rows keyed by scope item id and sight state (`
 |---|---|
 | Base filter | `Item.Archetype.Build.Reticle.Base` ("Base") |
 | Favourite filter | `Item.Archetype.Build.Reticle.Favourite` |
-| Reticle data | [`DT_Gunsmith_Reticles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/ReticleNodeFocus/Data/DT_Gunsmith_Reticles.json) |
+| Reticle data | `DT_Gunsmith_Reticles` |
 | Entry size (w x h) | 270 x 125 |
 | Items per page | 6 |
 | Entry icon type | `UI.Icon.Gunsmith.Reticle` |
@@ -159,7 +159,7 @@ The 10 reticle rows above, plus 4 rows keyed by scope item id and sight state (`
 
 ---
 
-## 7. Sight Sub-Node ([`DA_Gunsmith_SubNodeFocus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/SubNodeFocus/Data/DA_Gunsmith_SubNodeFocus.json))
+## 7. Sight Sub-Node (`DA_Gunsmith_SubNodeFocus`)
 
 Keyed on `Item.Attachment.Sight`:
 
@@ -173,7 +173,7 @@ Camera mode `Normal`.
 
 ---
 
-## 8. Optic Rail Adjustment ([`DA_Gunsmith_OpticAdjust`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/OpticAdjust/Data/DA_Gunsmith_OpticAdjust.json))
+## 8. Optic Rail Adjustment (`DA_Gunsmith_OpticAdjust`)
 
 | Field | Value |
 |---|---|
@@ -188,7 +188,7 @@ The slider's internal range (-2 to 10) is wider than its display range (-1 to 2)
 
 ## 9. Accuracy Display
 
-### 9a. Accuracy unit labels ([`DA_Gunsmith_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/Data/DA_Gunsmith_Stats.json))
+### 9a. Accuracy unit labels (`DA_Gunsmith_Stats`)
 
 | Accuracy type | Label |
 |---|---|
@@ -197,7 +197,7 @@ The slider's internal range (-2 to 10) is wider than its display range (-1 to 2)
 
 Expand and collapse actions: `Input.NamedActions.ItemSmith.ExpandStats` and `...CollapseStats`.
 
-### 9b. Expanded accuracy ([`DA_GunsmithExpandedAccuracy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.json))
+### 9b. Expanded accuracy (`DA_GunsmithExpandedAccuracy`)
 
 | Setting | Value |
 |---|---|
@@ -214,13 +214,13 @@ The large-MOA value bands (extracted in round 39) are 5.0, 10.0, 15.0, 20.0 and 
 
 ## 10. Textures and Entries
 
-### 10a. Decals ([`DT_Gunsmith_EntityData_UI_DecalTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_DecalTextures.json), 5 rows)
+### 10a. Decals (`DT_Gunsmith_EntityData_UI_DecalTextures`, 5 rows)
 `Gunsmith.Textures.Decal.Standard.ReviveHand` ("Revive Hand"), `...Headshot` ("Headshot"), `...DownedMarker` ("Downed Marker"), `...FriendlyMarker` ("Friendly Marker"), `...GRN` ("GRN").
 
-### 10b. Paint masks ([`DT_Gunsmith_EntityData_UI_PaintMaskTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_PaintMaskTextures.json), 4 rows)
+### 10b. Paint masks (`DT_Gunsmith_EntityData_UI_PaintMaskTextures`, 4 rows)
 `Gunsmith.Textures.Mask.BrushCircle`, `...BrushPyramid`, `...BulletImpactA`, `...BulletImpactB`. No friendly names.
 
-### 10c. Paint mastery ([`DT_Gunsmith_EntityData_UI_PaintMasteryTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_PaintMasteryTextures.json), 6 rows)
+### 10c. Paint mastery (`DT_Gunsmith_EntityData_UI_PaintMasteryTextures`, 6 rows)
 `Gunsmith.Textures.Mastery.Default1` ("Gold"), `Default2` ("pink"), `Default3` ("clouds"), `Default4` ("Normal"), `Default5` ("rainbow"), and `Gunsmith.Textures.Camo` ("Camo").
 
 ---
@@ -240,4 +240,4 @@ The large-MOA value bands (extracted in round 39) are 5.0, 10.0, 15.0, 20.0 and 
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **Localised strings** are referenced by key. The text is not in this export except where a `SourceString` was exported.
 - **Scope and sight item ids** (for example `Id.Item.OPT_08`) are referenced in the exclusivity and texture rows, but the item definitions are outside this plugin.
-- **Popup options** ([`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json)) hold five popup rows (see the Season 02 update). Popup text is referenced by key, and only some `SourceString` values are exported.
+- **Popup options** (`DT_GunsmithPopupOptions`) hold five popup rows (see the Season 02 update). Popup text is referenced by key, and only some `SourceString` values are exported.

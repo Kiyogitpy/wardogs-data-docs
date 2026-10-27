@@ -117,6 +117,6 @@ The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections,
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), section 6 for the reward tags and base values
 - [King of the Hill challenge feature](../../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
-- [KOTH challenge table](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/DT_Challenges_SessionEvents_KOTH.json) (JSON)
-- [Shared session-event reward formulas](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) (JSON)
+- KOTH challenge table (JSON)
+- Shared session-event reward formulas (JSON)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

@@ -6,7 +6,7 @@ description: "Inventory of the Category, Minimap and World Textures, Map and Min
 ---
 
 # Wardogs — UI Data Reference
-*Extracted from cooked game data ([`Wardogs/Content/UI`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI), 605 JSON files holding 793 export blocks: 501 UDataAsset, 188 UObject, 92 UDataTable, 11 curve assets, 1 common input table). Values are as exported; nothing here was checked in-game. Multi-export files were split on their `--- export:` headers before parsing.*
+*Extracted from cooked game data (`Wardogs/Content/UI`, 605 JSON files holding 793 export blocks: 501 UDataAsset, 188 UObject, 92 UDataTable, 11 curve assets, 1 common input table). Values are as exported; nothing here was checked in-game. Multi-export files were split on their `--- export:` headers before parsing.*
 
 > **Scope note:** this is the UI-layer data: HUD trackers and feeds, map and minimap setup, ping and radial wheels, vendor and inventory grids, tooltips, settings display, frontend scenes, localisation-tag tables, and UI audio. Gameplay numbers (cash, XP, weapon stats) live in other categories. Where a UI asset refers to a gameplay tag or entity, the tag is named but its gameplay value is not included here.
 
@@ -16,17 +16,17 @@ description: "Inventory of the Category, Minimap and World Textures, Map and Min
 
 - **Size:** the UI export now has 605 JSON files and 793 export blocks (was 586 and 774), including 92 DataTables (was 88).
 - **New wager family:** a wager vendor entry, a create-wager panel, an objective selector, a match status scene, a receipt, an in-match HUD and result toasts. See section 8d.
-- **New squad tools:** [`DT_SquadIntents`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/ContextDrawer/Tabs/Party/Data/DT_SquadIntents.json) (12 rows, `Squad.Intent.*` tags) and a create-squad popup ([`DA_CreateSquadData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadCreationPopup/Data/DA_CreateSquadData.json)) on the party tab of the context drawer.
-- **New shooting-range context drawer:** [`DA_ShootingRange_ContextDrawer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/ContextDrawer/Data/DA_ShootingRange_ContextDrawer.json) and the match scene row `UI.Scene.Match.ContextDrawer` ([`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json)).
-- **New frontend assets:** deployment select scene ([`DA_DeploymentSelectScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/DeploymentSelect/Data/DA_DeploymentSelectScene.json)), advanced filters and lookup session popups ([`DA_Popup_AdvancedFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Widgets/AdvancedFiltersPopup/Data/DA_Popup_AdvancedFilter.json), [`DA_Popup_LookupSession`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Widgets/LookupSessionPopup/Data/DA_Popup_LookupSession.json)), and a Gold Exchange entity row ([`DT_EntityData_UI_GoldExchange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/GoldExchange/Data/DT_EntityData_UI_GoldExchange.json)).
-- **New chat and vehicle assets:** clan-tag blocklist [`DA_ClanTagProfanityFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DA_ClanTagProfanityFilter.json) (17 entries) and vehicle countermeasure asset [`DA_VehicleCountermeasure`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json).
-- **New settings widgets:** [`DA_SettingValue_RetryCommunication`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_RetryCommunication.json), [`DA_SettingValue_Status`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_Status.json) and [`DA_Setting_Value_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Widgets/SettingValue/Data/DA_Setting_Value_Default.json). [`DT_SettingTypeUIData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Widgets/SettingValue/Data/DT_SettingTypeUIData.json) goes from 12 to 13 rows (adds `SwitchConfirmed`).
+- **New squad tools:** `DT_SquadIntents` (12 rows, `Squad.Intent.*` tags) and a create-squad popup (`DA_CreateSquadData`) on the party tab of the context drawer.
+- **New shooting-range context drawer:** `DA_ShootingRange_ContextDrawer` and the match scene row `UI.Scene.Match.ContextDrawer` (`DT_SceneData_Match_ShootingRange`).
+- **New frontend assets:** deployment select scene (`DA_DeploymentSelectScene`), advanced filters and lookup session popups (`DA_Popup_AdvancedFilter`, `DA_Popup_LookupSession`), and a Gold Exchange entity row (`DT_EntityData_UI_GoldExchange`).
+- **New chat and vehicle assets:** clan-tag blocklist `DA_ClanTagProfanityFilter` (17 entries) and vehicle countermeasure asset `DA_VehicleCountermeasure`.
+- **New settings widgets:** `DA_SettingValue_RetryCommunication`, `DA_SettingValue_Status` and `DA_Setting_Value_Default`. `DT_SettingTypeUIData` goes from 12 to 13 rows (adds `SwitchConfirmed`).
 - **Removed:** `DA_VehicleFlares`, `DA_SettingValue_Button` and the two inventory prompt-bar assets (`DA_ItemCard_PromptBarData_Inventory` and `_Gear`). `WDUIButtonPromptsBarData` goes from 12 to 10.
-- **Tables that were empty now have rows:** [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) 0 → 5, [`DT_ExperienceServerBrowserTags`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/ServerBrowser/DT_ExperienceServerBrowserTags.json) 0 → 19, [`DT_OnlineRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data/DT_OnlineRegions.json) 0 → 14, [`DT_ServerBrowserMapTexture`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data/DT_ServerBrowserMapTexture.json) 0 → 12, [`DT_PopupButtons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Popups/Widgets/Data/DT_PopupButtons.json) 0 → 2.
-- **Row count changes:** [`DT_ScopeReticleTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/ScopeReticle/Data/DT_ScopeReticleTypes.json) 15 → 17, [`DT_VendorTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Data/DT_VendorTypes.json) 3 → 4 (adds `Vendor.Type.Wager`), [`DT_PopupTypes_Features`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Popups/Data/DT_PopupTypes_Features.json) 13 → 14, [`DT_TooltipData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Data/DT_TooltipData.json) 33 → 34, [`DT_Calibers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_Calibers_TaggedIcons.json) 33 → 34, [`DT_EntityData_UI_Items`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Items.json) 295 → 296, [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) 24 → 25.
-- **Tracker fields:** `Duration` is no longer exported on [`DA_Tracker_Map_HitMarker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_HitMarker.json) (was 150) or [`DA_Tracker_Spatial_AssistanceRequest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_AssistanceRequest.json) (was 20). The `RemovalTime` of 10 on [`DA_MaterialTrackerData_AssistanceRequest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_AssistanceRequest.json) is gone. [`DA_SpatialTrackers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Data/DA_SpatialTrackers.json) keeps its 0.6 value, now under an unnamed field.
-- **Ping requests:** `ChannelType` is set on [`DA_PingAction_Request_Dropoff`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Dropoff.json) (`Vehicle`) and on the Fuel and Supplies request assets (`Team`).
-- **Spelling in strings:** some UI strings moved to US spelling, for example "Optimised" → "Optimized" in [`DT_EntityData_UI_Items`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Items.json) and "cancelled" → "canceled" in [`DT_EventFeedTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data/DT_EventFeedTypes.json).
+- **Tables that were empty now have rows:** `DT_PlayerIdentities` 0 → 5, `DT_ExperienceServerBrowserTags` 0 → 19, `DT_OnlineRegions` 0 → 14, `DT_ServerBrowserMapTexture` 0 → 12, `DT_PopupButtons` 0 → 2.
+- **Row count changes:** `DT_ScopeReticleTypes` 15 → 17, `DT_VendorTypes` 3 → 4 (adds `Vendor.Type.Wager`), `DT_PopupTypes_Features` 13 → 14, `DT_TooltipData` 33 → 34, `DT_Calibers_TaggedIcons` 33 → 34, `DT_EntityData_UI_Items` 295 → 296, `DT_SceneData_Match` 24 → 25.
+- **Tracker fields:** `Duration` is no longer exported on `DA_Tracker_Map_HitMarker` (was 150) or `DA_Tracker_Spatial_AssistanceRequest` (was 20). The `RemovalTime` of 10 on `DA_MaterialTrackerData_AssistanceRequest` is gone. `DA_SpatialTrackers` keeps its 0.6 value, now under an unnamed field.
+- **Ping requests:** `ChannelType` is set on `DA_PingAction_Request_Dropoff` (`Vehicle`) and on the Fuel and Supplies request assets (`Team`).
+- **Spelling in strings:** some UI strings moved to US spelling, for example "Optimised" → "Optimized" in `DT_EntityData_UI_Items` and "cancelled" → "canceled" in `DT_EventFeedTypes`.
 
 Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
 
@@ -36,11 +36,11 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 
 | Top folder | Export blocks | Notes |
 |---|---|---|
-| [`Features/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features) | 737 | All screens and HUD elements; see section 1b for the breakdown |
+| `Features/` | 737 | All screens and HUD elements; see section 1b for the breakdown |
 | `Data/` | 39 | Shared tables: entities, tagged icons, audio, scenes, interaction, tag-to-text |
-| `Tools/` | 9 | Minimap texture definitions ([`Tools/WorldCapture`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Tools/WorldCapture)) and editor-only tracker data |
+| `Tools/` | 9 | Minimap texture definitions (`Tools/WorldCapture`) and editor-only tracker data |
 | `Shared/` | 4 | Rich-text image tables |
-| [`Cursors/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Cursors), `Input/`, [`Prototype/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Prototype) | 4 | Software cursor, common input actions, one prototype |
+| `Cursors/`, `Input/`, `Prototype/` | 4 | Software cursor, common input actions, one prototype |
 
 ### 1a. Most common asset types
 
@@ -48,7 +48,7 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 |---|---|---|
 | `DataTable` | 92 | Row tables (see section 13) |
 | `WDPingActionAsset` | 35 | One per ping-wheel entry |
-| `WDUITutorialsContentData` | 26 | LearnToPlay tab content (all under [`Frontend/LearnToPlay`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/LearnToPlay)) |
+| `WDUITutorialsContentData` | 26 | LearnToPlay tab content (all under `Frontend/LearnToPlay`) |
 | `WDUIContainerGridData` | 16 | Grid size and label per container view |
 | `WDUIRadialWheelSlotTypeDataAsset` | 16 | Radial wheel slot definitions |
 | `WDUIMaterialTrackerDataAsset` | 15 | Map material-tracker settings (`Map_Optimisation`) |
@@ -61,7 +61,7 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 
 ### 1b. Export blocks by feature folder
 
-| Folder under [`Features/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features) | Blocks | Folder under [`Features/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features) | Blocks |
+| Folder under `Features/` | Blocks | Folder under `Features/` | Blocks |
 |---|---|---|---|
 | `HUD` | 191 | `Popups` | 11 |
 | `Frontend` | 133 | `Scoreboard` | 8 |
@@ -97,7 +97,7 @@ Z bounds are present on every map (for example Europe ±164,285.9; Shooting_Rang
 
 ## 3. Map and Minimap Trackers
 
-Trackers are registered in [`DT_TrackerData_Minimap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DT_TrackerData_Minimap.json) (17 rows), `DT_TrackerData_Map` (17 rows, tactical map) and [`DT_TrackerData_Spatial`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DT_TrackerData_Spatial.json) (13 rows, world-space markers). Each row binds a `Trackers.Type.*` tag to a tracker class and a widget (`W_Tracker_Map_*` or `W_Tracker_Spatial_*`).
+Trackers are registered in `DT_TrackerData_Minimap` (17 rows), `DT_TrackerData_Map` (17 rows, tactical map) and `DT_TrackerData_Spatial` (13 rows, world-space markers). Each row binds a `Trackers.Type.*` tag to a tracker class and a widget (`W_Tracker_Map_*` or `W_Tracker_Spatial_*`).
 
 ### 3a. Tracker types on the minimap and tactical map
 
@@ -126,32 +126,32 @@ On the minimap table, four trackers require gameplay tags: `Character`, `Vehicle
 
 | Asset | Type | ZOrder | Other notable values |
 |---|---|---|---|
-| [`DA_Tracker_Minimap_Spawn`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Spawn.json) | WDUIMapTrackerData | 1 | — |
-| [`DA_Tracker_Minimap_Corpse`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Corpse.json) | WDUITimedMapTrackerData | 10 | — |
-| [`DA_Tracker_Minimap_DeploymentBoard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_DeploymentBoard.json) | WDUIMapTrackerData | 20 | Default tracker icon set |
-| [`DA_Tracker_Minimap_Vendor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Vendor.json) | WDUIVendorMapTrackerData | 20 | `VendorTextures` ×2 |
-| [`DA_Tracker_Minimap_Vehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Vehicle.json) | WDUIVehicleMapTrackerData | 25 | `OccupantsTextFormat`, 4 assistance-request textures |
-| [`DA_Tracker_Minimap_Ping`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Ping.json) | WDUIPingMapTrackerData | 40 | 2 ping colours |
-| [`DA_Tracker_Minimap_AssistanceRequestPing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_AssistanceRequestPing.json) | WDUIAssistanceRequestMapTrackerData | 40 | 1 texture, 1 ping colour, 1 tracker exception |
-| [`DA_Tracker_Minimap_ContextualPing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_ContextualPing.json) | WDUIContextualMapTrackerData | 40 | 6 textures and colours |
-| [`DA_Tracker_Minimap_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Player.json) | WDUIPlayerMapTrackerData | 80 | `DefaultTexture` = `T_UI_FriendlyMarker_Map_Icon`, `SelfOrSquadTexture` = `T_UI_PlayerMarker_Map_Icon`; 9 assistance-request and 10 acknowledged textures |
-| [`DA_Tracker_Map_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Player.json) (tactical) | WDUIPlayerMapTrackerData | — | `DefaultIconScale` 0.75, `LowHealthColor`, `OverHealHealthColor` |
-| [`DA_Tracker_Map_HitMarker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_HitMarker.json) | WDUITimedMapTrackerData | 40 | — |
+| `DA_Tracker_Minimap_Spawn` | WDUIMapTrackerData | 1 | — |
+| `DA_Tracker_Minimap_Corpse` | WDUITimedMapTrackerData | 10 | — |
+| `DA_Tracker_Minimap_DeploymentBoard` | WDUIMapTrackerData | 20 | Default tracker icon set |
+| `DA_Tracker_Minimap_Vendor` | WDUIVendorMapTrackerData | 20 | `VendorTextures` ×2 |
+| `DA_Tracker_Minimap_Vehicle` | WDUIVehicleMapTrackerData | 25 | `OccupantsTextFormat`, 4 assistance-request textures |
+| `DA_Tracker_Minimap_Ping` | WDUIPingMapTrackerData | 40 | 2 ping colours |
+| `DA_Tracker_Minimap_AssistanceRequestPing` | WDUIAssistanceRequestMapTrackerData | 40 | 1 texture, 1 ping colour, 1 tracker exception |
+| `DA_Tracker_Minimap_ContextualPing` | WDUIContextualMapTrackerData | 40 | 6 textures and colours |
+| `DA_Tracker_Minimap_Player` | WDUIPlayerMapTrackerData | 80 | `DefaultTexture` = `T_UI_FriendlyMarker_Map_Icon`, `SelfOrSquadTexture` = `T_UI_PlayerMarker_Map_Icon`; 9 assistance-request and 10 acknowledged textures |
+| `DA_Tracker_Map_Player` (tactical) | WDUIPlayerMapTrackerData | — | `DefaultIconScale` 0.75, `LowHealthColor`, `OverHealHealthColor` |
+| `DA_Tracker_Map_HitMarker` | WDUITimedMapTrackerData | 40 | — |
 
-**Material-tracker removal times** ([`Features/Map/Map_Optimisation`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Map/Map_Optimisation), 15 assets): `RemovalTime` = **10** on Corpse, Ping and ContextualPing. The AssistanceRequest asset no longer exports a removal time, and the others have none. Every one carries a `ZoomScaleCurve`.
+**Material-tracker removal times** (`Features/Map/Map_Optimisation`, 15 assets): `RemovalTime` = **10** on Corpse, Ping and ContextualPing. The AssistanceRequest asset no longer exports a removal time, and the others have none. Every one carries a `ZoomScaleCurve`.
 
 ### 3c. Spatial (world-space) trackers
 
 | Asset | Type | Key values |
 |---|---|---|
-| [`DA_SpatialTrackers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Data/DA_SpatialTrackers.json) | WDUISpatialTrackersData | an unnamed field (0.6); 6 `WorldDistanceScoreMultipliers` |
-| [`DA_Tracker_Spatial_AssistanceRequest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_AssistanceRequest.json) | WDUIAssistanceRequestSpatialTrackerData | `StalkMaxYSize` 300, `StalkSizeChangeRate` 1500, `PingScaleMaxDistance` 10, `ZOrder` 3 |
-| [`DA_Tracker_Spatial_ContextualPing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.json) | WDUIContextualPingSpatialTrackerData | `StalkMaxYSize` 300, `StalkSizeChangeRate` 1500, `PingScaleMaxDistance` 10 |
-| [`DA_Tracker_Spatial_Ping`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.json) | WDUIPingSpatialTrackerData | `StalkMinYSize` 0, `StalkMaxYSize` 0, `StalkSizeChangeRate` 1500, `PingScaleMaxDistance` 10 |
-| [`DA_Tracker_Spatial_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.json) | WDUIPlayerSpatialTrackerData | `bUseOcclusionFade` True, `OcclusionFadeDuration` 0.5 |
-| [`DA_Tracker_Spatial_Vehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Vehicle.json) | WDUIVehicleSpatialTrackerData | `bHideIfDrivenByLocalPlayer` True, `bUseOcclusionFade` True, fade 0.5 |
+| `DA_SpatialTrackers` | WDUISpatialTrackersData | an unnamed field (0.6); 6 `WorldDistanceScoreMultipliers` |
+| `DA_Tracker_Spatial_AssistanceRequest` | WDUIAssistanceRequestSpatialTrackerData | `StalkMaxYSize` 300, `StalkSizeChangeRate` 1500, `PingScaleMaxDistance` 10, `ZOrder` 3 |
+| `DA_Tracker_Spatial_ContextualPing` | WDUIContextualPingSpatialTrackerData | `StalkMaxYSize` 300, `StalkSizeChangeRate` 1500, `PingScaleMaxDistance` 10 |
+| `DA_Tracker_Spatial_Ping` | WDUIPingSpatialTrackerData | `StalkMinYSize` 0, `StalkMaxYSize` 0, `StalkSizeChangeRate` 1500, `PingScaleMaxDistance` 10 |
+| `DA_Tracker_Spatial_Player` | WDUIPlayerSpatialTrackerData | `bUseOcclusionFade` True, `OcclusionFadeDuration` 0.5 |
+| `DA_Tracker_Spatial_Vehicle` | WDUIVehicleSpatialTrackerData | `bHideIfDrivenByLocalPlayer` True, `bUseOcclusionFade` True, fade 0.5 |
 | `DA_Tracker_Spatial_Vehicle_LockOn` | WDUISpatialTrackerData | `bUseOcclusionFade` True, fade 0.5 |
-| [`DA_Tracker_Spatial_ActiveZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.json) | WDUIActiveZoneData | `ValueSmoothingSpeed` 0.5 |
+| `DA_Tracker_Spatial_ActiveZone` | WDUIActiveZoneData | `ValueSmoothingSpeed` 0.5 |
 | `DA_Tracker_Spatial_Interactable_*` (2) | WDUIInteractableActorData | Second variant is screen-clamped |
 
 Spatial `RuleSets` and `DistanceRulesets` reference shared rule assets (section 9). The meaning of the `Stalk*` fields is inferred from their names and was not confirmed.
@@ -165,10 +165,10 @@ The ping wheel has 35 entries in five categories. Each entry is one `DT_PingActi
 | Category table | Rows | Category tag | Preferred page |
 |---|---|---|---|
 | `DT_PingActions_Emote` | 10 | not captured | not captured |
-| [`DT_PingActions_Orders`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Orders/DT_PingActions_Orders.json) | 5 | `UI.Features.PingWheel.Category.Squad` | 2 |
-| [`DT_PingActions_Request`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Requests/DT_PingActions_Request.json) | 10 | `UI.Features.PingWheel.Category.Requests` | 1 |
-| [`DT_PingActions_Social`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Social/DT_PingActions_Social.json) | 5 | not captured | not captured |
-| [`DT_PingActions_Squad`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Squad/DT_PingActions_Squad.json) | 5 | not captured | not captured |
+| `DT_PingActions_Orders` | 5 | `UI.Features.PingWheel.Category.Squad` | 2 |
+| `DT_PingActions_Request` | 10 | `UI.Features.PingWheel.Category.Requests` | 1 |
+| `DT_PingActions_Social` | 5 | not captured | not captured |
+| `DT_PingActions_Squad` | 5 | not captured | not captured |
 
 ### 4a. Orders (Squad category, page 2)
 
@@ -217,16 +217,16 @@ Emote icons include Assault, Move_Up, Point, Surrender_Drop, Halt, Middle_Finger
 
 | Wheel tag | Display name / title | Close action | Slot table |
 |---|---|---|---|
-| `UI.RadialWheel.Equipment` | "TAC-VEST" | `UI.Action.Feature.RadialWheel.Equipment.ToggleScene` | [`DT_RadialWheelSlotType_EquipmentData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/EquipmentWheel/DT_RadialWheelSlotType_EquipmentData.json) (7 rows) |
-| `UI.RadialWheel.VoiceChat` | "SELECT VOICE CHANNEL" (description: "Current - {TalkingChannel}") | `UI.Action.Feature.RadialWheel.VoiceChat.ToggleScene` | [`DT_RadialWheelSlotType_VoiceChatData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/VoiceChat/DT_RadialWheelSlotType_VoiceChatData.json) (2 rows) |
+| `UI.RadialWheel.Equipment` | "TAC-VEST" | `UI.Action.Feature.RadialWheel.Equipment.ToggleScene` | `DT_RadialWheelSlotType_EquipmentData` (7 rows) |
+| `UI.RadialWheel.VoiceChat` | "SELECT VOICE CHANNEL" (description: "Current - {TalkingChannel}") | `UI.Action.Feature.RadialWheel.VoiceChat.ToggleScene` | `DT_RadialWheelSlotType_VoiceChatData` (2 rows) |
 
-[`DT_RadialWheelSlotType_Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/Vehicles/DT_RadialWheelSlotType_Vehicles.json) has 9 rows. Slot-type assets cover empty and locked states: `EmptySlotTitleText`, `EmptySlotDescriptionText`, `LockedSlotTitleText`, `LockedSlotDescriptionText`, `EmptyTextureScale`, `LockedTextureScale`, and `QuantityTextAngleOverride`. Voice-channel slot assets also hold `ChannelType`, `Action`, `Icon` and `IconScale`.
+`DT_RadialWheelSlotType_Vehicles` has 9 rows. Slot-type assets cover empty and locked states: `EmptySlotTitleText`, `EmptySlotDescriptionText`, `LockedSlotTitleText`, `LockedSlotDescriptionText`, `EmptyTextureScale`, `LockedTextureScale`, and `QuantityTextAngleOverride`. Voice-channel slot assets also hold `ChannelType`, `Action`, `Icon` and `IconScale`.
 
 ---
 
 ## 6. Feeds and Notifications
 
-### 6a. Reward feed ([`DA_RewardFeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DA_RewardFeed.json), [`DT_RewardFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_RewardFeedActions.json), 52 rows)
+### 6a. Reward feed (`DA_RewardFeed`, `DT_RewardFeedActions`, 52 rows)
 
 | Setting | Value |
 |---|---|
@@ -252,15 +252,15 @@ Sample rows (tag → text):
 
 The remaining rows cover friendly-fire and destroyed-friendly variants, schematic and FOB build steps, magnet zone states, deployables, supply crates and transport assists.
 
-### 6b. Challenges feed ([`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json), 68 rows)
+### 6b. Challenges feed (`DT_ChallengesFeedActions`, 68 rows)
 
 Rows are keyed `Challenges.Rewards.*`. Some carry `ConditionalExpressions` on context tags. For example, `Challenges.Rewards.PlayerKill` shows **"No Value Kill"** when the context is `Challenges.Context.RessedByEnemy`, which is the feed-side counterpart of the ressed-by-enemy penalty. `Challenges.Rewards.PlayerKill.CrewAssist` shows "Kill Assist" and `.LogisticAssist` shows "Deployed Player Assist".
 
 ### 6c. Tipping
 
-[`DT_TippingReward`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Tipping/Data/DT_TippingReward.json) (4 rows, reward-feed row type). [`DA_TippingData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Tipping/Data/DA_TippingData.json) `TipPromptDuration` = 8.
+`DT_TippingReward` (4 rows, reward-feed row type). `DA_TippingData` `TipPromptDuration` = 8.
 
-### 6d. Killfeed ([`DA_Killfeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Killfeed/Data/DA_Killfeed.json), [`DA_KillfeedEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Killfeed/Widgets/KillfeedEntry/Data/DA_KillfeedEntry.json))
+### 6d. Killfeed (`DA_Killfeed`, `DA_KillfeedEntry`)
 
 | Setting | Value |
 |---|---|
@@ -270,7 +270,7 @@ Rows are keyed `Challenges.Rewards.*`. Some carry `ConditionalExpressions` on co
 | `DistanceTextFormat` | `[{Distance} {Unit}]` |
 | `DisconnectedPlayerText` | "Disconnected Player" |
 
-### 6e. Event feed ([`DT_EventFeedTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data/DT_EventFeedTypes.json), 34 rows; [`DA_EventFeedEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data/DA_EventFeedEntry.json))
+### 6e. Event feed (`DT_EventFeedTypes`, 34 rows; `DA_EventFeedEntry`)
 
 | Setting | Value |
 |---|---|
@@ -284,9 +284,9 @@ Examples: `Type.Acknowledgement` ("{RequestPlayerName} acknowledged <Highlight>{
 
 | Asset | Key values |
 |---|---|
-| [`DA_HUDFeedback`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/HUDFeedback/Data/DA_HUDFeedback.json) | `EntryDuration` 4.5 |
-| [`DA_Chatbox`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DA_Chatbox.json) | `MaximumCachedMessages` 50, `DisplayDuration` 10, `MaxCharactersPerMessage` 64, mention prefix `@`, profanity filter [`DA_ProfanityFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DA_ProfanityFilter.json) |
-| [`DA_ClanTagProfanityFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DA_ClanTagProfanityFilter.json) | Clan-tag blocklist (`WDUIProfanityFilter`, 17 entries) |
+| `DA_HUDFeedback` | `EntryDuration` 4.5 |
+| `DA_Chatbox` | `MaximumCachedMessages` 50, `DisplayDuration` 10, `MaxCharactersPerMessage` 64, mention prefix `@`, profanity filter `DA_ProfanityFilter` |
+| `DA_ClanTagProfanityFilter` | Clan-tag blocklist (`WDUIProfanityFilter`, 17 entries) |
 | Chat channel tags | Player name, mention-me and mention-other links, coordinate link |
 
 ---
@@ -295,19 +295,19 @@ Examples: `Type.Acknowledgement` ("{RequestPlayerName} acknowledged <Highlight>{
 
 | Asset | Type | Key values |
 |---|---|---|
-| [`DA_Crosshair`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Crosshair/Data/DA_Crosshair.json) | WDUICrosshairData | `Opacity` 0.6, `HairLength` 7.5, `Gap` 0, `SpreadMultiplier` 600, `BuildableCheckRadius` 310, `bShowDot` True, `RevealGraceTime` 0.4, `RevealAnimPlayRate` 1.2, `FallbackCrosshairProjectionDistance` 1000. Hidden during 14 action tags (Sprint, TacSprint, Ladder, Climbing, Mantling, Vaulting, Revive, MeleeBash, Reload, ChamberRound, Swimming, Parachuting, Inspect, Prone.Crawl) and 3 gameplay tags (Vitality.Critical, Vitality.Dead, Vehicle.Role.ActivePassenger) |
-| [`DA_Compass`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Compass/Data/DA_Compass.json) | WDUICompassData | 8 cardinal/intercardinal labels at 45° steps (N = 0, E = 90, S = 180, W = 270); `IconSize` 18×18; `FadeStart` 0.4; `bCullPingsAtEdgeOfCompass` True |
-| [`DA_FadeOut`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/FadeOut/Data/DA_FadeOut.json) | WDUIFadeOutData | `BlackoutTransitionDurationOut` 3; "Respawning in {Time}..." |
-| [`DA_HUDQuickSlots`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/QuickSlots/Data/DA_HUDQuickSlots.json) | WDUIHUDQuickSlotsData | `TimeUntilFadeStarts` 4 |
-| [`DA_HUDPrompts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Prompts/Data/DA_HUDPrompts.json) | WDUIHUDPromptsData | `ProneBlockedDisplayTime` 1.2; `bEnableTraversalPrompt` False |
-| [`DA_HUDFalling`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Falling/Data/DA_HUDFalling.json) | WDUIHUDFallingData | `MinimumGaugeActivationHeight` 5; `bShowGaugeWhileFallingWithoutParachute` False |
-| [`DA_DeathState`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/DeathState/Data/DA_DeathState.json) | WDUIDeathStateData | `TimeBetweenDistanceChecks` 1; `MaxBlackoutOpacity` 1; `MaximumDistanceToConsiderAsNearby` 100 |
-| [`DA_EquippedItem`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EquippedItem/Data/DA_EquippedItem.json) | WDUIEquippedItemData | Default magazine, bullet and chamber textures; `EquippedItemNameTextFormat` `{ItemDisplayName} // {ResourceDisplayName} // SN ...` |
-| [`DA_ScopeReticle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/ScopeReticle/Data/DA_ScopeReticle.json) | WDUIScopeReticleData | `DeadZoneSize` 0, `DampenZoneSize` 0 (17 reticle types in [`DT_ScopeReticleTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/ScopeReticle/Data/DT_ScopeReticleTypes.json)) |
-| [`DA_WeightDisplay`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Shared/Widgets/WeightDisplay/Data/DA_WeightDisplay.json) | WDUIWeightDisplayData | `HeaviestWeightBuffer` 15 |
+| `DA_Crosshair` | WDUICrosshairData | `Opacity` 0.6, `HairLength` 7.5, `Gap` 0, `SpreadMultiplier` 600, `BuildableCheckRadius` 310, `bShowDot` True, `RevealGraceTime` 0.4, `RevealAnimPlayRate` 1.2, `FallbackCrosshairProjectionDistance` 1000. Hidden during 14 action tags (Sprint, TacSprint, Ladder, Climbing, Mantling, Vaulting, Revive, MeleeBash, Reload, ChamberRound, Swimming, Parachuting, Inspect, Prone.Crawl) and 3 gameplay tags (Vitality.Critical, Vitality.Dead, Vehicle.Role.ActivePassenger) |
+| `DA_Compass` | WDUICompassData | 8 cardinal/intercardinal labels at 45° steps (N = 0, E = 90, S = 180, W = 270); `IconSize` 18×18; `FadeStart` 0.4; `bCullPingsAtEdgeOfCompass` True |
+| `DA_FadeOut` | WDUIFadeOutData | `BlackoutTransitionDurationOut` 3; "Respawning in {Time}..." |
+| `DA_HUDQuickSlots` | WDUIHUDQuickSlotsData | `TimeUntilFadeStarts` 4 |
+| `DA_HUDPrompts` | WDUIHUDPromptsData | `ProneBlockedDisplayTime` 1.2; `bEnableTraversalPrompt` False |
+| `DA_HUDFalling` | WDUIHUDFallingData | `MinimumGaugeActivationHeight` 5; `bShowGaugeWhileFallingWithoutParachute` False |
+| `DA_DeathState` | WDUIDeathStateData | `TimeBetweenDistanceChecks` 1; `MaxBlackoutOpacity` 1; `MaximumDistanceToConsiderAsNearby` 100 |
+| `DA_EquippedItem` | WDUIEquippedItemData | Default magazine, bullet and chamber textures; `EquippedItemNameTextFormat` `{ItemDisplayName} // {ResourceDisplayName} // SN ...` |
+| `DA_ScopeReticle` | WDUIScopeReticleData | `DeadZoneSize` 0, `DampenZoneSize` 0 (17 reticle types in `DT_ScopeReticleTypes`) |
+| `DA_WeightDisplay` | WDUIWeightDisplayData | `HeaviestWeightBuffer` 15 |
 | `DA_VehicleFuelHealth` | WDUIVehicleFuelHealthData | `LowFuelThreshold` 0.2 |
-| [`DA_Passengers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Passengers/Data/DA_Passengers.json) | WDUIPassengersData | "PASSENGERS [{Occupants}/{Capacity}]"; `PassengerCollapseThreshold` 13 |
-| [`DA_KillfeedEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Killfeed/Widgets/KillfeedEntry/Data/DA_KillfeedEntry.json) | WDUIKillfeedEntryData | See 6d |
+| `DA_Passengers` | WDUIPassengersData | "PASSENGERS [{Occupants}/{Capacity}]"; `PassengerCollapseThreshold` 13 |
+| `DA_KillfeedEntry` | WDUIKillfeedEntryData | See 6d |
 
 Vehicle HUD assets (`WDUIVehicleStateData` ×2, `WDUIVehicleWeaponAmmoData` ×2, `WDUIVehicleReloadingMinigameData`, `WDUIVehicleCountermeasureData`, `WDUIVehicleThreatIndicatorData`, and others) hold icon sets, colour thresholds and a reloading minigame that uses quadrant-based inputs. Their numeric detail was not extracted (section 14).
 
@@ -319,20 +319,20 @@ Vehicle HUD assets (`WDUIVehicleStateData` ×2, `WDUIVehicleWeaponAmmoData` ×2,
 
 | Asset | Min W×H | Max W×H | Notes |
 |---|---|---|---|
-| [`DA_ContainerGrid_Inventory_Slot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Slot.json) | 1×1 | 1×1 | Single-slot equipment |
-| [`DA_ContainerGrid_Inventory_Slot_Weapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Slot_Weapon.json) | 1×1 | 1×1 | |
-| [`DA_ContainerGrid_Inventory_Slot_Vest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Slot_Vest.json) | 1×1 | 1×1 | |
-| [`DA_ContainerGrid_Inventory_Slot_Attachment`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Slot_Attachment.json) | 1×1 | 1×1 | |
-| [`DA_ContainerGrid_Vendor_Backpack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Backpack.json) | 9×2 | 9×2 | Label "Backpack"; fixed-size grid |
-| [`DA_ContainerGrid_Vendor_Slot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot.json) | 1×1 | 1×2 | Label "Backpack" |
-| [`DA_ContainerGrid_Vendor_Slot_Weapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot_Weapon.json) | 1×1 | 1×2 | Label "Backpack" |
-| [`DA_ContainerGrid_Vendor_Slot_Attachment`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot_Attachment.json) | 1×1 | 1×1 | |
+| `DA_ContainerGrid_Inventory_Slot` | 1×1 | 1×1 | Single-slot equipment |
+| `DA_ContainerGrid_Inventory_Slot_Weapon` | 1×1 | 1×1 | |
+| `DA_ContainerGrid_Inventory_Slot_Vest` | 1×1 | 1×1 | |
+| `DA_ContainerGrid_Inventory_Slot_Attachment` | 1×1 | 1×1 | |
+| `DA_ContainerGrid_Vendor_Backpack` | 9×2 | 9×2 | Label "Backpack"; fixed-size grid |
+| `DA_ContainerGrid_Vendor_Slot` | 1×1 | 1×2 | Label "Backpack" |
+| `DA_ContainerGrid_Vendor_Slot_Weapon` | 1×1 | 1×2 | Label "Backpack" |
+| `DA_ContainerGrid_Vendor_Slot_Attachment` | 1×1 | 1×1 | |
 
 Subslot grids (Backpack, Storage, Vest, Vault) and the vehicle-inventory grid carry labels and `bUseItemAsSlotName` settings but no size bounds.
 
 ### 8b. Vendor panels and types
 
-[`DT_VendorTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Data/DT_VendorTypes.json) has 4 rows:
+`DT_VendorTypes` has 4 rows:
 
 | Vendor type | Default panel | Swap to default on close | Panel buttons |
 |---|---|---|---|
@@ -341,7 +341,7 @@ Subslot grids (Backpack, Storage, Vest, Vault) and the vehicle-inventory grid ca
 | `Vendor.Type.Garage` | `Vendor.Panel.Garage.Overview` | True | Overview, and others |
 | `Vendor.Type.Wager` | `Vendor.Category.Wagers` | False | CREATE (120×50 minimum size) |
 
-Panel data assets: `WDUIVendorPanelData_Utility` (2), `_Gear`, `_Weapons`, `_Garage`, `_GarageOverview`, `_GarageSupplyCrate`, `_Overview`, `_Vehicles`. The wager create panel is `WDUIVendorPanelData_Wagers` ([`DA_VendorPanel_Wagers_Create`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Wagers_Create.json)). Utility panels set `bTryPurchaseEvenIfDesiredSlotIsUnavailable` True and `bCheckForSubslotSupportWhenFilteringPurchases` True, and show "CAP. {Amount}/{Capacity}".
+Panel data assets: `WDUIVendorPanelData_Utility` (2), `_Gear`, `_Weapons`, `_Garage`, `_GarageOverview`, `_GarageSupplyCrate`, `_Overview`, `_Vehicles`. The wager create panel is `WDUIVendorPanelData_Wagers` (`DA_VendorPanel_Wagers_Create`). Utility panels set `bTryPurchaseEvenIfDesiredSlotIsUnavailable` True and `bCheckForSubslotSupportWhenFilteringPurchases` True, and show "CAP. {Amount}/{Capacity}".
 
 ### 8c. Purchasable item cards
 
@@ -354,7 +354,7 @@ Purchasable card assets (`WDUIPurchasableItemCardData_Vendor`, 5) share these te
 | `InsufficientFundsWarning` | "Not Enough Cash" |
 | `ItemAmountType` | `EWDUIItemAmountType::InInventory` |
 
-Vehicle vendor ([`DA_VehicleVendor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Data/DA_VehicleVendor.json)): `VehicleTypeFormat` `{Subcategory} Vehicle`, `bFlushInputOnEnter` True.
+Vehicle vendor (`DA_VehicleVendor`): `VehicleTypeFormat` `{Subcategory} Vehicle`, `bFlushInputOnEnter` True.
 
 ### 8d. Wagers (new in Season 02)
 
@@ -362,15 +362,15 @@ Wagers are placed at a vendor, tracked on a match status scene, and reported by 
 
 | Asset | Type | Key values |
 |---|---|---|
-| [`DA_WagerVendor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Data/DA_WagerVendor.json) | WDUIVendorData_Rework | Opens from the `Action.Player.AccessWagerVendor` action; equipment vendor open and close audio |
-| [`DA_VendorPanel_Wagers_Create`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Wagers_Create.json) | WDUIVendorPanelData_Wagers | Create-wager panel (`Vendor.Category.Wagers`): "Create new wager", "Unlock wagers", "Requires Wardog level {Level}", "Minimum stake is {Amount}", "Not enough cash - you have {Amount}" |
-| [`DA_Wagers_ObjectiveSelector`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Widgets/Wagers/WagerObjectiveSelector/Data/DA_Wagers_ObjectiveSelector.json) | WDUIWagerObjectiveSelectorData | Four objective archetypes: Kills, Revives, Drop Offs (`Wager.Archetype.PlayersDelivered`), Destroy Vehicles (`Wager.Archetype.VehiclesDestroyed`) |
-| [`DT_SceneData_Match_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) (1 row) | WDSceneDataTableRow | Scene `UI.Scene.Match.WagerStatus`: UI input mode, session scene group |
-| [`DA_WagerStatusScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Wagers/Status/DA_WagerStatusScene.json) | WDUIWagerStatusSceneData | Hosts the status and receipt view models; close action `UI.Action.Feature.CloseScene` |
-| [`DA_WagerStatus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Wagers/Status/DA_WagerStatus.json) | WDUIWagerStatusData | Title "Wager #{Handle}"; states Active, Completed, Failed |
-| [`DA_WagerReceipt`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Wagers/Receipt/DA_WagerReceipt.json) | WDUIWagerReceiptData | "Potential return", "Paid", "Stake lost", "No active wager. Visit the wager vendor in spawn." |
-| [`DA_WagerHUD`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Wagers/HUD/DA_WagerHUD.json) | WDUIWagerHUDData | In-match wager HUD |
-| [`DA_WagerToast`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Wagers/Toast/DA_WagerToast.json) | WDUIWagerToastData | "WAGER COMPLETE", "WAGER FAILED" and "JACKPOT WINNER" toasts; result sounds under `Audio.Event.Vendor.Wager.Result.*` |
+| `DA_WagerVendor` | WDUIVendorData_Rework | Opens from the `Action.Player.AccessWagerVendor` action; equipment vendor open and close audio |
+| `DA_VendorPanel_Wagers_Create` | WDUIVendorPanelData_Wagers | Create-wager panel (`Vendor.Category.Wagers`): "Create new wager", "Unlock wagers", "Requires Wardog level {Level}", "Minimum stake is {Amount}", "Not enough cash - you have {Amount}" |
+| `DA_Wagers_ObjectiveSelector` | WDUIWagerObjectiveSelectorData | Four objective archetypes: Kills, Revives, Drop Offs (`Wager.Archetype.PlayersDelivered`), Destroy Vehicles (`Wager.Archetype.VehiclesDestroyed`) |
+| `DT_SceneData_Match_Wagers` (1 row) | WDSceneDataTableRow | Scene `UI.Scene.Match.WagerStatus`: UI input mode, session scene group |
+| `DA_WagerStatusScene` | WDUIWagerStatusSceneData | Hosts the status and receipt view models; close action `UI.Action.Feature.CloseScene` |
+| `DA_WagerStatus` | WDUIWagerStatusData | Title "Wager #{Handle}"; states Active, Completed, Failed |
+| `DA_WagerReceipt` | WDUIWagerReceiptData | "Potential return", "Paid", "Stake lost", "No active wager. Visit the wager vendor in spawn." |
+| `DA_WagerHUD` | WDUIWagerHUDData | In-match wager HUD |
+| `DA_WagerToast` | WDUIWagerToastData | "WAGER COMPLETE", "WAGER FAILED" and "JACKPOT WINNER" toasts; result sounds under `Audio.Event.Vendor.Wager.Result.*` |
 
 ---
 
@@ -399,15 +399,15 @@ Trackers reference these by `RuleSets` and `DistanceRulesets` (arrays of 1–7 e
 
 | Asset | Key values |
 |---|---|
-| [`DA_SoftwareCursor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Cursors/Data/DA_SoftwareCursor.json) (`WDUISoftwareCursorData`) | `FallbackCursorSize` 18×21.33; `DeadZoneRadius` 0.15; `AnalogStickResponseCurve` = [`C_CursorAnalogStickResponseCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Cursors/C_CursorAnalogStickResponseCurve.json); `CursorInfoMap` |
-| [`DA_DeadZoneAnalogue`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Data/DA_DeadZoneAnalogue.json) | Test readout text "X: {XValue}%, Y: {YValue}%" for both sticks |
-| [`DA_DeadZoneTrigger`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Data/DA_DeadZoneTrigger.json) | "Trigger: {Percentage}%" for left and right triggers |
-| [`DT_Settings_DisplayData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Data/DT_Settings_DisplayData.json) (15 rows) | Includes gamepad move-stick dead-zone presets: `Preset`, `Centre`, `Axial`, `MaxInput` |
-| [`DT_SettingTypeUIData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Widgets/SettingValue/Data/DT_SettingTypeUIData.json) (13 rows) | Display widget types: Numeric, Keybind, InputField, Rotator, Switch, SwitchConfirmed, Dropdown, Hyperlink, Button, JoystickAxis, JoystickAction, Status, RetryCommunication |
+| `DA_SoftwareCursor` (`WDUISoftwareCursorData`) | `FallbackCursorSize` 18×21.33; `DeadZoneRadius` 0.15; `AnalogStickResponseCurve` = `C_CursorAnalogStickResponseCurve`; `CursorInfoMap` |
+| `DA_DeadZoneAnalogue` | Test readout text "X: {XValue}%, Y: {YValue}%" for both sticks |
+| `DA_DeadZoneTrigger` | "Trigger: {Percentage}%" for left and right triggers |
+| `DT_Settings_DisplayData` (15 rows) | Includes gamepad move-stick dead-zone presets: `Preset`, `Centre`, `Axial`, `MaxInput` |
+| `DT_SettingTypeUIData` (13 rows) | Display widget types: Numeric, Keybind, InputField, Rotator, Switch, SwitchConfirmed, Dropdown, Hyperlink, Button, JoystickAxis, JoystickAction, Status, RetryCommunication |
 | `WDUISettingValueData` (4) | `bCanBeNudged` (2), `bCanBeContinuouslyNudged` (4), `NudgeCurve` (4) |
 | `WDUISettingsPanelData` (6), `WDUISettingsData` (1), `WDUIInitialSettingsData` (1) | Settings panel pages, categories and first-run settings |
 
-Common UI input actions are in `UCommonGenericInputActionDataTable` (1 table) and [`DT_UIInputActionData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_UIInputActionData.json) (1 row).
+Common UI input actions are in `UCommonGenericInputActionDataTable` (1 table) and `DT_UIInputActionData` (1 row).
 
 ---
 
@@ -417,15 +417,15 @@ Common UI input actions are in `UCommonGenericInputActionDataTable` (1 table) an
 
 | Table | Rows | Example scenes |
 |---|---|---|
-| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | 28 | `Logo`, `Photosensitivity`, `Start`, `InitialSettings`, `Home`, `Career`, `Customize` |
-| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | 25 | In-match scenes |
-| [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | 1 | Shooting-range context drawer scene (`UI.Scene.Match.ContextDrawer`) |
-| [`DT_SceneData_Match_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) | 1 | Wager status scene (`UI.Scene.Match.WagerStatus`) |
-| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | 4 | Shared scenes |
+| `DT_SceneData_Frontend` | 28 | `Logo`, `Photosensitivity`, `Start`, `InitialSettings`, `Home`, `Career`, `Customize` |
+| `DT_SceneData_Match` | 25 | In-match scenes |
+| `DT_SceneData_Match_ShootingRange` | 1 | Shooting-range context drawer scene (`UI.Scene.Match.ContextDrawer`) |
+| `DT_SceneData_Match_Wagers` | 1 | Wager status scene (`UI.Scene.Match.WagerStatus`) |
+| `DT_SceneData_Shared` | 4 | Shared scenes |
 
 Scene fields: `InputMode` (`EWDInputMode::UI`), `bResetFocusOnEnter` (True on the sampled rows), `bShouldBlockBack` (True on `Logo`, `Photosensitivity`, `Start`, `InitialSettings`; False on `Home`, `Career`, `Customize`), `bIsFocusable`.
 
-### 11b. Role skill tree ([`DT_CharacterSkillNodes_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CharacterSkillNodes_Data.json), 131 rows)
+### 11b. Role skill tree (`DT_CharacterSkillNodes_Data`, 131 rows)
 
 | Role | Nodes |
 |---|---|
@@ -440,11 +440,11 @@ Each node has a `FriendlyName` (for example "Medkits have more uses"), a `Descri
 
 ### 11c. LearnToPlay tutorials
 
-All 26 `WDUITutorialsContentData` assets sit under [`Frontend/LearnToPlay/Data/ContentSceneData/TabData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/LearnToPlay/Data/ContentSceneData/TabData). Tab folders include `Introduction`, `UsingEquipment`, `Vehicles` and `TravelToObjective`. Each carries `MediaPlayer` and `ContentTabData` references.
+All 26 `WDUITutorialsContentData` assets sit under `Frontend/LearnToPlay/Data/ContentSceneData/TabData/`. Tab folders include `Introduction`, `UsingEquipment`, `Vehicles` and `TravelToObjective`. Each carries `MediaPlayer` and `ContentTabData` references.
 
 ### 11d. Loading screen tips
 
-[`DT_LoadingScreenTips`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Data/DT_LoadingScreenTips.json) has **110 rows**. Tag prefixes: `Tip.Economy.*`, `Tip.Items.*` (including weapon examples), `Tip.ControlZone.*`.
+`DT_LoadingScreenTips` has **110 rows**. Tag prefixes: `Tip.Economy.*`, `Tip.Items.*` (including weapon examples), `Tip.ControlZone.*`.
 
 ---
 
@@ -452,21 +452,21 @@ All 26 `WDUITutorialsContentData` assets sit under [`Frontend/LearnToPlay/Data/C
 
 | Table | Rows | Role |
 |---|---|---|
-| [`DT_EntityData_UI_Items`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Items.json) | 296 | UI entity data per `Id.Item.*` (e.g. `Id.Item.Fists`, `Id.Item.Bandage`, `Id.Item.SuperBandage`) |
-| [`DT_EntityData_UI_Garage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Garage.json) | 2 | Garage entities |
-| [`DT_EntityData_UI_VehicleAmmo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_VehicleAmmo.json) | 5 | Vehicle ammo entities |
-| [`DT_EntityData_UI_Misc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Misc.json) | 1 | Misc entity |
-| [`DT_EntityData_UI_GoldExchange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/GoldExchange/Data/DT_EntityData_UI_GoldExchange.json) | 1 | Gold Exchange unlock entity (`Meta.Unlocks.GoldExchange`) |
-| [`DT_InteractionContextData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Interaction/DT_InteractionContextData.json) | 86 | Interaction prompt text and condition rules, e.g. `Interaction.Context.Container.Loot` → "Container" |
-| [`DT_InteractionContexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_InteractionContexts.json) | 70 | Second interaction table (`BHEntityData_UI` row type) |
-| [`DT_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_TaggedIcons.json) | 63 | Inventory slot and general tag icons |
-| [`DT_Calibers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_Calibers_TaggedIcons.json) | 34 | Calibre icons |
-| [`DT_CaliberModifiers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CaliberModifiers_TaggedIcons.json) | 6 | Calibre modifier icons |
-| [`DT_DamageTypes_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_DamageTypes_TaggedIcons.json) | 3 | Fall, Impact, Explosive |
-| [`DT_LevelIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_LevelIcons.json) | 7 | Role level icons: Wardog, Driver, Infantry, and others |
-| [`DT_TooltipData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Data/DT_TooltipData.json) | 34 | Tooltip widget and view-model mapping |
+| `DT_EntityData_UI_Items` | 296 | UI entity data per `Id.Item.*` (e.g. `Id.Item.Fists`, `Id.Item.Bandage`, `Id.Item.SuperBandage`) |
+| `DT_EntityData_UI_Garage` | 2 | Garage entities |
+| `DT_EntityData_UI_VehicleAmmo` | 5 | Vehicle ammo entities |
+| `DT_EntityData_UI_Misc` | 1 | Misc entity |
+| `DT_EntityData_UI_GoldExchange` | 1 | Gold Exchange unlock entity (`Meta.Unlocks.GoldExchange`) |
+| `DT_InteractionContextData` | 86 | Interaction prompt text and condition rules, e.g. `Interaction.Context.Container.Loot` → "Container" |
+| `DT_InteractionContexts` | 70 | Second interaction table (`BHEntityData_UI` row type) |
+| `DT_TaggedIcons` | 63 | Inventory slot and general tag icons |
+| `DT_Calibers_TaggedIcons` | 34 | Calibre icons |
+| `DT_CaliberModifiers_TaggedIcons` | 6 | Calibre modifier icons |
+| `DT_DamageTypes_TaggedIcons` | 3 | Fall, Impact, Explosive |
+| `DT_LevelIcons` | 7 | Role level icons: Wardog, Driver, Infantry, and others |
+| `DT_TooltipData` | 34 | Tooltip widget and view-model mapping |
 
-**Gameplay-tag-to-text tables** ([`Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText), 15 tables, 331 rows total): Categories 112, InventorySlots 37, SceneNames 38, Calibers 31, Archetypes 16, Ammunition 14, Roles 13, ServerTags 24, Damage 9, Tooltips 10, Components 7, EventLog 6, Tutorials 5, PlayerStates 5, Prompts 4.
+**Gameplay-tag-to-text tables** (`Data/GameplayTagsToText`, 15 tables, 331 rows total): Categories 112, InventorySlots 37, SceneNames 38, Calibers 31, Archetypes 16, Ammunition 14, Roles 13, ServerTags 24, Damage 9, Tooltips 10, Components 7, EventLog 6, Tutorials 5, PlayerStates 5, Prompts 4.
 
 ---
 
@@ -520,11 +520,11 @@ Counts come from a grouping of all 92 `DataTable` exports by RowStruct. Row type
 
 Notable non-trivial tables:
 
-- [`DT_UIAudioData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Audio/DT_UIAudioData.json) (20 rows, `WDUIActionSoundTableRow`): maps UI tags to MSS sound assets. Several rows have an **empty** `AssetPathName`, so the sound is unset: `UI.Audio.Vendor.Open`, `UI.Audio.Vendor.Close`, `UI.Audio.RewardFeed.CashComboAdd`, `UI.Audio.RewardFeed.CashComboBank`.
-- [`DT_MaterialTrackerSettingsData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Trackers/DT_MaterialTrackerSettingsData.json) (15 rows): material-tracker settings, paired with section 3b.
-- [`DT_PopupTypes_Features`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Popups/Data/DT_PopupTypes_Features.json) (14) and [`DT_PopupTypes_Generic`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Popups/Data/DT_PopupTypes_Generic.json) (3): popup type definitions.
-- [`DT_ScoreboardStats_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Scoreboard/Widgets/Scoreboard/Data/DT_ScoreboardStats_Default.json) (5): default scoreboard columns.
-- [`DT_LootedComponentTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Inventory_2_0/Widgets/InventoryComponent/Data/DT_LootedComponentTypes.json) (4): loot-container component widget params.
+- `DT_UIAudioData` (20 rows, `WDUIActionSoundTableRow`): maps UI tags to MSS sound assets. Several rows have an **empty** `AssetPathName`, so the sound is unset: `UI.Audio.Vendor.Open`, `UI.Audio.Vendor.Close`, `UI.Audio.RewardFeed.CashComboAdd`, `UI.Audio.RewardFeed.CashComboBank`.
+- `DT_MaterialTrackerSettingsData` (15 rows): material-tracker settings, paired with section 3b.
+- `DT_PopupTypes_Features` (14) and `DT_PopupTypes_Generic` (3): popup type definitions.
+- `DT_ScoreboardStats_Default` (5): default scoreboard columns.
+- `DT_LootedComponentTypes` (4): loot-container component widget params.
 
 ---
 
@@ -532,11 +532,11 @@ Notable non-trivial tables:
 
 | Asset | Type | Use (from name) |
 |---|---|---|
-| [`C_CursorAnalogStickResponseCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Cursors/C_CursorAnalogStickResponseCurve.json) | CurveFloat | Cursor analogue-stick response; keys run from (0, ~0) to (1, 1), cubic auto tangents |
-| [`C_DynamicLocationOffsetPlayerTracker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/C_DynamicLocationOffsetPlayerTracker.json) / [`C_DynamicLocationOffsetVehicleTracker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/C_DynamicLocationOffsetVehicleTracker.json) | CurveFloat | Dynamic location offset for tracker markers |
-| [`CC_SpatialPingTimeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Materials/CC_SpatialPingTimeline.json) / [`CC_SpatialPingDangerTimeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Materials/CC_SpatialPingDangerTimeline.json) | CurveLinearColor | Spatial ping colour timeline (normal and danger) |
-| [`CC_AlphaTime`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Textures/CC_AlphaTime.json) / [`CC_LinesTimeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Textures/CC_LinesTimeline.json) / [`CC_PulseTimeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Textures/CC_PulseTimeline.json) | CurveLinearColor | HUD animation timelines |
-| [`CA_SpatialPingTimeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Materials/CA_SpatialPingTimeline.json) / [`CA_SpatialPingDangerTimeline`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Materials/CA_SpatialPingDangerTimeline.json) / [`CA_ThrobberTime`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Textures/CA_ThrobberTime.json) | CurveLinearColorAtlas | Gradient atlases for the same timelines |
+| `C_CursorAnalogStickResponseCurve` | CurveFloat | Cursor analogue-stick response; keys run from (0, ~0) to (1, 1), cubic auto tangents |
+| `C_DynamicLocationOffsetPlayerTracker` / `C_DynamicLocationOffsetVehicleTracker` | CurveFloat | Dynamic location offset for tracker markers |
+| `CC_SpatialPingTimeline` / `CC_SpatialPingDangerTimeline` | CurveLinearColor | Spatial ping colour timeline (normal and danger) |
+| `CC_AlphaTime` / `CC_LinesTimeline` / `CC_PulseTimeline` | CurveLinearColor | HUD animation timelines |
+| `CA_SpatialPingTimeline` / `CA_SpatialPingDangerTimeline` / `CA_ThrobberTime` | CurveLinearColorAtlas | Gradient atlases for the same timelines |
 
 Curve key values were not extracted, so the shapes are not documented here.
 
@@ -547,7 +547,7 @@ Curve key values were not extracted, so the shapes are not documented here.
 - A **tracker** is defined by a row in one of the three tracker tables (section 3). It picks a widget and a data asset. The data asset chooses textures, colours and `ZOrder`, and points to **rule assets** (section 9) that decide opacity, scale, clamping and visibility by distance.
 - A **ping** starts from a ping-wheel row (section 4), which gates it by player state. The action asset then decides what is sent: text to a channel, a voice request, a spatial marker or a squad-status check. Pings that place a map coordinate set `bRequestPlayerMapCoordinates`.
 - **Feeds** (section 6) match an event tag to display text and an audio tag. Reward-feed rows are keyed by the same `Meta.Progression.Resources.*` tags that the cash and XP tables use.
-- **Vendor and inventory** grids (section 8) combine a container-grid size, a layout, an item card and a panel type from [`DT_VendorTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Vendor/Data/DT_VendorTypes.json).
+- **Vendor and inventory** grids (section 8) combine a container-grid size, a layout, an item card and a panel type from `DT_VendorTypes`.
 
 ---
 
@@ -556,11 +556,11 @@ Curve key values were not extracted, so the shapes are not documented here.
 - **Curve keyframes** (section 14) and **`WDUIMaterialTrackerDataAsset` ZoomScaleCurve** values were not extracted. Only the names are listed.
 - **Field meanings not confirmed:** `ZOrder` direction (higher drawn on top is inferred from values), `RemovalTime` and `Duration` units (seconds assumed for the 10 values, but not stated), `EntryDuration` units, the `Stalk*` spatial fields, defaults where `bIsWorkInProgress` is omitted, and the `RuleSets` evaluation order. `Actions=[N]` counts entries in an array of action-object references; the full per-ping list and execution semantics remain outside this pass.
 - **Partially extracted:** the tactical map's `SmallestViewSize` and `LerpZoomPresetTolerance`; the full list of `Actions` for each ping action; the `Challenges.Rewards.*` condition tags; the vehicle-HUD assets in section 7.
-- **Not covered in detail:** `DT_RichText_Style_*` and `DT_RichImg_*` styling rows (only counted); [`DT_CustomEmojis`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DT_CustomEmojis.json) and tooltip emojis (only counted); `DA_Settings*` category contents; `WDUIMockInvestmentCardData` and other mock or prototype assets; loading-screen tip text.
+- **Not covered in detail:** `DT_RichText_Style_*` and `DT_RichImg_*` styling rows (only counted); `DT_CustomEmojis` and tooltip emojis (only counted); `DA_Settings*` category contents; `WDUIMockInvestmentCardData` and other mock or prototype assets; loading-screen tip text.
 - **Multi-export files:** 60 files contain more than one export block. They are parsed correctly by splitting on the `--- export:` header, but sub-objects such as `WDUIViewModelExtension_HideReasons_0` appear in the same file and were counted separately.
 - Localised strings are taken from `SourceString` (the English source text). Localised builds may differ.
 - Nothing in this document was verified against live gameplay or the running UI.
 
 ---
 
-*Source directory: [`Wardogs/Content/UI`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI).*
+*Source directory: `Wardogs/Content/UI`.*

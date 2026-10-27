@@ -119,11 +119,11 @@ data. The audit established the data shape only:
 
 | Evidence | Result |
 |---|---|
-| [Infantry rule table][infantry] | 146 entries: 12 custom percentages, 74 non-custom percentages, 60 `None` entries. All `PriorityIndex` values are -1; eight non-`None` categories occur |
+| Infantry rule table | 146 entries: 12 custom percentages, 74 non-custom percentages, 60 `None` entries. All `PriorityIndex` values are -1; eight non-`None` categories occur |
 | `None` entries | Empty requirements and hit locations, no custom operation, amount 0.0, alignment `None`, category `None`, index -1. Another 29 non-custom `Percentage_Ongoing` entries have amount 0.0 |
-| [Category asset][categories] | Ordered list of 12 category tags |
-| [Bone table][bones] | 20 rows, each with 12 hit-location values |
-| [Seat-reduction table][seats] | 11 vehicle-variant rows with arm-tag/state-tag groups |
+| Category asset | Ordered list of 12 category tags |
+| Bone table | 20 rows, each with 12 hit-location values |
+| Seat-reduction table | 11 vehicle-variant rows with arm-tag/state-tag groups |
 
 | Question | Asked | Where it was answered |
 |---|---|---|
@@ -133,7 +133,7 @@ data. The audit established the data shape only:
 | B-4 | Bindings of the other custom operations | Bytecode for the three Blueprints; native code for `PlayerArmorDurability` ([DamagePipeline §7.2–7.5](../../pipelines/Wardogs_DamagePipeline_v2.md#7-custom-operations)) |
 
 The brief also fixed some reading rules that still apply. The generated
-`ModifyDamage` wrapper ([`WDGame_functions.cpp`](../../sdk/raw/WDGame_functions.cpp#L48948))
+`ModifyDamage` wrapper (`WDGame_functions.cpp`)
 and the `B_*::GetModificationAmount` wrappers only call `ProcessEvent`;
 they are not implementations. Placeholder types such as `TArray<FNone_>`
 for `FWDDamageableEntityTableRow.DamageModificationEntries` say nothing
@@ -691,7 +691,3 @@ directories.
 - Network authority is outside static analysis
   ([DamagePipeline §9](../../pipelines/Wardogs_DamagePipeline_v2.md#9-open-questions-and-what-closes-them)).
 
-[infantry]: https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json
-[categories]: https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json
-[bones]: https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json
-[seats]: https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json

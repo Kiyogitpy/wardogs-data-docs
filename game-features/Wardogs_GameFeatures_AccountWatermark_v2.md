@@ -6,7 +6,7 @@ description: "What This Folder Holds, Widget Setup, Data"
 ---
 
 # Wardogs — GameFeatures: AccountWatermark
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/AccountWatermark/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/AccountWatermark) — 2 JSON files ([`Content/AccountWatermark.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AccountWatermark/Content/AccountWatermark.json) with 151 exports, and [`Content/Data/DA_AccountWatermark.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AccountWatermark/Content/Data/DA_AccountWatermark.json)).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/AccountWatermark/` — 2 JSON files (`Content/AccountWatermark.json` with 151 exports, and `Content/Data/DA_AccountWatermark.json`).*
 
 ---
 
@@ -29,7 +29,7 @@ The 149 instances are probably placement slots (inferred). Their individual posi
 
 ---
 
-## 3. Data ([`DA_AccountWatermark`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AccountWatermark/Content/Data/DA_AccountWatermark.json))
+## 3. Data (`DA_AccountWatermark`)
 
 | Field | Value |
 |---|---|

@@ -208,7 +208,6 @@
   // ---------- browser ----------
   function renderBrowser(root) {
     var base = root.getAttribute('data-sd-base');
-    var gh = root.getAttribute('data-gh');
     var idx = null;
     var state = { area: '', q: '', st: STATUSES.slice(), noise: true };
     var areaAssets = {};   // id -> assets array
@@ -397,11 +396,9 @@
         h('span', { class: 'sd-count', text: a.status === 'added' ? (a.exports != null ? fmtNum(a.exports) + ' exports' : '') : a.status === 'removed' ? 'removed in Season 2' : n ? fmtNum(n) + (n === 1 ? ' change' : ' changes') + (rows ? ' match' : '') : 'no property changes' })
       ]);
       var meta = h('div', { class: 'sd-meta-row' });
+      meta.appendChild(h('code', { class: 'sd-path', text: a.path }));
       if (a.status === 'removed') {
-        meta.appendChild(h('code', { class: 'sd-path', text: a.path }));
         meta.appendChild(h('span', { class: 'sd-removed-note', text: 'removed in Season 2' }));
-      } else {
-        meta.appendChild(h('a', { class: 'sd-path', href: gh + a.path.split('/').map(encodeURIComponent).join('/'), text: a.path }));
       }
       if (a.old_path) {
         var how = { 'same-name': 'matched by file name', 'git-rename': 'detected as a rename', inferred: 'matched by content' }[a.paired_by];

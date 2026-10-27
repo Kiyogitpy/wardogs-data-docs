@@ -29,7 +29,6 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 PAGE = "game-features/Wardogs_Challenges_v1.md"
-REPO = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/"
 KOTH = "Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/"
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
 BLOCK = re.compile(r"<!-- challenge_tables (\w+) -->\r?\n.*?<!-- /challenge_tables -->", re.S)
@@ -45,7 +44,7 @@ def rel_of(path):
 
 
 def link(rel, label=None):
-    return f"[`{label or os.path.basename(rel)[:-5]}`]({REPO}{rel})"
+    return f"`{label or os.path.basename(rel)[:-5]}`"
 
 
 def n(x):

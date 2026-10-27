@@ -86,7 +86,7 @@ Blueprint override capability. This reduces the likelihood that the missing
 Blueprint subclasses of the two native owners hide the implementation path,
 but does not establish that all native interface implementations have been
 found. The reflected flag comments are in
-[`WDGame_functions.cpp`](../../sdk/raw/WDGame_functions.cpp) at the
+`WDGame_functions.cpp` at the
 `WDWeaponOwner.GetWeaponTag`, `GetDamageEntityComponent`, and `GetProjectileData`
 wrappers.
 

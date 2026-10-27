@@ -110,4 +110,4 @@ No attachments are listed for the bow.
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the draw input and release curve
 - [Season 2 Changes: Items and Equipment](../../season-2-changes/items-equipment.md)
 - [Season 2 Changes: Rewards and Unlocks](../../season-2-changes/rewards-unlocks.md)
-- [Bow stats asset](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/DA_CombatBow_Stats.json)
+- Bow stats asset
