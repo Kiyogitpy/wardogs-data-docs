@@ -21,6 +21,8 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 
 ---
 
+Every stored field of the explosion, impact, vehicle prop and muzzle-flash assets, one row per asset, is on [Explosion, Impact, Prop and Flash Fields](Wardogs_FX_Field_Tables_v1.md).
+
 ## 1. Inventory
 
 | Family (subfolder) | Files | Asset type | What it controls |
