@@ -159,5 +159,5 @@ One GFD with no actions. It is a test pack and adds nothing.
 - **StateTree logic.** The three challenge StateTrees and the full set of state nodes are summarised, not decoded. Triggers and conditions are not confirmed.
 - **Expression variables.** `LastVictimCount`, `LastVictimCountMax`, `LastVictimReductionModifier`, `HostileModifier` and `BaseReward` are named in the expression strings. Some of their literal values are in `DT_ChallengeRewards` in this folder. This page lists only the ones named in the Season 02 section.
 - **Interaction ranges.** `InteractionRange` is set on the interaction assets but its value was not extracted.
-- **Loot contents.** The full spawned item lists for each Lootable row are not decoded here.
+- **Loot contents.** Decoded on [Loot Containers](Wardogs_LootContainers_v1.md): every Lootable row with its items, weights, chances and sub-items.
 - **Localisation keys.** Some `_aaa…` localisation keys are present; their text is not resolved here.

@@ -461,6 +461,8 @@ The curve axis is not labelled in the data. The most likely reading is round cou
 
 Each faction has block-colour materials (`MI_WDPlayerBlue` for Alpha, `MI_WDPlayerRed` for Bravo, `MI_WDPlayerGreen` for Charlie, `MI_WDPlayerNoTeam` for Default). The third-person character material list is set for two factions.
 
+Field map of `WDFactionData` (**Data**): `FactionName` is the Name column (a string-table key `FactionName.<Alpha|Bravo|Charlie>`; Default uses a literal "White"), `FactionShortName` the Short column, `GenericTeamId` the Team ID column (the engine team id; Alpha 0, Bravo 1, Charlie 2, Default 3), `BlockColorMaterials` the block-colour materials named above, `FactionColor` and `FactionColorSquad` the two colour columns. **Native** (round 85, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round85-loot.md)): the shop's `WDEntityPriceModifier_Faction` rows (the three signature rifles at multiplier 0) apply when the buyer's faction tag, read from the buyer's faction reference (object offset `+1440`), equals the modifier's `Faction` tag (modifier offset `+0x28`) and the item is one of the modifier's entities; this is a live comparison, not a stored setting.
+
 ---
 
 ## 9. Player Character Components (`Player/PlayerCharacter/`)
