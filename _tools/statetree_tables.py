@@ -127,9 +127,14 @@ def main():
     def sub(m):
         return "<!-- statetree_tables %s -->\n%s\n<!-- /statetree_tables -->" % (m.group(1), MODES[m.group(1)](trees))
     new = BLOCK.sub(sub, text)
-    if "--check" in args:
-        print("up to date" if new == text else "DIFFERS")
-        return 0 if new == text else 1
+    if "--check" in args:   # line endings do not count: git may check the page out with CRLF
+        same = new.replace("
+", "
+") == text.replace("
+", "
+")
+        print("up to date" if same else "DIFFERS")
+        return 0 if same else 1
     if "--write" in args and new != text:
         open(path, "w", encoding="utf-8", newline="").write(new)
     print("%d blocks" % len(BLOCK.findall(new)))
