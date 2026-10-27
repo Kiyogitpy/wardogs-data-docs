@@ -1010,7 +1010,7 @@ def cmd_regen(args):
         f.write("\n".join(L) + "\n")
     say("regen done in %.0fs: %d generator failures, %d check failures, %d files changed, %d new, %d EOL-only restored. Report: %s" % (
         secs, len(fails), len(bad_checks), len(real), len(untracked), len(eol), os.path.join(outdir, "regen-report.md")))
-    return 1 if fails else (2 if bad_checks else 0)
+    return 1 if fails else (4 if bad_checks else 0)
 
 
 def real_diff_snapshot(repo):
@@ -1071,22 +1071,24 @@ def cmd_run(args):
     say("worktree %s on %s" % (wt, branch))
     script = os.path.join(wt, "_tools", "update_pipeline.py")
     script = script if os.path.exists(script) else os.path.abspath(__file__)
-    cfgarg = ["--config", args.config] if args.config else []
+    cfgarg = ["--config", args.config] if args.config else []   # a global option: must precede the sub-command
     if old and os.path.isdir(os.path.join(root, old, "data")) and not args.no_baseline:
         # Regenerating the OLD export first isolates what the patch changed: pages edited by hand after their last
         # generation, and generators that are ahead of their committed output, show up in this baseline commit instead.
         say("== 5a/5 baseline regen on the old export %s (so the final diff holds only the patch)" % old)
         t = time.time()
-        subprocess.run([sys.executable, "-I", script, "regen", "--data", os.path.join(root, old, "data"), "--repo", wt, "--label", label + "-baseline",
-                        "--passes", "1"] + cfgarg)
+        rcb = subprocess.run([sys.executable, "-I", script] + cfgarg + ["regen", "--data", os.path.join(root, old, "data"), "--repo", wt,
+                             "--label", label + "-baseline", "--passes", "1"]).returncode
+        if rcb not in (0, 1, 4):
+            raise SystemExit("baseline regen could not run (rc=%d)" % rcb)
         git("add", "-A", cwd=wt)
         rc0, _ = git("commit", "-q", "-m", "Baseline: regenerate with the previous export (%s); no data change" % old, cwd=wt)
         steps.append(("baseline regen", round(time.time() - t, 1)))
-        say("baseline committed on %s (empty commit = the site was already in sync with %s)" % (branch, old))
+        say("baseline %s on %s" % ("committed" if rc0 == 0 else "left nothing to commit: the site was already in sync with %s" % old, branch))
     say("== 5/5 regen")
     t = time.time()
-    rc = subprocess.run([sys.executable, "-I", script, "regen", "--data", os.path.join(ldir, "data"),
-                         "--repo", wt, "--label", label, "--passes", str(args.passes)] + cfgarg).returncode
+    rc = subprocess.run([sys.executable, "-I", script] + cfgarg + ["regen", "--data", os.path.join(ldir, "data"),
+                         "--repo", wt, "--label", label, "--passes", str(args.passes)]).returncode
     steps.append(("regen", round(time.time() - t, 1)))
     say("")
     say("== done in %.0fs: %s" % (time.time() - t0, ", ".join("%s %.0fs" % s for s in steps)))
