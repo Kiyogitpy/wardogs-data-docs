@@ -32,7 +32,7 @@ When a vehicle's fuel reaches zero, the server stops its engine. A stopped engin
 
 ### How fuel is used up
 
-The tank drains only while the engine is running, and the game works it out on the host or server, not on each player's PC. Driving at speed, the drain is the speed in km/h divided by 3,600 and by the vehicle's kilometres-per-litre figure, in litres per second. When a car or truck is stopped or crawling at 1 km/h or less, the drain switches to the engine speed (RPM) divided by 3,600 and by a second figure per vehicle, so an idling engine still burns a little: a Humvee idling uses roughly 0.11 L a minute against about 5.6 L a minute at 100 km/h (worked out from the stored numbers; the idle engine speed is assumed). Tracked vehicles and the airplane use no fuel while stopped or crawling at 1 km/h or less. A leak drains fuel even with the engine off. This is a static reading of the code; the game was not run to test it.
+The tank drains only while the engine is running, and the game works it out on the host or server, not on each player's PC. Driving at speed, the drain is the speed in km/h divided by 3,600 and by the vehicle's kilometres-per-litre figure, in litres per second. When a car or truck is stopped or crawling at 1 km/h or less, the drain switches to the engine speed (RPM) divided by 3,600 and by a second figure per vehicle, so an idling engine still burns a little. Tracked vehicles and the airplane use no fuel while stopped or crawling at 1 km/h or less. A leak drains fuel even with the engine off. This is a static reading of the code; the game was not run to test it.
 
 ### Fuel leaks
 
