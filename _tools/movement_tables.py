@@ -8,6 +8,7 @@ sits between
 on the page. Rerun after a data update (idempotent):
 
     python _tools/movement_tables.py --write       # refresh every block in place
+    python _tools/movement_tables.py --check       # exit 1 when a block is stale
     python _tools/movement_tables.py MODE          # print one block (counts, ground, stances, modes,
                                                    #   curves, ladder, audio, components, files)
     python _tools/movement_tables.py --check-native  # compare the NATIVE table with the constructor in the exe
@@ -201,9 +202,41 @@ def b_stances():
     out.append("")
     out.append(f"Walk speed = MaxSpeed {n(base)} (class default) x the stance multiplier. Sprint and tac sprint multiply that by "
                f"SprintMaxSpeedScale {n(spr)} and TacSprintMaxSpeedScale {n(tac)} (class defaults). "
-               "Sprint columns are given for Stand only; whether Crouch or Prone can sprint is not traced. "
+               "Sprint columns are given for Stand only: the walk-speed code applies the sprint scales in Stand and no other stance (section 1d). "
                "`DA_BodyDragging_GroundMovement` has the same stance table except Crouch, which sets a 45 degree walkable slope.")
     return "\n".join(out)
+
+
+def b_combine():
+    """Worked examples of the round 85 speed rule: stance speed x scales x attribute multipliers (all Derived)."""
+    g = ground_data()["DA_GroundMovement"]
+    base = g.get("MaxSpeed", native_value("MaxSpeed"))
+    mn = g.get("MinSpeed", native_value("MinSpeed"))
+    spr = g.get("SprintMaxSpeedScale", native_value("SprintMaxSpeedScale"))
+    tac = g.get("TacSprintMaxSpeedScale", native_value("TacSprintMaxSpeedScale"))
+    slow = {k.split("::")[-1]: v for k, v in ((e["Key"], e["Value"]) for e in g["SlowWalkSpeedSettings"])}
+    st = {r["stance"]: base * r["MaxSpeedModifier"][1] for r in stance_speeds()}
+    heavy, ads = 0.8, 0.5
+    rows = ["| Case | Calculation | Speed (cm/s, Derived) |", "|---|---|---|"]
+
+    def add(case, calc, v):
+        rows.append(f"| {case} | {calc} | **{n(v, 1)}** |")
+    s = st["Stand"]
+    add("Stand, walk", f"{n(base)} x 0.8", s)
+    for k in ("Slow", "Moderate", "Fast"):
+        add(f"Stand, slow walk {k.lower()}", f"{n(mn)} + ({n(s, 1)} - {n(mn)}) x {n(slow[k])}", mn + (s - mn) * slow[k])
+    add("Stand, sprint", f"{n(s, 1)} x {n(spr)}", s * spr)
+    add("Stand, tactical sprint", f"{n(s, 1)} x {n(tac)}", s * tac)
+    add("Crouch, walk", f"{n(base)} x 0.5", st["Crouch"])
+    add("Stand, walk, Heavy load", f"{n(s, 1)} x {heavy}", s * heavy)
+    add("Stand, sprint, Heavy load", f"{n(s, 1)} x {n(spr)} x {heavy}", s * spr * heavy)
+    add("Stand, walk, ADS (`GE_ADS`)", f"{n(s, 1)} x {ads}", s * ads)
+    add("Stand, walk, ADS and Heavy load", f"{n(s, 1)} x {ads} x {heavy}", s * ads * heavy)
+    add("Crouch, walk, ADS", f"{n(st['Crouch'], 1)} x {ads}", st["Crouch"] * ads)
+    rows.append("")
+    rows.append("Heavy load is `GE_Player_Weight_Heavy` (`MaxSpeedMultiplier` x0.8 compound); ADS is `GE_ADS` (x0.5 compound). "
+                "Both are compound, so they multiply. Slow walk is shown at full stick deflection with no sprint.")
+    return "\n".join(rows)
 
 
 def b_modes():
@@ -218,7 +251,7 @@ def b_modes():
     def add(mode, num, val, src):
         rows.append(f"| {mode} | {num} | {val} | {src} |")
     add("Ground, standing", "MaxSpeed (cm/s)", n(base), "Native default; stance multiplier in the stance table")
-    add("Ground", "Slow walk scale (Slow / Moderate / Fast)", " / ".join(n(slow[k]) for k in ("Slow", "Moderate", "Fast")), "Data: `SlowWalkSpeedSettings`; what it multiplies is not traced")
+    add("Ground", "Slow walk scale (Slow / Moderate / Fast)", " / ".join(n(slow[k]) for k in ("Slow", "Moderate", "Fast")), "Data: `SlowWalkSpeedSettings`; a blend factor between MinSpeed and the stance speed (section 1d)")
     add("Ground", "Jump velocity (cm/s)", n(g["JumpVelocity"]), "Data")
     add("Falling", "Acceleration / MaxSpeed / MaxStopSpeed", f"{n(fall['Acceleration'])} / {n(fall['MaxSpeed'])} / {n(fall['MaxStopSpeed'])}", "Data: `DA_FallingMovement`")
     add("Falling", "AirFriction / AirControlPercentage", f"{n(fall['AirFriction'])} / {n(fall['AirControlPercentage'])}", "Data")
@@ -381,7 +414,7 @@ def b_counts():
             ", ".join(f"{k if k.endswith('.json') is False else 'root file'} {v}" for k, v in sorted(fam.items())) + ".")
 
 
-BLOCKS = {"counts": b_counts, "ground": b_ground, "stances": b_stances, "modes": b_modes, "curves": b_curves,
+BLOCKS = {"counts": b_counts, "ground": b_ground, "stances": b_stances, "modes": b_modes, "combine": b_combine, "curves": b_curves,
           "response": b_response, "ladder": b_ladder, "audio": b_audio, "components": b_components, "files": b_files}
 
 
@@ -416,6 +449,15 @@ def main():
     arg = sys.argv[1] if len(sys.argv) > 1 else ""
     if arg == "--check-native":
         sys.exit(check_native())
+    if arg == "--check":
+        with open(os.path.join(ROOT, PAGE), encoding="utf-8") as f:
+            text = f.read().replace("\r\n", "\n")
+        new = BLOCK.sub(lambda m: f"<!-- movement_tables {m.group(1)} -->\n{BLOCKS[m.group(1)]()}\n<!-- /movement_tables -->", text)
+        if new != text:
+            print(f"stale: {PAGE}")
+            sys.exit(1)
+        print("ok")
+        return
     if arg == "--write":
         path = os.path.join(ROOT, PAGE)
         with open(path, encoding="utf-8") as f:
