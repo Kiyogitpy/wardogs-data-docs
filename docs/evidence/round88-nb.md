@@ -1,0 +1,80 @@
+# Round 88 (teammate nb): rewards, movement mode float, aim assist, fuel, wheel states
+
+GitHub-only page. Static reading only: the restored executable (`WardogsClient-Win64-Shipping.restored.exe`), the decompiled corpus `decompiled_cl516586_20261017_mmvpuc__` (unreviewed decompiler output), capstone over the restored executable, and the exported assets. Nothing was run and nothing entered the Elytra protection layer. All addresses are RVAs. IDA virtual addresses (as in earlier pages, for example `unk_143AAA8D0`) are the RVA plus `0x140000000`, so the "`0x43AAA8D0`" of round 85 is the RVA `0x3AAA8D0` with the top digit lost.
+
+Method: callers and callees from the corpus `calls` table; rip-relative references to string and global addresses by a numpy scan of `.text`; disassembly with capstone where the corpus has no body. Work scripts are in `E:/r88/work/nb/`, not committed.
+
+## Status
+
+| Item | Status | Result |
+|---|---|---|
+| 1. `Calculate Reward` arithmetic | FOUND | The formula is data: each `DT_ChallengeRewards_*` row holds an expression string plus selectors and variables. Native code is a generic stack-machine evaluator (`0x6CC9930` -> `0x6CC9F40` -> `0x6CCEB50` selectors and variables -> `0x6CCD310` instruction loop). The caller `0x86262A0` builds the input map (`0x861DB00`: `DistanceToTarget`, `LastVictimCount`, `KillStreak`), evaluates, ignores results at or below 1e-8 and truncates the rest to an integer |
+| 1b. Reward tags with no formula row | FOUND | The row lookup is a registry read; no row means no value is written and nothing is paid, with no error. 17 tags named in the trees have no row in any of the seven `DT_ChallengeRewards_*` tables |
+| 1c. `PlayerCountXPScalar` / `MatchScoreScalar` readers | FOUND (round 85) | Unchanged: `0x6CB9A40` (cash and XP), `0x6CB9970` (match score); tipper and receiver rewards return 1.0 |
+| 2. Movement mode float `+168` | FOUND (no writer) | No store to `+0xA8` in any function of the ground-mode vtables; the only writer in the class family is the constructor `0x5283BB0` (1.0). The field is the first byte of an unreflected 0x50 pad, so no asset sets it. It is a constant 1.0 |
+| 3a. Five unnamed aim-assist floats | FOUND | All read in the pull routine `0x6765BF0`; roles below. Offsets `0x3B0` to `0x3C8` |
+| 3b. `TargetWeightCurve` argument | FOUND | The per-target fade timer (record `+104`), set in `0x6766850` (store at `0x6766B5D`, then call `0x3E0DA70`) |
+| 3c. `0x43AAA8D0` | FOUND | RVA `0x3AAA8D0`, the Engine's `WasRecentlyRendered(Tolerance)`; the caller passes 0.2 |
+| 4a. Idle-speed threshold default | FOUND | Fuel component constructor `0x7665AC0`: threshold 1.0, RPML 1500, KML 1.0, boost 1.5, max fuel 100 |
+| 4b. Extra owner check in the rate term | FOUND | `0x53C9D00` returns the vehicle's `bIsEngineRunning` (`+0x889`). The "owner state 3" test of the tick is the actor `Role` byte (`+0x170`) equal to 3, `ROLE_Authority` |
+| 5. Wheel `Values[state]` read | FOUND (filler and consumers not traced) | `0x53A2910` copies the active block `record + (state << 7) + 304` into the active slots; the state is set by `0x53A55A0` from `0x5356470` and `0x53785C0`. Earlier scans looked for a scale-4 index; the block stride is 128 bytes |
+
+## 1. Reward arithmetic
+
+### Where the formula is
+
+`DT_ChallengeRewards_SessionEvents_Shared` (298 rows) and its siblings (Buildables, Crowbar, HotZoneMagnet, Spotting, TeamOffence, EndOfMatch; 479 rows across the seven tables) store, per resource (`Attribute.Meta.Currency.Cash`, XP tags), a value with `DefaultExpression.ExpressionString`, `ConditionalExpressions`, `Selectors` and `Variables`. The cooked `CompiledExpression` is a list of `EWDRewardCalculatorOp` instructions. The shared kill formula in `Wardogs_Rewards_and_Progression_v2.md` section 15 is the string of `Challenges.Rewards.PlayerKill`; the native code adds no further term.
+
+### Native evaluator
+
+- Variable map builder `0x861DB00`: three entries, `DistanceToTarget` (the float argument), `LastVictimCount` 0, `KillStreak` 0. Called by `0x86262A0`, `0x862B8F0` and `0x862BE30`. A tree that never sets a variable pays with 0 for it. How `CrewCount`, `HealFactor`, `PurchaseValue` and the other tree inputs enter the map is not traced (the builder has no further names, so they come by another path of the task).
+- Row lookup: `0x8626415` reads the registry whose type global is `qword_14D358128` (the same mechanism as `LiveCurves`); the key is the reward tag at task `+332`. A row is a 400-byte record. If the lookup fails, the code writes the default (empty) result and returns.
+- `0x6CC9930(row+8, &result, inputMap, contextTags)`:
+  - `0x6CC9F40`: the first entry of `ConditionalExpressions` (280-byte records) whose tag query matches the context tags (or is empty) replaces the default expression; otherwise `DefaultExpression` runs. First match wins.
+  - `0x6CCEB50`: for each selector (a 40-byte map entry: name, default option, array of 80-byte options each with a tag query and a variable name) the first option whose query is empty or matches the context wins; none matching gives the `DefaultOption`. The chosen name is looked up in the row's variables; failure is the error "Missing variable '{0}' referenced by selector '{1}'". Variable types: `Literal` (the stored value), `GameValue` (read by name from the input map; "Game Value '{0}' not found." on failure), `ScalingValue` (a curve from the `LiveCurves` registry sampled at the named input; "Unable to retrieve curve '{0}' from registry 'LiveCurves'." on failure) and a fourth type for table rows (anything else gives "Invalid variable type").
+  - `0x6CCD310`: stack machine over doubles. Ops by index: 0 push literal, 1 push variable ("Variable '{0}' not found."), 2 add, 3 subtract, 4 multiply, 5 divide (a divisor with absolute value at or below 1e-8 is an error, "Division by zero (or subnormal)"), 6 power, 7 negate, 8 absolute value, 9 minimum, 10 maximum, 11 clamp (`max(min(x, hi), lo)`, so a low bound above the high bound yields the low bound), 12 truncate, 13 floor, 14 ceiling, 15 round (x + 0.5, floor). The last stack value is the float result; "Expression evaluation failed. This should never happen." if the stack does not end with one value.
+- Post-processing in `0x86262A0` (the same tail is in `0x862B8F0` and `0x862BE30`): when the error flag is clear and the result's absolute value is above 1e-8, the result is cast to a 32-bit integer (truncation toward zero, so a fraction is dropped and a negative result such as the friendly-fire case stays negative) and stored as the reward value; otherwise the reward value is the empty default. `0x862B8F0` and `0x862BE30` evaluate the row with a fixed context of two tags (`Challenges.Context.PrecisionArtilleryStrikeKill` and `Challenges.Context.Target.InControlZone`); they read like preview or sampling evaluators and their role is not established.
+- `0x6CC11D0` is a log-string builder for the same row (it joins row names, game values as `name (value)` and context tags); it does not compute a reward.
+
+### Tags without a row
+
+Tags named by the trees (`assets/data/challenge-statetrees.json`, 54 tags) that have no row in any `DT_ChallengeRewards_*` table (17, all prefixed `Challenges.Rewards.`): `Assist.VehicleDestroyed`, `Assist.VehicleDestroyed.DamageAssist`, `Buildables.BuildSuppliesDeposited`, `DestroySupplyCrate`, `RepairVehicle`, `Spotting.Refreshed`, `Tip.Heal`, `Tip.PlayerDelivered`, `Tip.Refuel`, `Tip.Repair`, `Tip.Revive`, `VehicleDestroyed`, `VehicleDestroyed.Assist.CrewAssist`, `.FOBSuppliedAssist`, `.LogisticAssist`, `.ReviveAssist`, `ZoneEntry.SpawnVehicle`. `TeamOffence.Forgive` and `TeamOffence.Punish.Kill` do have rows, in `DT_ChallengeRewards_TeamOffence`. By the lookup above, a tag without a row writes no value and nothing is paid through this path. Some of them are base tags whose variants have rows (`VehicleDestroyed` against `VehicleDestroyed.Kodiak.Default` and so on); `Tip.*` and `DestroySupplyCrate` also appear in the older `DT_Rewards` / `DT_CashRewards` layer, and whether that layer is still paid was not shown.
+
+## 2. Movement mode float `+168`
+
+- `+0xA8` is the first byte of `Pad_A8[0x50]` in `UBHMoverMode_GroundMovement` (SDK, 0x98 to 0xF8). It is not a reflected property, so no asset can set it.
+- All vtable slots of `UBHMoverMode_GroundMovement`, `UWDMoverMode_GroundMovement`, `UBHMoverMode_BodyDragging` and `UWDMoverMode_BodyDragging` were disassembled for stores to `[reg+0xA8]`: only two `movups` into stack locals (`0x52976E0`, `0x52A3340`) and one in `BodyDragee` (`0x529E450`, a different class with a pointer at `+168`). A byte-pattern scan of the whole `.text` for `movss` and `mov` stores to `+0xA8` finds 8,950 sites in unrelated classes; the sites in the mover range sit in constructors and copy functions of other classes (`0x5281140`, `0x5283AE0`, `0x52834F0` and so on), none in the ground mode or its speed chain.
+- Result: the mode multiplier stays at the constructor value 1.0, so the non-sprint case of `0x5291720` is stance speed times 1. Not excluded: a writer reached only through a method pointer that the corpus does not show.
+
+## 3. Aim assist
+
+The settings pointer in `0x6765BF0` is `a1[9]`. Offsets are settings offsets; cooked values in parentheses.
+
+| Offset | Value | Use (all in `0x6765BF0`) |
+|---|---|---|
+| `0x3B0` (944) | 0.25 | Blend factor, clamped to 0..1: when the target's motion on the second axis opposes the player's look input, the axis limit `p` (the value `(1 - v66) * base` in the code, with `v66` a per-axis pull value) is replaced by `(p - base) * f + base`, where `base` is the unmodified limit. Whether `p` is below or above `base` in play was not established, so the effect is stated as a blend only |
+| `0x3B4` (948) | 0.6 | Reference for a counter-motion boost: `min(0x3B4 / s, 10)` where `s` is the second component returned by component virtual `+728`, floored at 1e-4; the boost is added to the look input when the target moves against it |
+| `0x3B8`, `0x3BC` | 0.1, 0.1 | Thresholds: normalised look-input magnitude squared above `0x3B8` squared, or move-input length squared above `0x3BC` squared, turn the pull off (also off when settings byte `+1088` is clear) |
+| `0x3C0` (960) | 0.75 | Outer-zone radius on the normalised look input (compared squared); a value of 0 or less switches the per-target offset averaging off |
+| `0x3C4` (964) | 2.5 | Offset threshold in degrees: the weight-averaged yaw or pitch offset of the targets from the reticle must be at least this |
+| `0x3C8` (968) | 0.4 | Blend factor, clamped to 0..1, applied like `0x3B0` when the look input is at or beyond `0x3C0` and pushes against an off-centre target (offset at or above `0x3C4`, offset and input of opposite sign; the sign convention was not checked) |
+
+The constructor `0x6760E9E` stores `0x3B0` and `0x3B4` with one 8-byte store, then 0.25, 0.25, 0.6, 1.0, 0.25 at `0x3B8` to `0x3C8`; the cooked classes override all seven except melee, which keeps the five constructor values.
+
+- `TargetWeightCurve` argument: in `0x6766850`, per target record, the fade timer at record `+104` is moved by the frame time (up while the target flags at `+128` and `+130` are set, capped at the curve's last key time through the time-range helper `0x3E10F30`; down to 0 otherwise). The new value is stored, and the curve (`0x3E0DA70`, argument in `xmm1`) is sampled at it. The result is clamped to 0..1, summed, then each weight is divided by the sum and floored at `MinAssistWeight` (settings `+1096`). With the shared curve (0 at 0, 1 at 0.01), a target reaches full weight 0.01 s after it becomes eligible and loses it in 0.01 s.
+- `0x3AAA8D0`: compares `max(frameTime + 1e-4, Tolerance)` (a float on the world, `+0x864`) with the world time (`+0x840`) minus the component's last render time (virtual `+0x700`). This is the Engine's `UPrimitiveComponent::WasRecentlyRendered(float Tolerance)`; the call in the collector (`0x6764493`) passes Tolerance 0.2 (float at `0x9AEF7E8`). A target counts as rendered recently when it was drawn within the last 0.2 s (or the last frame if the frame is longer).
+
+## 4. Fuel
+
+- Constructor `0x7665AC0` (found through the vtable `0xB64BD00`): `+272` 100.0, `+276` 1.0, `+280` 1.0, `+284` 1500.0, `+288` 20.0, `+292` 95.0, `+296` 1.5, a tag at `+300`, `+376` and `+380` -1.0. The rate function `0x7665DB0` reads `+276` as the moving divisor (KML), `+280` as the idle threshold, `+284` as the idle divisor (RPML) and `+296` as the boost multiplier (`comiss [rbx+0x118]`, `divss [rbx+0x114]`, `divss [rbx+0x11C]`, `mulss [rbx+0x128]`). `+288` (20) and `+292` (95) are unused by the rate function; one of them is presumably `LowFuelThreshold`.
+- Rate: speed is owner virtual `+0x9C8` = `0x53CAE30`, `|velocity| * 0.036` (centimetres per second to km/h). If the speed is above the threshold (default 1.0): `speed / 3600 / KML`. Otherwise the owner virtual `+0x950` is read: `0x15B83B0` returns 0 for the base, airplane and tracked classes; wheeled vehicles (`0x53C9B80`) return the engine RPM from the movement component (`+0x3C` of the object returned by `0x5361DC0`); rotary vehicles (`0x53C9B50`) call a component virtual (`+0x730`). Idle rate = `RPM / 3600 / RPML`. The decompiler dropped the RPM result; the assembly at `0x7665DF3` to `0x7665E0F` multiplies the divisor by `xmm0` after the call (RPM in the idle branch, speed in the moving branch). Then times the boost multiplier while boosting (owner virtual `+0x940`) and the fuel-usage multiplier.
+- Tick `0x7666FA0`: the owner must be a `BHBaseVehiclePawn` whose `Role` byte (`+0x170`, SDK `AActor::Role`) is 3, that is `ROLE_Authority`, with the component's disable byte `+308` clear. So the drain runs only where the vehicle is authoritative; otherwise the else branch calls a virtual at `+0x428` with 0, which stops the tick.
+- The extra check before the rate term is `0x53C9D00`: `movzx eax, byte [rcx+0x889]` = `ABHBaseVehiclePawn::bIsEngineRunning`. With the engine off only the leak term drains the tank.
+
+## 5. Wheel `Values[state]`
+
+- The per-wheel record is 1,648 bytes (`0x670`). It holds three 128-byte blocks at `+304`, `+432` and `+560` (state 0 intact, 1 damaged, 2 destroyed), each with 23 floats (`+0` to `+88`), a flag byte (`+92`) and an object pointer (`+120`, the physical material). The active copy of the current block is `+697` (byte), `+700` to `+805` (floats) and `+120` (pointer).
+- `0x53A2910(record)` is the reader: with the state byte at record `+1628` below 3 it copies block fields `(state << 7) + 304 ... + 424` into the active slots, derives `+1540` (radius times 2 pi), `+1544` (that times 0.06) and `+1064` (radius times 100) from the radius slot `+728`, and swaps the physical material.
+- `0x53A55A0(record, newState, apply)` sets `+1628` and calls it. Callers: `0x5356470` (wheel set-up, state from the 104-byte config row `+16`, clamped to 2) and `0x53785C0` (per update, states from the vehicle array at `+2480`, with the apply flag set so the current radius slots are refreshed).
+- Rounds 47 and 48 scanned for a scale-4 index into the asset fields and read the delegate listener; the blocks are expanded copies stored in the record and indexed with a 128-byte stride (`shl 7`), which is why those scans missed it. The slots `+728`, `+740`, `+752` and `+784` that the mesh mover `0x53AA370` reads (round 47) are among the active slots, so a state change changes the values the wheel mover uses.
+- Not traced: the filler of the three blocks from the wheel asset (the asset has 23 `FWheeledVehicleWheelConfigValue` fields plus `bPhysicsSurfaceUpdate`, the same counts as the block's 23 floats and one byte), the exact asset field behind each block float, and the consumers of the active slots inside Chaos. The first seven block floats match the first seven asset fields by position (inferred); the radius slot is block float 7, so the block order is not the asset order throughout.
