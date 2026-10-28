@@ -58,7 +58,7 @@ Each part on its own takes 15 repair hits from zero with the Medium Hammer or 10
 
 ## What it does
 
-The Door can be closed, and it has a breach effect when it is destroyed. The breach is a visual particle effect that plays at the door when the door section is destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
+The Door can be closed, and it has a breach effect when it is destroyed. The breach is a visual particle effect that plays at the door when the door section is destroyed; it has no damage, blast or other number attached. The rest of its effect is health and how it takes damage.
 
 ## Durability
 

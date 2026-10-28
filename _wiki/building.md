@@ -36,7 +36,7 @@ No in-game display name is known for the Shelter or the Wood base, so this page 
 
 ### Structures
 
-Parts of a larger structure, such as a floor or a roof, are placed with their parent and cannot be picked on their own. They are shown on the parent's row. A part's own cost is not added to the parent's total: the parent's cost is the whole price.
+Parts of a larger structure, such as a floor or a roof, are placed with their parent and cannot be picked on their own. They are listed in the parent's entry. A part's own cost is not added to the parent's total: the parent's cost is the whole price.
 
 | Structure | Build Supplies | Health (HP) | Hammers | Parts |
 |---|---:|---:|---|---|
@@ -133,7 +133,7 @@ The Forward Operating Base has a "do not take damage" setting that no game code 
 
 A structure is built in stages from 0 to 100%, and each stage shows a new part of the structure. Most multi-stage structures have five stages, at 0, 25, 50, 75 and 100%. The Door uses 0, 30, 60, 80 and 100%, and the Wood base 0, 20, 45, 70 and 100%. Parts such as floors and roofs have only one stage. Earlier stages have weak spots, which are shown as marked points on the half-built structure; a hammer hit on one adds more progress (see [Weak spots](#weak-spots)).
 
-In the multi-part structures (Bunker, Door, Gate, Recon Tower, Indirect Fire Shelter and Hesco Wall), the last stage hands over to the finished parts. Each part is its own buildable with its own health, so a finished Bunker is several pieces, not one. This is **Derived** from the stage data.
+In the multi-part structures (Bunker, Door, Gate, Recon Tower, Indirect Fire Shelter and Hesco Wall), the last stage hands over to the finished parts. Each part is its own buildable with its own health, so a finished Bunker is several pieces, not one. This is **derived** from the build stages.
 
 ## Use and timing
 
@@ -187,7 +187,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 
 The Drill Rig is the buildable form of the map's hot zone magnet. It needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 s of run time, and it holds up to 10,000 fuel. The run time is therefore 60 s at the minimum and 300 s on a full tank. The recharge after a run is 900 s. Starting it is a 10 s hold within 2 m. These seconds are **Derived**: the data gives the numbers, and the timers in the Blueprints use them as seconds.
 
-While it runs, the Drill Rig pulls the hot zone toward it at a speed in metres per second: 3 m/s by the game's default, while the rig's data lists 5 (not confirmed to replace it). The travel time, distance divided by speed, is added to the run time. See the [Drill Rig](building/drill-rig.md) article.
+While it runs, the Drill Rig pulls the hot zone toward it at a speed in metres per second: 3 m/s by the game's default, while the rig's own setting lists 5 (not confirmed to replace it). The travel time, distance divided by speed, is added to the run time. See the [Drill Rig](building/drill-rig.md) article.
 
 ### Refuel and repair
 

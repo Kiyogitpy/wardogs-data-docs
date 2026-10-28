@@ -59,7 +59,7 @@ The Drill Rig is Large only, so the Small and Medium columns for building say "c
 
 The Drill Rig is the buildable version of the map's hot zone magnet. It needs Fuel Supplies from the Forward Operating Base to run, and it holds up to 10,000 fuel.
 
-After it is placed, the rig waits 15 s before it can start. Starting it is a hold of 10 s within 2 m. It needs at least 2,000 fuel to run. Each fuel unit buys 0.03 s of run time, so the run time is 60 s with the minimum fuel and 300 s with a full tank. The rig then recharges for 900 s before it can run again. The seconds are **Derived** from the data's numbers and timers.
+After it is placed, the rig waits 15 s before it can start. Starting it is a hold of 10 s within 2 m. It needs at least 2,000 fuel to run. Each fuel unit buys 0.03 s of run time, so the run time is 60 s with the minimum fuel and 300 s with a full tank. The rig then recharges for 900 s before it can run again. The seconds are **derived** from the numbers and timers.
 
 | Setting | Value |
 |---|---:|
@@ -70,7 +70,7 @@ After it is placed, the rig waits 15 s before it can start. Starting it is a hol
 | Run time per fuel unit | 0.03 s (Derived) |
 | Recharge after a run | 900 s (Derived) |
 
-While it runs, the Drill Rig pulls the hot zone toward it. Once activated, the rig shrinks the hot zone to 0.6 of its width and length with the world default, which is 36 percent of the area. The rig's own data lists 0.5 instead, but the code reads the world default, and which value a live server uses is not shown.
+While it runs, the Drill Rig pulls the hot zone toward it. Once activated, the rig shrinks the hot zone to 0.6 of its width and length with the world default, which is 36 percent of the area. The rig's own setting lists 0.5 instead, but the code reads the world default, and which value a live server uses is not shown.
 
 **Movement.** The hot zone moves toward the activated rig at a speed given in metres per second. The game's default for this is 3 m/s, which the code reads. The rig's own setting lists 5 m/s; whether that replaces the 3 m/s in play is not confirmed. The time to arrive is the distance in metres divided by the speed, and that time is added to how long the rig stays active. Derived example: a hot zone 300 m away takes 100 s at 3 m/s and 60 s at 5 m/s.
 

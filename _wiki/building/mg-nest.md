@@ -29,11 +29,11 @@ description: "A buildable stationary machine gun firing .50 cal tracer rounds, b
 | Internal name | STN_06 |
 {: .wiki-infobox }
 
-The MG Nest is a buildable stationary machine gun that fires .50 cal tracer rounds. It is built with a Large Hammer from 650 Build Supplies. Its weapon is the only stationary gun in the data that uses the .50 cal round, and it is restocked in batches of 60 rounds.
+The MG Nest is a buildable stationary machine gun that fires .50 cal tracer rounds. It is built with a Large Hammer from 650 Build Supplies. Its weapon is the only stationary gun that uses the .50 cal round, and it is restocked in batches of 60 rounds.
 
 ## Overview
 
-The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock takes 200 Ammo Supplies and gives 60 rounds. The gun fires 600 rounds/min out to 1,000 m. The weapon data does not set a rate, so 600 rounds/min is the game's default.
+The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock takes 200 Ammo Supplies and gives 60 rounds. The gun fires 600 rounds/min out to 1,000 m. The weapon does not set a rate, so 600 rounds/min is the game's default.
 
 ## Effects
 

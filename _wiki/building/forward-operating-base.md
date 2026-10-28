@@ -29,7 +29,7 @@ description: "The base that players place to anchor building, costing 7,500 cash
 | Internal name | `DA_Buildable_FOB`, item `ID_ForwardOperatingBase` |
 {: .wiki-infobox }
 
-The Forward Operating Base, or FOB, is the anchor for most other structures. Most structures must be placed inside its radius. It has 15,000 HP, the most of any structure in the data, and it is placed from its own item rather than a hammer. It also holds items and resources for players to use.
+The Forward Operating Base, or FOB, is the anchor for most other structures. Most structures must be placed inside its radius. It has 15,000 HP, the most of any structure, and it is placed from its own item rather than a hammer. It also holds items and resources for players to use.
 
 ## Overview
 
@@ -45,16 +45,16 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 - **Hammer:** None. The FOB is placed from its own item.
 - **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. A new FOB also cannot be placed within about 42 m of another FOB. The check is a square box rather than a circle: a new FOB is refused when it is under 42 m from an existing one along both horizontal directions of that FOB (so up to about 59 m on a diagonal) and within 42 m in height, and the same test is run with the roles swapped. This is a static reading of the game code.
 - **Build time:** Instant. The FOB has no build stages.
-- **Repair and dismantle:** The data gives hammer figures for the FOB: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as the data shows.
+- **Repair and dismantle:** Hammer figures for the FOB are: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as is known.
 - **Stack limit:** 1.
 - **Limits:** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios. See the [Refuel and Repair Stations](refuel-and-repair-stations.md) and [Builder's Radio](builders-radio.md) articles.
 - **Interactions:** Players can use the FOB's access interaction. A tap on keyboard or a hold on gamepad lets players use it, and several players can do so at once. Hacking takes a hold of 30 seconds by one player. The data says the hacking result is sent to the server. The rewards for hacking are on the [Rewards page](../../game-features/Wardogs_GameFeatures_Rewards_v2.md).
 
 ## What it does
 
-The FOB anchors the building radius. Most structures must be inside a friendly FOB radius to be placed, and the FOB limits the number of Refuel Stations, Repair Stations and Builder's Radios. The FOB also holds supplies for players, and the data lists sounds for depositing Ammo, Build, Fuel and Mechanical Supplies.
+The FOB anchors the building radius. Most structures must be inside a friendly FOB radius to be placed, and the FOB limits the number of Refuel Stations, Repair Stations and Builder's Radios. The FOB also holds supplies for players, and there are sounds for depositing Ammo, Build, Fuel and Mechanical Supplies.
 
-Nothing in the game shows that the FOB is a spawn point. The server side is not excluded by the data, so whether players can spawn at a FOB is not known.
+Nothing in the game shows that the FOB is a spawn point. The server side is not ruled out, so whether players can spawn at a FOB is not known.
 
 ## Durability
 

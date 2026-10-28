@@ -40,7 +40,7 @@ Destroying an enemy Gate pays 200 cash and 50 Role XP. Its ramp pays 85 cash and
 
 - **Cost:** 200 Build Supplies for the Gate, whichever hammer builds it. The parts (85 Build Supplies each) are not added on top of the 200: three parts would come to 255, and the game charges only the 200 for the whole Gate. A part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
 - **Hammers:** Medium or Large.
-- **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. The Gate's parts can sit on surfaces with a maximum angle of 10. The data does not state the unit, which is most likely degrees.
+- **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. The Gate's parts can sit on surfaces with a maximum angle of 10. The unit is not stated, and is most likely degrees.
 - **Stack limit:** 1.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 21, 19, 39 and 40 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Parts:** When the Gate is finished, it turns into separate parts: the left half, the right half and the ramp. Each is its own buildable with its own health: each half has 5,320 HP and the ramp has 6,500 HP. This is Derived from the stage data (see [Buildables](../building.md#building)).
@@ -58,7 +58,7 @@ The parts are not built on their own; they come with the finished Gate. Once sep
 
 ## What it does
 
-The Gate can be closed, and it has a breach effect when it is destroyed. The breach is a visual particle effect that plays at the gate halves when they are destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
+The Gate can be closed, and it has a breach effect when it is destroyed. The breach is a visual particle effect that plays at the gate halves when they are destroyed; it has no damage, blast or other number attached. The rest of its effect is health and how it takes damage.
 
 ## Durability
 
