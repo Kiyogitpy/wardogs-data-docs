@@ -1,8 +1,8 @@
 ---
-title: "Challenges KOTH (feature)"
+title: "King of the Hill Challenges"
 redirect_from: ["/Wardogs_GameFeatures_Challenges_KOTH_v2.html", "/Wardogs_GameFeatures_Challenges_KOTH_v2"]
 parent: "Rewards & Unlocks"
-description: "What the Package Contains, How the Pieces Connect, State Tree Inventory, Reward Lookup Tables"
+description: "The King of the Hill challenge package: its contents, how the pieces connect, state trees and reward lookup tables."
 ---
 
 # Wardogs — GameFeature: Challenges_KOTH Reference

@@ -1,8 +1,8 @@
 ---
-title: "AI (feature)"
+title: "AI"
 redirect_from: ["/Wardogs_GameFeatures_AI_v2.html", "/Wardogs_GameFeatures_AI_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, Core AI Preset, Alert State Thresholds, Influence Maps"
+description: "The PvE AI stack and its example packs: the core AI preset, alert thresholds, behaviour goals, environment queries and influence maps."
 ---
 
 # Wardogs — GameFeatures: AI

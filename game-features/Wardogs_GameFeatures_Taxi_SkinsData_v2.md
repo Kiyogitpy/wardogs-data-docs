@@ -1,8 +1,8 @@
 ---
-title: "Taxi SkinsData (feature)"
+title: "Taxi Skins"
 redirect_from: ["/Wardogs_GameFeatures_Taxi_SkinsData_v2.html", "/Wardogs_GameFeatures_Taxi_SkinsData_v2"]
 parent: "Vehicles"
-description: "What This Folder Holds, Registry and Scan, Cosmetic Row, Skin"
+description: "The taxi cosmetic data for the Little Bird helicopter: one cosmetic entry, one skin asset and the pack that registers them."
 ---
 
 # Wardogs — GameFeatures: Taxi_SkinsData

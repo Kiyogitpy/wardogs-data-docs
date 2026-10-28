@@ -2,7 +2,7 @@
 title: "Significance"
 redirect_from: ["/Wardogs_Significance_v2.html", "/Wardogs_Significance_v2"]
 parent: "World, Visuals & Audio"
-description: "Asset Families, Settings Assets, Sphere Evaluators, FOV Evaluators"
+description: "Significance settings (update rates per level) and the sphere and field-of-view evaluators."
 ---
 
 # Wardogs — Significance Reference

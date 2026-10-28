@@ -1,5 +1,5 @@
 ---
-title: "Character Movement Settings (MoverTesting)"
+title: "Character Movement Settings"
 redirect_from: ["/Wardogs_MoverTesting_v2.html", "/Wardogs_MoverTesting_v2"]
 parent: "Player & Movement"
 description: "Character movement settings: ground, falling, parachute, climbing, ladder, mantling, swimming, modifier states and curves"

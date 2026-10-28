@@ -2,7 +2,7 @@
 title: "Audio"
 redirect_from: ["/Wardogs_Audio_v2.html", "/Wardogs_Audio_v2"]
 parent: "World, Visuals & Audio"
-description: "Inventory, Event structure, Notable events, Player Damage, Movement and Item Audio"
+description: "The audio event data: event structure, notable events, player damage, movement and item sounds."
 ---
 
 # Wardogs — Audio Data Reference

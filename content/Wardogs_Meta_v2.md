@@ -1,8 +1,8 @@
 ---
-title: "Meta"
+title: "Meta Progression"
 redirect_from: ["/Wardogs_Meta_v2.html", "/Wardogs_Meta_v2"]
 parent: "Rewards & Unlocks"
-description: "Folder Map, Role Unlock Trees, Character Skill Effects, Reward Scaling Curves"
+description: "Meta progression data: role unlock trees, character skill effects and reward scaling curves."
 ---
 
 # Wardogs: Meta Data Reference

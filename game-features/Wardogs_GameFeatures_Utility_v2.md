@@ -1,8 +1,8 @@
 ---
-title: "Utility (feature)"
+title: "Utility"
 redirect_from: ["/Wardogs_GameFeatures_Utility_v2.html", "/Wardogs_GameFeatures_Utility_v2"]
 parent: "Engine & Tooling Data"
-description: "What This Folder Holds, Packs and Data Layers, How It Is Used"
+description: "Thin packs for consumables, deployables, throwables and tools, each adding one external data layer of world content."
 ---
 
 # Wardogs — GameFeatures: Utility

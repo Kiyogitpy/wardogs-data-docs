@@ -1,5 +1,5 @@
 ---
-title: "Vehicle control assists"
+title: "Vehicle Control Assists"
 redirect_from: ["/Wardogs_VehicleControlAssists_v1.html", "/Wardogs_VehicleControlAssists_v1"]
 parent: "Vehicles"
 description: "Wheeled arcade-assist settings and the helicopter flight-assist objects (pitch, roll, yaw, collective) as stored in the game data"

@@ -224,7 +224,7 @@ def trim_cross(keys):
 
 # ---------------------------------------------------------------- page A: fixed wing
 FM_HEAD = """---
-title: "Fixed-wing flight model"
+title: "Fixed-Wing Flight Model"
 parent: "Vehicles"
 description: "Every flight-model field of the fixed-wing airplane FWG_01 (engine, drag, lift and drag curves, nose-wheel steering, the 22-row auto-trim table, control assists)."
 ---
@@ -372,7 +372,7 @@ def page_fixed_wing():
 
 # ---------------------------------------------------------------- page B: config fields
 CFG_HEAD = """---
-title: "Vehicle config fields"
+title: "Vehicle Config Fields"
 parent: "Vehicles"
 description: "Config sub-fields for wheeled, tracked and rotary vehicles, tracked wheel data, helicopter flight and drag assets, and the fuel settings (km per litre, idle burn, boost) for every vehicle, and the per-vehicle abandonment, occupant and ramming settings."
 ---
@@ -558,7 +558,7 @@ def settings_section():
 
 # ---------------------------------------------------------------- page C: turrets
 TUR_HEAD = """---
-title: "Vehicle turret controls"
+title: "Vehicle Turret Controls"
 parent: "Vehicles"
 description: "The 23 vehicle weapon data assets (mouse and gamepad rotation limits, yaw and pitch limits, muzzle sockets, aim cameras with zeroing distance) and the vehicle crosshair tables."
 ---

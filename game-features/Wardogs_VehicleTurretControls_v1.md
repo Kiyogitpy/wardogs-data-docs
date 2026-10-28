@@ -1,5 +1,5 @@
 ---
-title: "Vehicle turret controls"
+title: "Vehicle Turret Controls"
 parent: "Vehicles"
 description: "The 23 vehicle weapon data assets (mouse and gamepad rotation limits, yaw and pitch limits, muzzle sockets, aim cameras with zeroing distance) and the vehicle crosshair tables."
 ---

@@ -1,8 +1,8 @@
 ---
-title: "PvE (feature)"
+title: "PvE"
 redirect_from: ["/Wardogs_GameFeatures_PvE_v2.html", "/Wardogs_GameFeatures_PvE_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, Scenario Packs, AI Character Configs, Voice-Over Assets"
+description: "The PvE scenario framework: a shared base with mission scenarios, each setting a quest, death rules, a faction and scenario data."
 ---
 
 # Wardogs — GameFeatures: PvE

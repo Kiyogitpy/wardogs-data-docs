@@ -2,7 +2,7 @@
 title: "Destruction"
 redirect_from: ["/Wardogs_Destruction_v2.html", "/Wardogs_Destruction_v2"]
 parent: "World, Visuals & Audio"
-description: "Assets at a Glance, Normal Building Lookup, Anonymous Building Lookup, Score Curves"
+description: "Destruction lookups for normal and anonymous buildings, plus the score curves."
 ---
 
 # Wardogs — Destruction Reference

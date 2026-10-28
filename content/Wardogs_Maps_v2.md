@@ -2,7 +2,7 @@
 title: "Maps"
 redirect_from: ["/Wardogs_Maps_v2.html", "/Wardogs_Maps_v2"]
 parent: "Game Modes & Maps"
-description: "Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water Gym"
+description: "Data assets that sit beside the maps, including a minimal grid test, a shooting-range moving target and a water gym."
 ---
 
 # Wardogs — Maps & Gym Data Reference

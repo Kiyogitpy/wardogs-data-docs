@@ -1,8 +1,8 @@
 ---
-title: "GameMechanics"
+title: "Game Mechanics"
 redirect_from: ["/Wardogs_GameMechanics_v2.html", "/Wardogs_GameMechanics_v2"]
 parent: "Damage & Combat Systems"
-description: "Folder Map, Damage System, Projectiles, Action Definitions"
+description: "The damage system, projectile and action definitions behind the core game mechanics."
 ---
 
 # Wardogs — Game Mechanics Reference

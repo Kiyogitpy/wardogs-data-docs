@@ -1,8 +1,8 @@
 ---
-title: "FlyByManager (feature)"
+title: "Fly-By Manager"
 redirect_from: ["/Wardogs_GameFeatures_FlyByManager_v2.html", "/Wardogs_GameFeatures_FlyByManager_v2"]
 parent: "Game Modes & Maps"
-description: "Plugin Inventory, Plugin Root, Audio Events, How They Work Together"
+description: "The fly-by manager package: its plugin inventory, the audio events for the two jets and how they work together."
 ---
 
 # Wardogs — FlyByManager Game Feature Reference

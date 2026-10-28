@@ -212,7 +212,7 @@ DRONE_BP = {"collisionBoxHalfExtents": (46.64308, 46.0, 18.7716), "cameraFov": 5
 
 def render_page(inp, vs, sp, smoke, drone, tb, mass):
     L = []
-    L.append('---\ntitle: "Vehicle inputs and explosive effects"\n'
+    L.append('---\ntitle: "Vehicle Inputs and Explosive Effects"\n'
              'redirect_from: ["/Wardogs_VehicleInputsAndExplosiveEffects_v1.html", "/Wardogs_VehicleInputsAndExplosiveEffects_v1"]\n'
              'parent: "Vehicles"\n'
              'description: "Wheeled steering and pedal tuning, the vehicle smoke screen, the Stingray drone projectile, explosives against each vehicle row, the weapon spread curve table, the grenade throw-back gate and the air vehicle mass override"\n---\n')

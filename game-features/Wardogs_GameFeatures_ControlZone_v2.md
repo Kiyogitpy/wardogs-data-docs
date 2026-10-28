@@ -1,8 +1,8 @@
 ---
-title: "ControlZone (feature)"
+title: "Control Zone"
 redirect_from: ["/Wardogs_GameFeatures_ControlZone_v2.html", "/Wardogs_GameFeatures_ControlZone_v2"]
 parent: "Game Modes & Maps"
-description: "Package Contents, Zone Geometry Per Config, Hot Zone Movement, Balance: Contribution Modifiers"
+description: "The Control Zone mode package: zone geometry, hot zone movement, balance modifiers, reward feed, placement rules, HUD and AI teleport."
 ---
 
 # Wardogs — GameFeature: ControlZone Reference

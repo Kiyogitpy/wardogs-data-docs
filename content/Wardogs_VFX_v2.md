@@ -2,7 +2,7 @@
 title: "VFX"
 redirect_from: ["/Wardogs_VFX_v2.html", "/Wardogs_VFX_v2"]
 parent: "World, Visuals & Audio"
-description: "Inventory, Explosions, Explosion Sequences, Muzzle Flashes"
+description: "Visual effect assets: the inventory, explosions, explosion sequences and muzzle flashes."
 ---
 
 # Wardogs — VFX Reference

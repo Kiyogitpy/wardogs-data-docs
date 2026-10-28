@@ -2,7 +2,7 @@
 title: "Characters"
 redirect_from: ["/Wardogs_Characters_v2.html", "/Wardogs_Characters_v2"]
 parent: "Player & Movement"
-description: "File Map, Third-Person LOD Policy, Ghillie Physics Constraints, How Values Combine"
+description: "The character asset data: its file map and the third-person level-of-detail policy."
 ---
 
 # Wardogs: Characters Data Reference
