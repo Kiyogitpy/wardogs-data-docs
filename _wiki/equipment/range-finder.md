@@ -35,7 +35,7 @@ The shop text lists the Range Finder as a high magnification optic with an accur
 
 - It is used by aiming, with the item's secondary input.
 - While it is in use, maximum movement speed is halved.
-- The item data gives the Range Finder no reload action. Only the Infrared Range Finder has one.
+- The Range Finder has no reload action. Only the Infrared Range Finder has one.
 
 ## Season 2 changes
 

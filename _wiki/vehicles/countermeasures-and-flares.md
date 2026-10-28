@@ -90,7 +90,7 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 
 ## Sources
 
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): countermeasure items, prices and the smoke item
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): countermeasure items, prices and the smoke item
 - [Vehicles Reference](../../content/Wardogs_Vehicles_v2.md): the airplane's countermeasure data and input change
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): countermeasure lists per vehicle
 - [Smoke grenade effect data](../../content/Wardogs_GameplayCues_v2.md): the smoke screen timing

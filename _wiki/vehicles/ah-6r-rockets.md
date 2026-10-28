@@ -92,8 +92,8 @@ The AH-6R [Rockets] is covered by the air vehicle yards (inferred). Each side no
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of this aircraft, in kilograms

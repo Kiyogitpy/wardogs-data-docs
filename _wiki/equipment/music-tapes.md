@@ -64,6 +64,6 @@ Nine of the ten tapes appear as unlocks in the Driver or Pilot role trees. Tape 
 ## Sources
 
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the tape names, text and price
-- [Items (feature)](../../game-features/Wardogs_GameFeatures_Items_v2.md): the tape item rows and the Season 2 addition
+- [Items Game Feature](../../game-features/Wardogs_GameFeatures_Items_v2.md): the tape item rows and the Season 2 addition
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the track asset for each tape
 - [Driver](../progression-and-economy/driver.md) and [Pilot](../progression-and-economy/pilot.md): the role unlock tables

@@ -38,11 +38,11 @@ The shop describes the Defibrillator as reviving a teammate instantly, and says 
 - **Charge:** the charge takes 4 s.
 - **Battery:** each discharge uses 25 battery charges. A standard battery holds up to 100 charges and a large battery holds up to 250, so a standard battery covers four discharges.
 - **Blocking:** the item cannot be used while you are downed.
-- **Movement and bleeding:** the data gives no movement slow for this item. The Defibrillator does not cure bleeding, because the game has no damage-over-time bleeding.
+- **Movement and bleeding:** this item has no movement slow. The Defibrillator does not cure bleeding, because the game has no damage-over-time bleeding.
 
 ### Medic skills
 
-The "Defib charge speed" skill is described as reducing the charge time. The "Increased charges per battery" skill is also described. The game files give no number for either skill, so the new charge time and battery use are not in the data.
+The "Defib charge speed" skill is described as reducing the charge time. The "Increased charges per battery" skill is also described. No number for either skill is known, so the new charge time and battery use are not in the data.
 
 The revive speed boost skills apply after you revive a teammate. Your sprint and tactical sprint speed are multiplied by 1.2 at skill level 2 and 1.4 at level 4, and the revived teammate gets the same boost. Both last 5 s.
 
@@ -53,7 +53,7 @@ The revive speed boost skills apply after you revive a teammate. Your sprint and
 | Charge | 4 s |
 | Use animation | 9.2 s |
 
-The use animation in the data is 9.15 s long, and it loops in its middle part. The 4 s charge is the timer the item runs before the discharge. You need a teammate who is downed for it to revive, and you must be alive and not downed. It has its own reload action, and its magazine is a battery.
+The use animation is 9.15 s long, and it loops in its middle part. The 4 s charge is the timer the item runs before the discharge. You need a teammate who is downed for it to revive, and you must be alive and not downed. It has its own reload action, and its magazine is a battery.
 
 ## Default controls
 
@@ -65,7 +65,7 @@ The Item Shop lists the Defibrillator at 1,600 cash.
 
 ## Season 2 changes
 
-No Season 2 change to the Defibrillator is listed in the data.
+No Season 2 change to the Defibrillator is listed.
 
 ## See also
 

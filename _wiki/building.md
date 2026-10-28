@@ -32,11 +32,11 @@ Each hammer builds a set of structures:
 
 The Large Hammer is the only hammer that can place the Bunker, Recon Tower, Indirect Fire Shelter, Bremer Wall, Drill Rig, Refuel Station and Repair Station. The stationary weapons, listed below, are built with the Large Hammer, and the Loudspeaker can also be built with the Medium Hammer.
 
-The export gives no display name for the Shelter and the Wood base, so this page uses the plain names "Shelter" and "Wood base".
+No in-game display name is known for the Shelter or the Wood base, so this page uses the plain names "Shelter" and "Wood base".
 
 ### Structures
 
-Parts of a larger structure, such as a floor or a roof, are placed with their parent and cannot be picked on their own. They are shown on the parent's row. A part's own cost is not added to the parent's total: the parent's cost is the whole price.
+Parts of a larger structure, such as a floor or a roof, are placed with their parent and cannot be picked on their own. They are listed in the parent's entry. A part's own cost is not added to the parent's total: the parent's cost is the whole price.
 
 | Structure | Build Supplies | Health (HP) | Hammers | Parts |
 |---|---:|---:|---|---|
@@ -79,7 +79,7 @@ Each stationary weapon has its own article, with its gun, ammunition, restock an
 - [Talon 9K-SAM](building/talon-9k-sam.md): heavy mounted machine gun, 72 mm rounds
 - [Vanguard CIWS](building/vanguard-ciws.md): automatic 20x102 mm cannon
 - [L81 Mortar](building/l81-mortar.md): 120x800 mm shells, with an elevation table and flight data
-- [Loudspeaker](building/loudspeaker.md): no weapon in the data
+- [Loudspeaker](building/loudspeaker.md): no weapon
 - [Stingray](building/stingray.md): UAV ammunition
 - [MG Nest](building/mg-nest.md): .50 cal tracer rounds
 
@@ -106,7 +106,7 @@ Each structure below has its own article, with its cost, placement, damage numbe
 
 ### Damage by source
 
-Each structure has a damage row that changes how much damage each source does to it. The table shows the change for each source. A change of -85% means 15% of the damage is left. A change of +650% means the damage is multiplied by 7.5. A plus sign means more damage.
+Each structure has a damage table that changes how much damage each source does to it. The table shows the change for each source. A change of -85% means 15% of the damage is left. A change of +650% means the damage is multiplied by 7.5. A plus sign means more damage.
 
 | Structure | HP | Melee | Bullets | Grenades | Rockets | C4 | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -127,13 +127,13 @@ Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do
 
 The full table for every structure is on the [Buildables](../game-features/Wardogs_Buildables_v1.md) data page.
 
-The Forward Operating Base has a "do not take damage" flag in its data. No code in the game files reads it, so it appears to be unused data, and the hit counts above treat the base like any other structure.
+The Forward Operating Base has a "do not take damage" setting that no game code reads, so it appears to be unused, and the hit counts above treat the base like any other structure.
 
 ### Build stages
 
 A structure is built in stages from 0 to 100%, and each stage shows a new part of the structure. Most multi-stage structures have five stages, at 0, 25, 50, 75 and 100%. The Door uses 0, 30, 60, 80 and 100%, and the Wood base 0, 20, 45, 70 and 100%. Parts such as floors and roofs have only one stage. Earlier stages have weak spots, which are shown as marked points on the half-built structure; a hammer hit on one adds more progress (see [Weak spots](#weak-spots)).
 
-In the multi-part structures (Bunker, Door, Gate, Recon Tower, Indirect Fire Shelter and Hesco Wall), the last stage hands over to the finished parts. Each part is its own buildable with its own health, so a finished Bunker is several pieces, not one. This is **Derived** from the stage data.
+In the multi-part structures (Bunker, Door, Gate, Recon Tower, Indirect Fire Shelter and Hesco Wall), the last stage hands over to the finished parts. Each part is its own buildable with its own health, so a finished Bunker is several pieces, not one. This is **derived** from the build stages.
 
 ## Use and timing
 
@@ -156,7 +156,7 @@ The shop text describes the hammers as slow, moderate and fast. The hammer's use
 ### Repair and dismantle
 
 - **Repair:** on a finished structure, a hammer hit restores health instead of adding progress. It restores the hammer's build amount times the structure's repair multiplier. Repairing uses Build Supplies too, and any supplies not needed are returned. The repair multiplier differs by structure: 1 for most walls, 6.7 for the Bunker, Recon Tower and Indirect Fire Shelter, 13.3 for the Refuel and Repair Stations and 150 for the Drill Rig. Each article gives its repair hit count.
-- **Dismantle:** a hammer hit on your own structure does 150 (Small), 200 (Medium) or 250 (Large) damage. The data also sets half of that for a structure owned by someone else (the modifier name is read as "hostile"; this is inferred). No Build Supplies refund on dismantling was found in the data.
+- **Dismantle:** a hammer hit on your own structure does 150 (Small), 200 (Medium) or 250 (Large) damage. A structure owned by someone else takes half of that (the modifier name is read as "hostile"; this is inferred). No Build Supplies refund on dismantling was found.
 - **Unfinished structures:** damage removes build progress in proportion to the structure's maximum health. At zero progress the structure is destroyed.
 
 ### Weak spots
@@ -187,7 +187,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 
 The Drill Rig is the buildable form of the map's hot zone magnet. It needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 s of run time, and it holds up to 10,000 fuel. The run time is therefore 60 s at the minimum and 300 s on a full tank. The recharge after a run is 900 s. Starting it is a 10 s hold within 2 m. These seconds are **Derived**: the data gives the numbers, and the timers in the Blueprints use them as seconds.
 
-While it runs, the Drill Rig pulls the hot zone toward it at a speed in metres per second: 3 m/s by the game's default, while the rig's data lists 5 (not confirmed to replace it). The travel time, distance divided by speed, is added to the run time. See the [Drill Rig](building/drill-rig.md) article.
+While it runs, the Drill Rig pulls the hot zone toward it at a speed in metres per second: 3 m/s by the game's default, while the rig's own setting lists 5 (not confirmed to replace it). The travel time, distance divided by speed, is added to the run time. See the [Drill Rig](building/drill-rig.md) article.
 
 ### Refuel and repair
 

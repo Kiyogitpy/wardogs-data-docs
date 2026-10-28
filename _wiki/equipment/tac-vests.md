@@ -24,7 +24,7 @@ description: "The three Tac Vests: how many quick slots each one unlocks, how mu
 | Internal name | `Id.Item.SmallTacVest`, `Id.Item.MediumTacVest`, `Id.Item.LargeTacVest` |
 {: .wiki-infobox }
 
-The Tac Vest is a piece of gear that unlocks quick slots and speeds up reloading and switching to utility items. It is not body armor, and the data gives it no damage reduction. The three sizes differ in price and in how many quick slots they open.
+The Tac Vest is a piece of gear that unlocks quick slots and speeds up reloading and switching to utility items. It is not body armor, and it has no damage reduction. The three sizes differ in price and in how many quick slots they open.
 
 ## Overview
 
@@ -46,7 +46,7 @@ For armor that protects against damage, see [Body Armor](body-armor.md).
 
 ## Season 2 changes
 
-No Season 2 change to the Tac Vests is listed in the data.
+No Season 2 change to the Tac Vests is listed.
 
 ## See also
 

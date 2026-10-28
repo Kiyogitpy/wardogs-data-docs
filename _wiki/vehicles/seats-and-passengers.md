@@ -23,20 +23,20 @@ Every vehicle has a set of seats, and each seat has a role. The driver or pilot 
 
 ## Overview
 
-The seat count on each vehicle's stats sheet is the number the data lists for it. The seat data sometimes lists a different number of setups, which the tables below note. A vehicle with a mounted gun has a gunner seat for that gun.
+The seat count on each vehicle's stats sheet is the number listed for it. The seat setups sometimes differ in number, which the tables below note. A vehicle with a mounted gun has a gunner seat for that gun.
 
 ## How it works
 
 ### Seat roles
 
-The seat data names four roles. Every seat is one of them:
+Seats have four named roles. Every seat is one of them:
 
 - **Driver or pilot.** Steers the vehicle or flies it. The in-game tip says the driver or pilot navigates the battlefield.
 - **Gunner.** Works a mounted weapon. The in-game tip says gunners track targets.
-- **Active passenger.** A passenger seat listed as active in the data.
-- **Passive passenger.** A passenger seat listed as passive in the data, as used on the M113 APC SV.
+- **Active passenger.** A passenger seat listed as active.
+- **Passive passenger.** A passenger seat listed as passive, as used on the M113 APC SV.
 
-The data gives only these names. Only the M113 APC SV's nine rear seats are passive passengers; every other passenger seat is active. The two roles differ only in their input and animation, and the passive seats use a different pose.
+Only these names are given. Only the M113 APC SV's nine rear seats are passive passengers; every other passenger seat is active. The two roles differ only in their input and animation, and the passive seats use a different pose.
 
 ### Getting in, switching and leaving
 
@@ -45,13 +45,13 @@ The data gives only these names. Only the M113 APC SV's nine rear seats are pass
 - **Exit.** Open the interaction menu and press and hold the Exit Vehicle option. Leaving a moving vehicle can hurt you: the damage depends on the speed in km/h when you leave, and is applied on landing. There is no damage at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h and 100 at 75 km/h and above, with a straight line between those points. The minimum speed for damage is not in the exported data.
 - **Unlock.** Purchased vehicles start locked. The owner can unlock them for a squad or for everyone, and teammates cannot enter until they are unlocked.
 
-The data does not describe ejecting a player from a vehicle.
+Ejecting a player from a vehicle is not described.
 
 ### Seat protection
 
-The seat data sets a reduction for seated players against two main groups of arms: small and medium arms, and high-calibre arms. A value of -25 means the seated player takes 75% of the damage, which is 25% protection. A value of -90 means the player takes 10% of the damage.
+Seats set a reduction for seated players against two main groups of arms: small and medium arms, and high-calibre arms. A value of -25 means the seated player takes 75% of the damage, which is 25% protection. A value of -90 means the player takes 10% of the damage.
 
-The data lists seat protection only for these vehicles:
+Seat protection is listed only for these vehicles:
 
 | Vehicle group | Small and medium arms | High-calibre arms | Season 2 |
 |---|---|---|---|
@@ -61,7 +61,7 @@ The data lists seat protection only for these vehicles:
 | [Havoc](havoc.md) | -90% | -50%, plus -60% in a third group the data labels only as Special | Unchanged |
 | Humvee family ([Humvee](humvee.md), [Minigun](humvee-minigun.md), [M249](humvee-m249.md)) | -70% | -40% | Unchanged |
 
-The Season 2 values are the ones shown in the current data. The Season 2 notes say the Havoc and Humvee rows did not change. The data has no seat protection row for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
+The Season 2 values are the ones shown now. The Season 2 notes say the Havoc and Humvee rows did not change. No seat protection is listed for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
 
 ### Season 2 changes
 
@@ -110,11 +110,11 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 ## Tips that follow from the numbers
 
 - On a Little Bird, a seated player takes 75% of small and medium arms damage in Season 2. In Season 1 the seated player took 50%.
-- On a Havoc, a seated player takes 10% of small and medium arms damage. That is the strongest seat protection in the data.
+- On a Havoc, a seated player takes 10% of small and medium arms damage. That is the strongest seat protection.
 - The Z20 Lakota gets seat protection for the first time in Season 2, with 25% against small and medium arms.
-- A vehicle with no seat protection row, such as the Kodiak or the Ural, has no seat reduction in the data.
+- A vehicle with no seat protection listed, such as the Kodiak or the Ural, has no seat reduction.
 - The in-game tip says the passenger list shows who has a parachute.
-- The Havoc, M113 APC SV, Flakpanzer Gepard, SPH-2, L2A6 and T-72B3 are flagged in the data as seating players of one faction only. No other vehicle sets that flag. With it set, the enter check only lets a player in when the vehicle belongs to the player's faction or is neutral, and every player already seated must match the vehicle's faction.
+- The Havoc, M113 APC SV, Flakpanzer Gepard, SPH-2, L2A6 and T-72B3 are flagged as seating players of one faction only. No other vehicle sets that flag. With it set, the enter check only lets a player in when the vehicle belongs to the player's faction or is neutral, and every player already seated must match the vehicle's faction.
 
 ## See also
 
@@ -127,9 +127,9 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the rules for opening and cutting a parachute
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): seat counts per stats sheet
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names
-- [Vehicle config fields](../../game-features/Wardogs_VehicleConfigFields_v1.md): the same-faction-only occupant flag, abandoned-vehicle lifetime and ramming settings per vehicle
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names
+- [Vehicle Config Fields](../../game-features/Wardogs_VehicleConfigFields_v1.md): the same-faction-only occupant flag, abandoned-vehicle lifetime and ramming settings per vehicle
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the seat protection table and how it applies
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): the seat reduction step
 - [Frontend, Server and Test Data](../../content/Wardogs_DataTables_Frontend_v1.md): the in-game vehicle tips

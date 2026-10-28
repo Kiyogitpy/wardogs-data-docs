@@ -19,7 +19,7 @@ This article covers the throwables and placed gear that do something other than 
 
 ## Overview
 
-Flash and stun grenades are not in the data for this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached in the data.
+Flash and stun grenades are not in this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached in the data.
 
 Destroyed vehicles, the fixed guns and a destroyed forward operating base also set off explosions of their own. See [Destruction](../game-mechanics/destruction.md#wreck-explosions).
 
@@ -44,7 +44,7 @@ The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it 
 
 ### Smoke grenades
 
-Smoke grenades make a cloud of smoke. The data gives the length of each cloud, but no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone in the data. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
+Smoke grenades make a cloud of smoke. The length of each cloud is given, but there is no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
 
 | Item | Cloud length | Cost (cash) |
 |---|---:|---:|
@@ -60,7 +60,7 @@ The smoke effect's own defaults in the game files are a 180 s total, a 20 s fade
 
 ### Signal grenades
 
-Signal grenades release a column of coloured smoke and place a marker on the map. The data gives 180 s of cloud length for most colours and 64 s for the blue one. Each costs 50 cash.
+Signal grenades release a column of coloured smoke and place a marker on the map. Most colours give 180 s of cloud length, and the blue one 64 s. Each costs 50 cash.
 
 | Colour | Shop name | Map marker | Type |
 |---|---|---|---|
@@ -71,7 +71,7 @@ Signal grenades release a column of coloured smoke and place a marker on the map
 | Green | Supply Request | Supply Request | Logistics |
 | Purple | Landing Zone | Landing Zone | Logistics |
 
-Each colour adds its marker through the deployable map tracker, which places the marker on the map. The game names the smoke types "Covering" and "Signal". The data does not say who else can see the marker.
+Each colour adds its marker through the deployable map tracker, which places the marker on the map. The game names the smoke types "Covering" and "Signal". It is not known who else can see the marker.
 
 ### Mines and placed explosives
 
@@ -88,7 +88,7 @@ The AT Mine, Claymore and Improvised Explosive Device are placed on the ground, 
 | Range | placed up to 4 m away | placed up to 4 m away | 200 m (remote) | no limit |
 | Shot | any damage except thrown impacts sets it off | an explosion sets it off; other damage destroys it | a C4 or Improvised Explosive Device blast sets it off; it has 30 HP | same as C4 |
 
-Notes from the data:
+Notes:
 
 - The AT Mine checks for vehicles every 0.1 s, and ignores everything else.
 - The Claymore's trigger area is in front of it. Players must have a matching tag to count as a target.
@@ -129,7 +129,7 @@ Each throw also has a speed curve in the data. A static reading of the throw cod
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the Molotov, smoke grenades, mines or Claymore.
+No Season 2 change to the Molotov, smoke grenades, mines or Claymore is listed.
 
 ## See also
 

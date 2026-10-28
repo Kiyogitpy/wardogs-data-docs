@@ -128,8 +128,8 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the empty-tank restart block and the Max repair charge rule
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): health pools and health triggers
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): wheel radius states
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): health pools and health triggers
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md): wheel radius states
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the tyre states and deflate threshold
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Repair Station
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md) and [Item Actions](../../content/Wardogs_ItemActions_v1.md): repair tool amounts and prices

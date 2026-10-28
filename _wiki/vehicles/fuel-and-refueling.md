@@ -81,7 +81,7 @@ Fuel capacity and fuel economy for every drivable vehicle, from the vendor stats
 | [Wolf-110](wolf-110.md) | 60 | 4.0 |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 60 | 4.0 |
 
-A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). It equals one divided by the vehicle's stored kilometres-per-litre figure, so the range on a full tank is capacity times that figure: about 19.5 km for the Humvee and 29 km for the Havoc (derived). Driving burns fuel in proportion to speed; see [Vehicle config fields](../../game-features/Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine itself spends fuel in play was not traced. The fixed-wing airplane has no stats sheet in the data.
+A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). It equals one divided by the vehicle's stored kilometres-per-litre figure, so the range on a full tank is capacity times that figure: about 19.5 km for the Humvee and 29 km for the Havoc (derived). Driving burns fuel in proportion to speed; see [Vehicle Config Fields](../../game-features/Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine itself spends fuel in play was not traced. The fixed-wing airplane has no stats sheet in the data.
 
 Season 2 changed no fuel capacity or fuel economy value in the data.
 
@@ -102,8 +102,8 @@ Season 2 changed no fuel capacity or fuel economy value in the data.
 
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 - [Vehicles Reference](../../content/Wardogs_Vehicles_v2.md): the airplane's fuel leak and threshold data
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): vendor stats and fuel health triggers
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): vendor stats and fuel health triggers
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Refuel Station and its supplies
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): Fuel Canister and supply prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)

@@ -60,7 +60,7 @@ The Large Hammer is the only one that can place the Bunker. The repair and disma
 
 ## What it does
 
-The Bunker is a shelter with a floor and a roof. The data does not describe what a player can do inside it. Its effect in play is its health and how it takes damage.
+The Bunker is a shelter with a floor and a roof. What a player can do inside it is not described. Its effect in play is its health and how it takes damage.
 
 ## Durability
 
@@ -86,8 +86,8 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- Build cost went from 100 to 200 Build Supplies. The data lists this change for the main Bunker only.
-- The roof's footprint box grew. It is the box the data stores around the roof for its build stages and its finished shape: along its long side it went from about 7.5 m to about 11.6 m, and the roof's anchor points moved 22 cm higher. The data does not say what the game does with the box; it most likely sets the space the roof takes up when it is placed and checked (inferred).
+- Build cost went from 100 to 200 Build Supplies. This change applies to the main Bunker only.
+- The roof's footprint box grew. It is the box stored around the roof for its build stages and its finished shape: along its long side it went from about 7.5 m to about 11.6 m, and the roof's anchor points moved 22 cm higher. The data does not say what the game does with the box; it most likely sets the space the roof takes up when it is placed and checked (inferred).
 - The T-72B3's 125 mm shell does x0.70 of the damage it did: 23 hits to destroy became 33 (derived).
 
 ## See also

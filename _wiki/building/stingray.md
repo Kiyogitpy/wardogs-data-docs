@@ -31,11 +31,11 @@ description: "A buildable stationary emplacement whose ammunition is listed as U
 | Internal name | STN_05 |
 {: .wiki-infobox }
 
-The Stingray is a buildable stationary emplacement with a main barrel that fires UAV projectiles. The game lists its ammunition as "UAV", so it appears to be a drone launcher, though the data does not describe the projectile in plain words. It is built with a Large Hammer from 650 Build Supplies and has 3,000 HP.
+The Stingray is a buildable stationary emplacement with a main barrel that fires UAV projectiles. The game lists its ammunition as "UAV", so it appears to be a drone launcher, though the projectile is not described in plain words. It is built with a Large Hammer from 650 Build Supplies and has 3,000 HP.
 
 ## Overview
 
-The Stingray starts with no ammunition and needs a restock before it can fire. The restock takes 900 Mechanical Supplies (the Spare Parts supply) and 5,000 cash, the largest restock of the stationary weapons in the data. The match interface has a drone reload screen for this emplacement.
+The Stingray starts with no ammunition and needs a restock before it can fire. The restock takes 900 Mechanical Supplies (the Spare Parts supply) and 5,000 cash, the largest restock of the stationary weapons. The match interface has a drone reload screen for this emplacement.
 
 ## Effects
 
@@ -43,7 +43,7 @@ The Stingray starts with no ammunition and needs a restock before it can fire. T
 
 The barrel is listed at 50 rounds/min in semi-automatic mode, with an effective range of 10,000 m. The barrel has no reload step: its reload time is 0.0 s. It has a 1.0 s start delay and a 1.0 s end delay.
 
-The data does not give a windup time or a bullet speed that this article can check against play.
+No windup time or bullet speed is given that this article can check against play.
 
 ### Targeting
 
@@ -79,13 +79,13 @@ The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mr
 
 Each shot is a drone that flies out and detonates. Its collision box is about 93 by 92 by 38 cm, and its camera has a 50 degree field of view. The drone deals 120 damage in its blast, with a 10 m outer radius and a 5 m effective radius, a minimum explosive damage of 15 and a falloff of 0.45 between them. It also deals 100 blunt damage. The drone arms 0.1 s after launch. Its typical speed is 150 m/s, and under thrust it reaches 220 m/s. The data gives a maximum lifetime of 500 without a unit.
 
-Explosives against the Stingray's own damage entries: C4 does +300 % and IED +400 % (the table's amounts; the frag grenade entry is +0 %). Other entries on the same row apply too. See [Vehicle inputs and explosive effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 4.
+Explosives against the Stingray's own damage entries: C4 does +300 % and IED +400 % (the table's amounts; the frag grenade entry is +0 %). Other entries on the same row apply too. See [Vehicle Inputs and Explosive Effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 4.
 
 ## Use and timing
 
 The Stingray uses the same placement rules as the other stationary weapons: it is built with a Large Hammer, and its placement conditions check the Forward Operating Base bounds, a ladder check (not within 1 m of a ladder) and a safe zone check (not within 3 m of a safe zone or while standing in one). The [Building](../building.md) page describes these rules.
 
-Because the emplacement starts with no ammunition, the first use in a match depends on a restock. One restock gives one drone (derived: the data does not write a drone count per restock, so the engine's default of one is used). The Stingray has no reload step: its reload time is 0.0 s, with a 1.0 s delay at the start and at the end. The restock is a purchase scene ("Purchase Stingray"), and how long that scene lasts in play is not stored in the files.
+Because the emplacement starts with no ammunition, the first use in a match depends on a restock. One restock gives one drone (derived: no drone count per restock is given, so the engine's default of one is used). The Stingray has no reload step: its reload time is 0.0 s, with a 1.0 s delay at the start and at the end. The restock is a purchase scene ("Purchase Stingray"), and how long that scene lasts in play is not stored in the files.
 
 ## Destroying it
 

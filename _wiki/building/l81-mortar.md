@@ -38,7 +38,7 @@ The mortar can hit targets from 132 m to 684 m away. It has one firing arc only,
 
 ### Weapon
 
-The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It reloads in 4.5 s and starts with 3 shells. A restock takes 150 Ammo Supplies, and the data does not store how many shells one restock gives, so the engine default of one is used (derived). The data gives a windup time of 2.5 s before each shot.
+The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It reloads in 4.5 s and starts with 3 shells. A restock takes 150 Ammo Supplies, and the number of shells one restock gives is not stored, so the engine default of one is used (derived). A windup time of 2.5 s comes before each shot.
 
 ### Range and elevation
 
@@ -64,17 +64,17 @@ The game files hold a range table for the mortar: 17 rows, each giving a firing 
 | 110 | 900 | 250 | 22.4 |
 | 80 | 950 | 300 | 22.0 |
 
-Mils fall as range rises, so a longer shot needs a lower elevation setting. A shell is in the air for 16 to 22 s: the longer the shot, the shorter the flight, which is the opposite of the SPH-2 low arc. The data stores the travel times as plain numbers, and they are read here as seconds.
+Mils fall as range rises, so a longer shot needs a lower elevation setting. A shell is in the air for 16 to 22 s: the longer the shot, the shorter the flight, which is the opposite of the SPH-2 low arc. The travel times are plain numbers, read here as seconds.
 
 ### How the game table and the dial compare
 
 At the same range, the dial setting is the game table's elevation plus 650, to within 2 mils, on every one of the 17 rows. The two lists therefore agree on the shape of the mortar's range curve and differ by a fixed shift. The sight adds the 650 itself: its mil label is the table value plus 650. The two lists are therefore one measurement shown twice, not two independent measurements.
 
-The travel time in the -300 mrad row (20.0 s) breaks the pattern of its neighbours (17.9 s before it, 19.0 s after), and is probably a data oddity. The value is a round number among two-decimal values (the +300 row is 22.0 too), which suggests a hand-entered entry; a smooth value from the neighbouring rows would be about 18.4 s. The sight does not show the travel time column (it shows the mil label and the distance only), and no screen or Blueprint in the game files reads that column, so the odd value has no effect that could be found. The reason for the round number is not stated in the files.
+The travel time in the -300 mrad row (20.0 s) breaks the pattern of its neighbours (17.9 s before it, 19.0 s after), and is probably an oddity. The value is a round number among two-decimal values (the +300 row is 22.0 too), which suggests a hand-entered entry; a smooth value from the neighbouring rows would be about 18.4 s. The sight does not show the travel time column (it shows the mil label and the distance only), and no screen or Blueprint in the game files reads that column, so the odd value has no effect that could be found. The reason for the round number is not stated in the files.
 
 ### Minimum range
 
-The calculator's minimum range is 132 m, at 850 mils, the end of the dial range it measured (150 to 850 mils). The game table has rows beyond that stop, down to 80 m at 950 mils. The barrel's data limits its pitch to -29 to +15 degrees. The +15 degree limit is about 262 mrad, which is dial 912, and the table interpolated at that limit puts the shell about 103 m out (derived). The 110 m row (dial 900) is inside the limit, and the 80 m row (dial 950) is beyond it. So the data would allow shots down to about 103 m, and no limit found explains the community's 132 m stop. Treat 132 m as the shortest range measured in play and about 103 m as the shortest the weapon data appears to allow.
+The calculator's minimum range is 132 m, at 850 mils, the end of the dial range it measured (150 to 850 mils). The game table has rows beyond that stop, down to 80 m at 950 mils. The barrel limits its pitch to -29 to +15 degrees. The +15 degree limit is about 262 mrad, which is dial 912, and the table interpolated at that limit puts the shell about 103 m out (derived). The 110 m row (dial 900) is inside the limit, and the 80 m row (dial 950) is beyond it. So the data would allow shots down to about 103 m, and no limit found explains the community's 132 m stop. Treat 132 m as the shortest range measured in play and about 103 m as the shortest the weapon data appears to allow.
 
 ## Season 2 changes
 

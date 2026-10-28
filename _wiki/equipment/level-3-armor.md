@@ -35,7 +35,7 @@ It goes in the Armor slot and covers nothing below the torso. With a weight of 1
 
 ## Protection
 
-Level 3 Armor reduces damage at the upper, middle and lower torso by 50%. It does nothing for other body parts. The item data gives it 250 durability.
+Level 3 Armor reduces damage at the upper, middle and lower torso by 50%. It does nothing for other body parts. It has 250 durability.
 
 With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor and 13.6 HP with Level 3 Armor.
 
@@ -55,7 +55,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 | Damage reduction | 55% | 50% |
 | Price | 2,000 cash | 2,500 cash |
 
-The Season 2 data lists only these two changes for this vest.
+Only these two changes are listed for this vest in Season 2.
 
 ## See also
 

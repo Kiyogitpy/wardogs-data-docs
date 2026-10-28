@@ -35,10 +35,10 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 ## How it works
 
 - Using a drill repairs a vehicle. The use continues until the drill's power is spent or the vehicle is full.
-- The item data lists 1.25 for battery use per second on both drills, but nothing in the game reads that figure. The repair action spends 1 battery charge for each repair swing that lands (a Battery holds 100 charges, a High Capacity Battery 250). No per-second drain exists: the part of the game that handles batteries has no code that reads the per-second figure, and the game's built-in value for it is 5 (so the 1.25 is a leftover setting, not a rule). Drills drain a battery only by swing. See [Batteries](batteries.md).
-- Both have a reload action in the data. It swaps in a fresh battery from the drill's single battery slot.
-- The item data gives each drill a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
-- The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value in the data.
+- The 1.25 battery use per second listed for both drills is not read by anything in the game. The repair action spends 1 battery charge for each repair swing that lands (a Battery holds 100 charges, a High Capacity Battery 250). No per-second drain exists: the part of the game that handles batteries has no code that reads the per-second figure, and the game's built-in value for it is 5 (so the 1.25 is a leftover setting, not a rule). Drills drain a battery only by swing. See [Batteries](batteries.md).
+- Both have a reload action. It swaps in a fresh battery from the drill's single battery slot.
+- Each drill has a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
+- The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value.
 
 | Drill | Price (cash) | Weight (kg) | Grid | Melee value |
 |---|---:|---:|---|---:|
@@ -49,7 +49,7 @@ The weights are in kilograms. The game stores item weight as a whole number 1,00
 
 ## Season 2 changes
 
-No Season 2 change to the drills is listed in the data.
+No Season 2 change to the drills is listed.
 
 ## See also
 

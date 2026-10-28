@@ -31,11 +31,11 @@ The Pilot Helmet protects the head with a 30% reduction, the same as the [Level 
 
 The Item Shop describes the Pilot Helmet as "Low Damage Reduction" and lists the two vehicle effects. The shop files it under "Vehicle Use" rather than "Armor". It is still an armor item in the item data, and it goes in the Helmet slot.
 
-The item data omits the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The weight is not listed, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-The Pilot Helmet reduces damage to the head by 30%. It covers the head only, not the neck. The item data gives it 180 durability.
+The Pilot Helmet reduces damage to the head by 30%. It covers the head only, not the neck. It has 180 durability.
 
 With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 46.1 HP with the Pilot Helmet. That is the same as with the Level 1 Helmet.
 
@@ -65,7 +65,7 @@ The Tank Helmet uses the same system for tracked vehicles; see [Tank Helmet](tan
 
 ## Season 2 changes
 
-The Season 2 data does not change the Pilot Helmet.
+The Pilot Helmet did not change in Season 2.
 
 ## See also
 

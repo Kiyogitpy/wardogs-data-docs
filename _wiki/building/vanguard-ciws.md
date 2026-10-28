@@ -30,13 +30,13 @@ description: "A buildable stationary emplacement with a fast automatic 20x102 mm
 | Internal name | STN_02 |
 {: .wiki-infobox }
 
-The Vanguard CIWS is a stationary emplacement with an automatic 20x102 mm cannon. It fires at 1,800 rounds/min, the fastest rate of the stationary guns in the data. It is built with a Large Hammer from 1,200 Build Supplies and has 5,000 HP, the most health of the stationary weapons listed on the Buildables page.
+The Vanguard CIWS is a stationary emplacement with an automatic 20x102 mm cannon. It fires at 1,800 rounds/min, the fastest rate of the stationary guns. It is built with a Large Hammer from 1,200 Build Supplies and has 5,000 HP, the most health of the stationary weapons listed on the Buildables page.
 
 ## Overview
 
 Destroying an enemy Vanguard CIWS pays 1,200 cash and 300 Role XP.
 
-The Vanguard starts with 500 rounds and fires them in automatic bursts. The data gives a windup time of 1.5 s before the gun reaches full speed. It is listed on the [Building](../building.md) page with the other stationary weapons.
+The Vanguard starts with 500 rounds and fires them in automatic bursts. A windup time of 1.5 s comes before the gun reaches full speed. It is listed on the [Building](../building.md) page with the other stationary weapons.
 
 ## Effects
 
@@ -69,7 +69,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 ## Season 2 changes
 
 - Build cost went from 1,500 to 1,200 Build Supplies.
-- The bullet speed of the cannon went from 85,000 to 110,000 in the export's units.
+- The bullet speed of the cannon went from 85,000 to 110,000 in the game's units.
 - Two damage entries were added to the emplacement's damage table: one for 125 mm rocket hits (amount -20) and one for 20x102 mm cannon hits (amount -70). The amounts use the same units as the other entries in the [vehicle damage](../vehicles/vehicle-damage.md) table.
 
 ## See also

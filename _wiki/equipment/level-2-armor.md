@@ -35,7 +35,7 @@ It goes in the Armor slot and covers nothing below the torso. Its weight of 4.5 
 
 ## Protection
 
-Level 2 Armor reduces damage at the upper, middle and lower torso by 40%. It does nothing for other body parts. The item data gives it 220 durability.
+Level 2 Armor reduces damage at the upper, middle and lower torso by 40%. It does nothing for other body parts. It has 220 durability.
 
 With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor and 16.4 HP with Level 2 Armor.
 
@@ -50,7 +50,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 
 ## Season 2 changes
 
-The Season 2 data does not change Level 2 Armor.
+Level 2 Armor did not change in Season 2.
 
 ## See also
 

@@ -46,7 +46,7 @@ The weights are in kilograms. The game stores item weight as a whole number 1,00
 
 ## Season 2 changes
 
-No Season 2 change to the batteries is listed in the data.
+No Season 2 change to the batteries is listed.
 
 ## See also
 
