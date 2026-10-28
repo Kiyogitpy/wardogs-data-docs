@@ -36,7 +36,7 @@ A downed player is on the ground and cannot fight. Health does not drop any furt
 - **Reviving with a defibrillator.** A defibrillator revives the player instantly to 35 HP. It needs a battery and a 4 s charge. The user cannot use it while downed.
 - **Reviving with a Medical Bag.** A teammate can revive a player with a Medical Bag, restoring 50 HP and costing 10 durability.
 - **Reviving with a resuscitator.** Resuscitators revive faster than bare hands. Each one is a single use. The revive restores 10 HP and is applied once at the end of the 2.2 s use animation, so the use takes about 4 s (derived). If the downed player is on the other faction, the revived player also gets a 60 s effect marked as revived by an enemy (see [Status Effects](status-effects.md)). The effect changes nothing about the revived player's own health or movement. What it does is make that player a worthless kill for 60 s: killing them pays only 1% of the normal cash and no Role XP, assists on them pay no Role XP, the kill feed shows "No Value Kill", and [wagers](../progression-and-economy/wagers.md) do not count the kill.
-- **Revived again.** A player who is revived and then goes down again gets a bleed-out timer of at least 30 s. At half drain speed that is about 60 seconds. The data also stores a revive penalty value of 100 for this case, but no game code that reads it was found, so it has no known effect.
+- **Revived again.** A player who is revived and then goes down again gets a bleed-out timer of at least 30 s. At half drain speed that is about 60 seconds. The game also sets a revive penalty value of 100 for this case, but no game code that reads it was found, so it has no known effect.
 - **Revive boost.** After a Medic reviews a teammate, both can get a short sprint speed boost for 5 seconds (see the skills table below).
 
 Health comes back from items and revives, not on its own. No natural regeneration was found for infantry outside Deathmatch in the game code.
@@ -50,13 +50,13 @@ Healing items:
 | Bandage | +35 HP | 5.2 s on yourself, 4.8 s on a teammate | Stack of 5 |
 | Individual First Aid Kit | +100 HP | 5.2 s (heal lands at 4.7 s) | Single item |
 | Medical Bag, yourself | 35 HP over 5 s | 7 HP per second | Durability cost 25 per action, from a pool of 150 |
-| Medical Bag, teammate | 15 HP over 1.5 s | 10 HP per second | The data lists a durability cost of 2 for a teammate heal |
+| Medical Bag, teammate | 15 HP over 1.5 s | 10 HP per second | The game gives a durability cost of 2 for a teammate heal |
 | Enox | +40 HP as decaying health | 2.2 s | Pool of 40; loses 5 HP every 5 s until empty |
 | Adrenaline Pen | No healing; unlimited tactical sprint for 60 s | 2 s on yourself, 1.3 s on a teammate | Stack of 3 |
 
 Using any of the healing items also halves your movement speed while you use it.
 
-Medic skills that change these numbers, where the data gives a value:
+Medic skills that change these numbers, where the game gives a value:
 
 | Skill | Effect |
 |---|---|
@@ -65,7 +65,7 @@ Medic skills that change these numbers, where the data gives a value:
 | Sprint boost after reviving (you) | Sprint and tactical sprint speed rise to 1.2 or 1.4 times for 5 s |
 | Sprint boost after reviving (teammate) | The revived teammate gets the same boost for 5 s |
 
-The other Medic skills have names and descriptions in the skill tree, but no number exists for them in the game files and no game code reads them, so their size is not known.
+The other Medic skills have names and descriptions in the skill tree, but the game gives no number for them and no game code reads them, so their size is not known.
 
 ## Tips that follow from the numbers
 
@@ -77,8 +77,8 @@ The other Medic skills have names and descriptions in the skill tree, but no num
 
 ## Not yet known
 
-- What the Medic skills for bleed-out time and heal speed change in play. The game files contain no numbers for those skills, so their size is not in the data.
-- The resuscitator revive time is about 4 s by derivation from the item data; it has not been timed in play.
+- What the Medic skills for bleed-out time and heal speed change in play. The game gives no numbers for those skills, so their size is not known.
+- The resuscitator revive time is about 4 s by derivation from the item stats; it has not been timed in play.
 - Deathmatch regeneration is 5 health after a 10 s delay with no damage. The tick rate is derived from the component's 1 s setting.
 
 ## See also

@@ -35,10 +35,10 @@ A player walks at a base speed of 5.4 m/s, and each stance scales that speed. Sp
 - **Stacking.** Gear, aiming and other slowdowns multiply with each other and with the stance speed, and they apply to sprinting too. A heavy load (0.8) and aiming down sights (0.5) while standing give 0.8 x 0.8 x 0.5 = 32% of the base speed, about 1.7 m/s. A heavy load while sprinting gives 0.8 x 1.42 x 0.8 of the base, about 4.9 m/s. The slow-walk minimum speed (0.8 m/s) is not reduced by gear (static reading of the code; not tested in play).
 - **Using a medical item** halves your movement speed while you use it.
 - **Weight class.** Your gear sets a speed scale: Light 95%, Medium 87.5%, and Heavy and Super heavy 80% of the normal speed.
-- **Slopes.** Ground speed changes slightly on slopes, by up to 10% at the steepest value in the data. The slope curve takes the slope angle in degrees, weighted by a direction factor.
+- **Slopes.** Ground speed changes slightly on slopes, by up to 10% at the steepest setting. The slope curve takes the slope angle in degrees, weighted by a direction factor.
 - **Tactical sprint.** It drains stamina at 20 per second and needs at least 20% stamina to start. After a sprint, the player waits 0.8 s before sprinting again, or 0.6 s after a tactical sprint.
 - **Plain sprint.** A plain sprint costs no stamina. The only stamina drain tied to the sprint states in the movement code is the tactical sprint's 20 per second; plain sprinting only has the short wait before you can start it again.
-- **Swimming.** Swimming speed is capped at 250 in the movement data, and a fast swim doubles that cap to 500 while draining 20 stamina per second. The data does not state the unit; if it is centimetres per second, that is 2.5 m/s, or 5 m/s when fast swimming (derived). In the water the speed builds up at 4000 and stops at 500 (same unit).
+- **Swimming.** Swimming speed is capped at 250, and a fast swim doubles that cap to 500 while draining 20 stamina per second. The unit is not stated; if it is centimetres per second, that is 2.5 m/s, or 5 m/s when fast swimming (derived). In the water the speed builds up at 4000 and stops at 500 (same unit).
 - **Stance changes.** Each change costs stamina from a pool of 100. Standing costs 20 and crouching 30 to change into, and going prone costs 50. The pool refills at 50 per second with no delay.
 - **Jumping.** A jump costs 50 stamina from a pool of 150. The pool refills at 50 per second, and you can jump again after 0.05 s.
 - **Leaning.** You can lean up to 30 degrees to the left and 35 degrees to the right. Leaning takes 0.55 s and coming back up takes 0.35 s.
@@ -85,9 +85,9 @@ Falls, landings and parachutes:
 | Parachute, minimum height to open above ground | 10 m (new in Season 2) |
 | Parachute open time | 2 s (new in Season 2) |
 
-The fall speeds above assume the data's curve units are centimetres per second. The data does not confirm this.
+The fall speeds above assume the game's curve units are centimetres per second. The game does not confirm this.
 
-Leaving a moving vehicle can also hurt you. The damage depends on the vehicle's speed in km/h at the moment you leave, and it is applied when you land. There is no damage at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h, and 100 at 75 km/h and above, with a straight line between those points. Below the vehicle's minimum speed for damage nothing is applied. That minimum is not in the exported data.
+Leaving a moving vehicle can also hurt you. The damage depends on the vehicle's speed in km/h at the moment you leave, and it is applied when you land. There is no damage at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h, and 100 at 75 km/h and above, with a straight line between those points. Below the vehicle's minimum speed for damage nothing is applied. That minimum is not known.
 
 ## Tips that follow from the numbers
 
@@ -95,7 +95,7 @@ Leaving a moving vehicle can also hurt you. The damage depends on the vehicle's 
 - **Stance changes are cheap.** The stance pool refills at 50 per second with no delay, so switching stance a few times in a fight rarely runs you out of stamina.
 - **Tactical sprint is the stamina-limited sprint.** It drains 20 stamina per second, so it is best used for short bursts of speed.
 - **Heavy gear slows you down.** A Heavy or Super heavy player moves at 80% of the normal speed, compared with 95% for Light gear.
-- **Land softly.** The data starts landing damage at a fall speed of 6.7 m/s, and reaches 100 damage at 8.8 m/s.
+- **Land softly.** Landing damage starts at a fall speed of 6.7 m/s and reaches 100 damage at 8.8 m/s.
 - **Parachutes open higher now.** Season 2 raised the minimum fall before a parachute can be used from 1 m to 4 m, and added a 10 m minimum height to open it above the ground.
 
 ## Not yet known

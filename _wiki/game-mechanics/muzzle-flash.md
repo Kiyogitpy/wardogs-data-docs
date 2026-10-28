@@ -15,7 +15,7 @@ description: "How big each weapon's muzzle flash is for you and for other player
 | Typical flash lifetime | 0.05 s (0.06 s for sniper rifles) |
 {: .wiki-infobox }
 
-The muzzle flash is the burst of light at the end of a barrel. The game stores one flash recipe for each weapon, a multiplier set for each muzzle device, and a colour override for some ammunition. The flash size is purely visual data: nothing here says how visible a shooter is to the AI or whether the flash counts for detection.
+The muzzle flash is the burst of light at the end of a barrel. The game stores one flash recipe for each weapon, a multiplier set for each muzzle device, and a colour override for some ammunition. The flash size is purely visual: nothing here says how visible a shooter is to the AI or whether the flash counts for detection.
 
 ## Overview
 
@@ -53,7 +53,7 @@ A weapon's factory muzzle multiplies the first person flash by 1.5 and uses a li
 - Distant flash: x0.75 to x0.85.
 - Muzzle light: 0.05, half of the factory value.
 
-So fitting one of these devices both shrinks the flash on your own screen and dims it for people watching you. The game files do not say which shop muzzle device uses which of these assets, so the table above cannot be broken down device by device. See [Muzzle Devices](../attachments/muzzle-devices.md) for what each device does to recoil, spread and aim time.
+So fitting one of these devices both shrinks the flash on your own screen and dims it for people watching you. The game does not say which shop muzzle device uses which of these assets, so the table above cannot be broken down device by device. See [Muzzle Devices](../attachments/muzzle-devices.md) for what each device does to recoil, spread and aim time.
 
 ## Ammunition colour
 

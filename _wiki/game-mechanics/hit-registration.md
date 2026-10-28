@@ -27,11 +27,11 @@ In Wardogs, most bullets are moving objects, not instant lines from the gun to t
 - **Surfaces.** A hit on a surface can stop the bullet, bounce it off (ricochet) or let it pass through. The surface material decides the chance. See [Penetration and Ricochet](penetration-and-ricochet.md).
 - **Players.** A bullet that reaches a player is checked against every body part its path passes through. A character has 20 collision bodies, and one bullet can cross several of them. The game works out the damage for each part crossed, and the highest result counts. Which part that is decides the damage (see [Health and Damage](health-and-damage.md)).
 - **Limbs.** Calves, forearms and thighs are checked as plain capsules: a straight shape whose radius is the average of its two ends, not a tapered shape (a static reading of the game code, not checked in play).
-- **One hit per target.** A bullet does not hit the same target twice. It keeps a list of the actors it has already hit and skips them. The data shows no way to turn this off (a static reading of the game code, not checked in play).
-- **Your own vehicle.** A shot fired from a vehicle seat can be set to ignore that vehicle, so the bullet passes it. This is a plain on or off setting for the projectile, not a timer. The data has no time limit for it. The setting belongs to the ammunition type, not to the weapon: 20 of the 36 projectile types have it on (vehicle cannons and autocannons, rockets, shells, the Stingray drone, the explosive arrow and the TV-guided missile) and the rest have it off, including the ordinary rifle, pistol, shotgun and .50 caliber rounds.
+- **One hit per target.** A bullet does not hit the same target twice. It keeps a list of the actors it has already hit and skips them. The game shows no way to turn this off (a static reading of the game code, not checked in play).
+- **Your own vehicle.** A shot fired from a vehicle seat can be set to ignore that vehicle, so the bullet passes it. This is a plain on or off setting for the projectile, not a timer. There is no time limit for it. The setting belongs to the ammunition type, not to the weapon: 20 of the 36 projectile types have it on (vehicle cannons and autocannons, rockets, shells, the Stingray drone, the explosive arrow and the TV-guided missile) and the rest have it off, including the ordinary rifle, pistol, shotgun and .50 caliber rounds.
 - **Friendly fire.** Bullets that hit a player of your own faction still count as hits, but they do half the damage. Nothing in the game stops the bullet from hitting that player. Two players are of the same faction when they carry the same faction tag. Two players with no faction at all also match (derived from the code, not seen in play).
 - **Impact effects.** Each hit shows an impact effect on the surface it struck. These do not change the damage.
-- **Artillery shells.** The 155 mm shells are checked against a box 61.2 cm long and 11 cm across, not a point (derived from the box size in the shell data).
+- **Artillery shells.** The 155 mm shells are checked against a box 61.2 cm long and 11 cm across, not a point (derived from the shell's box size).
 - **Shotgun pellets.** Each pellet is a separate hit. A pellet that misses does no damage, and each one that hits does its own damage.
 
 ## Numbers
@@ -55,7 +55,7 @@ Bullet and hit values that matter in play:
 
 ## What is not yet known
 
-- How the game settles a hit when the shooter and target see it differently, such as with slow connections. That is decided on the game servers, which are not part of the game files, so it cannot be read from the data.
+- How the game settles a hit when the shooter and target see it differently, such as with slow connections. That is decided on the game servers, which are not part of the game, so it cannot be read from the game itself.
 - Whether a vehicle-mounted machine gun that fires an ordinary rifle or .50 caliber round passes through its own vehicle. Those rounds have the setting off, so it most likely does not (inferred; the game was not run).
 
 ## See also

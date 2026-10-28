@@ -29,7 +29,7 @@ Spotting has two events. A **target spotted** event happens when an enemy is mar
 - **Pay on destroy.** Destroying a spotted target pays between 50 and 500 cash. The spotter gets 75% of the 500 maximum for the destroy.
 - **Role XP.** A spot pays 5 to 100 Role XP (25 for a player). Destroying a spotted target pays 5 to 500 (150 for a player). A target destroyed by the enemy pays a quarter of its cash and half its Role XP.
 - **Assists.** Teammates who help with the spot or the destroy get their own share, set by a separate modifier.
-- **Repeats.** Spotting has its own repeat rule, harsher than the one for kills. Each repeat of the same kind of target pays 50% less than the one before, counted up to two repeats. The pay is the base times (1 minus 0.5 for each repeat counted), so by the reward formula the second spot of the same kind of target pays half and the third and later spots pay nothing. The same cut applies to the Role XP, to spotting and to the destroy that follows. The data keeps a 180 s cooldown with the repeat counter, which most likely means a repeat count starts again after 180 s without a repeat (inferred from the setting's name). Kills use a different rule (24% less per repeat, up to four repeats).
+- **Repeats.** Spotting has its own repeat rule, harsher than the one for kills. Each repeat of the same kind of target pays 50% less than the one before, counted up to two repeats. The pay is the base times (1 minus 0.5 for each repeat counted), so by the reward formula the second spot of the same kind of target pays half and the third and later spots pay nothing. The same cut applies to the Role XP, to spotting and to the destroy that follows. The game keeps a 180 s cooldown with the repeat counter, which most likely means a repeat count starts again after 180 s without a repeat (inferred from the setting's name). Kills use a different rule (24% less per repeat, up to four repeats).
 - **Buildables.** In Season 2, buildable and stationary targets pay in proportion to how much they were built, so an unfinished buildable pays less.
 - **Recon skills.** Two skills change spotting. One increases how long it takes for enemies to spot you. The other increases how long enemies stay spotted after you spot them. The spotted time is multiplied by 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -60,9 +60,9 @@ The challenge tables give the base payout for each kind of target. For a player 
 
 ## Not yet known
 
-- How the spot times hold up in play. The values come from the spotting data; the game was not run to time them.
+- How the spot times hold up in play. The values come from the game's spotting settings; the game was not run to time them.
 - The base payout for every target type. It is in the challenge tables, not on this page.
-- How the repeat counter is kept in play: which targets count as the same kind, and when it starts again. The reduction itself (50% a repeat, up to two) is known from the data.
+- How the repeat counter is kept in play: which targets count as the same kind, and when it starts again. The reduction itself (50% a repeat, up to two) is known from the game.
 
 ## See also
 
