@@ -1,7 +1,9 @@
 # Wiki main page portal boxes (rendered by _includes/wiki-front-portals.html). icon = a Material
 # Symbols Sharp name; url = site path, passed through relative_url. `more` is the footer link to
-# the box's hub, where every article of the area is listed.
+# the box's hub, where every article of the area is listed. Boxes hold up to six tiles (a 3x2
+# block) so rows line up; `wide: true` spans two grid columns (Weapons: ten tiles in a 5x2 block).
 - title: Weapons
+  wide: true
   more: { label: All weapons, url: /wiki/weapons/ }
   tiles:
     - { label: Assault rifles, icon: target, url: /wiki/weapons/#assault-rifles }
@@ -22,6 +24,7 @@
     - { label: Grenades and explosives, icon: explosion, url: /wiki/equipment/grenades-and-explosives/ }
     - { label: "Fire, smoke and flash", icon: local_fire_department, url: /wiki/equipment/fire-smoke-and-flash/ }
     - { label: Utility items, icon: backpack, url: /wiki/equipment/utility-items/ }
+    - { label: Optics comparison, icon: center_focus_strong, url: /wiki/equipment/optics-comparison/ }
 - title: Vehicles
   more: { label: All vehicles, url: /wiki/vehicles/ }
   tiles:
@@ -46,18 +49,17 @@
     - { label: Health and damage, icon: favorite, url: /wiki/game-mechanics/health-and-damage/ }
     - { label: Armor, icon: shield_with_heart, url: /wiki/game-mechanics/armor/ }
     - { label: Ballistics, icon: trending_down, url: /wiki/game-mechanics/ballistics/ }
-    - { label: Penetration and ricochet, icon: call_split, url: /wiki/game-mechanics/penetration-and-ricochet/ }
     - { label: Spread and recoil, icon: blur_on, url: /wiki/game-mechanics/spread-and-recoil/ }
     - { label: Movement, icon: directions_run, url: /wiki/game-mechanics/movement/ }
-    - { label: Downed and revive, icon: emergency, url: /wiki/game-mechanics/downed-and-revive/ }
     - { label: Spotting, icon: visibility, url: /wiki/game-mechanics/spotting/ }
-    - { label: Hit registration, icon: vital_signs, url: /wiki/game-mechanics/hit-registration/ }
-    - { label: Artillery, icon: track_changes, url: /wiki/game-mechanics/artillery/ }
-    - { label: Status effects, icon: healing, url: /wiki/game-mechanics/status-effects/ }
 - title: Modes and maps
   more: { label: All modes and maps, url: /wiki/game-modes-and-maps/ }
   tiles:
-    - { label: Game modes, icon: flag, url: /wiki/game-modes-and-maps/ }
+    - { label: King of the Hill, icon: flag, url: /wiki/game-modes-and-maps/king-of-the-hill/ }
+    - { label: Control Zone, icon: radio_button_checked, url: /wiki/game-modes-and-maps/control-zone/ }
+    - { label: Sniper Showdown, icon: gps_not_fixed, url: /wiki/game-modes-and-maps/sniper-showdown/ }
+    - { label: Deathmatch, icon: swords, url: /wiki/game-modes-and-maps/deathmatch/ }
+    - { label: PvE missions, icon: smart_toy, url: /wiki/game-modes-and-maps/pve-scenarios/ }
     - { label: Maps, icon: map, url: /wiki/game-modes-and-maps/maps/ }
 - title: Progression and economy
   more: { label: All progression, url: /wiki/progression-and-economy/ }
@@ -67,7 +69,6 @@
     - { label: Skills, icon: military_tech, url: /wiki/progression-and-economy/skills/ }
     - { label: Challenges, icon: emoji_events, url: /wiki/progression-and-economy/challenges/ }
     - { label: Shops, icon: storefront, url: /wiki/progression-and-economy/shops/ }
-    - { label: Factory investment, icon: factory, url: /wiki/progression-and-economy/factory-investment/ }
     - { label: Cosmetics, icon: checkroom, url: /wiki/progression-and-economy/cosmetics/ }
 - title: Guides
   more: { label: All guides, url: /wiki/guides/ }
