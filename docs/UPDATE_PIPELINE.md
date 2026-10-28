@@ -192,6 +192,24 @@ expected and the baseline commit of `run` absorbs it.
 No extractor nondeterminism was found: JSON, PNG and generated output are stable across runs. Line endings: generators write LF over
 CRLF checkouts; the report restores such files (`git diff --ignore-cr-at-eol`).
 
+## Running it from Jenkins
+
+[`jenkins/patch-watch.Jenkinsfile`](../jenkins/patch-watch.Jenkinsfile) runs `status` every 3 hours and, when a new build
+is installed, `run --label steam-<buildid> --assets` (or the `LABEL` parameter). It runs on the lead's PC through a Jenkins
+agent labelled `wardogs` and calls the main checkout's `update_pipeline.py`, so the `update-<label>` branch lands in the
+main checkout as with a manual run. The Jenkins server, the agent and the job definition live in the
+[`jenkins-demo`](https://github.com/Kiyogitpy/jenkins-demo) repo (`scripts/windows-agent.ps1`, `jenkins/casc.yaml`).
+
+| Situation | Build result |
+|---|---|
+| Wardogs is running, Steam is still updating (`StateFlags` not 4), or `status` exits 0 | not built; the reason is the build description |
+| `run` exits 0 | success: review and merge the branch as above |
+| `run` exits 1 or 4 with a `regen-report.md` | unstable: generators or checks failed |
+| `run` exits 3 (stale usmap) | failed. Regenerate the usmap, then run `run --label <label> --assets --force` by hand: the job does not retry, because `status` now compares against the new label's manifest |
+
+`patch-diff.md`, `regen-report.md` and `extract-meta.json` are archived on the build. The job never pushes and never
+starts or stops the game.
+
 ## Notes for maintainers
 
 - **Cleaning up**: `clean --label L` removes a `run` worktree safely: it deletes the `data` and `sdk/raw` junctions first (link only), checks their targets still exist, then runs `git worktree remove` without `--force`. Never use `rm -rf` or `--force` on a worktree while a junction is in place.
