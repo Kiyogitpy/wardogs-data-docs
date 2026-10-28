@@ -40,11 +40,11 @@ The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and n
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
 - **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the patch (a static reading of the game code, not checked in play). No timer for it is given.
 
-The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play). Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
+The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play). Armor reduces the burst but not the fire, since no armor rule applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
 
 ### Smoke grenades
 
-Smoke grenades make a cloud of smoke. The length of each cloud is given, but there is no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
+Smoke grenades make a cloud of smoke. The length of each cloud is given, but there is no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing found in the game makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
 
 | Item | Cloud length | Cost (cash) |
 |---|---:|---:|

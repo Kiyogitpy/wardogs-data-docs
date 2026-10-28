@@ -32,7 +32,7 @@ The launcher fires one 40 mm round per shot in semi-automatic mode at 75 rounds/
 
 ## Damage
 
-Each round is an explosion with a 100 damage base. The data gives an effective radius of 2.5 m and an outer radius of 10 m, with the damage falling off between them. The round also deals 80 blunt damage and an impulse that pushes what it hits. The round arms 0.07 s after it leaves the barrel.
+Each round is an explosion with a 100 damage base. It has an effective radius of 2.5 m and an outer radius of 10 m, with the damage falling off between them. The round also deals 80 blunt damage and an impulse that pushes what it hits. The round arms 0.07 s after it leaves the barrel.
 
 ## Ammunition
 

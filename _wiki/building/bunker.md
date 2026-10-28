@@ -56,7 +56,7 @@ Destroying an enemy Bunker pays 200 cash and 50 Role XP. Each of its floor and r
 
 Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
-The Large Hammer is the only one that can place the Bunker. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits, and hitting weak spots brings it down. A floor or roof on its own, once separated, takes 10 Large Hammer repair hits from zero and 9 dismantle hits.
+The Large Hammer is the only one that can place the Bunker. The repair and dismantle hits for the other hammers are what their hits do; they have not been verified for this structure. The build count assumes normal hits, and hitting weak spots brings it down. A floor or roof on its own, once separated, takes 10 Large Hammer repair hits from zero and 9 dismantle hits.
 
 ## What it does
 
@@ -87,7 +87,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 ## Season 2 changes
 
 - Build cost went from 100 to 200 Build Supplies. This change applies to the main Bunker only.
-- The roof's footprint box grew. It is the box stored around the roof for its build stages and its finished shape: along its long side it went from about 7.5 m to about 11.6 m, and the roof's anchor points moved 22 cm higher. The data does not say what the game does with the box; it most likely sets the space the roof takes up when it is placed and checked (inferred).
+- The roof's footprint box grew. It is the box stored around the roof for its build stages and its finished shape: along its long side it went from about 7.5 m to about 11.6 m, and the roof's anchor points moved 22 cm higher. It is not known what the game does with the box; it most likely sets the space the roof takes up when it is placed and checked (inferred).
 - The T-72B3's 125 mm shell does x0.70 of the damage it did: 23 hits to destroy became 33 (derived).
 
 ## See also

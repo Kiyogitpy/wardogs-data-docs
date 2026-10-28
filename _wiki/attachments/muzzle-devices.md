@@ -22,7 +22,7 @@ description: "Muzzle devices (brakes, flash hiders, suppressors and chokes) and 
 | Internal name | `Item.Attachment.Muzzle` |
 {: .wiki-infobox }
 
-Muzzle devices fit the end of a barrel: flash hiders, brakes, compensators, suppressors and shotgun chokes. The data lists 56 of them, and all of them fit a weapon. 54 change weapon numbers. Two change nothing: the M14 standard muzzle, and the Deadeye Flash Hider, whose multipliers are all set to 1 even though its shop text promises a minor flash reduction and faster aiming.
+Muzzle devices fit the end of a barrel: flash hiders, brakes, compensators, suppressors and shotgun chokes. There are 56 of them, and all of them fit a weapon. 54 change weapon numbers. Two change nothing: the M14 standard muzzle, and the Deadeye Flash Hider, whose multipliers are all set to 1 even though its shop text promises a minor flash reduction and faster aiming.
 
 ## What they change
 
@@ -31,7 +31,7 @@ Muzzle devices fit the end of a barrel: flash hiders, brakes, compensators, supp
 - Spread: x0.88 to x1 (55 parts).
 - Aim time: x0.97 to x1.15 (55 parts).
 
-Lower recoil and spread are better. Aim time is a time multiplier, so a value above 1 adds time to aim. A muzzle device changes no character-side stat in the data.
+Lower recoil and spread are better. Aim time is a time multiplier, so a value above 1 adds time to aim. A muzzle device changes no character-side stat.
 
 The two shotgun chokes on the M500 (Improved Cylinder Choke and Full Choke) replace the shotgun pellet pattern. Improved Cylinder Choke narrows the outer edge of the pellet cone from 1.56 to 1.36 degrees, and about 26 percent of pellets land in the tight inner cluster (20 percent without it). Full Choke narrows the outer edge to 0.95 degrees, and 34 percent of pellets land in the inner cluster (derived from the game's values).
 

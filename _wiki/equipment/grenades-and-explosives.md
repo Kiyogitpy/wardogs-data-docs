@@ -78,7 +78,7 @@ The vehicle cannons, artillery and drone shells are on the [Explosives](../../ga
 
 ### Throwing
 
-The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. From the game code, not tested in play, the back throw never applies as shipped, and molotovs and smoke grenades cannot be thrown back. The C4 trigger and Improvised Explosive Device trigger are thrown at 900 cm/s and 1,200 cm/s. Speeds in the data are in centimetres per second. The throw speed is scaled by a curve of how high you aim, and part of your own movement speed is added to it (a static reading of the throw code, not checked in play).
+The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), an underarm throw at 1,400 cm/s, and a back throw at 1,800 cm/s. From the game code, not tested in play, the back throw never applies as shipped, and molotovs and smoke grenades cannot be thrown back. The C4 trigger and Improvised Explosive Device trigger are thrown at 900 cm/s and 1,200 cm/s. The game gives speeds in centimetres per second. The throw speed is scaled by a curve of how high you aim, and part of your own movement speed is added to it (a static reading of the throw code, not checked in play).
 
 ### Remote detonators
 

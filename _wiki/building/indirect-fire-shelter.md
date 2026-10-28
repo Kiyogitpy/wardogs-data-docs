@@ -85,7 +85,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 ## Season 2 changes
 
 - Build cost went from 100 to 200 Build Supplies. This change applies to the main shelter only.
-- The ceiling's footprint box changed slightly. It is the box stored around the ceiling for its build stages and its finished shape: it became about 2 cm shorter at one end and 1 cm at the other, and its top edge about 8 cm lower. The data does not say what the game does with the box; it most likely sets the space the ceiling takes up when it is placed and checked (inferred).
+- The ceiling's footprint box changed slightly. It is the box stored around the ceiling for its build stages and its finished shape: it became about 2 cm shorter at one end and 1 cm at the other, and its top edge about 8 cm lower. It is not known what the game does with the box; it most likely sets the space the ceiling takes up when it is placed and checked (inferred).
 - The T-72B3's 125 mm shell does x0.70 of the damage it did: 23 hits to destroy became 33 (derived).
 
 ## See also

@@ -308,7 +308,7 @@ def stats(wid):
     shop = shop_rows.get(it["display"], {"price": "not yet known", "unlock": "not yet known", "defaults": ""})
 
     if dmg and dmg.get("rpm") is not None:
-        rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
+        rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
     else:
         m = re.match(r"([0-9.]+)", ro["rpm"] or "")
         if m:
@@ -470,7 +470,7 @@ def recoil_section(wid, title, multi_pellet=False):
     for stance, label in [("Stand", "Standing, hip fire"), ("Crouch", "Crouching, hip fire"), ("Prone", "Prone, hip fire")]:
         hip = _hip(spread, stance)
         if hip is None:
-            out.append(f"| {label} | not in the data | not in the data |")
+            out.append(f"| {label} | not known | not known |")
             continue
         if stance == "Stand":
             stand_hip = hip
@@ -493,7 +493,7 @@ def recoil_section(wid, title, multi_pellet=False):
         out += ["Buckshot fires several pellets per shot. For a multi-pellet round the hip spread rows above are not used; "
                 "the pellet pattern comes from the weapon's shotgun data instead (see [Weapon Spread pipeline](../../pipelines/Wardogs_WeaponSpread_v1.md)). "
                 "The hip rows apply to single-projectile ammunition such as the rifled slug.", ""]
-    out += ["- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, "
+    out += ["- There is no per-shot bloom and no recovery timer: nothing found in the spread settings makes firing widen the spread, "
             "and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.",
             "- Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).",
             "- The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.",
@@ -762,7 +762,7 @@ def attachments_page():
     cats = sorted(ATTACH, key=lambda c: -ATTACH[c]["count"])
     body = ["# Attachments", "",
             "Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. "
-            "The table lists each slot type in the data, how many parts it has and what it is for. "
+            "The table lists each slot type, how many parts it has and what it is for. "
             "The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.", "",
             "| Category | Parts | What it is |", "|---|---|---|"]
     for cat in cats:
@@ -780,7 +780,7 @@ def attachments_page():
              "## See also", "",
              "- [Choosing Attachments](guides/choosing-attachments.md), which part to pick in each category and the cheapest useful picks",
              "- [Spread and Recoil](game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread",
-             "- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data",
+             "- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the game",
              "- [Weapons](weapons.md)",
              "",
              "## Sources", "",
@@ -792,7 +792,7 @@ def attachments_page():
 
 
 def hub_page(sections):
-    head = ("---\ntitle: Weapons\nnav_order: 1\nwiki_hub: true\nhas_children: true\n"
+    head = ("---\ntitle: Weapons\nnav_order: 1\nwiki_hub: true\nhas_children: true\nhas_toc: false\n"
             "description: \"Every player weapon, the ammunition they use and the attachments that change them.\"\n---\n\n")
     body = ["# Weapons", "",
             "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow "
@@ -890,12 +890,12 @@ def main():
             row = (f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag_row']} | {price_display(code, s['price'])} |")
         sections.setdefault(arch, []).append(row)
         count += 1
-    ammo = ("---\ntitle: Ammunition\nnav_order: 1.2\nwiki_hub: true\nhas_children: true\n"
+    ammo = ("---\ntitle: Ammunition\nnav_order: 1.2\nwiki_hub: true\nhas_children: true\nhas_toc: false\n"
             "redirect_from: [\"/wiki/weapons/ammunition/\"]\n"
             "description: \"Bullet and shell types, what each does to armor and flesh, and which weapons use them.\"\n---\n\n") + rebase_links(ammo_page(), "weapons", "")
     with open(os.path.join(WIKI, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(wiki_icons.add_icon_columns(ammo, os.path.join(WIKI, "ammunition.md")))
-    att = ("---\ntitle: Attachments\nnav_order: 1.5\nwiki_hub: true\nhas_children: true\n"
+    att = ("---\ntitle: Attachments\nnav_order: 1.5\nwiki_hub: true\nhas_children: true\nhas_toc: false\n"
            "redirect_from: [\"/wiki/weapons/attachments/\"]\n"
            "description: \"The parts that fit on weapons, the slots they go into and what each category changes.\"\n---\n\n") + attachments_page()
     with open(os.path.join(WIKI, "attachments.md"), "w", encoding="utf-8", newline="\n") as f:

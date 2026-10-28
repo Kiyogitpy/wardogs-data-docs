@@ -5,6 +5,7 @@ description: "Everything players can build with hammers: Build Supplies cost, he
 nav_order: 2.5
 wiki_hub: true
 has_children: true
+has_toc: false
 ---
 
 # Building
@@ -185,7 +186,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 
 ### Drill Rig
 
-The Drill Rig is the buildable form of the map's hot zone magnet. It needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 s of run time, and it holds up to 10,000 fuel. The run time is therefore 60 s at the minimum and 300 s on a full tank. The recharge after a run is 900 s. Starting it is a 10 s hold within 2 m. These seconds are **Derived**: the data gives the numbers, and the timers in the Blueprints use them as seconds.
+The Drill Rig is the buildable form of the map's hot zone magnet. It needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 s of run time, and it holds up to 10,000 fuel. The run time is therefore 60 s at the minimum and 300 s on a full tank. The recharge after a run is 900 s. Starting it is a 10 s hold within 2 m. These seconds are **Derived**: the numbers are the game's settings, and the timers in the game's scripts use them as seconds.
 
 While it runs, the Drill Rig pulls the hot zone toward it at a speed in metres per second: 3 m/s by the game's default, while the rig's own setting lists 5 (not confirmed to replace it). The travel time, distance divided by speed, is added to the run time. See the [Drill Rig](building/drill-rig.md) article.
 

@@ -22,15 +22,15 @@ description: "Stocks that fit the back of the weapons in the data, and which of 
 | Internal name | `Item.Attachment.Stock` |
 {: .wiki-infobox }
 
-Stocks fit at the back of a weapon. The data lists 37 stock parts. None of them changes a weapon or character stat, so the choice of stock is about which weapons take it, not about numbers.
+Stocks fit at the back of a weapon. There are 37 stock parts. None of them changes a weapon or character stat, so the choice of stock is about which weapons take it, not about numbers.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts. The data files three Season 2 handguard-coded parts (the unnamed M14, PP-19 Bizon and TCX-SPR ones) under the stock category, so they are listed here.
 
 ## What they change
 
-- Weapon and character stats: no stock changes any in the data (37 of 37).
+- Weapon and character stats: no stock changes any (37 of 37).
 - Names: 20 stocks have no data name, so the table lists them by the weapon they fit.
-- Filed as stocks: 3 parts are handguard items in the data but carry the stock type. They are listed here as the data files them, and the Fits column shows where each one goes.
+- Filed as stocks: 3 parts are handguard items but carry the stock type. They are listed here as the data files them, and the Fits column shows where each one goes.
 
 ## Parts
 
@@ -78,7 +78,7 @@ The Weapon Shop data has no stock rows, so the price column reads Not in shop da
 
 ## Parts that fit no weapon
 
-9 parts in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+9 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
 AK-47 HERA CQR Stock, AK74 Alpha Folding Stock, AK74 Archangel OPFOR Stock, AK74 Buffertube Stock, AK74 Polymer Stock, AK74u Steel Folding Stock, RPK74 Wooden Stock, RS2 Slim, Unnamed stock.
 

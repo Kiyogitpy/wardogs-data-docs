@@ -51,11 +51,11 @@ Three magazines have a factor below 1.0, and all three are for machine guns. The
 | 7.62×54 mm, machine-gun magazine | 0.7 | 31.5 | 21.0 |
 | 5.56 mm, plain magazine (factor 1.0) | 1.0 | 30.3 | 20.2 |
 
-The round counts are examples. The magazine's capacity is not stored on the magazine item in the data, so the table does not say how many rounds each magazine holds.
+The round counts are examples. The magazine's capacity is not stored on the magazine item, so the table does not say how many rounds each magazine holds.
 
 ## Tips that follow from the numbers
 
-- **Loading is slower than extracting.** For the same round count, the load time is longer than the extract time in every caliber in the data (derived from the curve points).
+- **Loading is slower than extracting.** For the same round count, the load time is longer than the extract time in every caliber (derived from the curve points).
 - **Machine-gun magazines pack faster.** The M249 standard magazine takes 40 percent less time than a plain magazine (factor 0.6).
 
 ## What is not yet known

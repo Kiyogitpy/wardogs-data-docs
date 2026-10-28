@@ -26,7 +26,7 @@ description: "The Compound Bow: a draw-and-release weapon with Broadhead and Ram
 | Internal name | `Id.Item.CombatBow` |
 {: .wiki-infobox }
 
-The Compound Bow is a draw-and-release weapon. It is sold in the item shop, not in the weapon shop, and the data gives it its own ammunition: the Broadhead Arrow and the Rambo Explosive Arrow. It is the only bow in the game.
+The Compound Bow is a draw-and-release weapon. It is sold in the item shop, not in the weapon shop, and it has its own ammunition: the Broadhead Arrow and the Rambo Explosive Arrow. It is the only bow in the game.
 
 ## Overview
 

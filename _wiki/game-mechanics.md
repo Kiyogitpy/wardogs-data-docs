@@ -3,6 +3,7 @@ title: "Game Mechanics"
 nav_order: 4
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "How health, armor, bullets, movement, reviving and spotting work, explained from the game's numbers."
 ---
 

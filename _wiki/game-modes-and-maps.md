@@ -3,6 +3,7 @@ title: "Game Modes & Maps"
 nav_order: 5
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "The game modes, the maps they run on, and the match rules players see in the server browser."
 ---
 

@@ -3,6 +3,7 @@ title: "Guides"
 nav_order: 7
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "Practical guides for new players, built from the numbers in the game."
 ---
 

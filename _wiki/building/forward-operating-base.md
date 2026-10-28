@@ -48,7 +48,7 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 - **Repair and dismantle:** Hammer figures for the FOB are: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as is known.
 - **Stack limit:** 1.
 - **Limits:** Each FOB allows one Refuel Station, one Repair Station and up to four Builder's Radios. See the [Refuel and Repair Stations](refuel-and-repair-stations.md) and [Builder's Radio](builders-radio.md) articles.
-- **Interactions:** Players can use the FOB's access interaction. A tap on keyboard or a hold on gamepad lets players use it, and several players can do so at once. Hacking takes a hold of 30 seconds by one player. The data says the hacking result is sent to the server. The rewards for hacking are on the [Rewards page](../../game-features/Wardogs_GameFeatures_Rewards_v2.md).
+- **Interactions:** Players can use the FOB's access interaction. A tap on keyboard or a hold on gamepad lets players use it, and several players can do so at once. Hacking takes a hold of 30 seconds by one player. The hacking result is sent to the server. The rewards for hacking are on the [Rewards page](../../game-features/Wardogs_GameFeatures_Rewards_v2.md).
 
 ## What it does
 
@@ -69,7 +69,7 @@ The FOB has the most exposure to explosives of any structure. Its IED entry mult
 | C4 | +1,250% | 13.5 times |
 | IEDs | +5,000% | 51 times |
 
-The FOB's data has a flag named "do not take damage". No code in the game files reads it, so it appears to be unused data. The table below assumes the FOB takes damage like any other structure. Its health is 15,000, the value in its data asset, which is applied when the FOB is spawned. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The FOB has a setting named "do not take damage". No code in the game files reads it, so it appears to be unused. The table below assumes the FOB takes damage like any other structure. Its health is 15,000, the value in its data asset, which is applied when the FOB is spawned. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 

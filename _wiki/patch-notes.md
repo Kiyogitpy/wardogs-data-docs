@@ -3,6 +3,7 @@ title: "Patch Notes"
 nav_order: 8
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "Readable summaries of what changed between seasons, written from comparisons of the two seasons."
 ---
 

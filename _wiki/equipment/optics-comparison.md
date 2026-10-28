@@ -29,7 +29,7 @@ No spotting range is given for any of the four, so this page cannot say which on
 
 ## Spotting
 
-A spot on infantry takes 0.5 s to register and fades over 30 s, and it is kept for up to 180 s. The general spotting rules are on the [Spotting](../game-mechanics/spotting.md) page. The data does not list any spot time that depends on the optic used.
+A spot on infantry takes 0.5 s to register and fades over 30 s, and it is kept for up to 180 s. The general spotting rules are on the [Spotting](../game-mechanics/spotting.md) page. As far as is known, no spot time depends on the optic used.
 
 ## Season 2 price changes
 

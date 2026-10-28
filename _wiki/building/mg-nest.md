@@ -39,7 +39,7 @@ The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock
 
 ### Weapon
 
-The gun fires 600 rounds/min out to an effective range of 1,000 m. It holds 60 rounds and reloads in 8.0 s. The rate is not set on the weapon, so 600 rounds/min is the game's default rate. The weapon data carries the same lock-on setup as the other stationary guns: a 2.0 s lock, a 0.5 s delay after the lock, and a target list of air vehicles only (the Little Bird family, the Havoc, the [Huey](../vehicles/huey.md) and the fixed-wing airplane), with fire allowed only while locked on. The data does not show how a gun that a player operates uses it.
+The gun fires 600 rounds/min out to an effective range of 1,000 m. It holds 60 rounds and reloads in 8.0 s. The rate is not set on the weapon, so 600 rounds/min is the game's default rate. The weapon data carries the same lock-on setup as the other stationary guns: a 2.0 s lock, a 0.5 s delay after the lock, and a target list of air vehicles only (the Little Bird family, the Havoc, the [Huey](../vehicles/huey.md) and the fixed-wing airplane), with fire allowed only while locked on. It is not known how a gun that a player operates uses it.
 
 ### Health
 

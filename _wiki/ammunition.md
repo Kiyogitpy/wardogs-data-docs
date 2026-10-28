@@ -3,6 +3,7 @@ title: Ammunition
 nav_order: 1.2
 wiki_hub: true
 has_children: true
+has_toc: false
 redirect_from: ["/wiki/weapons/ammunition/"]
 description: "Bullet and shell types, what each does to armor and flesh, and which weapons use them."
 ---

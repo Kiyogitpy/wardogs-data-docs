@@ -45,7 +45,7 @@ Upper torso hits from the Super-45 at point blank range, per hit, without fallof
 | Armor Piercing (AP) | 27.7 | 21.9 | 20.0 | 18.0 | 16.1 |
 | Standard (FMJ) with tracer | 34.7 | 24.3 | 20.8 | 17.3 | 13.9 |
 
-Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type in the data.
+Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type.
 
 ## Against armor
 

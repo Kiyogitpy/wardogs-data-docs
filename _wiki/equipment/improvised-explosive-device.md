@@ -38,7 +38,7 @@ The IED uses a C4-style detonation, so a blast from another C4 or IED sets it of
 
 ## How it works
 
-**Placing.** The IED is placed on the ground. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone), and it has no set placement distance in the data.
+**Placing.** The IED is placed on the ground. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone), and it has no set placement distance.
 
 **Trigger.** Pressing the IED trigger starts a 3 s delay. After the delay the IED goes off. Nothing limits the distance from the player to the trigger.
 

@@ -42,7 +42,7 @@ The Vanguard starts with 500 rounds and fires them in automatic bursts. A windup
 
 ### Weapon
 
-The cannon has a rate of 1,800 rounds/min and an effective range of 1,000 m. Its reload time is 3.0 s. The game data also gives a bullet speed for the gun, but the export does not state its unit, so this article does not convert it.
+The cannon has a rate of 1,800 rounds/min and an effective range of 1,000 m. Its reload time is 3.0 s. The game also gives a bullet speed for the gun, but not its unit, so this article does not convert it.
 
 The emplacement starts with 500 rounds. A restock takes 250 Ammo Supplies and gives 500 rounds.
 

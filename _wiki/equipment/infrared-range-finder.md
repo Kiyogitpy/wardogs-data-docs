@@ -30,7 +30,7 @@ The Infrared Range Finder is the most expensive optic in the shop. It uses infra
 
 ## Overview
 
-The shop text lists the Infrared Range Finder as a variable infrared magnification optic with an accurate distance indicator. It is the most expensive recon item sold. The data gives no spotting range. The data gives spot timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
+The shop text lists the Infrared Range Finder as a variable infrared magnification optic with an accurate distance indicator. It is the most expensive recon item sold. There is no spotting range. Spotting works by timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
 
 ## How it works
 

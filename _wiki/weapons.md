@@ -3,6 +3,7 @@ title: Weapons
 nav_order: 1
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "Every player weapon, the ammunition they use and the attachments that change them."
 ---
 

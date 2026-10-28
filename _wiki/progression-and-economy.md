@@ -3,6 +3,7 @@ title: "Progression & Economy"
 nav_order: 6
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "How players earn cash and XP, what skills do, the challenges that pay out, how shops and unlocks work, and the cosmetics on sale."
 ---
 

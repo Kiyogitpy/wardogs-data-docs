@@ -53,7 +53,7 @@ Destroying an enemy Bremer Wall pays 30 cash and 10 Role XP.
 
 Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
-The Large Hammer is the only one that can place the Bremer Wall. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits.
+The Large Hammer is the only one that can place the Bremer Wall. The repair and dismantle hits for the other hammers are what their hits do; they have not been verified for this structure. The build count assumes normal hits.
 
 ## What it does
 

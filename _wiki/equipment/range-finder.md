@@ -29,7 +29,7 @@ The Range Finder is a recon optic with high, variable magnification. Its main di
 
 ## Overview
 
-The shop text lists the Range Finder as a high magnification optic with an accurate distance indicator. The data gives no spotting range or readout limit. The data gives spot timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
+The shop text lists the Range Finder as a high magnification optic with an accurate distance indicator. There is no spotting range or readout limit. Spotting works by timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
 
 ## How it works
 

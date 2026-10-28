@@ -191,9 +191,9 @@ def build(key):
         notes.append(f"A buckshot shot has {pellets} pellets, so multiply the per-pellet figure by {pellets} "
                      "for a full hit.")
     if tracer_note:
-        notes.append(f"{', '.join(tracer_note)} match their base type in the data.")
+        notes.append(f"{', '.join(tracer_note)} match their base type.")
     elif any(a == "Tracer" for a, _ in rows) and any("Tracer" in x for x in ad):
-        notes.append("Tracer rounds do the same damage as their base type in the data.")
+        notes.append("Tracer rounds do the same damage as their base type.")
     if notes:
         out += [" ".join(notes), ""]
 
@@ -222,7 +222,7 @@ def build(key):
         take.append(cross_text("A rifled slug", "a full buckshot shot", sl, full,
                                pellets_note=f" if all {pellets} pellets hit"))
     if not take:
-        take.append("The data gives no armor comparison between bullet types for this caliber.")
+        take.append("No armor comparison between bullet types is known for this caliber.")
     out += [f"- {t}" for t in take]
     out += ["", "The numbers come from the upper torso column of the table above. Head hits follow the same "
             "pattern at higher values; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]

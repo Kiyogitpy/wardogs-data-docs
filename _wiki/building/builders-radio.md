@@ -58,7 +58,7 @@ The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md
 
 ## What it does
 
-The Builder's Radio plays music. Its power switch turns the radio on and off, and each of the seven station buttons picks a station. Changing the station changes the music that plays. The data gives it no other effect beyond its health and how it takes damage.
+The Builder's Radio plays music. Its power switch turns the radio on and off, and each of the seven station buttons picks a station. Changing the station changes the music that plays. It has no other effect beyond its health and how it takes damage.
 
 Its registration with the base only affects the limit of four radios per base. Nothing else is tied to it, such as supply drops or spawns.
 

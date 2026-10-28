@@ -22,13 +22,13 @@ description: "Handguards that cover the barrel: which fit the weapons in the dat
 | Internal name | `Item.Attachment.Handguard` |
 {: .wiki-infobox }
 
-Handguards are the covers over the barrel. The data lists 25 of them, and 19 fit no weapon. None of them changes a weapon or character stat in the data.
+Handguards are the covers over the barrel. There are 25 of them, and 19 fit no weapon. None of them changes a weapon or character stat in the data.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
 
 ## What they change
 
-- Weapon and character stats: no handguard changes any in the data (25 of 25).
+- Weapon and character stats: no handguard changes any (25 of 25).
 - Underbarrel slot: 5 handguards add an underbarrel slot. A foregrip or bipod can go there, see [Grips and Foregrips](grips.md) and [Bipods](bipods.md).
 - Names: 8 handguards have no data name, so the table lists them by the weapon they fit.
 
@@ -66,7 +66,7 @@ The Weapon Shop data has no handguard rows, so the price column reads Not in sho
 
 ## Parts that fit no weapon
 
-19 parts in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+19 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
 AK74 Archangel OPFOR Forend, AK74 CMC Flat Trigger, AK74 M-LOK Dong Grip, AK74 MI Universal Handguard, AK74 Polymer Handguard, AK74 Sharkfin Dong Grip, AK74 TI Battlerail, AK74 Timney Drop-in Trigger, AK74 Wooden Dong Grip, AK74 ZenitCo B-13 Side Mount, AK74u Polymer Handguard, AK74u Wooden Handguard, LVOA Handguard, M4 Handguard, MP5 Handguard, RPK74 Polymer Handguard, RPK74 Wooden Handguard, Unnamed handguard, Unnamed handguard.
 

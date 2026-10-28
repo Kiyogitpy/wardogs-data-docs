@@ -22,7 +22,7 @@ description: "Red dots, holographic sights, scopes and iron sights for the top o
 | Internal name | `Item.Attachment.Sight` |
 {: .wiki-infobox }
 
-Sights sit on the top slot of a weapon. The data lists 29 of them and 28 fit a weapon. Every sight sets the weapon's ADS zoom, and most also change aim time and zeroing range. No sight changes recoil or spread in the data.
+Sights sit on the top slot of a weapon. There are 29 of them and 28 fit a weapon. Every sight sets the weapon's ADS zoom, and most also change aim time and zeroing range. No sight changes recoil or spread in the data.
 
 Every sight with its magnification, aimed field of view, aim time, zeroing range, price, unlock level and fitting weapons is in the [Sights and Optics data page](../../content/Wardogs_Sights_v1.md).
 
@@ -30,8 +30,8 @@ Every sight with its magnification, aimed field of view, aim time, zeroing range
 
 - ADS zoom: set to a fixed value on 29 sights, from 1.2 (red dots and holographic sights) to 6 (the 6-10x scope). The number is a magnification factor: 2.5 means the view is magnified 2.5 times (derived from the game's code, not checked on screen). The sight's sway is divided by it, so higher magnification steadies the view more.
 - Aim time: x0.85 to x1.2 (26 parts). This multiplies the time the weapon takes to come up to aim down the sights.
-- Minimum zeroing range: set to 10 to 100 on 18 sights. The data gives no unit; the game code treats the number as metres (derived).
-- Maximum zeroing range: set to 10 to 1000 on 18 sights. On 7 sights it follows the minimum zeroing range instead of a fixed value. The data gives no unit; the game code treats the number as metres (derived).
+- Minimum zeroing range: set to 10 to 100 on 18 sights. No unit is given; the game code treats the number as metres (derived).
+- Maximum zeroing range: set to 10 to 1000 on 18 sights. On 7 sights it follows the minimum zeroing range instead of a fixed value. No unit is given; the game code treats the number as metres (derived).
 - Character side: weapon sway stabilisation time is multiplied by 1 to 1.5 on 5 sights and set to 1.6 on 8 others.
 
 Zeroing range is the distance the sight is set for, bounded by the minimum and maximum. A weapon starts at the minimum, and the reset control returns it there (derived from the game's code; the game was not run).
@@ -40,7 +40,7 @@ Zeroing range is the distance the sight is set for, bounded by the minimum and m
 
 The ADS zoom narrows the camera's view by the sight's magnification. At full aim the on-screen field of view is your base field of view divided by the magnification, so a 2.5x sight on a 90 degree base gives 36 degrees. This is a plain division of the angle. The base is your Field of view setting in the default Affected aiming mode, or 72 degrees in Independent mode (see [Controls and settings](../game-mechanics/controls-and-settings.md)). The Affected mode follows your setting only at low magnification: the setting's own description says "below 3.25x". A sight of 3.25x or more uses 72 degrees as its base in both modes, so a 4x sight gives 18 degrees whatever your Field of view setting is. The 3.25 value is the larger of two numbers: the weapon's aiming magnification, and the highest magnification the sight can reach. They differ only for variable-zoom scopes. The Leatherwood ART II, for example, is listed at 3x but zooms up to 9x, so it counts as 9x for this test and uses 72 degrees even when it is turned down to 3x. The Frontier 2.5x-10x Precision Scope counts as 10x. A sight that cannot zoom just uses its own fixed magnification: the minimum and maximum zoom some of these sights still carry in their data (Spitfire 3X, Tricon, CQ-2x, 3x Tactical Prism, 4x Combat Prism, PGO-7, the 6x scopes and the PU 91/30) are ignored for the test (read from the game's code, not tested on screen). Iron sights count as a magnification of 1.2 plus the focus bonus.
 
-The view narrows along the weapon's aiming curve and eases toward its target at the weapon's FOV interpolation speed, which is 20 per second unless the weapon sets its own. For weapons with that option set, the aimed view is never wider than the view you had before aiming; the data does not show which weapons set it. These rules come from reading the camera code and were not checked on screen.
+The view narrows along the weapon's aiming curve and eases toward its target at the weapon's FOV interpolation speed, which is 20 per second unless the weapon sets its own. For weapons with that option set, the aimed view is never wider than the view you had before aiming; it is not known which weapons set it. These rules come from reading the camera code and were not checked on screen.
 
 ### Effective magnification
 
@@ -129,7 +129,7 @@ Prices come from the Weapon Shop data. The sight with no weapon is listed in the
 
 ## Parts that fit no weapon
 
-1 part in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+1 part can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
 CantedIrons.
 
@@ -141,7 +141,7 @@ New in Season 2: 3 parts: Compact P-1 Red Dot, Leatherwood ART II, PU 91/30 Scop
 
 No shop price changes for this category are listed in the Season 2 notes.
 
-Three existing sights changed values in Season 2 (the stat names suggest what these values control; the data does not describe them):
+Three existing sights changed values in Season 2 (the stat names suggest what these values control; the game does not describe them):
 
 - Holographic Sight: sight camera offset on one weapon changed from -8 to -7.
 

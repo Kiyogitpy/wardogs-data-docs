@@ -44,7 +44,7 @@ Upper torso hits from the AMR 50 at point blank range, per hit, without falloff.
 | Armor Piercing (AP) | 166.3 | 116.4 | 99.8 | 74.8 | 58.2 |
 | Standard (FMJ) with tracer | 207.9 | 145.5 | 124.7 | 93.6 | 72.8 |
 
-Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type in the data.
+Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type.
 
 ## Against armor
 

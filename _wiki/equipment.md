@@ -3,6 +3,7 @@ title: Equipment
 nav_order: 2
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "Body armor, medical items, grenades, fire and smoke, buildables and other gear: what each does, in numbers."
 ---
 

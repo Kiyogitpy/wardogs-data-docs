@@ -3,6 +3,7 @@ title: Vehicles
 nav_order: 3
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "Helicopters, tanks, trucks and SUVs in Wardogs: seats, health, prices, damage and Season 2 changes."
 ---
 
@@ -58,7 +59,7 @@ The numbers come from the data pages and are shown as stored. Speed and fuel uni
 |---|---|---:|---:|---:|---:|---:|
 | [Fixed-wing airplane](vehicles/fixed-wing-airplane.md) | Airplane | 2 | Not sold | 150 at start | Not stored | 7.5% |
 
-Stationary emplacements are built as buildables and cannot be driven, so they are listed under Building instead: [Talon 9K-SAM](building/talon-9k-sam.md), [Vanguard CIWS](building/vanguard-ciws.md), [L81 Mortar](building/l81-mortar.md), [Loudspeaker](building/loudspeaker.md), [Stingray](building/stingray.md) and [MG Nest](building/mg-nest.md). The guns mounted on vehicles are collected in [Vehicle weapons](vehicles/vehicle-weapons.md). Reference articles cover [fuel and refueling](vehicles/fuel-and-refueling.md), [repair and vehicle parts](vehicles/repair-and-vehicle-parts.md), [vehicle handling](vehicles/vehicle-handling.md), [countermeasures and flares](vehicles/countermeasures-and-flares.md) and [seats and passengers](vehicles/seats-and-passengers.md). The data lists no boats.
+Stationary emplacements are built as buildables and cannot be driven, so they are listed under Building instead: [Talon 9K-SAM](building/talon-9k-sam.md), [Vanguard CIWS](building/vanguard-ciws.md), [L81 Mortar](building/l81-mortar.md), [Loudspeaker](building/loudspeaker.md), [Stingray](building/stingray.md) and [MG Nest](building/mg-nest.md). The guns mounted on vehicles are collected in [Vehicle weapons](vehicles/vehicle-weapons.md). Reference articles cover [fuel and refueling](vehicles/fuel-and-refueling.md), [repair and vehicle parts](vehicles/repair-and-vehicle-parts.md), [vehicle handling](vehicles/vehicle-handling.md), [countermeasures and flares](vehicles/countermeasures-and-flares.md) and [seats and passengers](vehicles/seats-and-passengers.md). There are no boats.
 
 ## Reference
 

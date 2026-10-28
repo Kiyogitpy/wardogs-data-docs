@@ -22,7 +22,7 @@ description: "Magazines for the weapons in the data, with the aim time, recoil, 
 | Internal name | `Item.Attachment.Magazine` |
 {: .wiki-infobox }
 
-Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. The data lists 69 magazines. 46 of them carry stat multipliers, but on 19 of those every multiplier is 1, so 27 change weapon numbers and 42 change nothing. Tracer rounds load into the normal magazines for their caliber: loading checks the magazine and its caliber, not an ammo tag.
+Magazines hold the rounds a weapon fires. Some weapons use an internal magazine instead of a swappable one. There are 69 magazines. 46 of them carry stat multipliers, but on 19 of those every multiplier is 1, so 27 change weapon numbers and 42 change nothing. Tracer rounds load into the normal magazines for their caliber: loading checks the magazine and its caliber, not an ammo tag.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
 
@@ -35,7 +35,7 @@ Parts the game data gives no display name are labelled "Unnamed" followed by the
 - Aim sway (character side): x0.77 to x1.25 (37 parts carry it).
 - Packing time: x0.6 to x0.8 on 3 parts (the machine-gun magazines), no change on the rest. See [Ammo Packing](../ammunition/ammo-packing.md).
 
-A multiplier below 1 lowers the stat and one above 1 raises it, so for recoil lower is better. Equip speed is a speed multiplier, so a higher value should mean a faster equip (read from the stat name; the data gives no plain-words description). The name of each magazine gives its capacity: "30 RND" is 30 rounds.
+A multiplier below 1 lowers the stat and one above 1 raises it, so for recoil lower is better. Equip speed is a speed multiplier, so a higher value should mean a faster equip (read from the stat name; the game gives no plain-words description). The name of each magazine gives its capacity: "30 RND" is 30 rounds.
 
 ## Parts
 
@@ -115,7 +115,7 @@ Each row is one magazine. Fits lists the weapons that accept it. Prices come fro
 
 ## Parts that fit no weapon
 
-12 parts in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+12 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
 A91 Standard Mag, Battery, C4 Charge, Combat Bow Standard Mag, High Capacity Battery, KH2002 Extended Mag, KH2002 Standard Mag, 9K333 Verba Standard Mag, M4 Extended Mag, MP43 Internal Mag, TAR21 Standard Mag, Unnamed magazine.
 
