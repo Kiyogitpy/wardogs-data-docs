@@ -34,27 +34,41 @@ The wiki (`_wiki/`, served at `/wiki/`) turns the data pages into articles a pla
 
 ## Article layout (game wiki convention)
 
+Every article follows the Escape from Tarkov wiki template: title, infobox floated right, one lead sentence, sections, navbox, categories.
+
 1. `# Title`
-2. Infobox: a two-column markdown table directly under the title, followed by `{: .wiki-infobox }` on the next line. Header row `| | |` can be left blank-labelled, e.g.
+2. **Infobox**: a two-column markdown table directly under the title, followed by `{: .wiki-infobox }` on the next line. The header row carries the item name; the right header cell stays empty. Example:
 
    ```markdown
    | AK74 | |
    |---|---|
+   | **General** | |
    | Class | Assault rifle |
    | Caliber | 5.45x39mm |
-   | Fire rate | 600 rounds/min |
+   | **Performance** | |
+   | Fire rate | 650 rounds/min |
+   | **Availability** | |
+   | Vendor price | 800 |
+   | Internal name | AK74M |
    {: .wiki-infobox }
    ```
 
-   Group rows inside the infobox are written `| **Performance** | |` (bold label, empty value) and are drawn as bands. Suggested bands: weapons General / Performance / Availability; vehicles General / Durability / Availability.
-3. Lead paragraph (2–4 sentences): what it is and its role.
-4. Sections with `##` headings, in this order where they apply:
-   - Weapons: Overview, Stats, Damage (body parts, range falloff, armor), Recoil and spread, Ammunition, Attachments, Cost and unlocking, Season 2 changes, See also, Sources.
+   - Band rows are written `| **General** | |` (bold label, empty value) and are drawn as a full-width band. Suggested bands: weapons General / Performance / Availability; vehicles General / Durability / Availability.
+   - The item icon is a full-width first row, `| ![Name](...){: .wiki-infobox-img } | |`. `_tools/wiki_icons.py` inserts it for item articles; do not write it by hand.
+   - Rows are label and value only. Put long text in the body, not in a cell. The internal code goes only in the last row, "Internal name".
+   - The infobox floats right on wide screens and sits at full width above the lead on phones.
+3. **Lead**: one to three sentences in the benchmark's voice: "The AK74 is an assault rifle in Wardogs, chambered in 5.45x39mm." Say what it is, then its role or its key numbers. No data-speak ("is the AR class in the weapon data").
+4. **Sections** with `##` headings, in this order where they apply. Do not repeat the infobox in a "Stats" section; put every infobox fact in the infobox only.
+   - Weapons (generated): lead, Damage (body parts, range falloff, armor), Time to kill, Recoil and spread, Ammunition, Attachments, Cost and unlocking, Season 2 changes, See also, Sources.
    - Equipment/items: Overview, Effects, Use and timing, Cost, Season 2 changes, See also, Sources.
-   - Vehicles: Overview, Stats, Armor and damage, Weapons and seats, Handling, Season 2 changes, See also, Sources.
+   - Vehicles: Overview, Armor and damage, Weapons and seats, Handling, Season 2 changes, See also, Sources.
    - Mechanics: Overview, How it works, Numbers, Tips that follow from the numbers, See also, Sources.
    - Modes/maps: Overview, Rules and objectives, Rewards, See also, Sources.
 5. `## Sources`: bullet list of the data pages (relative `.md` links) and JSON files used. JSON files and anything under `data/`, `docs/`, `_tools/` are linked by absolute GitHub URL (`https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/...`) because they are not on the site.
+6. **Navbox** (automatic): one row per group of the hub, added by `_layouts/wiki.html`. Do not hand-write it.
+7. **Categories** (automatic): a "Categories:" line under the navbox, built from the front matter: the hub (`parent`) and the group (`group`), each linking to the hub page (the group to its heading on that page). Set `group:` to a name from `_data/wiki_groups.yml` and make the hub's heading for that group match.
+
+**Tables.** Tables of up to three columns (a stat and its value, body part and damage, falloff) shrink to their content; tables of four or more columns stay full width. Keep narrow tables narrow: label, value, optional unit. Hub tables (`_wiki/weapons.md`, `_wiki/ammunition.md`, `_wiki/vehicles.md`) get an image column automatically from `_tools/wiki_icons.py`. Price columns show the number; a free item reads "Free (...)", not 0.
 
 ## Links
 

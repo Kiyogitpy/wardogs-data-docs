@@ -25,22 +25,9 @@ description: "The AMR 50 sniper rifle: fire rate, damage by body part, range fal
 | Internal name | SR_04 |
 {: .wiki-infobox }
 
-The AMR 50 is a sniper rifle chambered in .50 Cal. It fires semi-automatic at 41.5 rounds/min. Its standard magazine is the AMR 50 5 RND Magazine.
-
-## Overview
-
-Sniper rifles are the sniper class in the weapon data.
+The AMR 50 is a [sniper rifle](../weapons.md#sniper-rifles) in Wardogs, chambered in .50 Cal. It fires semi-automatic at 41.5 rounds/min. Its standard magazine is the AMR 50 5 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 41.5 rounds/min |
-| Muzzle velocity | 900 m/s |
-| Effective range | 2000 m |
 
 ## Damage
 

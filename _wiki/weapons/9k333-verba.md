@@ -25,22 +25,9 @@ description: "The 9K333 Verba launcher: fire rate, damage by body part, range fa
 | Internal name | Launcher_04 |
 {: .wiki-infobox }
 
-The 9K333 Verba is a launcher that fires explosive rounds rather than bullets. Its fire rate is 100 rounds/min. It fires only while locked on to a target (2 s to lock, 0.25 s delay), and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles.
+The 9K333 Verba is a [launcher](../weapons.md#launchers) in Wardogs that fires explosive rounds rather than bullets. Its fire rate is 100 rounds/min. It fires only while locked on to a target (2 s to lock, 0.25 s delay), and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles.
 
-## Overview
-
-Launchers fire explosive rounds rather than bullets.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 100 rounds/min |
-| Muzzle velocity | 20 m/s |
-| Effective range | 1000 m |
-
-The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.
+Launchers fire explosive rounds rather than bullets. The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.
 
 ## Damage
 

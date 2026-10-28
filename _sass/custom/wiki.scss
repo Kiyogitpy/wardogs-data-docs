@@ -53,6 +53,16 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
 // infobox. Auto width keeps it a scrolling block that fills the space beside the box.
 .wiki .table-wrapper { width: auto; }
 
+// Narrow tables (up to three columns: stats, body part damage, falloff, armor) are sized to their
+// content instead of stretching label and value across the page; wide tables keep full width.
+.wiki .table-wrapper:not(:has(th:nth-child(4))):not(:has(> table.wiki-infobox)) {
+  width: fit-content;
+  max-width: 100%;
+  > table { min-width: 0; width: auto; }
+  th, td { padding-right: 2.5rem; }
+  th:last-child, td:last-child { padding-right: 1rem; }
+}
+
 // Infobox. just-the-docs wraps every table in .table-wrapper, so the wrapper is what floats.
 .main-content .table-wrapper:has(> table.wiki-infobox) {
   margin: 0 0 1.5rem;
@@ -68,12 +78,21 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   }
 }
 
+// Rows are grids so a full-width row (title, image, band) can span both columns; just-the-docs
+// tables are display: table, which cannot do that without colspan markup.
 .main-content table.wiki-infobox {
-  min-width: 100%;
+  display: block;
+  width: 100%;
+  min-width: 0;
   margin: 0;
   background: none;
 
+  thead, tbody { display: block; }
+  tr { display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); }
+  @media (max-width: 40rem) { tr { grid-template-columns: minmax(0, 9rem) minmax(0, 1fr); } }
+
   thead th {
+    grid-column: 1 / -1;
     background: $wiki-band;
     border-bottom: 1px solid $wiki-edge;
     color: $ue-white;
@@ -83,7 +102,7 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
     line-height: 1.15;
     padding: 0.6rem 0.9rem;
     text-align: left;
-    &:empty { padding: 0; }
+    &:last-child { display: none; }
   }
   td {
     background: none;
@@ -91,12 +110,22 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
     padding: 0.4rem 0.9rem;
     font-size: 0.9rem;
     vertical-align: top;
+    overflow-wrap: anywhere;
   }
-  td:first-child { color: $ue-text-dim; white-space: nowrap; }
+  td:first-child { color: $ue-text-dim; }
   td:last-child { color: $ue-white; }
   tr:last-child td { border-bottom: 0; }
 
-  // A row like `| **Performance** | |` (first cell only bold text) is a group band inside the box.
+  // Image row and group bands (`| **Performance** | |`: first cell only bold text) span the
+  // box; the empty second cell is hidden.
+  tr:has(img.wiki-infobox-img) td,
+  tr:has(> td:first-child > strong:only-child) td {
+    grid-column: 1 / -1;
+  }
+  tr:has(img.wiki-infobox-img) td:last-child,
+  tr:has(> td:first-child > strong:only-child) td:last-child { display: none; }
+
+  // A group band inside the box.
   tr:has(> td:first-child > strong:only-child) td {
     background: $wiki-band-deep;
     color: $wiki-tan;
@@ -104,28 +133,26 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
     font-size: 1rem !important;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
+    border-top: 1px solid $wiki-edge;
     strong { font-weight: 600; }
   }
-}
+  tr + tr:has(> td:first-child > strong:only-child) td { border-bottom: 1px solid $wiki-edge; }
 
-// Item icon: first row of an infobox (`| ![Name](icon.png){: .wiki-infobox-img } | |`). The row is
-// shown as one centred block on a dark plate; the empty second cell is hidden.
-.main-content table.wiki-infobox tr:has(img.wiki-infobox-img) {
-  display: block;
-  background: $wiki-band-deep;
-  border-bottom: 1px solid $wiki-edge;
-  text-align: center;
-
-  td { display: block; border: 0; padding: 0.7rem 0.9rem; background: none; }
-  td:last-child { display: none; }
+  // Item icon on a dark plate, centred across the full width.
+  tr:has(img.wiki-infobox-img) td {
+    background: $wiki-band-deep;
+    border-bottom: 1px solid $wiki-edge;
+    padding: 0.9rem;
+    text-align: center;
+  }
 }
 .main-content img.wiki-infobox-img {
-  display: inline-block;
-  max-width: min(220px, 100%);
-  max-height: 220px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 11rem;
   width: auto;
   height: auto;
-  vertical-align: middle;
 }
 
 // 48px icon in the first column of a part or vehicle table (`{: .wiki-icon }`).
@@ -140,6 +167,9 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   border-radius: $radius-small;
 }
 .main-content td:has(> img.wiki-icon) { width: 3.5rem; padding-top: 0.3rem; padding-bottom: 0.3rem; }
+// Wider thumbnail for weapon and caliber tables on the hubs (rifles are long and low).
+.main-content img.wiki-icon.wiki-icon-wide { width: 6rem; height: 3rem; }
+.main-content td:has(> img.wiki-icon-wide) { width: 6.75rem; }
 
 // Sortable table headers (assets/js/wiki.js).
 .wiki .wiki-sort {
@@ -311,4 +341,21 @@ $wiki-head: "Barlow Condensed", "Arial Narrow", sans-serif;
     text-decoration: none;
     .wiki-icon { border-color: $wiki-tan; }
   }
+}
+
+// Category footer under the navbox: "Categories: Weapons | Assault rifles".
+.wiki .wiki-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0;
+  max-width: none; // just-the-docs caps paragraphs at a reading width
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid $wiki-edge;
+  border-radius: $radius-small;
+  background: $wiki-band-deep;
+  font-size: 0.875rem;
+
+  span { color: $wiki-tan; font-weight: 600; margin-right: 0.6rem; }
+  a + a::before { content: "|"; color: $ue-text-dim; padding: 0 0.6rem; display: inline-block; }
 }

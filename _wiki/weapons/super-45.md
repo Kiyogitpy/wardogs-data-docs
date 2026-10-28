@@ -25,22 +25,9 @@ description: "The Super-45 submachine gun: fire rate, damage by body part, range
 | Internal name | Vector |
 {: .wiki-infobox }
 
-The Super-45 is a submachine gun chambered in .45 ACP. It fires fully automatic and semi-automatic at 1,200 rounds/min. Its standard magazine is the Super-45 30 RND Magazine.
-
-## Overview
-
-Submachine guns are the SMG class in the weapon data.
+The Super-45 is a [submachine gun](../weapons.md#submachine-guns) in Wardogs, chambered in .45 ACP. It fires fully automatic and semi-automatic at 1,200 rounds/min. Its standard magazine is the Super-45 30 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 1,200 rounds/min |
-| Muzzle velocity | 375 m/s |
-| Effective range | 50 m |
 
 ## Damage
 

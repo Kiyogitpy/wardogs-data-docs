@@ -25,22 +25,9 @@ description: "The Evo-3 Ultra light machine gun: fire rate, damage by body part,
 | Internal name | WEPN_036 |
 {: .wiki-infobox }
 
-The Evo-3 Ultra is a light machine gun chambered in .308 Win. It fires fully automatic and semi-automatic at 700 rounds/min. Its standard magazine is the Evo-3 Ultra 50 RND Box.
-
-## Overview
-
-Light machine guns are the LMG class in the weapon data.
+The Evo-3 Ultra is a [light machine gun](../weapons.md#light-machine-guns) in Wardogs, chambered in .308 Win. It fires fully automatic and semi-automatic at 700 rounds/min. Its standard magazine is the Evo-3 Ultra 50 RND Box.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 700 rounds/min |
-| Muzzle velocity | 790 m/s |
-| Effective range | 1000 m |
 
 ## Damage
 

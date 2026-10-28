@@ -25,22 +25,9 @@ description: "The M249 SAW light machine gun: fire rate, damage by body part, ra
 | Internal name | M249 |
 {: .wiki-infobox }
 
-The M249 SAW is a light machine gun chambered in 5.56x45mm. It fires fully automatic and semi-automatic at 850 rounds/min. Its standard magazine is the M249 200 RND Box.
-
-## Overview
-
-Light machine guns are the LMG class in the weapon data.
+The M249 SAW is a [light machine gun](../weapons.md#light-machine-guns) in Wardogs, chambered in 5.56x45mm. It fires fully automatic and semi-automatic at 850 rounds/min. Its standard magazine is the M249 200 RND Box.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 850 rounds/min |
-| Muzzle velocity | 915 m/s |
-| Effective range | 700 m |
 
 ## Damage
 

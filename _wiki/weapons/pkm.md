@@ -25,22 +25,9 @@ description: "The PKM light machine gun: fire rate, damage by body part, range f
 | Internal name | LMG_02 |
 {: .wiki-infobox }
 
-The PKM is a light machine gun chambered in 7.62x54mm. It fires fully automatic and semi-automatic at 600 rounds/min. Its standard magazine is the PKM 100 RND Box.
-
-## Overview
-
-Light machine guns are the LMG class in the weapon data.
+The PKM is a [light machine gun](../weapons.md#light-machine-guns) in Wardogs, chambered in 7.62x54mm. It fires fully automatic and semi-automatic at 600 rounds/min. Its standard magazine is the PKM 100 RND Box.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 600 rounds/min (class default) |
-| Muzzle velocity | 825 m/s |
-| Effective range | 1000 m |
 
 ## Damage
 

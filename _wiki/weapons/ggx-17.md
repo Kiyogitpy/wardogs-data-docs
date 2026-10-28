@@ -25,22 +25,9 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 | Internal name | Glock17 |
 {: .wiki-infobox }
 
-The GGX 17 is a pistol chambered in 9x19mm. It fires semi-automatic at 600 rounds/min. Its standard magazine is the GGX 17 RND Magazine.
-
-## Overview
-
-Pistols are the sidearm class in the weapon data.
+The GGX 17 is a [pistol](../weapons.md#pistols) in Wardogs, chambered in 9x19mm. It fires semi-automatic at 600 rounds/min. Its standard magazine is the GGX 17 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 600 rounds/min (class default) |
-| Muzzle velocity | 375 m/s |
-| Effective range | 50 m |
 
 ## Damage
 

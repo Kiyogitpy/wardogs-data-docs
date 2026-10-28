@@ -25,22 +25,9 @@ description: "The SVD marksman rifle: fire rate, damage by body part, range fall
 | Internal name | SVDM |
 {: .wiki-infobox }
 
-The SVD is a marksman rifle chambered in 7.62x54mm. It fires semi-automatic at 480 rounds/min. Its standard magazine is the SVD 10 RND Magazine.
+The SVD is a [marksman rifle](../weapons.md#marksman-rifles) in Wardogs, chambered in 7.62x54mm. It fires semi-automatic at 480 rounds/min. Its standard magazine is the SVD 10 RND Magazine.
 
-## Overview
-
-Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.
-
-It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 480 rounds/min |
-| Muzzle velocity | 800 m/s |
-| Effective range | 800 m |
+Most marksman rifles are semi-automatic. It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Damage
 

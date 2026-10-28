@@ -25,22 +25,9 @@ description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range 
 | Internal name | WEPN_037 |
 {: .wiki-infobox }
 
-The TCX-SPR is a marksman rifle chambered in 7.62x39mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the TCX-SPR 28 RND Magazine.
+The TCX-SPR is a [marksman rifle](../weapons.md#marksman-rifles) in Wardogs, chambered in 7.62x39mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the TCX-SPR 28 RND Magazine.
 
-## Overview
-
-Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.
-
-It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 800 rounds/min |
-| Muzzle velocity | 700 m/s |
-| Effective range | 400 m |
+Most marksman rifles are semi-automatic. It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Damage
 
