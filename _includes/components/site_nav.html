@@ -35,6 +35,11 @@
       {%- endfor -%}
     </ul>
   {%- endif -%}
+  {%- comment -%} The theme breadcrumbs read the parent links out of this HTML (all=true), so that call needs the full wiki tree.{%- endcomment -%}
+  {% if include.all %}
+    <div class="nav-category">{{ site.just_the_docs.collections.wiki.name }}</div>
+    {% include components/nav/pages.html pages=site.wiki all=include.all %}
+  {% else %}
   {%- comment -%} Wiki: Wiki Home plus the hub pages only; articles are reached through the hubs. {%- endcomment -%}
   {% assign wiki_hubs = site.wiki | where: "wiki_hub", true | sort: "nav_order" %}
   <div class="nav-category">{{ site.just_the_docs.collections.wiki.name }}</div>
@@ -44,6 +49,7 @@
       <li class="nav-list-item"><a href="{{ hub.url | relative_url }}" class="nav-list-link">{{ hub.title }}</a></li>
     {%- endfor %}
   </ul>
+  {% endif %}
   {% if pages_top_size > 0 %}
     {%- comment -%} Data Reference starts folded; the theme script opens it on a data page.
   This include is cached across pages, so it must not read page.*; assets/js/wiki-menu.js marks the active hub. {%- endcomment -%}

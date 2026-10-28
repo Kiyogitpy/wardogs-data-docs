@@ -1,5 +1,5 @@
 ---
-title: "Vehicles"
+title: "Vehicle Data"
 redirect_from: ["/Wardogs_Vehicles_v2.html", "/Wardogs_Vehicles_v2"]
 parent: "Vehicles"
 description: "Vehicle data: folder inventory, vehicle identity, rigid body, engine, drag and flight characteristics."
