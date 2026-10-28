@@ -2,6 +2,7 @@
 title: "Engine & Tooling Data"
 nav_order: 11
 has_children: true
+has_toc: false
 description: "Core framework, automation, test profiles and developer assets."
 ---
 

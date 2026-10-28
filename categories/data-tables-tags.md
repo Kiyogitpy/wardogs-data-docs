@@ -2,6 +2,7 @@
 title: "Data Tables & Tags"
 nav_order: 10
 has_children: true
+has_toc: false
 description: "The game's data tables, gameplay tags, display text, settings and inputs."
 ---
 

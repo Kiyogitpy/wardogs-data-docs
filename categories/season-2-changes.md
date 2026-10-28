@@ -2,6 +2,7 @@
 title: "Season 2 Changes"
 nav_order: 1.5
 has_children: true
+has_toc: false
 description: "Every change between Season 1 and Season 2 (build ++Wardogs+Live-CL-516586, 2026-10-15), before and after."
 ---
 
