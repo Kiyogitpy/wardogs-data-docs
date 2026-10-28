@@ -79,7 +79,7 @@ The table is laid out like the L81 Mortar's: the same elevations (-500 to 300 mr
 
 Each shot is a drone that flies out and detonates. Its collision box is about 93 by 92 by 38 cm, and its camera has a 50 degree field of view. The drone deals 120 damage in its blast, with a 10 m outer radius and a 5 m effective radius, a minimum explosive damage of 15 and a falloff of 0.45 between them. It also deals 100 blunt damage. The drone arms 0.1 s after launch. Its typical speed is 150 m/s, and under thrust it reaches 220 m/s. The data gives a maximum lifetime of 500 without a unit.
 
-Explosives against the Stingray's own damage entries: C4 does +300 % and IED +400 % (the table's amounts; the frag grenade entry is +0 %). Other entries on the same row apply too. See [Vehicle inputs and explosive effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 4.
+Explosives against the Stingray's own damage entries: C4 does +300 % and IED +400 % (the table's amounts; the frag grenade entry is +0 %). Other entries on the same row apply too. See [Vehicle Inputs and Explosive Effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 4.
 
 ## Use and timing
 
