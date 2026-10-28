@@ -25,20 +25,9 @@ description: "The MGL-40 launcher: fire rate, damage by body part, range falloff
 | Internal name | MMGL |
 {: .wiki-infobox }
 
-The MGL-40 is a launcher that fires explosive rounds rather than bullets. Its fire rate is 75 rounds/min.
-
-## Overview
+The MGL-40 is a [launcher](../weapons.md#launchers) in Wardogs that fires explosive rounds rather than bullets. Its fire rate is 75 rounds/min.
 
 Launchers fire explosive rounds rather than bullets.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 75 rounds/min |
-| Muzzle velocity | 75 m/s |
-| Effective range | 400 m |
 
 ## Damage
 

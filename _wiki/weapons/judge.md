@@ -25,22 +25,9 @@ description: "The Judge pistol: fire rate, damage by body part, range falloff, a
 | Internal name | Judge |
 {: .wiki-infobox }
 
-The Judge is a pistol chambered in .45 Colt. It fires semi-automatic at 200 rounds/min. Its standard magazine is the Judge Bullet Cylinder.
-
-## Overview
-
-Pistols are the sidearm class in the weapon data.
+The Judge is a [pistol](../weapons.md#pistols) in Wardogs, chambered in .45 Colt. It fires semi-automatic at 200 rounds/min. Its standard magazine is the Judge Bullet Cylinder.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 200 rounds/min |
-| Muzzle velocity | 335 m/s |
-| Effective range | 50 m |
 
 ## Damage
 

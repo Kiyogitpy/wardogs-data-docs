@@ -5,5 +5,11 @@ layout: default
 <div class="wiki">
 {{ content }}
 {% include wiki-navbox.html %}
+{%- if page.parent and page.wiki_hub != true -%}
+{%- assign cat_hub = site.wiki | where: "title", page.parent | where: "wiki_hub", true | first -%}
+{%- if cat_hub %}
+<p class="wiki-categories"><span>Categories:</span> <a href="{{ cat_hub.url | relative_url }}">{{ page.parent | escape }}</a>{% if page.group %}<a href="{{ cat_hub.url | relative_url }}#{{ page.group | slugify }}">{{ page.group | escape }}</a>{% endif %}</p>
+{%- endif -%}
+{%- endif %}
 </div>
 <script src="{{ '/assets/js/wiki.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>

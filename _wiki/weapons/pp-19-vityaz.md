@@ -25,22 +25,9 @@ description: "The PP-19 Vityaz submachine gun: fire rate, damage by body part, r
 | Internal name | SMG_03 |
 {: .wiki-infobox }
 
-The PP-19 Vityaz is a submachine gun chambered in 9x19mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the PP-19 Vityaz 30 RND Magazine.
-
-## Overview
-
-Submachine guns are the SMG class in the weapon data.
+The PP-19 Vityaz is a [submachine gun](../weapons.md#submachine-guns) in Wardogs, chambered in 9x19mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the PP-19 Vityaz 30 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 800 rounds/min |
-| Muzzle velocity | 380 m/s |
-| Effective range | 200 m |
 
 ## Damage
 

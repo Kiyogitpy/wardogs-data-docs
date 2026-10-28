@@ -25,22 +25,9 @@ description: "The Scout Rifle TD sniper rifle: fire rate, damage by body part, r
 | Internal name | WEPN_035 |
 {: .wiki-infobox }
 
-The Scout Rifle TD is a sniper rifle chambered in 5.56x45mm. It fires semi-automatic at 46 rounds/min.
-
-## Overview
-
-Sniper rifles are the sniper class in the weapon data.
+The Scout Rifle TD is a [sniper rifle](../weapons.md#sniper-rifles) in Wardogs, chambered in 5.56x45mm. It fires semi-automatic at 46 rounds/min.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 46 rounds/min |
-| Muzzle velocity | 975 m/s |
-| Effective range | 300 m |
 
 ## Damage
 

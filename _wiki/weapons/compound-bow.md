@@ -105,7 +105,7 @@ No attachments are listed for the bow.
 ## Sources
 
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the bow and arrow rows, price, size and draw time
-- [Items (feature)](../../game-features/Wardogs_GameFeatures_Items_v2.md): the arrow projectile data
+- [Items Game Feature](../../game-features/Wardogs_GameFeatures_Items_v2.md): the arrow projectile data
 - [Explosives](../../game-features/Wardogs_Explosives_v1.md): the Rambo Explosive Arrow blast
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the draw input and release curve
 - [Season 2 Changes: Items and Equipment](../../season-2-changes/items-equipment.md)

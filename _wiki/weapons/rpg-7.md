@@ -25,20 +25,9 @@ description: "The RPG-7 launcher: fire rate, damage by body part, range falloff,
 | Internal name | RPG7 |
 {: .wiki-infobox }
 
-The RPG-7 is a launcher that fires explosive rounds rather than bullets. Its fire rate is 100 rounds/min.
-
-## Overview
+The RPG-7 is a [launcher](../weapons.md#launchers) in Wardogs that fires explosive rounds rather than bullets. Its fire rate is 100 rounds/min.
 
 Launchers fire explosive rounds rather than bullets.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 100 rounds/min |
-| Muzzle velocity | 100 m/s |
-| Effective range | 300 m |
 
 ## Damage
 

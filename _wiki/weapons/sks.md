@@ -25,22 +25,9 @@ description: "The SKS marksman rifle: fire rate, damage by body part, range fall
 | Internal name | SKS |
 {: .wiki-infobox }
 
-The SKS is a marksman rifle chambered in 7.62x39mm. It fires semi-automatic at 420 rounds/min. Its standard magazine is the SKS Internal Mag.
+The SKS is a [marksman rifle](../weapons.md#marksman-rifles) in Wardogs, chambered in 7.62x39mm. It fires semi-automatic at 420 rounds/min. Its standard magazine is the SKS Internal Mag.
 
-## Overview
-
-Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.
-
-It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 420 rounds/min |
-| Muzzle velocity | 735 m/s |
-| Effective range | 400 m |
+Most marksman rifles are semi-automatic. It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Damage
 

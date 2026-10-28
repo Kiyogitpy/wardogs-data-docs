@@ -78,13 +78,8 @@ def class_group(arch):
 
 
 CLASS_BLURB = {
-    "AR": "Assault rifles are the AR class in the weapon data.",
-    "DMR": "Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.",
-    "LMG": "Light machine guns are the LMG class in the weapon data.",
-    "Pistol": "Pistols are the sidearm class in the weapon data.",
-    "SMG": "Submachine guns are the SMG class in the weapon data.",
-    "Shotgun": "Shotguns are the shotgun class in the weapon data. They fire shells rather than single bullets.",
-    "Sniper": "Sniper rifles are the sniper class in the weapon data.",
+    "DMR": "Most marksman rifles are semi-automatic.",
+    "Shotgun": "Shotguns fire shells rather than single bullets.",
     "Launcher": "Launchers fire explosive rounds rather than bullets.",
 }
 FIRE_PLAIN = {"Automatic": "fully automatic", "SemiAutomatic": "semi-automatic", "Burst": "burst fire"}
@@ -542,6 +537,13 @@ def recoil_section(wid, title, multi_pellet=False):
     return "\n".join(out)
 
 
+def price_display(code, price):
+    """Vendor price as players read it: faction weapons cost 0 once per life for their faction."""
+    if code in FACTION_WEAPONS:
+        return f"Free ({FACTION_WEAPONS[code]} faction, one per life)"
+    return price or "not yet known"
+
+
 def build_weapon(wid):
     code = code_for(wid)
     title = page_title(wid)
@@ -566,14 +568,15 @@ def build_weapon(wid):
         ("Effective range", s["range"]),
         ("Standard magazine", s["mag_row"]),
         ("**Availability**", ""),
-        ("Vendor price", (s["price"] or "not yet known") + (f" (free for {FACTION_WEAPONS[code]} players)" if code in FACTION_WEAPONS else "")),
+        ("Vendor price", price_display(code, s["price"])),
         ("Unlock level", s["unlock"] or "not yet known"),
         ("Internal name", code),
     ]
     infobox = [f"| {title} | |", "|---|---|"] + [f"| {a} | {b} |" for a, b in infobox_rows] + ["{: .wiki-infobox }"]
 
+    group_link = f"[{cls_l}](../weapons.md#{slugify(class_group(it['archetype']))})"
     if is_launcher:
-        lead = f"The {title} is {art} {cls_l} that fires explosive rounds rather than bullets."
+        lead = f"The {title} is {art} {group_link} in Wardogs that fires explosive rounds rather than bullets."
         if s["rpm"] != "not yet known":
             lead += f" Its fire rate is {s['rpm'].replace(' (class default)', '')}."
         lk = lock_on(code)
@@ -581,27 +584,18 @@ def build_weapon(wid):
             lead += (f" It fires only while locked on to a target ({lk['lock']:g} s to lock, {lk['delay']:g} s delay)"
                      + (", and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles." if lk["air_only"] else "."))
     else:
-        lead = (f"The {title} is {art} {cls_l} chambered in {s['cal']}. It fires {s['modes']} at {s['rpm'].replace(' (class default)', '')}.")
+        lead = (f"The {title} is {art} {group_link} in Wardogs, chambered in {s['cal']}. It fires {s['modes']} at {s['rpm'].replace(' (class default)', '')}.")
         if s["has_mag"]:
             lead += f" Its standard magazine is the {s['mag']}."
-
-    out = [f"# {title}", ""] + infobox + ["", lead, ""]
-
-    # Overview
-    out += ["## Overview", "", CLASS_BLURB[it["archetype"]], ""]
+    blurb = CLASS_BLURB.get(it["archetype"], "")
     if dmg:
         is_shell = any(a["id"] in ("Buckshot", "Slug") for a in dmg["ammo"])
         kind = "shells" if is_shell else "bullet types"
-        out += [f"It takes the {kind} described on the [Ammunition](../ammunition.md) page: {', '.join(ammo_base_names(code))}. Each has a tracer version.", ""]
-
-    # Stats
-    out += ["## Stats", "", "| Stat | Value |", "|---|---|",
-            f"| Fire modes | {s['modes_cap']} |",
-            f"| Fire rate | {s['rpm']} |",
-            f"| Muzzle velocity | {s['speed']} |",
-            f"| Effective range | {s['range']} |", ""]
+        blurb = (blurb + " " if blurb else "") + f"It takes the {kind} described on the [Ammunition](../ammunition.md) page: {', '.join(ammo_base_names(code))}. Each has a tracer version."
     if code == "Launcher_04":
-        out += ["The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.", ""]
+        blurb += (" " if blurb else "") + "The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this."
+
+    out = [f"# {title}", ""] + infobox + ["", lead, ""] + ([blurb, ""] if blurb else [])
 
     # Damage
     out += ["## Damage", ""]
@@ -754,7 +748,7 @@ def ammo_page():
              f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json)",
              f"- [ammo-availability.json]({GH}assets/data/ammo-availability.json)",
              "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md)",
-             "- [Ammo (feature)](../../game-features/Wardogs_GameFeatures_Ammo_v2.md)",
+             "- [Ammo Game Feature](../../game-features/Wardogs_GameFeatures_Ammo_v2.md)",
              "- [Round 45 wiki evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-a.md): tracer loading rule",
              ""]
     return "\n".join(body)
@@ -893,16 +887,16 @@ def main():
         s = stats(wid)
         if arch == "Launcher":
             row = (f"| [{title}](weapons/{slug}.md) | {s['speed']} | {s['range']} | {s['rpm']} | {s['mag_row']} "
-                   f"| {s['price'] or 'not yet known'} |")
+                   f"| {price_display(code, s['price'])} |")
         else:
-            row = (f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag_row']} | {s['price'] or 'not yet known'} |")
+            row = (f"| [{title}](weapons/{slug}.md) | {s['cal']} | {s['rpm']} | {s['mag_row']} | {price_display(code, s['price'])} |")
         sections.setdefault(arch, []).append(row)
         count += 1
     ammo = ("---\ntitle: Ammunition\nnav_order: 1.2\nwiki_hub: true\nhas_children: true\n"
             "redirect_from: [\"/wiki/weapons/ammunition/\"]\n"
             "description: \"Bullet and shell types, what each does to armor and flesh, and which weapons use them.\"\n---\n\n") + rebase_links(ammo_page(), "weapons", "")
     with open(os.path.join(WIKI, "ammunition.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(ammo)
+        f.write(wiki_icons.add_icon_columns(ammo, os.path.join(WIKI, "ammunition.md")))
     att = ("---\ntitle: Attachments\nnav_order: 1.5\nwiki_hub: true\nhas_children: true\n"
            "redirect_from: [\"/wiki/weapons/attachments/\"]\n"
            "description: \"The parts that fit on weapons, the slots they go into and what each category changes.\"\n---\n\n") + attachments_page()
@@ -911,7 +905,7 @@ def main():
     with open(os.path.join(OUT, "weapon-comparison.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write(comparison_page())
     with open(os.path.join(WIKI, "weapons.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(hub_page(sections))
+        f.write(wiki_icons.add_icon_columns(hub_page(sections), os.path.join(WIKI, "weapons.md")))  # thumbnail column
     print(f"wrote {count} weapon articles, ammunition, attachments and the hub")
 
 

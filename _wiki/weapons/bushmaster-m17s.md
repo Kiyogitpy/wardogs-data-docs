@@ -20,27 +20,14 @@ description: "The Bushmaster M17S assault rifle: fire rate, damage by body part,
 | Effective range | 300 m |
 | Standard magazine | STANAG 20 RND Magazine |
 | **Availability** |  |
-| Vendor price | 0 (free for Lonestar players) |
+| Vendor price | Free (Lonestar faction, one per life) |
 | Unlock level | 1 |
 | Internal name | WEPN_033 |
 {: .wiki-infobox }
 
-The Bushmaster M17S is an assault rifle chambered in 5.56x45mm. It fires semi-automatic and burst fire at 700 rounds/min. Its standard magazine is the STANAG 20 RND Magazine.
-
-## Overview
-
-Assault rifles are the AR class in the weapon data.
+The Bushmaster M17S is an [assault rifle](../weapons.md#assault-rifles) in Wardogs, chambered in 5.56x45mm. It fires semi-automatic and burst fire at 700 rounds/min. Its standard magazine is the STANAG 20 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic and burst fire |
-| Fire rate | 700 rounds/min |
-| Muzzle velocity | 715 m/s |
-| Effective range | 300 m |
 
 ## Damage
 

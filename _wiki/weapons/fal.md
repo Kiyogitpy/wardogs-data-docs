@@ -25,22 +25,9 @@ description: "The FAL assault rifle: fire rate, damage by body part, range fallo
 | Internal name | WEPN_030 |
 {: .wiki-infobox }
 
-The FAL is an assault rifle chambered in .308 Win. It fires fully automatic and semi-automatic at 650 rounds/min. Its standard magazine is the FAL 20 RND Magazine.
-
-## Overview
-
-Assault rifles are the AR class in the weapon data.
+The FAL is an [assault rifle](../weapons.md#assault-rifles) in Wardogs, chambered in .308 Win. It fires fully automatic and semi-automatic at 650 rounds/min. Its standard magazine is the FAL 20 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 650 rounds/min |
-| Muzzle velocity | 840 m/s |
-| Effective range | 800 m |
 
 ## Damage
 

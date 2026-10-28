@@ -25,22 +25,9 @@ description: "The Mosin Nagant sniper rifle: fire rate, damage by body part, ran
 | Internal name | WEPN_017 |
 {: .wiki-infobox }
 
-The Mosin Nagant is a sniper rifle chambered in 7.62x54mm. It fires semi-automatic at 46 rounds/min. Its standard magazine is the Mosin Standard Mag.
-
-## Overview
-
-Sniper rifles are the sniper class in the weapon data.
+The Mosin Nagant is a [sniper rifle](../weapons.md#sniper-rifles) in Wardogs, chambered in 7.62x54mm. It fires semi-automatic at 46 rounds/min. Its standard magazine is the Mosin Standard Mag.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 46 rounds/min |
-| Muzzle velocity | 865 m/s |
-| Effective range | 500 m |
 
 ## Damage
 

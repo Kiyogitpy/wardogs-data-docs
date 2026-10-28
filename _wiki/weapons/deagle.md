@@ -25,22 +25,9 @@ description: "The Deagle pistol: fire rate, damage by body part, range falloff, 
 | Internal name | WEPN_027 |
 {: .wiki-infobox }
 
-The Deagle is a pistol chambered in .50 AE. It fires semi-automatic at 267 rounds/min. Its standard magazine is the Deagle 7 RND Magazine.
-
-## Overview
-
-Pistols are the sidearm class in the weapon data.
+The Deagle is a [pistol](../weapons.md#pistols) in Wardogs, chambered in .50 AE. It fires semi-automatic at 267 rounds/min. Its standard magazine is the Deagle 7 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 267 rounds/min |
-| Muzzle velocity | 470 m/s |
-| Effective range | 100 m (game default) |
 
 ## Damage
 
