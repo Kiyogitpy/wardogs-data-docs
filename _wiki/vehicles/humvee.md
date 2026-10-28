@@ -68,7 +68,7 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 - Torque split of 0.4 to the front and 0.6 to the rear.
 - Engine idle 700 RPM, rev limit 4,000 RPM.
 
-**Steering and pedal tuning.** Its settings are steer sensitivity 2.5, steer input gravity 2, throttle sensitivity 2 and brake sensitivity 6.5, the highest brake value of the wheeled vehicles, and the brake reaches full at a tenth of pedal travel. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+**Steering and pedal tuning.** Its settings are steer sensitivity 2.5, steer input gravity 2, throttle sensitivity 2 and brake sensitivity 6.5, the highest brake value of any vehicle, and the brake reaches full at a tenth of pedal travel. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
 - No torque scale is set; the game default of 1.0 applies.
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
