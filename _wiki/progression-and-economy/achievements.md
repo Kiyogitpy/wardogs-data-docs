@@ -2,7 +2,7 @@
 title: "Achievements"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The ten one-time achievements, the thresholds they use (100,000 cash, one hour in a control zone, 950 m) and what each one asks for. Each is a Steam achievement, and the data lists no other reward."
+description: "The ten one-time achievements, the thresholds they use (100,000 cash, one hour in a control zone, 950 m) and what each one asks for. Each is a Steam achievement, and the game lists no other reward."
 ---
 
 # Achievements
@@ -21,7 +21,7 @@ description: "The ten one-time achievements, the thresholds they use (100,000 ca
 | Internal name | DT_Challenges_SessionEvents_Shared |
 {: .wiki-infobox }
 
-Achievements are one-time goals. A player can earn each one once, and each is also a Steam achievement. The data gives a name and a goal for all ten. Four of them have a number to reach: 100,000 cash twice, one hour in a control zone, and a 950 m kill. The data lists no cash, XP or item reward for any of them, so the Steam achievement is the only reward.
+Achievements are one-time goals. A player can earn each one once, and each is also a Steam achievement. The game gives a name and a goal for all ten. Four of them have a number to reach: 100,000 cash twice, one hour in a control zone, and a 950 m kill. The game lists no cash, XP or item reward for any of them, so the Steam achievement is the only reward.
 
 ## Overview
 
@@ -29,10 +29,10 @@ There are ten achievements. They are active from the start, and each one stops c
 
 ## How it works
 
-- **Always active.** The data sets all ten achievements to start automatically.
+- **Always active.** The game sets all ten achievements to start automatically.
 - **Earned once.** Each achievement stops counting after it is earned.
-- **Steam.** Each achievement is linked to a Steam achievement with its own ID in the data.
-- **Thresholds.** Loadout Spender and Single Life Profit need 100,000 cash. Control Zone Survivor needs 3,600 seconds (one hour) alive in a control zone. Long Shot needs a kill from 950 m. The data stores that distance as 95,000 Unreal units, the same unit the kill-distance rewards use, so 950 m is a derived figure.
+- **Steam.** Each achievement is linked to a Steam achievement with its own ID.
+- **Thresholds.** Loadout Spender and Single Life Profit need 100,000 cash. Control Zone Survivor needs 3,600 seconds (one hour) alive in a control zone. Long Shot needs a kill from 950 m. The game stores that distance as 95,000 Unreal units, the same unit the kill-distance rewards use, so 950 m is a derived figure.
 
 ## Achievements
 
@@ -53,11 +53,11 @@ Kill achievements count hostile targets only. Long Shot, Ricochet Kill and Defib
 
 ## Rewards
 
-The data lists no cash, role XP or item for any achievement. The reward is the Steam achievement that matches each one.
+The game lists no cash, role XP or item for any achievement. The reward is the Steam achievement that matches each one.
 
 ## Season 2 changes
 
-- The achievement table went from no rows to 10 rows in the Season 02 update.
+- The achievement list went from none to 10 entries in the Season 02 update.
 
 ## See also
 

@@ -19,13 +19,13 @@ description: "The Recon role: 17 skills for sniper and marksman rifles, longer e
 | Internal name | Meta.Role.Recon, DT_ReconSkills |
 {: .wiki-infobox }
 
-Recon is one of the six roles. Its 17 skills mostly tune long-range play: how fast a player aims and recovers with sniper rifles and marksman rifles, how much these rifles kick, and how fast they switch. Recon also has spotting skills: enemies take longer to spot a Recon player, and enemies a Recon player spots stay marked for longer. Lockpicking is the role's other ability, granted by the data rather than tuned by a number.
+Recon is one of the six roles. Its 17 skills mostly tune long-range play: how fast a player aims and recovers with sniper rifles and marksman rifles, how much these rifles kick, and how fast they switch. Recon also has spotting skills: enemies take longer to spot a Recon player, and enemies a Recon player spots stay marked for longer. Lockpicking is the role's other ability, granted by the game rather than tuned by a number.
 
 ## Overview
 
 Most Recon skills apply to one weapon archetype. A skill for marksman rifles helps only marksman rifles, and a skill for sniper rifles helps only sniper rifles. The spotting skills apply to the player and to spotted targets, not to a weapon.
 
-Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -35,7 +35,7 @@ Each skill's value comes from its curve at the skill's level. The unlock cost of
 | Aim down sights time (sniper rifles) | Less time to raise the sights. | 1, 0.8, 0.7, 0.6 | Sniper rifles only |
 | Aim move speed (marksman rifles) | Faster walking while aimed down sights. | 1, 1.2, 1.4 | Marksman rifles only |
 | Aim move speed (sniper rifles) | Faster walking while aimed down sights. | 1, 1.2, 1.4 | Sniper rifles only |
-| Infrared visibility | Reduces how visible the player is to enemies' infrared sights. | Set to 2.0, no curve (default 1) | One-time unlock. The data describes a heavy reduction, not invisibility. |
+| Infrared visibility | Reduces how visible the player is to enemies' infrared sights. | Set to 2.0, no curve (default 1) | One-time unlock. The game describes a heavy reduction, not invisibility. |
 | Horizontal recoil (marksman rifles) | Less sideways kick. | 1, 0.8, 0.7, 0.6 | Marksman rifles only |
 | Horizontal recoil (sniper rifles) | Less sideways kick. | 1, 0.8, 0.7, 0.6 | Sniper rifles only |
 | Time to be spotted | Enemies take longer to spot the player. | 1, 1.2, 1.4 | Any weapon |
@@ -67,12 +67,12 @@ All six roles share one mastery XP curve. The milestones for Recon are the total
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
 - **Unlock tree.** 58 items and vehicles, from level 2 to level 50, with 2,445,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
 
 ## Unlocks
 
-Each row is one item, vehicle or attachment in the Recon unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+Each row is one item, vehicle or attachment in the Recon unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
 
 | Role level | Item | Cash |
 |---|---:|---:|

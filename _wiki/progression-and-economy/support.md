@@ -25,7 +25,7 @@ Support is one of the six roles. Its 12 skills tune the heavy weapons: light mac
 
 Most Support skills apply to one weapon archetype. A skill for LMGs helps only LMGs, and a skill for shotguns helps only shotguns. The switching skill covers both archetypes at once.
 
-Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
@@ -62,12 +62,12 @@ All six roles share one mastery XP curve. The milestones for Support are the tot
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
 - **Unlock tree.** 33 items and vehicles, from level 1 to level 50, with 1,630,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
 
 ## Unlocks
 
-Each row is one item, vehicle or attachment in the Support unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+Each row is one item, vehicle or attachment in the Support unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
 
 | Role level | Item | Cash |
 |---|---:|---:|

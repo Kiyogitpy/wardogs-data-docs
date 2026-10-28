@@ -2,7 +2,7 @@
 title: "Wagers"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The four wager actions, how many of each a player can take on, the odds, the 50 conditions and the payout limits in the data. Settlement is on the server."
+description: "The four wager actions, how many of each a player can take on, the odds, the 50 conditions and the payout limits. Settlement is on the server."
 ---
 
 # Wagers
@@ -22,7 +22,7 @@ description: "The four wager actions, how many of each a player can take on, the
 | Internal name | DT_WagerActions, DT_WagerPricing, DT_WagerConditions, DT_WagerObjectiveCatalog |
 {: .wiki-infobox }
 
-A wager is a goal a player takes on with a stake of cash. The player picks how many of an action they will do, adds any conditions they want, and the odds rise with the difficulty. If the goal is reached the stake is paid out at the odds. The data gives the counts, odds, limits and conditions. It does not give the formula the server uses to settle a wager.
+A wager is a goal a player takes on with a stake of cash. The player picks how many of an action they will do, adds any conditions they want, and the odds rise with the difficulty. If the goal is reached the stake is paid out at the odds. The game gives the counts, odds, limits and conditions. It does not give the formula the server uses to settle a wager.
 
 ## Overview
 
@@ -35,13 +35,13 @@ A wager is a goal a player takes on with a stake of cash. The player picks how m
 
 ## How it works
 
-- **Not automatic.** The data marks wager challenges as not auto-activated, so a player takes one on by choice.
+- **Not automatic.** The game marks wager challenges as not auto-activated, so a player takes one on by choice.
 - **Count.** The player chooses the count on the slip. Each action has a range and a default, as in the table above.
 - **Rules.** Each action has rules for what counts. Kills must be inside the control zone and against enemy players, and a player an enemy revived does not count. Revives must be inside the control zone and on teammates, and a player downed by a teammate or by themselves does not count. Deliveries do not count if a spawn vehicle carried the passenger, and count once the passenger survives the drop-off. Vehicles count only when an enemy is driving them and an enemy bought them. Repeats on the same player do not count for kills or revives.
-- **Cooldown.** Each action has a cooldown of 86,400 seconds (24 hours) in the data. The data does not say whether the cooldown is per player, per wager or per match.
-- **Deaths.** The slip allows a number of deaths for a wager, and each allowance carries its own small odds. The data lists four values (1.009, 1.003, 1.002 and 1.001). Which value goes with which number of deaths is inferred from the slip text, not stated.
-- **Several objectives.** A slip can hold more than one objective. Each objective after the first adds 0.25 to the multi bonus. The slip text reads 1 + (objectives - 1) x 0.25, so two objectives give 1.25 and three give 1.5. The server settles the payout, so how this bonus combines with the odds is not in the game files.
-- **Unlock.** The Wardog level that unlocks wagers is a server rule, so it is not in the game files.
+- **Cooldown.** Each action has a cooldown of 86,400 seconds (24 hours). The game does not say whether the cooldown is per player, per wager or per match.
+- **Deaths.** The slip allows a number of deaths for a wager, and each allowance carries its own small odds. The game lists four values (1.009, 1.003, 1.002 and 1.001). Which value goes with which number of deaths is inferred from the slip text, not stated.
+- **Several objectives.** A slip can hold more than one objective. Each objective after the first adds 0.25 to the multi bonus. The slip text reads 1 + (objectives - 1) x 0.25, so two objectives give 1.25 and three give 1.5. The server settles the payout, so how this bonus combines with the odds is not known.
+- **Unlock.** The Wardog level that unlocks wagers is a server rule, so it is not in the game.
 
 ## Odds
 
@@ -56,9 +56,9 @@ Odds rise by a small step with each count. The table gives the lowest and highes
 
 ## Conditions
 
-A condition is an extra rule that a wager can carry. Each one multiplies the odds of the wager it is added to. The data lists 50 conditions. The table is sortable. The "Applies to" column shows the action a condition is tied to, or "Any action" when the data does not tie it to one.
+A condition is an extra rule that a wager can carry. Each one multiplies the odds of the wager it is added to. The game lists 50 conditions. The table is sortable. The "Applies to" column shows the action a condition is tied to, or "Any action" when the game does not tie it to one.
 
-Odds for the conditions run from 1.005 (5 tapes in the vehicle) to 10.0 (Deathwish). Time limit is 4.0, no vehicles is 3.0 and no resupply is 2.0. The server settles the payout, so the game files do not say whether two conditions on one wager multiply together.
+Odds for the conditions run from 1.005 (5 tapes in the vehicle) to 10.0 (Deathwish). Time limit is 4.0, no vehicles is 3.0 and no resupply is 2.0. The server settles the payout, so the game does not say whether two conditions on one wager multiply together.
 
 | Condition | Type | Applies to | Odds |
 |---|---|---|---:|
@@ -115,7 +115,7 @@ Odds for the conditions run from 1.005 (5 tapes in the vehicle) to 10.0 (Deathwi
 
 ## Prebuilt objectives
 
-The data holds a catalogue of prebuilt objectives. Five are public, with a fixed count and odds. Nine more carry a flag in the data, and each has a condition set and higher odds. Whether the flagged objectives are offered to every player is not stated. Three further catalogue entries are test rows and are left out.
+The game holds a catalogue of prebuilt objectives. Five are public, with a fixed count and odds. Nine more carry a flag, and each has a condition set and higher odds. Whether the flagged objectives are offered to every player is not stated. Three further catalogue entries are test rows and are left out.
 
 ### Public objectives
 
@@ -143,17 +143,17 @@ The data holds a catalogue of prebuilt objectives. Five are public, with a fixed
 
 ## Payout and settlement
 
-- **Stake and odds.** The slip shows a total odds figure and a return. By the slip's own labels the return is the stake times the total odds (the exact formula is not read from the data), and the slip labels it "(capped)" when the cap applies. The cap is 5,000,000 cash.
-- **Settlement.** Settlement runs on the server. The data has the odds, the cap and the stake limits, but not the formula that decides whether a wager pays and how much.
-- **Decided by the server.** How deaths, leaving a match or completing only part of a slip affect a payout is settled on the server, so it is not in the game files.
+- **Stake and odds.** The slip shows a total odds figure and a return. By the slip's own labels the return is the stake times the total odds (the exact formula is not read from the game), and the slip labels it "(capped)" when the cap applies. The cap is 5,000,000 cash.
+- **Settlement.** Settlement runs on the server. The game has the odds, the cap and the stake limits, but not the formula that decides whether a wager pays and how much.
+- **Decided by the server.** How deaths, leaving a match or completing only part of a slip affect a payout is settled on the server, so it is not in the game.
 
 ## Rewards
 
-The data lists no XP or item reward for the four wager challenges. The cash payout is the return described above.
+The game lists no XP or item reward for the four wager challenges. The cash payout is the return described above.
 
 ## Season 2 changes
 
-- The wager system was added in the Season 02 update, with seven files under the wager data folder: pricing, actions, challenges, conditions, an objective catalogue and two UI tables.
+- The wager system was added in the Season 02 update, with seven files under the wager folder: pricing, actions, challenges, conditions, an objective catalogue and two UI tables.
 - Four wager challenges were added: passengers delivered, rewarded kills, rewarded revives and rewarded vehicles destroyed.
 
 ## See also

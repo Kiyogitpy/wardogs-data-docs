@@ -2,7 +2,7 @@
 title: "Cosmetics"
 parent: "Progression & Economy"
 group: "Cosmetics"
-description: "Skins, emotes and other cosmetics for Seasons 1 and 2, their Gold Bar prices, and what the data does and does not say about how they are unlocked."
+description: "Skins, emotes and other cosmetics for Seasons 1 and 2, their Gold Bar prices, and what the game does and does not say about how they are unlocked."
 ---
 
 # Cosmetics
@@ -30,27 +30,27 @@ Cosmetics change how weapons, vehicles, parachutes and emotes look. Skins repain
 | Season 1 | 20 | 19 | 5 to 15 | [Season 1 Cosmetics](season-01-cosmetics.md) |
 | Gold Market total | 27 entries | 27 | 275 Gold Bars in all | [Currencies](currencies.md) |
 
-The Gold Market sells 27 entries. Weapon and vehicle skins account for most of them. Faction logos, the taxi skin and the bobbleheads are not sold on the Gold Market and have no price in the data.
+The Gold Market sells 27 entries. Weapon and vehicle skins account for most of them. Faction logos, the taxi skin and the bobbleheads are not sold on the Gold Market and have no price.
 
 ## How it works
 
 - **Sets.** A skin set has one look, such as Digital Wood, and applies to several items. Two-Tone Desert has 12 Season 1 rows, Digital Wood has 4 and Black and Gold has 1. Season 2 adds rows and a new Chocolate Chip set.
 - **Items.** The same weapon can appear in more than one set. The M4 has a Digital Wood skin and a Two-Tone Desert skin.
 - **Emotes.** Each emote has a name and an action. Six emote entries exist. Shh, Rock Paper Scissors and Middle Finger have cosmetic rows with prices. Rock, Paper and Scissors have none.
-- **Look only.** The data shows the pattern and colour of each set. It does not show how a skin looks on a model.
-- **How a player gets one.** The client has two routes: buying it on the Gold Market with Gold Bars, and the backend granting items to a player. Items with no Gold Market row (such as the AK74 Black and Gold skin, the faction logos, the taxi skin and the bobbleheads) can only come from a grant, and the data does not show which grants are made.
-- **No reward track.** The data has no battle pass and no season reward track, so no cosmetic is tied to a level. The season schedule is a server value and is not in the client data.
+- **Look only.** The game shows the pattern and colour of each set. It does not show how a skin looks on a model.
+- **How a player gets one.** The client has two routes: buying it on the Gold Market with Gold Bars, and the backend granting items to a player. Items with no Gold Market row (such as the AK74 Black and Gold skin, the faction logos, the taxi skin and the bobbleheads) can only come from a grant, and the game does not show which grants are made.
+- **No reward track.** The game has no battle pass and no season reward track, so no cosmetic is tied to a level. The season schedule is a server value and is not in the game.
 
 ## Parachute skin and character looks
 
-The data has no outfits or character skins. The only cosmetic a character carries is one parachute skin: the Sport parachute in the Digital Wood set, sold on the Gold Market for 15 Gold Bars. The gear shop lists the Sport parachute itself at 700 (see [Shops](shops.md)); the data does not say whether the parachute must be owned before its skin is bought, or how a character cosmetic is equipped in a match.
+The game has no outfits or character skins. The only cosmetic a character carries is one parachute skin: the Sport parachute in the Digital Wood set, sold on the Gold Market for 15 Gold Bars. The gear shop lists the Sport parachute itself at 700 (see [Shops](shops.md)); the game does not say whether the parachute must be owned before its skin is bought, or how a character cosmetic is equipped in a match.
 
 ## Tips that follow from the numbers
 
-- Emotes and several Season 1 skins cost 5 Gold Bars, the lowest listed price. Rock, Paper and Scissors have no price in the data.
-- The most expensive listed cosmetic is the Black and Gold Little Bird (MH-6), at 30 Gold Bars. Its Gold Market entry carries an expiry date of 31 December 2026 in the data, with a countdown on the tile. Whether it leaves the market on that date is decided by the server; the game files only store the date.
+- Emotes and several Season 1 skins cost 5 Gold Bars, the lowest listed price. Rock, Paper and Scissors have no price.
+- The most expensive listed cosmetic is the Black and Gold Little Bird (MH-6), at 30 Gold Bars. Its Gold Market entry carries an expiry date of 31 December 2026, with a countdown on the tile. Whether it leaves the market on that date is decided by the server; the game only stores the date.
 - Most Season 2 skins cost 10 Gold Bars.
-- The AK74 Black and Gold skin is not on the Gold Market, and the game files give it no price.
+- The AK74 Black and Gold skin is not on the Gold Market, and the game gives it no price.
 
 ## Season 2 changes
 
@@ -76,8 +76,8 @@ The data has no outfits or character skins. The only cosmetic a character carrie
 ## Sources
 
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
-- [Skins (feature)](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
-- [Emotes (feature)](../../game-features/Wardogs_GameFeatures_Emotes_v2.md)
+- [Skins](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
+- [Emotes](../../game-features/Wardogs_GameFeatures_Emotes_v2.md)
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Gold Market prices
 - [Taxi skins data](../../game-features/Wardogs_GameFeatures_Taxi_SkinsData_v2.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
