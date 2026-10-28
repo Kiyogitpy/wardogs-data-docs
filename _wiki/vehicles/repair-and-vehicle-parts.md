@@ -47,7 +47,7 @@ A deflated tyre keeps its wheel on the ground but uses a different collision sha
 
 ### Health triggers
 
-Parts have effect triggers at fixed percentages of their health. The game lists where each trigger sits. Most effects are not decoded, so the wiki does not say exactly what each one does. Where the data is clear, it is stated below.
+Parts have effect triggers at fixed percentages of their health. The game lists where each trigger sits. Most effects are not decoded, so the wiki does not say exactly what each one does. Where the source is clear, it is stated below.
 
 - **Main body.** Triggers at 55%, 25% and 10% on most ground vehicles and helicopters.
 - **Engine.** Triggers at 20% on the Bobcat, at 55% on the SPH-2, L2A6, Gepard and Humvee [M249], and at 0% on all of them.

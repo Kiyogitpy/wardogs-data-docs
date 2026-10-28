@@ -52,7 +52,7 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 ## Handling
 
 - No top speed is set. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000 kg) and drag, not from a speed limit.
-- The auto-trim table, which says what pitch trim the airplane needs at each speed, holds level flight at about 140 km/h at 10% throttle and about 430 km/h at full throttle, in the rows listed for the first gear setting. Both are read from the auto-trim table, not set as a speed limit.
+- The auto-trim table, which says what pitch trim the airplane needs at each speed, holds level flight at about 140 km/h at 10% throttle and about 430 km/h at full throttle, in the table entries listed for the first gear setting. Both are read from the auto-trim table, not set as a speed limit.
 
 - Control surfaces: elevators up to 40 degrees each, ailerons and rudders up to 20 degrees, flaps up to 18 degrees, and an airbrake that can extend.
 - Retractable landing gear, with a nose wheel that steers up to 45 degrees.
