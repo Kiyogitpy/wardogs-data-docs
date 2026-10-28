@@ -1,6 +1,6 @@
 {%- comment -%}
-  Override of just-the-docs v0.10.1 components/site_nav.html: the wiki collection comes first,
-  the data pages follow under a "Data Reference" heading. Re-sync on a theme upgrade.
+  Override of just-the-docs v0.10.1 components/site_nav.html: the wiki section lists Wiki Home
+  and the hub pages only; the data pages follow in a folded "Data Reference" section. Re-sync on a theme upgrade.
 
   Include as: {%- include_cached components/site_nav.html all=bool -%}
   Depends on: site.
@@ -35,39 +35,27 @@
       {%- endfor -%}
     </ul>
   {%- endif -%}
-  {% if site.just_the_docs.collections %}
-    {% assign collections_size = site.just_the_docs.collections | size %}
-    {% for collection_entry in site.just_the_docs.collections %}
-      {% assign collection_key = collection_entry[0] %}
-      {% assign collection_value = collection_entry[1] %}
-      {% assign collection = site[collection_key] %}
-      {% if collection_value.nav_exclude != true %}
-        {% if collections_size > 1 or pages_top_size > 0 %}
-          {% if collection_value.nav_fold == true %}
-            <ul class="nav-list nav-category-list">
-              <li class="nav-list-item">
-                {%- if collection.size > 0 -%}
-                <button class="nav-list-expander btn-reset" aria-label="Toggle collection {{ collection_value.name }}" aria-pressed="false">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
-                </button>
-                {%- endif -%}
-                <div class="nav-category">{{ collection_value.name }}</div>
-                {% include components/nav/pages.html pages=collection all=include.all %}
-              </li>
-            </ul>
-          {% else %}
-            <div class="nav-category">{{ collection_value.name }}</div>
-            {% include components/nav/pages.html pages=collection all=include.all %}
-          {% endif %}
-        {% else %}
-          {% include components/nav/pages.html pages=collection all=include.all %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+  {%- comment -%} Wiki: Wiki Home plus the hub pages only; articles are reached through the hubs. {%- endcomment -%}
+  {% assign wiki_hubs = site.wiki | where: "wiki_hub", true | sort: "nav_order" %}
+  <div class="nav-category">{{ site.just_the_docs.collections.wiki.name }}</div>
+  <ul class="nav-list">
+    <li class="nav-list-item"><a href="{{ '/' | relative_url }}" class="nav-list-link">Wiki Home</a></li>
+    {%- for hub in wiki_hubs %}
+      <li class="nav-list-item"><a href="{{ hub.url | relative_url }}" class="nav-list-link">{{ hub.title }}</a></li>
+    {%- endfor %}
+  </ul>
   {% if pages_top_size > 0 %}
-    <div class="nav-category">Data Reference</div>
-    {% include components/nav/pages.html pages=site.html_pages all=include.all %}
+    {%- comment -%} Data Reference starts folded; the theme script opens it on a data page.
+  This include is cached across pages, so it must not read page.*; assets/js/wiki-menu.js marks the active hub. {%- endcomment -%}
+    <ul class="nav-list nav-category-list">
+      <li class="nav-list-item">
+        <button class="nav-list-expander btn-reset" aria-label="Toggle Data Reference" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button>
+        <div class="nav-category">Data Reference</div>
+        {% include components/nav/pages.html pages=site.html_pages all=include.all %}
+      </li>
+    </ul>
   {% endif %}
 </nav>
 
