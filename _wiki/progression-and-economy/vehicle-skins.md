@@ -39,11 +39,11 @@ The MH-6 Black and Gold skin is the most expensive vehicle skin, at 30 Gold Bars
 
 ## Taxi skin
 
-The taxi skin is for the MH-6 (Little Bird). It is the only taxi cosmetic. It works by swapping materials on the helicopter rather than changing its shape. The list of material swaps is in the game but is not expanded here. The game gives the taxi skin no price and no Gold Market row, so the game does not show how a player gets it.
+The taxi skin is for the MH-6 (Little Bird). It is the only taxi cosmetic. It works by swapping materials on the helicopter rather than changing its shape. The list of material swaps is in the game but is not expanded here. The game gives the taxi skin no price and no Gold Market row, so it is not known how a player gets it.
 
 ## Bobbleheads
 
-Bobbleheads are vehicle cosmetics that fit a vehicle slot. The game has four of them. None has a Gold Market price, and the game does not say how they are unlocked.
+Bobbleheads are vehicle cosmetics that fit a vehicle slot. The game has four of them. None has a Gold Market price, and it is not known how they are unlocked.
 
 | Bobblehead | Price (Gold Bars) | How it unlocks |
 |---|---|---|

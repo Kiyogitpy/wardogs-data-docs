@@ -38,12 +38,12 @@ The Gold Market sells 27 entries. Weapon and vehicle skins account for most of t
 - **Items.** The same weapon can appear in more than one set. The M4 has a Digital Wood skin and a Two-Tone Desert skin.
 - **Emotes.** Each emote has a name and an action. Six emote entries exist. Shh, Rock Paper Scissors and Middle Finger have cosmetic rows with prices. Rock, Paper and Scissors have none.
 - **Look only.** The game shows the pattern and colour of each set. It does not show how a skin looks on a model.
-- **How a player gets one.** The client has two routes: buying it on the Gold Market with Gold Bars, and the backend granting items to a player. Items with no Gold Market row (such as the AK74 Black and Gold skin, the faction logos, the taxi skin and the bobbleheads) can only come from a grant, and the game does not show which grants are made.
+- **How a player gets one.** The client has two routes: buying it on the Gold Market with Gold Bars, and the backend granting items to a player. Items with no Gold Market row (such as the AK74 Black and Gold skin, the faction logos, the taxi skin and the bobbleheads) can only come from a grant, and it is not known which grants are made.
 - **No reward track.** The game has no battle pass and no season reward track, so no cosmetic is tied to a level. The season schedule is a server value and is not in the game.
 
 ## Parachute skin and character looks
 
-The game has no outfits or character skins. The only cosmetic a character carries is one parachute skin: the Sport parachute in the Digital Wood set, sold on the Gold Market for 15 Gold Bars. The gear shop lists the Sport parachute itself at 700 (see [Shops](shops.md)); the game does not say whether the parachute must be owned before its skin is bought, or how a character cosmetic is equipped in a match.
+The game has no outfits or character skins. The only cosmetic a character carries is one parachute skin: the Sport parachute in the Digital Wood set, sold on the Gold Market for 15 Gold Bars. The gear shop lists the Sport parachute itself at 700 (see [Shops](shops.md)); it is not known whether the parachute must be owned before its skin is bought, or how a character cosmetic is equipped in a match.
 
 ## Tips that follow from the numbers
 

@@ -51,7 +51,7 @@ The example scenario used for testing has no article of its own.
 
 ## Rewards
 
-The scenarios have no cash or XP table of their own. The general rules apply; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). None of the four scenario definitions sets a cash reward for finishing a mission, so no completion payout appears in the game. Any payout would be decided elsewhere, and the game does not show it.
+The scenarios have no cash or XP table of their own. The general rules apply; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). None of the four scenario definitions sets a cash reward for finishing a mission, so no completion payout appears in the game. Any payout would be decided elsewhere, and it is not known.
 
 ## Layout
 

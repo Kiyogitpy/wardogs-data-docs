@@ -71,7 +71,7 @@ A wager is a goal a player takes on with a stake of cash. The stake is between 2
 | Revive Teammates | 1 to 50 (5) | 1.001 | 1.2498 |
 | Destroy Occupied Vehicles | 1 to 20 (1) | 1.001 | 1.1479 |
 
-Each action has a 24-hour (86,400 s) cooldown, but the game does not say whether the cooldown is per player, per wager or per match ([Wagers](../progression-and-economy/wagers.md#how-it-works)).
+Each action has a 24-hour (86,400 s) cooldown, but it is not known whether the cooldown is per player, per wager or per match ([Wagers](../progression-and-economy/wagers.md#how-it-works)).
 
 The slip labels its return as the stake times the total odds, with a cap of 5,000,000 cash, but the exact settlement formula is not read from the game, and settlement runs on the server. So this guide gives no expected return ([Wagers](../progression-and-economy/wagers.md#payout-and-settlement)).
 
@@ -79,7 +79,7 @@ The slip labels its return as the stake times the total odds, with a cap of 5,00
 
 - Count is a weak lever for odds. Kills go from 1.001 at one to three kills to 1.2004 at 25 kills, so going from 3 kills to 25 raises the odds by about 0.2 ([Wagers](../progression-and-economy/wagers.md#odds)).
 - Conditions raise odds, and each one is an extra rule on the wager. "Deathwish" multiplies odds by 10.0, "Time limit" by 4.0 and "No vehicles" by 3.0, while "With a $20k loadout" gives 1.05 ([Wagers](../progression-and-economy/wagers.md#conditions)).
-- The server settles the payout, so the game does not say whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
+- The server settles the payout, so it is not known whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
 
 ## The Gold Exchange
 

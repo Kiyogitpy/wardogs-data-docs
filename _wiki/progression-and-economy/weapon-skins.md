@@ -27,7 +27,7 @@ The table below lists each weapon skin once per set, sorted by weapon. A weapon 
 | Weapon | Skin set | Season | Price (Gold Bars) | How it unlocks |
 |---|---|---|---|---|
 | A-91 | Two-Tone Desert | Season 1 | 5 | Gold Market |
-| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. It can only come from a server grant, which the game does not show |
+| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. It can only come from a server grant, and which grants are made is not known |
 | AMP-9 | Two-Tone Desert | Season 1 | 10 | Gold Market |
 | AMR 50 | Two-Tone Desert | Season 1 | 15 | Gold Market |
 | Bushmaster M17S | Two-Tone Desert | Season 1 | 5 | Gold Market |

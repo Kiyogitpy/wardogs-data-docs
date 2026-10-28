@@ -18,7 +18,7 @@ description: "What can be knocked down in the world, which explosives and vehicl
 | **Internal name** | DA_NormalBuilding_MeshToPrefabLookup, DA_AnonymousBuilding_MeshToPrefabLookup, DA_Demolition_* |
 {: .wiki-infobox }
 
-The world of Wardogs can be damaged. Fences, walls, signs and other props can be brought down by explosions and vehicles, and a broken prop can leave a remnant behind. This article explains which kinds of object can break, which hits can break them, and what the game says about the numbers. Where the game does not settle a question, the article says so.
+The world of Wardogs can be damaged. Fences, walls, signs and other props can be brought down by explosions and vehicles, and a broken prop can leave a remnant behind. This article explains which kinds of object can break, which hits can break them, and what the game says about the numbers. Where a question is not settled, the article says so.
 
 ## Overview
 
@@ -26,7 +26,7 @@ Destruction covers three kinds of object:
 
 - **Building pieces.** The walls, roofs, floors, balconies, stairs and apartment corridor pieces of residential buildings. Each has a break-apart piece built in, so the building can come apart into debris.
 - **Demolition props.** The fences, walls, bollards, signs, poles, bushes and trees that can be demolished by a set of named damage sources. Each prop has a rule set that decides what can bring it down.
-- **Street objects.** Road signs, telephone poles, lamp posts, benches, bins and a traffic cone. The game lists them as destructible, but none has a break-apart piece, so the game does not show how they break.
+- **Street objects.** Road signs, telephone poles, lamp posts, benches, bins and a traffic cone. The game lists them as destructible, but none has a break-apart piece, so it is not known how they break.
 
 Player-built structures such as walls, doors and bunkers are a separate system with their own health. They are covered on the [Building](../building.md) page.
 

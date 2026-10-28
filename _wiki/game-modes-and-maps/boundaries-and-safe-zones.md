@@ -76,7 +76,7 @@ The box size is the placed scale times the engine's default box size, because th
 - **Spotting.** The binoculars, the monocular and the range finders list the three safe zone states in one of their tag lists. The meaning is not named in the game (inferred: targets standing in a safe zone cannot be spotted).
 - **Vehicles.** Vehicles are repaired and refuelled by returning to your team's safe zone or a Forward Operating Base, according to the in-game tip, and the game's refuel code checks for your own safe zone. The game also sets a time that a vehicle may stay out of a safe zone before it is cleaned up when nobody uses it: 90 for the Havoc, 10 for the MH-6 and AH-6, and 30,000 for the stationary weapons (the unit is not named; seconds is inferred, and the code that uses it was not traced).
 
-**What the game does not show**
+**What is not known**
 
 - **Shooting.** No rule against firing weapons in a safe zone was found. Your own zone protects you, but no check on firing from it exists in the game or in the code that tests for the zone.
 - **After you leave.** No protection timer, grace period or lingering effect was found. The protection depends on standing in the zone, so it ends when you leave (reading).

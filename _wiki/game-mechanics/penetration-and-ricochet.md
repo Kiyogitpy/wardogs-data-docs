@@ -14,7 +14,7 @@ description: "When a bullet bounces off a surface or passes through it, how ammo
 | Worst penetrating ammo | Hollow point (penetration 0.1) |
 {: .wiki-infobox }
 
-A bullet that hits a surface that is not flesh can do one of three things: stop, bounce off (ricochet) or pass through and keep going. Which one happens depends on the surface material, the angle of the hit, and the ammo in the weapon. This article explains the rules. It does not give a result for any particular wall, because the game does not list the materials of the world's walls and props.
+A bullet that hits a surface that is not flesh can do one of three things: stop, bounce off (ricochet) or pass through and keep going. Which one happens depends on the surface material, the angle of the hit, and the ammo in the weapon. This article explains the rules. It does not give a result for any particular wall, because the materials of the world's walls and props are not known.
 
 ## Overview
 
