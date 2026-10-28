@@ -17,7 +17,7 @@ description: "The Infrared Range Finder: the most expensive recon optic, with in
 | **Use** | |
 | Magnification | Infrared, variable |
 | Distance readout | Accurate |
-| Battery use | 0 per second in the item data |
+| Battery use | 0 per second |
 | Movement while in use | Maximum speed halved |
 | **Availability** | |
 | Price | 3,200 cash |

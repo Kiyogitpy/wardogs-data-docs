@@ -39,14 +39,14 @@ For the mine that is aimed at vehicles, see [AT Mine](at-mine.md). Both are desc
 
 ## How it works
 
-**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The data stores a placement angle of 30. A static reading of the game's placement code shows it compares the slope of the surface you aim at (the angle between the surface normal and straight up, in degrees) with that number, so a surface steeper than 30 degrees from level is refused. The reach is the same 4 m line from your view, plus a small allowance for the Claymore's own size. While the Claymore is being placed, the player moves at 40% speed.
+**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The item has a placement angle of 30. A static reading of the game's placement code shows it compares the slope of the surface you aim at (the angle between the surface normal and straight up, in degrees) with that number, so a surface steeper than 30 degrees from level is refused. The reach is the same 4 m line from your view, plus a small allowance for the Claymore's own size. While the Claymore is being placed, the player moves at 40% speed.
 
 **Arming.** The Claymore is armed 2 s after it is placed. Until then its trigger is off.
 
 **Trigger.** The trigger is a box in front of the mine:
 
 - A target must be alive and moving: a living player whose speed is above 0 sets it off, and so does a vehicle driver or passenger in a moving vehicle. A motionless target does not trigger it.
-- The check compares the placer's faction with the target's, so the targets are enemies. The data does not show how a teammate is handled.
+- The check compares the placer's faction with the target's, so the targets are enemies. It is not known how a teammate is handled.
 - The blast must reach the target. The Claymore runs a line-of-sight check to the target's damage points before it fires.
 
 **Being shot.** An explosion nearby sets the Claymore off. Other damage destroys it, because its health is 1 HP.

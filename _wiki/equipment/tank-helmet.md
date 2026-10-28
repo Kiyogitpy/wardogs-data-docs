@@ -19,7 +19,7 @@ description: "Vehicle-use helmet: 55% reduction for the head and neck, removes s
 | Body parts covered | Head and neck |
 | Durability | 180 |
 | **Availability** | |
-| Price | Not sold (hidden in the shop; the data lists 5,000 cash) |
+| Price | Not sold (hidden in the shop; a price of 5,000 cash is listed) |
 | Unlock | Not applicable |
 | **Reference** | |
 | Internal name | `ID_TankHelmet` (item `Id.Item.TankHelmet`) |

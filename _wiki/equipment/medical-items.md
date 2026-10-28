@@ -38,7 +38,7 @@ Medical items heal the player who uses them, a teammate, or both, and some bring
 | Enox | 40 HP as decaying health | no | 450 (hidden in the shop) |
 | Adrenaline Pen | no heal; unlimited tactical sprint for 60 s | no | 250 |
 | Defibrillator | no | yes, to 35 HP | 1,600 |
-| Emergency Resuscitator | no | yes, to 10 HP | 0 in the shop data |
+| Emergency Resuscitator | no | yes, to 10 HP | 0 in the shop |
 | Field Resuscitator | no | yes, to 10 HP | 425 |
 
 ## Effects

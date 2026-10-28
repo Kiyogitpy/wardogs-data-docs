@@ -21,7 +21,7 @@ description: "The revive item that brings a downed teammate back at 35 HP after 
 | Use time | 9.2 s use animation |
 | **Availability** | |
 | Price | 1,600 cash |
-| Unlock level | 0 (shop data) |
+| Unlock level | 0 (shop) |
 | **Data** | |
 | Internal name | `Id.Item.Defibrillator.Standard` |
 {: .wiki-infobox }
@@ -42,7 +42,7 @@ The shop describes the Defibrillator as reviving a teammate instantly, and says 
 
 ### Medic skills
 
-The "Defib charge speed" skill is described as reducing the charge time. The "Increased charges per battery" skill is also described. No number for either skill is known, so the new charge time and battery use are not in the data.
+The "Defib charge speed" skill is described as reducing the charge time. The "Increased charges per battery" skill is also described. No number for either skill is known, so the new charge time and battery use are not known.
 
 The revive speed boost skills apply after you revive a teammate. Your sprint and tactical sprint speed are multiplied by 1.2 at skill level 2 and 1.4 at level 4, and the revived teammate gets the same boost. Both last 5 s.
 

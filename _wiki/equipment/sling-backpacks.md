@@ -32,7 +32,7 @@ The sling slots are for weapons or special items. The shop text describes the Me
 
 | Backpack | Price (cash) | Grid | Slots | Sling | Weight (kg) |
 |---|---:|---|---:|---|---:|
-| Medium Backpack and Sling (hidden in the shop) | 1,400 | not given in the shop text (3 x 5 in the item data) | not given | 1 weapon or special item | 4.0 |
+| Medium Backpack and Sling (hidden in the shop) | 1,400 | not given in the shop text (3 x 5) | not given | 1 weapon or special item | 4.0 |
 | Gunner Backpack and Sling | 2,400 | 6 x 4 | 24 | 1 equipment slot | 1.5 |
 | Arsenal Backpack and 2 Slings | 4,000 | 6 x 4 | 24 | 2 equipment slots | 1.5 |
 

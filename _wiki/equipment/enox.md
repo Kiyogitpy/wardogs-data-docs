@@ -16,7 +16,7 @@ description: "A self-only item that gives 40 HP as decaying health, above your n
 | **Effect** | |
 | Heals | 40 HP as decaying health |
 | Use time | 2.2 s |
-| Effects while using | None listed in the data |
+| Effects while using | None listed |
 | **Availability** | |
 | Price | 450 cash (marked hidden in the shop data) |
 | Unlock level | 0 (shop data) |

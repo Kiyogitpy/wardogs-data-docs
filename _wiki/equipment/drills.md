@@ -21,7 +21,7 @@ description: "The Light and Heavy Drills: the battery-powered vehicle repair too
 | Battery use | 1 charge per repair swing that lands (both). The game files also list 1.25 per second, but no part of the game reads it, so there is no per-second drain |
 | **Availability** | |
 | Price | 600 (Light), 1,300 cash (Heavy) |
-| Unlock level | 1 (shop data) |
+| Unlock level | 1 (shop) |
 | **Data** | |
 | Internal name | `ID.Item.RepairTool.Drill.Light`, `ID.Item.RepairTool.Drill.Heavy` |
 {: .wiki-infobox }

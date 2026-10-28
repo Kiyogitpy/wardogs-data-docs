@@ -72,7 +72,7 @@ No Season 2 change to the Ghillie Headwear is listed.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price, unlock and effects
 - [Items data](../../content/Wardogs_Items_v2.md): item id
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): how the damage tables treat the Ghillie items
-- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts in the item data
+- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts for this item
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor
