@@ -13,9 +13,9 @@ description: "The gameplay changes in Season 2 compared with Season 1, grouped b
 | Scope | Gameplay-relevant changes only |
 {: .wiki-infobox }
 
-Season 2 changed the weapons, damage rules, vehicles, items, modes and progression. The notes below cover the changes that affect play. Cosmetic changes, renamed settings, shader and warm-up data, and audio changes are left out. The full lists are on the [Season 2 Changes](../../season-2-changes/all-changes.md) pages, linked at the end of each section.
+Season 2 changed the weapons, damage rules, vehicles, items, modes and progression. The notes below cover the changes that affect play. Cosmetic changes, renamed settings, shader and warm-up files, and audio changes are left out. The full lists are on the [Season 2 Changes](../../season-2-changes/all-changes.md) pages, linked at the end of each section.
 
-**How these notes were made.** The game files were exported for Season 1 and for Season 2 and compared asset by asset. Renamed keys, swapped key names, moved files, and shader, audio and visual data were filtered out. The remaining value changes were kept when they affect play, and each was checked against the wiki article for that weapon, vehicle or item, so the names are the ones players see.
+**How these notes were made.** The game's files for Season 1 and Season 2 were compared asset by asset. Renamed keys, swapped key names, moved files, and shader, audio and visual settings were filtered out. The remaining value changes were kept when they affect play, and each was checked against the wiki article for that weapon, vehicle or item, so the names are the ones players see.
 
 ## Weapons
 
@@ -73,7 +73,7 @@ Full lists: [Vehicles changes](../../season-2-changes/vehicles.md).
 
 ## Items and equipment
 
-- **Parachutes open later and from a higher height.** The minimum fall before a parachute can be used rose from 1 m to 4 m (most likely; the data stores 100 and 400 without a unit). A parachute can now only open at least 10 m above the ground (most likely; stored as 1,000), and takes 2 (unit not stated, probably seconds) to open.
+- **Parachutes open later and from a higher height.** The minimum fall before a parachute can be used rose from 1 m to 4 m (most likely; the game stores 100 and 400 without a unit). A parachute can now only open at least 10 m above the ground (most likely; stored as 1,000), and takes 2 (unit not stated, probably seconds) to open.
 - **Parachute prices changed.** The Basic Parachute rose from 100 to 500, and the Sport Parachute fell from 1,000 to 700.
 - **Parachute landing damage reaches its maximum later.** Damage reaches 100 at a fall speed of 17 m/s, up from 11.1 m/s.
 - **Medical items and equipment changed in price.** Medical Bag down from 2,000 to 1,800, standard resuscitator down from 500 to 425, Heavy armor up from 2,000 to 2,500, Super heavy armor up from 4,000 to 5,000, Heavy helmet up from 1,500 to 2,000, Super heavy helmet up from 3,000 to 4,500.
@@ -91,12 +91,12 @@ Full lists: [Items & Equipment changes](../../season-2-changes/items-equipment.m
 ## Modes and rewards
 
 - **Team Offence was added as a new game mode,** with its own challenges and voting and punishment rules. [Hot Potato](../game-modes-and-maps/hot-potato.md) was also added: a pre-lobby mini-game with its own items, switched off by default, not a match mode. The shooting range also gained a tutorial, and Control Zone settings were added for Sniper Showdown and for the Africa and Russia layouts.
-- **Cash for spotting and destroying some vehicles changed.** For the SPH-2 (the artillery tank, which shares its body with the L2A6), spotting it went from 1,500 to 400 (200 when the spot is refreshed), and the cash paid to the spotter when a spotted SPH-2 is destroyed went from 8,000 to 1,200. These come from two different tables: 400 is from the spot-added row and 1,200 from the spotted-target-destroyed row of the spotting rewards, while destroying an SPH-2 yourself is a third value (14,000 to 8,000 base cash, below). Talon 9K-SAM spotting went from 200 to 75 (the data has a second Talon row, 1,000 to 400, listed below), and spotting a Vanguard CIWS went from 1,500 to 725.
+- **Cash for spotting and destroying some vehicles changed.** For the SPH-2 (the artillery tank, which shares its body with the L2A6), spotting it went from 1,500 to 400 (200 when the spot is refreshed), and the cash paid to the spotter when a spotted SPH-2 is destroyed went from 8,000 to 1,200. These come from two different tables: 400 is from the spot-added row and 1,200 from the spotted-target-destroyed row of the spotting rewards, while destroying an SPH-2 yourself is a third value (14,000 to 8,000 base cash, below). Talon 9K-SAM spotting went from 200 to 75 (the game has a second Talon row, 1,000 to 400, listed below), and spotting a Vanguard CIWS went from 1,500 to 725.
 - **Spotting rewards fell for more vehicles.** The Flakpanzer Gepard's cash went from 5,000 to 2,100, and the Talon 9K-SAM's from 1,000 to 400. XP for the Mortar and the Talon roughly halved (for example from 125 to 60). The XP reward for spotting an AT Mine and a Claymore doubled, from 2.5 to 5.0. The cash factor for a spotted target killed by enemies fell from 0.5 to 0.25 for players and most vehicles.
 - **The general spotting pay range is unchanged.** In the match-score table, spotting still pays 15 to 275 cash and destroying a spotted target 50 to 500. The vehicle and buildable amounts above come from a separate challenge reward table, which is why they can be higher.
 - **Spotting challenges gained rows.** The calculator grew from 44 to 130 rows, with variant-level rows for each vehicle and new entries for buildables that scale with build progress.
 - **Vehicle destroyed rewards cover the new vehicles.** Destroying the T-72B3 pays a base 5,000 cash.
-- **Team kill tracking was removed** from the game feature data.
+- **Team kill tracking was removed** from the game.
 
 Full lists: [Game Modes & Maps changes](../../season-2-changes/game-modes-maps.md) and [Rewards & Unlocks changes](../../season-2-changes/rewards-unlocks.md).
 
