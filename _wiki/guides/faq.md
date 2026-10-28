@@ -6,7 +6,7 @@ description: "Short answers to the questions players ask most about combat, armo
 
 # Frequently Asked Questions
 
-Short answers to the questions players ask most often. Each answer gives the number from the game data and links to the article that explains it. Where a figure is worked out from the data rather than timed in play, the answer says so, and where the data does not settle a question, the answer says that too.
+Short answers to the questions players ask most often. Each answer gives the number from the game and links to the article that explains it. Where a figure is worked out from the game rather than timed in play, the answer says so, and where the game does not settle a question, the answer says that too.
 
 ## Combat and damage
 
@@ -40,7 +40,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **What is the Medical Bag for?** It heals you at 7 HP per second, or a teammate at 10 HP per second, and it can revive a downed player to 50 HP. While a bandage, First Aid Kit, Medical Bag, Adrenaline Pen or resuscitator is in use, your maximum movement speed is halved ([Medical Items](../equipment/medical-items.md), [Downed and Revive](../game-mechanics/downed-and-revive.md)).
 
-**How long does a revive take?** A teammate holding a revive by hand needs 20 s with no equipment, and the revived player comes back at 10 HP. A Defibrillator needs a battery and a 4 s charge and restores 35 HP. The resuscitator takes about 4 s by derivation from the item data, but it has not been timed in play. A player revived by an enemy is a "No Value Kill" for 60 s: killing them pays almost no cash and no Role XP ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Defibrillator](../equipment/defibrillator.md)).
+**How long does a revive take?** A teammate holding a revive by hand needs 20 s with no equipment, and the revived player comes back at 10 HP. A Defibrillator needs a battery and a 4 s charge and restores 35 HP. The resuscitator takes about 4 s by derivation from the item stats, but it has not been timed in play. A player revived by an enemy is a "No Value Kill" for 60 s: killing them pays almost no cash and no Role XP ([Downed and Revive](../game-mechanics/downed-and-revive.md), [Defibrillator](../equipment/defibrillator.md)).
 
 **How long do I have when I am downed?** The bleed-out timer starts at 360 s and drains at half speed, so about 12 minutes unless you are helped. Giving up ends the wait in 1.5 s ([Downed and Revive](../game-mechanics/downed-and-revive.md)).
 
@@ -68,23 +68,23 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How do I repair a vehicle in the field?** Use a Wrench, which repairs 10 HP per use for 180 cash. A Repair Station's Fast option restores 5% of health for 100 cash, but it only works inside the Forward Operating Base radius ([Vehicle Guide](vehicle-guide.md)).
 
-**Do vehicle seats protect passengers?** Some do. A Havoc seat takes 10% of small and medium arms damage, a Humvee seat 30%, and a Little Bird seat 75% in Season 2. The data gives no seat protection for the Kodiak or the Ural ([Vehicle Guide](vehicle-guide.md), [Seats and Passengers](../vehicles/seats-and-passengers.md)).
+**Do vehicle seats protect passengers?** Some do. A Havoc seat takes 10% of small and medium arms damage, a Humvee seat 30%, and a Little Bird seat 75% in Season 2. The game gives no seat protection for the Kodiak or the Ural ([Vehicle Guide](vehicle-guide.md), [Seats and Passengers](../vehicles/seats-and-passengers.md)).
 
 **Why do I take damage when I jump out?** Damage depends on your speed when you leave. There is none at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h and 100 at 75 km/h and above ([Vehicle Guide](vehicle-guide.md), [Movement](../game-mechanics/movement.md)).
 
 ## Building
 
-**What is a Forward Operating Base?** The anchor for building. Most structures must be placed inside its radius. It costs 7,500 cash in the shop and has 15,000 HP. Its data lists a Build Supplies cost of 30, but nothing is charged at placement ([Forward Operating Base](../building/forward-operating-base.md)).
+**What is a Forward Operating Base?** The anchor for building. Most structures must be placed inside its radius. It costs 7,500 cash in the shop and has 15,000 HP. The game lists a Build Supplies cost of 30, but nothing is charged at placement ([Forward Operating Base](../building/forward-operating-base.md)).
 
 **Which hammer builds a Bunker, and how many rockets kill one?** Only the Large Hammer builds a Bunker, for 200 Build Supplies and 134 hits. Rockets do 45% more damage to it, and about 33 120 mm rockets destroy it at point blank. That count is derived from the damage table, not measured in play ([Bunker](../building/bunker.md), [Buildables](../building.md)).
 
-**What does the Drill Rig do?** It is a fuel-powered rig built with the Large Hammer for 2,750 Build Supplies, with 2,500 HP. It runs on Fuel Supplies and pulls the Hot Zone toward it, at 3 m/s by the game's default. The rig's own data lists 5 m/s, which is not confirmed ([Drill Rig](../building/drill-rig.md)).
+**What does the Drill Rig do?** It is a fuel-powered rig built with the Large Hammer for 2,750 Build Supplies, with 2,500 HP. It runs on Fuel Supplies and pulls the Hot Zone toward it, at 3 m/s by the game's default. The rig's own stats list 5 m/s, which is not confirmed ([Drill Rig](../building/drill-rig.md)).
 
 **Do sandbags stop bullets?** A Sandbag Wall, with 735 HP, takes 15% of bullet damage. It takes 650% more from rockets and 500% more from IEDs ([Buildables](../building.md#damage-by-source), [Sandbag Wall](../building/sandbag-wall.md)).
 
 **Where do I get Build Supplies?** From the Item Shop. Ammo, Fuel, Mechanical and Build Supplies all cost 10 cash for a lot of 50 ([Supplies](../equipment/supplies.md)).
 
-**Can I take down a structure I built?** Yes. A hammer hit on your own structure does 150, 200 or 250 damage with the Small, Medium or Large hammer. The data finds no Build Supplies refund for dismantling ([Buildables](../building.md#repair-and-dismantle)).
+**Can I take down a structure I built?** Yes. A hammer hit on your own structure does 150, 200 or 250 damage with the Small, Medium or Large hammer. The game shows no Build Supplies refund for dismantling ([Buildables](../building.md#repair-and-dismantle)).
 
 ## Modes and maps
 
@@ -104,11 +104,11 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 ## Money and progression
 
-**How much cash do I start with?** The game's table sets 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort). On live servers Cash is kept between matches, so your balance comes from your saved data online; 10,000 is the game's table value and most likely the first-time balance (inferred). In King of the Hill, points earned in the [pre-lobby](../game-modes-and-maps/pre-lobby.md) are added on top when the match starts, 1 cash per point up to 5,000.
+**How much cash do I start with?** The game's table sets 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort). On live servers Cash is kept between matches, so your balance comes from your saved account online; 10,000 is the game's table value and most likely the first-time balance (inferred). In King of the Hill, points earned in the [pre-lobby](../game-modes-and-maps/pre-lobby.md) are added on top when the match starts, 1 cash per point up to 5,000.
 
-**How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate and it changes over time, so the rate is not in the game files (the exchange table in the files is empty). Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
+**How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate and it changes over time, so the rate is not in the game (the exchange table is empty). Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
 
-**Can I buy Gold Bars with real money?** The client data has no Gold Bar pack, so it does not show whether they are sold for money ([Currencies](../progression-and-economy/currencies.md)).
+**Can I buy Gold Bars with real money?** The game has no Gold Bar pack, so it does not show whether they are sold for money ([Currencies](../progression-and-economy/currencies.md)).
 
 **Why is my shop price lower?** Each price is multiplied by every discount that applies. A player at Wardog level 8 or below pays 50% of the price, a first purchase pays 90% (10% off), and a losing faction that trails by 40 points pays 80% (this condition is inferred from the setting's field names). Your faction's signature rifle is free, as read from the setting's name ([Shops](../progression-and-economy/shops.md)).
 
@@ -116,7 +116,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top vehicle payout in the role table on Making Money. Destroying an artillery tank also pays a 6,000 base, and the SPH-2 has a separate per-kill session value of 8,000 in Season 2. Destroying an enemy Forward Operating Base pays 2,500 plus up to 7,500 more depending on the supplies it holds, so no single figure is the biggest. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
 
-**What is Intel for?** Passive missions pay 100 to 500 Intel per tier. The data has no shop price, unlock or exchange that uses it ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
+**What is Intel for?** Passive missions pay 100 to 500 Intel per tier. The game has no shop price, unlock or exchange that uses it ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
 
 ## AI and PvE
 
@@ -130,7 +130,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **How long does the VIP have before the mission fails?** In VIP Escort the mission fails 10 s after the VIP goes down (reaches the critical state). A revive does not stop that clock, so a downed VIP means a lost mission. If the VIP disconnects, the game picks a new VIP instead ([VIP Escort](../game-modes-and-maps/vip-escort.md), [PvE Guide](pve-guide.md)).
 
-**What does Hunter Killer include?** Its data is not finished. Its map layer holds only text labels and scenery, and it sets no soldiers, objectives, player faction or starting cash, so the game files have no answer for them ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
+**What does Hunter Killer include?** The mission is not finished. Its map layer holds only text labels and scenery, and it sets no soldiers, objectives, player faction or starting cash, so the game has no answer for them ([Hunter Killer](../game-modes-and-maps/hunter-killer.md)).
 
 ## Sources
 

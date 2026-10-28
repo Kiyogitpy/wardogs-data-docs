@@ -35,7 +35,7 @@ See [King of the Hill](../game-modes-and-maps/king-of-the-hill.md) for the full 
 | Bakurani | 500 m across, 170 m tall | 85 m across, 170 m tall | 3 | 60 |
 | Ozeti | 550 m across, 150 m tall | 85 m across, 150 m tall | 4 | 55 |
 | Zestafona | 500 m across, 500 m tall | 85 m across, 850 m tall | 4 | 56 |
-| Saburtulo | 550 m across, 150 m tall | 85 m across, 150 m tall | 4 | Not in the data |
+| Saburtulo | 550 m across, 150 m tall | 85 m across, 150 m tall | 4 | Not known |
 
 Sources: [Control Zone](../game-modes-and-maps/control-zone.md), [Zone Layouts](../game-modes-and-maps/zone-layouts.md).
 
@@ -87,13 +87,13 @@ The yards for each side:
 | Saburtulo | Valkyra | Rostokino | Valkyra version | 2 / 1 / 1 | 25 |
 | Saburtulo | Manticore | Ramenki | Lonestar version | 2 / 1 / 1 | 26 |
 
-The Kuzminki and Ramenki boards look swapped in the data. Which team gets which spawn vehicle in a match is not known. The yards allow vehicle families, not single vehicles, and the data does not say how many vehicles a yard holds.
+The Kuzminki and Ramenki boards look swapped in the game. Which team gets which spawn vehicle in a match is not known. The yards allow vehicle families, not single vehicles, and the game does not say how many vehicles a yard holds.
 
 ### Vehicle limits
 
 - A player may own at most 2 spawned vehicles at a time.
 - After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s.
-- The board does not put the APC out until one side has a score of 20. When the APC is destroyed it returns after 300 s, or after 60 s if the side is losing, meaning the best other side is ahead by 15 score points or more at that moment. These timers time the APC only. The data gives no return time for the other yard vehicles.
+- The board does not put the APC out until one side has a score of 20. When the APC is destroyed it returns after 300 s, or after 60 s if the side is losing, meaning the best other side is ahead by 15 score points or more at that moment. These timers time the APC only. The game gives no return time for the other yard vehicles.
 
 For which vehicles to use against which targets, see the [Vehicle Guide](vehicle-guide.md) and the [Anti-Vehicle Guide](anti-vehicle-guide.md).
 
@@ -101,7 +101,7 @@ Sources: [Maps](../game-modes-and-maps/maps.md), [Bakurani](../game-modes-and-ma
 
 ## Building a forward base
 
-The Forward Operating Base (FOB) costs 7,500 cash in the shop. Its data lists a Build Supplies cost of 30, but nothing is charged at placement. It has 15,000 HP, is placed from its own item, and has no build time. Most structures must be placed inside its radius. A new FOB cannot be placed within about 42 m of another FOB. Destroying an enemy FOB pays 2,500 cash. The King of the Hill spawn manager has no FOB step.
+The Forward Operating Base (FOB) costs 7,500 cash in the shop. The game lists a Build Supplies cost of 30, but nothing is charged at placement. It has 15,000 HP, is placed from its own item, and has no build time. Most structures must be placed inside its radius. A new FOB cannot be placed within about 42 m of another FOB. Destroying an enemy FOB pays 2,500 cash. The King of the Hill spawn manager has no FOB step.
 
 Read [Forward Operating Base](../building/forward-operating-base.md) for the full figures, and [Building a Base](building-guide.md) for what to build around it.
 
@@ -146,7 +146,7 @@ Sources: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), [Ki
 
 ### Zestafona
 
-- The Hot Zone is 850 m tall, against a 500 m tall Control Zone. The data does not say whether that is intended.
+- The Hot Zone is 850 m tall, against a 500 m tall Control Zone. The game does not say whether that is intended.
 - Small Factory has weight 0 and is used only when the rotation names it.
 - The Boston (Lonestar) area has no air yard of its own. The Lonestar side uses one extra air yard outside the spawn areas, which the wiki infers belongs to the base map.
 

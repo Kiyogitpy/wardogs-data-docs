@@ -17,7 +17,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 | Armor | Vests and helmets that absorb part of the damage from a hit. | [Armor](../game-mechanics/armor.md) |
 | Armor-piercing (AP) | Ammunition built to get through armor. It does about 0.8 times standard damage, but it does more than standard against medium armor on rifle calibers. | [Ammunition](../ammunition.md) |
 | Artillery | Long-range fire missions from the SPH-2 gun, aimed with map coordinates, a bearing and mils. | [Artillery](../game-mechanics/artillery.md) |
-| Assault | One of the six roles. It was called Infantry in the game data and is titled Assault on this wiki. | [Assault](../progression-and-economy/assault.md) |
+| Assault | One of the six roles. It was called Infantry in the game and is titled Assault on this wiki. | [Assault](../progression-and-economy/assault.md) |
 
 ## B
 
@@ -60,7 +60,7 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 
 | Term | Meaning | Read more |
 |---|---|---|
-| Factions | The three teams in the game data: Lonestar, Valkyra and Manticore. | [Factions](../game-modes-and-maps/factions.md) |
+| Factions | The three teams in the game: Lonestar, Valkyra and Manticore. | [Factions](../game-modes-and-maps/factions.md) |
 | Fall damage | Damage taken from a hard landing or a fall from height. | [Movement](../game-mechanics/movement.md) |
 | FMJ (full metal jacket) | The standard ammunition type and the baseline for damage. | [Ammunition](../ammunition.md) |
 | Forward Operating Base (FOB) | The main player-built base. Most structures must be placed inside its radius. | [Forward Operating Base](../building/forward-operating-base.md) |
@@ -169,5 +169,5 @@ This glossary explains the terms a player meets in the game and on this wiki. Ea
 
 ## Sources
 
-- The game-mechanics, weapon, equipment, vehicle and progression articles linked above, which hold the data behind each term
+- The game-mechanics, weapon, equipment, vehicle and progression articles linked above, which hold the numbers behind each term
 - [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md), for the default keys

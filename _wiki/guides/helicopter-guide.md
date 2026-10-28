@@ -32,14 +32,14 @@ The Z20 Lakota [Miniguns] fires 1,500 rounds/min out to 1,500 m, with 150 starti
 
 ## Threats from the ground
 
-**Lock-on weapons.** A lock-on weapon must lock on before it can fire. The data lists these ones that can hit helicopters:
+**Lock-on weapons.** A lock-on weapon must lock on before it can fire. The game lists these ones that can hit helicopters:
 
 | Weapon | Lock time | Delay after lock | Targets | Notes |
 |---|---:|---:|---|---|
 | [9K333 Verba](../weapons/9k333-verba.md) | 2 s | 0.25 s | Helicopters and the airplane only | A launcher a player carries. Fires only while locked on. Costs 800, unlock level 1. |
 | [Talon 9K-SAM](../building/talon-9k-sam.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey, the Z20 Lakota family and the airplane | An emplacement. Fires only while locked on. |
 | [Stingray](../building/stingray.md) | 2.0 s | 0.5 s | Air vehicles only, including the Little Bird family and the Havoc | An emplacement that fires a drone. |
-| [MG Nest](../building/mg-nest.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey and the airplane | An emplacement. Its weapon data has this lock-on block, but how a player-manned gun uses it is not shown in the data. |
+| [MG Nest](../building/mg-nest.md) | 2.0 s | 0.5 s | Air vehicles: the Little Bird family, the Havoc, the Huey and the airplane | An emplacement. Its weapon stats have this lock-on block, but how a player-manned gun uses it is not shown. |
 | [Vanguard CIWS](../building/vanguard-ciws.md) | Not stated | Not stated | The building guide says its target list is air vehicles only | The Vanguard page gives no lock-on timings. |
 
 Sources: the articles in the table, and [Building a Base](building-guide.md). The Huey is on the Talon and MG Nest lists. See the [Huey](../vehicles/huey.md) article.
@@ -93,16 +93,16 @@ The flare bands per helicopter:
 
 Source: [Countermeasures and flares](../vehicles/countermeasures-and-flares.md#numbers).
 
-Things flares do not do, as the data shows:
+Things flares do not do, as the game shows:
 
-- **Smoke does nothing to lock-on.** The smoke screen has no link to lock-on or to missile steering, as far as the data shows.
+- **Smoke does nothing to lock-on.** The smoke screen has no link to lock-on or to missile steering, as far as the game shows.
 - **The Stingray drone is not pulled.** The drone is player-flown and is not a guided missile. Flares do not change its course.
 - **A lock is not dropped.** The flares do not stop a new lock or drop one that exists. This is inferred from the game's code and not tested in play.
 - **The Talon's missiles.** The Talon fires the same guided 72 mm rocket as the 9K333 Verba, so the flare rules should apply to it too. This is inferred.
 
 ## Pilot helmet
 
-The [Pilot Helmet](../equipment/pilot-helmet.md) is a vehicle-use helmet that is not sold in the shop. The shop data lists it at 6,400 cash but hides it.
+The [Pilot Helmet](../equipment/pilot-helmet.md) is a vehicle-use helmet that is not sold in the shop. The shop lists it at 6,400 cash but hides it.
 
 - **Protection.** It reduces head damage by 30%. It covers the head only, and it has 180 durability.
 - **In a helicopter pilot or gunner seat.** Vehicle sound drops to about half volume, a setting of 0.50 (about 6 dB quieter). A low-pass filter set to 0.4 dulls the high tones. Both changes fade in and out over 0.1 s.
@@ -127,7 +127,7 @@ Sources: [Fuel and refueling](../vehicles/fuel-and-refueling.md) and [Repair and
 - A Wrench repairs 10 HP per use, in 0.68 s, for 180 cash. A light drill repairs 14.5 HP per use, in 0.75 s, for 600 cash. A heavy drill repairs 14.5 HP per use, in 0.5 s, for 1,300 cash.
 - Repairing a 400 HP helicopter from zero takes 40 Wrench uses (derived), about 27 s at 0.68 s each.
 - A Repair Station's Fast restock gives 5% in 3 s for 100 cash. Its Max restock gives up to 100% in 9 s for 2,000 cash.
-- The Havoc's rotors have damage triggers at 55% and 0%. The data sets rotor triggers only for the Havoc.
+- The Havoc's rotors have damage triggers at 55% and 0%. The game sets rotor triggers only for the Havoc.
 - The in-game tip says a rotor blade breaks if it hits an object. Flying close to terrain or other aircraft puts the rotors at risk.
 
 ## Earning as a pilot
