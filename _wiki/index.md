@@ -7,12 +7,14 @@ description: "Readable articles on Wardogs weapons, gear, vehicles, modes and me
 ---
 
 <div class="wf" markdown="0">
+<div class="wf-top">
 {% include wiki-front-welcome.html %}
+{% include wiki-front-tools.html %}
+</div>
 <div class="wf-cols">
 {% include wiki-front-portals.html part="first" %}
 {% include wiki-front-about.html %}
 {% include wiki-front-patch.html %}
-{% include wiki-front-tools.html %}
 {% include wiki-front-portals.html part="rest" %}
 {% include wiki-front-data.html %}
 </div>

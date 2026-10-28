@@ -88,6 +88,20 @@ $wf-head: "Barlow Condensed", "Arial Narrow", sans-serif;
   dd { margin: 0; color: $wf-tan; font-family: $wf-head; font-size: 1.5rem; white-space: nowrap; font-weight: 600; line-height: 1.2; }
 }
 
+// Top row: welcome on the left, interactive tools on the right. The tools column is as wide as
+// one column of .wf-cols below (same gap), so its edges line up.
+.wf-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  @media (min-width: 50rem) { grid-template-columns: minmax(0, 1fr) calc((100% - 1rem) / 2); }
+  @media (min-width: 75rem) { grid-template-columns: minmax(0, 1fr) calc((100% - 2rem) / 3); }
+
+  > .wf-box { margin: 0; }
+  .wf-welcome { grid-template-columns: 1fr; align-content: center; }
+}
+
 // 1 column, 2 from 50rem (800 px), 3 from 75rem (1200 px). CSS columns flow the boxes
 // top to bottom, balanced, so a tall box never leaves a hole beside a short one.
 .wf-cols {
