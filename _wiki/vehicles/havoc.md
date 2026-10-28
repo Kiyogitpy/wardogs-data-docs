@@ -53,7 +53,7 @@ Main health is 800 HP. The helicopter also has separate health for each of these
 
 Rifle rounds do 5% of their damage against the hull. A round that hits the fuel tank gets an extra 300% on top of that, so it does about a fifth of its full damage. Rocket blasts that burst within the inner radius are multiplied by five.
 
-Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -75,12 +75,12 @@ The seats are a driver (pilot) seat and one gunner seat.
 
 ## Handling
 
-- Driving assists: the climb rate is limited to 36 km/h, the collective holds a hover when released, and the pitch and roll level out at low speed. Four assists are stored as switched off: the sink-rate limit, the yaw reset on the ground, the roll drag-overshoot prevention and the roll damping. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
+- Driving assists: the climb rate is limited to 36 km/h, the collective holds a hover when released, and the pitch and roll level out at low speed. Four assists are set to off: the sink-rate limit, the yaw reset on the ground, the roll drag-overshoot prevention and the roll damping. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 
-- Rotor radius 600, maximum lift coefficient 1.8, and stall angle 40 degrees, as stored.
+- Rotor radius 600, maximum lift coefficient 1.8, and stall angle 40 degrees, as set.
 - Translational lift of 20% between 24 and 34 m/s.
 - Maximum angular velocity 83 deg/s.
-- Ground effect falloff 12 m. No ground-effect strength is stored for this helicopter.
+- Ground effect falloff 12 m. No ground-effect strength is set for this helicopter.
 
 ## Season 2 changes
 
@@ -92,7 +92,7 @@ The seats are a driver (pilot) seat and one gunner seat.
 
 ## Vehicle spawns
 
-The Havoc is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Havoc is also named directly in one Zestafona yard (the extra air yard of the Lonestar side, with the Little Bird family, the Huey and the Z20 Lakota family). The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Havoc is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Havoc is also named directly in one Zestafona yard (the extra air yard of the Lonestar side, with the Little Bird family, the Huey and the Z20 Lakota family). The airframe is not named in those yards, so which helicopter appears in a slot is not known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 

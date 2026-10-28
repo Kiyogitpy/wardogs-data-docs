@@ -39,7 +39,7 @@ The Kodiak [M249] is sold in the vehicle vendor under land transport, for 6,750 
 
 ## Armor and damage
 
-Main health is 400 HP, with the same engine, fuel tank and wheel health as the [Kodiak](kodiak.md). The data simulates this variant with the same damage rules as the base Kodiak, so its destruction counts match:
+Main health is 400 HP, with the same engine, fuel tank and wheel health as the [Kodiak](kodiak.md). This variant uses the same damage rules as the base Kodiak, so its destruction counts match:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -56,13 +56,13 @@ Main health is 400 HP, with the same engine, fuel tank and wheel health as the [
 |---|---|---:|---:|---:|---:|
 | M249 Machine Gun (ring turret) | Machine gun | 850 rounds/min | 700 m | 4.25 s | 0 (tracer) |
 
-The gun fires 850 rounds/min out to 700 m. The data gives the reload time and the starting ammunition too (none loaded at the start, tracer rounds).
+The gun fires 850 rounds/min out to 700 m. The reload time and the starting ammunition are listed too (none loaded at the start, tracer rounds).
 
 ## Handling
 
 Handling matches the base Kodiak: mass 2,750, hand brake 50, and front steering of 30 degrees.
 
-- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes
 
@@ -71,7 +71,7 @@ Handling matches the base Kodiak: mass 2,750, hand brake 50, and front steering 
 
 ## Vehicle spawns
 
-The Kodiak [M249] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Kodiak, Kodiak [M249] and Kodiak [Pickup]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in all 7 ground yards on Ozeti, 6 or 7 of the 6 or 7 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Kodiak [M249] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Kodiak, Kodiak [M249] and Kodiak [Pickup]), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in all 7 ground yards on Ozeti, 6 or 7 of the 6 or 7 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -87,4 +87,4 @@ The Kodiak [M249] is placed by the ground vehicle yards of all four main maps: [
 - [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article

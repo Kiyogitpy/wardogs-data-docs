@@ -45,7 +45,7 @@ Main health is 400 HP. The helicopter has separate health for its engine (200 HP
 
 Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
 
-Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
 | Ammunition | Hits to destroy |
 |---|---:|
@@ -58,7 +58,7 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 
 ## Weapons and seats
 
-The MH-6 has no weapons. Its six seats are for the pilot and passengers. The pilot seat is labelled "Pilot". The data does not give the roles of the other five seats.
+The MH-6 has no weapons. Its six seats are for the pilot and passengers. The pilot seat is labelled "Pilot". The roles of the other five seats are not known.
 
 ## Handling
 
@@ -76,7 +76,7 @@ The MH-6 has no weapons. Its six seats are for the pilot and passengers. The pil
 
 ## Vehicle spawns
 
-The MH-6 is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Little Bird family (MH-6, AH-6M [Miniguns] and AH-6R [Rockets]) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The MH-6 is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Little Bird family (MH-6, AH-6M [Miniguns] and AH-6R [Rockets]) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
