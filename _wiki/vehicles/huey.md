@@ -94,7 +94,7 @@ The Huey is named directly in one air yard on the Zestafona map: the extra air y
 - [Gameplay Tags](../../content/Wardogs_GameplayTags_v1.md): the Huey reward and platform tags
 - [Spotting](../../game-features/Wardogs_GameFeatures_Spotting_v2.md): the Huey target types
 - [VFX](../../content/Wardogs_VFX_v2.md): the mounted machine gun muzzle flash
-- [Meta](../../content/Wardogs_Meta_v2.md): the Pilot mounted-gun skills
+- [Meta Progression](../../content/Wardogs_Meta_v2.md): the Pilot mounted-gun skills
 - [Cash and Rewards](../progression-and-economy/cash-and-rewards.md): the destroy reward
 - Vehicle destroy reward table: base 1,200 and the zone multipliers
 - Seat damage reduction table: the -25 and -15 rows

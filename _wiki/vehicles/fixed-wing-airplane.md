@@ -80,9 +80,9 @@ The airplane falls under the same general air tag as the helicopters. 20 of the 
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [Vehicles (reference)](../../content/Wardogs_Vehicles_v2.md)
-- [Fixed-wing flight model](../../game-features/Wardogs_FixedWingFlightModel_v1.md): curves, auto-trim table and the speed figures read from it
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Fixed-Wing Flight Model](../../game-features/Wardogs_FixedWingFlightModel_v1.md): curves, auto-trim table and the speed figures read from it
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of the airplane, in kilograms

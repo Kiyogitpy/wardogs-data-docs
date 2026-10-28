@@ -127,9 +127,9 @@ Some vehicles have more seat setups in the seat data than seats on the stats she
 
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the rules for opening and cutting a parachute
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): seat counts per stats sheet
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names
-- [Vehicle config fields](../../game-features/Wardogs_VehicleConfigFields_v1.md): the same-faction-only occupant flag, abandoned-vehicle lifetime and ramming settings per vehicle
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): seat setups and roles
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md): seat names
+- [Vehicle Config Fields](../../game-features/Wardogs_VehicleConfigFields_v1.md): the same-faction-only occupant flag, abandoned-vehicle lifetime and ramming settings per vehicle
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md): the seat protection table and how it applies
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): the seat reduction step
 - [Frontend, Server and Test Data](../../content/Wardogs_DataTables_Frontend_v1.md): the in-game vehicle tips

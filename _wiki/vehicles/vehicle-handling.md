@@ -53,7 +53,7 @@ Each wheeled vehicle has its own input settings, which shape how the controls re
 
 The tracked, rotary and airplane controls store only input mapping and prompt lists, so the data has no tuning numbers for them.
 
-(Source: round 41 data, see [Vehicle inputs and explosive effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 1.)
+(Source: round 41 data, see [Vehicle Inputs and Explosive Effects](../../game-features/Wardogs_VehicleInputsAndExplosiveEffects_v1.md), section 1.)
 
 ### Braking
 
@@ -165,17 +165,17 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 ## See also
 
 - [Vehicle Curves](../../game-features/Wardogs_VehicleCurves_v1.md): every curve, its keys and which vehicle uses it
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md): the full per-variant drivetrain, suspension and brake tables
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md): the full per-variant drivetrain, suspension and brake tables
 - [Repair and vehicle parts](repair-and-vehicle-parts.md): tyre and track states, which change how a vehicle drives
 - [Vehicles](../vehicles.md): the full list of vehicles
 
 ## Sources
 
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the driving input tuning and the tracked torque curve range
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Curves](../../game-features/Wardogs_VehicleCurves_v1.md)
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): top speed and mass
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicles Reference](../../content/Wardogs_Vehicles_v2.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Driving and flight assist settings, tyre models and wheeled incline.

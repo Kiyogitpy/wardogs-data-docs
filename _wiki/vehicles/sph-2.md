@@ -129,8 +129,8 @@ The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Artillery Shell Flight Data](../../game-features/Wardogs_ArtilleryShellFlight_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)

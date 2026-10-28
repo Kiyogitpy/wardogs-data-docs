@@ -98,8 +98,8 @@ The "moving" message looks like a warning only, because the deploy check still a
 - [Round 75 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md): the deployment board's messages, timers and cooldown read from the game's code
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen's 16 s active window and 90 s cooldown, and the other round 41 vehicle readings
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
