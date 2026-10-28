@@ -42,9 +42,9 @@ The SPH-2 fires 155 mm shells from an L52 cannon. There are two kinds of shell, 
 
 Shells leave the barrel at 300 m/s and disappear after 40 s of flight. The barrel elevates from 2° to 80°, and the sight's MIL dial sets the elevation within the range shown in the infobox.
 
-The stats sheet gives the gun an "effective range" of 10,000 m. That is not the real reach: the longest measured shot is 2,629 m (measured in game by the community calculator). Air drag is the reason. With drag, the Expensive shell tops out near 2.6 km; without drag the same launch would throw it about 9 km (simulator estimate).
+The vendor stats give the gun an "effective range" of 10,000 m. That is not the real reach: the longest measured shot is 2,629 m (measured in game by the community calculator). Air drag is the reason. With drag, the Expensive shell tops out near 2.6 km; without drag the same launch would throw it about 9 km (simulator estimate).
 
-Ranges from about 1,181 m to 2,629 m can be hit on a low arc (20 to about 600 mils, flat and fast, about 5.5 to 24 s in the air) or a high arc (about 610 to 1,390 mils, steep and slow, 28 to 37 s in the air). The travel times come from the gun's range table in the game files. Between 780 m and 1,181 m only the high arc reaches.
+Ranges from about 1,181 m to 2,629 m can be hit on a low arc (20 to about 600 mils, flat and fast, about 5.5 to 24 s in the air) or a high arc (about 610 to 1,390 mils, steep and slow, 28 to 37 s in the air). The travel times come from the gun's range table in the game. Between 780 m and 1,181 m only the high arc reaches.
 
 A short table of the firing solutions on flat ground. The mils are the settings to dial on the sight's MIL scale, measured in game. The game's own range table lists different elevations for the same ranges (45 to 97 mils higher on the low arc, up to 34 mils lower on the high arc). The reason is that the sight does not read that table's distances. It works out each mil mark's distance with a live simulation from your firing altitude, so the table and the dial are two different calculations. The barrel's true elevation is the dial reading plus 16.8 mrad (about 0.96 degrees). Simulated, a 2,000 m low-arc shot needs 250 mils from 3 m, 224 from 50 m and 197 from 100 m, so the altitude explains part of the gap:
 
@@ -91,22 +91,22 @@ Rifle rounds do no damage to the tank, so rifle fire cannot destroy it. Cannon r
 |---|---|---:|---:|---:|---:|
 | L52 Cannon (155 mm artillery) | Artillery | 50 rounds/min | 10,000 m | 25.0 s | 10 Expensive, 0 Standard |
 
-The Expensive 155 mm shell has a camera that follows the round in flight. The Standard shell has no camera. The data does not list machine guns for this variant.
+The Expensive 155 mm shell has a camera that follows the round in flight. The Standard shell has no camera. No machine guns are listed for this variant.
 
-The stats sheet gives 3 seats, but the seat data has two setups: a driver and a gunner in the turret.
+The vendor stats give 3 seats, but there are two seat setups: a driver and a gunner in the turret.
 
 ## Handling
 
 - Tracked drive with a top speed of 65 and a maximum incline of 50 degrees.
 - Track rebound damping is shared across the tank family.
-- Steering input rises at 40 and falls at 80, as stored.
+- Steering input rises at 40 and falls at 80, as set.
 - Stabilized state: the hull takes 2.0 s to stabilize and 1.0 s to release. It must be almost stopped, on ground at most 20 degrees steep, to start. It cannot move while stabilized, and the gun cannot fire while the state changes. The stabilized state does not level the barrel.
 
-**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive data, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
+**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive settings, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
 
 ## Season 2 changes
 
-- One damage rule changed from -75% to -85%, so those hits do less damage. It is the 20 mm cannon rule, which covers the 20 mm guns such as the Vanguard CIWS (the entry's source is the 20x102 mm cannon).
+- One damage rule changed from -75% to -85%, so those hits do less damage. It is the 20 mm cannon rule, which covers the 20 mm guns such as the Vanguard CIWS (its listed source is the 20x102 mm cannon).
 - A new 125 mm rocket rule adds +15%.
 - Track rebound damping rose from 12,000 to 17,000 across the tank family.
 - The vehicle item is wider in inventory (width 4 to 6).
@@ -114,11 +114,11 @@ The stats sheet gives 3 seats, but the seat data has two setups: a driver and a 
 
 ## Vehicle spawns
 
-The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (L2A6, Flakpanzer Gepard and SPH-2 share one tank tag), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (L2A6, Flakpanzer Gepard and SPH-2 share one tank tag), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
-- [Artillery](../game-mechanics/artillery.md), the full firing table and flight data
+- [Artillery](../game-mechanics/artillery.md), the full firing table and flight times
 - [Aiming the SPH-2](../guides/aiming-the-sph-2.md), reading the gun sight and the map
 - [L81 Mortar](../building/l81-mortar.md), the fixed mortar emplacement for shorter range
 - [L2A6](l2a6.md) and [Flakpanzer Gepard](flakpanzer-gepard.md), the other tanks of this family
@@ -137,7 +137,7 @@ The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [wardogs-calculator by apollyon-sys (MIT)](https://github.com/apollyon-sys/wardogs-calculator), measured in game: maximum range, minimum range, and the firing table mils
 - [CV Artillery Computer by Kiyogitpy (MIT)](https://github.com/Kiyogitpy/cv-artillery-computer), measured on the game screen at 2560x1440: gun sight instruments and map readout
-- SPH-2 weapon data, from the game files: the range table with travel times
+- SPH-2 weapon settings, read from the game: the range table with travel times
 - [Round 21 artillery range check](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round21-artillery-range-check.md), estimated: the high-arc apex and the flight simulator's miss against real shots
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): how the SPH-2 sight labels its mil marks, and the mil scale.
 - [Round 40 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-weapons.md): mil offset (16.8 mrad) and firing altitude
