@@ -31,11 +31,11 @@ Level 1 Helmet is the first of the four helmet tiers. It protects the head and c
 
 Level 1 Helmet is the first helmet tier. The Item Shop describes it as "Low Damage Reduction" and says it protects the head. Unlike the higher tiers, it does not cover the neck.
 
-It goes in the Helmet slot. The item data omits the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+It goes in the Helmet slot. The weight is not listed, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-Level 1 Helmet reduces damage to the head by 30%. It does nothing for the neck or the body. The item data gives it 80 durability, the lowest of the helmets.
+Level 1 Helmet reduces damage to the head by 30%. It does nothing for the neck or the body. It has 80 durability, the lowest of the helmets.
 
 With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 46.1 HP with Level 1 Helmet.
 
@@ -54,7 +54,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 
 ## Season 2 changes
 
-The Season 2 data does not change Level 1 Helmet.
+Level 1 Helmet did not change in Season 2.
 
 ## See also
 

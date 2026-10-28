@@ -40,7 +40,7 @@ The IED uses a C4-style detonation, so a blast from another C4 or IED sets it of
 
 **Placing.** The IED is placed on the ground. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone), and it has no set placement distance in the data.
 
-**Trigger.** Pressing the IED trigger starts a 3 s delay. After the delay the IED goes off. Nothing in the data limits the distance from the player to the trigger.
+**Trigger.** Pressing the IED trigger starts a 3 s delay. After the delay the IED goes off. Nothing limits the distance from the player to the trigger.
 
 **Chain reactions.** Another C4 or IED blast sets it off.
 
@@ -52,7 +52,7 @@ Held, the IED uses the left mouse button (right trigger on a gamepad) for its ma
 
 ### To players
 
-The blast does its full 300 HP from the centre out to 4 m. Beyond 4 m the damage falls in a straight line to zero at 8 m. Examples from the data:
+The blast does its full 300 HP from the centre out to 4 m. Beyond 4 m the damage falls in a straight line to zero at 8 m. Examples:
 
 - At 5 m: 225 HP
 - At 7.5 m: 60 HP
@@ -62,7 +62,7 @@ Armor reduces this damage by body part. See [Body Armor](body-armor.md).
 
 ### To vehicles
 
-The data gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Treat these as a guide, because blasts near several parts can count more than once.
+The table gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Treat these as a guide, because blasts near several parts can count more than once.
 
 | Vehicle | Main health | Centre hits to destroy |
 |---|---:|---:|
@@ -75,7 +75,7 @@ See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the Improvised Explosive Device, and no change to its price.
+No Season 2 change to the Improvised Explosive Device, or to its price, is listed.
 
 ## See also
 

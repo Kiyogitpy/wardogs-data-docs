@@ -34,7 +34,7 @@ The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel 
 
 ## How it works
 
-The item data gives the canister two uses, both of which continue until the canister is empty or the target is full.
+The canister has two uses, both of which continue until the canister is empty or the target is full.
 
 - **Fill** adds fuel to the canister from a world refuel point, a fuel pump placed in the world. The pump charges cash for each step of fuel, at its price per litre. Pumps flagged as free in spawn areas do not charge in safe zones. The Refuel Station at a base does not fill canisters.
 - **Refuel** adds fuel to a vehicle in 2.0 unit steps every 0.75 s, which is 2.67 units per second. A full 40 L can empties in about 15 s (derived). The 20 L version adds 1.0 every 1.5 s, about 30 s for a full can (derived), but players cannot obtain it (inferred).
@@ -43,7 +43,7 @@ Refueling stations at a Forward Operating Base use Fuel Supplies, which are desc
 
 ## Season 2 changes
 
-No Season 2 change to the Fuel Canister is listed in the data.
+No Season 2 change to the Fuel Canister is listed.
 
 ## See also
 

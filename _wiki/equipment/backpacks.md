@@ -26,7 +26,7 @@ A backpack adds a grid of storage slots for items. The Pouch is free, and each b
 
 ## Overview
 
-The standard backpacks differ in price, grid and slot count. The shop text gives the grid for each one. The Pouch is the only bag with a placement rule: it only allows vertical placement. The Halftrack Backpack is also in the data, but the shop hides it.
+The standard backpacks differ in price, grid and slot count. The shop text gives the grid for each one. The Pouch is the only bag with a placement rule: it only allows vertical placement. The Halftrack Backpack also exists, but the shop hides it.
 
 ## How it works
 
@@ -42,13 +42,13 @@ The standard backpacks differ in price, grid and slot count. The shop text gives
 
 The weight is in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it. The item data draws some bags with a different grid shape from the shop text, for example the Scout Backpack. This page uses the shop text.
 
-The Halftrack Backpack has no price in the shop and cannot be bought there. The game files show no vendor, loot table or unlock that gives it, so how it can be obtained is not in the data.
+The Halftrack Backpack has no price in the shop and cannot be bought there. No vendor, loot table or unlock that gives it is known, so how it can be obtained is not known.
 
-The data gives no other effect for the standard backpacks. The number of slots is the only stated benefit.
+The standard backpacks have no other effect. The number of slots is the only stated benefit.
 
 ## Season 2 changes
 
-No Season 2 change to the standard backpacks is listed in the data.
+No Season 2 change to the standard backpacks is listed.
 
 ## See also
 

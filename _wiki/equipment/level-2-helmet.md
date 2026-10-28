@@ -35,7 +35,7 @@ It goes in the Helmet slot and weighs 1.6. For all the vests and helmets, see [B
 
 ## Protection
 
-Level 2 Helmet reduces damage to the head by 40%. It does nothing for the neck or the body. The item data gives it 100 durability.
+Level 2 Helmet reduces damage to the head by 40%. It does nothing for the neck or the body. It has 100 durability.
 
 With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 39.5 HP with Level 2 Helmet.
 
@@ -52,7 +52,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 
 ## Season 2 changes
 
-The Season 2 data does not change Level 2 Helmet.
+Level 2 Helmet did not change in Season 2.
 
 ## See also
 

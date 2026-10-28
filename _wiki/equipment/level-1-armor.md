@@ -29,13 +29,13 @@ Level 1 Armor is the lightest of the four vests and the cheapest of them. It pro
 
 ## Overview
 
-Level 1 Armor is the first vest tier. The Item Shop describes it as "Low Damage Reduction" and says it protects the upper and lower torso. The item data lists three torso areas, upper, middle and lower, so the middle torso is covered as well.
+Level 1 Armor is the first vest tier. The Item Shop describes it as "Low Damage Reduction" and says it protects the upper and lower torso. Three torso areas are listed, upper, middle and lower, so the middle torso is covered as well.
 
 The vest goes in the Armor slot, and it does not cover the pelvis, arms or legs. Tactical vests are a different item. They are in the Tac-Vest slot, add quick slots and give no protection. For how armor is applied to a hit, see [Armor](../game-mechanics/armor.md). For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-Level 1 Armor reduces damage taken at the upper, middle and lower torso by 30%. It does nothing for the head, neck, pelvis, arms or legs. The item data gives it 200 durability.
+Level 1 Armor reduces damage taken at the upper, middle and lower torso by 30%. It does nothing for the head, neck, pelvis, arms or legs. It has 200 durability.
 
 With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor and 19.1 HP with Level 1 Armor.
 
@@ -50,7 +50,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 
 ## Season 2 changes
 
-The Season 2 data does not change Level 1 Armor.
+Level 1 Armor did not change in Season 2.
 
 ## See also
 

@@ -58,7 +58,7 @@ The armor damage table has rows for the suit and headwear tags that take their a
 
 ## Season 2 changes
 
-The Season 2 data does not list a change for the Ghillie Body Suit.
+No Season 2 change to the Ghillie Body Suit is listed.
 
 ## See also
 

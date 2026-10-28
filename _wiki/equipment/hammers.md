@@ -42,9 +42,9 @@ There are three hammers, each for a different size of structure. The Small Hamme
 - A hit adds the build amount divided by the structure's Build Supplies cost to its progress. A bigger hammer therefore needs fewer hits for the same structure, and the same total Build Supplies. The hit counts for each structure are in its article.
 - A weak-spot hit adds the larger amount in the table, which is 6, 5 and 5.3 times the normal hit. Weak spots are explained in the [Buildables](../building.md#weak-spots) article.
 - The Small Hammer's build amount is 0.5. Barbed Wire and Recon Tent count each hit 3.5 times as much, so a Small Hammer builds them in 4 hits.
-- Blow time is the point in the swing when the hit lands, from the first-person animation data. It is not the time a build takes.
+- Blow time is the point in the swing when the hit lands, from the first-person animation. It is not the time a build takes.
 - The hammers also repair finished structures and dismantle your own. A repair hit restores health at the build amount times the structure's repair multiplier, and a dismantle hit does the damage in the Dismantle column to the structure.
-- The item data gives the hammers a melee value of 20 (Small), 35 (Medium) and 150 (Large). Each hammer's melee action passes that value as the damage of a swing hit, in a melee damage event tagged with the hammer (read from the melee Blueprint; not tested in play).
+- The hammers have a melee value of 20 (Small), 35 (Medium) and 150 (Large). Each hammer's melee action passes that value as the damage of a swing hit, in a melee damage event tagged with the hammer (read from the melee Blueprint; not tested in play).
 - One hit per swing takes 0.567 s with the Small and Medium hammers and 0.883 s with the Large. These come from the use animation (one hit per pass of the swing loop) and are estimates, not times measured in play. The articles use them to give build time in seconds.
 
 The hammer's actions let the player rotate the structure being placed, toggle snapping and toggle placement mode.

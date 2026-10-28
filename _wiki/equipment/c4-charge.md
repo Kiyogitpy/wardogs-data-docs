@@ -51,7 +51,7 @@ The C4 Charge is sold as a Lethal, Resource item. It does nothing on its own. Th
 
 ### To players
 
-The blast does its full 250 HP from the centre out to 2.5 m. Beyond 2.5 m the damage falls in a straight line to zero at 6 m. Examples from the data:
+The blast does its full 250 HP from the centre out to 2.5 m. Beyond 2.5 m the damage falls in a straight line to zero at 6 m. Examples:
 
 - At 5 m: about 71 HP
 - At 6 m and beyond: nothing
@@ -60,7 +60,7 @@ Armor reduces this damage by body part. See [Body Armor](body-armor.md).
 
 ### To vehicles
 
-The data gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Treat these as a guide, because blasts near several parts can count more than once.
+The table gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Treat these as a guide, because blasts near several parts can count more than once.
 
 | Vehicle | Main health | Centre hits to destroy |
 |---|---:|---:|
@@ -75,7 +75,7 @@ See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the C4 Charge or the Remote Detonator, and no change to their prices.
+No Season 2 change to the C4 Charge or the Remote Detonator is listed, and no change to their prices.
 
 ## See also
 
