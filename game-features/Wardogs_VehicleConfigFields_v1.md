@@ -1,5 +1,5 @@
 ---
-title: "Vehicle config fields"
+title: "Vehicle Config Fields"
 parent: "Vehicles"
 description: "Config sub-fields for wheeled, tracked and rotary vehicles, tracked wheel data, helicopter flight and drag assets, and the fuel settings (km per litre, idle burn, boost) for every vehicle, and the per-vehicle abandonment, occupant and ramming settings."
 ---

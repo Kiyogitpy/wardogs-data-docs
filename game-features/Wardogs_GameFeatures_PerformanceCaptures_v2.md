@@ -1,8 +1,8 @@
 ---
-title: "PerformanceCaptures (feature)"
+title: "Performance Captures"
 redirect_from: ["/Wardogs_GameFeatures_PerformanceCaptures_v2.html", "/Wardogs_GameFeatures_PerformanceCaptures_v2"]
 parent: "Engine & Tooling Data"
-description: "What This Folder Holds, Component, World Data, How Values Combine"
+description: "The performance-capture tooling: a game-state component and the per-world data assets that set the world bounds and the capture grid."
 ---
 
 # Wardogs — GameFeatures: PerformanceCaptures

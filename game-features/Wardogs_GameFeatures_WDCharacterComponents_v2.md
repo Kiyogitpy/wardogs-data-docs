@@ -1,8 +1,8 @@
 ---
-title: "WDCharacterComponents (feature)"
+title: "Character Components"
 redirect_from: ["/Wardogs_GameFeatures_WDCharacterComponents_v2.html", "/Wardogs_GameFeatures_WDCharacterComponents_v2"]
 parent: "Player & Movement"
-description: "What This Folder Holds, Components Added"
+description: "The component pack that gives the character and player classes their supporting components, such as ping and critical-event tracking."
 ---
 
 # Wardogs — GameFeatures: WDCharacterComponents

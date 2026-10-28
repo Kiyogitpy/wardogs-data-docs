@@ -1,5 +1,5 @@
 ---
-title: "Buildables (inventory)"
+title: "Buildables"
 redirect_from: ["/Wardogs_Buildables_v1.html", "/Wardogs_Buildables_v1"]
 parent: "Items & Equipment"
 description: "All buildable items: build stages, costs, build times and cash tables"

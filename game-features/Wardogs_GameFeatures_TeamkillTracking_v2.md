@@ -1,8 +1,8 @@
 ---
-title: "TeamkillTracking (feature)"
+title: "Teamkill Tracking"
 redirect_from: ["/Wardogs_GameFeatures_TeamkillTracking_v2.html", "/Wardogs_GameFeatures_TeamkillTracking_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, How It Is Used"
+description: "The teamkill tracking package, which is no longer in the game data as of Season 02."
 ---
 
 # Wardogs — GameFeatures: TeamkillTracking

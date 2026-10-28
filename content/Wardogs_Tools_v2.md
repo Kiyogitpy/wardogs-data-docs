@@ -1,8 +1,8 @@
 ---
-title: "Tools"
+title: "Editor Text Styles"
 redirect_from: ["/Wardogs_Tools_v2.html", "/Wardogs_Tools_v2"]
 parent: "Engine & Tooling Data"
-description: "File Map, Text Styles"
+description: "The text styles the editor UI uses; these are editor styles, not gameplay data."
 ---
 
 # Wardogs: Tools Data Reference

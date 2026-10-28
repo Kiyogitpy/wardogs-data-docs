@@ -1,8 +1,8 @@
 ---
-title: "GameplayCues"
+title: "Gameplay Cues"
 redirect_from: ["/Wardogs_GameplayCues_v2.html", "/Wardogs_GameplayCues_v2"]
 parent: "World, Visuals & Audio"
-description: "File Map, Smoke Screen Values, How Values Combine"
+description: "The smoke screen cue: its file map and timing values, including fade-in, hold and fade-out."
 ---
 
 # Wardogs: GameplayCues Data Reference

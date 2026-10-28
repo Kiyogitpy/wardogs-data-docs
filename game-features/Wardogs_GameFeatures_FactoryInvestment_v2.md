@@ -1,8 +1,8 @@
 ---
-title: "FactoryInvestment (feature)"
+title: "Factory Investment"
 redirect_from: ["/Wardogs_GameFeatures_FactoryInvestment_v2.html", "/Wardogs_GameFeatures_FactoryInvestment_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, Recipe Registry, Upgrade Values"
+description: "The shared factory investment base: the upgrade-value table that every factory investment reads, and the recipe registry."
 ---
 
 # Wardogs — GameFeatures: FactoryInvestment

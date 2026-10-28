@@ -1,8 +1,8 @@
 ---
-title: "AlternativeCriticalCamera (feature)"
+title: "Alternative Critical Camera"
 redirect_from: ["/Wardogs_GameFeatures_AlternativeCriticalCamera_v2.html", "/Wardogs_GameFeatures_AlternativeCriticalCamera_v2"]
 parent: "Player & Movement"
-description: "What This Folder Holds, Feature Actions, Infantry Critical State, Vehicle Critical State"
+description: "The camera for critical health: the view darkens, pans to the killer and shows a killcam, with a separate variant for vehicle seats."
 ---
 
 # Wardogs — GameFeatures: AlternativeCriticalCamera

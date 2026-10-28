@@ -1,8 +1,8 @@
 ---
-title: "AccountWatermark (feature)"
+title: "Account Watermark"
 redirect_from: ["/Wardogs_GameFeatures_AccountWatermark_v2.html", "/Wardogs_GameFeatures_AccountWatermark_v2"]
 parent: "Engine & Tooling Data"
-description: "What This Folder Holds, Widget Setup, Data"
+description: "The on-screen account watermark: a widget that shows the account's identifying text at randomised positions."
 ---
 
 # Wardogs — GameFeatures: AccountWatermark

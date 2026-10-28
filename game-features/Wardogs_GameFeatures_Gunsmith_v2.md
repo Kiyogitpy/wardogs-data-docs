@@ -1,8 +1,8 @@
 ---
-title: "Gunsmith (feature)"
+title: "Gunsmith"
 redirect_from: ["/Wardogs_GameFeatures_Gunsmith_v2.html", "/Wardogs_GameFeatures_Gunsmith_v2"]
 parent: "Weapons & Ammo"
-description: "Plugin Inventory, Root Game Feature, Frontend and Dev Map, Scene"
+description: "The Gunsmith weapon customisation screen: its scene, build page, reticles and frontend map."
 ---
 
 # Wardogs — Gunsmith Game Feature Reference

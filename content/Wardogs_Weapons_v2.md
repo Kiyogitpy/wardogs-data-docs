@@ -2,7 +2,7 @@
 title: "Weapons"
 redirect_from: ["/Wardogs_Weapons_v2.html", "/Wardogs_Weapons_v2"]
 parent: "Weapons & Ammo"
-description: "Weapon Stat Assets, Aim Sway Curve Families, ADS Curves, Input Actions and Mapping Contexts"
+description: "Weapon data: stat assets, aim-sway curve families, ADS curves, input actions and mapping contexts."
 ---
 
 # Wardogs — Weapons Reference

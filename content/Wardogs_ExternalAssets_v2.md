@@ -1,8 +1,8 @@
 ---
-title: "ExternalAssets"
+title: "External Assets"
 redirect_from: ["/Wardogs_ExternalAssets_v2.html", "/Wardogs_ExternalAssets_v2"]
 parent: "World, Visuals & Audio"
-description: "File Inventory, Building Definitions, Decorator Definitions, Damage-Tag Whitelists"
+description: "Building and decorator definitions, damage-tag whitelists and the inventory of external assets."
 ---
 
 # Wardogs — External Assets Reference

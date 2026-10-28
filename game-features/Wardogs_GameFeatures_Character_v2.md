@@ -1,8 +1,8 @@
 ---
-title: "Character (feature)"
+title: "Character Game Feature"
 redirect_from: ["/Wardogs_GameFeatures_Character_v2.html", "/Wardogs_GameFeatures_Character_v2"]
 parent: "Player & Movement"
-description: "What This Folder Holds, Packs"
+description: "Character kits: packs that each load an external data layer for one kit's content."
 ---
 
 # Wardogs — GameFeatures: Character

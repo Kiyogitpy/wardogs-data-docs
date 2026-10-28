@@ -1,8 +1,8 @@
 ---
-title: "WDAutomation (feature)"
+title: "WD Automation"
 redirect_from: ["/Wardogs_GameFeatures_WDAutomation_v2.html", "/Wardogs_GameFeatures_WDAutomation_v2"]
 parent: "Engine & Tooling Data"
-description: "What This Folder Holds, Primary Asset Scan"
+description: "The automation pack, which registers the logic-sequence asset type so those assets can be found and loaded."
 ---
 
 # Wardogs — GameFeatures: WDAutomation

@@ -221,7 +221,7 @@ def body_text(b):
 
 def render_page(a, r, t):
     L = []
-    L.append('---\ntitle: "Vehicle control assists"\n'
+    L.append('---\ntitle: "Vehicle Control Assists"\n'
              'redirect_from: ["/Wardogs_VehicleControlAssists_v1.html", "/Wardogs_VehicleControlAssists_v1"]\n'
              'parent: "Vehicles"\n'
              'description: "Wheeled arcade-assist settings and the helicopter flight-assist objects (pitch, roll, yaw, collective) as stored in the game data"\n---\n')

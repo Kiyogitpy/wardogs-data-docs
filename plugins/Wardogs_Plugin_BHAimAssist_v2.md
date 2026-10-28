@@ -1,8 +1,8 @@
 ---
-title: "BHAimAssist"
+title: "Aim Assist Plugin"
 redirect_from: ["/Wardogs_Plugin_BHAimAssist_v2.html", "/Wardogs_Plugin_BHAimAssist_v2"]
 parent: "Player & Movement"
-description: "What This Plugin Holds, Pull Strength Curves, Slow Strength Curves, Reticle Edge Falloff"
+description: "The aim-assist tuning curves: each maps a value, usually distance, to a strength between 0 and 1."
 ---
 
 # Wardogs — Plugin: BHAimAssist

@@ -1,5 +1,5 @@
 ---
-title: "Vehicle weapon rates, seats and damage effects"
+title: "Vehicle Weapons, Seats and Damage Effects"
 redirect_from: ["/Wardogs_VehicleWeaponsEffects_v1.html", "/Wardogs_VehicleWeaponsEffects_v1"]
 parent: "Vehicles"
 description: "Rate and range of every vehicle weapon, flare and smoke settings, seat roles, health-trigger effects and hand repair tool numbers"

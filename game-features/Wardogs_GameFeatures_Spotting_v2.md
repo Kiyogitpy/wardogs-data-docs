@@ -1,8 +1,8 @@
 ---
-title: "Spotting (feature)"
+title: "Spotting"
 redirect_from: ["/Wardogs_GameFeatures_Spotting_v2.html", "/Wardogs_GameFeatures_Spotting_v2"]
 parent: "Game Modes & Maps"
-description: "What 'Spotting' Covers, Package Contents, Challenge Calculator, Match-Score Payouts"
+description: "The Spotting package: its challenge calculator, match-score payouts, variant lookups, state trees, skills and feed strings."
 ---
 
 # Wardogs — GameFeature: Spotting Reference

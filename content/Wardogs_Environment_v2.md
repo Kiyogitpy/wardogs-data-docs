@@ -2,7 +2,7 @@
 title: "Environment"
 redirect_from: ["/Wardogs_Environment_v2.html", "/Wardogs_Environment_v2"]
 parent: "World, Visuals & Audio"
-description: "Inventory and folder map, How the vegetation and PCG data combines, MicroBiomes, Layers"
+description: "Environment and PCG data: the folder inventory, how vegetation and PCG data combine, micro-biomes and layers."
 ---
 
 # Wardogs — Environment & PCG Reference

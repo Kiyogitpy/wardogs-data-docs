@@ -1,8 +1,8 @@
 ---
-title: "BHSpectatorCamera"
+title: "Spectator Camera Plugin"
 redirect_from: ["/Wardogs_Plugin_BHSpectatorCamera_v2.html", "/Wardogs_Plugin_BHSpectatorCamera_v2"]
 parent: "Player & Movement"
-description: "What This Plugin Holds, Input Actions, Key Bindings, How Values Combine"
+description: "The free-fly spectator camera's input actions and the mapping context that binds keys to them."
 ---
 
 # Wardogs — Plugin: BHSpectatorCamera

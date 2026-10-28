@@ -2,7 +2,7 @@
 title: "Demolition"
 redirect_from: ["/Wardogs_Demolition_v2.html", "/Wardogs_Demolition_v2"]
 parent: "World, Visuals & Audio"
-description: "Asset Families, Demolition Assets, Component Settings, Remnant Meshes"
+description: "The demolition assets: asset families, component settings, remnant meshes and rulesets."
 ---
 
 # Wardogs — Demolition Reference

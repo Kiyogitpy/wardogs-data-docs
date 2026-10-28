@@ -1,8 +1,8 @@
 ---
-title: "BHFramework"
+title: "Framework Plugin"
 redirect_from: ["/Wardogs_Plugin_BHFramework_v2.html", "/Wardogs_Plugin_BHFramework_v2"]
 parent: "Engine & Tooling Data"
-description: "What This Plugin Holds, Audio, Controls, General"
+description: "The game's user-setting definitions: each one is an option the player can change in the settings menu, with its default and range."
 ---
 
 # Wardogs — Plugin: BHFramework
