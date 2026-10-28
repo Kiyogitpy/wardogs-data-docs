@@ -41,15 +41,15 @@ The coloured signal grenades use the same smoke but also place a marker on the m
 
 **Cloud.** The cloud lasts 120 s, then fades for 10 s before it is removed. A cloud that is already running when you arrive has lost the time it has already spent. The smoke stops at walls, so it does not pass through them. The smoke effect's default in the game files is 180 s with a 20 s fade in; the white grenade overrides that to 120 s. This is read from the files and was not seen in play.
 
-**Players in the cloud.** The data does not apply any game effect through the smoke. It does not hurt, heal or slow anyone in the cloud. The only effect found is on aim assist, as described above.
+**Players in the cloud.** No game effect is applied through the smoke. It does not hurt, heal or slow anyone in the cloud. The only effect found is on aim assist, as described above.
 
 ## Damage
 
-The M18 Smoke Grenade does no damage. It has no blast and no thrown-contact damage in the data.
+The M18 Smoke Grenade does no damage. It has no blast and no thrown-contact damage in the game files.
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the M18 Smoke Grenade, and no change to its price.
+No Season 2 change to the M18 Smoke Grenade, or to its price, is listed.
 
 ## See also
 

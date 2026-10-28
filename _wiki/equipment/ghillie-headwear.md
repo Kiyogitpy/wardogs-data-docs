@@ -31,7 +31,7 @@ Ghillie Headwear is camouflage for the head. It must be worn with the [Ghillie B
 
 The shop groups the Ghillie Headwear under "Camouflage" and lists it as armor. It goes in the Helmet slot.
 
-The Item Shop also lists a "Ghillie Headwear (Dead)" at 2,800 cash. It is a separate item with the same effects. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. The item data omits the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The Item Shop also lists a "Ghillie Headwear (Dead)" at 2,800 cash. It is a separate item with the same effects. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. The game files omit the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 

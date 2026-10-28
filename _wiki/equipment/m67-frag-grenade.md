@@ -39,7 +39,7 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 
 **Fuse.** The grenade goes off 4 s after it is thrown. Holding it before the throw (cooking) is allowed, so a player can shorten the time left before it lands. **Throwing one back never applies as shipped.** From the game code, not tested in play: a grenade can be thrown back only while more than 5 s of its fuse is left, and the M67's fuse is 4 s at most, so the check always fails. Molotovs and smoke grenades cannot be thrown back at all.
 
-**Throw.** The data has three throws:
+**Throw.** Three throws are listed:
 
 | Throw | Speed | Notes |
 |---|---:|---|
@@ -49,13 +49,13 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 
 **Contact.** A grenade that hits something before it goes off does 10 HP of thrown-contact damage.
 
-**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
+**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the game files do not show.
 
 ## Damage
 
 ### To players
 
-The blast does its full 100 HP from the centre out to 5 m. Beyond 5 m the damage falls in a straight line to zero at 10 m. Examples from the data:
+The blast does its full 100 HP from the centre out to 5 m. Beyond 5 m the damage falls in a straight line to zero at 10 m. Examples:
 
 - At 5 m: 100 HP
 - At 7.5 m: 50 HP
@@ -65,7 +65,7 @@ Body armor reduces this damage by body part. See [Body Armor](body-armor.md). Th
 
 ### To vehicles
 
-The data gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Blasts near several parts of a vehicle can count more than once, so treat these as a guide.
+The table gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Blasts near several parts of a vehicle can count more than once, so treat these as a guide.
 
 | Vehicle | Main health | Centre hits to destroy |
 |---|---:|---:|
@@ -80,7 +80,7 @@ See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the M67 Frag Grenade.
+No Season 2 change to the M67 Frag Grenade is listed.
 
 ## See also
 

@@ -36,7 +36,7 @@ The Molotov is a thrown incendiary. It does a small burst when it goes off, then
 
 ## Overview
 
-The Molotov is sold as a Lethal, Quick Slot item for 340 cash, and its shop listing has unlock level 1, a field that gates nothing. Its burst is small, so most of its value is the fire. The Season 2 item data adds the Molotov to the item list of each of the 24 emotes, but it does not say what that does in play.
+The Molotov is sold as a Lethal, Quick Slot item for 340 cash, and its shop listing has unlock level 1, a value that gates nothing. Its burst is small, so most of its value is the fire. The Season 2 item changes add the Molotov to the item list of each of the 24 emotes, but they do not say what that does in play.
 
 For the other explosives, see [Grenades and Explosives](grenades-and-explosives.md). For the smoke and signal throwables, see [Fire, Smoke and Flash](fire-smoke-and-flash.md).
 
@@ -44,7 +44,7 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Throwing.** The Molotov has two throws. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s). Thrown contact adds 10 HP of impact damage.
 
-**Water.** When the Molotov goes off, the game reads the water depth at the point of impact from the map's water height grid. The explosion code uses that depth to decide what happens to the fire. The data does not give the result in play.
+**Water.** When the Molotov goes off, the game reads the water depth at the point of impact from the map's water height grid. The explosion code uses that depth to decide what happens to the fire. The result in play is not given.
 
 **Burst on impact.** A thrown Molotov bursts on its first impact. It is the only throwable set to do so. The 5 s fuse is only a backstop, for a Molotov that does not hit anything. It cannot be cooked.
 
@@ -52,11 +52,11 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands. The fire does not appear all at once: it spreads out from the first patch at 2000 cm per second, so the farthest patch of the 15 lights about an eighth of a second after the first (read from the game code, not timed in play).
 
-**Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. The data does not give a timer for the status. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
+**Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. No timer for the status is given. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
 
 Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play).
 
-Armor reduces the burst but not the fire: no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. The fire has no check for who threw it either, so standing in your own fire hurts you as much as an enemy. Whether the game mode turns off friendly damage elsewhere is not in these tables.
+Armor reduces the burst but not the fire: no armor rule applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. The fire has no check for who threw it either, so standing in your own fire hurts you as much as an enemy. Whether the game mode turns off friendly damage elsewhere is not in these tables.
 
 ## Damage
 
@@ -69,7 +69,7 @@ The burst does 40 HP at its centre, out to 2.5 m. Beyond 2.5 m it falls to zero 
 
 ### To vehicles
 
-The burst does 40 HP at the centre, which is small against vehicles. The data gives the number of burst hits a vehicle needs to lose its main health. This assumes one burst on the main section, and it does not count the fire.
+The burst does 40 HP at the centre, which is small against vehicles. The table gives the number of burst hits a vehicle needs to lose its main health. This assumes one burst on the main section, and it does not count the fire.
 
 | Vehicle | Main health | Burst hits to destroy |
 |---|---:|---:|
@@ -82,7 +82,7 @@ The fire adds 2 HP every 0.4 s, which is 5 HP per second while a vehicle stays i
 
 ## Season 2 changes
 
-The Season 2 items data adds the Molotov, along with four other items, to the item list of each of the 24 emotes. The data does not say what this changes in play. The Season 2 items data lists no change to the Molotov's damage, fire, fuse or price.
+The Season 2 item changes add the Molotov, along with four other items, to the item list of each of the 24 emotes. They do not say what this changes in play. No Season 2 change to the Molotov's damage, fire, fuse or price is listed.
 
 ## See also
 

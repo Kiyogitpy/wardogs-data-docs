@@ -30,7 +30,7 @@ The 40 L Fuel Canister is the portable fuel supply for vehicles. It holds 40 L a
 
 ## Overview
 
-The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The item data also lists a 20 L version. The Item Shop does not sell that version, and nothing else in the data hands it out: the 20 L item has no item name of its own (it carries only the generic item tag), so no shop row, loot table or starting kit can point at it. Players cannot get it in the game as shipped (inferred; it looks like an unfinished item).
+The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The game files also list a 20 L version. The Item Shop does not sell that version, and nothing else in the data hands it out: the 20 L item has no item name of its own (it carries only the generic item tag), so no shop row, loot table or starting kit can point at it. Players cannot get it in the game as shipped (inferred; it looks like an unfinished item).
 
 ## How it works
 

@@ -40,7 +40,7 @@ The six signal grenades are sold for 50 cash each. Four are tactical (Alert, Hos
 | M18 Signal Grenade: Supply Request | Green | Supply Request | Logistics | 180 s |
 | M18 Signal Grenade: Landing Zone | Purple | Landing Zone | Logistics | 180 s |
 
-The shop text says each one "adds a marker to the map". Each colour adds its marker through the deployable map tracker. The data does not say who else can see the marker.
+The shop text says each one "adds a marker to the map". Each colour adds its marker through the deployable map tracker. It is not known who else can see the marker.
 
 ## How it works
 
@@ -50,15 +50,15 @@ The shop text says each one "adds a marker to the map". Each colour adds its mar
 
 **Cloud.** The cloud lasts 180 s, except for the Friendly grenade, whose cloud lasts 64 s. Then it fades for 10 s before it is removed. A cloud that is already running when you arrive has lost the time it has already spent. The smoke stops at walls.
 
-**Players in the cloud.** The data applies no game effect through the smoke.
+**Players in the cloud.** No game effect is applied through the smoke.
 
 ## Damage
 
-The signal grenades do no damage. They have no blast and no thrown-contact damage in the data.
+The signal grenades do no damage. They have no blast and no thrown-contact damage in the game files.
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the signal grenades, and no change to their prices.
+No Season 2 change to the signal grenades, or to their prices, is listed.
 
 ## See also
 

@@ -19,7 +19,7 @@ This article covers the throwables and placed gear that do something other than 
 
 ## Overview
 
-Flash and stun grenades are not in this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached in the data.
+Flash and stun grenades are not in this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached.
 
 Destroyed vehicles, the fixed guns and a destroyed forward operating base also set off explosions of their own. See [Destruction](../game-mechanics/destruction.md#wreck-explosions).
 
@@ -38,7 +38,7 @@ The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and n
 - **Burning area.** The fire lasts up to 45 s. It is laid as 15 patches per throw, each a 2 m by 2 m box 0.5 m tall. It damages players and vehicles inside a patch every 0.4 s. The 15 patches spread on a spiral out to about 2.5 m from the impact point.
 - **Players.** Each tick deals 15 HP, which is 37.5 HP per second while standing in the fire. Players without the Alive state take no damage.
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
-- **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the patch (a static reading of the game code, not checked in play). The data gives no timer for it.
+- **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the patch (a static reading of the game code, not checked in play). No timer for it is given.
 
 The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play). Armor reduces the burst but not the fire, since no armor rule in the data applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
 
@@ -56,7 +56,7 @@ Vehicle smoke is a countermeasure that trails smoke around a vehicle and then se
 
 Each smoke stays for its full duration (white and black 120 s, blue signal 64 s, other signals 180 s, vehicle smoke 6 s). Then the plume fades out over the fade time (10 s for the grenades, 2 s for the vehicle screen) before it is removed. A smoke effect that is already running when you arrive has lost the time it has already spent, so less of it is left.
 
-The smoke effect's own defaults in the game files are a 180 s total, a 20 s fade in and a 10 s fade out. The white grenade overrides the length to 120 s. These are read from the files and were not seen in play.
+The smoke effect's own defaults are a 180 s total, a 20 s fade in and a 10 s fade out. The white grenade overrides the length to 120 s. These are read from the files and were not seen in play.
 
 ### Signal grenades
 
@@ -104,7 +104,7 @@ The Molotov and smoke grenades use the same throw speeds:
 | Overarm (primary) | 2,000 | 20 |
 | Underarm (secondary) | 1,200 | 12 |
 
-Each throw also has a speed curve in the data. A static reading of the throw code (not checked in play) scales the flat speed by a curve of how high you aim, and then adds part of your own horizontal and vertical movement speed.
+Each throw also has a speed curve in the game files. A static reading of the throw code (not checked in play) scales the flat speed by a curve of how high you aim, and then adds part of your own horizontal and vertical movement speed.
 
 ## Use and timing
 
