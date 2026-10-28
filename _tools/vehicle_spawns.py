@@ -523,7 +523,7 @@ def render_page(data):
     w("python -I _tools/vehicle_spawns.py [--check] <round42 dir with sv> <dir bd>   (sv_extra is read next to bd)")
     w("```")
     w("")
-    w("Extractor arguments are in [`tools/cue4parse_extractor/README.md`](../tools/cue4parse_extractor/README.md). The wiki articles for each map summarise this page.")
+    w("Extractor arguments are in [`tools/cue4parse_extractor/README.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md). The wiki articles for each map summarise this page.")
     w("")
     return "\n".join(o) + "\n"
 

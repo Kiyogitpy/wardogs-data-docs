@@ -29,6 +29,10 @@ EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
 BLOCK = re.compile(r"<!-- datatable_catalog ([^>]+?) -->\r?\n.*?<!-- /datatable_catalog -->", re.S)
 INDEX_PAGE = "content/Wardogs_DataTables_v1.md"
 PAGE_GLOB = "content/Wardogs_DataTables*_v1.md"
+# Mirrors `exclude:` in _config.yml: these files are on GitHub only, so the site links them there
+UNPUBLISHED = ("docs/", "sdk/", "tools/", "_tools/", "mappings/", "worker/", "README.md", "CONTRIBUTING.md",
+               "SECURITY.md", "LICENSE", "Note_Template.md", "aes.md")
+GITHUB_BLOB = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
 
 # --- dispositions ---------------------------------------------------------------------------------
 AUDIO = {"WDImpulseResonanceEntry", "WDMusicState", "WDRainSpotEntry", "WDVoxBase", "WDUIActionSoundTableRow"}
@@ -294,6 +298,10 @@ def disposition(struct):
     return "Not expanded"
 
 
+def doc_href(p):
+    return GITHUB_BLOB + p if p.startswith(UNPUBLISHED) else f"../{p}"
+
+
 def block_index():
     ment = mentions()
     by = {}
@@ -310,7 +318,7 @@ def block_index():
         for t in ts:
             link = f"`{t['name']}`"
             pages = ment[t["name"]]
-            shown = ", ".join(f"[{os.path.basename(p)[:-3]}](../{p})" for p in pages[:3])
+            shown = ", ".join(f"[{os.path.basename(p)[:-3]}]({doc_href(p)})" for p in pages[:3])
             if len(pages) > 3:
                 shown += f" (+{len(pages) - 3})"
             folder = os.path.dirname(t["path"]).replace("data/Wardogs/", "")

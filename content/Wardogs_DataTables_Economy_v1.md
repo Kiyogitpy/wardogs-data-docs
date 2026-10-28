@@ -7,7 +7,7 @@ description: "Economy tables: rewards, spotting rewards, cash and currency value
 ---
 
 # Data Tables: Economy and Rewards
-*Generic expansion of the data tables below, built by [`_tools/datatable_catalog.py`](../_tools/datatable_catalog.py) (`--write` is idempotent). Back to the [catalog index](Wardogs_DataTables_v1.md).*
+*Generic expansion of the data tables below, built by [`_tools/datatable_catalog.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/datatable_catalog.py) (`--write` is idempotent). Back to the [catalog index](Wardogs_DataTables_v1.md).*
 
 > Columns are the flattened row fields: nested structs are dotted keys, gameplay tags show the tag name, object references show the asset name, arrays are joined with commas. Columns empty in every row are dropped. Long cells are cut with an ellipsis; open the table JSON for the full value.
 

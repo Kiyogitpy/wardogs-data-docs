@@ -7,7 +7,7 @@ description: "155 mm artillery shell flight: Blueprint actors, mover modes, grav
 
 # Wardogs: Artillery Shell Flight Data (what is and is not known)
 
-The 155 mm shell data assets (`DA_155mm_*_ProjectileData`) set `bActorHandlesProjectileMovement: true` and name a Blueprint actor. This page records what the cooked actor and the world settings contain, and what they do not. All numbers below are read from the game's own paks with the offline extractor; nothing was run or fitted. The rows are in [`assets/data/shell-actors.json`](../assets/data/shell-actors.json) (written by [`_tools/shell_actors.py`](../_tools/shell_actors.py)); the round 21 export of the actors is the first time they are in this repository (the `ProjectileActors` folder under `data/` holds only camera assets).
+The 155 mm shell data assets (`DA_155mm_*_ProjectileData`) set `bActorHandlesProjectileMovement: true` and name a Blueprint actor. This page records what the cooked actor and the world settings contain, and what they do not. All numbers below are read from the game's own paks with the offline extractor; nothing was run or fitted. The rows are in [`assets/data/shell-actors.json`](../assets/data/shell-actors.json) (written by [`_tools/shell_actors.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/shell_actors.py)); the round 21 export of the actors is the first time they are in this repository (the `ProjectileActors` folder under `data/` holds only camera assets).
 
 ## 1. Which actor flies which shell
 
