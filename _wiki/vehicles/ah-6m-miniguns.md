@@ -45,7 +45,7 @@ Main health is 400 HP. The engine has 200 HP, the fuel tank 200 HP, the main rot
 
 Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
 
-Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
 | Ammunition | Hits to destroy |
 |---|---:|
@@ -62,14 +62,14 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 |---|---|---:|---:|---:|---:|
 | M134D Minigun (two) | Machine gun | 1,500 rounds/min | 800 m | 4.25 s | 300 (tracer) |
 
-The pilot fires the miniguns. The two guns are grouped on one mount, and the data allows only the driver seat to use that weapon. The second seat is an active passenger seat with no gun. The mount can aim from 30 degrees down to 22 degrees up.
+The pilot fires the miniguns. The two guns are grouped on one mount, and only the driver seat can use that weapon. The second seat is an active passenger seat with no gun. The mount can aim from 30 degrees down to 22 degrees up.
 
 ## Handling
 
 - Driving assists: the climb rate is limited to 36 km/h and the collective holds a hover when released; the collective resets to minus 1 on the ground. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 
 - Maximum angular velocity 83 deg/s. Translational lift of 16% between 20 and 28 m/s.
-- Ground effect falloff 12 m, with no strength stored.
+- Ground effect falloff 12 m, with no strength set.
 
 ## Season 2 changes
 
@@ -80,7 +80,7 @@ The pilot fires the miniguns. The two guns are grouped on one mount, and the dat
 
 ## Vehicle spawns
 
-The AH-6M [Miniguns] is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Little Bird family (MH-6, AH-6M [Miniguns] and AH-6R [Rockets]) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The AH-6M [Miniguns] is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Little Bird family (MH-6, AH-6M [Miniguns] and AH-6R [Rockets]) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 

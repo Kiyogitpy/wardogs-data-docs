@@ -25,7 +25,7 @@ The Ural Defender is the protected version of the [Ural](ural.md). The shop desc
 
 ## Overview
 
-The Ural Defender is sold in the vehicle vendor under land transport, for 7,200 cash, and unlocks at level 0. The data gives it the same stats sheet, handling and damage numbers as the base Ural. The shop text describes protection, but the data does not show a difference in the numbers for this variant.
+The Ural Defender is sold in the vehicle vendor under land transport, for 7,200 cash, and unlocks at level 0. It has the same vendor stats, handling and damage numbers as the base Ural. The shop text describes protection, but no difference in the numbers for this variant is shown.
 
 ## Stats
 
@@ -59,7 +59,7 @@ The Ural Defender has no weapons. Its three seats are a driver and two passenger
 
 Handling matches the base Ural: mass 10,000, hand brake 50, front steering of 30 degrees, and the same gearbox: five forward gears and a reverse ratio.
 
-- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes
 
@@ -68,7 +68,7 @@ Handling matches the base Ural: mass 10,000, hand brake 50, front steering of 30
 
 ## Vehicle spawns
 
-The Ural Defender is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Ural, Ural Defender and Ural Defender [M249]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Ural Defender is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Ural, Ural Defender and Ural Defender [M249]), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -84,5 +84,5 @@ The Ural Defender is placed by the ground vehicle yards of all four main maps: [
 - [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article
 - [Round 46 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md): wiki update notes for gear order, the Drill Rig zone speed, the lock and flare search, rocket guidance and placement rewards

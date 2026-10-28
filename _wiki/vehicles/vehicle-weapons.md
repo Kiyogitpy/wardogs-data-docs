@@ -43,23 +43,23 @@ This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on 
 | B-13 Rocket Pods (two, 122 mm) | [AH-6R [Rockets]](ah-6r-rockets.md) | 122 mm | 350 rounds/min | 1,000 m | 6.0 s | 0 |
 | L52 Cannon (155 mm artillery) | [SPH-2](sph-2.md) | 155 mm | 50 rounds/min | 10,000 m | 25.0 s | 10 Expensive, 0 Standard |
 
-Reload times and starting ammunition come from each weapon's data file. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. The 600 rounds/min shown for the M2 Browning and the PKTM is the game's default rate, because their weapon data does not set one.
+Reload times and starting ammunition come from each weapon's own settings. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. The 600 rounds/min shown for the M2 Browning and the PKTM is the game's default rate, because their own settings do not set one.
 
-Only stationary weapons restock with supplies, as the [Building](../building.md) emplacements do. The guns on vehicles do not restock this way. A vehicle gun carries the rounds in the starting ammunition column and has no supply restock in the data.
+Only stationary weapons restock with supplies, as the [Building](../building.md) emplacements do. The guns on vehicles do not restock this way. A vehicle gun carries the rounds in the starting ammunition column and has no supply restock.
 
-Guns mounted on vehicles can have a spread of their own, set in the vehicle data. That spread eases toward its value at about 25 per second, and it is zero when the gunner is fully aimed down sights. Plain mounted weapons have no spread of their own. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md) (a static reading of the game code, not checked in play).
+Guns mounted on vehicles can have a spread of their own, set in the vehicle's own settings. That spread eases toward its value at about 25 per second, and it is zero when the gunner is fully aimed down sights. Plain mounted weapons have no spread of their own. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md) (a static reading of the game code, not checked in play).
 
 ## Miniguns
 
-The M134D minigun is the same gun on three vehicles, and it fires .308 Win rounds at 1,500 rounds/min everywhere. The AH-6M and the Humvee [Minigun] reach 800 m and reload in 4.25 s. The Z20 Lakota [Miniguns] reaches 1,500 m and reloads in 5.0 s. Each starts with 150 or 300 tracer rounds, as the table shows. On the Humvee [Minigun] the second seat is a gunner seat that fires the gun. On the AH-6M the pilot fires both guns, because the data allows only the driver seat to use them. On the Z20 Lakota [Miniguns] two gunner seats fire one gun each.
+The M134D minigun is the same gun on three vehicles, and it fires .308 Win rounds at 1,500 rounds/min everywhere. The AH-6M and the Humvee [Minigun] reach 800 m and reload in 4.25 s. The Z20 Lakota [Miniguns] reaches 1,500 m and reloads in 5.0 s. Each starts with 150 or 300 tracer rounds, as the table shows. On the Humvee [Minigun] the second seat is a gunner seat that fires the gun. On the AH-6M the pilot fires both guns, because only the driver seat can use them. On the Z20 Lakota [Miniguns] two gunner seats fire one gun each.
 
 Season 2 changed the damage table entries of the AH-6M and the Humvee [Minigun], and patch notes describe calibre reductions for these miniguns. The [Vehicles changes page](../../season-2-changes/vehicles.md) lists the damage changes.
 
 ## Machine guns
 
-The M249 appears on four vehicles, and all four use 5.56 mm rounds. All four mounts fire 850 rounds/min with a 700 m range. The data gives a 4.25 s reload and no starting rounds for each.
+The M249 appears on four vehicles, and all four use 5.56 mm rounds. All four mounts fire 850 rounds/min with a 700 m range. Each has a 4.25 s reload and no starting rounds.
 
-The M2 Browning is a .50 cal gun on two vehicles. The Wolf-110 ring turret and the T-72B3 mounted gun both reload in 8.0 s and start with no rounds loaded. Their weapon data does not set a rate, so they use the game's default of 600 rounds/min, out to 1,000 m.
+The M2 Browning is a .50 cal gun on two vehicles. The Wolf-110 ring turret and the T-72B3 mounted gun both reload in 8.0 s and start with no rounds loaded. Their own settings do not set a rate, so they use the game's default of 600 rounds/min, out to 1,000 m.
 
 The L2A6 has a coaxial MG3A1 that fires .308 Win rounds at 650 rounds/min to 200 m. The T-72B3 has a coaxial PKTM, a 7.62 mm class gun, with a 4.25 s reload and 300 tracer rounds. It fires 600 rounds/min (the default rate) out to 1,000 m.
 
@@ -99,7 +99,7 @@ The SPH-2's L52 fires 155 mm shells at 50 rounds/min with a 10,000 m range. The 
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the vehicle weapon stats (rate, effective range) and damage table changes
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): damage entries, gamepad sensitivity and cost changes
 - [Vehicle weapon articles](ah-6m-miniguns.md): the per-vehicle weapon tables this page collects, each linked from the table above
-- Vehicle weapon extension data: reload, restock and starting ammunition for each weapon
+- Vehicle weapon settings: reload, restock and starting ammunition for each weapon
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Round 39 and 40 evidence: machine gun rates and ranges, restock rules.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): vehicle-mounted gun spread and its easing

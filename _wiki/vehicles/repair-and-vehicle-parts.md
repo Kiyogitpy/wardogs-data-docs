@@ -37,37 +37,37 @@ Parts with their own health are the engine, fuel tank, wheels (or tracks on tank
 
 ### Tyres
 
-A tyre has three states in the data:
+A tyre has three states:
 
 1. **Intact.**
 2. **Damaged** (deflated) when the wheel's health falls to 55% of its maximum or below. A 75 HP tyre deflates at about 41 HP or less. Season 1 used 50%, and Season 2 raised it to 55% on every wheeled axle.
 3. **Destroyed** when the wheel's health reaches zero.
 
-A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. The data stores a tyre radius for each state (on the Dune Buggy 0.45 m, 0.345 m and 0.26 m). Each wheel keeps all three sets of values and copies the set for its current state into the values it works from (a static reading of the code, [round 88 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round88-nb.md)); the code that uses those values in the physics step was not read, so the effect on handling is not confirmed. The change of state also shows or hides wheel meshes and sets two visual values ([round 48 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md)). A deflated tyre also adds 1.5 of wheel drag, cuts grip by 0.35 friction, pulls the steering toward the damaged side (0.125) and adds 0.05 braking. The data does not say how the smaller radius of a deflated or destroyed tyre affects the car beyond the collision shape.
+A deflated tyre keeps its wheel on the ground but uses a different collision shape. A destroyed tyre is replaced by a damaged-wheel model. Each state sets a tyre radius (on the Dune Buggy 0.45 m, 0.345 m and 0.26 m). Each wheel keeps all three sets of values and copies the set for its current state into the values it works from (a static reading of the code, [round 88 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round88-nb.md)); the code that uses those values in the physics step was not read, so the effect on handling is not confirmed. The change of state also shows or hides wheel meshes and sets two visual values ([round 48 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md)). A deflated tyre also adds 1.5 of wheel drag, cuts grip by 0.35 friction, pulls the steering toward the damaged side (0.125) and adds 0.05 braking. It is not known how the smaller radius of a deflated or destroyed tyre affects the car beyond the collision shape.
 
 ### Health triggers
 
-Parts have effect triggers at fixed percentages of their health. The data lists where each trigger sits. Most effects are not decoded in the data, so the wiki does not say exactly what each one does. Where the data is clear, it is stated below.
+Parts have effect triggers at fixed percentages of their health. The game lists where each trigger sits. Most effects are not decoded, so the wiki does not say exactly what each one does. Where the source is clear, it is stated below.
 
 - **Main body.** Triggers at 55%, 25% and 10% on most ground vehicles and helicopters.
 - **Engine.** Triggers at 20% on the Bobcat, at 55% on the SPH-2, L2A6, Gepard and Humvee [M249], and at 0% on all of them.
 - **Fuel tank.** Triggers at 90% and 80%, 55%, and 0% on several vehicles. The Little Bird family uses 10% and 0%. When the fuel tank is hit, the tank leaks fuel at a rate that rises as its health falls; the steps are in [Fuel and refueling](fuel-and-refueling.md#fuel-leaks).
 - **Tracks.** A track has an effect above 55% and is dead at 0%.
 - **Wheels.** Triggers at 55% and 0% on the wheeled vehicles.
-- **Rotors.** The Havoc's main and tail rotors have triggers at 55% and 0%. The data sets rotor triggers only for the Havoc.
+- **Rotors.** The Havoc's main and tail rotors have triggers at 55% and 0%. Rotor triggers are set only for the Havoc.
 - **Radar.** On the M113, triggers at 55%, 25% and 0%.
-- **Turret stabilisation.** On the SPH-2, L2A6 and T-72B3, the turret's stabilisation is switched off below 25% main health. The data marks that point as the one where stabilisation is no longer permitted.
+- **Turret stabilisation.** On the SPH-2, L2A6 and T-72B3, the turret's stabilisation is switched off below 25% main health. That point is marked as the one where stabilisation is no longer permitted.
 
 A non-main part that reaches zero is marked destroyed, and the vehicle keeps going. Only the main health at zero destroys the vehicle.
 
 ### Season 2 changes
 
 - The tyre deflate threshold rose from 50% to 55% on every wheeled axle (the Humvee, Kodiak, Dune Buggy, Ural and Bobcat axles, among others).
-- The data lists no Season 2 change to the health pools of the engine, fuel tank, tracks or rotors.
+- No Season 2 change to the health pools of the engine, fuel tank, tracks or rotors is listed.
 
 ## Numbers
 
-Health pools per vehicle, as stored in the data. Sort by any column with the header. "Not listed" means the data sets no separate pool for that part.
+Health pools per vehicle, as set for each one. Sort by any column with the header. "Not listed" means no separate pool is set for that part.
 
 | Vehicle | Main health (HP) | Engine (HP) | Fuel tank (HP) | Wheels or tracks (HP each) | Rotors (HP, main / tail) |
 |---|---:|---:|---:|---|---|
@@ -106,14 +106,14 @@ Health pools per vehicle, as stored in the data. Sort by any column with the hea
 | [Heavy repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.5 s (29 HP per second) | 1,300 cash |
 | [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
 
-Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. A full restock uses 5 of them. A Max restock is charged only for the share of health it restores: the 2,000 cash price is the full-health price, scaled down for a partial repair and rounded up to a multiple of 50 (static reading of the restock code, not checked in play). The station's stored 13.33 figure is the structure's own hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
+Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. A full restock uses 5 of them. A Max restock is charged only for the share of health it restores: the 2,000 cash price is the full-health price, scaled down for a partial repair and rounded up to a multiple of 50 (static reading of the restock code, not checked in play). The station's own 13.33 figure is the structure's hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
 
 The in-game tips say that high impact damage zones on a vehicle can be repaired with repair tools, and that returning to base for repairs is not free.
 
 ## Tips that follow from the numbers
 
 - A Humvee tyre deflates at about 41 HP, which is 55% of its 75 HP. Any tyre damage past that point changes the tyre's state, so a deflated tyre is the first warning.
-- Tanks take little rifle damage, and their tracks have 125 HP each. The data sets a track trigger at 55%, but not what it does.
+- Tanks take little rifle damage, and their tracks have 125 HP each. A track trigger is set at 55%, but not what it does.
 - At 10 HP per Wrench use, the Humvee's 500 HP would take 50 uses to restore from zero, about 34 seconds of repair (derived).
 - The in-game tip says a rotor blade breaks if it hits an object, so flying close to terrain or other aircraft puts the rotors at risk.
 
@@ -121,7 +121,7 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 
 - [Vehicle damage](vehicle-damage.md): how hits reach each part
 - [Fuel and refueling](fuel-and-refueling.md): the fuel tank and refilling
-- [Vehicle handling](vehicle-handling.md): how wheel and track state affects movement, where the data says so
+- [Vehicle handling](vehicle-handling.md): how wheel and track state affects movement, where the sources document it
 - [Wrench](../equipment/wrench.md), [Drills](../equipment/drills.md) and [Supplies](../equipment/supplies.md)
 
 ## Sources
@@ -134,7 +134,7 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Repair Station
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md) and [Item Actions](../../content/Wardogs_ItemActions_v1.md): repair tool amounts and prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Repair Station restock rates and the stored 13.33 multiplier.
+- [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): Repair Station restock rates and the 13.33 multiplier.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Wrench and drill repair per application and rate, tyre deflation and fuel-tank leak steps.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the Wrench and drill timings and the fuel-tank health steps.
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article

@@ -21,7 +21,7 @@ description: "Heavy three-seat truck with no weapons and the heaviest mass of th
 | Internal name | WHL_07 (default variant) |
 {: .wiki-infobox }
 
-The Ural is a large truck with a mass of 10,000, the heaviest wheeled vehicle in the data. It has six wheels, a three-seat cab and no weapons. It is the base model of the Ural family, which also includes the [Ural Defender](ural-defender.md) and the [Ural Defender [M249]](ural-defender-m249.md).
+The Ural is a large truck with a mass of 10,000, the heaviest wheeled vehicle. It has six wheels, a three-seat cab and no weapons. It is the base model of the Ural family, which also includes the [Ural Defender](ural-defender.md) and the [Ural Defender [M249]](ural-defender-m249.md).
 
 ## Overview
 
@@ -44,7 +44,7 @@ Main health is 700 HP. The Ural has separate health for its engine (400 HP), fue
 
 Rifle rounds do 5% of their damage against the hull. The fuel tank takes an extra 350% from bullets.
 
-Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -63,15 +63,15 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 
 - Driving assists: drift values of 2.5 at the front and 30 at the rear. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 
-- Mass 10,000, hand brake 50, ABS 15 with a minimum speed of 35, and traction control 45, as stored.
+- Mass 10,000, hand brake 50, ABS 15 with a minimum speed of 35, and traction control 45, as set.
 - Front steering of 30 degrees.
-- Five forward gears and a reverse ratio (the last of its six gear entries). The first gear ratio is 5.62, second only to the Kodiak's 6.0 among the wheeled vehicles.
+- Five forward gears and a reverse ratio (the last of its six listed gear ratios). The first gear ratio is 5.62, second only to the Kodiak's 6.0 among the wheeled vehicles.
 - Torque peak 900 at 1,200 RPM, with a torque scale of 2.0 and an idle of 650 RPM.
 
-**Steering and pedal tuning.** The data stores steer input gravity 2 and throttle sensitivity 1. Its steer-speed multiplier falls from 1.4 to 0.5 as the input rises. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+**Steering and pedal tuning.** Its settings are steer input gravity 2 and throttle sensitivity 1. Its steer-speed multiplier falls from 1.4 to 0.5 as the input rises. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
-- Steering sensitivity is not stored; the game default of 5.0 applies.
-- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+- No steering sensitivity is set; the game default of 5.0 applies.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes
 
@@ -82,7 +82,7 @@ The Ural has no weapons. Its three seats are a driver and two passengers.
 
 ## Vehicle spawns
 
-The Ural is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Ural, Ural Defender and Ural Defender [M249]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Ural is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Ural, Ural Defender and Ural Defender [M249]), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
