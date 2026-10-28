@@ -63,7 +63,8 @@ def main():
         groups[next((p for p in PREFIXES if r["name"].startswith(p)), "Other")].append(r)
     mods = collections.Counter(m["kind"] for r in effects for m in r["modifiers"])
     out = [
-        "---", 'title: "Gameplay Effect Values"', 'parent: "Pipelines"', "nav_order: 3.5", "---", "",
+        "---", 'title: "Gameplay Effect Values"', 'parent: "Damage & Combat Systems"',
+        f'description: "What all {len(effects)} effects do: every attachment, stance and movement modifier"', "---", "",
         "# Wardogs — Gameplay Effect Values", "",
         "> **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs)"
         " · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)", "",
@@ -72,9 +73,9 @@ def main():
         "another attribute). How effects and attributes work is in the "
         "[Gameplay Effects Pipeline](Wardogs_GameplayEffectsPipeline_v1.md).", "",
         "**Source.** A static export of each effect's cooked class default object from the game's paks "
-        "([`tools/cue4parse_extractor`](../tools/cue4parse_extractor/README.md): CUE4Parse with the 5.7.4 usmap; three usmap "
-        "array types were corrected so the modifiers and tag queries decode). The data is in [`assets/data/ge-values.json`](assets/data/ge-values.json); this page "
-        "is generated from it by [`_tools/ge_values.py`](_tools/ge_values.py).", "",
+        "([`tools/cue4parse_extractor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md): CUE4Parse with the 5.7.4 usmap; three usmap "
+        "array types were corrected so the modifiers and tag queries decode). The data is in [`assets/data/ge-values.json`](../assets/data/ge-values.json); this page "
+        "is generated from it by [`_tools/ge_values.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/ge_values.py).", "",
         "**Reading the tables.** Attribute names drop `Attribute.Gameplay.`. Operations: `+` Add, `×` Multiply, "
         "`÷` Divide, `×c` MultiplyCompound, `+f` AddFinal, `=` Override. `@StackCount` and the like name the "
         "curve indexing ([pipeline §4.2](Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers)). Cooked objects only "
@@ -97,6 +98,15 @@ def main():
             stk = num(r["max_stacks"]) if r.get("max_stacks") is not None else ""
             out.append(f"| `{r['name']}` | {m} | {dur} | {stk} | {tags} | {requirements(r)} |")
         out.append("")
+    out += [
+        "## Ghillie effect (round 36 note)", "",
+        "`GE_Player_GhilliEffects` (Ghillie Body Suit and Ghillie Headwear applied together; it requires both "
+        "`State.Player.Ghilli.BodySuit` and `State.Player.Ghilli.Headwear`) multiplies, all `MultiplyCompound`: "
+        "`AdsTimeMultiplier` 0.8, `AimSwayScaleMultiplier` 1.15, `LeanTimeMultiplier` 1.15, `UnleanTimeMultiplier` "
+        "1.15, `MaxSpeedMultiplier` 0.95, `JumpVelocityMultiplier` 0.95. No other cooked asset names the two "
+        "`State.Player.Ghilli.*` tags (`findname` over all packages). See the [round 36 combat evidence]"
+        "(https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md#6-ghillie-suit-and-headwear).", "",
+    ]
     with open(PAGE, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(out))
     print(f"wrote {os.path.relpath(PAGE, ROOT)}: {len(effects)} effects")
