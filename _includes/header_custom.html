@@ -1,0 +1,19 @@
+{%- comment -%}Wiki menu bar: one dropdown per hub area, from _data/wiki_menu.yml.{%- endcomment -%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..24,400,0,0&display=block">
+<nav class="wm" aria-label="Wiki sections" id="wiki-menu">
+  <button type="button" class="wm-burger btn-reset" aria-expanded="false" aria-controls="wm-list"><span class="wm-icon" aria-hidden="true">menu</span> Browse the wiki</button>
+  <ul class="wm-list" id="wm-list">
+  {%- for item in site.data.wiki_menu %}
+    <li class="wm-item">
+      <a class="wm-top" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      <button type="button" class="wm-caret btn-reset" aria-expanded="false" aria-label="Show {{ item.title }} links"><span class="wm-icon" aria-hidden="true">expand_more</span></button>
+      <ul class="wm-drop">
+      {%- for l in item.links %}
+        <li><a href="{{ l.url | relative_url }}">{{ l.label }}</a></li>
+      {%- endfor %}
+      </ul>
+    </li>
+  {%- endfor %}
+  </ul>
+</nav>
+<script src="{{ '/assets/js/wiki-menu.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
