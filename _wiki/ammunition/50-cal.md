@@ -23,7 +23,7 @@ description: "The .50 Cal caliber: the weapons that fire it, its bullet types, h
 | Internal name | 50Cal |
 {: .wiki-infobox }
 
-The .50 Cal caliber is used by 1 weapon in the weapon data, across the Sniper rifle class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+The .50 Cal caliber is used by 1 weapon, across the Sniper rifle class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
 
 ## Weapons that use it
 

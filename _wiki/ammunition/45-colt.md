@@ -23,7 +23,7 @@ description: "The .45 Colt caliber: the weapons that fire it, its bullet types, 
 | Internal name | 45Colt |
 {: .wiki-infobox }
 
-The .45 Colt caliber is used by 1 weapon in the weapon data, across the Pistol class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+The .45 Colt caliber is used by 1 weapon, across the Pistol class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
 
 ## Weapons that use it
 

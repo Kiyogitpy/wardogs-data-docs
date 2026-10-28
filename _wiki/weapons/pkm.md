@@ -15,7 +15,7 @@ description: "The PKM light machine gun: fire rate, damage by body part, range f
 | Caliber | [7.62x54mm](../ammunition/7-62x54mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
-| Fire rate | 600 rounds/min (class default) |
+| Fire rate | 600 rounds/min |
 | Muzzle velocity | 825 m/s |
 | Effective range | 1000 m |
 | Standard magazine | PKM 100 RND Box |

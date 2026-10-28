@@ -308,13 +308,11 @@ def stats(wid):
     shop = shop_rows.get(it["display"], {"price": "not yet known", "unlock": "not yet known", "defaults": ""})
 
     if dmg and dmg.get("rpm") is not None:
-        rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
-        if str(dmg.get("rpm_source", "")).startswith("class_default"):
-            rpm += " (class default)"
+        rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
     else:
-        m = re.match(r"([0-9.]+)\s*(\(class default\))?", ro["rpm"] or "")
+        m = re.match(r"([0-9.]+)", ro["rpm"] or "")
         if m:
-            rpm = f"{fmt_int(float(m.group(1)))} rounds/min" + (" (class default)" if m.group(2) else "")
+            rpm = f"{fmt_int(float(m.group(1)))} rounds/min"
         else:
             rpm = "not yet known"
 
@@ -578,13 +576,13 @@ def build_weapon(wid):
     if is_launcher:
         lead = f"The {title} is {art} {group_link} in Wardogs that fires explosive rounds rather than bullets."
         if s["rpm"] != "not yet known":
-            lead += f" Its fire rate is {s['rpm'].replace(' (class default)', '')}."
+            lead += f" Its fire rate is {s['rpm']}."
         lk = lock_on(code)
         if lk:
             lead += (f" It fires only while locked on to a target ({lk['lock']:g} s to lock, {lk['delay']:g} s delay)"
                      + (", and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles." if lk["air_only"] else "."))
     else:
-        lead = (f"The {title} is {art} {group_link} in Wardogs, chambered in {s['cal']}. It fires {s['modes']} at {s['rpm'].replace(' (class default)', '')}.")
+        lead = (f"The {title} is {art} {group_link} in Wardogs, chambered in {s['cal']}. It fires {s['modes']} at {s['rpm']}.")
         if s["has_mag"]:
             lead += f" Its standard magazine is the {s['mag']}."
     blurb = CLASS_BLURB.get(it["archetype"], "")
@@ -798,7 +796,7 @@ def hub_page(sections):
             "description: \"Every player weapon, the ammunition they use and the attachments that change them.\"\n---\n\n")
     body = ["# Weapons", "",
             "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow "
-            "in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
+            "that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
             "[Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. "
             "To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.", ""]
     for arch in CLASS_ORDER:

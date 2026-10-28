@@ -23,7 +23,7 @@ description: "The .45 ACP caliber: the weapons that fire it, its bullet types, h
 | Internal name | 45ACP |
 {: .wiki-infobox }
 
-The .45 ACP caliber is used by 2 weapons in the weapon data, across the Submachine gun and Pistol classes. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+The .45 ACP caliber is used by 2 weapons, across the Submachine gun and Pistol classes. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
 
 ## Weapons that use it
 

@@ -15,7 +15,7 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
-| Fire rate | 600 rounds/min (class default) |
+| Fire rate | 600 rounds/min |
 | Muzzle velocity | 375 m/s |
 | Effective range | 50 m |
 | Standard magazine | GGX 17 RND Magazine |
