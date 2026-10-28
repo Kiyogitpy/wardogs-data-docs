@@ -2,7 +2,7 @@
 title: "Saburtulo"
 parent: "Game Modes & Maps"
 group: "Maps"
-description: "The Saburtulo King of the Hill map, added with its Season 2 zone and warm-up data: a 550 m zone with four placements."
+description: "The Saburtulo King of the Hill map, added with its Season 2 zone and warm-up setup: a 550 m zone with four placements."
 ---
 
 # Saburtulo
@@ -25,15 +25,15 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 | Internal name | Server browser Moscow_KOTH_01; zone config Russia; minimap folder Russia |
 {: .wiki-infobox }
 
-Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible zone placements. Its zone configuration, shader warm-up list and sight-blocker data were all added in Season 2. The data does not include a list of named zone regions for it, and it does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
+Saburtulo is a King of the Hill map with a 550 m Control Zone and four possible zone placements. Its zone configuration, shader warm-up list and sight-blocker data were all added in Season 2. The game does not include a list of named zone regions for it, and it does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
 ![Saburtulo map]({{ '/assets/img/maps/saburtulo.jpg' | relative_url }})
 
-*Saburtulo minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 1.7 m per pixel. The crop is a stand-in play box (the five towers and the zone object plus 500 m, with a further 500 m margin), about 2.75 km square, scale bar in the corner. The data has no zone regions for Saburtulo, so none are drawn. Magenta circles are the five Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three spawn areas (Kuzminki, Rostokino, Ramenki). Marks drawn from placed-object positions; the overview below shows the whole map.*
+*Saburtulo minimap, orientation as in the game's minimap (the map has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 1.7 m per pixel. The crop is a stand-in play box (the five towers and the zone object plus 500 m, with a further 500 m margin), about 2.75 km square, scale bar in the corner. The game has no zone regions for Saburtulo, so none are drawn. Magenta circles are the five Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three spawn areas (Kuzminki, Rostokino, Ramenki). Marks drawn from placed-object positions; the overview below shows the whole map.*
 
 ## Overview
 
-Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The data ties it to the Moscow entry by name and folder only (an inference from the names, not checked in game). Its zone configuration is stored under the Russia files. Some data entries spell the placement names with "Sabartulo", which refers to the same placement set.
+Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server browser entry. The game ties it to the Moscow entry by name and folder only (an inference from the names, not checked in game). Its zone configuration is stored under the Russia files. Some game entries spell the placement names with "Sabartulo", which refers to the same placement set.
 
 ## Modes played here
 
@@ -53,7 +53,7 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 | River | 0 |
 | Hillside | 0 |
 
-- **Zone regions.** The data does not include a region list for this map. The zone object placed in the Saburtulo map files has an empty region slot, the Sniper Showdown zone placed there has none either, and the minimap data holds none, so where the zone can sit beyond these four placements is not known. Bakurani, Ozeti and Zestafona each have a list; this is the one King of the Hill map with a zone but no list.
+- **Zone regions.** The game does not include a region list for this map. The zone object placed in the Saburtulo map files has an empty region slot, the Sniper Showdown zone placed there has none either, and the minimap has none, so where the zone can sit beyond these four placements is not known. Bakurani, Ozeti and Zestafona each have a list; this is the one King of the Hill map with a zone but no list.
 
 ## Vehicle spawns
 
@@ -67,11 +67,11 @@ The Moscow entry uses three spawn areas: Kuzminki (Lonestar side), Rostokino (Va
 
 Distances are straight-line metres from the middle of each side's infantry spawn points to the middle of the zone area and to the nearest Hot Zone Magnet tower (Saburtulo lists no zone regions, so the placed zone object stands in for the middle of the zone area (inferred); the five towers are the candidates). The Hot Zone itself moves, so these are distances to the area it can reach, not to the zone at a given moment. The deployment board stands within about 60 m of the spawn point. The boards tagged for Kuzminki and Ramenki stand in each other's areas, as noted above, so a board is paired by where it stands.
 
-The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). Two details look swapped in the data: the Kuzminki area (Lonestar side) holds a Manticore deployment board and the Ramenki area (Manticore side) holds a Lonestar board. Which team receives which spawn vehicle at run time is not known. The Rostokino area has no infantry spawn area in the dumped files.
+The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). Two details look swapped in the game: the Kuzminki area (Lonestar side) holds a Manticore deployment board and the Ramenki area (Manticore side) holds a Lonestar board. Which team receives which spawn vehicle at run time is not known. The Rostokino area has no infantry spawn area in the game.
 
-- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
-- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s. If the APC is destroyed, the board counts down 300 s before it returns, or 60 s when the side is losing, which means the best other side is ahead by 15 score points or more at that moment. The countdown times the APC only, and the board does not put the APC out at all until one side has a score of 20. The data gives no return time for the other yard vehicles.
-- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The game does not say how many of each vehicle a yard holds or in what order they appear.
+- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s. If the APC is destroyed, the board counts down 300 s before it returns, or 60 s when the side is losing, which means the best other side is ahead by 15 score points or more at that moment. The countdown times the APC only, and the board does not put the APC out at all until one side has a score of 20. The game gives no return time for the other yard vehicles.
+- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game.
 
 ## Light and weather
 
@@ -79,7 +79,7 @@ Clear late afternoon light by default: the sun stands only about 20 degrees up, 
 
 ## Cover materials
 
-Most cover on Saburtulo is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the whole map, because the data has no zone region list for it to narrow the count to the play area. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game files, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
+Most cover on Saburtulo is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the whole map, because the game has no zone region list for it to narrow the count to the play area. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
 
 | Material | Pieces | Share of pieces | Mostly (from the material names) |
 |---|---:|---:|---|
@@ -106,7 +106,7 @@ The heights are read from the game's ground pieces, which are 510 m wide, so the
 
 ## Placed objects
 
-These are the things the map file places for players to use or break. Saburtulo has no zone region list, so there is no "around the zones" area and only the whole file is counted. "Whole map file" counts everything in the file, and the Sniper Showdown layout for Russia uses the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
+These are the things the map file places for players to use or break. Saburtulo has no zone region list, so there is no "around the zones" area and only the whole file is counted. "Whole map file" counts everything in the file, and the Sniper Showdown layout for Russia uses the same file, so it is larger than this map alone. The counts were read from the game, not checked in play.
 
 | Object | Around the zones | Whole map file | What it is |
 |---|---:|---:|---|
@@ -117,7 +117,7 @@ These are the things the map file places for players to use or break. Saburtulo 
 | Destructible buildings | Not given | 378 | Single buildings that can be knocked down: houses, garages, warehouses and shops, plus a few larger ones. Doors and windows are counted on their own rows. |
 | Pre-placed barbed wire | Not given | 52 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
 | Water | Not given | None | No water actor was found in the file. |
-| Supply buildings | Not given | 10 | A kind of building. Its data shows no supply or pickup function. |
+| Supply buildings | Not given | 10 | A kind of building. It has no supply or pickup function. |
 
 ### Where the towers stand
 
@@ -151,7 +151,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 - The Russia zone configuration was added in Season 2. It is 550 m across with an 85 m Hot Zone, and it uses the standard 25-second move delay.
 - A shader warm-up list for this map was added in Season 2. It lists 1,132 graphics pipeline states and 74 compute pipeline states. These lists are technical caches and do not change play.
-- Sight-blocker map data was added for this map. The data does not say what sight blockers do in play.
+- Sight-blocker map data was added for this map. The game does not say what sight blockers do in play.
 
 ## See also
 

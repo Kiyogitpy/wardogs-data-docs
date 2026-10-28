@@ -16,7 +16,7 @@ description: "The two King of the Hill server variants: Hardcore strips the HUD 
 | Internal name | KOTH_Hardcore, KOTH_InfantryOnly |
 {: .wiki-infobox }
 
-Hosts can run King of the Hill with one of two rule variants. Both appear as tags in the server browser. The game files name what each variant changes, so this page lists exactly that.
+Hosts can run King of the Hill with one of two rule variants. Both appear as tags in the server browser. The game names what each variant changes, so this page lists exactly that.
 
 ## Hardcore
 
@@ -49,11 +49,11 @@ Infantry Only is King of the Hill with the heavier and armed vehicle packs disab
 | Wolf-110 [M2 Browning] | The armed Wolf |
 | Talon 9K SAM, Vanguard CIWS and Stingray | Buildable anti-air and counter-rocket emplacements |
 
-The unarmed Humvee, Kodiak, Ural, Wolf-110, Z20 Lakota and MH-6 are not on the removed list. They are separate vehicle packs that the mode does not switch off, and the Infantry Only rule itself is only a label for the server browser: no game code reads it to block vehicles (inferred from the code; the game was not run). Nothing in the game files stops the unarmed vehicles from spawning in Infantry Only, so they most likely still can, unless the server removes them.
+The unarmed Humvee, Kodiak, Ural, Wolf-110, Z20 Lakota and MH-6 are not on the removed list. They are separate vehicle packs that the mode does not switch off, and the Infantry Only rule itself is only a label for the server browser: no game code reads it to block vehicles (inferred from the code; the game was not run). Nothing in the game stops the unarmed vehicles from spawning in Infantry Only, so they most likely still can, unless the server removes them.
 
 ## Other server options
 
-The server browser also tags No Rebuy, No Return To Spawn, No Vault, No Player Looting, No Team Change, No Give Up and Reduced HUD. For those the game files give only the tag names, with no separate rule definition. See [Game Modes & Maps](../game-modes-and-maps.md).
+The server browser also tags No Rebuy, No Return To Spawn, No Vault, No Player Looting, No Team Change, No Give Up and Reduced HUD. For those the game gives only the tag names, with no separate rule definition. See [Game Modes & Maps](../game-modes-and-maps.md).
 
 ## See also
 

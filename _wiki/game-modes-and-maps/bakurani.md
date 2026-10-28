@@ -2,7 +2,7 @@
 title: "Bakurani"
 parent: "Game Modes & Maps"
 group: "Maps"
-description: "The Bakurani King of the Hill map: zone sizes, the three zone placements, and the 60 named zone regions the data lists for it."
+description: "The Bakurani King of the Hill map: zone sizes, the three zone placements, and the 60 named zone regions listed for it."
 ---
 
 # Bakurani
@@ -25,11 +25,11 @@ description: "The Bakurani King of the Hill map: zone sizes, the three zone plac
 | Internal name | Server browser Bakurani_KOTH_01 and Bakurani_KOTH_02; zone config Bakurani; region config and minimap folder Kavkazi |
 {: .wiki-infobox }
 
-Bakurani is the first King of the Hill map in the server browser, and it is the one with the most zone data. It has three alternative zone placements and 60 named zone regions, so the zone can appear in several parts of the map. The data does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
+Bakurani is the first King of the Hill map in the server browser, and it is the one with the most zone information. It has three alternative zone placements and 60 named zone regions, so the zone can appear in several parts of the map. The game does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
 ![Bakurani map]({{ '/assets/img/maps/bakurani.jpg' | relative_url }})
 
-*Bakurani minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 2.8 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 4.3 km by 4.4 km, scale bar in the corner. The white outlines are the 60 named zone regions, with the five Hot Zone Magnet tower regions drawn heavier; magenta circles are the towers, numbered as in the table below. Arrows point toward the three spawn areas of the first server browser entry (Baghi, Khevuli, Chuta), which lie 3.8 to 4.1 km from the middle of the crop. Tower 5 has no region of its own in the data, and TOWER 7 is not placed. Marks drawn from placed-object positions; the overview below shows the whole map.*
+*Bakurani minimap, orientation as in the game's minimap (the map has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 2.8 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 4.3 km by 4.4 km, scale bar in the corner. The white outlines are the 60 named zone regions, with the five Hot Zone Magnet tower regions drawn heavier; magenta circles are the towers, numbered as in the table below. Arrows point toward the three spawn areas of the first server browser entry (Baghi, Khevuli, Chuta), which lie 3.8 to 4.1 km from the middle of the crop. Tower 5 has no region of its own, and TOWER 7 is not placed. Marks drawn from placed-object positions; the overview below shows the whole map.*
 
 ## Overview
 
@@ -45,7 +45,7 @@ Bakurani is played in [King of the Hill](king-of-the-hill.md). The server browse
 The Control Zone is 500 m across and 170 m tall, with an 85 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md).
 
 - **Hot Zone movement.** The Hot Zone is placed at the start and then moves about every 25 seconds. Its default speed is 1.0, and the speed table runs from 0.75 to 2.0.
-- **Placements.** The zone has three placements. The server rotation can name one for a match. Without a name, one is drawn at random by weight, so the default (weight 2) is twice as likely as Farmland or Lumberyard (weight 1 each). The example server rotation names a Bakurani River entry, which has no placement in the game files, so that match falls back to the random draw: Default 50%, Farmland 25%, Lumberyard 25%.
+- **Placements.** The zone has three placements. The server rotation can name one for a match. Without a name, one is drawn at random by weight, so the default (weight 2) is twice as likely as Farmland or Lumberyard (weight 1 each). The example server rotation names a Bakurani River entry, which has no placement in the game, so that match falls back to the random draw: Default 50%, Farmland 25%, Lumberyard 25%.
 
 | Placement | Weight |
 |---|---|
@@ -53,7 +53,7 @@ The Control Zone is 500 m across and 170 m tall, with an 85 m Hot Zone in its ce
 | Farmland | 1 |
 | Lumberyard | 1 |
 
-- **Zone regions.** The data lists 60 named regions. Seven are towers with weight 0, which are never drawn at random. Most other regions have weight 1, and a few have weight 5, including SUNFLOWERS HOUSE, WEST FOREST PYLON and HILLSIDE TOP, which makes them much more likely. The Hot Zone moves to a region drawn at random by weight, and the region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in 33 pairs, which does not affect the draw.
+- **Zone regions.** The game lists 60 named regions. Seven are towers with weight 0, which are never drawn at random. Most other regions have weight 1, and a few have weight 5, including SUNFLOWERS HOUSE, WEST FOREST PYLON and HILLSIDE TOP, which makes them much more likely. The Hot Zone moves to a region drawn at random by weight, and the region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in 33 pairs, which does not affect the draw.
 
 ## Vehicle spawns
 
@@ -79,9 +79,9 @@ Distances are straight-line metres from the middle of each side's infantry spawn
 
 The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). In the first entry the Khevuli area has no APC volume of its own and only one ground yard; the Baghi and Chuta areas have three ground yards. One Baghi yard also allows the Azar test vehicle, which has no wiki article. The Chuta infantry spawn area is the largest in the first entry. 
 
-- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
-- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s. If the APC is destroyed, the board counts down 300 s before it returns, or 60 s when the side is losing, which means the best other side is ahead by 15 score points or more at that moment. The countdown times the APC only, and the board does not put the APC out at all until one side has a score of 20. The data gives no return time for the other yard vehicles.
-- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The game does not say how many of each vehicle a yard holds or in what order they appear.
+- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s. If the APC is destroyed, the board counts down 300 s before it returns, or 60 s when the side is losing, which means the best other side is ahead by 15 score points or more at that moment. The countdown times the APC only, and the board does not put the APC out at all until one side has a score of 20. The game gives no return time for the other yard vehicles.
+- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game.
 
 ## Light and weather
 
@@ -89,7 +89,7 @@ Clear midday light by default: the sun stands about 44 degrees up, so shadows ar
 
 ## Cover materials
 
-Most cover on Bakurani is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the part of the map around its zone regions (the area the Hot Zone can reach, plus 500 m on every side), which holds 109,586 of the 202,748 wall and building pieces placed on the whole map. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game files, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
+Most cover on Bakurani is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the part of the map around its zone regions (the area the Hot Zone can reach, plus 500 m on every side), which holds 109,586 of the 202,748 wall and building pieces placed on the whole map. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
 
 | Material | Pieces | Share of pieces | Mostly (from the material names) |
 |---|---:|---:|---|
@@ -123,11 +123,11 @@ The heights are read from the game's ground pieces, which are 1020 m wide, so th
 
 The game stores the water of this map as 23 height grids that each cover a square or rectangle of ground. The grids together span about 15.9 km by 9.4 km and run from -1,016 m to -806 m on the game's height scale (the same scale as the ground heights above). Each grid cell is 2 m wide, except one grid at 4 m.
 
-The numbers are read straight from the game files. The water is flat on lakes and falls steadily along each river toward the low end, and neighbouring grids agree where they overlap, to within a few tens of centimetres. Per-grid figures are in the [water height table](../../content/Wardogs_Environment_v2.md#13b-height-grids).
+The numbers are read straight from the game. The water is flat on lakes and falls steadily along each river toward the low end, and neighbouring grids agree where they overlap, to within a few tens of centimetres. Per-grid figures are in the [water height table](../../content/Wardogs_Environment_v2.md#13b-height-grids).
 
 ## Placed objects
 
-These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Mindori and Tevza (and Bakurani Outskirts - Jutari) use the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
+These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Mindori and Tevza (and Bakurani Outskirts - Jutari) use the same file, so it is larger than this map alone. The counts were read from the game, not checked in play.
 
 | Object | Around the zones | Whole map file | What it is |
 |---|---:|---:|---|
@@ -141,7 +141,7 @@ These are the things the map file places for players to use or break. "Around th
 
 ### Where the towers stand
 
-The map names its zone regions, and each tower stands inside one of them. "The middle of the zone area" is the middle of the box around all regions. Distances are straight-line metres on the map, read from the game files. Towers 1 to 4 stand in the regions named Tower 1 to Tower 4, which have weight 0 so the Hot Zone never lands there by the random draw. Tower 5 stands in Lumberyard North, 78 m from a small region named Tower 5 L. A region named Tower 7 exists in the list, but the map places no tower there. How a tower is captured is on [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
+The map names its zone regions, and each tower stands inside one of them. "The middle of the zone area" is the middle of the box around all regions. Distances are straight-line metres on the map, read from the game. Towers 1 to 4 stand in the regions named Tower 1 to Tower 4, which have weight 0 so the Hot Zone never lands there by the random draw. Tower 5 stands in Lumberyard North, 78 m from a small region named Tower 5 L. A region named Tower 7 exists in the list, but the map places no tower there. How a tower is captured is on [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
 
 | Tower | Region it stands in | From that region's middle | From the middle of the zone area |
 |---|---|---:|---:|
@@ -155,7 +155,7 @@ The map names its zone regions, and each tower stands inside one of them. "The m
 
 The file places 6 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a free fuel point, a small soccer pitch, 3 moving practice targets and a safe zone (all 6 areas; one lies 166 m from its spawn point, just beyond the 150 m radius used here). None of these areas lies inside the zone area. The invisible safe zone boxes are about 480 m tall; three safe zones are 640 m by 640 m and three are 480 m by 480 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 11.0 km by 11.0 km.
 
-The fuel point refuels vehicles without cost and does not run out (the data marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
+The fuel point refuels vehicles without cost and does not run out (the game marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
 
 ### Not in the map files
 
@@ -168,7 +168,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 ## Season 2 changes
 
 - The shader warm-up list for this map was updated. Its old count was withdrawn because the old file was cut short. The new file lists 867 graphics pipeline states and 117 compute pipeline states. These lists are technical caches and do not change play.
-- Sight-blocker map data was added for this map. The data does not say what sight blockers do in play.
+- Sight-blocker map data was added for this map. The game does not say what sight blockers do in play.
 - The Season 2 notes list no change to this map's Control Zone or regions.
 
 ## See also

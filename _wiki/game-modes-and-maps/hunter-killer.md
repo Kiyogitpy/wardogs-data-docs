@@ -2,7 +2,7 @@
 title: "Hunter Killer"
 parent: "Game Modes & Maps"
 group: "PvE missions"
-description: "A single-life PvE mission on the Bakurani world with no respawns. Its data is unfinished: no soldiers, objectives or player faction are set."
+description: "A single-life PvE mission on the Bakurani world with no respawns. It is unfinished: no soldiers, objectives or player faction are set."
 ---
 
 # Hunter Killer
@@ -20,32 +20,32 @@ description: "A single-life PvE mission on the Bakurani world with no respawns. 
 | Internal name | HunterKiller_01 |
 {: .wiki-infobox }
 
-Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The mission data is unfinished: it has a map layer that holds only labels, and no soldiers, objectives or player faction are set.
+Hunter Killer is a PvE mission played against AI squads instead of other players. A player who dies stays out for the rest of the mission. Like every PvE mission, it uses the shared setup with three teams. The mission is unfinished: it has a map layer that holds only labels, and no soldiers, objectives or player faction are set.
 
-Hunter Killer is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title.
+Hunter Killer is a plain-language name taken from the mission's internal name. The game gives no display name, so this is not confirmed as the in-game title.
 
 ## Overview
 
-Hunter Killer is one of the three PvE missions in the data, alongside [Strike and Disarm](strike-and-disarm.md) and [VIP Escort](vip-escort.md). It uses the shared PvE base described on the [PvE Scenarios](pve-scenarios.md) page: the no-respawn rule and the scenario quest log and trackers.
+Hunter Killer is one of the three PvE missions, alongside [Strike and Disarm](strike-and-disarm.md) and [VIP Escort](vip-escort.md). It uses the shared PvE base described on the [PvE Scenarios](pve-scenarios.md) page: the no-respawn rule and the scenario quest log and trackers.
 
 ## Objective and rules
 
 - **Respawns.** None. A player who dies stays out for the rest of the mission.
-- **Teams.** Like the other PvE missions, it uses the shared three-team setup. The game files set no faction tag and no starting cash for the player on this mission, so there is no starting side to state.
+- **Teams.** Like the other PvE missions, it uses the shared three-team setup. The game sets no faction tag and no starting cash for the player on this mission, so there is no starting side to state.
 - **Objectives.** None are set. The mission's quest has only a start and an end, with no steps between them.
-- **Map.** The Bakurani world (the data's name for it is Kavkazi). No time limit is set in the data.
+- **Map.** The Bakurani world (the game's internal name for it is Kavkazi). No time limit is set.
 - **Starting cash.** None is set for this mission.
 - **Downed players.** The mission switches off the rule that skips the downed state, so a player can be downed here, as in King of the Hill.
-- **Name.** The data has no name text for this mission at all, so the title above is a working name.
-- **Completion cash.** No payout for finishing the mission appears in the game files.
+- **Name.** The game has no name text for this mission at all, so the title above is a working name.
+- **Completion cash.** No payout for finishing the mission appears in the game.
 
 ## Enemies
 
-No AI soldiers are placed on the map, so the mission has no enemies in the data. The map has placeholder labels such as Guards (4), Patrol (7) and Lieutenant Location (2), but no soldiers. The [AI enemies](ai-enemies.md) page describes the soldiers used in the other two PvE missions.
+No AI soldiers are placed on the map, so the mission has no enemies. The map has placeholder labels such as Guards (4), Patrol (7) and Lieutenant Location (2), but no soldiers. The [AI enemies](ai-enemies.md) page describes the soldiers used in the other two PvE missions.
 
 ## Rewards
 
-The data has no reward table and no cash payout for this mission, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
+The game has no reward table and no cash payout for this mission, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
 
 ## Layout
 

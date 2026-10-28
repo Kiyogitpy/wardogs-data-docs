@@ -2,7 +2,7 @@
 title: "Ozeti"
 parent: "Game Modes & Maps"
 group: "Maps"
-description: "The Ozeti King of the Hill map: a 550 m zone with four placements, and 55 named zone regions in the data."
+description: "The Ozeti King of the Hill map: a 550 m zone with four placements, and 55 named zone regions."
 ---
 
 # Ozeti
@@ -25,11 +25,11 @@ description: "The Ozeti King of the Hill map: a 550 m zone with four placements,
 | Internal name | Server browser Madrid_KOTH_01; zone config Europe; region config Europe |
 {: .wiki-infobox }
 
-Ozeti is a King of the Hill map with a 550 m Control Zone and four possible zone placements. It has 55 named zone regions, almost all with weight 1. The data does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
+Ozeti is a King of the Hill map with a 550 m Control Zone and four possible zone placements. It has 55 named zone regions, almost all with weight 1. The game does not describe its streets or buildings. Its vehicle and infantry spawn areas are covered under Vehicle spawns.
 
 ![Ozeti map]({{ '/assets/img/maps/ozeti.jpg' | relative_url }})
 
-*Ozeti minimap, orientation as in the game's minimap (the data has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 3 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 4.8 km by 3.9 km, scale bar in the corner. The white outlines are the 55 named zone regions; magenta circles are the four Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three Madrid spawn areas (Granada, Barcelona, Malaga); Malaga lies off the top-left corner. Marks drawn from placed-object positions; the overview below shows the whole map.*
+*Ozeti minimap, orientation as in the game's minimap (the map has no north). Source: the game's world minimap texture, 16,384 px at 100 units per pixel, shown at about 3 m per pixel. The crop is the play box (zone regions plus 500 m) with a 500 m margin, about 4.8 km by 3.9 km, scale bar in the corner. The white outlines are the 55 named zone regions; magenta circles are the four Hot Zone Magnet towers, numbered as in the table below. Arrows point toward the three Madrid spawn areas (Granada, Barcelona, Malaga); Malaga lies off the top-left corner. Marks drawn from placed-object positions; the overview below shows the whole map.*
 
 ## Overview
 
@@ -53,7 +53,7 @@ The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its ce
 | River | 1 |
 | Farmland | 0 |
 
-- **Zone regions.** The data lists 55 named regions. Of these, 54 have weight 1 and one, Tower 2, has weight 0. Regions are named for towers and points of interest such as the stadium, pool, church top, lumberyard and apartments. Every non-zero region is equally likely under the data, because no other weight values appear. A region just used gives away half its weight, so it is unlikely to come up again at once.
+- **Zone regions.** The game lists 55 named regions. Of these, 54 have weight 1 and one, Tower 2, has weight 0. Regions are named for towers and points of interest such as the stadium, pool, church top, lumberyard and apartments. Every non-zero region is equally likely, because no other weight values appear. A region just used gives away half its weight, so it is unlikely to come up again at once.
 
 ## Vehicle spawns
 
@@ -69,9 +69,9 @@ Distances are straight-line metres from the middle of each side's infantry spawn
 
 The side names follow the spawn vehicle that each area's yards list (Lonestar, Valkyra or Manticore version; the pairing with the three team slots is inferred, see the [Vehicle Spawns data page](../../game-features/Wardogs_VehicleSpawns_v1.md)). Vehicle slots are the places where each side's yards park vehicles (inferred from the yard's target points). The Malaga area has a third ground yard, which is why the totals are not equal across sides.
 
-- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The data does not say how many of each vehicle a yard holds or in what order they appear.
-- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s. If the APC is destroyed, the board counts down 300 s before it returns, or 60 s when the side is losing, which means the best other side is ahead by 15 score points or more at that moment. The countdown times the APC only, and the board does not put the APC out at all until one side has a score of 20. The data gives no return time for the other yard vehicles.
-- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game files.
+- **Vehicles offered (inferred).** The yards do not name vehicles one by one; they allow vehicle families by tag. The ground yards allow the Humvee, Kodiak, Ural, Dune Buggy and Wolf 110 families (each family covers its gun variants), the tank family of the L2A6, Flakpanzer Gepard and SPH-2, and the T-72B3. The light yards allow only the Bobcat. The air yards allow any helicopter (the fixed-wing airplane is under the same tag; whether a yard ever places it was not checked). The game does not say how many of each vehicle a yard holds or in what order they appear.
+- **Limits and timers.** A player may own at most 2 spawned vehicles at a time. After a player deploys onto the side's spawn vehicle (the APC), that player cannot deploy from the same board again for 600 s. If the APC is destroyed, the board counts down 300 s before it returns, or 60 s when the side is losing, which means the best other side is ahead by 15 score points or more at that moment. The countdown times the APC only, and the board does not put the APC out at all until one side has a score of 20. The game gives no return time for the other yard vehicles.
+- **What is not known.** Which vehicle each slot gives, how many vehicles of one kind can exist, and whether every King of the Hill match uses these yards are not in the game.
 
 ## Light and weather
 
@@ -79,7 +79,7 @@ Clear late afternoon light by default: the sun stands only about 20 degrees up, 
 
 ## Cover materials
 
-Most cover on Ozeti is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the part of the map around its zone regions (the area the Hot Zone can reach, plus 500 m on every side), which holds 69,833 of the 114,190 wall and building pieces placed on the whole map. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game files, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
+Most cover on Ozeti is made of the materials below. The counts are placed wall and building pieces taken from the map files, covering the part of the map around its zone regions (the area the Hot Zone can reach, plus 500 m on every side), which holds 69,833 of the 114,190 wall and building pieces placed on the whole map. A piece is one placed part such as a wall panel, floor, roof section, trim strip or fence section, so one building is many pieces. Each piece is counted under every material it uses, so a piece with brick walls and wood trim appears in both rows and the rows add up to more than the total. Pieces seen only as decals are left out. This was read from the game, not checked in play, and broken-apart building pieces that appear when a building is destroyed are not included.
 
 | Material | Pieces | Share of pieces | Mostly (from the material names) |
 |---|---:|---:|---|
@@ -113,11 +113,11 @@ The heights are read from the game's ground pieces, which are 510 m wide, so the
 
 The game stores the water of this map as 17 height grids that each cover a square or rectangle of ground. The grids together span about 15.8 km by 13.0 km and run from -1,063 m to -883 m on the game's height scale (the same scale as the ground heights above). Each grid cell is 2 m to 12 m wide; most are 2 m.
 
-The numbers are read straight from the game files. The water is flat on lakes and falls steadily along each river toward the low end, and neighbouring grids agree where they overlap, to within a few tens of centimetres. Per-grid figures are in the [water height table](../../content/Wardogs_Environment_v2.md#13b-height-grids).
+The numbers are read straight from the game. The water is flat on lakes and falls steadily along each river toward the low end, and neighbouring grids agree where they overlap, to within a few tens of centimetres. Per-grid figures are in the [water height table](../../content/Wardogs_Environment_v2.md#13b-height-grids).
 
 ## Placed objects
 
-These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Berlin and Paris use the same file, so it is larger than this map alone. The counts were read from the game files, not checked in play.
+These are the things the map file places for players to use or break. "Around the zones" counts the objects inside the area the Hot Zone can reach plus 500 m on every side, the same area as the cover counts above. "Whole map file" counts everything in the file, and Berlin and Paris use the same file, so it is larger than this map alone. The counts were read from the game, not checked in play.
 
 | Object | Around the zones | Whole map file | What it is |
 |---|---:|---:|---|
@@ -128,11 +128,11 @@ These are the things the map file places for players to use or break. "Around th
 | Destructible buildings | 247 | 354 | Single buildings that can be knocked down: houses, garages, warehouses and shops, plus a few larger ones. Doors and windows are counted on their own rows. |
 | Pre-placed barbed wire | 32 | 32 | Slows and hurts players and damages vehicles, like the [Barbed Wire](../building/barbed-wire.md) you can build. |
 | Water | 4 river sections, a swimming pool | 17 river sections, a swimming pool | Water you can swim in. |
-| Supply buildings | 1 | 1 | A kind of building. Its data shows no supply or pickup function. |
+| Supply buildings | 1 | 1 | A kind of building. It has no supply or pickup function. |
 
 ### Where the towers stand
 
-The map names its zone regions, and each tower stands inside one of them. "The middle of the zone area" is the middle of the box around all regions. Distances are straight-line metres on the map, read from the game files. The region named Tower 2 has weight 0; the regions named Tower 1, 3 and 4 have weight 1, so the Hot Zone can land on them by the random draw. How a tower is captured is on [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
+The map names its zone regions, and each tower stands inside one of them. "The middle of the zone area" is the middle of the box around all regions. Distances are straight-line metres on the map, read from the game. The region named Tower 2 has weight 0; the regions named Tower 1, 3 and 4 have weight 1, so the Hot Zone can land on them by the random draw. How a tower is captured is on [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
 
 | Tower | Region it stands in | From that region's middle | From the middle of the zone area |
 |---|---|---:|---:|
@@ -145,7 +145,7 @@ The map names its zone regions, and each tower stands inside one of them. "The m
 
 The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a free fuel point, a small soccer pitch (2 of 3 areas), 3 moving practice targets and a safe zone (all 3 areas; one lies 155 m from its spawn point, just beyond the 150 m radius used here). None of these areas lies inside the zone area. The invisible safe zone boxes are about 480 m tall; each safe zone is 480 m by 480 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 8.5 km by 7.8 km.
 
-The fuel point refuels vehicles without cost and does not run out (the data marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
+The fuel point refuels vehicles without cost and does not run out (the game marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
 
 ### Not in the map files
 
@@ -158,7 +158,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 ## Season 2 changes
 
 - The shader warm-up list for this map was updated. Graphics pipeline states went from 1,639 to 1,053, and compute pipeline states from 6 to 83. These lists are technical caches and do not change play.
-- Sight-blocker map data was added for this map. The data does not say what sight blockers do in play.
+- Sight-blocker map data was added for this map. The game does not say what sight blockers do in play.
 - The Season 2 notes list no change to this map's Control Zone.
 
 ## See also
