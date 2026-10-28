@@ -1,8 +1,8 @@
 ---
-title: "Rewards (feature)"
+title: "Buildable Rewards"
 redirect_from: ["/Wardogs_GameFeatures_Rewards_v2.html", "/Wardogs_GameFeatures_Rewards_v2"]
 parent: "Rewards & Unlocks"
-description: "Package Contents, How the Calculator Works, Calculator Rows, Feed Strings"
+description: "Buildable challenge rewards: calculator rows, feed strings, destroyed-variant lookups and the assist damage curve."
 ---
 
 # Wardogs — GameFeature: Rewards (Buildables) Reference

@@ -29,13 +29,13 @@ Level 3 Helmet is the third of the four helmet tiers. It protects the head and n
 
 ## Overview
 
-Level 3 Helmet is the first helmet tier that covers the neck. The Item Shop describes it as "High Damage Reduction", and it adds that the helmet gives a "Low Suppression Reduction". The item data lists the head and neck.
+Level 3 Helmet is the first helmet tier that covers the neck. The Item Shop describes it as "High Damage Reduction", and it adds that the helmet gives a "Low Suppression Reduction". The listed areas are the head and neck.
 
 It goes in the Helmet slot and weighs 3. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-Level 3 Helmet reduces damage to the head and neck by 50%. It does nothing for the body. The item data gives it 180 durability.
+Level 3 Helmet reduces damage to the head and neck by 50%. It does nothing for the body. It has 180 durability.
 
 With M4 full-metal-jacket rounds:
 
@@ -60,7 +60,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 | Damage reduction | 55% | 50% |
 | Price | 1,500 cash | 2,000 cash |
 
-The Season 2 data lists only these two changes for this helmet.
+Only these two changes are listed for this helmet in Season 2.
 
 ## See also
 

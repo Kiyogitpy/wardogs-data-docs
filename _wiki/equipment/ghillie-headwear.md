@@ -31,7 +31,7 @@ Ghillie Headwear is camouflage for the head. It must be worn with the [Ghillie B
 
 The shop groups the Ghillie Headwear under "Camouflage" and lists it as armor. It goes in the Helmet slot.
 
-The Item Shop also lists a "Ghillie Headwear (Dead)" at 2,800 cash. It is a separate item with the same effects. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. The item data omits the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The Item Shop also lists a "Ghillie Headwear (Dead)" at 2,800 cash. It is a separate item with the same effects. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. The game files omit the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
@@ -58,7 +58,7 @@ The armor damage table has rows for the suit and headwear tags that take their a
 
 ## Season 2 changes
 
-The Season 2 data does not list a change for the Ghillie Headwear.
+No Season 2 change to the Ghillie Headwear is listed.
 
 ## See also
 
@@ -72,7 +72,7 @@ The Season 2 data does not list a change for the Ghillie Headwear.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price, unlock and effects
 - [Items data](../../content/Wardogs_Items_v2.md): item id
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): how the damage tables treat the Ghillie items
-- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts in the item data
+- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts for this item
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor

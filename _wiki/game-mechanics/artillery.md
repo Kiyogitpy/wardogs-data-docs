@@ -1,7 +1,7 @@
 ---
 title: "Artillery"
 parent: "Game Mechanics"
-description: "How SPH-2 artillery fire works: reading map coordinates, working out distance and bearing, mils, the low and high arcs, a firing table, and what the game data does and does not settle."
+description: "How SPH-2 artillery fire works: reading map coordinates, working out distance and bearing, mils, the low and high arcs, a firing table, and what the game does and does not settle."
 ---
 
 # Artillery
@@ -28,10 +28,10 @@ The SPH-2 can hit any range from 780 m to about 2,629 m, but only with the right
 
 ### Where these numbers come from
 
-- The gun's stats, the shell masses and drag values, the launch speed and the 40 s flight limit are read from the game's data files.
-- The gun's own range table is in the game files: for each elevation setting it lists where the shell lands and how long it takes. This article calls it the game table, and its elevations are in milliradians (mrad). It gives the travel times in the firing table below.
+- The gun's stats, the shell masses and drag values, the launch speed and the 40 s flight limit are set in the game.
+- The gun's own range table is built into the game: for each elevation setting it lists where the shell lands and how long it takes. This article calls it the game table, and its elevations are in milliradians (mrad). It gives the travel times in the firing table below.
 - The "dial" mils are the settings read off the sight's MIL scale in game. They were measured by the community calculator [wardogs-calculator](https://github.com/apollyon-sys/wardogs-calculator) by apollyon-sys and checked against logged impacts. The map readout and sight instrument figures were measured on the game screen by the [CV Artillery Computer](https://github.com/Kiyogitpy/cv-artillery-computer).
-- High-arc heights, the tilt comparison and the miss figures are estimates worked out from the game's flight data with a flight simulator. The simulator's median miss against 87 real logged shots was about 59 m, so treat these as estimates.
+- High-arc heights, the tilt comparison and the miss figures are estimates worked out from the game's flight values with a flight simulator. The simulator's median miss against 87 real logged shots was about 59 m, so treat these as estimates.
 
 ## How it works
 
@@ -121,7 +121,7 @@ The table assumes the target is at the same height as the gun. A target higher o
 - The CV Artillery Computer uses terrain heights for the same correction. Three logged shots at targets about 100 m higher landed within about 20 m.
 - Shots fired without a known height difference overshot by about 70 m on average.
 
-Hull tilt may change where the shell lands, and no game code that corrects for it was found. The MIL pointer reads the turret's own elevation relative to the hull, not the angle above the horizon; the two are equal only on level ground. The range function that the game uses for the dial takes only the dial value and adds no hull pitch, and no place where the game does add it was found. In the simulator's comparison against real shots (an estimate), adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. So park the SPH-2 level, or add the hull's pitch to the setting by hand on a slope. The SPH-2 also has a stabilized state that it can enter only when it is almost stopped and on a slope of 20 degrees or less; switching it on takes 2.0 s. It does not level the barrel, and the data does not say whether it changes the hull's pitch, so a slope may still change the shot.
+Hull tilt may change where the shell lands, and no game code that corrects for it was found. The MIL pointer reads the turret's own elevation relative to the hull, not the angle above the horizon; the two are equal only on level ground. The range function that the game uses for the dial takes only the dial value and adds no hull pitch, and no place where the game does add it was found. In the simulator's comparison against real shots (an estimate), adding the hull's pitch to the elevation setting halved the median miss, from 59 m to 34 m. So park the SPH-2 level, or add the hull's pitch to the setting by hand on a slope. The SPH-2 also has a stabilized state that it can enter only when it is almost stopped and on a slope of 20 degrees or less; switching it on takes 2.0 s. It does not level the barrel, and the game does not say whether it changes the hull's pitch, so a slope may still change the shot.
 
 ### Stabilizing the hull
 

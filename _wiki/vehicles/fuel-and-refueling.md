@@ -18,7 +18,7 @@ description: "How much fuel each vehicle carries, how its fuel economy is listed
 | Refuel rate | Refuel Station: Fast 5% in 3 s, Max up to 100% in 9 s. Canister: 2.0 units per 0.75 s |
 {: .wiki-infobox }
 
-Every driven vehicle has a fuel tank with a stored capacity and a stored fuel economy number. The vendor labels the economy number "L/KM", litres per kilometre, so a higher number means the vehicle burns more fuel for each kilometre. The capacity is labelled "L", litres. This article shows both numbers as the vendor lists them. The fuel tank also has its own health, which is covered in [Repair and vehicle parts](repair-and-vehicle-parts.md).
+Every driven vehicle has a fuel tank with a capacity and a fuel economy number. The vendor labels the economy number "L/KM", litres per kilometre, so a higher number means the vehicle burns more fuel for each kilometre. The capacity is labelled "L", litres. This article shows both numbers as the vendor lists them. The fuel tank also has its own health, which is covered in [Repair and vehicle parts](repair-and-vehicle-parts.md).
 
 ## Overview
 
@@ -81,13 +81,13 @@ Fuel capacity and fuel economy for every drivable vehicle, from the vendor stats
 | [Wolf-110](wolf-110.md) | 60 | 4.0 |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 60 | 4.0 |
 
-A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). It equals one divided by the vehicle's stored kilometres-per-litre figure, so the range on a full tank is capacity times that figure: about 19.5 km for the Humvee and 29 km for the Havoc (derived). Driving burns fuel in proportion to speed; see [Vehicle config fields](../../game-features/Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine itself spends fuel in play was not traced. The fixed-wing airplane has no stats sheet in the data.
+A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). It equals one divided by the vehicle's kilometres-per-litre figure, so the range on a full tank is capacity times that figure: about 19.5 km for the Humvee and 29 km for the Havoc (derived). Driving burns fuel in proportion to speed; see [Vehicle Config Fields](../../game-features/Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine itself spends fuel in play was not traced. The fixed-wing airplane has no vendor stats.
 
-Season 2 changed no fuel capacity or fuel economy value in the data.
+Season 2 changed no fuel capacity or fuel economy value.
 
 ## Tips that follow from the numbers
 
-- The Bobcat has the smallest stored capacity, 18. One Fuel Canister use adds 25, so one use is more than its whole tank, if the two use the same stored unit.
+- The Bobcat has the smallest capacity, 18. One Fuel Canister use adds 25, so one use is more than its whole tank, if the two use the same unit.
 - The Flakpanzer Gepard has the highest fuel economy number, 10.0, which means the thirstiest listed use of fuel per kilometre. Plan fuel from the vehicle's own article, not from this column alone.
 - The fuel tank is also a weak point for attackers. On the Humvee, bullets to the fuel tank take an extra 400%, so it is the fastest route to destroy that vehicle. See [Vehicle damage](vehicle-damage.md).
 
@@ -101,9 +101,9 @@ Season 2 changed no fuel capacity or fuel economy value in the data.
 ## Sources
 
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles Reference](../../content/Wardogs_Vehicles_v2.md): the airplane's fuel leak and threshold data
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): vendor stats and fuel health triggers
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Reference](../../content/Wardogs_Vehicles_v2.md): the airplane's fuel leak and threshold settings
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md): vendor stats and fuel health triggers
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): the Refuel Station and its supplies
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): Fuel Canister and supply prices
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)

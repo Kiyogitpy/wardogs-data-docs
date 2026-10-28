@@ -1,8 +1,8 @@
 ---
-title: "UnderbarrelGrenadeLauncher (feature)"
+title: "Underbarrel Grenade Launcher"
 redirect_from: ["/Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.html", "/Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2"]
 parent: "Weapons & Ammo"
-description: "Plugin Inventory, Attachment Item, Attachment Fragment: Weapon Setup, Ammo Container"
+description: "The underbarrel grenade launcher attachment: its ammo requirement, reload and firing animations, spread and weapon stats."
 ---
 
 # Wardogs — UnderbarrelGrenadeLauncher Game Feature Reference

@@ -22,7 +22,7 @@ description: "Pistol grips and foregrips: which change recoil, spread and aim, a
 | Internal name | `Item.Attachment.Grip` |
 {: .wiki-infobox }
 
-Grips sit under the weapon or in the grip slot. The data lists 32 grip parts. Pistol grips fit the grip slot and, apart from one, change nothing. Foregrips fit the underbarrel slot and change recoil, spread, aim time and sway.
+Grips sit under the weapon or in the grip slot. There are 32 grip parts. Pistol grips fit the grip slot and, apart from one, change nothing. Foregrips fit the underbarrel slot and change recoil, spread, aim time and sway.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
 
@@ -39,7 +39,7 @@ Foregrips (10 parts with effects):
 
 A multiplier of 0.70 means 30 percent less of that stat. The table lists each foregrip's values.
 
-Pistol grips (grip slot): the data gives them no effect, with one exception. The unnamed M4 grip sets vertical and horizontal recoil to 0 as a fixed value rather than a multiplier. The data gives that value; whether it matches in-game feel is not traced here.
+Pistol grips (grip slot): they have no effect, with one exception. The unnamed M4 grip sets vertical and horizontal recoil to 0 as a fixed value rather than a multiplier. The data gives that value; whether it matches in-game feel is not traced here.
 
 ## Parts
 
@@ -82,7 +82,7 @@ Grips with a data name use that name. Season 2 price changes are in the Season 2
 
 ## Parts that fit no weapon
 
-6 parts in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+6 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
 AK-12 Pistol Grip, AK74 AGS-74 PRO Sniper Pistol Grip, AK74 Archangel OPFOR Pistol Grip, AK74 KGB MG47 Grip, Unnamed grip, Unnamed grip.
 

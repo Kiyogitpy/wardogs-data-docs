@@ -45,7 +45,7 @@ The Hesco Walls are three barriers: the Small Hesco Block, the Large Hesco Block
 - **Placement:** All three must be inside a friendly Forward Operating Base radius. None can be placed within 3 m of a safe zone or while standing in one, or within 1 m of a ladder.
 - **Stack limit:** 5 for the Small Block, 2 for the Large Block and the Hesco Wall.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress, for each variant. The Small Block has 5, 16, 16 and 16 weak spots at the first four stages. The Large Block has 6, 24, 24 and 32. The Hesco Wall has 8, 31, 34 and 69. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
-- **Parts:** The Hesco Wall is made of several blocks. When it is finished, it turns into separate Large Hesco Blocks, each with its own health. This is Derived from the stage data (see [Buildables](../building.md#building)).
+- **Parts:** The Hesco Wall is made of several blocks. When it is finished, it turns into separate Large Hesco Blocks, each with its own health. This is derived from the build stages (see [Buildables](../building.md#building)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
 | Building it | Small Block | Large Block | Hesco Wall |
@@ -60,7 +60,7 @@ The columns for the Small Block read Small / Medium / Large hammer. The other tw
 
 ## What it does
 
-The Hesco Walls are cover and obstacles. The data gives them no effect beyond their health and how they take damage. The reward tables pay cash for placing and destroying them, as the table above shows.
+The Hesco Walls are cover and obstacles. They have no effect beyond their health and how they take damage. The reward tables pay cash for placing and destroying them, as the table above shows.
 
 ## Durability
 
@@ -89,20 +89,20 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to the cost or health of any Hesco variant.
+- No Season 2 change to the cost or health of any Hesco variant is listed.
 - Cannon rules changed for the two Hesco Blocks. The Gepard's 35 mm cannon went from x0.25 to x0.08 against the small Block and from x0.15 to x0.08 against the large Block, and the Vanguard CIWS 20 mm cannon from full damage to x0.08 against both. Hits to destroy at point blank (derived): small Block 107 to 334 (35 mm) and 27 to 334 (20 mm), large Block 250 to 469 (35 mm) and 38 to 469 (20 mm). The Hesco Wall has no change for either cannon.
 - The T-72B3's 125 mm shell does more damage to the Blocks and less to the Wall: x1.25 against the small Block (5 hits to 4), x1.20 against the large Block (9 to 7) and x0.50 against the Hesco Wall (11 to 21).
 
 ## See also
 
 - [Building](../building.md): costs, hammers and placement for every structure
-- [Bremer Wall](bremer-wall.md): the largest wall in the data
+- [Bremer Wall](bremer-wall.md): the largest wall
 - [Hedgehog](hedgehog.md): another high-health barrier
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage rows, placement conditions and cash rewards
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage tables, placement conditions and cash rewards
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

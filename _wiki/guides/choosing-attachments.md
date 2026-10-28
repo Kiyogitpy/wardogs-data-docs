@@ -15,16 +15,16 @@ This guide picks the best part for each job from the stat values on the attachme
 - **Recoil:** how far the view kicks up and sideways after each shot. Muzzle devices, foregrips, bipods and magazines change it.
 - **Spread:** how far each shot can land from the aim point. Muzzle devices, foregrips and the Grip Pod change it. Recoil moves the aim point but does not widen the spread.
 - **Handling:** aim time, equip speed and character sway. Sights, magazines and foregrips change these.
-- **Flash:** muzzle devices and suppressors. The muzzle flash page gives the cuts as a range. The first-person flash drops to x0.3 to x0.7, the flash other players see drops to x0.5 to x0.7, and the distant flash drops to x0.75 to x0.85. The game files do not say which device uses which cut, so the cuts are not given device by device.
+- **Flash:** muzzle devices and suppressors. The muzzle flash page gives the cuts as a range. The first-person flash drops to x0.3 to x0.7, the flash other players see drops to x0.5 to x0.7, and the distant flash drops to x0.75 to x0.85. The game does not say which device uses which cut, so the cuts are not given device by device.
 - **Magazine size:** set by the magazine's name. "30 RND" is 30 rounds.
 
 ## Magazines
 
-The data gives 46 of the 69 magazines aim time, recoil, equip speed and aim sway multipliers, but the magazine page shows only 27 of them with a value other than x1. The other 42 change nothing you can feel.
+The game gives 46 of the 69 magazines aim time, recoil, equip speed and aim sway multipliers, but the magazine page shows only 27 of them with a value other than x1. The other 42 change nothing you can feel.
 
 - **Least recoil and aim time:** the Super-45 13 RND Magazine (30) gives aim time x0.83, vertical and horizontal recoil x0.83 each, and aim sway x0.77. Its equip speed is x1.21, the highest of the priced magazines. The AMP-9 15 RND Magazine (30) has the same recoil values, with aim time x0.86.
 - **Worst values:** the largest magazines. The AK74 75 RND Drum Magazine has aim time x1.26 and vertical recoil x1.22. It has no shop price. The Super-45 40 RND Drum Magazine (280) has aim time x1.2 and vertical recoil x1.2.
-- The magazine page reads a higher equip speed value as a faster equip. It takes that from the stat name, and the data gives no plain description.
+- The magazine page reads a higher equip speed value as a faster equip. It takes that from the stat name, and the game gives no plain description.
 - **Price range:** 10 to 280. 33 of the 69 magazines have a shop price.
 
 For most weapons, the bigger the magazine, the more it raises aim time and recoil.
@@ -44,17 +44,17 @@ Muzzle devices change vertical and horizontal recoil, spread and aim time. The r
 
 ## Barrels
 
-Barrels change no weapon or character stat in the data (41 of 41). The thing that matters is their muzzle slot. 37 barrels carry one, and that slot decides which muzzle devices fit. 34 barrels fit one weapon, 2 fit two, and 5 fit none.
+Barrels change no weapon or character stat (41 of 41). The thing that matters is their muzzle slot. 37 barrels carry one, and that slot decides which muzzle devices fit. 34 barrels fit one weapon, 2 fit two, and 5 fit none.
 
-The data has no shop prices for barrels. Pick the barrel for the weapon and the muzzle device you want.
+No shop prices are listed for barrels. Pick the barrel for the weapon and the muzzle device you want.
 
 ## Stocks
 
-No stock changes a stat in the data. The 37 stocks are a choice of fit only. 9 of them fit no weapon, and 20 have no display name in the data. The data has no shop prices for stocks. Season 2 added 6 stocks.
+No stock changes a stat. The 37 stocks are a choice of fit only. 9 of them fit no weapon, and 20 have no display name. No shop prices are listed for stocks. Season 2 added 6 stocks.
 
 ## Grips and foregrips
 
-Pistol grips change nothing in the data, with one exception. The unnamed M4 grip sets vertical and horizontal recoil to 0. The data gives that value, and it is not checked against how the weapon feels in play.
+Pistol grips change nothing, with one exception. The unnamed M4 grip sets vertical and horizontal recoil to 0. The game sets that value, and it is not checked against how the weapon feels in play.
 
 Foregrips change vertical and horizontal recoil, spread, aim time, equip speed and sway. The ranges are x0.7 to x1.05 for vertical recoil, x0.71 to x0.97 for horizontal recoil, x0.76 to x0.91 for spread, x0.83 to x1.15 for aim time and x0.92 to x1.15 for equip speed.
 
@@ -65,9 +65,9 @@ Foregrips change vertical and horizontal recoil, spread, aim time, equip speed a
 
 ## Bipods
 
-Only the Grip Pod changes weapon numbers. It sets vertical recoil x0.88, horizontal recoil x0.9, spread x0.94, aim time x1.1 and equip speed x0.98, and it lowers sway. The data has no shop price for it.
+Only the Grip Pod changes weapon numbers. It sets vertical recoil x0.88, horizontal recoil x0.9, spread x0.94, aim time x1.1 and equip speed x0.98, and it lowers sway. No shop price is listed for it.
 
-The other eight bipods change no weapon numbers. While mounted, each one limits how far the weapon can turn. The pitch limit runs from 15 to 50, the yaw limit from 35 to 55, and the most the aim can change is 45 in yaw and 45 in pitch. The data gives these as angles, and the degree unit is inferred from the field names.
+The other eight bipods change no weapon numbers. While mounted, each one limits how far the weapon can turn. The pitch limit runs from 15 to 50, the yaw limit from 35 to 55, and the most the aim can change is 45 in yaw and 45 in pitch. The game gives these as angles, and the degree unit is inferred from the field names.
 
 The spread page lists a spread multiplier of x0.45 for a mounted bipod and x1.15 for an unfolded one. The bipods page does not give those values for any one part, so this guide does not tie them to a bipod.
 
@@ -82,17 +82,17 @@ Sights do not change recoil or spread. They change zoom, aim time, zeroing range
 - **Mid zoom:** the 3x Tactical Prism Scope (740) gives zoom 3 and aim time x1.1. The Spitfire 3X (790) gives zoom 3, aim time x1.1 and sway stabilisation x1.35.
 - **Red dots:** most give zoom 1.2. The Compact P-1 Red Dot (480) gives zoom 1.2 with no aim change.
 - **Price range:** 200 to 1,800. 19 of the 29 sights have a shop price. The Frontier 2.5x-10x Precision Scope (1,800) is the most expensive.
-- The data gives no unit for zeroing range. The game code treats it as metres (derived), and a weapon starts at the sight's minimum.
+- The game gives no unit for zeroing range. The game code treats it as metres (derived), and a weapon starts at the sight's minimum.
 
 ## Handguards
 
-No handguard changes a stat in the data. The 25 parts are a choice of fit only. 19 of them fit no weapon.
+No handguard changes a stat. The 25 parts are a choice of fit only. 19 of them fit no weapon.
 
-Five handguards add an underbarrel slot, where a foregrip or bipod can go. Only one of the five lists a weapon it fits: the Unnamed MGL-40 handguard, for the MGL-40. The LVOA, M4 and MP5 handguards fit no weapon in the data. The data has no shop prices for handguards.
+Five handguards add an underbarrel slot, where a foregrip or bipod can go. Only one of the five lists a weapon it fits: the Unnamed MGL-40 handguard, for the MGL-40. The LVOA, M4 and MP5 handguards fit no weapon. No shop prices are listed for handguards.
 
 ## On a budget
 
-These are the cheapest parts that change a number you can use. Prices come from the shop data.
+These are the cheapest parts that change a number you can use. Prices come from the shop.
 
 | Part | Price | What it changes |
 |---|---:|---|

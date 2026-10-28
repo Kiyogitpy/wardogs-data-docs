@@ -16,7 +16,7 @@ description: "The Basic and Sport parachutes: when they can be opened, what the 
 | Weight | Basic 2.5, Sport 9 kg |
 | **Use** | |
 | Steering | Basic: no. Sport: yes |
-| Opening time | 2 s (Season 2 data) |
+| Opening time | 2 s (Season 2) |
 | Opens after a fall of | 400 (unit not stated) |
 | Clearance above ground to open | 1,000 (unit not stated) |
 | **Availability** | |
@@ -30,7 +30,7 @@ The parachute comes in two versions, the Basic Parachute and the Sport Parachute
 
 ## Overview
 
-Both parachutes sit in the Traversal slot of the shop and are listed under the Utility category. Each one is used once, and neither needs an unlock. The shop text says the Basic Parachute "Cannot be Controlled" and the Sport Parachute "Can be Controlled". The Sport version is heavier and has more movement values in the data.
+Both parachutes sit in the Traversal slot of the shop and are listed under the Utility category. Each one is used once, and neither needs an unlock. The shop text says the Basic Parachute "Cannot be Controlled" and the Sport Parachute "Can be Controlled". The Sport version is heavier and has more movement values.
 
 ## How it works
 
@@ -38,7 +38,7 @@ Both parachutes sit in the Traversal slot of the shop and are listed under the U
 
 - A parachute can only be deployed after a fall of at least 400, which is most likely 4 m (derived from the speed scale).
 - The player needs at least 1,000 clearance above the ground to open it, most likely 10 m (derived).
-- Opening takes 2.0. The data does not give the unit.
+- Opening takes 2.0. The unit is not given.
 - To open a parachute you need the parachute item, the parachute must not already be open, you must be falling, and there must be enough clear space below you. You can cut the parachute only while it is open.
 - The game text says both versions reduce fall damage when deployed. The landing damage curve for a parachute runs in a straight line from 0 damage at a fall speed of 6.95 m/s to 100 at 17 m/s (the input is speed in cm/s).
 
@@ -54,12 +54,12 @@ Both parachutes sit in the Traversal slot of the shop and are listed under the U
 | Pull-up drag | 0 | 400 |
 | Pull-up stamina used per second | 0 | 50 |
 | Pull-up stamina regained per second | 0 | 30 |
-| Horizontal speed cap | 2,000 (class default) | 2,200 |
-| Vertical speed cap | 5,000 (class default) | 3,000 |
-| Roll speed | 1 | 2 (class default) |
-| Pull-up stamina pool | 0 | 100 (class default) |
+| Horizontal speed cap | 2,000 (standard) | 2,200 |
+| Vertical speed cap | 5,000 (standard) | 3,000 |
+| Roll speed | 1 | 2 (standard) |
+| Pull-up stamina pool | 0 | 100 (standard) |
 
-The data does not state units for any of these. The Basic version sets no speed caps, so the class defaults apply to it (2,000 horizontal and 5,000 vertical). The Sport version sets no roll speed or pull-up pool, so the class defaults (2 and 100) apply to it. The Basic Parachute has no glide, no pull-up and no stamina bar, which matches its shop text. The Sport Parachute's pull-up uses its stamina bar, which drains at 50 per second and refills at 30 per second.
+The units are not stated for any of these. The Basic version sets no speed caps, so the standard values apply to it (2,000 horizontal and 5,000 vertical). The Sport version sets no roll speed or pull-up pool, so the standard values (2 and 100) apply to it. The Basic Parachute has no glide, no pull-up and no stamina bar, which matches its shop text. The Sport Parachute's pull-up uses its stamina bar, which drains at 50 per second and refills at 30 per second.
 
 ## Season 2 changes
 

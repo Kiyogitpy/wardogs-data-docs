@@ -22,7 +22,7 @@ description: "The 12 gauge caliber: the weapons that fire it, its bullet types, 
 | Internal name | 12g |
 {: .wiki-infobox }
 
-The 12 gauge caliber is used by 2 weapons in the weapon data, across the Shotgun class. Its shells are Buckshot, Rifled slug. The tables below show how each type does against armor.
+The 12 gauge caliber is used by 2 weapons, across the Shotgun class. Its shells are Buckshot, Rifled slug. The tables below show how each type does against armor.
 
 ## Weapons that use it
 

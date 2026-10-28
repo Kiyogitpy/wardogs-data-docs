@@ -1,5 +1,5 @@
 ---
-title: "Vehicle inputs and explosive effects"
+title: "Vehicle Inputs and Explosive Effects"
 redirect_from: ["/Wardogs_VehicleInputsAndExplosiveEffects_v1.html", "/Wardogs_VehicleInputsAndExplosiveEffects_v1"]
 parent: "Vehicles"
 description: "Wheeled steering and pedal tuning, the vehicle smoke screen, the Stingray drone projectile, explosives against each vehicle row, the weapon spread curve table, the grenade throw-back gate and the air vehicle mass override"

@@ -14,7 +14,7 @@ description: "When a bullet bounces off a surface or passes through it, how ammo
 | Worst penetrating ammo | Hollow point (penetration 0.1) |
 {: .wiki-infobox }
 
-A bullet that hits a surface that is not flesh can do one of three things: stop, bounce off (ricochet) or pass through and keep going. Which one happens depends on the surface material, the angle of the hit, and the ammo in the weapon. This article explains the rules. It does not give a result for any particular wall, because the data does not list the materials of the world's walls and props.
+A bullet that hits a surface that is not flesh can do one of three things: stop, bounce off (ricochet) or pass through and keep going. Which one happens depends on the surface material, the angle of the hit, and the ammo in the weapon. This article explains the rules. It does not give a result for any particular wall, because the materials of the world's walls and props are not known.
 
 ## Overview
 
@@ -22,7 +22,7 @@ Most bullets stop at the first solid surface, and that surface absorbs the bulle
 
 ## How it works
 
-- **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below) and on the angle of the hit. Measured from the surface's normal (the line straight out of it), a head-on hit's chance is multiplied by 0.08, and a hit at 80 to 90 degrees, almost flat along the surface, by 0.92. A bullet that has slowed below a tenth of its launch speed cannot bounce. A bullet that can get through the surface easily also bounces less. The chance is cut by how much the bullet's ability to pass the surface exceeds the surface thickness: equal or less keeps the full chance, twice the thickness or more never bounces, and in between the chance is scaled down (derived from the game's code; the game was not run). So a round strong enough to pass through a thin surface by a margin of two will not ricochet off it. The data indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
+- **Ricochet.** When a bullet hits a surface, the game rolls a chance to bounce. The chance depends on the surface material (see the table below) and on the angle of the hit. Measured from the surface's normal (the line straight out of it), a head-on hit's chance is multiplied by 0.08, and a hit at 80 to 90 degrees, almost flat along the surface, by 0.92. A bullet that has slowed below a tenth of its launch speed cannot bounce. A bullet that can get through the surface easily also bounces less. The chance is cut by how much the bullet's ability to pass the surface exceeds the surface thickness: equal or less keeps the full chance, twice the thickness or more never bounces, and in between the chance is scaled down (derived from the game's code; the game was not run). So a round strong enough to pass through a thin surface by a margin of two will not ricochet off it. The game indicates that ricochet is checked first, so a bullet that bounces does not also pass through (not fully verified).
 - **Penetration.** A bullet can pass through a surface only if it has enough energy left for that thickness. A steeper angle makes the surface look thicker, which makes passing harder. Armor-piercing rounds have the most penetration, and hollow points have very little.
 - **Thickness.** Thickness is measured in the game's world units, which are centimetres (inferred from the engine). When a bullet hits a solid object, the game fires a short check straight on through it to find where the bullet would come out, and the distance in between is the thickness. If it finds no exit within about 2 m, the bullet cannot pass. Thin sheet surfaces such as glass use a stored thickness instead, multiplied by 10.
 - **Wall materials.** The material comes from the surface paint (the material applied to the wall mesh), not from the mesh itself. About 1,800 of the 3,150 material sets in the game name one of the physical materials in the table below, and the rest take it from a parent material. Of the 63 wall material sets, 40 are concrete, 10 brick, 4 metal, 1 wood and 1 plaster, and 7 inherit theirs. Across the 256 building material sets, 71 are concrete, 53 metal, 18 brick, 16 wood and 11 plaster.
@@ -41,7 +41,7 @@ A bounce is not a mirror reflection. The game picks the new direction at random,
 
 ## Numbers
 
-Ammo penetration, from the ammo data:
+Ammo penetration, by ammo type:
 
 | Ammo | Penetration | Exit-speed setting |
 |---|---:|---:|
@@ -54,7 +54,7 @@ Ammo penetration, from the ammo data:
 
 The exit-speed setting controls how much speed a bullet keeps when it comes out the far side. Only penetration uses it. The effective-range multiplier for each ammo type (hollow point 0.8, armor-piercing 1.2) only moves the distance at which wind starts to act on the bullet. It does not change the bullet's speed or its penetration. See [Ballistics](ballistics.md).
 
-Ricochet chance by surface material (named surfaces in the data; unnamed surface types are left out):
+Ricochet chance by surface material (only named surfaces are listed; unnamed surface types are left out):
 
 | Surface | Ricochet chance | Speed kept after a bounce |
 |---|---:|---:|

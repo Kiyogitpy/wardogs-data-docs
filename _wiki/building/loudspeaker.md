@@ -3,7 +3,7 @@ redirect_from: ["/wiki/equipment/loudspeaker/"]
 title: "Loudspeaker"
 parent: "Building"
 group: "Emplacements"
-description: "A buildable stationary emplacement with no weapon in the game data, built with a Medium or Large Hammer from 200 Build Supplies."
+description: "A buildable stationary emplacement with no weapon, built with a Medium or Large Hammer from 200 Build Supplies."
 ---
 
 # Loudspeaker
@@ -22,23 +22,23 @@ description: "A buildable stationary emplacement with no weapon in the game data
 | Internal name | STN_04 |
 {: .wiki-infobox }
 
-The Loudspeaker is the one stationary emplacement in the game data with no weapon. It is built with a Medium or Large Hammer from 200 Build Supplies and has 1,000 HP. It is the only stationary emplacement that a Medium Hammer can build.
+The Loudspeaker is the one stationary emplacement with no weapon. It is built with a Medium or Large Hammer from 200 Build Supplies and has 1,000 HP. It is the only stationary emplacement that a Medium Hammer can build.
 
 ## Overview
 
-Destroying an enemy Loudspeaker pays 200 cash and 50 Role XP. The data still gives it no function.
+Destroying an enemy Loudspeaker pays 200 cash and 50 Role XP. It still has no function.
 
-The Loudspeaker is listed on the [Building](../building.md) page with the other stationary emplacements, but the data gives no gun, ammunition, rate or range for it. The game files have no buildable data or weapon for the Loudspeaker, so what it does is not in the data.
+The Loudspeaker is listed on the [Building](../building.md) page with the other stationary emplacements, but no gun, ammunition, rate or range is given for it. The game files have no buildable data or weapon for the Loudspeaker, so what it does is not in the data.
 
 ## Effects
 
 ### Weapon
 
-None. The game data has no weapon for this emplacement.
+None. It has no weapon.
 
 ### Damage
 
-The damage data files the Loudspeaker under the same table as the radio tower structure, with 1,000 HP. The [vehicle damage](../vehicles/vehicle-damage.md) page explains how these tables work.
+The Loudspeaker shares the damage table of the radio tower structure, with 1,000 HP. The [vehicle damage](../vehicles/vehicle-damage.md) page explains how these tables work.
 
 ## Use and timing
 

@@ -156,5 +156,5 @@ WdExtract ... list B_VehicleDeploymentBoard, then dump it plus .../Gamemode/Obje
 python -I _tools/vehicle_spawns.py [--check] <round42 dir with sv> <dir bd>   (sv_extra is read next to bd)
 ```
 
-Extractor arguments are in [`tools/cue4parse_extractor/README.md`](../tools/cue4parse_extractor/README.md). The wiki articles for each map summarise this page.
+Extractor arguments are in [`tools/cue4parse_extractor/README.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md). The wiki articles for each map summarise this page.
 

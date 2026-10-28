@@ -3,6 +3,7 @@ title: Vehicles
 nav_order: 3
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "Helicopters, tanks, trucks and SUVs in Wardogs: seats, health, prices, damage and Season 2 changes."
 ---
 
@@ -10,7 +11,7 @@ description: "Helicopters, tanks, trucks and SUVs in Wardogs: seats, health, pri
 
 Wardogs has helicopters, a fixed-wing airplane, tanks and armored vehicles, and a range of trucks, SUVs and buggies. Most are bought from the vehicle vendor for cash and unlock at level 0 or 1. Each article gives the seats, health, weapons, handling and Season 2 changes for one vehicle. [Vehicle damage](vehicles/vehicle-damage.md) explains how they take hits.
 
-The numbers come from the data pages and are shown as stored. The data does not label its speed and fuel units, so those are plain numbers. Main health is in HP. "Rifle damage taken" is worked out from the damage rules for a full-power 5.56 mm hit to the hull. It shows how much of a rifle round's damage gets through. It is not an official armor rating.
+The numbers come from the data pages and are shown as stored. Speed and fuel units are not labelled, so those are plain numbers. Main health is in HP. "Rifle damage taken" is worked out from the damage rules for a full-power 5.56 mm hit to the hull. It shows how much of a rifle round's damage gets through. It is not an official armor rating.
 
 ## Helicopters
 
@@ -58,7 +59,7 @@ The numbers come from the data pages and are shown as stored. The data does not 
 |---|---|---:|---:|---:|---:|---:|
 | [Fixed-wing airplane](vehicles/fixed-wing-airplane.md) | Airplane | 2 | Not sold | 150 at start | Not stored | 7.5% |
 
-Stationary emplacements are built as buildables and cannot be driven, so they are listed under Building instead: [Talon 9K-SAM](building/talon-9k-sam.md), [Vanguard CIWS](building/vanguard-ciws.md), [L81 Mortar](building/l81-mortar.md), [Loudspeaker](building/loudspeaker.md), [Stingray](building/stingray.md) and [MG Nest](building/mg-nest.md). The guns mounted on vehicles are collected in [Vehicle weapons](vehicles/vehicle-weapons.md). Reference articles cover [fuel and refueling](vehicles/fuel-and-refueling.md), [repair and vehicle parts](vehicles/repair-and-vehicle-parts.md), [vehicle handling](vehicles/vehicle-handling.md), [countermeasures and flares](vehicles/countermeasures-and-flares.md) and [seats and passengers](vehicles/seats-and-passengers.md). The data lists no boats.
+Stationary emplacements are built as buildables and cannot be driven, so they are listed under Building instead: [Talon 9K-SAM](building/talon-9k-sam.md), [Vanguard CIWS](building/vanguard-ciws.md), [L81 Mortar](building/l81-mortar.md), [Loudspeaker](building/loudspeaker.md), [Stingray](building/stingray.md) and [MG Nest](building/mg-nest.md). The guns mounted on vehicles are collected in [Vehicle weapons](vehicles/vehicle-weapons.md). Reference articles cover [fuel and refueling](vehicles/fuel-and-refueling.md), [repair and vehicle parts](vehicles/repair-and-vehicle-parts.md), [vehicle handling](vehicles/vehicle-handling.md), [countermeasures and flares](vehicles/countermeasures-and-flares.md) and [seats and passengers](vehicles/seats-and-passengers.md). There are no boats.
 
 ## Reference
 
@@ -69,8 +70,8 @@ Stationary emplacements are built as buildables and cannot be driven, so they ar
 ## Sources
 
 - [All-Vehicle Stat & Damage Sheets](../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../game-features/Wardogs_ItemShop_v1.md)
 - [Vehicle Damage Pipeline](../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Season 2 Changes: Vehicles](../season-2-changes/vehicles.md)

@@ -10,7 +10,7 @@ Cash pays for nearly everything in Wardogs: gear, weapons, vehicles, role unlock
 
 ## Where cash comes from
 
-The game's table gives a player 10,000 cash to start (3,000 in Strike and Disarm, 2,000 in VIP Escort; in King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are added on top, 1 for 1 up to 5,000), and the loading-screen tip says cash carries over between matches ([Currencies](../progression-and-economy/currencies.md)). Each action pays a base amount from its reward table. The table below picks the biggest payers for each role. Role XP is a separate number and does not add cash. On live servers Cash is kept between matches, so your balance comes from your saved data online; 10,000 is the game's table value and most likely the first-time balance (inferred).
+The game's table gives a player 10,000 cash to start (3,000 in Strike and Disarm, 2,000 in VIP Escort; in King of the Hill, [pre-lobby](../game-modes-and-maps/pre-lobby.md) points are added on top, 1 for 1 up to 5,000), and the loading-screen tip says cash carries over between matches ([Currencies](../progression-and-economy/currencies.md)). Each action pays a base amount from its reward table. The table below picks the biggest payers for each role. Role XP is a separate number and does not add cash. On live servers Cash is kept between matches, so your balance comes from your saved account online; 10,000 is the game's table value and most likely the first-time balance (inferred).
 
 | Role | Action | Base cash |
 |---|---|---:|
@@ -58,7 +58,7 @@ The winning faction is paid the most at match end. First place gets 0.30 times t
 
 ### Passive missions pay Intel, not cash
 
-The three passive missions (Earn Cash, Earn Role XP and Time Played) have five tiers each. Every tier pays Intel, and the data gives Intel no use, so passive missions add nothing to a player's cash. The tier goals are 5,000, 12,000, 30,000, 80,000 and 200,000 cash earned for Earn Cash, 500 role XP for each Earn Role XP tier and 1,800 seconds played for each Time Played tier ([Passive Missions](../progression-and-economy/passive-missions.md), [Currencies](../progression-and-economy/currencies.md#intel)).
+The three passive missions (Earn Cash, Earn Role XP and Time Played) have five tiers each. Every tier pays Intel, and the game gives Intel no use, so passive missions add nothing to a player's cash. The tier goals are 5,000, 12,000, 30,000, 80,000 and 200,000 cash earned for Earn Cash, 500 role XP for each Earn Role XP tier and 1,800 seconds played for each Time Played tier ([Passive Missions](../progression-and-economy/passive-missions.md), [Currencies](../progression-and-economy/currencies.md#intel)).
 
 ### Wagers
 
@@ -71,27 +71,27 @@ A wager is a goal a player takes on with a stake of cash. The stake is between 2
 | Revive Teammates | 1 to 50 (5) | 1.001 | 1.2498 |
 | Destroy Occupied Vehicles | 1 to 20 (1) | 1.001 | 1.1479 |
 
-Each action has a 24-hour (86,400 s) cooldown in the data, but the data does not say whether the cooldown is per player, per wager or per match ([Wagers](../progression-and-economy/wagers.md#how-it-works)).
+Each action has a 24-hour (86,400 s) cooldown, but it is not known whether the cooldown is per player, per wager or per match ([Wagers](../progression-and-economy/wagers.md#how-it-works)).
 
-The slip labels its return as the stake times the total odds, with a cap of 5,000,000 cash, but the exact settlement formula is not read from the data, and settlement runs on the server. So this guide gives no expected return ([Wagers](../progression-and-economy/wagers.md#payout-and-settlement)).
+The slip labels its return as the stake times the total odds, with a cap of 5,000,000 cash, but the exact settlement formula is not read from the game, and settlement runs on the server. So this guide gives no expected return ([Wagers](../progression-and-economy/wagers.md#payout-and-settlement)).
 
 ### Tips that follow from the numbers
 
 - Count is a weak lever for odds. Kills go from 1.001 at one to three kills to 1.2004 at 25 kills, so going from 3 kills to 25 raises the odds by about 0.2 ([Wagers](../progression-and-economy/wagers.md#odds)).
 - Conditions raise odds, and each one is an extra rule on the wager. "Deathwish" multiplies odds by 10.0, "Time limit" by 4.0 and "No vehicles" by 3.0, while "With a $20k loadout" gives 1.05 ([Wagers](../progression-and-economy/wagers.md#conditions)).
-- The server settles the payout, so the game files do not say whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
+- The server settles the payout, so it is not known whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
 
 ## The Gold Exchange
 
 The Gold Exchange turns cash into Gold Bars, which buy cosmetics only ([Currencies](../progression-and-economy/currencies.md#gold-bars)).
 
 - **Unlock.** The exchange unlocks at Wardog level 35 and costs 150,000 cash to unlock.
-- **Rate.** The server sets the rate and it changes over time. The client holds no rate (its exchange table is empty), so the cash price of a Gold Bar is set by the server and cannot be read from the game files.
+- **Rate.** The server sets the rate and it changes over time. The client holds no rate (its exchange table is empty), so the cash price of a Gold Bar is set by the server and cannot be read from the game.
 - **No resale.** The exchange text says a gold exchange cannot be resold or refunded.
 - **Season end.** At the end of a major update cycle, level progression and cash are reset. Any cash left over is exchanged for Gold Bars automatically on the server ([Currencies](../progression-and-economy/currencies.md#gold-bars)).
 - **Cost of cosmetics.** The Gold Market entries cost 5 to 30 Gold Bars each ([Currencies](../progression-and-economy/currencies.md#gold-market)).
 
-Because the rate is set by the server, the number of Gold Bars that a cash amount buys cannot be read from the game files.
+Because the rate is set by the server, the number of Gold Bars that a cash amount buys cannot be read from the game.
 
 ## What is worth buying early
 
@@ -110,7 +110,7 @@ Armor and helmets are the clearest value question in the shop. Each tier cuts da
 | Level 3 Helmet | 50% | Head and neck | 180 | 2,000 | 40.0 |
 | Level 4 Helmet | 60% | Head and neck | 200 | 4,500 | 75.0 |
 
-The last column is derived here by dividing the price by the damage cut. It is a ratio, not a figure from the data.
+The last column is derived here by dividing the price by the damage cut. It is a ratio, not a figure from the game.
 
 With M4 full-metal-jacket rounds, an upper-torso hit does 27.3 HP with no armor, 19.1 HP with Level 1 Armor, 16.4 HP with Level 2, 13.6 HP with Level 3 and 10.9 HP with Level 4 ([Body Armor](../equipment/body-armor.md#what-the-reduction-does), [Level 1 Armor](../equipment/level-1-armor.md), [Level 2 Armor](../equipment/level-2-armor.md), [Level 3 Armor](../equipment/level-3-armor.md), [Level 4 Armor](../equipment/level-4-armor.md)).
 
@@ -122,7 +122,7 @@ With M4 full-metal-jacket rounds, an upper-torso hit does 27.3 HP with no armor,
 
 ### Weapons by price
 
-A selection of vendor prices, lowest first (the full list is on each weapon article; for example GGX 18 and PP-19 Bizon sell for 1,000 and M500 for 1,200). The weapon articles note that the data does not decode the currency. The Shops article says vendor prices are most likely cash ([Shops](../progression-and-economy/shops.md#how-it-works)).
+A selection of vendor prices, lowest first (the full list is on each weapon article; for example GGX 18 and PP-19 Bizon sell for 1,000 and M500 for 1,200). The weapon articles note that the game does not decode the currency. The Shops article says vendor prices are most likely cash ([Shops](../progression-and-economy/shops.md#how-it-works)).
 
 | Weapon | Vendor price | Article |
 |---|---:|---|
@@ -137,7 +137,7 @@ A selection of vendor prices, lowest first (the full list is on each weapon arti
 | Galil | 2,000 | [Galil](../weapons/galil.md) |
 | M4 | 2,800 | [M4](../weapons/m4.md) |
 
-Three weapons show a vendor price of 0 in the data: A-91, KH-2002 and Bushmaster M17S. They are the three faction rifles. The weapon vendor lists each one for a single faction (Valkyra, Manticore and Lonestar in that order), at price 0, from level 1, with a buy limit of one per life (the same limit field that the Emergency Resuscitator uses for its one per life), and the economy settings also price each at 0 for its own faction. So a player of that faction takes the rifle from the vendor for free, one at a time; it is not a missing price (inferred from the vendor and economy settings, not run in the game; whether a player of another faction can buy it is not shown, so the faction match is assumed). See [A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md) and [Bushmaster M17S](../weapons/bushmaster-m17s.md).
+Three weapons show a vendor price of 0: A-91, KH-2002 and Bushmaster M17S. They are the three faction rifles. The weapon vendor lists each one for a single faction (Valkyra, Manticore and Lonestar in that order), at price 0, from level 1, with a buy limit of one per life (the same limit field that the Emergency Resuscitator uses for its one per life), and the economy settings also price each at 0 for its own faction. So a player of that faction takes the rifle from the vendor for free, one at a time; it is not a missing price (inferred from the vendor and economy settings, not run in the game; whether a player of another faction can buy it is not shown, so the faction match is assumed). See [A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md) and [Bushmaster M17S](../weapons/bushmaster-m17s.md).
 
 Discounts stack. A Wardog level 8 or lower player pays half of the listed price, a first purchase costs 90%, and the faction that trails by 40 points pays 80% (inferred from field names). Derived: a first purchase by a player at level 8 or lower costs 45% of the listed price (0.5 x 0.9). See [Shops](../progression-and-economy/shops.md#how-it-works).
 
@@ -189,11 +189,11 @@ Stationary weapons need ammunition restocked, and the cost is in Ammo Supplies o
 | [L81 Mortar](../building/l81-mortar.md) | 150 Ammo Supplies | 30 cash |
 | [Stingray](../building/stingray.md) | 900 Mechanical Supplies and 5,000 cash | 180 cash, plus 5,000 cash |
 
-The Stingray is the most expensive restock in the data. Its 5,000 cash is a direct payment, on top of the supplies.
+The Stingray is the most expensive restock. Its 5,000 cash is a direct payment, on top of the supplies.
 
 ### Tips that follow from the numbers
 
-- The Stingray's restock is the largest cash outlay of the stationary weapons in the data, at 5,000 cash plus 900 Mechanical Supplies, before any build cost ([Stingray](../building/stingray.md)).
+- The Stingray's restock is the largest cash outlay of the stationary weapons, at 5,000 cash plus 900 Mechanical Supplies, before any build cost ([Stingray](../building/stingray.md)).
 - Fast and Max restocks cost the same per percent of the tank or health: 15 cash per percent for refuelling and 20 cash per percent for repair. Max is faster for the same money ([Refuel and Repair Stations](../building/refuel-and-repair-stations.md)).
 
 ## See also

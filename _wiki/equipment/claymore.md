@@ -39,27 +39,27 @@ For the mine that is aimed at vehicles, see [AT Mine](at-mine.md). Both are desc
 
 ## How it works
 
-**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The data stores a placement angle of 30. A static reading of the game's placement code shows it compares the slope of the surface you aim at (the angle between the surface normal and straight up, in degrees) with that number, so a surface steeper than 30 degrees from level is refused. The reach is the same 4 m line from your view, plus a small allowance for the Claymore's own size. While the Claymore is being placed, the player moves at 40% speed.
+**Placing.** The Claymore is placed on the ground up to 4 m from the player. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone). The item has a placement angle of 30. A static reading of the game's placement code shows it compares the slope of the surface you aim at (the angle between the surface normal and straight up, in degrees) with that number, so a surface steeper than 30 degrees from level is refused. The reach is the same 4 m line from your view, plus a small allowance for the Claymore's own size. While the Claymore is being placed, the player moves at 40% speed.
 
 **Arming.** The Claymore is armed 2 s after it is placed. Until then its trigger is off.
 
 **Trigger.** The trigger is a box in front of the mine:
 
 - A target must be alive and moving: a living player whose speed is above 0 sets it off, and so does a vehicle driver or passenger in a moving vehicle. A motionless target does not trigger it.
-- The check compares the placer's faction with the target's, so the data points to enemies as the targets. The data does not show how a teammate is handled.
+- The check compares the placer's faction with the target's, so the targets are enemies. It is not known how a teammate is handled.
 - The blast must reach the target. The Claymore runs a line-of-sight check to the target's damage points before it fires.
 
 **Being shot.** An explosion nearby sets the Claymore off. Other damage destroys it, because its health is 1 HP.
 
 **Detonation.** The mine goes off once it has taken 50 damage. That is the default for placed explosives, and neither the Claymore nor the AT mine overrides it (static reading). Once it has gone off it is removed. Whether the 50 counts each hit or the running total was not checked in play.
 
-**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
+**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the game files do not show.
 
 ## Damage
 
 ### To players
 
-The blast does its full 150 HP from the centre out to 1.5 m. Beyond 1.5 m the damage falls in a straight line to zero at 3 m. Examples from the data:
+The blast does its full 150 HP from the centre out to 1.5 m. Beyond 1.5 m the damage falls in a straight line to zero at 3 m. Examples:
 
 - At 2.5 m: 100 HP
 - At 3 m and beyond: nothing
@@ -68,7 +68,7 @@ Armor reduces this damage by body part. See [Body Armor](body-armor.md).
 
 ### To vehicles
 
-The data gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. The Claymore is weak against vehicles, so these numbers are high.
+The table gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. The Claymore is weak against vehicles, so these numbers are high.
 
 | Vehicle | Main health | Centre hits to destroy |
 |---|---:|---:|
@@ -83,7 +83,7 @@ See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the Claymore, and no change to its price.
+No Season 2 change to the Claymore, or to its price, is listed.
 
 ## See also
 

@@ -23,7 +23,7 @@ description: "Where the play area ends and what happens if you leave it, plus ho
 | Enemy team's zone | Counts as out of bounds: the same 20 s countdown |
 {: .wiki-infobox }
 
-The play area of each map is a large rectangle that is much bigger than the area where the Control Zone moves. Nothing blocks you from walking to its edge. Instead, a timer decides how long you may stay outside. The spawn safe zones sit well inside that rectangle and protect you from damage while you stand in your own team's zone. Distances on this page assume that the data's distance unit is centimetres, as on the map articles.
+The play area of each map is a large rectangle that is much bigger than the area where the Control Zone moves. Nothing blocks you from walking to its edge. Instead, a timer decides how long you may stay outside. The spawn safe zones sit well inside that rectangle and protect you from damage while you stand in your own team's zone. Distances on this page assume that the game's distance unit is centimetres, as on the map articles.
 
 ## The play area edge
 
@@ -41,9 +41,9 @@ The "zone area" here is the box around all the map's named zone regions plus 500
 ## What happens outside
 
 - **Warning.** When you are outside the rectangle, the screen shows "Return to the Combat Area" in red, with a countdown timer under it. The message is on screen for about 5 seconds each time it appears, and the timer text is part of the on-foot screen and of every vehicle screen. The tactical map also has a picture for the out-of-bounds area (inferred from the names in its files).
-- **Countdown.** On foot you have 20 seconds. The game's own default is 10 seconds, but the player character in the data is set to 20.
+- **Countdown.** On foot you have 20 seconds. The game's own default is 10 seconds, but the player character is set to 20.
 - **Coming back.** While you are inside the rectangle again, the timer counts down at the same speed it counted up. If you step out a second time, it continues from what is left rather than starting at zero (read from the game code, not timed in play).
-- **When it runs out.** The character dies. No damage over time, no health drain and no other penalty was found in the data.
+- **When it runs out.** The character dies. No damage over time, no health drain and no other penalty was found.
 - **Vehicles.** Vehicles run the same check with the same rectangle. The default time limit in the game code is 22 seconds. When it runs out, the game calls something that looks like destroying the vehicle (inferred; the three vehicle files that carry the setting do not change the limit, and the effect was not traced further).
 - **Enemy safe zone.** Standing in an enemy team's spawn safe zone counts as being out of bounds. The screen says "HOSTILE SAFE ZONE" and the same countdown runs, so staying there for the full time ends in death.
 - **Sniper Showdown.** The mode adds the same out-of-bounds state when you are in neither the Control Zone nor the Hot Zone, so leaving both starts the 20-second countdown. See [Sniper Showdown](sniper-showdown.md).
@@ -53,7 +53,7 @@ The "zone area" here is the box around all the map's named zone regions plus 500
 - **No walls.** The map files hold 218 invisible blocking volumes across the four worlds, but none of them is within 200 m of the rectangle edge. They stand inside the playable area.
 - **No kill or pain volumes.** No volume that kills or hurts on contact is placed in the maps.
 - **Fall limit.** A world-wide fall limit is set at 1,500 m below the map origin on Bakurani, Ozeti and Zestafona. The ground in the play areas of those three maps lies between about 1,000 m below and 250 m above the origin, so this is only a floor for falling through the world. Saburtulo sets none, so the engine default applies.
-- **Height.** No height ceiling was found for infantry, ground vehicles or the fixed-wing aircraft. Helicopters lose lift as they climb. The data lists a rotor efficiency that drops to 0.65 at 200 m and 0.4 at 280 m for the Havoc, to 0.75 at 250 m and 0.45 at 325 m for the MH-6 and AH-6, and to 0.65 at 250 m and 0.4 at 350 m for the Z20 Lakota. That is a soft ceiling (reading from the names; how the efficiency is used between the points was not read).
+- **Height.** No height ceiling was found for infantry, ground vehicles or the fixed-wing aircraft. Helicopters lose lift as they climb. The game lists a rotor efficiency that drops to 0.65 at 200 m and 0.4 at 280 m for the Havoc, to 0.75 at 250 m and 0.45 at 325 m for the MH-6 and AH-6, and to 0.65 at 250 m and 0.4 at 350 m for the Z20 Lakota. That is a soft ceiling (reading from the names; how the efficiency is used between the points was not read).
 
 ## Spawn safe zones
 
@@ -66,21 +66,21 @@ Every team spawn area has one safe zone, an invisible box that belongs to that t
 | Zestafona | 3 | 480 m by 480 m, 480 m tall |
 | Saburtulo | 3 | 800 m by 800 m, 480 m tall |
 
-The box size is the placed scale times the engine's default box size, because the data stores no box size of its own (inferred). Each zone sits 35 to 166 m from its spawn point and lies entirely inside the play rectangle, at least 1 km from the zone area. One Bakurani zone is 166 m from its spawn point, and one Ozeti zone is 155 m away, a little beyond the 150 m radius used on the map articles. Each zone belongs to one team and shows on the map and the minimap.
+The box size is the placed scale times the engine's default box size, because the game stores no box size of its own (inferred). Each zone sits 35 to 166 m from its spawn point and lies entirely inside the play rectangle, at least 1 km from the zone area. One Bakurani zone is 166 m from its spawn point, and one Ozeti zone is 155 m away, a little beyond the 150 m radius used on the map articles. Each zone belongs to one team and shows on the map and the minimap.
 
 **What it does**
 
 - **No damage in your own zone.** A player standing in their own team's safe zone takes no damage. The one exception in the code is damage of the vehicle-spawning type, which is the damage a vehicle does when it appears on top of someone (inferred from the name). This is read from the game code, not tested in play.
 - **No building.** Structures cannot be placed in a safe zone or within 3 m of one, and mines and explosives cannot be placed in one. See [Building](../building.md).
 - **Rewards.** Healing, refuelling and repairing a target in a safe zone earns no reward, and the transport-assist cash has a 0 modifier in a safe zone. Entering your safe zone after a successful logistics run pays a one-off reward (see [King of the Hill challenges](../progression-and-economy/king-of-the-hill-challenges.md)).
-- **Spotting.** The binoculars, the monocular and the range finders list the three safe zone states in one of their tag lists. The meaning is not named in the data (inferred: targets standing in a safe zone cannot be spotted).
-- **Vehicles.** Vehicles are repaired and refuelled by returning to your team's safe zone or a Forward Operating Base, according to the in-game tip, and the game's refuel code checks for your own safe zone. The data also stores a time that a vehicle may stay out of a safe zone before it is cleaned up when nobody uses it: 90 for the Havoc, 10 for the MH-6 and AH-6, and 30,000 for the stationary weapons (the unit is not named; seconds is inferred, and the code that uses it was not traced).
+- **Spotting.** The binoculars, the monocular and the range finders list the three safe zone states in one of their tag lists. The meaning is not named in the game (inferred: targets standing in a safe zone cannot be spotted).
+- **Vehicles.** Vehicles are repaired and refuelled by returning to your team's safe zone or a Forward Operating Base, according to the in-game tip, and the game's refuel code checks for your own safe zone. The game also sets a time that a vehicle may stay out of a safe zone before it is cleaned up when nobody uses it: 90 for the Havoc, 10 for the MH-6 and AH-6, and 30,000 for the stationary weapons (the unit is not named; seconds is inferred, and the code that uses it was not traced).
 
-**What the data does not show**
+**What is not known**
 
-- **Shooting.** No rule against firing weapons in a safe zone was found. Your own zone protects you, but no check on firing from it exists in the data or in the code that tests for the zone.
+- **Shooting.** No rule against firing weapons in a safe zone was found. Your own zone protects you, but no check on firing from it exists in the game or in the code that tests for the zone.
 - **After you leave.** No protection timer, grace period or lingering effect was found. The protection depends on standing in the zone, so it ends when you leave (reading).
-- **Enemies entering.** Apart from the out-of-bounds countdown above, the enemy gets no other penalty in the data.
+- **Enemies entering.** Apart from the out-of-bounds countdown above, the enemy gets no other penalty.
 
 ## Soccer pitch
 

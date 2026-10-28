@@ -1,0 +1,16 @@
+{%- comment -%}Portal icon boxes from _data/wiki_portals.yml. part="first" renders only the first box (Weapons), part="rest" the others, no part all of them.{%- endcomment -%}
+{%- for box in site.data.wiki_portals %}
+{%- if include.part == "first" and forloop.index > 1 %}{% continue %}{% endif -%}
+{%- if include.part == "rest" and forloop.index == 1 %}{% continue %}{% endif -%}
+<section class="wf-box" aria-labelledby="wf-portal-{{ forloop.index }}">
+  <h2 class="wf-band" id="wf-portal-{{ forloop.index }}">{{ box.title }}</h2>
+  <ul class="wf-tiles">
+  {%- for t in box.tiles %}
+    <li><a class="wf-tile" href="{{ t.url | relative_url }}"><span class="wf-icon" aria-hidden="true">{{ t.icon }}</span><span>{{ t.label }}</span></a></li>
+  {%- endfor %}
+  </ul>
+  {%- if box.more %}
+  <p class="wf-foot"><a href="{{ box.more.url | relative_url }}">{{ box.more.label }}</a></p>
+  {%- endif %}
+</section>
+{%- endfor %}

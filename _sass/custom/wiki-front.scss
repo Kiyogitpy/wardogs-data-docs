@@ -1,0 +1,326 @@
+// Wiki main page (_wiki/index.md), header menu bar (_includes/header_custom.html) and the
+// sidebar's wiki section. Self-contained: the wf- and wm- classes do not depend on wiki.scss.
+
+$wf-band: #2a2e22;
+$wf-band-deep: #20231a;
+$wf-edge: #3d4232;
+$wf-tan: #cdb98a;
+$wf-head: "Barlow Condensed", "Arial Narrow", sans-serif;
+
+// ---- Main page ---------------------------------------------------------------------------
+
+.wf {
+  a { text-decoration: none; &:hover { text-decoration: underline; } }
+  a:focus-visible, button:focus-visible { outline: 2px solid $wf-tan; outline-offset: 2px; }
+}
+
+.wf-box {
+  margin: 0 0 1rem;
+  border: 1px solid $wf-edge;
+  border-radius: $radius-small;
+  background: $ue-panel;
+  overflow: hidden;
+  break-inside: avoid;
+}
+
+.wf .wf-band {
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  background: $wf-band;
+  border-bottom: 1px solid $wf-edge;
+  color: $wf-tan;
+  font-family: $wf-head;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.wf-body {
+  padding: 0.9rem 1rem 1rem;
+  p, ul { margin: 0 0 0.7rem; max-width: none; }
+  ul { padding-left: 1.1rem; }
+  li { margin-bottom: 0.35rem; font-size: 0.9rem; }
+  p { font-size: 0.9rem; }
+  > :last-child { margin-bottom: 0; }
+}
+
+// Welcome: intro on the left, the three facts as stat blocks on the right.
+.wf-welcome {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 27rem;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding: 1.2rem 1.3rem;
+  @media (max-width: 50rem) { grid-template-columns: 1fr; }
+
+  h1 {
+    margin: 0 0 0.5rem;
+    font-family: $wf-head;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  p { margin: 0; max-width: 46rem; }
+}
+
+.wf .wf-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+
+  div {
+    display: flex;
+    flex-direction: column-reverse; // value above its label
+    justify-content: center;
+    min-width: 6.5rem;
+    padding: 0.6rem 0.9rem;
+    background: $wf-band-deep;
+    border: 1px solid $wf-edge;
+    border-radius: $radius-small;
+    text-align: center;
+    @media (max-width: 50rem) { flex: 1; min-width: 0; padding: 0.5rem 0.4rem; }
+  }
+  dt::after { content: none; }
+  dt { color: $ue-text-dim; font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  dd { margin: 0; color: $wf-tan; font-family: $wf-head; font-size: 1.5rem; white-space: nowrap; font-weight: 600; line-height: 1.2; }
+}
+
+// 1 column, 2 from 50rem (800 px), 3 from 75rem (1200 px). CSS columns flow the boxes
+// top to bottom, balanced, so a tall box never leaves a hole beside a short one.
+.wf-cols {
+  column-gap: 1rem;
+  columns: 1;
+  @media (min-width: 50rem) { columns: 2; }
+  @media (min-width: 75rem) { columns: 3; }
+}
+
+.wf-tiles {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5.25rem, 1fr));
+  gap: 0.35rem;
+
+  li { margin: 0; padding: 0; }
+  li::before { content: none; }
+}
+
+.main-content .wf ul.wf-tiles > li, .main-content .wf ul.wf-rows > li { padding-left: 0; }
+.main-content .wf ul.wf-tiles > li::before, .main-content .wf ul.wf-rows > li::before { content: none; }
+
+.wf-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0.5rem 0.2rem;
+  border: 1px solid transparent;
+  border-radius: $radius-small;
+  color: $ue-text;
+  font-size: 0.78rem;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover { border-color: $wf-edge; background: rgba(255, 255, 255, 0.03); color: $ue-white; text-decoration: none; }
+}
+
+.wf-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: $wf-band-deep;
+  border: 1px solid $wf-edge;
+  border-radius: 4px;
+  color: $wf-tan;
+  font-family: "Material Symbols Sharp";
+  font-size: 1.5rem;
+  line-height: 1;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.wf-foot {
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  border-top: 1px solid $wf-edge;
+  font-size: 0.82rem;
+  text-align: right;
+
+  a::after { content: " \203A"; }
+}
+
+.wf-more { font-weight: 600; }
+
+// Tools: two preview cards, then icon rows.
+.wf-shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.wf-shot {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $wf-edge;
+  border-radius: $radius-small;
+  background: $wf-band-deep;
+  color: $ue-text;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  text-align: center;
+  overflow: hidden;
+
+  img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #000; }
+  span { padding: 0.45rem 0.3rem; }
+  &:hover { border-color: $wf-tan; color: $ue-white; text-decoration: none; }
+}
+
+.wf-body ul.wf-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li { margin: 0; font-size: 0.9rem; }
+  li::before { content: none; }
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.3rem 0.2rem;
+    border-radius: $radius-small;
+    color: $ue-text;
+    &:hover { background: rgba(255, 255, 255, 0.04); color: $ue-white; text-decoration: none; }
+  }
+  .wf-icon { width: 2rem; height: 2rem; font-size: 1.2rem; }
+}
+
+// ---- Header menu bar ---------------------------------------------------------------------
+
+.wm-icon {
+  font-family: "Material Symbols Sharp";
+  font-size: 1.2rem;
+  line-height: 1;
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  vertical-align: middle;
+}
+
+.wm {
+  position: relative;
+  border-top: 1px solid $ue-border;
+  background: $ue-sidebar;
+
+  a { text-decoration: none; &:hover { text-decoration: none; } }
+  a:focus-visible, button:focus-visible { outline: 2px solid $wf-tan; outline-offset: -2px; }
+}
+
+.wm-list, .wm-drop { list-style: none; margin: 0; padding: 0; }
+
+.wm-burger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: none;
+  border: 0;
+  color: $ue-white;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wm-item { position: relative; }
+
+.wm-top {
+  display: block;
+  padding: 0.55rem 0.4rem 0.55rem 1rem;
+  color: $ue-white;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  &:hover { color: $wf-tan; }
+}
+
+.wm-caret {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  border: 0;
+  color: $ue-text-dim;
+  cursor: pointer;
+  &:hover { color: $wf-tan; }
+  .wm-icon { transition: transform 0.12s; }
+  &[aria-expanded="true"] .wm-icon { transform: rotate(180deg); }
+}
+
+.wm-drop {
+  display: none;
+  a {
+    display: block;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    color: $ue-text;
+    font-size: 0.85rem;
+    &:hover { background: rgba(255, 255, 255, 0.05); color: $wf-tan; }
+  }
+}
+
+// Narrow: the bar is hidden behind the "Browse the wiki" button and items stack.
+.wm-list { display: none; }
+.wm.wm-shown .wm-list { display: block; }
+.wm-item { display: flex; flex-wrap: wrap; align-items: center; border-top: 1px solid $ue-border; }
+.wm-top { flex: 1; }
+.wm-item.wm-open > .wm-drop { display: block; flex: 0 0 100%; }
+
+// Wide: a single row with dropdown panels.
+@media (min-width: 50rem) {
+  // The theme's header is a fixed-height flex row; let the menu wrap onto its own line.
+  .main-header { flex-wrap: wrap; height: auto; z-index: 5; }
+  .main-header > .search { order: 1; height: $header-height; }
+  .main-header > .aux-nav { order: 2; height: $header-height; }
+  .main-header > .wm { order: 3; flex: 0 0 100%; }
+
+  .wm-burger { display: none; }
+  .wm-list { display: flex; flex-wrap: wrap; padding: 0 0.5rem; }
+  .wm-item { border: 0; flex-wrap: nowrap; }
+  .wm-top { flex: none; padding: 0.6rem 0 0.6rem 0.6rem; }
+  .wm-caret { width: 1.6rem; height: 2.5rem; .wm-icon { font-size: 1.1rem; } }
+
+  .wm-drop {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 30;
+    min-width: 14rem;
+    padding: 0.3rem 0;
+    background: $ue-panel-raised;
+    border: 1px solid $wf-edge;
+    border-radius: 0 0 $radius-small $radius-small;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    a { padding: 0.45rem 1rem; }
+  }
+  // Open by click (wm-open), by keyboard focus, or by hover where there is a real pointer.
+  .wm-item.wm-open > .wm-drop { display: block; flex: none; }
+  .wm-item:focus-within > .wm-drop { display: block; }
+  .wm-item.wm-esc:not(.wm-open) > .wm-drop { display: none; }
+  @media (hover: hover) {
+    .wm-item:not(.wm-esc):hover > .wm-drop { display: block; }
+  }
+  // The last items open leftwards so the panel stays inside the page.
+  .wm-item:nth-last-child(-n + 4) > .wm-drop { left: auto; right: 0; }
+}

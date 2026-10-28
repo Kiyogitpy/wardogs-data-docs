@@ -1,8 +1,8 @@
 ---
-title: "Weapons (feature)"
+title: "Weapons Game Feature"
 redirect_from: ["/Wardogs_GameFeatures_Weapons_v2.html", "/Wardogs_GameFeatures_Weapons_v2"]
 parent: "Weapons & Ammo"
-description: "Folder layout, Weapon roster, Per-weapon ballistics, Default weapon attributes"
+description: "The weapon package: roster, per-weapon ballistics, default attributes, shared handling data and bundle wiring."
 ---
 
 # Wardogs — GameFeatures/Weapons Reference

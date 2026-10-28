@@ -42,7 +42,7 @@ The Wolf-110 [M2 Browning] is sold in the vehicle vendor under land transport, f
 
 Main health is 500 HP, with the same engine and fuel tank health as the [Wolf-110](wolf-110.md). Rifle rounds do 4.5% of their damage against the hull.
 
-The data simulates this variant with the same destruction numbers as the base Wolf-110, so the hits to destroy are the same:
+This variant uses the same destruction numbers as the base Wolf-110, so the hits to destroy are the same:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -59,13 +59,13 @@ The data simulates this variant with the same destruction numbers as the base Wo
 |---|---|---:|---:|---:|---:|
 | M2 Browning Machine Gun (ring turret) | Machine gun | 600 rounds/min | 1,000 m | 8.0 s | 0 (tracer) |
 
-The gun fires 600 rounds/min out to 1,000 m. The weapon data does not set a rate, so 600 rounds/min is the game's default. The data also gives the reload time and the starting ammunition (none loaded at the start, tracer rounds). The five seats are a driver, three active passengers and a gunner on the ring turret.
+The gun fires 600 rounds/min out to 1,000 m. The weapon's own settings do not set a rate, so 600 rounds/min is the game's default. The reload time and the starting ammunition are listed too (none loaded at the start, tracer rounds). The five seats are a driver, three active passengers and a gunner on the ring turret.
 
 ## Handling
 
 Handling matches the base Wolf-110: mass 3,200, hand brake 80, front steering of 35 degrees, and the same torque split.
 
-- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes
 
@@ -74,7 +74,7 @@ Handling matches the base Wolf-110: mass 3,200, hand brake 80, front steering of
 
 ## Vehicle spawns
 
-The Wolf 110 [M2 Browning] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Wolf 110 and Wolf 110 [M2 Browning]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Wolf 110 [M2 Browning] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Wolf 110 and Wolf 110 [M2 Browning]), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -86,8 +86,8 @@ The Wolf 110 [M2 Browning] is placed by the ground vehicle yards of all four mai
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article

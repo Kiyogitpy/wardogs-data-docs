@@ -25,22 +25,9 @@ description: "The 9K333 Verba launcher: fire rate, damage by body part, range fa
 | Internal name | Launcher_04 |
 {: .wiki-infobox }
 
-The 9K333 Verba is a launcher that fires explosive rounds rather than bullets. Its fire rate is 100 rounds/min. It fires only while locked on to a target (2 s to lock, 0.25 s delay), and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles.
+The 9K333 Verba is a [launcher](../weapons.md#launchers) in Wardogs that fires explosive rounds rather than bullets. Its fire rate is 100 rounds/min. It fires only while locked on to a target (2 s to lock, 0.25 s delay), and it can lock on to helicopters and the airplane only, so it cannot be used against ground vehicles.
 
-## Overview
-
-Launchers fire explosive rounds rather than bullets.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 100 rounds/min |
-| Muzzle velocity | 20 m/s |
-| Effective range | 1000 m |
-
-The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.
+Launchers fire explosive rounds rather than bullets. The muzzle velocity is the launch speed. The rocket has its own thrust after launch, so its speed in flight is higher than this.
 
 ## Damage
 
@@ -68,7 +55,7 @@ Cone half-angles in degrees: a bullet can land up to that far from the aim point
 
 The data leaves the accuracy value out for this weapon, so the game default of 1 mrad is used (a full cone angle; the aimed row is half of it, in degrees).
 
-- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
+- There is no per-shot bloom and no recovery timer: nothing found in the spread settings makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
 - Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).
 - The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.
 - At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.

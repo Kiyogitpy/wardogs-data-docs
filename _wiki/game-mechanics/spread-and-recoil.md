@@ -27,10 +27,10 @@ Two things decide where a shot goes. The first is the **spread cone**, which is 
 - **Moving widens the cone.** Hip spread scales with your speed compared with a reference speed for your stance. Standing and running make the cone widest, lying prone keeps it narrowest.
 - **Stance matters.** Prone and crouch give smaller spread than standing for the same speed.
 - **Air.** A shot fired while airborne uses a separate spread value of 10 degrees (half-angle) for every weapon. The stance and speed multipliers do not apply while airborne.
-- **Aim sway moves the shot.** In the game's default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../attachments/sights-and-optics.md)). No weapon in the data changes this mode (derived from the game's code).
+- **Aim sway moves the shot.** In the game's default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../attachments/sights-and-optics.md)). No weapon changes this mode (derived from the game's code).
 - **Vehicle-mounted guns.** A gun on a vehicle with its own spread setting eases toward that spread at about 25 per second rather than jumping to it. When the gunner is fully aimed down sights, the spread is zero. Plain mounted weapons have no spread of their own (a static reading of the game code, not checked in play).
 - **Attachments.** Bipods, muzzle devices and foregrips change the spread. Their multipliers are listed below.
-- **Zeroing.** The data does not list the zero angle for each sight range. The game works it out while it runs. At each zeroing range it predicts the bullet's drop over that distance and stores the angle that drop implies, in degrees, for each ammunition type (derived from the game's code).
+- **Zeroing.** The game does not list the zero angle for each sight range. The game works it out while it runs. At each zeroing range it predicts the bullet's drop over that distance and stores the angle that drop implies, in degrees, for each ammunition type (derived from the game's code).
 - **Recoil is applied after the shot.** The bullet leaves along the view as it was before that shot's kick. Earlier kicks have already moved the view, and they are part of the next shot's aim.
 - **Shotguns.** Each buckshot shell fires 8 pellets. Each pellet has its own random direction inside a cone, and the pellets all land at a small spread around the aim. Part of the pattern is a tight inner cluster: about 20 percent of pellets on the M500 and 14 percent on the MP43 (derived), rising to 26 and 34 percent on the M500 with the Improved Cylinder and Full Choke.
 
@@ -47,7 +47,7 @@ Hip spread in degrees (half-angle), from standing still to full speed. Full spee
 
 The PKM uses the sniper values. Fully aimed, all of these are 0.
 
-The data stores these as one spread curve row for each class and stance (29 rows in all, including the mounted machine guns and the stable mount). Each row is a straight line from input 0 to input 1, and the stored numbers carry no unit in the curve table. The degree reading above comes from the spread pipeline page, not from this table. The 0 to 1 input is your current speed as a share of the full speed for your stance (4.0 m/s standing, 2.5 m/s crouched, 0.5 m/s prone), capped at 1: 0 when you are still, 1 at full speed or faster. A gun on a vehicle uses the first point of its row (input 0).
+The game stores these as one spread curve for each class and stance (29 curves in all, including the mounted machine guns and the stable mount). Each curve is a straight line from input 0 to input 1, and the stored numbers carry no unit. The degree reading above comes from the spread pipeline page, not from this table. The 0 to 1 input is your current speed as a share of the full speed for your stance (4.0 m/s standing, 2.5 m/s crouched, 0.5 m/s prone), capped at 1: 0 when you are still, 1 at full speed or faster. A gun on a vehicle uses the first point of its row (input 0).
 
 Attachment multipliers on the spread:
 
@@ -58,7 +58,7 @@ Attachment multipliers on the spread:
 | Muzzle devices | 0.88 to 0.99 |
 | Foregrips | 0.76 to 0.94 |
 
-Shotgun pellet spread for the two shotguns in the data: the outer edge of the M500's pellet cone is about 1.6 degrees from the centre, and the MP43's about 1.9 degrees. Both add a random shift to the centre of the pattern, up to 2 degrees on the M500 and 3 degrees on the MP43.
+Shotgun pellet spread for the two shotguns: the outer edge of the M500's pellet cone is about 1.6 degrees from the centre, and the MP43's about 1.9 degrees. Both add a random shift to the centre of the pattern, up to 2 degrees on the M500 and 3 degrees on the MP43.
 
 ## Tips that follow from the numbers
 
@@ -71,11 +71,11 @@ Shotgun pellet spread for the two shotguns in the data: the outer edge of the M5
 
 ## Recoil figures
 
-Recoil patterns (the points that set each shot's kick) are different for each weapon. Season 2 changed recoil patterns on four weapons, including the SKS and SVD. Every weapon's recoil and camera-kick values are listed row by row on [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md).
+Recoil patterns (the points that set each shot's kick) are different for each weapon. Season 2 changed recoil patterns on four weapons, including the SKS and SVD. Every weapon's recoil and camera-kick values are listed weapon by weapon on [Weapon Spread and Recoil Data](../../content/Wardogs_WeaponSpreadRecoilData_v1.md).
 
 ## Spread in the air
 
-While a player is airborne, hip-fire spread uses the game's in-air value of 10.0 degrees. Only the grenade launcher sets that value itself, to the same 10.0 degrees, and the weapon's spread multiplier is not applied on this path. The game files have no per-shot bloom field, so spread does not build up with each shot.
+While a player is airborne, hip-fire spread uses the game's in-air value of 10.0 degrees. Only the grenade launcher sets that value itself, to the same 10.0 degrees, and the weapon's spread multiplier is not applied on this path. The game has no per-shot bloom setting, so spread does not build up with each shot.
 
 ## See also
 

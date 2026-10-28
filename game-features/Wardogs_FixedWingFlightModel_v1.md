@@ -1,5 +1,5 @@
 ---
-title: "Fixed-wing flight model"
+title: "Fixed-Wing Flight Model"
 parent: "Vehicles"
 description: "Every flight-model field of the fixed-wing airplane FWG_01 (engine, drag, lift and drag curves, nose-wheel steering, the 22-row auto-trim table, control assists)."
 ---

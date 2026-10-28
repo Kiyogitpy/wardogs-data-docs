@@ -1,8 +1,8 @@
 ---
-title: "Experiences (feature)"
+title: "Experiences Game Feature"
 redirect_from: ["/Wardogs_GameFeatures_Experiences_v2.html", "/Wardogs_GameFeatures_Experiences_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, KOTH, SniperShowdown, How Values Combine"
+description: "The two experience packs, King of the Hill and Sniper Showdown, which set match states, components, HUD widgets and data registries."
 ---
 
 # Wardogs — GameFeatures: Experiences

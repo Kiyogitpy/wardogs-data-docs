@@ -2,7 +2,7 @@
 title: "UI"
 redirect_from: ["/Wardogs_UI_v2.html", "/Wardogs_UI_v2"]
 parent: "World, Visuals & Audio"
-description: "Inventory of the Category, Minimap and World Textures, Map and Minimap Trackers, Ping Wheel"
+description: "UI data: the category, minimap and world textures, map and minimap trackers and the ping wheel."
 ---
 
 # Wardogs — UI Data Reference

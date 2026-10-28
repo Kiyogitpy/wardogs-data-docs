@@ -1,8 +1,8 @@
 ---
-title: "Challenges KOTH (feature)"
+title: "King of the Hill Challenges"
 redirect_from: ["/Wardogs_GameFeatures_Challenges_KOTH_v2.html", "/Wardogs_GameFeatures_Challenges_KOTH_v2"]
 parent: "Rewards & Unlocks"
-description: "What the Package Contains, How the Pieces Connect, State Tree Inventory, Reward Lookup Tables"
+description: "The King of the Hill challenge package: its contents, how the pieces connect, state trees and reward lookup tables."
 ---
 
 # Wardogs — GameFeature: Challenges_KOTH Reference
@@ -123,7 +123,7 @@ Observations:
 
 ## 5.1 State tree logic (decoded, round 86)
 
-A compiled `StateTree` asset is not bytecode. It keeps its states, transitions, task and condition nodes (editor name and instance values) and its property bindings in flat arrays. [`_tools/statetree_outline.py`](../_tools/statetree_outline.py) resolves all 83 `ST_Challenges_*` trees (the 60 here plus the Hot Zone Magnet, Buildable, Spotting and Team Offence trees) into [`challenge-statetrees.json`](../assets/data/challenge-statetrees.json): per state its enter conditions, tasks and transitions, and every binding as `target <- source`. Native task and condition classes keep their code in the executable; what is read here is the wiring and the values.
+A compiled `StateTree` asset is not bytecode. It keeps its states, transitions, task and condition nodes (editor name and instance values) and its property bindings in flat arrays. [`_tools/statetree_outline.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/statetree_outline.py) resolves all 83 `ST_Challenges_*` trees (the 60 here plus the Hot Zone Magnet, Buildable, Spotting and Team Offence trees) into [`challenge-statetrees.json`](../assets/data/challenge-statetrees.json): per state its enter conditions, tasks and transitions, and every binding as `target <- source`. Native task and condition classes keep their code in the executable; what is read here is the wiring and the values.
 
 **Shape of every reward tree** (**Data**). A tree waits in `Wait For ... Event` for its `Event.StateTree.*` tag, then enters `Populate Context`. The gate there is a list of conditions (killer is not the victim, victim is a pawn, and so on). If it passes, a chain of small states each add one `Challenges.Context.*` tag to the challenge's context when their condition holds (the table below), then `Track Target Repeat Count` (task `Resolve Repeat Action Count`), `Calculate Reward` (task `Calculate Reward`, which succeeds or fails and ends the run on failure), `Update Reward XP Tags` and `Grant Reward`. Some trees then broadcast an assist event (crew, logistic, revive, FOB-supplied, supply crate) for the helpers. Every tree ends in `Complete When Done`, which returns to `Root` on the next tick.
 

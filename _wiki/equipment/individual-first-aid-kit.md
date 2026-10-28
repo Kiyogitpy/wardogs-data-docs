@@ -28,16 +28,16 @@ The Individual First Aid Kit is the strongest single heal among the basic medica
 
 ## Overview
 
-The shop describes the kit as healing a teammate or yourself back to full health. The data gives it a heal of +100 HP, which reaches full from any health at 100 max HP.
+The shop describes the kit as healing a teammate or yourself back to full health. It heals +100 HP, which reaches full from any health at 100 max HP.
 ## Effects
 
-- **Healing:** +100 HP per use, added to current health and capped at the maximum. The data gives one heal per use. The game's own heal timing is shown in the use table below.
+- **Healing:** +100 HP per use, added to current health and capped at the maximum. It gives one heal per use. The game's own heal timing is shown in the use table below.
 - **Movement:** while the kit is in use, maximum movement speed is halved, as with the Bandage.
 - **Bleeding:** the kit does not stop bleeding. There is no damage-over-time bleeding in the game to cure, see [Medical Items](medical-items.md).
 
 ### Medic skills
 
-The "Self-healing speed" and "Teammate healing speed" skills are described as applying to all medical items. No number for them exists in the game files, and no game code reads them, so the effect on the kit's use time is not known.
+The "Self-healing speed" and "Teammate healing speed" skills are described as applying to all medical items. No number for them is known, and no game code reads them, so the effect on the kit's use time is not known.
 
 The "Item-switch speed (Medical Archetype)" skill makes switching to a medical item faster, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -48,7 +48,7 @@ The "Item-switch speed (Medical Archetype)" skill makes switching to a medical i
 | On yourself | 5.2 s | at 4.7 s |
 | On a teammate | 5.2 s | at 5.2 s |
 
-The times come from the use animation in the data. The heal lands near the end of the animation. For yourself you must be Injured and alive. For a teammate, the teammate must be Injured and alive. The kit blocks and is blocked by the Bandage use, and starting a use cancels sprint and tactical sprint.
+The times come from the use animation. The heal lands near the end of the animation. For yourself you must be Injured and alive. For a teammate, the teammate must be Injured and alive. The kit blocks and is blocked by the Bandage use, and starting a use cancels sprint and tactical sprint.
 
 ## Cost
 
@@ -56,7 +56,7 @@ The Item Shop lists the kit at 800 cash. No Season 2 change to its price is list
 
 ## Season 2 changes
 
-No Season 2 change to the kit is listed in the data.
+No Season 2 change to the kit is listed.
 
 ## See also
 

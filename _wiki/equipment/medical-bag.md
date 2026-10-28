@@ -48,7 +48,7 @@ The rate column is the amount divided by the time. Healing works in steps: a tea
 
 ### Medic skills
 
-The "Medkits have more uses" skill has a usage multiplier in the data, which falls from 1 to 0.6 as the skill levels up. The data gives four values:
+The "Medkits have more uses" skill has a usage multiplier, which falls from 1 to 0.6 as the skill levels up. Four values are given:
 
 | Skill level | Usage multiplier |
 |---|---:|
@@ -63,9 +63,9 @@ The game code never reads this multiplier, and it charges the same durability co
 
 The first teammate heal lands 1.5 s after you start, then one more every 1.5 s. Healing a teammate who is missing 60 HP takes 4 steps: 6 s and 8 durability. Healing yourself from 20 to 100 HP takes 3 steps: 15 s and 75 durability. A revive is a single action, about 6.5 s on the progress wheel, for 10 durability. If the revived player is on the other team, the bag also gives them an extra effect; its numbers are not known.
 
-The use animation lasts 7.4 s in the data, and it loops between about 1.5 s and 5.7 s. The heal runs until the target is full or the bag is empty, so the total time depends on how much health is missing. The "Medical item switch speed" skill also speeds up switching to the bag, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4.
+The use animation lasts 7.4 s, and it loops between about 1.5 s and 5.7 s. The heal runs until the target is full or the bag is empty, so the total time depends on how much health is missing. The "Medical item switch speed" skill also speeds up switching to the bag, with an equip speed multiplier of 1.2 at skill level 2 and 1.4 at level 4.
 
-The bag can heal yourself only while Injured and alive, and it can heal a teammate who is Injured and alive. A revive needs a downed teammate. A hand revive has a 20 s hold (see Downed and Revive); the data gives no separate hold time for the bag's revive.
+The bag can heal yourself only while Injured and alive, and it can heal a teammate who is Injured and alive. A revive needs a downed teammate. A hand revive has a 20 s hold (see Downed and Revive); no separate hold time for the bag's revive is given.
 
 ## Cost
 

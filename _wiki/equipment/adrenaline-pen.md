@@ -30,7 +30,7 @@ The Adrenaline Pen does not heal. It gives a player unlimited tactical sprint fo
 
 ## Overview
 
-The shop describes the pen as unlimited tactical sprint for a short time, with a reduced equipment weight class. Up to 3 can be carried. The pen can be used on yourself or on a teammate, and the data gives a separate use time for each.
+The shop describes the pen as unlimited tactical sprint for a short time, with a reduced equipment weight class. Up to 3 can be carried. The pen can be used on yourself or on a teammate, and each use has its own use time.
 
 ## Effects
 
@@ -52,7 +52,7 @@ The "Item-switch speed (Medical Archetype)" skill makes switching to the medical
 | On yourself | 2.0 s |
 | On a teammate | 1.3 s |
 
-The times are the length of each use animation in the data. The self use requires you to be alive. The teammate use requires the teammate to be alive. A teammate who is alive gets the same 60 s of unlimited tactical sprint, and nothing more. The self and teammate pen uses block each other.
+The times are the length of each use animation. The self use requires you to be alive. The teammate use requires the teammate to be alive. A teammate who is alive gets the same 60 s of unlimited tactical sprint, and nothing more. The self and teammate pen uses block each other.
 
 ## Cost
 
@@ -60,7 +60,7 @@ The Item Shop lists the pen at 250 cash.
 
 ## Season 2 changes
 
-No Season 2 change to the pen is listed in the data.
+No Season 2 change to the pen is listed.
 
 ## See also
 

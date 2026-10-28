@@ -241,7 +241,7 @@ def render_page(b):
     w, se, he = b["vehicle-weapons.json"], b["vehicle-seats.json"], b["vehicle-health-effects.json"]
     fl, rt = b["vehicle-flares.json"], b["vehicle-repair-tools.json"]
     L = []
-    L.append('---\ntitle: "Vehicle weapon rates, seats and damage effects"\n'
+    L.append('---\ntitle: "Vehicle Weapons, Seats and Damage Effects"\n'
              'redirect_from: ["/Wardogs_VehicleWeaponsEffects_v1.html", "/Wardogs_VehicleWeaponsEffects_v1"]\n'
              'parent: "Vehicles"\n'
              'description: "Rate and range of every vehicle weapon, flare and smoke settings, seat roles, health-trigger effects and hand repair tool numbers"\n---\n')

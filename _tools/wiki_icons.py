@@ -136,13 +136,15 @@ def inject(text, path):
 
 # ---- small icon column in the part tables and the Vehicles hub ------------------------------
 
-ICON_CELL = re.compile(r"^\| (?:!\[[^\]]*\]\([^)]*\)\{: \.wiki-icon \})? \|")
+ICON_CELL = re.compile(r"^\| (?:!\[[^\]]*\]\([^)]*\)\{: \.wiki-icon(?: \.wiki-icon-wide)? \})? \|")
 LINK_CELL = re.compile(r"^\| \[([^\]]+(?:\[[^\]]*\])?[^\]]*)\]\(([^)\s]+\.md)\)")
 SEP_ROW = re.compile(r"^\|[-: |]+\|?\s*$")
 # page -> (first-column header the icon column goes in front of, how a row finds its icon)
 ICON_TABLES = {
     "attachments": ("Part", "name"),
     "vehicles.md": ("Vehicle", "link"),
+    "weapons.md": ("Weapon", "link", "wiki-icon wiki-icon-wide"),  # hub: one table per class
+    "ammunition.md": ("Caliber", "link", "wiki-icon wiki-icon-wide"),
 }
 
 
@@ -180,7 +182,8 @@ def add_icon_columns(text, path):
     spec = ICON_TABLES.get(key[1]) if len(key) > 2 or key[1] in ICON_TABLES else None
     if not spec:
         return text
-    head, mode = spec
+    head, mode = spec[0], spec[1]
+    css = spec[2] if len(spec) > 2 else "wiki-icon"
     nl = "\r\n" if "\r\n" in text else "\n"
     lines = text.split(nl)
     names = name_icons() if mode == "name" else None
@@ -213,7 +216,7 @@ def add_icon_columns(text, path):
                     any_icon = True
                     rel = site_url(png)
                     alt = name.replace("[", "").replace("]", "")
-                    body_rows.append(f"| ![{alt}]({rel}){{: .wiki-icon }} {r}")
+                    body_rows.append(f"| ![{alt}]({rel}){{: .{css.replace(' ', ' .')} }} {r}")
                 else:
                     body_rows.append(f"|  {r}")
                 i += 1

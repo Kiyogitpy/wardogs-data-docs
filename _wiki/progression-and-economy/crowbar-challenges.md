@@ -24,7 +24,7 @@ The crowbar challenge pays when a player forces a door open. The crowbar is the 
 |---|---|---|---|
 | Door Forced Open | Breaching a door | Base 0.5, owner assist 0.25 | Base 0.25, owner assist 0.1 |
 
-The sources give the base numbers but not the formula that combines them with the event, so they are shown as the data lists them.
+The sources give the base numbers but not the formula that combines them with the event, so they are shown as the game lists them.
 
 ## Season 2 changes
 

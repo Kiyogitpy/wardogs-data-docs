@@ -15,7 +15,7 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 | Caliber | [9x19mm](../ammunition/9x19mm.md) |
 | Fire modes | Semi-automatic |
 | **Performance** |  |
-| Fire rate | 600 rounds/min (class default) |
+| Fire rate | 600 rounds/min |
 | Muzzle velocity | 375 m/s |
 | Effective range | 50 m |
 | Standard magazine | GGX 17 RND Magazine |
@@ -25,22 +25,9 @@ description: "The GGX 17 pistol: fire rate, damage by body part, range falloff, 
 | Internal name | Glock17 |
 {: .wiki-infobox }
 
-The GGX 17 is a pistol chambered in 9x19mm. It fires semi-automatic at 600 rounds/min. Its standard magazine is the GGX 17 RND Magazine.
-
-## Overview
-
-Pistols are the sidearm class in the weapon data.
+The GGX 17 is a [pistol](../weapons.md#pistols) in Wardogs, chambered in 9x19mm. It fires semi-automatic at 600 rounds/min. Its standard magazine is the GGX 17 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 600 rounds/min (class default) |
-| Muzzle velocity | 375 m/s |
-| Effective range | 50 m |
 
 ## Damage
 
@@ -145,7 +132,7 @@ Cone half-angles in degrees: a bullet can land up to that far from the aim point
 
 Accuracy is 3.49 mrad, a full cone angle; the aimed row is half of it, in degrees.
 
-- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
+- There is no per-shot bloom and no recovery timer: nothing found in the spread settings makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
 - Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).
 - The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.
 - At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.

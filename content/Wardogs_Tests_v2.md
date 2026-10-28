@@ -1,8 +1,8 @@
 ---
-title: "Tests"
+title: "Test Profiles"
 redirect_from: ["/Wardogs_Tests_v2.html", "/Wardogs_Tests_v2"]
 parent: "Engine & Tooling Data"
-description: "File Map, Server Profiles, Client Profiles"
+description: "Automated load-test profiles: how many clients join a test server and which orchestrator runs the test."
 ---
 
 # Wardogs: Tests Data Reference

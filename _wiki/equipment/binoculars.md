@@ -28,7 +28,7 @@ The Binoculars are the simplest of the recon optics. They give a low magnificati
 
 ## Overview
 
-The shop describes the Binoculars as a way to spot enemy infantry and vehicles with low magnification. Unlike the [Range Finder](range-finder.md), they show no distance. The data gives no spotting range. The data gives spot timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
+The shop describes the Binoculars as a way to spot enemy infantry and vehicles with low magnification. Unlike the [Range Finder](range-finder.md), they show no distance. There is no spotting range. Spotting works by timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
 
 ## How it works
 

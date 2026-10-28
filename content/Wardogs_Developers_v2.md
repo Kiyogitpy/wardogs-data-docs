@@ -1,8 +1,8 @@
 ---
-title: "Developers"
+title: "Developer Settings"
 redirect_from: ["/Wardogs_Developers_v2.html", "/Wardogs_Developers_v2"]
 parent: "Engine & Tooling Data"
-description: "File Map, Demolition Component Settings"
+description: "The one developer-owned settings asset, which configures the demolition component."
 ---
 
 # Wardogs: Developers Data Reference

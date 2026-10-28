@@ -31,7 +31,7 @@ The Shelter is a single-piece shelter that a Medium or Large Hammer can build. I
 
 ## Overview
 
-The Shelter costs 250 Build Supplies and has 2,250 HP. It has no separate parts. The export gives no display name for it, so this article uses the plain name "Shelter".
+The Shelter costs 250 Build Supplies and has 2,250 HP. It has no separate parts. No display name is known for it, so this article uses the plain name "Shelter".
 
 Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone) in the placement settings, while the reward calculator lists 10 cash for a placed schematic (20 in a hot zone); the two have not been reconciled. The data also has Built, Placed and Placed in FOB reward tables, and the game's lookup takes the first table that has a matching row (Built is checked first). But no code in the game client asks for these rows, so which amount is actually paid for a placement is decided outside the client, most likely by the game's servers; this structure has no row of its own in any of them (see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) and the [round 48 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md)).
 
@@ -56,7 +56,7 @@ The hits assume normal hits, not weak-spot hits. The Small Hammer cannot place t
 
 ## What it does
 
-The data does not describe its use in play beyond its health and how it takes damage.
+Its use in play beyond its health and how it takes damage is not described.
 
 ## Durability
 
@@ -81,7 +81,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the Shelter's cost or health.
+No Season 2 change to the Shelter's cost or health is listed.
 
 ## See also
 
@@ -91,7 +91,7 @@ The Season 2 data lists no change to the Shelter's cost or health.
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage table, placement conditions
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic

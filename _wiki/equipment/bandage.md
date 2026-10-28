@@ -39,7 +39,7 @@ The Bandage is the cheap, everyday heal. The shop describes it as healing a smal
 
 ### Medic skills
 
-The Medic skill "Self-healing speed" and "Teammate healing speed" are described as applying to all medical items. No number for them exists in the game files, and no game code reads them, so how much faster the Bandage heals is not known.
+The Medic skill "Self-healing speed" and "Teammate healing speed" are described as applying to all medical items. No number for them is known, and no game code reads them, so how much faster the Bandage heals is not known.
 
 The "Item-switch speed (Medical Archetype)" skill makes switching to a medical item faster. Its equip speed multiplier is 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -50,7 +50,7 @@ The "Item-switch speed (Medical Archetype)" skill makes switching to a medical i
 | On yourself | 5.2 s |
 | On a teammate | 4.8 s |
 
-The times are the length of each use animation in the data. You must be alive. On yourself you must also be Injured, and a teammate must be Injured too. Starting a bandage use cancels sprint and tactical sprint. A bandage use and a First Aid Kit use block each other, so only one can run at a time.
+The times are the length of each use animation. You must be alive. On yourself you must also be Injured, and a teammate must be Injured too. Starting a bandage use cancels sprint and tactical sprint. A bandage use and a First Aid Kit use block each other, so only one can run at a time.
 
 ## Cost
 
@@ -58,7 +58,7 @@ The Item Shop lists the Bandage at 200 cash. No Season 2 change to its price is 
 
 ## Season 2 changes
 
-No Season 2 change to the Bandage is listed in the data.
+No Season 2 change to the Bandage is listed.
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: "Weapon Spray Viewer"
 redirect_from: ["/spray-viewer.html", "/spray-viewer"]
-parent: "Weapons & Ammo"
+parent: "Interactive Tools"
 description: "Every weapon's recoil spray pattern, shot by shot, Season 1 against Season 2, with a fire-rate timeline and an all-weapons overview"
 ---
 

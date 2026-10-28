@@ -17,7 +17,7 @@ description: "The Halligan Bar: a quick-slot tool that pries open doors and lock
 | **Use** | |
 | Pries open | Doors (not gates) |
 | Also | Forces open a locked vehicle |
-| Melee damage | 100 in the item data |
+| Melee damage | 100 |
 | **Availability** | |
 | Price | 885 cash |
 | Unlock level | 0 |
@@ -29,13 +29,13 @@ The Halligan Bar is a quick-slot tool. Its main job is to pry open doors. It has
 
 ## Overview
 
-The shop text says the Halligan Bar pries open doors but is ineffective against gates, and that it has limited durability. Its durability was 5,000 in Season 1 and is 7,000 in Season 2. When its durability reaches 0 the bar is used up and removed from the inventory (read from the game's action data).
+The shop text says the Halligan Bar pries open doors but is ineffective against gates, and that it has limited durability. Its durability was 5,000 in Season 1 and is 7,000 in Season 2. When its durability reaches 0 the bar is used up and removed from the inventory (read from the game files).
 
 ## How it works
 
-- Using it on a door forces the door open. The item data names this as a separate action. Each door opened costs 1,000 durability.
-- The item data also gives the bar a vehicle unlock action, which forces open a locked vehicle. Each unlock also costs 1,000 durability. With 7,000 durability that is 7 uses in total, whatever mix of doors and vehicles.
-- It can also be swung as a melee weapon. The item data gives the hit 100 damage.
+- Using it on a door forces the door open. This is a separate action. Each door opened costs 1,000 durability.
+- The bar also has a vehicle unlock action, which forces open a locked vehicle. Each unlock also costs 1,000 durability. With 7,000 durability that is 7 uses in total, whatever mix of doors and vehicles.
+- It can also be swung as a melee weapon, for 100 damage.
 - The bar cannot be used while the player is critically injured or dead.
 - Inspecting the item interrupts a use.
 

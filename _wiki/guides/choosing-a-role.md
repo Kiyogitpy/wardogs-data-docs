@@ -37,7 +37,7 @@ The first unlock is the lowest role level in the role's unlock tree. The most ex
 - Key unlocks: Resuscitator at level 2 for 10,000 cash, Medkit at level 14 for 50,000 cash, and Defibrillator at level 22 for 110,000 cash.
 - A bare-hands revive pays 1,500 cash. A revive with a defibrillator pays 1,000.
 - A heal with a Bandage pays the healer 400, and a heal with an Individual First Aid Kit pays 1,000.
-- The other 19 nodes in the Medic tree have no number in the game files and no game code reads them, so their effect is not in the game files.
+- The other 19 nodes in the Medic tree have no number in the game and no game code reads them, so their effect is not known.
 
 ## Recon
 

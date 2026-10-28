@@ -2,7 +2,7 @@
 title: "Maps"
 redirect_from: ["/Wardogs_Maps_v2.html", "/Wardogs_Maps_v2"]
 parent: "Game Modes & Maps"
-description: "Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water Gym"
+description: "Data assets that sit beside the maps, including a minimal grid test, a shooting-range moving target and a water gym."
 ---
 
 # Wardogs — Maps & Gym Data Reference
@@ -14,7 +14,7 @@ description: "Inventory, Minimal Grid Test, Shooting-Range Moving Target, Water 
 
 ## Season 02 update (2026-10-15)
 
-- **New sight blocker assets:** four `DA_SightBlockers_*` files for Europe, North America, Russia and Kavkazi. See [section 7](#7-sight-blockers-wdsightblockerbakedataasset).
+- **New sight blocker assets:** four `DA_SightBlockers_*` files for Europe, North America, Russia and Kavkazi. See [section 7](#7-sight-blockers-wdsightblockerbakeddataasset).
 - **New warmup manifest:** `Russia_Moscow_KOTH_01` (1,132 graphics PSOs, 74 compute PSOs).
 - **Kavkazi manifest is complete:** 867 graphics PSOs and 117 compute PSOs. The previous file stopped partway through the compute list, so the old 2,528 graphics count is withdrawn. See [section 6](#6-kavkazi_bakurani_koth_01-manifest).
 - **Graphics PSO counts:** Madrid 1,639 to 1,053. Detroit 1,870 to 1,000. Kavkazi 2,528 to 867.

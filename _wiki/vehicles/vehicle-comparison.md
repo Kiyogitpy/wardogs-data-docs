@@ -21,11 +21,11 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 
 ## Reading the tables
 
-- **As stored** means the number is copied from the data without conversion. The vendor stat sheet labels speed as km/h; the data does not label the fuel unit. Both are shown as stored. Main health is in HP, prices are in cash, and the aircraft masses are in kilograms.
-- **Derived** means the number was worked out from the data. Rifle damage taken is the share of a full-power 5.56 mm hit that reaches the hull, as each article gives it. Hits to destroy are counts from simulating the damage rules with full-power, point-blank, standard (FMJ) hits. They are estimates, not measured in game. The value-for-money figures are plain division of the shop price by the seat count or by the main health.
+- **As stored** means the number is copied from the game's settings without conversion. The vendor stats label speed as km/h; the fuel unit is not labelled. Both are shown as stored. Main health is in HP, prices are in cash, and the aircraft masses are in kilograms.
+- **Derived** means the number was worked out from the game's settings. Rifle damage taken is the share of a full-power 5.56 mm hit that reaches the hull, as each article gives it. Hits to destroy are counts from simulating the damage rules with full-power, point-blank, standard (FMJ) hits. They are estimates, not measured in game. The value-for-money figures are plain division of the shop price by the seat count or by the main health.
 - Rockets, grenades, C4, mines and the other explosives have their own table, Hits to destroy by explosive. It uses a different rule from the bullet table above, so read its assumptions before comparing the two.
-- Mass is shown for the aircraft only. The wheeled and tracked articles list a mass too, but in units the data does not name.
-- Where articles disagree on seats, the table shows the figure in each article's infobox. The Humvee [Minigun] shop listing has 5 seats, while one stats sheet lists 4. The SPH-2 and the Ural Defender [M249] have 3 seats on the stats sheet, while their seat data has more setups.
+- Mass is shown for the aircraft only. The wheeled and tracked articles list a mass too, but in units the game does not name.
+- Where articles disagree on seats, the table shows the figure in each article's infobox. The Humvee [Minigun] shop listing has 5 seats, while one set of vendor stats lists 4. The SPH-2 and the Ural Defender [M249] have 3 seats in the vendor stats, while their seat setups number more.
 
 ## Main comparison
 
@@ -58,7 +58,7 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | SUV with machine gun | 5 | 7,800 | 0 | 500 | 129 | 60 | M2 Browning Machine Gun (ring turret) | None stated | 4.5% | - |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | Airplane | 2 | Not sold | Not applicable | 150 at start | Not stored | Not stated | None | Flares, 3 | 7.5% | 10,000 |
 
-Unlock levels and prices are the shop values. The M113 APC SV, the fixed-wing airplane and the Huey have no shop listing in the data, and the Huey has no stored stats at all, so it is left out of the hits-to-destroy and value tables. The SPH-2 article gives no countermeasure for its variant, and the Kodiak family, Humvee family, Ural family, Wolf-110 family, Bobcat and Dune Buggy have none listed.
+Unlock levels and prices are the shop values. The M113 APC SV, the fixed-wing airplane and the Huey have no shop listing, and the Huey has no stats at all, so it is left out of the hits-to-destroy and value tables. The SPH-2 article gives no countermeasure for its variant, and the Kodiak family, Humvee family, Ural family, Wolf-110 family, Bobcat and Dune Buggy have none listed.
 
 ## Hits to destroy
 
@@ -148,7 +148,7 @@ How to read the table:
 - **Outside the inner radius the counts rise sharply.** A rocket or grenade that bursts beyond its inner radius loses the large inner-radius bonus that most vehicles have, and its damage also falls off with distance. For example, a Humvee takes 2 MAAWS rockets inside 4 m, and about 8 when the blast is halfway out between the inner and outer radius (derived). Aim for the vehicle itself.
 - **The RPG-7 is never stronger than the MAAWS here, and often much weaker.** Its rocket takes 6 hits on a Humvee where the MAAWS takes 2. The Humvee's rule keeps about 0.9 of the RPG-7 rocket's damage and multiplies the MAAWS rocket's damage by 3.9.
 - **Armor angle and thickness play no part.** The damage rules for tanks look only at the type of damage and at the part that was hit, not at the angle, the thickness or the side of the armor. See [Vehicle damage](vehicle-damage.md).
-- **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. The data lists no hand-carried launcher for it.
+- **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. No hand-carried launcher is listed for it.
 - **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** It fires only while locked on, and it can lock on to helicopters and the airplane only. Its counts against ground vehicles show what the rocket would do, but in play it cannot be fired at them.
 
 The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts: it has no damage zones, so hits to it do nothing.
@@ -198,7 +198,7 @@ The Bobcat is lowest on both measures, at 250 cash per seat and 250 cash per 100
 
 - The vehicle articles linked in each table above, which are the source of every figure on this page
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)

@@ -41,7 +41,7 @@ the analysis image and is read from the restored image, as
 [IDA claim exposure](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/IDA_CLAIM_EXPOSURE.md) prescribes. The
 decompilation corpus was used read-only to locate functions and field names;
 the constants and offsets were re-read from the bytes with
-[`_tools/projectile_flight_check.py`](../_tools/projectile_flight_check.py).
+[`_tools/projectile_flight_check.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/projectile_flight_check.py).
 No game was run and no process was observed. Nothing here was fitted to
 calculator or in-game measurements.
 

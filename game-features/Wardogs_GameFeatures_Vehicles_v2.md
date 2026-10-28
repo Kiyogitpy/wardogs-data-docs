@@ -1,8 +1,8 @@
 ---
-title: "Vehicles (feature)"
+title: "Vehicles Game Feature"
 redirect_from: ["/Wardogs_GameFeatures_Vehicles_v2.html", "/Wardogs_GameFeatures_Vehicles_v2"]
 parent: "Vehicles"
-description: "Folder Layout and Family Map, Vehicle Chain: How the Assets Link, Vehicle Market, Vehicle Stats"
+description: "The vehicle packages: folder layout, vehicle chain, market prices, stats, health, seats, weapons and the projectile model."
 ---
 
 # Wardogs — GameFeatures / Vehicles Reference

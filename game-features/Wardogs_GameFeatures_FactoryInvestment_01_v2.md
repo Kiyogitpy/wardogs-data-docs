@@ -1,8 +1,8 @@
 ---
-title: "FactoryInvestment 01 (feature)"
+title: "Factory Investment 01"
 redirect_from: ["/Wardogs_GameFeatures_FactoryInvestment_01_v2.html", "/Wardogs_GameFeatures_FactoryInvestment_01_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, Investment Definition, Production Lines, Recipes"
+description: "The Factory 01 investment: its investment definition, production lines, recipes and upgrades."
 ---
 
 # Wardogs — GameFeatures: FactoryInvestment_01

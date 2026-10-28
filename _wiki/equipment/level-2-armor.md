@@ -29,13 +29,13 @@ Level 2 Armor is the second of the four vests. It protects the upper, middle and
 
 ## Overview
 
-Level 2 Armor sits between [Level 1 Armor](level-1-armor.md) and [Level 3 Armor](level-3-armor.md). The Item Shop describes it as "Medium Damage Reduction" and says it protects the upper and lower torso. The item data lists the upper, middle and lower torso.
+Level 2 Armor sits between [Level 1 Armor](level-1-armor.md) and [Level 3 Armor](level-3-armor.md). The Item Shop describes it as "Medium Damage Reduction" and says it protects the upper and lower torso. The listed areas are the upper, middle and lower torso.
 
 It goes in the Armor slot and covers nothing below the torso. Its weight of 4.5 is heavier than Level 1 Armor (3) and lighter than Level 3 Armor (10.5). For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-Level 2 Armor reduces damage at the upper, middle and lower torso by 40%. It does nothing for other body parts. The item data gives it 220 durability.
+Level 2 Armor reduces damage at the upper, middle and lower torso by 40%. It does nothing for other body parts. It has 220 durability.
 
 With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor and 16.4 HP with Level 2 Armor.
 
@@ -50,7 +50,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 
 ## Season 2 changes
 
-The Season 2 data does not change Level 2 Armor.
+Level 2 Armor did not change in Season 2.
 
 ## See also
 

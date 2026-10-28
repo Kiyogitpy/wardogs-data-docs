@@ -20,13 +20,13 @@ The Shooting Range is a practice area with no scoring. Its main feature is a mov
 
 ## Overview
 
-The range is a single playing state. It has no pre-match or post-match stages in the data, which sets it apart from the other modes. Its match scene data was added in Season 2.
+The range is a single playing state. It has no pre-match or post-match stages, which sets it apart from the other modes. Its match scene was added in Season 2.
 
 ## Rules and objectives
 
-- **No score.** The range has no objective and no win condition in the data.
-- **Moving target.** The target has 1 health, so one hit knocks it down, and the damage it takes is multiplied by 3.5. It falls in 0.5 seconds. It slides between two points 1.5 m either side of its centre (the data gives 150, read as centimetres). It takes 15 to 25 seconds to cross to its far point, and the time is picked at random for each run (the data gives no unit; seconds is assumed). It has audio for popping up and for being knocked down.
-- **Layout.** The range's world layout is a separate data layer, and its contents are not in the sources.
+- **No score.** The range has no objective and no win condition.
+- **Moving target.** The target has 1 health, so one hit knocks it down, and the damage it takes is multiplied by 3.5. It falls in 0.5 seconds. It slides between two points 1.5 m either side of its centre (the game gives 150, read as centimetres). It takes 15 to 25 seconds to cross to its far point, and the time is picked at random for each run (the game gives no unit; seconds is assumed). It has audio for popping up and for being knocked down.
+- **Layout.** The range's world layout is a separate map layer, and its contents are not in the sources.
 - **Teams.** The range uses the same three-faction setup as King of the Hill.
 - **Tutorial.** The tutorial is a separate feature that runs on top of the range. Its details are on its own data page.
 

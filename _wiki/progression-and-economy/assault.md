@@ -20,13 +20,13 @@ description: "The Assault role: 17 skills for assault rifles and SMGs, faster ai
 | Internal name | Meta.Role.Infantry, DT_InfantrySkills |
 {: .wiki-infobox }
 
-Assault is one of the six roles. Each role has its own skill set and its own mastery level. The 17 Assault skills mostly tune assault rifles and submachine guns: how fast they come up to the sights, how much they kick, and how fast they switch. The role also has movement skills for crouching, proning and tac-sprinting, and one ability, breaching doors by sprinting into them. The game files call it the Assault role internally.
+Assault is one of the six roles. Each role has its own skill set and its own mastery level. The 17 Assault skills mostly tune assault rifles and submachine guns: how fast they come up to the sights, how much they kick, and how fast they switch. The role also has movement skills for crouching, proning and tac-sprinting, and one ability, breaching doors by sprinting into them. The game calls it the Assault role internally.
 
 ## Overview
 
 Most Assault skills apply to one weapon archetype. A skill for assault rifles helps only assault rifles, and a skill for SMGs helps only SMGs. The movement and handling skills apply to the player or to the held weapon in general.
 
-Each skill's value comes from its curve at the skill's level. The game files hold no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The game has no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
 
 ## Skills
 
@@ -40,8 +40,8 @@ Each skill's value comes from its curve at the skill's level. The game files hol
 | Crouch and prone tac-sprint recovery | Tac-sprint stamina refills faster while crouched or prone. | 1, 1.2, 1.4 | Any weapon |
 | Horizontal recoil (assault rifles) | Less sideways kick. | 1, 0.8, 0.7, 0.6 | Assault rifles only |
 | Horizontal recoil (SMGs) | Less sideways kick. | 1, 0.8, 0.7, 0.6 | SMGs only |
-| Return to fire (assault rifles) | The weapon comes up faster after sprinting, using a ladder or exiting a vault. | 1, 0.8, 0.7, 0.6 | Assault rifles only. The data calls this a ready-to-fire speed. |
-| Return to fire (SMGs) | The weapon comes up faster after sprinting, using a ladder or exiting a vault. | 1, 0.8, 0.7, 0.6 | SMGs only. Same data name as above. |
+| Return to fire (assault rifles) | The weapon comes up faster after sprinting, using a ladder or exiting a vault. | 1, 0.8, 0.7, 0.6 | Assault rifles only. The game calls this a ready-to-fire speed. |
+| Return to fire (SMGs) | The weapon comes up faster after sprinting, using a ladder or exiting a vault. | 1, 0.8, 0.7, 0.6 | SMGs only. Same name as above. |
 | Sprint breach | Lets the player bash through doors by sprinting into them. | Not a number | Grants an ability |
 | Tac-sprint length | Lower tac-sprint stamina use, so the sprint lasts longer. | 1, 0.8, 0.7, 0.6 | Stamina use multiplier |
 | Tac-sprint recovery | Tac-sprint stamina refills faster. | 1, 1.2, 1.4 | Any weapon |
@@ -50,7 +50,7 @@ Each skill's value comes from its curve at the skill's level. The game files hol
 | Vertical recoil (SMGs) | Less upward kick. | 1, 0.8, 0.7, 0.6 | SMGs only |
 | Weapon switch speed | Faster switching to assault rifles and SMGs. | 1, 1.2, 1.4 | Assault rifles and SMGs |
 
-Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values. For the multiplier skills, a lower value gives a faster or less disruptive result, and the data's skill descriptions say so for aiming and recoil.
+Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values. For the multiplier skills, a lower value gives a faster or less disruptive result, and the game's skill descriptions say so for aiming and recoil.
 
 ## Mastery and rewards
 
@@ -68,12 +68,12 @@ All six roles share one mastery XP curve. The milestones for Assault are the tot
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
 - **Unlock tree.** 40 items and vehicles, from level 2 to level 50, with 1,270,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
 
 ## Unlocks
 
-Each row is one item, vehicle or attachment in the Assault unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+Each row is one item, vehicle or attachment in the Assault unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
 
 | Role level | Item | Cash |
 |---|---:|---:|

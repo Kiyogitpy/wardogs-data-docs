@@ -27,9 +27,9 @@ These challenges pay when a Hot Zone Magnet is activated or deactivated, or when
 | Magnet Deactivated | Players in range of a deactivated magnet | 2,500 | None (cash only) |
 | Tower Captured | Players in range of a captured tower | 250 for a neutral tower, 1,500 for a hostile tower (six times the neutral amount) | 100 (300 for a hostile tower) |
 
-The Tower Captured row pays players on the capturing team who are within 80 m of the tower and are neither dead nor critically wounded. A neutral tower belongs to no team and a hostile tower belongs to another team when it is taken (the exact test was not traced, so this is inferred). The tower row pays a neutral and a hostile tower at different amounts: a hostile tower pays six times the neutral cash and 300 Role XP instead of 100. The Magnet Deactivated row pays cash only. The cash table also has a magnet destroyed row worth 150 cash, which the data marks as unused.
+The Tower Captured row pays players on the capturing team who are within 80 m of the tower and are neither dead nor critically wounded. A neutral tower belongs to no team and a hostile tower belongs to another team when it is taken (the exact test was not traced, so this is inferred). The tower row pays a neutral and a hostile tower at different amounts: a hostile tower pays six times the neutral cash and 300 Role XP instead of 100. The Magnet Deactivated row pays cash only. The cash table also has a magnet destroyed row worth 150 cash, which the game marks as unused.
 
-This challenge table and the match cash table give different tower amounts: the cash table pays 1,000 for a hostile tower and 250 for a neutral one (see [Cash and Rewards](cash-and-rewards.md#zones-and-towers)). Both are in the game files, and which set a match pays is decided by the server, as for the other [King of the Hill rewards](king-of-the-hill-challenges.md).
+This challenge table and the match cash table give different tower amounts: the cash table pays 1,000 for a hostile tower and 250 for a neutral one (see [Cash and Rewards](cash-and-rewards.md#zones-and-towers)). Both are in the game, and which set a match pays is decided by the server, as for the other [King of the Hill rewards](king-of-the-hill-challenges.md).
 
 ## Season 2 changes
 

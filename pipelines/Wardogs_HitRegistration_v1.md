@@ -53,7 +53,7 @@ function cited in §9. All are identical except `0x3C95C30` (the
 stub in the analysis image and are read from the restored image, as
 [IDA claim exposure](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/IDA_CLAIM_EXPOSURE.md)
 prescribes. Byte patterns for the main claims are re-checked by
-[`_tools/hit_registration_check.py`](../_tools/hit_registration_check.py). No game was
+[`_tools/hit_registration_check.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/hit_registration_check.py). No game was
 run and no process was observed; nothing here is a runtime measurement.
 
 | Label | Meaning |

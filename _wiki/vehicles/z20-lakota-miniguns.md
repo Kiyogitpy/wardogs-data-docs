@@ -39,7 +39,7 @@ The armed Z20 is sold in the vehicle vendor under air combat, for 15,000 cash. I
 | Mass | 9,500 kg |
 | Countermeasures | Flares |
 
-The shop description says 11 passengers, which is fewer than the 13 seats on the stats sheet.
+The shop description says 11 passengers, which is fewer than the 13 seats in the vendor stats.
 
 ## Armor and damage
 
@@ -65,7 +65,7 @@ The two miniguns are fired by two dedicated gunner seats, one for the left gun a
 
 ## Vehicle spawns
 
-The Z20 Lakota [Miniguns] is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Z20 Lakota family (with and without miniguns) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Z20 Lakota [Miniguns] is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Z20 Lakota family (with and without miniguns) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -77,8 +77,8 @@ The Z20 Lakota [Miniguns] is covered by the air vehicle yards (inferred). Each s
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
 - [Round 42 weapons evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md): the body mass of this aircraft, in kilograms

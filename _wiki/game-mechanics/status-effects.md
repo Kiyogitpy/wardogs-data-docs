@@ -13,7 +13,7 @@ description: "The conditions a player can feel in Wardogs: downed and bleed-out,
 | Health regeneration | None outside Deathmatch (none found in the game code) |
 {: .wiki-infobox }
 
-A status effect is a temporary condition that changes how a player fights or moves. Some come from being hit, some from items, and some from the gear a player carries. Most are stored as gameplay effects with a multiplier, such as "movement at half speed", and the values in the data page for those effects are the source for the numbers below. Where a trigger or length is not in the data, it is marked as not yet known.
+A status effect is a temporary condition that changes how a player fights or moves. Some come from being hit, some from items, and some from the gear a player carries. Most are stored as gameplay effects with a multiplier, such as "movement at half speed", and the values on the data page for those effects are the source for the numbers below. Where a trigger or length is not yet known, it is marked as such.
 
 ## Effect table
 
@@ -34,7 +34,7 @@ A status effect is a temporary condition that changes how a player fights or mov
 | Heavy load | Equipment weight class | Slower, slower to aim and jump | While equipped | Heavy speed x0.8, super heavy jump x0.65 |
 | Aiming | Aiming down sights | Move at half speed | While aiming | Speed x0.5 |
 | Ghillie suit | Body suit and headwear both worn | Slower, quicker to aim, more sway | While worn | Aim time x0.8, aim sway x1.15 |
-| Barbed wire slow | Standing inside a barbed wire | Movement cut to 7.5% of normal speed | Not set in the data | Speed x0.075 |
+| Barbed wire slow | Standing inside a barbed wire | Movement cut to 7.5% of normal speed | Not yet known | Speed x0.075 |
 | Door breach | Breaching a door | Movement ramps down and back up | 0.8 s | Ramp curve, not a fixed number |
 | Tinnitus | Nearby explosions and backblast | Audio only: a low-pass mix | About 1.2 s (1 s hold, 0.1 s fades; derived) | Tank Helmet removes it, per the shop text |
 
@@ -44,7 +44,7 @@ When health reaches 0 the player is downed. They cannot fight, and their health 
 
 ## Bleeding and bleed-out
 
-In Wardogs, "bleeding" means the bleed-out timer. There is no damage over time: the data shows that a downed player loses no health while bleeding out, and no item cures a bleed. The timer starts at 360 s and drains at 0.5 per second in the normal state, so a player lasts about 720 s unless helped. Giving up switches the drain to 240 per second, which ends the wait in about 1.5 s. A player who was revived and goes down again starts with at least 30 s, which lasts about 60 s at the normal drain. When the timer reaches zero the player bleeds out and respawns at Headquarters.
+In Wardogs, "bleeding" means the bleed-out timer. There is no damage over time: the game shows that a downed player loses no health while bleeding out, and no item cures a bleed. The timer starts at 360 s and drains at 0.5 per second in the normal state, so a player lasts about 720 s unless helped. Giving up switches the drain to 240 per second, which ends the wait in about 1.5 s. A player who was revived and goes down again starts with at least 30 s, which lasts about 60 s at the normal drain. When the timer reaches zero the player bleeds out and respawns at Headquarters.
 
 ## Burning
 
@@ -52,18 +52,18 @@ Molotov fire creates a fire area that lasts 45 s. A player standing in it takes 
 
 ## Suppression
 
-Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value in the game data, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. Each hit near you raises a suppression strength between 0 and 1 (the bullet's value after the distance falloff, inferred) and that strength only drives two things: a screen effect and a camera shake. The data does list three things that reduce it. Heavy helmets carry a suppression multiplier of 0.32 and super-heavy helmets 0.2, which reads as cutting suppression to 32% and 20% (a reading of the effect data, not tested in play). The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but their values are not in the data. See [Body Armor](../equipment/body-armor.md) for the helmets.
+Enemy bullets that pass near a player add suppression. Each weapon has a suppression value and a distance falloff, so close shots matter more. Each bullet class has a suppression value, from 0.2 for small pistol rounds to 0.9 for 120 mm and larger rounds, and it falls off with distance. The screen effect fades at 0.4 of its rate, and the concussive variant at 0.1, lasting 2 s. Each hit near you raises a suppression strength between 0 and 1 (the bullet's value after the distance falloff, inferred) and that strength only drives two things: a screen effect and a camera shake. The game lists three things that reduce it. Heavy helmets carry a suppression multiplier of 0.32 and super-heavy helmets 0.2, which reads as cutting suppression to 32% and 20% (a reading of the effect values, not tested in play). The Tank Helmet removes it entirely while the wearer is a driver or gunner in a tracked vehicle. Two Medic skills change it (less suppression, and faster healing while suppressed), but the game gives no values for them. See [Body Armor](../equipment/body-armor.md) for the helmets.
 
 What suppression does to you, in numbers:
 
-- **Screen effect.** It uses the same screen layer as damage (blur, darkening and fading of colour share one control set), with its own suppression control. How strong the blur looks at a given strength is not in the game files, so no blur percentage can be given.
+- **Screen effect.** It uses the same screen layer as damage (blur, darkening and fading of colour share one control set), with its own suppression control. How strong the blur looks at a given strength is not known, so no blur percentage can be given.
 - **Camera shake from nearby fire.** It lasts 0.5 s. It shakes the camera sideways and forwards slightly (position strength 0.11), rolls and tilts it (rotation strength 0.45), wobbles the field of view by 0.9 and adds a colour fringe of 4.5.
 - **Camera shake from backblast and concussion.** It is stronger: rotation strength 2.0 with up to 8 degrees of pitch, 5 of yaw and 5 of roll, a field of view wobble of 6 and a colour fringe of 10, over 0.5 s with a 0.3 s fade out, followed by a 2 s darkening.
 - **No effect on aim or movement.** Nothing in the game's code reads the suppression strength to change your weapon sway, spread, recoil, aim speed or walking speed. Only the screen effect and the camera shake use it (read from the game's code, not tested in play).
 
 ## Spotted
 
-Spotting an enemy with binoculars shows that enemy to your teammates on the mini and tactical maps and in the world. A spot marker fades over 3.0 s on the spatial tracker, and the on-screen spotting overlay fades 1.0 s after the spot. A spot on infantry takes 0.5 s, and the spot fades over 30 s and is kept up to 180 s. Vehicles stay spotted for 60 to 90 s, and bases and buildings up to 3,600 s. The Recon skills multiply the spotted time and the spotting duration by 1.2 at level 2 and 1.4 at level 4. The data has no separate "marked" state: spotting is the marking. See [Spotting](spotting.md).
+Spotting an enemy with binoculars shows that enemy to your teammates on the mini and tactical maps and in the world. A spot marker fades over 3.0 s on the spatial tracker, and the on-screen spotting overlay fades 1.0 s after the spot. A spot on infantry takes 0.5 s, and the spot fades over 30 s and is kept up to 180 s. Vehicles stay spotted for 60 to 90 s, and bases and buildings up to 3,600 s. The Recon skills multiply the spotted time and the spotting duration by 1.2 at level 2 and 1.4 at level 4. The game has no separate "marked" state: spotting is the marking. See [Spotting](spotting.md).
 
 ## Adrenaline
 
@@ -71,7 +71,7 @@ The Adrenaline Pen heals nothing. It gives unlimited tactical sprint for 60 s an
 
 ## Medical use
 
-Using any medical item (bandage, First Aid Kit, Medical Bag, Adrenaline Pen, resuscitators) halves movement speed while the item is in use. The data sets no fixed duration for this, so it lasts while the action runs.
+Using any medical item (bandage, First Aid Kit, Medical Bag, Adrenaline Pen, resuscitators) halves movement speed while the item is in use. The game sets no fixed duration for this, so it lasts while the action runs.
 
 ## Enox boost
 
@@ -83,7 +83,7 @@ After a Medic revives a teammate, the Medic gets a faster sprint and tactical sp
 
 ## Falling and landing
 
-A hard landing causes damage that rises with fall speed. The data curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 6.95 m/s and reaches 100 at 17 m/s. A landing also briefly changes weapon sway and dips the weapon, for about 0.6 s.
+A hard landing causes damage that rises with fall speed. The game's curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 6.95 m/s and reaches 100 at 17 m/s. A landing also briefly changes weapon sway and dips the weapon, for about 0.6 s.
 
 ## Movement sway
 
@@ -103,7 +103,7 @@ Barbed wire has an effect that sets movement to 7.5% of normal speed. It is appl
 
 ## Not yet known
 
-- How strong the suppression blur and darkening look at a given strength. The screen effect's formula is not in the exported game files, and the game was not run.
+- How strong the suppression blur and darkening look at a given strength. The screen effect's formula is not known, and the game was not run.
 - Whether a rule outside the damage tables switches friendly fire off for fire.
 
 ## See also

@@ -3,12 +3,13 @@ title: "Game Mechanics"
 nav_order: 4
 wiki_hub: true
 has_children: true
+has_toc: false
 description: "How health, armor, bullets, movement, reviving and spotting work, explained from the game's numbers."
 ---
 
 # Game Mechanics
 
-These articles explain the rules of combat and movement in Wardogs: how much damage a hit does, how bullets fly and bounce, how fast players move, and how a downed teammate is revived. Every figure comes from the game's data, and anything the data does not settle is marked as not yet known.
+These articles explain the rules of combat and movement in Wardogs: how much damage a hit does, how bullets fly and bounce, how fast players move, and how a downed teammate is revived. Every figure comes from the game, and anything that is not settled is marked as not yet known.
 
 ## Articles
 

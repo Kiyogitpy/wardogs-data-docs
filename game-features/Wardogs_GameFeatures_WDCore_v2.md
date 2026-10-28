@@ -1,8 +1,8 @@
 ---
-title: "WDCore (feature)"
+title: "WD Core"
 redirect_from: ["/Wardogs_GameFeatures_WDCore_v2.html", "/Wardogs_GameFeatures_WDCore_v2"]
 parent: "Engine & Tooling Data"
-description: "What This Folder Holds, Components, Pawn Data Scan, Animation Set"
+description: "The core player-character pack: player pawn data, the aim-assist target manager and the character animation set."
 ---
 
 # Wardogs — GameFeatures: WDCore

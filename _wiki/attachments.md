@@ -3,13 +3,14 @@ title: Attachments
 nav_order: 1.5
 wiki_hub: true
 has_children: true
+has_toc: false
 redirect_from: ["/wiki/weapons/attachments/"]
 description: "The parts that fit on weapons, the slots they go into and what each category changes."
 ---
 
 # Attachments
 
-Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. The table lists each slot type in the data, how many parts it has and what it is for. The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.
+Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. The table lists each slot type, how many parts it has and what it is for. The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.
 
 | Category | Parts | What it is |
 |---|---|---|
@@ -39,7 +40,7 @@ Each weapon article lists its own slots and default parts under its Attachments 
 
 - [Choosing Attachments](guides/choosing-attachments.md), which part to pick in each category and the cheapest useful picks
 - [Spread and Recoil](game-mechanics/spread-and-recoil.md), where bipods, muzzle devices and foregrips change spread
-- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the data
+- [Underbarrel Grenade Launcher (test item)](attachments/underbarrel-grenade-launcher.md), a 40 mm launcher attachment named as a test item in the game
 - [Weapons](weapons.md)
 
 ## Sources

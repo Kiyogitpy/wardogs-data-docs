@@ -45,7 +45,7 @@ The sources list 108 challenge definitions in nine tables. Each table is one cat
 
 ## Tips
 
-Tips are a reward for teamwork. The data lists tip tiers for five actions, and a pre-tip bonus:
+Tips are a reward for teamwork. The game lists tip tiers for five actions, and a pre-tip bonus:
 
 | Tip for | Tier 1 | Tier 2 | Tier 3 | Tier 4 |
 |---|---|---|---|---|
@@ -55,7 +55,7 @@ Tips are a reward for teamwork. The data lists tip tiers for five actions, and a
 | Repair | 5 | 10 | 15 | 20 |
 | Refuel | 5 | 10 | 15 | 20 |
 
-A pre-tip pays 50 cash for each tip, capped at 500. The unit for the tier values is not stated in the data, apart from the pre-tip bonus, which is cash.
+A pre-tip pays 50 cash for each tip, capped at 500. The unit for the tier values is not stated, apart from the pre-tip bonus, which is cash.
 
 ## Numbers
 

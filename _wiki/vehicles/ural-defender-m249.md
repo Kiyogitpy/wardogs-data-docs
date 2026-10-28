@@ -25,7 +25,7 @@ The Ural Defender [M249] is the armored version of the [Ural Defender](ural-defe
 
 ## Overview
 
-The Ural Defender [M249] is sold in the vehicle vendor under land transport, for 9,500 cash, and unlocks at level 0. Its Season 2 price went up from 6,750. Its stats sheet and health match the Ural family.
+The Ural Defender [M249] is sold in the vehicle vendor under land transport, for 9,500 cash, and unlocks at level 0. Its Season 2 price went up from 6,750. Its vendor stats and health match the Ural family.
 
 ## Stats
 
@@ -38,11 +38,11 @@ The Ural Defender [M249] is sold in the vehicle vendor under land transport, for
 | Mass | 10,000 (as stored, unit not stated) |
 | Countermeasures | Not stated |
 
-The seat data has 5 setups, but the stats sheet gives 3 seats. The data does not show why they differ.
+There are 5 seat setups, but the vendor stats give 3 seats. Why they differ is not shown.
 
 ## Armor and damage
 
-Main health is 700 HP. Its engine, fuel tank and wheels match the [Ural](ural.md). The data uses the Ural damage table for this variant:
+Main health is 700 HP. Its engine, fuel tank and wheels match the [Ural](ural.md). This variant uses the Ural damage table:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -59,13 +59,13 @@ Main health is 700 HP. Its engine, fuel tank and wheels match the [Ural](ural.md
 |---|---|---:|---:|---:|---:|
 | M249 Machine Gun (mounted) | Machine gun | 850 rounds/min | 700 m | 4.25 s | 0 (tracer) |
 
-The gun fires 850 rounds/min out to 700 m. The data gives the reload time and the starting ammunition too (none loaded at the start, tracer rounds).
+The gun fires 850 rounds/min out to 700 m. The reload time and the starting ammunition are listed too (none loaded at the start, tracer rounds).
 
 ## Handling
 
 Handling matches the Ural: mass 10,000, hand brake 50, and front steering of 30 degrees.
 
-- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes
 
@@ -74,7 +74,7 @@ Handling matches the Ural: mass 10,000, hand brake 50, and front steering of 30 
 
 ## Vehicle spawns
 
-The Ural Defender [M249] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Ural, Ural Defender and Ural Defender [M249]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Ural Defender [M249] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Ural, Ural Defender and Ural Defender [M249]), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -86,8 +86,8 @@ The Ural Defender [M249] is placed by the ground vehicle yards of all four main 
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article

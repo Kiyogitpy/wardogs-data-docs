@@ -30,7 +30,7 @@ The Emergency Resuscitator revives a downed teammate. It is a single-use item, a
 
 ## Overview
 
-The shop describes the item as a one-per-life emergency revive that revives teammates faster and is single use. The shop data lists its price as 0, and the game files show no vendor, loot or unlock that gives it. The Field Resuscitator is the other item of this type, with the same use behavior.
+The shop describes the item as a one-per-life emergency revive that revives teammates faster and is single use. The shop lists its price as 0, and no vendor, loot or unlock that gives it is known. The Field Resuscitator is the other item of this type, with the same use behavior.
 
 ## Effects
 
@@ -41,7 +41,7 @@ The shop describes the item as a one-per-life emergency revive that revives team
 
 ### Medic skills
 
-The Medic skill for base revive speed covers only the bare-hands revive, not this item, and it has no number in the data. The post-revive sprint boost applies after you revive a teammate, and it gives both you and the revived teammate 1.2 or 1.4 times sprint speed for 5 s.
+The Medic skill for base revive speed covers only the bare-hands revive, not this item, and no number is known for it. The post-revive sprint boost applies after you revive a teammate, and it gives both you and the revived teammate 1.2 or 1.4 times sprint speed for 5 s.
 
 ## Use and timing
 
@@ -49,11 +49,11 @@ The use animation is 2.2 s, and the revive is applied at the end of it, so the t
 
 ## Cost
 
-The shop data lists a price of 0 for this item, and a buy limit of 1, shown in the shop text as one per life.
+The shop lists a price of 0 for this item, and a buy limit of 1, shown in the shop text as one per life.
 
 ## Season 2 changes
 
-No Season 2 change to this item is listed in the data.
+No Season 2 change to this item is listed.
 
 ## See also
 

@@ -28,7 +28,7 @@ description: "A large wall built only with the Large Hammer, from 32 Build Suppl
 | Internal name | `DA_Buildable_BremmerWall` |
 {: .wiki-infobox }
 
-The Bremer Wall has 6,500 HP, the most of any wall in the data, and only the Large Hammer can build it. Bullets and melee do 20% of their normal damage to it.
+The Bremer Wall has 6,500 HP, the most of any wall, and only the Large Hammer can build it. Bullets and melee do 20% of their normal damage to it.
 
 ## Overview
 
@@ -53,11 +53,11 @@ Destroying an enemy Bremer Wall pays 30 cash and 10 Role XP.
 
 Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
-The Large Hammer is the only one that can place the Bremer Wall. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits.
+The Large Hammer is the only one that can place the Bremer Wall. The repair and dismantle hits for the other hammers are what their hits do; they have not been verified for this structure. The build count assumes normal hits.
 
 ## What it does
 
-The Bremer Wall is cover and an obstacle. The data gives it no effect beyond its health and how it takes damage.
+The Bremer Wall is cover and an obstacle. It has no effect beyond its health and how it takes damage.
 
 ## Durability
 

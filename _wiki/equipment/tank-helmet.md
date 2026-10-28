@@ -19,7 +19,7 @@ description: "Vehicle-use helmet: 55% reduction for the head and neck, removes s
 | Body parts covered | Head and neck |
 | Durability | 180 |
 | **Availability** | |
-| Price | Not sold (hidden in the shop; the data lists 5,000 cash) |
+| Price | Not sold (hidden in the shop; a price of 5,000 cash is listed) |
 | Unlock | Not applicable |
 | **Reference** | |
 | Internal name | `ID_TankHelmet` (item `Id.Item.TankHelmet`) |
@@ -31,11 +31,11 @@ The Tank Helmet has a 55% reduction for the head and neck, which is between the 
 
 The Item Shop describes the Tank Helmet as "High Damage Reduction", and lists the audio and suppression effects. The shop files it under "Vehicle Use" rather than "Armor". It goes in the Helmet slot.
 
-The item data omits the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The weight is not listed, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-The Tank Helmet reduces damage to the head and neck by 55%. It does nothing for the body. The item data gives it 180 durability.
+The Tank Helmet reduces damage to the head and neck by 55%. It does nothing for the body. It has 180 durability.
 
 With M4 full-metal-jacket rounds:
 
@@ -57,7 +57,7 @@ Suppression on the wearer is set per bullet class (0.2 for small pistol rounds t
 
 ## Season 2 changes
 
-The Season 2 data does not change the Tank Helmet.
+The Tank Helmet did not change in Season 2.
 
 ## See also
 

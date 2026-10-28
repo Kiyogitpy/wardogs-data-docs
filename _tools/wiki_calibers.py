@@ -120,7 +120,7 @@ def build(key):
 
     n = len(ws)
     noun = "shells" if is_shell else "rounds"
-    lead = (f"The {title} caliber is used by {n} weapon{'s' if n != 1 else ''} in the weapon data, "
+    lead = (f"The {title} caliber is used by {n} weapon{'s' if n != 1 else ''}, "
             f"across the {', '.join(classes[:-1]) + ' and ' + classes[-1] if len(classes) > 1 else classes[0]} "
             f"class{'es' if len(classes) > 1 else ''}. "
             f"Its {noun} are {', '.join(SHORT[b] for b in base_ids)}. "
@@ -151,7 +151,7 @@ def build(key):
         pell = base.get("pellets")
         dmg_txt = f"{tor:.1f}" + (f" per pellet ({pell} pellets)" if pell else "")
         out.append(f"| [{W.page_title(wid)}]({W.slugify(W.page_title(wid))}.md) | {s['cls']} | "
-                   f"{s['rpm'].replace(' (class default)', '')} | {dmg_txt} |")
+                   f"{s['rpm']} | {dmg_txt} |")
     out.append("")
     out += ["Point-blank figures use standard rounds (buckshot for shotguns, per pellet), per hit, without falloff. "
             "See [Ammunition](../ammunition.md) for the bullet types.", ""]
@@ -191,9 +191,9 @@ def build(key):
         notes.append(f"A buckshot shot has {pellets} pellets, so multiply the per-pellet figure by {pellets} "
                      "for a full hit.")
     if tracer_note:
-        notes.append(f"{', '.join(tracer_note)} match their base type in the data.")
+        notes.append(f"{', '.join(tracer_note)} match their base type.")
     elif any(a == "Tracer" for a, _ in rows) and any("Tracer" in x for x in ad):
-        notes.append("Tracer rounds do the same damage as their base type in the data.")
+        notes.append("Tracer rounds do the same damage as their base type.")
     if notes:
         out += [" ".join(notes), ""]
 
@@ -222,7 +222,7 @@ def build(key):
         take.append(cross_text("A rifled slug", "a full buckshot shot", sl, full,
                                pellets_note=f" if all {pellets} pellets hit"))
     if not take:
-        take.append("The data gives no armor comparison between bullet types for this caliber.")
+        take.append("No armor comparison between bullet types is known for this caliber.")
     out += [f"- {t}" for t in take]
     out += ["", "The numbers come from the upper torso column of the table above. Head hits follow the same "
             "pattern at higher values; see [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md).", ""]

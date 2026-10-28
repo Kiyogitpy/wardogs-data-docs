@@ -1,6 +1,8 @@
-# Wiki main page portal boxes (rendered by _includes/wiki-portal.html). icon = a Material
-# Symbols Sharp name; url = site path, passed through relative_url.
-- title: Arsenal
+# Wiki main page portal boxes (rendered by _includes/wiki-front-portals.html). icon = a Material
+# Symbols Sharp name; url = site path, passed through relative_url. `more` is the footer link to
+# the box's hub, where every article of the area is listed.
+- title: Weapons
+  more: { label: All weapons, url: /wiki/weapons/ }
   tiles:
     - { label: Assault rifles, icon: target, url: /wiki/weapons/#assault-rifles }
     - { label: Marksman rifles, icon: my_location, url: /wiki/weapons/#marksman-rifles }
@@ -13,25 +15,15 @@
     - { label: Ammunition, icon: inventory_2, url: /wiki/ammunition/ }
     - { label: Attachments, icon: build, url: /wiki/attachments/ }
 - title: Gear
+  more: { label: All gear, url: /wiki/equipment/ }
   tiles:
     - { label: Body armor, icon: shield, url: /wiki/equipment/body-armor/ }
     - { label: Medical items, icon: medical_services, url: /wiki/equipment/medical-items/ }
     - { label: Grenades and explosives, icon: explosion, url: /wiki/equipment/grenades-and-explosives/ }
     - { label: "Fire, smoke and flash", icon: local_fire_department, url: /wiki/equipment/fire-smoke-and-flash/ }
     - { label: Utility items, icon: backpack, url: /wiki/equipment/utility-items/ }
-- title: Building
-  tiles:
-    - { label: Building overview, icon: construction, url: /wiki/building/ }
-    - { label: Forward Operating Base, icon: flag, url: /wiki/building/forward-operating-base/ }
-    - { label: Bunker, icon: security, url: /wiki/building/bunker/ }
-    - { label: Sandbag Wall, icon: grain, url: /wiki/building/sandbag-wall/ }
-    - { label: Drill Rig, icon: radar, url: /wiki/building/drill-rig/ }
-    - { label: Talon 9K-SAM, icon: rocket_launch, url: /wiki/building/talon-9k-sam/ }
-    - { label: Vanguard CIWS, icon: gps_fixed, url: /wiki/building/vanguard-ciws/ }
-    - { label: MG Nest, icon: bolt, url: /wiki/building/mg-nest/ }
-    - { label: L81 Mortar, icon: architecture, url: /wiki/building/l81-mortar/ }
-    - { label: Stingray, icon: near_me, url: /wiki/building/stingray/ }
 - title: Vehicles
+  more: { label: All vehicles, url: /wiki/vehicles/ }
   tiles:
     - { label: Helicopters, icon: helicopter, url: /wiki/vehicles/#helicopters }
     - { label: Armored vehicles, icon: security, url: /wiki/vehicles/#armored-vehicles }
@@ -39,7 +31,17 @@
     - { label: Aircraft, icon: flight, url: /wiki/vehicles/#aircraft }
     - { label: Vehicle damage, icon: crisis_alert, url: /wiki/vehicles/vehicle-damage/ }
     - { label: Vehicle weapons, icon: swords, url: /wiki/vehicles/vehicle-weapons/ }
-- title: Systems
+- title: Building
+  more: { label: All buildables, url: /wiki/building/ }
+  tiles:
+    - { label: Building overview, icon: construction, url: /wiki/building/ }
+    - { label: Forward Operating Base, icon: flag, url: /wiki/building/forward-operating-base/ }
+    - { label: Bunker, icon: security, url: /wiki/building/bunker/ }
+    - { label: Sandbag Wall, icon: grain, url: /wiki/building/sandbag-wall/ }
+    - { label: Drill Rig, icon: radar, url: /wiki/building/drill-rig/ }
+    - { label: Talon 9K-SAM, icon: rocket_launch, url: /wiki/building/talon-9k-sam/ }
+- title: Game systems
+  more: { label: All mechanics, url: /wiki/game-mechanics/ }
   tiles:
     - { label: Health and damage, icon: favorite, url: /wiki/game-mechanics/health-and-damage/ }
     - { label: Armor, icon: shield_with_heart, url: /wiki/game-mechanics/armor/ }
@@ -52,10 +54,14 @@
     - { label: Hit registration, icon: vital_signs, url: /wiki/game-mechanics/hit-registration/ }
     - { label: Artillery, icon: track_changes, url: /wiki/game-mechanics/artillery/ }
     - { label: Status effects, icon: healing, url: /wiki/game-mechanics/status-effects/ }
-- title: Play
+- title: Modes and maps
+  more: { label: All modes and maps, url: /wiki/game-modes-and-maps/ }
   tiles:
     - { label: Game modes, icon: flag, url: /wiki/game-modes-and-maps/ }
     - { label: Maps, icon: map, url: /wiki/game-modes-and-maps/maps/ }
+- title: Progression and economy
+  more: { label: All progression, url: /wiki/progression-and-economy/ }
+  tiles:
     - { label: Cash and rewards, icon: payments, url: /wiki/progression-and-economy/cash-and-rewards/ }
     - { label: Currencies, icon: diamond, url: /wiki/progression-and-economy/currencies/ }
     - { label: Skills, icon: military_tech, url: /wiki/progression-and-economy/skills/ }
@@ -64,20 +70,11 @@
     - { label: Factory investment, icon: factory, url: /wiki/progression-and-economy/factory-investment/ }
     - { label: Cosmetics, icon: checkroom, url: /wiki/progression-and-economy/cosmetics/ }
 - title: Guides
+  more: { label: All guides, url: /wiki/guides/ }
   tiles:
     - { label: "Beginner's guide", icon: school, url: /wiki/guides/beginners-guide/ }
-    - { label: Choosing ammo, icon: category, url: /wiki/guides/choosing-ammo/ }
-    - { label: Choosing attachments, icon: build, url: /wiki/guides/choosing-attachments/ }
-    - { label: Aiming the SPH-2, icon: explore, url: /wiki/guides/aiming-the-sph-2/ }
-    - { label: Making money, icon: payments, url: /wiki/guides/making-money/ }
     - { label: Choosing a role, icon: badge, url: /wiki/guides/choosing-a-role/ }
-    - { label: King of the Hill guide, icon: flag, url: /wiki/guides/king-of-the-hill-guide/ }
-    - { label: Infantry combat guide, icon: military_tech, url: /wiki/guides/infantry-combat-guide/ }
-    - { label: Building a base, icon: construction, url: /wiki/guides/building-guide/ }
-    - { label: Vehicle guide, icon: directions_car, url: /wiki/guides/vehicle-guide/ }
-    - { label: Anti-vehicle guide, icon: gps_fixed, url: /wiki/guides/anti-vehicle-guide/ }
-    - { label: Helicopter guide, icon: flight, url: /wiki/guides/helicopter-guide/ }
-    - { label: PvE guide, icon: pest_control, url: /wiki/guides/pve-guide/ }
+    - { label: Choosing ammo, icon: category, url: /wiki/guides/choosing-ammo/ }
+    - { label: Making money, icon: payments, url: /wiki/guides/making-money/ }
     - { label: Frequently asked questions, icon: auto_stories, url: /wiki/guides/faq/ }
     - { label: Glossary, icon: menu_book, url: /wiki/guides/glossary/ }
-    - { label: Season 2 patch notes, icon: new_releases, url: /wiki/patch-notes/season-2/ }

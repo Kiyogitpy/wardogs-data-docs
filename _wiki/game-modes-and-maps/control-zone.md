@@ -34,7 +34,7 @@ Each map has a Control Zone configuration that sets the size of the zone, the si
 
 ### Zone sizes
 
-Sizes are the data values converted to metres. Height is the vertical extent.
+Sizes are the game's values converted to metres. Height is the vertical extent.
 
 | Map | Control Zone (m) | Hot Zone (m) | Placements |
 |---|---|---|---|
@@ -46,7 +46,7 @@ Sizes are the data values converted to metres. Height is the vertical extent.
 | Bakurani Outskirts (Sniper Showdown) | 350 × 350 × 170 | 75 × 75 × 170 | None (fixed spot) |
 | Sniper Showdown, North America and Russia zones | 350 × 350 × 170 | 75 × 75 × 170 | None (fixed spot) |
 
-The Zestafona Hot Zone is 850 m tall against a 500 m tall Control Zone. The data does not say whether that is intended.
+The Zestafona Hot Zone is 850 m tall against a 500 m tall Control Zone. The game does not say whether that is intended.
 
 ### Alternative placements
 

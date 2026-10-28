@@ -20,7 +20,7 @@ Body armor is worn in two separate slots. A vest protects the torso, and on the 
 
 ## Overview
 
-The armor levels are named by tier in the game. The vests are the "Level 1" to "Level 4" armors, and the helmets are the "Level 1" to "Level 4" helmets, with the Pilot and Tank helmets as separate pieces. The Ghillie suit and Ghillie headwear are camouflage. The data gives them no damage reduction.
+The armor levels are named by tier in the game. The vests are the "Level 1" to "Level 4" armors, and the helmets are the "Level 1" to "Level 4" helmets, with the Pilot and Tank helmets as separate pieces. The Ghillie suit and Ghillie headwear are camouflage. They give no damage reduction.
 
 Tactical vests are a different item. They add quick slots and do not protect against damage. See [Utility Items](utility-items.md).
 
@@ -51,10 +51,10 @@ Each vest and helmet has its own article.
 | Level 2 Helmet | 40% | Head | 100 | 1.6 | 500 | |
 | Level 3 Helmet | 50% | Head and neck | 180 | 3 | 2,000 | Low suppression reduction |
 | Level 4 Helmet | 60% | Head and neck | 200 | 4.5 | 4,500 | High suppression reduction; strongly muffles nearby sound |
-| Pilot Helmet | 30% | Head | 180 | 1 | not sold (data value 6,400) | Muffles vehicle audio; highlights target vehicles |
-| Tank Helmet | 55% | Head and neck | 180 | 1 | not sold (data value 5,000) | Muffles vehicle and infantry audio; removes suppression and tinnitus |
+| Pilot Helmet | 30% | Head | 180 | 1 | not sold (hidden price 6,400) | Muffles vehicle audio; highlights target vehicles |
+| Tank Helmet | 55% | Head and neck | 180 | 1 | not sold (hidden price 5,000) | Muffles vehicle and infantry audio; removes suppression and tinnitus |
 
-The Pilot and Tank helmets are marked as hidden in the shop data, so they do not appear in the shop listing. The data values are shown for reference.
+The Pilot and Tank helmets are marked as hidden in the shop, so they do not appear in the shop listing. Their values are shown for reference.
 
 ### What the reduction does
 
@@ -77,7 +77,7 @@ The reduction is applied to each hit at a covered body part. Taking the M4 with 
 
 Read the table as: a Level 3 vest turns a 27.3 HP upper-torso hit into 13.6 HP. Each weapon and ammunition type has its own numbers, so the M4 values are an example, not a rule. The full per-weapon tables are on the [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) data page.
 
-**Lower arms, hands and legs have no armor.** No vest or helmet covers them in the data. A hit there takes the full damage listed in the no-armor column.
+**Lower arms, hands and legs have no armor.** No vest or helmet covers them. A hit there takes the full damage listed in the no-armor column.
 
 ### Durability
 
@@ -85,7 +85,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 
 ## Use and timing
 
-Armor vests go in the Armor slot and helmets in the Helmet slot. Tactical vests use a separate Tac-Vest slot, so they do not take up the Armor slot. The data has one Armor slot and one Helmet slot, so two armor vests or two helmets are not worn together. No put-on or take-off time for armor appears in the game data, so none is listed.
+Armor vests go in the Armor slot and helmets in the Helmet slot. Tactical vests use a separate Tac-Vest slot, so they do not take up the Armor slot. There is one Armor slot and one Helmet slot, so two armor vests or two helmets are not worn together. No put-on or take-off time for armor appears in the game files, so none is listed.
 
 ## Cost
 
@@ -104,7 +104,7 @@ Prices are in the tables above. The Level 1 and Level 2 pieces cost 200 to 1,000
 | Level 3 Helmet price | 1,500 | 2,000 |
 | Level 4 Helmet price | 3,000 | 4,500 |
 
-The Level 1 and Level 2 armor and helmets, and the Pilot and Tank helmets, did not change in the Season 2 data.
+The Level 1 and Level 2 armor and helmets, and the Pilot and Tank helmets, did not change in Season 2.
 
 ## See also
 

@@ -2,7 +2,7 @@
 title: "Season 1 Cosmetics"
 parent: "Progression & Economy"
 group: "Cosmetics"
-description: "Every Season 1 cosmetic: three skin sets and three emotes, their Gold Bar prices, and what the data says about how they were earned."
+description: "Every Season 1 cosmetic: three skin sets and three emotes, their Gold Bar prices, and what the game says about how they were earned."
 ---
 
 # Season 1 Cosmetics
@@ -17,17 +17,17 @@ description: "Every Season 1 cosmetic: three skin sets and three emotes, their G
 | Internal name | Season 1 cosmetic tables and the Season 1 season definition table (`DT_Cosmetics_Season01_Skins`, `DT_Cosmetics_Season01_Emotes`, `DT_SeasonDefinitions`) |
 {: .wiki-infobox }
 
-Season 1 added three skin sets and three emotes. Every Season 1 cosmetic that has a price is sold on the Gold Market. The data does not say when a Season 1 cosmetic could be obtained, because there is no season reward track and the season schedule is a server value.
+Season 1 added three skin sets and three emotes. Every Season 1 cosmetic that has a price is sold on the Gold Market. The game does not say when a Season 1 cosmetic could be obtained, because there is no season reward track and the season schedule is a server value.
 
 ## Overview
 
-The list below is the full Season 1 cosmetic set from the data. Each row is one item, vehicle or emote in one set. Prices come from the Gold Market table. The three faction logos and the bobbleheads are not in the Season 1 cosmetic table, so they are covered on [Weapon Skins](weapon-skins.md) and [Vehicle Skins](vehicle-skins.md).
+The list below is the full Season 1 cosmetic set. Each row is one item, vehicle or emote in one set. Prices come from the Gold Market table. The three faction logos and the bobbleheads are not in the Season 1 cosmetic table, so they are covered on [Weapon Skins](weapon-skins.md) and [Vehicle Skins](vehicle-skins.md).
 
 ## Season 1 list
 
 | Cosmetic | Type | Skin set | Price (Gold Bars) | How it was earned |
 |---|---|---|---|---|
-| AK74 | Weapon skin | Black and Gold | Not sold | No Gold Market listing and no price in the data |
+| AK74 | Weapon skin | Black and Gold | Not sold | No Gold Market listing and no price |
 | GGX 17 | Weapon skin | Digital Wood | 5 | Gold Market |
 | M4 | Weapon skin | Digital Wood | 10 | Gold Market |
 | SV98 | Weapon skin | Digital Wood | 10 | Gold Market |
@@ -52,9 +52,9 @@ The 19 Gold Market rows are worth 170 Gold Bars in total: 16 skins worth 155, an
 
 ## How they were earned
 
-- **Gold Market.** This is the only purchase route the data shows. Gold Bars are covered in [Currencies](currencies.md).
-- **No reward track.** The client's season definition has a current season number of 1 and an empty list of season levels. The season's dates and names come from the server. No level, date or achievement unlocks a Season 1 cosmetic in the data.
-- **AK74 Black and Gold.** This is the one Season 1 weapon skin with no Gold Market row. The data gives it no price, so it can only come from a server grant, which the client data does not show.
+- **Gold Market.** This is the only purchase route the game shows. Gold Bars are covered in [Currencies](currencies.md).
+- **No reward track.** The client's season definition has a current season number of 1 and an empty list of season levels. The season's dates and names come from the server. No level, date or achievement unlocks a Season 1 cosmetic.
+- **AK74 Black and Gold.** This is the one Season 1 weapon skin with no Gold Market row. The game gives it no price, so it can only come from a server grant, and which grants are made is not known.
 
 ## Season 2 changes
 
@@ -71,8 +71,8 @@ Season 1 rows are unchanged in Season 2, and none was removed. Season 2 adds a L
 ## Sources
 
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
-- [Skins (feature)](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
-- [Emotes (feature)](../../game-features/Wardogs_GameFeatures_Emotes_v2.md)
+- [Skins](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
+- [Emotes](../../game-features/Wardogs_GameFeatures_Emotes_v2.md)
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Gold Market prices
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)

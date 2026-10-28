@@ -1,8 +1,8 @@
 ---
-title: "Deathmatch (feature)"
+title: "Deathmatch"
 redirect_from: ["/Wardogs_GameFeatures_Deathmatch_v2.html", "/Wardogs_GameFeatures_Deathmatch_v2"]
 parent: "Game Modes & Maps"
-description: "What This Folder Holds, Match Flow, Components, Input, Registries and HUD"
+description: "The team deathmatch mode: a weapon-select screen before spawn, health regeneration and a loadout that generates ammo."
 ---
 
 # Wardogs — GameFeatures: Deathmatch

@@ -22,7 +22,7 @@ description: "Bipods and the Grip Pod: the bipods that limit how far a weapon tu
 | Internal name | `Item.Attachment.Bipod` |
 {: .wiki-infobox }
 
-Bipods are folding legs that mount under the weapon. The data lists 9 parts: eight bipods and the Grip Pod, which the data files with them. Only the Grip Pod changes weapon or character numbers. The eight bipods change none; what they do in the data is limit how far the weapon can turn while mounted.
+Bipods are folding legs that mount under the weapon. There are 9 parts: eight bipods and the Grip Pod, which the data files with them. Only the Grip Pod changes weapon or character numbers. The eight bipods change none; what they do in the data is limit how far the weapon can turn while mounted.
 
 ## What they change
 
@@ -32,13 +32,13 @@ Grip Pod, character side: aim sway speed x0.95; aim sway horizontal x0.9; aim sw
 
 The eight bipods list only multipliers of 1, so their weapon numbers stay as they are.
 
-Mounted bipods: the data gives a separate effect list for the weapon and the character while a bipod is mounted, and that list replaces the unfolded one.
+Mounted bipods: there is a separate effect list for the weapon and the character while a bipod is mounted, and that list replaces the unfolded one.
 
-Stance limits: while mounted, each bipod sets how far the weapon can turn in each stance. Pitch lock runs from 15 to 50, yaw lock from 35 to 55, and the maximum change is 45 in yaw and 45 in pitch. The data gives these as angles, and the degree unit is inferred from the field names.
+Stance limits: while mounted, each bipod sets how far the weapon can turn in each stance. Pitch lock runs from 15 to 50, yaw lock from 35 to 55, and the maximum change is 45 in yaw and 45 in pitch. These are given as angles, and the degree unit is inferred from the field names.
 
 ## Parts
 
-Bipods are sold in the Weapon Shop, so most rows have a price. The Grip Pod has no shop price in the data.
+Bipods are sold in the Weapon Shop, so most rows have a price. The Grip Pod has no shop price.
 
 | | Part | Fits | Shop price | Main effect |
 |---|---|---|---:|---|

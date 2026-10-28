@@ -2,7 +2,7 @@
 title: "Emotes"
 parent: "Progression & Economy"
 group: "Cosmetics"
-description: "The six emotes in the data, which three are sold on the Gold Market for 5 Gold Bars, and how the others are unlocked."
+description: "The six emotes, which three are sold on the Gold Market for 5 Gold Bars, and how the others are unlocked."
 ---
 
 # Emotes
@@ -15,7 +15,7 @@ description: "The six emotes in the data, which three are sold on the Gold Marke
 | Internal name | Emote entity and cosmetic tables (`DT_EntityData_Ext_Emotes`, `DT_Cosmetics_Season01_Emotes`) |
 {: .wiki-infobox }
 
-An emote is an action a player can perform with their character. Each emote has a name and an action. Three emotes are sold on the Gold Market. Rock, Paper and Scissors have no sale entry in the data.
+An emote is an action a player can perform with their character. Each emote has a name and an action. Three emotes are sold on the Gold Market. Rock, Paper and Scissors have no sale entry.
 
 ## Overview
 
@@ -28,21 +28,21 @@ All six emotes use the same placeholder icon in this build, so none has final ar
 | Middle Finger | 5 | Gold Market |
 | Rock Paper Scissors | 5 | Gold Market |
 | Shh | 5 | Gold Market |
-| Paper | Not sold | No price in the data |
-| Rock | Not sold | Not in the game files |
-| Scissors | Not sold | Not in the game files |
+| Paper | Not sold | No price |
+| Rock | Not sold | Not in the game |
+| Scissors | Not sold | Not in the game |
 
-The three priced emotes are worth 15 Gold Bars in total. Rock Paper Scissors is the combined emote. The data does not confirm how it relates to Rock, Paper and Scissors.
+The three priced emotes are worth 15 Gold Bars in total. Rock Paper Scissors is the combined emote. The game does not confirm how it relates to Rock, Paper and Scissors.
 
 ## Cost and unlocking
 
 - **Gold Market.** Shh, Rock Paper Scissors and Middle Finger are bought with Gold Bars. Gold Bars are covered in [Currencies](currencies.md).
-- **Rock, Paper and Scissors.** These have an emote entry but no cosmetic row, so the data gives them no price and no unlock. The game files hold no price or unlock for them, so how they are obtained is not shown.
+- **Rock, Paper and Scissors.** These have an emote entry but no cosmetic row, so the game gives them no price and no unlock. The game has no price or unlock for them, so how they are obtained is not shown.
 - **No level gate.** The season schedule that would tie an emote to a level is empty in this build. See [Season 1 Cosmetics](season-01-cosmetics.md).
 
-## Not yet in the data
+## Not yet in the game
 
-The data does not include the animation, sound or visual effects of any emote, or the rules that run when an emote is used.
+The game does not include the animation, sound or visual effects of any emote, or the rules that run when an emote is used.
 
 ## See also
 
@@ -53,7 +53,7 @@ The data does not include the animation, sound or visual effects of any emote, o
 
 ## Sources
 
-- [Emotes (feature)](../../game-features/Wardogs_GameFeatures_Emotes_v2.md)
+- [Emotes](../../game-features/Wardogs_GameFeatures_Emotes_v2.md)
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the Gold Market prices
 - [Data tables: Economy and Rewards](../../content/Wardogs_DataTables_Economy_v1.md), the Gold Market table

@@ -18,7 +18,7 @@ description: "Default keyboard and mouse controls grouped by movement, combat, v
 | **Internal name** | IA_* input actions, DA_Setting_* settings |
 {: .wiki-infobox }
 
-This article lists the default controls for infantry, vehicles and building, and the settings that change how the game feels to play: aim, field of view and the HUD. The defaults come from the game data. The numbers were read from the data and have not been checked in the game, so a value in the options menu may differ from the one listed here.
+This article lists the default controls for infantry, vehicles and building, and the settings that change how the game feels to play: aim, field of view and the HUD. The defaults come from the game itself. The numbers were read from the game's code and have not been checked in the game, so a value in the options menu may differ from the one listed here.
 
 ## Controls
 
@@ -136,11 +136,11 @@ Building uses the hammer and build tool.
 | Pause menu | Escape or F10 |
 | Tips | F1 |
 
-Each control has a gamepad default in the data as well. The full list, including gamepad and flight stick (HOTAS) defaults, is on the [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md) data page.
+Each control also has a gamepad default. The full list, including gamepad and flight stick (HOTAS) defaults, is on the [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md) data page.
 
 ## Settings
 
-Each setting has a default. Some have an exact range; where the export does not give a range, the table says so.
+Each setting has a default. Some have an exact range; where no range is known, the table says so.
 
 ### Aim and sensitivity
 
@@ -151,7 +151,7 @@ Each setting has a default. Some have an exact range; where the export does not 
 | Aim down sight (FOV) | Affected | Affected or Independent |
 | Sensitivity scaling mode | Relative | Relative or Legacy |
 | Sensitivity scaling transition | ADS Transition | While Transitioning, ADS Transition, Transition Finished or Instant |
-| Monitor matching distance | 100 | Not in export |
+| Monitor matching distance | 100 | Not known |
 | Bipod deployment | Automatic | Automatic or Manual |
 | Sprint | Toggle | Hold or Toggle |
 | Gamepad steady aim | Hold | Hold or Toggle |
@@ -161,12 +161,12 @@ Each setting has a default. Some have an exact range; where the export does not 
 | Gamepad vertical sensitivity | 3 | Stored 1 to 7, shown 1 to 10 |
 | Look acceleration multiplier | 1.5 | 1.2 to 5 |
 | Look acceleration curve | Standard | Standard, Linear or Aggressive |
-| Look acceleration threshold | 0.9 | Not in export |
-| Look acceleration pitch weight | 0.2 | Not in export |
+| Look acceleration threshold | 0.9 | Not known |
+| Look acceleration pitch weight | 0.2 | Not known |
 | Gamepad response curve | Standard | Linear, Standard, Classic or Dynamic |
 | Slow walk speed | Slow | Slow, Moderate or Fast |
 
-Two different gamepad curve settings exist in the data: the look acceleration curve (Standard, Linear or Aggressive, with its own threshold, pitch weight and max multiplier) and the gamepad response curve (Linear, Standard, Classic or Dynamic). The data does not show how the two relate.
+Two different gamepad curve settings exist: the look acceleration curve (Standard, Linear or Aggressive, with its own threshold, pitch weight and max multiplier) and the gamepad response curve (Linear, Standard, Classic or Dynamic). The game does not show how the two relate.
 
 #### Mouse sensitivity formula
 
@@ -209,7 +209,7 @@ Two parts are inferred from how Unreal Engine normally behaves rather than read 
 
 ### Field of view and view model
 
-The character's first-person camera is set to a field of view of 106 in its data, while the Field of view setting below defaults to 90. The game copies the setting onto the camera when it applies the player's field of view, so the 90 (or whatever the slider says) is the normal view you see and the 106 is only the asset's starting value (derived from the camera code, not checked on screen). The Third-person field of view setting is used the same way in vehicles.
+The character's first-person camera is built with a field of view of 106, while the Field of view setting below defaults to 90. The game copies the setting onto the camera when it applies the player's field of view, so the 90 (or whatever the slider says) is the normal view you see and the 106 is only the asset's starting value (derived from the camera code, not checked on screen). The Third-person field of view setting is used the same way in vehicles.
 
 | Setting | Default | Range or options |
 |---|---|---|
@@ -222,7 +222,7 @@ The character's first-person camera is set to a field of view of 106 in its data
 | Setting | Default | Range or options |
 |---|---|---|
 | Ground vehicle multiplier | 0.5 | 0.01 to 2 |
-| Vehicle weapon sensitivity | 1 | Not in export |
+| Vehicle weapon sensitivity | 1 | Not known |
 | Transmission type | Automatic | Automatic or Sequential |
 | Helicopter mouse pitch, roll and yaw sensitivity | 50 each | 1 to 100 |
 | Helicopter mouse swipe left and right | Roll | Roll, Yaw or Disabled |
@@ -234,14 +234,14 @@ The character's first-person camera is set to a field of view of 106 in its data
 |---|---|---|
 | HUD visibility preset | Dynamic | Always On, Dynamic, Off or Custom |
 | Quick slots | Dynamic | Always On, Dynamic or Off |
-| Nameplate background opacity | Not in export | Not in export |
+| Nameplate background opacity | Not known | Not known |
 | Killfeed filter | Show All | Show All, Show Squad Only, Show Self Only or Show Squad and Proximity |
 | Brightness | 2.2 (stored) | Shown 50 to 150 |
 
-Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) are in the data but are not covered here. Two numbers from the data are worth knowing:
+Video and quality options (upscaling, resolution scale, DLSS, FSR and similar) are set in the game but are not covered here. Two numbers worth knowing are:
 
 - **Texture streaming memory.** The texture streaming pool depends on the texture quality level: 1,280 MB at level 0, 2,048 MB at level 1, 3,072 MB at level 2 and 6,144 MB at level 3. These are the configured pool sizes for each level.
-- **Languages.** The game files hold text for 15 languages: English, German, Spanish, French, Italian, Japanese, Korean, Polish, Portuguese, Brazilian Portuguese, Russian, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese.
+- **Languages.** The game has text for 15 languages: English, German, Spanish, French, Italian, Japanese, Korean, Polish, Portuguese, Brazilian Portuguese, Russian, Turkish, Ukrainian, Simplified Chinese and Traditional Chinese.
 
 Audio and language settings are covered on the [Settings and Input Actions](../../content/Wardogs_SettingsAndInputs_v1.md) page.
 
@@ -249,7 +249,7 @@ Audio and language settings are covered on the [Settings and Input Actions](../.
 
 - Sprint is set to Toggle by default, so Left Shift switches sprinting on and off rather than being held.
 - Aim down sight (FOV) is set to Affected by default. With Affected, the aimed field of view starts from your field of view setting, so changing the slider also changes the scope view. With Independent, the aimed field of view always starts from a fixed 72 degrees, and the slider no longer changes the scope view. The aimed view is that base divided by the sight's magnification, so a 2.5x sight gives 36 degrees from the default 90. Even in Affected mode, a sight of 3.25x or more also starts from 72 degrees, as the setting's own description says ("below 3.25x"), so a 4x sight gives 18 degrees. For a variable-zoom scope the test uses its highest magnification. Because the angle is divided, the real picture magnification against the normal view is the tangent of half the normal angle divided by the tangent of half the aimed angle: a 4x sight on the default 90 gives 18 degrees, which is about 6.3 times the normal size, and a 2.5x sight gives 36 degrees, about 3.1 times. The sights page lists this effective magnification for every sight, derived from the camera code and not measured on screen. These rules come from the camera code and were not checked on screen; that the 72 degree rule belongs to this setting is inferred from the code, not traced. See [Sights and optics](../attachments/sights-and-optics.md).
-- **Chat distances.** Proximity chat reaches 1,500 and team chat 10,000 (units not stated in the data). The chat history keeps the last 250 messages.
+- **Chat distances.** Proximity chat reaches 1,500 and team chat 10,000 (units not stated). The chat history keeps the last 250 messages.
 
 ## See also
 

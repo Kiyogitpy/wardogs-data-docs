@@ -22,13 +22,13 @@ description: "Replacement barrels for the weapons in the data, and the muzzle sl
 | Internal name | `Item.Attachment.Barrel` |
 {: .wiki-infobox }
 
-Barrels are replacement barrels that go in a weapon's barrel slot. The data lists 41 of them. None of them changes a weapon or character stat. Their main job is the muzzle slot that most of them carry, which decides which muzzle devices can be fitted.
+Barrels are replacement barrels that go in a weapon's barrel slot. There are 41 of them. None of them changes a weapon or character stat. Their main job is the muzzle slot that most of them carry, which decides which muzzle devices can be fitted.
 
 Parts the game data gives no display name are labelled "Unnamed" followed by the weapon and part type. These labels are placeholders used on this wiki, not names shown in the game, and the same label can appear more than once for different parts.
 
 ## What they change
 
-- Weapon and character stats: no barrel changes any in the data (41 of 41).
+- Weapon and character stats: no barrel changes any (41 of 41).
 - Muzzle slot: 37 barrels carry one. Its allow or block list decides which muzzle devices fit, see [Muzzle Devices](muzzle-devices.md).
 - Fit: 34 barrels fit one weapon, 2 fit two, and 5 fit no weapon. The Fits column is the quickest guide.
 
@@ -82,7 +82,7 @@ The Weapon Shop data has no barrel rows, so the price column reads Not in shop d
 
 ## Parts that fit no weapon
 
-5 parts in the data can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+5 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
 
 RPK74 Barrel + Gas Block, Unnamed barrel, Unnamed barrel, Unnamed barrel, Unnamed barrel.
 

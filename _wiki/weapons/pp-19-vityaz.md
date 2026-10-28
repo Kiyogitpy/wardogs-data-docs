@@ -25,22 +25,9 @@ description: "The PP-19 Vityaz submachine gun: fire rate, damage by body part, r
 | Internal name | SMG_03 |
 {: .wiki-infobox }
 
-The PP-19 Vityaz is a submachine gun chambered in 9x19mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the PP-19 Vityaz 30 RND Magazine.
-
-## Overview
-
-Submachine guns are the SMG class in the weapon data.
+The PP-19 Vityaz is a [submachine gun](../weapons.md#submachine-guns) in Wardogs, chambered in 9x19mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the PP-19 Vityaz 30 RND Magazine.
 
 It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Fully automatic and semi-automatic |
-| Fire rate | 800 rounds/min |
-| Muzzle velocity | 380 m/s |
-| Effective range | 200 m |
 
 ## Damage
 
@@ -145,7 +132,7 @@ Cone half-angles in degrees: a bullet can land up to that far from the aim point
 
 Accuracy is 1.3 mrad, a full cone angle; the aimed row is half of it, in degrees.
 
-- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
+- There is no per-shot bloom and no recovery timer: nothing found in the spread settings makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
 - Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).
 - The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.
 - At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.

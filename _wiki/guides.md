@@ -3,12 +3,13 @@ title: "Guides"
 nav_order: 7
 wiki_hub: true
 has_children: true
-description: "Practical guides for new players, built from the numbers in the game data."
+has_toc: false
+description: "Practical guides for new players, built from the numbers in the game."
 ---
 
 # Guides
 
-Practical guides for playing Wardogs, written from the numbers in the game data. Each guide links to the mechanics article that explains the rule in full, so you can check every figure.
+Practical guides for playing Wardogs, written from the numbers in the game. Each guide links to the mechanics article that explains the rule in full, so you can check every figure.
 
 ## Articles
 

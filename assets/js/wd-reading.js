@@ -300,6 +300,8 @@
   }
 
   function buildZoneToggle() {
+    // The zone multiplier is for data pages; wiki pages (and the main page) carry a .wiki wrapper.
+    if (document.querySelector(".wiki")) return;
     var footer = document.querySelector(".side-bar .site-footer");
     if (!footer) return;
     var box = document.createElement("div"), label = document.createElement("div");

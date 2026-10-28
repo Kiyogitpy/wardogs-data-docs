@@ -2,6 +2,7 @@
 title: "Damage & Combat Systems"
 nav_order: 4
 has_children: true
+has_toc: false
 description: "How damage, projectiles and effects are calculated, with hitbox viewers."
 ---
 

@@ -2,6 +2,7 @@
 title: "Player & Movement"
 nav_order: 5
 has_children: true
+has_toc: false
 description: "Character movement, stances, parachutes, animation and character data."
 ---
 

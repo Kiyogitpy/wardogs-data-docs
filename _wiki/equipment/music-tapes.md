@@ -26,7 +26,7 @@ Music Tapes are small items that play a song on a vehicle's stereo. The shop tex
 
 Each tape is a separate item named after its song, in the form "Song - Artist". A tape is bought from the item shop like any other item, with a price of 100 cash and an unlock level of 0. The shop sells one tape per purchase.
 
-The data does not say how a player loads a tape into a vehicle or whether every vehicle has a stereo. It lists the tape as an item for vehicle use only. Each tape has a track assigned to a vehicle hi-fi, which is what plays. The sound files themselves are audio and are not described here.
+It is not known how a player loads a tape into a vehicle or whether every vehicle has a stereo. The tape is listed as an item for vehicle use only. Each tape has a track assigned to a vehicle hi-fi, which is what plays. The sound files themselves are audio and are not described here.
 
 ## The tapes
 
@@ -52,7 +52,7 @@ Nine of the ten tapes appear as unlocks in the Driver or Pilot role trees. Tape 
 
 ## Season 2 changes
 
-- Tape 11, "Blue (Da Ba Dee) - Eiffel 65", is new in Season 2, priced at 100 cash. There is no tape 10 in the data, so the set runs 01 to 09, then 11.
+- Tape 11, "Blue (Da Ba Dee) - Eiffel 65", is new in Season 2, priced at 100 cash. There is no tape 10, so the set runs 01 to 09, then 11.
 
 ## See also
 
@@ -64,6 +64,6 @@ Nine of the ten tapes appear as unlocks in the Driver or Pilot role trees. Tape 
 ## Sources
 
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the tape names, text and price
-- [Items (feature)](../../game-features/Wardogs_GameFeatures_Items_v2.md): the tape item rows and the Season 2 addition
+- [Items Game Feature](../../game-features/Wardogs_GameFeatures_Items_v2.md): the tape item rows and the Season 2 addition
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the track asset for each tape
 - [Driver](../progression-and-economy/driver.md) and [Pilot](../progression-and-economy/pilot.md): the role unlock tables

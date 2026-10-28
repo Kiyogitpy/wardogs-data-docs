@@ -26,7 +26,7 @@ description: "The Compound Bow: a draw-and-release weapon with Broadhead and Ram
 | Internal name | `Id.Item.CombatBow` |
 {: .wiki-infobox }
 
-The Compound Bow is a draw-and-release weapon. It is sold in the item shop, not in the weapon shop, and the data gives it its own ammunition: the Broadhead Arrow and the Rambo Explosive Arrow. It is the only bow in the game.
+The Compound Bow is a draw-and-release weapon. It is sold in the item shop, not in the weapon shop, and it has its own ammunition: the Broadhead Arrow and the Rambo Explosive Arrow. It is the only bow in the game.
 
 ## Overview
 
@@ -105,7 +105,7 @@ No attachments are listed for the bow.
 ## Sources
 
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the bow and arrow rows, price, size and draw time
-- [Items (feature)](../../game-features/Wardogs_GameFeatures_Items_v2.md): the arrow projectile data
+- [Items Game Feature](../../game-features/Wardogs_GameFeatures_Items_v2.md): the arrow projectile data
 - [Explosives](../../game-features/Wardogs_Explosives_v1.md): the Rambo Explosive Arrow blast
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the draw input and release curve
 - [Season 2 Changes: Items and Equipment](../../season-2-changes/items-equipment.md)

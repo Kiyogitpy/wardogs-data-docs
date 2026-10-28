@@ -22,11 +22,11 @@ description: "A single-life PvE mission on the Bakurani world: the team hacks a 
 
 Strike and Disarm is a PvE mission played against AI squads instead of other players. It includes a laptop hack and opens with a four-line voice-over intro. A player who dies stays out for the rest of the mission.
 
-Strike and Disarm is a plain-language name taken from the data's internal mission name. The data gives no display name, so this is not confirmed as the in-game title. The quest's own name in the data is a placeholder, "[PH] Strike and Swipe".
+Strike and Disarm is a plain-language name taken from the mission's internal name. The game gives no display name, so this is not confirmed as the in-game title. The quest's own name is a placeholder, "[PH] Strike and Swipe".
 
 ## Overview
 
-Strike and Disarm is one of the three PvE missions in the data, alongside [Hunter Killer](hunter-killer.md) and [VIP Escort](vip-escort.md). It is the mission with the laptop hack. The shared PvE rules are described on the [PvE Scenarios](pve-scenarios.md) page.
+Strike and Disarm is one of the three PvE missions, alongside [Hunter Killer](hunter-killer.md) and [VIP Escort](vip-escort.md). It is the mission with the laptop hack. The shared PvE rules are described on the [PvE Scenarios](pve-scenarios.md) page.
 
 ## Objective and rules
 
@@ -35,8 +35,8 @@ Strike and Disarm is one of the three PvE missions in the data, alongside [Hunte
 - **Player faction.** Set to the Manticore faction, the same faction the Manticore AI uses.
 - **Laptop hack.** The hack takes 5 minutes (300 seconds) once it starts. It has a start line and an end line of voice-over. Aborting the hack fails the mission.
 - **Intro and completion.** Four intro voice-over lines and a mission-complete line.
-- **Starting cash.** Each player starts the mission with 3,000 cash. The mission data sets no time limit.
-- **Map.** The Bakurani world (the data's name: Kavkazi), which all three PvE missions share.
+- **Starting cash.** Each player starts the mission with 3,000 cash. The mission sets no time limit.
+- **Map.** The Bakurani world (the game's internal name: Kavkazi), which all three PvE missions share.
 - **Objectives.** Upload the virus while keeping Lonestar soldiers away from the laptop, then board the extraction helicopter to leave the area.
 - **Vehicle spawners.** This mission has 5 vehicle spawners.
 
@@ -46,11 +46,11 @@ The mission has 53 Lonestar soldiers: 49 riflemen and 4 snipers. 27 are on the m
 
 ## Rewards
 
-The mission has no reward table of its own. No payout for completing the mission is set in the game files, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no rows for PvE missions.
+The mission has no reward table of its own. No payout for completing the mission is set in the game, so any payout is decided by the server. Rewards follow the general rules; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The session-event reward lookup has no entries for PvE missions.
 
 ## Layout
 
-The mission is placed in the Bakurani world, in its own map layer. Distances below are straight lines, not road lengths, and come from the game files, not from play.
+The mission is placed in the Bakurani world, in its own map layer. Distances below are straight lines, not road lengths, and come from the game, not from play.
 
 - **Start.** One spawn area in the far west of the world, about 2,400 m west of the Bakurani zone area of King of the Hill. It has an equipment vendor, a vehicle vendor, one vehicle spawner (a Kodiak pickup) and an area for the team to appear in with room for 15 spawn points.
 - **Laptop.** One laptop, the only objective site, 2,478 m from the spawn area in a straight line. It stands just outside the western edge of the Bakurani zone area (64 m) and 799 m from the nearest named zone region (Green Farmland). A map circle of about 200 m radius marks the compound around it, and a smaller target area sits 30 m from the laptop for the counter-attack.

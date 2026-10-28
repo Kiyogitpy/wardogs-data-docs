@@ -2,7 +2,7 @@
 title: "Items"
 redirect_from: ["/Wardogs_Items_v2.html", "/Wardogs_Items_v2"]
 parent: "Items & Equipment"
-description: "How an Item Is Built, Attachments, Clothing and Equipment, Consumables and Medical Items"
+description: "Item data: how an item is built, plus its attachments, clothing, equipment, consumables and medical items."
 ---
 
 # Wardogs — Items Reference

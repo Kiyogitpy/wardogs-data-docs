@@ -61,7 +61,7 @@ body {
   hr {
     border-color: $ue-border;
   }
-  a:not(.wd-card):not(.wd-btn):not(.wd-note-card):not(.wiki-tile) {
+  a:not(.wd-card):not(.wd-btn):not(.wd-note-card) {
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
@@ -569,6 +569,30 @@ $ue-btn-grey-hover: #46474a;
 .main-content .wd-section-intro {
   color: $ue-text-dim;
   margin-top: -0.25rem;
+}
+
+.wd-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.wd-related-label {
+  color: $ue-text-dim;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.main-content .wd-card-group {
+  margin: 1.5rem 0 -0.5rem;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .wd-grid {
@@ -1188,3 +1212,5 @@ $wd-mono: "JetBrains Mono", ui-monospace, monospace;
 @import "./loadout-recoil";
 // The loadout builder (/loadout/).
 @import "./loadout-builder";
+// Wiki main page, header menu bar and sidebar tweaks.
+@import "./wiki-front";

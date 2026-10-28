@@ -23,18 +23,18 @@ Driver is one of the six roles. Its six skills apply to ground vehicles: the mou
 
 ## Overview
 
-The vehicle skills apply to the ground vehicle the player is driving. The gun skills apply only to the mounted machine gun named in the data, which is the heavy tank's mounted machine gun, not every gun on a ground vehicle. The supply crate skill applies to a crate the driver drops. It sets the crate's own health, not the vehicle's.
+The vehicle skills apply to the ground vehicle the player is driving. The gun skills apply only to the mounted machine gun named in the game, which is the heavy tank's mounted machine gun, not every gun on a ground vehicle. The supply crate skill applies to a crate the driver drops. It sets the crate's own health, not the vehicle's.
 
-Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game data, so it is not yet known (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game, so it is not yet known (see [Skills](skills.md)).
 
 ## Skills
 
 | Skill | What it does | Curve values | Notes |
 |---|---|---|---|
 | Aim down sights time (mounted machine gun) | Less time to raise the sights on the mounted machine gun. | 1, 0.8, 0.7, 0.6 | Heavy tank's mounted machine gun |
-| Fuel use | Less fuel used in ground vehicles, for a longer fuel time. | 1, 0.8, 0.7, 0.6 | Ground vehicles. The data overrides the fuel usage multiplier with this value. |
+| Fuel use | Less fuel used in ground vehicles, for a longer fuel time. | 1, 0.8, 0.7, 0.6 | Ground vehicles. The game overrides the fuel usage multiplier with this value. |
 | Horizontal recoil (mounted machine gun) | Less sideways kick. | 1, 0.8, 0.7, 0.6 | Heavy tank's mounted machine gun |
-| Impact damage | Less damage when the ground vehicle hits objects or the landscape. | 1, 0.8, 0.7, 0.6 | Ground vehicles. The data overrides the impact reduction multiplier with this value. |
+| Impact damage | Less damage when the ground vehicle hits objects or the landscape. | 1, 0.8, 0.7, 0.6 | Ground vehicles. The game overrides the impact reduction multiplier with this value. |
 | Supply crate durability | A supply crate the driver drops has 1.0, 1.2 or 1.4 times its normal health at skill levels 0, 2 and 4. It is set when the crate is created, and it is not a vehicle-health bonus. | 1, 1.2, 1.4 | Crates the driver drops |
 | Vertical recoil (mounted machine gun) | Less upward kick. | 1, 0.8, 0.7, 0.6 | Heavy tank's mounted machine gun |
 
@@ -56,12 +56,12 @@ All six roles share one mastery XP curve. The milestones for Driver are the tota
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
 - **Unlock tree.** 21 items and vehicles, from level 3 to level 35, with 2,308,250 cash in total. Each one needs a role level and a cash price (see Unlocks below).
 
 ## Unlocks
 
-Each row is one item, vehicle or attachment in the Driver unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+Each row is one item, vehicle or attachment in the Driver unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
 
 | Role level | Item | Cash |
 |---|---:|---:|

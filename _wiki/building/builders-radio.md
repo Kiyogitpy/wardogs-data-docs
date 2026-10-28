@@ -32,7 +32,7 @@ The Builder's Radio is a music radio that any hammer can build. It has a power s
 
 ## Overview
 
-The Builder's Radio costs 20 Build Supplies and has 1,000 HP. It has no separate parts. Its entry in the data carries the Support role experience tag.
+The Builder's Radio costs 20 Build Supplies and has 1,000 HP. It has no separate parts. It carries the Support role experience tag.
 
 Destroying an enemy Builder's Radio pays 20 cash and 10 Role XP.
 
@@ -58,9 +58,9 @@ The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md
 
 ## What it does
 
-The Builder's Radio plays music. Its power switch turns the radio on and off, and each of the seven station buttons picks a station. Changing the station changes the music that plays. The data gives it no other effect beyond its health and how it takes damage.
+The Builder's Radio plays music. Its power switch turns the radio on and off, and each of the seven station buttons picks a station. Changing the station changes the music that plays. It has no other effect beyond its health and how it takes damage.
 
-Its registration with the base only affects the limit of four radios per base. The data shows nothing else tied to it, such as supply drops or spawns.
+Its registration with the base only affects the limit of four radios per base. Nothing else is tied to it, such as supply drops or spawns.
 
 ## Durability
 
@@ -87,7 +87,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to the Builder's Radio's cost or health.
+- No Season 2 change to the Builder's Radio's cost or health is listed.
 - The Gepard's 35 mm cannon went from x0.25 to x0.20 of its damage (67 hits to destroy became 84, derived). The T-72B3's 125 mm shell and the 20 mm cannon are unchanged.
 
 ## See also
@@ -98,7 +98,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement limits and the support role tag
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage table, placement limits and the support role tag
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

@@ -1,8 +1,8 @@
 ---
-title: "ControlZoneRegions (feature)"
+title: "Control Zone Regions"
 redirect_from: ["/Wardogs_GameFeatures_ControlZoneRegions_v2.html", "/Wardogs_GameFeatures_ControlZoneRegions_v2"]
 parent: "Game Modes & Maps"
-description: "Package Contents, Region Record Format, Per-Config Statistics, Region Names by Config"
+description: "Control zone region data: the package contents, the region record format, per-config statistics and region names."
 ---
 
 # Wardogs — GameFeature: ControlZoneRegions Reference

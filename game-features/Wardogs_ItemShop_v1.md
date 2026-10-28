@@ -1,5 +1,5 @@
 ---
-title: "Item Shop (non-weapon)"
+title: "Non-Weapon Item Shop"
 redirect_from: ["/Wardogs_ItemShop_v1.html", "/Wardogs_ItemShop_v1"]
 parent: "Items & Equipment"
 description: "Shop data for armor, helmets, vests, backpacks, parachutes and medical items"

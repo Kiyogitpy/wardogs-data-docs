@@ -1,8 +1,8 @@
 ---
 title: "Loadout Builder"
 permalink: /loadout/
-parent: "Weapons & Ammo"
-description: "Build a loadout within your Wardog level and class level, let it pick the best attachments for vertical recoil, horizontal recoil or overall, then see sway, recoil, every handling value, the reticle, and damage per body part and over distance"
+parent: "Interactive Tools"
+description: "Use this to find the best setup: give it your Wardog and class level and it picks the attachments with the least vertical, horizontal or overall recoil, then shows sway, recoil, handling, the reticle and damage per body part and over distance"
 ---
 
 # Loadout Builder

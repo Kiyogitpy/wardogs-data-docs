@@ -1,7 +1,7 @@
 ---
 title: "Object Collision Viewer"
 redirect_from: ["/object-viewer.html", "/object-viewer"]
-parent: "Damage & Combat Systems"
+parent: "Interactive Tools"
 description: "Collision shapes of buildables, fortifications, the FOB, doors, smashable windows, the drone projectile, placed explosives and crates, with their health and damage data"
 ---
 

@@ -50,13 +50,13 @@ For the mine that goes off on people, see [Claymore](claymore.md).
 
 **Detonation.** The mine goes off once it has taken 50 damage. That is the default for placed explosives, and neither the Claymore nor the AT mine overrides it (static reading). Once it has gone off it is removed. Whether the 50 counts each hit or the running total was not checked in play.
 
-**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
+**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the game files do not show.
 
 ## Damage
 
 ### To players
 
-The mine does not trigger on players, but its blast does harm people near it when it goes off. The blast does its full 300 HP from the centre out to 3.8 m. Beyond 3.8 m the damage falls in a straight line to zero at 7.5 m. Examples from the data:
+The mine does not trigger on players, but its blast does harm people near it when it goes off. The blast does its full 300 HP from the centre out to 3.8 m. Beyond 3.8 m the damage falls in a straight line to zero at 7.5 m. Examples:
 
 - At 2.5 m: 300 HP
 - At 5 m: 250 HP
@@ -66,7 +66,7 @@ Armor reduces this damage by body part. See [Body Armor](body-armor.md).
 
 ### To vehicles
 
-The data gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Treat these as a guide, because blasts near several parts can count more than once.
+The table gives the number of centre hits a vehicle needs to lose its main health. This assumes one blast hitting the main section. Treat these as a guide, because blasts near several parts can count more than once.
 
 | Vehicle | Main health | Centre hits to destroy |
 |---|---:|---:|
@@ -81,7 +81,7 @@ See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the AT Mine, and no change to its price.
+No Season 2 change to the AT Mine, or to its price, is listed.
 
 ## See also
 

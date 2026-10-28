@@ -1,0 +1,70 @@
+{%- comment -%}
+  Override of just-the-docs v0.10.1 components/site_nav.html: the wiki section lists Wiki Home
+  and the hub pages only; the data pages follow in a folded "Data Reference" section. Re-sync on a theme upgrade.
+
+  Include as: {%- include_cached components/site_nav.html all=bool -%}
+  Depends on: site.
+  Results in: cached HTML for the main navigation when `all` is nil or false;
+    includes links to pages excluded from the main navigation when `all` is true.
+  Includes:
+    components/nav/pages.html
+  Overwrites:
+    pages_top_size, collections_size, collection_entry,
+    collection_key, collection_value, collection.
+{%- endcomment -%}
+
+<nav aria-label="Main" id="site-nav" class="site-nav">
+  {% assign pages_top_size = site.html_pages
+        | where_exp:"item", "item.title != nil"
+        | where_exp:"item", "item.parent == nil"
+        | where_exp:"item", "item.nav_exclude != true"
+        | size %}
+  {%- if site.nav_external_links -%}
+    <ul class="nav-list">
+      {%- for node in site.nav_external_links -%}
+        <li class="nav-list-item external">
+          <a href="{{ node.url | absolute_url }}" class="nav-list-link external"
+            {% if node.opens_in_new_tab or node.opens_in_new_tab == nil and site.nav_external_links_new_tab %}
+              target="_blank" rel="noopener noreferrer"
+            {% endif %}
+          >
+            {{ node.title }}
+            {% unless node.hide_icon %}<svg viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>{% endunless %}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+  {%- comment -%} The theme breadcrumbs read the parent links out of this HTML (all=true), so that call needs the full wiki tree.{%- endcomment -%}
+  {% if include.all %}
+    <div class="nav-category">{{ site.just_the_docs.collections.wiki.name }}</div>
+    {% include components/nav/pages.html pages=site.wiki all=include.all %}
+  {% else %}
+  {%- comment -%} Wiki: Wiki Home plus the hub pages only; articles are reached through the hubs. {%- endcomment -%}
+  {% assign wiki_hubs = site.wiki | where: "wiki_hub", true | sort: "nav_order" %}
+  <div class="nav-category">{{ site.just_the_docs.collections.wiki.name }}</div>
+  <ul class="nav-list">
+    <li class="nav-list-item"><a href="{{ '/' | relative_url }}" class="nav-list-link">Wiki Home</a></li>
+    {%- for hub in wiki_hubs %}
+      <li class="nav-list-item"><a href="{{ hub.url | relative_url }}" class="nav-list-link">{{ hub.title }}</a></li>
+    {%- endfor %}
+  </ul>
+  {% endif %}
+  {% if pages_top_size > 0 %}
+    {%- comment -%} Data Reference starts folded; the theme script opens it on a data page.
+  This include is cached across pages, so it must not read page.*; assets/js/wiki-menu.js marks the active hub. {%- endcomment -%}
+    <ul class="nav-list nav-category-list">
+      <li class="nav-list-item">
+        <button class="nav-list-expander btn-reset" aria-label="Toggle Data Reference" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+        </button>
+        <div class="nav-category">Data Reference</div>
+        {% include components/nav/pages.html pages=site.html_pages all=include.all %}
+      </li>
+    </ul>
+  {% endif %}
+</nav>
+
+{% if site.nav_error_report %}
+{{ nav_error_report }}
+{%- endif %}

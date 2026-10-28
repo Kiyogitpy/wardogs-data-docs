@@ -45,7 +45,7 @@ Main health is 600 HP. The helicopter has separate health for its engine (200 HP
 
 Rifle rounds do 5% of their damage against the hull. The tail rotor is the weak point. Rifle fire destroys the helicopter after 858 hits to the body, or after 429 hits through the tail rotor.
 
-Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates from the data, not measured in game:
+Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
 | Ammunition | Hits to destroy | Faster route |
 |---|---:|---|
@@ -58,13 +58,13 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 
 ## Weapons and seats
 
-The Z20 Lakota has no weapons. The seat with the pilot is labelled "Pilot". The data gives 13 seats on the stats sheet. The shop description says 11 passengers, which is one fewer than the 13 seats of the stats sheet.
+The Z20 Lakota has no weapons. The seat with the pilot is labelled "Pilot". The vendor stats give 13 seats. The shop description says 11 passengers, which is one fewer than the 13 seats in the vendor stats.
 
 ## Handling
 
 - Driving assists: the climb rate is limited to 36 km/h and the collective holds a hover when released; the collective resets to minus 1 on the ground. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 
-- Rotor radius 800, maximum lift coefficient 5.75, and translational lift of 25% between 24 and 34 m/s, as stored.
+- Rotor radius 800, maximum lift coefficient 5.75, and translational lift of 25% between 24 and 34 m/s, as set.
 - Ground effect strength 30% with a 12 m falloff.
 - The main rotor's operating RPM is 270 and its critical low RPM is 180.
 - Maximum angular velocity 83 deg/s.
@@ -79,7 +79,7 @@ The Z20 Lakota has no weapons. The seat with the pilot is labelled "Pilot". The 
 
 ## Vehicle spawns
 
-The Z20 Lakota is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Z20 Lakota family (with and without miniguns) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not in the data. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Z20 Lakota is covered by the air vehicle yards (inferred). Each side normally has one air yard, and every yard allows any helicopter by a general air tag, so it can be placed on all four main maps (three air yards per match). The Z20 Lakota family (with and without miniguns) is named directly in one Zestafona yard, the extra air yard of the Lonestar side. The airframe is not named in those yards, so which helicopter appears in a slot is not known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -91,8 +91,8 @@ The Z20 Lakota is covered by the air vehicle yards (inferred). Each side normall
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)

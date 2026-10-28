@@ -24,8 +24,8 @@ Every hammer spends Build Supplies. Build Supplies sell in lots of 50 for 10 cas
 
 - **Same supplies, fewer hits.** A bigger hammer does not change what a structure costs in Build Supplies. It only changes how many hits it takes. A Sandbag Wall takes 30 hits with the Small Hammer, 15 with the Medium and 10 with the Large ([Buildables](../building.md#building)).
 - **Hit the weak spots to build 5 to 6 times faster.** A hit on a weak spot adds 3, 5 or 8 build progress (Small, Medium, Large) instead of 0.5, 1 or 1.5. Only a hammer can hit a weak spot, because bullets cannot. Barbed Wire and Recon Tent have their weak spots switched off ([Buildables](../building.md#weak-spots)).
-- **Weak spots are about building, not damage.** No damage entry in the data uses them, so a structure does not take more damage because it has them.
-- **Repair with the big hammer.** On a finished structure, each hit restores health at the hammer's build amount times the structure's repair multiplier, and the repair uses Build Supplies too. The Large Hammer needs fewer repair hits than the Small one for every structure in the data (see each article's "Building it" table).
+- **Weak spots are about building, not damage.** No damage entry uses them, so a structure does not take more damage because it has them.
+- **Repair with the big hammer.** On a finished structure, each hit restores health at the hammer's build amount times the structure's repair multiplier, and the repair uses Build Supplies too. The Large Hammer needs fewer repair hits than the Small one for every structure (see each article's "Building it" table).
 
 ## How many hits to build
 
@@ -68,7 +68,7 @@ The Forward Operating Base (FOB) is the anchor for building. It is placed from i
 ### Tips that follow from the numbers
 
 - Because most structures need the FOB radius, place the FOB before any wall or station. The small structures are the only ones that can go down without one.
-- The FOB takes 51 times normal IED damage, more than any other structure in the damage table, so IEDs are its most damaging source in the data ([Forward Operating Base](../building/forward-operating-base.md#durability)).
+- The FOB takes 51 times normal IED damage, more than any other structure in the damage table, so IEDs are its most damaging source ([Forward Operating Base](../building/forward-operating-base.md#durability)).
 - Destroying an enemy FOB pays the attacker 2,500 cash plus up to 7,500 by its supplies, and hacking one pays 1,000 ([Cash and Rewards](../progression-and-economy/cash-and-rewards.md#spotting-supply-crates-and-buildables)).
 
 ## What to build first
@@ -112,20 +112,20 @@ Sources for these numbers: [Buildables](../building.md#structures), with each st
 
 Six stationary weapons are buildable. Five are built with the Large Hammer and the Loudspeaker with the Medium or Large Hammer ([Buildables](../building.md#overview)).
 
-| Emplacement | Build Supplies | Health (HP) | Gun and ammunition | Restock | What the data says it counters |
+| Emplacement | Build Supplies | Health (HP) | Gun and ammunition | Restock | What it counters |
 |---|---:|---:|---|---|---|
 | [L81 Mortar](../building/l81-mortar.md) | 600 | 3,000 | 120x800 mm shells, 132 to 684 m | 150 Ammo Supplies | Targets are not listed. Its range table runs 132 to 684 m |
 | [Talon 9K-SAM](../building/talon-9k-sam.md) | 650 | 3,000 | 72 mm heavy machine gun, 1,000 m effective | 200 Ammo Supplies | Air vehicles only. Lock-on takes 2.0 s |
 | [Stingray](../building/stingray.md) | 650 | 3,000 | UAV drone projectile, lock-on | 900 Mechanical Supplies and 5,000 cash | Air vehicles only: the Little Bird family, the Havoc and the fixed-wing airplane |
 | [MG Nest](../building/mg-nest.md) | 650 | 1,800 when finished (3,000 under construction) | .50 cal tracer machine gun | 200 Ammo Supplies for 60 rounds | Targets are not listed. 600 rounds/min, 1,000 m range, 8 s reload |
 | [Vanguard CIWS](../building/vanguard-ciws.md) | 1,200 | 5,000 | 20x102 mm cannon, 1,800 rounds/min, 1,000 m | 250 Ammo Supplies for 500 rounds | Targets are not listed |
-| [Loudspeaker](../building/loudspeaker.md) | 200 | 1,000 | No weapon in the data | Not applicable | Not applicable |
+| [Loudspeaker](../building/loudspeaker.md) | 200 | 1,000 | No weapon | Not applicable | Not applicable |
 
 Restock costs at the Supplies lot price of 10 cash per 50 are derived: 200 Ammo Supplies is about 40 cash, 250 is 50 cash and 150 is 30 cash ([Supplies](../equipment/supplies.md)).
 
 ### Tips that follow from the numbers
 
-- **Every lock-on emplacement is air-only in the data.** The Stingray, Talon 9K-SAM, Vanguard CIWS, L81 Mortar and MG Nest all carry a target list of air vehicles only. The data does not show how the mortar or the player-operated MG Nest uses it.
+- **Every lock-on emplacement is air-only.** The Stingray, Talon 9K-SAM, Vanguard CIWS, L81 Mortar and MG Nest all carry a target list of air vehicles only. The game does not show how the mortar or the player-operated MG Nest uses it.
 - **Health and price.** The Vanguard CIWS has the most health (5,000) and costs 1,200 Build Supplies, 1.85 times the 650 of the Talon, Stingray and MG Nest (derived). The L81 Mortar is the cheapest gun at 600 Build Supplies, with 3,000 HP, the same as the Talon and Stingray.
 - **The MG Nest is the weakest finished emplacement.** It has 1,800 HP when finished, and the 3,000 HP figure applies only while it is under construction ([MG Nest](../building/mg-nest.md#health)).
 - **The Stingray has the largest restock.** It needs 900 Mechanical Supplies and 5,000 cash each time, while the other guns restock with Ammo Supplies only ([Stingray](../building/stingray.md#overview)).

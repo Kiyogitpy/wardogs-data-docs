@@ -23,7 +23,7 @@ description: "The .50 Cal caliber: the weapons that fire it, its bullet types, h
 | Internal name | 50Cal |
 {: .wiki-infobox }
 
-The .50 Cal caliber is used by 1 weapon in the weapon data, across the Sniper rifle class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+The .50 Cal caliber is used by 1 weapon, across the Sniper rifle class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
 
 ## Weapons that use it
 
@@ -44,7 +44,7 @@ Upper torso hits from the AMR 50 at point blank range, per hit, without falloff.
 | Armor Piercing (AP) | 166.3 | 116.4 | 99.8 | 74.8 | 58.2 |
 | Standard (FMJ) with tracer | 207.9 | 145.5 | 124.7 | 93.6 | 72.8 |
 
-Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type in the data.
+Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type.
 
 ## Against armor
 

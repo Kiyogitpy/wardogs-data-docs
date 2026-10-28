@@ -1,6 +1,26 @@
-<div class="wd-grid" markdown="0">
+{%- comment -%}Card grid for a category's pages, in the groups from _data/category_groups.yml when it has any.{%- endcomment -%}
 {%- assign pages = site.pages | where: "parent", include.parent | sort: "title" -%}
-{%- for p in pages %}
+{%- assign groups = site.data.category_groups[include.parent] -%}
+{%- assign grouped = "" | split: "" -%}
+{%- for g in groups -%}{%- assign grouped = grouped | concat: g.pages -%}{%- endfor -%}
+{%- assign rest = "" | split: "" -%}
+{%- for p in pages -%}{%- unless grouped contains p.title -%}{%- assign rest = rest | push: p -%}{%- endunless -%}{%- endfor -%}
+{%- for g in groups %}
+{%- assign items = pages | where_exp: "p", "g.pages contains p.title" %}
+<p class="wd-card-group">{{ g.name }}</p>
+<div class="wd-grid" markdown="0">
+{%- for p in items %}
 <a class="wd-card" href="{{ p.url | relative_url }}"><span class="wd-card-name">{{ p.title | escape }}</span><span class="wd-card-desc">{{ p.description | escape }}</span></a>
 {%- endfor %}
 </div>
+{%- endfor %}
+{%- if rest.size > 0 %}
+{%- if groups %}
+<p class="wd-card-group">Other</p>
+{%- endif %}
+<div class="wd-grid" markdown="0">
+{%- for p in rest %}
+<a class="wd-card" href="{{ p.url | relative_url }}"><span class="wd-card-name">{{ p.title | escape }}</span><span class="wd-card-desc">{{ p.description | escape }}</span></a>
+{%- endfor %}
+</div>
+{%- endif %}

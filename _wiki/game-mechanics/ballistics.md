@@ -28,11 +28,11 @@ A bullet leaves the muzzle at the weapon's muzzle speed. From then on, gravity p
 - **Flight steps.** The game moves a bullet in steps of 33 ms (about 30 a second) and checks its path at each step.
 - **Drag.** Air slows bullets. How much depends on the bullet's shape, weight and size, so the same muzzle speed does not mean the same range for every round.
 - **Damage falloff.** Each weapon has a distance curve. Damage stays at full up to a set distance and then drops; on many rifles the curve reaches 20% of full damage at 1,200 m. Separately, once a bullet has slowed below a reference speed, its damage is also scaled down (see Speed scale below). Both effects multiply together, which is why the table drops further than the curve alone.
-- **Effective range.** Each weapon's data lists an effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. It sets only one thing: when wind starts to act on the bullet. Wind begins once the bullet has flown the effective range and is at full strength from about 1.41 times that distance (a static reading of the game's code). Nothing else reads it: not damage, spread or how long the bullet lives. It is not a damage cutoff, since damage falloff comes from the weapon's own curve. Armor-piercing and hollow-point rounds only move the point where the wind starts.
+- **Effective range.** Each weapon has a listed effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. It sets only one thing: when wind starts to act on the bullet. Wind begins once the bullet has flown the effective range and is at full strength from about 1.41 times that distance (a static reading of the game's code). Nothing else reads it: not damage, spread or how long the bullet lives. It is not a damage cutoff, since damage falloff comes from the weapon's own curve. Armor-piercing and hollow-point rounds only move the point where the wind starts.
 
 ## Numbers
 
-Muzzle speed and listed effective range, from the weapon data:
+Muzzle speed and listed effective range, by weapon:
 
 | Weapon | Muzzle speed | Effective range |
 |---|---:|---:|
@@ -66,7 +66,7 @@ Upper-torso damage per hit with full metal jacket ammo and no armor, at set dist
 
 The AMR 50 and MK22 keep most of their damage at long range, while the MP5 and Super-45 lose most of theirs within a few hundred metres.
 
-**Drop, estimated.** Ignoring drag, a bullet at 880 m/s falls about 6 cm at 100 m, about 25 cm at 200 m and about 1.6 m at 500 m. Drag makes the real drop larger than these figures. They are simple estimates from the gravity and muzzle speed in the data, not measured in-game values.
+**Drop, estimated.** Ignoring drag, a bullet at 880 m/s falls about 6 cm at 100 m, about 25 cm at 200 m and about 1.6 m at 500 m. Drag makes the real drop larger than these figures. They are simple estimates from the gravity and muzzle speed, not measured in-game values.
 
 ### Speed scale
 
@@ -89,7 +89,7 @@ The M4 keeps full speed to 400 m. The GGX 17 is already at 0.80 by 200 m and 0.4
 
 - **Range is different for every weapon.** The MP5 does 25.4 at 100 m and 7.4 at 400 m, so it is a close-range weapon. The FAL still does 32.9 at 600 m.
 - **Sniper rifles hit hard at any distance.** The MK22 does 118.8 to the upper torso at 800 m. The AMR 50 does 207.9 at any distance in the table.
-- **Drop grows quickly at long range.** Even without drag, a bullet from an M4-class rifle falls about 1.6 m by 500 m. A weapon starts zeroed at the shortest zeroing range its sight allows, and the reset key returns it there. The zeroing controls then step the setting up or down inside the sight's own range (see [Sights and Optics](../attachments/sights-and-optics.md)), so a red dot with one fixed range stays put and a 6-10x scope can be raised up to 1,000. The game works out the matching sight angle itself while it runs (see [Spread and Recoil](spread-and-recoil.md)). The shortest zeroing range is the minimum the sight sets, 10 to 100 metres in the data (the game code multiplies the range by 100 to get centimetres, derived; the game was not run).
+- **Drop grows quickly at long range.** Even without drag, a bullet from an M4-class rifle falls about 1.6 m by 500 m. A weapon starts zeroed at the shortest zeroing range its sight allows, and the reset key returns it there. The zeroing controls then step the setting up or down inside the sight's own range (see [Sights and Optics](../attachments/sights-and-optics.md)), so a red dot with one fixed range stays put and a 6-10x scope can be raised up to 1,000. The game works out the matching sight angle itself while it runs (see [Spread and Recoil](spread-and-recoil.md)). The shortest zeroing range is the minimum the sight sets, 10 to 100 metres (the game code multiplies the range by 100 to get centimetres, derived; the game was not run).
 - **Pistols lose damage quickly.** The GGX 17 falls from 25.4 at 50 m to 12.0 at 400 m.
 
 ## See also

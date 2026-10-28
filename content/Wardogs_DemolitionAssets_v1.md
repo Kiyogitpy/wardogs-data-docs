@@ -1,5 +1,5 @@
 ---
-title: "Demolition Assets (row level)"
+title: "Demolition Asset Rows"
 redirect_from: ["/Wardogs_DemolitionAssets_v1.html", "/Wardogs_DemolitionAssets_v1"]
 parent: "World, Visuals & Audio"
 description: "Every demolition data asset, component setting, remnant set and ruleset under Content/Demolition with full names, per-mesh rows, resolved rule sets and the assets that use each"

@@ -25,22 +25,9 @@ description: "The SVD marksman rifle: fire rate, damage by body part, range fall
 | Internal name | SVDM |
 {: .wiki-infobox }
 
-The SVD is a marksman rifle chambered in 7.62x54mm. It fires semi-automatic at 480 rounds/min. Its standard magazine is the SVD 10 RND Magazine.
+The SVD is a [marksman rifle](../weapons.md#marksman-rifles) in Wardogs, chambered in 7.62x54mm. It fires semi-automatic at 480 rounds/min. Its standard magazine is the SVD 10 RND Magazine.
 
-## Overview
-
-Marksman rifles are the DMR class in the weapon data. Most are semi-automatic rifles.
-
-It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
-
-## Stats
-
-| Stat | Value |
-|---|---|
-| Fire modes | Semi-automatic |
-| Fire rate | 480 rounds/min |
-| Muzzle velocity | 800 m/s |
-| Effective range | 800 m |
+Most marksman rifles are semi-automatic. It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Damage
 
@@ -145,7 +132,7 @@ Cone half-angles in degrees: a bullet can land up to that far from the aim point
 
 Accuracy is 0.45 mrad, a full cone angle; the aimed row is half of it, in degrees.
 
-- The data has no per-shot bloom and no recovery timer: nothing found in the spread data makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
+- There is no per-shot bloom and no recovery timer: nothing found in the spread settings makes firing widen the spread, and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.
 - Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).
 - The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.
 - At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.

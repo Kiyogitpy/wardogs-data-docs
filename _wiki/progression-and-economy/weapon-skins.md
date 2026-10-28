@@ -20,14 +20,14 @@ A weapon skin repaints one weapon with a pattern and colour set. Each skin belon
 
 ## Overview
 
-The table below lists each weapon skin once per set, sorted by weapon. A weapon that appears twice, such as the M4, has one skin in each set. The price is the Gold Bar cost on the Gold Market. The Gold Market is the only purchase route the data shows.
+The table below lists each weapon skin once per set, sorted by weapon. A weapon that appears twice, such as the M4, has one skin in each set. The price is the Gold Bar cost on the Gold Market. The Gold Market is the only purchase route the game shows.
 
 ## Weapon skins
 
 | Weapon | Skin set | Season | Price (Gold Bars) | How it unlocks |
 |---|---|---|---|---|
 | A-91 | Two-Tone Desert | Season 1 | 5 | Gold Market |
-| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. It can only come from a server grant, which the client data does not show |
+| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. It can only come from a server grant, and which grants are made is not known |
 | AMP-9 | Two-Tone Desert | Season 1 | 10 | Gold Market |
 | AMR 50 | Two-Tone Desert | Season 1 | 15 | Gold Market |
 | Bushmaster M17S | Two-Tone Desert | Season 1 | 5 | Gold Market |
@@ -49,19 +49,19 @@ The Gold Market prices are 17 weapon skins worth 160 Gold Bars in total.
 
 ## Faction logos
 
-Each faction logo is a skin for one weapon, and each faction has one logo. The data gives these no price and no Gold Market row. The icon textures are named for a "Supporter Pack", which also holds the taxi skin (see [Vehicle Skins](vehicle-skins.md)). The data does not say how the pack is sold or granted.
+Each faction logo is a skin for one weapon, and each faction has one logo. The game gives these no price and no Gold Market row. The icon textures are named for a "Supporter Pack", which also holds the taxi skin (see [Vehicle Skins](vehicle-skins.md)). The game does not say how the pack is sold or granted.
 
 | Weapon | Faction | Price (Gold Bars) | How it unlocks |
 |---|---|---|---|
-| A-91 | Valkyra | Not sold | Not in the data |
-| Bushmaster M17S | Lonestar | Not sold | Not in the data |
-| KH-2002 | Manticore | Not sold | Not in the data |
+| A-91 | Valkyra | Not sold | Not known |
+| Bushmaster M17S | Lonestar | Not sold | Not known |
+| KH-2002 | Manticore | Not sold | Not known |
 
 ## Cost and unlocking
 
 - **Gold Market.** Every priced weapon skin is a Gold Market entry. A player spends Gold Bars to buy it. Gold Bars are covered in [Currencies](currencies.md).
-- **No level gate.** The data ties no weapon skin to a level. There is no season reward track, so skins are sold on the Gold Market, and server grants are the only other route. See [Season 1 Cosmetics](season-01-cosmetics.md).
-- **Look on other items.** The skin data also sets how each set looks on items that are not sold with it. Digital Wood has settings for 46 items and Chocolate Chip for 56. The data does not say whether a player can apply those looks to the other items.
+- **No level gate.** The game ties no weapon skin to a level. There is no season reward track, so skins are sold on the Gold Market, and server grants are the only other route. See [Season 1 Cosmetics](season-01-cosmetics.md).
+- **Look on other items.** The skin settings also set how each set looks on items that are not sold with it. Digital Wood has settings for 46 items and Chocolate Chip for 56. The game does not say whether a player can apply those looks to the other items.
 
 ## Season 2 changes
 
@@ -80,7 +80,7 @@ Each faction logo is a skin for one weapon, and each faction has one logo. The d
 
 ## Sources
 
-- [Skins (feature)](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
+- [Skins](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)
 - [Progression tables](../../game-features/Wardogs_Progression_v1.md), including the cosmetic table and Gold Market prices
 - [Meta: currency and Gold Market](../../content/Wardogs_Meta_v2.md)

@@ -23,7 +23,7 @@ description: "The .45 Colt caliber: the weapons that fire it, its bullet types, 
 | Internal name | 45Colt |
 {: .wiki-infobox }
 
-The .45 Colt caliber is used by 1 weapon in the weapon data, across the Pistol class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
+The .45 Colt caliber is used by 1 weapon, across the Pistol class. Its rounds are Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). The tables below show how each type does against armor.
 
 ## Weapons that use it
 
@@ -44,7 +44,7 @@ Upper torso hits from the Judge at point blank range, per hit, without falloff. 
 | Armor Piercing (AP) | 41.6 | 32.8 | 29.9 | 27.0 | 24.1 |
 | Standard (FMJ) with tracer | 52.0 | 36.4 | 31.2 | 26.0 | 20.8 |
 
-Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type in the data.
+Flesh Damage (HP) with tracer, Armor Piercing (AP) with tracer match their base type.
 
 ## Against armor
 

@@ -1,8 +1,8 @@
 ---
-title: "Items (feature)"
+title: "Items Game Feature"
 redirect_from: ["/Wardogs_GameFeatures_Items_v2.html", "/Wardogs_GameFeatures_Items_v2"]
 parent: "Items & Equipment"
-description: "Layout and File Counts, Item Roster, Vendor Prices, Projectiles"
+description: "The item package: roster, vendor prices, projectiles, action definitions, buildables and inventory footprints."
 ---
 
 # Wardogs: GameFeatures Items Reference

@@ -2,7 +2,7 @@
 title: "Animation"
 redirect_from: ["/Wardogs_Animation_v2.html", "/Wardogs_Animation_v2"]
 parent: "Player & Movement"
-description: "Folder Map, Motion Matching, First-Person Mirroring, Animation Curves"
+description: "Motion-matching and mirroring tables, animation curves and the folder map of the animation data."
 ---
 
 # Wardogs: Animation Data Reference

@@ -2,6 +2,7 @@
 title: "Items & Equipment"
 nav_order: 6
 has_children: true
+has_toc: false
 description: "Items, attachments, consumables, item actions, shops and buildables."
 ---
 

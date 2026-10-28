@@ -23,18 +23,18 @@ description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles 
 | Price | 150 cash |
 | Unlock level | 0 |
 | **Data** | |
-| Internal name | `Id.Item.FuelCan` (the 20 L version in the data is `ID_FuelCan_20L`) |
+| Internal name | `Id.Item.FuelCan` (the 20 L version is `ID_FuelCan_20L`) |
 {: .wiki-infobox }
 
 The 40 L Fuel Canister is the portable fuel supply for vehicles. It holds 40 L and can refuel a vehicle. The shop text says it is used for refueling vehicles.
 
 ## Overview
 
-The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The item data also lists a 20 L version. The Item Shop does not sell that version, and nothing else in the data hands it out: the 20 L item has no item name of its own (it carries only the generic item tag), so no shop row, loot table or starting kit can point at it. Players cannot get it in the game as shipped (inferred; it looks like an unfinished item).
+The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The game files also list a 20 L version. The Item Shop does not sell that version, and nothing else hands it out: the 20 L item has no item name of its own (it carries only the generic item tag), so no shop row, loot table or starting kit can point at it. Players cannot get it in the game as shipped (inferred; it looks like an unfinished item).
 
 ## How it works
 
-The item data gives the canister two uses, both of which continue until the canister is empty or the target is full.
+The canister has two uses, both of which continue until the canister is empty or the target is full.
 
 - **Fill** adds fuel to the canister from a world refuel point, a fuel pump placed in the world. The pump charges cash for each step of fuel, at its price per litre. Pumps flagged as free in spawn areas do not charge in safe zones. The Refuel Station at a base does not fill canisters.
 - **Refuel** adds fuel to a vehicle in 2.0 unit steps every 0.75 s, which is 2.67 units per second. A full 40 L can empties in about 15 s (derived). The 20 L version adds 1.0 every 1.5 s, about 30 s for a full can (derived), but players cannot obtain it (inferred).
@@ -43,7 +43,7 @@ Refueling stations at a Forward Operating Base use Fuel Supplies, which are desc
 
 ## Season 2 changes
 
-No Season 2 change to the Fuel Canister is listed in the data.
+No Season 2 change to the Fuel Canister is listed.
 
 ## See also
 

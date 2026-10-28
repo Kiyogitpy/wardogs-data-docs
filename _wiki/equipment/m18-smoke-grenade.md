@@ -25,7 +25,7 @@ description: "The M18 Smoke Grenade in white and black: a thrown smoke cloud tha
 | Internal name | `ID.Item.SmokeGrenade.White`, `ID.Item.SmokeGrenade.Black` |
 {: .wiki-infobox }
 
-The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. In the code found, the only thing that reads the cloud is the [aim-assist](../game-mechanics/aim-assist.md) target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing in the data makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so AI sight is not blocked as far as the data shows.
+The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It is the plain smoke throwable, and it is not a blast. In the code found, the only thing that reads the cloud is the [aim-assist](../game-mechanics/aim-assist.md) target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing found in the game makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so AI sight is not blocked as far as the data shows.
 
 ## Overview
 
@@ -41,15 +41,15 @@ The coloured signal grenades use the same smoke but also place a marker on the m
 
 **Cloud.** The cloud lasts 120 s, then fades for 10 s before it is removed. A cloud that is already running when you arrive has lost the time it has already spent. The smoke stops at walls, so it does not pass through them. The smoke effect's default in the game files is 180 s with a 20 s fade in; the white grenade overrides that to 120 s. This is read from the files and was not seen in play.
 
-**Players in the cloud.** The data does not apply any game effect through the smoke. It does not hurt, heal or slow anyone in the cloud. The only effect found is on aim assist, as described above.
+**Players in the cloud.** No game effect is applied through the smoke. It does not hurt, heal or slow anyone in the cloud. The only effect found is on aim assist, as described above.
 
 ## Damage
 
-The M18 Smoke Grenade does no damage. It has no blast and no thrown-contact damage in the data.
+The M18 Smoke Grenade does no damage. It has no blast and no thrown-contact damage in the game files.
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the M18 Smoke Grenade, and no change to its price.
+No Season 2 change to the M18 Smoke Grenade, or to its price, is listed.
 
 ## See also
 

@@ -1,8 +1,8 @@
 ---
-title: "Vehiclesmith (feature)"
+title: "Vehiclesmith"
 redirect_from: ["/Wardogs_GameFeatures_Vehiclesmith_v2.html", "/Wardogs_GameFeatures_Vehiclesmith_v2"]
 parent: "Vehicles"
-description: "Plugin Inventory, Root Game Feature, Frontend Scene Entry, Dev Menu Map"
+description: "The Vehiclesmith vehicle customisation screen: its scene, pages, data layers, dev menu map and persistent actions."
 ---
 
 # Wardogs — Vehiclesmith Game Feature Reference

@@ -2,7 +2,7 @@
 title: "Buildable Challenges"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The eleven challenges for building, supplying, damaging and hacking buildables and forward operating bases, with the base amounts in the data."
+description: "The eleven challenges for building, supplying, damaging and hacking buildables and forward operating bases, with the base amounts shown."
 ---
 
 # Buildable Challenges
@@ -20,12 +20,12 @@ Buildable challenges pay for work on buildables, the structures players place, i
 
 ## Overview
 
-Rows are grouped by the kind of work: building and finishing, destroying and damaging, schematics and build supplies, and FOB events. The cash and XP columns show the base amounts from the data. Where a row says "match score", the sources list that as the reward and give no cash or XP for it.
+Rows are grouped by the kind of work: building and finishing, destroying and damaging, schematics and build supplies, and FOB events. The cash and XP columns show the base amounts. Where a row says "match score", the sources list that as the reward and give no cash or XP for it.
 
 ## How it works
 
 - **Calculated.** Most rows are worked out from one input. Finishing a buildable uses the build cost, building uses the build amount, FOB resources used uses the cash spent, and hacks and door closures use the victim count.
-- **Formula not given.** The sources list the base numbers and the owner or helper shares, but not the formula that combines them with the input. The numbers are shown as the data lists them.
+- **Formula not given.** The sources list the base numbers and the owner or helper shares, but not the formula that combines them with the input. The numbers are shown as the game lists them.
 - **Not automatic.** Buildable Damaged and Schematic Placed are not auto-activated.
 
 ## Challenges

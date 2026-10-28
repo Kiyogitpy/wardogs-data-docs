@@ -1,5 +1,5 @@
 ---
-title: "Vehicle parts and handling"
+title: "Vehicle Parts and Handling"
 redirect_from: ["/Wardogs_VehicleHandling_v1.html", "/Wardogs_VehicleHandling_v1"]
 parent: "Vehicles"
 description: "Vehicle parts and handling tables: engines, wheels, suspension and per-vehicle values"
@@ -336,7 +336,7 @@ Steering, suspension and tracks
 ## 9. Open items
 
 - Which of `EngineData` and `DynamicsData` drives a tracked vehicle, and the unit of the torque and brake numbers, are not traced.
-- Gear order: **the last entry of `GearRatios` is the reverse gear**, applied with a negative sign; the forward gears are the entries before it ([round 46](../docs/evidence/round46-b.md), item 1). So WHL_01 (4.2, 2.8, 1.9, 1.5, 1.3, 6) has five forward gears and reverse 6.0, and the native default list (3.0, 5.0) is one forward gear and reverse 5.0.
+- Gear order: **the last entry of `GearRatios` is the reverse gear**, applied with a negative sign; the forward gears are the entries before it ([round 46](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-b.md), item 1). So WHL_01 (4.2, 2.8, 1.9, 1.5, 1.3, 6) has five forward gears and reverse 6.0, and the native default list (3.0, 5.0) is one forward gear and reverse 5.0.
 - `DA_ArcadeControls_*` are tabled in [Vehicle control assists](Wardogs_VehicleControlAssists_v1.md). The `FlightCharacteristics` scalars and control forces of the three helicopters, the air drag assets, the tracked wheel data and the config sub-fields are tabled in [Vehicle config fields](Wardogs_VehicleConfigFields_v1.md); the fixed-wing airplane's flight asset is in [Fixed-wing flight model](Wardogs_FixedWingFlightModel_v1.md).
 - Whether the boost switch (`bEnableBoost`, false in every wheeled asset) gates the stored boost scale is not traced.
 
@@ -344,7 +344,7 @@ Steering, suspension and tracks
 
 ## 10. Native defaults for `—` fields
 
-**Data.** A cooked asset stores only the properties that differ from the class default, so every `—` above (and every missing `Values[n]` key of a wheel asset) takes the value the native constructor writes. The constructors were read statically in [round 45](../docs/evidence/round45-b.md) (items 1, 4 and 7); the filled-in values for every asset are in [`vehicle-native-defaults.json`](../assets/data/vehicle-native-defaults.json), rebuilt by [`_tools/r45_vehicle_defaults.py`](../_tools/r45_vehicle_defaults.py). A missing key is the default, not zero.
+**Data.** A cooked asset stores only the properties that differ from the class default, so every `—` above (and every missing `Values[n]` key of a wheel asset) takes the value the native constructor writes. The constructors were read statically in [round 45](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md) (items 1, 4 and 7); the filled-in values for every asset are in [`vehicle-native-defaults.json`](../assets/data/vehicle-native-defaults.json), rebuilt by [`_tools/r45_vehicle_defaults.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/r45_vehicle_defaults.py). A missing key is the default, not zero.
 
 | Class (constructor RVA) | Defaults that matter for the `—` cells |
 |---|---|

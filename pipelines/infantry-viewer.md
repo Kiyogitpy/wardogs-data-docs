@@ -1,7 +1,7 @@
 ---
 title: "Infantry Hitbox Viewer"
 redirect_from: ["/infantry-viewer.html", "/infantry-viewer"]
-parent: "Damage & Combat Systems"
+parent: "Interactive Tools"
 description: "The player's physics bodies coloured by hit location, multipliers per damage source, armor and helmet coverage"
 ---
 

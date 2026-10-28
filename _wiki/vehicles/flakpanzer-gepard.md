@@ -56,26 +56,26 @@ While its main body stands, the body sends 5% of each hit to the fuel tank. Rifl
 |---|---|---:|---:|---:|---:|
 | Duel 35 mm Oerlikon GDF cannons (twin) | Cannon | 1,100 rounds/min | 1,000 m | 4.0 s | None |
 
-The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6. Its smoke screen stays active for 16 seconds, and the Gepard can use smoke again 90 seconds after the first use. The data lists one starting charge. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The vehicle vendor sells smoke for 750 cash, one charge per purchase, the same as flares.
+The seats are a driver and a gunner in the turret. The Gepard also carries a smoke countermeasure with one charge, like the L2A6. Its smoke screen stays active for 16 seconds, and the Gepard can use smoke again 90 seconds after the first use. One starting charge is listed. Smoke charges follow the vehicle inventory in the same way as flares: the smoke item must be added to the vehicle. The vehicle vendor sells smoke for 750 cash, one charge per purchase, the same as flares.
 
 ## Handling
 
 - Tracked drive with a top speed of 65 and a maximum incline of 50 degrees.
-- Fuel economy is listed as 10.0 (as stored), higher than the other tanks' 8.0 to 8.5. The data does not say which direction is better.
+- Fuel economy is listed as 10.0 (as set), higher than the other tanks' 8.0 to 8.5. It is not known which direction is better.
 
-**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive data, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
+**Engine torque.** The torque curve is set against engine RPM up to 5,000 in the tracked drive settings, and the torque values carry no unit label. See [Vehicle handling](vehicle-handling.md) for the other tracked numbers.
 
 ## Season 2 changes
 
 - Price rose from 10,000 to 14,000 cash.
-- One damage rule changed from -75% to -85%, so those hits do less damage. It is the 20 mm cannon rule, which covers the 20 mm guns such as the Vanguard CIWS (the entry's source is the 20x102 mm cannon).
+- One damage rule changed from -75% to -85%, so those hits do less damage. It is the 20 mm cannon rule, which covers the 20 mm guns such as the Vanguard CIWS (its listed source is the 20x102 mm cannon).
 - A new 125 mm rocket rule adds +40%.
 - Two interaction points on the sides of the vehicle moved outward, from an offset of 40 to 85 (units not stated).
 - The vehicle item is wider in inventory (width 4 to 6).
 
 ## Vehicle spawns
 
-The Flakpanzer Gepard is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (L2A6, Flakpanzer Gepard and SPH-2 share one tank tag), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Flakpanzer Gepard is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (L2A6, Flakpanzer Gepard and SPH-2 share one tank tag), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in 7 of the 7 ground yards on Ozeti, 5 or 6 of the 7 or 6 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -88,9 +88,9 @@ The Flakpanzer Gepard is placed by the ground vehicle yards of all four main map
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the smoke screen's 16 s active window and 90 s cooldown, and the other round 41 vehicle readings
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
-- [Vehicle parts and handling](../../game-features/Wardogs_VehicleHandling_v1.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article

@@ -29,13 +29,13 @@ Level 4 Armor is the top vest tier. It covers the same torso as the lower tiers,
 
 ## Overview
 
-Level 4 Armor is the only vest that protects outside the torso. The Item Shop describes it as "Very High Damage Reduction" and says it protects the upper and lower torso, the upper arms and the pelvis. The item data lists the same areas.
+Level 4 Armor is the only vest that protects outside the torso. The Item Shop describes it as "Very High Damage Reduction" and says it protects the upper and lower torso, the upper arms and the pelvis. The listed areas are the same.
 
 It goes in the Armor slot. The lower arms, hands and legs are not covered. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-Level 4 Armor reduces damage by 60% at the upper, middle and lower torso, the pelvis and the upper arms. The item data gives it 300 durability.
+Level 4 Armor reduces damage by 60% at the upper, middle and lower torso, the pelvis and the upper arms. It has 300 durability.
 
 With M4 full-metal-jacket rounds, these hits are reduced as follows:
 
@@ -59,7 +59,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 | Damage reduction | 65% | 60% |
 | Price | 4,000 cash | 5,000 cash |
 
-The Season 2 data lists only these two changes for this vest.
+Only these two changes are listed for this vest in Season 2.
 
 ## See also
 

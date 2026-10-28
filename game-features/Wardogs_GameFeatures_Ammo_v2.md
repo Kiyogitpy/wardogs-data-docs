@@ -1,8 +1,8 @@
 ---
-title: "Ammo (feature)"
+title: "Ammo Game Feature"
 redirect_from: ["/Wardogs_GameFeatures_Ammo_v2.html", "/Wardogs_GameFeatures_Ammo_v2"]
 parent: "Weapons & Ammo"
-description: "Package Contents, Bundle-to-Layer Map, What Each Bundle Does, Relationship to the Other GameFeatures"
+description: "The ammo packages: the bundle-to-layer map, what each bundle does and how the packages relate to the other game features."
 ---
 
 # Wardogs — GameFeature: Ammo Reference
