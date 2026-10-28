@@ -20,11 +20,11 @@ description: "An unfinished two-seat airplane: it has a flight model but no dama
 | Internal name | FWG_01 |
 {: .wiki-infobox }
 
-The fixed-wing airplane is the only fixed-wing aircraft in the data, and it looks like an unfinished vehicle. It has a full flight model with control surfaces, flaps, an airbrake and retractable landing gear, but no name, no shop listing, no unlock, no damage zones and no yard that places it. This article describes it by what it is.
+The fixed-wing airplane is the only fixed-wing aircraft in the game, and it looks like an unfinished vehicle. It has a full flight model with control surfaces, flaps, an airbrake and retractable landing gear, but no name, no shop listing, no unlock, no damage zones and no yard that places it. This article describes it by what it is.
 
 ## Overview
 
-The airplane has two seats, a driver and one passenger. Its model still uses placeholder materials from a real-world jet. It was built far enough to fly, but the parts a player would meet in a match were never set up: nobody can buy or unlock it, it has no entry in the vehicle lists or kill rewards, and the data does not show whether a match ever places one.
+The airplane has two seats, a driver and one passenger. Its model still uses placeholder materials from a real-world jet. It was built far enough to fly, but the parts a player would meet in a match were never set up: nobody can buy or unlock it, it has no entry in the vehicle lists or kill rewards, and it is not known whether a match ever places one.
 
 ## Stats
 
@@ -39,9 +39,9 @@ The airplane has two seats, a driver and one passenger. Its model still uses pla
 
 ## Armor and damage
 
-The airplane lists 150 HP at start. The data gives threshold triggers on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The leaks pair with the tank thresholds in order: 0.1 per second below 90%, 0.4 below 50% and 0.5 at 0%.
+The airplane lists 150 HP at start. Threshold triggers sit on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The leaks pair with the tank thresholds in order: 0.1 per second below 90%, 0.4 below 50% and 0.5 at 0%.
 
-Every other armed or armored vehicle splits its body into damage zones, such as the hull, engine and fuel tank. The airplane has none: no zones and no hit boxes on its model. A bullet, rocket or explosion that hits it finds no zone to damage, so the data gives it no way to lose health from enemy fire. The 150 HP and the thresholds therefore have nothing feeding them, and no hit counts are listed. Its damage rules are copied from the Little Bird family (rifle rounds would do 7.5% of their damage), but with no zones they never apply.
+Every other armed or armored vehicle splits its body into damage zones, such as the hull, engine and fuel tank. The airplane has none: no zones and no hit boxes on its model. A bullet, rocket or explosion that hits it finds no zone to damage, so nothing gives it a way to lose health from enemy fire. The 150 HP and the thresholds therefore have nothing feeding them, and no hit counts are listed. Its damage rules are copied from the Little Bird family (rifle rounds would do 7.5% of their damage), but with no zones they never apply.
 
 Several weapons still list it as a valid lock-on target: the 9K333 Verba launcher and five emplaced weapons.
 
@@ -51,24 +51,24 @@ The airplane has no weapons. It has two seats: a driver seat and an active passe
 
 ## Handling
 
-- The data stores no top speed. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000 kg) and drag, not from a speed limit.
-- The auto-trim table, which says what pitch trim the airplane needs at each speed, holds level flight at about 140 km/h at 10% throttle and about 430 km/h at full throttle, in the rows the data names for the first gear setting. Both are read from the auto-trim table, not stored as a speed limit.
+- No top speed is set. The airplane's speed comes from its engine thrust (226,800 N), its mass (10,000 kg) and drag, not from a speed limit.
+- The auto-trim table, which says what pitch trim the airplane needs at each speed, holds level flight at about 140 km/h at 10% throttle and about 430 km/h at full throttle, in the rows listed for the first gear setting. Both are read from the auto-trim table, not set as a speed limit.
 
 - Control surfaces: elevators up to 40 degrees each, ailerons and rudders up to 20 degrees, flaps up to 18 degrees, and an airbrake that can extend.
 - Retractable landing gear, with a nose wheel that steers up to 45 degrees.
 - Main lift multiplier 0.4.
 - Translational lift of 20% between 24 and 34 m/s.
-- Max angular velocity limit is switched off in the data. The 83 deg/s value is stored but inactive.
+- Max angular velocity limit is switched off. The 83 deg/s value is set but inactive.
 - Ground effect strength is 0%, so it has no effect.
 
 ## Season 2 changes
 
-- One health-threshold flag in its gameplay settings changed from true to false, and the export does not say what that flag controls.
+- One health-threshold flag in its gameplay settings changed from true to false, and it is not known what that flag controls.
 - The flares button is renamed Fire Countermeasures. The key is the same (V on keyboard).
 
 ## Vehicle spawns
 
-The airplane falls under the same general air tag as the helicopters. 20 of the 21 air vehicle yards accept any air vehicle, so their rules would allow it, while the ground and light yards list it as excluded. No yard and no map file names it, so the game files cannot show whether any build ever placed it. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The airplane falls under the same general air tag as the helicopters. 20 of the 21 air vehicle yards accept any air vehicle, so their rules would allow it, while the ground and light yards list it as excluded. No yard and no map names it, so it is not known whether any build ever placed it. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
