@@ -587,7 +587,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | `DT_Reward_Cash_EndGameFactionReward` | 4 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Objective` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [round48](../docs/evidence/round48.md) |
 | `DT_Reward_Cash_Heal` | 8 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Heal` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 | `DT_Reward_Cash_HotZoneMagnet` | 8 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/HotZoneMagnet` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [round38-building-data](../docs/evidence/round38-building-data.md), [round66-map-actors](../docs/evidence/round66-map-actors.md) (+3) |
-| `DT_Reward_Cash_PlayerKill` | 3 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [index](../index.md) |
+| `DT_Reward_Cash_PlayerKill` | 3 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [reference](../reference.md) |
 | `DT_Reward_Cash_Refuel` | 1 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 | `DT_Reward_Cash_Repair` | 4 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 | `DT_Reward_Cash_Revive` | 6 | `GameMechanics/Gamemode/Data/CashRewardsDataTable/Revive` | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |

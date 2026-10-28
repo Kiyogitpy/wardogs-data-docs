@@ -1,5 +1,5 @@
-title: Wardogs Data Reference
-description: Per-category reference docs for Wardogs game data
+title: Wardogs Wiki
+description: Wardogs wiki articles, with the full game-data reference behind them
 remote_theme: just-the-docs/just-the-docs@v0.10.1
 plugins:
   - jekyll-remote-theme
@@ -30,7 +30,7 @@ search:
 ask_endpoint: "https://wardogs-ask.wardogs-docs.workers.dev"
 
 aux_links:
-  "Wiki": "https://kiyogitpy.github.io/wardogs-data-docs/wiki/"
+  "Data Reference": "https://kiyogitpy.github.io/wardogs-data-docs/reference/"
   "View on GitHub": "https://github.com/Kiyogitpy/wardogs-data-docs"
 
 # The raw source JSON is local only (gitignored); the docs cite it by path
@@ -65,5 +65,7 @@ relative_links:
   enabled: true
   collections: true
 defaults:
+  - scope: { path: "", type: pages }
+    values: { layout: reference }
   - scope: { path: "", type: wiki }
     values: { layout: wiki }

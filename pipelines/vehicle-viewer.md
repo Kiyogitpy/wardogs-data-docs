@@ -1,7 +1,7 @@
 ---
 title: "Vehicle Hitbox Viewer"
 redirect_from: ["/vehicle-viewer.html", "/vehicle-viewer"]
-parent: "Damage & Combat Systems"
+parent: "Interactive Tools"
 description: "3D collision meshes coloured by health section, routing and hits to destroy per caliber"
 ---
 

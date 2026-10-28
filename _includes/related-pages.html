@@ -1,0 +1,13 @@
+{%- comment -%}"Related pages" bar for data pages in a set from _data/related_pages.yml.{%- endcomment -%}
+{%- for set in site.data.related_pages -%}
+{%- if set.pages contains page.path %}
+<nav class="wd-related" aria-label="{{ set.name }}"><span class="wd-related-label">{{ set.name }}</span>
+{%- for path in set.pages -%}
+{%- assign p = site.pages | where: "path", path | first -%}
+{%- if path == page.path %} <strong aria-current="page">{{ p.title }}</strong>
+{%- elsif p %} <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+{%- endif -%}
+{%- endfor %}
+</nav>
+{%- endif -%}
+{%- endfor -%}

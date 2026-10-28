@@ -1,8 +1,8 @@
 ---
 title: "Weapon Loadout Calculator"
 redirect_from: ["/loadout-calculator.html", "/loadout-calculator"]
-parent: "Weapons & Ammo"
-description: "Any weapon with any attachments, sight, stance and bipod state, within a class level: every weapon attribute, the sight's reticle, and damage per body part and over distance for each ammunition"
+parent: "Interactive Tools"
+description: "Use this to check a setup you already have: pick any weapon, attachments, sight, stance and bipod state yourself and see every weapon attribute, the reticle and damage per body part and over distance for each ammunition"
 ---
 
 # Weapon Loadout Calculator

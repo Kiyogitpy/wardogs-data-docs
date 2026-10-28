@@ -1,26 +1,28 @@
 ---
-title: Home
+title: Reference Home
 nav_order: 1
+permalink: /reference/
 ---
+{% assign cats = site.pages | where: "has_children", true | where_exp: "p", "p.path contains 'categories/'" | sort: "nav_order" %}
 
 <div class="wd-hero" markdown="1">
 <div class="wd-hero-text" markdown="0">
 <h1>Every number in Wardogs, in one place</h1>
 <p>Reference pages for the game's data: weapon and vehicle stats, rewards, items, challenges and more, read straight from the game files (build <code>++Wardogs+Live-CL-516586</code>, UE 5.7). Search any value, asset name or table name from the bar at the top, or ask a question.</p>
 <div class="wd-actions">
-<a class="wd-btn wd-btn-primary" href="#weapons-ammo">Browse categories</a>
-<a class="wd-btn wd-btn-secondary" href="Wardogs_Rewards_and_Progression_v2.html">Rewards &amp; progression</a>
+<a class="wd-btn wd-btn-primary" href="#{{ cats.first.title | slugify }}">Browse categories</a>
+<a class="wd-btn wd-btn-secondary" href="{{ '/Wardogs_Rewards_and_Progression_v2.html' | relative_url }}">Rewards &amp; progression</a>
 <button class="wd-btn wd-btn-secondary" type="button" data-wd-ask hidden>Ask a question</button>
 </div>
 </div>
 
 <div class="wd-hero-viewers" markdown="0">
-<a class="wd-hero-viewer" href="pipelines/vehicle-viewer.html">
+<a class="wd-hero-viewer" href="{{ '/pipelines/vehicle-viewer.html' | relative_url }}">
 <img src="{{ '/assets/images/vehicle-viewer-preview.png' | relative_url }}" alt="3D collision mesh of the Havoc attack helicopter, coloured by health section" width="780" height="585">
 <span class="wd-hero-viewer-name">Vehicle Hitbox Viewer</span>
 <span class="wd-hero-viewer-desc">Every vehicle's collision mesh in 3D, coloured by health section. Pick a part to see how it routes damage and how many hits destroy the vehicle.</span>
 </a>
-<a class="wd-hero-viewer" href="pipelines/infantry-viewer.html">
+<a class="wd-hero-viewer" href="{{ '/pipelines/infantry-viewer.html' | relative_url }}">
 <img src="{{ '/assets/images/infantry-viewer-preview.png' | relative_url }}" alt="3D physics bodies of the player character, coloured by hit location" width="780" height="585">
 <span class="wd-hero-viewer-name">Infantry Hitbox Viewer</span>
 <span class="wd-hero-viewer-desc">The player's physics bodies coloured by hit location. Pick a damage source, armor or helmet to see each body part's multiplier.</span>
@@ -38,7 +40,6 @@ nav_order: 1
 </div>
 
 <div class="wd-kicker"><span class="wd-pill wd-pill-1">{{ site.pages | where_exp: "p", "p.parent" | size }} pages</span></div>
-{% assign cats = site.pages | where: "has_children", true | where_exp: "p", "p.path contains 'categories/'" | sort: "nav_order" %}
 {%- for c in cats %}
 
 <h2 id="{{ c.title | slugify }}">{{ c.title }}</h2>
@@ -53,5 +54,5 @@ nav_order: 1
 <p class="wd-section-intro">Worked damage comparisons between game versions, calculated from the values on these pages.</p>
 
 <div class="wd-grid" markdown="0">
-<a class="wd-card" href="balance-notes.html"><span class="wd-card-name">Balance Notes</span><span class="wd-card-desc">Before/after damage per bullet, hits to kill and the multipliers behind each change</span></a>
+<a class="wd-card" href="{{ '/balance-notes.html' | relative_url }}"><span class="wd-card-name">Balance Notes</span><span class="wd-card-desc">Before/after damage per bullet, hits to kill and the multipliers behind each change</span></a>
 </div>
