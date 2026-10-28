@@ -195,7 +195,8 @@ CRLF checkouts; the report restores such files (`git diff --ignore-cr-at-eol`).
 ## Running it from Jenkins
 
 [`jenkins/patch-watch.Jenkinsfile`](../jenkins/patch-watch.Jenkinsfile) runs `status` every 3 hours and, when a new build
-is installed, `run --label steam-<buildid> --assets` (or the `LABEL` parameter). It runs on the lead's PC through a Jenkins
+is installed, `run --label <season>-<buildid> --assets`, for example `s2-26000000` (or the `LABEL` parameter). The
+season prefix is `SEASON` in the Jenkinsfile: change it when a new season starts. It runs on the lead's PC through a Jenkins
 agent labelled `wardogs` and calls the main checkout's `update_pipeline.py`, so the `update-<label>` branch lands in the
 main checkout as with a manual run. The Jenkins server, the agent and the job definition live in the
 [`jenkins-demo`](https://github.com/Kiyogitpy/jenkins-demo) repo (`scripts/windows-agent.ps1`, `jenkins/casc.yaml`).

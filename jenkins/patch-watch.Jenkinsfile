@@ -13,12 +13,13 @@ pipeline {
     }
 
     parameters {
-        string(name: 'LABEL', defaultValue: '', description: 'Label for the new build. Empty: steam-<Steam build id>.')
+        string(name: 'LABEL', defaultValue: '', description: 'Label for the new build. Empty: <SEASON>-<Steam build id>.')
     }
 
     environment {
         MAIN_CHECKOUT = 'E:/Reverse_Engineer/wardogs_analysis/data_docs_clone/wardogs-data-docs'
         STEAM_MANIFEST = 'E:/Steam/steamapps/appmanifest_1867240.acf'
+        SEASON = 's2'   // label prefix for automatic runs; change it when a new season starts
         PYTHONUTF8 = '1'
     }
 
@@ -44,7 +45,7 @@ pipeline {
                     if (rc != 10) {
                         error("update_pipeline.py status failed with exit code ${rc}")
                     }
-                    env.NEW_LABEL = params.LABEL ?: "steam-${acfValue(acf, 'buildid')}"
+                    env.NEW_LABEL = params.LABEL ?: "${env.SEASON}-${acfValue(acf, 'buildid')}"
                 }
             }
         }
