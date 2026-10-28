@@ -33,7 +33,7 @@
       var at = links.indexOf(document.activeElement);
       e.preventDefault();
       if (!item.classList.contains("wm-open")) { closeAll(item); setOpen(item, true); }
-      var next = e.key === "ArrowDown" ? at + 1 : at - 1;
+      var next = e.key === "ArrowDown" ? at + 1 : (at < 0 ? links.length - 1 : at - 1);
       links[(next + links.length) % links.length].focus();
     });
   });

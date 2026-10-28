@@ -87,7 +87,7 @@ The yards for each side:
 | Saburtulo | Valkyra | Rostokino | Valkyra version | 2 / 1 / 1 | 25 |
 | Saburtulo | Manticore | Ramenki | Lonestar version | 2 / 1 / 1 | 26 |
 
-The Kuzminki and Ramenki boards look swapped in the game. Which team gets which spawn vehicle in a match is not known. The yards allow vehicle families, not single vehicles, and the game does not say how many vehicles a yard holds.
+The Kuzminki and Ramenki boards look swapped in the game. Which team gets which spawn vehicle in a match is not known. The yards allow vehicle families, not single vehicles, and it is not known how many vehicles a yard holds.
 
 ### Vehicle limits
 

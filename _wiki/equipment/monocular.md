@@ -28,7 +28,7 @@ The Monocular is the middle recon optic in price and power. It has a medium magn
 
 ## Overview
 
-The shop text describes the Monocular as spotting enemy infantry and vehicles with medium, variable magnification. Unlike the Range Finder and the Infrared Range Finder, its shop text does not mention an accurate distance readout. The data gives no spotting range. The data gives spot timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
+The shop text describes the Monocular as spotting enemy infantry and vehicles with medium, variable magnification. Unlike the Range Finder and the Infrared Range Finder, its shop text does not mention an accurate distance readout. No spotting range is known. Spot timing is known instead: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
 
 ## How it works
 
@@ -36,7 +36,7 @@ The shop text describes the Monocular as spotting enemy infantry and vehicles wi
 - The game files place it in the same aim action as the Range Finder, so the two share controls.
 - While it is in use, maximum movement speed is halved.
 
-The data gives the Monocular no reload action.
+The Monocular has no reload action.
 
 ## Season 2 changes
 

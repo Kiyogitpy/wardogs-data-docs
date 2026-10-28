@@ -35,7 +35,7 @@ The Item Shop also lists a "Ghillie Body Suit (Dead)" at 3,500 cash. It is a sep
 
 ## Protection
 
-The suit has no durability, covers no body parts and gives no protection. The game's armor damage table sets the armor damage of this piece to zero, so it never reduces a hit and takes no armor damage (read from the game data; the game was not run to confirm it). The Weapon Damage page therefore treats it as no armor.
+The suit has no durability, covers no body parts and gives no protection. The game's armor damage table sets the armor damage of this piece to zero, so it never reduces a hit and takes no armor damage (read from the game files; the game was not run to confirm it). The Weapon Damage page therefore treats it as no armor.
 
 | Piece | Damage reduction | Body parts covered | Durability |
 |---|---:|---|---:|
@@ -72,7 +72,7 @@ No Season 2 change to the Ghillie Body Suit is listed.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price, unlock and effects
 - [Items data](../../content/Wardogs_Items_v2.md): weight and item id
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): how the damage tables treat the Ghillie items
-- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts in the item data
+- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts for this item
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor

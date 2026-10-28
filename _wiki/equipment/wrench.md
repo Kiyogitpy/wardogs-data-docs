@@ -28,7 +28,7 @@ The Wrench is the basic hand tool for repairing vehicles. It can repair any vehi
 
 ## Overview
 
-The shop text describes the Wrench as a tool for manually repairing all vehicles at a slow repair speed. It is the cheapest of the three repair tools. The Wrench is the slowest of the repair tools in the data: about 14.7 vehicle health per second, against 19.3 for the Light Drill and 29 for the Heavy Drill.
+The shop text describes the Wrench as a tool for manually repairing all vehicles at a slow repair speed. It is the cheapest of the three repair tools. The Wrench is the slowest of the repair tools: about 14.7 vehicle health per second, against 19.3 for the Light Drill and 29 for the Heavy Drill.
 
 ## How it works
 

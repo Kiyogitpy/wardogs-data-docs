@@ -8,7 +8,7 @@ description: "Every player weapon, the ammunition they use and the attachments t
 
 # Weapons
 
-Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow in the weapon data that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
+Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
 
 ## Assault rifles
 
@@ -39,7 +39,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 |---|---|---|---:|---|---:|
 | ![Evo-3 Ultra]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_036.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Evo-3 Ultra](weapons/evo-3-ultra.md) | .308 Win | 700 rounds/min | Evo-3 Ultra 50 RND Box | 7250 |
 | ![M249 SAW]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_009.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M249 SAW](weapons/m249-saw.md) | 5.56x45mm | 850 rounds/min | M249 200 RND Box | 3200 |
-| ![PKM]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_019.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [PKM](weapons/pkm.md) | 7.62x54mm | 600 rounds/min (class default) | PKM 100 RND Box | 4100 |
+| ![PKM]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_019.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [PKM](weapons/pkm.md) | 7.62x54mm | 600 rounds/min | PKM 100 RND Box | 4100 |
 
 ## Submachine guns
 
@@ -56,7 +56,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---|---:|---|---:|
 | ![Deagle]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_027.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Deagle](weapons/deagle.md) | .50 AE | 267 rounds/min | Deagle 7 RND Magazine | 750 |
-| ![GGX 17]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_010.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [GGX 17](weapons/ggx-17.md) | 9x19mm | 600 rounds/min (class default) | GGX 17 RND Magazine | 200 |
+| ![GGX 17]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_010.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [GGX 17](weapons/ggx-17.md) | 9x19mm | 600 rounds/min | GGX 17 RND Magazine | 200 |
 | ![GGX 18]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_032.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [GGX 18](weapons/ggx-18.md) | 9x19mm | 1,200 rounds/min | GGX 17 RND Magazine | 1000 |
 | ![Judge]({{ '/assets/img/icons/weapons-3d-inventory/T_UI_Icon_Weapon_judge_Textured_512x256_inv.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Judge](weapons/judge.md) | .45 Colt | 200 rounds/min | Judge Bullet Cylinder (6 rounds) | 250 |
 | ![M1911]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_026.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M1911](weapons/m1911.md) | .45 ACP | 430 rounds/min | M1911 7 RND Magazine | 300 |

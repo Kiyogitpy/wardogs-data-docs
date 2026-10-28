@@ -11,9 +11,9 @@ The four recon optics are the [Binoculars](binoculars.md), [Monocular](monocular
 
 | Item | Price | Zoom | Range readout | Needs batteries | Notes |
 |---|---:|---|---|---|---|
-| [Binoculars](binoculars.md) | 180 cash | Low | None in the shop text | Not stated in the data | Recon. Shop unlock level 0. Not in the Recon unlock tree. |
-| [Monocular](monocular.md) | 350 cash | Medium, variable | None in the shop text | Not stated in the data | Recon. Shop unlock level 0. Recon unlock tree: level 2 for 7,500 cash. |
-| [Range Finder](range-finder.md) | 1,450 cash | High, variable | Accurate | Not stated in the data | Recon. Shop unlock level 0. Recon unlock tree: level 8 for 25,000 cash. |
+| [Binoculars](binoculars.md) | 180 cash | Low | None in the shop text | Not known | Recon. Shop unlock level 0. Not in the Recon unlock tree. |
+| [Monocular](monocular.md) | 350 cash | Medium, variable | None in the shop text | Not known | Recon. Shop unlock level 0. Recon unlock tree: level 2 for 7,500 cash. |
+| [Range Finder](range-finder.md) | 1,450 cash | High, variable | Accurate | Not known | Recon. Shop unlock level 0. Recon unlock tree: level 8 for 25,000 cash. |
 | [Infrared Range Finder](infrared-range-finder.md) | 3,200 cash | Infrared, variable | Accurate | Yes. The scope uses 3 charges when raised, then 1 charge every 0.8 s: about 78 s on a Battery, 198 s on a High Capacity Battery | Recon. Shop unlock level 0. Recon unlock tree: level 32 for 50,000 cash. Ghillie Body Suit and Ghillie Headwear hide the player from it, per the shop text. Has a reload action. |
 
 The Recon unlock tree lists its own role level and cash cost for the Monocular, Range Finder and Infrared Range Finder. Those costs are separate from the shop prices in the table.

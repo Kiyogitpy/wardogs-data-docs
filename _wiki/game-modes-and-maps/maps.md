@@ -74,7 +74,7 @@ The Kenya map, added in Season 2. Its zone set is labelled Africa. Its Control Z
 
 ### Vehicle spawns on the main maps
 
-Each King of the Hill match uses three spawn areas, one per side, and each area has a vehicle deployment board, several vehicle yards and an infantry spawn area. The counts below are per server browser entry; the game does not say how many vehicles of each kind a yard holds.
+Each King of the Hill match uses three spawn areas, one per side, and each area has a vehicle deployment board, several vehicle yards and an infantry spawn area. The counts below are per server browser entry; it is not known how many vehicles of each kind a yard holds.
 
 | Map (entry) | Deployment boards | Vehicle yards (ground / air / light) | Vehicle slots |
 |---|---:|---|---:|

@@ -54,7 +54,7 @@ The 19 Gold Market rows are worth 170 Gold Bars in total: 16 skins worth 155, an
 
 - **Gold Market.** This is the only purchase route the game shows. Gold Bars are covered in [Currencies](currencies.md).
 - **No reward track.** The client's season definition has a current season number of 1 and an empty list of season levels. The season's dates and names come from the server. No level, date or achievement unlocks a Season 1 cosmetic.
-- **AK74 Black and Gold.** This is the one Season 1 weapon skin with no Gold Market row. The game gives it no price, so it can only come from a server grant, which the game does not show.
+- **AK74 Black and Gold.** This is the one Season 1 weapon skin with no Gold Market row. The game gives it no price, so it can only come from a server grant, and which grants are made is not known.
 
 ## Season 2 changes
 

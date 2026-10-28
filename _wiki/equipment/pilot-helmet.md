@@ -19,17 +19,17 @@ description: "Vehicle-use helmet: 30% head damage reduction, halves vehicle soun
 | Body parts covered | Head |
 | Durability | 180 |
 | **Availability** | |
-| Price | Not sold (hidden in the shop; the data lists 6,400 cash) |
+| Price | Not sold (hidden in the shop; a price of 6,400 cash is listed) |
 | Unlock | Not applicable |
 | **Reference** | |
 | Internal name | `ID_PilotHelmet` (item `Id.Item.PilotHelmet`) |
 {: .wiki-infobox }
 
-The Pilot Helmet protects the head with a 30% reduction, the same as the [Level 1 Helmet](level-1-helmet.md). It also has two vehicle effects: it muffles vehicle audio and highlights target vehicles. The shop data marks it as hidden, so it is not sold in the shop.
+The Pilot Helmet protects the head with a 30% reduction, the same as the [Level 1 Helmet](level-1-helmet.md). It also has two vehicle effects: it muffles vehicle audio and highlights target vehicles. The shop marks it as hidden, so it is not sold in the shop.
 
 ## Overview
 
-The Item Shop describes the Pilot Helmet as "Low Damage Reduction" and lists the two vehicle effects. The shop files it under "Vehicle Use" rather than "Armor". It is still an armor item in the item data, and it goes in the Helmet slot.
+The Item Shop describes the Pilot Helmet as "Low Damage Reduction" and lists the two vehicle effects. The shop files it under "Vehicle Use" rather than "Armor". It is still an armor item, and it goes in the Helmet slot.
 
 The weight is not listed, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
 

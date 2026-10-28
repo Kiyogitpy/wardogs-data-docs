@@ -6,7 +6,7 @@ description: "Short answers to the questions players ask most about combat, armo
 
 # Frequently Asked Questions
 
-Short answers to the questions players ask most often. Each answer gives the number from the game and links to the article that explains it. Where a figure is worked out from the game rather than timed in play, the answer says so, and where the game does not settle a question, the answer says that too.
+Short answers to the questions players ask most often. Each answer gives the number from the game and links to the article that explains it. Where a figure is worked out from the game rather than timed in play, the answer says so, and where a question is not settled, the answer says that too.
 
 ## Combat and damage
 

@@ -140,7 +140,7 @@ Each control also has a gamepad default. The full list, including gamepad and fl
 
 ## Settings
 
-Each setting has a default. Some have an exact range; where the game does not give a range, the table says so.
+Each setting has a default. Some have an exact range; where no range is known, the table says so.
 
 ### Aim and sensitivity
 

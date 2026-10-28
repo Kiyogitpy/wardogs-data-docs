@@ -20,7 +20,7 @@ description: "A single-use revive item that revives a downed teammate faster tha
 | Effects while using | Maximum movement speed halved |
 | **Availability** | |
 | Price | 425 cash (500 in Season 1) |
-| Unlock level | 0 (shop data) |
+| Unlock level | 0 (shop) |
 | **Data** | |
 | Internal name | `Id.Item.Resuscitator.Standard` |
 {: .wiki-infobox }
@@ -29,7 +29,7 @@ The Field Resuscitator revives a downed teammate. It is a single-use item, and t
 
 ## Overview
 
-The shop describes the Field Resuscitator as a field revive item that revives teammates faster and is single use. It works like the [Emergency Resuscitator](emergency-resuscitator.md), with the same use animation and container. The main difference in the data is the price, and the shop text does not limit it to one per life.
+The shop describes the Field Resuscitator as a field revive item that revives teammates faster and is single use. It works like the [Emergency Resuscitator](emergency-resuscitator.md), with the same use animation and container. The main difference is the price, and the shop text does not limit it to one per life.
 
 ## Effects
 

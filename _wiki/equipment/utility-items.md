@@ -18,7 +18,7 @@ Utility items are the gear that is neither armor, medical, explosive nor buildab
 
 ## Overview
 
-Each item below has its own article with the full details. The tables on this page give the shop prices and the main numbers in one place. Where a number is missing from the data, the article says so.
+Each item below has its own article with the full details. The tables on this page give the shop prices and the main numbers in one place. Where a number is not known, the article says so.
 
 ## Individual items
 
@@ -53,7 +53,7 @@ Each item below has its own article with the full details. The tables on this pa
 
 ### Parachutes
 
-A parachute is a single-use item that must be deployed by hand. The data gives it a minimum fall before it can be opened, a minimum clearance above the ground, and an open time. See [Parachutes](parachutes.md) for the values and their units.
+A parachute is a single-use item that must be deployed by hand. It has a minimum fall before it can be opened, a minimum clearance above the ground, and an open time. See [Parachutes](parachutes.md) for the values and their units.
 
 | Item | Weight (kg) | Price (cash) | Can steer | Notes |
 |---|---:|---:|---|---|
@@ -81,7 +81,7 @@ A backpack adds a grid of storage slots. The Pouch is free, and the other standa
 
 ### Tactical vests
 
-Tactical vests are not body armor. They give no damage reduction in the data. Each one unlocks more quick slots and speeds up reloading and switching to utility items. None adds storage. For armor, see [Body Armor](body-armor.md).
+Tactical vests are not body armor. They give no damage reduction. Each one unlocks more quick slots and speeds up reloading and switching to utility items. None adds storage. For armor, see [Body Armor](body-armor.md).
 
 | Vest | Price (cash) | Quick slots unlocked | Reload and utility speed |
 |---|---:|---|---|
@@ -91,7 +91,7 @@ Tactical vests are not body armor. They give no damage reduction in the data. Ea
 
 ### Recon optics
 
-These optics spot enemy infantry and vehicles at a distance. The shop text describes what they show. The data gives no spotting range for any of them.
+These optics spot enemy infantry and vehicles at a distance. The shop text describes what they show. No spotting range is known for any of them.
 
 | Item | Price (cash) | Magnification |
 |---|---:|---|
@@ -118,7 +118,7 @@ The Light and Heavy Drills use Batteries, and Batteries also power the [Defibril
 
 ### Vehicle fuel
 
-The 40 L Fuel Canister costs 150 cash. It has 40 durability, and each use adds 25 fuel, according to the item data. See [Fuel Canister](fuel-canister.md).
+The 40 L Fuel Canister costs 150 cash. It has 40 durability, and each use adds 25 fuel, according to the shop. See [Fuel Canister](fuel-canister.md).
 
 ### Build tools
 
@@ -150,7 +150,7 @@ Prices are listed in each table above and in each item's article.
 | Large Hammer critical-spot build amount | 10 | 8 |
 | Medium Hammer critical-spot build amount | 6 | 5 |
 
-Both parachutes also gained three values in Season 2: a vertical drag coefficient of 1.75, an open time of 2.0 and a clearance above the ground to open of 1,000. The data gives no units for these.
+Both parachutes also gained three values in Season 2: a vertical drag coefficient of 1.75, an open time of 2.0 and a clearance above the ground to open of 1,000. No units are known for these.
 
 ## See also
 

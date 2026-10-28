@@ -8,7 +8,7 @@ layout: default
 {%- if page.parent and page.wiki_hub != true -%}
 {%- assign cat_hub = site.wiki | where: "title", page.parent | where: "wiki_hub", true | first -%}
 {%- if cat_hub %}
-<p class="wiki-categories"><span>Categories:</span> <a href="{{ cat_hub.url | relative_url }}">{{ page.parent | escape }}</a>{% if page.group %}<a href="{{ cat_hub.url | relative_url }}#{{ page.group | slugify }}">{{ page.group | escape }}</a>{% endif %}</p>
+<p class="wiki-categories"><span>Categories:</span> <a href="{{ cat_hub.url | relative_url }}">{{ page.parent | escape }}</a>{% if page.group %}{% capture group_heading %}## {{ page.group }}{% endcapture %}<a href="{{ cat_hub.url | relative_url }}{% if cat_hub.content contains group_heading %}#{{ page.group | slugify }}{% endif %}">{{ page.group | escape }}</a>{% endif %}</p>
 {%- endif -%}
 {%- endif %}
 </div>

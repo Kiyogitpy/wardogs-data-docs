@@ -58,7 +58,7 @@ Odds rise by a small step with each count. The table gives the lowest and highes
 
 A condition is an extra rule that a wager can carry. Each one multiplies the odds of the wager it is added to. The game lists 50 conditions. The table is sortable. The "Applies to" column shows the action a condition is tied to, or "Any action" when the game does not tie it to one.
 
-Odds for the conditions run from 1.005 (5 tapes in the vehicle) to 10.0 (Deathwish). Time limit is 4.0, no vehicles is 3.0 and no resupply is 2.0. The server settles the payout, so the game does not say whether two conditions on one wager multiply together.
+Odds for the conditions run from 1.005 (5 tapes in the vehicle) to 10.0 (Deathwish). Time limit is 4.0, no vehicles is 3.0 and no resupply is 2.0. The server settles the payout, so it is not known whether two conditions on one wager multiply together.
 
 | Condition | Type | Applies to | Odds |
 |---|---|---|---:|
