@@ -10,6 +10,6 @@ description: "Body armor, medical items, grenades, fire and smoke, buildables an
 
 Equipment is everything a player carries or wears apart from weapons: body armor, medical items, grenades and other explosives, fire and smoke throwables, and utility gear such as parachutes, backpacks and tools. Structures and emplacements built with hammers have their own section, [Building](building.md); ammunition and attachments have theirs too ([Ammunition](ammunition.md), [Attachments](attachments.md)).
 
-Prices are cash in the item shop. Health is shown in HP. Where the data does not give a value, the article says "not yet known".
+Prices are cash in the item shop. Health is shown in HP. Where no value is known, the article says "not yet known".
 
 {% include wiki-index.html hub="Equipment" %}
