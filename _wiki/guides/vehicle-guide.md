@@ -6,11 +6,11 @@ description: "How to pick a vehicle by role, what it takes to destroy one, how t
 
 # Vehicle Guide
 
-This guide puts the vehicle articles side by side for a player choosing and running a vehicle. Every figure comes from the linked vehicle, damage, fuel, repair and seat articles, so check there for the full rules. Speeds are shown as stored, because the data does not label their unit.
+This guide puts the vehicle articles side by side for a player choosing and running a vehicle. Every figure comes from the linked vehicle, damage, fuel, repair and seat articles, so check there for the full rules. Speeds are shown as stored, because the game does not label their unit.
 
 ## Picking a vehicle
 
-The table lists every purchasable vehicle by role. The airplane is left out because it has no shop listing in the data, and the M113 APC SV is left out because it is a spawn vehicle with no price.
+The table lists every purchasable vehicle by role. The airplane is left out because it has no shop listing, and the M113 APC SV is left out because it is a spawn vehicle with no price.
 
 | Vehicle | Role | Price (cash) | Seats | Main health (HP) | Rifle damage taken | Top speed (as stored) |
 |---|---|---:|---:|---:|---:|---:|
@@ -41,7 +41,7 @@ The table lists every purchasable vehicle by role. The airplane is left out beca
 Notes on the table:
 
 - "Rifle damage taken" is the share of 5.56 mm full-power rifle damage that reaches the hull. It is derived from each vehicle's damage rules, see [Vehicle damage](../vehicles/vehicle-damage.md).
-- The Humvee [Minigun] lists 5 seats in the shop and 4 on one stats sheet. The Kodiak [Pickup] lists 6 on its stats sheet and 4 in the base seat data. See [Seats and passengers](../vehicles/seats-and-passengers.md).
+- The Humvee [Minigun] lists 5 seats in the shop and 4 on one stats sheet. The Kodiak [Pickup] lists 6 on its stats sheet and 4 in the base seat settings. See [Seats and passengers](../vehicles/seats-and-passengers.md).
 - Armed and armored vehicles are listed by the gun or armor they carry, as the vehicle articles name them.
 
 Tips that follow from the table:
@@ -50,7 +50,7 @@ Tips that follow from the table:
 - **The Little Bird family takes the most rifle damage of any helicopter.** The MH-6, AH-6M and AH-6R take 7.5%, against 5% for the Z20 Lakota and the Havoc.
 - **The Havoc has the most main health of any helicopter, 800 HP,** but it costs 28,000 cash, the highest price in the vehicle vendor. See the [Havoc](../vehicles/havoc.md) article.
 - **Among helicopters, the Z20 Lakota gives the most seats per cash.** It has 13 seats for 7,400 cash, about 570 cash per seat (derived). The MH-6 has 6 seats for 6,250 cash, about 1,040 per seat (derived). The Bobcat and the Kodiak [Pickup] are cheaper per seat, but both are ground vehicles.
-- **Speed is a relative number here.** The data stores 445 for the Z20 Lakota and 79 for the Ural, and the vendor stat sheet labels that figure km/h, but the values were not checked in play, so compare speeds within a role rather than across them.
+- **Speed is a relative number here.** The game stores 445 for the Z20 Lakota and 79 for the Ural, and the vendor stat sheet labels that figure km/h, but the values were not checked in play, so compare speeds within a role rather than across them.
 
 ## Keeping it alive
 
@@ -101,8 +101,8 @@ Tips that follow from the numbers:
 - **Because each helicopter starts with only 2 flares, plan a flight around that count.** Each press uses one flare and then waits 5 seconds before the next. The "3 bursts" in the item text is not a count. Flares are an inventory item: the vehicle vendor sells one for 750 cash, and buying or being given one adds a flare to the vehicle, and pressing the key takes one out. See [Countermeasures and flares](../vehicles/countermeasures-and-flares.md).
 - **Because the helicopters have arcade assists, do not expect a manual climb to be unlimited.** Each helicopter limits its climb rate to 36 km/h and holds a hover when the collective is released. The Havoc alone also levels pitch and roll at low speed. See [Vehicle handling](../vehicles/vehicle-handling.md#driving-and-flight-assists).
 - **Because flares work on a missile that is already flying, fire them when it is close.** A guided missile between the minimum and maximum flare distance (5 to 300 m on the Havoc) turns toward a flare point beside the helicopter for the 3.5 seconds the flares burn, and gives up its target when it gets within about 100 m of that point. They do not clear a lock, so do not treat them as a shield against a missile that is still far off or already inside the minimum distance. The in-game tip about preventing locks does not match the code: helicopters are marked as not lockable while flares burn, but nothing in the client reads that mark, so flares neither stop a new lock nor drop one (inferred). Smoke has no effect on lock-on.
-- **Because the in-game tip also says flying low stops certain launchers from locking on, low flight is a second defence.** The data does not say which launchers.
-- **Because the L2A6's smoke screen stays active for 16 seconds and can be used again 90 seconds after it is fired, it gives short cover with a long wait.** The 6 seconds in the smoke effect data describe the look of the grenade-style cloud (2 seconds fading in, 2 at full density, 2 fading out), not how long the screen is active. The game code shows no link between smoke and lock-on weapons.
+- **Because the in-game tip also says flying low stops certain launchers from locking on, low flight is a second defence.** The game does not say which launchers.
+- **Because the L2A6's smoke screen stays active for 16 seconds and can be used again 90 seconds after it is fired, it gives short cover with a long wait.** The 6 seconds in the smoke effect settings describe the look of the grenade-style cloud (2 seconds fading in, 2 at full density, 2 fading out), not how long the screen is active. The game code shows no link between smoke and lock-on weapons.
 
 ## Fuel and repair
 
@@ -141,7 +141,7 @@ Tips that follow from the numbers:
 
 ## Seats and passengers
 
-Seated players take a reduced share of gunfire on some vehicles. The data sets this only for the vehicles below. The figures show the share of damage a seated player takes, so 10% means a 90% reduction.
+Seated players take a reduced share of gunfire on some vehicles. The game sets this only for the vehicles below. The figures show the share of damage a seated player takes, so 10% means a 90% reduction.
 
 | Vehicle group | Small and medium arms taken | High-calibre arms taken | Season 2 |
 |---|---:|---:|---|
@@ -150,13 +150,13 @@ Seated players take a reduced share of gunfire on some vehicles. The data sets t
 | Little Bird family ([MH-6](../vehicles/mh-6.md), [AH-6M [Miniguns]](../vehicles/ah-6m-miniguns.md), [AH-6R [Rockets]](../vehicles/ah-6r-rockets.md)) | 75% (50% in Season 1) | 85% (80% in Season 1) | Halved |
 | [Z20 Lakota](../vehicles/z20-lakota.md), [Z20 Lakota [Miniguns]](../vehicles/z20-lakota-miniguns.md) | 75% (no reduction in Season 1) | 85% (no reduction in Season 1) | Added |
 
-The data sets no seat reduction for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
+The game sets no seat reduction for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
 
 Tips that follow from the numbers:
 
-- **Because the Havoc's seats take only 10% of small and medium arms damage, a Havoc is the best-protected seat in the data.** The Humvee's seats take 30%.
+- **Because the Havoc's seats take only 10% of small and medium arms damage, a Havoc is the best-protected seat in the game.** The Humvee's seats take 30%.
 - **Because Season 2 halved the Little Bird family's protection, an MH-6 seat takes 75% of small-arms damage, where it took 50% in Season 1.**
-- **Because the Kodiak and the Ural have no seat row, a rider in them gets no seat reduction in the data.** As far as the data shows, protection in those vehicles comes only from the player's own armor.
+- **Because the Kodiak and the Ural have no seat row, a rider in them gets no seat reduction.** As far as the game shows, protection in those vehicles comes only from the player's own armor.
 - **Because purchased vehicles start locked, teammates cannot enter until the owner unlocks them for a squad or for everyone.** See [Seats and passengers](../vehicles/seats-and-passengers.md).
 - **Because switching seats takes a moment, a passenger should move before the fight, not during it.** The seats are chosen with F1 to F12 by default, and the in-game tip says switching is not instant.
 - **A destroyed deployment APC comes back after 300 s (60 s for a side that is 15 or more score points behind the best other side), so a side can lose its forward spawn for a few minutes.** The board shows the time left. The board also has a 600 s deploy cooldown per player, which starts when that player deploys onto the APC. The APC is not out at all until one side has a score of 20. See [M113 APC SV](../vehicles/m113-apc-sv.md).
@@ -169,7 +169,7 @@ Tips that follow from the numbers:
 - [Vehicle damage](../vehicles/vehicle-damage.md), [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md), [Fuel and refueling](../vehicles/fuel-and-refueling.md), [Countermeasures and flares](../vehicles/countermeasures-and-flares.md) and [Seats and passengers](../vehicles/seats-and-passengers.md)
 - [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) and [Fuel Canister](../equipment/fuel-canister.md)
 - [All-Vehicle Stat & Damage Sheets](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
-- [Vehicles (feature)](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
+- [Vehicles Game Feature](../../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
 - [Round 46 A evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round46-a.md): wiki update notes and data findings for this article

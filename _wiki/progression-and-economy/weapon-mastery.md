@@ -2,7 +2,7 @@
 title: "Weapon Mastery"
 parent: "Progression & Economy"
 group: "Roles and mastery"
-description: "The mastery screen's lists: 8 weapon types with 25 weapons, and 2 vehicle types with 8 vehicles. The data has no XP, level or reward table for either, so how progress is earned is not in the game data."
+description: "The mastery screen's lists: 8 weapon types with 25 weapons, and 2 vehicle types with 8 vehicles. The game has no XP, level or reward table for either, so how progress is earned is not known."
 ---
 
 # Weapon Mastery
@@ -20,7 +20,7 @@ description: "The mastery screen's lists: 8 weapon types with 25 weapons, and 2 
 | Internal name | DA_UI_PlatformMastery_SceneData |
 {: .wiki-infobox }
 
-Weapon mastery is the mastery track for each type of weapon. The game data calls it platform mastery. The mastery screen has two halves: Weapon Mastery, for eight weapon types, and Vehicle Mastery, for two vehicle types. The data gives the lists that the screen shows. It holds no XP, level or reward table for any of them, so how progress is earned and what each level gives is not in the game data.
+Weapon mastery is the mastery track for each type of weapon. The game calls it platform mastery. The mastery screen has two halves: Weapon Mastery, for eight weapon types, and Vehicle Mastery, for two vehicle types. The game gives the lists that the screen shows. It has no XP, level or reward table for any of them, so how progress is earned and what each level gives is not known.
 
 ## Overview
 
@@ -30,7 +30,7 @@ Each weapon type and vehicle type has its own mastery progress. The mastery scre
 
 - **Per type.** Progress is kept for each type, not for each weapon or vehicle. The screen lists which weapons and vehicles belong to each type.
 - **Two tabs.** The platform mastery screen has a Progression tab and a Challenges tab.
-- **XP.** The data gives no XP for any weapon or vehicle. No item in this build has a platform XP tag set (it is empty on all 628 item rows), so how mastery XP is earned is not in the game files, and the backend has no record type for it.
+- **XP.** The game gives no XP for any weapon or vehicle. No item in this build has a platform XP tag set (it is empty on all 628 item rows), so how mastery XP is earned is not in the game, and the backend has no record type for it.
 - **Separate from role mastery.** Role mastery is a different track for the six roles, with its own XP curve. See [Cash and Rewards](cash-and-rewards.md#role-mastery-xp).
 
 ## Weapon types
@@ -63,7 +63,7 @@ The Season 1 skin table names three weapons differently from this wiki. Its AX50
 
 ### Skins
 
-The Season 1 cosmetic data lists skins for weapons, vehicles and a parachute, in three sets: Black and Gold, Digital Wood and Two-Tone Desert.
+The Season 1 cosmetics list has skins for weapons, vehicles and a parachute, in three sets: Black and Gold, Digital Wood and Two-Tone Desert.
 
 | Item | Type | Skin set |
 |---|---|---|
@@ -81,15 +81,15 @@ The Season 1 cosmetic data lists skins for weapons, vehicles and a parachute, in
 | Humvee, Bobcat, Littlebird and Dune Buggy | Vehicles | Two-Tone Desert |
 | Sports parachute | Parachute | Digital Wood |
 
-The data does not say how a skin is granted. The Season 1 skins are sold on the Gold Market, and the backend can grant items outside the shop (see [Cosmetics](cosmetics.md)). No mastery level is linked to a skin in the data. No skin is listed for the Marksman Rifle or Launcher types.
+The game does not say how a skin is granted. The Season 1 skins are sold on the Gold Market, and the backend can grant items outside the shop (see [Cosmetics](cosmetics.md)). No mastery level is linked to a skin. No skin is listed for the Marksman Rifle or Launcher types.
 
 ### Parts
 
-The data has a mastery paint title and a mastery texture slot for paints, but it lists no mastery paint names and no weapon paint list. Which attachments or parts a weapon type unlocks is not in the data.
+The game has a mastery paint title and a mastery texture slot for paints, but it lists no mastery paint names and no weapon paint list. Which attachments or parts a weapon type unlocks is not known.
 
 ### XP and rewards per level
 
-Not in the client data. The mastery data holds screen text, colours and icon settings. It has no XP figures and no reward for any level, and the backend has no platform mastery content type. The level and XP thresholds that would gate the track do not appear in the client.
+Not in the game. The mastery screen has text, colours and icon settings. It has no XP figures and no reward for any level, and the backend has no platform mastery content type. The level and XP thresholds that would gate the track do not appear in the client.
 
 ## Season 2 changes
 

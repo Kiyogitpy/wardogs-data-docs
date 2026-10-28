@@ -23,8 +23,8 @@ Team Offence challenges belong to the [Team Offence](../game-modes-and-maps/team
 
 | Challenge | What earns it | Cash | Role XP |
 |---|---|---|---|
-| Team Offence Punish | Punishing a kill in Team Offence. Pays points, not cash: 1 to 5 points per kill (see below). | None (points instead) | No row |
-| Teamkill Voter | Voting on a teamkill. A forgive decision pays 500 cash. | 500 | No row |
+| Team Offence Punish | Punishing a kill in Team Offence. Pays points, not cash: 1 to 5 points per kill (see below). | None (points instead) | None |
+| Teamkill Voter | Voting on a teamkill. A forgive decision pays 500 cash. | 500 | None |
 
 ### Punish points
 

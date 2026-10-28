@@ -31,20 +31,20 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 
 ## How it works
 
-- **Price.** Each listing has one price. The vendor rows do not name a currency. The Season 2 unlock tree lists its costs in cash, so vendor prices are most likely cash, but the data does not state it outright.
+- **Price.** Each listing has one price. The vendor rows do not name a currency. The Season 2 unlock tree lists its costs in cash, so vendor prices are most likely cash, but the game does not state it outright.
 - **Price modifiers.** Each price is multiplied by every discount that applies. A discount is a percentage: 50% halves the price and 90% takes 10% off. The discounts in the game's economy settings are:
   - Wardog level 8 or below: 50%.
   - The losing faction, when it trails by 40 points: 80%. This condition is inferred from the setting's field names.
   - A first purchase: 90%.
-  - The signature rifle of a faction is free (0%) for that faction: the setting pairs each rifle with a faction tag, and the faction data names them Lonestar, Valkyra and Manticore. The game applies the 0% only when the buyer's own faction is the faction named in the setting; a buyer of another faction pays the normal price. See [Factions](../game-modes-and-maps/factions.md).
+  - The signature rifle of a faction is free (0%) for that faction: the setting pairs each rifle with a faction tag, and the faction setup names them Lonestar, Valkyra and Manticore. The game applies the 0% only when the buyer's own faction is the faction named in the setting; a buyer of another faction pays the normal price. See [Factions](../game-modes-and-maps/factions.md).
 
   Derived example: an AK74 (800 cash) bought as a first purchase by a Wardog level 8 player costs 360 (800 x 0.5 x 0.9), before any other discount.
 - **Refunds.** A refund pays 90% of the smaller of what was spent on the refunded items and the eligible purchase amount. It must be claimed within 20 score ticks, a window set in the economy settings.
-- **Gating.** Shops gate listings by Wardog level or role level and by required items. The unlock level field in the vendor data is 0 or 1 on every listing and gates nothing.
-- **Required items.** Some listings need other items first. The data records these; the sample listings below show none.
-- **Buy limit.** Some listings have a lifetime buy limit. Where the data shows none, the listing has no limit.
+- **Gating.** Shops gate listings by Wardog level or role level and by required items. The unlock level field in the vendor table is 0 or 1 on every listing and gates nothing.
+- **Required items.** Some listings need other items first. The game records these; the sample listings below show none.
+- **Buy limit.** Some listings have a lifetime buy limit. Where the game shows none, the listing has no limit.
 - **Amount.** Each purchase is one stack of the listing's amount. Most listings buy one item.
-- **Hidden variations.** 343 of the 670 vendor variations in the data are hidden from the shop panels, mostly ammunition and magazine variants. They are filtered out of the vendor lists, so the tables here show only the visible listings.
+- **Hidden variations.** 343 of the 670 vendor variations are hidden from the shop panels, mostly ammunition and magazine variants. They are filtered out of the vendor lists, so the tables here show only the visible listings.
 
 ## Numbers
 

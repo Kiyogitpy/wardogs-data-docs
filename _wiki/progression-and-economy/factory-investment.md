@@ -21,15 +21,15 @@ The factory investment is a passive purchase. Once bought, it runs three product
 
 ## Overview
 
-The first factory investment sets up three lines and six recipes. It is passive: it does not need active use once bought. The data does not say what it unlocks at purchase.
+The first factory investment sets up three lines and six recipes. It is passive: it does not need active use once bought. The game does not say what it unlocks at purchase.
 
 ## How it works
 
 - **Lines.** Each line can make only the two recipes listed for it.
-- **Queues.** Each line has a queue. The queue size comes from an upgrade. The data reads the queue size from the level of the upgrade.
+- **Queues.** Each line has a queue. The queue size comes from an upgrade. The game reads the queue size from the level of the upgrade.
 - **Storage.** The factory has a storage size, also set by an upgrade.
 - **Recipes.** Each recipe has a production cost and a production discount. The discount is 20 percent: the production cost of a recipe is 80% of its shop price.
-- **Build time.** Every recipe takes 10 in the data. The unit is not confirmed.
+- **Build time.** Every recipe takes 10. The unit is not confirmed.
 
 ## Numbers
 
@@ -62,7 +62,7 @@ The first factory investment sets up three lines and six recipes. It is passive:
 | 4 | 20 | 4 | 20 |
 | 5 | 20 | 5 | 20 |
 
-The data also has a slot amount for each level. The Zaystev Foundry's own upgrade list never uses it, so in practice every line keeps a slot amount of 1 (inferred: the game starts each of the three slot amounts at level 1). The game code does read it. When the factory is set up, the code takes the slot amount for each production line and makes that many slots for the line, so a slot amount is a count of slots per line, separate from the queue size (inferred from the code; the step that looks the value up could not be read). Levels above 5 keep the level 5 values.
+The game also has a slot amount for each level. The Zaystev Foundry's own upgrade list never uses it, so in practice every line keeps a slot amount of 1 (inferred: the game starts each of the three slot amounts at level 1). The game code does read it. When the factory is set up, the code takes the slot amount for each production line and makes that many slots for the line, so a slot amount is a count of slots per line, separate from the queue size (inferred from the code; the step that looks the value up could not be read). Levels above 5 keep the level 5 values.
 
 The investment starts with its upgrade at level 1 for each of the three queues and for storage.
 
@@ -85,7 +85,7 @@ The investment starts with its upgrade at level 1 for each of the three queues a
 
 ## Sources
 
-- [FactoryInvestment (feature)](../../game-features/Wardogs_GameFeatures_FactoryInvestment_v2.md)
-- [FactoryInvestment_01 (feature)](../../game-features/Wardogs_GameFeatures_FactoryInvestment_01_v2.md)
+- [Factory Investment](../../game-features/Wardogs_GameFeatures_FactoryInvestment_v2.md)
+- [Factory Investment 01](../../game-features/Wardogs_GameFeatures_FactoryInvestment_01_v2.md)
 - [Season 2 changes: Game Modes & Maps](../../season-2-changes/game-modes-maps.md)
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

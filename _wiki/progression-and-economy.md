@@ -10,13 +10,13 @@ description: "How players earn cash and XP, what skills do, the challenges that 
 
 Players earn cash and XP for almost everything they do in a match: kills, revives, heals, vehicle work and zone play. Cash buys gear, weapons and vehicles, and XP raises each role's mastery level. This hub covers how the money and progress systems fit together.
 
-Where the data has no answer, the articles say "not yet known". The sources do not give the level or cost that unlocks each skill rank, for example.
+Where the game has no answer, the articles say "not yet known". The sources do not give the level or cost that unlocks each skill rank, for example.
 
 {% include wiki-index.html hub="Progression & Economy" %}
 
 ## Currencies
 
-The data defines two currencies. The data lists 10,000 as the starting balance of Cash. Gold Bars start at 0 and pay for cosmetics on the Gold Market. A third tag, Intel, is paid by passive missions, but the data gives it no display name, and the game files show no way to spend it. See [Currencies](progression-and-economy/currencies.md) for the details.
+The game defines two currencies. The game lists 10,000 as the starting balance of Cash. Gold Bars start at 0 and pay for cosmetics on the Gold Market. A third tag, Intel, is paid by passive missions, but the game gives it no display name, and the game shows no way to spend it. See [Currencies](progression-and-economy/currencies.md) for the details.
 ## Sources
 
 - [Rewards and progression](../Wardogs_Rewards_and_Progression_v2.md)

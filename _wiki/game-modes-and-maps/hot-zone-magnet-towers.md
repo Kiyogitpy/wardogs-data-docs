@@ -24,7 +24,7 @@ description: "How the numbered towers on the King of the Hill maps are captured,
 | Recharge afterwards | 900 s |
 {: .wiki-infobox }
 
-Every King of the Hill map has a few numbered towers near the middle of the play area. A team captures towers to learn a secret code, then types the whole code on a tower keypad. A correct code turns that tower into a magnet: the Hot Zone is pulled to it and stays for a while, and every tower goes on cooldown afterwards. The numbers on this page were read from the game files, not timed in play. Where a rule is read from the game's code and not from a data table, the text says "inferred".
+Every King of the Hill map has a few numbered towers near the middle of the play area. A team captures towers to learn a secret code, then types the whole code on a tower keypad. A correct code turns that tower into a magnet: the Hot Zone is pulled to it and stays for a while, and every tower goes on cooldown afterwards. The numbers on this page were read from the game, not timed in play. Where a rule is read from the game's code and not from a fixed table, the text says "inferred".
 
 ## Overview
 
@@ -58,15 +58,15 @@ When the whole code is right:
 - **Hot Zone.** The Hot Zone moves to that tower at 3 m per second and shrinks to 0.6 of its width and length, which is 36 percent of its area. It stays for 180 s. Walking time adds to how long it stays, as it does for the [Drill Rig](../building/drill-rig.md#what-it-does).
 - **Towers.** Every tower switches to the activating team's colour while the magnet runs (inferred).
 - **Cooldown.** After the magnet ends, all towers go on a 900 s recharge. The map shows "Cooling down" with a countdown on each tower. Players cannot capture a tower or type a code until the recharge ends.
-- **Reward.** The cash table pays 5,000 for activating the magnet. The challenge reward pays 2,500 cash and 500 Role XP to players in range. See [Hot Zone Magnet Challenges](../progression-and-economy/hot-zone-magnet-challenges.md). The data does not say which player the 5,000 goes to; the activator is the likely one.
+- **Reward.** The cash table pays 5,000 for activating the magnet. The challenge reward pays 2,500 cash and 500 Role XP to players in range. See [Hot Zone Magnet Challenges](../progression-and-economy/hot-zone-magnet-challenges.md). The game does not say which player the 5,000 goes to; the activator is the likely one.
 - **Switching it off.** Towers cannot be switched off early by default (inferred from a switch that is off by default).
 
 ## What is not known
 
 - Whether the towers return to neutral when a recharge ends was not traced.
-- Which player the 5,000 activation cash goes to is not stated in the data.
+- Which player the 5,000 activation cash goes to is not stated.
 - The exact test for a hostile tower was not traced.
-- The numbers above are the game's data. A live server could change them.
+- The numbers above come from the game's settings. A live server could change them.
 
 ## See also
 

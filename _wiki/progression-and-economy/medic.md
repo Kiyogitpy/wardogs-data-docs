@@ -19,13 +19,13 @@ description: "The Medic role: 4 skills for medical items, medkit uses and sprint
 | Internal name | Meta.Role.Medic, DT_MedicSkills |
 {: .wiki-infobox }
 
-Medic is one of the six roles and has the fewest skills with numbers, four. Its tree has 23 nodes. The other 19 have no number in the game files and no game code reads them, so their effect is not in the game files. Two skills tune medical items: the medic switches to them faster, and a medkit lasts more uses. The other two give a short sprint boost to the medic who has just revived a teammate and to the teammate who was revived. A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator.
+Medic is one of the six roles and has the fewest skills with numbers, four. Its tree has 23 nodes. The other 19 have no number in the game and no game code reads them, so their effect is not known. Two skills tune medical items: the medic switches to them faster, and a medkit lasts more uses. The other two give a short sprint boost to the medic who has just revived a teammate and to the teammate who was revived. A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator.
 
 ## Overview
 
 The skills apply to medical items and to the revive itself. The medical item skills apply to items in the medical archetype or to a specific item, and the revive skills apply after a revive ends.
 
-Each skill's value comes from its curve at the skill's level. The game files hold no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
+Each skill's value comes from its curve at the skill's level. The game has no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
 
 ## Skills
 
@@ -33,7 +33,7 @@ Each skill's value comes from its curve at the skill's level. The game files hol
 |---|---|---|---|
 | Medical item switch speed | Faster switching to medical items. | 1, 1.2, 1.4 | Medical items only |
 | Medkit uses | The medkit lasts more uses before it runs out. | 1, 0.8, 0.7, 0.6 | Only when the medic uses it. See [Medical Items](../equipment/medical-items.md). |
-| Sprint boost after a revive (medic) | After reviving a teammate, the medic sprints faster for a short time. | 1, 1.2, 1.4 | Sprint and tac-sprint. The data gives the boost a duration of 5.0 with no unit. |
+| Sprint boost after a revive (medic) | After reviving a teammate, the medic sprints faster for a short time. | 1, 1.2, 1.4 | Sprint and tac-sprint. The game gives the boost a duration of 5.0 with no unit. |
 | Sprint boost after a revive (teammate) | After the medic revives a teammate, the revived player sprints faster for a short time. | 1, 1.2, 1.4 | Sprint and tac-sprint. Same duration of 5.0 with no unit. |
 
 Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values.
@@ -54,12 +54,12 @@ All six roles share one mastery XP curve. The milestones for Medic are the total
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None in the data. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
+- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
 - **Unlock tree.** 38 items and vehicles, from level 1 to level 50, with 1,220,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
 
 ## Unlocks
 
-Each row is one item, vehicle or attachment in the Medic unlock tree, with the role level it needs and its cash cost. The data gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the data has no display name for an item, the row describes it in plain words.
+Each row is one item, vehicle or attachment in the Medic unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
 
 | Role level | Item | Cash |
 |---|---:|---:|
@@ -116,7 +116,7 @@ Revive cash goes to the player who revives:
 | Medical Bag | 800 |
 | Adrenaline Pen | 400 |
 
-The data lists a second Adrenaline Pen row worth 100. The data does not say which row applies in which case. Revives in a zone are multiplied by 1.2 to 2.0.
+The game lists a second Adrenaline Pen entry worth 100. The game does not say which entry applies in which case. Revives in a zone are multiplied by 1.2 to 2.0.
 
 Heal cash goes to the player who heals:
 

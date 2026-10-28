@@ -22,12 +22,12 @@ Passive missions track a total that builds up over play, not a single event. The
 ## Overview
 
 - **Earn Cash** counts the cash a player earns. Tiers: 5,000, 12,000, 30,000, 80,000 and 200,000 cash.
-- **Earn Role XP** counts role XP earned. Every tier has the same goal in the data: 500 role XP.
-- **Time Played** counts real time played, in 5-second steps. Every tier has the same goal in the data: 1,800 seconds (30 minutes).
+- **Earn Role XP** counts role XP earned. Every tier has the same goal: 500 role XP.
+- **Time Played** counts real time played, in 5-second steps. Every tier has the same goal: 1,800 seconds (30 minutes).
 
 ## How it works
 
-- **Not automatic.** The data marks passive missions as not auto-activated.
+- **Not automatic.** The game marks passive missions as not auto-activated.
 - **Tiers.** Each tier is a separate challenge with its own reward. The Earn Role XP and Time Played tiers differ only in their reward.
 - **Time Played** records the real time elapsed every 5 seconds, so progress moves in 5-second steps.
 
@@ -53,7 +53,7 @@ Passive missions track a total that builds up over play, not a single event. The
 
 ## Intel
 
-Intel is the currency these missions pay. The data gives it no display name, and the game files show no way to spend it.
+Intel is the currency these missions pay. The game gives it no display name, and the game shows no way to spend it.
 
 ## Season 2 changes
 

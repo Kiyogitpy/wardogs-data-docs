@@ -49,7 +49,7 @@ The counts are blasts inside the inner radius. The 9K333 Verba appears only agai
 - **The IED is the best placed charge.** It takes 3 on every tank. C4 takes 4 to 5.
 - **The M67 frag grenade works in a pinch.** It takes 6 to 8, and you must be within 5 m of the tank to get the inner-radius damage.
 - **The Claymore does almost nothing.** A tank takes 92 to 141 of them, because the tank's rules keep only about 5% of the damage.
-- **There is no weak armor facing in the data.** The damage rules look at the type of damage and the part hit, not at the angle or thickness. The L2A6 does have a tougher hull zone that passes 40% of its damage to the main health while it stands. See [Vehicle damage](../vehicles/vehicle-damage.md).
+- **There is no weak armor facing.** The damage rules look at the type of damage and the part hit, not at the angle or thickness. The L2A6 does have a tougher hull zone that passes 40% of its damage to the main health while it stands. See [Vehicle damage](../vehicles/vehicle-damage.md).
 
 ## Helicopters
 
@@ -73,7 +73,7 @@ Emplacements use the same rules as vehicles, with much more health. Blasts insid
 | [Loudspeaker](../building/loudspeaker.md) | 1,000 | 3 | 5 | 2 | 4 | 4 |
 | [MG Nest](../building/mg-nest.md) | 1,800 | 18 | 17 | 6 | 8 | 18 |
 
-- **C4 and the IED are the best emplacement killers.** One C4 charge destroys a Talon 9K SAM, and one IED destroys a Vanguard CIWS. The MG Nest is the hardest on the list because the data gives it no special weakness rules.
+- **C4 and the IED are the best emplacement killers.** One C4 charge destroys a Talon 9K SAM, and one IED destroys a Vanguard CIWS. The MG Nest is the hardest on the list because the game gives it no special weakness rules.
 - **Do not use the AT mine on an emplacement.** It needs a moving vehicle to set it off.
 - Walls, gates and other buildings use a separate table, see [Building a Base](building-guide.md).
 
@@ -83,7 +83,7 @@ Emplacements use the same rules as vehicles, with much more health. Blasts insid
 - They count one hit on the main body. A real blast can touch several parts of a vehicle, and the game applies the first part it finds to the whole blast. The counts do not model that.
 - Repair is not counted. Repairing between blasts raises the counts. See [Repair and vehicle parts](../vehicles/repair-and-vehicle-parts.md).
 - The damage rules for vehicles name the type of explosive, not the weapon that fired it.
-- None of this was timed in play. Treat each count as the data's estimate.
+- None of this was timed in play. Treat each count as an estimate.
 
 ## See also
 

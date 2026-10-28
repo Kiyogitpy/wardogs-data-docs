@@ -22,19 +22,19 @@ Deathmatch is a team-versus-team mode with no zone. Before each spawn, players c
 
 ## Overview
 
-The server browser lists Deathmatch as a mode, but the data gives it no map name. Deathmatch is the only mode in the sources with two factions rather than three.
+The server browser lists Deathmatch as a mode, but the game gives it no map name. Deathmatch is the only mode in the sources with two factions rather than three.
 
 ## Rules and objectives
 
-- **Match flow.** A match starts with the world loading, then a ready-up stage, then play, then the post-match screen. The ready-up stage is named in the data, but the exact trigger that starts the match is not in the sources.
+- **Match flow.** A match starts with the world loading, then a ready-up stage, then play, then the post-match screen. The ready-up stage is named in the game, but the exact trigger that starts the match is not in the sources.
 - **Weapon select.** Before each spawn, the player picks one of 20 weapons. The list is:
 
   AK74, M4, SKS, KH-2002, A-91, GGX 17, M500, AMP-9, SV98, PP-19 Vityaz, Judge, PKM, M249 SAW, MK22, MGL-40, BMR-308, AMR 50, SVD, T-21, Super-45.
 
   Each entry uses the weapon's normal name and icon.
 - **Health.** Players regenerate after 10 s without damage: 5 health per tick, up to full health. The amount comes from the game code; the tick interval of 1 s is derived from the component's setting.
-- **Ammunition.** Choosing a weapon gives you that weapon and four magazines. How many rounds start loaded is not in the data.
-- **Spawning.** You respawn at the spawn point furthest from all enemies. The choice is made by the game's code, not by a data table. In the code the distance is a straight line to the nearest enemy, measured to every free spawn point, and the largest wins; there is no random pick and no check whether an enemy could see the point. A point someone is still standing on, or that you would not fit on, is skipped. (Read from the game code, not tested in play.)
+- **Ammunition.** Choosing a weapon gives you that weapon and four magazines. How many rounds start loaded is not known.
+- **Spawning.** You respawn at the spawn point furthest from all enemies. The choice is made by the game's code, not by a fixed table. In the code the distance is a straight line to the nearest enemy, measured to every free spawn point, and the largest wins; there is no random pick and no check whether an enemy could see the point. A point someone is still standing on, or that you would not fit on, is skipped. (Read from the game code, not tested in play.)
 - **Teams and win condition.** Two teams, Lonestar and Valkyra. Players choose their team; the server places nobody automatically. A team-balance lock can be switched on to refuse a team switch that would leave the target team 2 or more players larger than the smallest team. It is off by default. The mode ends when a side reaches a score limit of 75 kills, or when the 30 minute time limit runs out. How many players each side may have is a server setting. Whether kills are counted per team or per player is not confirmed.
 
 ## Rewards

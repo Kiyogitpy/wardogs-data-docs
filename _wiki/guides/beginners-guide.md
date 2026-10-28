@@ -6,7 +6,7 @@ description: "The basics every new player needs: health, where hits count most, 
 
 # Beginner's Guide
 
-This guide covers the basics of combat in Wardogs, with every number taken from the game's data. It is a starting point. Each section links to the article that explains the rule in full.
+This guide covers the basics of combat in Wardogs, with every number taken from the game. It is a starting point. Each section links to the article that explains the rule in full.
 
 ## 1. Health
 
@@ -85,7 +85,7 @@ Bullets that hit a teammate do half damage. Friendly fire still costs health, so
 
 - How the game settles a hit when the shooter and target see it differently.
 - The payout for each kind of spotted target is in the spotting challenge rows.
-- The real revive time of a resuscitator, which is about 4 s by derivation from the item data.
+- The real revive time of a resuscitator, which is about 4 s by derivation from the item stats.
 
 ## See also
 

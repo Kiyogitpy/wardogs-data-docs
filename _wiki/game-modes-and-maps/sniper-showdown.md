@@ -21,25 +21,25 @@ Sniper Showdown is a round-based sniper mode. Its defining rule is stillness: a 
 
 ## Overview
 
-Sniper Showdown runs on its own map entry in the server browser, Bakurani Outskirts - Jutari. The data also has two more Sniper Showdown zone layouts, for North America and Russia, but they are not matched to a display name in the sources.
+Sniper Showdown runs on its own map entry in the server browser, Bakurani Outskirts - Jutari. The game also has two more Sniper Showdown zone layouts, for North America and Russia, but they are not matched to a display name in the sources.
 
 ## Rules and objectives
 
-- **Stillness.** Stand within about 50 m of one spot for 90 seconds and you are revealed: a marker shows your position on the map for 200 seconds, and at most three markers show at once. A warning appears at 75 seconds. After a reveal, the check waits 15 seconds before it can count standing still again. The on-screen message reads "Keep moving or you will be revealed." Once spotted, the message is "You have been revealed. Run." Moving clears it with "You are now hidden." The 50 m figure assumes the data's distance unit is centimetres, and the 200 seconds comes from the same settings block. Neither is confirmed in play.
+- **Stillness.** Stand within about 50 m of one spot for 90 seconds and you are revealed: a marker shows your position on the map for 200 seconds, and at most three markers show at once. A warning appears at 75 seconds. After a reveal, the check waits 15 seconds before it can count standing still again. The on-screen message reads "Keep moving or you will be revealed." Once spotted, the message is "You have been revealed. Run." Moving clears it with "You are now hidden." The 50 m figure assumes the game's distance unit is centimetres, and the 200 seconds comes from the same settings block. Neither is confirmed in play.
 - **Zone.** The mode uses a Control Zone with a seeker that finds the zone. Its zones are 350 m across, with a 75 m Hot Zone and no alternative placements. The Hot Zone moves from the start (first move at 0 seconds), at a default speed of 1.5. See [Control Zone](control-zone.md).
 - **Out of bounds.** Leaving both the Control Zone and the Hot Zone puts you in the hostile-zone state. The game treats that state as being out of bounds: the screen shows "Return to the Combat Area" with a countdown of 20 seconds, and the character dies when it runs out. Going back into a zone counts the timer down again. See [Boundaries and Safe Zones](boundaries-and-safe-zones.md). This is read from the game code, not timed in play.
 - **Deaths and respawns.** The death screen shows "Killed by" the attacker's name, then a blackout of 3.0 seconds, then "Respawning in" a countdown.
-- **Death explosion.** A player who dies explodes 1.5 seconds later. The blast is set to 250 damage, a radius of 500, an effective radius of 250, a minimum of 30 damage, a falloff of 0.5 and 100 blunt damage. Line of sight is checked. How these values combine into the final damage is not in the data.
+- **Death explosion.** A player who dies explodes 1.5 seconds later. The blast is set to 250 damage, a radius of 500, an effective radius of 250, a minimum of 30 damage, a falloff of 0.5 and 100 blunt damage. Line of sight is checked. How these values combine into the final damage is not known.
 - **Round end.** At the end of a round a countdown shows "Next Round in" minutes and seconds, then a scoreboard.
-- **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. A round ends at 10 kills or after 30 minutes. The game files do not describe what the leaderboard shows.
-- **No vehicle spawns.** The Sniper Showdown entries enable none of the spawn areas that King of the Hill uses, so the vehicle deployment boards, vehicle yards and team infantry spawn areas are not part of this mode in the game files.
+- **Timer and leaderboard.** The timer shows minutes and seconds. A leaderboard is shown during play. A round ends at 10 kills or after 30 minutes. The game does not describe what the leaderboard shows.
+- **No vehicle spawns.** The Sniper Showdown entries enable none of the spawn areas that King of the Hill uses, so the vehicle deployment boards, vehicle yards and team infantry spawn areas are not part of this mode.
 - **Starting loadout.** Each player gets a Scout Backpack and a GGX 17 pistol at spawn.
 - **Factions.** The mode is free-for-all. The game prepares a pool of 100 single-player factions and puts each joining player on the non-default faction with the fewest members. With 100 players or fewer, everyone is alone on a faction.
 - **Loot points.** Each map has 150 sniper-only loot points, sorted into high-, middle- and low-value points. Kavkazi has 87 high, 21 middle and 42 low. North America has 69 high, 16 middle and 65 low. Russia has 79 high, 19 middle and 52 low.
 
 ## Rewards
 
-The data does not list Sniper Showdown-specific cash or XP rewards. The general cash table applies to kills and other actions; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
+The game does not list Sniper Showdown-specific cash or XP rewards. The general cash table applies to kills and other actions; see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
 
 ## See also
 

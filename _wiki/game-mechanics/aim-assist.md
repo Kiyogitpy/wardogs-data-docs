@@ -16,7 +16,7 @@ description: "How aim assist pulls your aim toward enemies, the four pull modes 
 | Switched off | Launchers: RPG-7, 9K333 Verba, MGL-40, MAAWS (both hip fire and aiming down sights) |
 {: .wiki-infobox }
 
-Aim assist helps you keep your aim on an enemy by pulling your aim toward a target inside the assist reticle. Each weapon class has its own settings, and each one picks a pull mode for hip fire and another for aiming down sights. The settings are stored in the game data. The figures below are the values as stored, not values checked in play.
+Aim assist helps you keep your aim on an enemy by pulling your aim toward a target inside the assist reticle. Each weapon class has its own settings, and each one picks a pull mode for hip fire and another for aiming down sights. The game sets these values. The figures below are the values the game stores, not values checked in play.
 
 ## Overview
 
@@ -27,7 +27,7 @@ Aim assist is a pull, not an automatic aim. The game looks at the enemies in a s
 - **Pull modes.** The mode decides when the pull happens. **All** pulls when you move or look. **Movement only** pulls only when you move. **Look only** pulls only when you move the camera. **Off** never pulls.
 - **Input.** Unless a setting says otherwise, the pull needs input from you, either movement or looking (derived from the game's default for this setting).
 - **Targets.** Up to 8 targets are counted at once for every class. A minimum weight of 0.125 is stored for every class.
-- **Slow-down.** The settings also hold a slow-down part, with its own rates, that eases your look speed while a target is in the reticle. The data stores the rates, but the feel in play has not been measured.
+- **Slow-down.** The settings also hold a slow-down part, with its own rates, that eases your look speed while a target is in the reticle. The game sets the rates, but how they feel in play has not been measured.
 - **Units.** The target range is in the game's world units, which are centimetres (inferred): 30,000 is 300 m for rifles and 800 is 8 m for melee. The reticle sizes are world units at a depth equal to the target range. Every class uses the same shape, an inner reticle 3% and an outer reticle 9% of that depth wide (and 2.4% and 7.2% high), so the outer reticle is about 5 degrees wide and 4 degrees high and the inner one about 1.7 degrees wide and 1.4 degrees high at any range (derived from the stored numbers). The pull and slow rates (10 in, 8 out) are speeds per second at which the assist fades in and out, so a higher number reaches full strength sooner (inferred; the game code that applies them was not found).
 - **Distance.** The pull fades with distance. When firing from the hip it is full strength from 6 m to 20 m and gone at 25 m. When aiming down sights the range is much longer: full strength from 2 m out to 100 m (pistol), 125 m (SMG), 150 m (sniper), 175 m (shotgun), 200 m (LMG) or 225 m (assault rifle), then fading to nothing 25 m further out (50 m for the sniper). The sniper gets no pull closer than 1.5 m. The slow-down part has its own, similar curves.
 - **Which target wins.** Among the targets in front of you, the game ranks them by a score. A target that is drawn on your screen gets a bonus larger than everything else combined, so an enemy you can see is always chosen over one you cannot. After that it prefers targets nearer the centre of your view and, for the assault rifle and SMG, nearer to you. The same target keeps a small bonus from the last update, which stops the pick from flickering (static reading of the code; not tested in play).
@@ -46,7 +46,7 @@ Stored settings by weapon class. The target range is in world units (centimetres
 | Pull, aiming down sights | All | All | All | All | All | All | All | Off |
 | Target range | 30,000 | 30,000 | 20,000 | 20,000 | 40,000 | not set | 800 | 0 |
 
-A class with no stored pull mode takes the game's default, which is All in both modes. Only the launcher settings store an Off pull mode in the data.
+A class with no stored pull mode takes the game's default, which is All in both modes. Only the launcher settings use an Off pull mode.
 
 ## Tips that follow from the numbers
 

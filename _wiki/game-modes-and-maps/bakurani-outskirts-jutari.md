@@ -24,11 +24,11 @@ Bakurani Outskirts - Jutari is the Sniper Showdown map with a Bakurani name. Its
 
 ![Bakurani Outskirts - Jutari map]({{ '/assets/img/maps/jutari.jpg' | relative_url }})
 
-*Jutari spot on the Bakurani minimap, orientation as in the game's minimap (the data has no north). The crop is 1.5 km square at about 1 m per pixel (scale bar in the corner). The white circle is the 350 m Control Zone and the magenta circle the 75 m Hot Zone, drawn at the Sniper Showdown zone object. The map has no towers and no zone regions.*
+*Jutari spot on the Bakurani minimap, orientation as in the game's minimap (the map has no north). The crop is 1.5 km square at about 1 m per pixel (scale bar in the corner). The white circle is the 350 m Control Zone and the magenta circle the 75 m Hot Zone, drawn at the Sniper Showdown zone object. The map has no towers and no zone regions.*
 
 ## Overview
 
-The server browser lists this map as a Sniper Showdown entry, with the Bakurani loading screen art. The data links it to the Sniper Showdown zone configuration named Bakurani by name. The data does not describe its terrain, buildings or sniper positions.
+The server browser lists this map as a Sniper Showdown entry, with the Bakurani loading screen art. The game links it to the Sniper Showdown zone configuration named Bakurani by name. The game does not describe its terrain, buildings or sniper positions.
 
 ## Modes played here
 
@@ -38,15 +38,15 @@ The server browser lists this map as a Sniper Showdown entry, with the Bakurani 
 
 The Control Zone is 350 m across and 170 m tall, with a 75 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md) and [Sniper Showdown](sniper-showdown.md).
 
-- **Hot Zone movement.** The data sets the first move and the delay between moves to 0 seconds. The data gives no delay between moves, so no timer holds the zone back; how often it moves in play was not measured.
+- **Hot Zone movement.** The game sets the first move and the delay between moves to 0 seconds. It gives no delay between moves, so no timer holds the zone back; how often it moves in play was not measured.
 - **Speed.** The default move speed is 1.5. The speed table runs from 1.25 to 3.0, which is faster than the 0.75 to 2.0 table on the King of the Hill maps.
 - **Placements.** There are no alternative placements. The zone is always in the same spot.
-- **Zone regions.** The data has no region list for this zone. The Sniper Showdown zone placed in the Bakurani world has an empty region slot, and the Bakurani region list belongs to the King of the Hill zone only.
-- **Where it sits.** The fixed spot is inside the same world as [Bakurani](bakurani.md), about 400 m east of the edge of the area that Bakurani's zone regions cover (read from the placed zone object; the data gives the map no separate size).
+- **Zone regions.** No region list is set for this zone. The Sniper Showdown zone placed in the Bakurani world has an empty region slot, and the Bakurani region list belongs to the King of the Hill zone only.
+- **Where it sits.** The fixed spot is inside the same world as [Bakurani](bakurani.md), about 400 m east of the edge of the area that Bakurani's zone regions cover (read from the placed zone object; the game gives the map no separate size).
 
 ## Placed objects
 
-This entry has no objects of its own. Its zone sits in the Bakurani map file, so the objects around it are Bakurani's. Taking an area of 850 m across, centred on the fixed zone spot (the zone's 350 m width plus 500 m on every side, the same margin the other map articles use), the file places the following. The counts were read from the game files, not checked in play.
+This entry has no objects of its own. Its zone sits in the Bakurani map file, so the objects around it are Bakurani's. Taking an area of 850 m across, centred on the fixed zone spot (the zone's 350 m width plus 500 m on every side, the same margin the other map articles use), the file places the following. The counts were read from the game, not checked in play.
 
 | Object | Count in that area |
 |---|---:|
@@ -64,7 +64,7 @@ The zone layout for this map is described in full on [Zone Layouts](zone-layouts
 
 ## Season 2 changes
 
-- Two more Sniper Showdown layouts were added in Season 2, for North America and Russia. They have no display name in the data, so they are not described on their own page. See [Maps](maps.md).
+- Two more Sniper Showdown layouts were added in Season 2, for North America and Russia. They have no display name, so they are not described on their own page. See [Maps](maps.md).
 - The Season 2 notes list no change to this map's zone.
 
 ## See also
