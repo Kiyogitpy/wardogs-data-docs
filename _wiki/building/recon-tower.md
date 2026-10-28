@@ -32,7 +32,7 @@ The Recon Tower is a large tower built from a base floor, a first floor and a ro
 
 ## Overview
 
-The Recon Tower costs 200 Build Supplies and has 5,000 HP. Its three parts each cost 10 Build Supplies and have 2,250 HP. The export gives no display name for the parts, so they are described here as parts of the tower.
+The Recon Tower costs 200 Build Supplies and has 5,000 HP. Its three parts each cost 10 Build Supplies and have 2,250 HP. No display name is known for the parts, so they are described here as parts of the tower.
 
 Destroying an enemy Recon Tower pays 200 cash and 50 Role XP.
 
@@ -54,11 +54,11 @@ Destroying an enemy Recon Tower pays 200 cash and 50 Role XP.
 
 Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
-The Large Hammer is the only one that can place the tower. The repair and dismantle hits for the other hammers are what their hits do; the data does not check them for this structure. The build count assumes normal hits, and hitting weak spots brings it down.
+The Large Hammer is the only one that can place the tower. The repair and dismantle hits for the other hammers are what their hits do; they are not checked for this structure. The build count assumes normal hits, and hitting weak spots brings it down.
 
 ## What it does
 
-The data does not describe what a player can do on the tower. Its effect in play is its health and how it takes damage.
+What a player can do on the tower is not described. Its effect in play is its health and how it takes damage.
 
 ## Durability
 
@@ -84,7 +84,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- Build cost went from 100 to 200 Build Supplies. The data lists this change for the main tower only.
+- Build cost went from 100 to 200 Build Supplies. This change applies to the main tower only.
 - The T-72B3's 125 mm shell does x0.70 of the damage it did: 23 hits to destroy became 33 (derived).
 
 ## See also
@@ -94,7 +94,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, parts, stages, damage row, placement conditions and cash rewards
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, parts, stages, damage table, placement conditions and cash rewards
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the build cost change
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic

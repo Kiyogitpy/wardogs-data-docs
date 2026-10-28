@@ -58,7 +58,7 @@ Each part on its own takes 15 repair hits from zero with the Medium Hammer or 10
 
 ## What it does
 
-The Door can be closed, and the data gives it a breach effect when it is destroyed. The breach is a visual particle effect that plays at the door when the door section is destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
+The Door can be closed, and it has a breach effect when it is destroyed. The breach is a visual particle effect that plays at the door when the door section is destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
 
 ## Durability
 
@@ -84,7 +84,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- Build cost went from 22 to 80 Build Supplies. The data lists this change for the main Door only, not for its parts.
+- Build cost went from 22 to 80 Build Supplies. This change applies to the main Door only, not to its parts.
 - The Gepard's 35 mm cannon went from x0.20 to x0.08 of its damage. The Vanguard CIWS 20 mm cannon, which did full damage, now does x0.08. Hits to destroy the 2,200 HP Door at point blank (derived): 184 to 459 for the 35 mm cannon, 37 to 459 for the 20 mm cannon.
 - The T-72B3's 125 mm shell does half the damage it did: 2 hits to destroy became 4 (derived).
 

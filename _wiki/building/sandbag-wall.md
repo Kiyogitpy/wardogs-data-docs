@@ -57,7 +57,7 @@ The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md
 
 ## What it does
 
-The Sandbag Wall is cover and an obstacle. The data gives it no effect beyond its health and how it takes damage.
+The Sandbag Wall is cover and an obstacle. It has no effect beyond its health and how it takes damage.
 
 ## Durability
 
@@ -72,7 +72,7 @@ The table shows how much of each damage source reaches the wall. A change of -85
 | C4 | +200% | 3 times |
 | IEDs | +500% | 6 times |
 
-These are the entries that match one source on its own. The data also has entries for particular ammunition and calibers, which this table does not show. The table below gives the hits it takes to destroy, for each source.
+These are the entries that match one source on its own. There are also entries for particular ammunition and calibers, which this table does not show. The table below gives the hits it takes to destroy, for each source.
 
 ## Hits to destroy (point blank, derived)
 
@@ -84,7 +84,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to the Sandbag Wall's cost or health.
+- No Season 2 change to the Sandbag Wall's cost or health is listed.
 - The Vanguard CIWS 20 mm cannon went from full damage to x0.20 (13 hits to destroy became 62, derived). The T-72B3's 125 mm shell does half the damage it did: 1 hit to destroy became 2 (derived).
 
 ## See also
@@ -95,7 +95,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions and cash rewards
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage table, placement conditions and cash rewards
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable damage table changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

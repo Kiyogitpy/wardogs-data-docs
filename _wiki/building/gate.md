@@ -58,7 +58,7 @@ The parts are not built on their own; they come with the finished Gate. Once sep
 
 ## What it does
 
-The Gate can be closed, and the data gives it a breach effect when it is destroyed. The breach is a visual particle effect that plays at the gate halves when they are destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
+The Gate can be closed, and it has a breach effect when it is destroyed. The breach is a visual particle effect that plays at the gate halves when they are destroyed; the data attaches no damage, blast or other number to it. The rest of its effect is health and how it takes damage.
 
 ## Durability
 
@@ -84,7 +84,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- Build cost went from 85 to 200 Build Supplies. The data lists this change for the main Gate only.
+- Build cost went from 85 to 200 Build Supplies. This change applies to the main Gate only.
 - The Gepard's 35 mm cannon went from x0.60 to x0.50 of its damage, and the Vanguard CIWS 20 mm cannon from full damage to x0.50. Hits to destroy the Gate at point blank (derived): 148 to 178 for the 35 mm cannon, 89 to 178 for the 20 mm cannon.
 - The T-72B3's 125 mm shell does x0.80 of the damage it did: 4 hits to destroy became 5 (derived).
 

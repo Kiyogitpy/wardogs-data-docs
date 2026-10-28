@@ -31,7 +31,7 @@ The Wood base is a 735 HP structure that any hammer can build. It takes the same
 
 ## Overview
 
-The Wood base costs 15 Build Supplies and has 735 HP. The export gives no display name for it, so this article uses the plain name "Wood base". It has no separate parts.
+The Wood base costs 15 Build Supplies and has 735 HP. No display name is known for it, so this article uses the plain name "Wood base". It has no separate parts.
 
 Destroying an enemy Wood base pays 15 cash and 5 Role XP. The placement rewards for a structure placed inside a base are a flat 5 cash (10 in a hot zone) in the placement settings, while the reward calculator lists 10 cash for a placed schematic (20 in a hot zone); the two have not been reconciled. The data also has Built, Placed and Placed in FOB reward tables, and the game's lookup takes the first table that has a matching row (Built is checked first). But no code in the game client asks for these rows, so which amount is actually paid for a placement is decided outside the client, most likely by the game's servers; this structure has no row of its own in any of them (see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) and the [round 48 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md)).
 
@@ -56,7 +56,7 @@ The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md
 
 ## What it does
 
-The Wood base is cover and an obstacle. The data gives it no effect beyond its health and how it takes damage.
+The Wood base is cover and an obstacle. It has no effect beyond its health and how it takes damage.
 
 ## Durability
 
@@ -83,7 +83,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-The Season 2 data lists no change to the Wood base's cost or health.
+No Season 2 change to the Wood base's cost or health is listed.
 
 ## See also
 

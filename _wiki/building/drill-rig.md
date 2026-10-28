@@ -34,7 +34,7 @@ The Drill Rig is the most expensive structure that a player can build with a ham
 
 The Drill Rig costs 2,750 Build Supplies and has 2,500 HP. It has no separate parts.
 
-Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. The data pays the same row as the Hot Zone Magnet, because the Drill Rig is the buildable form of the magnet.
+Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. It pays the same reward as the Hot Zone Magnet, because the Drill Rig is the buildable form of the magnet.
 
 ## Building it
 
@@ -53,7 +53,7 @@ Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. The data pays the
 
 Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
-The Drill Rig is Large only, so the Small and Medium columns for building say "cannot place". The repair and dismantle hits are what each hammer's hit does; the data does not check them for this structure. The build count assumes normal hits. The rig's build factor is 2, so each Large Hammer hit counts double: 3 build amount instead of 1.5. Hitting its weak spots brings the count down.
+The Drill Rig is Large only, so the Small and Medium columns for building say "cannot place". The repair and dismantle hits are what each hammer's hit does; they are not checked for this structure. The build count assumes normal hits. The rig's build factor is 2, so each Large Hammer hit counts double: 3 build amount instead of 1.5. Hitting its weak spots brings the count down.
 
 ## What it does
 
@@ -72,7 +72,7 @@ After it is placed, the rig waits 15 s before it can start. Starting it is a hol
 
 While it runs, the Drill Rig pulls the hot zone toward it. Once activated, the rig shrinks the hot zone to 0.6 of its width and length with the world default, which is 36 percent of the area. The rig's own data lists 0.5 instead, but the code reads the world default, and which value a live server uses is not shown.
 
-**Movement.** The hot zone moves toward the activated rig at a speed given in metres per second. The game's default for this is 3 m/s, which the code reads. The rig's own data lists 5 m/s; whether that replaces the 3 m/s in play is not confirmed. The time to arrive is the distance in metres divided by the speed, and that time is added to how long the rig stays active. Derived example: a hot zone 300 m away takes 100 s at 3 m/s and 60 s at 5 m/s.
+**Movement.** The hot zone moves toward the activated rig at a speed given in metres per second. The game's default for this is 3 m/s, which the code reads. The rig's own setting lists 5 m/s; whether that replaces the 3 m/s in play is not confirmed. The time to arrive is the distance in metres divided by the speed, and that time is added to how long the rig stays active. Derived example: a hot zone 300 m away takes 100 s at 3 m/s and 60 s at 5 m/s.
 
 ## Durability
 
@@ -89,7 +89,7 @@ For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardo
 
 ## Hits to destroy (point blank, derived)
 
-The counts below use the Drill Rig's own damage row, the same way as every other structure. The other structures' counts are in the [Buildables](../building.md#hits-to-destroy-point-blank-derived) article.
+The counts below use the Drill Rig's own damage table, the same way as every other structure. The other structures' counts are in the [Buildables](../building.md#hits-to-destroy-point-blank-derived) article.
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -113,7 +113,7 @@ The counts below use the Drill Rig's own damage row, the same way as every other
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions, fuel settings and cash rewards
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage table, placement conditions, fuel settings and cash rewards
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the cost and fuel changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic

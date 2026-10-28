@@ -43,7 +43,7 @@ The Stingray starts with no ammunition and needs a restock before it can fire. T
 
 The barrel is listed at 50 rounds/min in semi-automatic mode, with an effective range of 10,000 m. The barrel has no reload step: its reload time is 0.0 s. It has a 1.0 s start delay and a 1.0 s end delay.
 
-The data does not give a windup time or a bullet speed that this article can check against play.
+No windup time or bullet speed is given that this article can check against play.
 
 ### Targeting
 

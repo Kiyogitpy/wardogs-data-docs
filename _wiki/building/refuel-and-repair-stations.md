@@ -94,7 +94,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to either station's cost or health.
+- No Season 2 change to either station's cost or health is listed.
 - The Vanguard CIWS 20 mm cannon went from full damage to x0.25 against both stations (27 hits to destroy became 107, derived). The T-72B3's 125 mm shell does x0.80 of the damage it did and still destroys either station in 1 hit (derived).
 
 ## See also
@@ -106,7 +106,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 ## Sources
 
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the Max restock charge rule (the supplies and cash scale with the amount restored)
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, damage rows, placement limits, the repair multiplier and the item descriptions
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, damage tables, placement limits, the repair multiplier and the item descriptions
 - [Tag display text](../../content/Wardogs_TagDisplayText_v1.md): the names of the FOB supply containers, including Fuel Supplies and Mechanical Supplies
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): restock amounts, times and costs for both stations, and the derived hits to destroy.

@@ -28,7 +28,7 @@ description: "A small wire obstacle built with any hammer from 7 Build Supplies,
 | Internal name | `DA_Buildable_BarbedWire` |
 {: .wiki-infobox }
 
-Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure in the data. It takes more melee damage than most walls, and only 15% of bullet damage gets through. Anyone standing in it is slowed and hurt.
+Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure. It takes more melee damage than most walls, and only 15% of bullet damage gets through. Anyone standing in it is slowed and hurt.
 
 ## Overview
 
@@ -87,7 +87,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to Barbed Wire's cost or health.
+- No Season 2 change to Barbed Wire's cost or health is listed.
 - The Season 2 damage table gained a 125 mm shell entry for Barbed Wire, but its amount is 0, so nothing changed.
 
 ## See also
@@ -97,7 +97,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions and cash rewards
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage table, placement conditions and cash rewards
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

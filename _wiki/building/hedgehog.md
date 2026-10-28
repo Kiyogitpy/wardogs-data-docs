@@ -57,7 +57,7 @@ The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md
 
 ## What it does
 
-The Hedgehog is an obstacle. The data gives it no effect beyond its health and how it takes damage.
+The Hedgehog is an obstacle. It has no effect beyond its health and how it takes damage.
 
 ## Durability
 
@@ -82,7 +82,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to the Hedgehog's cost or health.
+- No Season 2 change to the Hedgehog's cost or health is listed.
 - The T-72B3's 125 mm shell does x0.70 of the damage it did: 6 hits to destroy became 8 (derived). The cannons are unchanged.
 
 ## See also
@@ -93,7 +93,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Sources
 
-- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage row, placement conditions and cash rewards
+- [Buildables](../../game-features/Wardogs_Buildables_v1.md): cost, health, stages, damage table, placement conditions and cash rewards
 - [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md): how the percentage changes are applied (section 6)
 - [Items and equipment changes, Season 2](../../season-2-changes/items-equipment.md): the buildable changes
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): derived hits to destroy for each source of damage.

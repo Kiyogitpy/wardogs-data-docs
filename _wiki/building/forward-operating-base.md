@@ -35,7 +35,7 @@ The Forward Operating Base, or FOB, is the anchor for most other structures. Mos
 
 The FOB costs 7,500 cash in the shop, and its Build Supplies cost is 30. Its item description reads: needed to build larger structures, can hold items and resources for players to use, and provides a radius in which players can build.
 
-Each faction has its own FOB model in the data.
+Each faction has its own FOB model.
 
 Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more cash that depends on the supplies the FOB holds (the full bonus at 25,000 supplies). Hacking an enemy FOB pays 1,000 cash.
 
@@ -54,7 +54,7 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 
 The FOB anchors the building radius. Most structures must be inside a friendly FOB radius to be placed, and the FOB limits the number of Refuel Stations, Repair Stations and Builder's Radios. The FOB also holds supplies for players, and the data lists sounds for depositing Ammo, Build, Fuel and Mechanical Supplies.
 
-The client game files hold no spawn data tied to the FOB, so nothing in them shows that it is a spawn point. The server side is not excluded by the data, so whether players can spawn at a FOB is not known.
+Nothing in the game shows that the FOB is a spawn point. The server side is not excluded by the data, so whether players can spawn at a FOB is not known.
 
 ## Durability
 
@@ -81,7 +81,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 ## Season 2 changes
 
-- The Season 2 data lists no change to the Forward Operating Base's cost or health.
+- No Season 2 change to the Forward Operating Base's cost or health is listed.
 - The Vanguard CIWS 20 mm cannon went from full damage to x0.80 (250 hits to destroy became 313, derived). The T-72B3's 125 mm shell does x1.35 of the damage it did: 7 hits to destroy became 5 (derived).
 
 ## See also
