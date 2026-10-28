@@ -15,7 +15,7 @@ description: "Healing and revive items: use time, healing amounts, the effects e
 | Max HP | 100 |
 {: .wiki-infobox }
 
-Medical items heal the player who uses them, a teammate, or both, and some bring a downed teammate back to their feet. Most healing is a fixed amount added in one use. The Medical Bag is the exception, because it heals over time. The data shows no medical item that stops bleeding or does damage over time. In this game, "bleed" refers to the bleed-out timer of a downed player, described below.
+Medical items heal the player who uses them, a teammate, or both, and some bring a downed teammate back to their feet. Most healing is a fixed amount added in one use. The Medical Bag is the exception, because it heals over time. No medical item is listed as stopping bleeding or doing damage over time. In this game, "bleed" refers to the bleed-out timer of a downed player, described below.
 
 ## Individual items
 
@@ -45,7 +45,7 @@ Medical items heal the player who uses them, a teammate, or both, and some bring
 
 **Bandage.** Adds 35 HP per use. A player can carry up to 5, and the bandage can be used on yourself or a teammate.
 
-**Individual First Aid Kit.** Adds 100 HP per use, which returns a player at 100 max HP to full from any health. The data gives one heal value for the item, so the same amount applies whether it is used on yourself or a teammate.
+**Individual First Aid Kit.** Adds 100 HP per use, which returns a player at 100 max HP to full from any health. The item has one heal value, so the same amount applies whether it is used on yourself or a teammate.
 
 **Medical Bag.** Uses durability rather than single items. The bag has 150 durability, and each action spends some of it:
 
@@ -79,7 +79,7 @@ Max health is 100 HP. No natural health regeneration for infantry was found in t
 
 ### Medic skills
 
-The Medic skill tree changes some of these numbers. Four skills have values in the data, covering three effects:
+The Medic skill tree changes some of these numbers. Four skills have listed values, covering three effects:
 
 - **Medkits have more uses.** The bag's usage rate multiplier drops from 1.0 to 0.6 as the skill levels up. The game code never reads it, so it does not appear to change the bag's durability cost.
 - **Medical item swap speed.** Switching to a medical item gets faster, with the equip speed multiplied by 1.2 or 1.4 at the higher levels. It covers the items tagged as medical, all of the list above except the Enox.
@@ -91,7 +91,7 @@ With the fixed durability costs, the bag gives the same counts at every skill le
 
 ## Use and timing
 
-Times are the length of each item's use animation, taken from the data.
+Times are the length of each item's use animation, taken from the game files.
 
 | Item | On yourself | On a teammate | Notes |
 |---|---:|---:|---|
@@ -103,11 +103,11 @@ Times are the length of each item's use animation, taken from the data.
 | Defibrillator | 4 s charge | used to revive | Needs a battery |
 | Emergency and Field Resuscitator | 2.2 s animation, one revive | | About 4 s in total, derived |
 
-While a bandage, First Aid Kit, Medical Bag, Adrenaline Pen or resuscitator is in use, maximum movement speed is halved, according to the data.
+While a bandage, First Aid Kit, Medical Bag, Adrenaline Pen or resuscitator is in use, maximum movement speed is halved, according to the game files.
 
 ## Cost
 
-The shop price of each item is in the Overview table. The Season 2 Item Shop changed two of them, as listed below. The Emergency Resuscitator has a shop price of 0 in the data, and its item text says it is limited to one per life.
+The shop price of each item is in the Overview table. The Season 2 Item Shop changed two of them, as listed below. The Emergency Resuscitator has a shop price of 0, and its item text says it is limited to one per life.
 
 ## Season 2 changes
 
@@ -116,7 +116,7 @@ The shop price of each item is in the Overview table. The Season 2 Item Shop cha
 | Medical Bag price | 2,000 | 1,800 |
 | Field Resuscitator price | 500 | 425 |
 
-No change to healing amounts, use times or the downed rules is listed in the Season 2 Items data.
+No change to healing amounts, use times or the downed rules is listed in the Season 2 item changes.
 
 ## See also
 

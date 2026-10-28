@@ -20,7 +20,7 @@ Grenades and explosives deal damage in a blast around the point where they go of
 
 ## Overview
 
-The table lists the blast numbers in the data. These are the starting amounts before armor and before the game's rules for each body part, so they are not the final damage a player takes. Armor reduction is explained on [Body Armor](body-armor.md).
+The table lists the blast numbers. These are the starting amounts before armor and before the game's rules for each body part, so they are not the final damage a player takes. Armor reduction is explained on [Body Armor](body-armor.md).
 
 Blast damage falls evenly from the full amount at the inner radius to zero at the outer radius. Where a value is shown as "full to", the blast does its full amount out to that distance.
 
@@ -46,7 +46,7 @@ Blast damage falls evenly from the full amount at the inner radius to zero at th
 
 Examples from the frag grenade: 100 HP at 5 m, 50 HP at 7.5 m, and nothing from 10 m on.
 
-The gold variant of the M67 Frag Grenade is in the item data, but it has no shop listing, so it is not described further.
+A gold variant of the M67 Frag Grenade exists in the game files, but it has no shop listing, so it is not described further.
 
 ### Launcher and bow rounds
 
@@ -62,9 +62,9 @@ These rounds are fired by weapons. The figures are the explosion at the centre o
 
 The vehicle cannons, artillery and drone shells are on the [Explosives](../../game-features/Wardogs_Explosives_v1.md) data page. They are used by vehicles, not infantry.
 
-**Guidance.** The game data stores guidance settings for two rocket projectiles: the 72 mm rocket has a proportional-navigation (steering) constant of 30, a maximum turn of 10 and a lock-on time of 2 s, and the 70 mm projectile a maximum turn of 1.0 (units as stored). In the game code, guidance only acts while a rocket's motor is thrusting, and only for a projectile marked as guided that has a target: each step it turns toward the target by the steering constant times the angle off, capped at the maximum turn in degrees. The lock-on time is not read by the projectile code. The 72 mm and 70 mm rockets and one debug rocket are the only projectiles marked as guided; every other projectile flies unguided (from the game data and code, not tested in play). No weapon item lists the 70 mm projectile, and whether the Talon 9K-SAM's 72 mm rounds use these settings is not confirmed.
+**Guidance.** Guidance settings are stored for two rocket projectiles: the 72 mm rocket has a proportional-navigation (steering) constant of 30, a maximum turn of 10 and a lock-on time of 2 s, and the 70 mm projectile a maximum turn of 1.0 (units as stored). In the game code, guidance only acts while a rocket's motor is thrusting, and only for a projectile marked as guided that has a target: each step it turns toward the target by the steering constant times the angle off, capped at the maximum turn in degrees. The lock-on time is not read by the projectile code. The 72 mm and 70 mm rockets and one debug rocket are the only projectiles marked as guided; every other projectile flies unguided (from the game data and code, not tested in play). No weapon item lists the 70 mm projectile, and whether the Talon 9K-SAM's 72 mm rounds use these settings is not confirmed.
 
-**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the data does not show.
+**Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the game files do not show.
 
 ## Use and timing
 
@@ -82,7 +82,7 @@ The M67 Frag Grenade has three throws: an overarm throw at 2,500 cm/s (25 m/s), 
 
 ### Remote detonators
 
-The Remote Detonator sets off placed C4 charges. The data sets the detonator's range to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The Improvised Explosive Device trigger has no range limit.
+The Remote Detonator sets off placed C4 charges. The detonator's range is set to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The Improvised Explosive Device trigger has no range limit.
 
 ## Cost
 
@@ -99,7 +99,7 @@ Launcher and bow rounds are priced with their weapons. See the [Weapon Shop](../
 
 ## Season 2 changes
 
-The Season 2 items data lists no change to the blast damage, radius or fuse of any grenade, C4 charge, mine, Improvised Explosive Device or launcher round. It lists no price change for these items either.
+No Season 2 change to the blast damage, radius or fuse of any grenade, C4 charge, mine, Improvised Explosive Device or launcher round is listed. No price change for these items is listed either.
 
 ## See also
 

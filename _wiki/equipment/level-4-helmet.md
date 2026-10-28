@@ -29,13 +29,13 @@ Level 4 Helmet is the top helmet tier. It protects the head and neck and cuts da
 
 ## Overview
 
-The Item Shop describes the Level 4 Helmet as "Very High Damage Reduction", with "High Suppression Reduction" and a strong muffling of nearby sound. The item data lists the head and neck.
+The Item Shop describes the Level 4 Helmet as "Very High Damage Reduction", with "High Suppression Reduction" and a strong muffling of nearby sound. The listed areas are the head and neck.
 
 It goes in the Helmet slot and weighs 4.5. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-Level 4 Helmet reduces damage to the head and neck by 60%. It does nothing for the body. The item data gives it 200 durability, the highest of the helmets.
+Level 4 Helmet reduces damage to the head and neck by 60%. It does nothing for the body. It has 200 durability, the highest of the helmets.
 
 With M4 full-metal-jacket rounds:
 
@@ -60,7 +60,7 @@ Each hit on a covered body part takes durability from the piece. For an ordinary
 | Damage reduction | 65% | 60% |
 | Price | 3,000 cash | 4,500 cash |
 
-The Season 2 data lists only these two changes for this helmet.
+Only these two changes are listed for this helmet in Season 2.
 
 ## See also
 

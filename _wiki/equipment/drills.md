@@ -18,7 +18,7 @@ description: "The Light and Heavy Drills: the battery-powered vehicle repair too
 | Repair speed | Light: moderate. Heavy: fastest |
 | Repair per application | 14.5 vehicle health (both) |
 | Repair rate | Light 19.3 per second (every 0.75 s); Heavy 29 per second (every 0.5 s) |
-| Battery use | 1 charge per repair swing that lands (both). The item data also lists 1.25 per second, but no part of the game reads it, so there is no per-second drain |
+| Battery use | 1 charge per repair swing that lands (both). The game files also list 1.25 per second, but no part of the game reads it, so there is no per-second drain |
 | **Availability** | |
 | Price | 600 (Light), 1,300 cash (Heavy) |
 | Unlock level | 1 (shop data) |

@@ -29,7 +29,7 @@ Level 2 Armor is the second of the four vests. It protects the upper, middle and
 
 ## Overview
 
-Level 2 Armor sits between [Level 1 Armor](level-1-armor.md) and [Level 3 Armor](level-3-armor.md). The Item Shop describes it as "Medium Damage Reduction" and says it protects the upper and lower torso. The item data lists the upper, middle and lower torso.
+Level 2 Armor sits between [Level 1 Armor](level-1-armor.md) and [Level 3 Armor](level-3-armor.md). The Item Shop describes it as "Medium Damage Reduction" and says it protects the upper and lower torso. The listed areas are the upper, middle and lower torso.
 
 It goes in the Armor slot and covers nothing below the torso. Its weight of 4.5 is heavier than Level 1 Armor (3) and lighter than Level 3 Armor (10.5). For all the vests and helmets, see [Body Armor](body-armor.md).
 

@@ -29,7 +29,7 @@ Level 3 Armor is the third of the four vests. It protects the upper, middle and 
 
 ## Overview
 
-Level 3 Armor is one step below [Level 4 Armor](level-4-armor.md). The Item Shop describes it as "High Damage Reduction" and says it protects the upper and lower torso. The item data lists the upper, middle and lower torso.
+Level 3 Armor is one step below [Level 4 Armor](level-4-armor.md). The Item Shop describes it as "High Damage Reduction" and says it protects the upper and lower torso. The listed areas are the upper, middle and lower torso.
 
 It goes in the Armor slot and covers nothing below the torso. With a weight of 10.5, it is much heavier than the two lower tiers. For all the vests and helmets, see [Body Armor](body-armor.md).
 

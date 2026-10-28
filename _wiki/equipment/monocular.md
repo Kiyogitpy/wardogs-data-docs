@@ -33,7 +33,7 @@ The shop text describes the Monocular as spotting enemy infantry and vehicles wi
 ## How it works
 
 - It is used by aiming, with the item's secondary input.
-- The item data places it in the same aim action as the Range Finder, so the two share controls.
+- The game files place it in the same aim action as the Range Finder, so the two share controls.
 - While it is in use, maximum movement speed is halved.
 
 The data gives the Monocular no reload action.
