@@ -25,7 +25,7 @@ The Recon unlock tree lists its own role level and cash cost for the Monocular, 
 - **Accurate distance:** the Range Finder, at 1,450 cash. It is the cheapest of the two optics that show a distance.
 - **Infrared view:** the Infrared Range Finder, at 3,200 cash. It is the most expensive optic and the only one with infrared magnification.
 
-The data gives no spotting range for any of the four, so this page cannot say which one reveals targets farther away.
+No spotting range is given for any of the four, so this page cannot say which one reveals targets farther away.
 
 ## Spotting
 

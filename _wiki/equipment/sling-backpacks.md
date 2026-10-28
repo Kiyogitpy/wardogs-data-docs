@@ -36,13 +36,13 @@ The sling slots are for weapons or special items. The shop text describes the Me
 | Gunner Backpack and Sling | 2,400 | 6 x 4 | 24 | 1 equipment slot | 1.5 |
 | Arsenal Backpack and 2 Slings | 4,000 | 6 x 4 | 24 | 2 equipment slots | 1.5 |
 
-The item data gives the Medium Backpack and Sling a weapon slot that holds one item. It gives the Arsenal Backpack two sling slots, each holding one item. The weights are in kilograms, the unit the game shows for item weight.
+The Medium Backpack and Sling has a weapon slot that holds one item. The Arsenal Backpack has two sling slots, each holding one item. The weights are in kilograms, the unit the game shows for item weight.
 
-The item data gives the Medium Backpack and Sling a much higher weight (4.0) than the plain Medium Backpack (0.88). The sources do not explain the difference.
+The Medium Backpack and Sling has a much higher weight (4.0) than the plain Medium Backpack (0.88). The sources do not explain the difference.
 
 ## Season 2 changes
 
-No Season 2 change to the sling backpacks is listed in the data.
+No Season 2 change to the sling backpacks is listed.
 
 ## See also
 
