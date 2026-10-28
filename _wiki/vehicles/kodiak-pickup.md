@@ -21,7 +21,7 @@ description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold fo
 | Internal name | WHL_02 (pickup variant) |
 {: .wiki-infobox }
 
-The Kodiak [Pickup] is the pickup version of the [Kodiak](kodiak.md). It has a larger seating layout, six seats on the stats sheet, and no weapons.
+The Kodiak [Pickup] is the pickup version of the [Kodiak](kodiak.md). It has a larger seating layout, six seats in its vendor stats, and no weapons.
 
 ## Overview
 
@@ -61,10 +61,10 @@ The pickup has no weapons. Its seats are the driver, three inside passengers and
 
 Handling matches the base Kodiak: mass 2,750, hand brake 50, front steering of 30 degrees, and the same engine and transmission.
 
-**Steering and pedal tuning.** The pickup uses the same input set as the Kodiak, which stores steer input gravity 2 and no other sensitivity values. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
+**Steering and pedal tuning.** The pickup uses the same input set as the Kodiak, which is set to steer input gravity 2 and no other sensitivity values. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
-- Steering sensitivity is not stored; the game default of 5.0 applies.
-- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. The wheel data stores a radius, friction and brake value for each state. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
+- No steering sensitivity is set; the game default of 5.0 applies.
+- **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes
 
@@ -75,7 +75,7 @@ Handling matches the base Kodiak: mass 2,750, hand brake 50, front steering of 3
 
 ## Vehicle spawns
 
-The Kodiak [Pickup] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Kodiak, Kodiak [M249] and Kodiak [Pickup]), not each variant, so which variant appears in a slot is not in the data (inferred). A match offers it in all 7 ground yards on Ozeti, 6 or 7 of the 6 or 7 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. The data gives no vehicle count or respawn timer per yard. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
+The Kodiak [Pickup] is placed by the ground vehicle yards of all four main maps: [Bakurani](../game-modes-and-maps/bakurani.md), [Ozeti](../game-modes-and-maps/ozeti.md), [Zestafona](../game-modes-and-maps/zestafona.md) and [Saburtulo](../game-modes-and-maps/saburtulo.md). The yards list the vehicle family (Kodiak, Kodiak [M249] and Kodiak [Pickup]), not each variant, so which variant appears in a slot is not known (inferred). A match offers it in all 7 ground yards on Ozeti, 6 or 7 of the 6 or 7 on Bakurani, 7 of 7 on Zestafona and 6 of 6 on Saburtulo. No vehicle count or respawn timer per yard is known. See [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md).
 
 ## See also
 
@@ -93,4 +93,4 @@ The Kodiak [Pickup] is placed by the ground vehicle yards of all four main maps:
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md)
 - [Season 2 Changes: Vehicles](../../season-2-changes/vehicles.md)
-- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and data findings for this article
+- [Round 45 B evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md): wiki update notes and findings for this article
