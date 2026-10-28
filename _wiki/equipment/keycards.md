@@ -54,7 +54,7 @@ None found.
 
 ## Sources
 
-- [Items (feature)](../../game-features/Wardogs_GameFeatures_Items_v2.md): the six keycard rows and the use action
+- [Items Game Feature](../../game-features/Wardogs_GameFeatures_Items_v2.md): the six keycard rows and the use action
 - [Round 75 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round75-open-questions.md): the reader in the code and the search for anything that uses it
 - [Item Shop](../../game-features/Wardogs_ItemShop_v1.md): the keycard names in the entity text table
 - [Weapon Miscellany](../../game-features/Wardogs_WeaponMisc_v1.md): the keycard animation sets
