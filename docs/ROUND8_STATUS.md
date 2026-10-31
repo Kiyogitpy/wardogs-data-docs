@@ -130,6 +130,27 @@ parity are still open. No game or service was used.
   `Server_PurchaseLoadout` validates that
   its incoming Requests array is empty; the equipment destination is selected
   by the later buffer-to-pawn copy, not that parameter.
+  Round 92 (DeepExtract corpus) looked again for a client-side preset store
+  beyond `UWDStorageVaultComponent` and found none, so the item stays open.
+  A scan of the string literals of all 33,389 functions that have any (tags,
+  reflection and delegate names) for loadout, preset, favourite and
+  save-game names finds only the vendor purchase tags, the wager rule
+  `Wager.Behavior.RequireLoadoutCost`, the scene tag `UI.Scene.Frontend.Loadouts`
+  (the five-entry scene above), the tutorial tag `Tutorials.BuyingYourLoadout`,
+  the Deathmatch `Server_SetupLoadoutByTag` binding, the cosmetic Itemsmith
+  favourite action (paint favourites, not equipment), and presets of video
+  quality, gamepad dead zones and minimap zoom. The Pragma player-data client
+  types are currencies, XP, mastery, wager cooldowns, collection items and
+  equipped collection items plus the vault types (`GetVaults`,
+  `ApplyVaultUpdates`, `AutoArrangeVault`, snapshots); none is a loadout or
+  preset record, and `FWDLoadout` is the vendor cart structure used by
+  `Server_ApplyLoadout` and `Server_PurchaseLoadout`. The Unreal save-game API
+  has no game-code caller: the writer behind `SaveGameToSlot` (`0x3F209B0`) is
+  reached only from the reflected thunk (`0x3F2F880`) and an engine function
+  without recorded callers (`0x3F18839`), and the loader (`0x3F0DDE0`) only from
+  engine code (`0x3EDB280`), its thunk (`0x3F2BFF0`) and the Enhanced Input
+  local-player subsystem (`0x4CE8730`). Anything stored only on the backend is
+  not visible in client code. [Round 92 evidence](evidence/round92-movement-camera.md#9-saved-preset-hypothesis).
 - [x] `ClassToHitLocations`: packed keys BHMoverPawn and WDTargetDummy select the player asset; inheritance branches do not compete. [Evidence](evidence/round8-config.md#classtohitlocations-entries-and-precedence).
 - [x] Vehicle sweep hits: native query flags, conversion and reversed Item/MyItem traced. Ordinary mesh sweeps lack triangle-material indices; single-body cases do not select a section. Custom queries remain distinct. [Evidence](evidence/round8-vehicle-sweep.md).
 - [x] Rotor-hub group membership: native registration, health selector and callback fan-out show hubs and blades toggle together in their Main/Tail groups, restoring each member's own profile. [Evidence](evidence/round8-rotor-toggle.md).
