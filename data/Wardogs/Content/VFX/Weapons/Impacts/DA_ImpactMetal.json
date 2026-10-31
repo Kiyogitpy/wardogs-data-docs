@@ -1,0 +1,46 @@
+--- export: UPrimaryDataAsset / DA_ImpactMetal ---
+{
+  "Type": "PDA_PhysicalMaterialResponse_C",
+  "Name": "DA_ImpactMetal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.PDA_PhysicalMaterialResponse_C'",
+  "Package": "/Game/VFX/Weapons/Impacts/DA_ImpactMetal",
+  "Template": {
+    "ObjectName": "PDA_PhysicalMaterialResponse_C'Default__PDA_PhysicalMaterialResponse_C'",
+    "ObjectPath": "/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.1"
+  },
+  "Properties": {
+    "BulletDecal": {
+      "AssetPathName": "/Game/VFX/Decals/_MaterialInstances/MI_VFX_BulletDecal_Metal.MI_VFX_BulletDecal_Metal",
+      "SubPathString": ""
+    },
+    "BulletImpactEffect": {
+      "AssetPathName": "/Game/VFX/Weapons/Impacts/Systems/NS_VFX_ImpactMetal.NS_VFX_ImpactMetal",
+      "SubPathString": ""
+    },
+    "ExplosionEffect": [
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion01_Metal.NS_VFX_Explosion01_Metal",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion_Med.NS_VFX_Explosion_Med",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/VFX/Weapons/Explosions/Systems/NS_VFX_Explosion_Big.NS_VFX_Explosion_Big",
+        "SubPathString": ""
+      }
+    ],
+    "SmallCaliberSIze": 2.0,
+    "MediumCaliberSIze": 2.0,
+    "LargeCaliberSIze": 2.0,
+    "SizeRandomMin": 0.95,
+    "SizeRandomMax": 1.05,
+    "ExplosionDecalSize": 200.0,
+    "NativeClass": {
+      "ObjectName": "BlueprintGeneratedClass'PDA_PhysicalMaterialResponse_C'",
+      "ObjectPath": "/Game/VFX/Weapons/Impacts/PDA_PhysicalMaterialResponse.0"
+    }
+  }
+}

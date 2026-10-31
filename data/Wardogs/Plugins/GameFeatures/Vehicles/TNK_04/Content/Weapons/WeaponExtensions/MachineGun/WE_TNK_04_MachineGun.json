@@ -1,0 +1,70 @@
+--- export: UDataAsset / WE_TNK_04_MachineGun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_TNK_04_MachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/TNK_04/Weapons/WeaponExtensions/MachineGun/WE_TNK_04_MachineGun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.TNK_04.MachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleTurretMachineGun_TNK_04"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.TNK_04.TurretMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.MachineGun"
+      }
+    },
+    "WeaponExtensionName": "Machine Gun",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_LMG_02_Stats'",
+      "ObjectPath": "/LMG_02/Data/DA_LMG_02_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "MountedMachineGun"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.25,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.762x54mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.762x54mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.762x54mm.Tracer"
+        },
+        "Value": 300
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_TNK_04_MachineGun_Weapon_Audio'",
+      "ObjectPath": "/TNK_04/Weapons/WeaponExtensions/MachineGun/DA_TNK_04_MachineGun_Weapon_Audio.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_TankMG_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_TankMG.1"
+    }
+  }
+}

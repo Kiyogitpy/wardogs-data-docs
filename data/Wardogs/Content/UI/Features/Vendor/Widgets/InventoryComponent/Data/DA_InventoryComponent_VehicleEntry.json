@@ -1,0 +1,23 @@
+--- export: UDataAsset / DA_InventoryComponent_VehicleEntry ---
+{
+  "Type": "WDUIVehicleEntryData",
+  "Name": "DA_InventoryComponent_VehicleEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleEntryData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_VehicleEntry",
+  "Properties": {
+    "NoSupplyCrateText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+      "Key": "SupplyCrate.NoCrate",
+      "SourceString": "[ NO CRATE ] ",
+      "LocalizedString": "[ NO CRATE ] "
+    },
+    "AmmoTextFormat": {
+      "CultureInvariantString": "{Amount}/{Capacity}"
+    },
+    "FallbackCrateIcon": {
+      "AssetPathName": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Textures/T_UI_Vendor_SupplyCrateSlot.T_UI_Vendor_SupplyCrateSlot",
+      "SubPathString": ""
+    }
+  }
+}

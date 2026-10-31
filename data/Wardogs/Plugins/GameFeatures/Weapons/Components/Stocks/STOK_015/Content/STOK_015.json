@@ -1,0 +1,56 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'STOK_015'",
+    "ObjectPath": "/STOK_015/STOK_015.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_STOK_015'",
+      "ObjectPath": "/STOK_015/EDL_STOK_015.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / STOK_015 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "STOK_015",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/STOK_015/STOK_015",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'STOK_015:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/STOK_015/STOK_015.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/STOK_015/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

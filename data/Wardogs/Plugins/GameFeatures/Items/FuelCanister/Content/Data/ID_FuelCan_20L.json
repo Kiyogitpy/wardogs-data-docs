@@ -1,0 +1,601 @@
+--- export: UObject / BH_FuelCan_ExtensionData_C_0 ---
+{
+  "Type": "BH_FuelCan_ExtensionData_C",
+  "Name": "BH_FuelCan_ExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/FuelCanister/Blueprints/BH_FuelCan_ExtensionData.BH_FuelCan_ExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Template": {
+    "ObjectName": "BH_FuelCan_ExtensionData_C'Default__BH_FuelCan_ExtensionData_C'",
+    "ObjectPath": "/FuelCanister/Blueprints/BH_FuelCan_ExtensionData.0"
+  },
+  "Properties": {
+    "Trace Distance": 500.0
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/FuelCanister/Meshes/SM_Fuel_Canister.SM_Fuel_Canister",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  },
+  "Properties": {
+    "Weight": 3.0
+  }
+}
+--- export: UPrimaryDataAsset / ID_FuelCan_20L ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_FuelCan_20L",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/FuelCanister/Data/ID_FuelCan_20L",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item"
+    },
+    "ItemContext": [
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipTwoHandsHeavy",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.FuelCan",
+      "SourceString": "Fuel Can",
+      "LocalizedString": "Fuel Can"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_FuelCan_20L:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_FuelCan_20L:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_FuelCan_20L:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Durability'ID_FuelCan_20L:WDInventoryFragment_Durability_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_FuelCan_20L:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_FuelCan_20L:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_FuelCan_Audio'",
+      "ObjectPath": "/FuelCanister/Audio/ID_FuelCan_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Durability_0 ---
+{
+  "Type": "WDInventoryFragment_Durability",
+  "Name": "WDInventoryFragment_Durability_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Durability'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  },
+  "Properties": {
+    "ReplicatedData": {
+      "Durability": 20.0
+    },
+    "bIsVisibleOnEquippedUI": true
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FuelCan_20L'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.11"
+      },
+      {
+        "ObjectName": "BH_FuelCan_ExtensionData_C'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.BH_FuelCan_ExtensionData_C_0'",
+        "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_FuelCan'",
+      "ObjectPath": "/FuelCanister/Data/AnimSet_FuelCan.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Fuel"
+    },
+    "AttributeValue": 25.0,
+    "bApplyAsDelta": true,
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.Appliable.FuelCan.Refuel"
+        },
+        "Value": {
+          "RequiredOwnerStates": [],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+              "Key": "HUD.Refuel.Instigator",
+              "SourceString": "Refueling",
+              "LocalizedString": "Refueling"
+            },
+            "TargetText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+              "Key": "HUD.Refuel.Target",
+              "SourceString": "Being Refueled By",
+              "LocalizedString": "Being Refueled By"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::UntilItemEmptyOrTargetFull",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.PrimaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": true,
+          "WorldInteractionContextClass": {
+            "ObjectName": "Class'WDVehicleAddFuelInteractionContext'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Appliable.FuelCan.Fill"
+        },
+        "Value": {
+          "RequiredOwnerStates": [],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+              "Key": "HUD.FuelCan.Refill",
+              "SourceString": "Refilling",
+              "LocalizedString": "Refilling"
+            },
+            "TargetText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+              "Key": "HUD.Refuel.Target",
+              "SourceString": "Being Refueled By",
+              "LocalizedString": "Being Refueled By"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::UntilItemEmptyOrTargetFull",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.SecondaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": true,
+          "WorldInteractionContextClass": {
+            "ObjectName": "BlueprintGeneratedClass'WIC_InteractionContext_ItemRefuel_C'",
+            "ObjectPath": "/Game/GameMechanics/WorldInteractable/Objects/InteractionContexts/WIC_InteractionContext_ItemRefuel.0"
+          },
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": true
+        }
+      }
+    ],
+    "bContainerAppliable": true,
+    "ContainerData": {
+      "StartingAmount": 20.0,
+      "MaxAmount": 20.0,
+      "UpdateTime": 1.5,
+      "UpdateAmount": 1.0
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_FuelCan_Audio'",
+      "ObjectPath": "/FuelCanister/Audio/ID_FuelCan_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AttributeExtension_1 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_AttributeExtension_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_FuelCanister'",
+      "ObjectPath": "/FuelCanister/Meshes/SK_FuelCanister.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_FuelCan_WeaponMaster'",
+        "ObjectPath": "/Game/Items/Vehicles/FuelCan/Materials/MI_FuelCan_WeaponMaster.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_FuelCaniter_C'",
+      "ObjectPath": "/FuelCanister/Animation/FP/Blueprint/ABP_FuelCaniter.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_FuelCanister_Equip'",
+        "ObjectPath": "/FuelCanister/Animation/FP/Character/Montage/AM_FP_FuelCanister_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_FuelCanister_Equip'",
+        "ObjectPath": "/FuelCanister/Animation/FP/Item/Montage/AM_Weap_FuelCanister_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_FuelCanister_Holster'",
+        "ObjectPath": "/FuelCanister/Animation/FP/Character/Montage/AM_FP_FuelCanister_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/FuelCanister/Animation/FP/Blueprint/ABP_FP_FuelCanister_Layer_RW.ABP_FP_FuelCanister_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/FuelCanister/Animation/TP/Blueprint/ABP_TP_FuelCanister_Layer_RW.ABP_TP_FuelCanister_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.1
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Appliable'",
+      "ObjectPath": "/Game/Items/ItemExtensionDefaults/IMC_Appliable.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.16"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_0'",
+          "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.17"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_1'",
+          "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_1'",
+          "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.20"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.8"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Appliable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.FuelCan.Refuel"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.FuelCan.Fill"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.14"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.FuelCan.Refuel"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_1 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_FuelCan_20L:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/FuelCanister/Data/ID_FuelCan_20L.14"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.FuelCan.Fill"
+    }
+  }
+}

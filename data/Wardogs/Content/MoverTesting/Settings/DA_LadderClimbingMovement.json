@@ -1,0 +1,53 @@
+--- export: UDataAsset / DA_LadderClimbingMovement ---
+{
+  "Type": "BHLadderClimbingData",
+  "Name": "DA_LadderClimbingMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHLadderClimbingData'",
+  "Package": "/Game/MoverTesting/Settings/DA_LadderClimbingMovement",
+  "Properties": {
+    "LadderEntryAngleThreshold": 60.0,
+    "bConsiderTopEntryFromCollision": false,
+    "ClimbUpMaxSpeed": 160.0,
+    "ClimbUpMinSpeed": 40.0,
+    "ClimbUpAcceleration": 100000.0,
+    "ClimbDownMaxSpeed": 160.0,
+    "ClimbDownMinSpeed": 40.0,
+    "ClimbDownAcceleration": 500.0,
+    "SlideDownSpeed": 320.0,
+    "SlideDownAcceleration": 1000.0,
+    "JumpOffForce": 300.0,
+    "LadderTransitionCurves[1]": {
+      "TransitionCurve": {
+        "ObjectName": "CurveVector'CRV_LMF_Ladder_ClimbOntoAnimation'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOntoAnimation.0"
+      },
+      "TransitionDuration": 0.25
+    },
+    "LadderTransitionCurves[2]": {
+      "TransitionCurve": {
+        "ObjectName": "CurveVector'CRV_LMF_Ladder_ClimbOntoFromTopAnimation'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOntoFromTopAnimation.0"
+      },
+      "TransitionDuration": 0.75
+    },
+    "LadderTransitionCurves[3]": {
+      "TransitionCurve": {
+        "ObjectName": "CurveVector'CRV_LMF_Ladder_ClimbOntoAnimation'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOntoAnimation.0"
+      },
+      "TransitionDuration": 0.25
+    },
+    "LadderTransitionCurves[4]": {
+      "TransitionCurve": {
+        "ObjectName": "CurveVector'CRV_LMF_Ladder_ClimbOffAtTopAnimation'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/MovementFeatures/Ladder/Curves/CRV_LMF_Ladder_ClimbOffAtTopAnimation.0"
+      },
+      "TransitionDuration": 1.0
+    },
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_LadderClimbing'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_LadderClimbing.4"
+    }
+  }
+}

@@ -1,0 +1,208 @@
+--- export: UDataTable / DT_SquadIntents ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SquadIntents",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/DT_SquadIntents",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUISquadIntentTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Squad.Intent.Building": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Vendor.Category.Utility.Type.Building",
+        "SourceString": "Building",
+        "LocalizedString": "Building"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_Building.T_UI_SquadIntent_Building",
+        "SubPathString": ""
+      },
+      "SortOrder": 10,
+      "Tag": {
+        "TagName": "Squad.Intent.Building"
+      }
+    },
+    "Squad.Intent.Hotzone": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.Hotzone.DisplayName",
+        "SourceString": "Hotzone",
+        "LocalizedString": "Hotzone"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_Hotzon.T_UI_SquadIntent_Hotzon",
+        "SubPathString": ""
+      },
+      "SortOrder": 20,
+      "Tag": {
+        "TagName": "Squad.Intent.Hotzone"
+      }
+    },
+    "Squad.Intent.AirCombat": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.AirCombat.DisplayName",
+        "SourceString": "Air Combat",
+        "LocalizedString": "Air Combat"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_AirCombat.T_UI_SquadIntent_AirCombat",
+        "SubPathString": ""
+      },
+      "SortOrder": 50,
+      "Tag": {
+        "TagName": "Squad.Intent.AirCombat"
+      }
+    },
+    "Squad.Intent.GroundCombat": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.GroundCombat.DisplayName",
+        "SourceString": "Ground Combat",
+        "LocalizedString": "Ground Combat"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_GroundCombat.T_UI_SquadIntent_GroundCombat",
+        "SubPathString": ""
+      },
+      "SortOrder": 60,
+      "Tag": {
+        "TagName": "Squad.Intent.GroundCombat"
+      }
+    },
+    "Squad.Intent.AirTransport": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.AirTransport.DisplayName",
+        "SourceString": "Air Transport",
+        "LocalizedString": "Air Transport"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_AirTransport.T_UI_SquadIntent_AirTransport",
+        "SubPathString": ""
+      },
+      "SortOrder": 70,
+      "Tag": {
+        "TagName": "Squad.Intent.AirTransport"
+      }
+    },
+    "Squad.Intent.GroundTransport": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.GroundTransport.DisplayName",
+        "SourceString": "Ground Transport",
+        "LocalizedString": "Ground Transport"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_GroundTransport.T_UI_SquadIntent_GroundTransport",
+        "SubPathString": ""
+      },
+      "SortOrder": 80,
+      "Tag": {
+        "TagName": "Squad.Intent.GroundTransport"
+      }
+    },
+    "Squad.Intent.FOBAssault": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.FOBAssault.DisplayName",
+        "SourceString": "FOB Assault",
+        "LocalizedString": "FOB Assault"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_FobAssault.T_UI_SquadIntent_FobAssault",
+        "SubPathString": ""
+      },
+      "SortOrder": 90,
+      "Tag": {
+        "TagName": "Squad.Intent.FOBAssault"
+      }
+    },
+    "Squad.Intent.TalkingShit": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.TalkingShit.DisplayName",
+        "SourceString": "Talking shit",
+        "LocalizedString": "Talking shit"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_Talking.T_UI_SquadIntent_Talking",
+        "SubPathString": ""
+      },
+      "SortOrder": 100,
+      "Tag": {
+        "TagName": "Squad.Intent.TalkingShit"
+      }
+    },
+    "Squad.Intent.NoobFriendly": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.NoobFriendly.DisplayName",
+        "SourceString": "Noob friendly",
+        "LocalizedString": "Noob friendly"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_NoobFriendly.T_UI_SquadIntent_NoobFriendly",
+        "SubPathString": ""
+      },
+      "SortOrder": 110,
+      "Tag": {
+        "TagName": "Squad.Intent.NoobFriendly"
+      }
+    },
+    "Squad.Intent.Competitive": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.Competitive.DisplayName",
+        "SourceString": "Competitive",
+        "LocalizedString": "Competitive"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_Competitive.T_UI_SquadIntent_Competitive",
+        "SubPathString": ""
+      },
+      "SortOrder": 120,
+      "Tag": {
+        "TagName": "Squad.Intent.Competitive"
+      }
+    },
+    "Squad.Intent.CapturingTowers": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ContextDrawer.STRINGS_ContextDrawer",
+        "Key": "Squad.Intent.CapturingTowers.DisplayName",
+        "SourceString": "Capturing Towers",
+        "LocalizedString": "Capturing Towers"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_TowerCapture.T_UI_SquadIntent_TowerCapture",
+        "SubPathString": ""
+      },
+      "SortOrder": 30,
+      "Tag": {
+        "TagName": "Squad.Intent.CapturingTowers"
+      }
+    },
+    "Squad.Intent.Recon": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+        "Key": "Vendor.Category.Utility.Type.Recon",
+        "SourceString": "Recon",
+        "LocalizedString": "Recon"
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_Recon.T_UI_SquadIntent_Recon",
+        "SubPathString": ""
+      },
+      "SortOrder": 40,
+      "Tag": {
+        "TagName": "Squad.Intent.Recon"
+      }
+    }
+  }
+}

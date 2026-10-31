@@ -1,0 +1,31 @@
+--- export: UDataAsset / DA_TreeRewardTrackCard ---
+{
+  "Type": "WDUIUnlockTreeData",
+  "Name": "DA_TreeRewardTrackCard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIUnlockTreeData'",
+  "Package": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard",
+  "Properties": {
+    "IconTag": {
+      "TagName": "UI.Icon.Vendor"
+    },
+    "DefaultTypeText": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.DefaultItemType",
+      "SourceString": "Item //",
+      "LocalizedString": "Item //"
+    },
+    "UnlockedText": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Unlocked",
+      "SourceString": "Completed",
+      "LocalizedString": "Completed"
+    },
+    "UnlockCurrencyFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Format.UnlockCurrency",
+      "SourceString": "{Cost} to Unlock",
+      "LocalizedString": "{Cost} to Unlock"
+    }
+  }
+}

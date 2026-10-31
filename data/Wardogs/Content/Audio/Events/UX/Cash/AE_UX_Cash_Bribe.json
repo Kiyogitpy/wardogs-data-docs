@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UX_Cash_Bribe ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Cash_Bribe",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_Bribe",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Cash.Bribe"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Cash_Bribe:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_Bribe.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Cash_Bribe'",
+    "ObjectPath": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_Bribe.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Cash_Bribe'",
+      "ObjectPath": "/Game/Audio/UX/Cash/MSS_UX_Cash_Bribe.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

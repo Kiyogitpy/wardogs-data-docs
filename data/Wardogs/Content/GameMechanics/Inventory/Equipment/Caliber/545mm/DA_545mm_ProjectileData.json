@@ -1,0 +1,107 @@
+--- export: UPrimaryDataAsset / DA_545mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_545mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/545mm/DA_545mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.545mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.545mm"
+        },
+        "Context": [
+          "Meta.Damage.Arms.Medium"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 26.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "ImpulseScale": 8500.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 1.71704,
+        "Diameter": 0.56,
+        "Mass": 0.0034,
+        "DragModel": {
+          "Value": 1.4,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.3,
+        "DistanceFalloffRange": {
+          "Min": 1.0,
+          "Max": 2.5
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.2,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.359061,
+                "Value": 0.24066,
+                "ArriveTangent": -0.132981,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -0.132975,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.000196,
+                "Value": 0.036167,
+                "ArriveTangent": -2E-06,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 2E-06,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Medium'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0"
+          }
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_545mm.NS_Tracer_545mm",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 30000.0,
+      "TravelDistanceForWhizBy": 1000.0,
+      "DistanceToPlayerForWhizBy": 1000.0
+    }
+  }
+}

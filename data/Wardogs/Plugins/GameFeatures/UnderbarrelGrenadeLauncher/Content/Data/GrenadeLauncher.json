@@ -1,0 +1,329 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'GrenadeLauncher'",
+    "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.2"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.40mm"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.40mm"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'GrenadeLauncher'",
+    "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.2"
+  }
+}
+--- export: UPrimaryDataAsset / GrenadeLauncher ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "GrenadeLauncher",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.TestGrenadeLauncher"
+    },
+    "ItemContext": [
+      "Item.Attachment.Underbarrel"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "E7B5BA104A7EED7CDB2E03B3A71DA93D",
+      "SourceString": "TEST Grenade Launcher",
+      "LocalizedString": "TEST Grenade Launcher"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'GrenadeLauncher:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'GrenadeLauncher:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'GrenadeLauncher:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'GrenadeLauncher:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.0"
+      },
+      {
+        "ObjectName": "WDItemsmithDataFragment_CameraData'GrenadeLauncher:WDItemsmithDataFragment_CameraData_0'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'GrenadeLauncher:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'GrenadeLauncher'",
+    "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.2"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "WeaponStats": {
+        "ObjectName": "WDWeaponStatsData'DA_GrenadeLauncher_Stats'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/DA_GrenadeLauncher_Stats.0"
+      },
+      "ResourceRequirement": {
+        "RequiredResource": {
+          "TagName": "Id.Item.40mm"
+        },
+        "ResourcesUsed": 1,
+        "bLimitSearchToItem": true,
+        "OptionalRequiredSubSlotCategory": {
+          "TagName": "None"
+        },
+        "ResourceType": {
+          "TagName": "Item.Resource.AncillaryAmmo"
+        }
+      },
+      "ReloadAnimation": {
+        "FirstPersonPlayerAnimation": {
+          "ObjectName": "AnimMontage'AM_FP_UniTool_Reload'",
+          "ObjectPath": "/Game/Animation/Characters/Utilities/Universal_Tool/AM_FP_UniTool_Reload.0"
+        },
+        "ThirdPersonPlayerAnimation": {
+          "ObjectName": "AnimMontage'AM_TP_UniTool_Reload'",
+          "ObjectPath": "/Game/Animation/Characters/Utilities/Universal_Tool/TP/AM_TP_UniTool_Reload.0"
+        },
+        "FirstPersonItemAnimation": null,
+        "ThirdPersonItemAnimation": null,
+        "bOverrideLength": false,
+        "OverrideLength": 1.0,
+        "ItemBlendOutTime": 0.1,
+        "PlayerBlendOutTime": 0.1
+      },
+      "FiringAnimation": {
+        "FirstPersonPlayerAnimation": null,
+        "ThirdPersonPlayerAnimation": null,
+        "FirstPersonItemAnimation": null,
+        "ThirdPersonItemAnimation": null,
+        "bOverrideLength": false,
+        "OverrideLength": 1.0,
+        "ItemBlendOutTime": 0.1,
+        "PlayerBlendOutTime": 0.1
+      },
+      "AudioData": {
+        "ObjectName": "WDAudioData'DA_GrenadeLauncher_Audio'",
+        "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/DA_GrenadeLauncher_Audio.0"
+      },
+      "SpreadValues": [
+        {
+          "Key": "EWDPlayerStance::Stand",
+          "Value": {
+            "Value": 1.0,
+            "Curve": {
+              "CurveTable": {
+                "ObjectName": "CurveTable'CT_Weapon_Spread'",
+                "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+              },
+              "RowName": "AR.Stand"
+            },
+            "RegistryType": {
+              "Name": "None"
+            }
+          }
+        },
+        {
+          "Key": "EWDPlayerStance::Crouch",
+          "Value": {
+            "Value": 1.0,
+            "Curve": {
+              "CurveTable": {
+                "ObjectName": "CurveTable'CT_Weapon_Spread'",
+                "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+              },
+              "RowName": "AR.Crouch"
+            },
+            "RegistryType": {
+              "Name": "None"
+            }
+          }
+        },
+        {
+          "Key": "EWDPlayerStance::Prone",
+          "Value": {
+            "Value": 1.0,
+            "Curve": {
+              "CurveTable": {
+                "ObjectName": "CurveTable'CT_Weapon_Spread'",
+                "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+              },
+              "RowName": "AR.Prone"
+            },
+            "RegistryType": {
+              "Name": "None"
+            }
+          }
+        }
+      ],
+      "InAirHipFireSpread": 10.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Underbarrel"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'GrenadeLauncher'",
+    "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.2"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'GrenadeLauncher'",
+    "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.2"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}
+--- export: UObject / WDItemsmithDataFragment_CameraData_0 ---
+{
+  "Type": "WDItemsmithDataFragment_CameraData",
+  "Name": "WDItemsmithDataFragment_CameraData_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemsmithDataFragment_CameraData'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'GrenadeLauncher'",
+    "ObjectPath": "/UnderbarrelGrenadeLauncher/Data/GrenadeLauncher.2"
+  },
+  "Properties": {
+    "CameraParams": [
+      {
+        "Key": {
+          "TagName": "Item.Attachment.Underbarrel"
+        },
+        "Value": {
+          "FocusPositionOffset": {
+            "X": 0.0,
+            "Y": 15.0,
+            "Z": -5.204615
+          },
+          "FocusPosition": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DefaultAngle": {
+            "Pitch": 0.0,
+            "Yaw": 180.0,
+            "Roll": 0.0
+          },
+          "CenterAngle": {
+            "Pitch": 0.0,
+            "Yaw": 180.0,
+            "Roll": 0.0
+          },
+          "AngleOffsetLimit": 75.0,
+          "DesiredDistance": 60.0,
+          "DistanceLimits": {
+            "X": 10.0,
+            "Y": 200.0
+          },
+          "CameraSpeed": 1.0,
+          "ZoomSpeed": 40.0,
+          "FlairPanLimitMin": {
+            "X": -100.0,
+            "Y": -50.0
+          },
+          "FlairPanLimitMax": {
+            "X": 100.0,
+            "Y": 50.0
+          },
+          "ItemSelectViewOffset": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+--- export: UObject / AEB_SetVehicleParameters_SpeedAndRotation_C_1 ---
+{
+  "Type": "AEB_SetVehicleParameters_SpeedAndRotation_C",
+  "Name": "AEB_SetVehicleParameters_SpeedAndRotation_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_SpeedAndRotation.AEB_SetVehicleParameters_SpeedAndRotation_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleParameters_SpeedAndRotation_C'Default__AEB_SetVehicleParameters_SpeedAndRotation_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_SpeedAndRotation.0"
+  },
+  "Properties": {
+    "ParameterDestinationContexts": [
+      {
+        "TagName": "Audio.Context.Vehicle.Engine"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.Moving.Surface"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.Moving"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.Fuel"
+      }
+    ]
+  }
+}
+--- export: UObject / AEB_SetVehicleParameters_Tracked_C_1 ---
+{
+  "Type": "AEB_SetVehicleParameters_Tracked_C",
+  "Name": "AEB_SetVehicleParameters_Tracked_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_Tracked.AEB_SetVehicleParameters_Tracked_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleParameters_Tracked_C'Default__AEB_SetVehicleParameters_Tracked_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/VehicleAEBs/AEB_SetVehicleParameters_Tracked.0"
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Moving_TNK ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Moving_TNK",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Moving.TNK"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Moving_TNK:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Moving_TNK:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.5"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleParameters_SpeedAndRotation_C'AE_Vehicle_Moving_TNK:AEB_SetVehicleParameters_SpeedAndRotation_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.0"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleParameters_Tracked_C'AE_Vehicle_Moving_TNK:AEB_SetVehicleParameters_Tracked_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_Moving_TNK:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.6"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_Moving_TNK:WDAudioEventBehaviorPlayVehicleSound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.7"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Moving_TNK:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 5.0
+    },
+    "SocketName": "body_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 5.0
+    },
+    "SocketName": "body_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving.Surface"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Foley"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "CancelFadeOut": true,
+    "CancelFadeOutDuration": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    },
+    "bPersistent": true
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_1 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Moving_TNK'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/TNK/AE_Vehicle_Moving_TNK.3"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Surface"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "CancelFadeOut": true,
+    "CancelFadeOutDuration": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving.Surface"
+    },
+    "bPersistent": true
+  }
+}

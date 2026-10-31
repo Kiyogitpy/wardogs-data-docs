@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_RocketPods_Config ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_RocketPods_Config",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Config",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Config"
+    ],
+    "Fragments": [
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_ROT_03_RocketPods_Config:MVF_VehicleConfig_0'",
+            "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Config.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_RocketPods_Config'",
+    "ObjectPath": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_RocketPods_Config.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/ROT_03_WeaponVariants/Data/WeaponVariants/DA_ROT_03_RocketPods_Config.DA_ROT_03_RocketPods_Config",
+      "SubPathString": ""
+    }
+  }
+}

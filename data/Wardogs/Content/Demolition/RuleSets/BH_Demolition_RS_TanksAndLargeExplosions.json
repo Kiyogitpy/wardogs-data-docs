@@ -1,0 +1,71 @@
+--- export: UObject / BHDemolitionRule_Or_0 ---
+{
+  "Type": "BHDemolitionRule_Or",
+  "Name": "BHDemolitionRule_Or_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Or'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_TanksAndLargeExplosions'",
+    "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.3"
+  },
+  "Properties": {
+    "Rules": [
+      {
+        "ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_TanksAndLargeExplosions:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_0'",
+        "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.1"
+      },
+      {
+        "ObjectName": "BHDemolitionRule_Ruleset'BH_Demolition_RS_TanksAndLargeExplosions:BHDemolitionRule_Or_0.BHDemolitionRule_Ruleset_1'",
+        "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.2"
+      }
+    ]
+  }
+}
+--- export: UObject / BHDemolitionRule_Ruleset_0 ---
+{
+  "Type": "BHDemolitionRule_Ruleset",
+  "Name": "BHDemolitionRule_Ruleset_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Ruleset'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_TanksAndLargeExplosions:BHDemolitionRule_Or_0'",
+    "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.0"
+  },
+  "Properties": {
+    "Ruleset": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_LargeExplosives'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_LargeExplosives.0"
+    }
+  }
+}
+--- export: UObject / BHDemolitionRule_Ruleset_1 ---
+{
+  "Type": "BHDemolitionRule_Ruleset",
+  "Name": "BHDemolitionRule_Ruleset_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Ruleset'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_TanksAndLargeExplosions:BHDemolitionRule_Or_0'",
+    "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.0"
+  },
+  "Properties": {
+    "Ruleset": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_TrackedVehicles'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_TrackedVehicles.1"
+    }
+  }
+}
+--- export: UDataAsset / BH_Demolition_RS_TanksAndLargeExplosions ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_TanksAndLargeExplosions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "BHDemolitionRule_Or'BH_Demolition_RS_TanksAndLargeExplosions:BHDemolitionRule_Or_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.0"
+    }
+  }
+}

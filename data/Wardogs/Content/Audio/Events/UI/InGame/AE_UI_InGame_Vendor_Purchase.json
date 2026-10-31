@@ -1,0 +1,64 @@
+--- export: UObject / AEB_PlayContextualPurchaseSound_C_0 ---
+{
+  "Type": "AEB_PlayContextualPurchaseSound_C",
+  "Name": "AEB_PlayContextualPurchaseSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayContextualPurchaseSound.AEB_PlayContextualPurchaseSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Purchase'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Purchase.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayContextualPurchaseSound_C'Default__AEB_PlayContextualPurchaseSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayContextualPurchaseSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_InGame_Vendor_Purchase ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Vendor_Purchase",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Purchase",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Purchase"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Vendor_Purchase:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Purchase.2"
+      },
+      {
+        "ObjectName": "AEB_PlayContextualPurchaseSound_C'AE_UI_InGame_Vendor_Purchase:AEB_PlayContextualPurchaseSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Purchase.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Purchase'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Purchase.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Vendor_PurchaseCart'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/MSS_UI_InGame_Vendor_PurchaseCart.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

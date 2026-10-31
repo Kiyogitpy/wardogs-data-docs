@@ -1,0 +1,26 @@
+--- export: UDataAsset / DA_CosmeticSet_GoldMarket ---
+{
+  "Type": "WDUICosmeticSetData",
+  "Name": "DA_CosmeticSet_GoldMarket",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUICosmeticSetData'",
+  "Package": "/Game/UI/Features/Frontend/GoldMarket/Widgets/CosmeticSet/Data/DA_CosmeticSet_GoldMarket",
+  "Properties": {
+    "CosmeticViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUICosmeticViewModel_GoldMarket",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/GoldMarket/Widgets/Cosmetic/Data/DA_Cosmetic_GoldMarket.DA_Cosmetic_GoldMarket",
+        "SubPathString": ""
+      }
+    },
+    "ObtainedTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_GoldMarket.STRINGS_GoldMarket",
+      "Key": "Text.Format.Progress",
+      "SourceString": "[{Amount}/{Total}] Owned",
+      "LocalizedString": "[{Amount}/{Total}] Owned"
+    }
+  }
+}

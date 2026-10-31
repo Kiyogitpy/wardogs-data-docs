@@ -1,0 +1,55 @@
+--- export: UDataAsset / IA_Vehicle_Camera_ToggleFreeLook ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Camera_ToggleFreeLook",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTapXTimes'IA_Vehicle_Camera_ToggleFreeLook:InputTriggerTapXTimes_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.2"
+      }
+    ],
+    "PlayerMappableKeySettings": {
+      "ObjectName": "BHPlayerMappableKeySettings'IA_Vehicle_Camera_ToggleFreeLook:BHPlayerMappableKeySettings_0'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.1"
+    }
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Camera_ToggleFreeLook'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.0"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+    },
+    "Name": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+  }
+}
+--- export: UObject / InputTriggerTapXTimes_0 ---
+{
+  "Type": "InputTriggerTapXTimes",
+  "Name": "InputTriggerTapXTimes_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTapXTimes'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Camera_ToggleFreeLook'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.0"
+  },
+  "Properties": {
+    "TapThreshold": 0.2,
+    "TapTriggerThreshold": 2
+  }
+}

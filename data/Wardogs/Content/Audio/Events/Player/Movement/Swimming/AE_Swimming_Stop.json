@@ -1,0 +1,113 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetSourceTransformParameters_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSourceTransformParameters.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_1 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetSourceTransformParameters_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSourceTransformParameters.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Swimming_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Swimming_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Swimming.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Swimming_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Swimming_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.3"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Swimming_Stop:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.0"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Swimming_Stop:AEB_EndBehavior_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.2"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Stop.2"
+  },
+  "Properties": {
+    "FadeOut": 1.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}

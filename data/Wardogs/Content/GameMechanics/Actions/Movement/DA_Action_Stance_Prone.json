@@ -1,0 +1,95 @@
+--- export: UPrimaryDataAsset / DA_Action_Stance_Prone ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_Stance_Prone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Stance_Prone",
+  "Properties": {
+    "ActionEffects": [
+      {
+        "Key": "GameplayEffect_Prone",
+        "Value": {
+          "ObjectName": "BlueprintGeneratedClass'GE_Player_Stance_Prone_C'",
+          "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Stance_Prone.0"
+        }
+      },
+      {
+        "Key": "GameplayEffecct_StanceTransition_Prone",
+        "Value": {
+          "ObjectName": "BlueprintGeneratedClass'GE_Player_Stance_Transition_C'",
+          "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_Stance_Transition.0"
+        }
+      }
+    ],
+    "ActionTag": {
+      "TagName": "Action.Player.Prone"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Stance_Prone_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Stance_Prone.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Player.Crouch",
+            "Action.Player.Stand",
+            "Action.Item.Inspect",
+            "Action.Weapon.ADS",
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptOnComplete",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptOnComplete",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Weapon.ADS"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Ladder",
+            "Action.Player.Traversing.Mantling",
+            "Action.Player.Traversing.Vaulting",
+            "Action.Player.Traversing.Climbing",
+            "Action.Item.Inspect",
+            "Action.Player.Emote.Surrender_Drop"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'BHStanceTransitionContextData'",
+      "ObjectPath": "/Script/BHMover"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+--- export: UPrimaryDataAsset / AINavigation_Example ---
+{
+  "Type": "GameFeatureData",
+  "Name": "AINavigation_Example",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/AINavigation_Example/AINavigation_Example",
+  "Properties": {
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.AISpawn",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDAIPvEAICoreRuntime.WDAICharacterConfigData",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/AINavigation_Example"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

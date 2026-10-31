@@ -1,0 +1,80 @@
+--- export: UPrimaryDataAsset / DA_GrenadeLauncher_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_GrenadeLauncher_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/UnderbarrelGrenadeLauncher/Data/DA_GrenadeLauncher_Stats",
+  "Properties": {
+    "WeaponStats": {
+      "RoundsPerMinute": 75.0,
+      "SupportedFireModes": [
+        "EWDFireMode::SemiAutomatic"
+      ],
+      "RoundsPerBurst": 1,
+      "_aaabaehmmeimejkapkogn": false,
+      "bSpawnProjectileFromCameraWhenAds": false,
+      "ViewKickCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "RecoveryKickCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "SupportedCaliber": [
+        "Item.Caliber.40mm"
+      ],
+      "InitialBulletSpeed": 7600.0,
+      "EffectiveRange": 300.0
+    }
+  }
+}

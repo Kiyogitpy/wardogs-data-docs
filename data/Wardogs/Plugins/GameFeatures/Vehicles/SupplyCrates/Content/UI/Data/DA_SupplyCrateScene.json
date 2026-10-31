@@ -1,0 +1,64 @@
+--- export: UDataAsset / DA_SupplyCrateScene ---
+{
+  "Type": "WDUISupplyCrateData",
+  "Name": "DA_SupplyCrateScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISupplyCrateData'",
+  "Package": "/SupplyCrates/UI/Data/DA_SupplyCrateScene",
+  "Properties": {
+    "SupplyCrateItemViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISupplyCrateItemCardViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_SupplyCrate.DA_ItemCard_SupplyCrate",
+        "SubPathString": ""
+      }
+    },
+    "InventoryContainerLayoutViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInventoryComponentViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/InventoryComponent/Data/DA_InventoryComponent_2_0.DA_InventoryComponent_2_0",
+        "SubPathString": ""
+      }
+    },
+    "PlayerInventoryComponentViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInventoryComponentViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/InventoryComponent/Data/DA_InventoryComponent_2_0.DA_InventoryComponent_2_0",
+        "SubPathString": ""
+      }
+    },
+    "SupplyCrateTextFormat": {
+      "Namespace": "",
+      "Key": "133F867641EB4ECB2A6A9E93256D0B94",
+      "SourceString": "{CrateHealth}/{MaxHealth}",
+      "LocalizedString": "{CrateHealth}/{MaxHealth}"
+    },
+    "SupplyCrateMarkUpTextFormat": {
+      "Namespace": "",
+      "Key": "BF34AF99442D866A448D02A3CA935C29",
+      "SourceString": "{Markup}%",
+      "LocalizedString": "{Markup}%"
+    },
+    "SupplyCrateTitleFormat": {
+      "Namespace": "",
+      "Key": "9C4786654BA35B076B580B932D39BB5E",
+      "SourceString": "OWNER: {Playername}",
+      "LocalizedString": "OWNER: {Playername}"
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Close"
+    }
+  }
+}

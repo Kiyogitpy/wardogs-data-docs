@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / DA_Action_Emote_Scissors ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Emote_Scissors",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Character/DA_Action_Emote_Scissors",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Emote.Scissors"
+    },
+    "ActionContext": [
+      "Action.Context.Emote"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Emote_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Character/B_Action_Emote.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [
+            "Action.Player.Emote"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Emote"
+          ],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDEmoteActivationContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_SV98Stock ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SV98Stock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/HNDG_021/Data/ID_SV98Stock",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SV98Stock"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_SV98Stock:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/HNDG_021/Data/ID_SV98Stock.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_SV98Stock:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/HNDG_021/Data/ID_SV98Stock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98Stock'",
+    "ObjectPath": "/HNDG_021/Data/ID_SV98Stock.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SV98Stock'",
+    "ObjectPath": "/HNDG_021/Data/ID_SV98Stock.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

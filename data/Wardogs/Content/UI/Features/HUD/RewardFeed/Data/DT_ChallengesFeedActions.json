@@ -1,0 +1,1877 @@
+--- export: UDataTable / DT_ChallengesFeedActions ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengesFeedActions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.PlayerKill": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.RessedByEnemy"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.RessedByEnemy )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.RessedByEnemy",
+            "SourceString": "No Value Kill",
+            "LocalizedString": "No Value Kill"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.FriendlyKill"
+              },
+              {
+                "TagName": "Challenges.Context.Instigator.InHotZone"
+              },
+              {
+                "TagName": "Challenges.Context.Target.InHotZone"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              4,
+              2,
+              2,
+              2,
+              0,
+              1,
+              2,
+              2,
+              0,
+              2
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY(  ALL( Challenges.Context.FriendlyKill, Challenges.Context.Instigator.InHotZone ),  ALL( Challenges.Context.FriendlyKill, Challenges.Context.Target.InHotZone ) )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.Friendly.HotZone",
+            "SourceString": "Hotzone Team Kill",
+            "LocalizedString": "Hotzone Team Kill"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.FriendlyKill"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.FriendlyKill )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.Friendly",
+            "SourceString": "Team Kill",
+            "LocalizedString": "Team Kill"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Cash.TeammateKill"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.PrecisionArtilleryStrikeKill"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.PrecisionArtilleryStrikeKill )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.ArtilleryKill",
+            "SourceString": "Artillery Kill",
+            "LocalizedString": "Artillery Kill"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.SniperKill"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.SniperKill )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.SniperKill",
+            "SourceString": "Longshot Kill",
+            "LocalizedString": "Longshot Kill"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.RevengeKill"
+              },
+              {
+                "TagName": "Challenges.Context.KillStreakStopped"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              2,
+              0,
+              1
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( Challenges.Context.RevengeKill, Challenges.Context.KillStreakStopped )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.Revenge.KillStreakStopped",
+            "SourceString": "Revenge Kill",
+            "LocalizedString": "Revenge Kill"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Combat.HighValueKill"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.RevengeKill"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.RevengeKill )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.Revenge",
+            "SourceString": "Revenge Kill",
+            "LocalizedString": "Revenge Kill"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.KillStreakStopped"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.KillStreakStopped )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.KillStreakStopped",
+            "SourceString": "Shutdown Kill",
+            "LocalizedString": "Shutdown Kill"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Combat.HighValueKill"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Headshot"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.Headshot )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.Headshot",
+            "SourceString": "Headshot Kill",
+            "LocalizedString": "Headshot Kill"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill",
+        "SourceString": "Kill",
+        "LocalizedString": "Kill"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.CrewAssist",
+        "SourceString": "Kill Assist",
+        "LocalizedString": "Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.CrewAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.FOBSuppliedAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.FOBSuppliedAssist",
+        "SourceString": "FOB Supplied Assist",
+        "LocalizedString": "FOB Supplied Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.Assist": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.FriendlyKill"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.FriendlyKill )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerKill.Assist.Friendly",
+            "SourceString": "Team Kill Assist",
+            "LocalizedString": "Team Kill Assist"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.Assist",
+        "SourceString": "Kill Assist",
+        "LocalizedString": "Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.Assist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.Assist.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.Assist.CrewAssist",
+        "SourceString": "Kill Assist",
+        "LocalizedString": "Kill Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Combat.KillAssist"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.Assist.CrewAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.Assist.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.Assist.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.Assist.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.Assist.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.Assist.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.Assist.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.Assist.FOBSuppliedAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.Assist.FOBSuppliedAssist",
+        "SourceString": "FOB Supplied Assist",
+        "LocalizedString": "FOB Supplied Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.Assist.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.Rewards.PlayerKill.Assist.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerKill.Assist.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerKill.Assist.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.RevivePlayer": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.LastKiller"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( Challenges.Context.LastKiller )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.RevivePlayer.LastKiller",
+            "SourceString": "Revived Player Killed",
+            "LocalizedString": "Revived Player Killed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RevivePlayer",
+        "SourceString": "Revived Teammate",
+        "LocalizedString": "Revived Teammate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RevivePlayer"
+      }
+    },
+    "Challenges.Rewards.RevivePlayer.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RevivePlayer.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RevivePlayer.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.RevivePlayer.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RevivePlayer.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RevivePlayer.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.RevivePlayer.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RevivePlayer.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RevivePlayer.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.RevivePlayer.TargetInObjective": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RevivePlayer.TargetInObjective",
+        "SourceString": "Waited to be revived",
+        "LocalizedString": "Waited to be revived"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RevivePlayer.TargetInObjective"
+      }
+    },
+    "Challenges.Rewards.RevivePlayer.Contributor": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.LastKiller"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( Challenges.Context.LastKiller )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.RevivePlayer.LastKiller",
+            "SourceString": "Revived Player Killed",
+            "LocalizedString": "Revived Player Killed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RevivePlayer.Contributor",
+        "SourceString": "Helped Revive Teammate",
+        "LocalizedString": "Helped Revive Teammate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RevivePlayer.Contributor"
+      }
+    },
+    "Challenges.Rewards.HealPlayer": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Heal.BuffItem"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( Challenges.Context.Heal.BuffItem )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.HealPlayer.Buffed",
+            "SourceString": "Applied Stim",
+            "LocalizedString": "Applied Stim"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.HealPlayer",
+        "SourceString": "Healed Teammate",
+        "LocalizedString": "Healed Teammate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.HealedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HealPlayer"
+      }
+    },
+    "Challenges.Rewards.HealPlayer.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.HealPlayer.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HealPlayer.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.HealPlayer.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.HealPlayer.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HealPlayer.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.HealPlayer.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.HealPlayer.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.HealPlayer.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+              },
+              {
+                "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore"
+              },
+              {
+                "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
+              },
+              {
+                "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar"
+              },
+              {
+                "TagName": "Meta.Progression.Context.Vehicle.Faction.Friendly"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              5,
+              2,
+              1,
+              4,
+              0,
+              1,
+              2,
+              3,
+              3,
+              1,
+              4
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL(  ANY( Challenges.Rewards.VehicleDestroyed.SpawnVehicle, Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore, Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra, Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar ),  NONE( Meta.Progression.Context.Vehicle.Faction.Friendly ) )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.VehicleDestroyed",
+            "SourceString": "Vehicle Destroyed",
+            "LocalizedString": "Vehicle Destroyed"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Cash.DeliveredSpawnVehicle"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed",
+        "SourceString": "Vehicle Destroyed",
+        "LocalizedString": "Vehicle Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.CrewAssist",
+        "SourceString": "Vehicle Destroyed Assist",
+        "LocalizedString": "Vehicle Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.CrewAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.FOBSuppliedAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.FOBSuppliedAssist",
+        "SourceString": "FOB Supplied Assist",
+        "LocalizedString": "FOB Supplied Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.Assist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Assist.VehicleDestroyed",
+        "SourceString": "Vehicle Destroyed Assist",
+        "LocalizedString": "Vehicle Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Assist.Crew"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.Assist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.Assist.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Assist.VehicleDestroyed.CrewAssist",
+        "SourceString": "Vehicle Destroyed Assist",
+        "LocalizedString": "Vehicle Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Assist.Crew"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.Assist.CrewAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.Assist.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.Assist.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.Assist.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.Assist.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.Assist.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.Assist.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.Assist.FOBSuppliedAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.Assist.FOBSuppliedAssist",
+        "SourceString": "FOB Supplied Assist",
+        "LocalizedString": "FOB Supplied Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.Assist.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.Rewards.VehicleDestroyed.Assist.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleDestroyed.Assist.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleDestroyed.Assist.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Attribute.Gameplay.Health.Engine"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Attribute.Gameplay.Health.Engine )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroyVehicleSection.Engine",
+            "SourceString": "Engine Destroyed",
+            "LocalizedString": "Engine Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Attribute.Gameplay.Health.Radar"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Attribute.Gameplay.Health.Radar )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroyVehicleSection.Radar",
+            "SourceString": "Radar Destroyed",
+            "LocalizedString": "Radar Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              2,
+              0,
+              1
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Attribute.Gameplay.Health.Tracks.Right, Attribute.Gameplay.Health.Tracks.Left )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroyVehicleSection.Tracks",
+            "SourceString": "Tracks Destroyed",
+            "LocalizedString": "Tracks Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              6,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Attribute.Gameplay.Health.Wheel.Left.Front, Attribute.Gameplay.Health.Wheel.Left.Middle, Attribute.Gameplay.Health.Wheel.Left.Rear, Attribute.Gameplay.Health.Wheel.Right.Front, Attribute.Gameplay.Health.Wheel.Right.Middle, Attribute.Gameplay.Health.Wheel.Right.Rear )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroyVehicleSection.Wheels",
+            "SourceString": "Wheels Destroyed",
+            "LocalizedString": "Wheels Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              2,
+              0,
+              1
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Attribute.Gameplay.Health.Rotor.Main, Attribute.Gameplay.Health.Rotor.Tail )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroyVehicleSection.Rotor",
+            "SourceString": "Rotors Destroyed",
+            "LocalizedString": "Rotors Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "CultureInvariantString": null
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.CrewAssist",
+        "SourceString": "Vehicle Section Destroyed Assist",
+        "LocalizedString": "Vehicle Section Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.CrewAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.Assist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.Assist",
+        "SourceString": "Vehicle Section Destroyed Assist",
+        "LocalizedString": "Vehicle Section Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.Assist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.Assist.CrewAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.Assist.CrewAssist",
+        "SourceString": "Vehicle Section Destroyed Assist",
+        "LocalizedString": "Vehicle Section Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.Assist.CrewAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.Assist.LogisticAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.Assist.LogisticAssist",
+        "SourceString": "Deployed Player Assist",
+        "LocalizedString": "Deployed Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.Assist.LogisticAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.Assist.ReviveAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.Assist.ReviveAssist",
+        "SourceString": "Revived Player Assist",
+        "LocalizedString": "Revived Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.Assist.ReviveAssist"
+      }
+    },
+    "Challenges.Rewards.DestroyVehicleSection.Assist.SupplyCrateAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyVehicleSection.Assist.SupplyCrateAssist",
+        "SourceString": "Supplied Player Assist",
+        "LocalizedString": "Supplied Player Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyVehicleSection.Assist.SupplyCrateAssist"
+      }
+    },
+    "Challenges.Rewards.ZoneEntry": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.ZoneEntry",
+        "SourceString": "Control Zone Entered",
+        "LocalizedString": "Control Zone Entered"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.ZoneEntry"
+      }
+    },
+    "Challenges.Rewards.ZoneEntry.SpawnVehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.ZoneEntry.InSpawnVehicle",
+        "SourceString": "Spawn Vehicle Delivered",
+        "LocalizedString": "Spawn Vehicle Delivered"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DeliveredSpawnVehicle"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.ZoneEntry.SpawnVehicle"
+      }
+    },
+    "Challenges.Rewards.ZonePresence": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Instigator.InHotZone"
+              },
+              {
+                "TagName": "Challenges.Context.HotZoneMagnetActive"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              2,
+              0,
+              1
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( Challenges.Context.Instigator.InHotZone, Challenges.Context.HotZoneMagnetActive )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.ZonePresence.HotZoneMagnet",
+            "SourceString": "Active Drill Presence",
+            "LocalizedString": "Active Drill Presence"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Cash.HotzoneReward"
+          }
+        },
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Instigator.InHotZone"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.Instigator.InHotZone )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.ZonePresence.HotZone",
+            "SourceString": "Hotzone Presence",
+            "LocalizedString": "Hotzone Presence"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Cash.HotzoneReward"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.ZonePresence",
+        "SourceString": "Control Zone Presence",
+        "LocalizedString": "Control Zone Presence"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.ZonePresence"
+      }
+    },
+    "Challenges.Rewards.DestroyThrowable": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Meta.Progression.Context.Player.Faction.Friendly"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Meta.Progression.Context.Player.Faction.Friendly )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroyThrowable.Friendly",
+            "SourceString": "Team Equipment Destroyed",
+            "LocalizedString": "Team Equipment Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroyThrowable",
+        "SourceString": "Equipment Destroyed",
+        "LocalizedString": "Equipment Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroyThrowable"
+      }
+    },
+    "Challenges.Rewards.RefuelVehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RefuelVehicle",
+        "SourceString": "Refuelled Vehicle",
+        "LocalizedString": "Refuelled Vehicle"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RefuelVehicle"
+      }
+    },
+    "Challenges.Rewards.DeployOnVehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DeployOnVehicle",
+        "SourceString": "Spawn Vehicle Tactical Deployment",
+        "LocalizedString": "Spawn Vehicle Tactical Deployment"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DeployOnVehicle"
+      }
+    },
+    "Challenges.Rewards.DeploySupplyCrate": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.SupplyPalletDropped",
+        "SourceString": "Supplies Delivered",
+        "LocalizedString": "Supplies Delivered"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DeploySupplyCrate"
+      }
+    },
+    "Challenges.Rewards.RepairVehicle": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.RepairVehicle",
+        "SourceString": "Repaired Vehicle",
+        "LocalizedString": "Repaired Vehicle"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.RepairVehicle"
+      }
+    },
+    "Challenges.Rewards.PurchaseFromSupplyCrate": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PurchaseFromSupplyCrate",
+        "SourceString": "Supply Crate Item Sold",
+        "LocalizedString": "Supply Crate Item Sold"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.PurchaseSupplies"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PurchaseFromSupplyCrate"
+      }
+    },
+    "Challenges.Rewards.DestroySupplyCrate": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Target.Friendly"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( Challenges.Context.Target.Friendly )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.DestroySupplyCrate.Friendly",
+            "SourceString": "Destroyed Team Supply Crate",
+            "LocalizedString": "Destroyed Team Supply Crate"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.DestroySupplyCrate",
+        "SourceString": "Destroyed Supply Crate",
+        "LocalizedString": "Destroyed Supply Crate"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DestroyedVehicle"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.DestroySupplyCrate"
+      }
+    },
+    "Challenges.Rewards.SupplyCrateDestroyed": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "ID.Item.VehicleSupplyCrate"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( ID.Item.VehicleSupplyCrate )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.SupplyCrateDestroyed.Height",
+            "SourceString": "Supplies Destroyed On Impact",
+            "LocalizedString": "Supplies Destroyed On Impact"
+          },
+          "bOverrideAudio": true,
+          "AudioEventTag": {
+            "TagName": "Audio.Event.UX.Cash.SupplyDestroyOnImpact"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.SupplyCrateDestroyed",
+        "SourceString": "Supplies Destroyed",
+        "LocalizedString": "Supplies Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.SupplyCrateDestroyed"
+      }
+    },
+    "Challenges.Rewards.PlayerDelivered": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PlayerDelivered",
+        "SourceString": "Tactical Deployment",
+        "LocalizedString": "Tactical Deployment"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DeliveredPassenger"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PlayerDelivered"
+      }
+    },
+    "Challenges.Rewards.PassengerSurvived": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PassengerSurvived",
+        "SourceString": "Passenger Survived",
+        "LocalizedString": "Passenger Survived"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.PassengerSurvived"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.PassengerSurvived"
+      }
+    },
+    "Challenges.Rewards.SafeZoneEntered": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.SafeZoneEntered",
+        "SourceString": "Round Trip",
+        "LocalizedString": "Round Trip"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.SafeZoneEntered"
+      }
+    },
+    "Challenges.Rewards.SendTip": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Tip",
+        "SourceString": "Tip",
+        "LocalizedString": "Tip"
+      },
+      "bIsTip": true,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.SendTip"
+      }
+    },
+    "Challenges.Rewards.SendPreTip": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PreTip",
+        "SourceString": "Bribe",
+        "LocalizedString": "Bribe"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Bribe"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.SendPreTip"
+      }
+    },
+    "Challenges.Rewards.ReceiveTip": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Tip",
+        "SourceString": "Tip",
+        "LocalizedString": "Tip"
+      },
+      "bIsTip": true,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.ReceiveTip"
+      }
+    },
+    "Challenges.Rewards.ReceivePreTip": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.PreTip",
+        "SourceString": "Bribe",
+        "LocalizedString": "Bribe"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.Tip"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.ReceivePreTip"
+      }
+    },
+    "Challenges.Rewards.SupplyPalletDropped": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.SupplyPalletDropped",
+        "SourceString": "Supplies Delivered",
+        "LocalizedString": "Supplies Delivered"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.DeliveredSpawnVehicle"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.SupplyPalletDropped"
+      }
+    },
+    "Challenges.Rewards.VehicleAirborne": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleAirborne",
+        "SourceString": "Air Time Bonus",
+        "LocalizedString": "Air Time Bonus"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleAirborne"
+      }
+    },
+    "Challenges.Rewards.VehicleFlyThrough": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleFlyThrough",
+        "SourceString": "Fly Through Bonus",
+        "LocalizedString": "Fly Through Bonus"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleFlyThrough"
+      }
+    },
+    "Challenges.Rewards.Test": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "D57D76EF40FBF5D760137286495D5498",
+        "SourceString": "TEST EVENT",
+        "LocalizedString": "TEST EVENT"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Test"
+      }
+    },
+    "Challenges.Rewards.VehicleRepair": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleRepair",
+        "SourceString": "Vehicle Repairing",
+        "LocalizedString": "Vehicle Repairing"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleRepair"
+      }
+    },
+    "Challenges.Rewards.VehicleRefuel": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.VehicleRefuel",
+        "SourceString": "Vehicle Refuelling",
+        "LocalizedString": "Vehicle Refuelling"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.VehicleRefuel"
+      }
+    }
+  }
+}

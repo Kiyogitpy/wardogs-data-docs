@@ -1,0 +1,41 @@
+--- export: UDataAsset / DA_FrontAxle_WHL_07 ---
+{
+  "Type": "MWheeledVehicleAxlesDataAsset",
+  "Name": "DA_FrontAxle_WHL_07",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleAxlesDataAsset'",
+  "Package": "/WHL_07/Data/DA_FrontAxle_WHL_07",
+  "Properties": {
+    "TireModelDataAsset": {
+      "ObjectName": "MWheeledVehicleTireModelSimpleDataAsset'DA_SimpleTireModel_WHL_07'",
+      "ObjectPath": "/WHL_07/Data/DA_SimpleTireModel_WHL_07.0"
+    },
+    "WheelDataAsset": {
+      "ObjectName": "MWheeledVehicleWheelDataAsset'DA_FrontWheels_WHL_07'",
+      "ObjectPath": "/WHL_07/Data/DA_FrontWheels_WHL_07.0"
+    },
+    "WheelSetup": [
+      {
+        "Side": "EMWheelSide::Left",
+        "BoneName": "frontLWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+        },
+        "DeflateThreshold": 0.55
+      },
+      {
+        "Side": "EMWheelSide::Right",
+        "BoneName": "frontRWheelSpin_J",
+        "WheelTags": [],
+        "TyreHealthAttribute": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+        },
+        "DeflateThreshold": 0.55
+      }
+    ],
+    "DifferentialType": "EMDifferential::LSD",
+    "DiffStrength": 0.7,
+    "MaxSteerAngle": 30.0
+  }
+}

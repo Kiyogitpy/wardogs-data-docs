@@ -1,0 +1,86 @@
+--- export: UDataAsset / DA_FOB_Interactions ---
+{
+  "Type": "WDFobInteractionDataAsset",
+  "Name": "DA_FOB_Interactions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFobInteractionDataAsset'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/DA_FOB_Interactions",
+  "Properties": {
+    "_aaabclccjpjdgcbbljobm": [
+      {
+        "InteractionContext": {
+          "AssetPathName": "/Script/BuildablesRuntime.WDFobInteractionContext",
+          "SubPathString": ""
+        },
+        "Config": {
+          "InteractionTag": {
+            "TagName": "Interaction.Context.Buildables.Fob.Access"
+          },
+          "InteractionBehavior": "EWDWorldInteractableContextBehaviour::Tap",
+          "InteractionBehaviorGamepad": "EWDWorldInteractableContextBehaviour::Hold",
+          "bAllowMultipleInteractors": true,
+          "bBypassLookAtCheck": null,
+          "bBypassConditionCheck": null,
+          "bRequirePlayerDragging": null,
+          "InputActionTag": null,
+          "InteractionDuration": null,
+          "InteractionRange": null,
+          "InteractionAngle": null,
+          "bTraceLookAtCameraForward": null,
+          "bSendSuccessRPC": null,
+          "bSendFailureRPC": null,
+          "bShowInteractionPrompt": null,
+          "InteractionBeginGameplayCueTag": null,
+          "InteractionSuccessGameplayCueTag": null,
+          "InteractionFailedGameplayCueTag": null,
+          "InteractionDeniedGameplayCueTag": null,
+          "InteractionPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Default"
+          },
+          "InteractorBlockingTags": []
+        }
+      },
+      {
+        "InteractionContext": {
+          "AssetPathName": "/Script/BuildablesRuntime.WDFobHackInteractionContext",
+          "SubPathString": ""
+        },
+        "Config": {
+          "InteractionTag": {
+            "TagName": "Interaction.Context.Buildables.Fob.Hacking"
+          },
+          "InteractionBehavior": "EWDWorldInteractableContextBehaviour::Hold",
+          "InteractionBehaviorGamepad": "EWDWorldInteractableContextBehaviour::Hold",
+          "bAllowMultipleInteractors": false,
+          "bBypassLookAtCheck": null,
+          "bBypassConditionCheck": null,
+          "bRequirePlayerDragging": null,
+          "InputActionTag": null,
+          "InteractionDuration": 30.0,
+          "InteractionRange": null,
+          "InteractionAngle": null,
+          "bTraceLookAtCameraForward": null,
+          "bSendSuccessRPC": true,
+          "bSendFailureRPC": true,
+          "bShowInteractionPrompt": null,
+          "InteractionBeginGameplayCueTag": {
+            "TagName": "GameplayCue.FOB.Hack.Start"
+          },
+          "InteractionSuccessGameplayCueTag": {
+            "TagName": "GameplayCue.FOB.Hack.Success"
+          },
+          "InteractionFailedGameplayCueTag": {
+            "TagName": "GameplayCue.FOB.Hack.Fail"
+          },
+          "InteractionDeniedGameplayCueTag": {
+            "TagName": "GameplayCue.FOB.Hack.Stop"
+          },
+          "InteractionPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Default"
+          },
+          "InteractorBlockingTags": []
+        }
+      }
+    ]
+  }
+}

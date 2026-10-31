@@ -1,0 +1,109 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDCharacterComponents'",
+    "ObjectPath": "/WDCharacterComponents/WDCharacterComponents.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDMoverCharacter",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/WDCharacterComponents/Components/B_CharacterReferencePoseComponent.B_CharacterReferencePoseComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/WDCharacterComponents/Components/B_CharacterSuppressionComponent.B_CharacterSuppressionComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/WDCharacterComponents/Components/B_CharacterDeathStateEffectComponent.B_CharacterDeathStateEffectComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/WDCharacterComponents/Components/B_CharacterMovementEffectsComponent.B_CharacterMovementEffectsComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDGame.WDCriticalEventTrackerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDGame.WDPingComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WDCharacterComponents ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WDCharacterComponents",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WDCharacterComponents/WDCharacterComponents",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'WDCharacterComponents:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/WDCharacterComponents/WDCharacterComponents.0"
+      }
+    ]
+  }
+}

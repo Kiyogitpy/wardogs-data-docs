@@ -1,0 +1,20 @@
+--- export: UDataAsset / DA_QuestLog ---
+{
+  "Type": "WDUIQuestLogData",
+  "Name": "DA_QuestLog",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIQuestLogData'",
+  "Package": "/BaseScenario/UI/QuestLog/Data/DA_QuestLog",
+  "Properties": {
+    "QuestLogEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/BaseScenarioRuntime.WDUIHUDQuestLogEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "TagsForTimeout": [
+      "UI.HUD.Layout.Default",
+      "UI.HUD.Layout.Vehicle"
+    ]
+  }
+}

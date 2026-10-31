@@ -1,0 +1,82 @@
+--- export: UDataAsset / DA_Demolition_TelephoneWireCable_40M_01_A ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_TelephoneWireCable_40M_01_A",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_TelephoneWireCable_40M_01_A",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Transport_Infrastructure/Telephone_Poles/SM_TelephonePole_Cable_40M_01a.SM_TelephonePole_Cable_40M_01a'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Transport_Infrastructure/Telephone_Poles/SM_TelephonePole_Cable_40M_01a.SM_TelephonePole_Cable_40M_01a",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": null,
+          "Remnant_BaseCPD": null,
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.0,
+                "G": 0.0,
+                "B": 0.0,
+                "A": 1.0,
+                "Hex": "000000"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_ShadowCacheStatic'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_ShadowCacheStatic.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_LargeAndMediumVehiclesAndExplosions'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_LargeAndMediumVehiclesAndExplosions.5"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Metal/NS_MetalGeneralSmash.NS_MetalGeneralSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.Sign"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.3
+      }
+    ]
+  }
+}

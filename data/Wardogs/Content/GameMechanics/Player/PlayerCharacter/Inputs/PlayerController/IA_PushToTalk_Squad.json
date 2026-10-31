@@ -1,0 +1,45 @@
+--- export: UDataAsset / IA_PushToTalk_Squad ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_PushToTalk_Squad",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_PushToTalk_Squad",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Squad"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_PushToTalk_Squad:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_PushToTalk_Squad.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_PushToTalk_Squad:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_PushToTalk_Squad.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_PushToTalk_Squad'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_PushToTalk_Squad.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_PushToTalk_Squad'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_PushToTalk_Squad.0"
+  }
+}

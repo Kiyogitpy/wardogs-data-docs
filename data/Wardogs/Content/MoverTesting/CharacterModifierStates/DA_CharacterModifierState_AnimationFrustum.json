@@ -1,0 +1,79 @@
+--- export: UObject / WDCharacterModifier_AnimationFrustum_0 ---
+{
+  "Type": "WDCharacterModifier_AnimationFrustum",
+  "Name": "WDCharacterModifier_AnimationFrustum_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_AnimationFrustum'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_AnimationFrustum'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_AnimationFrustum.2"
+  },
+  "Properties": {
+    "SkeletonCharacterSpaceTransform": {
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.707107,
+        "W": 0.707107,
+        "IsNormalized": true,
+        "Size": 1.0000002,
+        "SizeSquared": 1.0000006
+      }
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_AnimationFrustum'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_AnimationFrustum.2"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        3,
+        1,
+        0
+      ],
+      "UserDescription": "Suppress animation-driven camera motion while critical - the detached critical/downed camera must stay still.",
+      "AutoDescription": " NONE( State.Player.Vitality.Critical )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_AnimationFrustum ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_AnimationFrustum",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_AnimationFrustum",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.AnimationFrustum"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_AnimationFrustum'DA_CharacterModifierState_AnimationFrustum:WDCharacterModifier_AnimationFrustum_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_AnimationFrustum.0"
+      }
+    ],
+    "Priority": 126,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_AnimationFrustum:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_AnimationFrustum.1"
+      }
+    ]
+  }
+}

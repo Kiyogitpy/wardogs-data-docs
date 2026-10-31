@@ -1,0 +1,135 @@
+--- export: UDataAsset / IMC_Emote ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Emote",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Emote",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_MoverPlayer:InputModifierSwizzleAxis_3'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.30"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+          },
+          "Key": {
+            "KeyName": "W"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_MoverPlayer:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_MoverPlayer:InputModifierSwizzleAxis_4'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.31"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_MoverPlayer:InputModifierNegate_4'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.26"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+          },
+          "Key": {
+            "KeyName": "S"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_MoverPlayer:BHPlayerMappableKeySettings_23'",
+            "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.8"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_MoverPlayer:InputModifierNegate_3'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.25"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_MoverPlayer:InputModifierSwizzleAxis_0'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.27"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+          },
+          "Key": {
+            "KeyName": "A"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_MoverPlayer:BHPlayerMappableKeySettings_31'",
+            "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.12"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_MoverPlayer:InputModifierSwizzleAxis_1'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.28"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+          },
+          "Key": {
+            "KeyName": "D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_MoverPlayer:BHPlayerMappableKeySettings_32'",
+            "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.13"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDRerouteAxisInput'IMC_MoverPlayer:WDRerouteAxisInput_0'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.33"
+            },
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_MoverPlayer:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.32"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_MoverPlayer:InputModifierSwizzleAxis_2'",
+              "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.29"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Left2D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_MoverPlayer:BHPlayerMappableKeySettings_33'",
+            "ObjectPath": "/Game/MoverTesting/Input/IMC_MoverPlayer.14"
+          }
+        }
+      ]
+    }
+  }
+}

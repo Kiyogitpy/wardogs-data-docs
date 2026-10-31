@@ -1,0 +1,30 @@
+--- export: UDataAsset / DA_FOB_Ruleset ---
+{
+  "Type": "WDFOBRulesetData",
+  "Name": "DA_FOB_Ruleset",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFOBRulesetData'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/DA_FOB_Ruleset",
+  "Properties": {
+    "LimitFOBBuildables": [
+      {
+        "Key": {
+          "TagName": "Id.Buildable.RefuelStation"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Buildable.RepairStation"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Buildable.Radio"
+        },
+        "Value": 4
+      }
+    ]
+  }
+}

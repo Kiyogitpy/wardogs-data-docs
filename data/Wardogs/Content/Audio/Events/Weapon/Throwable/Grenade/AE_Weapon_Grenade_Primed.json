@@ -1,0 +1,67 @@
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_1 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Primed'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Primed.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.Prime.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.Prime.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Prime"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Grenade_Primed ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Grenade_Primed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Primed",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Grenade.Primed"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Grenade_Primed:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Primed.2"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Weapon_Grenade_Primed:AEB_PlayHeldItemPerspectiveSound_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Primed.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Primed'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Primed.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Prime"
+    }
+  }
+}

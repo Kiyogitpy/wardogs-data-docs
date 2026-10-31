@@ -1,0 +1,96 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_ShootingRange_Enter'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_Main'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Main.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_DeactivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateControlBusMix_C",
+  "Name": "AEB_DeactivateControlBusMix_C_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.AEB_DeactivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_ShootingRange_Enter'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMix_C'Default__AEB_DeactivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_PopUpWindow'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_PopUpWindow.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_World_ShootingRange_Enter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_World_ShootingRange_Enter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.World.ShootingRange.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_World_ShootingRange_Enter:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_World_ShootingRange_Enter:WDAudioEventBehaviorDisableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter.3"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMix_C'AE_World_ShootingRange_Enter:AEB_DeactivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_ShootingRange_Enter'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_ShootingRange_Enter.2"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.FrontEnd.MainMenu"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

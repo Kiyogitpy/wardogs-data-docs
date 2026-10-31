@@ -1,0 +1,45 @@
+--- export: UDataAsset / IA_Player_CrouchProne ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_CrouchProne",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CrouchProne",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.CrouchProne"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Player_CrouchProne:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CrouchProne.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Player_CrouchProne:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CrouchProne.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_CrouchProne'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CrouchProne.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_CrouchProne'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CrouchProne.0"
+  }
+}

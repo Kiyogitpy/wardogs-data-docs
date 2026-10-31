@@ -1,0 +1,62 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Targeting_IsFullLockedOnTo ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Targeting_IsFullLockedOnTo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsFullLockedOnTo",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Targeting.IsFullLockedOnTo"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Targeting_IsFullLockedOnTo:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsFullLockedOnTo.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Weapon_Targeting_IsFullLockedOnTo:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsFullLockedOnTo.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Targeting_IsFullLockedOnTo'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsFullLockedOnTo.0"
+  },
+  "Properties": {
+    "ParameterName": "Full Locked Start",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Targeting.LockOnSystem"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Targeting_IsFullLockedOnTo'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Targeting/AE_Weapon_Targeting_IsFullLockedOnTo.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Targeting_LockOn_1p'",
+      "ObjectPath": "/Game/Audio/Weapon/Targeting/MSS/MSS_Weapon_Targeting_LockOn_1p.0"
+    },
+    "bCancelFadeOut": true,
+    "CancelFadeOutDuration": 0.05,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Targeting.LockOnSystem"
+    }
+  }
+}

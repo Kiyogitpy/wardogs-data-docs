@@ -1,0 +1,101 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_SupplyCrate_Destroy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SupplyCrate_Destroy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.SupplyCrate.Destroy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Vehicle_SupplyCrate_Destroy:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_SupplyCrate_Destroy:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_SupplyCrate_Destroy:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_SupplyCrate_Destroy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 154.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Destroy'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Destroy'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_SupplyCrate_Destroy'",
+      "ObjectPath": "/SupplyCrates/Audio/MSS/MSS_Item_SupplyCrate_Destroy.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Destroy'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.0"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyCrate_Destroy'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyCrate_Destroy.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.SupplyCrate.Active"
+    }
+  }
+}

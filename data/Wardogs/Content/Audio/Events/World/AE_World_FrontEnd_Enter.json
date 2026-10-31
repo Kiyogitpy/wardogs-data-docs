@@ -1,0 +1,69 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_FrontEnd_Enter'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_FrontEnd_Enter.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_Main'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_Main.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_DeactivateAllControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateAllControlBusMix_C",
+  "Name": "AEB_DeactivateAllControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateAllControlBusMix.AEB_DeactivateAllControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_FrontEnd_Enter'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_FrontEnd_Enter.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateAllControlBusMix_C'Default__AEB_DeactivateAllControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateAllControlBusMix.0"
+  },
+  "Properties": {
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_World_FrontEnd_Enter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_World_FrontEnd_Enter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/World/AE_World_FrontEnd_Enter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.World.FrontEnd.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_DeactivateAllControlBusMix_C'AE_World_FrontEnd_Enter:AEB_DeactivateAllControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_FrontEnd_Enter.1"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_World_FrontEnd_Enter:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_FrontEnd_Enter.0"
+      }
+    ]
+  }
+}

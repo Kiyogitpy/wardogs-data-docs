@@ -1,0 +1,123 @@
+--- export: UObject / UWDUIItemsmithBaseReticleSelectFilter_0 ---
+{
+  "Type": "WDUIGunsmithBaseReticleSelectFilter",
+  "Name": "UWDUIItemsmithBaseReticleSelectFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGunsmithBaseReticleSelectFilter'",
+  "Outer": {
+    "ObjectName": "WDUIGunsmithReticleNodeFocusData'DA_Gunsmith_ReticleNodeFocus'",
+    "ObjectPath": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Build.Reticle.Base"
+    },
+    "FilterTitleText": {
+      "TableId": "/Gunsmith/UI/ReticleNodeFocus/Data/STRINGS_Gunsmith_ReticleNodeFocus.STRINGS_Gunsmith_ReticleNodeFocus",
+      "Key": "Gunsmith.Build.ReticleNodeFocus.TabGroup.BaseReticle",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus_BrowserList.DA_Gunsmith_ReticleNodeFocus_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / UWDUIItemsmithFavouriteReticleSelectFilter_0 ---
+{
+  "Type": "WDUIGunsmithFavouriteReticleSelectFilter",
+  "Name": "UWDUIItemsmithFavouriteReticleSelectFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGunsmithFavouriteReticleSelectFilter'",
+  "Outer": {
+    "ObjectName": "WDUIGunsmithReticleNodeFocusData'DA_Gunsmith_ReticleNodeFocus'",
+    "ObjectPath": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Build.Reticle.Favourite"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.ItemSelect.TabGroup.Favourite",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus_BrowserList.DA_Gunsmith_ReticleNodeFocus_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UDataAsset / DA_Gunsmith_ReticleNodeFocus ---
+{
+  "Type": "WDUIGunsmithReticleNodeFocusData",
+  "Name": "DA_Gunsmith_ReticleNodeFocus",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGunsmithReticleNodeFocusData'",
+  "Package": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus",
+  "Properties": {
+    "ReticlesData": {
+      "AssetPathName": "/Gunsmith/UI/ReticleNodeFocus/Data/DT_Gunsmith_Reticles.DT_Gunsmith_Reticles",
+      "SubPathString": ""
+    },
+    "DefaultReticleDisplayName": {
+      "TableId": "/Gunsmith/UI/ReticleNodeFocus/Data/STRINGS_Gunsmith_ReticleNodeFocus.STRINGS_Gunsmith_ReticleNodeFocus",
+      "Key": "Gunsmith.Build.ReticleNodeFocus.DefaultReticle",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Item.Archetype.Build.Reticle.Favourite"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIGunsmithFavouriteReticleSelectFilter'DA_Gunsmith_ReticleNodeFocus:UWDUIItemsmithFavouriteReticleSelectFilter_0'",
+        "ObjectPath": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.1"
+      },
+      {
+        "ObjectName": "WDUIGunsmithBaseReticleSelectFilter'DA_Gunsmith_ReticleNodeFocus:UWDUIItemsmithBaseReticleSelectFilter_0'",
+        "ObjectPath": "/Gunsmith/UI/ReticleNodeFocus/Data/DA_Gunsmith_ReticleNodeFocus.0"
+      }
+    ],
+    "PageType": "EWDUIItemsmithPages::ReticleNodeFocus",
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_ReticleNodeFocus'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_ReticleNodeFocus.0"
+    },
+    "InputMappingContextPriority": 11
+  }
+}

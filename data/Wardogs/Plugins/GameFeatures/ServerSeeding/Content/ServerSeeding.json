@@ -1,0 +1,132 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ServerSeeding'",
+    "ObjectPath": "/ServerSeeding/ServerSeeding.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/ServerSeeding/Data/B_ServerSeedingPreLobbyComponent.B_ServerSeedingPreLobbyComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ServerSeeding ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ServerSeeding",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ServerSeeding/ServerSeeding",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'ServerSeeding:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/ServerSeeding/ServerSeeding.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/ServerSeeding/ServerSeeding.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ServerSeeding'",
+    "ObjectPath": "/ServerSeeding/ServerSeeding.1"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.ServerSeeding"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/ServerSeeding/Data/UI/W_ServerSeeding.W_ServerSeeding_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ServerSeedingRuntime.WDUIServerSeedingViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/ServerSeeding/Data/UI/DA_ServerSeeding.DA_ServerSeeding",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkejhohfkdpglkgkep": false
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_0'",
+        "ObjectPath": "/ServerSeeding/ServerSeeding.3"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_1'",
+        "ObjectPath": "/ServerSeeding/ServerSeeding.4"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_2'",
+        "ObjectPath": "/ServerSeeding/ServerSeeding.5"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ServerSeeding/ServerSeeding.2"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_1 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ServerSeeding/ServerSeeding.2"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_2 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ServerSeeding:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ServerSeeding/ServerSeeding.2"
+  }
+}

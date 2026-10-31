@@ -1,0 +1,26 @@
+--- export: UPrimaryDataAsset / DA_Action_IED_Place ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_IED_Place",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/IED/Data/Actions/DA_Action_IED_Place",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Placeable.PrimaryUse.IED"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_IED_Place_C'",
+      "ObjectPath": "/IED/Data/Actions/B_Action_IED_Place.1"
+    },
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

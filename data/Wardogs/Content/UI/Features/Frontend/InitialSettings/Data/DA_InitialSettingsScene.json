@@ -1,0 +1,191 @@
+--- export: UDataAsset / DA_InitialSettingsScene ---
+{
+  "Type": "WDUIInitialSettingsData",
+  "Name": "DA_InitialSettingsScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIInitialSettingsData'",
+  "Package": "/Game/UI/Features/Frontend/InitialSettings/Data/DA_InitialSettingsScene",
+  "Properties": {
+    "Pages": [
+      {
+        "Settings": [
+          {
+            "TagName": "UserSettings.Video.Brightness"
+          }
+        ],
+        "_aaaaombebpbbdmpdajmcj": [],
+        "PreviewData": [
+          {
+            "Key": {
+              "TagName": "UserSettings.Video.Brightness"
+            },
+            "Value": {
+              "bAffectsPerformance": false,
+              "ValueData": [
+                {
+                  "DisplayText": {
+                    "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+                    "Key": "DisplayName.Brightness",
+                    "SourceString": "Brightness",
+                    "LocalizedString": "Brightness"
+                  },
+                  "DisplayTexture": {
+                    "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Brightness_Indoors.T_UI_Settings_Brightness_Indoors",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "DisplayText": {
+                    "TableId": "/Game/UI/StringTables/STRINGS_Settings_Video.STRINGS_Settings_Video",
+                    "Key": "DisplayName.Brightness",
+                    "SourceString": "Brightness",
+                    "LocalizedString": "Brightness"
+                  },
+                  "DisplayTexture": {
+                    "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Brightness_Outdoor_Tower.T_UI_Settings_Brightness_Outdoor_Tower",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "PageTitle": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Video.STRINGS_BH_Settings_Video",
+          "Key": "DisplayName.Brightness",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "PageDescription": {
+          "CultureInvariantString": null
+        }
+      },
+      {
+        "Settings": [
+          {
+            "TagName": "UserSettings.Audio.InputDevice"
+          },
+          {
+            "TagName": "UserSettings.Audio.OutputDevice"
+          }
+        ],
+        "_aaaaombebpbbdmpdajmcj": [
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Squad"
+          },
+          {
+            "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Proximity"
+          }
+        ],
+        "PreviewData": [
+          {
+            "Key": {
+              "TagName": "UserSettings.Audio.InputDevice"
+            },
+            "Value": {
+              "bAffectsPerformance": false,
+              "ValueData": [
+                {
+                  "DisplayText": {
+                    "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+                    "Key": "DIsplayName.InputDevice",
+                    "SourceString": "Input Device",
+                    "LocalizedString": "Input Device"
+                  },
+                  "DisplayTexture": {
+                    "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_InputDevices.T_UI_Settings_720p_InputDevices",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Key": {
+              "TagName": "UserSettings.Audio.OutputDevice"
+            },
+            "Value": {
+              "bAffectsPerformance": false,
+              "ValueData": [
+                {
+                  "DisplayText": {
+                    "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+                    "Key": "DisplayName.OutputDevice",
+                    "SourceString": "Output Device",
+                    "LocalizedString": "Output Device"
+                  },
+                  "DisplayTexture": {
+                    "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_OutputDevices.T_UI_Settings_720p_OutputDevices",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Key": {
+              "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Proximity"
+            },
+            "Value": {
+              "bAffectsPerformance": false,
+              "ValueData": [
+                {
+                  "DisplayText": {
+                    "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+                    "Key": "DisplayName.ProximityVoiceChat",
+                    "SourceString": "Proximity Voice Chat",
+                    "LocalizedString": "Proximity Voice Chat"
+                  },
+                  "DisplayTexture": {
+                    "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VoIPProximity.T_UI_Settings_VoIPProximity",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Key": {
+              "TagName": "Input.NamedActions.Player.VOIP.PushToTalk.Squad"
+            },
+            "Value": {
+              "bAffectsPerformance": false,
+              "ValueData": [
+                {
+                  "DisplayText": {
+                    "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+                    "Key": "DisplayName.SquadVoiceChat",
+                    "SourceString": "Squad Voice Chat",
+                    "LocalizedString": "Squad Voice Chat"
+                  },
+                  "DisplayTexture": {
+                    "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VoIPSquad.T_UI_Settings_VoIPSquad",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "PageTitle": {
+          "TableId": "/Game/UI/StringTables/STRINGS_InitialSettings.STRINGS_InitialSettings",
+          "Key": "InitialSettings.VoipAudioSettings",
+          "SourceString": "VOIP & AUDIO SETTINGS",
+          "LocalizedString": "VOIP & AUDIO SETTINGS"
+        },
+        "PageDescription": {
+          "TableId": "/Game/UI/StringTables/STRINGS_InitialSettings.STRINGS_InitialSettings",
+          "Key": "InitialSettings.WardogsIsBestExperiencedWith",
+          "SourceString": "WARDOGS is best experienced with voice. Talk to your teammates (and your enemies) using proximity chat. Set your preferred VOIP keybinds to get started.",
+          "LocalizedString": "WARDOGS is best experienced with voice. Talk to your teammates (and your enemies) using proximity chat. Set your preferred VOIP keybinds to get started."
+        }
+      }
+    ],
+    "SettingPreviewViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingPreviewViewModel",
+        "SubPathString": ""
+      }
+    }
+  }
+}

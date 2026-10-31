@@ -1,0 +1,106 @@
+--- export: UDataAsset / DA_Setting_Controls_SensitivityFOVTransitionType ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_SensitivityFOVTransitionType",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_SensitivityFOVTransitionType",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_SensitivityFOVTransitionType:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_SensitivityFOVTransitionType.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_SensitivityFOVTransitionType'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_SensitivityFOVTransitionType.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDAimingFovSensitivityTransitionType::StartAiming",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.StartAiming",
+          "SourceString": "While Transitioning",
+          "LocalizedString": "While Transitioning"
+        }
+      },
+      {
+        "Key": "EWDAimingFovSensitivityTransitionType::AimingAlpha",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.AimingAlpha",
+          "SourceString": "ADS Transition",
+          "LocalizedString": "ADS Transition"
+        }
+      },
+      {
+        "Key": "EWDAimingFovSensitivityTransitionType::EndAiming",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.EndAiming",
+          "SourceString": "Transition Finished",
+          "LocalizedString": "Transition Finished"
+        }
+      },
+      {
+        "Key": "EWDAimingFovSensitivityTransitionType::IsAiming",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.IsAiming",
+          "SourceString": "Instant",
+          "LocalizedString": "Instant"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.StartAiming",
+          "SourceString": "While Transitioning",
+          "LocalizedString": "While Transitioning"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.AimingAlpha",
+          "SourceString": "ADS Transition",
+          "LocalizedString": "ADS Transition"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.EndAiming",
+          "SourceString": "Transition Finished",
+          "LocalizedString": "Transition Finished"
+        }
+      },
+      {
+        "Key": "3",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityTransitionType.IsAiming",
+          "SourceString": "Instant",
+          "LocalizedString": "Instant"
+        }
+      }
+    ]
+  }
+}

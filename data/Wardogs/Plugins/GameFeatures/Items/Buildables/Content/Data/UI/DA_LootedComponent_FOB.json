@@ -1,0 +1,117 @@
+--- export: UDataAsset / DA_LootedComponent_FOB ---
+{
+  "Type": "WDUIInventoryComponentData",
+  "Name": "DA_LootedComponent_FOB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIInventoryComponentData'",
+  "Package": "/Buildables/Data/UI/DA_LootedComponent_FOB",
+  "Properties": {
+    "FallbackSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Slot.DA_ContainerGrid_Inventory_Slot",
+        "SubPathString": ""
+      }
+    },
+    "FallbackContainerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Subslots_Storage.DA_ContainerGrid_Inventory_Subslots_Storage",
+        "SubPathString": ""
+      }
+    },
+    "FallbackContainerLayoutViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerLayout/Data/DA_ContainerLayout_Inventory_Storage.DA_ContainerLayout_Inventory_Storage",
+        "SubPathString": ""
+      }
+    },
+    "ContainerViewModelParams": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.FOB.ItemsContainer"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_ContainerGrid_Inventory_Subslots_FOB.DA_ContainerGrid_Inventory_Subslots_FOB",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.FOB.BuildSuppliesContainer"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_ContainerGrid_Inventory_Subslots_FOBSupplies.DA_ContainerGrid_Inventory_Subslots_FOBSupplies",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.FOB.FuelSuppliesContainer"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_ContainerGrid_Inventory_Subslots_FOBSupplies.DA_ContainerGrid_Inventory_Subslots_FOBSupplies",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.FOB.MunitionSuppliesContainer"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_ContainerGrid_Inventory_Subslots_FOBSupplies.DA_ContainerGrid_Inventory_Subslots_FOBSupplies",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.FOB.SparePartsSuppliesContainer"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_ContainerGrid_Inventory_Subslots_FOBSupplies.DA_ContainerGrid_Inventory_Subslots_FOBSupplies",
+            "SubPathString": ""
+          }
+        }
+      }
+    ]
+  }
+}

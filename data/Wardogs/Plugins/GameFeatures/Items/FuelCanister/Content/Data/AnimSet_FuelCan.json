@@ -1,0 +1,139 @@
+--- export: UPrimaryDataAsset / AnimSet_FuelCan ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_FuelCan",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/FuelCanister/Data/AnimSet_FuelCan",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FuelCanister_Inspect'",
+              "ObjectPath": "/FuelCanister/Animation/FP/Character/Montage/AM_FP_FuelCanister_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FuelCanister_Inspect'",
+              "ObjectPath": "/FuelCanister/Animation/FP/Item/Montage/AM_Weap_FuelCanister_Inspect.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FuelCanister_Use'",
+              "ObjectPath": "/FuelCanister/Animation/FP/Character/Montage/AM_FP_FuelCanister_Use.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_FuelCanister_Use'",
+              "ObjectPath": "/FuelCanister/Animation/TP/Character/Montage/AM_TP_FuelCanister_Use.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FuelCanister_Use'",
+              "ObjectPath": "/FuelCanister/Animation/FP/Character/Montage/AM_FP_FuelCanister_Use.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_FuelCanister_Use'",
+              "ObjectPath": "/FuelCanister/Animation/TP/Character/Montage/AM_TP_FuelCanister_Use.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Equipment2H_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Equipment2H_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Nothing_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Nothing_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1002 @@
+--- export: UDataTable / DT_FP_Mirroring ---
+{
+  "Type": "MirrorDataTable",
+  "Name": "DT_FP_Mirroring",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MirrorDataTable'",
+  "Package": "/Game/Animation/Blueprints/Character/Layers/DT_FP_Mirroring",
+  "Properties": {
+    "MirrorFindReplaceExpressions": [
+      {
+        "FindExpression": "r_",
+        "ReplaceExpression": "l_",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "l_",
+        "ReplaceExpression": "r_",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "R_",
+        "ReplaceExpression": "L_",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "L_",
+        "ReplaceExpression": "R_",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "_l",
+        "ReplaceExpression": "_r",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Suffix"
+      },
+      {
+        "FindExpression": "_r",
+        "ReplaceExpression": "_l",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Suffix"
+      },
+      {
+        "FindExpression": "_R",
+        "ReplaceExpression": "_L",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Suffix"
+      },
+      {
+        "FindExpression": "_L",
+        "ReplaceExpression": "_R",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Suffix"
+      },
+      {
+        "FindExpression": "right",
+        "ReplaceExpression": "left",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "left",
+        "ReplaceExpression": "right",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "Right",
+        "ReplaceExpression": "Left",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "Left",
+        "ReplaceExpression": "Right",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::Prefix"
+      },
+      {
+        "FindExpression": "([^}]*)_l_([^}]*)",
+        "ReplaceExpression": "$1_r_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_r_([^}]*)",
+        "ReplaceExpression": "$1_l_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_L_([^}]*)",
+        "ReplaceExpression": "$1_R_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_R_([^}]*)",
+        "ReplaceExpression": "$1_L_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_left_([^}]*)",
+        "ReplaceExpression": "$1_right_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_right_([^}]*)",
+        "ReplaceExpression": "$1_left_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_Left_([^}]*)",
+        "ReplaceExpression": "$1_Right_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "([^}]*)_Right_([^}]*)",
+        "ReplaceExpression": "$1_Left_$2",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      },
+      {
+        "FindExpression": "((?:^[sS]pine|^[rR]oot|^[pP]elvis|^[nN]eck|^[hH]ead|^ik_hand_gun).*)",
+        "ReplaceExpression": "$1",
+        "FindReplaceMethod": "EMirrorFindReplaceMethod::RegularExpression"
+      }
+    ],
+    "Skeleton": {
+      "ObjectName": "Skeleton'SKEL_TPCharacter'",
+      "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/SKEL_TPCharacter.35"
+    },
+    "RowStruct": {
+      "ObjectName": "Class'MirrorTableRow'",
+      "ObjectPath": "/Script/Engine"
+    }
+  },
+  "Rows": {
+    "root": {
+      "Name": "root",
+      "MirroredName": "root",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pelvis": {
+      "Name": "pelvis",
+      "MirroredName": "pelvis",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_01": {
+      "Name": "spine_01",
+      "MirroredName": "spine_01",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_02": {
+      "Name": "spine_02",
+      "MirroredName": "spine_02",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_03": {
+      "Name": "spine_03",
+      "MirroredName": "spine_03",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_04": {
+      "Name": "spine_04",
+      "MirroredName": "spine_04",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_05": {
+      "Name": "spine_05",
+      "MirroredName": "spine_05",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "neck_01": {
+      "Name": "neck_01",
+      "MirroredName": "neck_01",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "neck_02": {
+      "Name": "neck_02",
+      "MirroredName": "neck_02",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "head": {
+      "Name": "head",
+      "MirroredName": "head",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_l": {
+      "Name": "clavicle_l",
+      "MirroredName": "clavicle_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_l": {
+      "Name": "upperarm_l",
+      "MirroredName": "upperarm_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_l": {
+      "Name": "lowerarm_l",
+      "MirroredName": "lowerarm_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_twist_02_l": {
+      "Name": "lowerarm_twist_02_l",
+      "MirroredName": "lowerarm_twist_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_twist_01_l": {
+      "Name": "lowerarm_twist_01_l",
+      "MirroredName": "lowerarm_twist_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_correctiveRoot_l": {
+      "Name": "lowerarm_correctiveRoot_l",
+      "MirroredName": "lowerarm_correctiveRoot_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_in_l": {
+      "Name": "lowerarm_in_l",
+      "MirroredName": "lowerarm_in_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_out_l": {
+      "Name": "lowerarm_out_l",
+      "MirroredName": "lowerarm_out_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_fwd_l": {
+      "Name": "lowerarm_fwd_l",
+      "MirroredName": "lowerarm_fwd_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_bck_l": {
+      "Name": "lowerarm_bck_l",
+      "MirroredName": "lowerarm_bck_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "hand_l": {
+      "Name": "hand_l",
+      "MirroredName": "hand_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "wrist_inner_l": {
+      "Name": "wrist_inner_l",
+      "MirroredName": "wrist_inner_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "wrist_outer_l": {
+      "Name": "wrist_outer_l",
+      "MirroredName": "wrist_outer_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_metacarpal_l": {
+      "Name": "index_metacarpal_l",
+      "MirroredName": "index_metacarpal_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_01_l": {
+      "Name": "index_01_l",
+      "MirroredName": "index_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_02_l": {
+      "Name": "index_02_l",
+      "MirroredName": "index_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_03_l": {
+      "Name": "index_03_l",
+      "MirroredName": "index_03_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_metacarpal_l": {
+      "Name": "middle_metacarpal_l",
+      "MirroredName": "middle_metacarpal_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_01_l": {
+      "Name": "middle_01_l",
+      "MirroredName": "middle_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_02_l": {
+      "Name": "middle_02_l",
+      "MirroredName": "middle_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_03_l": {
+      "Name": "middle_03_l",
+      "MirroredName": "middle_03_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thumb_01_l": {
+      "Name": "thumb_01_l",
+      "MirroredName": "thumb_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thumb_02_l": {
+      "Name": "thumb_02_l",
+      "MirroredName": "thumb_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thumb_03_l": {
+      "Name": "thumb_03_l",
+      "MirroredName": "thumb_03_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_metacarpal_l": {
+      "Name": "pinky_metacarpal_l",
+      "MirroredName": "pinky_metacarpal_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_01_l": {
+      "Name": "pinky_01_l",
+      "MirroredName": "pinky_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_02_l": {
+      "Name": "pinky_02_l",
+      "MirroredName": "pinky_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_03_l": {
+      "Name": "pinky_03_l",
+      "MirroredName": "pinky_03_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_metacarpal_l": {
+      "Name": "ring_metacarpal_l",
+      "MirroredName": "ring_metacarpal_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_01_l": {
+      "Name": "ring_01_l",
+      "MirroredName": "ring_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_02_l": {
+      "Name": "ring_02_l",
+      "MirroredName": "ring_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_03_l": {
+      "Name": "ring_03_l",
+      "MirroredName": "ring_03_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "weapon_l": {
+      "Name": "weapon_l",
+      "MirroredName": "weapon_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twist_01_l": {
+      "Name": "upperarm_twist_01_l",
+      "MirroredName": "upperarm_twist_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twistCor_01_l": {
+      "Name": "upperarm_twistCor_01_l",
+      "MirroredName": "upperarm_twistCor_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twist_02_l": {
+      "Name": "upperarm_twist_02_l",
+      "MirroredName": "upperarm_twist_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_tricep_l": {
+      "Name": "upperarm_tricep_l",
+      "MirroredName": "upperarm_tricep_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_bicep_l": {
+      "Name": "upperarm_bicep_l",
+      "MirroredName": "upperarm_bicep_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twistCor_02_l": {
+      "Name": "upperarm_twistCor_02_l",
+      "MirroredName": "upperarm_twistCor_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_correctiveRoot_l": {
+      "Name": "upperarm_correctiveRoot_l",
+      "MirroredName": "upperarm_correctiveRoot_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_bck_l": {
+      "Name": "upperarm_bck_l",
+      "MirroredName": "upperarm_bck_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_fwd_l": {
+      "Name": "upperarm_fwd_l",
+      "MirroredName": "upperarm_fwd_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_in_l": {
+      "Name": "upperarm_in_l",
+      "MirroredName": "upperarm_in_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_out_l": {
+      "Name": "upperarm_out_l",
+      "MirroredName": "upperarm_out_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_out_l": {
+      "Name": "clavicle_out_l",
+      "MirroredName": "clavicle_out_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_scap_l": {
+      "Name": "clavicle_scap_l",
+      "MirroredName": "clavicle_scap_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_r": {
+      "Name": "clavicle_r",
+      "MirroredName": "clavicle_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_r": {
+      "Name": "upperarm_r",
+      "MirroredName": "upperarm_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_r": {
+      "Name": "lowerarm_r",
+      "MirroredName": "lowerarm_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_twist_02_r": {
+      "Name": "lowerarm_twist_02_r",
+      "MirroredName": "lowerarm_twist_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_twist_01_r": {
+      "Name": "lowerarm_twist_01_r",
+      "MirroredName": "lowerarm_twist_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_correctiveRoot_r": {
+      "Name": "lowerarm_correctiveRoot_r",
+      "MirroredName": "lowerarm_correctiveRoot_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_out_r": {
+      "Name": "lowerarm_out_r",
+      "MirroredName": "lowerarm_out_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_in_r": {
+      "Name": "lowerarm_in_r",
+      "MirroredName": "lowerarm_in_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_fwd_r": {
+      "Name": "lowerarm_fwd_r",
+      "MirroredName": "lowerarm_fwd_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "lowerarm_bck_r": {
+      "Name": "lowerarm_bck_r",
+      "MirroredName": "lowerarm_bck_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "hand_r": {
+      "Name": "hand_r",
+      "MirroredName": "hand_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "wrist_inner_r": {
+      "Name": "wrist_inner_r",
+      "MirroredName": "wrist_inner_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "wrist_outer_r": {
+      "Name": "wrist_outer_r",
+      "MirroredName": "wrist_outer_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_metacarpal_r": {
+      "Name": "pinky_metacarpal_r",
+      "MirroredName": "pinky_metacarpal_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_01_r": {
+      "Name": "pinky_01_r",
+      "MirroredName": "pinky_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_02_r": {
+      "Name": "pinky_02_r",
+      "MirroredName": "pinky_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "pinky_03_r": {
+      "Name": "pinky_03_r",
+      "MirroredName": "pinky_03_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_metacarpal_r": {
+      "Name": "ring_metacarpal_r",
+      "MirroredName": "ring_metacarpal_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_01_r": {
+      "Name": "ring_01_r",
+      "MirroredName": "ring_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_02_r": {
+      "Name": "ring_02_r",
+      "MirroredName": "ring_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ring_03_r": {
+      "Name": "ring_03_r",
+      "MirroredName": "ring_03_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_metacarpal_r": {
+      "Name": "middle_metacarpal_r",
+      "MirroredName": "middle_metacarpal_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_01_r": {
+      "Name": "middle_01_r",
+      "MirroredName": "middle_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_02_r": {
+      "Name": "middle_02_r",
+      "MirroredName": "middle_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "middle_03_r": {
+      "Name": "middle_03_r",
+      "MirroredName": "middle_03_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_metacarpal_r": {
+      "Name": "index_metacarpal_r",
+      "MirroredName": "index_metacarpal_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_01_r": {
+      "Name": "index_01_r",
+      "MirroredName": "index_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_02_r": {
+      "Name": "index_02_r",
+      "MirroredName": "index_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "index_03_r": {
+      "Name": "index_03_r",
+      "MirroredName": "index_03_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thumb_01_r": {
+      "Name": "thumb_01_r",
+      "MirroredName": "thumb_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thumb_02_r": {
+      "Name": "thumb_02_r",
+      "MirroredName": "thumb_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thumb_03_r": {
+      "Name": "thumb_03_r",
+      "MirroredName": "thumb_03_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "weapon_r": {
+      "Name": "weapon_r",
+      "MirroredName": "weapon_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twist_01_r": {
+      "Name": "upperarm_twist_01_r",
+      "MirroredName": "upperarm_twist_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twistCor_01_r": {
+      "Name": "upperarm_twistCor_01_r",
+      "MirroredName": "upperarm_twistCor_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twist_02_r": {
+      "Name": "upperarm_twist_02_r",
+      "MirroredName": "upperarm_twist_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_tricep_r": {
+      "Name": "upperarm_tricep_r",
+      "MirroredName": "upperarm_tricep_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_bicep_r": {
+      "Name": "upperarm_bicep_r",
+      "MirroredName": "upperarm_bicep_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_twistCor_02_r": {
+      "Name": "upperarm_twistCor_02_r",
+      "MirroredName": "upperarm_twistCor_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_correctiveRoot_r": {
+      "Name": "upperarm_correctiveRoot_r",
+      "MirroredName": "upperarm_correctiveRoot_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_bck_r": {
+      "Name": "upperarm_bck_r",
+      "MirroredName": "upperarm_bck_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_in_r": {
+      "Name": "upperarm_in_r",
+      "MirroredName": "upperarm_in_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_fwd_r": {
+      "Name": "upperarm_fwd_r",
+      "MirroredName": "upperarm_fwd_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "upperarm_out_r": {
+      "Name": "upperarm_out_r",
+      "MirroredName": "upperarm_out_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_out_r": {
+      "Name": "clavicle_out_r",
+      "MirroredName": "clavicle_out_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_scap_r": {
+      "Name": "clavicle_scap_r",
+      "MirroredName": "clavicle_scap_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_pec_r": {
+      "Name": "clavicle_pec_r",
+      "MirroredName": "clavicle_pec_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_04_latissimus_l": {
+      "Name": "spine_04_latissimus_l",
+      "MirroredName": "spine_04_latissimus_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "spine_04_latissimus_r": {
+      "Name": "spine_04_latissimus_r",
+      "MirroredName": "spine_04_latissimus_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "clavicle_pec_l": {
+      "Name": "clavicle_pec_l",
+      "MirroredName": "clavicle_pec_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_r": {
+      "Name": "thigh_r",
+      "MirroredName": "thigh_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_r": {
+      "Name": "calf_r",
+      "MirroredName": "calf_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "foot_r": {
+      "Name": "foot_r",
+      "MirroredName": "foot_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ball_r": {
+      "Name": "ball_r",
+      "MirroredName": "ball_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ankle_fwd_r": {
+      "Name": "ankle_fwd_r",
+      "MirroredName": "ankle_fwd_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ankle_bck_r": {
+      "Name": "ankle_bck_r",
+      "MirroredName": "ankle_bck_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_twist_02_r": {
+      "Name": "calf_twist_02_r",
+      "MirroredName": "calf_twist_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_twistCor_02_r": {
+      "Name": "calf_twistCor_02_r",
+      "MirroredName": "calf_twistCor_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_twist_01_r": {
+      "Name": "calf_twist_01_r",
+      "MirroredName": "calf_twist_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_correctiveRoot_r": {
+      "Name": "calf_correctiveRoot_r",
+      "MirroredName": "calf_correctiveRoot_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_kneeBack_r": {
+      "Name": "calf_kneeBack_r",
+      "MirroredName": "calf_kneeBack_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_knee_r": {
+      "Name": "calf_knee_r",
+      "MirroredName": "calf_knee_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twist_01_r": {
+      "Name": "thigh_twist_01_r",
+      "MirroredName": "thigh_twist_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twistCor_01_r": {
+      "Name": "thigh_twistCor_01_r",
+      "MirroredName": "thigh_twistCor_01_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twist_02_r": {
+      "Name": "thigh_twist_02_r",
+      "MirroredName": "thigh_twist_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twistCor_02_r": {
+      "Name": "thigh_twistCor_02_r",
+      "MirroredName": "thigh_twistCor_02_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_correctiveRoot_r": {
+      "Name": "thigh_correctiveRoot_r",
+      "MirroredName": "thigh_correctiveRoot_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_fwd_r": {
+      "Name": "thigh_fwd_r",
+      "MirroredName": "thigh_fwd_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_bck_r": {
+      "Name": "thigh_bck_r",
+      "MirroredName": "thigh_bck_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_out_r": {
+      "Name": "thigh_out_r",
+      "MirroredName": "thigh_out_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_in_r": {
+      "Name": "thigh_in_r",
+      "MirroredName": "thigh_in_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_bck_lwr_r": {
+      "Name": "thigh_bck_lwr_r",
+      "MirroredName": "thigh_bck_lwr_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_fwd_lwr_r": {
+      "Name": "thigh_fwd_lwr_r",
+      "MirroredName": "thigh_fwd_lwr_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_l": {
+      "Name": "thigh_l",
+      "MirroredName": "thigh_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_l": {
+      "Name": "calf_l",
+      "MirroredName": "calf_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "foot_l": {
+      "Name": "foot_l",
+      "MirroredName": "foot_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ball_l": {
+      "Name": "ball_l",
+      "MirroredName": "ball_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ankle_bck_l": {
+      "Name": "ankle_bck_l",
+      "MirroredName": "ankle_bck_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ankle_fwd_l": {
+      "Name": "ankle_fwd_l",
+      "MirroredName": "ankle_fwd_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_twist_02_l": {
+      "Name": "calf_twist_02_l",
+      "MirroredName": "calf_twist_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_twistCor_02_l": {
+      "Name": "calf_twistCor_02_l",
+      "MirroredName": "calf_twistCor_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_twist_01_l": {
+      "Name": "calf_twist_01_l",
+      "MirroredName": "calf_twist_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_correctiveRoot_l": {
+      "Name": "calf_correctiveRoot_l",
+      "MirroredName": "calf_correctiveRoot_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_kneeBack_l": {
+      "Name": "calf_kneeBack_l",
+      "MirroredName": "calf_kneeBack_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "calf_knee_l": {
+      "Name": "calf_knee_l",
+      "MirroredName": "calf_knee_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twist_01_l": {
+      "Name": "thigh_twist_01_l",
+      "MirroredName": "thigh_twist_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twistCor_01_l": {
+      "Name": "thigh_twistCor_01_l",
+      "MirroredName": "thigh_twistCor_01_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twist_02_l": {
+      "Name": "thigh_twist_02_l",
+      "MirroredName": "thigh_twist_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_twistCor_02_l": {
+      "Name": "thigh_twistCor_02_l",
+      "MirroredName": "thigh_twistCor_02_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_correctiveRoot_l": {
+      "Name": "thigh_correctiveRoot_l",
+      "MirroredName": "thigh_correctiveRoot_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_bck_l": {
+      "Name": "thigh_bck_l",
+      "MirroredName": "thigh_bck_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_fwd_l": {
+      "Name": "thigh_fwd_l",
+      "MirroredName": "thigh_fwd_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_out_l": {
+      "Name": "thigh_out_l",
+      "MirroredName": "thigh_out_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_bck_lwr_l": {
+      "Name": "thigh_bck_lwr_l",
+      "MirroredName": "thigh_bck_lwr_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_in_l": {
+      "Name": "thigh_in_l",
+      "MirroredName": "thigh_in_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "thigh_fwd_lwr_l": {
+      "Name": "thigh_fwd_lwr_l",
+      "MirroredName": "thigh_fwd_lwr_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ik_foot_l": {
+      "Name": "ik_foot_l",
+      "MirroredName": "ik_foot_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ik_foot_r": {
+      "Name": "ik_foot_r",
+      "MirroredName": "ik_foot_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ik_hand_gun": {
+      "Name": "ik_hand_gun",
+      "MirroredName": "ik_hand_gun",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ik_hand_l": {
+      "Name": "ik_hand_l",
+      "MirroredName": "ik_hand_r",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "ik_hand_r": {
+      "Name": "ik_hand_r",
+      "MirroredName": "ik_hand_l",
+      "MirrorEntryType": "EMirrorRowType::Bone"
+    },
+    "FootLock_L": {
+      "Name": "FootLock_L",
+      "MirroredName": "FootLock_R",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "FootLock_R": {
+      "Name": "FootLock_R",
+      "MirroredName": "FootLock_L",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "Layering_Arm_L": {
+      "Name": "Layering_Arm_L",
+      "MirroredName": "Layering_Arm_R",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "Layering_Arm_L_Add": {
+      "Name": "Layering_Arm_L_Add",
+      "MirroredName": "Layering_Arm_R_Add",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "Layering_Arm_L_LS": {
+      "Name": "Layering_Arm_L_LS",
+      "MirroredName": "Layering_Arm_R_LS",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "Layering_Arm_R": {
+      "Name": "Layering_Arm_R",
+      "MirroredName": "Layering_Arm_L",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "Layering_Arm_R_Add": {
+      "Name": "Layering_Arm_R_Add",
+      "MirroredName": "Layering_Arm_L_Add",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "Layering_Arm_R_LS": {
+      "Name": "Layering_Arm_R_LS",
+      "MirroredName": "Layering_Arm_L_LS",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadAnim_Rot_X": {
+      "Name": "HeadAnim_Rot_X",
+      "MirroredName": "HeadAnim_Rot_X",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadAnim_Rot_Y": {
+      "Name": "HeadAnim_Rot_Y",
+      "MirroredName": "HeadAnim_Rot_Y",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadAnim_Rot_Z": {
+      "Name": "HeadAnim_Rot_Z",
+      "MirroredName": "HeadAnim_Rot_Z",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadBobY": {
+      "Name": "HeadBobY",
+      "MirroredName": "HeadBobY",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadAnim_Loc_Z": {
+      "Name": "HeadAnim_Loc_Z",
+      "MirroredName": "HeadAnim_Loc_Z",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "RootBlend": {
+      "Name": "RootBlend",
+      "MirroredName": "RootBlend",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadAnim_Loc_X": {
+      "Name": "HeadAnim_Loc_X",
+      "MirroredName": "HeadAnim_Loc_X",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "HeadAnim_Loc_Y": {
+      "Name": "HeadAnim_Loc_Y",
+      "MirroredName": "HeadAnim_Loc_Y",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "pelvis:Curve": {
+      "Name": "pelvis",
+      "MirroredName": "pelvis",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    },
+    "head:Curve": {
+      "Name": "head",
+      "MirroredName": "head",
+      "MirrorEntryType": "EMirrorRowType::Curve"
+    }
+  }
+}

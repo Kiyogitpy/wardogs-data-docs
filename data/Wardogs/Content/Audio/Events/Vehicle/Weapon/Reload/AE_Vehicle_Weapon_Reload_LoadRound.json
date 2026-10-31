@@ -1,0 +1,67 @@
+--- export: UObject / AEB_PlayVehicleWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayVehicleWeaponPerspectiveSound_C",
+  "Name": "AEB_PlayVehicleWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.AEB_PlayVehicleWeaponPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Reload_LoadRound'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Reload/AE_Vehicle_Weapon_Reload_LoadRound.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'Default__AEB_PlayVehicleWeaponPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.ReloadEmpty.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.ReloadEmpty.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Reload_LoadRound ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Reload_LoadRound",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Reload/AE_Vehicle_Weapon_Reload_LoadRound",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.Reload.LoadRound"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'AE_Vehicle_Weapon_Reload_LoadRound:AEB_PlayVehicleWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Reload/AE_Vehicle_Weapon_Reload_LoadRound.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorMoveSoundToActor'AE_Vehicle_Weapon_Reload_LoadRound:CrosstalkAudioEventBehaviorMoveSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Reload/AE_Vehicle_Weapon_Reload_LoadRound.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 65.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorMoveSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorMoveSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorMoveSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorMoveSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Reload_LoadRound'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Reload/AE_Vehicle_Weapon_Reload_LoadRound.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

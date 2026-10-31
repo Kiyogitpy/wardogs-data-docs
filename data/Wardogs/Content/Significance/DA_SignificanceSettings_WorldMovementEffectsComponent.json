@@ -1,0 +1,28 @@
+--- export: UDataAsset / DA_SignificanceSettings_WorldMovementEffectsComponent ---
+{
+  "Type": "BHSignificanceSettingsAsset",
+  "Name": "DA_SignificanceSettings_WorldMovementEffectsComponent",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSignificanceSettingsAsset'",
+  "Package": "/Game/Significance/DA_SignificanceSettings_WorldMovementEffectsComponent",
+  "Properties": {
+    "SignificanceEvaluators": [
+      {
+        "ObjectName": "BHSignificanceEvaluator_Sphere'DA_Significance_Evaluator_Sphere_MovementEffectsComponent'",
+        "ObjectPath": "/Game/Significance/Evaluators/DA_Significance_Evaluator_Sphere_MovementEffectsComponent.0"
+      }
+    ],
+    "LevelSettings": [
+      {
+        "TickRate": 0.0,
+        "SignificanceUpdateRate": 0.3,
+        "LocationUpdateRate": 0.5
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 1.0,
+        "LocationUpdateRate": 1.0
+      }
+    ]
+  }
+}

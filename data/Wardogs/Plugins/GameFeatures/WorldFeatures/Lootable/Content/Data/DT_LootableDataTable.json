@@ -1,0 +1,2296 @@
+--- export: UDataTable / DT_LootableDataTable ---
+{
+  "Type": "DataTable",
+  "Name": "DT_LootableDataTable",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Lootable/Data/DT_LootableDataTable",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDLootableDataTable'",
+      "ObjectPath": "/Script/LootableRuntime"
+    }
+  },
+  "Rows": {
+    "Lootable.Test": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SV98"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SniperScope10x"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.8
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Tower": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SV98"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SniperScope10x"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.8
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.M249"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MAGZ_062"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_012"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.EotechHoloSight"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MedKit.Standard"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Defibrillator.Standard"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Battery"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Battery"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.StimPen"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 3
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.SmokeGrenade.White"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.8
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.M500"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.12g.RifledSlug"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 30
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.C4Explosive"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 3
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.C4Trigger"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.M67Grenade"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 2
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Claymore"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "ID.Item.RepairTool.Drill.Heavy"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.LargeBattery"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FuelCan"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.WEPN_028"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MAGZ_004"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MAGZ_004"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          }
+        ],
+        "SpawnChance": 50.0,
+        "bSpawnByDefault": false,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 10,
+        "bCanRespawn": true,
+        "RespawnTime": 300.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": true,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.AbandonedTower": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Bandage"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.M67Grenade"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 2
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.BasicRedDot"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 3,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.3xScope"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.RK6ForeGrip"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SuperBandage"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.StimPen"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 3
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_009"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 2,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Bandage"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Resuscitator.Standard"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 2
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.SmokeGrenade.White"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 2
+              }
+            ],
+            "ItemAmount": 5,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 50.0,
+        "bSpawnByDefault": false,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 10,
+        "bCanRespawn": true,
+        "RespawnTime": 300.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": true,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Bandage": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Bandage"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": false,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Weapon": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.AK74M"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": false,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Helmet": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.LightHelmet"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": false,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Armor": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.LightArmor"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": false,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Defib.Cheap": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Defibrillator.Cheap"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": false,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Sniper": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Mosin"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": false,
+        "RespawnTime": 10.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SniperOnly.HighValue": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Mosin"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.4xElcanSpectr"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.762x54mm.Tracer"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.762x54mm.Tracer"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SV98"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_030"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Bandage"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MK22"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_036"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MK22Mag"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MK22Mag"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SR_04"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_029"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Bandage"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.GhillieArmor"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.GhillieHelmet"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.InfraredRangeFinder"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Bandage"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          }
+        ],
+        "SpawnChance": 25.0,
+        "bSpawnByDefault": false,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 30.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": true,
+        "RespawnTime": 60.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SniperOnly.MiddleValue": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Mosin"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.4xElcanSpectr"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.762x54mm.Tracer"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.762x54mm.Tracer"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.25
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SV98"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_030"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.25
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MK22"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_036"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MK22Mag"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MK22Mag"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.25
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SR_04"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SGHT_029"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04Magazine"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.25
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.GhillieArmor"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.GhillieHelmet"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.InfraredRangeFinder"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.05
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.10xScopeMoa"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Mosin"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SniperScope10x"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MUZL_022"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Bandage"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.10xScopeMoa"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_036"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.WEPN_027"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_031"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Mosin"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_031"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MUZL_025"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_009"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Mosin"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_011"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MUZL_022"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_013"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_032"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_013"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SuperBandage"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 25.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 10.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": true,
+        "RespawnTime": 20.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SniperOnly.LowValue": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Mosin"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.4xElcanSpectr"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.762x54mm.Tracer"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.762x54mm.Tracer"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.25
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.10xScopeMoa"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04Magazine"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.WEPN_027"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SniperScope10x"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MUZL_022"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Bandage"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.10xScopeMoa"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_036"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.WEPN_027"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Bandage"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SV98Magazine"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_031"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Glock17"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_031"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MUZL_025"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_009"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.MK22"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_011"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_013"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "ID.Item.RangeFinder"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04Magazine"
+                },
+                "SubSpawnChance": 50.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SGHT_032"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.FGRP_013"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SuperBandage"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 1
+              },
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.SR_04"
+                },
+                "SubSpawnChance": 25.0,
+                "SubItemAmount": 1
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          }
+        ],
+        "SpawnChance": 20.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 10.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": true,
+        "RespawnTime": 20.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.PreLobby": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Glock17"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Judge"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.8
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_026"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.8
+          },
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_032"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 0.5
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": true,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 15,
+        "bCanRespawn": true,
+        "RespawnTime": 180.0,
+        "bNeverSelectPreviousItem": true
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": true
+    },
+    "Lootable.AK74": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.AK74M"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.AR15": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.M4"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.KH2002": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.KH2002"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.A91": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.A91"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.TAR21": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.TAR21"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Vector": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Vector"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SKS": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SKS"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SV98": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SV98"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.M249": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.M249"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Glock17": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Glock17"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.M500": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.M500"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.MMGL": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MMGL"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.CGM4": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.CGM4"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.MP9": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MP9"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SVDM": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SVDM"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.RFB": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.RFB"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Mosin": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Mosin"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.MK22": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MK22"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.PKM": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "ID.Item.LMG_01_BRL_06"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Judge": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Judge"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.MP43": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.MP43"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.RPG": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.RPG7"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.PP19": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_023"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.AX50": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.SR_04"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Verba": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.Launcher_04"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.M1911": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_026"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Deagle": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_027"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.MP5": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_028"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Galil": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_029"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.FAL": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_030"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Glock18": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_032"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Bushmaster": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_033"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.M14": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_034"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Scout": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_035"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Evolys": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_036"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.SigSpear": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.WEPN_037"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Bow": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.CombatBow"
+            },
+            "SubItemsSpawnData": [
+              {
+                "SubItemTag": {
+                  "TagName": "Id.Item.Arrow"
+                },
+                "SubSpawnChance": 100.0,
+                "SubItemAmount": 10
+              }
+            ],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": true,
+        "RespawnTime": 1.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.M4": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.M4"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": false,
+        "RespawnTime": 0.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    },
+    "Lootable.Bag": {
+      "LootableData": {
+        "ItemsToSpawn": [
+          {
+            "ItemTag": {
+              "TagName": "Id.Item.BPAK_007"
+            },
+            "SubItemsSpawnData": [],
+            "ItemAmount": 1,
+            "ItemSpawnWeight": 1.0
+          }
+        ],
+        "SpawnChance": 100.0,
+        "bSpawnByDefault": true,
+        "bSpawnByPoints": false,
+        "InitialSpawnTime": 0.0,
+        "InitialSpawnPoints": 0,
+        "bCanRespawn": false,
+        "RespawnTime": 0.0,
+        "bNeverSelectPreviousItem": false
+      },
+      "bSpawnInsideControlZoneOnly": false,
+      "_aaabeefoaikdjpkadlplk": false
+    }
+  }
+}

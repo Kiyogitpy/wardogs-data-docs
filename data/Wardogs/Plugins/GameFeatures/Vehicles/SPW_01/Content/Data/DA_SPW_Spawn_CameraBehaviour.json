@@ -1,0 +1,82 @@
+--- export: UDataAsset / DA_SPW_Spawn_CameraBehaviour ---
+{
+  "Type": "MVehicleSpringArmDataAsset",
+  "Name": "DA_SPW_Spawn_CameraBehaviour",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpringArmDataAsset'",
+  "Package": "/SPW_01/Data/DA_SPW_Spawn_CameraBehaviour",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Type": "ERangeBoundTypes::Open"
+      },
+      "UpperBound": {
+        "Type": "ERangeBoundTypes::Open"
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -20.0
+      },
+      "UpperBound": {
+        "Value": 60.0
+      }
+    },
+    "CameraProbeMinDistance": 20.0,
+    "CameraUpwardsZOffset": 800.0,
+    "ZoomRange": {
+      "LowerBound": {
+        "Value": 100.0
+      },
+      "UpperBound": {
+        "Value": 300.0
+      }
+    },
+    "SocketOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 370.0
+    },
+    "TargetArmLength": 1500.0,
+    "bMapArmLengthFromFOV": true,
+    "bMapArmHeightFromFOV": true,
+    "FOVMappingRange": {
+      "LowerBound": {
+        "Value": 60.0
+      },
+      "UpperBound": {
+        "Value": 110.0
+      }
+    },
+    "ArmLengthAtFOVRange": {
+      "X": 1325.0,
+      "Y": 750.0
+    },
+    "ArmHeightAtFOVRange": {
+      "X": -6.5,
+      "Y": -30.0
+    },
+    "ProbeSize": 50.0,
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 5.0,
+    "CameraRotationLagSpeed": 2.0,
+    "CameraLagMaxDistance": 100.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      },
+      "RotationOverride": {
+        "Pitch": -6.0,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      },
+      "FirstPersonLagSettings": {
+        "LagSpeedInYaw": 30.0,
+        "LagSpeedInPitch": 30.0,
+        "LagSpeedInRoll": 30.0
+      }
+    }
+  }
+}

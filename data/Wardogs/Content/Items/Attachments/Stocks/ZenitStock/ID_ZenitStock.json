@@ -1,0 +1,90 @@
+--- export: UPrimaryDataAsset / ID_ZenitStock ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_ZenitStock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.ZenitStock"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock.AK74M"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_ZenitStock:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_ZenitStock:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_ZenitStock:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitStock'",
+    "ObjectPath": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitStock'",
+    "ObjectPath": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.0"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitStock'",
+    "ObjectPath": "/Game/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

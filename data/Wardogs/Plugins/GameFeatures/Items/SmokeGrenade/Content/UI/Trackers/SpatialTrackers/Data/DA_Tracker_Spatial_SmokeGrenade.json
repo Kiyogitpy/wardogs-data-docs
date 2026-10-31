@@ -1,0 +1,248 @@
+--- export: UDataAsset / DA_Tracker_Spatial_SmokeGrenade ---
+{
+  "Type": "WDUIDeployableSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_SmokeGrenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDeployableSpatialTrackerData'",
+  "Package": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade",
+  "Properties": {
+    "ItemData": [
+      {
+        "bShowTracker": true,
+        "TrackerQueryConditions": {
+          "StateQuery": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "State.Player.Vehicle.Role.Gunner"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+          },
+          "bOverrideForCurrentVehicle": true,
+          "AllowedVehicles": [
+            "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+            "Vehicle.Variant.Stationary.Mortar"
+          ]
+        },
+        "ItemTag": {
+          "TagName": "ID.Item.SmokeGrenade.Red"
+        },
+        "ItemTexture": {
+          "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_SmokeGrenadeRed.T_UI_Icon_SmokeGrenadeRed",
+          "SubPathString": ""
+        }
+      },
+      {
+        "bShowTracker": true,
+        "TrackerQueryConditions": {
+          "StateQuery": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "State.Player.Vehicle.Role.Gunner"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+          },
+          "bOverrideForCurrentVehicle": true,
+          "AllowedVehicles": [
+            "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+            "Vehicle.Variant.Stationary.Mortar"
+          ]
+        },
+        "ItemTag": {
+          "TagName": "ID.Item.SmokeGrenade.Blue"
+        },
+        "ItemTexture": {
+          "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_SmokeGrenadeBlue.T_UI_Icon_SmokeGrenadeBlue",
+          "SubPathString": ""
+        }
+      },
+      {
+        "bShowTracker": true,
+        "TrackerQueryConditions": {
+          "StateQuery": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "State.Player.Vehicle.Role.Driver"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( State.Player.Vehicle.Role.Driver )"
+          },
+          "bOverrideForCurrentVehicle": true,
+          "AllowedVehicles": [
+            "Vehicle.Variant.Land.Wheeled.Kodiak.Default",
+            "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun",
+            "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup",
+            "Vehicle.Variant.Land.Wheeled.Ural.Attack",
+            "Vehicle.Variant.Land.Wheeled.Ural.Battle",
+            "Vehicle.Variant.Land.Wheeled.Ural.Default",
+            "Vehicle.Variant.Land.Wheeled.Humvee.Default",
+            "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun",
+            "Vehicle.Variant.Land.Wheeled.Humvee.Minigun",
+            "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+            "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns",
+            "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+            "Vehicle.Variant.Air.Rotary.ROT_04.Default",
+            "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns",
+            "Vehicle.Variant.Land.Wheeled.WHL_08.Default",
+            "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+          ]
+        },
+        "ItemTag": {
+          "TagName": "ID.Item.SmokeGrenade.Green"
+        },
+        "ItemTexture": {
+          "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_SmokeGrenadeGreen.T_UI_Icon_SmokeGrenadeGreen",
+          "SubPathString": ""
+        }
+      },
+      {
+        "bShowTracker": true,
+        "TrackerQueryConditions": {
+          "StateQuery": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "State.Player.Vehicle.Role.Driver"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              2,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ALL( State.Player.Vehicle.Role.Driver )"
+          },
+          "bOverrideForCurrentVehicle": true,
+          "AllowedVehicles": [
+            "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+            "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+            "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods",
+            "Vehicle.Variant.Air.Rotary.Havoc.Default",
+            "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns",
+            "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+            "Vehicle.Variant.Air.Rotary.ROT_04.Default",
+            "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+          ]
+        },
+        "ItemTag": {
+          "TagName": "ID.Item.SmokeGrenade.Purple"
+        },
+        "ItemTexture": {
+          "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_SmokeGrenadePurple.T_UI_Icon_SmokeGrenadePurple",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIDistanceTextRules'DA_Tracker_Spatial_SmokeGrenade:WDUIDistanceTextRules_0'",
+              "ObjectPath": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.1"
+            },
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_Tracker_Spatial_SmokeGrenade:WDUILocationOffsetRules_0'",
+              "ObjectPath": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.2"
+            },
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_SmokeGrenade:WDUIScreenClampingRules_0'",
+              "ObjectPath": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.3"
+            }
+          ]
+        }
+      }
+    ],
+    "MaximumDistanceFromScreenCenter": {
+      "X": 0.85,
+      "Y": 0.85
+    },
+    "ZOrder": 3,
+    "DefaultSize": {
+      "X": 24.0,
+      "Y": 24.0
+    }
+  }
+}
+--- export: UObject / WDUIDistanceTextRules_0 ---
+{
+  "Type": "WDUIDistanceTextRules",
+  "Name": "WDUIDistanceTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDistanceTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIDeployableSpatialTrackerData'DA_Tracker_Spatial_SmokeGrenade'",
+    "ObjectPath": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.0"
+  },
+  "Properties": {
+    "bForceMeters": true
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_0 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIDeployableSpatialTrackerData'DA_Tracker_Spatial_SmokeGrenade'",
+    "ObjectPath": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.0"
+  },
+  "Properties": {
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 500.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_0 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIDeployableSpatialTrackerData'DA_Tracker_Spatial_SmokeGrenade'",
+    "ObjectPath": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.0"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 120.0,
+      "Y": 120.0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+--- export: UDataAsset / DA_Characteristics_WHL_05_Humvee ---
+{
+  "Type": "MWheeledVehicleCharacteristicsDataAsset",
+  "Name": "DA_Characteristics_WHL_05_Humvee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleCharacteristicsDataAsset'",
+  "Package": "/WHL_05/Data/DA_Characteristics_WHL_05_Humvee",
+  "Properties": {
+    "Mass": 7250.0,
+    "InertiaScale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "CenterOfMassOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -0.4
+    },
+    "bHasRelaxationDownforce": true,
+    "bDetectGroundVelocity": true,
+    "bTirePenetration": true,
+    "ReverseBrakeSpeed": 15.0,
+    "DrivetrainFriction": 100.0,
+    "RollingResistanceCoefficient": 30.0,
+    "HandBrakePower": 80.0,
+    "StickyTireSpeed": 5.0,
+    "OptimumSlipWeight": 0.5,
+    "DownForceCoefficient": 5.0,
+    "Abs": 50.0,
+    "ASR": 45.0,
+    "UnderSteerAssist": 20.0,
+    "MinUnderSteerAngle": 8.0,
+    "OverSteerAssist": 65.0,
+    "MinOverSteerAngle": 5.0,
+    "FrontAntiRollPower": 25.0,
+    "RearAntiRollPower": 4.0,
+    "MaxSlopeLockSpeed": 2.0,
+    "SuspensionQueryType": "EMSuspensionQueryType::Convex",
+    "ConvexAsset": {
+      "ObjectName": "StaticMesh'Cylinder'",
+      "ObjectPath": "/Game/Vehicles/Shared/StaticMeshes/Cylinder.2"
+    },
+    "SleepLinearThreshold": 5.0,
+    "SleepAngularThreshold": 5.0,
+    "SleepWaitingTime": 3.0
+  }
+}

@@ -1,0 +1,248 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/MAGZ_054/Meshes/SM_STANAG_60rd.SM_STANAG_60rd",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.556mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 60,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.556mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "Weight": 1.01
+  }
+}
+--- export: UPrimaryDataAsset / ID_STANAG_Mag_Extended_60rd ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_STANAG_Mag_Extended_60rd",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.STANAGExtendedMagazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine.AR",
+      "Item.Resource.Magazine.Extended"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+      "Key": "Items.Magazine.STANAG.Extended",
+      "SourceString": "STANAG 60 RND Magazine",
+      "LocalizedString": "STANAG 60 RND Magazine"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_STANAG_Mag_Extended_60rd:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_STANAG_Mag_Extended_60rd:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_STANAG_Mag_Extended_60rd:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_STANAG_Mag_Extended_60rd:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_STANAG_Mag_Extended_60rd:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_STANAG_Mag_Extended_60rd:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_STANAG_Mag_Extended_60rd:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_STANAG_Mag_Extended_60rd:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [
+        {
+          "TagName": "Id.Item.M249"
+        },
+        {
+          "TagName": "Id.Item.M4"
+        }
+      ],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAGZ_054_C'",
+          "ObjectPath": "/MAGZ_054/Data/GE_MAGZ_054.0"
+        }
+      ],
+      "AppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAGZ_054_CharacterEffects_C'",
+          "ObjectPath": "/MAGZ_054/Data/GE_MAGZ_054_CharacterEffects.0"
+        }
+      ],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STANAG_Mag_Extended_60rd'",
+    "ObjectPath": "/MAGZ_054/Data/ID_STANAG_Mag_Extended_60rd.5"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

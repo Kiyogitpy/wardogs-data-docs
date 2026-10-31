@@ -1,0 +1,206 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ScenarioExample'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.2"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/B_FactionSetup_CreateThreeTeams.B_FactionSetup_CreateThreeTeams_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDVendor",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/ScenarioExample/Blueprints/B_ExampleScenarioVendorStock.B_ExampleScenarioVendorStock_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDSpawnVolume",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/Objects/B_FreeVehicleSpawner.B_FreeVehicleSpawner_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ScenarioExample'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_ScenarioExample'",
+      "ObjectPath": "/ScenarioExample/EDL_ScenarioExample.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ScenarioExample ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ScenarioExample",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ScenarioExample/ScenarioExample",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'ScenarioExample:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddScenarioState'ScenarioExample:WDGameFeatureAction_AddScenarioState_0'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'ScenarioExample:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.1"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddScenarioState_0 ---
+{
+  "Type": "WDGameFeatureAction_AddScenarioState",
+  "Name": "WDGameFeatureAction_AddScenarioState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddScenarioState'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ScenarioExample'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.2"
+  },
+  "Properties": {
+    "ScenarioData": {
+      "DeathRuleSetClass": {
+        "ObjectName": "BlueprintGeneratedClass'B_DeathRuleSet_NoRespawns_C'",
+        "ObjectPath": "/BaseScenario/DeathRuleSets/B_DeathRuleSet_NoRespawns.1"
+      },
+      "ScenarioQuest": {
+        "AssetPathName": "/ScenarioExample/Q_ScenarioExample.Q_ScenarioExample",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ScenarioExample'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.2"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.InventorySpaceIndicator"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/BaseScenario/UI/W_HUDSubtitleWidget.W_HUDSubtitleWidget_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/BaseScenarioRuntime.WDUIScenarioSubtitleViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkejhohfkdpglkgkep": false
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_24'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.5"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_25'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_26'",
+        "ObjectPath": "/ScenarioExample/ScenarioExample.7"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_24 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_24",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_25 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_25",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_26 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_26",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'ScenarioExample:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/ScenarioExample/ScenarioExample.4"
+  }
+}

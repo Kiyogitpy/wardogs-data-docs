@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Gamemode_HotZoneMagnet_Capture_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_HotZoneMagnet_Capture_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.HotZoneMagnet.Capture.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Gamemode_HotZoneMagnet_Capture_Stop:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Stop.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Gamemode_HotZoneMagnet_Capture_Stop:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Stop.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Capture_Stop'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Capture_Stop'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Stop.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_HotZoneMagnet_Tower_Captured_Stop'",
+      "ObjectPath": "/Game/Audio/Gamemode/HotZoneMagnet/MSS/MSS_Gamemode_HotZoneMagnet_Tower_Captured_Stop.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "CancelFadeOutDuration": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

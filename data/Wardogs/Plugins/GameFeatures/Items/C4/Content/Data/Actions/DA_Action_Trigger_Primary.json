@@ -1,0 +1,62 @@
+--- export: UPrimaryDataAsset / DA_Action_Trigger_Primary ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Trigger_Primary",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/C4/Data/Actions/DA_Action_Trigger_Primary",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Trigger.Primary"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Trigger_C'",
+      "ObjectPath": "/C4/Data/Actions/B_Action_Trigger.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Equipment.Change",
+            "Action.Item.Inspect"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Equipment.Change",
+            "Action.Item.Inspect"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

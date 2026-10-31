@@ -1,0 +1,54 @@
+--- export: UPrimaryDataAsset / VV_Attack_ROT_02 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_Attack_ROT_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/ROT_02/Variants/VV_Attack_ROT_02",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Air.Rotary.Havoc.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -1500.0,
+        "Y": -1207.0,
+        "Z": -1.562851
+      },
+      "Max": {
+        "X": 1217.0,
+        "Y": 1207.0,
+        "Z": 800.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+        "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "FrontTurret"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_02/Parts/VP_ROT_02_Weapon_30mmCannon.VP_ROT_02_Weapon_30mmCannon",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "WingWeaponry1"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.VP_ROT_02_Weapon_122mm_R",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

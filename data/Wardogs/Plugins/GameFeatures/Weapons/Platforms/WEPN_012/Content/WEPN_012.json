@@ -1,0 +1,89 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WEPN_012'",
+    "ObjectPath": "/WEPN_012/WEPN_012.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_WEPN_012'",
+      "ObjectPath": "/WEPN_012/EDL_WEPN_012.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WEPN_012'",
+    "ObjectPath": "/WEPN_012/WEPN_012.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/WEPN_012/Data/DT_WeaponVendor_EXT_Launcher_01.DT_WeaponVendor_EXT_Launcher_01",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WEPN_012 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WEPN_012",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WEPN_012/WEPN_012",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'WEPN_012:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/WEPN_012/WEPN_012.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'WEPN_012:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/WEPN_012/WEPN_012.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WEPN_012/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

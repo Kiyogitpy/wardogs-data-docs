@@ -1,0 +1,137 @@
+--- export: UObject / WDUIItemsmithCamoPaintSelectFilter_0 ---
+{
+  "Type": "WDUIItemsmithCamoPaintSelectFilter",
+  "Name": "WDUIItemsmithCamoPaintSelectFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithCamoPaintSelectFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithPaintSelectData'DA_Itemsmith_CamoPaintSelect'",
+    "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaintSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Flair.Colours.Basic"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+      "Key": "Itemsmith.Flair.Archetype.Colours",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserPaintViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaints_BrowserList.DA_Itemsmith_CamoPaints_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDUIItemsmithFavouriteCamoPaintSelectFilter_0 ---
+{
+  "Type": "WDUIItemsmithFavouriteCamoPaintSelectFilter",
+  "Name": "WDUIItemsmithFavouriteCamoPaintSelectFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithFavouriteCamoPaintSelectFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithPaintSelectData'DA_Itemsmith_CamoPaintSelect'",
+    "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaintSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Flair.Colours.Favourite"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.ItemSelect.TabGroup.Favourite",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserPaintViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaints_BrowserList.DA_Itemsmith_CamoPaints_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UDataAsset / DA_Itemsmith_CamoPaintSelect ---
+{
+  "Type": "WDUIItemsmithPaintSelectData",
+  "Name": "DA_Itemsmith_CamoPaintSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithPaintSelectData'",
+  "Package": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaintSelect",
+  "Properties": {
+    "PaintType": "EWDFlairPaintType::Camo",
+    "SettingRotatorViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingValueRotatorViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_Rotator.DA_SettingValue_Rotator",
+        "SubPathString": ""
+      }
+    },
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Item.Archetype.Flair.Colours.Basic"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIItemsmithFavouriteCamoPaintSelectFilter'DA_Itemsmith_CamoPaintSelect:WDUIItemsmithFavouriteCamoPaintSelectFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaintSelect.1"
+      },
+      {
+        "ObjectName": "WDUIItemsmithCamoPaintSelectFilter'DA_Itemsmith_CamoPaintSelect:WDUIItemsmithCamoPaintSelectFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Camo/DA_Itemsmith_CamoPaintSelect.0"
+      }
+    ],
+    "PageType": "EWDUIItemsmithPages::FlairCamoPaint",
+    "CameraMode": "EItemsmithCameraMode::FixedSideOn",
+    "CameraFocusOffset": {
+      "X": 0.0,
+      "Y": 20.0,
+      "Z": 0.0
+    },
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_BasicPaintSelect'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BasicPaintSelect.0"
+    },
+    "InputMappingContextPriority": 11,
+    "ScreenTitle": {
+      "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+      "Key": "Itemsmith.Flair.CamoPaint.Title",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "bShowBlueprintNameAsSubtitle": true
+  }
+}

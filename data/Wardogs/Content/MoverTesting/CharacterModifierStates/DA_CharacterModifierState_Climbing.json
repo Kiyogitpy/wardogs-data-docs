@@ -1,0 +1,138 @@
+--- export: UObject / WDCharacterModifier_TraversingCameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_TraversingCameraLock",
+  "Name": "WDCharacterModifier_TraversingCameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_TraversingCameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Climbing'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.4"
+  },
+  "Properties": {
+    "PitchLockSettings": {
+      "LockAngle": 40.0,
+      "bSmoothLock": true,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_Camera_LockSmoothCurve_Climbing'",
+        "ObjectPath": "/Game/MoverTesting/Curves/CRV_Camera_LockSmoothCurve_Climbing.0"
+      }
+    },
+    "YawLockSettings": {
+      "LockAngle": 60.0,
+      "bSmoothLock": true,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_Camera_LockSmoothCurve_Mantling'",
+        "ObjectPath": "/Game/MoverTesting/Curves/CRV_Camera_LockSmoothCurve_Mantling.0"
+      }
+    }
+  }
+}
+--- export: UObject / WDCharacterModifier_TraversingFirstPersonLock_0 ---
+{
+  "Type": "WDCharacterModifier_TraversingFirstPersonLock",
+  "Name": "WDCharacterModifier_TraversingFirstPersonLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_TraversingFirstPersonLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Climbing'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.4"
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_MovementMode_0 ---
+{
+  "Type": "WDCharacterModifierCondition_MovementMode",
+  "Name": "WDCharacterModifierCondition_MovementMode_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_MovementMode'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Climbing'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.4"
+  },
+  "Properties": {
+    "MovementModeTag": {
+      "TagName": "Mover.Mode.Traversing.Climbing"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Climbing'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.4"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        3,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "UserDescription": "We are alive and not in a vehicle.",
+      "AutoDescription": " NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead, State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Climbing ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Climbing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Climb"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_TraversingCameraLock'DA_CharacterModifierState_Climbing:WDCharacterModifier_TraversingCameraLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.0"
+      },
+      {
+        "ObjectName": "WDCharacterModifier_TraversingFirstPersonLock'DA_CharacterModifierState_Climbing:WDCharacterModifier_TraversingFirstPersonLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.1"
+      }
+    ],
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Climbing:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.3"
+      },
+      {
+        "ObjectName": "WDCharacterModifierCondition_MovementMode'DA_CharacterModifierState_Climbing:WDCharacterModifierCondition_MovementMode_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Climbing.2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+--- export: UDataAsset / AlertStateThreashold_DataConfig ---
+{
+  "Type": "WDAIAlertStateThresholdData",
+  "Name": "AlertStateThreashold_DataConfig",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIAlertStateThresholdData'",
+  "Package": "/WDAIPvEAICore/DataAssets/AlertStateThreashold_DataConfig",
+  "Properties": {
+    "AlertStatesWithThreashold": [
+      {
+        "AlertState": "EWDAIAlertState::Relaxed",
+        "LowerThreshold": 0.0,
+        "bRequireSightToTransitionFromLower": false,
+        "bRequireSightToTransitionFromHigher": false
+      },
+      {
+        "AlertState": "EWDAIAlertState::Alert",
+        "LowerThreshold": 0.8,
+        "bRequireSightToTransitionFromLower": false,
+        "bRequireSightToTransitionFromHigher": false
+      },
+      {
+        "AlertState": "EWDAIAlertState::Combat",
+        "LowerThreshold": 1.0,
+        "bRequireSightToTransitionFromLower": true,
+        "bRequireSightToTransitionFromHigher": false
+      }
+    ]
+  }
+}

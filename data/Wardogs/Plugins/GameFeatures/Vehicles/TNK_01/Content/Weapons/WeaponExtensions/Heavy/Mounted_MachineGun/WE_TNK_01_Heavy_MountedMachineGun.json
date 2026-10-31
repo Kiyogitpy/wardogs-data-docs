@@ -1,0 +1,154 @@
+--- export: UDataAsset / WE_TNK_01_Heavy_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_TNK_01_Heavy_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/TNK_01/Weapons/WeaponExtensions/Heavy/Mounted_MachineGun/WE_TNK_01_Heavy_MountedMachineGun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.TNK_01.MountedMachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.HeavyTankMountedMachineGun"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.TNK_01.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.LMG.M249"
+      }
+    },
+    "WeaponExtensionName": "Mounted M249",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_M249_Stats'",
+      "ObjectPath": "/WEPN_009/Data/DA_M249_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "MountedMachineGun"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.25,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.556mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.556mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.556mm.Tracer"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_TNK_01_Heavy_MountedMachineGun_Audio'",
+      "ObjectPath": "/TNK_01/Weapons/WeaponExtensions/Heavy/Mounted_MachineGun/DA_TNK_01_Heavy_MountedMachineGun_Audio.0"
+    },
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Fire"
+        },
+        "Value": {
+          "FirstPersonPlayerAnimation": {
+            "ObjectName": "AnimMontage'AM_FP_M249_Fire'",
+            "ObjectPath": "/WEPN_009/Animation/Character/Montage/FP/AM_FP_M249_Fire.0"
+          },
+          "ThirdPersonPlayerAnimation": null,
+          "_aaabkaiiiikngfhjclpcl": {
+            "ObjectName": "AnimMontage'AM_Weap_M249_Fire'",
+            "ObjectPath": "/WEPN_009/Animation/Weapon/Montage/FP/AM_Weap_M249_Fire.0"
+          },
+          "_aaabknpfkgdelmmgiloin": {
+            "ObjectName": "AnimMontage'AM_Weap_M249_Fire'",
+            "ObjectPath": "/WEPN_009/Animation/Weapon/Montage/FP/AM_Weap_M249_Fire.0"
+          }
+        }
+      }
+    ],
+    "OperatorStateAnimations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Kodiak_Turret_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Kodiak_Turret_Crouch_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Tank_Turret_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Tank_Turret_Crouch_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": null,
+          "PerSeatBlendSpaces": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Humvee_Turret_M249_Idle_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_M249_Idle_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Kodiak_Turret_M249_Idle_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Kodiak_Turret_M249_Idle_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": {
+            "ObjectName": "BlendSpace'BS_TP_Kodiak_Turret_M249_AO'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/Kodiak/BS_TP_Kodiak_Turret_M249_AO.0"
+          },
+          "PerSeatBlendSpaces": []
+        }
+      }
+    ],
+    "OperatorIdleSequence": {
+      "ObjectName": "AnimSequence'A_FP_Humvee_Turret_M249_Idle_Pose'",
+      "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Humvee_Turret_M249_Idle_Pose.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_TankMG_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_TankMG.1"
+    },
+    "FireCameraShakeMultiplier": 0.1
+  }
+}

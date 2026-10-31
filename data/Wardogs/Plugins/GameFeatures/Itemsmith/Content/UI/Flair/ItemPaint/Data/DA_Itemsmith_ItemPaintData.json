@@ -1,0 +1,81 @@
+--- export: UDataAsset / DA_Itemsmith_ItemPaintData ---
+{
+  "Type": "WDUIFlairItemPaintData",
+  "Name": "DA_Itemsmith_ItemPaintData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIFlairItemPaintData'",
+  "Package": "/Itemsmith/UI/Flair/ItemPaint/Data/DA_Itemsmith_ItemPaintData",
+  "Properties": {
+    "PaintCounterFormat": {
+      "TableId": "/Itemsmith/UI/Flair/ItemPaint/STRINGS_Itemsmith_ItemPaint.STRINGS_Itemsmith_ItemPaint",
+      "Key": "Itemsmith.Flair.ItemPaint.CountFormat",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "FavoriteWarningPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.EmptyFavoritePaints"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Type.Warning",
+        "SourceString": "> Warning <",
+        "LocalizedString": "> Warning <"
+      },
+      "Subtitle": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+        "Key": "UI.Popup.EmptyFavoritePaints.Subtitle",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "Description": {
+        "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith_Popups.STRINGS_Itemsmith_Popups",
+        "Key": "UI.Popup.EmptyFavoritePaints.Description",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.OK",
+              "SourceString": "OK",
+              "LocalizedString": "OK"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "MaxFavouritePaintsToShow": 5,
+    "CameraMode": "EItemsmithCameraMode::FixedSideOn",
+    "CameraFocusOffset": {
+      "X": 0.0,
+      "Y": 20.0,
+      "Z": 7.0
+    },
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_FlairItemPaint'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_FlairItemPaint.0"
+    },
+    "InputMappingContextPriority": 11,
+    "ScreenTitle": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.Flair.WeaponPaint.Title",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "bShowBlueprintNameAsSubtitle": true
+  }
+}

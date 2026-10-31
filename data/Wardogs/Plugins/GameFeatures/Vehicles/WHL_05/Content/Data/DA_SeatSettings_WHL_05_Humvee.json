@@ -1,0 +1,589 @@
+--- export: UDataAsset / DA_SeatSettings_WHL_05_Humvee ---
+{
+  "Type": "BHSeatSettingsDataAsset",
+  "Name": "DA_SeatSettings_WHL_05_Humvee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSeatSettingsDataAsset'",
+  "Package": "/WHL_05/Data/DA_SeatSettings_WHL_05_Humvee",
+  "Properties": {
+    "SeatSetups": [
+      {
+        "Identifier": "Not Selected",
+        "SeatRoleTag": {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        "SeatPriority": 0,
+        "SeatTags": [
+          "State.Player.Vehicle.SeatDamageReduction"
+        ],
+        "_aaabdpbpgdlebknoodmnp": [],
+        "bShouldAutoEnterGunner": false,
+        "bIsGunner": false,
+        "bDoesGunnerSeatMoveWithWeapon": false,
+        "bIsCrewSeat": true,
+        "bIsExteriorSeat": false,
+        "bExcludedFromSuppression": true,
+        "bIsStandingSeat": false,
+        "bCanExitWithinBounds": false,
+        "_aaabjmcpkpiebmnbkaadl": false,
+        "SeatAnimationData": {
+          "bIsolateNeck": true,
+          "bHideBackpack": true,
+          "bOverrideDefaultPose": true,
+          "bUpdateSteeringValues": true,
+          "bUpdateGearChangeValues": false,
+          "SeatIdlePose": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Driver_Pose'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Driver/A_TP_Humvee_Driver_Pose.0"
+          },
+          "SeatIdleAnimation": null,
+          "SeatDeathAnimation": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Dead'",
+            "ObjectPath": "/Game/Animation/Characters/Player/States/A_TP_Humvee_Dead.0"
+          },
+          "SeatBlendSpaces": [
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Passive"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Driver_Head'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Blendspace/Vehicle/Driver/BS_TP_Driver_Head.0"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Steer"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Humvee_Driver_Steering'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Blendspace/Vehicle/Driver/Humvee_Steer/BS_TP_Humvee_Driver_Steering.0"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Pedals"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Humvee_Pedal_AO'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Blendspace/Vehicle/Driver/Humvee_Pedals/BS_TP_Humvee_Pedal_AO.0"
+              }
+            }
+          ]
+        },
+        "SeatAccessPoint": {
+          "EntryAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "ExitAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "InteractOffset": {
+            "X": 20.0,
+            "Y": -120.0,
+            "Z": 72.0
+          }
+        },
+        "SeatPositionOffset": {
+          "X": 12.0,
+          "Y": -78.5,
+          "Z": 68.903534
+        },
+        "SeatTrackerOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 100.0
+        },
+        "bBlockTest": false,
+        "SeatCharacterCapsuleRadius": 32.0,
+        "SeatCharacterCapsuleHalfHeight": 70.0,
+        "SeatCharacterCapsuleOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": -25.0
+        },
+        "SeatCameraMode": "EBHVehicleSeatCameraMode::PlayerCamera",
+        "SeatEyeHeight": 115.0,
+        "_aaabgafndlekhbmklkdoc": 70.0,
+        "SeatRotation": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "bAutoEjectOnDowned": false,
+        "bUseCameraLimits": true,
+        "CameraLockYaw": 100.0,
+        "CameraLockPitch": 50.0,
+        "OccupancyHistoryExpiration": 60.0,
+        "SeatSwitchFilter": {
+          "RoleRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "TagRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "AllowList": [],
+          "DenyList": []
+        },
+        "SeatSwitchTimers": [],
+        "SeatExitEffects": {
+          "Effects": []
+        },
+        "_aaabinfodaelcilhdpckh": false,
+        "_aaabdbhjahojgocnggjjm": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaabdgbfhknihflfhepph": [],
+        "_aaabimjmoonmmbklhfcdc": false
+      },
+      {
+        "Identifier": "Not Selected",
+        "SeatRoleTag": {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        "SeatPriority": 0,
+        "SeatTags": [
+          "State.Player.Vehicle.SeatDamageReduction"
+        ],
+        "_aaabdpbpgdlebknoodmnp": [],
+        "bShouldAutoEnterGunner": false,
+        "bIsGunner": false,
+        "bDoesGunnerSeatMoveWithWeapon": false,
+        "bIsCrewSeat": false,
+        "bIsExteriorSeat": false,
+        "bExcludedFromSuppression": true,
+        "bIsStandingSeat": false,
+        "bCanExitWithinBounds": false,
+        "_aaabjmcpkpiebmnbkaadl": false,
+        "SeatAnimationData": {
+          "bIsolateNeck": false,
+          "bHideBackpack": true,
+          "bOverrideDefaultPose": false,
+          "bUpdateSteeringValues": false,
+          "bUpdateGearChangeValues": false,
+          "SeatIdlePose": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Passenger_Pose'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/A_TP_Humvee_Passenger_Pose.0"
+          },
+          "SeatIdleAnimation": null,
+          "SeatDeathAnimation": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Dead'",
+            "ObjectPath": "/Game/Animation/Characters/Player/States/A_TP_Humvee_Dead.0"
+          },
+          "SeatBlendSpaces": [
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Passive"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Bobcat_Passenger'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Blendspace/Vehicle/Passenger/Bobcat/BS_TP_Bobcat_Passenger.0"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Active"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Gen_Pistol_AO_Standing'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Pistol/AO/BS_TP_Gen_Pistol_AO_Standing.0"
+              }
+            }
+          ]
+        },
+        "SeatAccessPoint": {
+          "EntryAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "ExitAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "InteractOffset": {
+            "X": 20.0,
+            "Y": 120.0,
+            "Z": 58.0
+          }
+        },
+        "SeatPositionOffset": {
+          "X": 25.0,
+          "Y": 78.5,
+          "Z": 60.0
+        },
+        "SeatTrackerOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 100.0
+        },
+        "bBlockTest": false,
+        "SeatCharacterCapsuleRadius": 32.0,
+        "SeatCharacterCapsuleHalfHeight": 70.0,
+        "SeatCharacterCapsuleOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": -25.0
+        },
+        "SeatCameraMode": "EBHVehicleSeatCameraMode::PlayerCamera",
+        "SeatEyeHeight": 130.0,
+        "_aaabgafndlekhbmklkdoc": 70.0,
+        "SeatRotation": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "bAutoEjectOnDowned": false,
+        "bUseCameraLimits": true,
+        "CameraLockYaw": 100.0,
+        "CameraLockPitch": 50.0,
+        "OccupancyHistoryExpiration": 10.0,
+        "SeatSwitchFilter": {
+          "RoleRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "TagRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "AllowList": [],
+          "DenyList": []
+        },
+        "SeatSwitchTimers": [],
+        "SeatExitEffects": {
+          "Effects": []
+        },
+        "_aaabinfodaelcilhdpckh": false,
+        "_aaabdbhjahojgocnggjjm": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaabdgbfhknihflfhepph": [],
+        "_aaabimjmoonmmbklhfcdc": false
+      },
+      {
+        "Identifier": "Not Selected",
+        "SeatRoleTag": {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        "SeatPriority": 0,
+        "SeatTags": [
+          "State.Player.Vehicle.SeatDamageReduction"
+        ],
+        "_aaabdpbpgdlebknoodmnp": [],
+        "bShouldAutoEnterGunner": false,
+        "bIsGunner": false,
+        "bDoesGunnerSeatMoveWithWeapon": false,
+        "bIsCrewSeat": false,
+        "bIsExteriorSeat": false,
+        "bExcludedFromSuppression": true,
+        "bIsStandingSeat": false,
+        "bCanExitWithinBounds": false,
+        "_aaabjmcpkpiebmnbkaadl": false,
+        "SeatAnimationData": {
+          "bIsolateNeck": false,
+          "bHideBackpack": true,
+          "bOverrideDefaultPose": false,
+          "bUpdateSteeringValues": false,
+          "bUpdateGearChangeValues": false,
+          "SeatIdlePose": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Passenger_Pose'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/A_TP_Humvee_Passenger_Pose.0"
+          },
+          "SeatIdleAnimation": null,
+          "SeatDeathAnimation": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Dead'",
+            "ObjectPath": "/Game/Animation/Characters/Player/States/A_TP_Humvee_Dead.0"
+          },
+          "SeatBlendSpaces": [
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Passive"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Bobcat_Passenger'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Blendspace/Vehicle/Passenger/Bobcat/BS_TP_Bobcat_Passenger.0"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Active"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Gen_Pistol_AO_Standing'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Pistol/AO/BS_TP_Gen_Pistol_AO_Standing.0"
+              }
+            }
+          ]
+        },
+        "SeatAccessPoint": {
+          "EntryAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "ExitAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "InteractOffset": {
+            "X": 0.0,
+            "Y": -95.0,
+            "Z": 58.0
+          }
+        },
+        "SeatPositionOffset": {
+          "X": -75.0,
+          "Y": -78.5,
+          "Z": 60.0
+        },
+        "SeatTrackerOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 100.0
+        },
+        "bBlockTest": false,
+        "SeatCharacterCapsuleRadius": 32.0,
+        "SeatCharacterCapsuleHalfHeight": 70.0,
+        "SeatCharacterCapsuleOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": -25.0
+        },
+        "SeatCameraMode": "EBHVehicleSeatCameraMode::PlayerCamera",
+        "SeatEyeHeight": 130.0,
+        "_aaabgafndlekhbmklkdoc": 70.0,
+        "SeatRotation": {
+          "Pitch": 0.0,
+          "Yaw": 1E-06,
+          "Roll": 0.0
+        },
+        "bAutoEjectOnDowned": false,
+        "bUseCameraLimits": true,
+        "CameraLockYaw": 100.0,
+        "CameraLockPitch": 50.0,
+        "OccupancyHistoryExpiration": 10.0,
+        "SeatSwitchFilter": {
+          "RoleRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "TagRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "AllowList": [],
+          "DenyList": []
+        },
+        "SeatSwitchTimers": [],
+        "SeatExitEffects": {
+          "Effects": []
+        },
+        "_aaabinfodaelcilhdpckh": false,
+        "_aaabdbhjahojgocnggjjm": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaabdgbfhknihflfhepph": [],
+        "_aaabimjmoonmmbklhfcdc": false
+      },
+      {
+        "Identifier": "Not Selected",
+        "SeatRoleTag": {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        "SeatPriority": 0,
+        "SeatTags": [
+          "State.Player.Vehicle.SeatDamageReduction"
+        ],
+        "_aaabdpbpgdlebknoodmnp": [],
+        "bShouldAutoEnterGunner": false,
+        "bIsGunner": false,
+        "bDoesGunnerSeatMoveWithWeapon": false,
+        "bIsCrewSeat": false,
+        "bIsExteriorSeat": false,
+        "bExcludedFromSuppression": true,
+        "bIsStandingSeat": false,
+        "bCanExitWithinBounds": false,
+        "_aaabjmcpkpiebmnbkaadl": false,
+        "SeatAnimationData": {
+          "bIsolateNeck": false,
+          "bHideBackpack": true,
+          "bOverrideDefaultPose": false,
+          "bUpdateSteeringValues": false,
+          "bUpdateGearChangeValues": false,
+          "SeatIdlePose": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Passenger_Pose'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/A_TP_Humvee_Passenger_Pose.0"
+          },
+          "SeatIdleAnimation": null,
+          "SeatDeathAnimation": {
+            "ObjectName": "AnimSequence'A_TP_Humvee_Dead'",
+            "ObjectPath": "/Game/Animation/Characters/Player/States/A_TP_Humvee_Dead.0"
+          },
+          "SeatBlendSpaces": [
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Passive"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Bobcat_Passenger'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Blendspace/Vehicle/Passenger/Bobcat/BS_TP_Bobcat_Passenger.0"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Animation.Player.BlendSpace.TP.Seat.Active"
+              },
+              "Value": {
+                "ObjectName": "BlendSpace'BS_TP_Gen_Pistol_AO_Standing'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Pistol/AO/BS_TP_Gen_Pistol_AO_Standing.0"
+              }
+            }
+          ]
+        },
+        "SeatAccessPoint": {
+          "EntryAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "ExitAnimation": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null,
+            "VehicleAnimation": null
+          },
+          "InteractOffset": {
+            "X": 7.0,
+            "Y": 53.0,
+            "Z": 61.0
+          }
+        },
+        "SeatPositionOffset": {
+          "X": -75.0,
+          "Y": 78.5,
+          "Z": 60.0
+        },
+        "SeatTrackerOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 100.0
+        },
+        "bBlockTest": false,
+        "SeatCharacterCapsuleRadius": 32.0,
+        "SeatCharacterCapsuleHalfHeight": 70.0,
+        "SeatCharacterCapsuleOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": -25.0
+        },
+        "SeatCameraMode": "EBHVehicleSeatCameraMode::PlayerCamera",
+        "SeatEyeHeight": 130.0,
+        "_aaabgafndlekhbmklkdoc": 70.0,
+        "SeatRotation": {
+          "Pitch": 0.0,
+          "Yaw": -1E-06,
+          "Roll": 0.0
+        },
+        "bAutoEjectOnDowned": false,
+        "bUseCameraLimits": true,
+        "CameraLockYaw": 100.0,
+        "CameraLockPitch": 50.0,
+        "OccupancyHistoryExpiration": 10.0,
+        "SeatSwitchFilter": {
+          "RoleRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "TagRequirements": {
+            "RequireTags": [],
+            "IgnoreTags": [],
+            "TagQuery": {
+              "TokenStreamVersion": 0,
+              "TagDictionary": [],
+              "QueryTokenStream": [],
+              "UserDescription": "",
+              "AutoDescription": ""
+            }
+          },
+          "AllowList": [],
+          "DenyList": []
+        },
+        "SeatSwitchTimers": [],
+        "SeatExitEffects": {
+          "Effects": []
+        },
+        "_aaabinfodaelcilhdpckh": false,
+        "_aaabdbhjahojgocnggjjm": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaabdgbfhknihflfhepph": [],
+        "_aaabimjmoonmmbklhfcdc": false
+      }
+    ]
+  }
+}

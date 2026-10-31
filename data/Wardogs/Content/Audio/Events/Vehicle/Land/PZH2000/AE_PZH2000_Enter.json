@@ -1,0 +1,125 @@
+--- export: UObject / AEB_AttachToGCObject_C_0 ---
+{
+  "Type": "AEB_AttachToGCObject_C",
+  "Name": "AEB_AttachToGCObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachToGCObject.AEB_AttachToGCObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachToGCObject_C'Default__AEB_AttachToGCObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachToGCObject.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Enter"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_PZH_Enter_1p'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/PZH2000/MSS/1p/MSS_Vehicle_PZH_Enter_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_PZH_Enter_3p'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/PZH2000/MSS/3p/MSS_Vehicle_PZH_Enter_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Enter"
+    }
+  }
+}
+--- export: UObject / AEB_TriggerOnGCSourceObject_C_0 ---
+{
+  "Type": "AEB_TriggerOnGCSourceObject_C",
+  "Name": "AEB_TriggerOnGCSourceObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_TriggerOnGCSourceObject.AEB_TriggerOnGCSourceObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_TriggerOnGCSourceObject_C'Default__AEB_TriggerOnGCSourceObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_TriggerOnGCSourceObject.0"
+  },
+  "Properties": {
+    "Context Name Tag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    },
+    "Trigger Name": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PZH2000_Enter'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Enter"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_PZH2000_Enter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_PZH2000_Enter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.PZH2000.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachToGCObject_C'AE_PZH2000_Enter:AEB_AttachToGCObject_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.0"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_PZH2000_Enter:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.1"
+      },
+      {
+        "ObjectName": "AEB_TriggerOnGCSourceObject_C'AE_PZH2000_Enter:AEB_TriggerOnGCSourceObject_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.2"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_PZH2000_Enter:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/PZH2000/AE_PZH2000_Enter.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 62.0
+  }
+}

@@ -1,0 +1,70 @@
+--- export: UObject / AEB_AttachSoundToWeaponComponent_C_0 ---
+{
+  "Type": "AEB_AttachSoundToWeaponComponent_C",
+  "Name": "AEB_AttachSoundToWeaponComponent_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToWeaponComponent.AEB_AttachSoundToWeaponComponent_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_BackBlast'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_BackBlast.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToWeaponComponent_C'Default__AEB_AttachSoundToWeaponComponent_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToWeaponComponent.0"
+  },
+  "Properties": {
+    "Socket Name": "S_backblast",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.BackBlast"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_BackBlast'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_BackBlast.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Shared_BackBlast'",
+      "ObjectPath": "/Game/Audio/Weapon/Shared/BackBlast/MSS_Weapon_Shared_BackBlast.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.BackBlast"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_BackBlast ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_BackBlast",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_BackBlast",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.BackBlast"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToWeaponComponent_C'AE_Weapon_BackBlast:AEB_AttachSoundToWeaponComponent_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_BackBlast.0"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Weapon_BackBlast:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_BackBlast.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.5
+  }
+}

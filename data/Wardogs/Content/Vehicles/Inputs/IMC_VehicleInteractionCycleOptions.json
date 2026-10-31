@@ -1,0 +1,82 @@
+--- export: UDataAsset / IMC_VehicleInteractionCycleOptions ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_VehicleInteractionCycleOptions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Vehicles/Inputs/IMC_VehicleInteractionCycleOptions",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "InputModifierNegate'IMC_VehicleInteractionCycleOptions:InputModifierNegate_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleInteractionCycleOptions.1"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Interaction_Previous'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Interaction_Previous.0"
+          },
+          "Key": {
+            "KeyName": "MouseScrollUp"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Interaction_Previous'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Interaction_Previous.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Interaction_Next'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Interaction_Next.0"
+          },
+          "Key": {
+            "KeyName": "MouseScrollDown"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Interaction_Next'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Interaction_Next.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Down"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleInteractionCycleOptions'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleInteractionCycleOptions.0"
+  }
+}

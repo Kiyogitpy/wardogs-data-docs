@@ -1,0 +1,79 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VehicleTurretMachineGun_TNK_04'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurretMachineGun_TNK_04.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.762x54mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 150,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.762x54mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_VehicleTurretMachineGun_TNK_04 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_VehicleTurretMachineGun_TNK_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurretMachineGun_TNK_04",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleTurretMachineGun_TNK_04"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.TNK_04.TurretMachineGun",
+      "Item.Context.MovementBlocked"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "FE0CEED54F9C3AEF0F7CA9A5C2698B80",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_VehicleTurretMachineGun_TNK_04:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurretMachineGun_TNK_04.0"
+      }
+    ]
+  }
+}

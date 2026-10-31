@@ -1,0 +1,237 @@
+--- export: UObject / BHPlayerMappableKeySettings_2 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_IED'",
+    "ObjectPath": "/IED/Data/IMC_IED.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Inspect"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Inspect"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_3 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_IED'",
+    "ObjectPath": "/IED/Data/IMC_IED.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Appliable.SecondaryUse"
+    },
+    "Name": "Input.NamedActions.Appliable.SecondaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_4 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_IED'",
+    "ObjectPath": "/IED/Data/IMC_IED.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_5 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_IED'",
+    "ObjectPath": "/IED/Data/IMC_IED.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UDataAsset / IMC_IED ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_IED",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/IED/Data/IMC_IED",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_IED:BHPlayerMappableKeySettings_4'",
+            "ObjectPath": "/IED/Data/IMC_IED.2"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_IED:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/IED/Data/IMC_IED.5"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_PrimaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_IED:BHPlayerMappableKeySettings_5'",
+            "ObjectPath": "/IED/Data/IMC_IED.3"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Appliable_SecondaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Appliable_SecondaryUse.0"
+          },
+          "Key": {
+            "KeyName": "RightMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_IED:BHPlayerMappableKeySettings_3'",
+            "ObjectPath": "/IED/Data/IMC_IED.1"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Appliable_SecondaryUse'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Appliable_SecondaryUse.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Inspect'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Inspect.0"
+          },
+          "Key": {
+            "KeyName": "I"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_IED:BHPlayerMappableKeySettings_2'",
+            "ObjectPath": "/IED/Data/IMC_IED.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_SecondaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "RightMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_SecondaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_SecondaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTrigger"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_PrimaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_PrimaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_Holdable_PrimaryUse_Release'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/TaggedActions/IA_Player_Holdable_PrimaryUse_Release.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_IED'",
+    "ObjectPath": "/IED/Data/IMC_IED.4"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+    }
+  }
+}

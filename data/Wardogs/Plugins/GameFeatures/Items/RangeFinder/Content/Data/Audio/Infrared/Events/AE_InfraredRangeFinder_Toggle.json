@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_InfraredRangeFinder_Toggle ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_InfraredRangeFinder_Toggle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Toggle",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.RangeFinder.Toggle"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_InfraredRangeFinder_Toggle:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Toggle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_InfraredRangeFinder_Toggle'",
+    "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Toggle.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_InfraredRangeFinder_Toggle_1p'",
+      "ObjectPath": "/RangeFinder/Data/Audio/Infrared/MSS/MSS_Item_InfraredRangeFinder_Toggle_1p.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.IRRangeFinder"
+    }
+  }
+}

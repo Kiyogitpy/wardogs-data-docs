@@ -1,0 +1,59 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'MUZL_064'",
+    "ObjectPath": "/MUZL_064/MUZL_064.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_MUZL_064'",
+      "ObjectPath": "/MUZL_064/EDL_MUZL_064.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / MUZL_064 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "MUZL_064",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/MUZL_064/MUZL_064",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'MUZL_064:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/MUZL_064/MUZL_064.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/MUZL_064/Data"
+          },
+          {
+            "Path": ""
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

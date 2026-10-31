@@ -1,0 +1,62 @@
+--- export: UDataAsset / DA_TeamOffencePromptsBar ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_TeamOffencePromptsBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/TeamOffence/UI/DA_TeamOffencePromptsBar",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.TeamOffence.Forgive"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/TeamOffence/UI/StringTables/STRINGS_TeamOffence.STRINGS_TeamOffence",
+          "Key": "Prompt_ForgiveLabel",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.TeamOffence.Punish"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/TeamOffence/UI/StringTables/STRINGS_TeamOffence.STRINGS_TeamOffence",
+          "Key": "Prompt_PunishLabel",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      }
+    ]
+  }
+}

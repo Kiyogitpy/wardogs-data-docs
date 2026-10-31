@@ -1,0 +1,32 @@
+--- export: UDataAsset / DA_ROT_04_DragDataAsset ---
+{
+  "Type": "BHAirVehicleDragDataAsset",
+  "Name": "DA_ROT_04_DragDataAsset",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAirVehicleDragDataAsset'",
+  "Package": "/ROT_04/Data/DA_ROT_04_DragDataAsset",
+  "Properties": {
+    "AirDensityAtSeaLevel": 0.0012499999720603228,
+    "FrontDragArea": 4000.0,
+    "RearDragArea": 6000.0,
+    "SideArea": 9000.0,
+    "BottomArea": 350000.0,
+    "TopArea": 400000.0,
+    "DragCoefficient": 0.00559999980032444,
+    "YawAngularVelocityInducedDragTorqueCoef": 199999995904.0,
+    "PitchAngularVelocityInducedDragTorqueCoef": 300000000000.0,
+    "RollAngularVelocityInducedDragTorqueCoef": 32000000000.0,
+    "RollLinearVelocityInducedDragTorqueCoef": 0.30000001192092896,
+    "PitchLinearVelocityInducedDragTorqueCoef": 540.0,
+    "YawLinearVelocityInducedDragTorqueCoef": 120000.0,
+    "YawLinearVelocityInducedDragTorqueCoefBySkidAngleCurve": {
+      "ObjectName": "CurveFloat'CF_YawDragAngle_ROT_04'",
+      "ObjectPath": "/ROT_04/Curves/CF_YawDragAngle_ROT_04.0"
+    },
+    "PitchLinearVelocityInducedDragTorqueCoefByAngleCurve": {
+      "ObjectName": "CurveFloat'CF_PitchDragAngle'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/CF_PitchDragAngle.0"
+    },
+    "ReverseYawCorrectionCoef": 0.8
+  }
+}

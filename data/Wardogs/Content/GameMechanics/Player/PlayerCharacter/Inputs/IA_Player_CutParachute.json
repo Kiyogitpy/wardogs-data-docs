@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Player_CutParachute ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_CutParachute",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CutParachute",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.CutParachute"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Player_CutParachute:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CutParachute.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_CutParachute'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CutParachute.0"
+  }
+}

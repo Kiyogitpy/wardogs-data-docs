@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_Vendor_Wager_Create_New ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Vendor_Wager_Create_New",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Wager_Create_New",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Create.New"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Vendor_Wager_Create_New:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Wager_Create_New.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Wager_Create_New'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Wager_Create_New.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Vendor_Wager_Create_New'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Vendor/Wager/MSS_UI_InGame_Vendor_Wager_Create_New.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

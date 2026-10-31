@@ -1,0 +1,54 @@
+--- export: UDataTable / DT_MockInvestments ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MockInvestments",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/MockInvestments/DT_MockInvestments",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMockInvestmentItemTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.MockInvestment.Definitions": {
+      "ActiveInvestmentIds": [
+        {
+          "TagName": "Meta.MockInvestment.Bandage"
+        }
+      ],
+      "Investments": [
+        {
+          "Key": {
+            "TagName": "Meta.MockInvestment.AK74M"
+          },
+          "Value": {
+            "ItemEntryId": {
+              "TagName": "Id.Item.AK74M"
+            },
+            "ItemQuantity": 1,
+            "CashCostAmount": 1000,
+            "WaitDurationSeconds": 43200
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Meta.MockInvestment.Bandage"
+          },
+          "Value": {
+            "ItemEntryId": {
+              "TagName": "Id.Item.Bandage"
+            },
+            "ItemQuantity": 5,
+            "CashCostAmount": 200,
+            "WaitDurationSeconds": 43200
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.MockInvestment.Definitions"
+      }
+    }
+  }
+}

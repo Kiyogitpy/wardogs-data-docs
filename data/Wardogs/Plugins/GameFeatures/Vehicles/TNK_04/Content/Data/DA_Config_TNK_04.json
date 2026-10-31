@@ -1,0 +1,230 @@
+--- export: UPrimaryDataAsset / DA_Config_TNK_04 ---
+{
+  "Type": "MTrackedVehicleConfigDataAsset",
+  "Name": "DA_Config_TNK_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MTrackedVehicleConfigDataAsset'",
+  "Package": "/TNK_04/Data/DA_Config_TNK_04",
+  "Properties": {
+    "TrackedVehicleEngineData": {
+      "ObjectName": "MTrackedVehicleEngineData'DA_TNK_04_EngineData'",
+      "ObjectPath": "/TNK_04/Data/DA_TNK_04_EngineData.0"
+    },
+    "TrackedVehicleSuspensionData": {
+      "ObjectName": "MTrackedVehicleSuspensionData'DA_TNK_04_SuspensionData'",
+      "ObjectPath": "/TNK_04/Data/DA_TNK_04_SuspensionData.0"
+    },
+    "TrackedVehicleWheelData": {
+      "ObjectName": "MTrackedVehicleWheelData'DA_TNK_04_WheelData'",
+      "ObjectPath": "/TNK_04/Data/DA_TNK_04_WheelData.0"
+    },
+    "TrackedVehicleDynamicsData": {
+      "ObjectName": "MTrackedVehicleDynamicsData'DA_TNK_04_DynamicsData'",
+      "ObjectPath": "/TNK_04/Data/DA_TNK_04_DynamicsData.0"
+    },
+    "TrackData": [
+      {
+        "WheelBoneNames": [
+          "wheelSpinL_01_J",
+          "wheelSpinL_02_J",
+          "wheelSpinL_03_J",
+          "wheelSpinL_04_J",
+          "wheelSpinL_05_J",
+          "wheelSpinL_06_J"
+        ],
+        "SprocketBoneName": "rearWheelSpinL_J",
+        "IdlerBoneName": "frontWheelSpinL_J"
+      },
+      {
+        "WheelBoneNames": [
+          "wheelSpinR_01_J",
+          "wheelSpinR_02_J",
+          "wheelSpinR_03_J",
+          "wheelSpinR_04_J",
+          "wheelSpinR_05_J",
+          "wheelSpinR_06_J"
+        ],
+        "SprocketBoneName": "rearWheelSpinR_J",
+        "IdlerBoneName": "frontWheelSpinR_J"
+      }
+    ],
+    "TreadMesh": {
+      "AssetPathName": "/TNK_04/Meshes/SM_TNK_04_Track.SM_TNK_04_Track",
+      "SubPathString": ""
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_TNK_04'",
+      "ObjectPath": "/TNK_04/Data/DA_GameplaySystems_TNK_04.26"
+    },
+    "_aaabljnlghahlkidgdeii": {
+      "ObjectName": "MVehiclePredictionSettings_Tracked'DA_PredictionSettings_TNK_04'",
+      "ObjectPath": "/TNK_04/Data/DA_PredictionSettings_TNK_04.0"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MVehicleSpringArmDataAsset'DA_TNK_04_Camera_TP'",
+      "ObjectPath": "/TNK_04/Data/DA_TNK_04_Camera_TP.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MVehicleSpringArmDataAsset'DA_TNK_04_Camera_FP'",
+      "ObjectPath": "/TNK_04/Data/DA_TNK_04_Camera_FP.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "MVehicleSensorsDataAsset'DA_VehicleSensor_TNK_04'",
+      "ObjectPath": "/TNK_04/Data/DA_VehicleSensor_TNK_04.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MTrackedInputControlsDataAsset'DA_InputControls_TNK_04'",
+      "ObjectPath": "/TNK_04/Data/DA_InputControls_TNK_04.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.Tracked"
+    },
+    "ExitVehicleDamageType": {
+      "ObjectName": "Class'WDImpactDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.TNK_04"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.PZH2000"
+    },
+    "MovingGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Moving.TNK_04"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.PZH2000"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.PZH2000"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter.TNK_04"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit.TNK_04"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "UseHornGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Horn"
+    },
+    "ItemAddedToInventoryCueTag": {
+      "TagName": "GameplayCue.Vehicle.DepositSupplies"
+    },
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "VehicleFlipCheckThreshold": 160.0,
+    "EntryOffsetTolerance": 850.0,
+    "VehicleConfigExtensions": [
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_TNK_04_Audio'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_TNK_04_Audio.0"
+        }
+      },
+      {
+        "Key": "CBM",
+        "Value": {
+          "ObjectName": "PDA_CBM_Map_C'DA_Vehicle_Land_TankArtillery_Vehicle_CBM_Map'",
+          "ObjectPath": "/Game/Audio/Vehicles/Land/PZH2000/DA/DA_Vehicle_Land_TankArtillery_Vehicle_CBM_Map.0"
+        }
+      },
+      {
+        "Key": "SurfaceSlow",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_Surface_Slow'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_Surface_Slow.0"
+        }
+      },
+      {
+        "Key": "SurfaceMedium",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_Surface_Medium'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_Surface_Medium.0"
+        }
+      },
+      {
+        "Key": "SurfaceFast",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_Surface_Fast'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_Surface_Fast.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceSlow",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_Skidding_Slow'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_Skidding_Slow.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceMedium",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_Skidding_Medium'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_Skidding_Medium.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceFast",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_Skidding_Fast'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_Skidding_Fast.0"
+        }
+      },
+      {
+        "Key": "BrakingSurface",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_BrakingSurface'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_BrakingSurface.0"
+        }
+      },
+      {
+        "Key": "WheelSpinSurface",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicles_TNK_04_WheelSpinSurface'",
+          "ObjectPath": "/TNK_04/Audio/DA/DA_Vehicles_TNK_04_WheelSpinSurface.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_TNK_04_Destroyed'",
+      "ObjectPath": "/TNK_04/Meshes/Destroyed/SM_TNK_04_Destroyed.2"
+    },
+    "FirstPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 178.66013,
+        "Y": -47.27825,
+        "Z": 299.64035
+      }
+    },
+    "ThirdPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 110.0
+      }
+    },
+    "MovingEffectAngularSpeedThreshold": 0.2,
+    "_aaabammkdefcmcmkgofgm": {
+      "liftstep": 150.0,
+      "_aaaanfbaabccmjoafaohg": 150.0,
+      "RingCount": 1,
+      "_aaaalokhgkfoapmcocanl": 800.0,
+      "_aaaandgghdpkjdhegibkb": 3,
+      "BoundsOffset": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -10.0
+      }
+    }
+  }
+}

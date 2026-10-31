@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UX_Combat_KillAssist ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Combat_KillAssist",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_KillAssist",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Combat.KillAssist"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Combat_KillAssist:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_KillAssist.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_KillAssist'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_KillAssist.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Spotting_SpottedTargetDestroyAssist'",
+      "ObjectPath": "/Game/Audio/UX/Spotting/MSS/MSS_UX_Spotting_SpottedTargetDestroyAssist.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.CentralFeedback"
+    }
+  }
+}

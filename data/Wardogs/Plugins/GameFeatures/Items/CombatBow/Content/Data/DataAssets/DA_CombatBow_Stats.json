@@ -1,0 +1,308 @@
+--- export: UPrimaryDataAsset / DA_CombatBow_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_CombatBow_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/CombatBow/Data/DataAssets/DA_CombatBow_Stats",
+  "Properties": {
+    "WeaponId": {
+      "TagName": "Id.Item.CombatBow"
+    },
+    "WeaponStats": {
+      "WeaponAccuracy": {
+        "AccuracyValue": 0.0
+      },
+      "AdsCameraCurve": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CF_SniperRifles_ADS_Curve'",
+          "ObjectPath": "/Game/Weapons/Curves/ADSCurves/CF_SniperRifles_ADS_Curve.0"
+        }
+      },
+      "FocusEnergyReductionPerShot": 100.0,
+      "RecoilReductionWhenFocussing": 80.0,
+      "bOverrideTypicalSpeed": true,
+      "TypicalSpeed": 13000.0,
+      "bUseDistanceDamageFalloffCurve": true,
+      "DistanceDamageFalloffCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 10000.0,
+              "Value": 1.0,
+              "ArriveTangent": -1.070042E-05,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": -1.0786811E-05,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 50000.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 120000.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "RoundsPerMinute": 90.0,
+      "SupportedFireModes": [
+        "EWDFireMode::SemiAutomatic"
+      ],
+      "RoundsPerBurst": 1,
+      "_aaabaehmmeimejkapkogn": false,
+      "ZeroingStep": 10,
+      "AnimationSwayData": {
+        "bPersistentADSValues": false,
+        "ADSPitchSwayMultiplierCurve": {
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CRV_WeaponAnimSwayMultiplier_Bow'",
+            "ObjectPath": "/Game/Items/Weapons/Curves/AimSway/Bow/CRV_WeaponAnimSwayMultiplier_Bow.0"
+          }
+        },
+        "ADSYawSwayMultiplierCurve": {
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CRV_WeaponAnimSwayMultiplier_Bow'",
+            "ObjectPath": "/Game/Items/Weapons/Curves/AimSway/Bow/CRV_WeaponAnimSwayMultiplier_Bow.0"
+          }
+        }
+      },
+      "AimSwayData": {
+        "bPersistentValues": false,
+        "PersistentData": {
+          "AimSwaySpeed": 0.3,
+          "HorizontalAimSwayMagnitude": 50.0,
+          "VerticalAimSwayMagnitude": 100.0
+        },
+        "CurveData": {
+          "AimSwaySpeedCurve": {
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'AimSway_SpeedCurve'",
+              "ObjectPath": "/Game/Weapons/AimSway_SpeedCurve.0"
+            }
+          },
+          "HorizontalAimSwayMovementCurve": {
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'HorizontalAimSway_MovementCurve'",
+              "ObjectPath": "/Game/Weapons/HorizontalAimSway_MovementCurve.0"
+            }
+          },
+          "VerticalAimSwayMovementCurve": {
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'VerticalAimSway_MovementCurve'",
+              "ObjectPath": "/Game/Weapons/VerticalAimSway_MovementCurve.0"
+            }
+          },
+          "HorizontalDeviationRange": {
+            "Min": 0.95,
+            "Max": 1.1
+          },
+          "VerticalDeviationRange": {
+            "Min": 0.9,
+            "Max": 1.15
+          }
+        },
+        "TotalPatternDuration": 6.0,
+        "StandOffsetMultiplier": 0.8,
+        "CrouchOffsetMultiplier": 0.5,
+        "ProneOffsetMultiplier": 0.25,
+        "NoFocusEnergySpeedMultiplier": 2.5,
+        "PlayerCameraOffsetMultiplier": 0.75,
+        "WeaponRotationIdleSwayMultiplier": 0.02,
+        "WeaponTranslationIdleSwayMultiplier": 0.01,
+        "WeaponTranslationStabilizationSway": {
+          "ExternalCurve": {
+            "ObjectName": "CurveVector'AdsStabilizationTranslation_DMR'",
+            "ObjectPath": "/Game/Weapons/AimSway/DMR/AdsStabilizationTranslation_DMR.0"
+          }
+        },
+        "WeaponTranslationStabilizationSwayCurveStanceMultiplier": {
+          "StandMultiplier": 0.7
+        },
+        "WeaponRotationStabilizationSway": {
+          "ExternalCurve": {
+            "ObjectName": "CurveVector'AdsStabilizationRotation_DMR'",
+            "ObjectPath": "/Game/Weapons/AimSway/DMR/AdsStabilizationRotation_DMR.0"
+          }
+        },
+        "WeaponRotationStabilizationSwayCurveStanceMultiplier": {
+          "StandMultiplier": 0.8
+        },
+        "bUseTranslationStabilizationJitter": true,
+        "TranslationStabilizationJitter": {
+          "StabilizationNoiseResultOffset": 0.1,
+          "GeneralPathJitter": 1.0,
+          "SecondaryJitter": 2.0
+        },
+        "bUseRotationStabilizationJitter": true,
+        "RotationStabilizationJitter": {
+          "StabilizationNoiseResultOffset": 0.1,
+          "StabilizationInitialOffset": 0.0,
+          "GeneralPathJitter": 2.0,
+          "SecondaryJitter": 1.0
+        },
+        "SightSwayDefaultDistanceOffset": 13.0,
+        "PlayerSpeedStabilizationMultiplierCurve": {
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CF_AimSway_Stabilization_PlayerSpeed'",
+            "ObjectPath": "/Game/Items/Weapons/Curves/AimSway/CF_AimSway_Stabilization_PlayerSpeed.0"
+          }
+        },
+        "AdsStabilizationData": {
+          "AdsStabilizeTime": 1.25,
+          "AdsStabilizeCooldownRate": 5.0,
+          "AdsStabilizeMovementProgressPenalty": 0.35
+        }
+      },
+      "ViewKickCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 10.656462,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 10.656457,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.15,
+              "Value": 1.0,
+              "ArriveTangent": 1.25,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 1.25,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.4,
+              "Value": 0.5,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "ViewKickMagnitudeMultiplier": 0.0,
+      "RecoveryKickCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "FOVShiftingType": "EWDWeaponFOVShiftingType::Curve",
+      "FOVShiftingCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 5.0,
+              "Value": -3.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "FOVShiftDuration": 0.35,
+      "RecoilPatternYawMinMax": {
+        "Min": -22.5,
+        "Max": 22.5
+      },
+      "RecoilPatternPitchMax": 45.0,
+      "PostPatternRandomPitchRecoil": {
+        "X": 2.0,
+        "Y": 3.0
+      },
+      "RandomDeviationDegree": 4.0,
+      "RecoilPatternResetTime": 0.2,
+      "SupportedCaliber": [
+        "Item.Caliber.Arrow"
+      ],
+      "InitialBulletSpeed": 16000.0,
+      "EffectiveRange": 60.0,
+      "MeleeDamage": 35.0,
+      "MeleeHitBoxSize": {
+        "X": 55.0,
+        "Y": 35.0,
+        "Z": 25.0
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Artillery_Travel_1p_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Artillery_Travel_1p_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Artillery.Travel.1p.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_Weapon_Artillery_Travel_1p_Stop:CrosstalkAudioEventBehaviorStopSound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_Weapon_Artillery_Travel_1p_Stop:CrosstalkAudioEventBehaviorStopSound_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_Weapon_Artillery_Travel_1p_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Travel_1p_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket.Wind"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Travel_1p_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Artillery.Travel.1p"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_2 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Artillery_Travel_1p_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Artillery_Travel_1p_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket"
+    }
+  }
+}

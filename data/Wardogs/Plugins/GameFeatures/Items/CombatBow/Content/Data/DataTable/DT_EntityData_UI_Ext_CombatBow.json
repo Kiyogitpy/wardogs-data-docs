@@ -1,0 +1,313 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_CombatBow ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_CombatBow",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/CombatBow/Data/DataTable/DT_EntityData_UI_Ext_CombatBow",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.CombatBow": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+        "Key": "Items.Weapons.CombatBow",
+        "SourceString": "Compound Bow",
+        "LocalizedString": "Compound Bow"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+        "Key": "Description.Weapon.CombatBow",
+        "SourceString": "- Pull & Release\r\n- Standard Arrows",
+        "LocalizedString": "- Pull & Release\r\n- Standard Arrows"
+      },
+      "Category": {
+        "TagName": "Item.Category.Weapon.Ranged"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Recon"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Weapon"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Weapon"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Equipment",
+            "SourceString": "Equipment",
+            "LocalizedString": "Equipment"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Description.Weapon.CombatBow",
+            "SourceString": "- Pull & Release\r\n- Standard Arrows",
+            "LocalizedString": "- Pull & Release\r\n- Standard Arrows"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Flavor.Weapon.CombatBow",
+            "SourceString": "Silent and deadly.\r\n\r\n\"Sometimes you need to go back to basics.\"",
+            "LocalizedString": "Silent and deadly.\r\n\r\n\"Sometimes you need to go back to basics.\""
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Weapons/T_UI_Icon_Weapon_AK74M_Textured_512x256.T_UI_Icon_Weapon_AK74M_Textured_512x256",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/3D/Session/T_UI_Weapon_Bow_BC.T_UI_Weapon_Bow_BC",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_compoundbow.T_UI_Icon_Killfeed_compoundbow",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.CombatBow"
+      }
+    },
+    "Id.Item.Arrow": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Calibers.STRINGS_Calibers",
+        "Key": "Calibers.Arrow",
+        "SourceString": "Broadhead Arrow",
+        "LocalizedString": "Broadhead Arrow"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_WeaponAmmunition.STRINGS_VendorTooltips_WeaponAmmunition",
+        "Key": "TooltipDescription.Ammunition.Arrow",
+        "SourceString": "- Metal broadhead arrow\r\n- Effective against unarmored targets",
+        "LocalizedString": "- Metal broadhead arrow\r\n- Effective against unarmored targets"
+      },
+      "Category": {
+        "TagName": "Item.Category.Ammunition"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Ammunition",
+            "SourceString": "Ammunition",
+            "LocalizedString": "Ammunition"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_WeaponAmmunition.STRINGS_VendorTooltips_WeaponAmmunition",
+            "Key": "TooltipDescription.Ammunition.Arrow",
+            "SourceString": "- Metal broadhead arrow\r\n- Effective against unarmored targets",
+            "LocalizedString": "- Metal broadhead arrow\r\n- Effective against unarmored targets"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_WeaponAmmunition.STRINGS_VendorTooltips_WeaponAmmunition",
+            "Key": "TooltipFlavor.Ammunition.Arrow",
+            "SourceString": "Silent, deadly and perfect for resourceful stealthy combatants.",
+            "LocalizedString": "Silent, deadly and perfect for resourceful stealthy combatants."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Attachments/T_UI_Icon_Attachment_Ammo_556mm_Textured_512x512.T_UI_Icon_Attachment_Ammo_556mm_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Attachments/3D/T_UI_Magazine_Bow_BC.T_UI_Magazine_Bow_BC",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.Arrow"
+      }
+    },
+    "Id.Item.Arrow.Explosive": {
+      "FriendlyName": {
+        "CultureInvariantString": "Rambo Explosive Arrow"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "CultureInvariantString": "Explosive arrow head for the compond bow"
+      },
+      "Category": {
+        "TagName": "Item.Category.Ammunition"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Ammunition",
+            "SourceString": "Ammunition",
+            "LocalizedString": "Ammunition"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "CultureInvariantString": "Explosive arrow head for the compond bow"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Attachments/T_UI_Icon_Attachment_Ammo_556mm_Single_Textured_256x512.T_UI_Icon_Attachment_Ammo_556mm_Single_Textured_256x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Attachments/3D/T_UI_Magazine_Bow_BC.T_UI_Magazine_Bow_BC",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.Arrow.Explosive"
+      }
+    }
+  }
+}

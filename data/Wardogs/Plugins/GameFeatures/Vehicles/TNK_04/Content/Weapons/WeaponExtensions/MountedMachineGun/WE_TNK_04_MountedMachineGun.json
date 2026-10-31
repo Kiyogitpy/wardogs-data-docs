@@ -1,0 +1,132 @@
+--- export: UDataAsset / WE_TNK_04_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_TNK_04_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/TNK_04/Weapons/WeaponExtensions/MountedMachineGun/WE_TNK_04_MountedMachineGun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.TNK_04.MountedMachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.MountedMachineGun_TNK_04"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.TNK_04.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.HMG.MWSY_001"
+      }
+    },
+    "WeaponExtensionName": "Mounted M2 Browning",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_MWSY_001_Heavy_MountedMachineGun_Stats'",
+      "ObjectPath": "/MWSY_001/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "MountedMachineGun"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 8.0,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.50Cal"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.50Cal"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.50Cal.Tracer"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_MWSY_001_MountedMachineGun_Audio'",
+      "ObjectPath": "/MWSY_001/Data/DA_MWSY_001_MountedMachineGun_Audio.0"
+    },
+    "OperatorStateAnimations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_MWSY_001_Idle'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/A_FP_MWSY_001_Idle.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Humvee_Turret_M249_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Humvee_Turret_M249_Crouch_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": null,
+          "PerSeatBlendSpaces": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_MWSY_001_Idle'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/A_FP_MWSY_001_Idle.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_4x4_Turret_MWSY_001_Idle'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/WHL_08_AO/A_TP_4x4_Turret_MWSY_001_Idle.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": {
+            "ObjectName": "BlendSpace'BS_WHL_08_MWSY_001_AO'",
+            "ObjectPath": "/MWSY_001/Animation/Anims/WHL_08_AO/BS_WHL_08_MWSY_001_AO.0"
+          },
+          "PerSeatBlendSpaces": []
+        }
+      }
+    ],
+    "OperatorIdleSequence": {
+      "ObjectName": "AnimSequence'A_FP_MWSY_001_Idle'",
+      "ObjectPath": "/MWSY_001/Animation/Anims/A_FP_MWSY_001_Idle.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_TankMG_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_TankMG.1"
+    },
+    "FireCameraShakeMultiplier": 0.8
+  }
+}

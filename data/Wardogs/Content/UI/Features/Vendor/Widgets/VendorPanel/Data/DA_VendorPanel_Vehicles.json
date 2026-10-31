@@ -1,0 +1,84 @@
+--- export: UDataAsset / DA_VendorPanel_Vehicles ---
+{
+  "Type": "WDUIVendorPanelData_Vehicles",
+  "Name": "DA_VendorPanel_Vehicles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_Vehicles'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Vehicles",
+  "Properties": {
+    "SpaceOccupiedPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.VehicleSpaceOccupied"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.VehicleSpaceOccupied",
+        "SourceString": "No Space Available",
+        "LocalizedString": "No Space Available"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.VehicleSpaceOccupied",
+        "SourceString": "Unable to Deliver Vehicle",
+        "LocalizedString": "Unable to Deliver Vehicle"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.VehicleSpaceOccupied",
+        "SourceString": "All vehicle bays are currently occupied. \r\n\r\nPlease ensure space is available in order to have your vehicle successfully delivered.",
+        "LocalizedString": "All vehicle bays are currently occupied. \r\n\r\nPlease ensure space is available in order to have your vehicle successfully delivered."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.OK",
+              "SourceString": "OK",
+              "LocalizedString": "OK"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "PurchasableEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPurchasableItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Purchasable_Vehicle.DA_ItemCard_Vendor_Purchasable_Vehicle",
+        "SubPathString": ""
+      }
+    },
+    "PreviousSubcategoryActionTag": {
+      "TagName": "UI.Action.Feature.Vendor.Filter.Previous"
+    },
+    "NextSubcategoryActionTag": {
+      "TagName": "UI.Action.Feature.Vendor.Filter.Next"
+    },
+    "ShowAllSubcategoryForCategories": [
+      "Vendor.Category.Vehicle.Air",
+      "Vendor.Category.Vehicle.Land",
+      "Vendor.Category.Vehicle.Sea"
+    ],
+    "DefaultCardSize": "EWDUIVendorPanelCardSize::Large",
+    "PageTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.Page",
+      "SourceString": "PG.{Page} //",
+      "LocalizedString": "PG.{Page} //"
+    }
+  }
+}

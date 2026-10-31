@@ -1,0 +1,95 @@
+--- export: UPrimaryDataAsset / VV_WHL_07_ArmouredBattle ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_07_ArmouredBattle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_07_ArmouredBattle/Variants/VV_WHL_07_ArmouredBattle",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -401.2754,
+        "Y": -146.63548,
+        "Z": -0.505
+      },
+      "Max": {
+        "X": 399.66324,
+        "Y": 146.63458,
+        "Z": 289.1306
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_07'",
+        "ObjectPath": "/WHL_07/Platforms/VP_WHL_07.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_Seats_ArmouredBattle.VP_WHL_07_Seats_ArmouredBattle",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_Rearback_ArmouredBattle.VP_WHL_07_Rearback_ArmouredBattle",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "WeaponryL"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_MountedMachinegun_L.VP_WHL_07_MountedMachinegun_L",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "WeaponryR"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_MountedMachinegun_R.VP_WHL_07_MountedMachinegun_R",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Interactions"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_Interactions_ArmouredBattle.VP_WHL_07_Interactions_ArmouredBattle",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "/WHL_07/Meshes/SK_WHL_07_Battle.SK_WHL_07_Battle",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

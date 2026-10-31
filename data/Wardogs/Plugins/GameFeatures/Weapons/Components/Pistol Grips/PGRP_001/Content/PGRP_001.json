@@ -1,0 +1,56 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_2 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'PGRP_001'",
+    "ObjectPath": "/PGRP_001/PGRP_001.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_PGRP_001'",
+      "ObjectPath": "/PGRP_001/EDL_PGRP_001.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / PGRP_001 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "PGRP_001",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/PGRP_001/PGRP_001",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'PGRP_001:GameFeatureAction_AddWorldPartitionContent_2'",
+        "ObjectPath": "/PGRP_001/PGRP_001.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/PGRP_001/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

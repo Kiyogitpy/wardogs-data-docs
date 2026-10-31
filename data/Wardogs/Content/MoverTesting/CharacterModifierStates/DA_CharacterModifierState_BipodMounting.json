@@ -1,0 +1,119 @@
+--- export: UObject / WDCharacterModifier_BipodMounting_0 ---
+{
+  "Type": "WDCharacterModifier_BipodMounting",
+  "Name": "WDCharacterModifier_BipodMounting_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_BipodMounting'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_BipodMounting'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting.3"
+  }
+}
+--- export: UObject / WDCharacterModifier_BipodMountingCameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_BipodMountingCameraLock",
+  "Name": "WDCharacterModifier_BipodMountingCameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_BipodMountingCameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_BipodMounting'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting.3"
+  },
+  "Properties": {
+    "PitchLockSettings": {
+      "LockAngle": 10.0,
+      "bInterpolateTarget": false
+    },
+    "YawLockSettings": {
+      "LockAngle": 10.0,
+      "bInterpolateTarget": false
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_BipodMounting'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "Action.Weapon.Bipod.Mount"
+        },
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        2,
+        2,
+        1,
+        0,
+        3,
+        6,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "UserDescription": "We are alive and not in a vehicle",
+      "AutoDescription": " ALL(  ALL( Action.Weapon.Bipod.Mount ),  NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead, State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger ) )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_BipodMounting ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_BipodMounting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.BipodMounting"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_BipodMounting'DA_CharacterModifierState_BipodMounting:WDCharacterModifier_BipodMounting_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting.0"
+      },
+      {
+        "ObjectName": "WDCharacterModifier_BipodMountingCameraLock'DA_CharacterModifierState_BipodMounting:WDCharacterModifier_BipodMountingCameraLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting.1"
+      }
+    ],
+    "Priority": 124,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_BipodMounting:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BipodMounting.2"
+      }
+    ]
+  }
+}

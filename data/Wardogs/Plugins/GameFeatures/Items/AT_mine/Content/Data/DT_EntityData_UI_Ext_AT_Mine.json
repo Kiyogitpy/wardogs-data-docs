@@ -1,0 +1,139 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_AT_Mine ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_AT_Mine",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/AT_mine/Data/DT_EntityData_UI_Ext_AT_Mine",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "ID.Item.ATMine": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.ATMine",
+        "SourceString": "AT Mine",
+        "LocalizedString": "AT Mine"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.ATMine.Description",
+        "SourceString": "- Placeable Anti-Vehicle Mines\r\n- Pressure Triggered by Vehicles only",
+        "LocalizedString": "- Placeable Anti-Vehicle Mines\r\n- Pressure Triggered by Vehicles only"
+      },
+      "Category": {
+        "TagName": "Item.Category.Deployable"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.ATMine.Description",
+            "SourceString": "- Placeable Anti-Vehicle Mines\r\n- Pressure Triggered by Vehicles only",
+            "LocalizedString": "- Placeable Anti-Vehicle Mines\r\n- Pressure Triggered by Vehicles only"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Lethal",
+            "SourceString": "Lethal // Quick Slot",
+            "LocalizedString": "Lethal // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.ATMine.Flavor",
+            "SourceString": "Perfect for placing traps and taking enemy Vehicles by surprise.",
+            "LocalizedString": "Perfect for placing traps and taking enemy Vehicles by surprise."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_TempLandmine_Icon.T_TempLandmine_Icon",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Vendor_ATMine2.T_UI_Vendor_ATMine2",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_APMine.T_UI_Icon_Killfeed_APMine",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Item_Mine_BC.T_UI_Item_Mine_BC",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.ATMine"
+      }
+    }
+  }
+}

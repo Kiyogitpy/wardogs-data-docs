@@ -1,0 +1,394 @@
+--- export: UDataTable / DT_DriverSkills ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DriverSkills",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CharacterSkills/DT_DriverSkills",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Driver.HorizontalRecoil.MountedGun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_DriverSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_DriverSkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_MountedGun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "ID.Item.HeavyTankMountedMachineGun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Driver.HorizontalRecoil.MountedGun"
+      }
+    },
+    "Meta.Role.Driver.VerticalRecoil.MountedGun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_DriverSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_DriverSkills.0"
+                        },
+                        "RowName": "VerticalRecoil_MountedGun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "ID.Item.HeavyTankMountedMachineGun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Driver.VerticalRecoil.MountedGun"
+      }
+    },
+    "Meta.Role.Driver.ImpactDamageReduction": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Vehicle"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Vehicle_ImpactReductionMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Vehicle/GE_Vehicle_ImpactReductionMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Health.ImpactReductionMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_DriverSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_DriverSkills.0"
+                        },
+                        "RowName": "ImpactDamageReduction"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "VehicleApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Vehicle.Variant.Land"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Vehicle.Variant.Land )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Driver.ImpactDamageReduction"
+      }
+    },
+    "Meta.Role.Driver.FuelUsageReduction": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Vehicle"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Vehicle_FuelUsageReductionMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Vehicle/GE_Vehicle_FuelUsageReductionMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.FuelUsageReductionMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_DriverSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_DriverSkills.0"
+                        },
+                        "RowName": "FuelUsageReduction"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "VehicleApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Vehicle.Variant.Land"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Vehicle.Variant.Land )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Driver.FuelUsageReduction"
+      }
+    },
+    "Meta.Role.Driver.AimDownSightSpeed.MountedGun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_DriverSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_DriverSkills.0"
+                        },
+                        "RowName": "AimDownSight_MountedGun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "ID.Item.HeavyTankMountedMachineGun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Driver.AimDownSightSpeed.MountedGun"
+      }
+    },
+    "Meta.Role.Driver.IncreasedHealth.SupplyCrate": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.SupplyCrate"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Vehicle_Health_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Vehicle/GE_Vehicle_Health.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Health"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_DriverSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_DriverSkills.0"
+                        },
+                        "RowName": "IncreasedHealth_SupplyCrate"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "VehicleApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Vehicle.Variant.Land"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Vehicle.Variant.Land )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Driver.IncreasedHealth.SupplyCrate"
+      }
+    }
+  }
+}

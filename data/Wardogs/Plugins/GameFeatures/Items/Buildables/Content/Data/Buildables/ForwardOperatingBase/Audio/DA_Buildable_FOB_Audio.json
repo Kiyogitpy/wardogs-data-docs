@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / DA_Buildable_FOB_Audio ---
+{
+  "Type": "WDAudioData",
+  "Name": "DA_Buildable_FOB_Audio",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioData'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/DA_Buildable_FOB_Audio",
+  "Properties": {
+    "SoundAssets": [
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Buildable.Destroyed"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Buildable_Destroyed'",
+          "ObjectPath": "/Buildables/Data/Buildables/Audio/MSS/MSS_Buildable_Destroyed.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Buildable.Placed"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Item_FOB_Spawn'",
+          "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/MSS/3p/MSS_Item_FOB_Spawn.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Buildable.Damaged"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Buildable_Damaged'",
+          "ObjectPath": "/Buildables/Data/Buildables/Audio/MSS/MSS_Buildable_Damaged.0"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+--- export: UObject / AEB_WindowDamage_C_0 ---
+{
+  "Type": "AEB_WindowDamage_C",
+  "Name": "AEB_WindowDamage_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_WindowDamage.AEB_WindowDamage_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_WindowDamage'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_WindowDamage_C'Default__AEB_WindowDamage_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_WindowDamage.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Destruction_WindowDamage ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Destruction_WindowDamage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Destruction.DamagedWindow"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Destruction_WindowDamage:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage.2"
+      },
+      {
+        "ObjectName": "AEB_WindowDamage_C'AE_Destruction_WindowDamage:AEB_WindowDamage_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Destruction_WindowDamage:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 15.25
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_WindowDamage'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_WindowDamage'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_WindowDamage.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Dest_Glass_WindowDamage'",
+      "ObjectPath": "/Game/Audio/Destruction/MSS/MSS_Dest_Glass_WindowDamage.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

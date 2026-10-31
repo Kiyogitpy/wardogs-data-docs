@@ -1,0 +1,132 @@
+--- export: UDataTable / DT_Editor_TrackerData_WorldDisplay ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Editor_TrackerData_WorldDisplay",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Tools/WorldDisplay/Data/DT_Editor_TrackerData_WorldDisplay",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.SupplyCrate": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIStaticTransformTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Tools/WorldDisplay/Trackers/W_Editor_Tracker_Location_1.W_Editor_Tracker_Location_1_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location.DA_Editor_Tracker_Location",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SupplyCrate"
+      }
+    },
+    "Trackers.Type.Spawn": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIStaticTransformTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Tools/WorldDisplay/Trackers/W_Editor_Tracker_Location_2.W_Editor_Tracker_Location_2_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location.DA_Editor_Tracker_Location",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Spawn"
+      }
+    },
+    "Trackers.Type.Tooling.Jira": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIStaticTransformTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/Tools/BugsMap/W_Tracker_JiraTicket.W_Tracker_JiraTicket_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location.DA_Editor_Tracker_Location",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Tooling.Jira"
+      }
+    },
+    "Trackers.Type.Tooling.SceneComponent": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIStaticTransformTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Tools/WorldDisplay/Trackers/W_Editor_Tracker_SceneComponent.W_Editor_Tracker_SceneComponent_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location.DA_Editor_Tracker_Location",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Tooling.SceneComponent"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+--- export: UDataTable / DT_WagerPricing ---
+{
+  "Type": "DataTable",
+  "Name": "DT_WagerPricing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Wagers/DT_WagerPricing",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDWagerPricingDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Wager.Pricing": {
+      "Pricing": {
+        "_aaaaneeiimhdoagdnepon": 1.001,
+        "_aaaanhjhmeoeolaclenmp": 100.0,
+        "FoldBonusStep": 0.25,
+        "MaxPayout": 5000000,
+        "LivesOdds": [
+          1.009,
+          1.003,
+          1.002,
+          1.001
+        ]
+      },
+      "MinStake": 2500,
+      "MaxStake": 100000,
+      "_aaabdmginceanljpngccf": false,
+      "_aaabappeahnblfboghmcb": false,
+      "_aaabdfkjenifhpkjaffkh": false,
+      "Tag": {
+        "TagName": "Wager.Pricing"
+      }
+    }
+  }
+}

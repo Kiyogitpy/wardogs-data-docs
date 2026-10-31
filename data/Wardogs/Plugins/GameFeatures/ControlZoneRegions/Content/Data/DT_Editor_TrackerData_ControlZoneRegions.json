@@ -1,0 +1,45 @@
+--- export: UDataTable / DT_Editor_TrackerData_ControlZoneRegions ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Editor_TrackerData_ControlZoneRegions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ControlZoneRegions/Data/DT_Editor_TrackerData_ControlZoneRegions",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.ControlZone": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIStaticTransformTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/ControlZoneRegions/Data/UI/W_Editor_Tracker_Regions.W_Editor_Tracker_Regions_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ControlZoneRegionsRuntime.WDUIRegionsTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Tools/WorldDisplay/Data/DA_Editor_Tracker_Location.DA_Editor_Tracker_Location",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.ControlZone"
+      }
+    }
+  }
+}

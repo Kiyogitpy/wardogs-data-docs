@@ -1,0 +1,46 @@
+--- export: UDataAsset / DA_SettingValue_Rotator ---
+{
+  "Type": "WDUISettingValueRotatorData",
+  "Name": "DA_SettingValue_Rotator",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingValueRotatorData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_Rotator",
+  "Properties": {
+    "UnknownValueText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+      "Key": "Value.Unknown",
+      "SourceString": "Custom",
+      "LocalizedString": "Custom"
+    },
+    "bCanBeNudged": true,
+    "bCanBeContinuouslyNudged": true,
+    "NudgeCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Constant",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 0.5,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Constant",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.5,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

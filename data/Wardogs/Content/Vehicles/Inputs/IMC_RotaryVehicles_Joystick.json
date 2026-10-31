@@ -1,0 +1,474 @@
+--- export: UDataAsset / IMC_RotaryVehicles_Joystick ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_RotaryVehicles_Joystick",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_RotaryVehicles_Joystick:InputTriggerDown_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.12"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDHOTASAxisCenterModifier'IMC_RotaryVehicles_Joystick:WDHOTASAxisCenterModifier_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.18"
+            },
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_RotaryVehicles_Joystick:InputModifierDeadZone_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.2"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Pedals'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Pedals.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Axis_Yaw"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_RotaryVehicles_Joystick:InputTriggerDown_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.11"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDHOTASAxisCenterModifier'IMC_RotaryVehicles_Joystick:WDHOTASAxisCenterModifier_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.17"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_RotaryVehicles_Joystick:InputModifierSwizzleAxis_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.9"
+            },
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_RotaryVehicles_Joystick:InputModifierDeadZone_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.1"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Axis_Roll"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_RotaryVehicles_Joystick:InputTriggerDown_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.14"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDHOTASAxisCenterModifier'IMC_RotaryVehicles_Joystick:WDHOTASAxisCenterModifier_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.20"
+            },
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_RotaryVehicles_Joystick:InputModifierDeadZone_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.4"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_RotaryVehicles_Joystick:InputModifierNegate_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.8"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Axis_Pitch"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_RotaryVehicles_Joystick:InputTriggerDown_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.13"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDHOTASAxisCenterModifier'IMC_RotaryVehicles_Joystick:WDHOTASAxisCenterModifier_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.19"
+            },
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_RotaryVehicles_Joystick:InputModifierDeadZone_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Collective_Absolute'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Collective_Absolute.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Axis_Throttle"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_RotaryVehicles_Joystick:InputTriggerDown_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.15"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDHOTASAxisCenterModifier'IMC_RotaryVehicles_Joystick:WDHOTASAxisCenterModifier_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.21"
+            },
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_RotaryVehicles_Joystick:InputModifierDeadZone_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.5"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_FreeLookDirectional'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_FreeLookDirectional.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Axis_LookYaw"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerDown'IMC_RotaryVehicles_Joystick:InputTriggerDown_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.16"
+            }
+          ],
+          "Modifiers": [
+            {
+              "ObjectName": "WDHOTASAxisCenterModifier'IMC_RotaryVehicles_Joystick:WDHOTASAxisCenterModifier_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.22"
+            },
+            {
+              "ObjectName": "InputModifierSwizzleAxis'IMC_RotaryVehicles_Joystick:InputModifierSwizzleAxis_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.10"
+            },
+            {
+              "ObjectName": "InputModifierDeadZone'IMC_RotaryVehicles_Joystick:InputModifierDeadZone_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.6"
+            },
+            {
+              "ObjectName": "InputModifierNegate'IMC_RotaryVehicles_Joystick:InputModifierNegate_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.7"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Camera_FreeLookDirectional'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_FreeLookDirectional.0"
+          },
+          "Key": {
+            "KeyName": "HOTAS_Axis_LookPitch"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputModifierDeadZone_0 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "LowerThreshold": 0.0,
+    "Type": "EDeadZoneType::Axial"
+  }
+}
+--- export: UObject / InputModifierDeadZone_1 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "LowerThreshold": 0.0,
+    "Type": "EDeadZoneType::Axial"
+  }
+}
+--- export: UObject / InputModifierDeadZone_2 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "LowerThreshold": 0.0,
+    "Type": "EDeadZoneType::Axial"
+  }
+}
+--- export: UObject / InputModifierDeadZone_3 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "LowerThreshold": 0.0,
+    "Type": "EDeadZoneType::Axial"
+  }
+}
+--- export: UObject / InputModifierDeadZone_4 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "LowerThreshold": 0.1,
+    "Type": "EDeadZoneType::Axial"
+  }
+}
+--- export: UObject / InputModifierDeadZone_5 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_5",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "LowerThreshold": 0.1,
+    "Type": "EDeadZoneType::Axial"
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "bX": false,
+    "bZ": false
+  }
+}
+--- export: UObject / InputModifierNegate_1 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_0 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_1 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerDown_1 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerDown_2 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerDown_3 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.0
+  }
+}
+--- export: UObject / InputTriggerDown_4 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / InputTriggerDown_5 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_5",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / WDHOTASAxisCenterModifier_0 ---
+{
+  "Type": "WDHOTASAxisCenterModifier",
+  "Name": "WDHOTASAxisCenterModifier_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHOTASAxisCenterModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / WDHOTASAxisCenterModifier_1 ---
+{
+  "Type": "WDHOTASAxisCenterModifier",
+  "Name": "WDHOTASAxisCenterModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHOTASAxisCenterModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / WDHOTASAxisCenterModifier_2 ---
+{
+  "Type": "WDHOTASAxisCenterModifier",
+  "Name": "WDHOTASAxisCenterModifier_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHOTASAxisCenterModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / WDHOTASAxisCenterModifier_3 ---
+{
+  "Type": "WDHOTASAxisCenterModifier",
+  "Name": "WDHOTASAxisCenterModifier_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHOTASAxisCenterModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / WDHOTASAxisCenterModifier_4 ---
+{
+  "Type": "WDHOTASAxisCenterModifier",
+  "Name": "WDHOTASAxisCenterModifier_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHOTASAxisCenterModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}
+--- export: UObject / WDHOTASAxisCenterModifier_5 ---
+{
+  "Type": "WDHOTASAxisCenterModifier",
+  "Name": "WDHOTASAxisCenterModifier_5",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDHOTASAxisCenterModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_RotaryVehicles_Joystick'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Joystick.0"
+  }
+}

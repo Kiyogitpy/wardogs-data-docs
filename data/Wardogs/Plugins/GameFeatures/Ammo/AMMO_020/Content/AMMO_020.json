@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_2 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'AMMO_020'",
+    "ObjectPath": "/AMMO_020/AMMO_020.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_AMMO_020'",
+      "ObjectPath": "/AMMO_020/EDL_AMMO_020.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AMMO_020 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "AMMO_020",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/AMMO_020/AMMO_020",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'AMMO_020:GameFeatureAction_AddWorldPartitionContent_2'",
+        "ObjectPath": "/AMMO_020/AMMO_020.0"
+      }
+    ]
+  }
+}

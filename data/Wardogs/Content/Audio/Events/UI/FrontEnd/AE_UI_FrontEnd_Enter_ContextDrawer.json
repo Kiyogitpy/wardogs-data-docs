@@ -1,0 +1,69 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Enter_ContextDrawer'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_ContextDrawer.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_ContextDrawer'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_ContextDrawer.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Enter_ContextDrawer ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Enter_ContextDrawer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_ContextDrawer",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.ContextDrawer"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_FrontEnd_Enter_ContextDrawer:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_ContextDrawer.2"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_UI_FrontEnd_Enter_ContextDrawer:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_ContextDrawer.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Enter_ContextDrawer'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_ContextDrawer.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_FrontEnd_Enter_ContextDrawer'",
+      "ObjectPath": "/Game/Audio/UI/FrontEnd/MSS_UI_FrontEnd_Enter_ContextDrawer.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.FrontEnd.Open.ContextDrawer"
+    }
+  }
+}

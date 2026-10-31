@@ -1,0 +1,34 @@
+--- export: UDataAsset / DA_AdminPanel ---
+{
+  "Type": "WDUIAdminPanelData",
+  "Name": "DA_AdminPanel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIAdminPanelData'",
+  "Package": "/Game/UI/Features/AdminPanel/Data/DA_AdminPanel",
+  "Properties": {
+    "GrantableItemEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIAdminPanelEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "CommandListEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIAdminPanelCommandListEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "DefaultItemIdText": {
+      "CultureInvariantString": "ID.Item.Missing"
+    },
+    "DefaultItemNameText": {
+      "CultureInvariantString": "Missing Item Info"
+    },
+    "PurchasableEntityCategories": [
+      "Vendor.Category.Utility",
+      "Vendor.Category.Weapon",
+      "Vendor.Category.Attachment",
+      "Vendor.Category.Gear"
+    ]
+  }
+}

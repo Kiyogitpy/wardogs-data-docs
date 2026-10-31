@@ -1,0 +1,65 @@
+--- export: UPrimaryDataAsset / AE_Item_Disarm_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Disarm_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/AE_Item_Disarm_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Disarm.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Item_Disarm_Start:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Item_Disarm_Start.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Item_Disarm_Start:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Item_Disarm_Start.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Disarm_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Item_Disarm_Start.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 10.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Disarm"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Disarm_Start'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Item_Disarm_Start.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_Disarm_Start'",
+      "ObjectPath": "/Game/Audio/Item/Disarm/MSS/MSS_Item_Disarm_Start.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Disarm"
+    }
+  }
+}

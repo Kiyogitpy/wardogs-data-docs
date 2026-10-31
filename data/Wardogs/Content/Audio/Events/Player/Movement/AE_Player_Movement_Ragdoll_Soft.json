@@ -1,0 +1,70 @@
+--- export: UPrimaryDataAsset / AE_Player_Movement_Ragdoll_Soft ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Movement_Ragdoll_Soft",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Soft",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Ragdoll.Soft"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Movement_Ragdoll_Soft:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Soft.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Player_Movement_Ragdoll_Soft:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Soft.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 55.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Movement_Ragdoll_Soft'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Soft.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ragdoll"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Movement_Ragdoll_Soft'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Movement_Ragdoll_Soft.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Footstep.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_PlayerMovement_Ragdoll_Soft'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Ragdoll/DA_PlayerMovement_Ragdoll_Soft.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ragdoll"
+    },
+    "bStatic": true
+  }
+}

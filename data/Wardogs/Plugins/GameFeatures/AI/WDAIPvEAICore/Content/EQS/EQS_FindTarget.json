@@ -1,0 +1,237 @@
+--- export: UDataAsset / EQS_FindTarget ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindTarget",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/WDAIPvEAICore/EQS/EQS_FindTarget",
+  "Properties": {
+    "QueryName": "EQS_FindTarget",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindTarget:EnvQueryOption_3'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.3"
+      },
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindTarget:EnvQueryOption_0'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.1"
+      },
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindTarget:EnvQueryOption_1'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "WDEnvQueryGenerator_ThreatActors'EQS_FindTarget:WDEnvQueryGenerator_ThreatActors_1'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.8"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_GameplayTags'EQS_FindTarget:EnvQueryTest_GameplayTags_0'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.4"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "WDEnvQueryGenerator_ThreatActors'EQS_FindTarget:WDEnvQueryGenerator_ThreatActors_2'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.9"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_GameplayTags'EQS_FindTarget:EnvQueryTest_GameplayTags_2'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.6"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_3 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "WDEnvQueryGenerator_ThreatActors'EQS_FindTarget:WDEnvQueryGenerator_ThreatActors_0'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.7"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_GameplayTags'EQS_FindTarget:EnvQueryTest_GameplayTags_1'",
+        "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.5"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_GameplayTags_0 ---
+{
+  "Type": "EnvQueryTest_GameplayTags",
+  "Name": "EnvQueryTest_GameplayTags_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_GameplayTags'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "TagQueryToMatch": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Alive"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "UserDescription": "Actor is 'alive'.",
+      "AutoDescription": " ALL( State.Player.Vitality.Alive )"
+    },
+    "bUpdatedToUseQuery": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_GameplayTags_1 ---
+{
+  "Type": "EnvQueryTest_GameplayTags",
+  "Name": "EnvQueryTest_GameplayTags_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_GameplayTags'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "TagQueryToMatch": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Alive"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "UserDescription": "Actor is 'alive'.",
+      "AutoDescription": " ALL( State.Player.Vitality.Alive )"
+    },
+    "bUpdatedToUseQuery": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_GameplayTags_2 ---
+{
+  "Type": "EnvQueryTest_GameplayTags",
+  "Name": "EnvQueryTest_GameplayTags_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_GameplayTags'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "TagQueryToMatch": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Alive"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "UserDescription": "Actor is 'alive'.",
+      "AutoDescription": " ALL( State.Player.Vitality.Alive )"
+    },
+    "bUpdatedToUseQuery": true,
+    "VerNum": 2
+  }
+}
+--- export: UObject / WDEnvQueryGenerator_ThreatActors_0 ---
+{
+  "Type": "WDEnvQueryGenerator_ThreatActors",
+  "Name": "WDEnvQueryGenerator_ThreatActors_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryGenerator_ThreatActors'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDEnvQueryGenerator_ThreatActors_1 ---
+{
+  "Type": "WDEnvQueryGenerator_ThreatActors",
+  "Name": "WDEnvQueryGenerator_ThreatActors_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryGenerator_ThreatActors'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "SenseToUse": {
+      "ObjectName": "Class'AISense_Hearing'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDEnvQueryGenerator_ThreatActors_2 ---
+{
+  "Type": "WDEnvQueryGenerator_ThreatActors",
+  "Name": "WDEnvQueryGenerator_ThreatActors_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryGenerator_ThreatActors'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindTarget'",
+    "ObjectPath": "/WDAIPvEAICore/EQS/EQS_FindTarget.0"
+  },
+  "Properties": {
+    "SenseToUse": {
+      "ObjectName": "Class'AISense_Damage'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "VerNum": 1
+  }
+}

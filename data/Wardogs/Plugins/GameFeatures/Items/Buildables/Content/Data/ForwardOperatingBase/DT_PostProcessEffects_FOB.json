@@ -1,0 +1,33 @@
+--- export: UDataTable / DT_PostProcessEffects_FOB ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PostProcessEffects_FOB",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/ForwardOperatingBase/DT_PostProcessEffects_FOB",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPostProcessEffect'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "PostProcessEffect.ShowFOBExtents": {
+      "MaterialClass": {
+        "ObjectName": "Material'PP_FOBBuildableArea'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/PP_FOBBuildableArea.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": false,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.ShowFOBExtents"
+      }
+    }
+  }
+}

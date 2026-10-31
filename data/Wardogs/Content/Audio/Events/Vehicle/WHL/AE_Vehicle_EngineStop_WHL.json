@@ -1,0 +1,125 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_EngineStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetVehicleHostility_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHostility.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_1 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_EngineStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "Class'WDAudioEventBehaviorVehicleThreatLevel'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_2 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_EngineStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_Doppler_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_EngineStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "Engine On",
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_EngineStop_WHL ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_EngineStop_WHL",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Engine.Stop.WHL"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_EngineStop_WHL:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.3"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_EngineStop_WHL:AEB_EndBehavior_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.1"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_EngineStop_WHL:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.0"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_EngineStop_WHL:AEB_EndBehavior_C_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_EngineStop_WHL.2"
+      }
+    ]
+  }
+}

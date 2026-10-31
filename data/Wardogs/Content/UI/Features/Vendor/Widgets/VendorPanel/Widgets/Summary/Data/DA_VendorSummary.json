@@ -1,0 +1,90 @@
+--- export: UDataAsset / DA_VendorSummary ---
+{
+  "Type": "WDUIVendorSummaryData",
+  "Name": "DA_VendorSummary",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorSummaryData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Widgets/Summary/Data/DA_VendorSummary",
+  "Properties": {
+    "WeightDisplayViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWeightDisplayViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/WeightDisplay/Data/DA_WeightDisplay.DA_WeightDisplay",
+        "SubPathString": ""
+      }
+    },
+    "WeaponSlotTags": [
+      "Inventory.Slot.Primary"
+    ],
+    "PurchaseText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Button.Purchase",
+      "SourceString": "Purchase",
+      "LocalizedString": "Purchase"
+    },
+    "PurchaseUnavailableText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Button.Purchase.Unavailable",
+      "SourceString": "Unavailable",
+      "LocalizedString": "Unavailable"
+    },
+    "NoAmmoText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+      "Key": "Text.NoAmmo",
+      "SourceString": "No Ammo",
+      "LocalizedString": "No Ammo"
+    },
+    "LowAmmoText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+      "Key": "Text.LowAmmo",
+      "SourceString": "Low Ammo",
+      "LocalizedString": "Low Ammo"
+    },
+    "CapacityFormat": {
+      "CultureInvariantString": "{Amount}/{Capacity}"
+    },
+    "NewRecruitDiscountLevelFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.DiscountExpiry",
+      "SourceString": "Expires: Lvl {Level}",
+      "LocalizedString": "Expires: Lvl {Level}"
+    },
+    "PurchaseUnavailablePopupData": {
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Vendor.PurchaseUnavailable",
+        "SourceString": "Purchase Unavailable",
+        "LocalizedString": "Purchase Unavailable"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Vendor.PurchaseUnavailable",
+        "SourceString": "You may not complete any purchases at this time.",
+        "LocalizedString": "You may not complete any purchases at this time."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.OK",
+              "SourceString": "OK",
+              "LocalizedString": "OK"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    }
+  }
+}

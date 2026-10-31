@@ -1,0 +1,25 @@
+--- export: UDataAsset / DA_Itemsmith_FavouritePaint_BrowserItem ---
+{
+  "Type": "WDUIItemsmithBrowserItemData",
+  "Name": "DA_Itemsmith_FavouritePaint_BrowserItem",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithBrowserItemData'",
+  "Package": "/Itemsmith/UI/Flair/PaintSelect/Data/Favourites/DA_Itemsmith_FavouritePaint_BrowserItem",
+  "Properties": {
+    "bShouldDisplayEntryName": false,
+    "bShouldDisplayPriceValue": false,
+    "IconType": {
+      "TagName": "UI.Icon.Gunsmith.Paint"
+    },
+    "ItemIconLoadingTexture": {
+      "ObjectName": "Texture2D'T_UI_Empty'",
+      "ObjectPath": "/Game/UI/Shared/Textures/T_UI_Empty.0"
+    },
+    "EntityDataName": "Gunsmith_EntityData_UI",
+    "DefaultPersistentActions": [
+      {
+        "TagName": "Itemsmith.Actions.Persistent.FavouritePaint"
+      }
+    ]
+  }
+}

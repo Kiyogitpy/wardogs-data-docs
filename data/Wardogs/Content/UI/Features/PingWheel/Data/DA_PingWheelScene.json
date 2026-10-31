@@ -1,0 +1,146 @@
+--- export: UDataAsset / DA_PingWheelScene ---
+{
+  "Type": "WDUIPingWheelData",
+  "Name": "DA_PingWheelScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPingWheelData'",
+  "Package": "/Game/UI/Features/PingWheel/Data/DA_PingWheelScene",
+  "Properties": {
+    "CategoryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPingWheelCategoryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Category/Data/DA_PingWheelCategory.DA_PingWheelCategory",
+        "SubPathString": ""
+      }
+    },
+    "ActionViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPingWheelActionViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Data/DA_PingWheelAction.DA_PingWheelAction",
+        "SubPathString": ""
+      }
+    },
+    "DisplayedCategories": [
+      {
+        "Key": {
+          "TagName": "UI.Features.PingWheel.Category.Requests"
+        },
+        "Value": {
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "NumberOfActionPages": 1,
+          "Pages": [
+            {
+              "Text": {
+                "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+                "Key": "Category.Requests",
+                "SourceString": "Requests",
+                "LocalizedString": "Requests"
+              }
+            }
+          ],
+          "State": "EWDUIPingWheelCategoryState::Default"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.PingWheel.Category.Squad"
+        },
+        "Value": {
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "NumberOfActionPages": 1,
+          "Pages": [
+            {
+              "Text": {
+                "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+                "Key": "Category.Squad",
+                "SourceString": "Squad",
+                "LocalizedString": "Squad"
+              }
+            },
+            {
+              "Text": {
+                "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+                "Key": "Category.Orders",
+                "SourceString": "Orders",
+                "LocalizedString": "Orders"
+              }
+            }
+          ],
+          "State": "EWDUIPingWheelCategoryState::Default"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.PingWheel.Category.Social"
+        },
+        "Value": {
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "NumberOfActionPages": 1,
+          "Pages": [
+            {
+              "Text": {
+                "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+                "Key": "Category.Social",
+                "SourceString": "Local",
+                "LocalizedString": "Local"
+              }
+            }
+          ],
+          "State": "EWDUIPingWheelCategoryState::Default"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Features.PingWheel.Category.Emotes"
+        },
+        "Value": {
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "NumberOfActionPages": 2,
+          "Pages": [
+            {
+              "Text": {
+                "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+                "Key": "Category.Emotes",
+                "SourceString": "Emotes",
+                "LocalizedString": "Emotes"
+              }
+            },
+            {
+              "Text": {
+                "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+                "Key": "Category.Emotes",
+                "SourceString": "Emotes",
+                "LocalizedString": "Emotes"
+              }
+            }
+          ],
+          "State": "EWDUIPingWheelCategoryState::Default"
+        }
+      }
+    ],
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Request.SceneEnter"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Request.SceneExit"
+    }
+  }
+}

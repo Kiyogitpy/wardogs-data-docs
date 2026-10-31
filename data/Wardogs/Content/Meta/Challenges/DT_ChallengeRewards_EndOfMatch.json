@@ -1,0 +1,1889 @@
+--- export: UDataTable / DT_ChallengeRewards_EndOfMatch ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengeRewards_EndOfMatch",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Challenges/DT_ChallengeRewards_EndOfMatch",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeRewardDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "1000",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [
+                  1000.0
+                ],
+                "Variables": [],
+                "VariableIndexMap": []
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [],
+            "Variables": []
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+      }
+    },
+    "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "500",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [
+                  500.0
+                ],
+                "Variables": [],
+                "VariableIndexMap": []
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [],
+            "Variables": []
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+      }
+    },
+    "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "250",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [
+                  250.0
+                ],
+                "Variables": [],
+                "VariableIndexMap": []
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [],
+            "Variables": []
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+      }
+    },
+    "Challenges.Rewards.EndOfMatchFactionReward.FactionWinBonus": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "FactionWinBonus",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "FactionWinBonus"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "FactionWinBonus",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "FactionWinBonus",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Meta.Alignment.Faction.Alpha"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Meta.Alignment.Faction.Alpha )"
+                      },
+                      "Variable": "LonestarBonus"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Meta.Alignment.Faction.Bravo"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Meta.Alignment.Faction.Bravo )"
+                      },
+                      "Variable": "ValkyraBonus"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Meta.Alignment.Faction.Charlie"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Meta.Alignment.Faction.Charlie )"
+                      },
+                      "Variable": "ManticoreBonus"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "LonestarBonus",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 10000.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ValkyraBonus",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ManticoreBonus",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FactionWinBonus"
+      }
+    },
+    "Challenges.Rewards.EndOfMatchFactionReward.Bonus": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(CashEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(CashEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "CashEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "CashEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "CashEarned",
+                "Value": {
+                  "DefaultOption": "CashEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "CashEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "CashEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.CashEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.3,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.25,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.2,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role.Driver"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(XPEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(XPEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "XPEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "XPEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "DefaultOption": "XPEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "XPEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.75,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.5,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role.Infantry"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(XPEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(XPEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "XPEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "XPEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "DefaultOption": "XPEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "XPEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.75,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.5,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role.Medic"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(XPEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(XPEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "XPEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "XPEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "DefaultOption": "XPEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "XPEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.75,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.5,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role.Pilot"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(XPEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(XPEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "XPEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "XPEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "DefaultOption": "XPEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "XPEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.75,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.5,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role.Recon"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(XPEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(XPEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "XPEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "XPEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "DefaultOption": "XPEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "XPEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.75,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.5,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role.Support"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(XPEarned) * PlacementModifier",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(XPEarned * PlacementModifier)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "XPEarned",
+                  "PlacementModifier"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "XPEarned",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "PlacementModifier",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "DefaultOption": "XPEarned",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "PlacementModifier",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.FirstPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.FirstPlace )"
+                      },
+                      "Variable": "FirstPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.SecondPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.SecondPlace )"
+                      },
+                      "Variable": "SecondPlaceFactor"
+                    },
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Rewards.EndOfMatchFactionReward.ThirdPlace )"
+                      },
+                      "Variable": "ThirdPlaceFactor"
+                    }
+                  ]
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "XPEarned",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::ScalingValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "CashEarned",
+                  "ScalingValueInput": "XPEarned",
+                  "ScalingValueCurveTag": {
+                    "TagName": "LiveCurves.Challenges.SessionEvents.EndOfMatch.XPEarned"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FirstPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "SecondPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.75,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "ThirdPlaceFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.5,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.EndOfMatchFactionReward.Bonus"
+      }
+    }
+  }
+}

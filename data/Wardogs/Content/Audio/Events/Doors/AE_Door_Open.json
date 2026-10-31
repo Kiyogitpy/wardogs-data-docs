@@ -1,0 +1,85 @@
+--- export: UObject / AEB_AttachSoundToStaticMesh_C_0 ---
+{
+  "Type": "AEB_AttachSoundToDoorHandle_C",
+  "Name": "AEB_AttachSoundToStaticMesh_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.AEB_AttachSoundToDoorHandle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Open'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToDoorHandle_C'Default__AEB_AttachSoundToDoorHandle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}
+--- export: UObject / AEB_SelectSoundBasedOnTag_C_0 ---
+{
+  "Type": "AEB_SelectDoorSound_C",
+  "Name": "AEB_SelectSoundBasedOnTag_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SelectDoorSound.AEB_SelectDoorSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Open'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SelectDoorSound_C'Default__AEB_SelectDoorSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SelectDoorSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Door_Open ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Door_Open",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Doors/AE_Door_Open",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Door.Open"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SelectDoorSound_C'AE_Door_Open:AEB_SelectSoundBasedOnTag_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToDoorHandle_C'AE_Door_Open:AEB_AttachSoundToStaticMesh_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Door_Open:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Open'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open.2"
+  },
+  "Properties": {
+    "ParameterName": "Open",
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}

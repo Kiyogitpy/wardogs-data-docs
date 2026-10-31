@@ -1,0 +1,201 @@
+--- export: UDataAsset / WE_STN_06_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_STN_06_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/STN_06/Weapons/WeaponExtensions/WE_STN_06_MountedMachineGun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.STN_06.MountedMachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.MWSY_001.MountedMachineGun"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.MWSY_001.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.STN_06"
+      }
+    },
+    "WeaponExtensionName": "Mounted M2 Browning",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_MWSY_001_Heavy_MountedMachineGun_Stats'",
+      "ObjectPath": "/MWSY_001/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "AR.Stand"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 8.0,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAllowsRestocking": true,
+    "RestockSuppliesTag": {
+      "TagName": "Id.Item.MunitionsSupplies"
+    },
+    "RestockSuppliesNeeded": 200,
+    "ResultingAmmoAmount": 60,
+    "RestockInventoryTag": {
+      "TagName": "Vehicle.AssociatedInventory.FOB"
+    },
+    "AmmoTag": {
+      "TagName": "Id.Item.50Cal.Tracer"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.50Cal"
+    },
+    "AmmoInsertionMethod": "EWDAmmoInsertionMethod::PullsAmmoFromReserve",
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.50Cal.Tracer"
+        },
+        "Value": 60
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_MWSY_001_MountedMachineGun_Audio'",
+      "ObjectPath": "/MWSY_001/Data/DA_MWSY_001_MountedMachineGun_Audio.0"
+    },
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Fire"
+        },
+        "Value": {
+          "FirstPersonPlayerAnimation": null,
+          "ThirdPersonPlayerAnimation": null,
+          "_aaabkaiiiikngfhjclpcl": null,
+          "_aaabknpfkgdelmmgiloin": null
+        }
+      }
+    ],
+    "OperatorStateAnimations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.HipFire"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_MWSY_001_Idle_STN'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/A_FP_MWSY_001_Idle_STN.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Turret_MWSY_001_AO_Idle'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/Buildable_Turret_AO/A_TP_Turret_MWSY_001_AO_Idle.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": {
+            "ObjectName": "BlendSpace'BS_TP_Turret_MWSY_001_AO'",
+            "ObjectPath": "/MWSY_001/Animation/Anims/Buildable_Turret_AO/BS_TP_Turret_MWSY_001_AO.0"
+          },
+          "PerSeatBlendSpaces": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_MWSY_001_Idle_STN'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/A_FP_MWSY_001_Idle_STN.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Turret_MWSY_001_AO_Idle'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/Buildable_Turret_AO/A_TP_Turret_MWSY_001_AO_Idle.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": {
+            "ObjectName": "BlendSpace'BS_TP_Turret_MWSY_001_AO'",
+            "ObjectPath": "/MWSY_001/Animation/Anims/Buildable_Turret_AO/BS_TP_Turret_MWSY_001_AO.0"
+          },
+          "PerSeatBlendSpaces": []
+        }
+      }
+    ],
+    "OperatorIdleSequence": {
+      "ObjectName": "AnimSequence'A_FP_MWSY_001_Idle_STN'",
+      "ObjectPath": "/MWSY_001/Animation/Anims/A_FP_MWSY_001_Idle_STN.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_STN_06_MachineGun_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_STN_06_MachineGun.1"
+    },
+    "TargetingSetup": {
+      "MaxTargetingAngleCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 1.0,
+              "ArriveTangent": -0.0072686863,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": -0.00435961,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": -0.0043527056,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "TargetingDistance": {
+        "Max": 100000.0
+      },
+      "TimeToTarget": 2.0,
+      "FireDelayAfterLock": 0.5,
+      "AllowedTargets": [
+        "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+        "Vehicle.Variant.Air.Airplane.FWG.Default",
+        "Vehicle.Variant.Air.Rotary.Havoc.Default",
+        "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+        "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods",
+        "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+        "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns"
+      ],
+      "bOnlyFireWhenLockedOn": true
+    }
+  }
+}

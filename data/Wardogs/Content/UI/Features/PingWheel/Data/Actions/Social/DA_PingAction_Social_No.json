@@ -1,0 +1,67 @@
+--- export: UObject / WDPingAction_SendTextMessage_0 ---
+{
+  "Type": "WDPingAction_SendTextMessage",
+  "Name": "WDPingAction_SendTextMessage_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_SendTextMessage'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Social_No'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Social/DA_PingAction_Social_No.2"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Social.No",
+      "SourceString": "No",
+      "LocalizedString": "No"
+    },
+    "ChannelType": "EWDChannelType::Proximity"
+  }
+}
+--- export: UObject / WDPingAction_VoxRequest_0 ---
+{
+  "Type": "WDPingAction_VoxRequest",
+  "Name": "WDPingAction_VoxRequest_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_VoxRequest'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Social_No'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Social/DA_PingAction_Social_No.2"
+  },
+  "Properties": {
+    "GameplayCueTag": {
+      "TagName": "GameplayCue.Comms.Social.No"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Social_No ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Social_No",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Social/DA_PingAction_Social_No",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Social.No",
+      "SourceString": "No",
+      "LocalizedString": "No"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Negative_64x64.T_UI_Icon_PingWheel_Negative_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_SendTextMessage'DA_PingAction_Social_No:WDPingAction_SendTextMessage_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Social/DA_PingAction_Social_No.0"
+      },
+      {
+        "ObjectName": "WDPingAction_VoxRequest'DA_PingAction_Social_No:WDPingAction_VoxRequest_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Social/DA_PingAction_Social_No.1"
+      }
+    ]
+  }
+}

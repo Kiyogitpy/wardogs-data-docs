@@ -1,0 +1,40 @@
+--- export: UObject / AEB_SetTinnitusMix_C_0 ---
+{
+  "Type": "AEB_SetTinnitusMix_C",
+  "Name": "AEB_SetTinnitusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetTinnitusMix.AEB_SetTinnitusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_State_Tinnitus'",
+    "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_Tinnitus.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetTinnitusMix_C'Default__AEB_SetTinnitusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetTinnitusMix.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.State.Tinnitus"
+    },
+    "ConcurrentInstanceLimit": 3
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_State_Tinnitus ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_State_Tinnitus",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/State/AE_Player_State_Tinnitus",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.State.Tinnitus"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetTinnitusMix_C'AE_Player_State_Tinnitus:AEB_SetTinnitusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_Tinnitus.0"
+      }
+    ]
+  }
+}

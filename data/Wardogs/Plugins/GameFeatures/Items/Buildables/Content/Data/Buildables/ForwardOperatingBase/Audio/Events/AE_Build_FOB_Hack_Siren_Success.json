@@ -1,0 +1,88 @@
+--- export: UPrimaryDataAsset / AE_Build_FOB_Hack_Siren_Success ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Build_FOB_Hack_Siren_Success",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Build.FOB.Hack.Siren.Success"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Build_FOB_Hack_Siren_Success:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Build_FOB_Hack_Siren_Success:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Build_FOB_Hack_Siren_Success:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Hack_Siren_Success'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 1100.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.Hack.Siren.Complete"
+    },
+    "_aaabhgndclheajnnlnade": 310.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Hack_Siren_Success'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.Hack.Siren"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Hack_Siren_Success'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Success.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_FOB_Hack_Complete'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/MSS/MSS_Item_FOB_Hack_Complete.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.Hack.Siren.Complete"
+    },
+    "_aaabhgndclheajnnlnade": 310.0
+  }
+}

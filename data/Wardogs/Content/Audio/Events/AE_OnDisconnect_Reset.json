@@ -1,0 +1,78 @@
+--- export: UObject / AEB_DeactivateAllControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateAllControlBusMix_C",
+  "Name": "AEB_DeactivateAllControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateAllControlBusMix.AEB_DeactivateAllControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_OnDisconnect_Reset'",
+    "ObjectPath": "/Game/Audio/Events/AE_OnDisconnect_Reset.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateAllControlBusMix_C'Default__AEB_DeactivateAllControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateAllControlBusMix.0"
+  },
+  "Properties": {
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_Submix_DeactivateEffect_C_0 ---
+{
+  "Type": "AEB_Submix_DeactivateEffect_C",
+  "Name": "AEB_Submix_DeactivateEffect_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Submix_DeactivateEffect.AEB_Submix_DeactivateEffect_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_OnDisconnect_Reset'",
+    "ObjectPath": "/Game/Audio/Events/AE_OnDisconnect_Reset.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_Submix_DeactivateEffect_C'Default__AEB_Submix_DeactivateEffect_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Submix_DeactivateEffect.0"
+  },
+  "Properties": {
+    "Sound Submixes": [
+      {
+        "ObjectName": "SoundSubmix'SBMIX_CriticalGroup_Heavy'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_CriticalGroup_Heavy.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_CriticalGroup_Medium'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_CriticalGroup_Medium.0"
+      },
+      {
+        "ObjectName": "SoundSubmix'SBMIX_CriticalGroup_Light'",
+        "ObjectPath": "/Game/Audio/Submix/SBMIX_CriticalGroup_Light.0"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_OnDisconnect_Reset ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_OnDisconnect_Reset",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/AE_OnDisconnect_Reset",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.OnDisconnect.Reset"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_DeactivateAllControlBusMix_C'AE_OnDisconnect_Reset:AEB_DeactivateAllControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/AE_OnDisconnect_Reset.0"
+      },
+      {
+        "ObjectName": "AEB_Submix_DeactivateEffect_C'AE_OnDisconnect_Reset:AEB_Submix_DeactivateEffect_C_0'",
+        "ObjectPath": "/Game/Audio/Events/AE_OnDisconnect_Reset.1"
+      }
+    ]
+  }
+}

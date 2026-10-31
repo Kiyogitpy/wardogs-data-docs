@@ -1,0 +1,113 @@
+--- export: UDataAsset / DA_Buildable_MGNest ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_MGNest",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/STN_06/Buildabledata/DA_Buildable_MGNest",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDVehicleBuildSpawner'DA_Buildable_MGNest:WDVehicleBuildSpawner_0'",
+      "ObjectPath": "/STN_06/Buildabledata/DA_Buildable_MGNest.1"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.MGNest"
+    },
+    "Cost": 650,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.MGNest",
+      "SourceString": "MG Nest",
+      "LocalizedString": "MG Nest"
+    },
+    "MaxHealth": 3000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 5,
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "PlacePivotVerticalOffset": 77.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Hesco.SM_Foundation_Hesco",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_MGNest_Stages'",
+      "ObjectPath": "/STN_06/Buildabledata/DA_MGNest_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -91.4331,
+        "Y": -91.6991,
+        "Z": -53.2223
+      },
+      "Max": {
+        "X": 91.9651,
+        "Y": 91.6991,
+        "Z": 154.3294
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.MGNest"
+    }
+  }
+}
+--- export: UObject / WDVehicleBuildSpawner_0 ---
+{
+  "Type": "WDVehicleBuildSpawner",
+  "Name": "WDVehicleBuildSpawner_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_MGNest'",
+    "ObjectPath": "/STN_06/Buildabledata/DA_Buildable_MGNest.0"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_StationaryVehicle_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable_StationaryVehicle.2"
+    },
+    "VehicleTag": {
+      "TagName": "Vehicle.Variant.Stationary.MGNest"
+    }
+  }
+}

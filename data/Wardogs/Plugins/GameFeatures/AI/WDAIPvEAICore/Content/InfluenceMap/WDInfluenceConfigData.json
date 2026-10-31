@@ -1,0 +1,61 @@
+--- export: UDataAsset / WDInfluenceConfigData ---
+{
+  "Type": "SDInfluenceMapConfigDataAsset",
+  "Name": "WDInfluenceConfigData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDInfluenceMapConfigDataAsset'",
+  "Package": "/WDAIPvEAICore/InfluenceMap/WDInfluenceConfigData",
+  "Properties": {
+    "InfluenceMapData": [
+      {
+        "Key": {
+          "TagName": "InfluenceMap.TeamMap"
+        },
+        "Value": {
+          "DecayPercentagePerSecond": 10.0,
+          "InfluenceMapUpdateFrequency": 5.0,
+          "PropagateInfluence": true,
+          "EvaluationType": "ESDInfluenceEvaluationTypes::NavRaycast",
+          "CreateArea": false,
+          "CheckForPathExistToAreaID": false,
+          "RemoveInfluenceAreaEvaluationType": "ESDRemoveInfluenceAreaEvaluationType::None",
+          "EnableDebug": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "InfluenceMap.EnemyMap"
+        },
+        "Value": {
+          "DecayPercentagePerSecond": 10.0,
+          "InfluenceMapUpdateFrequency": 2.0,
+          "PropagateInfluence": true,
+          "EvaluationType": "ESDInfluenceEvaluationTypes::None",
+          "CreateArea": false,
+          "CheckForPathExistToAreaID": false,
+          "RemoveInfluenceAreaEvaluationType": "ESDRemoveInfluenceAreaEvaluationType::None",
+          "EnableDebug": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "InfluenceMap.AlertMap"
+        },
+        "Value": {
+          "DecayPercentagePerSecond": 1.0,
+          "InfluenceMapUpdateFrequency": 0.5,
+          "PropagateInfluence": false,
+          "EvaluationType": "ESDInfluenceEvaluationTypes::None",
+          "CreateArea": true,
+          "CheckForPathExistToAreaID": true,
+          "RemoveInfluenceAreaEvaluationType": "ESDRemoveInfluenceAreaEvaluationType::NavRaycast",
+          "EnableDebug": false
+        }
+      }
+    ],
+    "AIPawnClass": {
+      "AssetPathName": "/WDCore/Character/B_WDCore_MoverPlayerCharacter.B_WDCore_MoverPlayerCharacter_C",
+      "SubPathString": ""
+    }
+  }
+}

@@ -1,0 +1,80 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Throwable_Molotov_Explode_Water ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Throwable_Molotov_Explode_Water",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Molotov.Explode.Water"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Weapon_Throwable_Molotov_Explode_Water:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Throwable_Molotov_Explode_Water:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Throwable_Molotov_Explode_Water:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Explode_Water'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Explode"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Explode_Water'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Molotov_Impact_Water'",
+      "ObjectPath": "/Molotov/Audio/MSS/MSS_Weapon_Throwable_Molotov_Impact_Water.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Explode"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Explode_Water'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode_Water.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Explode"
+    }
+  }
+}

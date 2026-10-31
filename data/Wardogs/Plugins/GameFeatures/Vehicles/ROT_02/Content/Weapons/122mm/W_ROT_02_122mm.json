@@ -1,0 +1,51 @@
+--- export: UDataAsset / W_ROT_02_122mm ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_ROT_02_122mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/ROT_02/Weapons/122mm/W_ROT_02_122mm",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.ROT_02.122mm"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/Game/Items/Weapons/Launcher/AT4/Assets/DefaultAttachments/SK_AT4_Rockets.SK_AT4_Rockets",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "S_MuzzleFlash_R",
+      "S_MuzzleFlash_L"
+    ],
+    "GamepadRotationSensitivity": 10.0,
+    "GamepadRotationUpdateMax": {
+      "X": 60.0,
+      "Y": 60.0
+    },
+    "MouseRotationSensitivity": 10.0,
+    "MouseRotationUpdateMax": {
+      "X": 60.0,
+      "Y": 60.0
+    },
+    "bAllowKeyRotation": false,
+    "KeyRotationSensitivity": 5.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "bLimitWeaponYaw": true,
+      "MinWeaponYawAngle": -45.0,
+      "MaxWeaponYawAngle": 45.0,
+      "bLimitWeaponPitch": true,
+      "MaxWeaponPitchAngle": 30.0
+    },
+    "bUseWeaponAsViewTarget": false,
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Air"
+    },
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/ROT_02/Weapons/122mm/WE_ROT_02_Weapon_122mm.WE_ROT_02_Weapon_122mm",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

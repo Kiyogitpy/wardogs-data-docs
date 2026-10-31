@@ -1,0 +1,71 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Attachment_Bipod_Unfold'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Unfold.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Bipod.Fold"
+    }
+  }
+}
+--- export: UObject / AEB_PlayWeaponAttachmentSound_C_0 ---
+{
+  "Type": "AEB_PlayWeaponAttachmentSound_C",
+  "Name": "AEB_PlayWeaponAttachmentSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayWeaponAttachmentSound.AEB_PlayWeaponAttachmentSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Attachment_Bipod_Unfold'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Unfold.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayWeaponAttachmentSound_C'Default__AEB_PlayWeaponAttachmentSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayWeaponAttachmentSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Attachment.Bipod.Unfold.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Attachment.Bipod.Unfold.3p"
+    },
+    "Restart Behavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Bipod.Fold"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Attachment_Bipod_Unfold ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Attachment_Bipod_Unfold",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Unfold",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Attachment.Bipod.Unfold"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Weapon_Attachment_Bipod_Unfold:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Unfold.0"
+      },
+      {
+        "ObjectName": "AEB_PlayWeaponAttachmentSound_C'AE_Weapon_Attachment_Bipod_Unfold:AEB_PlayWeaponAttachmentSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Attachment/AE_Weapon_Attachment_Bipod_Unfold.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}

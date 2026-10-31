@@ -1,0 +1,103 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SGHT_011'",
+    "ObjectPath": "/SGHT_011/SGHT_011.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_SGHT_011'",
+      "ObjectPath": "/SGHT_011/EDL_SGHT_011.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'SGHT_011'",
+    "ObjectPath": "/SGHT_011/SGHT_011.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/SGHT_011/Data/DT_EntityData_Ext_SGHT_011.DT_EntityData_Ext_SGHT_011",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/SGHT_011/Data/DT_WeaponVendor_SGHT_011.DT_WeaponVendor_SGHT_011",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / SGHT_011 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "SGHT_011",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/SGHT_011/SGHT_011",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'SGHT_011:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/SGHT_011/SGHT_011.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'SGHT_011:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/SGHT_011/SGHT_011.1"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/SGHT_011/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

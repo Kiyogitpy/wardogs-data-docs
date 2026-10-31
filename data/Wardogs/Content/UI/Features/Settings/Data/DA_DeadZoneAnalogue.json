@@ -1,0 +1,28 @@
+--- export: UDataAsset / DA_DeadZoneAnalogue ---
+{
+  "Type": "WDDeadZoneAnalogueData",
+  "Name": "DA_DeadZoneAnalogue",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneAnalogueData'",
+  "Package": "/Game/UI/Features/Settings/Data/DA_DeadZoneAnalogue",
+  "Properties": {
+    "MoveStickTestingText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+      "Key": "Value.MoveStick.TestOutput",
+      "SourceString": "X: {XValue}%, Y: {YValue}%",
+      "LocalizedString": "X: {XValue}%, Y: {YValue}%"
+    },
+    "LookStickTestingText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+      "Key": "Value.LookStick.TestOutput",
+      "SourceString": "X: {XValue}%, Y: {YValue}%",
+      "LocalizedString": "X: {XValue}%, Y: {YValue}%"
+    },
+    "DynamicImageMaterialViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIDynamicImageMaterialViewModel",
+        "SubPathString": ""
+      }
+    }
+  }
+}

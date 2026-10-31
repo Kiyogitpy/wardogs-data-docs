@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Weapon_PreFire_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_PreFire_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_PreFire_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.PreFire.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_Weapon_PreFire_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_PreFire_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_PreFire_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Firing/AE_Weapon_PreFire_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "StopPreFire",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.PreFire"
+    }
+  }
+}

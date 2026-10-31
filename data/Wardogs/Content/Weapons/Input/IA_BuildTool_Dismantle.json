@@ -1,0 +1,33 @@
+--- export: UDataAsset / IA_BuildTool_Dismantle ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_BuildTool_Dismantle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_BuildTool_Dismantle",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_BuildTool_Dismantle:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Dismantle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_BuildTool_Dismantle'",
+    "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Dismantle.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.1
+  }
+}

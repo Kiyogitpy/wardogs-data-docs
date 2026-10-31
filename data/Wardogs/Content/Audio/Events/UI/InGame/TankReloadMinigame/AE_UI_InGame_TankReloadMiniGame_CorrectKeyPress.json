@@ -1,0 +1,85 @@
+--- export: UObject / AEB_SetReloadingMinigameSegment_C_0 ---
+{
+  "Type": "AEB_SetReloadingMinigameSegment_C",
+  "Name": "AEB_SetReloadingMinigameSegment_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetReloadingMinigameSegment.AEB_SetReloadingMinigameSegment_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetReloadingMinigameSegment_C'Default__AEB_SetReloadingMinigameSegment_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetReloadingMinigameSegment.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.ReloadMinigame"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.CorrectKey"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress.2"
+      },
+      {
+        "ObjectName": "AEB_SetReloadingMinigameSegment_C'AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress:AEB_SetReloadingMinigameSegment_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress.1"
+  },
+  "Properties": {
+    "ParameterName": "Keypress",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.ReloadMinigame"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/TankReloadMinigame/AE_UI_InGame_TankReloadMiniGame_CorrectKeyPress.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_TankReloadMinigame'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/TankReloadMinigame/MSS_UI_InGame_TankReloadMinigame.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.ReloadMinigame"
+    }
+  }
+}

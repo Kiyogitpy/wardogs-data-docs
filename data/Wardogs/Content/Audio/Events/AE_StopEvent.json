@@ -1,0 +1,35 @@
+--- export: UPrimaryDataAsset / AE_StopEvent ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_StopEvent",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/AE_StopEvent",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.StopSound"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_StopEvent:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/AE_StopEvent.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_StopEvent'",
+    "ObjectPath": "/Game/Audio/Events/AE_StopEvent.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

@@ -1,0 +1,187 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Claymore'",
+    "ObjectPath": "/Claymore/Claymore.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Claymore'",
+      "ObjectPath": "/Claymore/EDL_Claymore.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Claymore'",
+    "ObjectPath": "/Claymore/Claymore.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Claymore/Data/DT_EntityData_UI_Ext_Claymore.DT_EntityData_UI_Ext_Claymore",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Claymore/Data/DT_VendorData_Ext_Claymore.DT_VendorData_Ext_Claymore",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Claymore ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Claymore",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Claymore/Claymore",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Claymore:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Claymore/Claymore.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'Claymore:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/Claymore/Claymore.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Claymore/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Game/GameMechanics/Actions/Weapons"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Claymore/Data/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "WD.RewardRule",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDRewardRule",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": true,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Claymore/Data/Rewards"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Claymore/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

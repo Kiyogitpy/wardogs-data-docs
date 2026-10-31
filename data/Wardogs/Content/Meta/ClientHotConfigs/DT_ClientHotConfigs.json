@@ -1,0 +1,28 @@
+--- export: UDataTable / DT_ClientHotConfigs ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ClientHotConfigs",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/ClientHotConfigs/DT_ClientHotConfigs",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDClientHotConfigTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "ServerBrowserSubsystem": {
+      "TargetIniFile": "Game",
+      "IniBlob": "[/Script/WDGame.WDServerBrowserSubsystem]\r\nMaxSelectedRegions=3\r\nServerIDLength=6\r\nbAllowGlobalSearch=False"
+    },
+    "AuthSubsystem": {
+      "TargetIniFile": "Game",
+      "IniBlob": "[/Script/WDGame.WDOnlineAuthSubsystem]\r\nbEnableFulfillOrders=True"
+    },
+    "CommunicationSubsystem": {
+      "TargetIniFile": "Game",
+      "IniBlob": "[/Script/WDGame.WDCommunicationSubsystem]\r\nMaxLoginRetries=2\r\nLoginRetryDelaySeconds=30.0\r\nLoginRetryJitterFraction=0.25\r\n!LoginGivenUpRetryDelaysSeconds=ClearArray\r\n+LoginGivenUpRetryDelaysSeconds=10.0\r\n+LoginGivenUpRetryDelaysSeconds=20.0\r\n+LoginGivenUpRetryDelaysSeconds=30.0\r\n+LoginGivenUpRetryDelaysSeconds=60.0\r\n+LoginGivenUpRetryDelaysSeconds=120.0\r\n+LoginGivenUpRetryDelaysSeconds=300.0\r\nLoginHangingTimeoutSeconds=60.0\r\nLoginStuckTimeoutSeconds=90.0\r\nVoiceReconnectCheckIntervalSeconds=5.0\r\nMaxVoiceChannelConnectAttempts=5\r\nChannelConnectGivenUpRetrySeconds=30.0\r\nFastChannelJoinRetryAttempts=5\r\nFastChannelJoinRetryDelaySeconds=5.0\r\nSlowChannelJoinRetryDelaySeconds=60.0\r\nJoinTokenGraceSeconds=15.0\r\nLoginTokenBucket=(Capacity=4,RefillPerSecond=0.05)\r\nJoinTokenBucket=(Capacity=5,RefillPerSecond=0.1)\r\nManualRetryBucket=(Capacity=1,RefillPerSecond=0.0333)\r\n; Vivox endpoints. Uncomment to switch environment; the Pragma token issuer and the dedicated-server voice proxy config must change in the same window. A connected client logs out and back in when these change.\r\n;VivoxServer=https://wardxp.www.vivox.com/api2\r\n;VivoxDomain=wardxp.vivox.com\r\n;VivoxIssuer=57731-wardo-80274"
+    }
+  }
+}

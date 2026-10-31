@@ -1,0 +1,71 @@
+--- export: UCurveFloat / AimSway_SpeedCurve_Pistol ---
+{
+  "Type": "CurveFloat",
+  "Name": "AimSway_SpeedCurve_Pistol",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CurveFloat'",
+  "Package": "/Game/Weapons/AimSway/Pistol/AimSway_SpeedCurve_Pistol",
+  "Properties": {
+    "FloatCurve": {
+      "Keys": [
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 0.0,
+          "Value": 1.0,
+          "ArriveTangent": -0.0004306426,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": -0.0004306426,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 1.5,
+          "Value": 1.1,
+          "ArriveTangent": 0.08792226,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.08792226,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 3.0,
+          "Value": 1.2,
+          "ArriveTangent": -0.00016074913,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": -0.00016074913,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 4.5,
+          "Value": 1.1,
+          "ArriveTangent": -0.08668918,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": -0.08668918,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 6.0,
+          "Value": 1.0,
+          "ArriveTangent": 0.00038182302,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.00038182302,
+          "LeaveTangentWeight": 0.0
+        }
+      ],
+      "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Cycle",
+      "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Cycle"
+    }
+  }
+}

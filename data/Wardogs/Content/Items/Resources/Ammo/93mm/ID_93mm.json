@@ -1,0 +1,142 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_93mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_93mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/93mm/SM_RPG_Rocket.SM_RPG_Rocket",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_93mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_93mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.4"
+  },
+  "Properties": {
+    "Weight": 2.6
+  }
+}
+--- export: UPrimaryDataAsset / ID_93mm ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_93mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/93mm/ID_93mm",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.93mm"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.93mm"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "8FCA18C74F218A878E50ED86A6ED1D89",
+      "SourceString": "93mm",
+      "LocalizedString": "93mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_93mm:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_93mm:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_93mm:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_93mm:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_93mm:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_93mm:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_93mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Rockets_Audio'",
+      "ObjectPath": "/Game/Items/Resources/Ammo/Rockets/ID_Rockets_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_93mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/93mm/ID_93mm.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_93mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/93mm/DA_93mm_ProjectileData.0"
+    }
+  }
+}

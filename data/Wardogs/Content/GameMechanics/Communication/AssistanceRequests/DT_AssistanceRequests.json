@@ -1,0 +1,557 @@
+--- export: UDataTable / DT_AssistanceRequests ---
+{
+  "Type": "DataTable",
+  "Name": "DT_AssistanceRequests",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Communication/AssistanceRequests/DT_AssistanceRequests",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDAssistanceRequestData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Communication.AssistanceRequest.Ammo": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Ammo",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Ammo"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": false,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 50.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Ammo"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Ammo"
+      }
+    },
+    "Communication.AssistanceRequest.Backup": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Backup",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Backup"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": false,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 10.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 50.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Backup"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Backup"
+      }
+    },
+    "Communication.AssistanceRequest.Refueling": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Refueling",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Refueling"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": true,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 200.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Vehicle"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Refueling"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Refueling"
+      }
+    },
+    "Communication.AssistanceRequest.Healing": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Healing",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Healing"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": false,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 50.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Healing"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Healing"
+      }
+    },
+    "Communication.AssistanceRequest.Repair": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Repair",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Repair"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": true,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 200.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Vehicle"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Repair"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Repair"
+      }
+    },
+    "Communication.AssistanceRequest.Revive": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Revive",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Revive"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": true,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Alive",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 30.0,
+      "MaxDistanceForVisibleSpatialIcon": 500.0,
+      "TagsToBlockRequest": [],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": false,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "None"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Revive"
+      }
+    },
+    "Communication.AssistanceRequest.Pickup": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Pickup",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Pickup"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": false,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 200.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vehicle.Role.Driver",
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": true,
+      "_aaabiallblepnacgldlho": true,
+      "_aaabhfplnboaifloconni": true,
+      "bCancelRequestOnVehicleEntry": true,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Pickup"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Pickup"
+      }
+    },
+    "Communication.AssistanceRequest.Dropoff": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Dropoff",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Dropoff"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": true,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 20.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 1000.0,
+      "MaxDistanceForVisibleSpatialIcon": 1500.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive",
+        "State.Player.Vehicle.Role.Driver"
+      ],
+      "bShowToOnlyInVehicle": true,
+      "_aaabiallblepnacgldlho": true,
+      "_aaabhfplnboaifloconni": true,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Dropoff"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Dropoff"
+      }
+    },
+    "Communication.AssistanceRequest.Getout": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_GetOut",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Getout"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": false,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 15.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 30.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive",
+        "State.Player.Vehicle.Role"
+      ],
+      "bShowToOnlyInVehicle": true,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Vehicle"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Getout"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Getout"
+      }
+    },
+    "Communication.AssistanceRequest.SquadInvite": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_SquadInvite",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.SquadInvite"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": true,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 60.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 30.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Squad.InSquad",
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.SquadInvite"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Acknowledgement.SquadInvite"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.SquadInvite"
+      }
+    },
+    "Communication.AssistanceRequest.GetIn": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_GetIn",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.GetIn"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": true,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 20.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 30.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": false,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Vehicle"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.GetIn"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.GetIn"
+      }
+    },
+    "Communication.AssistanceRequest.Supplies": {
+      "RequestClass": {
+        "AssetPathName": "/Script/WDGame.WDAssistanceRequest_Supplies",
+        "SubPathString": ""
+      },
+      "EventFeedTag": {
+        "TagName": "UI.HUD.Element.EventFeed.Type.Request.Supplies"
+      },
+      "bOnlyShowEventFeedToInvolvedPlayers": false,
+      "CancelWhenEnteringVitalityStates": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "Duration": 0.0,
+      "GameplayCueDuration": 0.0,
+      "MaxDistanceForTeamEvent": 50.0,
+      "MaxDistanceForVisibleSpatialIcon": 100.0,
+      "TagsToBlockRequest": [
+        "State.Player.Vitality.Critical",
+        "State.Player.Vitality.Dead"
+      ],
+      "RequiredTagsToAcceptRequest": [
+        "State.Player.Vitality.Alive"
+      ],
+      "bShowToOnlyInVehicle": false,
+      "_aaabiallblepnacgldlho": false,
+      "_aaabhfplnboaifloconni": true,
+      "bCancelRequestOnVehicleEntry": false,
+      "bAutoplayCue": true,
+      "AssistanceRequestSpatialContext": {
+        "TagName": "Communication.AssistanceRequest.Context.Player"
+      },
+      "GameplayCueTag": {
+        "TagName": "GameplayCue.AssistanceRequest.Supplies"
+      },
+      "CustomAcknowledgementMessage": {
+        "TagName": "None"
+      },
+      "_aaabdjgllgkciaeipccgg": {
+        "TagName": "GameplayCue.AssistanceRequest.Supplies.Radio"
+      },
+      "Tag": {
+        "TagName": "Communication.AssistanceRequest.Supplies"
+      }
+    }
+  }
+}

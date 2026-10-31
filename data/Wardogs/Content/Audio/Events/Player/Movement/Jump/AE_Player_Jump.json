@@ -1,0 +1,469 @@
+--- export: UObject / AEB_ModifyCosmeticExertion_C_0 ---
+{
+  "Type": "AEB_ModifyCosmeticExertion_C",
+  "Name": "AEB_ModifyCosmeticExertion_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.AEB_ModifyCosmeticExertion_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Jump'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ModifyCosmeticExertion_C'Default__AEB_ModifyCosmeticExertion_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.0"
+  },
+  "Properties": {
+    "Amount": 0.065
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Jump'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.Jump"
+      },
+      "Perspective": "EWDVoxPerspective::FirstPerson"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Jump"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Jump ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Jump",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Jump.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Jump:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.3"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Player_Jump:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.4"
+      },
+      {
+        "ObjectName": "AEB_ModifyCosmeticExertion_C'AE_Player_Jump:AEB_ModifyCosmeticExertion_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.0"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Player_Jump:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourSetMultipleSurfaceProperties'AE_Player_Jump:WDAudioEventBehaviourSetMultipleSurfaceProperties_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.5"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Jump'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Jump"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Jump'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.2"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Jump.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Jump.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Jump.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Jump_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Jump/DA/DA_Jump_Audio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Jump"
+    },
+    "bStatic": true
+  }
+}
+--- export: UObject / WDAudioEventBehaviourSetMultipleSurfaceProperties_0 ---
+{
+  "Type": "WDAudioEventBehaviourSetMultipleSurfaceProperties",
+  "Name": "WDAudioEventBehaviourSetMultipleSurfaceProperties_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourSetMultipleSurfaceProperties'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Jump'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Jump.2"
+  },
+  "Properties": {
+    "AudioSurfacePropertiesInput": [
+      {
+        "GainName": "Gain",
+        "SurfaceWavesName": "JumpSurface",
+        "AudioData": {
+          "ObjectName": "WDAudioData'DA_Player_JumpSurface'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/DA/DA_Player_JumpSurface.0"
+        },
+        "AudioSurfaceToSurfacePropertiesMap": [
+          {
+            "Key": "EWDAudioSurface::Flesh",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Concrete",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Dirt",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Mud",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Grass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Leaves",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Foliage",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Gravel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Sand",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Metal",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalSheet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalVehicle",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalChainLink",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalGrate",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalCorrugated",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalDebris",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Glass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::GlassBulletProof",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Carpet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Fabric",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Wood",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodBox",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodPlank",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Plastic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBag",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Water",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Snow",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ice",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubble",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ceramic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubber",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Paper",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Unspecified",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          }
+        ]
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Jump"
+    }
+  }
+}

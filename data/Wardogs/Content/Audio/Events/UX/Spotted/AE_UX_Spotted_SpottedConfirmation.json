@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UX_Spotted_SpottedConfirmation ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Spotted_SpottedConfirmation",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Spotted/AE_UX_Spotted_SpottedConfirmation",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Spotted.SpottedConfirmation"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Spotted_SpottedConfirmation:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Spotted/AE_UX_Spotted_SpottedConfirmation.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Spotted_SpottedConfirmation'",
+    "ObjectPath": "/Game/Audio/Events/UX/Spotted/AE_UX_Spotted_SpottedConfirmation.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Spotting_SpottedConfirmation'",
+      "ObjectPath": "/Game/Audio/UX/Spotting/MSS/MSS_UX_Spotting_SpottedConfirmation.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

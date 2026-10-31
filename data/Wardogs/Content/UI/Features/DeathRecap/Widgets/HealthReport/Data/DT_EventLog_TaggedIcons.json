@@ -1,0 +1,73 @@
+--- export: UDataTable / DT_EventLog_TaggedIcons ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EventLog_TaggedIcons",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/DeathRecap/Widgets/HealthReport/Data/DT_EventLog_TaggedIcons",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITaggedIconRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "EventLog.Overview.CategoryIcon": {
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/DeathRecap/Textures/T_UI_CombatLog_ArmorBroke.T_UI_CombatLog_ArmorBroke",
+            "Value": [
+              "UI.Icon.EventLog.Category.ArmorDurability"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/DeathRecap/Textures/T_UI_CombatLog_ArmorMit.T_UI_CombatLog_ArmorMit",
+            "Value": [
+              "UI.Icon.EventLog.Category.ArmorMitigation"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/DeathRecap/Textures/T_UI_CombatLog_Health.T_UI_CombatLog_Health",
+            "Value": [
+              "UI.Icon.EventLog.Category.Health"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/DeathRecap/Textures/T_UI_CombatLog_HP.T_UI_CombatLog_HP",
+            "Value": [
+              "UI.Icon.EventLog.Category.Damage"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "EventLog.Overview.CategoryIcon"
+      }
+    },
+    "EventLog.Overview.DeathIcon": {
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/HUD/Killfeed/Textures/T_UI_Killfeed_KillConfirmed.T_UI_Killfeed_KillConfirmed",
+            "Value": [
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "EventLog.Overview.DeathIcon"
+      }
+    }
+  }
+}

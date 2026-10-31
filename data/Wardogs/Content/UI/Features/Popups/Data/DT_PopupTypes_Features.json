@@ -1,0 +1,324 @@
+--- export: UDataTable / DT_PopupTypes_Features ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PopupTypes_Features",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Popups/Data/DT_PopupTypes_Features",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIPopupTypeDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Popup.Type.Custom.PurchaseItem": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Popups/W_Popup_PurchaseItem.W_Popup_PurchaseItem_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPurchaseItemPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/LookupSessionPopup/Data/DA_Popup_LookupSession.DA_Popup_LookupSession",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.PurchaseItem"
+      }
+    },
+    "UI.Popup.Type.Custom.GoldExchange": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/GoldExchange/W_Popup_GoldExchange.W_Popup_GoldExchange_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIGoldExchangePopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/GoldExchange/Data/DA_Popup_GoldExchange.DA_Popup_GoldExchange",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.GoldExchange"
+      }
+    },
+    "UI.Popup.Type.Custom.Report": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/W_Popup_ReportPlayer.W_Popup_ReportPlayer_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIReportPlayerPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_PopupData_Report.DA_PopupData_Report",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.Report"
+      }
+    },
+    "UI.Popup.Type.Custom.PatchNotes": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/W_Popup_Type_PatchNotes.W_Popup_Type_PatchNotes_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPatchNotesPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_Popup_PatchNotes.DA_Popup_PatchNotes",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.PatchNotes"
+      }
+    },
+    "UI.Popup.Type.Custom.MetaTree.UpgradeNodeConfirmation": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/W_Popup_Type_Unlock.W_Popup_Type_Unlock_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMetaTreeConfirmationPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_PopupData_Unlock.DA_PopupData_Unlock",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.MetaTree.UpgradeNodeConfirmation"
+      }
+    },
+    "UI.Popup.Type.Custom.PurchaseCosmetic": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/W_Popup_Type_PurchaseCosmetic.W_Popup_Type_PurchaseCosmetic_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPurchaseCosmeticPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_PopupData_PurchaseCosmetic.DA_PopupData_PurchaseCosmetic",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.PurchaseCosmetic"
+      }
+    },
+    "UI.Popup.Type.Custom.Seasons.SeasonRewards": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/W_Popup_Type_SeasonRewards.W_Popup_Type_SeasonRewards_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISeasonRewardsPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_Popup_SeasonRewards.DA_Popup_SeasonRewards",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.Seasons.SeasonRewards"
+      }
+    },
+    "UI.Popup.Type.Custom.RegionSelection": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/W_Popup_RegionSelection.W_Popup_RegionSelection_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIRegionSelectionPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Data/DA_PopupData_RegionSelection.DA_PopupData_RegionSelection",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.RegionSelection"
+      }
+    },
+    "UI.Popup.Type.Custom.ServerInfo": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/W_Popup_Type_ServerInfo.W_Popup_Type_ServerInfo_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIServerInfoPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Data/DA_PopupData_ServerInfo.DA_PopupData_ServerInfo",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.ServerInfo"
+      }
+    },
+    "UI.Popup.Type.Custom.JoinQueue": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/Widgets/W_Popup_Type_Info.W_Popup_Type_Info_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIJoinQueuePopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.JoinQueue"
+      }
+    },
+    "UI.Popup.Type.Custom.ServerTerminated": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/ServerTerminated/W_ServerTerminated.W_ServerTerminated_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIServerTerminatedPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.ServerTerminated"
+      }
+    },
+    "UI.Popup.Type.Custom.LookupSession": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/LookupSessionPopup/W_Popup_LookupSession.W_Popup_LookupSession_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUILookupSessionPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/LookupSessionPopup/Data/DA_Popup_LookupSession.DA_Popup_LookupSession",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.LookupSession"
+      }
+    },
+    "UI.Popup.Type.Custom.AdvancedFilters": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/AdvancedFiltersPopup/W_Popup_AdvancedFilters.W_Popup_AdvancedFilters_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIAdvancedFiltersPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/AdvancedFiltersPopup/Data/DA_Popup_AdvancedFilter.DA_Popup_AdvancedFilter",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.AdvancedFilters"
+      }
+    },
+    "UI.Popup.Type.Custom.CreateSquad": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadCreationPopup/W_Popup_CreateSquad.W_Popup_CreateSquad_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUICreateSquadPopupViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Widgets/SquadCreationPopup/Data/DA_CreateSquadData.DA_CreateSquadData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Type.Custom.CreateSquad"
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitHandguard'",
+    "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Underbarrel"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Underbarrel"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Item.Attachment.Bipod.Attached"
+          ]
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_ZenitHandguard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_ZenitHandguard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.ZenitHandguard"
+    },
+    "ItemContext": [
+      "Item.Attachment.Handguard.AK74M"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_ZenitHandguard:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_ZenitHandguard:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_ZenitHandguard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_ZenitHandguard:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitHandguard'",
+    "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Handguard"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitHandguard'",
+    "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ZenitHandguard'",
+    "ObjectPath": "/Game/Items/Attachments/Handguards/ZenitHandguard/ID_ZenitHandguard.1"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

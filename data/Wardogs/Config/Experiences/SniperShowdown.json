@@ -1,0 +1,18 @@
+{
+	"Aliases" : [ "ED_SniperShowdown" ],
+	"Includes" : [ "DefaultSet" ],
+	"EnabledDataLayers" : ["EDL_SniperShowdown"],
+	"EnabledGameFeatures" : [
+		"SniperShowdown",
+		"ControlZone",
+		"Lootable",
+		"Spotting"
+	],
+	"PawnData" : "BH.PawnData:SniperShowdown_PlayerData",
+	"FeatureFlags" : [
+		"Experience.Rules.FreeForAll",
+		"Experience.Rules.NoCashFeed"
+	],
+	"DisallowedFeatureFlags" : ["Experience.Rules.SkipPlayerKnocked"],
+	"EditorVisible" : true
+}

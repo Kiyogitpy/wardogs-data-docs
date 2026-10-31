@@ -1,0 +1,152 @@
+--- export: UDataAsset / DA_Tracker_Spatial_Ping ---
+{
+  "Type": "WDUIPingSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Ping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPingSpatialTrackerData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping",
+  "Properties": {
+    "PingTypeColors": [
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Default"
+        },
+        "Value": {
+          "R": 1.0,
+          "G": 1.0,
+          "B": 1.0,
+          "A": 1.0,
+          "Hex": "FFFFFF"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Danger"
+        },
+        "Value": {
+          "R": 1.0,
+          "G": 0.0,
+          "B": 0.0,
+          "A": 1.0,
+          "Hex": "FF0000"
+        }
+      }
+    ],
+    "StalkMaxScreenDistance": {
+      "X": 0.6,
+      "Y": 0.1
+    },
+    "StalkMinYSize": 0.0,
+    "StalkMaxYSize": 0.0,
+    "StalkSizeChangeRate": 1500.0,
+    "PingScaleMaxDistance": 10.0,
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::Default",
+        "Value": {
+          "Priority": 0,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Ping:WDUIScreenClampingRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.1"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::LocalUser_InADS",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenDistanceOpacityRules'DA_Tracker_Spatial_Ping:WDUIScreenDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.2"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Delayed_First",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Ping:WDUIWorldDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.3"
+            }
+          ]
+        }
+      }
+    ],
+    "MaximumDistanceFromScreenCenter": {
+      "X": 0.95,
+      "Y": 0.95
+    },
+    "ZOrder": 3,
+    "DefaultSize": {
+      "X": 25.0,
+      "Y": 25.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_0 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIPingSpatialTrackerData'DA_Tracker_Spatial_Ping'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.0"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 85.0,
+      "Y": 85.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIScreenDistanceOpacityRules",
+  "Name": "WDUIScreenDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPingSpatialTrackerData'DA_Tracker_Spatial_Ping'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": {
+      "X": 0.075,
+      "Y": 0.5
+    },
+    "FalloffRangeMaximum": {
+      "X": 0.05,
+      "Y": 0.05
+    },
+    "OpacityRange": {
+      "Min": 0.4
+    },
+    "bInvertOpacity": true,
+    "Targets": 7
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPingSpatialTrackerData'DA_Tracker_Spatial_Ping'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.0"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 1000.0,
+    "FalloffRangeMaximum": 900.0,
+    "MaxOpacity": 0.7,
+    "SquaredFalloffRangeMaximum": 9.9E+09,
+    "SquaredMaximumVisibleDistance": 1E+10
+  }
+}

@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Targeting_IsFullLockedOnTo_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Targeting_IsFullLockedOnTo_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Targeting/AE_Vehicle_Targeting_IsFullLockedOnTo_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Targeting.IsFullLockedOnTo.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Targeting_IsFullLockedOnTo_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Targeting/AE_Vehicle_Targeting_IsFullLockedOnTo_Stop.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_Targeting_IsFullLockedOnTo_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Targeting/AE_Vehicle_Targeting_IsFullLockedOnTo_Stop.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_IsFullLockedOnTo_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Targeting/AE_Vehicle_Targeting_IsFullLockedOnTo_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Full Locked Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Targeting.LockOnSystem"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Targeting_IsFullLockedOnTo_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Targeting/AE_Vehicle_Targeting_IsFullLockedOnTo_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Targeting.LockOnSystem"
+    }
+  }
+}

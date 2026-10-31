@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / AE_Swimming_LandHeavy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Swimming_LandHeavy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_LandHeavy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Swimming.LandHeavy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Swimming_LandHeavy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_LandHeavy.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Swimming_LandHeavy:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_LandHeavy.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_LandHeavy'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_LandHeavy.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_LandHeavy'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_LandHeavy.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Swim.LandHeavy.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Swim.LandHeavy.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Swim.LandHeavy.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Swim_LandHeavy'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Swimming/DA/DA_Player_Swim_LandHeavy.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bStatic": true
+  }
+}

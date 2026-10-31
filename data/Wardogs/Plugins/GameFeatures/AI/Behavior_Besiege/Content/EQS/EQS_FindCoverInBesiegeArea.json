@@ -1,0 +1,227 @@
+--- export: UDataAsset / EQS_FindCoverInBesiegeArea ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindCoverInBesiegeArea",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea",
+  "Properties": {
+    "QueryName": "EQS_FindCoverInBesiegeArea",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindCoverInBesiegeArea:EnvQueryOption_4'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_4 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_Covers'EQS_FindCoverInBesiegeArea:SDEnvQueryGenerator_Covers_4'",
+      "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.6"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Volume'EQS_FindCoverInBesiegeArea:EnvQueryTest_Volume_4'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.5"
+      },
+      {
+        "ObjectName": "WDEnvQueryTest_InfluenceMapValue'EQS_FindCoverInBesiegeArea:WDEnvQueryTest_InfluenceMapValue_4'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.8"
+      },
+      {
+        "ObjectName": "EnvQueryTest_PathfindingBatch'EQS_FindCoverInBesiegeArea:EnvQueryTest_PathfindingBatch_3'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverInBesiegeArea:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.2"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Dot'EQS_FindCoverInBesiegeArea:EnvQueryTest_Dot_6'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_FriendsMovementLocations_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/BP_EnvQueryContext_FriendsMovementLocations.0"
+    },
+    "TestOrder": 3,
+    "MultipleContextScoreOp": "EEnvTestScoreOperator::MinScore",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Dot_6 ---
+{
+  "Type": "EnvQueryTest_Dot",
+  "Name": "EnvQueryTest_Dot_6",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Dot'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "LineA": {
+      "Rotation": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    },
+    "LineB": {
+      "LineFrom": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "LineTo": {
+        "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+        "ObjectPath": "/Script/SDAIGoalsRuntime"
+      }
+    },
+    "TestMode": "EEnvTestDot::Dot2D",
+    "TestOrder": 4,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Maximum",
+    "FloatValueMin": {
+      "DefaultValue": 0.6
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_PathfindingBatch_3 ---
+{
+  "Type": "EnvQueryTest_PathfindingBatch",
+  "Name": "EnvQueryTest_PathfindingBatch_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_PathfindingBatch'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Volume_4 ---
+{
+  "Type": "EnvQueryTest_Volume",
+  "Name": "EnvQueryTest_Volume_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Volume'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "VolumeContext": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "VolumeClass": {
+      "ObjectName": "Class'WDTargetAreaVolume'",
+      "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+    },
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "VerNum": 2
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_Covers_4 ---
+{
+  "Type": "SDEnvQueryGenerator_Covers",
+  "Name": "SDEnvQueryGenerator_Covers_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_Covers'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "CenterContext": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "Radius": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_VolumeSize'EQS_FindCoverInBesiegeArea:SDEnvQueryGenerator_Covers_4.WDAIDataProvider_VolumeSize_1'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.7"
+      },
+      "DataField": "DataValue"
+    },
+    "OnlyFreeCovers": {
+      "DefaultValue": true
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDAIDataProvider_VolumeSize_1 ---
+{
+  "Type": "WDAIDataProvider_VolumeSize",
+  "Name": "WDAIDataProvider_VolumeSize_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_VolumeSize'",
+  "Outer": {
+    "ObjectName": "SDEnvQueryGenerator_Covers'EQS_FindCoverInBesiegeArea:SDEnvQueryGenerator_Covers_4'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.6"
+  },
+  "Properties": {
+    "VolumeContext": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    }
+  }
+}
+--- export: UObject / WDEnvQueryTest_InfluenceMapValue_4 ---
+{
+  "Type": "WDEnvQueryTest_InfluenceMapValue",
+  "Name": "WDEnvQueryTest_InfluenceMapValue_4",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDEnvQueryTest_InfluenceMapValue'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverInBesiegeArea'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindCoverInBesiegeArea.0"
+  },
+  "Properties": {
+    "InfluenceMapTag": {
+      "TagName": "InfluenceMap.TeamMap"
+    },
+    "TestOrder": 1,
+    "FilterType": "EEnvTestFilterType::Maximum",
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "FloatValueMax": {
+      "DefaultValue": 0.4
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "VerNum": 2
+  }
+}

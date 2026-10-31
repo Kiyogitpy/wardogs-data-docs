@@ -1,0 +1,89 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Launcher_04'",
+    "ObjectPath": "/Launcher_04/Launcher_04.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Launcher_04'",
+      "ObjectPath": "/Launcher_04/EDL_Launcher_04.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Launcher_04'",
+    "ObjectPath": "/Launcher_04/Launcher_04.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Launcher_04/Data/DT_VendorData_Launcher_04.DT_VendorData_Launcher_04",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Launcher_04 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Launcher_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Launcher_04/Launcher_04",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Launcher_04:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Launcher_04/Launcher_04.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'Launcher_04:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/Launcher_04/Launcher_04.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Launcher_04/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

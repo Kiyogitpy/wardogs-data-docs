@@ -1,0 +1,109 @@
+--- export: UPrimaryDataAsset / DA_308Winchester_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_308Winchester_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/308Winchester/DA_308Winchester_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.308Win"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.308Win"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 45.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "bVelocityChange": true,
+          "ImpulseScale": 2500.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 3.2,
+        "Diameter": 0.782,
+        "Mass": 0.012,
+        "DragModel": {
+          "Value": 0.9,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.65,
+        "DistanceFalloffRange": {
+          "Min": 1.25,
+          "Max": 2.5
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.22906876,
+                "Value": 0.6758362,
+                "ArriveTangent": -0.2487729,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": -0.24877283,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5858242,
+                "Value": 0.008512497,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Large'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Large.0"
+          }
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_308Winchester.NS_Tracer_308Winchester",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 38500.0,
+      "PenetrationExitSpeedMultiplier": 0.13,
+      "TravelDistanceForWhizBy": 800.0,
+      "DistanceToPlayerForWhizBy": 700.0
+    }
+  }
+}

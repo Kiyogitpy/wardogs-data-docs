@@ -1,0 +1,369 @@
+--- export: UObject / BHGameFeatureAction_AddGameplayCuePath_0 ---
+{
+  "Type": "BHGameFeatureAction_AddGameplayCuePath",
+  "Name": "BHGameFeatureAction_AddGameplayCuePath_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddGameplayCuePath'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Spotting'",
+    "ObjectPath": "/Spotting/Spotting.4"
+  },
+  "Properties": {
+    "DirectoryPathsToAdd": [
+      {
+        "Path": "/Spotting/Data/GameplayCues"
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Spotting'",
+    "ObjectPath": "/Spotting/Spotting.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SpottingRuntime.WDSpottingManagerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistry_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistry",
+  "Name": "GameFeatureAction_DataRegistry_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistry'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Spotting'",
+    "ObjectPath": "/Spotting/Spotting.4"
+  },
+  "Properties": {
+    "RegistriesToAdd": [
+      {
+        "AssetPathName": "/Spotting/Data/Challenges/LookupRegistries/DR_SessionEvent_Spotting_Added.DR_SessionEvent_Spotting_Added",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Spotting/Data/Challenges/LookupRegistries/DR_SessionEvent_Spotting_Removed.DR_SessionEvent_Spotting_Removed",
+        "SubPathString": ""
+      }
+    ],
+    "bPreloadInEditor": true
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Spotting'",
+    "ObjectPath": "/Spotting/Spotting.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "RewardData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/DT_Rewards_Spotting.DT_Rewards_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/UI/RewardFeed/DT_RewardFeedActions_Spotting.DT_RewardFeedActions_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.DT_ChallengesFeedActions_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Minimap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/UI/Tracker/Map/Data/DT_TrackerData_Map_Spotting.DT_TrackerData_Map_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/UI/Tracker/Map/Data/DT_TrackerData_Map_Spotting.DT_TrackerData_Map_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Spatial",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/UI/Tracker/Spatial/Data/DT_TrackerData_Spatial_Spotting.DT_TrackerData_Spatial_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "MaterialTrackersData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/UI/Tracker/Optimization/Data/DT_MaterialTrackerSettingsData_Spotting.DT_MaterialTrackerSettingsData_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "CashRewards",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/Rewards/DT_Reward_Cash_Spotting.DT_Reward_Cash_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "SkillEffectsRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/Skills/DT_Skills_Spotting.DT_Skills_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "Challenges",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.DT_Challenges_SessionEvents_KOTH_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "ChallengeRewards",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Spotting/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.DT_ChallengeRewards_SessionEvents_Spotting",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Spotting ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Spotting/Spotting",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'Spotting:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/Spotting/Spotting.5"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'Spotting:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/Spotting/Spotting.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistry'Spotting:GameFeatureAction_DataRegistry_0'",
+        "ObjectPath": "/Spotting/Spotting.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Spotting:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/Spotting/Spotting.3"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'Spotting:BHGameFeatureAction_AddGameplayCuePath_0'",
+        "ObjectPath": "/Spotting/Spotting.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "WD.RewardRule",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDRewardRule",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": true,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Spotting/Data/Rewards"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Spotting/Data/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Spotting'",
+    "ObjectPath": "/Spotting/Spotting.4"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.Spotting"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/Spotting/Data/UI/W_SpottingOverlay.W_SpottingOverlay_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/SpottingRuntime.WDUISpottingOverlayViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Spotting/Data/UI/DA_SpottingOverlay.DA_SpottingOverlay",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkejhohfkdpglkgkep": false
+        }
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Spotting:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_208'",
+        "ObjectPath": "/Spotting/Spotting.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_208 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_208",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'Spotting:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/Spotting/Spotting.5"
+  }
+}

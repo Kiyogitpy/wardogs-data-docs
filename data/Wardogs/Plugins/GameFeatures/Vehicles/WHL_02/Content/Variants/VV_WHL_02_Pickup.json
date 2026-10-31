@@ -1,0 +1,86 @@
+--- export: UPrimaryDataAsset / VV_WHL_02_Pickup ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_02_Pickup",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_02/Variants/VV_WHL_02_Pickup",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -346.63126,
+        "Y": -143.75768,
+        "Z": -1.903966
+      },
+      "Max": {
+        "X": 299.10556,
+        "Y": 143.76756,
+        "Z": 224.8432
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_02'",
+        "ObjectPath": "/WHL_02/Platforms/VP_WHL_02.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Rearback"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup.VP_WHL_02_RearBack_Pickup",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Rearback.Chassis"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.VP_WHL_02_RearBack_Pickup_Chassis",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Config"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/Pickup/VP_WHL_02_Pickup_Config.VP_WHL_02_Pickup_Config",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Body"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_02/Parts/VP_WHL_02_MainBody_Pickup.VP_WHL_02_MainBody_Pickup",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "/WHL_02/SkeletalMeshes/SK_WHL_02_Pickup.SK_WHL_02_Pickup",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": []
+            }
+          }
+        ]
+      }
+    }
+  }
+}

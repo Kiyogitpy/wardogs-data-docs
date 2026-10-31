@@ -1,0 +1,166 @@
+--- export: UPrimaryDataAsset / DA_ROT_04_Config ---
+{
+  "Type": "BHRotaryVehicleConfigDataAsset",
+  "Name": "DA_ROT_04_Config",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryVehicleConfigDataAsset'",
+  "Package": "/ROT_04/Config/DA_ROT_04_Config",
+  "Properties": {
+    "RotaryVehicleBodyDataAsset": {
+      "ObjectName": "BHRotaryVehicleBodyDataAsset'DA_ROT_04_Body'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_Body.0"
+    },
+    "RotaryEngineDataAsset": {
+      "ObjectName": "BHHelicopterEngineDataAsset'DA_ROT_04_Engine'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_Engine.0"
+    },
+    "RotaryVehicleDragDataAsset": {
+      "ObjectName": "BHAirVehicleDragDataAsset'DA_ROT_04_DragDataAsset'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_DragDataAsset.0"
+    },
+    "RotaryVehicleFlightCharacteristicsDataAsset": {
+      "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_04_FlightCharacteristicsDataAsset'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_FlightCharacteristicsDataAsset.67"
+    },
+    "DustKickupGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.DustKickup"
+    },
+    "RotorExplosionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+    },
+    "RotorMaterialCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_04_MainRotorRPM_MaterialValue'",
+      "ObjectPath": "/ROT_04/Data/FC_ROT_04_MainRotorRPM_MaterialValue.0"
+    },
+    "TailRotorMaterialCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_04_TailRotorRPM_MaterialValue'",
+      "ObjectPath": "/ROT_04/Data/FC_ROT_04_TailRotorRPM_MaterialValue.0"
+    },
+    "RotorReturnMeshCurve": {
+      "ObjectName": "CurveFloat'FC_ROT_04_MainRotorRPM_MeshValue'",
+      "ObjectPath": "/ROT_04/Data/FC_ROT_04_MainRotorRPM_MeshValue.0"
+    },
+    "_aaabppmmjbfkkfmipkbho": {
+      "AssetPathName": "/Game/Significance/DA_SignificanceSettings_RotaryVehicle.DA_SignificanceSettings_RotaryVehicle",
+      "SubPathString": ""
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_ROT_04_GameplaySystems'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_GameplaySystems.31"
+    },
+    "_aaabljnlghahlkidgdeii": {
+      "ObjectName": "MVehiclePredictionSettings_Rotary'DA_ROT_04_PredictionSettings'",
+      "ObjectPath": "/ROT_04/Config/DA_ROT_04_PredictionSettings.0"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_ROT_04_CameraBehaviourSettings'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_CameraBehaviourSettings.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_ROT_04_CameraBehaviourSettings_FP'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_CameraBehaviourSettings_FP.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "BHRotaryVehicleSensorsDataAsset'DA_ROT_04_Sensors'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_Sensors.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MRotaryInputControlsDataAsset'DA_ROT_04_InputControls'",
+      "ObjectPath": "/ROT_04/Data/DA_ROT_04_InputControls.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.Rotary"
+    },
+    "ExitVehicleDamageType": {
+      "ObjectName": "Class'WDImpactDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.ROT_04"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.ROT_04"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.ROT_04"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter.ROT_04"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit.ROT_04"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "UseHornGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Horn"
+    },
+    "ItemAddedToInventoryCueTag": {
+      "TagName": "GameplayCue.Vehicle.DepositSupplies"
+    },
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "EntryOffsetTolerance": 1500.0,
+    "VehicleConfigExtensions": [
+      {
+        "Key": "CBM",
+        "Value": {
+          "ObjectName": "PDA_CBM_Map_C'DA_Vehicle_Air_Helicopter_CBM_Map'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/Helicopter/DA/DA_Vehicle_Air_Helicopter_CBM_Map.0"
+        }
+      },
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_ROT_04_Audio'",
+          "ObjectPath": "/ROT_04/Config/DA_ROT_04_Audio.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_ROT_04_Destroyed'",
+      "ObjectPath": "/ROT_04/Destroyed/Mesh/Without_BladesandDoors/SM_ROT_04_Destroyed.2"
+    },
+    "FirstPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 301.82178,
+        "Y": 69.8628,
+        "Z": 259.33862
+      }
+    },
+    "ThirdPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 115.0
+      }
+    },
+    "_aaabammkdefcmcmkgofgm": {
+      "_aaaanfbaabccmjoafaohg": 500.0,
+      "RingCount": 2,
+      "_aaaalokhgkfoapmcocanl": 1400.0,
+      "_aaaandgghdpkjdhegibkb": 3,
+      "_aaaappffdfakbghkalhfi": {
+        "X": 0.72,
+        "Y": 0.65,
+        "Z": 0.65
+      },
+      "BoundsOffset": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -100.0
+      },
+      "_aaabekepgfadhlphpjcnl": false
+    }
+  }
+}

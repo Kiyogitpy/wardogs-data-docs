@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Swimming_Splash ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Swimming_Splash",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Splash",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Swimming.Splash"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Swimming_Splash:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Splash.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Swimming_Splash'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Swimming/AE_Swimming_Splash.0"
+  },
+  "Properties": {
+    "ParameterName": "Splash",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Footstep"
+    }
+  }
+}

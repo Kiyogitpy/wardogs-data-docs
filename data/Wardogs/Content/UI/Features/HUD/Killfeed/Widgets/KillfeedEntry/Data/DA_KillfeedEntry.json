@@ -1,0 +1,25 @@
+--- export: UDataAsset / DA_KillfeedEntry ---
+{
+  "Type": "WDUIKillfeedEntryData",
+  "Name": "DA_KillfeedEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIKillfeedEntryData'",
+  "Package": "/Game/UI/Features/HUD/Killfeed/Widgets/KillfeedEntry/Data/DA_KillfeedEntry",
+  "Properties": {
+    "DistanceTextFormat": {
+      "CultureInvariantString": "[{Distance} {Unit}]"
+    },
+    "DisconnectedPlayerText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+      "Key": "DisconnectedPlayer",
+      "SourceString": "Disconnected Player",
+      "LocalizedString": "Disconnected Player"
+    },
+    "ContextViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITaggedIconViewModel",
+        "SubPathString": ""
+      }
+    }
+  }
+}

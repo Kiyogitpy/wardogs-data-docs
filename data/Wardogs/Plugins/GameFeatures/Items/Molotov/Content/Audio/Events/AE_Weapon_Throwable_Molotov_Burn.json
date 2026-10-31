@@ -1,0 +1,64 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Throwable_Molotov_Burn ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Throwable_Molotov_Burn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Burn",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Molotov.Burn"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Throwable_Molotov_Burn:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Burn.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Throwable_Molotov_Burn:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Burn.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Burn'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Burn.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 15.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Burn'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Burn.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Molotov_Burn'",
+      "ObjectPath": "/Molotov/Audio/MSS/MSS_Weapon_Throwable_Molotov_Burn.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

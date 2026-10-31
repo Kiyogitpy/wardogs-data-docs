@@ -1,0 +1,118 @@
+--- export: UObject / AEB_AttachSoundToDoorHandle_C_0 ---
+{
+  "Type": "AEB_AttachSoundToDoorHandle_C",
+  "Name": "AEB_AttachSoundToDoorHandle_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.AEB_AttachSoundToDoorHandle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_PeekOpen'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_PeekOpen.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToDoorHandle_C'Default__AEB_AttachSoundToDoorHandle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door.Peek"
+    }
+  }
+}
+--- export: UObject / AEB_SelectDoorSound_C_0 ---
+{
+  "Type": "AEB_SelectDoorSound_C",
+  "Name": "AEB_SelectDoorSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SelectDoorSound.AEB_SelectDoorSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_PeekOpen'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_PeekOpen.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SelectDoorSound_C'Default__AEB_SelectDoorSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SelectDoorSound.0"
+  },
+  "Properties": {
+    "Doors": [
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Door.Metal"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Door_Metal_PeekOpenClose'",
+          "ObjectPath": "/Game/Audio/Doors/Metal/MSS/MSS_Door_Metal_PeekOpenClose.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Door.Wooden"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Door_PeekOpenClose'",
+          "ObjectPath": "/Game/Audio/Doors/MSS_Door_PeekOpenClose.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Door.Metal.Large"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Door_Metal_PeekOpenClose'",
+          "ObjectPath": "/Game/Audio/Doors/Metal/MSS/MSS_Door_Metal_PeekOpenClose.0"
+        }
+      }
+    ],
+    "Default": {
+      "ObjectName": "MetaSoundSource'MSS_Door_PeekOpenClose'",
+      "ObjectPath": "/Game/Audio/Doors/MSS_Door_PeekOpenClose.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Door.Peek"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Door_PeekOpen ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Door_PeekOpen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Doors/AE_Door_PeekOpen",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Door.PeekOpen"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SelectDoorSound_C'AE_Door_PeekOpen:AEB_SelectDoorSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_PeekOpen.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToDoorHandle_C'AE_Door_PeekOpen:AEB_AttachSoundToDoorHandle_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_PeekOpen.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Door_PeekOpen:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_PeekOpen.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_PeekOpen'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_PeekOpen.2"
+  },
+  "Properties": {
+    "ParameterName": "PeekOpen",
+    "ContextTag": {
+      "TagName": "Audio.Context.Door.Peek"
+    }
+  }
+}

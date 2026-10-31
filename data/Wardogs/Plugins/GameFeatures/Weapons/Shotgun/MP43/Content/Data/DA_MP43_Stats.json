@@ -1,0 +1,853 @@
+--- export: UPrimaryDataAsset / DA_MP43_Stats ---
+{
+  "Type": "WDWeaponStatsData",
+  "Name": "DA_MP43_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWeaponStatsData'",
+  "Package": "/MP43/Data/DA_MP43_Stats",
+  "Properties": {
+    "WeaponId": {
+      "TagName": "Id.Item.MP43"
+    },
+    "WeaponStats": {
+      "WeaponAccuracy": {
+        "AccuracyValue": 3.08
+      },
+      "AdsCameraCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": -7.0260334E-08,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.29432473,
+              "Value": -3.1927236E-09,
+              "ArriveTangent": 1.0000001,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 1.0000001,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.50275815,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        },
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CF_Shotgun_ADS_Curve'",
+          "ObjectPath": "/Game/Weapons/Curves/ADSCurves/CF_Shotgun_ADS_Curve.0"
+        }
+      },
+      "DistanceDamageFalloffCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 7000.0,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 120000.0,
+              "Value": 0.2,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "RoundsPerMinute": 900.0,
+      "SupportedFireModes": [
+        "EWDFireMode::SemiAutomatic"
+      ],
+      "IronSightsFovMultiplier": 1.0,
+      "MinZeroingRange": 70,
+      "MaxZeroingRange": 70,
+      "ZeroingStep": 70,
+      "AnimationSwayData": {
+        "bPersistentADSValues": false,
+        "ADSPitchSwayMultiplierCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 0.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.005,
+                "Value": 0.4,
+                "ArriveTangent": 60.000004,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 60.000004,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.01,
+                "Value": 0.6,
+                "ArriveTangent": 40.000004,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 40.000004,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.02,
+                "Value": 1.0,
+                "ArriveTangent": 53.33333,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 53.33333,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.025,
+                "Value": 1.4,
+                "ArriveTangent": 15.000001,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 15.000001,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.1,
+                "Value": 2.2,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.25,
+                "Value": 2.2,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5,
+                "Value": 2.2,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CRV_WeaponAnimSwayMultiplier_Shotgun'",
+            "ObjectPath": "/Game/Items/Weapons/Curves/AimSway/Shotgun/CRV_WeaponAnimSwayMultiplier_Shotgun.0"
+          }
+        },
+        "ADSYawSwayMultiplierCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 0.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.005,
+                "Value": 0.4,
+                "ArriveTangent": 60.000004,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 60.000004,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.01,
+                "Value": 0.6,
+                "ArriveTangent": 40.000004,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 40.000004,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.02,
+                "Value": 1.0,
+                "ArriveTangent": 53.33333,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 53.33333,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.025,
+                "Value": 1.4,
+                "ArriveTangent": 15.000001,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 15.000001,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.1,
+                "Value": 2.2,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.25,
+                "Value": 2.2,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5,
+                "Value": 2.2,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CRV_WeaponAnimSwayMultiplier_Shotgun'",
+            "ObjectPath": "/Game/Items/Weapons/Curves/AimSway/Shotgun/CRV_WeaponAnimSwayMultiplier_Shotgun.0"
+          }
+        }
+      },
+      "AimSwayData": {
+        "bPersistentValues": false,
+        "CurveData": {
+          "AimSwaySpeedCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.92,
+                  "ArriveTangent": 0.0007260313,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0007260313,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 1.25,
+                  "ArriveTangent": -8.9E-05,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -8.9E-05,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 2.0,
+                  "Value": 1.15,
+                  "ArriveTangent": -0.018452,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.018452,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 3.0,
+                  "Value": 1.13,
+                  "ArriveTangent": -0.016196,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.016196,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.0,
+                  "Value": 1.15,
+                  "ArriveTangent": 0.042628,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.042628,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 5.0,
+                  "Value": 1.25,
+                  "ArriveTangent": -0.000119,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.000119,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 6.0,
+                  "Value": 0.92,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ]
+            },
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'AimSway_SpeedCurve_Shotgun'",
+              "ObjectPath": "/Game/Weapons/AimSway/Shotgun/AimSway_SpeedCurve_Shotgun.0"
+            }
+          },
+          "HorizontalAimSwayMovementCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.034346,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.034346,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.03,
+                  "ArriveTangent": 0.03379,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.03379,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.5,
+                  "Value": 0.045,
+                  "ArriveTangent": -0.000339,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.000339,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 2.2,
+                  "Value": 0.02,
+                  "ArriveTangent": -0.025736,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.025736,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 3.0,
+                  "Value": 0.0,
+                  "ArriveTangent": -0.01966,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.01966,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 3.8,
+                  "Value": -0.025,
+                  "ArriveTangent": -0.02955,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.02955,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.3,
+                  "Value": -0.045,
+                  "ArriveTangent": 3.9E-05,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 3.9E-05,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.9,
+                  "Value": -0.018,
+                  "ArriveTangent": 0.029889,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.029889,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 6.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.015109,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.015109,
+                  "LeaveTangentWeight": 0.0
+                }
+              ]
+            },
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'HorizontalAimSway_MovementCurve_Shotgun'",
+              "ObjectPath": "/Game/Weapons/AimSway/Shotgun/HorizontalAimSway_MovementCurve_Shotgun.0"
+            }
+          },
+          "VerticalAimSwayMovementCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.046751,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.046751,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.8,
+                  "Value": 0.045,
+                  "ArriveTangent": 0.052989,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.052989,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.2,
+                  "Value": 0.06,
+                  "ArriveTangent": -0.000174,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.000174,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.6,
+                  "Value": 0.052,
+                  "ArriveTangent": -0.031723,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.031723,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 3.0,
+                  "Value": 0.0,
+                  "ArriveTangent": -0.042543,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.042543,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 3.8,
+                  "Value": -0.045,
+                  "ArriveTangent": -0.046548,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.046548,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.2,
+                  "Value": -0.06,
+                  "ArriveTangent": -6.9E-05,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -6.9E-05,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.6,
+                  "Value": -0.052,
+                  "ArriveTangent": 0.027325,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.027325,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 6.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.046891,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.046891,
+                  "LeaveTangentWeight": 0.0
+                }
+              ]
+            },
+            "ExternalCurve": {
+              "ObjectName": "CurveFloat'VerticalAimSway_MovementCurve_Shotgun'",
+              "ObjectPath": "/Game/Weapons/AimSway/Shotgun/VerticalAimSway_MovementCurve_Shotgun.0"
+            }
+          },
+          "HorizontalDeviationRange": {
+            "Min": 0.9,
+            "Max": 1.15
+          },
+          "VerticalDeviationRange": {
+            "Min": 0.9,
+            "Max": 1.12
+          }
+        },
+        "TotalPatternDuration": 6.0,
+        "StandOffsetMultiplier": 1.3,
+        "ProneOffsetMultiplier": 0.4,
+        "NoFocusEnergySpeedMultiplier": 2.5,
+        "PlayerCameraOffsetMultiplier": 0.75,
+        "SwayScaleDecreaseCorrectionSpeed": 2.1,
+        "SwayScaleIncreaseCorrectionSpeed": 2.8,
+        "SwaySpeedDecreaseCorrectionSpeed": 2.3,
+        "SwaySpeedIncreaseCorrectionSpeed": 3.0,
+        "WeaponRotationIdleSwayMultiplier": 0.02,
+        "WeaponTranslationIdleSwayMultiplier": 0.01,
+        "WeaponTranslationStabilizationSway": {
+          "ExternalCurve": {
+            "ObjectName": "CurveVector'AdsStabilizationTranslation_Shotgun'",
+            "ObjectPath": "/Game/Weapons/AimSway/Shotgun/AdsStabilizationTranslation_Shotgun.0"
+          }
+        },
+        "WeaponRotationStabilizationSway": {
+          "ExternalCurve": {
+            "ObjectName": "CurveVector'AdsStabilizationRotation_Shotgun'",
+            "ObjectPath": "/Game/Weapons/AimSway/Shotgun/AdsStabilizationRotation_Shotgun.0"
+          }
+        },
+        "WeaponRotationStabilizationSwayCurveStanceMultiplier": {
+          "StandMultiplier": 0.5,
+          "CrouchMultiplier": 0.35
+        },
+        "bUseRotationStabilizationJitter": true,
+        "RotationStabilizationJitter": {
+          "StabilizationNoiseResultOffset": 0.1,
+          "StabilizationNoiseJitter": 1.0,
+          "StabilizationInitialOffset": 0.0,
+          "GeneralPathJitter": 0.7,
+          "SecondaryJitter": 0.7
+        },
+        "SightSwayDefaultDistanceOffset": 10.0,
+        "PlayerSpeedStabilizationMultiplierCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 0.5,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Constant",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 350.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CF_AimSway_Stabilization_PlayerSpeed'",
+            "ObjectPath": "/Game/Items/Weapons/Curves/AimSway/CF_AimSway_Stabilization_PlayerSpeed.0"
+          }
+        },
+        "ADSStabilizationMovementSpeedRateDown": 2.0,
+        "StabilizationHoldTime": 0.35,
+        "AdsStabilizationData": {
+          "AdsStabilizeTime": 1.0,
+          "AdsStabilizeCooldownRate": 0.6,
+          "AdsStabilizeExitGracePeriod": 0.2,
+          "AdsStabilizeCooldownRateMovingMultiplier": 2.0,
+          "AdsStabilizeMovementProgressPenalty": 0.4
+        }
+      },
+      "ViewKickCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 9.321039,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 9.321034,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.15,
+              "Value": 1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "ViewKickMagnitudeMultiplier": 1.15,
+      "RecoveryKickCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": -0.000432,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "FOVShiftingType": "EWDWeaponFOVShiftingType::Curve",
+      "FOVShiftingCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": -0.4,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 3.0,
+              "Value": -0.8,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 10.0,
+              "Value": -1.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "FOVShiftDuration": 0.35,
+      "RecoilPattern": [
+        {
+          "X": 0.84000367,
+          "Y": 1.71
+        },
+        {
+          "X": 0.45,
+          "Y": 1.9300013
+        }
+      ],
+      "RecoilPatternYawMinMax": {
+        "Min": -22.5,
+        "Max": 22.5
+      },
+      "RecoilPatternPitchMax": 45.0,
+      "PostPatternRandomYawRecoil": {
+        "X": -0.45,
+        "Y": 0.45
+      },
+      "PostPatternRandomPitchRecoil": {
+        "X": 0.8,
+        "Y": 1.4
+      },
+      "RandomDeviationDegree": 28.0,
+      "RecoilPatternResetTime": 1.2,
+      "MinimumRandomFiringAnimationOffset": {
+        "X": -0.35,
+        "Y": -0.35
+      },
+      "MaximumRandomFiringAnimationOffset": {
+        "X": 0.35,
+        "Y": 0.35
+      },
+      "SupportedCaliber": [
+        "Item.Caliber.7mmBuck",
+        "Item.Caliber.12g"
+      ],
+      "ShotgunData": {
+        "ChokeFactor": 0.35,
+        "OuterConeHalfAngle": 1.85,
+        "RandomConeHalfAngleRange": {
+          "X": 0.0,
+          "Y": 3.0
+        },
+        "InnerConeHalfAngleMultiplier": 0.6
+      },
+      "InitialBulletSpeed": 39100.0,
+      "MeleeDamage": 35.0,
+      "MeleeHitBoxSize": {
+        "X": 55.0,
+        "Y": 35.0,
+        "Z": 25.0
+      }
+    }
+  }
+}

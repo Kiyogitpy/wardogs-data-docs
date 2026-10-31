@@ -1,0 +1,97 @@
+--- export: UObject / AEB_DeactivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateControlBusMix_C",
+  "Name": "AEB_DeactivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.AEB_DeactivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_Deployed'",
+    "ObjectPath": "/Game/Audio/Events/Music/AE_Music_Deployed.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMix_C'Default__AEB_DeactivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_PopUpWindow'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_PopUpWindow.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_DeactivateControlBusMix_C_1 ---
+{
+  "Type": "AEB_DeactivateControlBusMix_C",
+  "Name": "AEB_DeactivateControlBusMix_C_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.AEB_DeactivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_Deployed'",
+    "ObjectPath": "/Game/Audio/Events/Music/AE_Music_Deployed.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMix_C'Default__AEB_DeactivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene_DeploymentScreen'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene_DeploymentScreen.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_Music_Deployed_C_1 ---
+{
+  "Type": "AEB_Music_Deployed_C",
+  "Name": "AEB_Music_Deployed_C_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/Music/AEB_Music_Deployed.AEB_Music_Deployed_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Music_Deployed'",
+    "ObjectPath": "/Game/Audio/Events/Music/AE_Music_Deployed.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_Music_Deployed_C'Default__AEB_Music_Deployed_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/Music/AEB_Music_Deployed.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Music_Deployed ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Music_Deployed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Music/AE_Music_Deployed",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Music.Deployed"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Music_Deployed_C'AE_Music_Deployed:AEB_Music_Deployed_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Music/AE_Music_Deployed.2"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMix_C'AE_Music_Deployed:AEB_DeactivateControlBusMix_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Music/AE_Music_Deployed.1"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMix_C'AE_Music_Deployed:AEB_DeactivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Music/AE_Music_Deployed.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_05_Minigun'",
+    "ObjectPath": "/WHL_05_Minigun/Variants/ID_WHL_05_Minigun.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 4,
+      "Y": 3
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_WHL_05_Minigun ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_WHL_05_Minigun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/WHL_05_Minigun/Variants/ID_WHL_05_Minigun",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Minigun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_WHL_05_Minigun:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/WHL_05_Minigun/Variants/ID_WHL_05_Minigun.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_WHL_05_Minigun:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/WHL_05_Minigun/Variants/ID_WHL_05_Minigun.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_05_Minigun'",
+    "ObjectPath": "/WHL_05_Minigun/Variants/ID_WHL_05_Minigun.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_WHL_05_Audio'",
+      "ObjectPath": "/WHL_05/Data/DA_WHL_05_Audio.0"
+    }
+  }
+}

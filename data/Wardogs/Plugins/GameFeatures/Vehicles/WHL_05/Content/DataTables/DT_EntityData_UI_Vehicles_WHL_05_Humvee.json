@@ -1,0 +1,129 @@
+--- export: UDataTable / DT_EntityData_UI_Vehicles_WHL_05_Humvee ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Vehicles_WHL_05_Humvee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/WHL_05/DataTables/DT_EntityData_UI_Vehicles_WHL_05_Humvee",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Vehicle.Variant.Land.Wheeled.Humvee.Default": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Name.Humvee.Medium",
+        "SourceString": "Humvee",
+        "LocalizedString": "Humvee"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Description.Humvee",
+        "SourceString": "4 Seat Light-Armored Wheeled Vehicle. Best Suited For Off Road Travel",
+        "LocalizedString": "4 Seat Light-Armored Wheeled Vehicle. Best Suited For Off Road Travel"
+      },
+      "Category": {
+        "TagName": "Vehicle.Archetype.Land.Wheeled"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Driver"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Vehicle"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipSubtitle.Vehicle.SUV",
+            "SourceString": "SUV",
+            "LocalizedString": "SUV"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipDescription.Vehicle.Humvee",
+            "SourceString": "1 Driver + 3 Passengers\r\nOptional Logistics Crates",
+            "LocalizedString": "1 Driver + 3 Passengers\r\nOptional Logistics Crates"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipFlavor.Vehicle.Humvee",
+            "SourceString": "Manufactured by PATRIOT. \r\nAn armored transport vehicle designed to transport troops and cargo into battle.",
+            "LocalizedString": "Manufactured by PATRIOT. \r\nAn armored transport vehicle designed to transport troops and cargo into battle."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Spatial_Humvee_256px.T_UI_Icon_Spatial_Humvee_256px",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/3D/T_UI_Vehicle_transport_Humvee_Temp_512x512.T_UI_Vehicle_transport_Humvee_Temp_512x512",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Tooltip"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Spatial_Humvee_256px.T_UI_Icon_Spatial_Humvee_256px",
+            "Value": [
+              "UI.Icon.Tracker.Spatial",
+              "UI.Icon.Tracker.TacticalMap"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_Kodiak_VehicleHUD_512x512.T_UI_Icon_Kodiak_VehicleHUD_512x512",
+            "Value": [
+              "UI.Icon.Vehicle.State"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_Humvee.T_UI_Icon_Killfeed_Humvee",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+      }
+    }
+  }
+}

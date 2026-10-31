@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / DA_Action_Bandage_PrimaryUse ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Bandage_PrimaryUse",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Appliables/Bandage/DA_Action_Bandage_PrimaryUse",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Appliable.Bandage.PrimaryUse"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Interaction",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Bandage_Use_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Appliables/Bandage/B_Action_Bandage_Use.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Appliable.Bandage.SecondaryUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.TacSprint",
+            "Action.Player.Sprint"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDAppliableItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

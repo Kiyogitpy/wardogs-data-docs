@@ -1,0 +1,65 @@
+--- export: UDataAsset / DA_ContainerGridSlot_Vendor_Weapon ---
+{
+  "Type": "WDUIWeaponGridSlotData_Vendor",
+  "Name": "DA_ContainerGridSlot_Vendor_Weapon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWeaponGridSlotData_Vendor'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ContainerGridSlot/Data/DA_ContainerGridSlot_Vendor_Weapon",
+  "Properties": {
+    "AttachmentsLayoutViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerLayout/Data/DA_ContainerLayout_Vendor_Overview_Attachments.DA_ContainerLayout_Vendor_Overview_Attachments",
+        "SubPathString": ""
+      }
+    },
+    "AmmoSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot_Attachment.DA_ContainerGrid_Vendor_Slot_Attachment",
+        "SubPathString": ""
+      }
+    },
+    "BlacklistedVendorAttachments": [
+      "Item.Ammo",
+      "Item.Attachment.Chamber",
+      "Item.Attachment.Magazine"
+    ],
+    "ActivatedText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Active",
+      "SourceString": "Active",
+      "LocalizedString": "Active"
+    },
+    "DeactivatedText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Inactive",
+      "SourceString": "Inactive",
+      "LocalizedString": "Inactive"
+    },
+    "HintIconType": {
+      "TagName": "UI.Icon.Inventory"
+    },
+    "bUseItemAsSlotName": true,
+    "States": [
+      {
+        "Key": {
+          "TagName": "UI.Shared.ShapeGrid.SlotState.Available"
+        },
+        "Value": 0
+      },
+      {
+        "Key": {
+          "TagName": "UI.Shared.ShapeGrid.SlotState.Unavailable"
+        },
+        "Value": 0
+      }
+    ]
+  }
+}

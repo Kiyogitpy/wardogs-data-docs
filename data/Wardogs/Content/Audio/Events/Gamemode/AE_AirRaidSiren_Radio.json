@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_AirRaidSiren_Radio ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_AirRaidSiren_Radio",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gamemode/AE_AirRaidSiren_Radio",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Environment.AirRaidSiren.Radio"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_AirRaidSiren_Radio:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Gamemode/AE_AirRaidSiren_Radio.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_AirRaidSiren_Radio'",
+    "ObjectPath": "/Game/Audio/Events/Gamemode/AE_AirRaidSiren_Radio.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_10PointSiren_Radio'",
+      "ObjectPath": "/Game/Audio/Gamemode/AirRaidSiren/MSS/MSS_10PointSiren_Radio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

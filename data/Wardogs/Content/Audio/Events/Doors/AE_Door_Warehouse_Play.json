@@ -1,0 +1,80 @@
+--- export: UPrimaryDataAsset / AE_Door_Warehouse_Play ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Door_Warehouse_Play",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Door.Warehouse"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Door_Warehouse_Play:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Door_Warehouse_Play:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Door_Warehouse_Play:CrosstalkAudioEventBehaviorExecuteTriggerParameter_1'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Warehouse_Play'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Warehouse_Play'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play.0"
+  },
+  "Properties": {
+    "ParameterName": "Start",
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Warehouse_Play'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Warehouse_Play.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Door_Warehouse_OpenClose'",
+      "ObjectPath": "/Game/Audio/Doors/Warehouse/MSS_Door_Warehouse_OpenClose.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}

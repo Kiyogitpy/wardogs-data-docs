@@ -1,0 +1,48 @@
+--- export: UDataAsset / EQS_FindRandomPeekPoint ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindRandomPeekPoint",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/CoverExample/EQS_FindRandomPeekPoint",
+  "Properties": {
+    "QueryName": "EQS_FindRandomPeekPoint",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindRandomPeekPoint:EnvQueryOption_1'",
+        "ObjectPath": "/CoverExample/EQS_FindRandomPeekPoint.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindRandomPeekPoint'",
+    "ObjectPath": "/CoverExample/EQS_FindRandomPeekPoint.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_PeekPoints'EQS_FindRandomPeekPoint:SDEnvQueryGenerator_PeekPoints_0'",
+      "ObjectPath": "/CoverExample/EQS_FindRandomPeekPoint.2"
+    }
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_PeekPoints_0 ---
+{
+  "Type": "SDEnvQueryGenerator_PeekPoints",
+  "Name": "SDEnvQueryGenerator_PeekPoints_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_PeekPoints'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindRandomPeekPoint'",
+    "ObjectPath": "/CoverExample/EQS_FindRandomPeekPoint.0"
+  },
+  "Properties": {
+    "VerNum": 1
+  }
+}

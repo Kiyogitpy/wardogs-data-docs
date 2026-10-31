@@ -1,0 +1,79 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Ural_Turret'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/WHL_07/ID_Ural_Turret.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.556mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 150,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.556mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_Ural_Turret ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Ural_Turret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/WHL_07/ID_Ural_Turret",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.UralVehicleMachineGun"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.WHL_07.MountedMachineGun",
+      "Item.Context.MovementBlocked"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "66C047EC48122878BDB62A960B4A1582",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Ural_Turret:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/WHL_07/ID_Ural_Turret.0"
+      }
+    ]
+  }
+}

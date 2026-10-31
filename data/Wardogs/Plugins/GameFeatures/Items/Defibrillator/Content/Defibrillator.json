@@ -1,0 +1,164 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Defibrillator'",
+    "ObjectPath": "/Defibrillator/Defibrillator.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Defibrilator'",
+      "ObjectPath": "/Defibrillator/EDL_Defibrilator.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Defibrillator'",
+    "ObjectPath": "/Defibrillator/Defibrillator.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Defibrillator/Data/DT_EntityData_UI_Ext_Defibrillator.DT_EntityData_UI_Ext_Defibrillator",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Defibrillator'",
+    "ObjectPath": "/Defibrillator/Defibrillator.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Defibrillator/Data/DT_VendorData_Ext_Defibrillator.DT_VendorData_Ext_Defibrillator",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Defibrillator ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Defibrillator",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Defibrillator/Defibrillator",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Defibrillator:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Defibrillator/Defibrillator.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Defibrillator:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/Defibrillator/Defibrillator.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'Defibrillator:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/Defibrillator/Defibrillator.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Defibrillator/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Defibrillator/Data/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Defibrillator/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

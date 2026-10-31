@@ -1,0 +1,94 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_UsePrimary_Start_FuelCan'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_FuelCannister_C_0 ---
+{
+  "Type": "AEB_FuelCannister_C",
+  "Name": "AEB_FuelCannister_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_FuelCannister.AEB_FuelCannister_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_UsePrimary_Start_FuelCan'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_FuelCannister_C'Default__AEB_FuelCannister_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_FuelCannister.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_UsePrimary_Start_FuelCan'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Item_UsePrimary_Start_FuelCan ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_UsePrimary_Start_FuelCan",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.UsePrimary.Start.FuelCan"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_FuelCannister_C'AE_Item_UsePrimary_Start_FuelCan:AEB_FuelCannister_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan.1"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Item_UsePrimary_Start_FuelCan:AEB_PlayHeldWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan.2"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Item_UsePrimary_Start_FuelCan:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/FuelCan/AE_Item_UsePrimary_Start_FuelCan.0"
+      }
+    ]
+  }
+}

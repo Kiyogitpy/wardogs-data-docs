@@ -1,0 +1,114 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Grenade_Explosion ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Grenade_Explosion",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Grenade.Explosion"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Weapon_Grenade_Explosion:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Grenade_Explosion:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Grenade_Explosion:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorApplyImpulseResonance'AE_Weapon_Grenade_Explosion:WDAudioEventBehaviorApplyImpulseResonance_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.4"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 405.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Grenade_Explosion_Preset'",
+      "ObjectPath": "/Game/Audio/Weapon/Throwable/Grenade/MSS/MSS_Weapon_Throwable_Grenade_Explosion_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.0"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorApplyImpulseResonance_0 ---
+{
+  "Type": "WDAudioEventBehaviorApplyImpulseResonance",
+  "Name": "WDAudioEventBehaviorApplyImpulseResonance_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorApplyImpulseResonance'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Grenade_Explosion'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/Grenade/AE_Weapon_Grenade_Explosion.0"
+  },
+  "Properties": {
+    "DefaultResonanceRange": 1500.0,
+    "IdImpulseProperties": [
+      {
+        "Key": {
+          "TagName": "Id.Item.M67Grenade"
+        },
+        "Value": {
+          "ResonanceRange": 3500.0,
+          "VolumeScaling": 0.8
+        }
+      }
+    ],
+    "CollisionChannel": "ECollisionChannel::ECC_GameTraceChannel12",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}

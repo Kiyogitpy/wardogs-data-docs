@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_TrackerData_Spatial_Scenario ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Spatial_Scenario",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/BaseScenario/UI/Trackers/DT_TrackerData_Spatial_Scenario",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.VIP": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.VIP.Transforms",
+        "Trackers.Type.VIP.Data"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/BaseScenario/UI/Trackers/SpatialTracker/W_Tracker_Spatial_VIP.W_Tracker_Spatial_VIP_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BaseScenarioRuntime.WDUIVIPSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/BaseScenario/UI/Trackers/SpatialTracker/DA_Tracker_Spatial_VIP.DA_Tracker_Spatial_VIP",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.VIP"
+      }
+    }
+  }
+}

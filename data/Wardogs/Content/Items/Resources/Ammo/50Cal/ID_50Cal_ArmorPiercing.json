@@ -1,0 +1,145 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50Cal_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50Cal_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/762x54mm/SM_762x54mm_Ammo.SM_762x54mm_Ammo",
+      "SubPathString": ""
+    },
+    "_aaaankomdlipjpppmphif": 2.0
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50Cal_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.4"
+  },
+  "Properties": {
+    "MaxStackSize": 30
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50Cal_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_50Cal_ArmorPiercing ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_50Cal_ArmorPiercing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.50Cal.ArmorPiercing"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.50Cal",
+      "Item.Ammo.Type.ArmorPiercing",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "BA0723AF4FB911191DFCAA983C844731",
+      "SourceString": ".50 Cal AP",
+      "LocalizedString": ".50 Cal AP"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_50Cal_ArmorPiercing:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_50Cal_ArmorPiercing:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_50Cal_ArmorPiercing:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_50Cal_ArmorPiercing:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_50Cal_ArmorPiercing:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_50Cal_ArmorPiercing:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50Cal_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50Cal_ArmorPiercing'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_50Cal_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/50Cal/DA_50Cal_ProjectileData.0"
+    }
+  }
+}

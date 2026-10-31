@@ -1,0 +1,65 @@
+--- export: UObject / B_CameraModifier_Molotov_C_0 ---
+{
+  "Type": "B_CameraModifier_MolotovBurning_C",
+  "Name": "B_CameraModifier_Molotov_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Molotov/Data/Camera/B_CameraModifier_MolotovBurning.B_CameraModifier_MolotovBurning_C'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_MolotovBurning'",
+    "ObjectPath": "/Molotov/Data/DA_CharacterModifierState_MolotovBurning.2"
+  },
+  "Template": {
+    "ObjectName": "B_CameraModifier_MolotovBurning_C'Default__B_CameraModifier_MolotovBurning_C'",
+    "ObjectPath": "/Molotov/Data/Camera/B_CameraModifier_MolotovBurning.0"
+  },
+  "Properties": {
+    "bBlendedRemoval": true,
+    "RemovalTime": 0.25
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_Tags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_Tags",
+  "Name": "WDCharacterModifierCondition_Tags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_Tags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_MolotovBurning'",
+    "ObjectPath": "/Molotov/Data/DA_CharacterModifierState_MolotovBurning.2"
+  },
+  "Properties": {
+    "Requirements": {
+      "RequireTags": [
+        "State.Player.Molotov.Burning"
+      ],
+      "IgnoreTags": [
+        "State.Player.Vitality.Critical"
+      ]
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_MolotovBurning ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_MolotovBurning",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Molotov/Data/DA_CharacterModifierState_MolotovBurning",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Molotov.Burning"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "B_CameraModifier_MolotovBurning_C'DA_CharacterModifierState_MolotovBurning:B_CameraModifier_Molotov_C_0'",
+        "ObjectPath": "/Molotov/Data/DA_CharacterModifierState_MolotovBurning.0"
+      }
+    ],
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_Tags'DA_CharacterModifierState_MolotovBurning:WDCharacterModifierCondition_Tags_0'",
+        "ObjectPath": "/Molotov/Data/DA_CharacterModifierState_MolotovBurning.1"
+      }
+    ]
+  }
+}

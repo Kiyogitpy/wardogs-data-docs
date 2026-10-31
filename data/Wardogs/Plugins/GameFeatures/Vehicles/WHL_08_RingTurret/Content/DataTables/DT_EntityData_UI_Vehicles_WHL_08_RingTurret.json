@@ -1,0 +1,182 @@
+--- export: UDataTable / DT_EntityData_UI_Vehicles_WHL_08_RingTurret ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Vehicles_WHL_08_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/WHL_08_RingTurret/DataTables/DT_EntityData_UI_Vehicles_WHL_08_RingTurret",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Name.Wolf-110.Assault",
+        "SourceString": "Wolf-110 [M2 Browning]",
+        "LocalizedString": "Wolf-110 [M2 Browning]"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Description.Wolf-110.Assault",
+        "SourceString": "5 Seat Wheeled Vehicle With A Machine Gun Attachment",
+        "LocalizedString": "5 Seat Wheeled Vehicle With A Machine Gun Attachment"
+      },
+      "Category": {
+        "TagName": "Vehicle.Archetype.Land.Wheeled"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Driver"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Vehicle"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipSubtitle.Vehicle.SUV",
+            "SourceString": "SUV",
+            "LocalizedString": "SUV"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipDescription.Vehicle.WHL_08.Assault",
+            "SourceString": "- 2 Crew + 3 Passengers\r\n- Optional Logistics Crates",
+            "LocalizedString": "- 2 Crew + 3 Passengers\r\n- Optional Logistics Crates"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Spatial_Humvee_256px.T_UI_Icon_Spatial_Humvee_256px",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/3D/T_UI_Vendor_WHL_08_Gun.T_UI_Vendor_WHL_08_Gun",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Tooltip"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/T_UI_Spatial_WHL_08.T_UI_Spatial_WHL_08",
+            "Value": [
+              "UI.Icon.Tracker.Spatial",
+              "UI.Icon.Tracker.TacticalMap"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_Kodiak_VehicleHUD_512x512.T_UI_Icon_Kodiak_VehicleHUD_512x512",
+            "Value": [
+              "UI.Icon.Vehicle.State"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_WHL_08.T_UI_Icon_Killfeed_WHL_08",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+      }
+    },
+    "Id.Vehicle.WeaponExtension.WHL_08.RingTurret": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_VehicleVendor_Stats.STRINGS_VehicleVendor_Stats",
+        "Key": "VehicleStats.Equipment.MountedM2Browning",
+        "SourceString": "M2 Browning Machine Gun",
+        "LocalizedString": "M2 Browning Machine Gun"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Driver"
+      },
+      "TooltipTags": [],
+      "AdditionalTexts": [],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_MGNest.T_UI_Icon_Killfeed_MGNest",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/HUD/Vehicles/Vehicle_HUD_Materials/Textures/T_UI_Missile_Inactive.T_UI_Missile_Inactive",
+            "Value": [
+              "UI.Icon.Vehicle.WeaponExtension.WeaponType.Active"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/HUD/Vehicles/Vehicle_HUD_Materials/Textures/T_UI_Missile_Active.T_UI_Missile_Active",
+            "Value": [
+              "UI.Icon.Vehicle.WeaponExtension.WeaponType.Inactive"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/3D/T_UI_Vehicle_WPN_MachineGun.T_UI_Vehicle_WPN_MachineGun",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.WHL_08.RingTurret"
+      }
+    }
+  }
+}

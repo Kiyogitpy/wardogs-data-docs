@@ -1,0 +1,261 @@
+--- export: UDataTable / DT_GlobalDamage_VehicleData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_GlobalDamage_VehicleData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDDamageableEntityTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Damage.Vehicle": {
+      "DamageModificationEntries": [
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.AmmoModifier.HollowPoint"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -40.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.AmmoModifier.HollowPoint"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 40.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.AmmoModifier"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Kinetic.Impact.Ricochet"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Ricochet"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::None",
+            "Amount": 0.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "None"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle"
+      }
+    }
+  }
+}

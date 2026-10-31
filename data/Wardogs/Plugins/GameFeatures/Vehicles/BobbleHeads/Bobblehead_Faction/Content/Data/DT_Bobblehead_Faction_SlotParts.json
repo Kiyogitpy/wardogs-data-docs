@@ -1,0 +1,56 @@
+--- export: UDataTable / DT_Bobblehead_Faction_SlotParts ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Bobblehead_Faction_SlotParts",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Bobblehead_Faction/Data/DT_Bobblehead_Faction_SlotParts",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDVehicleSlotPartRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Cosmetic.Bobblehead.Wardog": {
+      "Part": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "TargetSlot": "Bobblehead",
+      "VehicleFilter": [],
+      "Selectors": [
+        {
+          "FactionTag": {
+            "TagName": "Meta.Alignment.Faction.Alpha"
+          },
+          "Part": {
+            "AssetPathName": "/Bobblehead_Faction/Parts/VP_BobbleHead_Lonestar.VP_BobbleHead_Lonestar",
+            "SubPathString": ""
+          }
+        },
+        {
+          "FactionTag": {
+            "TagName": "Meta.Alignment.Faction.Bravo"
+          },
+          "Part": {
+            "AssetPathName": "/Bobblehead_Faction/Parts/VP_BobbleHead_Valkyra.VP_BobbleHead_Valkyra",
+            "SubPathString": ""
+          }
+        },
+        {
+          "FactionTag": {
+            "TagName": "Meta.Alignment.Faction.Charlie"
+          },
+          "Part": {
+            "AssetPathName": "/Bobblehead_Faction/Parts/VP_BobbleHead_Manticore.VP_BobbleHead_Manticore",
+            "SubPathString": ""
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Cosmetic.Bobblehead.Wardog"
+      }
+    }
+  }
+}

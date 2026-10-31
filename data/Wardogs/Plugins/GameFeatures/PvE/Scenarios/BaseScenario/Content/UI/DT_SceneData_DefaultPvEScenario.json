@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_SceneData_DefaultPvEScenario ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_DefaultPvEScenario",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/BaseScenario/UI/DT_SceneData_DefaultPvEScenario",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Match.Scenario.Results": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/BaseScenario/UI/W_ScenarioResultsScene.W_ScenarioResultsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BaseScenarioRuntime.WDUIScenarioResultsSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/BaseScenario/UI/DA_DefaultScenarioResultsSceneData.DA_DefaultScenarioResultsSceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Match.Scenario.Results"
+      }
+    }
+  }
+}

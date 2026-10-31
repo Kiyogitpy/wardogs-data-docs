@@ -1,0 +1,64 @@
+--- export: UObject / AEB_RequestVox_C_1 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Request_Revive'",
+    "ObjectPath": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Revive.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Request.Revive"
+      }
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_Request_Revive ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Request_Revive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Revive",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Request.Revive"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Comms_Request_Revive:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Revive.2"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Comms_Request_Revive:AEB_RequestVox_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Revive.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Request_Revive'",
+    "ObjectPath": "/Game/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Revive.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

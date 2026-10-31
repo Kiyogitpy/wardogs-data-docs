@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_Seeding_RewardReason_Shooting ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Seeding_RewardReason_Shooting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/Seeding/AE_UI_InGame_Seeding_RewardReason_Shooting",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.ServerSeeding.RewardReason.Shooting"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Seeding_RewardReason_Shooting:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/Seeding/AE_UI_InGame_Seeding_RewardReason_Shooting.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Seeding_RewardReason_Shooting'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/Seeding/AE_UI_InGame_Seeding_RewardReason_Shooting.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Seeding_Reward_Shooting'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Seeding/MSS_UI_InGame_Seeding_Reward_Shooting.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

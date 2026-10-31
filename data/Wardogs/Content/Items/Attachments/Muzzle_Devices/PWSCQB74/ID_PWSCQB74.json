@@ -1,0 +1,197 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/SM_PWSCQB74_Muzzle.SM_PWSCQB74_Muzzle",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  },
+  "Properties": {
+    "Weight": 0.22
+  }
+}
+--- export: UPrimaryDataAsset / ID_PWSCQB74 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_PWSCQB74",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.PWSCQB74Muzzle"
+    },
+    "ItemContext": [
+      "Item.Context.Equippable",
+      "Item.Attachment.Muzzle.AK74M"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Attachments.STRINGS_Items_Attachments",
+      "Key": "Items.Attachments.MUZL_015",
+      "SourceString": "CQB 74 Brake",
+      "LocalizedString": "CQB 74 Brake"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_PWSCQB74:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_PWSCQB74:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_PWSCQB74:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_PWSCQB74:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_PWSCQB74:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_PWSCQB74:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_PWSCQB74:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "FireAudioContextTag": {
+        "TagName": "None"
+      },
+      "FireMuzzleFlashScaleMultiplier": 0.2,
+      "bOverrideShotgunData": false,
+      "ShotgunData": {
+        "ChokeFactor": 0.8,
+        "bSeparateOuterConeHalfAngles": false,
+        "OuterConeHalfAngle": 10.0,
+        "OuterConeHorizontalHalfAngle": 10.0,
+        "OuterConeVerticalHalfAngle": 10.0,
+        "bSeparateRandomConeHalfAnglesRanges": false,
+        "RandomConeHalfAngleRange": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "RandomConeHorizontalHalfAngleRange": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "RandomConeVerticalHalfAngleRange": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "InnerConeHalfAngleMultiplier": 0.5
+      },
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Muzzle"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_PWSCQB74_C'",
+          "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/GE_PWSCQB74.0"
+        }
+      ],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PWSCQB74'",
+    "ObjectPath": "/Game/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.4"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

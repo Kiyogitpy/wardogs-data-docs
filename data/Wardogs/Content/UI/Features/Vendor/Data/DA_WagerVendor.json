@@ -1,0 +1,23 @@
+--- export: UDataAsset / DA_WagerVendor ---
+{
+  "Type": "WDUIVendorData_Rework",
+  "Name": "DA_WagerVendor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorData_Rework'",
+  "Package": "/Game/UI/Features/Vendor/Data/DA_WagerVendor",
+  "Properties": {
+    "_aaabolcgkpleccdobhlkn": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "bFlushInputOnEnter": true,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Equipment.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Equipment.Close"
+    },
+    "AssociatedSceneAction": {
+      "TagName": "Action.Player.AccessWagerVendor"
+    }
+  }
+}

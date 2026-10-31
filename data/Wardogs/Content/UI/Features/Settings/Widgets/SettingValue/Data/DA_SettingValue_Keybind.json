@@ -1,0 +1,169 @@
+--- export: UDataAsset / DA_SettingValue_Keybind ---
+{
+  "Type": "WDUISettingValueKeybindData",
+  "Name": "DA_SettingValue_Keybind",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingValueKeybindData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_Keybind",
+  "Properties": {
+    "SelectingKeyText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+      "Key": "Value.Keybindings.SelectKey",
+      "SourceString": "...",
+      "LocalizedString": "..."
+    },
+    "NoKeySelectedText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings_Keybindings.STRINGS_Settings_Keybindings",
+      "Key": "Value.Keybindings.NoKeySelected",
+      "SourceString": "-",
+      "LocalizedString": "-"
+    },
+    "BoundActionTextFormat": {
+      "CultureInvariantString": "{Name}"
+    },
+    "NoKeySelectedTexture": {
+      "AssetPathName": "/Game/UI/Shared/Textures/T_UI_Empty.T_UI_Empty",
+      "SubPathString": ""
+    },
+    "DefaultKeyTexture": {
+      "AssetPathName": "/Game/UI/Shared/Textures/T_UI_Empty.T_UI_Empty",
+      "SubPathString": ""
+    },
+    "OverwriteKeybindPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.OverwriteKeybind"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.OverwriteKeybind",
+        "SourceString": "Key already bound",
+        "LocalizedString": "Key already bound"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.OverwriteKeybind",
+        "SourceString": "Existing keybinding(s) will be unbound.",
+        "LocalizedString": "Existing keybinding(s) will be unbound."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.OverwriteKeybind",
+        "SourceString": "<keyglyph key=\"{Key}\"/>  is already bound to the following action(s):\r\n\r\n{Keybinding}\r\n\r\nAre you sure you want to overwrite the action(s)?",
+        "LocalizedString": "<keyglyph key=\"{Key}\"/>  is already bound to the following action(s):\r\n\r\n{Keybinding}\r\n\r\nAre you sure you want to overwrite the action(s)?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "BindToExistingKeyPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.BindToExistingKey"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.OverwriteKeybind",
+        "SourceString": "Key already bound",
+        "LocalizedString": "Key already bound"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.BindToExistingKey",
+        "SourceString": "Multiple actions will be bound to the same key.",
+        "LocalizedString": "Multiple actions will be bound to the same key."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.BindToExistingKey",
+        "SourceString": "<keyglyph key=\"{Key}\"/>  is already bound to the following action(s):\r\n\r\n{Keybinding}\r\n\r\nAre you sure you want to bind to the same key?",
+        "LocalizedString": "<keyglyph key=\"{Key}\"/>  is already bound to the following action(s):\r\n\r\n{Keybinding}\r\n\r\nAre you sure you want to bind to the same key?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaaaofmbpdbhapjlcfaom": true,
+    "_aaabdcfgjhnbglaieiiha": 1.5,
+    "UnknownValueText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+      "Key": "Value.Unknown",
+      "SourceString": "Custom",
+      "LocalizedString": "Custom"
+    }
+  }
+}

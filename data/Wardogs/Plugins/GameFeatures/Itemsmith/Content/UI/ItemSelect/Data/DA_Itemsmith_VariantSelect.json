@@ -1,0 +1,122 @@
+--- export: UObject / WDUIGunsmithFavouritedVariantsFilter_0 ---
+{
+  "Type": "WDUIGunsmithFavouritedVariantsFilter",
+  "Name": "WDUIGunsmithFavouritedVariantsFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGunsmithFavouritedVariantsFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Itemsmith_VariantSelect'",
+    "ObjectPath": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_VariantSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Itemsmith.Variants.Tabs.Favourite"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.ItemSelect.TabGroup.Favourite",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Browser/Data/DA_Itemsmith_Variants_BrowserList.DA_Itemsmith_Variants_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDUIGunsmithVariantsFilter_0 ---
+{
+  "Type": "WDUIGunsmithVariantsFilter",
+  "Name": "WDUIGunsmithVariantsFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGunsmithVariantsFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Itemsmith_VariantSelect'",
+    "ObjectPath": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_VariantSelect.2"
+  },
+  "Properties": {
+    "NewVariantIdTag": {
+      "TagName": "Itemsmith.Variants.CreateNewButton"
+    },
+    "FilterIdTag": {
+      "TagName": "Itemsmith.Variants.Tabs.Saved"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.Variants.TabGroup.SavedVariants",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Browser/Data/DA_Itemsmith_Variants_BrowserList.DA_Itemsmith_Variants_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UDataAsset / DA_Itemsmith_VariantSelect ---
+{
+  "Type": "WDUIItemsmithItemSelectData",
+  "Name": "DA_Itemsmith_VariantSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithItemSelectData'",
+  "Package": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_VariantSelect",
+  "Properties": {
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Item.Archetype.AR"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIGunsmithFavouritedVariantsFilter'DA_Itemsmith_VariantSelect:WDUIGunsmithFavouritedVariantsFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_VariantSelect.0"
+      },
+      {
+        "ObjectName": "WDUIGunsmithVariantsFilter'DA_Itemsmith_VariantSelect:WDUIGunsmithVariantsFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/ItemSelect/Data/DA_Itemsmith_VariantSelect.1"
+      }
+    ],
+    "PageType": "EWDUIItemsmithPages::Variants",
+    "CameraMode": "EItemsmithCameraMode::FixedSideOn",
+    "CameraFocusOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 5.5
+    },
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_BlueprintSelect'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BlueprintSelect.0"
+    },
+    "InputMappingContextPriority": 1
+  }
+}

@@ -1,0 +1,69 @@
+--- export: UObject / AEB_Play_FOB_Build_C_0 ---
+{
+  "Type": "AEB_Play_Buildable_Sound_C",
+  "Name": "AEB_Play_FOB_Build_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Buildables/Data/Buildables/Audio/AEB_Play_Buildable_Sound.AEB_Play_Buildable_Sound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Placed'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Placed.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Play_Buildable_Sound_C'Default__AEB_Play_Buildable_Sound_C'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AEB_Play_Buildable_Sound.0"
+  },
+  "Properties": {
+    "Sound Asset Tag": {
+      "TagName": "Audio.Asset.Buildable.Placed"
+    },
+    "Restart Behavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.Placed"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Buildable_Placed ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Buildable_Placed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/Audio/AE_Buildable_Placed",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Buildable.Placed"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Buildable_Placed:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Placed.2"
+      },
+      {
+        "ObjectName": "AEB_Play_Buildable_Sound_C'AE_Buildable_Placed:AEB_Play_FOB_Build_C_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Placed.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 40.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Placed'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Placed.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 10.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.Placed"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UX_Cash_Assist_BuiltScore_Enemy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Cash_Assist_BuiltScore_Enemy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Cash/Assists/AE_UX_Cash_Assist_BuiltScore_Enemy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Cash.Assist.BuiltScore.Enemy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Cash_Assist_BuiltScore_Enemy:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Cash/Assists/AE_UX_Cash_Assist_BuiltScore_Enemy.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Cash_Assist_BuiltScore_Enemy'",
+    "ObjectPath": "/Game/Audio/Events/UX/Cash/Assists/AE_UX_Cash_Assist_BuiltScore_Enemy.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Cash_Assist'",
+      "ObjectPath": "/Game/Audio/UX/Cash/MSS_UX_Cash_Assist.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Cash.Assist"
+    }
+  }
+}

@@ -1,0 +1,89 @@
+--- export: UObject / AEB_AttachSoundToVehicle_C_0 ---
+{
+  "Type": "AEB_AttachSoundToVehicle_C",
+  "Name": "AEB_AttachSoundToVehicle_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.AEB_AttachSoundToVehicle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Exit_TNK_01'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToVehicle_C'Default__AEB_AttachSoundToVehicle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Exit"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Exit_TNK_01'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Exit"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Exit_TNK_01 ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Exit_TNK_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Exit.TNK_01"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToVehicle_C'AE_Vehicle_Exit_TNK_01:AEB_AttachSoundToVehicle_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_Exit_TNK_01:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01.3"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Exit_TNK_01:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 150.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Exit_TNK_01'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Land/TNK_01/AE_Vehicle_Exit_TNK_01.2"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_TNK_01_Exit_3p'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/TNK_01/MSS/3p/MSS_Vehicle_TNK_01_Exit_3p.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Exit"
+    }
+  }
+}

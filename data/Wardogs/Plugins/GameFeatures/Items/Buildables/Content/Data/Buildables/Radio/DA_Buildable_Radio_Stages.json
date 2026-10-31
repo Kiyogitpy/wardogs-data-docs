@@ -1,0 +1,5076 @@
+--- export: UDataAsset / DA_Buildable_Radio_Stages ---
+{
+  "Type": "BuildingStagesDefinition",
+  "Name": "DA_Buildable_Radio_Stages",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BuildingStagesDefinition'",
+  "Package": "/Buildables/Data/Buildables/Radio/DA_Buildable_Radio_Stages",
+  "Properties": {
+    "BoundingBox": {
+      "Min": {
+        "X": -75.0,
+        "Y": -150.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 75.0,
+        "Y": 150.0,
+        "Z": 180.0
+      },
+      "IsValid": 1
+    },
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": -0.0,
+          "Y": 0.0,
+          "Z": -0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": -150.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": 150.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 1.0,
+          "W": 6.123234E-17,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": -75.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.0,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": -79.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 1.0,
+          "W": 6.123234E-17,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": 75.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.0,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": 72.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.70710677,
+          "Z": 0.0,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": -75.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.70710677,
+          "Z": 0.0,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": 75.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "Stages": [
+      {
+        "StageName": "Stage 1",
+        "RequiredBuildingProgress": 0.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [
+          {
+            "Key": "/Game/Environment/Props/Residential/Riverside/Pier/SM_RetainingWall_02a.SM_RetainingWall_02a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.70726633,
+                      "W": 0.7069472,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 59.771008,
+                      "Y": 1.649859,
+                      "Z": -13.283247
+                    },
+                    "Scale3D": {
+                      "X": 0.23921722,
+                      "Y": 0.469534,
+                      "Z": 0.29981086
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_11a.SM_FOB_Crate_11a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.02957314,
+                      "W": 0.9995626,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -7.6997423,
+                      "Y": 16.721989,
+                      "Z": 4.9957137
+                    },
+                    "Scale3D": {
+                      "X": 0.9382676,
+                      "Y": 0.9382676,
+                      "Z": 0.9382676
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.029573137,
+                      "W": 0.9995626,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -0.62224853,
+                      "Y": 16.302832,
+                      "Z": 48.172455
+                    },
+                    "Scale3D": {
+                      "X": 0.7097246,
+                      "Y": 0.7097246,
+                      "Z": 0.7097246
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Boxes/Cardboard/Meshes/SM_MS_CardboardBox_01a.SM_MS_CardboardBox_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7143096,
+                      "W": 0.6998298,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 0.64727795,
+                      "Y": 13.267394,
+                      "Z": 84.467
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Gunsmith/SM_MilitaryTable_01b.SM_MilitaryTable_01b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.6252314,
+                      "Z": 0.0,
+                      "W": 0.78043944,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 55.003014,
+                      "Y": 38.339195,
+                      "Z": 11.364204
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.78043944,
+                      "Y": 7.607792E-09,
+                      "Z": 0.6252314,
+                      "W": 9.4963575E-09,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 52.291138,
+                      "Y": 38.339195,
+                      "Z": 10.757946
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          }
+        ],
+        "CriticalHitSpots": [
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": -60.876633,
+                "Y": -103.026596,
+                "Z": 7.557515
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": -71.84935,
+                "Y": -28.115524,
+                "Z": 7.557396
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": -68.40593,
+                "Y": 127.52135,
+                "Z": 7.557277
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": -19.911585,
+                "Y": -133.5088,
+                "Z": 7.621006
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.707107,
+                "Z": 0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": 2.201223,
+                "Y": 16.228733,
+                "Z": 123.06655
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": 44.036972,
+                "Y": -103.026596,
+                "Z": 7.684497
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": 48.3583,
+                "Y": 124.30388,
+                "Z": 7.684378
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 1",
+            "Transform": {
+              "Rotation": {
+                "X": 0.952041,
+                "Y": -0.000141,
+                "Z": 0.305969,
+                "W": 0.00044,
+                "IsNormalized": true,
+                "Size": 0.9999996,
+                "SizeSquared": 0.9999992
+              },
+              "Translation": {
+                "X": 50.125507,
+                "Y": 45.02553,
+                "Z": 58.883312
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          }
+        ],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      },
+      {
+        "StageName": "Stage 2",
+        "RequiredBuildingProgress": 0.25,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_bottle_01a.SM_bottle_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.6467914,
+                      "Y": 0.28576374,
+                      "Z": 0.6611269,
+                      "W": 0.250821,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -10.835395,
+                      "Y": 70.81454,
+                      "Z": 116.6126
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.28554693,
+                      "Y": -0.6468871,
+                      "Z": -0.25104257,
+                      "W": 0.6610428,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 50.250866,
+                      "Y": 74.52411,
+                      "Z": 110.486145
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.28554693,
+                      "Y": -0.6468871,
+                      "Z": -0.25104257,
+                      "W": 0.6610428,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 51.85967,
+                      "Y": 86.39317,
+                      "Z": 110.486145
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.5390233,
+                      "W": 0.8422909,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 45.758926,
+                      "Y": 48.434124,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.9251679,
+                      "W": 0.3795581,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 23.837833,
+                      "Y": 52.85683,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.6467914,
+                      "Y": 0.28576374,
+                      "Z": 0.6611269,
+                      "W": 0.250821,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -10.835395,
+                      "Y": 88.51317,
+                      "Z": 110.486145
+                    },
+                    "Scale3D": {
+                      "X": 0.887039,
+                      "Y": 0.887039,
+                      "Z": 0.887039
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.6467914,
+                      "Y": 0.28576374,
+                      "Z": 0.6611269,
+                      "W": 0.250821,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -10.835395,
+                      "Y": 77.47293,
+                      "Z": 110.486145
+                    },
+                    "Scale3D": {
+                      "X": 0.939822,
+                      "Y": 0.939822,
+                      "Z": 0.939822
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Residential/Riverside/Pier/SM_RetainingWall_02a.SM_RetainingWall_02a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7072663,
+                      "W": 0.70694727,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 59.771008,
+                      "Y": 1.649859,
+                      "Z": -14.032327
+                    },
+                    "Scale3D": {
+                      "X": 0.24095295,
+                      "Y": 0.469534,
+                      "Z": 0.330061
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_11a.SM_FOB_Crate_11a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.029572988,
+                      "W": 0.9995626,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 17.323774,
+                      "Y": -32.10286,
+                      "Z": 6.90442
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7670186,
+                      "W": 0.64162487,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 15.729243,
+                      "Y": 12.503338,
+                      "Z": 41.867928
+                    },
+                    "Scale3D": {
+                      "X": 0.455285,
+                      "Y": 0.378238,
+                      "Z": 0.455285
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.7670186,
+                      "Y": -0.64162487,
+                      "Z": 6.6935E-09,
+                      "W": -5.599233E-09,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 7.069101,
+                      "Y": -28.583979,
+                      "Z": 66.107346
+                    },
+                    "Scale3D": {
+                      "X": 0.477497,
+                      "Y": 0.378238,
+                      "Z": 0.477497
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Boxes/Cardboard/Meshes/SM_MS_CardboardBox_01a.SM_MS_CardboardBox_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.9958107,
+                      "W": 0.091439225,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 14.568053,
+                      "Y": 80.0396,
+                      "Z": 11.734265
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Sandbag_Barrier_udtvadqfa/S_Sandbag_Barrier_udtvadqfa_high_Var1.S_Sandbag_Barrier_udtvadqfa_high_Var1",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.15953,
+                      "Y": 74.491455,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": 0.938268,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Gunsmith/SM_MilitaryTable_01a.SM_MilitaryTable_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 13.746238,
+                      "Y": 4.808687,
+                      "Z": 9.944795
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06a.SM_FOB_Crate_06a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.687752,
+                      "W": 0.7259457,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 20.477663,
+                      "Y": 82.03586,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06b.SM_FOB_Crate_06b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.31051415,
+                      "Y": -0.3476431,
+                      "Z": -0.5893611,
+                      "W": 0.6598324,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 10.57662,
+                      "Y": 104.58759,
+                      "Z": 123.271866
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          }
+        ],
+        "CriticalHitSpots": [
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": -53.168266,
+                "Y": -124.937355,
+                "Z": 7.557515
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": -0.697454,
+                "Y": -0.116437,
+                "Z": -0.697454,
+                "W": 0.116437,
+                "IsNormalized": true,
+                "Size": 0.99999964,
+                "SizeSquared": 0.9999993
+              },
+              "Translation": {
+                "X": -67.16234,
+                "Y": -21.569454,
+                "Z": 7.557396
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": 0.707107,
+                "Y": -0.000327,
+                "Z": 0.707107,
+                "W": 0.000327,
+                "IsNormalized": true,
+                "Size": 1.0000004,
+                "SizeSquared": 1.0000008
+              },
+              "Translation": {
+                "X": -60.87654,
+                "Y": 102.55976,
+                "Z": 7.557277
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": -0.0,
+                "Y": -0.707107,
+                "Z": -0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": -20.325144,
+                "Y": -94.47668,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": -0.0,
+                "Y": -0.707107,
+                "Z": -0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": -23.904346,
+                "Y": 28.493849,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": -0.155269,
+                "Y": -0.689849,
+                "Z": -0.155269,
+                "W": 0.689849,
+                "IsNormalized": true,
+                "Size": 1.0000001,
+                "SizeSquared": 1.0000002
+              },
+              "Translation": {
+                "X": -29.639095,
+                "Y": 109.83647,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 0.620343,
+                "Z": 0.620343
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": 0.256673,
+                "Y": -0.658877,
+                "Z": 0.256673,
+                "W": 0.658877,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": 44.88073,
+                "Y": -91.355835,
+                "Z": 105.1177
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": -0.0,
+                "Y": -0.707107,
+                "Z": -0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": 27.117544,
+                "Y": -41.34791,
+                "Z": 105.1177
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 2",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.707107,
+                "Z": 0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": 52.52467,
+                "Y": 31.054876,
+                "Z": 110.15798
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 0.673056,
+                "Z": 0.673056
+              }
+            }
+          }
+        ],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      },
+      {
+        "StageName": "Stage 3",
+        "RequiredBuildingProgress": 0.5,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_bottle_01a.SM_bottle_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.26854342,
+                      "Y": 0.65412873,
+                      "Z": 0.48147246,
+                      "W": 0.5178651,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 0.99433297,
+                      "Y": -104.92167,
+                      "Z": 108.978
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.53902304,
+                      "W": 0.84229106,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0000001
+                    },
+                    "Translation": {
+                      "X": 49.304474,
+                      "Y": 93.31431,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 27.38338,
+                      "Y": 97.737015,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.385316,
+                      "Y": 0.5929008,
+                      "Z": 0.6906959,
+                      "W": -0.15145752,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 6.763142,
+                      "Y": -23.296598,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.887039,
+                      "Y": 0.887039,
+                      "Z": 0.887039
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.385316,
+                      "Y": 0.5929008,
+                      "Z": 0.6906959,
+                      "W": -0.15145752,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 16.871365,
+                      "Y": -27.736263,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.939822,
+                      "Y": 0.939822,
+                      "Z": 0.939822
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.385316,
+                      "Y": 0.5929008,
+                      "Z": 0.6906959,
+                      "W": -0.15145752,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 22.967663,
+                      "Y": -30.413837,
+                      "Z": 53.645634
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.5927714,
+                      "Y": -0.38551491,
+                      "Z": 0.15122567,
+                      "W": 0.6907467,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 33.916046,
+                      "Y": 33.253246,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.5927714,
+                      "Y": -0.38551491,
+                      "Z": 0.15122567,
+                      "W": 0.6907467,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 44.13617,
+                      "Y": 27.007296,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -2.5380955,
+                      "Y": -91.51556,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -21.565248,
+                      "Y": -62.62186,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.45719448,
+                      "W": 0.88936675,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -18.396788,
+                      "Y": -72.58508,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.45719448,
+                      "W": 0.88936675,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -13.362847,
+                      "Y": -63.01505,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.45620623,
+                      "W": 0.8898741,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -15.663535,
+                      "Y": -81.81602,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Residential/Riverside/Pier/SM_RetainingWall_02a.SM_RetainingWall_02a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7072663,
+                      "W": 0.70694727,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 59.771008,
+                      "Y": 1.649859,
+                      "Z": -14.032327
+                    },
+                    "Scale3D": {
+                      "X": 0.23969388,
+                      "Y": 0.469534,
+                      "Z": 0.330061
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_11a.SM_FOB_Crate_11a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.02957299,
+                      "W": 0.9995626,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 17.323774,
+                      "Y": -32.10286,
+                      "Z": 6.90442
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7670187,
+                      "W": 0.64162475,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 12.014375,
+                      "Y": -57.923607,
+                      "Z": 41.867928
+                    },
+                    "Scale3D": {
+                      "X": 0.455285,
+                      "Y": 0.378238,
+                      "Z": 0.455285
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Sandbag_Barrier_udtvadqfa/S_Sandbag_Barrier_udtvadqfa_high_Var1.S_Sandbag_Barrier_udtvadqfa_high_Var1",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.15953,
+                      "Y": 74.491455,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": 0.938268,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.159529,
+                      "Y": -77.58922,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": -0.84630924,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Gunsmith/SM_MilitaryTable_01a.SM_MilitaryTable_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 13.746238,
+                      "Y": 4.808687,
+                      "Z": 9.944795
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06a.SM_FOB_Crate_06a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.17894419,
+                      "W": 0.98385924,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 25.285715,
+                      "Y": 2.7682707,
+                      "Z": 40.980965
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06b.SM_FOB_Crate_06b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.06991985,
+                      "Y": -0.46085352,
+                      "Z": -0.13270935,
+                      "W": 0.87470764,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 0.6562322,
+                      "Y": 2.7719111,
+                      "Z": 60.304893
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Boxes/Cardboard/Meshes/SM_MS_CardboardBox_01a.SM_MS_CardboardBox_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.72391474,
+                      "W": 0.68988943,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 1.7366042,
+                      "Y": 23.182178,
+                      "Z": 103.835205
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_can_01a.SM_can_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 16.657156,
+                      "Y": -84.25409,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 23.36254,
+                      "Y": -87.73841,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 23.119438,
+                      "Y": -80.94685,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 39.263283,
+                      "Y": -96.41363,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Wooden_Crate_vijncb3/S_Wooden_Crate_vijncb3.S_Wooden_Crate_vijncb3",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.8280907,
+                      "W": 0.56059414,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -5.79658,
+                      "Y": -67.56853,
+                      "Z": 104.95174
+                    },
+                    "Scale3D": {
+                      "X": 0.78717095,
+                      "Y": 0.78717095,
+                      "Z": 0.78717095
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          }
+        ],
+        "CriticalHitSpots": [
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": -0.15526898,
+                "Y": -0.6898489,
+                "Z": -0.15526898,
+                "W": 0.6898489,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.9999999
+              },
+              "Translation": {
+                "X": -19.639095,
+                "Y": 99.83647,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": -6.123234E-17,
+                "Y": -1.0,
+                "Z": 6.123234E-17,
+                "W": 6.0839747E-09,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": -23.904346,
+                "Y": 28.493849,
+                "Z": 125.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": 52.52467,
+                "Y": 31.054876,
+                "Z": 110.15798
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": 27.117544,
+                "Y": -41.34791,
+                "Z": 105.1177
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": 0.256673,
+                "Y": -0.6588771,
+                "Z": 0.256673,
+                "W": 0.6588771,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 44.88073,
+                "Y": -91.355835,
+                "Z": 105.1177
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": -20.325144,
+                "Y": -94.47668,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": 0.7071067,
+                "Y": -0.00032699987,
+                "Z": 0.7071067,
+                "W": 0.00032699987,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": -60.87654,
+                "Y": 102.55976,
+                "Z": 7.557277
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": -0.6974542,
+                "Y": -0.11643704,
+                "Z": -0.6974542,
+                "W": 0.11643704,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": -67.16234,
+                "Y": -21.569454,
+                "Z": 7.557396
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 3",
+            "Transform": {
+              "Rotation": {
+                "X": 0.7071067,
+                "Y": -0.00032699987,
+                "Z": 0.7071067,
+                "W": 0.00032699987,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": -53.168266,
+                "Y": -124.937355,
+                "Z": 7.557515
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          }
+        ],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      },
+      {
+        "StageName": "Stage 4",
+        "RequiredBuildingProgress": 0.75,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_bottle_01a.SM_bottle_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.26854306,
+                      "Y": 0.65412915,
+                      "Z": 0.4814721,
+                      "W": 0.5178651,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 0.994333,
+                      "Y": -104.92168,
+                      "Z": 108.978
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.38114682,
+                      "Y": -0.5955897,
+                      "Z": 0.38114682,
+                      "W": 0.5955897,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 48.30601,
+                      "Y": 85.40594,
+                      "Z": 109.44213
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.50975627,
+                      "Y": -0.49004954,
+                      "Z": -0.22983748,
+                      "W": 0.66871125,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 23.387562,
+                      "Y": 101.12155,
+                      "Z": 109.302376
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.3853159,
+                      "Y": 0.5929009,
+                      "Z": 0.6906958,
+                      "W": -0.15145797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 6.763142,
+                      "Y": -23.296598,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.887039,
+                      "Y": 0.887039,
+                      "Z": 0.887039
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.3853159,
+                      "Y": 0.5929009,
+                      "Z": 0.6906958,
+                      "W": -0.15145797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 16.871365,
+                      "Y": -27.736263,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.939822,
+                      "Y": 0.939822,
+                      "Z": 0.939822
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.3853159,
+                      "Y": 0.5929009,
+                      "Z": 0.6906958,
+                      "W": -0.15145797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 22.967663,
+                      "Y": -30.413837,
+                      "Z": 53.645634
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.592771,
+                      "Y": -0.385515,
+                      "Z": 0.151226,
+                      "W": 0.690747,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 33.916046,
+                      "Y": 33.253246,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.592771,
+                      "Y": -0.385515,
+                      "Z": 0.151226,
+                      "W": 0.690747,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 44.13617,
+                      "Y": 27.007296,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 53.01612,
+                      "Y": -96.30323,
+                      "Z": 10.493
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -21.969435,
+                      "Y": -63.34591,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.457194,
+                      "W": 0.889367,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -18.800972,
+                      "Y": -73.309135,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.19298066,
+                      "Y": 0.3754,
+                      "Z": 0.41446933,
+                      "W": 0.8062558,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -14.859759,
+                      "Y": -66.689896,
+                      "Z": 104.986206
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.45620608,
+                      "W": 0.88987416,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -13.227201,
+                      "Y": -81.20171,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Residential/Riverside/Pier/SM_RetainingWall_02a.SM_RetainingWall_02a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7072663,
+                      "W": 0.70694727,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 59.771008,
+                      "Y": 1.649859,
+                      "Z": -14.032327
+                    },
+                    "Scale3D": {
+                      "X": 0.235009,
+                      "Y": 0.469534,
+                      "Z": 0.330061
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_11a.SM_FOB_Crate_11a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.02957299,
+                      "W": 0.9995626,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 17.323774,
+                      "Y": -32.10286,
+                      "Z": 6.90442
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7670187,
+                      "W": 0.64162475,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 12.014375,
+                      "Y": -57.923607,
+                      "Z": 41.867928
+                    },
+                    "Scale3D": {
+                      "X": 0.455285,
+                      "Y": 0.378238,
+                      "Z": 0.455285
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Sandbag_Barrier_udtvadqfa/S_Sandbag_Barrier_udtvadqfa_high_Var1.S_Sandbag_Barrier_udtvadqfa_high_Var1",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.15953,
+                      "Y": 74.491455,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": 0.938268,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.15953,
+                      "Y": -77.58922,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": -0.846309,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Gunsmith/SM_MilitaryTable_01a.SM_MilitaryTable_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 13.746238,
+                      "Y": 4.808687,
+                      "Z": 9.944795
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06a.SM_FOB_Crate_06a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.17894405,
+                      "W": 0.98385924,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 25.285715,
+                      "Y": 2.768271,
+                      "Z": 40.980965
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06b.SM_FOB_Crate_06b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.069919966,
+                      "Y": -0.4608538,
+                      "Z": -0.13270894,
+                      "W": 0.8747076,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 0.656232,
+                      "Y": 2.771911,
+                      "Z": 60.304893
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Buildables/Data/Buildables/Radio/SM_Buildable_Radio.SM_Buildable_Radio",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.07553087,
+                      "W": 0.99714345,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 12.638329,
+                      "Y": 29.218687,
+                      "Z": 103.8352
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_can_01b.SM_can_01b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 19.683285,
+                      "Y": -79.75063,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 26.388668,
+                      "Y": -83.23496,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7195117,
+                      "W": 0.6944803,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 20.486544,
+                      "Y": -78.32971,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 51.16067,
+                      "Y": 54.026253,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 45.175106,
+                      "Y": 106.03581,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.7251507,
+                      "W": 0.6885902,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 13.361647,
+                      "Y": 105.04319,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.7251507,
+                      "W": 0.6885902,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 51.928856,
+                      "Y": 73.76304,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.7251507,
+                      "W": 0.6885902,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 30.34283,
+                      "Y": -71.22431,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_can_01a.SM_can_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 39.263283,
+                      "Y": -96.41363,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Wooden_Crate_vijncb3/S_Wooden_Crate_vijncb3.S_Wooden_Crate_vijncb3",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.82809085,
+                      "W": 0.5605939,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -5.79658,
+                      "Y": -67.56853,
+                      "Z": 104.95174
+                    },
+                    "Scale3D": {
+                      "X": 0.787171,
+                      "Y": 0.787171,
+                      "Z": 0.787171
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          }
+        ],
+        "CriticalHitSpots": [
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": -17.784988,
+                "Y": 59.205566,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": 52.52467,
+                "Y": 31.054876,
+                "Z": 110.15798
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": 27.117544,
+                "Y": -41.34791,
+                "Z": 105.1177
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.256673,
+                "Y": -0.6588771,
+                "Z": 0.256673,
+                "W": 0.6588771,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 44.88073,
+                "Y": -91.355835,
+                "Z": 99.98131
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": -0.15526898,
+                "Y": -0.6898489,
+                "Z": -0.15526898,
+                "W": 0.6898489,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.9999999
+              },
+              "Translation": {
+                "X": -29.639095,
+                "Y": 109.83647,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.70710677,
+                "Z": 0.0,
+                "W": 0.70710677,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": -20.325144,
+                "Y": -94.47668,
+                "Z": 105.117714
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.7071067,
+                "Y": -0.00032699987,
+                "Z": 0.7071067,
+                "W": 0.00032699987,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": -70.61721,
+                "Y": 102.55976,
+                "Z": 61.74336
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": -0.6974542,
+                "Y": -0.11643704,
+                "Z": -0.6974542,
+                "W": 0.11643704,
+                "IsNormalized": true,
+                "Size": 0.99999994,
+                "SizeSquared": 0.99999994
+              },
+              "Translation": {
+                "X": -67.874245,
+                "Y": -65.14501,
+                "Z": 59.75787
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          },
+          {
+            "LocationGroup": "CriticalHitSpot_Stage 4",
+            "Transform": {
+              "Rotation": {
+                "X": 0.7071067,
+                "Y": -0.00032699987,
+                "Z": 0.7071067,
+                "W": 0.00032699987,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": -53.168266,
+                "Y": -124.937355,
+                "Z": 7.557515
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            }
+          }
+        ],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      },
+      {
+        "StageName": "Stage 5",
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_bottle_01a.SM_bottle_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.26854306,
+                      "Y": 0.65412915,
+                      "Z": 0.4814721,
+                      "W": 0.5178651,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 0.994333,
+                      "Y": -104.92168,
+                      "Z": 108.978
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.38114682,
+                      "Y": -0.5955897,
+                      "Z": 0.38114682,
+                      "W": 0.5955897,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 48.30601,
+                      "Y": 85.40594,
+                      "Z": 109.44213
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.5057133,
+                      "Y": -0.49422106,
+                      "Z": -0.23532256,
+                      "W": 0.6668005,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 8.565173,
+                      "Y": 106.92702,
+                      "Z": 109.302376
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.3853159,
+                      "Y": 0.5929009,
+                      "Z": 0.6906958,
+                      "W": -0.15145797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 6.763142,
+                      "Y": -23.296598,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.887039,
+                      "Y": 0.887039,
+                      "Z": 0.887039
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.3853159,
+                      "Y": 0.5929009,
+                      "Z": 0.6906958,
+                      "W": -0.15145797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 16.871365,
+                      "Y": -27.736263,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.939822,
+                      "Y": 0.939822,
+                      "Z": 0.939822
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.3853159,
+                      "Y": 0.5929009,
+                      "Z": 0.6906958,
+                      "W": -0.15145797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 22.967663,
+                      "Y": -30.413837,
+                      "Z": 53.645634
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.592771,
+                      "Y": -0.385515,
+                      "Z": 0.151226,
+                      "W": 0.690747,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 33.916046,
+                      "Y": 33.253246,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.592771,
+                      "Y": -0.385515,
+                      "Z": 0.151226,
+                      "W": 0.690747,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 44.13617,
+                      "Y": 27.007296,
+                      "Z": 47.519176
+                    },
+                    "Scale3D": {
+                      "X": 0.923678,
+                      "Y": 0.923678,
+                      "Z": 0.923678
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 53.01612,
+                      "Y": -96.30323,
+                      "Z": 10.493
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.46724582,
+                      "Y": -0.5307366,
+                      "Z": -0.7053605,
+                      "W": 0.049664944,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 27.009338,
+                      "Y": -55.082775,
+                      "Z": 110.19236
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.14560585,
+                      "Y": 0.074851125,
+                      "Z": 0.45102513,
+                      "W": 0.87736684,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -18.800972,
+                      "Y": -73.309135,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.19298099,
+                      "Y": 0.37539998,
+                      "Z": 0.41446897,
+                      "W": 0.80625594,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -16.527874,
+                      "Y": -64.21661,
+                      "Z": 105.68002
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.31041476,
+                      "Y": 0.15913835,
+                      "Z": -0.42754996,
+                      "W": 0.83397764,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -13.227201,
+                      "Y": -81.20171,
+                      "Z": 105.77212
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Residential/Riverside/Pier/SM_RetainingWall_02a.SM_RetainingWall_02a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7072663,
+                      "W": 0.70694727,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 64.42497,
+                      "Y": 0.557489,
+                      "Z": -15.323057
+                    },
+                    "Scale3D": {
+                      "X": 0.24917318,
+                      "Y": 0.46953464,
+                      "Z": 0.3300617
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_11a.SM_FOB_Crate_11a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.02957299,
+                      "W": 0.9995626,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 17.323774,
+                      "Y": -32.10286,
+                      "Z": 6.90442
+                    },
+                    "Scale3D": {
+                      "X": 0.709725,
+                      "Y": 0.709725,
+                      "Z": 0.709725
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.7670187,
+                      "W": 0.64162475,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 12.014375,
+                      "Y": -57.923607,
+                      "Z": 41.867928
+                    },
+                    "Scale3D": {
+                      "X": 0.455285,
+                      "Y": 0.378238,
+                      "Z": 0.455285
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Sandbag_Barrier_udtvadqfa/S_Sandbag_Barrier_udtvadqfa_high_Var1.S_Sandbag_Barrier_udtvadqfa_high_Var1",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.15953,
+                      "Y": 74.491455,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": 0.938268,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -17.15953,
+                      "Y": -77.58922,
+                      "Z": 7.940536
+                    },
+                    "Scale3D": {
+                      "X": -0.846309,
+                      "Y": 0.938268,
+                      "Z": 0.938268
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Gunsmith/SM_MilitaryTable_01a.SM_MilitaryTable_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 13.746238,
+                      "Y": 4.808687,
+                      "Z": 9.944795
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06a.SM_FOB_Crate_06a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.17894405,
+                      "W": 0.98385924,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 25.285715,
+                      "Y": 2.768271,
+                      "Z": 40.980965
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_06b.SM_FOB_Crate_06b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.069919966,
+                      "Y": -0.4608538,
+                      "Z": -0.13270894,
+                      "W": 0.8747076,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 0.656232,
+                      "Y": 2.771911,
+                      "Z": 60.304893
+                    },
+                    "Scale3D": {
+                      "X": 0.425516,
+                      "Y": 0.344897,
+                      "Z": 0.424885
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Buildables/Data/Buildables/Radio/SM_Buildable_Radio.SM_Buildable_Radio",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.075531036,
+                      "W": 0.99714345,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 12.638328,
+                      "Y": 29.218687,
+                      "Z": 103.8352
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_can_01b.SM_can_01b",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 19.683285,
+                      "Y": -79.75063,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 26.388668,
+                      "Y": -83.23496,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.719512,
+                      "W": 0.69448,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 20.486544,
+                      "Y": -78.32971,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 51.16067,
+                      "Y": 54.026253,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 25.035553,
+                      "Y": 111.1896,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.72515094,
+                      "W": 0.68858993,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -1.4607412,
+                      "Y": 110.848656,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.72515094,
+                      "W": 0.68858993,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 51.928856,
+                      "Y": 73.76304,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.72515094,
+                      "W": 0.68858993,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 30.34283,
+                      "Y": -71.22431,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 32.09223,
+                      "Y": -19.68487,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.925168,
+                      "W": 0.37955797,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 53.773624,
+                      "Y": -80.55096,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.9869258,
+                      "W": 0.16117546,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 44.830154,
+                      "Y": 12.8225,
+                      "Z": 105.11258
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.719512,
+                      "W": 0.69448,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 32.895493,
+                      "Y": -18.26395,
+                      "Z": 103.94794
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.9999913,
+                      "W": 0.0041781575,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 55.2961,
+                      "Y": 93.76881,
+                      "Z": 10.52211
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.93374985,
+                      "W": 0.35792628,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 41.860165,
+                      "Y": 108.24659,
+                      "Z": 10.52211
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Environment/Props/Market/Bottles/SM_can_01a.SM_can_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.6250619,
+                      "Y": 0.33060184,
+                      "Z": 0.33060184,
+                      "W": 0.6250619,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": 39.263283,
+                      "Y": -96.41363,
+                      "Z": 106.99852
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.0
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          },
+          {
+            "Key": "/Game/Megascans/3D_Assets/Wooden_Crate_vijncb3/S_Wooden_Crate_vijncb3.S_Wooden_Crate_vijncb3",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.82809085,
+                      "W": 0.5605939,
+                      "IsNormalized": true,
+                      "Size": 1.0,
+                      "SizeSquared": 1.0
+                    },
+                    "Translation": {
+                      "X": -5.79658,
+                      "Y": -67.56853,
+                      "Z": 104.95174
+                    },
+                    "Scale3D": {
+                      "X": 0.787171,
+                      "Y": 0.787171,
+                      "Z": 0.787171
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          }
+        ],
+        "CriticalHitSpots": [],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_122mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 6,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_122mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/SM_40mm_Ammo.SM_40mm_Ammo",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_122mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.4"
+  },
+  "Properties": {
+    "MaxStackSize": 3
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_122mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_122mm ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_122mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/122mm/ID_122mm",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.122mm"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.122mm",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "0B8194CB4F47BCA560B3ADB1C1B52B27",
+      "SourceString": "122mm",
+      "LocalizedString": "122mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_122mm:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_122mm:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_122mm:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_122mm:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_122mm:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_122mm:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_122mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_122mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/122mm/ID_122mm.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_122mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.0"
+    }
+  }
+}

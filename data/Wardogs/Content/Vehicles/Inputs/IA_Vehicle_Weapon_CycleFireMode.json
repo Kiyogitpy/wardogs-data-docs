@@ -1,0 +1,51 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_CycleFireMode ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_CycleFireMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_CycleFireMode",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.CycleFireMode"
+    },
+    "ActionDescription": {
+      "Namespace": "",
+      "Key": "4CF46EF6410F7483C62EDEB9B69A90A8",
+      "SourceString": "Cycle through the possible fire modes of the vehicle weapon extension",
+      "LocalizedString": "Cycle through the possible fire modes of the vehicle weapon extension"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_Weapon_CycleFireMode:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_CycleFireMode.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Weapon_CycleFireMode:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_CycleFireMode.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_CycleFireMode'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_CycleFireMode.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_CycleFireMode'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_CycleFireMode.0"
+  }
+}

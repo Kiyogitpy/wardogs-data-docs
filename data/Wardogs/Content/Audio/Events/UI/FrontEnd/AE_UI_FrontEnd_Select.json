@@ -1,0 +1,41 @@
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Select ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Select",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Select",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_FrontEnd_Select:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Select.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Select'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Select.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_FrontEnd_General_Select'",
+      "ObjectPath": "/Game/Audio/UI/FrontEnd/MSS_UI_FrontEnd_General_Select.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bSourceObjectInstanced": false
+  }
+}

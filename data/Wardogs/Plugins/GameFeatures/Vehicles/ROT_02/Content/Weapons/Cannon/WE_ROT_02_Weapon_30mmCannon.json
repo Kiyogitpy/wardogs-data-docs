@@ -1,0 +1,68 @@
+--- export: UDataAsset / WE_ROT_02_Weapon_30mmCannon ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_ROT_02_Weapon_30mmCannon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/ROT_02/Weapons/Cannon/WE_ROT_02_Weapon_30mmCannon",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.ROT_02.30mmCannon"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleHelicopterCannon"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.ROT_02.Turret"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.HelicopterCannon"
+      }
+    },
+    "WeaponExtensionName": "30mm Cannon",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_ROT_02_Weapon_30mmCannon_Stats'",
+      "ObjectPath": "/ROT_02/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.0"
+    },
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "MountedMachineGun"
+      }
+    },
+    "DistanceTraceTimerLoopFrequency": 0.5,
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 8.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.30mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.30mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.30mm"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_ROT_02_Weapon_762Minigun_Audio'",
+      "ObjectPath": "/ROT_02/Weapons/Cannon/DA_ROT_02_Weapon_762Minigun_Audio.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_HeliFiring_C'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/CameraShake/B_CameraShake_HeliFiring.1"
+    }
+  }
+}

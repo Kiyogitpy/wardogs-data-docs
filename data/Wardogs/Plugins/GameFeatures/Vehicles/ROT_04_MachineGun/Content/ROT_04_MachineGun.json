@@ -1,0 +1,103 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ROT_04_MachineGun'",
+    "ObjectPath": "/ROT_04_MachineGun/ROT_04_MachineGun.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ROT_04_MachineGun/DataTables/DT_VehicleMarket_ROT_04_MachineGun.DT_VehicleMarket_ROT_04_MachineGun",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ROT_04_MachineGun/DataTables/DT_EntityData_UI_Vehicles_ROT_04_MachineGun.DT_EntityData_UI_Vehicles_ROT_04_MachineGun",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ROT_04_MachineGun ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ROT_04_MachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ROT_04_MachineGun/ROT_04_MachineGun",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'ROT_04_MachineGun:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/ROT_04_MachineGun/ROT_04_MachineGun.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "ModularVehicleVariant",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/ModularVehicles.ModularVehicleVariant",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/ROT_04_MachineGun/Variants"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/ROT_04_MachineGun/Variants"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

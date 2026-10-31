@@ -1,0 +1,77 @@
+--- export: UDataAsset / DA_PopupData_Unlock ---
+{
+  "Type": "WDUIMetaTreeConfirmationPopupData",
+  "Name": "DA_PopupData_Unlock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIMetaTreeConfirmationPopupData'",
+  "Package": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_PopupData_Unlock",
+  "Properties": {
+    "ItemCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemCardViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_ItemCard_Popup_Unlock.DA_ItemCard_Popup_Unlock",
+        "SubPathString": ""
+      }
+    },
+    "NonCashDescriptionTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.Unlock.Format.NonCashDescription",
+      "SourceString": "Are you sure you want to unlock the {Name}?",
+      "LocalizedString": "Are you sure you want to unlock the {Name}?"
+    },
+    "MinimumAwaitResponseSeconds": 0.5,
+    "AutoCloseOnCompletionTimer": 1.5,
+    "TitleFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.Unlock.Format.Title",
+      "SourceString": "Unlock {Name}",
+      "LocalizedString": "Unlock {Name}"
+    },
+    "DescriptionFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.Unlock.Format.Description",
+      "SourceString": "Are you sure you want to unlock the {Name} for {Price}?",
+      "LocalizedString": "Are you sure you want to unlock the {Name} for {Price}?"
+    },
+    "CancelButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Cancel",
+      "SourceString": "Cancel",
+      "LocalizedString": "Cancel"
+    },
+    "CloseButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Close",
+      "SourceString": "Close",
+      "LocalizedString": "Close"
+    },
+    "ConfirmButtonText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Button.Confirm",
+      "SourceString": "Confirm",
+      "LocalizedString": "Confirm"
+    },
+    "FailedText": {
+      "Namespace": "",
+      "Key": "3D351DB847BFC2A935112B854E216230",
+      "SourceString": "Failed To Connect",
+      "LocalizedString": "Failed To Connect"
+    },
+    "InformationIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/Passengers/Textures/T_UI_Vehicle_Unlocked.T_UI_Vehicle_Unlocked",
+      "SubPathString": ""
+    },
+    "ConfirmationAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "SuccessAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.Unlock"
+    },
+    "FailureAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.Unlock.Fail"
+    }
+  }
+}

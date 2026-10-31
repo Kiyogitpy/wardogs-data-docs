@@ -1,0 +1,116 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_Shelter'",
+    "ObjectPath": "/Buildables/Data/Buildables/SV_Shelter/DA_Buildable_Shelter.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_Shelter ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_Shelter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/SV_Shelter/DA_Buildable_Shelter",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_Shelter:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/SV_Shelter/DA_Buildable_Shelter.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.SV_Shelter"
+    },
+    "Cost": 250,
+    "DisplayName": {
+      "TableId": "/Buildables/Data/STRINGS_BuildableDescriptions.STRINGS_BuildableDescriptions",
+      "Key": "RadialWheelSlotType.Shelter.SlotTitle",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "MaxHealth": 2250.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "StackCheckOffset": 30.0,
+    "MaxStack": 1,
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "PlacePivotVerticalOffset": -250.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Buildables/SV_Shelter/Meshes/SM_SV_Shelter_FoundationPlaceholder.SM_SV_Shelter_FoundationPlaceholder",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_Shelter_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/SV_Shelter/DA_Buildable_Shelter_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -456.7786,
+        "Y": -455.8098,
+        "Z": -0.07384066
+      },
+      "Max": {
+        "X": 456.6702,
+        "Y": 456.1263,
+        "Z": 459.11856
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.SV_Shelter"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.SV Shelter"
+    }
+  }
+}

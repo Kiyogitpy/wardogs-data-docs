@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_WHL_08_Turret_Seats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_08_Turret_Seats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_08_RingTurret/Parts/VP_WHL_08_Turret_Seats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Seat"
+    ],
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_WHL_08_Turret_Seats:MVF_Seats_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_Turret_Seats.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_Turret_Seats'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_Turret_Seats.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/WHL_08_RingTurret/Data/RingTurretDefender/DA_SeatSettings_WHL_08_RingTurret.DA_SeatSettings_WHL_08_RingTurret",
+      "SubPathString": ""
+    }
+  }
+}

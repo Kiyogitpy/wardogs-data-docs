@@ -1,0 +1,218 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/SR_04/Meshes/SM_SR_04_Magazine.SM_SR_04_Magazine",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.50Cal"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 5,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.50Cal.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  },
+  "Properties": {
+    "Weight": 1.27
+  }
+}
+--- export: UPrimaryDataAsset / ID_SR_04_Mag_Standard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SR_04_Mag_Standard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SR_04/Data/ID_SR_04_Mag_Standard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SR_04Magazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine",
+      "Item.Resource.Magazine.Small"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+      "Key": "Items.Magazine.AX50.Standard",
+      "SourceString": "AMR 50 5 RND Magazine",
+      "LocalizedString": "AMR 50 5 RND Magazine"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_SR_04_Mag_Standard:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SR_04_Mag_Standard:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SR_04_Mag_Standard:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_SR_04_Mag_Standard:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SR_04_Mag_Standard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SR_04_Mag_Standard:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_SR_04_Mag_Standard:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAG_SR_04_5rd_C'",
+          "ObjectPath": "/SR_04/Data/GE_MAG_SR_04_5rd.0"
+        }
+      ],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SR_04_Mag_Standard'",
+    "ObjectPath": "/SR_04/Data/ID_SR_04_Mag_Standard.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_MicTest_Stopped'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_MicTest_Stopped.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_Comms_StartPlayerVoice_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_StartPlayerVoice.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Comms"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_MicTest_Stopped ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_MicTest_Stopped",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/VOIP/AE_Comms_MicTest_Stopped",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.MicTest.Stopped"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Comms_MicTest_Stopped:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_MicTest_Stopped.2"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Comms_MicTest_Stopped:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_MicTest_Stopped.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_MicTest_Stopped'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_MicTest_Stopped.1"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Comms.Self"
+    }
+  }
+}

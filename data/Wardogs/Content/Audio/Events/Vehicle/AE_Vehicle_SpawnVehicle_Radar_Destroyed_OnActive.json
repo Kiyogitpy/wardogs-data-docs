@@ -1,0 +1,64 @@
+--- export: UObject / AEB_AttachSoundToVehicle_C_0 ---
+{
+  "Type": "AEB_AttachSoundToVehicle_C",
+  "Name": "AEB_AttachSoundToVehicle_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.AEB_AttachSoundToVehicle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToVehicle_C'Default__AEB_AttachSoundToVehicle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.0"
+  },
+  "Properties": {
+    "Socket Name": "body_RadarSocket",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.Destroyed.OnActive"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.SpawnVehicle.Radar.Destroyed.OnActive"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToVehicle_C'AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive:AEB_AttachSoundToVehicle_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_Radar_Destroyed_OnActive.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_Land_SpawnVehicle_Patriot_RadarDish_Destroy_OneShot'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/Spawn_Vehicle/Radars/MSS_Vehicles_Land_SpawnVehicle_Patriot_RadarDish_Destroy_OneShot.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Radar.Destroyed.OnActive"
+    }
+  }
+}

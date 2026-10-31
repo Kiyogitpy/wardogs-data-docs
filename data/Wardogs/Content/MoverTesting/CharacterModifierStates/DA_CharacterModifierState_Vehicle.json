@@ -1,0 +1,110 @@
+--- export: UObject / WDCameraModifier_VehicleFreeLook_0 ---
+{
+  "Type": "WDCameraModifier_VehicleFreeLook",
+  "Name": "WDCameraModifier_VehicleFreeLook_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCameraModifier_VehicleFreeLook'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Vehicle'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle.3"
+  }
+}
+--- export: UObject / WDCharacterModifier_VehicleSeat_1 ---
+{
+  "Type": "WDCharacterModifier_VehicleSeat",
+  "Name": "WDCharacterModifier_VehicleSeat_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_VehicleSeat'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Vehicle'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle.3"
+  },
+  "Properties": {
+    "NetMask": 3
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Vehicle'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        2,
+        3,
+        2,
+        0,
+        1,
+        1,
+        4,
+        2,
+        3,
+        4,
+        5
+      ],
+      "UserDescription": "We are alive and in a vehicle",
+      "AutoDescription": " ALL(  NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead ),  ANY( State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger ) )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Vehicle ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Vehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Vehicle"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "WDCameraModifier_VehicleFreeLook'DA_CharacterModifierState_Vehicle:WDCameraModifier_VehicleFreeLook_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle.0"
+      }
+    ],
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_VehicleSeat'DA_CharacterModifierState_Vehicle:WDCharacterModifier_VehicleSeat_1'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle.1"
+      }
+    ],
+    "Priority": 100,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Vehicle:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Vehicle.2"
+      }
+    ]
+  }
+}

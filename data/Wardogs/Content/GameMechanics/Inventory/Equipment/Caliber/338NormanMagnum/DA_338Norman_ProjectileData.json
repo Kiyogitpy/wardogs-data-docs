@@ -1,0 +1,58 @@
+--- export: UPrimaryDataAsset / DA_338Norman_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_338Norman_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/338NormanMagnum/DA_338Norman_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.338Nor"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.338Nor"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 105.0
+      },
+      "ProjectileDimensions": {
+        "Length": 3.02006,
+        "Diameter": 0.86106,
+        "Mass": 0.01944,
+        "DragModel": {
+          "Value": 0.72,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_338NormanMagnum.NS_Tracer_338NormanMagnum",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 50000.0,
+      "TravelDistanceForWhizBy": 800.0,
+      "DistanceToPlayerForWhizBy": 700.0
+    }
+  }
+}

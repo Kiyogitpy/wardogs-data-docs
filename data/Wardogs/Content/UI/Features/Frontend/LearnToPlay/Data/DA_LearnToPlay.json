@@ -1,0 +1,168 @@
+--- export: UDataAsset / DA_LearnToPlay ---
+{
+  "Type": "WDUILearnToPlaySceneData",
+  "Name": "DA_LearnToPlay",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILearnToPlaySceneData'",
+  "Package": "/Game/UI/Features/Frontend/LearnToPlay/Data/DA_LearnToPlay",
+  "Properties": {
+    "ShootingRangePopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.ShootingRange"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.ShootingRange",
+        "SourceString": "Firing Range",
+        "LocalizedString": "Firing Range"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.ShootingRange",
+        "SourceString": "You will enter the Firing Range.",
+        "LocalizedString": "You will enter the Firing Range."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.ShootingRange",
+        "SourceString": "Are you sure you want to enter the Firing Range?",
+        "LocalizedString": "Are you sure you want to enter the Firing Range?"
+      },
+      "AdditionalData": {
+        "DataArray": [
+          {
+            "Level": {
+              "AssetPathName": "/Game/Maps/Worlds/Kavkazi/Kavkazi.Kavkazi",
+              "SubPathString": ""
+            },
+            "Options": "Experience=ShootingRange",
+            "CustomLoadingScreenWidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Frontend/LoadingScreen/W_LoadingScreen_ShootingRange.W_LoadingScreen_ShootingRange_C",
+              "SubPathString": ""
+            }
+          }
+        ]
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Back",
+              "SourceString": "Back",
+              "LocalizedString": "Back"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Confirm",
+              "SourceString": "Confirm",
+              "LocalizedString": "Confirm"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "TutorialPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.Tutorial"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Tutorial",
+        "SourceString": "Tutorial",
+        "LocalizedString": "Tutorial"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.Tutorial",
+        "SourceString": "You will enter the Tutorial.",
+        "LocalizedString": "You will enter the Tutorial."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Tutorial",
+        "SourceString": "Are you sure you want to enter the Tutorial?",
+        "LocalizedString": "Are you sure you want to enter the Tutorial?"
+      },
+      "AdditionalData": {
+        "DataArray": [
+          {
+            "Level": {
+              "AssetPathName": "/Game/Maps/Worlds/Kavkazi/Kavkazi.Kavkazi",
+              "SubPathString": ""
+            },
+            "Options": "Experience=ShootingRangeTutorial",
+            "CustomLoadingScreenWidgetClass": {
+              "AssetPathName": "/Game/UI/Features/Frontend/LoadingScreen/W_LoadingScreen_Tutorial.W_LoadingScreen_Tutorial_C",
+              "SubPathString": ""
+            }
+          }
+        ]
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Back",
+              "SourceString": "Back",
+              "LocalizedString": "Back"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Confirm",
+              "SourceString": "Confirm",
+              "LocalizedString": "Confirm"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.SubMenu"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Close.SubMenu"
+    }
+  }
+}

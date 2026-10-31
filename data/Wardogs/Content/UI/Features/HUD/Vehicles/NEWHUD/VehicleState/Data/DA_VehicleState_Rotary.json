@@ -1,0 +1,27 @@
+--- export: UDataAsset / DA_VehicleState_Rotary ---
+{
+  "Type": "WDUIVehicleStateData",
+  "Name": "DA_VehicleState_Rotary",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleStateData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/NEWHUD/VehicleState/Data/DA_VehicleState_Rotary",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleStateEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Vehicles/NEWHUD/VehicleState/Data/DA_VehicleStateEntry_Rotary.DA_VehicleStateEntry_Rotary",
+        "SubPathString": ""
+      }
+    },
+    "bDisplayVehicleWidget": false,
+    "VehicleWeaponsToIgnore": [
+      "Id.Vehicle.Weapon.ROT_02.122mm",
+      "Id.Vehicle.Weapon.ROT_01.MachineGun",
+      "Id.Vehicle.Weapon.ROT_03.MachineGun",
+      "Id.Vehicle.Weapon.ROT_04.MachineGun"
+    ]
+  }
+}

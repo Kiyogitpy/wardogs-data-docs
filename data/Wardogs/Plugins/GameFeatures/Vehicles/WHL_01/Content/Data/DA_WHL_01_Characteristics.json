@@ -1,0 +1,43 @@
+--- export: UDataAsset / DA_WHL_01_Characteristics ---
+{
+  "Type": "MWheeledVehicleCharacteristicsDataAsset",
+  "Name": "DA_WHL_01_Characteristics",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleCharacteristicsDataAsset'",
+  "Package": "/WHL_01/Data/DA_WHL_01_Characteristics",
+  "Properties": {
+    "Mass": 250.0,
+    "InertiaScale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "CenterOfMassOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": -0.45
+    },
+    "bDetectGroundVelocity": true,
+    "DrivetrainInertia": 0.8,
+    "DrivetrainFriction": 25.0,
+    "RollingResistanceCoefficient": 0.015,
+    "HandBrakePower": 8.0,
+    "StickyTireSpeed": 5.0,
+    "OptimumSlipWeight": 1.0,
+    "DragCoefficient": 1.1,
+    "DownForceCoefficient": 0.1,
+    "MinUnderSteerAngle": 10.0,
+    "OverSteerAssist": 55.0,
+    "MinOverSteerAngle": 10.0,
+    "FrontAntiRollPower": 40.0,
+    "RearAntiRollPower": 40.0,
+    "MaxSlopeLockSpeed": 2.0,
+    "SuspensionQueryType": "EMSuspensionQueryType::Convex",
+    "ConvexAsset": {
+      "ObjectName": "StaticMesh'Cylinder'",
+      "ObjectPath": "/Game/Vehicles/Shared/StaticMeshes/Cylinder.2"
+    },
+    "SleepLinearThreshold": 1.0,
+    "SleepAngularThreshold": 1.0
+  }
+}

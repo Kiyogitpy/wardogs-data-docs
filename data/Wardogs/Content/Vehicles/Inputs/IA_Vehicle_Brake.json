@@ -1,0 +1,74 @@
+--- export: UDataAsset / IA_Vehicle_Brake ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Brake",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Brake",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Brake"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerHold'IA_Vehicle_Brake:InputTriggerHold_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.2"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Brake:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.3"
+      }
+    ],
+    "PlayerMappableKeySettings": {
+      "ObjectName": "BHPlayerMappableKeySettings'IA_Vehicle_Brake:BHPlayerMappableKeySettings_0'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.1"
+    }
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Brake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.0"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Brake"
+    },
+    "Name": "Input.NamedActions.Vehicle.Brake"
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Brake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Brake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

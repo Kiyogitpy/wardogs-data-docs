@@ -1,0 +1,273 @@
+--- export: UDataAsset / DA_Vehiclesmith_Scene ---
+{
+  "Type": "WDUIVehiclesmithSceneData",
+  "Name": "DA_Vehiclesmith_Scene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehiclesmithSceneData'",
+  "Package": "/Vehiclesmith/UI/Scene/Data/DA_Vehiclesmith_Scene",
+  "Properties": {
+    "VehiclesmithPagePreferenceParams": [
+      {
+        "Key": "EWDUIVehiclesmithEnvironmentOption::Land",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithItemSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_LandItemSelect.DA_Vehiclesmith_LandItemSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIVehiclesmithEnvironmentOption::Air",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithItemSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_AirItemSelect.DA_Vehiclesmith_AirItemSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      }
+    ],
+    "LandTabText": {
+      "TableId": "/Vehiclesmith/UI/Scene/Data/STRINGS_Vehiclesmith_Scene.STRINGS_Vehiclesmith_Scene",
+      "Key": "Vehiclesmith.Tab.Land",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "AirTabText": {
+      "TableId": "/Vehiclesmith/UI/Scene/Data/STRINGS_Vehiclesmith_Scene.STRINGS_Vehiclesmith_Scene",
+      "Key": "Vehiclesmith.Tab.Air",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "BuildTabText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.Build.Title",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "FlairTabText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.Flair.Title",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "EnvironmentOptionToFamilyTag": [
+      {
+        "Key": "EWDUIVehiclesmithEnvironmentOption::Air",
+        "Value": {
+          "TagName": "Vehicle.Variant.Air"
+        }
+      },
+      {
+        "Key": "EWDUIVehiclesmithEnvironmentOption::Land",
+        "Value": {
+          "TagName": "Vehicle.Variant.Land"
+        }
+      }
+    ],
+    "ItemsmithType": "EWDUIItemsmithType::Vehiclesmith",
+    "ItemsmithPagePreferenceParams": [
+      {
+        "Key": "EWDUIItemsmithPages::Build",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::BuildFlair",
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBuildViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Vehiclesmith/UI/BuildOverview/Data/DA_Vehiclesmith_BuildOverview.DA_Vehiclesmith_BuildOverview",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Variants",
+        "Value": {
+          "SceneWidgetsPreference": [
+            "EWDUIItemsmithSharedSceneWidgets::Stats",
+            "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+            "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+            "EWDUIItemsmithSharedSceneWidgets::NavigationBar"
+          ],
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithVariantSelectViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Vehiclesmith/UI/VariantSelect/Data/DA_Vehiclesmith_VariantSelect.DA_Vehiclesmith_VariantSelect",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      }
+    ],
+    "ItemsmithPageSubClass": [
+      {
+        "Key": "EWDUIItemsmithPages::ItemSelect",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_ItemSelectGrid_C'",
+          "ObjectPath": "/Itemsmith/UI/ItemSelect/W_Itemsmith_ItemSelectGrid.8"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Build",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_Build_C'",
+          "ObjectPath": "/Itemsmith/UI/Build/W_Itemsmith_Build.2"
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithPages::Variants",
+        "Value": {
+          "ObjectName": "WidgetBlueprintGeneratedClass'W_Itemsmith_ItemSelectGrid_C'",
+          "ObjectPath": "/Itemsmith/UI/ItemSelect/W_Itemsmith_ItemSelectGrid.8"
+        }
+      }
+    ],
+    "ItemsmithSharedWidgetsViewModelsParams": [
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::NavigationBar",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithNavigationBarViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SharedWidgets/NavigationBar/Data/DA_Itemsmith_NavigationBar.DA_Itemsmith_NavigationBar",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::BaseInfo",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBaseInfoViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SharedWidgets/BaseInfo/Data/DA_Itemsmith_BaseInfo.DA_Itemsmith_BaseInfo",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      },
+      {
+        "Key": "EWDUIItemsmithSharedSceneWidgets::HeroTitle",
+        "Value": {
+          "PageViewModel": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithHeroTitleViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Itemsmith/UI/SharedWidgets/HeroTitle/Data/DA_Itemsmith_HeroTitle.DA_Itemsmith_HeroTitle",
+              "SubPathString": ""
+            }
+          },
+          "ViewModelPreference": []
+        }
+      }
+    ],
+    "DefaultItemFamilyBackground": {
+      "TagName": "Vehicle.Variant.Land"
+    },
+    "ItemFamilyToDataLayers": [
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land"
+        },
+        "Value": {
+          "BackgroundDataLayer": {
+            "AssetPathName": "/Vehiclesmith/Maps/DataLayers/DL_Vehiclesmith_Garage_Background.DL_Vehiclesmith_Garage_Background",
+            "SubPathString": ""
+          },
+          "TestingGroundDataLayer": {
+            "AssetPathName": "/Vehiclesmith/Maps/DataLayers/DL_Vehiclesmith_Land_TestDrive.DL_Vehiclesmith_Land_TestDrive",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air"
+        },
+        "Value": {
+          "BackgroundDataLayer": {
+            "AssetPathName": "/Vehiclesmith/Maps/DataLayers/DL_Vehiclesmith_Hangar_Background.DL_Vehiclesmith_Hangar_Background",
+            "SubPathString": ""
+          },
+          "TestingGroundDataLayer": {
+            "AssetPathName": "/Vehiclesmith/Maps/DataLayers/DL_Vehiclesmith_Air_TestDrive.DL_Vehiclesmith_Air_TestDrive",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "DpadControlsAngle": 55.0,
+    "DevControlsMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_Dev'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_Dev.0"
+    },
+    "PersistentActionViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPersistentActionsViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Vehiclesmith/UI/Scene/Data/DA_Vehiclesmith_PersistentActions.DA_Vehiclesmith_PersistentActions",
+        "SubPathString": ""
+      }
+    },
+    "PopupDataTable": {
+      "AssetPathName": "/Vehiclesmith/UI/Scene/Data/DT_VehiclesmithPopupOptions.DT_VehiclesmithPopupOptions",
+      "SubPathString": ""
+    },
+    "SceneMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith.0"
+    }
+  }
+}

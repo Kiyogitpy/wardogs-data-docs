@@ -1,0 +1,276 @@
+--- export: UDataTable / DT_CashRewardModifiers ---
+{
+  "Type": "DataTable",
+  "Name": "DT_CashRewardModifiers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/DT_CashRewardModifiers",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDResourceRewardModifierTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Rewards.Modifier.DamageScalar": {
+      "ModifierCategory": "EWDRewardModifierCategory::Scalar",
+      "ModifierType": "EWDRewardModifierType::PostMultiply",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "None"
+      },
+      "ModifierValues": [],
+      "ScalarModifier": {
+        "ObjectName": "CurveFloat'CF_Reward_Assist_DamagePlayer'",
+        "ObjectPath": "/Game/GameMechanics/Gamemode/Data/ScalarModifiers/Assists/CF_Reward_Assist_DamagePlayer.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.DamageScalar"
+      }
+    },
+    "Meta.Rewards.Modifier.TransportAssist.VehicleType": {
+      "ModifierCategory": "EWDRewardModifierCategory::Group",
+      "ModifierType": "EWDRewardModifierType::BaseAdditive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "Vehicle.Variant"
+      },
+      "ModifierValues": [
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+          },
+          "Value": 0.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+          },
+          "Value": 0.0
+        }
+      ],
+      "ScalarModifier": null,
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.TransportAssist.VehicleType"
+      }
+    },
+    "Meta.Rewards.Modifier.DestroyedVehicleType": {
+      "ModifierCategory": "EWDRewardModifierCategory::Group",
+      "ModifierType": "EWDRewardModifierType::BaseAdditive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "Vehicle.Variant"
+      },
+      "ModifierValues": [
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+          },
+          "Value": 300.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat"
+          },
+          "Value": 100.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Air.Rotary.ROT_01"
+          },
+          "Value": 500.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+          },
+          "Value": 300.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Tracked.TNK_01"
+          },
+          "Value": 2500.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle"
+          },
+          "Value": 3000.0
+        }
+      ],
+      "ScalarModifier": null,
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.DestroyedVehicleType"
+      }
+    },
+    "Meta.Rewards.Modifier.Transport.VehicleType": {
+      "ModifierCategory": "EWDRewardModifierCategory::Group",
+      "ModifierType": "EWDRewardModifierType::BaseAdditive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "Vehicle.Variant"
+      },
+      "ModifierValues": [
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Air.Rotary"
+          },
+          "Value": 25.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Wheeled"
+          },
+          "Value": 40.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Tracked.TNK_01"
+          },
+          "Value": 50.0
+        }
+      ],
+      "ScalarModifier": null,
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.Transport.VehicleType"
+      }
+    },
+    "Meta.Rewards.Modifier.DamageScalar.Vehicle": {
+      "ModifierCategory": "EWDRewardModifierCategory::Scalar",
+      "ModifierType": "EWDRewardModifierType::PostMultiply",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "None"
+      },
+      "ModifierValues": [],
+      "ScalarModifier": {
+        "ObjectName": "CurveFloat'CF_Reward_Assist_DamageVehicle'",
+        "ObjectPath": "/Game/GameMechanics/Gamemode/Data/ScalarModifiers/Assists/CF_Reward_Assist_DamageVehicle.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.DamageScalar.Vehicle"
+      }
+    },
+    "Meta.Rewards.Modifier.VehicleKill.VehicleType": {
+      "ModifierCategory": "EWDRewardModifierCategory::Group",
+      "ModifierType": "EWDRewardModifierType::BaseAdditive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "Vehicle.Variant"
+      },
+      "ModifierValues": [
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Air.Rotary"
+          },
+          "Value": 25.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Wheeled"
+          },
+          "Value": 50.0
+        },
+        {
+          "Key": {
+            "TagName": "Vehicle.Variant.Land.Tracked"
+          },
+          "Value": 50.0
+        }
+      ],
+      "ScalarModifier": null,
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.VehicleKill.VehicleType"
+      }
+    },
+    "Meta.Rewards.Modifier.PurchaseScalar.SupplyCrate": {
+      "ModifierCategory": "EWDRewardModifierCategory::Scalar",
+      "ModifierType": "EWDRewardModifierType::BaseAdditive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "None"
+      },
+      "ModifierValues": [],
+      "ScalarModifier": {
+        "ObjectName": "CurveFloat'CF_Reward_SupplyCrateItemPurchase'",
+        "ObjectPath": "/Game/GameMechanics/Gamemode/Data/ScalarModifiers/SupplyCratePurchase/CF_Reward_SupplyCrateItemPurchase.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.PurchaseScalar.SupplyCrate"
+      }
+    },
+    "Meta.Rewards.Modifier.BuildScalar": {
+      "ModifierCategory": "EWDRewardModifierCategory::Scalar",
+      "ModifierType": "EWDRewardModifierType::Additive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "None"
+      },
+      "ModifierValues": [],
+      "ScalarModifier": {
+        "ObjectName": "CurveFloat'CF_Reward_Build'",
+        "ObjectPath": "/Game/GameMechanics/Gamemode/Data/ScalarModifiers/Buildables/CF_Reward_Build.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.BuildScalar"
+      }
+    },
+    "Meta.Rewards.Modifier.BuildableBuilt": {
+      "ModifierCategory": "EWDRewardModifierCategory::Group",
+      "ModifierType": "EWDRewardModifierType::Additive",
+      "ModifierValue": 1.0,
+      "ParentTag": {
+        "TagName": "Id.Buildable"
+      },
+      "ModifierValues": [
+        {
+          "Key": {
+            "TagName": "Id.Buildable.HBlock"
+          },
+          "Value": 20.0
+        },
+        {
+          "Key": {
+            "TagName": "Id.Buildable.TallHBlock"
+          },
+          "Value": 25.0
+        },
+        {
+          "Key": {
+            "TagName": "Id.Buildable.SandbagWall"
+          },
+          "Value": 10.0
+        },
+        {
+          "Key": {
+            "TagName": "Id.Buildable.FloorBoard"
+          },
+          "Value": 5.0
+        },
+        {
+          "Key": {
+            "TagName": "Id.Buildable.Ramp"
+          },
+          "Value": 15.0
+        },
+        {
+          "Key": {
+            "TagName": "Id.Buildable.TankTrap"
+          },
+          "Value": 50.0
+        },
+        {
+          "Key": {
+            "TagName": "Id.Buildable.WindowBoard"
+          },
+          "Value": 5.0
+        }
+      ],
+      "ScalarModifier": null,
+      "Tag": {
+        "TagName": "Meta.Rewards.Modifier.BuildableBuilt"
+      }
+    }
+  }
+}

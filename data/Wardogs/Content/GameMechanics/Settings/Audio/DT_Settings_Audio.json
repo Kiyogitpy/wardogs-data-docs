@@ -1,0 +1,808 @@
+--- export: UDataTable / DT_Settings_Audio ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Settings_Audio",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Settings/Audio/DT_Settings_Audio",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHUserSettingDataTableRow'",
+      "ObjectPath": "/Script/BHUserSettings"
+    }
+  },
+  "Rows": {
+    "UserSettings.Audio.InputDevice": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DIsplayName.InputDevice",
+          "SourceString": "Input Device",
+          "LocalizedString": "Input Device"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.InputDevice",
+          "SourceString": "The audio device used for audio input.",
+          "LocalizedString": "The audio device used for audio input."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_InputDevices.T_UI_Settings_720p_InputDevices",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_InputDevice.DA_Setting_Audio_InputDevice",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.InputDevice"
+      }
+    },
+    "UserSettings.Audio.OutputDevice": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.OutputDevice",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.OutputDevice",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_OutputDevices.T_UI_Settings_720p_OutputDevices",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_OutputDevice.DA_Setting_Audio_OutputDevice",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.OutputDevice"
+      }
+    },
+    "UserSettings.Audio.EnableSoundInBackground": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DIsplayName.EnableSoundInBackground",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.EnableSoundInBackground",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_SoundInBackground.T_UI_Settings_SoundInBackground",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.EnableSoundInBackground"
+      }
+    },
+    "UserSettings.Audio.Volume.Effects": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.Effects",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.Effects",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_EffectsVolume.T_UI_Settings_720p_EffectsVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Effects"
+      }
+    },
+    "UserSettings.Audio.Volume.Master": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.Master",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.Master",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_MasterVolume.T_UI_Settings_720p_MasterVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Master"
+      }
+    },
+    "UserSettings.Audio.Volume.Music.Base": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.Music",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.Music",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_MusicVolume.T_UI_Settings_720p_MusicVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Music.Base"
+      }
+    },
+    "UserSettings.Audio.Volume.Music.Ingame": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.Music.Ingame",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.Music.Ingame",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_MusicVolume.T_UI_Settings_720p_MusicVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Music.Ingame"
+      }
+    },
+    "UserSettings.Audio.Volume.Music.Menu": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.Music.Menu",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.Music.Menu",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_MenuMusicVolume.T_UI_Settings_720p_MenuMusicVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Music.Menu"
+      }
+    },
+    "UserSettings.Audio.Volume.Music.Radio": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.Music.Radio",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.Music.Radio",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_VehicleRadioVolume.T_UI_Settings_720p_VehicleRadioVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes_LicensedMusic.DA_Setting_Audio_Volumes_LicensedMusic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Music.Radio"
+      }
+    },
+    "UserSettings.Audio.Volume.UI": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.UI",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.UI",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_UIVolume.T_UI_Settings_720p_UIVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.UI"
+      }
+    },
+    "UserSettings.Audio.Volume.VOIP": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.VOIP",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.VOIP",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VoIPProximity.T_UI_Settings_VoIPProximity",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes.DA_Setting_Audio_Volumes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.VOIP"
+      }
+    },
+    "UserSettings.Audio.Volume.VOIP.Proximity": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.VOIP.Proximity",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.VOIP.Proximity",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_VoIPProxVolume.T_UI_Settings_720p_VoIPProxVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes_VOIP.DA_Setting_Audio_Volumes_VOIP",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.VOIP.Proximity"
+      }
+    },
+    "UserSettings.Audio.Volume.VOIP.Squad": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "DisplayName.Volume.VOIP.Squad",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "Description": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Audio.STRINGS_BH_Settings_Audio",
+          "Key": "Description.Volume.VOIP.Squad",
+          "SourceString": null,
+          "LocalizedString": ""
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_VoIPSquadVolume.T_UI_Settings_720p_VoIPSquadVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes_VOIP.DA_Setting_Audio_Volumes_VOIP",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.VOIP.Squad"
+      }
+    },
+    "UserSettings.Audio.Volume.Microphone": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.MicrophoneVolume",
+          "SourceString": "Microphone Volume",
+          "LocalizedString": "Microphone Volume"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.Volume.Microphone",
+          "SourceString": "Controls the volume of your microphone input. ",
+          "LocalizedString": "Controls the volume of your microphone input. "
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Audio/DA_Setting_Audio_Volumes_Microphone.DA_Setting_Audio_Volumes_Microphone",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Volume.Microphone"
+      }
+    },
+    "UserSettings.Audio.MicrophoneTest.Enabled": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.MicrophoneTest",
+          "SourceString": "Test Microphone",
+          "LocalizedString": "Test Microphone"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.MicrophoneTest",
+          "SourceString": "Toggle to hear your microphone input.",
+          "LocalizedString": "Toggle to hear your microphone input."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Audio/DA_SettingMicTestButton.DA_SettingMicTestButton",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.MicrophoneTest.Enabled"
+      }
+    },
+    "UserSettings.Audio.VoiceChat.Enabled": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.VoiceChat",
+          "SourceString": "Voice Chat",
+          "LocalizedString": "Voice Chat"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.VoiceChat",
+          "SourceString": "Toggles [Deafen] on all voice channels",
+          "LocalizedString": "Toggles [Deafen] on all voice channels"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VoIPOff.T_UI_Settings_VoIPOff",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.VoiceChat.Enabled"
+      }
+    },
+    "UserSettings.Audio.ProximityVoiceChat.Enabled": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.ProximityVoiceChat",
+          "SourceString": "Proximity Voice Chat",
+          "LocalizedString": "Proximity Voice Chat"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.ProximityVoiceChat",
+          "SourceString": "Controls whether proximity voice chat is enabled.",
+          "LocalizedString": "Controls whether proximity voice chat is enabled."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VoIPProximity.T_UI_Settings_VoIPProximity",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.ProximityVoiceChat.Enabled"
+      }
+    },
+    "UserSettings.Audio.SquadVoiceChat.Enabled": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.SquadVoiceChat",
+          "SourceString": "Squad Voice Chat",
+          "LocalizedString": "Squad Voice Chat"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.SquadVoiceChat",
+          "SourceString": "Controls whether squad voice chat is enabled.",
+          "LocalizedString": "Controls whether squad voice chat is enabled."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VoIPSquad.T_UI_Settings_VoIPSquad",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.SquadVoiceChat.Enabled"
+      }
+    },
+    "UserSettings.Audio.Tinnitus.Enabled": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.TinnitusAudio",
+          "SourceString": "Tinnitus Audio",
+          "LocalizedString": "Tinnitus Audio"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.TinnitusAudio",
+          "SourceString": "A high-pitched ringing sound that plays after nearby explosions, simulating temporary hearing damage. Disable this to remove the ringing effect.",
+          "LocalizedString": "A high-pitched ringing sound that plays after nearby explosions, simulating temporary hearing damage. Disable this to remove the ringing effect."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_TinnitusVolume.T_UI_Settings_720p_TinnitusVolume",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.Tinnitus.Enabled"
+      }
+    },
+    "UserSettings.Audio.SpatialAudio": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.SpatialAudio",
+          "SourceString": "3D Spatial Audio",
+          "LocalizedString": "3D Spatial Audio"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.SpatialAudio",
+          "SourceString": "For the best audio experience, we recommend enabling 3D audio and playing on headphones. This gives you a greater understanding to the location of sounds in front, behind, above and below you.",
+          "LocalizedString": "For the best audio experience, we recommend enabling 3D audio and playing on headphones. This gives you a greater understanding to the location of sounds in front, behind, above and below you."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_3DAudio.T_UI_Settings_720p_3DAudio",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.SpatialAudio"
+      }
+    },
+    "UserSettings.Audio.CommunicationStatus": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.CommunicationStatus",
+          "SourceString": "Communication Status",
+          "LocalizedString": "Communication Status"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.CommunicationStatus",
+          "SourceString": "Status of the voice and text chat connection. Text chat uses this connection too, so it stays active with Voice Chat off.",
+          "LocalizedString": "Status of the voice and text chat connection. Text chat uses this connection too, so it stays active with Voice Chat off."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.CommunicationStatus"
+      }
+    },
+    "UserSettings.Audio.RetryCommunication": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "DisplayName.RetryCommunication",
+          "SourceString": "Retry Connection",
+          "LocalizedString": "Retry Connection"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Audio.STRINGS_Settings_Audio",
+          "Key": "Description.RetryCommunication",
+          "SourceString": "Retry the communication connection now. Available while retrying, once every 30 seconds.",
+          "LocalizedString": "Retry the communication connection now. Available while retrying, once every 30 seconds."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Audio/DA_SettingRetryCommunicationButton.DA_SettingRetryCommunicationButton",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Audio.RetryCommunication"
+      }
+    }
+  }
+}

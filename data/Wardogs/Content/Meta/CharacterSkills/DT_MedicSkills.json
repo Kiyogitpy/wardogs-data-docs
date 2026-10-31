@@ -1,0 +1,276 @@
+--- export: UDataTable / DT_MedicSkills ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MedicSkills",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CharacterSkills/DT_MedicSkills",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Medic.ReduceUsage.Medkit": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Item_UsageRateMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Items/GE_Item_UsageRateMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Item.UsageRateMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_MedicSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_MedicSkills.0"
+                        },
+                        "RowName": "ReduceUsage_Medkit"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Item.UsageRateMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "ID.Item.MedKit.Standard"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Medic.ReduceUsage.Medkit"
+      }
+    },
+    "Meta.Role.Medic.MedicalItemSwapSpeed": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_EquipSpeedMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_EquipSpeedMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_MedicSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_MedicSkills.0"
+                        },
+                        "RowName": "MedicalItemSwapSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Context.Medical"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Medic.MedicalItemSwapSpeed"
+      }
+    },
+    "Meta.Role.Medic.ReviveSpeedBoost.Teammate": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Revive.Target"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_SprintSpeedMultiplier_Temp_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_SprintSpeedMultiplier_Temp.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.SprintSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_MedicSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_MedicSkills.0"
+                        },
+                        "RowName": "ReviveSpeedBoost_Teammate_SprintSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  },
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.TacSprintSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_MedicSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_MedicSkills.0"
+                        },
+                        "RowName": "ReviveSpeedBoost_Teammate_TacSprintSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Medic.ReviveSpeedBoost.Teammate"
+      }
+    },
+    "Meta.Role.Medic.ReviveSpeedBoost.Self": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Revive.Target"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_SprintSpeedMultiplier_Temp_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_SprintSpeedMultiplier_Temp.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.SprintSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_MedicSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_MedicSkills.0"
+                        },
+                        "RowName": "ReviveSpeedBoost_Self_SprintSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  },
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.TacSprintSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_MedicSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_MedicSkills.0"
+                        },
+                        "RowName": "ReviveSpeedBoost_Self_TacSprintSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Medic.ReviveSpeedBoost.Self"
+      }
+    }
+  }
+}

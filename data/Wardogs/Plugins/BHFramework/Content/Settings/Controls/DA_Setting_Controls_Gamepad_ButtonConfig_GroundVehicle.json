@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Controls/DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingGameplayTagDiscreteValues'DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle:BHUserSettingGameplayTagDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingGameplayTagDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingGameplayTagDiscreteValues",
+  "Name": "BHUserSettingGameplayTagDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingGameplayTagDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle'",
+    "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_Gamepad_ButtonConfig_GroundVehicle.0"
+  },
+  "Properties": {
+    "Values": [
+      {
+        "Key": {
+          "TagName": "Input.Gamepad.Config.Button.Vehicle.Ground.Default"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controller.STRINGS_Settings_Controller",
+          "Key": "Config.Button.Vehicle.Ground.Default",
+          "SourceString": "Default",
+          "LocalizedString": "Default"
+        }
+      }
+    ]
+  }
+}

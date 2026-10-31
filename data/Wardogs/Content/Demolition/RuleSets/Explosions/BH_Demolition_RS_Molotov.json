@@ -1,0 +1,44 @@
+--- export: UDataAsset / BH_Demolition_RS_Molotov ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_Molotov",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_Molotov",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "WDDemolitionRule_Explosion'BH_Demolition_RS_Molotov:WDDemolitionRule_Explosion_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_Molotov.1"
+    }
+  }
+}
+--- export: UObject / WDDemolitionRule_Explosion_0 ---
+{
+  "Type": "WDDemolitionRule_Explosion",
+  "Name": "WDDemolitionRule_Explosion_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDemolitionRule_Explosion'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_Molotov'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_Molotov.0"
+  },
+  "Properties": {
+    "PermittedDamageSources": {
+      "TagDictionary": [
+        {
+          "TagName": "Meta.Damage.Molotov"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "UserDescription": "Molotov fire",
+      "AutoDescription": " ANY( Meta.Damage.Molotov )"
+    },
+    "MinimumDistanceFromExplosionSource": 300.0
+  }
+}

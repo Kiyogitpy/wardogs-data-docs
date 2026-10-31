@@ -1,0 +1,88 @@
+--- export: UObject / AEB_SetImpulseResonanceParameters_C_1 ---
+{
+  "Type": "AEB_SetImpulseResonanceParameters_C",
+  "Name": "AEB_SetImpulseResonanceParameters_C_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetImpulseResonanceParameters.AEB_SetImpulseResonanceParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ImpulseResonance_CivilianVehicle_Alarm'",
+    "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetImpulseResonanceParameters_C'Default__AEB_SetImpulseResonanceParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetImpulseResonanceParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_ImpulseResonance_CivilianVehicle_Alarm ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_ImpulseResonance_CivilianVehicle_Alarm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Environment.ImpulseResonance.CivilianVehicle.Alarm"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_ImpulseResonance_CivilianVehicle_Alarm:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlaySoundCullNearbyDuplicates'AE_ImpulseResonance_CivilianVehicle_Alarm:WDAudioEventBehaviorPlaySoundCullNearbyDuplicates_0'",
+        "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm.3"
+      },
+      {
+        "ObjectName": "AEB_SetImpulseResonanceParameters_C'AE_ImpulseResonance_CivilianVehicle_Alarm:AEB_SetImpulseResonanceParameters_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ImpulseResonance_CivilianVehicle_Alarm'",
+    "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 150.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlaySoundCullNearbyDuplicates_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlaySoundCullNearbyDuplicates",
+  "Name": "WDAudioEventBehaviorPlaySoundCullNearbyDuplicates_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlaySoundCullNearbyDuplicates'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ImpulseResonance_CivilianVehicle_Alarm'",
+    "ObjectPath": "/Game/Audio/Events/Environment/ImpulseResonance/AE_ImpulseResonance_CivilianVehicle_Alarm.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Ambience_Resonance_CivilianVehicle_Alarm'",
+      "ObjectPath": "/Game/Audio/Ambience/Resonance/MSS/MSS_Ambience_Resonance_CivilianVehicle_Alarm.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

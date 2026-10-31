@@ -1,0 +1,67 @@
+--- export: UPrimaryDataAsset / VP_BobbleHead_Valkyra ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_BobbleHead_Valkyra",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/Bobblehead_Faction/Parts/VP_BobbleHead_Valkyra",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Bobblehead"
+    ],
+    "Fragments": [
+      {
+        "Key": "BobbleHead",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_BobbleHead_Valkyra:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/Bobblehead_Faction/Parts/VP_BobbleHead_Valkyra.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_BobbleHead_Valkyra'",
+    "ObjectPath": "/Bobblehead_Faction/Parts/VP_BobbleHead_Valkyra.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "Bobblehead_Socket"
+      },
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Identifier": "Chassis"
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/Bobblehead_Faction/Meshes/Valkyra/SK_Bobblehead_001_VK.SK_Bobblehead_001_VK",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/Bobblehead_Faction/Meshes/Valkyra/ABP_Bobblehead_001_VK.ABP_Bobblehead_001_VK_C",
+      "SubPathString": ""
+    },
+    "bReceiveDecals": false,
+    "bHitEvents": false,
+    "bGenerateOverlapsOnServer": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic",
+        "Flags": 0
+      }
+    },
+    "MeshComponentClass": {
+      "ObjectName": "Class'MOccupancyGatedMeshComponent'",
+      "ObjectPath": "/Script/Mechanized"
+    }
+  }
+}

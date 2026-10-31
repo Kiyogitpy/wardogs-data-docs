@@ -1,0 +1,84 @@
+--- export: UObject / AEB_SetSpottingParameters_C_0 ---
+{
+  "Type": "AEB_SetSpottingParameters_C",
+  "Name": "AEB_SetSpottingParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Spotting/Data/Audio/Blueprints/AEB_SetSpottingParameters.AEB_SetSpottingParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Spotting_Start'",
+    "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSpottingParameters_C'Default__AEB_SetSpottingParameters_C'",
+    "ObjectPath": "/Spotting/Data/Audio/Blueprints/AEB_SetSpottingParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Spotting"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Spotting_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Spotting_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Spotting.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetSpottingParameters_C'AE_UX_Spotting_Start:AEB_SetSpottingParameters_C_0'",
+        "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Spotting_Start:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_UX_Spotting_Start:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Spotting_Start'",
+    "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start.1"
+  },
+  "Properties": {
+    "ParameterName": "Start",
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Spotting"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Spotting_Start'",
+    "ObjectPath": "/Spotting/Data/Audio/Events/AE_UX_Spotting_Start.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Spotting'",
+      "ObjectPath": "/Spotting/Data/Audio/MSS/MSS_UX_Spotting.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Spotting"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+--- export: UDataAsset / DA_WagerStatusScene ---
+{
+  "Type": "WDUIWagerStatusSceneData",
+  "Name": "DA_WagerStatusScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWagerStatusSceneData'",
+  "Package": "/Game/UI/Features/Wagers/Status/DA_WagerStatusScene",
+  "Properties": {
+    "_aaabkafioibinaeopiljn": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWagerStatusViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Wagers/Status/DA_WagerStatus.DA_WagerStatus",
+        "SubPathString": ""
+      }
+    },
+    "_aaablbdhlloonmbdaincm": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWagerReceiptViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Wagers/Receipt/DA_WagerReceipt.DA_WagerReceipt",
+        "SubPathString": ""
+      }
+    },
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.CloseScene"
+    },
+    "bUseGamepadOverrides": true,
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Scoreboard.Exit"
+    }
+  }
+}

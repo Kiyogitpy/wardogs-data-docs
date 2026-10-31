@@ -1,0 +1,59 @@
+--- export: UObject / GameFeatureAction_DataRegistry_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistry",
+  "Name": "GameFeatureAction_DataRegistry_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistry'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'FactoryInvestment'",
+    "ObjectPath": "/FactoryInvestment/FactoryInvestment.1"
+  },
+  "Properties": {
+    "RegistriesToAdd": [
+      {
+        "AssetPathName": "/FactoryInvestment/Data/DR_FactoryRecipes.DR_FactoryRecipes",
+        "SubPathString": ""
+      }
+    ],
+    "bPreloadInEditor": true
+  }
+}
+--- export: UPrimaryDataAsset / FactoryInvestment ---
+{
+  "Type": "GameFeatureData",
+  "Name": "FactoryInvestment",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/FactoryInvestment/FactoryInvestment",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistry'FactoryInvestment:GameFeatureAction_DataRegistry_0'",
+        "ObjectPath": "/FactoryInvestment/FactoryInvestment.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "WD.Meta.Investment",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDInvestmentDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/FactoryInvestment/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

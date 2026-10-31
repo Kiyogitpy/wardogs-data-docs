@@ -1,0 +1,81 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Interaction'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_Interaction.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Interact"
+    },
+    "Name": "Input.NamedActions.Player.Interact"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_1 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Interaction'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_Interaction.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Interact"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Player.Interact"
+  }
+}
+--- export: UDataAsset / IMC_Interaction ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Interaction",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_Interaction",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Interact'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Interact.0"
+          },
+          "Key": {
+            "KeyName": "F"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Interaction:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_Interaction.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Interact'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Interact.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Interaction:BHPlayerMappableKeySettings_1'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_Interaction.1"
+          }
+        }
+      ]
+    }
+  }
+}

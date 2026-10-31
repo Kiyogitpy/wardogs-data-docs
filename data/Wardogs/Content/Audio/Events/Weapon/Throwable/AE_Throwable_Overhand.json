@@ -1,0 +1,97 @@
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Throwable_Overhand'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.Throw.OverHand.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.Throw.OverHand.3p"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Throw"
+    },
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Throwable_Overhand'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.ThrowingGrenade.OverHand"
+      }
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Throw"
+    },
+    "_aaabhgndclheajnnlnade": 80.0
+  }
+}
+--- export: UPrimaryDataAsset / AE_Throwable_Overhand ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Throwable_Overhand",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Overhand"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Throwable_Overhand:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand.3"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Throwable_Overhand:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand.0"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Throwable_Overhand:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Throwable_Overhand'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Throwable/AE_Throwable_Overhand.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Throw"
+    },
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}

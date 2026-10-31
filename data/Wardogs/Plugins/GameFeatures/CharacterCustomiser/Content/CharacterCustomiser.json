@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'CharacterCustomiser'",
+    "ObjectPath": "/CharacterCustomiser/CharacterCustomiser.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_CharacterCustomiser'",
+      "ObjectPath": "/CharacterCustomiser/EDL_CharacterCustomiser.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / CharacterCustomiser ---
+{
+  "Type": "GameFeatureData",
+  "Name": "CharacterCustomiser",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/CharacterCustomiser/CharacterCustomiser",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'CharacterCustomiser:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/CharacterCustomiser/CharacterCustomiser.0"
+      }
+    ]
+  }
+}

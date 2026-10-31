@@ -1,0 +1,104 @@
+--- export: UDataAsset / DA_ItemCard_SupplyCrate ---
+{
+  "Type": "WDUIPurchasableItemCardData_Vendor",
+  "Name": "DA_ItemCard_SupplyCrate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPurchasableItemCardData_Vendor'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_SupplyCrate",
+  "Properties": {
+    "MultipleItemsPriceTooltipFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.PricePerItem",
+      "SourceString": "{Value} per Item",
+      "LocalizedString": "{Value} per Item"
+    },
+    "UnlockLevelTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.UnlockLevel",
+      "SourceString": "{Role} Lvl {Level}",
+      "LocalizedString": "{Role} Lvl {Level}"
+    },
+    "InsufficientFundsWarning": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.Warning.InsufficientFunds",
+      "SourceString": "Not Enough Cash",
+      "LocalizedString": "Not Enough Cash"
+    },
+    "NormalPriceColor": {
+      "R": 0.8125,
+      "G": 0.8125,
+      "B": 0.8125,
+      "A": 1.0,
+      "Hex": "E9E9E9"
+    },
+    "PriceModifierColor_PriceReduction": {
+      "R": 0.152926,
+      "G": 0.361307,
+      "B": 0.07036,
+      "A": 1.0,
+      "Hex": "6DA24B"
+    },
+    "PriceModifierColor_PriceIncrease": {
+      "R": 0.333,
+      "G": 0.0,
+      "B": 0.0,
+      "A": 1.0,
+      "Hex": "9C0000"
+    },
+    "CantAffordPriceColor": {
+      "R": 0.333,
+      "G": 0.0,
+      "B": 0.0,
+      "A": 1.0,
+      "Hex": "9C0000"
+    },
+    "PurchaseFailedAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.InsufficientFunds"
+    },
+    "UnlockPurchaseFailedAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.InsufficientFunds"
+    },
+    "ItemCardTooltipPrompts": [
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Purchase"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Purchase"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Purchase",
+            "SourceString": "Purchase",
+            "LocalizedString": "Purchase"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      }
+    ],
+    "ItemAmountType": "EWDUIItemAmountType::InInventory",
+    "IconType": {
+      "TagName": "UI.Icon.Vendor"
+    },
+    "TooltipContext": {
+      "TagName": "UI.Tooltip.Context.Vendor"
+    },
+    "_aaabeldgebdhiiiacflnh": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.RoleXP.Formatting",
+      "SourceString": "\r\nREWARDS {Emoji} {RoleName} XP",
+      "LocalizedString": "\r\nREWARDS {Emoji} {RoleName} XP"
+    }
+  }
+}

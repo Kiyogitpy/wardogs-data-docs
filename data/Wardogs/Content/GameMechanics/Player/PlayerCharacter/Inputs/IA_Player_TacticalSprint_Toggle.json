@@ -1,0 +1,36 @@
+--- export: UDataAsset / IA_Player_TacticalSprint_Toggle ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_TacticalSprint_Toggle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_TacticalSprint_Toggle",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.TacticalSprint"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTapXTimes'IA_Player_TacticalSprint_Toggle:InputTriggerTapXTimes_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_TacticalSprint_Toggle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTapXTimes_0 ---
+{
+  "Type": "InputTriggerTapXTimes",
+  "Name": "InputTriggerTapXTimes_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTapXTimes'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_TacticalSprint_Toggle'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_TacticalSprint_Toggle.0"
+  },
+  "Properties": {
+    "TapThreshold": 0.5,
+    "TapTriggerThreshold": 2,
+    "TimeBetweenTapsThreshold": 0.5
+  }
+}

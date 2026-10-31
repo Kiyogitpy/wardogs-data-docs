@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Weapon_ToggleAncillaryFire ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Weapon_ToggleAncillaryFire",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_Weapon_ToggleAncillaryFire",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Weapon.ToggleAncillaryFire"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Weapon_ToggleAncillaryFire:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_Weapon_ToggleAncillaryFire.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Weapon_ToggleAncillaryFire'",
+    "ObjectPath": "/Game/Weapons/Input/IA_Weapon_ToggleAncillaryFire.0"
+  }
+}

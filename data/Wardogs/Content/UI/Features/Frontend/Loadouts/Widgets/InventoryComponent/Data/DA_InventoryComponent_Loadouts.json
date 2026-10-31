@@ -1,0 +1,136 @@
+--- export: UDataAsset / DA_InventoryComponent_Loadouts ---
+{
+  "Type": "WDUIInventoryComponentData",
+  "Name": "DA_InventoryComponent_Loadouts",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIInventoryComponentData'",
+  "Package": "/Game/UI/Features/Frontend/Loadouts/Widgets/InventoryComponent/Data/DA_InventoryComponent_Loadouts",
+  "Properties": {
+    "WeightDisplayViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWeightDisplayViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/WeightDisplay/Data/DA_WeightDisplay.DA_WeightDisplay",
+        "SubPathString": ""
+      }
+    },
+    "FallbackSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot.DA_ContainerGrid_Vendor_Overview_Slot",
+        "SubPathString": ""
+      }
+    },
+    "FallbackContainerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot.DA_ContainerGrid_Vendor_Overview_Slot",
+        "SubPathString": ""
+      }
+    },
+    "SlotViewModelParams": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Primary"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot_Weapon.DA_ContainerGrid_Vendor_Overview_Slot_Weapon",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Specialist"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot_Weapon.DA_ContainerGrid_Vendor_Overview_Slot_Weapon",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Sidearm"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot_Weapon.DA_ContainerGrid_Vendor_Overview_Slot_Weapon",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "ContainerViewModelParams": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Backpack"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Subslots_Storage.DA_ContainerGrid_Vendor_Overview_Subslots_Storage",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Vest"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Subslots_Vest.DA_ContainerGrid_Vendor_Overview_Subslots_Vest",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "ContainerLayoutViewModelParams": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Backpack"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerLayout/Data/DA_ContainerLayout_Vendor_Overview_Storage.DA_ContainerLayout_Vendor_Overview_Storage",
+            "SubPathString": ""
+          }
+        }
+      }
+    ]
+  }
+}

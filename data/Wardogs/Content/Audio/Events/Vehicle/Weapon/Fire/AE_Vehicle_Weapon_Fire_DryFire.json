@@ -1,0 +1,116 @@
+--- export: UObject / AEB_PlayVehicleWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayVehicleWeaponPerspectiveSound_C",
+  "Name": "AEB_PlayVehicleWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.AEB_PlayVehicleWeaponPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_DryFire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'Default__AEB_PlayVehicleWeaponPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.DryFire.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.DryFire.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / AEB_SetHostilityParameter_C_0 ---
+{
+  "Type": "AEB_SetHostilityParameter_C",
+  "Name": "AEB_SetHostilityParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetHostilityParameter.AEB_SetHostilityParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_DryFire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetHostilityParameter_C'Default__AEB_SetHostilityParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetHostilityParameter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / AEB_VehicleWeaponStartFireParameters_C_0 ---
+{
+  "Type": "AEB_VehicleWeaponStartFireParameters_C",
+  "Name": "AEB_VehicleWeaponStartFireParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehicleWeaponStartFireParameters.AEB_VehicleWeaponStartFireParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_DryFire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehicleWeaponStartFireParameters_C'Default__AEB_VehicleWeaponStartFireParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehicleWeaponStartFireParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Fire_DryFire ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Fire_DryFire",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.Fire.DryFire"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'AE_Vehicle_Weapon_Fire_DryFire:AEB_PlayVehicleWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.0"
+      },
+      {
+        "ObjectName": "AEB_VehicleWeaponStartFireParameters_C'AE_Vehicle_Weapon_Fire_DryFire:AEB_VehicleWeaponStartFireParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.2"
+      },
+      {
+        "ObjectName": "AEB_SetHostilityParameter_C'AE_Vehicle_Weapon_Fire_DryFire:AEB_SetHostilityParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Weapon_Fire_DryFire:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.4"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 155.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_DryFire'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_DryFire.3"
+  },
+  "Properties": {
+    "ParameterName": "Trigger",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}

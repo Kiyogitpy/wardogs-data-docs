@@ -1,0 +1,523 @@
+--- export: UDataTable / DT_TrackerData_TacticalMap ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_TacticalMap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Map/Widgets/Trackers/Data/DT_TrackerData_TacticalMap",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.Character": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.Character.Data",
+        "Trackers.Type.Character.Transforms"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Player.W_Tracker_Map_Player_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPlayerMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Player.DA_Tracker_Map_Player",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Character"
+      }
+    },
+    "Trackers.Type.Vehicle": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.Vehicle.Data",
+        "Trackers.Type.Vehicle.Transforms",
+        "Vehicle"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Vehicle.W_Tracker_Map_Vehicle_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Vehicle.DA_Tracker_Map_Vehicle",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vehicle"
+      }
+    },
+    "Trackers.Type.Spawn": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Spawn.W_Tracker_Map_Spawn_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISpawnMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Spawn.DA_Tracker_Map_Spawn",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Spawn"
+      }
+    },
+    "Trackers.Type.SafeZone": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_SafeZone.W_Tracker_Map_SafeZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISafeZoneMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_SafeZone.DA_Tracker_Map_SafeZone",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SafeZone"
+      }
+    },
+    "Trackers.Type.Vendor": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Vendor.W_Tracker_Map_Vendor_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVendorMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Vendor.DA_Tracker_Map_Vendor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vendor"
+      }
+    },
+    "Trackers.Type.DeploymentBoard": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_DeploymentBoard.W_Tracker_Map_DeploymentBoard_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDeploymentBoardMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_DeploymentBoard.DA_Tracker_Map_DeploymentBoard",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.DeploymentBoard"
+      }
+    },
+    "Trackers.Type.RefuelStation": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_FuelStation.W_Tracker_Map_FuelStation_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_FuelStation.DA_Tracker_Map_FuelStation",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.RefuelStation"
+      }
+    },
+    "Trackers.Type.Corpse": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIStaticTransformTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Corpse.W_Tracker_Map_Corpse_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUICorpseMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Corpse.DA_Tracker_Map_Corpse",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Corpse"
+      }
+    },
+    "Trackers.Type.Ping": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Ping.W_Tracker_Map_Ping_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPingMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Ping.DA_Tracker_Map_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping"
+      }
+    },
+    "Trackers.Type.SupplyCrate": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_SupplyCrate.W_Tracker_Map_SupplyCrate_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISupplyCrateMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_SupplyCrate.DA_Tracker_Map_SupplyCrate",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SupplyCrate"
+      }
+    },
+    "Trackers.Type.AssistanceRequest": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_AssistanceRequest.W_Tracker_Map_AssistanceRequest_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIAssistanceRequestMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_AssistanceRequest.DA_Tracker_Map_AssistanceRequest",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.AssistanceRequest"
+      }
+    },
+    "Trackers.Type.Ping.Contextual": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Contextual.W_Tracker_Map_Contextual_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContextualMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_ContextualPing.DA_Tracker_Map_ContextualPing",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping.Contextual"
+      }
+    },
+    "Trackers.Type.Ping.Contextual.MarkCoordinates": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Marker.W_Tracker_Map_Marker_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapMarkerTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_ContextualPing.DA_Tracker_Map_ContextualPing",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping.Contextual.MarkCoordinates"
+      }
+    },
+    "Trackers.Type.HitMarker": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_HitMarker.W_Tracker_Map_HitMarker_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapMarkerTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_HitMarker.DA_Tracker_Map_HitMarker",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.HitMarker"
+      }
+    },
+    "Trackers.Type.Deployable": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Id.Item",
+        "Trackers.Type.Deployable"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Deployable.W_Tracker_Map_Deployable_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDeployableMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_Deployable.DA_Tracker_Map_Deployable",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Deployable"
+      }
+    },
+    "Trackers.Type.SupplyPallet": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_SupplyPallet.W_Tracker_Map_SupplyPallet_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISupplyCrateMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_SupplyCrate.DA_Tracker_Map_SupplyCrate",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SupplyPallet"
+      }
+    },
+    "Trackers.Type.StationaryVehicle": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Vehicle",
+        "Trackers.Type.StationaryVehicle.Data",
+        "Trackers.Type.StationaryVehicle.Transforms"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_StationaryVehicle.W_Tracker_Map_StationaryVehicle_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIStationaryVehicleMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Data/DA_Tracker_Map_StationaryVehicle.DA_Tracker_Map_StationaryVehicle",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.StationaryVehicle"
+      }
+    }
+  }
+}

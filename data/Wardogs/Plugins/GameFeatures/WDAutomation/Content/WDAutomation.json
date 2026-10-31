@@ -1,0 +1,33 @@
+--- export: UPrimaryDataAsset / WDAutomation ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WDAutomation",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WDAutomation/WDAutomation",
+  "Properties": {
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "WDAutomationLogicSequence",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDAutomationRuntime.WDAutomationLogicSequence",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": true,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WDAutomation/AutomationLogicSequences"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

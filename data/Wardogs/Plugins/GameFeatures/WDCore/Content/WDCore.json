@@ -1,0 +1,67 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDCore'",
+    "ObjectPath": "/WDCore/WDCore.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/AimAssist/B_WDAimAssistTargetManager.B_WDAimAssistTargetManager_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WDCore ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WDCore",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WDCore/WDCore",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'WDCore:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/WDCore/WDCore.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.PawnData",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHModularGameplay.BHPawnData",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WDCore/Character"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

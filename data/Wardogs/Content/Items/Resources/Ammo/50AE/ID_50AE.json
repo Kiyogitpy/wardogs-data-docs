@@ -1,0 +1,145 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50AE'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50AE'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/762x54mm/SM_762x54mm_Ammo.SM_762x54mm_Ammo",
+      "SubPathString": ""
+    },
+    "_aaaankomdlipjpppmphif": 2.0
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50AE'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.4"
+  },
+  "Properties": {
+    "MaxStackSize": 30
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50AE'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_50AE ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_50AE",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/50AE/ID_50AE",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.50AE"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.50AE",
+      "Item.Ammo.Type.FMJ.Tracer",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "34D60DE840ACA26007C959B150D73E1A",
+      "SourceString": ".50 AE",
+      "LocalizedString": ".50 AE"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_50AE:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_50AE:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_50AE:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_50AE:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_50AE:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_50AE:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50AE'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_LooseAmmoBox_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_LooseAmmoBox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_50AE'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/50AE/ID_50AE.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_50AE_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/50AE/DA_50AE_ProjectileData.0"
+    }
+  }
+}

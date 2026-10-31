@@ -1,0 +1,77 @@
+--- export: UDataTable / DT_TrackerData_Map_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/HotZoneMagnet/Data/UI/MapTrackers/DT_TrackerData_Map_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.HotZoneMagnet": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Meta.Alignment.Faction",
+        "Trackers.Type.HotZoneMagnet"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/W_Tracker_Map_HotZoneMagnet.W_Tracker_Map_HotZoneMagnet_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/HotZoneMagnetRuntime.WDUIHotZoneMagnetHitPointMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/DA_Tracker_Map_HotZoneMagnet.DA_Tracker_Map_HotZoneMagnet",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.HotZoneMagnet"
+      }
+    },
+    "Trackers.Type.HotZoneMagnetTower": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/W_Tracker_Map_HotZoneMagnetTower.W_Tracker_Map_HotZoneMagnetTower_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/HotZoneMagnetRuntime.WDUIHotZoneMagnetMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/DA_Tracker_Map_HotZoneMagnetTower.DA_Tracker_Map_HotZoneMagnetTower",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.HotZoneMagnetTower"
+      }
+    }
+  }
+}

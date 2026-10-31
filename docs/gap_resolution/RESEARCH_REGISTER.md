@@ -55,8 +55,8 @@ proposed resolution path, status.
 ## Notes for the triage pass
 
 **Scope guard:** documentation only. No loader runs, no dynamic agent
-load, no game-process attachment. See [`../SCOPE.md`](../SCOPE.md)
-for scope posture.
+load, no game-process attachment. See the
+[contribution boundaries](../../CONTRIBUTING.md).
 
 **Preferred resolution order per gap:**
 

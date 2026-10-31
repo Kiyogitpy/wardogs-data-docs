@@ -1,0 +1,64 @@
+--- export: UObject / AEB_TriggerOnGCSourceObject_C_0 ---
+{
+  "Type": "AEB_TriggerOnGCSourceObject_C",
+  "Name": "AEB_TriggerOnGCSourceObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_TriggerOnGCSourceObject.AEB_TriggerOnGCSourceObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Drone_Fuel_Empty'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Empty.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_TriggerOnGCSourceObject_C'Default__AEB_TriggerOnGCSourceObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_TriggerOnGCSourceObject.0"
+  },
+  "Properties": {
+    "Context Name Tag": {
+      "TagName": "Audio.Context.Projectile.Rocket"
+    },
+    "Trigger Name": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Drone_Fuel_Empty ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Drone_Fuel_Empty",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Empty",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Projectile.Fuel.Empty"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_TriggerOnGCSourceObject_C'AE_Weapon_Projectile_Drone_Fuel_Empty:AEB_TriggerOnGCSourceObject_C_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Empty.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Weapon_Projectile_Drone_Fuel_Empty:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Empty.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Drone_Fuel_Empty'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Empty.1"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel"
+    }
+  }
+}

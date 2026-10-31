@@ -1,0 +1,64 @@
+--- export: UDataTable / DT_RewardFeedActions_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_RewardFeedActions_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/UI/RewardFeed/DT_RewardFeedActions_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Resources.MatchScore.SpottingOwner": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "2FFCE4E5498D8B97F725DDA98CFF33E0",
+        "SourceString": "Target Spotted",
+        "LocalizedString": "Target Spotted"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SpottingOwner"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SpottingAssist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "046EF7A44BB7989F2ADE1A98AFF57FD3",
+        "SourceString": "Target Spotted Assist",
+        "LocalizedString": "Target Spotted Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SpottingAssist"
+      }
+    },
+    "Meta.Progression.Resources.MatchScore.SpottingDestroyed": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "Namespace": "",
+        "Key": "DBDB86284703AB8ACD7723A14A300AD2",
+        "SourceString": "Spotted Target Destroyed",
+        "LocalizedString": "Spotted Target Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Spotted.DestroyAssist"
+      },
+      "Tag": {
+        "TagName": "Meta.Progression.Resources.MatchScore.SpottingDestroyed"
+      }
+    }
+  }
+}

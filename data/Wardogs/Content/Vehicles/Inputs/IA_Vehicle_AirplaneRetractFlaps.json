@@ -1,0 +1,74 @@
+--- export: UDataAsset / IA_Vehicle_AirplaneRetractFlaps ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_AirplaneRetractFlaps",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.FlapsRetract"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerDown'IA_Vehicle_AirplaneRetractFlaps:InputTriggerDown_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.3"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierNegate'IA_Vehicle_AirplaneRetractFlaps:InputModifierNegate_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.1"
+      },
+      {
+        "ObjectName": "InputModifierScalar'IA_Vehicle_AirplaneRetractFlaps:InputModifierScalar_1'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierNegate_0 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneRetractFlaps'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.0"
+  }
+}
+--- export: UObject / InputModifierScalar_1 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneRetractFlaps'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 0.05,
+      "Y": 0.05,
+      "Z": 0.05
+    }
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneRetractFlaps'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneRetractFlaps.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

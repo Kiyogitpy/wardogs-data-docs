@@ -1,0 +1,68 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Open_Foley'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open_Foley.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Door_Open_Foley_1p'",
+      "ObjectPath": "/Game/Audio/Doors/Foley/MSS/MSS_Door_Open_Foley_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Door_Open_Foley_3p'",
+      "ObjectPath": "/Game/Audio/Doors/Foley/MSS/MSS_Door_Open_Foley_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Door"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Door_Open_Foley ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Door_Open_Foley",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Doors/AE_Door_Open_Foley",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Door.Foley"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Door_Open_Foley:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open_Foley.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Door_Open_Foley:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open_Foley.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Open_Foley'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Open_Foley.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Door"
+    }
+  }
+}

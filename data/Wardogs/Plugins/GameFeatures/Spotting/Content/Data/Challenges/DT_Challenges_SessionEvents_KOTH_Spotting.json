@@ -1,0 +1,146 @@
+--- export: UDataTable / DT_Challenges_SessionEvents_KOTH_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Challenges_SessionEvents_KOTH_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.SessionEvents.Spotting.Added": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "3C3AE9E2429C1DC1561A9AA844F280F0",
+        "SourceString": "Target Spotted",
+        "LocalizedString": "Target Spotted"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "B0E64C5148D85F477929188D9769F609",
+        "SourceString": "Award resources to the player successfully spotting a target.",
+        "LocalizedString": "Award resources to the player successfully spotting a target."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Spotting.Added"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_Spotting_Added'",
+          "ObjectPath": "/Spotting/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Added.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Spotting.Added"
+      }
+    },
+    "Challenges.SessionEvents.Spotting.Removed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "65F270DA4A27A365A3FE318403DD5F76",
+        "SourceString": "Spotted Target Destroyed",
+        "LocalizedString": "Spotted Target Destroyed"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "2137F4D6484893C6989A3F8BE1E18440",
+        "SourceString": "Award resources to the players who spotted a destroyed target.",
+        "LocalizedString": "Award resources to the players who spotted a destroyed target."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Spotting.Removed"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_Spotting_Removed'",
+          "ObjectPath": "/Spotting/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Removed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Spotting.Removed"
+      }
+    }
+  }
+}

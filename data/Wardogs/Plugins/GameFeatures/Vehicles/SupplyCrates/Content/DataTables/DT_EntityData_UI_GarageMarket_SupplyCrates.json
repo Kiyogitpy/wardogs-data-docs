@@ -1,0 +1,816 @@
+--- export: UDataTable / DT_EntityData_UI_GarageMarket_SupplyCrates ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_GarageMarket_SupplyCrates",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SupplyCrates/DataTables/DT_EntityData_UI_GarageMarket_SupplyCrates",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "ID.Item.VehicleSupplyCrate.Small": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.Small",
+        "SourceString": "Small Crate",
+        "LocalizedString": "Small Crate"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.Small",
+        "SourceString": "Small Crate",
+        "LocalizedString": "Small Crate"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.Small.Description",
+        "SourceString": "- Unarmored resupply crate\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)",
+        "LocalizedString": "- Unarmored resupply crate\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.Small.Description",
+            "SourceString": "- Unarmored resupply crate\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)",
+            "LocalizedString": "- Unarmored resupply crate\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.Small.Flavor",
+            "SourceString": "Small deployable supply crate that allows the owner to sell its contents to others.",
+            "LocalizedString": "Small deployable supply crate that allows the owner to sell its contents to others."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/SupplyCrates/UI/Textures/T_UI_Icon_TempSupplyCrate.T_UI_Icon_TempSupplyCrate",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/SupplyCrates/UI/Textures/ID_Item_VehicleSupplyCrate_Small.ID_Item_VehicleSupplyCrate_Small",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Small"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Small.Armoured": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.SmallArmored",
+        "SourceString": "Small Armored Crate",
+        "LocalizedString": "Small Armored Crate"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.SmallArmored",
+        "SourceString": "Small Armored Crate",
+        "LocalizedString": "Small Armored Crate"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.SmallArmored.Description",
+        "SourceString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)",
+        "LocalizedString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.SmallArmored.Description",
+            "SourceString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)",
+            "LocalizedString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 24 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.SmallArmored.Flavor",
+            "SourceString": "Small armored deployable supply crate that allows the owner to sell its contents to others.",
+            "LocalizedString": "Small armored deployable supply crate that allows the owner to sell its contents to others."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/SupplyCrates/UI/Textures/T_UI_Icon_TempSupplyCrate.T_UI_Icon_TempSupplyCrate",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/SupplyCrates/UI/Textures/ID_Item_VehicleSupplyCrate_Small_Armoured.ID_Item_VehicleSupplyCrate_Small_Armoured",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Small.Armoured"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Large": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.Large",
+        "SourceString": "Large Crate",
+        "LocalizedString": "Large Crate"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.Large",
+        "SourceString": "Large Crate",
+        "LocalizedString": "Large Crate"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.Large.Description",
+        "SourceString": "- Unarmored resupply crate\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)",
+        "LocalizedString": "- Unarmored resupply crate\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.Large.Description",
+            "SourceString": "- Unarmored resupply crate\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)",
+            "LocalizedString": "- Unarmored resupply crate\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 60m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.Large.Flavor",
+            "SourceString": "Large deployable supply crate that allows the owner to sell its contents to others.",
+            "LocalizedString": "Large deployable supply crate that allows the owner to sell its contents to others."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/t_ui_icon_supply_crate1_temp.t_ui_icon_supply_crate1_temp",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/SupplyCrates/UI/Textures/ID_Item_VehicleSupplyCrate_Large.ID_Item_VehicleSupplyCrate_Large",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Large"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Large.Armoured": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.LargeArmored",
+        "SourceString": "Large Armored Crate",
+        "LocalizedString": "Large Armored Crate"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.LargeArmored",
+        "SourceString": "Large Armored Crate",
+        "LocalizedString": "Large Armored Crate"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyCrate.LargeArmored.Description",
+        "SourceString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)",
+        "LocalizedString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.LargeArmored.Description",
+            "SourceString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)",
+            "LocalizedString": "- Armored resupply crate\r\n- Resistant to Bullets and Explosions\r\n- 35 Slots available\r\n- Will be destroyed by high-speed impacts (approx. 80m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyCrate.LargeArmored.Flavor",
+            "SourceString": "Large armored deployable supply crate that allows the owner to sell its contents to others.",
+            "LocalizedString": "Large armored deployable supply crate that allows the owner to sell its contents to others."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/t_ui_icon_supply_crate1_temp.t_ui_icon_supply_crate1_temp",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/SupplyCrates/UI/Textures/ID_Item_VehicleSupplyCrate_Large_Armoured.ID_Item_VehicleSupplyCrate_Large_Armoured",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Large.Armoured"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Pallet.BuildSupply": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.BuildSupply",
+        "SourceString": "Build Supply Pallet",
+        "LocalizedString": "Build Supply Pallet"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.BuildSupply",
+        "SourceString": "Build Supply Pallet",
+        "LocalizedString": "Build Supply Pallet"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.BuildSupply.Description",
+        "SourceString": "- Building resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+        "LocalizedString": "- Building resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.BuildSupply.Description",
+            "SourceString": "- Building resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+            "LocalizedString": "- Building resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.BuildSupply.Flavor",
+            "SourceString": "A large pallet containing {Amount} build supplies.\r\nIdeal for resupplying a FOB.",
+            "LocalizedString": "A large pallet containing {Amount} build supplies.\r\nIdeal for resupplying a FOB."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/t_ui_icon_supply_crate1_temp.t_ui_icon_supply_crate1_temp",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/GarageVendor/T_UI_Supply_Build_Palette.T_UI_Supply_Build_Palette",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Pallet.BuildSupply"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.MunitionsSupply",
+        "SourceString": "Ammo Supply Pallet",
+        "LocalizedString": "Ammo Supply Pallet"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.MunitionsSupply",
+        "SourceString": "Ammo Supply Pallet",
+        "LocalizedString": "Ammo Supply Pallet"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.MunitionsSupply.Description",
+        "SourceString": "- Ammo resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+        "LocalizedString": "- Ammo resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.MunitionsSupply.Description",
+            "SourceString": "- Ammo resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+            "LocalizedString": "- Ammo resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.MunitionsSupply.Flavor",
+            "SourceString": "A large pallet containing {Amount} ammunition supplies.\r\nIdeal for resupplying a FOB.",
+            "LocalizedString": "A large pallet containing {Amount} ammunition supplies.\r\nIdeal for resupplying a FOB."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/t_ui_icon_supply_crate1_temp.t_ui_icon_supply_crate1_temp",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/GarageVendor/T_UI_Supply_Ammo_Palette.T_UI_Supply_Ammo_Palette",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Pallet.FuelSupply": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.Fuel",
+        "SourceString": "Fuel Supply Pallet",
+        "LocalizedString": "Fuel Supply Pallet"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.Fuel",
+        "SourceString": "Fuel Supply Pallet",
+        "LocalizedString": "Fuel Supply Pallet"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.Fuel.Description",
+        "SourceString": "- Fuel resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+        "LocalizedString": "- Fuel resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.Fuel.Description",
+            "SourceString": "- Fuel resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+            "LocalizedString": "- Fuel resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.Fuel.Flavor",
+            "SourceString": "A large pallet containing {Amount} fuel supplies.\r\nIdeal for resupplying a FOB.",
+            "LocalizedString": "A large pallet containing {Amount} fuel supplies.\r\nIdeal for resupplying a FOB."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/t_ui_icon_supply_crate1_temp.t_ui_icon_supply_crate1_temp",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/GarageVendor/T_UI_Supply_Fuel_Palette.T_UI_Supply_Fuel_Palette",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Pallet.FuelSupply"
+      }
+    },
+    "ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.SpareParts",
+        "SourceString": "Mechanical Supply Pallet",
+        "LocalizedString": "Mechanical Supply Pallet"
+      },
+      "FriendlyShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.SpareParts",
+        "SourceString": "Mechanical Supply Pallet",
+        "LocalizedString": "Mechanical Supply Pallet"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+        "Key": "SupplyPallet.SpareParts.Description",
+        "SourceString": "- Mechanical resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+        "LocalizedString": "- Mechanical resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Support"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.SpareParts.Description",
+            "SourceString": "- Mechanical resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)",
+            "LocalizedString": "- Mechanical resource pallet\r\n- Delivery to FOB is recommended\r\n- Will be destroyed by high-speed impacts (approx. 90m free-fall max.)"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_SupplyCrates.STRINGS_SupplyCrates",
+            "Key": "SupplyPallet.SpareParts.Flavor",
+            "SourceString": "A large pallet containing {Amount} mechanical supplies.\r\nIdeal for resupplying a FOB.",
+            "LocalizedString": "A large pallet containing {Amount} mechanical supplies.\r\nIdeal for resupplying a FOB."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/t_ui_icon_supply_crate1_temp.t_ui_icon_supply_crate1_temp",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/GarageVendor/T_UI_Supply_Mech_Palette.T_UI_Supply_Mech_Palette",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply"
+      }
+    }
+  }
+}

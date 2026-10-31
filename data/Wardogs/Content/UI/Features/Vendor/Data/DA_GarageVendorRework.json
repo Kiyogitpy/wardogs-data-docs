@@ -1,0 +1,102 @@
+--- export: UDataAsset / DA_GarageVendorRework ---
+{
+  "Type": "WDUIVendorData_Rework",
+  "Name": "DA_GarageVendorRework",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorData_Rework'",
+  "Package": "/Game/UI/Features/Vendor/Data/DA_GarageVendorRework",
+  "Properties": {
+    "PendingPurchasesPopup": {
+      "Tag": {
+        "TagName": "UI.Popup.Vendor.PendingPurchases"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.PendingPurchases.Title",
+        "SourceString": "Unpurchased Items In Loadout",
+        "LocalizedString": "Unpurchased Items In Loadout"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.PendingPurchases.Subtitle",
+        "SourceString": "Pending purchases will be cleared.",
+        "LocalizedString": "Pending purchases will be cleared."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.PendingPurchases.Description",
+        "SourceString": "You have unpurchased items in your loadout.\r\n\r\nHow do you wish to proceed?",
+        "LocalizedString": "You have unpurchased items in your loadout.\r\n\r\nHow do you wish to proceed?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+              "Key": "Popup.PendingPurchases.Option.Cancel",
+              "SourceString": "Back",
+              "LocalizedString": "Back"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+              "Key": "Popup.PendingPurchases.Option.PurchaseAndExit",
+              "SourceString": "Purchase & Exit",
+              "LocalizedString": "Purchase & Exit"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+              "Key": "Popup.PendingPurchases.Option.Exit",
+              "SourceString": "Exit",
+              "LocalizedString": "Exit"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "bFlushInputOnEnter": true,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Close"
+    },
+    "AssociatedSceneAction": {
+      "TagName": "Action.Player.AccessGarageVendor"
+    }
+  }
+}

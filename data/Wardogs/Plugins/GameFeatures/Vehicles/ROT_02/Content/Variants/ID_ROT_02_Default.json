@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ROT_02_Default'",
+    "ObjectPath": "/ROT_02/Variants/ID_ROT_02_Default.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 5,
+      "Y": 4
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_ROT_02_Default ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_ROT_02_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/ROT_02/Variants/ID_ROT_02_Default",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Air.Rotary.Havoc.Default"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_ROT_02_Default:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/ROT_02/Variants/ID_ROT_02_Default.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_ROT_02_Default:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/ROT_02/Variants/ID_ROT_02_Default.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ROT_02_Default'",
+    "ObjectPath": "/ROT_02/Variants/ID_ROT_02_Default.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_ROT_02_Audio'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_Audio.0"
+    }
+  }
+}

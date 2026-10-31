@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / AE_Player_Fall_SkyDive_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Fall_SkyDive_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Fall.Skydive.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Player_Fall_SkyDive_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Stop.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Player_Fall_SkyDive_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Stop.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Fall_SkyDive_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.SkyDive"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Fall_SkyDive_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Fall/AE_Player_Fall_SkyDive_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.SkyDive"
+    }
+  }
+}

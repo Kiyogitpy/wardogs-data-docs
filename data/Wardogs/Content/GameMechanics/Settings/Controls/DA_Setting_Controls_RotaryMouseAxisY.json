@@ -1,0 +1,69 @@
+--- export: UDataAsset / DA_Setting_Controls_RotaryMouseAxisY ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_RotaryMouseAxisY",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_RotaryMouseAxisY",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_RotaryMouseAxisY:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_RotaryMouseAxisY.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_RotaryMouseAxisY'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_RotaryMouseAxisY.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDRotaryMouseYFunction::Pitch",
+        "Value": {
+          "Namespace": "",
+          "Key": "B49D4C8C4D883825A7413D8F47124A4E",
+          "SourceString": "Pitch",
+          "LocalizedString": "Pitch"
+        }
+      },
+      {
+        "Key": "EWDRotaryMouseYFunction::Disabled",
+        "Value": {
+          "Namespace": "",
+          "Key": "258EC15847F7BE89AD0767A792A64EFA",
+          "SourceString": "Disabled",
+          "LocalizedString": "Disabled"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "Namespace": "",
+          "Key": "B49D4C8C4D883825A7413D8F47124A4E",
+          "SourceString": "Pitch",
+          "LocalizedString": "Pitch"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "Namespace": "",
+          "Key": "258EC15847F7BE89AD0767A792A64EFA",
+          "SourceString": "Disabled",
+          "LocalizedString": "Disabled"
+        }
+      }
+    ]
+  }
+}

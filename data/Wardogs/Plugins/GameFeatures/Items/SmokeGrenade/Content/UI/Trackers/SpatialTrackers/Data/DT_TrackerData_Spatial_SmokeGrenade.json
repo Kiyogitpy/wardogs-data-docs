@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_TrackerData_Spatial_SmokeGrenade ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Spatial_SmokeGrenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DT_TrackerData_Spatial_SmokeGrenade",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.SmokeGrenade": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.SmokeGrenade",
+        "Id.Item"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/SmokeGrenade/UI/Trackers/SpatialTrackers/W_Tracker_Spatial_SmokeGrenade.W_Tracker_Spatial_SmokeGrenade_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDeployableSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SmokeGrenade/UI/Trackers/SpatialTrackers/Data/DA_Tracker_Spatial_SmokeGrenade.DA_Tracker_Spatial_SmokeGrenade",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.SmokeGrenade"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_PostDestroy_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_PostDestroy_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_PostDestroy_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.PostDestroy.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_PostDestroy_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_PostDestroy_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_PostDestroy_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_PostDestroy_Stop.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.PostDestroy"
+    }
+  }
+}

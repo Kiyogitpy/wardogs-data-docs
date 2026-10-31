@@ -1,0 +1,246 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/MAGZ_012/Meshes/SM_MAGZ_012.SM_MAGZ_012",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_MAGZ_012'",
+        "ObjectPath": "/MAGZ_012/Materials/MI_MAGZ_012.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_BulletsRefactor'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/Materials/MI_BulletsRefactor.0"
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.9mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 33,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.9mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  },
+  "Properties": {
+    "Weight": 0.52
+  }
+}
+--- export: UPrimaryDataAsset / ID_MAGZ_012 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MAGZ_012",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/MAGZ_012/Data/ID_MAGZ_012",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MAGZ_012"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine",
+      "Item.Context.Equippable",
+      "Item.Resource.Magazine.Extended"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+      "Key": "Items.Magazine.Glock.Standard",
+      "SourceString": "GGX 33 RND Magazine",
+      "LocalizedString": "GGX 33 RND Magazine"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_MAGZ_012:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_MAGZ_012:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_MAGZ_012:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.8"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_MAGZ_012:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_MAGZ_012:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_MAGZ_012:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_MAGZ_012:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_MAGZ_012:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": false,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAGZ_012_C'",
+          "ObjectPath": "/MAGZ_012/Data/GE_MAGZ_012.0"
+        }
+      ],
+      "AppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MAGZ_012_CharacterEffects_C'",
+          "ObjectPath": "/MAGZ_012/Data/GE_MAGZ_012_CharacterEffects.0"
+        }
+      ],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MAGZ_012'",
+    "ObjectPath": "/MAGZ_012/Data/ID_MAGZ_012.5"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

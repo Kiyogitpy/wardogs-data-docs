@@ -1,0 +1,32 @@
+--- export: UDataAsset / DA_Killfeed ---
+{
+  "Type": "WDUIKillfeedData",
+  "Name": "DA_Killfeed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIKillfeedData'",
+  "Package": "/Game/UI/Features/HUD/Killfeed/Data/DA_Killfeed",
+  "Properties": {
+    "KillfeedEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIKillfeedEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Widgets/KillfeedEntry/Data/DA_KillfeedEntry.DA_KillfeedEntry",
+        "SubPathString": ""
+      }
+    },
+    "MaximumEntries": 5,
+    "EntryDuration": 10.0,
+    "PreloadedTaggedIcons": [
+      "Meta.Progression.Context.Player.KillContext.Headshot",
+      "Meta.Progression.Context.Player.KillContext.Falling",
+      "Meta.Progression.Context.Player.KillContext.Default",
+      "Meta.Progression.Context.Player.KillContext.RoadKill",
+      "Meta.Progression.Context.Player.KillContext.Penetration",
+      "Meta.Progression.Context.Player.KillContext.Ricochet",
+      "Meta.Progression.Context.Player.KillContext.WeaponMelee",
+      "Meta.Progression.Context.Player.KillContext.RangedWeaponMelee"
+    ]
+  }
+}

@@ -1,0 +1,247 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'C4'",
+    "ObjectPath": "/C4/C4.3"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/PC_WDPlayerController.PC_WDPlayerController_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/C4/Data/Blueprints/TrackThrownItems_Component.TrackThrownItems_Component_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'C4'",
+    "ObjectPath": "/C4/C4.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_C4'",
+      "ObjectPath": "/C4/EDL_C4.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'C4'",
+    "ObjectPath": "/C4/C4.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/C4/Data/DT_EntityData_UI_Ext_C4.DT_EntityData_UI_Ext_C4",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/C4/Data/DT_EntityData_UI_Ext_C4Explosive.DT_EntityData_UI_Ext_C4Explosive",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/C4/Data/DT_VendorData_Ext_C4.DT_VendorData_Ext_C4",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "SkillEffectsRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/C4/Data/Skills/DT_Skills_C4.DT_Skills_C4",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / C4 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "C4",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/C4/C4",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'C4:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/C4/C4.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'C4:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/C4/C4.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'C4:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/C4/C4.1"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/C4/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Game/GameMechanics/Actions/Weapons"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/C4/Data/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "WD.RewardRule",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDRewardRule",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": true,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/C4/Data/Rewards"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/C4/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

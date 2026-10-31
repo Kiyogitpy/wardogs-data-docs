@@ -1,0 +1,39 @@
+--- export: UObject / AEB_CancelReloadSound_C_0 ---
+{
+  "Type": "AEB_CancelReloadSound_C",
+  "Name": "AEB_CancelReloadSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_CancelReloadSound.AEB_CancelReloadSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Reload_Cancelled'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Reload_Cancelled.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_CancelReloadSound_C'Default__AEB_CancelReloadSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_CancelReloadSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Reload_Cancelled ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Reload_Cancelled",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Reload_Cancelled",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Reload.Cancelled"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_CancelReloadSound_C'AE_Weapon_Reload_Cancelled:AEB_CancelReloadSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Reload_Cancelled.0"
+      }
+    ]
+  }
+}

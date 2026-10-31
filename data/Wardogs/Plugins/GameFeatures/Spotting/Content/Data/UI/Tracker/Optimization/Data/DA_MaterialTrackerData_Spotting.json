@@ -1,0 +1,492 @@
+--- export: UDataAsset / DA_MaterialTrackerData_Spotting ---
+{
+  "Type": "WDUISpottingMaterialTrackerDataAsset",
+  "Name": "DA_MaterialTrackerData_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpottingMaterialTrackerDataAsset'",
+  "Package": "/Spotting/Data/UI/Tracker/Optimization/Data/DA_MaterialTrackerData_Spotting",
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+    },
+    "bOverrideForCurrentVehicle": true,
+    "AllowedVehicles": [
+      "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+      "Vehicle.Variant.Stationary.Mortar",
+      "Vehicle.Variant.Stationary.STN_05"
+    ],
+    "bShowCashText": false,
+    "bForceMeters": true,
+    "_aaabgohafnpnhgbnggpgf": [
+      {
+        "Key": "/Script/WDGame.WDMoverCharacter",
+        "Value": {
+          "_aaabafbflgggllabacfih": {
+            "TagName": "Challenges.Rewards.PlayerKill"
+          },
+          "_aaabjfbncandnipjabkdm": []
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDRotaryVehicle",
+        "Value": {
+          "_aaabafbflgggllabacfih": {
+            "TagName": "None"
+          },
+          "_aaabjfbncandnipjabkdm": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.LittleBird"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.ROT_01"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.Huey"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.Havoc"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.Havoc"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDWheeledVehiclePawn",
+        "Value": {
+          "_aaabafbflgggllabacfih": {
+            "TagName": "None"
+          },
+          "_aaabjfbncandnipjabkdm": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.Bobcat"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.DuneBuggy"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Humvee"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.Humvee"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.Kodiak"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Ural"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.Ural"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTrackedVehicle",
+        "Value": {
+          "_aaabafbflgggllabacfih": {
+            "TagName": "None"
+          },
+          "_aaabjfbncandnipjabkdm": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.TNK_01"
+              },
+              "Value": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.TNK_01.Heavy"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "_aaaanffeponpoffecgblf": [
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Havoc"
+        },
+        "Value": {
+          "MapIconIndex": 25,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_01"
+        },
+        "Value": {
+          "MapIconIndex": 24,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+        },
+        "Value": {
+          "MapIconIndex": 24,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle"
+        },
+        "Value": {
+          "MapIconIndex": 31,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir"
+        },
+        "Value": {
+          "MapIconIndex": 72,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+        },
+        "Value": {
+          "MapIconIndex": 32,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Heavy"
+        },
+        "Value": {
+          "MapIconIndex": 32,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Light"
+        },
+        "Value": {
+          "MapIconIndex": 32,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat"
+        },
+        "Value": {
+          "MapIconIndex": 26,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 0.8,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy"
+        },
+        "Value": {
+          "MapIconIndex": 27,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee"
+        },
+        "Value": {
+          "MapIconIndex": 28,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+        },
+        "Value": {
+          "MapIconIndex": 29,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural"
+        },
+        "Value": {
+          "MapIconIndex": 30,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Buildable.HotzoneMagnet"
+        },
+        "Value": {
+          "MapIconIndex": 34,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 0.8,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ID.Item.ATMine"
+        },
+        "Value": {
+          "MapIconIndex": 37,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Entity.WorldObject.Character"
+        },
+        "Value": {
+          "MapIconIndex": 22,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 0.75,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.Claymore"
+        },
+        "Value": {
+          "MapIconIndex": 36,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ID.Item.VehicleSupplyCrate.Large"
+        },
+        "Value": {
+          "MapIconIndex": 33,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ID.Item.VehicleSupplyCrate.Small"
+        },
+        "Value": {
+          "MapIconIndex": 33,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "ID.Item.VehicleSupplyCrate.Pallet"
+        },
+        "Value": {
+          "MapIconIndex": 33,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Buildable.FOB"
+        },
+        "Value": {
+          "MapIconIndex": 35,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Stationary"
+        },
+        "Value": {
+          "MapIconIndex": 23,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Buildable.RefuelStation"
+        },
+        "Value": {
+          "MapIconIndex": 23,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Id.Buildable.RepairStation"
+        },
+        "Value": {
+          "MapIconIndex": 23,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_04"
+        },
+        "Value": {
+          "MapIconIndex": 24,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
+        },
+        "Value": {
+          "MapIconIndex": 74,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+        },
+        "Value": {
+          "MapIconIndex": 74,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_04.Default"
+        },
+        "Value": {
+          "MapIconIndex": 76,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      }
+    ],
+    "ZoomScaleCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

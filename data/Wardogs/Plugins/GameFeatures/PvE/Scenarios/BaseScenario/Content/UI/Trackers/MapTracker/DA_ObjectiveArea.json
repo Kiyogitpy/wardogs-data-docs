@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_ObjectiveArea ---
+{
+  "Type": "WDUIObjectiveAreaMapTrackerData",
+  "Name": "DA_ObjectiveArea",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIObjectiveAreaMapTrackerData'",
+  "Package": "/BaseScenario/UI/Trackers/MapTracker/DA_ObjectiveArea",
+  "Properties": {
+    "ObjectiveAreaMaterials": [
+      {
+        "Key": {
+          "TagName": "UI.Material.Tracker.PVE.Circle"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_Zone_Circle.MI_UI_Zone_Circle",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Material.Tracker.PVE.Square"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_Zone_Rectangle.MI_UI_Zone_Rectangle",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "IconTags": [
+      {
+        "Key": {
+          "TagName": "UI.Icon.Tracker.PVE.Objective"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Map_Ping_64x64.T_UI_Map_Ping_64x64",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "bDisplayText": false
+  }
+}

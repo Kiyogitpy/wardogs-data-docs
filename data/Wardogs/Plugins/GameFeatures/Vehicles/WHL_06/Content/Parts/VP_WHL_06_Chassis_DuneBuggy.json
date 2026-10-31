@@ -1,0 +1,103 @@
+--- export: UPrimaryDataAsset / VP_WHL_06_Chassis_DuneBuggy ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_06_Chassis_DuneBuggy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Chassis.Rear"
+    ],
+    "Fragments": [
+      {
+        "Key": "Interior_Rear",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_06_Chassis_DuneBuggy:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.1"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_WHL_06_Chassis_DuneBuggy:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.3"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_WHL_06_Chassis_DuneBuggy:WD_MVF_Interactions_0'",
+            "ObjectPath": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_06_Chassis_DuneBuggy'",
+    "ObjectPath": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_06_Chassis_DuneBuggy'",
+    "ObjectPath": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/WHL_06/Data/DA_VehicleInteractions_WHL_06_DuneBuggy.DA_VehicleInteractions_WHL_06_DuneBuggy",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_06_Chassis_DuneBuggy'",
+    "ObjectPath": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/WHL_06/Data/DA_WHL_06_DuneBuggy_Stats.DA_WHL_06_DuneBuggy_Stats",
+      "SubPathString": ""
+    }
+  }
+}

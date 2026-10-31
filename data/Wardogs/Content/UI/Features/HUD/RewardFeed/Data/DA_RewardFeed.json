@@ -1,0 +1,21 @@
+--- export: UDataAsset / DA_RewardFeed ---
+{
+  "Type": "WDUIRewardFeedData",
+  "Name": "DA_RewardFeed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIRewardFeedData'",
+  "Package": "/Game/UI/Features/HUD/RewardFeed/Data/DA_RewardFeed",
+  "Properties": {
+    "RewardFeedEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRewardFeedEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/RewardFeed/Widgets/Entry/Data/DA_RewardFeedEntry.DA_RewardFeedEntry",
+        "SubPathString": ""
+      }
+    },
+    "InitialExpiryTime": 6.0
+  }
+}

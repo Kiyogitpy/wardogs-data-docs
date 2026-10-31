@@ -1,0 +1,237 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_IED ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_IED",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/IED/Data/DT_EntityData_UI_Ext_IED",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.IED.Trigger": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.IED",
+        "SourceString": "Improvised Explosive Device",
+        "LocalizedString": "Improvised Explosive Device"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.IED.Description",
+        "SourceString": "- Remotely Detonated Explosive\r\n- Can Only Be Used Once",
+        "LocalizedString": "- Remotely Detonated Explosive\r\n- Can Only Be Used Once"
+      },
+      "Category": {
+        "TagName": "Item.Category.Throwable"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Infantry"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.IED.Description",
+            "SourceString": "- Remotely Detonated Explosive\r\n- Can Only Be Used Once",
+            "LocalizedString": "- Remotely Detonated Explosive\r\n- Can Only Be Used Once"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Equipment",
+            "SourceString": "Equipment // Quick Slot",
+            "LocalizedString": "Equipment // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+            "Key": "Items.Utility.IED.Flavor",
+            "SourceString": "Remote improvised explosives used to detonate globally.",
+            "LocalizedString": "Remote improvised explosives used to detonate globally."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_c4_trigger.t_ui_icon_c4_trigger",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Vendor_IED2.T_UI_Vendor_IED2",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_IED.T_UI_Icon_Killfeed_IED",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.IED.Trigger"
+      }
+    },
+    "Id.Item.IED.Explosive": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+        "Key": "Items.Utility.IED",
+        "SourceString": "Improvised Explosive Device",
+        "LocalizedString": "Improvised Explosive Device"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Category": {
+        "TagName": "Item.Category.Throwable"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Infantry"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_C4_Textured_512x512.T_UI_Icon_Utility_C4_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Vendor_C42.T_UI_Vendor_C42",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_C4.T_UI_Icon_Killfeed_C4",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Item_C4_BC.T_UI_Item_C4_BC",
+            "Value": [
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.IED.Explosive"
+      }
+    }
+  }
+}

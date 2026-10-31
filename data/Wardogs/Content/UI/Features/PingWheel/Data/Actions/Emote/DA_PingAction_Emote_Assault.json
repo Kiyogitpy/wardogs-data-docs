@@ -1,0 +1,62 @@
+--- export: UObject / WDPingAction_Emote_1 ---
+{
+  "Type": "WDPingAction_Emote",
+  "Name": "WDPingAction_Emote_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_Emote'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Emote_Assault'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Emote_Assault.1"
+  },
+  "Properties": {
+    "_aaaaofflhbiijaegojgpg": {
+      "TagName": "Action.Player.Emote.Assault"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Emote_Assault ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Emote_Assault",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Emote_Assault",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Emote.Assault",
+      "SourceString": "Assault",
+      "LocalizedString": "Assault"
+    },
+    "LockedDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Emote.State.Locked",
+      "SourceString": "Must be unlocked",
+      "LocalizedString": "Must be unlocked"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.Critical"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Emote.NonTriggerable.Critical",
+          "SourceString": "Health Critical",
+          "LocalizedString": "Health Critical"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Assault.T_UI_Icon_PingWheel_Assault",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_Emote'DA_PingAction_Emote_Assault:WDPingAction_Emote_1'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Emote_Assault.0"
+      }
+    ]
+  }
+}

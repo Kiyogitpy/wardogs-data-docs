@@ -1,0 +1,93 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_SceneEnter'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_MoveUISoundToCharacter_C_0 ---
+{
+  "Type": "AEB_MoveUISoundToCharacter_C",
+  "Name": "AEB_MoveUISoundToCharacter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_MoveUISoundToCharacter.AEB_MoveUISoundToCharacter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_SceneEnter'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_MoveUISoundToCharacter_C'Default__AEB_MoveUISoundToCharacter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_MoveUISoundToCharacter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_Inventory_SceneEnter ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Inventory_SceneEnter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Inventory.SceneEnter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_MoveUISoundToCharacter_C'AE_UI_Inventory_SceneEnter:AEB_MoveUISoundToCharacter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_Inventory_SceneEnter:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter.3"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_UI_Inventory_SceneEnter:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_SceneEnter'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_SceneEnter.2"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Inventory_Open'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Inventory/MSS_UI_InGame_Inventory_Open.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

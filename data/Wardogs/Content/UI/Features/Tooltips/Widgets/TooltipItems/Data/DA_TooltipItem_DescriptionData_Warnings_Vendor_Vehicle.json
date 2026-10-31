@@ -1,0 +1,22 @@
+--- export: UDataAsset / DA_TooltipItem_DescriptionData_Warnings_Vendor_Vehicle ---
+{
+  "Type": "WDUITooltipItemDescriptionData",
+  "Name": "DA_TooltipItem_DescriptionData_Warnings_Vendor_Vehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipItemDescriptionData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_DescriptionData_Warnings_Vendor_Vehicle",
+  "Properties": {
+    "DescriptionEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITooltipItemDescriptionEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "AllowedEntryTypes": [
+      "UI.Tooltip.Layout.ItemDescription.Entry.Warning.NonRefundable",
+      "UI.Tooltip.Layout.ItemDescription.Entry.Warning.ItemPurchaseRequirement",
+      "UI.Tooltip.Layout.ItemDescription.Entry.Warning.InsufficientFunds"
+    ],
+    "bShouldUpdateOnCashChange": true
+  }
+}

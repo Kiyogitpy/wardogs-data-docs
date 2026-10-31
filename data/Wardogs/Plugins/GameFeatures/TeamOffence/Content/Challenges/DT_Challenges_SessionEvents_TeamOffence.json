@@ -1,0 +1,178 @@
+--- export: UDataTable / DT_Challenges_SessionEvents_TeamOffence ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Challenges_SessionEvents_TeamOffence",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/TeamOffence/Challenges/DT_Challenges_SessionEvents_TeamOffence",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.SessionEvents.TeamOffencePunish": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "490A8B1F4C6C2329524D5BB52A488F32",
+        "SourceString": "Team Offence Punish",
+        "LocalizedString": "Team Offence Punish"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.TeamOffencePunish"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_TeamOffencePunish'",
+          "ObjectPath": "/TeamOffence/Challenges/ST_Challenges_SessionEvents_TeamOffencePunish.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "6B445BF5-4D58FA7B-FD7F7093-37081325",
+              "Name": "ContextTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.TeamOffencePunish"
+      }
+    },
+    "Challenges.SessionEvents.TeamOffenceVoter": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "EE0BD2844A17E9EBDD01A9A21B475ECA",
+        "SourceString": "Teamkill Voter",
+        "LocalizedString": "Teamkill Voter"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.TeamOffenceVoter"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_TeamOffenceVoter'",
+          "ObjectPath": "/TeamOffence/Challenges/ST_Challenges_SessionEvents_TeamOffenceVoter.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "B2F51F15-4DCE8D4C-AB2BB5BD-0E7A4B33",
+              "Name": "ContextTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.TeamOffenceVoter"
+      }
+    }
+  }
+}

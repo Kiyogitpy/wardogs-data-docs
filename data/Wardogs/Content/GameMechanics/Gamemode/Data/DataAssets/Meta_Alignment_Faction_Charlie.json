@@ -1,0 +1,109 @@
+--- export: UPrimaryDataAsset / Meta_Alignment_Faction_Charlie ---
+{
+  "Type": "WDFactionData",
+  "Name": "Meta_Alignment_Faction_Charlie",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFactionData'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/DataAssets/Meta_Alignment_Faction_Charlie",
+  "Properties": {
+    "FactionTag": {
+      "TagName": "Meta.Alignment.Faction.Charlie"
+    },
+    "FactionName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Misc.STRINGS_Misc",
+      "Key": "FactionName.Charlie",
+      "SourceString": "Manticore",
+      "LocalizedString": "Manticore"
+    },
+    "FactionShortName": {
+      "Namespace": "",
+      "Key": "EB963B7244D2243FC48DD6BC3D0D9660",
+      "SourceString": "Mtc",
+      "LocalizedString": "Mtc"
+    },
+    "FactionColor": {
+      "B": 92,
+      "G": 214,
+      "R": 29,
+      "A": 255,
+      "Hex": "1DD65C"
+    },
+    "FactionColorSquad": {
+      "B": 20,
+      "G": 163,
+      "R": 237,
+      "A": 255,
+      "Hex": "EDA314"
+    },
+    "Icons": {
+      "FallbackIcon": {
+        "AssetPathName": "/Game/UI/Shared/Textures/Factions/T_UI_ManticoreLogo_White.T_UI_ManticoreLogo_White",
+        "SubPathString": ""
+      },
+      "TaggedIcons": [
+        {
+          "Key": "/Game/UI/Shared/Textures/Factions/T_UI_ManticoreLogo_White.T_UI_ManticoreLogo_White",
+          "Value": [
+            "UI.Icon.Default",
+            "UI.Icon.FactionSelect",
+            "UI.Icon.Inventory",
+            "UI.Icon.GameOver",
+            "UI.Icon.Tracker.TacticalMap.Spawn",
+            "UI.Icon.Scoreboard",
+            "UI.Icon.Killfeed",
+            "UI.Icon.EventFeed"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_GRN_White_256px.T_UI_Icon_Spatial_GRN_White_256px",
+          "Value": []
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_SquadMarker_Icon.T_UI_SquadMarker_Icon",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Player.Squad",
+            "UI.Icon.Chatbox.Squad",
+            "UI.Icon.Passengers.Squad",
+            "UI.Icon.Killfeed.Squad",
+            "UI.Icon.Tracker.TacticalMap.Player.Squad",
+            "UI.Icon.EventFeed.Squad"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Icon_Spatial_GrnTeamSpawn_256px.T_UI_Icon_Spatial_GrnTeamSpawn_256px",
+          "Value": [
+            "UI.Icon.Tracker.Spatial.Spawn"
+          ]
+        },
+        {
+          "Key": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_Manticore_SpatialIcon.T_UI_Manticore_SpatialIcon",
+          "Value": [
+            "UI.Icon.Passengers",
+            "UI.Icon.Tracker.Spatial.Player",
+            "UI.Icon.GameModeStatus",
+            "UI.Icon.Chatbox"
+          ]
+        }
+      ]
+    },
+    "TPCharacterMaterials": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Western_Band'",
+        "ObjectPath": "/Game/Characters/First_Playable/Western/Variants/MI_Western_Band.0"
+      }
+    ],
+    "BlockColorMaterials": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_WDPlayerGreen'",
+        "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/Materials/MI_WDPlayerGreen.0"
+      }
+    ],
+    "GenericTeamId": 2,
+    "SafeZoneTag": {
+      "TagName": "State.Location.SafeZone.Charlie"
+    },
+    "SafeZoneCameraTag": {
+      "TagName": "State.Player.Camera.SafeZone.Charlie"
+    }
+  }
+}

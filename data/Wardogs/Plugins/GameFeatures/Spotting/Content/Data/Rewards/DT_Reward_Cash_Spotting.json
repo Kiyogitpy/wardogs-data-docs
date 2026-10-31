@@ -1,0 +1,124 @@
+--- export: UDataTable / DT_Reward_Cash_Spotting ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Reward_Cash_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Spotting/Data/Rewards/DT_Reward_Cash_Spotting",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCustomRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Context.MatchScore.SpottedMin": {
+      "Description": {
+        "Namespace": "",
+        "Key": "596E6FF24457C54829E43EA2277D9FC1",
+        "SourceString": "The minimum reward for spotting multiplied by the assist scaling modifier.",
+        "LocalizedString": "The minimum reward for spotting multiplied by the assist scaling modifier."
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 15.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.5,
+      "AssistScalingModifier": 0.2,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.MatchScore.SpottedMin"
+      }
+    },
+    "Meta.Progression.Context.MatchScore.SpottedMax": {
+      "Description": {
+        "Namespace": "",
+        "Key": "1CB1A66640F8EF62FDCB8A8E5E8690F4",
+        "SourceString": "The maximum reward for spotting multiplied by the assist scaling modifier.",
+        "LocalizedString": "The maximum reward for spotting multiplied by the assist scaling modifier."
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 275.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 0.2,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.1,
+      "AssistScalingModifier": 0.2,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.MatchScore.SpottedMax"
+      }
+    },
+    "Meta.Progression.Context.MatchScore.SpottedDestroyedMin": {
+      "Description": {
+        "Namespace": "",
+        "Key": "87CD8F82491684AA4B4DF0862348DB53",
+        "SourceString": "The minimum reward for destroyed spotted targets multiplied by the assist scaling modifier.",
+        "LocalizedString": "The minimum reward for destroyed spotted targets multiplied by the assist scaling modifier."
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 50.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.5,
+      "AssistScalingModifier": 1.0,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.MatchScore.SpottedDestroyedMin"
+      }
+    },
+    "Meta.Progression.Context.MatchScore.SpottedDestroyedMax": {
+      "Description": {
+        "Namespace": "",
+        "Key": "F2AE83D0437D3A74C838F695B5925549",
+        "SourceString": "The maximum reward for destroyed spotted targets multiplied by the assist scaling modifier.",
+        "LocalizedString": "The maximum reward for destroyed spotted targets multiplied by the assist scaling modifier."
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 500.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 0.75,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.5,
+      "AssistScalingModifier": 0.75,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 1.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.MatchScore.SpottedDestroyedMax"
+      }
+    }
+  }
+}

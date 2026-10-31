@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ArtWorld'",
+    "ObjectPath": "/ArtWorld/ArtWorld.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_ArtWorld'",
+      "ObjectPath": "/ArtWorld/DataLayers/EDL_ArtWorld.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ArtWorld ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ArtWorld",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ArtWorld/ArtWorld",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'ArtWorld:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/ArtWorld/ArtWorld.0"
+      }
+    ]
+  }
+}

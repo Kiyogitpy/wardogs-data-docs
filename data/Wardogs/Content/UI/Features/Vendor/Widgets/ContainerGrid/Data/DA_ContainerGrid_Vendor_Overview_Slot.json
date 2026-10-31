@@ -1,0 +1,37 @@
+--- export: UDataAsset / DA_ContainerGrid_Vendor_Overview_Slot ---
+{
+  "Type": "WDUIContainerGridData",
+  "Name": "DA_ContainerGrid_Vendor_Overview_Slot",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContainerGridData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Overview_Slot",
+  "Properties": {
+    "ItemCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Overview_Storage.DA_ItemCard_Vendor_Overview_Storage",
+        "SubPathString": ""
+      }
+    },
+    "NameText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Slot.Backpack",
+      "SourceString": "Backpack",
+      "LocalizedString": "Backpack"
+    },
+    "bUseSquareShapeForListSetup": false,
+    "GridSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridSlotViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGridSlot/Data/DA_ContainerGridSlot_Vendor_Overview_Storage.DA_ContainerGridSlot_Vendor_Overview_Storage",
+        "SubPathString": ""
+      }
+    }
+  }
+}

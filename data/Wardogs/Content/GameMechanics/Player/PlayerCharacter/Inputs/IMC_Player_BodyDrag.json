@@ -1,0 +1,81 @@
+--- export: UObject / BHPlayerMappableKeySettings_21 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_21",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_BodyDrag'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_BodyDrag.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.BodyDrag"
+    },
+    "Name": "Input.NamedActions.Player.BodyDrag"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_24 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_24",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_BodyDrag'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_BodyDrag.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.BodyDrag"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Player.BodyDrag"
+  }
+}
+--- export: UDataAsset / IMC_Player_BodyDrag ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Player_BodyDrag",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_BodyDrag",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_BodyDrag'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_BodyDrag.0"
+          },
+          "Key": {
+            "KeyName": "G"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Player_BodyDrag:BHPlayerMappableKeySettings_21'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_BodyDrag.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_BodyDrag'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_BodyDrag.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightShoulder"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::IgnoreSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Player_BodyDrag:BHPlayerMappableKeySettings_24'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_BodyDrag.1"
+          }
+        }
+      ]
+    }
+  }
+}

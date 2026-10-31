@@ -1,0 +1,135 @@
+--- export: UObject / AEB_PlayHelicopterDestroySound_C_0 ---
+{
+  "Type": "AEB_SetROTDestroyParams_C",
+  "Name": "AEB_PlayHelicopterDestroySound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/VehicleAEBs/AEB_SetROTDestroyParams.AEB_SetROTDestroyParams_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetROTDestroyParams_C'Default__AEB_SetROTDestroyParams_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/VehicleAEBs/AEB_SetROTDestroyParams.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Destroy"
+    }
+  }
+}
+--- export: UObject / AEB_StopSound_SpeedOfSoundDelay_C_0 ---
+{
+  "Type": "AEB_StopSound_SpeedOfSoundDelay_C",
+  "Name": "AEB_StopSound_SpeedOfSoundDelay_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StopSound_SpeedOfSoundDelay.AEB_StopSound_SpeedOfSoundDelay_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_StopSound_SpeedOfSoundDelay_C'Default__AEB_StopSound_SpeedOfSoundDelay_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StopSound_SpeedOfSoundDelay.0"
+  },
+  "Properties": {
+    "Fade Out Duration": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.DustKickup"
+    }
+  }
+}
+--- export: UObject / AEB_StopSound_SpeedOfSoundDelay_C_1 ---
+{
+  "Type": "AEB_StopSound_SpeedOfSoundDelay_C",
+  "Name": "AEB_StopSound_SpeedOfSoundDelay_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StopSound_SpeedOfSoundDelay.AEB_StopSound_SpeedOfSoundDelay_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_StopSound_SpeedOfSoundDelay_C'Default__AEB_StopSound_SpeedOfSoundDelay_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StopSound_SpeedOfSoundDelay.0"
+  },
+  "Properties": {
+    "Fade Out Duration": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_HIDZ_MainRotor_Destroy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_HIDZ_MainRotor_Destroy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.MainRotor.Destroy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_HIDZ_MainRotor_Destroy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.4"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_HIDZ_MainRotor_Destroy:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.5"
+      },
+      {
+        "ObjectName": "AEB_StopSound_SpeedOfSoundDelay_C'AE_Vehicle_HIDZ_MainRotor_Destroy:AEB_StopSound_SpeedOfSoundDelay_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.2"
+      },
+      {
+        "ObjectName": "AEB_StopSound_SpeedOfSoundDelay_C'AE_Vehicle_HIDZ_MainRotor_Destroy:AEB_StopSound_SpeedOfSoundDelay_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.1"
+      },
+      {
+        "ObjectName": "AEB_SetROTDestroyParams_C'AE_Vehicle_HIDZ_MainRotor_Destroy:AEB_PlayHelicopterDestroySound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.3"
+  },
+  "Properties": {
+    "SocketName": "Collective_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Destroy"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Destroy'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Destroy.3"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.HIDZ.MainRotor.Destroy"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Destroy"
+    },
+    "bPersistent": true
+  }
+}

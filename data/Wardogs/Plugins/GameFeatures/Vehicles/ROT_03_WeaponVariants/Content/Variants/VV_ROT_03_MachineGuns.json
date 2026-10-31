@@ -1,0 +1,81 @@
+--- export: UPrimaryDataAsset / VV_ROT_03_MachineGuns ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_ROT_03_MachineGuns",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/ROT_03_WeaponVariants/Variants/VV_ROT_03_MachineGuns",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -600.0,
+        "Y": -450.0,
+        "Z": -2.0
+      },
+      "Max": {
+        "X": 370.0,
+        "Y": 450.0,
+        "Z": 600.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_ROT_03'",
+        "ObjectPath": "/ROT_03/Platform/VP_ROT_03.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Seats.VP_ROT_03_Attack_Seats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "MainBody"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_Attack_Body.VP_ROT_03_Attack_Body",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "WeaponExtension"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_MachineGuns_Weaponry.VP_ROT_03_MachineGuns_Weaponry",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "MainBody.Stats"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_MachineGuns_Stats.VP_ROT_03_MachineGuns_Stats",
+              "SubPathString": ""
+            }
+          },
+          {
+            "Path": {
+              "Path": "Reticle"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_03_WeaponVariants/Parts/VP_ROT_03_WeaponReticle.VP_ROT_03_WeaponReticle",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

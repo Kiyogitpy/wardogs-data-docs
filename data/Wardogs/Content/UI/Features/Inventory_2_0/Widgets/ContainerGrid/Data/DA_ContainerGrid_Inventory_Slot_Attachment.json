@@ -1,0 +1,35 @@
+--- export: UDataAsset / DA_ContainerGrid_Inventory_Slot_Attachment ---
+{
+  "Type": "WDUIContainerGridData",
+  "Name": "DA_ContainerGrid_Inventory_Slot_Attachment",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContainerGridData'",
+  "Package": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerGrid/Data/DA_ContainerGrid_Inventory_Slot_Attachment",
+  "Properties": {
+    "ItemCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemCardViewModel_Inventory",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ItemCard/Data/DA_ItemCard_Inventory_Attachment.DA_ItemCard_Inventory_Attachment",
+        "SubPathString": ""
+      }
+    },
+    "bUseSquareShapeForListSetup": false,
+    "MinimumWidth": 1,
+    "MinimumHeight": 1,
+    "MaximumWidth": 1,
+    "MaximumHeight": 1,
+    "GridSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridSlotViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerGridSlot/Data/DA_ContainerGridSlot_Inventory_Storage.DA_ContainerGridSlot_Inventory_Storage",
+        "SubPathString": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+--- export: UDataAsset / DA_Buildable_Door_DoorOnly_Stages ---
+{
+  "Type": "BuildingStagesDefinition",
+  "Name": "DA_Buildable_Door_DoorOnly_Stages",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BuildingStagesDefinition'",
+  "Package": "/Buildables/Data/Buildables/BarrierDoor/DA_Buildable_Door_DoorOnly_Stages",
+  "Properties": {
+    "BoundingBox": {
+      "Min": {
+        "X": -5.0,
+        "Y": -155.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 145.0,
+        "Y": -5.0,
+        "Z": 300.0
+      },
+      "IsValid": 1
+    },
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": -0.70710677,
+          "Y": -0.70710677,
+          "Z": -1.6640035E-31,
+          "W": 8.6595606E-17,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 67.0,
+          "Y": -7.386211,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 2.9582284E-31,
+          "Y": -8.6595606E-17,
+          "Z": -0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 67.0,
+          "Y": -157.95073,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "Stages": [
+      {
+        "StageName": "Stage 5",
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [
+          {
+            "Key": "/Buildables/Data/Buildables/BarrierDoor/SM_BuildableDoor_Door_Stage_01a.SM_BuildableDoor_Door_Stage_01a",
+            "Value": {
+              "Placements": [
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": 0.0,
+                      "Y": -0.0,
+                      "Z": 0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": 136.9259,
+                      "Y": -81.59285,
+                      "Z": -2.610383
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.019973
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                },
+                {
+                  "RelativeTransform": {
+                    "Rotation": {
+                      "X": -0.0,
+                      "Y": 0.0,
+                      "Z": -0.70710677,
+                      "W": 0.70710677,
+                      "IsNormalized": true,
+                      "Size": 0.99999994,
+                      "SizeSquared": 0.99999994
+                    },
+                    "Translation": {
+                      "X": -3.0,
+                      "Y": -81.59285,
+                      "Z": -2.610383
+                    },
+                    "Scale3D": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 1.019973
+                    }
+                  },
+                  "bShouldSpawnFoundations": false,
+                  "_aaaaohimhelffpgapbopa": "EWDPlacementRules::PreviewAndFinal",
+                  "_aaabhfangjmkjikilhgdj": false,
+                  "_aaabdnocoacbcnplehfpi": {
+                    "_aaabbphfdgjajbfckmdmd": -1,
+                    "_aaaapcpfoekmpmniihgfe": -1
+                  }
+                }
+              ],
+              "ActorToSpawn": null
+            }
+          }
+        ],
+        "CriticalHitSpots": [],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      }
+    ]
+  }
+}

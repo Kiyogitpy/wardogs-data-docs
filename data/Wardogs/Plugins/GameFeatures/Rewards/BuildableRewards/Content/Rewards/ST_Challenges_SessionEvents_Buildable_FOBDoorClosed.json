@@ -1,0 +1,4022 @@
+--- export: UDataAsset / ST_Challenges_SessionEvents_Buildable_FOBDoorClosed ---
+{
+  "Type": "StateTree",
+  "Name": "ST_Challenges_SessionEvents_Buildable_FOBDoorClosed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'StateTree'",
+  "Package": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed",
+  "Properties": {
+    "LastCompiledEditorDataHash": 3445329055,
+    "Schema": {
+      "ObjectName": "WDChallengeStateTreeSchema'ST_Challenges_SessionEvents_Buildable_FOBDoorClosed:WDChallengeStateTreeSchema_0'",
+      "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed.1"
+    },
+    "Frames": [
+      {
+        "RootState": {
+          "Index": 0
+        },
+        "NumberOfTasksStatusMasks": 1
+      }
+    ],
+    "States": [
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Root",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 65535
+        },
+        "ChildrenBegin": 1,
+        "ChildrenEnd": 12,
+        "EnterConditionsBegin": 9,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 0,
+        "TasksBegin": 1,
+        "ParameterTemplateIndex": {
+          "Value": 1
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 0,
+          "StateHandle": {
+            "Index": 0
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 2,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 1,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 0,
+        "TasksNum": 0,
+        "EnabledTasksNum": 0,
+        "InstanceDataNum": 1,
+        "Depth": 0,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TrySelectChildrenInOrder",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": false,
+        "bHasSucceededTriggerTransitions": false,
+        "bHasFailedTriggerTransitions": false,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Wait For FOB Door Close Event",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 0
+        },
+        "ChildrenBegin": 2,
+        "ChildrenEnd": 2,
+        "EnterConditionsBegin": 9,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 0,
+        "TasksBegin": 1,
+        "ParameterTemplateIndex": {
+          "Value": 2
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 1,
+          "StateHandle": {
+            "Index": 1
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 4,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 2,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 0,
+        "EnabledTasksNum": 0,
+        "InstanceDataNum": 1,
+        "Depth": 1,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TrySelectChildrenInOrder",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": true,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": false,
+        "bHasSucceededTriggerTransitions": false,
+        "bHasFailedTriggerTransitions": false,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": {
+            "ObjectName": "Class'WDFobDoorClosedMessage'",
+            "ObjectPath": "/Script/BuildablesRuntime"
+          },
+          "Tag": {
+            "TagName": "Event.StateTree.FOBDoorClosed"
+          }
+        },
+        "Name": "On FOB Door Close Event",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 0
+        },
+        "ChildrenBegin": 3,
+        "ChildrenEnd": 12,
+        "EnterConditionsBegin": 9,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 1,
+        "TasksBegin": 1,
+        "ParameterTemplateIndex": {
+          "Value": 3
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 1,
+          "StateHandle": {
+            "Index": 2
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 2
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 4,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 2,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 0,
+        "TasksNum": 0,
+        "EnabledTasksNum": 0,
+        "InstanceDataNum": 2,
+        "Depth": 1,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TrySelectChildrenInOrder",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": false,
+        "bHasSucceededTriggerTransitions": false,
+        "bHasFailedTriggerTransitions": false,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Populate Context",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 2
+        },
+        "ChildrenBegin": 4,
+        "ChildrenEnd": 11,
+        "EnterConditionsBegin": 9,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 1,
+        "TasksBegin": 2,
+        "ParameterTemplateIndex": {
+          "Value": 4
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 3,
+          "StateHandle": {
+            "Index": 3
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 2
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 8,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 3,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 1,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 0,
+        "TasksNum": 0,
+        "EnabledTasksNum": 0,
+        "InstanceDataNum": 1,
+        "Depth": 2,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TrySelectChildrenInOrder",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": false,
+        "bHasSucceededTriggerTransitions": false,
+        "bHasFailedTriggerTransitions": false,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Instigator in Control Zone",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 3
+        },
+        "ChildrenBegin": 5,
+        "ChildrenEnd": 5,
+        "EnterConditionsBegin": 11,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 1,
+        "TasksBegin": 2,
+        "ParameterTemplateIndex": {
+          "Value": 5
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 4,
+          "StateHandle": {
+            "Index": 4
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 16,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 4,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 1,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 1,
+        "EnabledTasksNum": 1,
+        "InstanceDataNum": 2,
+        "Depth": 3,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": true,
+        "bHasSucceededTriggerTransitions": true,
+        "bHasFailedTriggerTransitions": true,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Instigator in Hot Zone",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 3
+        },
+        "ChildrenBegin": 6,
+        "ChildrenEnd": 6,
+        "EnterConditionsBegin": 12,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 2,
+        "TasksBegin": 3,
+        "ParameterTemplateIndex": {
+          "Value": 7
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 4,
+          "StateHandle": {
+            "Index": 5
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 16,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 4,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 1,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 1,
+        "EnabledTasksNum": 1,
+        "InstanceDataNum": 2,
+        "Depth": 3,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": true,
+        "bHasSucceededTriggerTransitions": true,
+        "bHasFailedTriggerTransitions": true,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Add Hot Zone Magnet To Context",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 3
+        },
+        "ChildrenBegin": 7,
+        "ChildrenEnd": 7,
+        "EnterConditionsBegin": 13,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 3,
+        "TasksBegin": 4,
+        "ParameterTemplateIndex": {
+          "Value": 9
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 4,
+          "StateHandle": {
+            "Index": 6
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 16,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 4,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 1,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 1,
+        "EnabledTasksNum": 1,
+        "InstanceDataNum": 2,
+        "Depth": 3,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": true,
+        "bHasSucceededTriggerTransitions": true,
+        "bHasFailedTriggerTransitions": true,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Track Target Repeat Count",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 3
+        },
+        "ChildrenBegin": 8,
+        "ChildrenEnd": 8,
+        "EnterConditionsBegin": 14,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 4,
+        "TasksBegin": 5,
+        "ParameterTemplateIndex": {
+          "Value": 11
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 4,
+          "StateHandle": {
+            "Index": 7
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 16,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 4,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 1,
+        "EnabledTasksNum": 1,
+        "InstanceDataNum": 2,
+        "Depth": 3,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": true,
+        "bHasSucceededTriggerTransitions": true,
+        "bHasFailedTriggerTransitions": true,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Calculate Reward",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 3
+        },
+        "ChildrenBegin": 9,
+        "ChildrenEnd": 11,
+        "EnterConditionsBegin": 14,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 5,
+        "TasksBegin": 7,
+        "ParameterTemplateIndex": {
+          "Value": 13
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 4,
+          "StateHandle": {
+            "Index": 8
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 16,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 4,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 2,
+        "TasksNum": 1,
+        "EnabledTasksNum": 1,
+        "InstanceDataNum": 2,
+        "Depth": 3,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": true,
+        "bHasSucceededTriggerTransitions": true,
+        "bHasFailedTriggerTransitions": true,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Grant Reward",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 8
+        },
+        "ChildrenBegin": 10,
+        "ChildrenEnd": 10,
+        "EnterConditionsBegin": 14,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 7,
+        "TasksBegin": 8,
+        "ParameterTemplateIndex": {
+          "Value": 15
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 6,
+          "StateHandle": {
+            "Index": 9
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 32,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 5,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 2,
+        "TasksNum": 1,
+        "EnabledTasksNum": 1,
+        "InstanceDataNum": 2,
+        "Depth": 4,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": false,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": true,
+        "bHasSucceededTriggerTransitions": true,
+        "bHasFailedTriggerTransitions": true,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Complete When Done",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 8
+        },
+        "ChildrenBegin": 11,
+        "ChildrenEnd": 11,
+        "EnterConditionsBegin": 14,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 9,
+        "TasksBegin": 9,
+        "ParameterTemplateIndex": {
+          "Value": 17
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 6,
+          "StateHandle": {
+            "Index": 10
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 32,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 5,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 0,
+        "EnabledTasksNum": 0,
+        "InstanceDataNum": 1,
+        "Depth": 4,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": true,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": false,
+        "bHasSucceededTriggerTransitions": false,
+        "bHasFailedTriggerTransitions": false,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      },
+      {
+        "RequiredEventToEnter": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "Name": "Complete When Done",
+        "Tag": {
+          "TagName": "None"
+        },
+        "LinkedAsset": null,
+        "LinkedState": {
+          "Index": 65535
+        },
+        "Parent": {
+          "Index": 2
+        },
+        "ChildrenBegin": 12,
+        "ChildrenEnd": 12,
+        "EnterConditionsBegin": 14,
+        "UtilityConsiderationsBegin": 14,
+        "TransitionsBegin": 10,
+        "TasksBegin": 9,
+        "ParameterTemplateIndex": {
+          "Value": 18
+        },
+        "ParameterDataHandle": {
+          "Source": "EStateTreeDataSourceType::StateParameterData",
+          "Index": 3,
+          "StateHandle": {
+            "Index": 11
+          }
+        },
+        "ParameterBindingsBatch": {
+          "Value": 65535
+        },
+        "EventDataIndex": {
+          "Value": 65535
+        },
+        "Weight": 1.0,
+        "CustomTickRate": 0.0,
+        "CompletionTasksMask": 8,
+        "CompletionTasksMaskBufferIndex": 0,
+        "CompletionTasksMaskBitsOffset": 3,
+        "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
+        "EnterConditionsNum": 0,
+        "UtilityConsiderationsNum": 0,
+        "TransitionsNum": 1,
+        "TasksNum": 0,
+        "EnabledTasksNum": 0,
+        "InstanceDataNum": 1,
+        "Depth": 2,
+        "Type": "EStateTreeStateType::State",
+        "SelectionBehavior": "EStateTreeStateSelectionBehavior::TryEnterState",
+        "bHasTransitionTasks": false,
+        "bHasStateChangeConditions": false,
+        "bHasTickTriggerTransitions": true,
+        "bHasEventTriggerTransitions": false,
+        "bHasDelegateTriggerTransitions": false,
+        "bHasCompletedTriggerTransitions": false,
+        "bHasSucceededTriggerTransitions": false,
+        "bHasFailedTriggerTransitions": false,
+        "bCheckPrerequisitesWhenActivatingChildDirectly": true,
+        "bEnabled": true,
+        "bConsumeEventOnSelect": true,
+        "bHasCustomTickRate": false
+      }
+    ],
+    "Transitions": [
+      {
+        "RequiredEvent": {
+          "PayloadStruct": {
+            "ObjectName": "Class'WDFobDoorClosedMessage'",
+            "ObjectPath": "/Script/BuildablesRuntime"
+          },
+          "Tag": {
+            "TagName": "Event.StateTree.FOBDoorClosed"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 9,
+        "State": {
+          "Index": 2
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnEvent",
+        "Priority": "EStateTreeTransitionPriority::Normal",
+        "FallBack": "EStateTreeSelectionFallback::None",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": false
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 12,
+        "State": {
+          "Index": 5
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateCompleted",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::NextSelectableSibling",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 13,
+        "State": {
+          "Index": 6
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateCompleted",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::NextSelectableSibling",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 7
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateCompleted",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::NextSelectableSibling",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 8
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateCompleted",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::NextSelectableSibling",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 9
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateSucceeded",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::None",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 0
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateFailed",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::None",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 10
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateSucceeded",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::NextSelectableSibling",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 0
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnStateFailed",
+        "Priority": "EStateTreeTransitionPriority::None",
+        "FallBack": "EStateTreeSelectionFallback::None",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 0
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnTick",
+        "Priority": "EStateTreeTransitionPriority::Normal",
+        "FallBack": "EStateTreeSelectionFallback::None",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      },
+      {
+        "RequiredEvent": {
+          "PayloadStruct": null,
+          "Tag": {
+            "TagName": "None"
+          }
+        },
+        "RequiredDelegateDispatcher": {
+          "ID": "00000000-00000000-00000000-00000000"
+        },
+        "ConditionsBegin": 14,
+        "State": {
+          "Index": 0
+        },
+        "Delay": {
+          "Duration": 0,
+          "RandomVariance": 0
+        },
+        "Trigger": "EStateTreeTransitionTrigger::OnTick",
+        "Priority": "EStateTreeTransitionPriority::Normal",
+        "FallBack": "EStateTreeSelectionFallback::None",
+        "ConditionsNum": 0,
+        "bTransitionEnabled": true,
+        "bReactivateTargetState": false,
+        "bConsumeEventOnSelect": true
+      }
+    ],
+    "Nodes": {
+      "Structs": [
+        {
+          "EventType": {
+            "ObjectName": "Class'WDFobDoorClosedMessage'",
+            "ObjectPath": "/Script/BuildablesRuntime"
+          },
+          "StateTreeEventTag": {
+            "TagName": "Event.StateTree.FOBDoorClosed"
+          },
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Listen for Event",
+          "BindingsBatch": {
+            "Value": 0
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 0
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::GlobalInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "Name": "Get Pawn from PlayerState",
+          "BindingsBatch": {
+            "Value": 1
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 0
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Add Context Tags",
+          "BindingsBatch": {
+            "Value": 3
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 6
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 4
+            }
+          }
+        },
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Add Context Tags",
+          "BindingsBatch": {
+            "Value": 4
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 8
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 5
+            }
+          }
+        },
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Add Context Tags",
+          "BindingsBatch": {
+            "Value": 5
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 10
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 6
+            }
+          }
+        },
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Resolve Repeat Action Count",
+          "BindingsBatch": {
+            "Value": 6
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 12
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 7
+            }
+          }
+        },
+        {
+          "Name": "Get Repeat Actions Cooldown",
+          "BindingsBatch": {
+            "Value": 65535
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 1
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "_aaabfgnbfohopopdfengm": [
+            "LastVictimCount"
+          ],
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Calculate Reward",
+          "BindingsBatch": {
+            "Value": 7
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 14
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 8
+            }
+          }
+        },
+        {
+          "bTaskEnabled": true,
+          "TransitionHandlingPriority": "EStateTreeTransitionPriority::Normal",
+          "Name": "Grant Reward",
+          "BindingsBatch": {
+            "Value": 8
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 16
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 7,
+            "StateHandle": {
+              "Index": 9
+            }
+          }
+        },
+        {
+          "bInvert": false,
+          "Operand": "EStateTreeExpressionOperand::Copy",
+          "DeltaIndent": 0,
+          "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
+          "Name": "Object Equals",
+          "BindingsBatch": {
+            "Value": 10
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 0
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "Name": "Get Pawn from PlayerState",
+          "BindingsBatch": {
+            "Value": 9
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 2
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "Operand": "EStateTreeExpressionOperand::Copy",
+          "DeltaIndent": 0,
+          "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
+          "Name": "Actor In Control Zone",
+          "BindingsBatch": {
+            "Value": 11
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 1
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "Operand": "EStateTreeExpressionOperand::Copy",
+          "DeltaIndent": 0,
+          "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
+          "Name": "Actor In Hot Zone",
+          "BindingsBatch": {
+            "Value": 12
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 2
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        {
+          "Operand": "EStateTreeExpressionOperand::Copy",
+          "DeltaIndent": 0,
+          "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
+          "Name": "Hot Zone Magnet Active",
+          "BindingsBatch": {
+            "Value": 65535
+          },
+          "OutputBindingsBatch": {
+            "Value": 65535
+          },
+          "InstanceTemplateIndex": {
+            "Value": 3
+          },
+          "ExecutionRuntimeTemplateIndex": {
+            "Value": 65535
+          },
+          "InstanceDataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        }
+      ]
+    },
+    "DefaultInstanceData": {
+      "Data": {
+        "InstanceStructs": {
+          "Structs": [
+            {
+              "ContextObject": null,
+              "Event": {
+                "PlayerState": null,
+                "fobactor": null
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [
+                  {
+                    "ValueTypeObject": {
+                      "ObjectName": "Class'GameplayTag'",
+                      "ObjectPath": "/Script/GameplayTags"
+                    },
+                    "ID": "8CC1A02D-49256B60-773BD5A0-8230FF12",
+                    "Name": "RewardTag",
+                    "ValueType": "EPropertyBagPropertyType::Struct",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
+                    "ValueTypeObject": {
+                      "ObjectName": "Class'GameplayTagContainer'",
+                      "ObjectPath": "/Script/GameplayTags"
+                    },
+                    "ID": "1A86B0B3-4786E528-9B3794B0-D18C44B5",
+                    "Name": "ContextTags",
+                    "ValueType": "EPropertyBagPropertyType::Struct",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
+                    "ValueTypeObject": {
+                      "ObjectName": "Class'Actor'",
+                      "ObjectPath": "/Script/Engine"
+                    },
+                    "ID": "DE8EC6C6-4A6F7E67-D3FA069F-3F2576D9",
+                    "Name": "Interactor",
+                    "ValueType": "EPropertyBagPropertyType::Object",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
+                    "ValueTypeObject": {
+                      "ObjectName": "Class'Actor'",
+                      "ObjectPath": "/Script/Engine"
+                    },
+                    "ID": "49DBC50F-4AB7F6F6-6224FC83-957D0B11",
+                    "Name": "FobActor",
+                    "ValueType": "EPropertyBagPropertyType::Object",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
+                    "ValueTypeObject": {
+                      "ObjectName": "Class'GameplayTag'",
+                      "ObjectPath": "/Script/GameplayTags"
+                    },
+                    "ID": "D5DA6C66-4479EC95-758E6980-D12F0BF3",
+                    "Name": "PlatformXPTag",
+                    "ValueType": "EPropertyBagPropertyType::Struct",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
+                    "ValueTypeObject": {
+                      "ObjectName": "Class'GameplayTag'",
+                      "ObjectPath": "/Script/GameplayTags"
+                    },
+                    "ID": "BB908314-44870C33-6CAA9B94-647883E4",
+                    "Name": "RoleXPTag",
+                    "ValueType": "EPropertyBagPropertyType::Struct",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  },
+                  {
+                    "ValueTypeObject": null,
+                    "ID": "DBC4C538-494DACC2-0F13CCB5-E6961F26",
+                    "Name": "RepeatCount",
+                    "ValueType": "EPropertyBagPropertyType::Int32",
+                    "ContainerType": "EPropertyBagContainerType::None",
+                    "PropertyFlags": "EPropertyFlags::None",
+                    "ContainerTypes": {
+                      "Types": []
+                    },
+                    "MetaData": null,
+                    "MetaClass": null,
+                    "KeyType": "EPropertyBagPropertyType::None",
+                    "KeyTypeObject": null
+                  }
+                ],
+                "SerialSize": 23
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "EditableConditions": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.Instigator.InControlZone"
+              },
+              "AddTags": []
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "EditableConditions": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.Instigator.InHotZone"
+              },
+              "AddTags": []
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "EditableConditions": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "ContextTags": {
+                "RefAccessIndex": {
+                  "Value": 0
+                }
+              },
+              "bAddSeveralTags": false,
+              "AddTag": {
+                "TagName": "Challenges.Context.HotZoneMagnetActive"
+              },
+              "AddTags": []
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 2
+              }
+            },
+            {
+              "Target": null,
+              "Cooldown": 0.0,
+              "Tracker": {
+                "RefAccessIndex": {
+                  "Value": 2
+                }
+              },
+              "_aaaaonllifhdnbbglapcn": {
+                "RefAccessIndex": {
+                  "Value": 1
+                }
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "EditableConditions": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "RewardTag": {
+                "TagName": "Challenges.Rewards.Buildables.BuildableFinished"
+              },
+              "Inputs": [
+                {
+                  "VariableName": "LastVictimCount",
+                  "Value": 0.0
+                }
+              ],
+              "ContextTags": [],
+              "RewardResources": [],
+              "_aaaaljfdepodpipjjkgej": false
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "PlayerChallengeComponent": null,
+              "Challenge": {
+                "DisplayName": {
+                  "CultureInvariantString": null
+                },
+                "Description": {
+                  "CultureInvariantString": null
+                },
+                "Rewards": [],
+                "Objectives": [],
+                "bAutoActivate": false,
+                "_aaabgikgfhflcpoeckhbm": false,
+                "bSendChatMessages": false,
+                "Prerequisites": {
+                  "QueryDefinition": {
+                    "StaticStruct": {
+                      "SchemaClass": {
+                        "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+                        "ObjectPath": "/Script/WDGame"
+                      },
+                      "EditableConditions": []
+                    },
+                    "SharedDefinition": null
+                  }
+                },
+                "StateTreeReference": {
+                  "StateTree": null,
+                  "Parameters": {
+                    "PropertyDescs": [],
+                    "SerialSize": 0
+                  },
+                  "PropertyOverrides": []
+                },
+                "LinkedStateTreeOverrides": {
+                  "OverrideItems": []
+                },
+                "Tag": {
+                  "TagName": "None"
+                }
+              },
+              "RewardTag": {
+                "TagName": "None"
+              },
+              "ContextTags": [],
+              "RewardResources": [],
+              "_aaaaljfdepodpipjjkgej": false,
+              "_aaabaombnfaebibigppgn": [],
+              "TargetActor": null
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            },
+            {
+              "Parameters": {
+                "PropertyDescs": [],
+                "SerialSize": 0
+              }
+            }
+          ]
+        }
+      }
+    },
+    "DefaultEvaluationScopeInstanceData": {
+      "InstanceStructs": {
+        "Structs": [
+          {
+            "Input": null,
+            "Output": null
+          },
+          {
+            "RepeatActionsCooldown": 180.0
+          },
+          {
+            "Input": null,
+            "Output": null
+          }
+        ]
+      }
+    },
+    "SharedInstanceData": {
+      "Data": {
+        "InstanceStructs": {
+          "Structs": [
+            {
+              "Left": null,
+              "Right": null
+            },
+            {
+              "Actor": null,
+              "bInsideTheZone": true
+            },
+            {
+              "Actor": null,
+              "bInsideTheZone": true
+            },
+            {
+              "bMagnetEnabled": true
+            }
+          ]
+        }
+      }
+    },
+    "ContextDataDescs": [
+      {
+        "Struct": {
+          "ObjectName": "Class'WDPlayerState'",
+          "ObjectPath": "/Script/WDGame"
+        },
+        "Name": "PlayerState",
+        "Handle": {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        "Requirement": "EStateTreeExternalDataRequirement::Required"
+      },
+      {
+        "Struct": {
+          "ObjectName": "Class'WDPlayerChallengeComponent'",
+          "ObjectPath": "/Script/WDGame"
+        },
+        "Name": "PlayerChallengeComponent",
+        "Handle": {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        "Requirement": "EStateTreeExternalDataRequirement::Required"
+      },
+      {
+        "Struct": {
+          "ObjectName": "Class'WDChallengeDefinition'",
+          "ObjectPath": "/Script/WDGame"
+        },
+        "Name": "Challenge",
+        "Handle": {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        },
+        "Requirement": "EStateTreeExternalDataRequirement::Required"
+      }
+    ],
+    "PropertyBindings": {
+      "SourceStructs": [
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::GlobalParameterData",
+            "Index": 65535,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Parameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Context",
+          "Struct": {
+            "ObjectName": "Class'WDPlayerState'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "PlayerState"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Context",
+          "Struct": {
+            "ObjectName": "Class'WDPlayerChallengeComponent'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "PlayerChallengeComponent"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Context",
+          "Struct": {
+            "ObjectName": "Class'WDChallengeDefinition'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Challenge"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::GlobalInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'BHEventListenForEventTaskInstanceData'",
+            "ObjectPath": "/Script/BHEventSystem"
+          },
+          "Name": "Listen for Event"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 0
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 1
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 2
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateEvent",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 2
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateEvent",
+          "Struct": {
+            "ObjectName": "Class'StateTreeEvent'",
+            "ObjectPath": "/Script/StateTreeModule"
+          },
+          "Name": "Enter Event"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::PropertyFunction",
+          "Struct": {
+            "ObjectName": "Class'BHStateTreeGetPawnFromPlayerStateFunctionInstanceData'",
+            "ObjectPath": "/Script/BHStateTree"
+          },
+          "Name": "Get Pawn from PlayerState"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 4,
+            "StateHandle": {
+              "Index": 4
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 4
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'WDChallengeAddContextTagsTaskInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Add Context Tags"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 4,
+            "StateHandle": {
+              "Index": 5
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 5
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'WDChallengeAddContextTagsTaskInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Add Context Tags"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 4,
+            "StateHandle": {
+              "Index": 6
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 6
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'WDChallengeAddContextTagsTaskInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Add Context Tags"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 4,
+            "StateHandle": {
+              "Index": 7
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 7
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'WDSessionEventsResolveRepeatActionCountTaskInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Resolve Repeat Action Count"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::PropertyFunction",
+          "Struct": {
+            "ObjectName": "Class'WDChallengeGetRepeatActionsCooldownInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Get Repeat Actions Cooldown"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 4,
+            "StateHandle": {
+              "Index": 8
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 8
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'WDSessionEventsCalculateRewardTaskInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Calculate Reward"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 6,
+            "StateHandle": {
+              "Index": 9
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 7,
+            "StateHandle": {
+              "Index": 9
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Task",
+          "Struct": {
+            "ObjectName": "Class'WDSessionEventsGrantRewardTaskInstanceData'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "Name": "Grant Reward"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 6,
+            "StateHandle": {
+              "Index": 10
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 11
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::StateParameter",
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::TransitionEvent",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::TransitionEvent",
+          "Struct": {
+            "ObjectName": "Class'StateTreeEvent'",
+            "ObjectPath": "/Script/StateTreeModule"
+          },
+          "Name": "Transition Event"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Condition",
+          "Struct": {
+            "ObjectName": "Class'StateTreeObjectEqualsConditionInstanceData'",
+            "ObjectPath": "/Script/StateTreeModule"
+          },
+          "Name": "Object Equals"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::PropertyFunction",
+          "Struct": {
+            "ObjectName": "Class'BHStateTreeGetPawnFromPlayerStateFunctionInstanceData'",
+            "ObjectPath": "/Script/BHStateTree"
+          },
+          "Name": "Get Pawn from PlayerState"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Condition",
+          "Struct": {
+            "ObjectName": "Class'WDStateTreeActorInControlZoneConditionInstanceData'",
+            "ObjectPath": "/Script/ControlZoneRuntime"
+          },
+          "Name": "Actor In Control Zone"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Condition",
+          "Struct": {
+            "ObjectName": "Class'WDStateTreeActorInHotZoneConditionInstanceData'",
+            "ObjectPath": "/Script/ControlZoneRuntime"
+          },
+          "Name": "Actor In Hot Zone"
+        },
+        {
+          "DataHandle": {
+            "Source": "EStateTreeDataSourceType::SharedInstanceData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "DataSource": "EStateTreeBindableStructSource::Condition",
+          "Struct": {
+            "ObjectName": "Class'WDStateTreeHotZoneMagnetConditionInstanceData'",
+            "ObjectPath": "/Script/HotZoneMagnetRuntime"
+          },
+          "Name": "Hot Zone Magnet Active"
+        }
+      ],
+      "PropertyPathBindings": [
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "ContextObject",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateEvent",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 2
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Payload",
+                "ArrayIndex": -1,
+                "InstanceStruct": {
+                  "ObjectName": "Class'WDFobDoorClosedMessage'",
+                  "ObjectPath": "/Script/BuildablesRuntime"
+                },
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::StructInstance"
+              },
+              {
+                "Name": "PlayerState",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Input",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Output",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Interactor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateEvent",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 2
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Payload",
+                "ArrayIndex": -1,
+                "InstanceStruct": {
+                  "ObjectName": "Class'WDFobDoorClosedMessage'",
+                  "ObjectPath": "/Script/BuildablesRuntime"
+                },
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::StructInstance"
+              },
+              {
+                "Name": "FobActor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "FobActor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "PlayerChallengeComponent",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Challenge",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "PlayerChallengeComponent",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Challenge",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "PlayerChallengeComponent",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Challenge",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "FobActor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Target",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "RepeatActionsCooldown",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Cooldown",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "PlayerChallengeComponent",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Challenge",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "RewardTag",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "RewardTag",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "RepeatCount",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Inputs",
+                "ArrayIndex": 0,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              },
+              {
+                "Name": "Value",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "ContextTags",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "ContextTags",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 1,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "PlayerChallengeComponent",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Challenge",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "RewardTag",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "RewardTag",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "ContextTags",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "ContextTags",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+            "Index": 5,
+            "StateHandle": {
+              "Index": 8
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "RewardResources",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "RewardResources",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::ContextData",
+            "Index": 0,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": []
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Input",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 65535
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Output",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Left",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Interactor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Right",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Interactor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Actor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Interactor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "Actor",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        }
+      ],
+      "PropertyReferencePaths": [
+        {
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "ContextTags",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          }
+        },
+        {
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "RepeatCount",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          }
+        },
+        {
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "VictimTracker",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::GlobalParameterData",
+            "Index": 65535,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        }
+      ],
+      "PropertyAccesses": [
+        {
+          "SourceIndirection": {
+            "ArrayIndex": {
+              "Value": 65535
+            },
+            "Offset": 16,
+            "NextIndex": {
+              "Value": 65535
+            },
+            "Type": "EPropertyBindingPropertyAccessType::Offset",
+            "InstanceStruct": null
+          },
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          }
+        },
+        {
+          "SourceIndirection": {
+            "ArrayIndex": {
+              "Value": 65535
+            },
+            "Offset": 88,
+            "NextIndex": {
+              "Value": 65535
+            },
+            "Type": "EPropertyBindingPropertyAccessType::Offset",
+            "InstanceStruct": null
+          },
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateParameterData",
+            "Index": 3,
+            "StateHandle": {
+              "Index": 3
+            }
+          }
+        },
+        {
+          "SourceIndirection": {
+            "ArrayIndex": {
+              "Value": 65535
+            },
+            "Offset": 0,
+            "NextIndex": {
+              "Value": 65535
+            },
+            "Type": "EPropertyBindingPropertyAccessType::Offset",
+            "InstanceStruct": null
+          },
+          "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::GlobalParameterData",
+            "Index": 65535,
+            "StateHandle": {
+              "Index": 65535
+            }
+          }
+        }
+      ],
+      "CopyBatches": [
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::GlobalInstanceData",
+              "Index": 0,
+              "StateHandle": {
+                "Index": 65535
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'BHEventListenForEventTaskInstanceData'",
+              "ObjectPath": "/Script/BHEventSystem"
+            },
+            "Name": "Listen for Event"
+          },
+          "BindingsBegin": {
+            "Value": 0
+          },
+          "BindingsEnd": {
+            "Value": 1
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+              "Index": 0,
+              "StateHandle": {
+                "Index": 65535
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::PropertyFunction",
+            "Struct": {
+              "ObjectName": "Class'BHStateTreeGetPawnFromPlayerStateFunctionInstanceData'",
+              "ObjectPath": "/Script/BHStateTree"
+            },
+            "Name": "Get Pawn from PlayerState"
+          },
+          "BindingsBegin": {
+            "Value": 1
+          },
+          "BindingsEnd": {
+            "Value": 2
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::StateParameterData",
+              "Index": 3,
+              "StateHandle": {
+                "Index": 3
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::StateParameter",
+            "Struct": null,
+            "Name": "Parameters"
+          },
+          "BindingsBegin": {
+            "Value": 2
+          },
+          "BindingsEnd": {
+            "Value": 4
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 1
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 2
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+              "Index": 5,
+              "StateHandle": {
+                "Index": 4
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'WDChallengeAddContextTagsTaskInstanceData'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "Name": "Add Context Tags"
+          },
+          "BindingsBegin": {
+            "Value": 4
+          },
+          "BindingsEnd": {
+            "Value": 6
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+              "Index": 5,
+              "StateHandle": {
+                "Index": 5
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'WDChallengeAddContextTagsTaskInstanceData'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "Name": "Add Context Tags"
+          },
+          "BindingsBegin": {
+            "Value": 6
+          },
+          "BindingsEnd": {
+            "Value": 8
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+              "Index": 5,
+              "StateHandle": {
+                "Index": 6
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'WDChallengeAddContextTagsTaskInstanceData'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "Name": "Add Context Tags"
+          },
+          "BindingsBegin": {
+            "Value": 8
+          },
+          "BindingsEnd": {
+            "Value": 10
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+              "Index": 5,
+              "StateHandle": {
+                "Index": 7
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'WDSessionEventsResolveRepeatActionCountTaskInstanceData'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "Name": "Resolve Repeat Action Count"
+          },
+          "BindingsBegin": {
+            "Value": 10
+          },
+          "BindingsEnd": {
+            "Value": 12
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 6
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 7
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+              "Index": 5,
+              "StateHandle": {
+                "Index": 8
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'WDSessionEventsCalculateRewardTaskInstanceData'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "Name": "Calculate Reward"
+          },
+          "BindingsBegin": {
+            "Value": 12
+          },
+          "BindingsEnd": {
+            "Value": 17
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::ActiveInstanceData",
+              "Index": 7,
+              "StateHandle": {
+                "Index": 9
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Task",
+            "Struct": {
+              "ObjectName": "Class'WDSessionEventsGrantRewardTaskInstanceData'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "Name": "Grant Reward"
+          },
+          "BindingsBegin": {
+            "Value": 17
+          },
+          "BindingsEnd": {
+            "Value": 22
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::EvaluationScopeInstanceData",
+              "Index": 2,
+              "StateHandle": {
+                "Index": 65535
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::PropertyFunction",
+            "Struct": {
+              "ObjectName": "Class'BHStateTreeGetPawnFromPlayerStateFunctionInstanceData'",
+              "ObjectPath": "/Script/BHStateTree"
+            },
+            "Name": "Get Pawn from PlayerState"
+          },
+          "BindingsBegin": {
+            "Value": 22
+          },
+          "BindingsEnd": {
+            "Value": 23
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::SharedInstanceData",
+              "Index": 0,
+              "StateHandle": {
+                "Index": 65535
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Condition",
+            "Struct": {
+              "ObjectName": "Class'StateTreeObjectEqualsConditionInstanceData'",
+              "ObjectPath": "/Script/StateTreeModule"
+            },
+            "Name": "Object Equals"
+          },
+          "BindingsBegin": {
+            "Value": 23
+          },
+          "BindingsEnd": {
+            "Value": 25
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 10
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 11
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::SharedInstanceData",
+              "Index": 1,
+              "StateHandle": {
+                "Index": 65535
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Condition",
+            "Struct": {
+              "ObjectName": "Class'WDStateTreeActorInControlZoneConditionInstanceData'",
+              "ObjectPath": "/Script/ControlZoneRuntime"
+            },
+            "Name": "Actor In Control Zone"
+          },
+          "BindingsBegin": {
+            "Value": 25
+          },
+          "BindingsEnd": {
+            "Value": 26
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        },
+        {
+          "TargetStruct": {
+            "DataHandle": {
+              "Source": "EStateTreeDataSourceType::SharedInstanceData",
+              "Index": 2,
+              "StateHandle": {
+                "Index": 65535
+              }
+            },
+            "DataSource": "EStateTreeBindableStructSource::Condition",
+            "Struct": {
+              "ObjectName": "Class'WDStateTreeActorInHotZoneConditionInstanceData'",
+              "ObjectPath": "/Script/ControlZoneRuntime"
+            },
+            "Name": "Actor In Hot Zone"
+          },
+          "BindingsBegin": {
+            "Value": 26
+          },
+          "BindingsEnd": {
+            "Value": 27
+          },
+          "PropertyFunctionsBegin": {
+            "Value": 65535
+          },
+          "PropertyFunctionsEnd": {
+            "Value": 65535
+          }
+        }
+      ]
+    },
+    "IDToStateMappings": [
+      {
+        "ID": "FF99B19C-4250EBA7-6DE969A8-C092FE64",
+        "Handle": {
+          "Index": 0
+        }
+      },
+      {
+        "ID": "7792F16B-4FB1064E-B1A98596-4D868EC4",
+        "Handle": {
+          "Index": 1
+        }
+      },
+      {
+        "ID": "5A5C9C9D-4F07A713-4C231C88-0DE59109",
+        "Handle": {
+          "Index": 2
+        }
+      },
+      {
+        "ID": "061BABF6-40A1F5AF-1D596BAB-44CD31BD",
+        "Handle": {
+          "Index": 3
+        }
+      },
+      {
+        "ID": "3829CAD4-4DF07E41-FCCC9698-D7F76ED2",
+        "Handle": {
+          "Index": 4
+        }
+      },
+      {
+        "ID": "8EB2CBDE-4F6905E7-EFF2E092-07CCBD6D",
+        "Handle": {
+          "Index": 5
+        }
+      },
+      {
+        "ID": "C8B16878-4796D13D-3FABA487-F2FACED9",
+        "Handle": {
+          "Index": 6
+        }
+      },
+      {
+        "ID": "A136EF95-4B7A9EFD-6D489E9C-591D78C9",
+        "Handle": {
+          "Index": 7
+        }
+      },
+      {
+        "ID": "2EAFFB0A-43DCC877-7827F09F-EF2B4830",
+        "Handle": {
+          "Index": 8
+        }
+      },
+      {
+        "ID": "6B223107-4484FDED-E38278BC-DBAD3986",
+        "Handle": {
+          "Index": 9
+        }
+      },
+      {
+        "ID": "9F8E84BE-4D11E18C-781E45A4-05CE9480",
+        "Handle": {
+          "Index": 10
+        }
+      },
+      {
+        "ID": "F4131642-44661EE6-7A2582A7-E06A65FF",
+        "Handle": {
+          "Index": 11
+        }
+      }
+    ],
+    "IDToNodeMappings": [
+      {
+        "ID": "D6594052-48A85DB4-E7D1709B-A63945C3",
+        "Index": {
+          "Value": 0
+        }
+      },
+      {
+        "ID": "AC1B3FF9-43160BA9-EDB2A38F-37C34FC7",
+        "Index": {
+          "Value": 1
+        }
+      },
+      {
+        "ID": "C8E1C93C-45BB97A6-84C06D81-59DE3E73",
+        "Index": {
+          "Value": 2
+        }
+      },
+      {
+        "ID": "49070151-47A18213-E2DA5E99-E532A16F",
+        "Index": {
+          "Value": 3
+        }
+      },
+      {
+        "ID": "D6993BF8-4B9B8C3E-C63A278E-A2DE8EF8",
+        "Index": {
+          "Value": 4
+        }
+      },
+      {
+        "ID": "014F8734-4D3EDDD3-D9BFFFA9-4177DD17",
+        "Index": {
+          "Value": 5
+        }
+      },
+      {
+        "ID": "65ADC217-4142C712-FD25B499-39A85BF4",
+        "Index": {
+          "Value": 6
+        }
+      },
+      {
+        "ID": "7B2161B8-4DF5FEF5-78CE0C8D-B08F9894",
+        "Index": {
+          "Value": 7
+        }
+      },
+      {
+        "ID": "198A2BC4-41459F36-08716D97-644970C3",
+        "Index": {
+          "Value": 8
+        }
+      },
+      {
+        "ID": "BA9A1A12-4D2402F9-293709BF-4BA9D3DB",
+        "Index": {
+          "Value": 9
+        }
+      },
+      {
+        "ID": "D28FD5D1-4B9B2F7D-B088FAB0-0148F045",
+        "Index": {
+          "Value": 10
+        }
+      },
+      {
+        "ID": "2A7EA967-4E737D2B-91CB4F9D-7B219A44",
+        "Index": {
+          "Value": 11
+        }
+      },
+      {
+        "ID": "5BFDB92D-47640E46-550F56A9-6761121B",
+        "Index": {
+          "Value": 12
+        }
+      },
+      {
+        "ID": "9AFE2B47-49098685-ACCFA797-3D89362A",
+        "Index": {
+          "Value": 13
+        }
+      }
+    ],
+    "IDToTransitionMappings": [
+      {
+        "ID": "2080408E-4BD6E297-7C0933B5-83CB757F",
+        "Index": {
+          "Value": 0
+        }
+      },
+      {
+        "ID": "72511B8A-45647FB5-A4D3CBB4-AD4AE1BD",
+        "Index": {
+          "Value": 1
+        }
+      },
+      {
+        "ID": "8C07B4FE-466FCE26-5E998C8B-4B46D54B",
+        "Index": {
+          "Value": 2
+        }
+      },
+      {
+        "ID": "116CF4D0-4FBF39A4-54E5A888-ED27140A",
+        "Index": {
+          "Value": 3
+        }
+      },
+      {
+        "ID": "96F9FAB8-45214202-C7880480-E8FAD3C2",
+        "Index": {
+          "Value": 4
+        }
+      },
+      {
+        "ID": "111E9539-41BDE2F9-E0BCBD81-64886421",
+        "Index": {
+          "Value": 5
+        }
+      },
+      {
+        "ID": "1476B894-4683ECC5-A7A7E7A4-E7DEDB04",
+        "Index": {
+          "Value": 6
+        }
+      },
+      {
+        "ID": "B6B1B805-4B03B4BB-05A3EE94-F1C384B6",
+        "Index": {
+          "Value": 7
+        }
+      },
+      {
+        "ID": "272EA232-46557FE1-EEC536BE-9DA26697",
+        "Index": {
+          "Value": 8
+        }
+      },
+      {
+        "ID": "D4011C81-42A92647-F8CA4597-E87A86A8",
+        "Index": {
+          "Value": 9
+        }
+      },
+      {
+        "ID": "0CDCD4F3-4B8094E3-8F296EA6-0BF6B4E1",
+        "Index": {
+          "Value": 10
+        }
+      }
+    ],
+    "Parameters": {
+      "PropertyDescs": [
+        {
+          "ValueTypeObject": {
+            "ObjectName": "Class'WDRepeatActionTargetTracker'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "ID": "FD92F4F5-401862EC-2BD5C2A2-883E2D9F",
+          "Name": "VictimTracker",
+          "ValueType": "EPropertyBagPropertyType::Struct",
+          "ContainerType": "EPropertyBagContainerType::None",
+          "PropertyFlags": "EPropertyFlags::None",
+          "ContainerTypes": {
+            "Types": []
+          },
+          "MetaData": null,
+          "MetaClass": null,
+          "KeyType": "EPropertyBagPropertyType::None",
+          "KeyTypeObject": null
+        }
+      ],
+      "SerialSize": 12
+    },
+    "CompletionGlobalTasksMask": 1,
+    "NumContextData": 3,
+    "NumGlobalInstanceData": 1,
+    "GlobalTasksNum": 1
+  }
+}
+--- export: UObject / WDChallengeStateTreeSchema_0 ---
+{
+  "Type": "WDChallengeStateTreeSchema",
+  "Name": "WDChallengeStateTreeSchema_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDChallengeStateTreeSchema'",
+  "Outer": {
+    "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_FOBDoorClosed'",
+    "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed.0"
+  }
+}

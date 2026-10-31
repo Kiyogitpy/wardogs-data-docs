@@ -1,0 +1,75 @@
+--- export: UDataAsset / DA_TreeRewardTrackPanel ---
+{
+  "Type": "WDUITreeRewardTrackPanelData",
+  "Name": "DA_TreeRewardTrackPanel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITreeRewardTrackPanelData'",
+  "Package": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardTrackPanel/Data/DA_TreeRewardTrackPanel",
+  "Properties": {
+    "UnlockCardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIUnlocksTreeNodeViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/TreeRewardCard/Data/DA_TreeRewardTrackCard.DA_TreeRewardTrackCard",
+        "SubPathString": ""
+      }
+    },
+    "RoleLevelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleLevelViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Shared/Widgets/Meta/Data/DA_RoleLevelData.DA_RoleLevelData",
+        "SubPathString": ""
+      }
+    },
+    "FadedOutOpacity": 0.8,
+    "ActiveText": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Active",
+      "SourceString": "Unlocked",
+      "LocalizedString": "Unlocked"
+    },
+    "UnlockedText": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Unlocked",
+      "SourceString": "Completed",
+      "LocalizedString": "Completed"
+    },
+    "XPTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "TreeRewardTrackPanel.XPTextFormat",
+      "SourceString": "{CurrentLevelXP}/{MaxLevelXP}XP",
+      "LocalizedString": "{CurrentLevelXP}/{MaxLevelXP}XP"
+    },
+    "LockedLevelXPTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "TreeRewardTrackPanel.LockedLevelXPTextFormat",
+      "SourceString": "{RequiredLevelXP}XP",
+      "LocalizedString": "{RequiredLevelXP}XP"
+    },
+    "RewardTextFormat": {
+      "Namespace": "",
+      "Key": "10B5F07C4E1365129450999616F2CAB9",
+      "SourceString": "{CurrentRewards}/{MaxRewards}",
+      "LocalizedString": "{CurrentRewards}/{MaxRewards}"
+    },
+    "UnselectedTextColor": {
+      "R": 1.0,
+      "G": 1.0,
+      "B": 1.0,
+      "A": 0.65,
+      "Hex": "A6FFFFFF"
+    },
+    "SelectedTextColor": {
+      "R": 0.73791,
+      "G": 0.533276,
+      "B": 0.042311,
+      "A": 1.0,
+      "Hex": "DFC13A"
+    }
+  }
+}

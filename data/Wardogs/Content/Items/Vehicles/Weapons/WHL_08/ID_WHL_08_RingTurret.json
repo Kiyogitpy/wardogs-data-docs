@@ -1,0 +1,79 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_08_RingTurret'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/WHL_08/ID_WHL_08_RingTurret.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.50Cal"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 60,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.50Cal.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_WHL_08_RingTurret ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_WHL_08_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/WHL_08/ID_WHL_08_RingTurret",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.WHL_08_VehicleRingTurret"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.WHL_08.MountedMachineGun",
+      "Item.Context.MovementBlocked"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "22C088A243BFC8482C559BB0743030F2",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_WHL_08_RingTurret:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/WHL_08/ID_WHL_08_RingTurret.0"
+      }
+    ]
+  }
+}

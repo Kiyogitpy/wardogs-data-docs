@@ -1,0 +1,112 @@
+--- export: UDataAsset / DA_Buildable_STN_04 ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_STN_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/STN_04/BuildableData/DA_Buildable_STN_04",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDVehicleBuildSpawner'DA_Buildable_STN_04:WDVehicleBuildSpawner_0'",
+      "ObjectPath": "/STN_04/BuildableData/DA_Buildable_STN_04.1"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.Loudspeaker"
+    },
+    "Cost": 200,
+    "RepairSpeedMultiplier": 6.67,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.Loudspeaker",
+      "SourceString": "Loudspeaker",
+      "LocalizedString": "Loudspeaker"
+    },
+    "MaxHealth": 1000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "PlacementFlags": 9,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Loudspeaker.SM_Foundation_Loudspeaker",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Loudspeaker_Stages'",
+      "ObjectPath": "/STN_04/BuildableData/DA_Loudspeaker_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -158.93681,
+        "Y": -158.65063,
+        "Z": -4.1910906E-05
+      },
+      "Max": {
+        "X": 156.4112,
+        "Y": 174.57416,
+        "Z": 813.03937
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_Default_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/Audio/DA_Buildable_Default_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.Loudspeaker"
+    }
+  }
+}
+--- export: UObject / WDVehicleBuildSpawner_0 ---
+{
+  "Type": "WDVehicleBuildSpawner",
+  "Name": "WDVehicleBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_STN_04'",
+    "ObjectPath": "/STN_04/BuildableData/DA_Buildable_STN_04.0"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_StationaryVehicle_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable_StationaryVehicle.2"
+    },
+    "VehicleTag": {
+      "TagName": "Vehicle.Variant.Stationary.Loudspeaker"
+    }
+  }
+}

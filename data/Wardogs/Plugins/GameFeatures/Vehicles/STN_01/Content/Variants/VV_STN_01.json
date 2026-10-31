@@ -1,0 +1,44 @@
+--- export: UPrimaryDataAsset / VV_STN_01 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_STN_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/STN_01/Variants/VV_STN_01",
+  "Properties": {
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Stationary.MistralAA"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -150.0,
+        "Y": -150.0,
+        "Z": -11.19298
+      },
+      "Max": {
+        "X": 150.0,
+        "Y": 150.0,
+        "Z": 136.74677
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_STN_01'",
+        "ObjectPath": "/STN_01/Platform/VP_STN_01.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Seats"
+            },
+            "Part": {
+              "AssetPathName": "/STN_01/Parts/VP_STN_01_Seats.VP_STN_01_Seats",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

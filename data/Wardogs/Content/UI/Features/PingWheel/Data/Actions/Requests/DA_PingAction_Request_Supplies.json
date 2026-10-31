@@ -1,0 +1,54 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Supplies_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Supplies",
+  "Name": "WDPingAction_AssistanceRequest_Supplies_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Supplies'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Supplies'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Supplies.1"
+  },
+  "Properties": {
+    "ChannelType": "EWDChannelType::Team",
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Supplies_Other",
+      "SourceString": "Requesting supplies",
+      "LocalizedString": "Requesting supplies"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Supplies_Other_WithLoc",
+      "SourceString": "Requesting supplies at X{X}, Y{Y}",
+      "LocalizedString": "Requesting supplies at X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Supplies ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Supplies",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Supplies",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Supplies",
+      "SourceString": "Supplies",
+      "LocalizedString": "Supplies"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_SquadInvite_64x65.T_UI_Icon_PingWheel_SquadInvite_64x65",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Supplies'DA_PingAction_Request_Supplies:WDPingAction_AssistanceRequest_Supplies_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Supplies.0"
+      }
+    ]
+  }
+}

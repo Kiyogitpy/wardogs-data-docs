@@ -1,0 +1,120 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRewardZone'",
+    "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.2"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/VehicleRewardZone/BP_VehicleRewardTrackerComponent.BP_VehicleRewardTrackerComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRewardZone'",
+    "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_VehicleRewardZone'",
+      "ObjectPath": "/VehicleRewardZone/DataLayers/EDL_VehicleRewardZone.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / VehicleRewardZone ---
+{
+  "Type": "GameFeatureData",
+  "Name": "VehicleRewardZone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/VehicleRewardZone/VehicleRewardZone",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'VehicleRewardZone:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'VehicleRewardZone:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'VehicleRewardZone:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRewardZone'",
+    "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.2"
+  },
+  "Properties": {
+    "PersistentWidgets": [
+      {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/VehicleRewardZone/WBP_VehicleRewardCaptureState.WBP_VehicleRewardCaptureState_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'VehicleRewardZone:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_3'",
+        "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_3 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'VehicleRewardZone:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/VehicleRewardZone/VehicleRewardZone.3"
+  }
+}

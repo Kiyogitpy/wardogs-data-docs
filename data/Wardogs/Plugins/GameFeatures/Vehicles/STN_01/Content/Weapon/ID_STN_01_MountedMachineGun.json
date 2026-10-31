@@ -1,0 +1,72 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STN_01_MountedMachineGun'",
+    "ObjectPath": "/STN_01/Weapon/ID_STN_01_MountedMachineGun.1"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.72mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::List",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 1,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_STN_01_MountedMachineGun ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_STN_01_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/STN_01/Weapon/ID_STN_01_MountedMachineGun",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MistralAA"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.STN_01.MistralAA"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "11F0BB0F415FAEFEDB2D0E8115BF5947",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_STN_01_MountedMachineGun:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/STN_01/Weapon/ID_STN_01_MountedMachineGun.0"
+      }
+    ]
+  }
+}

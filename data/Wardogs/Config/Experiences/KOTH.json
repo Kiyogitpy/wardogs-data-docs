@@ -1,0 +1,23 @@
+{
+	"Aliases" : [ "ED_KOTH" ],
+	"Includes" : [ "DefaultSet" ],
+	"EnabledDataLayers" : ["EDL_KOTH"],
+	"EnabledGameFeatures" : [ 
+		"KOTH",
+		"ServerSeeding",
+		"AlternativeCriticalCamera",
+		"ControlZone",
+		"ControlZoneRegions",
+		"FlyByManager",
+		"FreeVehicleSpawner",
+		"HotZoneMagnet",
+		"Lootable",
+		"PlayerHealthBar",
+		"Spotting"
+	],
+	"PawnData" : "BH.PawnData:WDCore_PlayerData",
+	"FeatureFlags" : [ "Experience.Rules.ReturnToSpawnEnabled" ],
+	"DisallowedFeatureFlags" : ["Experience.Rules.SkipPlayerDowned"],
+	"PresenceStatus" : "Status_KOTH",
+	"EditorVisible" : false
+}

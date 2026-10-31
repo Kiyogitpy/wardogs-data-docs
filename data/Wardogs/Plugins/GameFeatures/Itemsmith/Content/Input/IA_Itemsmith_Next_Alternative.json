@@ -1,0 +1,35 @@
+--- export: UDataAsset / IA_Itemsmith_Next_Alternative ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_Next_Alternative",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.Next.Alternative"
+    },
+    "bTriggerWhenPaused": true,
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Itemsmith_Next_Alternative:InputTriggerPressed_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_Next_Alternative'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Next_Alternative.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

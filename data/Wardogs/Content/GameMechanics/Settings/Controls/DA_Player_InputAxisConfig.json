@@ -1,0 +1,246 @@
+--- export: UDataAsset / DA_Player_InputAxisConfig ---
+{
+  "Type": "BHAxisConfigDataAsset",
+  "Name": "DA_Player_InputAxisConfig",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAxisConfigDataAsset'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Player_InputAxisConfig",
+  "Properties": {
+    "DefaultAxisConfig": {
+      "AxisSettingModifiers": [
+        {
+          "Axis": "EBHAxis::XY",
+          "bGamepad": false,
+          "ModifierType": "EBHAxisModifierType::Exponent",
+          "PropertyName": "MouseAcceleration"
+        },
+        {
+          "Axis": "EBHAxis::XY",
+          "bGamepad": false,
+          "ModifierType": "EBHAxisModifierType::Sensitivity",
+          "PropertyName": "MouseSensitivity"
+        },
+        {
+          "Axis": "EBHAxis::Y",
+          "bGamepad": false,
+          "ModifierType": "EBHAxisModifierType::Invert",
+          "PropertyName": "bInvertYAxisInfantry"
+        },
+        {
+          "Axis": "EBHAxis::X",
+          "bGamepad": false,
+          "ModifierType": "EBHAxisModifierType::Exponent",
+          "PropertyName": "None"
+        },
+        {
+          "Axis": "EBHAxis::Y",
+          "bGamepad": true,
+          "ModifierType": "EBHAxisModifierType::Invert",
+          "PropertyName": "bGamepadInvertYAxisInfantry"
+        },
+        {
+          "Axis": "EBHAxis::X",
+          "bGamepad": true,
+          "ModifierType": "EBHAxisModifierType::Sensitivity",
+          "PropertyName": "GamepadHorizontalAxisSensitivity"
+        },
+        {
+          "Axis": "EBHAxis::Y",
+          "bGamepad": true,
+          "ModifierType": "EBHAxisModifierType::Sensitivity",
+          "PropertyName": "GamepadVerticalAxisSensitivity"
+        },
+        {
+          "Axis": "EBHAxis::X",
+          "bGamepad": true,
+          "ModifierType": "EBHAxisModifierType::Sensitivity",
+          "PropertyName": "RotaryXAxisSensitivity"
+        },
+        {
+          "Axis": "EBHAxis::Y",
+          "bGamepad": true,
+          "ModifierType": "EBHAxisModifierType::Sensitivity",
+          "PropertyName": "RotaryYAxisSensitivity"
+        }
+      ]
+    },
+    "StateAxisConfigs": [
+      {
+        "RequiredTags": [
+          [
+            "State.Player.Vehicle.4W",
+            "State.Player.Vehicle.Tracked"
+          ],
+          [
+            "State.Player.Vehicle.Role.Gunner"
+          ],
+          [
+            "State.Player.Movement.Aiming"
+          ]
+        ],
+        "AxisConfigProperties": {
+          "AxisSettingModifiers": [
+            {
+              "Axis": "EBHAxis::Y",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Invert",
+              "PropertyName": "bInvertYAxisLandVehicles"
+            },
+            {
+              "Axis": "EBHAxis::Y",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Invert",
+              "PropertyName": "bGamepadInvertYAxisLandVehicles"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "MouseADSSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "GamepadADSSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "LandVehicleSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "GamepadLandVehicleSensitivityMultiplier"
+            }
+          ]
+        }
+      },
+      {
+        "RequiredTags": [
+          [
+            "State.Player.Movement.Aiming"
+          ]
+        ],
+        "AxisConfigProperties": {
+          "AxisSettingModifiers": [
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "MouseADSSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "GamepadADSSensitivityMultiplier"
+            }
+          ]
+        }
+      },
+      {
+        "RequiredTags": [
+          [
+            "State.Player.Vehicle.Rotary",
+            "State.Player.Vehicle.Airplane"
+          ],
+          [
+            "State.Player.Vehicle.Role.Driver"
+          ]
+        ],
+        "AxisConfigProperties": {
+          "AxisSettingModifiers": [
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "AirVehicleSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "GamepadAirVehicleSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::Y",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Invert",
+              "PropertyName": "bGamepadInvertYAxisHelicopters"
+            }
+          ]
+        }
+      },
+      {
+        "RequiredTags": [
+          [
+            "State.Player.Vehicle.4W",
+            "State.Player.Vehicle.Tracked"
+          ],
+          [
+            "State.Player.Vehicle.Role.Driver"
+          ]
+        ],
+        "AxisConfigProperties": {
+          "AxisSettingModifiers": [
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "LandVehicleSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "GamepadLandVehicleSensitivityMultiplier"
+            }
+          ]
+        }
+      },
+      {
+        "RequiredTags": [
+          [
+            "State.Player.Vehicle.4W",
+            "State.Player.Vehicle.Tracked"
+          ],
+          [
+            "State.Player.Vehicle.Role.Gunner"
+          ]
+        ],
+        "AxisConfigProperties": {
+          "AxisSettingModifiers": [
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "LandVehicleSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::XY",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Sensitivity",
+              "PropertyName": "GamepadLandVehicleSensitivityMultiplier"
+            },
+            {
+              "Axis": "EBHAxis::Y",
+              "bGamepad": false,
+              "ModifierType": "EBHAxisModifierType::Invert",
+              "PropertyName": "bInvertYAxisLandVehicles"
+            },
+            {
+              "Axis": "EBHAxis::Y",
+              "bGamepad": true,
+              "ModifierType": "EBHAxisModifierType::Invert",
+              "PropertyName": "bGamepadInvertYAxisLandVehicles"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

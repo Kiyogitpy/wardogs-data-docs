@@ -1,0 +1,123 @@
+--- export: UObject / AEB_EnemyKilledParameters_C_0 ---
+{
+  "Type": "AEB_EnemyKilledParameters_C",
+  "Name": "AEB_EnemyKilledParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EnemyKilledParameters.AEB_EnemyKilledParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Combat_Kill'",
+    "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Kill.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_EnemyKilledParameters_C'Default__AEB_EnemyKilledParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EnemyKilledParameters.0"
+  },
+  "Properties": {
+    "BallisticWeapons": [
+      {
+        "TagName": "Id.Item.AK74M"
+      },
+      {
+        "TagName": "Id.Item.KH2002"
+      },
+      {
+        "TagName": "Id.Item.A91"
+      },
+      {
+        "TagName": "Id.Item.TAR21"
+      },
+      {
+        "TagName": "Id.Item.M4"
+      },
+      {
+        "TagName": "Id.Item.SKS"
+      },
+      {
+        "TagName": "Id.Item.SR_04"
+      },
+      {
+        "TagName": "Id.Item.Mosin"
+      },
+      {
+        "TagName": "Id.Item.Glock17"
+      },
+      {
+        "TagName": "Id.Item.Vector"
+      },
+      {
+        "TagName": "Id.Item.MP9"
+      },
+      {
+        "TagName": "Id.Item.M249"
+      },
+      {
+        "TagName": "Id.Item.LMG_02"
+      },
+      {
+        "TagName": "Id.Item.SMG_03"
+      },
+      {
+        "TagName": "Id.Item.M500"
+      },
+      {
+        "TagName": "Id.Item.MP43"
+      },
+      {
+        "TagName": "Id.Item.Judge"
+      },
+      {
+        "TagName": "Id.Item.MK22"
+      },
+      {
+        "TagName": "Id.Item.SV98"
+      },
+      {
+        "TagName": "Id.Item.SVDM"
+      }
+    ],
+    "BallisticKillConfirm": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Notify_KillConfirmed'",
+      "ObjectPath": "/Game/Audio/UX/Combat/Kill/MSS_UX_Combat_Notify_KillConfirmed.0"
+    },
+    "Launchers": [
+      {
+        "TagName": "Id.Item.AT4"
+      },
+      {
+        "TagName": "Id.Item.MMGL"
+      },
+      {
+        "TagName": "Id.Item.RPG7"
+      },
+      {
+        "TagName": "Id.Item.CGM4"
+      }
+    ],
+    "LauncherKillConfirm": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Combat_Notify_KillConfirmed'",
+      "ObjectPath": "/Game/Audio/UX/Combat/Kill/MSS_UX_Combat_Notify_KillConfirmed.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.CentralFeedback"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Combat_Kill ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Combat_Kill",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Kill",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Combat.Kill"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EnemyKilledParameters_C'AE_UX_Combat_Kill:AEB_EnemyKilledParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Combat/AE_UX_Combat_Kill.0"
+      }
+    ]
+  }
+}

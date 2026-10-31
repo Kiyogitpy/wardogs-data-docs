@@ -1,0 +1,170 @@
+--- export: UDataTable / DT_PlayerIdentities ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PlayerIdentities",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/DT_PlayerIdentities",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPlayerIdentityRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Player.Identity.CommunityDev": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlayerIdentities.STRINGS_PlayerIdentities",
+        "Key": "Player.Identity.CommunityDev.DisplayName",
+        "SourceString": "Community Developer",
+        "LocalizedString": "Community Developer"
+      },
+      "Priority": 0,
+      "_aaaancbloodmkealjoiop": true,
+      "_aaaamkihpmjajnpfjbpfh": "Dev Impersonator",
+      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::None",
+      "_aaaapjfdfpekdnohlpcal": [],
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_BHlogo_128.T_UI_BHlogo_128",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_BHlogo_128.T_UI_BHlogo_128",
+            "Value": [
+              "UI.Icon.Scoreboard"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Player.Identity.CommunityDev"
+      }
+    },
+    "Player.Identity.VIP": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlayerIdentities.STRINGS_PlayerIdentities",
+        "Key": "Player.Identity.VIP.DisplayName",
+        "SourceString": "VIP",
+        "LocalizedString": "VIP"
+      },
+      "Priority": 1,
+      "_aaaancbloodmkealjoiop": true,
+      "_aaaamkihpmjajnpfjbpfh": "VIP Impersonator",
+      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::None",
+      "_aaaapjfdfpekdnohlpcal": [],
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Frontend/T_UI_ServerBrowser_Checkmark.T_UI_ServerBrowser_Checkmark",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Frontend/T_UI_ServerBrowser_Checkmark.T_UI_ServerBrowser_Checkmark",
+            "Value": [
+              "UI.Icon.Scoreboard"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Player.Identity.VIP"
+      }
+    },
+    "Player.Identity.ETP": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlayerIdentities.STRINGS_PlayerIdentities",
+        "Key": "Player.Identity.ETP.DisplayName",
+        "SourceString": "ETP",
+        "LocalizedString": "ETP"
+      },
+      "Priority": 2,
+      "_aaaancbloodmkealjoiop": false,
+      "_aaaamkihpmjajnpfjbpfh": "",
+      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::None",
+      "_aaaapjfdfpekdnohlpcal": [],
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_EPTIcon.T_UI_EPTIcon",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_EPTIcon.T_UI_EPTIcon",
+            "Value": [
+              "UI.Icon.Scoreboard"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Player.Identity.ETP"
+      }
+    },
+    "Player.Identity.EASupporter": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlayerIdentities.STRINGS_PlayerIdentities",
+        "Key": "Player.Identity.EASupporter.DisplayName",
+        "SourceString": "Early Access Supporter",
+        "LocalizedString": "Early Access Supporter"
+      },
+      "Priority": 3,
+      "_aaaancbloodmkealjoiop": false,
+      "_aaaamkihpmjajnpfjbpfh": "",
+      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::Entitlement",
+      "_aaaapjfdfpekdnohlpcal": [
+        "Player.Identity.EASupporter"
+      ],
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Frontend/T_UI_Icon_SupporterBadge.T_UI_Icon_SupporterBadge",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Frontend/T_UI_Icon_SupporterBadge.T_UI_Icon_SupporterBadge",
+            "Value": [
+              "UI.Icon.Scoreboard"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Player.Identity.EASupporter"
+      }
+    },
+    "Player.Identity.EarlyAdopter": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_PlayerIdentities.STRINGS_PlayerIdentities",
+        "Key": "Player.Identity.EarlyAdopter.DisplayName",
+        "SourceString": "Early Adopter",
+        "LocalizedString": "Early Adopter"
+      },
+      "Priority": 4,
+      "_aaaancbloodmkealjoiop": false,
+      "_aaaamkihpmjajnpfjbpfh": "",
+      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::Entitlement",
+      "_aaaapjfdfpekdnohlpcal": [
+        "Player.Identity.EarlyAdopter"
+      ],
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_TwitchBadgeViewer.T_UI_Icon_TwitchBadgeViewer",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_TwitchBadgeViewer.T_UI_Icon_TwitchBadgeViewer",
+            "Value": [
+              "UI.Icon.Scoreboard"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Player.Identity.EarlyAdopter"
+      }
+    }
+  }
+}

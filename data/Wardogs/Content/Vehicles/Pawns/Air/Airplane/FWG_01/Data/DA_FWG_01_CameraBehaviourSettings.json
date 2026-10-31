@@ -1,0 +1,55 @@
+--- export: UDataAsset / DA_FWG_01_CameraBehaviourSettings ---
+{
+  "Type": "MRotaryVehicleSpringArmDataAsset",
+  "Name": "DA_FWG_01_CameraBehaviourSettings",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MRotaryVehicleSpringArmDataAsset'",
+  "Package": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_CameraBehaviourSettings",
+  "Properties": {
+    "PitchMapBoundsInput": {
+      "X": -45.0,
+      "Y": 45.0
+    },
+    "PitchMapBoundsOutput": {
+      "X": -25.0,
+      "Y": 10.0
+    },
+    "VelocityMapBoundsInput": {
+      "X": 100.0,
+      "Y": 7000.0
+    },
+    "VelocityMapBoundsOutput": {
+      "X": 0.3,
+      "Y": 5.0
+    },
+    "DefaultLerpSpeed": 5.0,
+    "CameraBehaviourMinVelocity": 1.0,
+    "SocketOffset": {
+      "X": -750.0,
+      "Y": 0.0,
+      "Z": 300.0
+    },
+    "TargetArmLength": 1000.0,
+    "RotationLagVsVehicleRotation": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'DA_FWG_01_CameraRotationCurve'",
+        "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_CameraRotationCurve.0"
+      }
+    },
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 5.0,
+    "CameraRotationLagSpeed": 3.0,
+    "CameraLagMaxDistance": 300.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {},
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'DA_FWG_01_SpeedFOVCurve'",
+          "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_SpeedFOVCurve.0"
+        }
+      }
+    }
+  }
+}

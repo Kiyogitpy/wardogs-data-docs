@@ -1,0 +1,3065 @@
+--- export: UPrimaryDataAsset / AnimSet_AK74M ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_AK74M",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/WEPN_001/Data/AnimSet_AK74M",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Reload_Empty_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 0.5,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.S2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.E2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.E2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.D2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.D2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.D2E"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadTactical_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadTactical_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Reload_Tactical_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.25,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.S2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2E"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.MeleeBash"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Melee'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Melee.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Gen_Rifle_Melee'",
+              "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Rifle/Actions/AM_TP_Gen_Rifle_Melee.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Fire"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Fire'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Fire.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Fire'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_Fire.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Fire'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Fire.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Fire'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Fire.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.0,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Chamber"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Rechamber'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Rechamber.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Rechamber'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_Rechamber.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Rechamber'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Rechamber.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Chamber'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Chamber.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Inspect'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Inspect'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Inspect.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Rifle_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Rifle_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_AR_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AR_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_TP_AR_Door_Interact.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.D2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_75_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.D2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_75to30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 3.70067,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.S2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30to75_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Tactical_Reload_75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Tactical_Reload_75_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_D2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_D2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_75to30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 3.39733,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.S2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30to75_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_30to75_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 3.68,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip"
+        },
+        "Value": {
+          "BaseAsset": null,
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.BumpStop"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.BumpStop )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.RK6"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Vertical"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Vertical )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_02"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Angled"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Angled )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_03"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.Vertical"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.Vertical )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_04"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "TagQuery": {
+                          "TokenStreamVersion": 0,
+                          "TagDictionary": [
+                            {
+                              "TagName": "Item.Context.Animation.Archetype.Foregrip.HERA"
+                            }
+                          ],
+                          "QueryTokenStream": [
+                            0,
+                            1,
+                            1,
+                            1,
+                            0
+                          ],
+                          "UserDescription": "",
+                          "AutoDescription": " ANY( Item.Context.Animation.Archetype.Foregrip.HERA )"
+                        },
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+                    "ObjectPath": "/Script/BHAnimationData"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_014"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_02"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_AK74M_FGP_02_Idle'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/FP/A_FP_AK74M_FGP_02_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_AK74M_FGP_02_Pose'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/TP/Foregrips/A_TP_AK74M_FGP_02_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_03"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_AK74M_FGP_03_Idle'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/FP/A_FP_AK74M_FGP_03_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_AK74M_FGP_03_Pose'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/TP/Foregrips/A_TP_AK74M_FGP_03_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.RK6"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_AK74M_RK6_Idle'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/FP/A_FP_AK74M_RK6_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_AK74M_RK6_Pose'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/TP/Foregrips/A_TP_AK74M_RK6_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_04"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_AK74M_FGP_04_Idle'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/FP/A_FP_AK74M_FGP_04_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_AK74M_FGP_04_Pose'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/TP/Foregrips/A_TP_AK74M_FGP_04_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Attachment.Bipod.Unfold"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_FGP_04_Deploy'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_FGP_04_Deploy.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_FGP_04_Deploy'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_FGP_04_Deploy.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Deploy'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Deploy.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Deploy'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Deploy.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Attachment.Bipod.Fold"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_FGP_04_Stow'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_FGP_04_Stow.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_FGP_04_Stow'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_FGP_04_Stow.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Stow'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Stow.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_FGP_04_Stow'",
+              "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_04/Assets/Animations/AM_FP_FGP_04_Stow.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadEmpty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadEmpty_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 0.5,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.S2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.E2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.E2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.D2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.D2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.D2D"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.25,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.S2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.S2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.E2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.E2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.E2D"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.D2S"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MExtendedMagazine"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.D2E"
+              }
+            },
+            {
+              "Condition": {
+                "StaticStruct": {
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  },
+                  "EditableConditions": []
+                },
+                "SharedDefinition": {
+                  "Conditions": {
+                    "Structs": [
+                      {
+                        "ApplicableFromMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "ApplicableToMags": [
+                          "Id.Item.AK74MMagazine75rnd"
+                        ],
+                        "bInvert": false,
+                        "Operator": "EWorldConditionOperator::Copy",
+                        "NextExpressionDepth": 0
+                      }
+                    ]
+                  },
+                  "SchemaClass": {
+                    "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+                    "ObjectPath": "/Script/WDGame"
+                  }
+                }
+              },
+              "KeyOverride": {
+                "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.D2D"
+              }
+            }
+          ],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.D2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_75_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.D2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_75to30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 4.18867,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.S2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30to75_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 5.22,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.D2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Tactical_Reload_75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Tactical_Reload_75_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_D2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_D2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.D2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_75to30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 3.29333,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.S2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30to75_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_30to75_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 3.885,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Reload_Empty_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 0.5,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Reload_Empty_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.36,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.E2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30to75_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Reload_Empty_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Reload_Empty_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.808,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty.AK74M.D2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_75to30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.10733,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadTactical_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadTactical_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Reload_Tactical_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.25,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadTactical_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadTactical_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Reload_Tactical_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.19834,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.E2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30to75_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_30to75_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_30to75_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.32,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadTactical_30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadTactical_30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_AK74M_Reload_Tactical_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_AK74M_Reload_Tactical_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.333,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical.AK74M.D2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_75to30_Retain.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Retain.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.77067,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadEmpty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadEmpty_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 0.5,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadEmpty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadEmpty_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.06933,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.E2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 4.144,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.E2S"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 2.914,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.E2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30to75_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.996,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.25,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Tactical.AK74M.D2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Tactical_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Tactical_75to30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadTactical_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadTactical_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Tactical_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Tactical_75to30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Tactical'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Tactical.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 3.50133,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.S2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_ReloadEmpty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_ReloadEmpty_30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.032,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.E2D"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_30to75_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_S2D'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_S2D.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_30to75_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": true,
+            "OverrideLength": 4.88167,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Discarding.Empty.AK74M.D2E"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Reload_Empty_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Reload_Empty_75to30_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_ReloadEmpty_D2S'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/TP/AM_TP_AK74M_ReloadEmpty_D2S.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_FP_Weap_AK74M_Reload_Empty_75to30_Drop.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Weap_Reload_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Sequences/TP/AM_TP_AK74M_Weap_Reload_Empty.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationConditionSchema_Reload'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Pose.Foregrip.FGP_014"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonAsset": {
+              "ObjectName": "AnimSequence'A_FP_AK74M_FGP_014_Idle'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/FP/A_FP_AK74M_FGP_014_Idle.0"
+            },
+            "ThirdPersonAsset": {
+              "ObjectName": "AnimSequence'A_TP_AK74M_FGP_14_Pose'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Sequences/TP/Foregrips/A_TP_AK74M_FGP_14_Pose.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Inspect_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Inspect_Empty.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Inspect_Empty'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Inspect_Empty.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect.Fallback"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AK74M_Inspect_Fallback'",
+              "ObjectPath": "/WEPN_001/Animation/Character/Montages/FP/AM_FP_AK74M_Inspect_Fallback.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_FP_AK74M_Inspect_Fallback'",
+              "ObjectPath": "/WEPN_001/Animation/Weapon/Montages/FP/AM_Weap_FP_AK74M_Inspect_Fallback.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.PickUp"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Item_Pickup'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Item_Pickup.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Item_Pick_Up'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Item_Pick_Drop/AM_TP_AK74M_Item_Pick_Up.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

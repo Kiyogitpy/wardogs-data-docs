@@ -1,0 +1,132 @@
+--- export: UDataAsset / EQS_PatrolPoint ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_PatrolPoint",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Behavior_Patrol/EQS/EQS_PatrolPoint",
+  "Properties": {
+    "QueryName": "EQS_PatrolPoint",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_PatrolPoint:EnvQueryOption_5'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_ProjectedLocation_0 ---
+{
+  "Type": "EnvQueryGenerator_ProjectedLocation",
+  "Name": "EnvQueryGenerator_ProjectedLocation_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_ProjectedLocation'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.0"
+  },
+  "Properties": {
+    "QueryContext": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_ProjectedPatrolPointOnSpline_C'",
+      "ObjectPath": "/Behavior_Patrol/EQS/BP_EnvQueryContext_ProjectedPatrolPointOnSpline.0"
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_5 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_5",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_ProjectedLocation'EQS_PatrolPoint:EnvQueryGenerator_ProjectedLocation_0'",
+      "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_PathfindingBatch'EQS_PatrolPoint:EnvQueryTest_PathfindingBatch_1'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_PatrolPoint:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_PatrolPoint:EnvQueryTest_Distance_2'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_2 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_ClosestPointOnSplineFromItem_C'",
+      "ObjectPath": "/Behavior_Patrol/EQS/BP_EnvQueryContext_ClosestPointOnSplineFromItem.0"
+    },
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "ScoringFactor": {
+      "DefaultValue": 10.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.0"
+  },
+  "Properties": {
+    "TestOrder": 1,
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_PathfindingBatch_1 ---
+{
+  "Type": "EnvQueryTest_PathfindingBatch",
+  "Name": "EnvQueryTest_PathfindingBatch_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_PathfindingBatch'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint.0"
+  },
+  "Properties": {
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FloatValueMin": {
+      "DefaultValue": 0.0
+    },
+    "VerNum": 2
+  }
+}

@@ -1,0 +1,145 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_45ACP_HollowPoint'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_45ACP_HollowPoint'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/SM_45ACP_Ammo.SM_45ACP_Ammo",
+      "SubPathString": ""
+    },
+    "_aaaankomdlipjpppmphif": 2.0
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_45ACP_HollowPoint'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.4"
+  },
+  "Properties": {
+    "MaxStackSize": 60
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_45ACP_HollowPoint'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_45ACP_HollowPoint ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_45ACP_HollowPoint",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.45ACP.HollowPoint"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.45ACP",
+      "Item.Ammo.Type.HollowPoint",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "8EC416C74A5BFA916B213296B9C4AE17",
+      "SourceString": ".45 ACP HP",
+      "LocalizedString": ".45 ACP HP"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_45ACP_HollowPoint:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_45ACP_HollowPoint:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_45ACP_HollowPoint:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_45ACP_HollowPoint:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_45ACP_HollowPoint:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_45ACP_HollowPoint:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_45ACP_HollowPoint'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_LooseAmmoBox_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_LooseAmmoBox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_45ACP_HollowPoint'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_45ACP_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/45ACP/DA_45ACP_ProjectileData.0"
+    }
+  }
+}

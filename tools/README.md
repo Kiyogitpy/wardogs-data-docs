@@ -21,6 +21,6 @@ public location.
 
 ## Related
 
-- Methodology: [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md)
-- Scope: [`../docs/SCOPE.md`](../docs/SCOPE.md)
+- Update pipeline: [`../docs/UPDATE_PIPELINE.md`](../docs/UPDATE_PIPELINE.md)
+- Contribution boundaries: [`../CONTRIBUTING.md`](../CONTRIBUTING.md)
 - Security: [`../SECURITY.md`](../SECURITY.md)

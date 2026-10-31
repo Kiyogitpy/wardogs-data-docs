@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_WHL_02_SUV_RingTurret_Seats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_02_SUV_RingTurret_Seats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret_Seats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Seat"
+    ],
+    "Fragments": [
+      {
+        "Key": "GunnerSeats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_WHL_02_SUV_RingTurret_Seats:MVF_Seats_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret_Seats.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret_Seats'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret_Seats.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/WHL_02_RingTurret/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_RingTurret_SeatSettings.DA_WHL_02_SUV_RingTurret_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}

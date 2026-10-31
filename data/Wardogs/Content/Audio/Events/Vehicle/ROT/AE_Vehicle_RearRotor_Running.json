@@ -1,0 +1,165 @@
+--- export: UObject / AEB_Doppler_C_0 ---
+{
+  "Type": "AEB_Doppler_C",
+  "Name": "AEB_Doppler_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Doppler.AEB_Doppler_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_RearRotor_Running'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_Doppler_C'Default__AEB_Doppler_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_RearRotor_Running'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "Engine On",
+    "In Bool": true,
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleHIDZAttribute_C_0 ---
+{
+  "Type": "AEB_SetVehicleHIDZAttribute_C",
+  "Name": "AEB_SetVehicleHIDZAttribute_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.AEB_SetVehicleHIDZAttribute_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_RearRotor_Running'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetVehicleHIDZAttribute_C'Default__AEB_SetVehicleHIDZAttribute_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.0"
+  },
+  "Properties": {
+    "Attribute Tag": {
+      "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+    },
+    "ParameterName": "TailRotorHealth",
+    "ShouldNormaliseAttribute": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_RearRotor_Running'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_RearRotor_Running ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_RearRotor_Running",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.RearRotor.Running"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_RearRotor_Running:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.5"
+      },
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_RearRotor_Running:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.1"
+      },
+      {
+        "ObjectName": "AEB_SetVehicleHIDZAttribute_C'AE_Vehicle_RearRotor_Running:AEB_SetVehicleHIDZAttribute_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.2"
+      },
+      {
+        "ObjectName": "AEB_Doppler_C'AE_Vehicle_RearRotor_Running:AEB_Doppler_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_RearRotor_Running:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.6"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_RearRotor_Running:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_RearRotor_Running'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.4"
+  },
+  "Properties": {
+    "SocketName": "rearRotorSpin_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_RearRotor_Running'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_RearRotor_Running.4"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.RearRotor"
+    },
+    "_aaabffflldkehlgjhdacf": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Engine.RearRotor"
+    },
+    "bPersistent": true
+  }
+}

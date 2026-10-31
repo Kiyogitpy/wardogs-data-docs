@@ -1,0 +1,32 @@
+--- export: UDataTable / DT_RewardFeedActions_TeamOffence ---
+{
+  "Type": "DataTable",
+  "Name": "DT_RewardFeedActions_TeamOffence",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/TeamOffence/Data/UI/RewardFeed/DT_RewardFeedActions_TeamOffence",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.TeamOffence.Forgive": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/TeamOffence/UI/StringTables/STRINGS_TeamOffence.STRINGS_TeamOffence",
+        "Key": "Reward_Forgive",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RepairingScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.TeamOffence.Forgive"
+      }
+    }
+  }
+}

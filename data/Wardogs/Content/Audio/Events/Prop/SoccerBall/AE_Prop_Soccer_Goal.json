@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Prop_Soccer_Goal ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Prop_Soccer_Goal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Goal",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Prop.Ball.Goal"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Prop_Soccer_Goal:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Goal.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_Prop_Soccer_Goal:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Goal.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 154.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_Soccer_Goal'",
+    "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Goal.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Soccer_Goal'",
+      "ObjectPath": "/Game/Audio/Props/Soccer/Audio/MSS/MSS_Soccer_Goal.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Prop.Ball.Goal"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Prop_Soccer_Goal'",
+    "ObjectPath": "/Game/Audio/Events/Prop/SoccerBall/AE_Prop_Soccer_Goal.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Prop.Ball.Goal"
+    }
+  }
+}

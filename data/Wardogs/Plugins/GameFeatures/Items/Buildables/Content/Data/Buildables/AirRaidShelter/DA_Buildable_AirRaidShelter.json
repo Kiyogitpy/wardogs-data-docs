@@ -1,0 +1,116 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_AirRaidShelter'",
+    "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_AirRaidShelter_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/B_Buildable_AirRaidShelter.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_AirRaidShelter ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_AirRaidShelter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_AirRaidShelter:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.AirRaidShelter"
+    },
+    "Cost": 200,
+    "RepairSpeedMultiplier": 6.67,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.AirRaidShelter",
+      "SourceString": "Indirect Fire Shelter",
+      "LocalizedString": "Indirect Fire Shelter"
+    },
+    "MaxHealth": 5000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 1,
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_AirRaidShelter.SM_Foundation_AirRaidShelter",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_AirRaidShelter_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -375.0,
+        "Y": -375.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 375.0,
+        "Y": 375.0,
+        "Z": 460.0
+      },
+      "IsValid": 1
+    },
+    "bOverridesFinalStage": true,
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.AirRaidShelter"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.AirRaidShelter"
+    }
+  }
+}

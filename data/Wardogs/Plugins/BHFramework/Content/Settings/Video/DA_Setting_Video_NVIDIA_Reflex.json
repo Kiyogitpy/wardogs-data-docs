@@ -1,0 +1,87 @@
+--- export: UDataAsset / DA_Setting_Video_NVIDIA_Reflex ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Video_NVIDIA_Reflex",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Video/DA_Setting_Video_NVIDIA_Reflex",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Video_NVIDIA_Reflex:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Video/DA_Setting_Video_NVIDIA_Reflex.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Video_NVIDIA_Reflex'",
+    "ObjectPath": "/BHFramework/Settings/Video/DA_Setting_Video_NVIDIA_Reflex.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EReflexMode::Disabled",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.NVIDIA.Reflex.Disabled",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EReflexMode::Enabled",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.NVIDIA.Reflex.Enabled",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EReflexMode::EnabledPlusBoost",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.NVIDIA.Reflex.EnabledBoost",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.NVIDIA.Reflex.Disabled",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.NVIDIA.Reflex.Enabled",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "3",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.NVIDIA.Reflex.EnabledBoost",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}

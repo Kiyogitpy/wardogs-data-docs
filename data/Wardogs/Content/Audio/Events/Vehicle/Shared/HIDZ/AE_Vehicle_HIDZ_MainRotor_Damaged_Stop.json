@@ -1,0 +1,92 @@
+--- export: UObject / AEB_EndBehavior_C_1 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetVehicleHIDZAttribute_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetVehicleHIDZAttribute.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_2 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_Doppler_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_HIDZ_MainRotor_Damaged_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_HIDZ_MainRotor_Damaged_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.MainRotor.Damaged.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_HIDZ_MainRotor_Damaged_Stop:AEB_EndBehavior_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop.0"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_HIDZ_MainRotor_Damaged_Stop:AEB_EndBehavior_C_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_Vehicle_HIDZ_MainRotor_Damaged_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_1 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_MainRotor_Damaged_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged_Stop.2"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.MainRotor.Damaged"
+    }
+  }
+}

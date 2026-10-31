@@ -1,0 +1,104 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_Bunker_Floor'",
+    "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Floor.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_Bunker_Floor ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_Bunker_Floor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Floor",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_Bunker_Floor:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Floor.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.Bunker.Floor"
+    },
+    "Cost": 10,
+    "RepairSpeedMultiplier": 0.67,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.Bunker",
+      "SourceString": "Bunker",
+      "LocalizedString": "Bunker"
+    },
+    "MaxHealth": 2250.0,
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Temp_BunkerFloor.SM_Foundation_Temp_BunkerFloor",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_Bunker_Floor_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Floor_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -299.7489,
+        "Y": -296.1022,
+        "Z": -2.085032
+      },
+      "Max": {
+        "X": 297.10083,
+        "Y": 299.27426,
+        "Z": 7.2451653
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.Bunker"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false,
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.Bunker"
+    }
+  }
+}

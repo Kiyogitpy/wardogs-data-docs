@@ -1,0 +1,307 @@
+--- export: UPrimaryDataAsset / VP_WHL_02_RearBack_SUV_Chassis ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_02_RearBack_SUV_Chassis",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Chassis.Rear"
+    ],
+    "Fragments": [
+      {
+        "Key": "Interior_Rear",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_RearBack_SUV_Chassis:MVF_StaticMesh_7'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.2"
+          }
+        }
+      },
+      {
+        "Key": "Chassis_Rear",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_RearBack_SUV_Chassis:MVF_StaticMesh_9'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.3"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_WHL_02_RearBack_SUV_Chassis:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.7"
+          }
+        }
+      },
+      {
+        "Key": "Boot",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_RearBack_SUV_Chassis:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.1"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_WHL_02_RearBack_SUV_Chassis:WD_MVF_Interactions_0'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.4"
+          }
+        }
+      },
+      {
+        "Key": "Inventory",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_WHL_02_RearBack_SUV_Chassis:WD_MVF_InventoryFragment_1'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.5"
+          }
+        }
+      },
+      {
+        "Key": "Supplycrate",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_WHL_02_RearBack_SUV_Chassis:WD_MVF_SupplyCrateFragment_1'",
+            "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.6"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "bootDoorTop_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_SUV_BootTop.SM_WHL_02_SUV_BootTop",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_7 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_SUV_Interior.SM_WHL_02_SUV_Interior",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_9 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_9",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_SUV_Variant.SM_WHL_02_SUV_Variant",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/WHL_02/Data/DA_VehicleInteractions_WHL_02.DA_VehicleInteractions_WHL_02",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_1 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Storage/ID_VehicleStorageMedium.ID_VehicleStorageMedium",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_1 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "bShouldUseVehicleSpeedCheck": false,
+      "LogisticsSlotSettings": [
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.BackSlot",
+            "SourceString": "Back Slot",
+            "LocalizedString": "Back Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": -0.0,
+              "Z": 0.70710677,
+              "W": 0.70710677,
+              "IsNormalized": true,
+              "Size": 0.99999994,
+              "SizeSquared": 0.99999994
+            },
+            "Translation": {
+              "X": -76.14211,
+              "Y": -2.5579538E-13,
+              "Z": 104.8212
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 4,
+            "Y": 1
+          },
+          "SpaceEdgeLength": 25.0,
+          "SpaceDimensions": {
+            "X": 75.0,
+            "Y": 75.0,
+            "Z": 124.5
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabfpidgmbniihagpoap": false,
+          "DeployOffset": {
+            "X": -750.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        }
+      ],
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_SUV_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/SUV/VP_WHL_02_RearBack_SUV_Chassis.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/WHL_02/Data/DA_WHL_02_Stats.DA_WHL_02_Stats",
+      "SubPathString": ""
+    }
+  }
+}

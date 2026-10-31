@@ -1,0 +1,33 @@
+--- export: UDataAsset / IA_BuildTool_Dismantle_Release ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_BuildTool_Dismantle_Release",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_BuildTool_Dismantle_Release",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle.Release"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerReleased'IA_BuildTool_Dismantle_Release:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Dismantle_Release.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_BuildTool_Dismantle_Release'",
+    "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Dismantle_Release.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.1
+  }
+}

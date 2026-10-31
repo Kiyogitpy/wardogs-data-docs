@@ -1,0 +1,2149 @@
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "bAbsolute": false,
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::GreaterThan",
+    "TestValue": 36.0
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "bAbsolute": false,
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": -50.0
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Length",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": 36.0,
+    "Label": "At low speeds"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldRotation_Deg",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Y",
+    "bAbsolute": false,
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::GreaterThan",
+    "Label": "Nose up"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_2 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldRotation_Deg",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Y",
+    "bAbsolute": false,
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "Label": "Nose down"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_3 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Length",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::GreaterThan",
+    "TestValue": 18.0,
+    "InterpolationBand": 18.0,
+    "InterpolationExponent": 2.0,
+    "Label": "Speed must be above threshold to avoid faulty skid angles"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_4 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::SkidAngle_Deg",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Y",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": 0.5729577823242186,
+    "InterpolationBand": 14.32394487827058,
+    "InterpolationExponent": 4.0
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Length",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": 36.0,
+    "Label": "At low speeds"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::X",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": 28.64788975654116,
+    "Label": "Roll speed close to zero"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": 5.729578036685597,
+    "Label": "Yaw value close to zero"
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::SkidAngle_Deg",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::LessThan",
+    "TestValue": 18.907607239317166,
+    "InterpolationBand": 12.032113697747288,
+    "InterpolationExponent": 0.6600000262260437
+  }
+}
+--- export: UObject / BHControlValueSatisfiesRotaryMovementControlAssistCondition_2 ---
+{
+  "Type": "BHControlValueSatisfiesRotaryMovementControlAssistCondition",
+  "Name": "BHControlValueSatisfiesRotaryMovementControlAssistCondition_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHControlValueSatisfiesRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "ControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "TestOperator": "EBHRotaryMovementControlAssistConditionOperator::GreaterThan",
+    "TestValue": 2.8647889756541165,
+    "InterpolationBand": 8.594366926962348,
+    "Label": "Don't dampen low yaw angular speed as it is drag trying to aling the heli with the flight direction"
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::EASE_IN_EASE_OUT",
+      "InterpTimeS": 1.5,
+      "exp": 1.25
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::EASE_IN_EASE_OUT",
+      "InterpTimeS": 1.5,
+      "exp": 1.5
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_2 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::EASE_IN_EASE_OUT",
+      "InterpTimeS": 1.5,
+      "exp": 1.25
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_3 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::EASE_IN_EASE_OUT",
+      "InterpTimeS": 2.5,
+      "exp": 3.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 7.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 7.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 4.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 7.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 20.0
+    }
+  }
+}
+--- export: UObject / BHDampingRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHDampingRotaryMovementControlAssistBody",
+  "Name": "BHDampingRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDampingRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "Interpolation": {
+      "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+      "InterpSpeed": 7.0
+    }
+  }
+}
+--- export: UObject / BHHasPilotRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHHasPilotRotaryMovementControlAssistCondition",
+  "Name": "BHHasPilotRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHHasPilotRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": 1.0,
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "InfluenceProperties": {
+      "InInterpolation": {
+        "InterpTimeS": 1.0,
+        "exp": 2.0
+      },
+      "OutInterpolation": {
+        "InterpTimeS": 1.5,
+        "exp": 1.5
+      }
+    }
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": 1.0,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_3 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": 1.0,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_4 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": -1.0,
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_5 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_5",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": 1.0,
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Collective pressed"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_3 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Threshold": 1.0,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_4 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_5 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Cyclic Y released"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": 1.0,
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Collective pressed and up"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Cyclic Y released"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_3 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Collective",
+    "Threshold": -1.0,
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Collective pressed and down"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_4 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicY",
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Raw input at zero"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "Threshold": 1.0,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_4 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::CyclicX",
+    "bAbsolute": false,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal",
+    "Label": "Raw input at zero"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateControlAssistCondition_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_1 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHInputStateRotaryMovementControlAssistCondition_2 ---
+{
+  "Type": "BHInputStateRotaryMovementControlAssistCondition",
+  "Name": "BHInputStateRotaryMovementControlAssistCondition_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputStateRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlType": "EBHRotaryMovementControlType::Pedals",
+    "Threshold": 1.0,
+    "Operator": "EBHRotaryMovementControlAssistConditionOperator::Equal"
+  }
+}
+--- export: UObject / BHIsOnGroundControlAssistCondition_0 ---
+{
+  "Type": "BHIsOnGroundRotaryMovementControlAssistCondition",
+  "Name": "BHIsOnGroundControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHIsOnGroundRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "InfluenceProperties": {
+      "InInterpolation": {
+        "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+        "InterpSpeed": 0.2
+      }
+    }
+  }
+}
+--- export: UObject / BHIsOnGroundControlAssistCondition_0 ---
+{
+  "Type": "BHIsOnGroundRotaryMovementControlAssistCondition",
+  "Name": "BHIsOnGroundControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHIsOnGroundRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  }
+}
+--- export: UObject / BHIsOnGroundControlAssistCondition_0 ---
+{
+  "Type": "BHIsOnGroundRotaryMovementControlAssistCondition",
+  "Name": "BHIsOnGroundControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHIsOnGroundRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  }
+}
+--- export: UObject / BHIsOnGroundControlAssistCondition_0 ---
+{
+  "Type": "BHIsOnGroundRotaryMovementControlAssistCondition",
+  "Name": "BHIsOnGroundControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHIsOnGroundRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "PID": {
+      "ProportionalGain": 0.055555556,
+      "DerivativeGain": 0.055555556
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "PID": {
+      "ProportionalGain": 0.055555556,
+      "DerivativeGain": 0.055555556
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_2 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "TargetParams": {
+      "Value": 36.0
+    },
+    "PID": {
+      "ProportionalGain": 0.11111111,
+      "DerivativeGain": 0.16666667
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_3 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "TargetParams": {
+      "Value": -31.32
+    },
+    "PID": {
+      "ProportionalGain": 0.16666667,
+      "DerivativeGain": 0.11111111
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Y"
+    },
+    "PID": {
+      "ProportionalGain": 0.012217305,
+      "DerivativeGain": 0.030543262
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Y"
+    },
+    "PID": {
+      "ProportionalGain": 0.55850536,
+      "DerivativeGain": 0.13962634
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_2 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "OutputParams": {
+      "Type": "EPIDRotaryMovementControlAssistOutputType::Value"
+    },
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::SkidAngle_Deg",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Y"
+    },
+    "PID": {
+      "DerivativeGain": 0.0076794485
+    },
+    "bNegateOutputFixedAfterSkidAngleFlip": true
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_3 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Y"
+    },
+    "PID": {
+      "ProportionalGain": 0.008726646,
+      "DerivativeGain": 0.02443461
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_4 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "OutputParams": {
+      "Type": "EPIDRotaryMovementControlAssistOutputType::Value",
+      "MaxPIDOutput": 0.035,
+      "NegateCondition": "EBHNegatePIDRotaryMovementControlAssistOutputCondition::Always"
+    },
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::WorldRotation_Deg",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Y"
+    },
+    "PID": {
+      "ProportionalGain": 0.004363323,
+      "DerivativeGain": 0.0034906585
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "OutputParams": {
+      "NegateCondition": "EBHNegatePIDRotaryMovementControlAssistOutputCondition::Always"
+    },
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::X"
+    },
+    "PID": {
+      "ProportionalGain": 0.20943952,
+      "IntegralGain": 0.0017453292,
+      "DerivativeGain": 0.08726646
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "OutputParams": {
+      "NegateCondition": "EBHNegatePIDRotaryMovementControlAssistOutputCondition::Always"
+    },
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::X"
+    },
+    "PID": {
+      "ProportionalGain": 0.08726646,
+      "DerivativeGain": 0.05235988
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_4 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_4",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "OutputParams": {
+      "Type": "EPIDRotaryMovementControlAssistOutputType::Value",
+      "MaxPIDOutput": 0.035
+    },
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::WorldRotation_Deg",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::X"
+    },
+    "PID": {
+      "ProportionalGain": 0.004363323,
+      "DerivativeGain": 0.0034906585
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "PID": {
+      "ProportionalGain": 0.2,
+      "IntegralGain": 0.05,
+      "DerivativeGain": 0.10471976,
+      "IntegralAntiWindUp": {
+        "AggregatedErrorLimit": 0.5,
+        "ErrorLimit": 0.3
+      }
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_1 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "PID": {
+      "ProportionalGain": 0.10471976,
+      "DerivativeGain": 0.10471976
+    }
+  }
+}
+--- export: UObject / BHPIDRotaryMovementControlAssistBody_2 ---
+{
+  "Type": "BHPIDRotaryMovementControlAssistBody",
+  "Name": "BHPIDRotaryMovementControlAssistBody_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPIDRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "ControlValueParams": {
+      "Type": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+      "Component": "EBHRotaryMovementControlAssistControlValueComponent::Z"
+    },
+    "PID": {
+      "ProportionalGain": 0.05235988,
+      "DerivativeGain": 0.05235988
+    }
+  }
+}
+--- export: UDataAsset / DA_ROT_02_FlightCharacteristics ---
+{
+  "Type": "BHRotaryFlightDataAsset",
+  "Name": "DA_ROT_02_FlightCharacteristics",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryFlightDataAsset'",
+  "Package": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics",
+  "Properties": {
+    "RotorSettings": {
+      "MaxLiftCoeff": 1.8,
+      "BladeAngleOfAttackForStall_deg": 40.0,
+      "RotorRadius": 600.0,
+      "LiftForcesAppliedAtRadius": 1000.0,
+      "LowAltitude_m": 40.0,
+      "HighAltitude_m": 200.0,
+      "MaxAltitude_m": 280.0,
+      "HighAltitudeRotorEfficiency": 0.65,
+      "MaxAltitudeRotorEfficiency": 0.4,
+      "_aaabgcipakomhengpaeid": 0.3,
+      "TailRotorNeutralTorque": 600000000.0
+    },
+    "PitchControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+    },
+    "PitchControlForce": {
+      "Type": "ERotationalControlType::RotorBladeAngle",
+      "MaxTorque": 4.8E+09,
+      "MaxRotorBladeAngleDelta": 1.3
+    },
+    "RollControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+    },
+    "RollControlForce": {
+      "Type": "ERotationalControlType::RotorBladeAngle",
+      "MaxTorque": 1.5E+09,
+      "MaxRotorBladeAngleDelta": 0.42
+    },
+    "YawControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+    },
+    "YawControlForce": {
+      "MaxTorque": 330000100.0
+    },
+    "CollectiveControl": {
+      "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+      "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+    },
+    "CollectiveControlForce": {
+      "Type": "ELinearControlType::RotorBladeAngle",
+      "MinForce": 400000.0,
+      "MaxForce": 2800000.0,
+      "MinRotorBladeAngleDelta": -0.5,
+      "MaxRotorBladeAngleDelta": 10.0
+    },
+    "bEnableMaxAngularVelocity": false,
+    "MaxAngularVelocityDegPerS": 83.0,
+    "PitchHoverAssistanceCurve": {
+      "ObjectName": "CurveFloat'CF_PitchHoverAssistance'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/CF_PitchHoverAssistance.0"
+    },
+    "DefaultFMAssistanceLevel": {
+      "bNeutralLift": true,
+      "bRateLock": true
+    },
+    "TranslationalLiftPercent": 20.0,
+    "TranslationalLiftMinAtHorizSpeed_mps": 24.0,
+    "TranslationalLiftMaxAtHorizSpeed_mps": 34.0,
+    "GroundEffectFalloff_m": 12.0,
+    "RearRotorEfficiencyCurve": {
+      "ObjectName": "CurveFloat'Havoc_RearRotor_EfficacyCurve'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/Havoc_RearRotor_EfficacyCurve.0"
+    },
+    "GForceControlFalloffCurve": {
+      "ObjectName": "CurveVector'CF_GForceControlFalloff_AprilKom'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/Data/Curves/CF_GForceControlFalloff_AprilKom.0"
+    },
+    "CyclicAttenuationFactor": 0.45
+  }
+}
+--- export: UObject / CollectiveControl_3 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "CollectiveControl_3",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_02_FlightCharacteristics'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.73"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::EnvelopeLimits",
+        "Label": "Limit climb rate",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.0"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateRotaryMovementControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.28"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHPIDRotaryMovementControlAssistBody_2'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.60"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::EnvelopeLimits",
+        "Label": "Limit sink rate",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.1"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateRotaryMovementControlAssistCondition_3'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.29"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHPIDRotaryMovementControlAssistBody_3'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.61"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Reset collective on ground when engaged",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHWasOnGroundAtStartRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHWasOnGroundAtStartRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.86"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateRotaryMovementControlAssistCondition_5'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.31"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHDampingRotaryMovementControlAssistBody_3'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.15"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen pressed inputs - up",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.26"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.12"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen pressed inputs - down",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateRotaryMovementControlAssistCondition_4'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.30"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHDampingRotaryMovementControlAssistBody_2'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.14"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Set to -1 on ground",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.23"
+          },
+          {
+            "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHIsOnGroundControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.54"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.78"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::AutoHover",
+        "Label": "Stabilize after input released",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHStabilizedAfterInputReleasedControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHStabilizeAfterInputReleasedControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.82"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.24"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.58"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::AutoHover",
+        "Label": "Hover assist",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.25"
+          },
+          {
+            "ObjectName": "BHHasPilotRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHHasPilotRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.22"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHPIDRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.59"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen released inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHInputStateRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.27"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:CollectiveControl_3.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.13"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / PitchControl_0 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "PitchControl_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_02_FlightCharacteristics'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.73"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen pressed inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateControlAssistCondition_3'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.34"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.16"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Set to 0 on ground",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHIsOnGroundControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.55"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.32"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.79"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Stabilize after input released",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHStabilizedAfterInputReleasedControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHStabilizeAfterInputReleasedControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.83"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.33"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHPIDRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.63"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Level at low speeds",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateRotaryMovementControlAssistCondition_4'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.41"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.2"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHPIDRotaryMovementControlAssistBody_4'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.66"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Stabilize released pitch when collective up",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.37"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.38"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.3"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.62"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Stabilize released pitch when collective down",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateRotaryMovementControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.39"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateRotaryMovementControlAssistCondition_3'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.40"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHControlValueSatisfiesRotaryMovementControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.4"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHPIDRotaryMovementControlAssistBody_3'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.65"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::TurnCoordination",
+        "Label": "Snap to 0 skid pitch",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateControlAssistCondition_5'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.36"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHControlValueSatisfiesRotaryMovementControlAssistCondition_3'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.5"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHControlValueSatisfiesRotaryMovementControlAssistCondition_4'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.6"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHPIDRotaryMovementControlAssistBody_2'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.64"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen released inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHInputStateControlAssistCondition_4'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.35"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:PitchControl_0.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.17"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / RollControl_1 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "RollControl_1",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_02_FlightCharacteristics'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.73"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen pressed inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHInputStateRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.45"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:RollControl_1.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.19"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Set to 0 on ground",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHIsOnGroundControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.56"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHInputStateControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.42"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:RollControl_1.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.80"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Stabilize after input released",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHStabilizedAfterInputReleasedControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHStabilizeAfterInputReleasedControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.84"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHInputStateControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.43"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:RollControl_1.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.67"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Level at low speeds",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHInputStateRotaryMovementControlAssistCondition_4'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.47"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.7"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:RollControl_1.BHPIDRotaryMovementControlAssistBody_4'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.69"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Prevent drag torque overshoot",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.8"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHInputStateControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.44"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:RollControl_1.BHPIDRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.68"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:RollControl_1.BHInputStateRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.46"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:RollControl_1.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.18"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / YawControl_2 ---
+{
+  "Type": "BHRotaryMovementControl",
+  "Name": "YawControl_2",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHRotaryMovementControl'",
+  "Outer": {
+    "ObjectName": "BHRotaryFlightDataAsset'DA_ROT_02_FlightCharacteristics'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.73"
+  },
+  "Properties": {
+    "Assists": [
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen pressed inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHInputStateRotaryMovementControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.53"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:YawControl_2.BHDampingRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.21"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Set to 0 on ground",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHIsOnGroundRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHIsOnGroundControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.57"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHInputStateControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.48"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHSetToValueRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:YawControl_2.BHSetRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.81"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Stability",
+        "Label": "Stabilize after input released",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHStabilizedAfterInputReleasedControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHStabilizeAfterInputReleasedControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.85"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHInputStateControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.49"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:YawControl_2.BHPIDRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.70"
+        }
+      },
+      {
+        "bEnabled": false,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Prevent drag torque overshoot",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHControlValueSatisfiesRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.9"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHInputStateControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.50"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:YawControl_2.BHPIDRotaryMovementControlAssistBody_1'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.71"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen angular velocity near 0 yaw",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHControlValueSatisfiesRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.10"
+          },
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHInputStateRotaryMovementControlAssistCondition_0'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.51"
+          },
+          {
+            "ObjectName": "BHControlValueSatisfiesRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHControlValueSatisfiesRotaryMovementControlAssistCondition_2'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.11"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHPIDRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:YawControl_2.BHPIDRotaryMovementControlAssistBody_2'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.72"
+        }
+      },
+      {
+        "bEnabled": true,
+        "Category": "EBHHeliAssistCategory::Core",
+        "Label": "Dampen inputs",
+        "OutputMode": "EBHRotaryMovementControlAssistOutputMode::Mixed",
+        "Conditions": [
+          {
+            "ObjectName": "BHInputStateRotaryMovementControlAssistCondition'DA_ROT_02_FlightCharacteristics:YawControl_2.BHInputStateRotaryMovementControlAssistCondition_1'",
+            "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.52"
+          }
+        ],
+        "Body": {
+          "ObjectName": "BHDampingRotaryMovementControlAssistBody'DA_ROT_02_FlightCharacteristics:YawControl_2.BHDampingRotaryMovementControlAssistBody_0'",
+          "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.20"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / BHSetRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHSetToValueRotaryMovementControlAssistBody",
+  "Name": "BHSetRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSetToValueRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "Value": -1.0
+  }
+}
+--- export: UObject / BHSetRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHSetToValueRotaryMovementControlAssistBody",
+  "Name": "BHSetRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSetToValueRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  }
+}
+--- export: UObject / BHSetRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHSetToValueRotaryMovementControlAssistBody",
+  "Name": "BHSetRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSetToValueRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  }
+}
+--- export: UObject / BHSetRotaryMovementControlAssistBody_0 ---
+{
+  "Type": "BHSetToValueRotaryMovementControlAssistBody",
+  "Name": "BHSetRotaryMovementControlAssistBody_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSetToValueRotaryMovementControlAssistBody'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  }
+}
+--- export: UObject / BHStabilizeAfterInputReleasedControlAssistCondition_0 ---
+{
+  "Type": "BHStabilizedAfterInputReleasedControlAssistCondition",
+  "Name": "BHStabilizeAfterInputReleasedControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHStabilizedAfterInputReleasedControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  },
+  "Properties": {
+    "StabilityControlValueType": "EBHRotaryMovementControlAssistControlValueType::WorldVelocity_KmPerH",
+    "StabilityControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "StabilityThreshold": 0.00036,
+    "InfluenceProperties": {
+      "InInterpolation": {
+        "InterpTimeS": 1.5,
+        "exp": 1.5
+      }
+    }
+  }
+}
+--- export: UObject / BHStabilizeAfterInputReleasedControlAssistCondition_0 ---
+{
+  "Type": "BHStabilizedAfterInputReleasedControlAssistCondition",
+  "Name": "BHStabilizeAfterInputReleasedControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHStabilizedAfterInputReleasedControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:PitchControl_0'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.75"
+  },
+  "Properties": {
+    "StabilityControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "StabilityControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Y",
+    "StabilityThreshold": 0.57295775,
+    "TimeThresholdS": 0.06,
+    "InfluenceProperties": {
+      "OutInterpolation": {
+        "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+        "InterpSpeed": 3.0
+      }
+    }
+  }
+}
+--- export: UObject / BHStabilizeAfterInputReleasedControlAssistCondition_0 ---
+{
+  "Type": "BHStabilizedAfterInputReleasedControlAssistCondition",
+  "Name": "BHStabilizeAfterInputReleasedControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHStabilizedAfterInputReleasedControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:RollControl_1'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.76"
+  },
+  "Properties": {
+    "StabilityControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "StabilityControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::X",
+    "StabilityThreshold": 2.864789
+  }
+}
+--- export: UObject / BHStabilizeAfterInputReleasedControlAssistCondition_0 ---
+{
+  "Type": "BHStabilizedAfterInputReleasedControlAssistCondition",
+  "Name": "BHStabilizeAfterInputReleasedControlAssistCondition_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHStabilizedAfterInputReleasedControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:YawControl_2'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.77"
+  },
+  "Properties": {
+    "StabilityControlValueType": "EBHRotaryMovementControlAssistControlValueType::LocalAngularVelocity_DegPerS",
+    "StabilityControlValueComponent": "EBHRotaryMovementControlAssistControlValueComponent::Z",
+    "StabilityThreshold": 0.28647888,
+    "InfluenceProperties": {
+      "InInterpolation": {
+        "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+        "InterpSpeed": 1.5
+      },
+      "OutInterpolation": {
+        "InterpolationMethod": "EBHControlAssistInterpolationMethod::INTERP_TO",
+        "InterpSpeed": 1.5
+      }
+    }
+  }
+}
+--- export: UObject / BHWasOnGroundAtStartRotaryMovementControlAssistCondition_0 ---
+{
+  "Type": "BHWasOnGroundAtStartRotaryMovementControlAssistCondition",
+  "Name": "BHWasOnGroundAtStartRotaryMovementControlAssistCondition_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHWasOnGroundAtStartRotaryMovementControlAssistCondition'",
+  "Outer": {
+    "ObjectName": "BHRotaryMovementControl'DA_ROT_02_FlightCharacteristics:CollectiveControl_3'",
+    "ObjectPath": "/ROT_02/Data/DA_ROT_02_FlightCharacteristics.74"
+  }
+}

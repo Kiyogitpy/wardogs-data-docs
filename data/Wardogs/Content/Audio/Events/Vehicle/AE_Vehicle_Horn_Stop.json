@@ -1,0 +1,69 @@
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_Doppler_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Horn"
+    }
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn_Stop.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "HornOn",
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Horn"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Horn_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Horn_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Horn.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_Horn_Stop:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn_Stop.1"
+      },
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_Vehicle_Horn_Stop:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn_Stop.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,378 @@
+--- export: UDataAsset / DA_VendorPanel_Weapons ---
+{
+  "Type": "WDUIVendorPanelData_Weapons",
+  "Name": "DA_VendorPanel_Weapons",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_Weapons'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Weapons",
+  "Properties": {
+    "FocusedWeaponAttachmentsLayoutViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerLayout/Data/DA_ContainerLayout_Vendor_Attachments.DA_ContainerLayout_Vendor_Attachments",
+        "SubPathString": ""
+      }
+    },
+    "MagPackingViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIMagPackingLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/MagPacking/Data/DA_MagPacking.DA_MagPacking",
+        "SubPathString": ""
+      }
+    },
+    "CardSizesPerPanelState": [
+      {
+        "Key": "EWDUIWeaponPanelState::Default",
+        "Value": "EWDUIVendorPanelCardSize::Large"
+      },
+      {
+        "Key": "EWDUIWeaponPanelState::Attachments",
+        "Value": "EWDUIVendorPanelCardSize::Small"
+      },
+      {
+        "Key": "EWDUIWeaponPanelState::Ammo",
+        "Value": "EWDUIVendorPanelCardSize::Small"
+      }
+    ],
+    "FallbackSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot.DA_ContainerGrid_Vendor_Slot",
+        "SubPathString": ""
+      }
+    },
+    "FallbackContainerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Backpack.DA_ContainerGrid_Vendor_Backpack",
+        "SubPathString": ""
+      }
+    },
+    "FallbackContainerLayoutViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerLayout/Data/DA_ContainerLayout_Vendor_Overview_Storage.DA_ContainerLayout_Vendor_Overview_Storage",
+        "SubPathString": ""
+      }
+    },
+    "FallbackItemPreviewSlotViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemPreviewSlotViewModel",
+        "SubPathString": ""
+      }
+    },
+    "SlotViewModelParams": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Primary"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot_Weapon.DA_ContainerGrid_Vendor_Slot_Weapon",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Specialist"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot_Weapon.DA_ContainerGrid_Vendor_Slot_Weapon",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Sidearm"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContainerGridViewModel_Vendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ContainerGrid/Data/DA_ContainerGrid_Vendor_Slot_Weapon.DA_ContainerGrid_Vendor_Slot_Weapon",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "ItemPreviewSlotViewModelParams": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Attachment.Magazine"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIItemPreviewSlotViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/MagPacking/Data/DA_ItemPreviewSlot_Magazine.DA_ItemPreviewSlot_Magazine",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Attachment.Ammo"
+        },
+        "Value": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIItemPreviewSlotViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Widgets/MagPacking/Data/DA_ItemPreviewSlot_Ammo.DA_ItemPreviewSlot_Ammo",
+            "SubPathString": ""
+          }
+        }
+      }
+    ],
+    "bCheckForSubslotSupportWhenFilteringPurchases": true,
+    "bTryPurchaseEvenIfDesiredSlotIsUnavailable": true,
+    "DefaultActivatedSlot": {
+      "TagName": "Inventory.Slot.Primary"
+    },
+    "BackpackCapacityFormat": {
+      "CultureInvariantString": "CAP. {Amount}/{Capacity}"
+    },
+    "RemovedItemFromCartAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.RemoveItemFromCart"
+    },
+    "_aaabmmjaifjllmklafddn": {
+      "TagName": "Audio.Event.UI.Vendor.Rebuy"
+    },
+    "BackpackPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.PurchaseItem"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Custom.PurchaseItem"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Vendor.Backpacks",
+        "SourceString": "Backpack Required",
+        "LocalizedString": "Backpack Required"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.Vendor.Backpacks",
+        "SourceString": "No backpack currently equipped.",
+        "LocalizedString": "No backpack currently equipped."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Vendor.Backpacks",
+        "SourceString": "Choose a Backpack",
+        "LocalizedString": "Choose a Backpack"
+      },
+      "AdditionalData": {
+        "DataArray": [
+          {
+            "Category": {
+              "TagName": "Vendor.Category.Gear"
+            },
+            "Subcategory": {
+              "TagName": "Vendor.Category.Gear.Backpack"
+            }
+          }
+        ]
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Cancel",
+              "SourceString": "Cancel",
+              "LocalizedString": "Cancel"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "PurchasableEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPurchasableItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Purchasable.DA_ItemCard_Vendor_Purchasable",
+        "SubPathString": ""
+      }
+    },
+    "PreviousSubcategoryActionTag": {
+      "TagName": "UI.Action.Feature.Vendor.Filter.Previous"
+    },
+    "NextSubcategoryActionTag": {
+      "TagName": "UI.Action.Feature.Vendor.Filter.Next"
+    },
+    "ShowAllSubcategoryForCategories": [
+      "Vendor.Category.Attachment",
+      "Vendor.Category.Ammo",
+      "Vendor.Category.Magazine"
+    ],
+    "SubcategorySorting": "EWDUISubcategorySortingMethod::Priority",
+    "SubcategoryPriority": [
+      {
+        "TagName": "Vendor.Category.Weapon.Type.AssaultRifle"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.SMG"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.Shotgun"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.LMG"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.MarksmanRifle"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.Sniper"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.Bow"
+      },
+      {
+        "TagName": "Vendor.Category.Blueprint"
+      },
+      {
+        "TagName": "Vendor.Category.Weapon.Type.Launcher"
+      },
+      {
+        "TagName": "Vendor.Category.Utility.Type.Medical"
+      },
+      {
+        "TagName": "Vendor.Category.Utility.Type.Building"
+      },
+      {
+        "TagName": "Vendor.Category.Utility.Type.Recon"
+      },
+      {
+        "TagName": "Vendor.Category.Utility.Type.Vehicle"
+      },
+      {
+        "TagName": "Vendor.Category.All"
+      },
+      {
+        "TagName": "Vendor.Category.Attachment.Grip.Vertical"
+      },
+      {
+        "TagName": "Vendor.Category.Attachment.Grip.Angled"
+      },
+      {
+        "TagName": "Vendor.Category.Attachment.Bipod"
+      }
+    ],
+    "PurchasableCardTypes": [
+      {
+        "Key": "EWDUIVendorPanelCardSize::Small",
+        "Value": {
+          "CategoriesForType": [
+            "Vendor.Category.Ammo",
+            "Vendor.Category.Attachment",
+            "Vendor.Category.Utility"
+          ],
+          "NumberOfVisibleCards": {
+            "X": 6,
+            "Y": 2
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVendorPanelCardSize::Medium",
+        "Value": {
+          "CategoriesForType": [
+            "Vendor.Category.Gear.Armor",
+            "Vendor.Category.Gear.Backpack",
+            "Vendor.Category.Gear.Headgear",
+            "Vendor.Category.Gear.Helmet",
+            "Vendor.Category.Gear.Traversal",
+            "Vendor.Category.Gear.Vest"
+          ],
+          "NumberOfVisibleCards": {
+            "X": 8,
+            "Y": 2
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVendorPanelCardSize::Large",
+        "Value": {
+          "CategoriesForType": [
+            "Vendor.Category.Weapon.Primary",
+            "Vendor.Category.Weapon.Secondary",
+            "Vendor.Category.Weapon.Sidearm"
+          ],
+          "NumberOfVisibleCards": {
+            "X": 3,
+            "Y": 2
+          }
+        }
+      }
+    ],
+    "DefaultCardSize": "EWDUIVendorPanelCardSize::Large",
+    "PageTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.Page",
+      "SourceString": "PG.{Page} //",
+      "LocalizedString": "PG.{Page} //"
+    },
+    "ItemCardGridPreviewHideItemTags": [
+      "Id.Item.308Win",
+      "Id.Item.338Nor",
+      "Id.Item.9mm",
+      "Id.Item.762x54mm",
+      "Id.Item.762x51mm",
+      "Id.Item.762mm",
+      "Id.Item.556mm",
+      "Id.Item.545mm",
+      "Id.Item.50Cal",
+      "Id.Item.50AE",
+      "Id.Item.45Colt",
+      "Id.Item.45ACP",
+      "Id.Item.84mm",
+      "Id.Item.Arrow",
+      "Id.Item.12g.7mmBuck",
+      "Id.Item.12g.RifledSlug"
+    ]
+  }
+}

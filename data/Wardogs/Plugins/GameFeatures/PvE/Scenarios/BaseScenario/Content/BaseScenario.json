@@ -1,0 +1,322 @@
+--- export: UObject / BHGameFeatureAction_RegisterMatchStates_0 ---
+{
+  "Type": "BHGameFeatureAction_RegisterMatchStates",
+  "Name": "BHGameFeatureAction_RegisterMatchStates_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_RegisterMatchStates'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'BaseScenario'",
+    "ObjectPath": "/BaseScenario/BaseScenario.3"
+  },
+  "Properties": {
+    "MatchStates": [
+      {
+        "AssetPathName": "/Script/BaseScenarioRuntime.WDMatchState_PreMatch_Scenario",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/BaseScenarioRuntime.WDMatchState_Playing_Scenario",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/BaseScenarioRuntime.WDMatchState_PostMatch_Scenario",
+        "SubPathString": ""
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'BaseScenario'",
+    "ObjectPath": "/BaseScenario/BaseScenario.3"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameMode",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/BaseScenarioRuntime.WDScenarioDefaultPlayerSpawnManagerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SDQuestSystem.SDQuestObjectiveDataProviderComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Game/GameMechanics/Player/PlayerCharacter/PC_WDPlayerController.PC_WDPlayerController_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SDQuestSystem.SDQuestObjectiveComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'BaseScenario'",
+    "ObjectPath": "/BaseScenario/BaseScenario.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "UISceneData_Match",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/BaseScenario/UI/DT_SceneData_DefaultPvEScenario.DT_SceneData_DefaultPvEScenario",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BaseScenario/UI/Trackers/DT_TrackerData_Map_Scenario.DT_TrackerData_Map_Scenario",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Minimap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BaseScenario/UI/Trackers/DT_TrackerData_Minimap_Scenario.DT_TrackerData_Minimap_Scenario",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Spatial",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/BaseScenario/UI/Trackers/DT_TrackerData_Spatial_Scenario.DT_TrackerData_Spatial_Scenario",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / BaseScenario ---
+{
+  "Type": "GameFeatureData",
+  "Name": "BaseScenario",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/BaseScenario/BaseScenario",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'BaseScenario:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/BaseScenario/BaseScenario.1"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_RegisterMatchStates'BaseScenario:BHGameFeatureAction_RegisterMatchStates_0'",
+        "ObjectPath": "/BaseScenario/BaseScenario.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'BaseScenario:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/BaseScenario/BaseScenario.2"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'BaseScenario:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/BaseScenario/BaseScenario.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'BaseScenario'",
+    "ObjectPath": "/BaseScenario/BaseScenario.3"
+  },
+  "Properties": {
+    "TaggedElements": [
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.GameFeature.Scenario.QuestLog"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/BaseScenario/UI/QuestLog/W_HUDScenarioQuestLog.W_HUDScenarioQuestLog_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/BaseScenarioRuntime.WDUIHUDQuestLogViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/BaseScenario/UI/QuestLog/Data/DA_QuestLog.DA_QuestLog",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkejhohfkdpglkgkep": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.HUD.Element.InventorySpaceIndicator"
+        },
+        "Value": {
+          "WidgetClass": {
+            "AssetPathName": "/BaseScenario/UI/W_HUDSubtitleWidget.W_HUDSubtitleWidget_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/BaseScenarioRuntime.WDUIScenarioSubtitleViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            }
+          },
+          "_aaabkejhohfkdpglkgkep": false
+        }
+      }
+    ],
+    "PersistentWidgets": [
+      {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      }
+    ],
+    "AddWidgetElementsInstances": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'BaseScenario:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_31'",
+        "ObjectPath": "/BaseScenario/BaseScenario.5"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'BaseScenario:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_32'",
+        "ObjectPath": "/BaseScenario/BaseScenario.6"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'BaseScenario:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_33'",
+        "ObjectPath": "/BaseScenario/BaseScenario.7"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'BaseScenario:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_34'",
+        "ObjectPath": "/BaseScenario/BaseScenario.8"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_31 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_31",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'BaseScenario:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/BaseScenario/BaseScenario.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_32 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_32",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'BaseScenario:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/BaseScenario/BaseScenario.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_33 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_33",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'BaseScenario:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/BaseScenario/BaseScenario.4"
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_Instance_34 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements_Instance",
+  "Name": "WDGameFeatureAction_AddWidgetElements_Instance_34",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
+  "Outer": {
+    "ObjectName": "WDGameFeatureAction_AddWidgetElements'BaseScenario:WDGameFeatureAction_AddWidgetElements_0'",
+    "ObjectPath": "/BaseScenario/BaseScenario.4"
+  }
+}

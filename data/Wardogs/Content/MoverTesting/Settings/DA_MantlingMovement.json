@@ -1,0 +1,54 @@
+--- export: UDataAsset / DA_MantlingMovement ---
+{
+  "Type": "BHMantlingData",
+  "Name": "DA_MantlingMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHMantlingData'",
+  "Package": "/Game/MoverTesting/Settings/DA_MantlingMovement",
+  "Properties": {
+    "MantleDepthCurve": {
+      "ObjectName": "CurveFloat'CRV_Mantling_TransitionDepth'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Mantling_TransitionDepth.0"
+    },
+    "MaxAllowedWallAngle": 60.0,
+    "AllowedScaleOverDirectionMask": 11,
+    "MaxHeightAboveLedgeToScaleOver": 55.0,
+    "MaxWallWidth": 30.0,
+    "ScaleOverTransitionWeightMultiplierCurve": {
+      "ObjectName": "CurveVector'CRV_Mantling_ScaleOver_TransitionWeight'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Mantling_ScaleOver_TransitionWeight.0"
+    },
+    "ScaleOverTransitionOffsetCurve": {
+      "ObjectName": "CurveVector'CRV_Mantling_ScaleOver_TransitionOffset'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Mantling_ScaleOver_TransitionOffset.0"
+    },
+    "ScaleOverAnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Mantling_ThirdPerson_RM_Off'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Mantling_ThirdPerson_RM_Off.0"
+    },
+    "BaseScaleOverSpeed": 200.0,
+    "FindWallTraceDistance": 50.0,
+    "MaxTargetFloorHeight": 35.0,
+    "AllowedTraversalDirectionMask": 11,
+    "ClampedTraversalDirectionMask": 199,
+    "bUseForwardOnlyHeight": true,
+    "bUseForwardOnlyLeftAndRight": false,
+    "ForwardOnlyHeight": 127.5,
+    "TransitionWeightMultiplierCurve": {
+      "ObjectName": "CurveVector'CRV_Mantling_TransitionWeight'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Mantling_TransitionWeight.0"
+    },
+    "TraversalHeightSpeedMultiplierCurve": {
+      "ObjectName": "CurveFloat'CRV_Mantling_HeightSpeedMultiplier'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Traversing/CRV_Mantling_HeightSpeedMultiplier.0"
+    },
+    "AnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Mantling_ThirdPerson'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Mantling_ThirdPerson.0"
+    },
+    "RootMotionAnimMontageChooserTable": {
+      "ObjectName": "ChooserTable'CHT_Traversal_Mantling_ThirdPerson_RM_On'",
+      "ObjectPath": "/Game/Animation/Blueprints/Character/Chooser/CHT_Traversal_Mantling_ThirdPerson_RM_On.0"
+    }
+  }
+}

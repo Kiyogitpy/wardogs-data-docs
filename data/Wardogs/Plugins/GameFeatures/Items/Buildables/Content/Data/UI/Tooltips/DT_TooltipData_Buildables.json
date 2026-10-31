@@ -1,0 +1,62 @@
+--- export: UDataTable / DT_TooltipData_Buildables ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TooltipData_Buildables",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/UI/Tooltips/DT_TooltipData_Buildables",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITooltipDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Tooltip.Data.FOB": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/UI/W_Fob_Tooltip.W_Fob_Tooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIFobTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_Tooltip_FOB.DA_Tooltip_FOB",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.FOB"
+      }
+    }
+  }
+}

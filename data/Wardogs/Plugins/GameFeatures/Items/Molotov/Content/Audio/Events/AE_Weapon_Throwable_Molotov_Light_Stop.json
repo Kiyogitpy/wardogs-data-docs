@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Throwable_Molotov_Light_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Throwable_Molotov_Light_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Molotov.Light.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Weapon_Throwable_Molotov_Light_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Light_Stop'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

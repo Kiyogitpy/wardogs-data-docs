@@ -1,0 +1,92 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Flares'",
+    "ObjectPath": "/Flares/Data/ID_Flares.3"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Flares'",
+    "ObjectPath": "/Flares/Data/ID_Flares.3"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Flares/Mesh/SM_Countermeasures_Flare.SM_Countermeasures_Flare",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Countermeasure_Flares'",
+        "ObjectPath": "/Flares/Material/MI_Countermeasure_Flares.0"
+      }
+    ],
+    "Scale": {
+      "X": 0.75,
+      "Y": 0.75,
+      "Z": 0.75
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Flares'",
+    "ObjectPath": "/Flares/Data/ID_Flares.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Flares ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Flares",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Flares/Data/ID_Flares",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Flares"
+    },
+    "ItemContext": [
+      "Item.Resource.Ammo"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "DC9B2B1E4C06BA346B224D8FDD212BC6",
+      "SourceString": "Flares",
+      "LocalizedString": "Flares"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Flares:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Flares/Data/ID_Flares.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Flares:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Flares/Data/ID_Flares.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Flares:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Flares/Data/ID_Flares.1"
+      }
+    ]
+  }
+}

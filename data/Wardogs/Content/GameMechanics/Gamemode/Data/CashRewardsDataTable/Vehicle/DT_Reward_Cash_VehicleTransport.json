@@ -1,0 +1,88 @@
+--- export: UDataTable / DT_Reward_Cash_VehicleTransport ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Reward_Cash_VehicleTransport",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_VehicleTransport",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCustomRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Context.DefaultReward": {
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 20.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 1.0,
+      "OwnerModifier": 0.25,
+      "ModifierCZ": 1.1,
+      "ModifierHZ": 1.2,
+      "ModifierHZM": 1.3,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.DefaultReward"
+      }
+    },
+    "Meta.Progression.Context.Vehicle.SpawnedOn": {
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 100.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.Vehicle.SpawnedOn"
+      }
+    },
+    "Meta.Progression.Context.Vehicle.Transported": {
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 250.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.0,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.Vehicle.Transported"
+      }
+    }
+  }
+}

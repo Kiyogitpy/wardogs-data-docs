@@ -1,0 +1,69 @@
+--- export: UDataAsset / DA_Setting_General_BipodDeployMode ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_General_BipodDeployMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/General/DA_Setting_General_BipodDeployMode",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_General_BipodDeployMode:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_General_BipodDeployMode.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_General_BipodDeployMode'",
+    "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_General_BipodDeployMode.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDBipodDeployMode::Automatic",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Value.BipodDeployMode.Automatic",
+          "SourceString": "Automatic",
+          "LocalizedString": "Automatic"
+        }
+      },
+      {
+        "Key": "EWDBipodDeployMode::Manual",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Value.BipodDeployMode.Manual",
+          "SourceString": "Manual",
+          "LocalizedString": "Manual"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Value.BipodDeployMode.Automatic",
+          "SourceString": "Automatic",
+          "LocalizedString": "Automatic"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Value.BipodDeployMode.Manual",
+          "SourceString": "Manual",
+          "LocalizedString": "Manual"
+        }
+      }
+    ]
+  }
+}

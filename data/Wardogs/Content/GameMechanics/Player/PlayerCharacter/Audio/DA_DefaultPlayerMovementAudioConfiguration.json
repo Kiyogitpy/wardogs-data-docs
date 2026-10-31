@@ -1,0 +1,1307 @@
+--- export: UPrimaryDataAsset / DA_DefaultPlayerMovementAudioConfiguration ---
+{
+  "Type": "WDCharacterMovementEffectsComponentConfigurationDataAsset",
+  "Name": "DA_DefaultPlayerMovementAudioConfiguration",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterMovementEffectsComponentConfigurationDataAsset'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Audio/DA_DefaultPlayerMovementAudioConfiguration",
+  "Properties": {
+    "Stances": [
+      {
+        "Key": {
+          "TagName": "State.Player.Stance.Current.Standing"
+        },
+        "Value": {
+          "DefaultState": {
+            "TriggerDistance": 150.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Walking.Step"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "AdditionalStates": [
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Sprint"
+              },
+              "Value": {
+                "TriggerDistance": 200.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Sprint.Tactical"
+              },
+              "Value": {
+                "TriggerDistance": 190.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint.Tactical"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint.Tactical.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Aiming"
+              },
+              "Value": {
+                "TriggerDistance": 95.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Walking.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Custom.Swimming"
+              },
+              "Value": {
+                "TriggerDistance": 160.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Swimming"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Swimming.Splash"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": true,
+                "bTriggerEffectOnFirstMovement": true,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Custom.Ladder.Sliding"
+              },
+              "Value": {
+                "TriggerDistance": 0.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Ladder.Sliding"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "None"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Custom.Skydiving"
+              },
+              "Value": {
+                "TriggerDistance": 0.0,
+                "bLocalOnly": true,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Fall.Skydive"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "None"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": true,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Custom.Parachuting"
+              },
+              "Value": {
+                "TriggerDistance": 0.0,
+                "bLocalOnly": true,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Fall.Parachute"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "GameplayCue.Player.Item.UsePrimary.Parachute"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "None"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Stance.Current.Crouched"
+        },
+        "Value": {
+          "DefaultState": {
+            "TriggerDistance": 110.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "AdditionalStates": [
+            {
+              "Key": {
+                "TagName": "State.Player.Movement.Aiming"
+              },
+              "Value": {
+                "TriggerDistance": 65.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Stance.Current.Prone"
+        },
+        "Value": {
+          "DefaultState": {
+            "TriggerDistance": 50.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Prone"
+            },
+            "bResetDistanceTravelledOnEnter": true,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": true,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "AdditionalStates": []
+        }
+      }
+    ],
+    "JumpGameplayCueTag": {
+      "TagName": "GameplayCue.Player.Movement.Jump"
+    },
+    "LandingGameplayCueTags": [
+      {
+        "Key": {
+          "TagName": "Mover.Mode.Falling"
+        },
+        "Value": {
+          "GameplayCueTag": {
+            "TagName": "GameplayCue.Player.Movement.Land"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.Parachuting"
+        },
+        "Value": {
+          "GameplayCueTag": {
+            "TagName": "GameplayCue.Player.Movement.Parachute.Land"
+          }
+        }
+      }
+    ],
+    "StanceTransitionEffects": {
+      "StandToCrouch": {
+        "TagName": "Audio.Event.Player.Stance.StandToCrouch"
+      },
+      "StandToProne": {
+        "TagName": "Audio.Event.Player.Stance.StandToProne"
+      },
+      "CrouchToStand": {
+        "TagName": "Audio.Event.Player.Stance.CrouchToStand"
+      },
+      "CrouchToProne": {
+        "TagName": "Audio.Event.Player.Stance.CrouchToProne"
+      },
+      "ProneToStand": {
+        "TagName": "Audio.Event.Player.Stance.ProneToStand"
+      },
+      "ProneToCrouch": {
+        "TagName": "Audio.Event.Player.Stance.ProneToCrouch"
+      }
+    },
+    "MovementModeEffects": [
+      {
+        "Key": {
+          "TagName": "Mover.Mode.GroundMovement"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 162.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [
+              {
+                "TagName": "GameplayCue.Player.Movement.Jump"
+              }
+            ],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Walking.Step"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 6000.0
+          },
+          "Variants": [
+            {
+              "PlayerTags": [
+                "Action.Player.Crouch"
+              ],
+              "Effect": {
+                "TriggerDistance": 110.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Walking.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 3000.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.Prone"
+              ],
+              "Effect": {
+                "TriggerDistance": 50.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Prone"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": true,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 1500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.Sprint"
+              ],
+              "Effect": {
+                "TriggerDistance": 200.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 8000.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.TacSprint"
+              ],
+              "Effect": {
+                "TriggerDistance": 190.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint.Tactical"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Sprint.Tactical.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 8000.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Weapon.ADS"
+              ],
+              "Effect": {
+                "TriggerDistance": 145.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 5000.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.Crouch",
+                "Action.Weapon.ADS"
+              ],
+              "Effect": {
+                "TriggerDistance": 160.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 3500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Slow"
+              ],
+              "Effect": {
+                "TriggerDistance": 140.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Weapon.ADS",
+                "State.Player.Movement.SlowWalk.Slow"
+              ],
+              "Effect": {
+                "TriggerDistance": 140.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.Crouch",
+                "State.Player.Movement.SlowWalk.Slow"
+              ],
+              "Effect": {
+                "TriggerDistance": 95.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.Crouch",
+                "Action.Weapon.ADS",
+                "State.Player.Movement.SlowWalk.Slow"
+              ],
+              "Effect": {
+                "TriggerDistance": 150.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Moderate"
+              ],
+              "Effect": {
+                "TriggerDistance": 140.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Walking.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Moderate",
+                "Action.Weapon.ADS"
+              ],
+              "Effect": {
+                "TriggerDistance": 140.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Moderate",
+                "Action.Player.Crouch"
+              ],
+              "Effect": {
+                "TriggerDistance": 100.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Moderate",
+                "Action.Weapon.ADS",
+                "Action.Player.Crouch"
+              ],
+              "Effect": {
+                "TriggerDistance": 70.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Fast"
+              ],
+              "Effect": {
+                "TriggerDistance": 140.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Walking.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Fast",
+                "Action.Weapon.ADS"
+              ],
+              "Effect": {
+                "TriggerDistance": 145.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Fast",
+                "Action.Player.Crouch"
+              ],
+              "Effect": {
+                "TriggerDistance": 96.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.SlowWalk.Fast",
+                "Action.Player.Crouch",
+                "Action.Weapon.ADS"
+              ],
+              "Effect": {
+                "TriggerDistance": 75.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Crouch.Footstep"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.Swimming"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 385.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Swimming"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Swimming.Splash"
+            },
+            "bResetDistanceTravelledOnEnter": true,
+            "bResetDistanceTravelledOnExit": true,
+            "bTriggerEffectOnFirstMovement": true,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.Parachuting"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 0.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Fall.Parachute"
+            },
+            "EnterGameplayCue": {
+              "TagName": "GameplayCue.Player.Item.UsePrimary.Parachute"
+            },
+            "ExitGameplayCue": {
+              "TagName": "GameplayCue.Player.Item.UsePrimary.Parachute.Cut"
+            },
+            "EffectGameplayCue": {
+              "TagName": "None"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.Falling"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 0.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "None"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": [
+            {
+              "PlayerTags": [
+                "Action.Player.Skydiving"
+              ],
+              "Effect": {
+                "TriggerDistance": 0.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Fall.Skydive"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "None"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": true,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.LadderClimbing"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 0.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "None"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": [
+            {
+              "PlayerTags": [
+                "State.Player.Movement.Custom.Ladder.Sliding"
+              ],
+              "Effect": {
+                "TriggerDistance": 0.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Ladder.Sliding"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "None"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.Custom.Ladder",
+                "Action.Player.SlowLadderClimb"
+              ],
+              "Effect": {
+                "TriggerDistance": 68.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Ladder.Climbing.Slow"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": true,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "State.Player.Movement.Custom.Ladder"
+              ],
+              "Effect": {
+                "TriggerDistance": 68.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Ladder.Climbing"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": true,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.BipodMounting"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 0.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.BipodMounting"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "None"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.BodyDragging"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 162.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Walking.Step"
+            },
+            "bResetDistanceTravelledOnEnter": false,
+            "bResetDistanceTravelledOnExit": false,
+            "bTriggerEffectOnFirstMovement": false,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": [
+            {
+              "PlayerTags": [
+                "Action.Player.Crouch"
+              ],
+              "Effect": {
+                "TriggerDistance": 110.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Walking.Step"
+                },
+                "bResetDistanceTravelledOnEnter": false,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": false,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            },
+            {
+              "PlayerTags": [
+                "Action.Player.Prone"
+              ],
+              "Effect": {
+                "TriggerDistance": 50.0,
+                "bLocalOnly": false,
+                "_aaaaokedimdloijjfidjc": [],
+                "StateGameplayCue": {
+                  "TagName": "None"
+                },
+                "EnterGameplayCue": {
+                  "TagName": "None"
+                },
+                "ExitGameplayCue": {
+                  "TagName": "None"
+                },
+                "EffectGameplayCue": {
+                  "TagName": "GameplayCue.Player.Movement.Prone"
+                },
+                "bResetDistanceTravelledOnEnter": true,
+                "bResetDistanceTravelledOnExit": false,
+                "bTriggerEffectOnFirstMovement": true,
+                "bTriggerEffectDuringStanceTransitions": false,
+                "NoiseMaxRangeForAIHearing": 500.0
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.BodyDragee"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 0.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "GameplayCue.Player.Movement.Drag"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "None"
+            },
+            "bResetDistanceTravelledOnEnter": true,
+            "bResetDistanceTravelledOnExit": true,
+            "bTriggerEffectOnFirstMovement": true,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Mover.Mode.Ragdoll"
+        },
+        "Value": {
+          "Default": {
+            "TriggerDistance": 0.0,
+            "bLocalOnly": false,
+            "_aaaaokedimdloijjfidjc": [],
+            "StateGameplayCue": {
+              "TagName": "None"
+            },
+            "EnterGameplayCue": {
+              "TagName": "None"
+            },
+            "ExitGameplayCue": {
+              "TagName": "None"
+            },
+            "EffectGameplayCue": {
+              "TagName": "None"
+            },
+            "bResetDistanceTravelledOnEnter": true,
+            "bResetDistanceTravelledOnExit": true,
+            "bTriggerEffectOnFirstMovement": true,
+            "bTriggerEffectDuringStanceTransitions": false,
+            "NoiseMaxRangeForAIHearing": 500.0
+          },
+          "Variants": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+--- export: UObject / WDUIButtonActionPlatformSetWidgetIndex_0 ---
+{
+  "Type": "WDUIButtonActionPlatformSetWidgetIndex",
+  "Name": "WDUIButtonActionPlatformSetWidgetIndex_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonActionPlatformSetWidgetIndex'",
+  "Outer": {
+    "ObjectName": "WDUIPlatformMasteryProgressSceneData'DA_UI_PlatformMastery_ProgressSceneData'",
+    "ObjectPath": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressSceneData.2"
+  },
+  "Properties": {
+    "WidgetIndex": 0
+  }
+}
+--- export: UObject / WDUIButtonActionPlatformSetWidgetIndex_1 ---
+{
+  "Type": "WDUIButtonActionPlatformSetWidgetIndex",
+  "Name": "WDUIButtonActionPlatformSetWidgetIndex_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonActionPlatformSetWidgetIndex'",
+  "Outer": {
+    "ObjectName": "WDUIPlatformMasteryProgressSceneData'DA_UI_PlatformMastery_ProgressSceneData'",
+    "ObjectPath": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressSceneData.2"
+  },
+  "Properties": {
+    "WidgetIndex": 1
+  }
+}
+--- export: UDataAsset / DA_UI_PlatformMastery_ProgressSceneData ---
+{
+  "Type": "WDUIPlatformMasteryProgressSceneData",
+  "Name": "DA_UI_PlatformMastery_ProgressSceneData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPlatformMasteryProgressSceneData'",
+  "Package": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressSceneData",
+  "Properties": {
+    "Title": {
+      "CultureInvariantString": "{PLATFORMNAME} PLATFORM"
+    },
+    "MasteryProgressViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPlatformMasteryProgressViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressData.DA_UI_PlatformMastery_ProgressData",
+        "SubPathString": ""
+      }
+    },
+    "ChallengeEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPlatformChallengeEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "DefaultButtonsForType": [
+      {
+        "Tag": {
+          "TagName": "UI.Action.Meta.Mastery.Platform.Progression"
+        },
+        "OverrideButtonClass": null,
+        "Action": {
+          "ObjectName": "WDUIButtonActionPlatformSetWidgetIndex'DA_UI_PlatformMastery_ProgressSceneData:WDUIButtonActionPlatformSetWidgetIndex_0'",
+          "ObjectPath": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressSceneData.0"
+        },
+        "Text": {
+          "CultureInvariantString": "PROGRESSION"
+        },
+        "MinimumSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Icon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bDisabled": false,
+        "DisabledReason": {
+          "CultureInvariantString": null
+        }
+      },
+      {
+        "Tag": {
+          "TagName": "UI.Action.Meta.Mastery.Platform.Challenges"
+        },
+        "OverrideButtonClass": null,
+        "Action": {
+          "ObjectName": "WDUIButtonActionPlatformSetWidgetIndex'DA_UI_PlatformMastery_ProgressSceneData:WDUIButtonActionPlatformSetWidgetIndex_1'",
+          "ObjectPath": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressSceneData.1"
+        },
+        "Text": {
+          "CultureInvariantString": "CHALLENGES"
+        },
+        "MinimumSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Icon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bDisabled": false,
+        "DisabledReason": {
+          "CultureInvariantString": null
+        }
+      }
+    ]
+  }
+}

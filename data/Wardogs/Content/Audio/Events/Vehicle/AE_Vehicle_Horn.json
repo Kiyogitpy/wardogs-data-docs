@@ -1,0 +1,130 @@
+--- export: UObject / AEB_Doppler_C_0 ---
+{
+  "Type": "AEB_Doppler_C",
+  "Name": "AEB_Doppler_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Doppler.AEB_Doppler_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_Doppler_C'Default__AEB_Doppler_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Doppler.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Horn"
+    }
+  }
+}
+--- export: UObject / AEB_SetVehicleSoundParameters_Horn_C_0 ---
+{
+  "Type": "AEB_PlayVehicleHorn_C",
+  "Name": "AEB_SetVehicleSoundParameters_Horn_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleHorn.AEB_PlayVehicleHorn_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleHorn_C'Default__AEB_PlayVehicleHorn_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleHorn.0"
+  }
+}
+--- export: UObject / AEB_SetBooleanParameter_C_0 ---
+{
+  "Type": "AEB_SetBooleanParameter_C",
+  "Name": "AEB_SetBooleanParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetBooleanParameter.AEB_SetBooleanParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBooleanParameter_C'Default__AEB_SetBooleanParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetBooleanParameter.0"
+  },
+  "Properties": {
+    "In Name": "HornOn",
+    "In Bool": true,
+    "Delay": 0.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Horn"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Horn"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Horn ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Horn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Horn"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Horn:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.5"
+      },
+      {
+        "ObjectName": "AEB_SetBooleanParameter_C'AE_Vehicle_Horn:AEB_SetBooleanParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.2"
+      },
+      {
+        "ObjectName": "AEB_Doppler_C'AE_Vehicle_Horn:AEB_Doppler_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.0"
+      },
+      {
+        "ObjectName": "AEB_PlayVehicleHorn_C'AE_Vehicle_Horn:AEB_SetVehicleSoundParameters_Horn_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.1"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Horn:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Horn'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_Horn.4"
+  },
+  "Properties": {
+    "SocketName": "horn_Socket",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Horn"
+    }
+  }
+}

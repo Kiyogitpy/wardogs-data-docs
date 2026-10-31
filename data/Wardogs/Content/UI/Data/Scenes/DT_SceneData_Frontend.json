@@ -1,0 +1,1201 @@
+--- export: UDataTable / DT_SceneData_Frontend ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Frontend",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Scenes/DT_SceneData_Frontend",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Frontend.Logo": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [
+        {
+          "FallbackSceneTag": {
+            "TagName": "UI.Scene.Frontend.Photosensitivity"
+          }
+        }
+      ],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [
+        {}
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Upper",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Logo/W_LogoScene.W_LogoScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUILogoMovieViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Logo/Data/DA_LogoScene.DA_LogoScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Logo"
+      }
+    },
+    "UI.Scene.Frontend.Photosensitivity": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [
+        {
+          "FallbackSceneTag": {
+            "TagName": "UI.Scene.Frontend.Start"
+          }
+        }
+      ],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [
+        {}
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Upper",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Photosensitivity/W_PhotosensitivityScene.W_PhotosensitivityScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPhotosensitivityViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Photosensitivity/Data/DA_PhotosensitivityScene.DA_PhotosensitivityScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Photosensitivity"
+      }
+    },
+    "UI.Scene.Frontend.Start": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Upper",
+        "ZOrder": 1,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Start/W_StartScene.W_StartScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIStartViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Start/Data/DA_StartScene.DA_StartScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Start"
+      }
+    },
+    "UI.Scene.Frontend.InitialSettings": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [
+        {
+          "FallbackSceneTag": {
+            "TagName": "UI.Scene.Frontend.Home"
+          }
+        }
+      ],
+      "OpenSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_AccountBar_C'",
+            "ObjectPath": "/Game/UI/Features/AccountBar/W_AccountBar.77"
+          }
+        }
+      ],
+      "CloseSceneActions": [
+        {},
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_AccountBar_C'",
+            "ObjectPath": "/Game/UI/Features/AccountBar/W_AccountBar.77"
+          }
+        }
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/InitialSettings/W_InitialSettingsScene.W_InitialSettingsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIInitialSettingsViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/InitialSettings/Data/DA_InitialSettingsScene.DA_InitialSettingsScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.InitialSettings"
+      }
+    },
+    "UI.Scene.Frontend.Home": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "UI.SceneGroup.Frontend.TopBar"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Home/W_HomeScene.W_HomeScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIHomeViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Home/Data/DA_HomeScene.DA_HomeScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Home"
+      }
+    },
+    "UI.Scene.Frontend.Career": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "UI.SceneGroup.Frontend.TopBar"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Progression/W_Progression_Scene.W_Progression_Scene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIProgressionSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Progression/Data/DA_Progression_Scene.DA_Progression_Scene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Career"
+      }
+    },
+    "UI.Scene.Frontend.Customize": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "UI.SceneGroup.Frontend.TopBar"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Customize/W_CustomiseScene.W_CustomiseScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Customize/Data/DA_CustomizeScene.DA_CustomizeScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Customize"
+      }
+    },
+    "UI.Scene.Frontend.Collection": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Collection/W_CollectionScene.W_CollectionScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUICollectionViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Collection/Data/DA_CollectionScene.DA_CollectionScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Collection"
+      }
+    },
+    "UI.Scene.Frontend.GoldMarket": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/GoldMarket/W_GoldMarketScene.W_GoldMarketScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIGoldMarketViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/GoldMarket/Data/DA_GoldMarketScene.DA_GoldMarketScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.GoldMarket"
+      }
+    },
+    "UI.Scene.Frontend.Orientation": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Orientation/W_OrientationScene.W_OrientationScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIOrientationViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Orientation/Data/DA_OrientationScene.DA_OrientationScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Orientation"
+      }
+    },
+    "UI.Scene.Frontend.FindMatch": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/W_FindMatchScene.W_FindMatchScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIFindMatchViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Data/DA_FindMatchScene.DA_FindMatchScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.FindMatch"
+      }
+    },
+    "UI.Scene.Frontend.DevMenu": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/DevMenu/W_DevMenuScene.W_DevMenuScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDevMenuViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/DevMenu/Data/DA_DevMenuScene.DA_DevMenuScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.DevMenu"
+      }
+    },
+    "UI.Scene.Frontend.Wardog": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Wardog/W_WardogScene.W_WardogScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIWardogViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Wardog/Data/DA_WardogScene.DA_WardogScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Wardog"
+      }
+    },
+    "UI.Scene.Frontend.Blackmarket": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "UI.SceneGroup.Frontend.TopBar"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/W_BlackMarketScene.W_BlackMarketScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIBlackMarketViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Data/DA_BlackMarketScene.DA_BlackMarketScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": true,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Blackmarket"
+      }
+    },
+    "UI.Scene.Frontend.Blackmarket.Missions": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Missions/W_MissionsScene.W_MissionsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Missions/Data/DA_MissionsScene.DA_MissionsScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Blackmarket.Missions"
+      }
+    },
+    "UI.Scene.Frontend.Blackmarket.Unlocks": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Unlocks/W_UnlocksScene.W_UnlocksScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIUnlocksSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Unlocks/Data/DA_UnlocksScene.DA_UnlocksScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": true,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Blackmarket.Unlocks"
+      }
+    },
+    "UI.Scene.Frontend.Blackmarket.Investments": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Investments/W_InvestmentsScene.W_InvestmentsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIInvestmentsViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Investments/Data/DA_InvestmentsScene.DA_InvestmentsScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": true,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Blackmarket.Investments"
+      }
+    },
+    "UI.Scene.Frontend.Wardog.Customize": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Customize/W_CustomizeScene.W_CustomizeScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUICustomizeViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Customize/Data/DA_CustomizeScene.DA_CustomizeScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Wardog.Customize"
+      }
+    },
+    "UI.Scene.Frontend.Vault": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Vault/W_VaultScene.W_VaultScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVaultViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Vault/Data/DA_VaultSceneData.DA_VaultSceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Vault"
+      }
+    },
+    "UI.Scene.Frontend.Wardog.Mastery.Platforms": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Platforms/Widgets/W_PlatformMastery_Scene.W_PlatformMastery_Scene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPlatformMasterySceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_SceneData.DA_UI_PlatformMastery_SceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Wardog.Mastery.Platforms"
+      }
+    },
+    "UI.Scene.Frontend.Wardog.Mastery.PlatformProgress": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Platforms/Widgets/W_PlatformMastery_ProgressScene.W_PlatformMastery_ProgressScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPlatformMasteryProgressSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_ProgressSceneData.DA_UI_PlatformMastery_ProgressSceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Wardog.Mastery.PlatformProgress"
+      }
+    },
+    "UI.Scene.Frontend.Wardog.Mastery.Roles": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Roles/Widgets/W_RoleMastery_Scene.W_RoleMastery_Scene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Roles/Data/DA_UI_RoleMastery_SceneData.DA_UI_RoleMastery_SceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Wardog.Mastery.Roles"
+      }
+    },
+    "UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Roles/Widgets/W_RoleSkillTree_Scene.W_RoleSkillTree_Scene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIRoleSkillTreeSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Mastery/Roles/Data/DA_UI_RoleSkillTree_SceneData.DA_UI_RoleSkillTree_SceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree"
+      }
+    },
+    "UI.Scene.Frontend.LearnToPlay": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/W_LearnToPlayScene.W_LearnToPlayScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUILearnToPlayViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Data/DA_LearnToPlay.DA_LearnToPlay",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.LearnToPlay"
+      }
+    },
+    "UI.Scene.Frontend.Tutorials": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Widgets/W_TutorialsScene.W_TutorialsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITutorialsViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Data/ContentSceneData/DA_TutorialsContent.DA_TutorialsContent",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Tutorials"
+      }
+    },
+    "UI.Scene.Frontend.ContextDrawer": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Upper",
+        "ZOrder": 3,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/ContextDrawer/W_ContextDrawer.W_ContextDrawer_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContextDrawerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/ContextDrawer/Data/DA_Frontend_ContextDrawer.DA_Frontend_ContextDrawer",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": true,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": true,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.ContextDrawer"
+      }
+    },
+    "UI.Scene.Frontend.Mailbox": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Mailbox/W_MailboxScene.W_MailboxScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Mailbox/Data/DA_MailboxData.DA_MailboxData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Mailbox"
+      }
+    },
+    "UI.Scene.Frontend.DeploymentSelect": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/DeploymentSelect/W_DeploymentSelectScene.W_DeploymentSelectScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDeploymentSelectViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/DeploymentSelect/Data/DA_DeploymentSelectScene.DA_DeploymentSelectScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.DeploymentSelect"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_XPProgression_RevealRoleProgression ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_XPProgression_RevealRoleProgression",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_RevealRoleProgression",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.XPProgression.RevealRoleProgression"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_XPProgression_RevealRoleProgression:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_RevealRoleProgression.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_XPProgression_RevealRoleProgression'",
+    "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_RevealRoleProgression.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_RoleCard'",
+      "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_RoleCard.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.XPProgression.RevealRoleProgression"
+    }
+  }
+}

@@ -1,0 +1,151 @@
+--- export: UDataAsset / WE_WHL_02_RingTurret ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_WHL_02_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/WHL_02_RingTurret/Weapons/WeaponExtensions/SUV_RingTurret/WE_WHL_02_RingTurret",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.WHL_02.SUV.RingTurret"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleRingTurret"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.WHL_02.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.LMG.M249"
+      }
+    },
+    "WeaponExtensionName": "Mounted M249",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_M249_Stats'",
+      "ObjectPath": "/WEPN_009/Data/DA_M249_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "MountedMachineGun"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.25,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.556mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.556mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.556mm.Tracer"
+        },
+        "Value": 0
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_WHL_02_RingTurret_Audio'",
+      "ObjectPath": "/WHL_02_RingTurret/Weapons/WeaponExtensions/SUV_RingTurret/DA_WHL_02_RingTurret_Audio.0"
+    },
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Fire"
+        },
+        "Value": {
+          "FirstPersonPlayerAnimation": null,
+          "ThirdPersonPlayerAnimation": null,
+          "_aaabkaiiiikngfhjclpcl": {
+            "ObjectName": "AnimMontage'AM_Weap_M249_Fire'",
+            "ObjectPath": "/WEPN_009/Animation/Weapon/Montage/FP/AM_Weap_M249_Fire.0"
+          },
+          "_aaabknpfkgdelmmgiloin": {
+            "ObjectName": "AnimMontage'AM_Weap_M249_Fire'",
+            "ObjectPath": "/WEPN_009/Animation/Weapon/Montage/FP/AM_Weap_M249_Fire.0"
+          }
+        }
+      }
+    ],
+    "OperatorStateAnimations": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Kodiak_Turret_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Kodiak_Turret_Crouch_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Kodiak_Turret_Crouch_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Kodiak_Turret_Crouch_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": null,
+          "PerSeatBlendSpaces": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "OperatorAnimations": [
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::FirstPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_FP_Kodiak_Turret_M249_Idle_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Kodiak_Turret_M249_Idle_Pose.0"
+              }
+            },
+            {
+              "Key": "EWDVehicleWeaponStateAnimationTypes::ThirdPerson",
+              "Value": {
+                "ObjectName": "AnimSequence'A_TP_Kodiak_Turret_M249_Idle_Pose'",
+                "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Kodiak_Turret_M249_Idle_Pose.0"
+              }
+            }
+          ],
+          "bHasPerSeatBlendSpace": false,
+          "WeaponStateBlendSpace": {
+            "ObjectName": "BlendSpace'BS_TP_Kodiak_Turret_M249_AO'",
+            "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/Kodiak/BS_TP_Kodiak_Turret_M249_AO.0"
+          },
+          "PerSeatBlendSpaces": []
+        }
+      }
+    ],
+    "OperatorIdleSequence": {
+      "ObjectName": "AnimSequence'A_FP_Kodiak_Turret_M249_Idle_Pose'",
+      "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_FP_Kodiak_Turret_M249_Idle_Pose.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_WHL_02_RingTurret_Camera_FiringShake_C'",
+      "ObjectPath": "/WHL_02_RingTurret/Weapons/WeaponExtensions/Camera/BP_WHL_02_RingTurret_Camera_FiringShake.0"
+    },
+    "FireCameraShakeMultiplier": 0.1
+  }
+}

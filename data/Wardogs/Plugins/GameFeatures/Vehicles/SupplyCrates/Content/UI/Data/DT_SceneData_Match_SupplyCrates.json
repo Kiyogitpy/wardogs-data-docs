@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_SceneData_Match_SupplyCrates ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Match_SupplyCrates",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SupplyCrates/UI/Data/DT_SceneData_Match_SupplyCrates",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Match.VehicleSupplyCrate": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/SupplyCrates/UI/W_SupplyCrateScene_2_0.W_SupplyCrateScene_2_0_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleSupplyCrateViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SupplyCrates/UI/Data/DA_SupplyCrateScene.DA_SupplyCrateScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Match.VehicleSupplyCrate"
+      }
+    }
+  }
+}

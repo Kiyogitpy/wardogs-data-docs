@@ -1,0 +1,32 @@
+--- export: UDataAsset / IA_Itemsmith_Tab ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_Tab",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_Tab",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.Tab"
+    },
+    "bTriggerWhenPaused": true,
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Itemsmith_Tab:InputTriggerTap_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Tab.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_Tab'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Tab.0"
+  }
+}

@@ -1,0 +1,93 @@
+--- export: UObject / AEB_PlayAllegianceSound_C_0 ---
+{
+  "Type": "AEB_PlayAllegianceSound_C",
+  "Name": "AEB_PlayAllegianceSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayAllegianceSound.AEB_PlayAllegianceSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_RadarFold'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayAllegianceSound_C'Default__AEB_PlayAllegianceSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayAllegianceSound.0"
+  },
+  "Properties": {
+    "Alpha": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Land_SpawnVehicle_Radar_Lonestar'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/Spawn_Vehicle/Radars/MSS_Vehicle_Land_SpawnVehicle_Radar_Lonestar.0"
+    },
+    "Bravo": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Land_SpawnVehicle_Radar_Valkyra'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/Spawn_Vehicle/Radars/MSS_Vehicle_Land_SpawnVehicle_Radar_Valkyra.0"
+    },
+    "Charlie": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Land_SpawnVehicle_Radar_Manticore'",
+      "ObjectPath": "/Game/Audio/Vehicles/Land/Spawn_Vehicle/Radars/MSS_Vehicle_Land_SpawnVehicle_Radar_Manticore.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.RadarDish"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_SpawnVehicle_RadarFold ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SpawnVehicle_RadarFold",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.SpawnVehicle.RadarFold"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_SpawnVehicle_RadarFold:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.2"
+      },
+      {
+        "ObjectName": "AEB_PlayAllegianceSound_C'AE_Vehicle_SpawnVehicle_RadarFold:AEB_PlayAllegianceSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_SpawnVehicle_RadarFold:CrosstalkAudioEventBehaviorExecuteTriggerParameter_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_RadarFold'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.1"
+  },
+  "Properties": {
+    "SocketName": "body_RadarSocket",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.RadarDish"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SpawnVehicle_RadarFold'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.1"
+  },
+  "Properties": {
+    "ParameterName": "Fold",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.RadarDish"
+    }
+  }
+}

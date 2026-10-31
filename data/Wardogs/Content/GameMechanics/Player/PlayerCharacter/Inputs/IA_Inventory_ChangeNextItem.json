@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Inventory_ChangeNextItem ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Inventory_ChangeNextItem",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Inventory_ChangeNextItem",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Inventory.ChangeNextItem"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Inventory_ChangeNextItem:InputTriggerTap_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Inventory_ChangeNextItem.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Inventory_ChangeNextItem'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Inventory_ChangeNextItem.0"
+  }
+}

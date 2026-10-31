@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_Tracker_Minimap_Ping ---
+{
+  "Type": "WDUIPingMapTrackerData",
+  "Name": "DA_Tracker_Minimap_Ping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPingMapTrackerData'",
+  "Package": "/Game/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Ping",
+  "Properties": {
+    "PingTypeColors": [
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Default"
+        },
+        "Value": {
+          "R": 1.0,
+          "G": 1.0,
+          "B": 1.0,
+          "A": 1.0,
+          "Hex": "FFFFFF"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.Ping.Type.Danger"
+        },
+        "Value": {
+          "R": 1.0,
+          "G": 0.0,
+          "B": 0.0,
+          "A": 1.0,
+          "Hex": "FF0000"
+        }
+      }
+    ],
+    "bDisplayText": false,
+    "ZOrder": 40,
+    "DefaultSize": {
+      "X": 16.0,
+      "Y": 16.0
+    }
+  }
+}

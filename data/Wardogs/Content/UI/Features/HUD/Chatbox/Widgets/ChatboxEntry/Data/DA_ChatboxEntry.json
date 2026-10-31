@@ -1,0 +1,53 @@
+--- export: UDataAsset / DA_ChatboxEntry ---
+{
+  "Type": "WDUIChatboxEntryData",
+  "Name": "DA_ChatboxEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIChatboxEntryData'",
+  "Package": "/Game/UI/Features/HUD/Chatbox/Widgets/ChatboxEntry/Data/DA_ChatboxEntry",
+  "Properties": {
+    "_aaabglpoimaflgfiijcio": {
+      "R": 0.0,
+      "G": 0.0,
+      "B": 0.0,
+      "A": 0.2,
+      "Hex": "33000000"
+    },
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_ContextMenu'DA_ChatboxEntry:WDUIViewModelExtension_ContextMenu_1'",
+        "ObjectPath": "/Game/UI/Features/HUD/Chatbox/Widgets/ChatboxEntry/Data/DA_ChatboxEntry.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDUIViewModelExtension_ContextMenu_1 ---
+{
+  "Type": "WDUIViewModelExtension_ContextMenu",
+  "Name": "WDUIViewModelExtension_ContextMenu_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_ContextMenu'",
+  "Outer": {
+    "ObjectName": "WDUIChatboxEntryData'DA_ChatboxEntry'",
+    "ObjectPath": "/Game/UI/Features/HUD/Chatbox/Widgets/ChatboxEntry/Data/DA_ChatboxEntry.0"
+  },
+  "Properties": {
+    "ContextMenuActionTags": [
+      {
+        "TagName": "ContextMenu.Action.MutePlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.UnmutePlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.ReportPlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.KickPlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.BlockPlayer"
+      }
+    ]
+  }
+}

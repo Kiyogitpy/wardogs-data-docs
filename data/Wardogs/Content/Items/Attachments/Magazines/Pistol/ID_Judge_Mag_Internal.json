@@ -1,0 +1,180 @@
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Judge_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.3"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Weapons/Pistol/Glock17/Assets/SM_Glock17_StandardMag.SM_Glock17_StandardMag",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Glock17_Mag'",
+        "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Materials/MI_Glock17_Mag.0"
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Judge_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.3"
+  },
+  "Properties": {
+    "bCanRemoveItem": false,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.45Colt"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 6,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.45Colt.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Judge_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.3"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Judge_Mag_Internal ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Judge_Mag_Internal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.JudgeMagazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "EFFCEF1A4C104568D1E4478C08035E03",
+      "SourceString": "Judge Bullet Cylinder",
+      "LocalizedString": "Judge Bullet Cylinder"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Judge_Mag_Internal:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Judge_Mag_Internal:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_Judge_Mag_Internal:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Judge_Mag_Internal:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Judge_Mag_Internal:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Judge_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.3"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Judge_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.3"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}

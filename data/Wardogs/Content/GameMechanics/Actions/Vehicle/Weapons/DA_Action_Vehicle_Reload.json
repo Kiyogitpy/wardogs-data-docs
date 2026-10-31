@@ -1,0 +1,44 @@
+--- export: UPrimaryDataAsset / DA_Action_Vehicle_Reload ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Vehicle_Reload",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Vehicle/Weapons/DA_Action_Vehicle_Reload",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Vehicle.Weapon.Reload"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Vehicle_Reload_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Vehicle/Weapons/B_Action_Vehicle_Reload.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Vehicle.Weapon.Reload",
+            "Action.Vehicle.Weapon.Fire",
+            "Action.Vehicle.Weapon.ActiveReload"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDVehicleWeaponActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

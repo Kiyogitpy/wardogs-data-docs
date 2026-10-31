@@ -1,0 +1,144 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeSupplyPallet_BuildSupplies'",
+    "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.2"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 4,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeSupplyPallet_BuildSupplies'",
+    "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.2"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 6,
+          "Y": 6
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 1,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_LargeSupplyPallet_BuildSupplies ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_LargeSupplyPallet_BuildSupplies",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleSupplyCrate.Pallet.BuildSupply"
+    },
+    "ItemContext": [
+      "Inventory.Type.Storage",
+      "Inventory.Slot.SupplyContainer"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "6D792DFC47A7C92AEAF655B51F870C44",
+      "SourceString": "Build Supply Pallet",
+      "LocalizedString": "Build Supply Pallet"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeSupplyPallet_BuildSupplies:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_LargeSupplyPallet_BuildSupplies:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_LargeSupplyPallet_BuildSupplies:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeSupplyPallet_BuildSupplies'",
+    "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.2"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_VehicleSupplyCrate'ID_LargeSupplyPallet_BuildSupplies:WDInventoryFragment_ItemActor_0.WDItemExtensionData_VehicleSupplyCrate_0'",
+        "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_VehicleSupplyCrate_0 ---
+{
+  "Type": "WDItemExtensionData_VehicleSupplyCrate",
+  "Name": "WDItemExtensionData_VehicleSupplyCrate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_VehicleSupplyCrate'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeSupplyPallet_BuildSupplies:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/SupplyCrates/ItemID/Prefabs/ID_LargeSupplyPallet_BuildSupplies.3"
+  },
+  "Properties": {
+    "BaseClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_SupplyPallet_BuildSupplies_C'",
+      "ObjectPath": "/SupplyCrates/Blueprints/Pallets/B_SupplyPallet_BuildSupplies.3"
+    },
+    "SupplyCrateStaticMesh": {
+      "AssetPathName": "/SupplyCrates/Supply_Pallets/Meshes/SM_BuildSuppliesPalette_01a.SM_BuildSuppliesPalette_01a",
+      "SubPathString": ""
+    },
+    "NumberOfSlots": 12,
+    "StartingHealth": 800.0,
+    "MaxHealth": 800.0,
+    "bLockCrateOnPurchase": true,
+    "ExtensionComponentClass": {
+      "ObjectName": "Class'WDItemExtension_VehicleSupplyCrate'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

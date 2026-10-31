@@ -1,0 +1,72 @@
+--- export: UPrimaryDataAsset / AE_Player_ProneToCrouch ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_ProneToCrouch",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Stance/AE_Player_ProneToCrouch",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Stance.ProneToCrouch"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Player_ProneToCrouch:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Stance/AE_Player_ProneToCrouch.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_ProneToCrouch:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Stance/AE_Player_ProneToCrouch.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_ProneToCrouch'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Stance/AE_Player_ProneToCrouch.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Stance.ProneToCrouch"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_ProneToCrouch'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Stance/AE_Player_ProneToCrouch.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Stance.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Stance.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Stance.Enemy"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "PlayEvenIfInaudible": false,
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Stance_ProneToCrouch_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Stance/DA/DA_Stance_ProneToCrouch_Audio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Stance.ProneToCrouch"
+    },
+    "bStatic": true
+  }
+}

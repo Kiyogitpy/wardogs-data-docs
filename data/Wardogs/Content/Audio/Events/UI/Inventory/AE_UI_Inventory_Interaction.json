@@ -1,0 +1,86 @@
+--- export: UObject / AEB_MoveUISoundToCharacter_C_0 ---
+{
+  "Type": "AEB_MoveUISoundToCharacter_C",
+  "Name": "AEB_MoveUISoundToCharacter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_MoveUISoundToCharacter.AEB_MoveUISoundToCharacter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_Interaction'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Interaction.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_MoveUISoundToCharacter_C'Default__AEB_MoveUISoundToCharacter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_MoveUISoundToCharacter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.AddToCart"
+    }
+  }
+}
+--- export: UObject / AEB_PlayInventoryItemUISound_C_0 ---
+{
+  "Type": "AEB_PlayInventoryItemUISound_C",
+  "Name": "AEB_PlayInventoryItemUISound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayInventoryItemUISound.AEB_PlayInventoryItemUISound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_Interaction'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Interaction.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayInventoryItemUISound_C'Default__AEB_PlayInventoryItemUISound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayInventoryItemUISound.0"
+  },
+  "Properties": {
+    "DefaultInteractionSounds": [
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Item.Inventory.DragDrop.Hover.Allowed"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_InGame_Inventory_Hover'",
+          "ObjectPath": "/Game/Audio/UI/InGame/MSS/Inventory/MSS_UI_InGame_Inventory_Hover.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Vendor.MoveToCart"
+        },
+        "Value": null
+      },
+      {
+        "Key": {
+          "TagName": "None"
+        },
+        "Value": null
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.AddToCart"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_Inventory_Interaction ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Inventory_Interaction",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Interaction",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Inventory.ItemInteraction"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayInventoryItemUISound_C'AE_UI_Inventory_Interaction:AEB_PlayInventoryItemUISound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Interaction.1"
+      },
+      {
+        "ObjectName": "AEB_MoveUISoundToCharacter_C'AE_UI_Inventory_Interaction:AEB_MoveUISoundToCharacter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_Interaction.0"
+      }
+    ]
+  }
+}

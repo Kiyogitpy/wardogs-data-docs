@@ -1,0 +1,63 @@
+--- export: UDataAsset / DA_QuickRestockScene ---
+{
+  "Type": "WDUIQuickRestockData",
+  "Name": "DA_QuickRestockScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIQuickRestockData'",
+  "Package": "/Game/UI/Features/QuickRestock/Data/DA_QuickRestockScene",
+  "Properties": {
+    "RestockableCategories": [
+      "Vendor.Category.Attachment",
+      "Vendor.Category.Utility",
+      "Vendor.Category.Weapon",
+      "Vendor.Category.Gear"
+    ],
+    "PurchaseActionTag": {
+      "TagName": "UI.Audio.Vendor.Purchased"
+    },
+    "IgnoreVendorTypes": [
+      "Vendor.Type.Garage",
+      "Vendor.Type.Vehicle"
+    ],
+    "_aaabcpphnjobeeidekkch": {
+      "Tag": {
+        "TagName": "UI.Popup.Restock.Failed"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_QuickRestock.STRINGS_QuickRestock",
+        "Key": "Restock.FailedPopupHeader",
+        "SourceString": "Re-buy Failed",
+        "LocalizedString": "Re-buy Failed"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_QuickRestock.STRINGS_QuickRestock",
+        "Key": "Restock.FailedPopupDescription",
+        "SourceString": "Re-buy failed to purchase some items",
+        "LocalizedString": "Re-buy failed to purchase some items"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_QuickRestock.STRINGS_QuickRestock",
+              "Key": "Restock.FailedPopupExit",
+              "SourceString": "Exit",
+              "LocalizedString": "Exit"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    }
+  }
+}

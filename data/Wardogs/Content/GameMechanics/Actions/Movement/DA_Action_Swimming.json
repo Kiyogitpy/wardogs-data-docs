@@ -1,0 +1,105 @@
+--- export: UPrimaryDataAsset / DA_Action_Swimming ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Swimming",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Swimming",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Swimming"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Swimming_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Swimming.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.Reload"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Sprint"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.ChamberRound"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.VehicleRepairTool.Reload"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Melee.PrimaryUse",
+            "Action.Weapon.Fire",
+            "Action.VehicleRepairTool.ContinuousUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Weapon.Reload",
+            "Action.Weapon.ChamberRound"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

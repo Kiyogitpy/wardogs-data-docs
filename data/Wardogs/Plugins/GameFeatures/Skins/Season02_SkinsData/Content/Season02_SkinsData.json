@@ -1,0 +1,45 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Season02_SkinsData'",
+    "ObjectPath": "/Season02_SkinsData/Season02_SkinsData.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "CosmeticData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Season02_SkinsData/Data/DT_Cosmetics_Season02_Skins.DT_Cosmetics_Season02_Skins",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Season02_SkinsData ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Season02_SkinsData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Season02_SkinsData/Season02_SkinsData",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Season02_SkinsData:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Season02_SkinsData/Season02_SkinsData.0"
+      }
+    ]
+  }
+}

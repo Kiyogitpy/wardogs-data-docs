@@ -1,0 +1,66 @@
+--- export: UPrimaryDataAsset / AE_Weapon_IED_Deploy ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_IED_Deploy",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/IED/Audio/Events/AE_Weapon_IED_Deploy",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.IED.Deploy"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_IED_Deploy:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_Deploy.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_IED_Deploy:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_Deploy.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 27.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_IED_Deploy'",
+    "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_Deploy.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 5.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_IED_Deploy'",
+    "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_Deploy.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_IED_Place'",
+      "ObjectPath": "/IED/Audio/MSS/MSS_Weapon_Throwable_IED_Place.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Throwable_Molotov_Flight ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Throwable_Molotov_Flight",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Flight",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Molotov.Flight"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Throwable_Molotov_Flight:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Flight.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Throwable_Molotov_Flight:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Flight.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Flight'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Flight.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Flight"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Flight'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Flight.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Molotov_Thrown_Lp'",
+      "ObjectPath": "/Molotov/Audio/MSS/MSS_Weapon_Throwable_Molotov_Thrown_Lp.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Flight"
+    }
+  }
+}

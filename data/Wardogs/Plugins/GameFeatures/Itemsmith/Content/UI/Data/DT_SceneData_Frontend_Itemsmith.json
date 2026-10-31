@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_SceneData_Frontend_Itemsmith ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Frontend_Itemsmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Itemsmith/UI/Data/DT_SceneData_Frontend_Itemsmith",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Itemsmith.TestingGround.Pause": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 1,
+        "WidgetClass": {
+          "AssetPathName": "/Itemsmith/UI/TestingGround/W_TestingGroundPauseScene.W_TestingGroundPauseScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTestingGroundPauseViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Itemsmith/UI/TestingGround/Data/DA_TestingGroundSceneData.DA_TestingGroundSceneData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Itemsmith.TestingGround.Pause"
+      }
+    }
+  }
+}

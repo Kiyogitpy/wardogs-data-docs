@@ -1,0 +1,68 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Reviving_Success'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Reviving_Success.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Interact_Revive_1p'",
+      "ObjectPath": "/Game/Audio/Player/Interact/Revive/MSS/MSS_Player_Interact_Revive_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Interact_Revive_3p_Preset'",
+      "ObjectPath": "/Game/Audio/Player/Interact/Revive/MSS/MSS_Player_Interact_Revive_3p_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Reviving"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Reviving_Success ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Reviving_Success",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/AE_Reviving_Success",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Reviving.Success"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Reviving_Success:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Reviving_Success.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Reviving_Success:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Reviving_Success.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Reviving_Success'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/AE_Reviving_Success.1"
+  },
+  "Properties": {
+    "ParameterName": "Success",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Reviving"
+    }
+  }
+}

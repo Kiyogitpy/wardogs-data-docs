@@ -1,0 +1,94 @@
+--- export: UObject / AEB_ModifyCosmeticExertion_C_0 ---
+{
+  "Type": "AEB_ModifyCosmeticExertion_C",
+  "Name": "AEB_ModifyCosmeticExertion_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.AEB_ModifyCosmeticExertion_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ModifyCosmeticExertion_C'Default__AEB_ModifyCosmeticExertion_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.0"
+  },
+  "Properties": {
+    "Amount": 0.05
+  }
+}
+--- export: UObject / AEB_Vaulting_C_0 ---
+{
+  "Type": "AEB_Vaulting_C",
+  "Name": "AEB_Vaulting_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Vaulting.AEB_Vaulting_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_Vaulting_C'Default__AEB_Vaulting_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Vaulting.0"
+  },
+  "Properties": {
+    "1p": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Vault_1p'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Vault/MSS/1p/MSS_Player_Movement_Vault_1p.0"
+    },
+    "Ally": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Vault_3p_Ally_Preset'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Vault/MSS/Ally/MSS_Player_Movement_Vault_3p_Ally_Preset.0"
+    },
+    "Vault Height": 0.8058334350585937,
+    "Enemy": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Vault_3p_Enemy_Preset'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Vault/MSS/Enemy/MSS_Player_Movement_Vault_3p_Enemy_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vault"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Vault ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Vault",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/AE_Player_Vault",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Vault"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Vaulting_C'AE_Player_Vault:AEB_Vaulting_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Vault:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault.3"
+      },
+      {
+        "ObjectName": "AEB_ModifyCosmeticExertion_C'AE_Player_Vault:AEB_ModifyCosmeticExertion_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vault"
+    }
+  }
+}

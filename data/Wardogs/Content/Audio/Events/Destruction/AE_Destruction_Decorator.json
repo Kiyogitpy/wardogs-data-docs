@@ -1,0 +1,40 @@
+--- export: UObject / AEB_Destruction_Decorator_C_0 ---
+{
+  "Type": "AEB_Destruction_Decorator_C",
+  "Name": "AEB_Destruction_Decorator_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Destruction_Decorator.AEB_Destruction_Decorator_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_Decorator'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Decorator.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Destruction_Decorator_C'Default__AEB_Destruction_Decorator_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Destruction_Decorator.0"
+  },
+  "Properties": {
+    "Physical Material Weight Map": [],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Destruction_Decorator ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Destruction_Decorator",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Destruction/AE_Destruction_Decorator",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Destruction.Decorator"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Destruction_Decorator_C'AE_Destruction_Decorator:AEB_Destruction_Decorator_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Decorator.0"
+      }
+    ]
+  }
+}

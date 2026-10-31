@@ -1,0 +1,70 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Detonate'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Detonate.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Use"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Detonate'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Detonate.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.3p"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Use"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_C4_Detonate ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_C4_Detonate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/C4/Audio/Events/AE_Weapon_C4_Detonate",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.C4.Detonate"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Weapon_C4_Detonate:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Detonate.0"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Weapon_C4_Detonate:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Detonate.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}

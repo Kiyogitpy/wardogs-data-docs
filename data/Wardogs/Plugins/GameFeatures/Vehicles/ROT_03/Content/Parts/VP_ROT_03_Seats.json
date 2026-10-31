@@ -1,0 +1,100 @@
+--- export: UPrimaryDataAsset / VP_ROT_03_Seats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_03_Seats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_03/Parts/VP_ROT_03_Seats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Attachment"
+    ],
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_ROT_03_Seats:MVF_Seats_0'",
+            "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Seats.1"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_ROT_03_Seats:WD_MVF_Interactions_0'",
+            "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Seats.2"
+          }
+        }
+      },
+      {
+        "Key": "SupplyCrates",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_ROT_03_Seats:WD_MVF_SupplyCrateFragment_0'",
+            "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Seats.3"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Seats'",
+    "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Seats.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/ROT_03/Data/DA_ROT_03_SeatSettings.DA_ROT_03_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Seats'",
+    "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Seats.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/ROT_03/Data/DA_VehicleInteractions_ROT_03.DA_VehicleInteractions_ROT_03",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_0 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_03_Seats'",
+    "ObjectPath": "/ROT_03/Parts/VP_ROT_03_Seats.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "bShouldUseVehicleSpeedCheck": false,
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}

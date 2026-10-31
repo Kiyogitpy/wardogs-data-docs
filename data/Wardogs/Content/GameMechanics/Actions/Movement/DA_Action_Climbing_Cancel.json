@@ -1,0 +1,50 @@
+--- export: UPrimaryDataAsset / DA_Action_Climbing_Cancel ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_Climbing_Cancel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Climbing_Cancel",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Traversing.ClimbingCancel"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Climbing_Cancel_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Climbing_Cancel.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.ADS"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": -10.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.Fire"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": -10.0
+            }
+          ]
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

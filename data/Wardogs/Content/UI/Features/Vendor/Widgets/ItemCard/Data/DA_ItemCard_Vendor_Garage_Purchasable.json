@@ -1,0 +1,195 @@
+--- export: UDataAsset / DA_ItemCard_Vendor_Garage_Purchasable ---
+{
+  "Type": "WDUIPurchasableItemCardData_Vendor",
+  "Name": "DA_ItemCard_Vendor_Garage_Purchasable",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPurchasableItemCardData_Vendor'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Garage_Purchasable",
+  "Properties": {
+    "MultipleItemsPriceTooltipFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.PricePerItem",
+      "SourceString": "{Value} per Item",
+      "LocalizedString": "{Value} per Item"
+    },
+    "UnlockLevelTextFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Text.Format.UnlockLevel",
+      "SourceString": "{Role} Lvl {Level}",
+      "LocalizedString": "{Role} Lvl {Level}"
+    },
+    "InsufficientFundsWarning": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.Warning.InsufficientFunds",
+      "SourceString": "Not Enough Cash",
+      "LocalizedString": "Not Enough Cash"
+    },
+    "PriceModifierColor_PriceReduction": {
+      "R": 0.152926,
+      "G": 0.361307,
+      "B": 0.07036,
+      "A": 1.0,
+      "Hex": "6DA24B"
+    },
+    "PriceModifierColor_PriceIncrease": {
+      "R": 0.333,
+      "G": 0.0,
+      "B": 0.0,
+      "A": 1.0,
+      "Hex": "9C0000"
+    },
+    "PurchaseFailedAudioEvent": {
+      "TagName": "Audio.Event.UI.Vendor.InsufficientFunds"
+    },
+    "ItemCardTooltipPrompts": [
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Purchase"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Purchase"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Purchase",
+            "SourceString": "Purchase",
+            "LocalizedString": "Purchase"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Destroy"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Destroy"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Destroy.DestroyFromLoadout",
+            "SourceString": "Delete Item / Stack",
+            "LocalizedString": "Delete Item / Stack"
+          },
+          "IsHoldable": true,
+          "bUseActionShortName": true,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Unlock"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Purchase"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Purchase.Unlock",
+            "SourceString": "Unlock",
+            "LocalizedString": "Unlock"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Purchase.AddToLoadout"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Purchase.AddToLoadout"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Prompt.Purchase.AddToLoadout",
+            "SourceString": "Add to Loadout ",
+            "LocalizedString": "Add to Loadout "
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Vendor.Purchase.BulkAmmo"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Modifier.Ctrl"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "UI.Action.Feature.Vendor.Purchase.BulkAmmo"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+            "Key": "Button.PurchaseFullStack",
+            "SourceString": "Purchase Full Stack",
+            "LocalizedString": "Purchase Full Stack"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": false,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      }
+    ],
+    "ItemAmountType": "EWDUIItemAmountType::InInventory",
+    "IconType": {
+      "TagName": "UI.Icon.Vendor"
+    },
+    "TooltipContext": {
+      "TagName": "UI.Tooltip.Context.Vendor"
+    },
+    "_aaabeldgebdhiiiacflnh": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.RoleXP.Formatting",
+      "SourceString": "\r\nREWARDS {Emoji} {RoleName} XP",
+      "LocalizedString": "\r\nREWARDS {Emoji} {RoleName} XP"
+    }
+  }
+}

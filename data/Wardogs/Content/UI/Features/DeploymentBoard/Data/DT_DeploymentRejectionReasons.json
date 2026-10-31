@@ -1,0 +1,137 @@
+--- export: UDataTable / DT_DeploymentRejectionReasons ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DeploymentRejectionReasons",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/DeploymentBoard/Data/DT_DeploymentRejectionReasons",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIDeploymentBoardRejectionTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interactive.Deployment.Rejection.Cooldown": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.Cooldown",
+        "SourceString": "Deployment on cooldown - {Minutes}:{Seconds}",
+        "LocalizedString": "Deployment on cooldown - {Minutes}:{Seconds}"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.Cooldown"
+      }
+    },
+    "Interactive.Deployment.Rejection.Driving": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.Driving",
+        "SourceString": "Spawn vehicle is moving",
+        "LocalizedString": "Spawn vehicle is moving"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.Driving"
+      }
+    },
+    "Interactive.Deployment.Rejection.LowHP": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.LowHP",
+        "SourceString": "Spawn vehicle has too low HP",
+        "LocalizedString": "Spawn vehicle has too low HP"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.LowHP"
+      }
+    },
+    "Interactive.Deployment.Rejection.NoSeat": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.NoSeat",
+        "SourceString": "No available seat",
+        "LocalizedString": "No available seat"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.NoSeat"
+      }
+    },
+    "Interactive.Deployment.Rejection.NoVehicle": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "InactiveReason.Default",
+        "SourceString": "No Active Spawn Vehicle",
+        "LocalizedString": "No Active Spawn Vehicle"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.NoVehicle"
+      }
+    },
+    "Interactive.Deployment.Available": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.Empty",
+        "SourceString": "Deployment Available",
+        "LocalizedString": "Deployment Available"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Available"
+      }
+    },
+    "Interactive.Deployment.Rejection.NotInControlZone": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.NotInControlZone",
+        "SourceString": "Spawn vehicle is not in the control zone",
+        "LocalizedString": "Spawn vehicle is not in the control zone"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.NotInControlZone"
+      }
+    },
+    "Interactive.Deployment.Rejection.RadarDestroyed": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.RadarDestroyed",
+        "SourceString": "Spawn Vehicle Radar Destroyed : Awaiting Repairs",
+        "LocalizedString": "Spawn Vehicle Radar Destroyed : Awaiting Repairs"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.RadarDestroyed"
+      }
+    },
+    "Interactive.Deployment.Rejection.Respawning": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.VehicleRespawning",
+        "SourceString": "Spawn Vehicle will respawn in {Minutes}:{Seconds}",
+        "LocalizedString": "Spawn Vehicle will respawn in {Minutes}:{Seconds}"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.Respawning"
+      }
+    },
+    "Interactive.Deployment.Rejection.ScoreRequired": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "InactiveReason.ScoreRequired",
+        "SourceString": "Inactive Vehicle: Min Required Game Score: {Score}",
+        "LocalizedString": "Inactive Vehicle: Min Required Game Score: {Score}"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.ScoreRequired"
+      }
+    },
+    "Interactive.Deployment.Rejection.PlayerNotEnteredControlZone": {
+      "RejectionText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+        "Key": "RejectionReason.TeamSwitchPenalty",
+        "SourceString": "MAP OFFLINE... ENTER ZONE FOR DATA",
+        "LocalizedString": "MAP OFFLINE... ENTER ZONE FOR DATA"
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.PlayerNotEnteredControlZone"
+      }
+    }
+  }
+}

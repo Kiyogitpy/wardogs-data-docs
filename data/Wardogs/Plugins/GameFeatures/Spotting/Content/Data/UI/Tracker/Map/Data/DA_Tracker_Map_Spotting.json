@@ -1,0 +1,605 @@
+--- export: UDataAsset / DA_Tracker_Map_Spotting ---
+{
+  "Type": "WDUISpottingTargetMapTrackerData",
+  "Name": "DA_Tracker_Map_Spotting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISpottingTargetMapTrackerData'",
+  "Package": "/Spotting/Data/UI/Tracker/Map/Data/DA_Tracker_Map_Spotting",
+  "Properties": {
+    "TargetData": [
+      {
+        "Key": "/Script/WDGame.WDMoverCharacter",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted.T_UI_Map_Spotted",
+              "SubPathString": ""
+            },
+            "Scale": 0.8,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "Challenges.Rewards.PlayerKill"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDRotaryVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Heli.T_UI_Map_Spotted_Heli",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.LittleBird"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.ROT_01"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Heli.T_UI_Map_Spotted_Heli",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Huey"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.Havoc"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Havoc.T_UI_Map_Spotted_Havoc",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Havoc"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Air.Rotary.ROT_04"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Heli.T_UI_Map_Spotted_Heli",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Blackhawk"
+                }
+              }
+            }
+          ],
+          "_aaabbeolcgjohophhbbip": true
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDAirplaneVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": true
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDWheeledVehiclePawn",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Quad.T_UI_Map_Spotted_Quad",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Bobcat"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Dune.T_UI_Map_Spotted_Dune",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.DuneBuggy"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Humvee"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Kodiak.T_UI_Map_Spotted_Kodiak",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Humvee"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Kodiak.T_UI_Map_Spotted_Kodiak",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 92.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Kodiak"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.Ural"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_URAL.T_UI_Map_Spotted_URAL",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.Humvee"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Kodiak.T_UI_Map_Spotted_Kodiak",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.WHL_08"
+                }
+              }
+            }
+          ],
+          "_aaabbeolcgjohophhbbip": true
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDTrackedVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Vehicle.T_UI_Map_Spotted_Vehicle",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Spawn.T_UI_Map_Spotted_Spawn",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.TNK_01"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Tank.T_UI_Map_Spotted_Tank",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.TNK_01.Heavy"
+                }
+              }
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.Variant.Land.Tracked.TNK_04"
+              },
+              "Value": {
+                "Texture": {
+                  "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_Tank.T_UI_Map_Spotted_Tank",
+                  "SubPathString": ""
+                },
+                "Scale": 1.0,
+                "Rotation": 90.0,
+                "FadeoutTime": 3.0,
+                "StartingOpacity": 0.75,
+                "RewardTag": {
+                  "TagName": "Challenges.Rewards.VehicleDestroyed.TNK_04.Default"
+                }
+              }
+            }
+          ],
+          "_aaabbeolcgjohophhbbip": true
+        }
+      },
+      {
+        "Key": "/Claymore/Data/Blueprints/B_Claymore.B_Claymore_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Claymore.T_UI_Icon_Killfeed_Claymore",
+              "SubPathString": ""
+            },
+            "Scale": 0.75,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/AT_mine/Data/Blueprints/B_AT_Mine.B_AT_Mine_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_APMine.T_UI_Icon_Killfeed_APMine",
+              "SubPathString": ""
+            },
+            "Scale": 0.75,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Lonestar.B_Buildable_ForwardOperatingBase_Lonestar_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Manticore.B_Buildable_ForwardOperatingBase_Manticore_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/ForwardOperatingBase/Buildables/B_Buildable_ForwardOperatingBase_Valkyra.B_Buildable_ForwardOperatingBase_Valkyra_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Buildables/Data/Buildables/Hotzone_Magnet/B_Buildable_HotzoneMagnet.B_Buildable_HotzoneMagnet_C",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_HotzoneMagnet.T_UI_Map_Spotted_HotzoneMagnet",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyCrate",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_supplycrate.T_UI_Map_Spotted_supplycrate",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDVehicleSupplyPallet",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted_supplycrate.T_UI_Map_Spotted_supplycrate",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 90.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      },
+      {
+        "Key": "/Script/WDGame.WDStationaryVehicle",
+        "Value": {
+          "DefaultTexture": {
+            "Texture": {
+              "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Tower_Zoom.T_UI_Map_Tower_Zoom",
+              "SubPathString": ""
+            },
+            "Scale": 1.0,
+            "Rotation": 0.0,
+            "FadeoutTime": 3.0,
+            "StartingOpacity": 0.75,
+            "RewardTag": {
+              "TagName": "None"
+            }
+          },
+          "OverrideTextures": [],
+          "_aaabbeolcgjohophhbbip": false
+        }
+      }
+    ],
+    "bShowCashText": true,
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "AutoDescription": " ALL( State.Player.Vehicle.Role.Gunner )"
+    },
+    "bOverrideForCurrentVehicle": true,
+    "AllowedVehicles": [
+      "Vehicle.Variant.Land.Tracked.TNK_01.Artillery",
+      "Vehicle.Variant.Stationary.Mortar"
+    ],
+    "bForceMeters": true,
+    "bDisplayText": false,
+    "bShouldMaskCursor": true,
+    "ZoomScaleCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "DefaultTrackerIcon": {
+      "Scale": {
+        "X": 0.5,
+        "Y": 0.5
+      }
+    },
+    "TrackerZoomIcons": [
+      {
+        "MapZoomMin": 5000.0,
+        "TrackerIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_Spotted.T_UI_Map_Spotted",
+          "SubPathString": ""
+        },
+        "Scale": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    ],
+    "ZOrder": 150,
+    "DefaultSize": {
+      "X": 42.0,
+      "Y": 42.0
+    }
+  }
+}

@@ -1,0 +1,200 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDAIPvEAICore'",
+    "ObjectPath": "/WDAIPvEAICore/WDAIPvEAICore.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDAIPvEAICoreRuntime.WDAIPvEGameStateComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameMode",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SDAIRules.SDAIRuleManagerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/WDCore/Character/B_WDCore_MoverPlayerCharacter.B_WDCore_MoverPlayerCharacter_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/SDUESmartObject.SDAISmartObjectActorComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/WDCore/Character/B_WDCore_MoverPlayerCharacter.B_WDCore_MoverPlayerCharacter_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/WDAIPvEAICore/Components/BP_PlayerCharacterDetectabilityComponent.BP_PlayerCharacterDetectabilityComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/WDCore/Character/B_WDCore_MoverPlayerCharacter.B_WDCore_MoverPlayerCharacter_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDAIPvEAICoreRuntime.WDAISightTargetComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/WDAIPvEAICore/BP_CoreAIController.BP_CoreAIController_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDAIPvEAICoreRuntime.WDAITetherComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/Mechanized.BHBaseVehiclePawn",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDAIPvEAICoreRuntime.WDVehicleDetectabilityComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WDAIPvEAICore ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WDAIPvEAICore",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WDAIPvEAICore/WDAIPvEAICore",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'WDAIPvEAICore:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/WDAIPvEAICore/WDAIPvEAICore.0"
+      },
+      {
+        "ObjectName": "SDGameFeatureAction_ActivateSubsystem'WDAIPvEAICore:SDGameFeatureAction_ActivateSubsystem_0'",
+        "ObjectPath": "/WDAIPvEAICore/WDAIPvEAICore.2"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.AISpawn",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDAIPvEAICoreRuntime.WDAICharacterConfigData",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WDAIPvEAICore"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/SmartObject/UseComputer"
+          },
+          {
+            "Path": "/WDAIPvEAICore/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / SDGameFeatureAction_ActivateSubsystem_0 ---
+{
+  "Type": "SDGameFeatureAction_ActivateSubsystem",
+  "Name": "SDGameFeatureAction_ActivateSubsystem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDGameFeatureAction_ActivateSubsystem'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDAIPvEAICore'",
+    "ObjectPath": "/WDAIPvEAICore/WDAIPvEAICore.1"
+  },
+  "Properties": {
+    "DeveloperSettingsToEnable": [
+      {
+        "ObjectName": "Class'SDDeveloperSettings_Cover'",
+        "ObjectPath": "/Script/SDAICover"
+      },
+      {
+        "ObjectName": "Class'SDDeveloperSettings_AIGoals'",
+        "ObjectPath": "/Script/SDAIGoalsRuntime"
+      },
+      {
+        "ObjectName": "Class'SDDeveloperSettings_InfluenceMap'",
+        "ObjectPath": "/Script/SDInfluenceMapRuntime"
+      }
+    ]
+  }
+}

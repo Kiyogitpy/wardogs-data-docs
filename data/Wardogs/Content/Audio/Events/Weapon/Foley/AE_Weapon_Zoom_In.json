@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Zoom_In ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Zoom_In",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Zoom_In",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Zoom.In"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Zoom_In:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Zoom_In.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Zoom_In'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Zoom_In.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Zooming_Master'",
+      "ObjectPath": "/Game/Audio/Weapon/Shared/Zoom/MSS_Weapon_Zooming_Master.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Zoom"
+    }
+  }
+}

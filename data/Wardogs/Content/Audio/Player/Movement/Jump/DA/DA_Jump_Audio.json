@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / DA_Jump_Audio ---
+{
+  "Type": "WDAudioData",
+  "Name": "DA_Jump_Audio",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioData'",
+  "Package": "/Game/Audio/Player/Movement/Jump/DA/DA_Jump_Audio",
+  "Properties": {
+    "SoundAssets": [
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Player.Jump.1p"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Movement_Jump_1p'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/MSS/1p/MSS_Player_Movement_Jump_1p.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Player.Jump.Ally"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Movement_Jump_3p_Ally'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/MSS/Ally/MSS_Player_Movement_Jump_3p_Ally.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Player.Jump.Enemy"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Movement_Jump_3p_Enemy'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/MSS/Enemy/MSS_Player_Movement_Jump_3p_Enemy.0"
+        }
+      }
+    ]
+  }
+}

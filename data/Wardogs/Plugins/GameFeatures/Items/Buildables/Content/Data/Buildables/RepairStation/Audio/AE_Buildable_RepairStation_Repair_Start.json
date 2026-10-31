@@ -1,0 +1,78 @@
+--- export: UObject / AEB_AttachSoundToVehicle_C_0 ---
+{
+  "Type": "AEB_AttachSoundToVehicle_C",
+  "Name": "AEB_AttachSoundToVehicle_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.AEB_AttachSoundToVehicle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_RepairStation_Repair_Start'",
+    "ObjectPath": "/Buildables/Data/Buildables/RepairStation/Audio/AE_Buildable_RepairStation_Repair_Start.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToVehicle_C'Default__AEB_AttachSoundToVehicle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToVehicle.0"
+  },
+  "Properties": {
+    "Location Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 100.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Buildable_RepairStation_Repair_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Buildable_RepairStation_Repair_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/RepairStation/Audio/AE_Buildable_RepairStation_Repair_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Buildable.RepairStation.Repair.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToVehicle_C'AE_Buildable_RepairStation_Repair_Start:AEB_AttachSoundToVehicle_C_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/RepairStation/Audio/AE_Buildable_RepairStation_Repair_Start.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Buildable_RepairStation_Repair_Start:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/RepairStation/Audio/AE_Buildable_RepairStation_Repair_Start.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_RepairStation_Repair_Start'",
+    "ObjectPath": "/Buildables/Data/Buildables/RepairStation/Audio/AE_Buildable_RepairStation_Repair_Start.1"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.3p"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.3p"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_RepairStation_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/RepairStation/Audio/DA_RepairStation_Audio.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bStatic": true
+  }
+}

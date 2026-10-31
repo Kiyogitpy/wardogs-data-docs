@@ -1,0 +1,137 @@
+--- export: UObject / WDUIItemsmithFavouriteMasteryPaintSelectFilter_0 ---
+{
+  "Type": "WDUIItemsmithFavouriteMasteryPaintSelectFilter",
+  "Name": "WDUIItemsmithFavouriteMasteryPaintSelectFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithFavouriteMasteryPaintSelectFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithPaintSelectData'DA_Itemsmith_MasteryPaintSelect'",
+    "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Flair.Colours.Favourite"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Data/STRINGS_Itemsmith.STRINGS_Itemsmith",
+      "Key": "Itemsmith.ItemSelect.TabGroup.Favourite",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserPaintViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaints_BrowserList.DA_Itemsmith_MasteryPaints_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDUIItemsmithMasteryPaintSelectFilter_0 ---
+{
+  "Type": "WDUIItemsmithMasteryPaintSelectFilter",
+  "Name": "WDUIItemsmithMasteryPaintSelectFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithMasteryPaintSelectFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithPaintSelectData'DA_Itemsmith_MasteryPaintSelect'",
+    "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Flair.Colours.Basic"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+      "Key": "Itemsmith.Flair.Archetype.Colours",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserPaintViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaints_BrowserList.DA_Itemsmith_MasteryPaints_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UDataAsset / DA_Itemsmith_MasteryPaintSelect ---
+{
+  "Type": "WDUIItemsmithPaintSelectData",
+  "Name": "DA_Itemsmith_MasteryPaintSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithPaintSelectData'",
+  "Package": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect",
+  "Properties": {
+    "PaintType": "EWDFlairPaintType::Mastery",
+    "SettingRotatorViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingValueRotatorViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingValue/Data/DA_SettingValue_Rotator.DA_SettingValue_Rotator",
+        "SubPathString": ""
+      }
+    },
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Item.Archetype.Flair.Colours.Basic"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIItemsmithFavouriteMasteryPaintSelectFilter'DA_Itemsmith_MasteryPaintSelect:WDUIItemsmithFavouriteMasteryPaintSelectFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect.0"
+      },
+      {
+        "ObjectName": "WDUIItemsmithMasteryPaintSelectFilter'DA_Itemsmith_MasteryPaintSelect:WDUIItemsmithMasteryPaintSelectFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/Flair/PaintSelect/Data/Mastery/DA_Itemsmith_MasteryPaintSelect.1"
+      }
+    ],
+    "PageType": "EWDUIItemsmithPages::FlairMasteryPaint",
+    "CameraMode": "EItemsmithCameraMode::FixedSideOn",
+    "CameraFocusOffset": {
+      "X": 0.0,
+      "Y": 20.0,
+      "Z": 0.0
+    },
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_BasicPaintSelect'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_BasicPaintSelect.0"
+    },
+    "InputMappingContextPriority": 11,
+    "ScreenTitle": {
+      "TableId": "/Itemsmith/UI/Flair/PaintSelect/STRINGS_Itemsmith_PaintSelect.STRINGS_Itemsmith_PaintSelect",
+      "Key": "Itemsmith.Flair.MasteryPaint.Title",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "bShowBlueprintNameAsSubtitle": true
+  }
+}

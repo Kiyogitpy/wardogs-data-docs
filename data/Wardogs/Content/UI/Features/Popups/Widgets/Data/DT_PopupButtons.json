@@ -1,0 +1,38 @@
+--- export: UDataTable / DT_PopupButtons ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PopupButtons",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Popups/Widgets/Data/DT_PopupButtons",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIPopupButtonDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Popup.Button.Main": {
+      "ButtonClass": {
+        "ObjectName": "WidgetBlueprintGeneratedClass'W_StyleGuide_Button_Main_Primary_C'",
+        "ObjectPath": "/Game/UI/Shared/StyleGuide/Widgets/Buttons/W_StyleGuide_Button_Main_Primary.76"
+      },
+      "DefaultConfig": null,
+      "Tag": {
+        "TagName": "UI.Popup.Button.Main"
+      }
+    },
+    "UI.Popup.Button.Main.Timed": {
+      "ButtonClass": {
+        "ObjectName": "WidgetBlueprintGeneratedClass'W_StyleGuide_Button_Main_Timer_Primary_C'",
+        "ObjectPath": "/Game/UI/Shared/StyleGuide/Widgets/Buttons/W_StyleGuide_Button_Main_Timer_Primary.93"
+      },
+      "DefaultConfig": {
+        "Duration": 5.0
+      },
+      "Tag": {
+        "TagName": "UI.Popup.Button.Main.Timed"
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+--- export: UPrimaryDataAsset / DA_Action_Defibrillator_Reload ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Defibrillator_Reload",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Defibrillator/Data/Actions/DA_Action_Defibrillator_Reload",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Defibrillator.Reload"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Reload_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Weapons/B_Action_Reload.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect",
+            "Action.Defibrillator.PrimaryUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Item.Inspect",
+            "Action.Player.Focus",
+            "Action.Weapon.CycleSights",
+            "Action.Defibrillator.Reload"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Defibrillator.PrimaryUse"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": 2.0
+            }
+          ]
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+--- export: UDataAsset / IA_Ping ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Ping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Ping",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Ping"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Ping:InputTriggerTap_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Ping.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Ping'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Ping.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.1
+  }
+}

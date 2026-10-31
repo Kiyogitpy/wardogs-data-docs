@@ -1,0 +1,101 @@
+--- export: UPrimaryDataAsset / DA_Action_UI_ChangeQuickSlot ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_UI_ChangeQuickSlot",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/UI/DA_Action_UI_ChangeQuickSlot",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.ChangeQuickSlot"
+    },
+    "ActionContext": [
+      "Action.Context.UI"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_UI_ChangeQuickSlot_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/UI/B_Action_UI_ChangeQuickSlot.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Revive",
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right",
+            "Action.Player.ChangeQuickSlot"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Holdable",
+            "Action.Context.Emote",
+            "Action.Context.UI"
+          ],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Lean.Left"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 1.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Player.Lean.Right"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 1.0
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDActionChangeQuickSlotContext'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "_aaabhcpaaifhekodaalnj": true
+  }
+}

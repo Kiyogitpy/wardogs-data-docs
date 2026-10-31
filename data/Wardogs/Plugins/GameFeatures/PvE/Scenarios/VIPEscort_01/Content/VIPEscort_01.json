@@ -1,0 +1,150 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VIPEscort_01'",
+    "ObjectPath": "/VIPEscort_01/VIPEscort_01.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/B_FactionSetup_CreateThreeTeams.B_FactionSetup_CreateThreeTeams_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VIPEscort_01'",
+    "ObjectPath": "/VIPEscort_01/VIPEscort_01.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Blockout_VIPEscort'",
+      "ObjectPath": "/VIPEscort_01/DataLayers/EDL_Blockout_VIPEscort.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_1 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VIPEscort_01'",
+    "ObjectPath": "/VIPEscort_01/VIPEscort_01.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Gameplay_VIPEscort'",
+      "ObjectPath": "/VIPEscort_01/DataLayers/EDL_Gameplay_VIPEscort.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VIPEscort_01'",
+    "ObjectPath": "/VIPEscort_01/VIPEscort_01.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "LootableDataTable",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/VIPEscort_01/DT_LootableDataTable_VIPEscort_01.DT_LootableDataTable_VIPEscort_01",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / VIPEscort_01 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "VIPEscort_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/VIPEscort_01/VIPEscort_01",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'VIPEscort_01:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/VIPEscort_01/VIPEscort_01.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddScenarioState'VIPEscort_01:WDGameFeatureAction_AddScenarioState_0'",
+        "ObjectPath": "/VIPEscort_01/VIPEscort_01.5"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'VIPEscort_01:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/VIPEscort_01/VIPEscort_01.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'VIPEscort_01:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/VIPEscort_01/VIPEscort_01.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'VIPEscort_01:GameFeatureAction_AddWorldPartitionContent_1'",
+        "ObjectPath": "/VIPEscort_01/VIPEscort_01.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddScenarioState_0 ---
+{
+  "Type": "WDGameFeatureAction_AddScenarioState",
+  "Name": "WDGameFeatureAction_AddScenarioState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddScenarioState'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VIPEscort_01'",
+    "ObjectPath": "/VIPEscort_01/VIPEscort_01.4"
+  },
+  "Properties": {
+    "ScenarioData": {
+      "ScenarioStartingCash": 2000,
+      "DeathRuleSetClass": {
+        "ObjectName": "BlueprintGeneratedClass'B_DeathRuleSet_NoRespawns_C'",
+        "ObjectPath": "/BaseScenario/DeathRuleSets/B_DeathRuleSet_NoRespawns.1"
+      },
+      "PlayerFactionTag": {
+        "TagName": "Meta.Alignment.Faction.Bravo"
+      },
+      "ScenarioQuest": {
+        "AssetPathName": "/VIPEscort_01/Q_VIPEscort_01.Q_VIPEscort_01",
+        "SubPathString": ""
+      }
+    }
+  }
+}

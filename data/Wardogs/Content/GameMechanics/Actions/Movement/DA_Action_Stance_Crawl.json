@@ -1,0 +1,90 @@
+--- export: UPrimaryDataAsset / DA_Action_Stance_Crawl ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_Stance_Crawl",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Stance_Crawl",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Prone.Crawl"
+    },
+    "ActionContext": [
+      "Action.Context.Movement"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Crawl_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Crawl.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Appliable.SecondaryUse",
+            "Action.Appliable.PrimaryUse",
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right",
+            "Action.Player.Focus",
+            "Action.Weapon.Bow.Draw"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Appliable.AdrenalinePen",
+            "Action.Weapon.Bow.Draw"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptAndBuffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptAndBuffer",
+          "ActionResponses": [
+            "Action.Weapon.ADS"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.ADS"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": -10.0
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_2 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Medkit_Consume'",
+    "ObjectPath": "/MedKit/Data/Audio/Events/AE_Item_Medkit_Consume.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_MedKit_Consume_1p'",
+      "ObjectPath": "/MedKit/Data/Audio/MSS/1p/MSS_Item_MedKit_Consume_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_MedKit_Consume_3p'",
+      "ObjectPath": "/MedKit/Data/Audio/MSS/3p/MSS_Item_MedKit_Consume_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Item_Medkit_Consume ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Medkit_Consume",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/MedKit/Data/Audio/Events/AE_Item_Medkit_Consume",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Consume"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Item_Medkit_Consume:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/MedKit/Data/Audio/Events/AE_Item_Medkit_Consume.2"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Item_Medkit_Consume:AEB_PlayPerspectiveSound_C_2'",
+        "ObjectPath": "/MedKit/Data/Audio/Events/AE_Item_Medkit_Consume.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Medkit_Consume'",
+    "ObjectPath": "/MedKit/Data/Audio/Events/AE_Item_Medkit_Consume.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

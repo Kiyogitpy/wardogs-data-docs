@@ -1,0 +1,90 @@
+--- export: UObject / AEB_Play_Buildable_Sound_C_0 ---
+{
+  "Type": "AEB_Play_Buildable_Sound_C",
+  "Name": "AEB_Play_Buildable_Sound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Buildables/Data/Buildables/Audio/AEB_Play_Buildable_Sound.AEB_Play_Buildable_Sound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Destroyed'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Play_Buildable_Sound_C'Default__AEB_Play_Buildable_Sound_C'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AEB_Play_Buildable_Sound.0"
+  },
+  "Properties": {
+    "Sound Asset Tag": {
+      "TagName": "Audio.Asset.Buildable.Destroyed"
+    },
+    "Restart Behavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.Destroyed"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Buildable_Destroyed ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Buildable_Destroyed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Buildable.Destroyed"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Buildable_Destroyed:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Buildable_Destroyed:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed.2"
+      },
+      {
+        "ObjectName": "AEB_Play_Buildable_Sound_C'AE_Buildable_Destroyed:AEB_Play_Buildable_Sound_C_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 60.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Destroyed'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 10.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.Destroyed"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Destroyed'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Destroyed.1"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.Destroyed"
+    }
+  }
+}

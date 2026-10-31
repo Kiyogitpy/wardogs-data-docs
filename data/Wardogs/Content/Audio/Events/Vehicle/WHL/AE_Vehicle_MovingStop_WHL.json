@@ -1,0 +1,127 @@
+--- export: UObject / AEB_StopSoundByContext_C_0 ---
+{
+  "Type": "AEB_StopSoundByContext_C",
+  "Name": "AEB_StopSoundByContext_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_StopSoundByContext.AEB_StopSoundByContext_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_MovingStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_StopSoundByContext_C'Default__AEB_StopSoundByContext_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_StopSoundByContext.0"
+  },
+  "Properties": {
+    "Context Tags Array": [
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.DestroyedLoop.FrontLeft"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.DestroyedLoop.FrontRight"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.DestroyedLoop.RearLeft"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.DestroyedLoop.RearRight"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.FlatLoop.FrontLeft"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.FlatLoop.FrontRight"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.FlatLoop.RearLeft"
+      },
+      {
+        "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.FlatLoop.RearRight"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_MovingStop_WHL ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_MovingStop_WHL",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.MovingStop.WHL"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_MovingStop_WHL:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_MovingStop_WHL:CrosstalkAudioEventBehaviorStopSound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Vehicle_MovingStop_WHL:CrosstalkAudioEventBehaviorStopSound_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.4"
+      },
+      {
+        "ObjectName": "AEB_StopSoundByContext_C'AE_Vehicle_MovingStop_WHL:AEB_StopSoundByContext_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_MovingStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.1"
+  },
+  "Properties": {
+    "FadeOut": 1.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_MovingStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.1"
+  },
+  "Properties": {
+    "FadeOut": 1.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Moving.Surface"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_2 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_MovingStop_WHL'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/WHL/AE_Vehicle_MovingStop_WHL.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.DestroyedLoop.FrontLeft"
+    }
+  }
+}

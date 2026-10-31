@@ -12,8 +12,8 @@ that use it.
 
 - **Live site:** <https://kiyogitpy.github.io/wardogs-data-docs/>
 - **Repository:** <https://github.com/Kiyogitpy/wardogs-data-docs>
-- **How the data is read:** [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md)
-- **What the docs cover:** [`docs/INTENT.md`](docs/INTENT.md) · [`docs/SCOPE.md`](docs/SCOPE.md)
+- **Extraction and updates:** [`docs/UPDATE_PIPELINE.md`](docs/UPDATE_PIPELINE.md)
+- **Contributing:** [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ---
 
@@ -32,14 +32,18 @@ that use it.
 | `docs/` | Methodology, units, evidence notes per research round |
 | `_includes/`, `_layouts/`, `_sass/` | Jekyll theme for the GitHub Pages site |
 
-### What is not in this repo
+### Raw exports and local-only files
 
-The raw game exports (`data/`) and the Dumper-7 header dump (`sdk/raw/`)
-are generated locally from an owned copy of the game and are not
-published: they are the game's own material. The docs cite assets by
-name and path (for example
-`Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json`), so anyone with the game can
-produce the same files with the extractor in `tools/` and check a value.
+Raw JSON asset exports are tracked under `data/` alongside the generated
+site JSON in `assets/data/`. The exports retain the extractor's original
+format, including `--- export: ... ---` separators where an asset contains
+one or more exported objects. The docs cite assets by name and path so
+readers can check the source values or reproduce them with `tools/`.
+
+The Dumper-7 header dump (`sdk/raw/`), non-JSON extracted files, game
+binaries, pak files, keys and mapping files remain local and are not
+published. Publishing the exports does not grant a licence to the game's
+underlying material.
 
 ## How it was built
 
@@ -57,8 +61,8 @@ produce the same files with the extractor in `tools/` and check a value.
    is a rerun, not a rewrite.
 
 Apart from that one class dump, the work reads files on disk and an
-offline binary; nothing runs against online matches. Details in
-[`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
+offline binary; nothing runs against online matches. Extraction and update
+steps are in [`docs/UPDATE_PIPELINE.md`](docs/UPDATE_PIPELINE.md).
 
 ## Target build
 

@@ -1,0 +1,178 @@
+--- export: UDataAsset / DA_TacticalMap_ButtonPromptsBar ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_TacticalMap_ButtonPromptsBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/Map/Widgets/TacticalMap/Data/DA_TacticalMap_ButtonPromptsBar",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Zoom.In"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Zoom.Out"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.Zoom",
+          "SourceString": "Zoom",
+          "LocalizedString": "Zoom"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.ToggleZoomPreset"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.ToggleZoom",
+          "SourceString": "Toggle Zoom",
+          "LocalizedString": "Toggle Zoom"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.ToggleLegend"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.ToggleLegend",
+          "SourceString": "Toggle Legend",
+          "LocalizedString": "Toggle Legend"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.ToggleHealth"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.ToggleHealth",
+          "SourceString": "Toggle Health",
+          "LocalizedString": "Toggle Health"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": [
+          "Experience.Rules.NoMinimapHealth"
+        ]
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Recenter"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.RecenterPlayer",
+          "SourceString": "Recenter",
+          "LocalizedString": "Recenter"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Ping"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.Ping",
+          "SourceString": "Ping",
+          "LocalizedString": "Ping"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [
+          "State.Player.Vitality.Critical"
+        ],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.MarkCoordinates"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+          "Key": "Map.InteractionMenu.MarkCoordinates",
+          "SourceString": "Mark Coordinates",
+          "LocalizedString": "Mark Coordinates"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [
+          "State.Player.Vitality.Critical"
+        ],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+--- export: UPrimaryDataAsset / DA_Action_Ladder ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Ladder",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Ladder",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Ladder"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Ladder_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Ladder.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.Reload"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.ChamberRound"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            },
+            {
+              "ActionTag": {
+                "TagName": "Action.VehicleRepairTool.Reload"
+              },
+              "BufferType": "EBHActionBufferType::PartialBuffer",
+              "BufferTime": 5.0
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Melee.PrimaryUse",
+            "Action.Weapon.Fire",
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Player.Prone",
+            "Action.Player.Crouch",
+            "Action.Player.ChangeQuickSlot",
+            "Action.Player.ChangeToNextQuickSlot",
+            "Action.Player.ChangeToPreviousQuickSlot",
+            "Action.Player.ToggleHands",
+            "Action.VehicleRepairTool.ContinuousUse",
+            "Action.Player.Emote.Surrender_Drop"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Player.Jump",
+            "Action.Player.Crouch",
+            "Action.Player.Prone",
+            "Action.Weapon.ADS",
+            "Action.Player.Lean.Left",
+            "Action.Player.Lean.Right"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Weapon"
+          ],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

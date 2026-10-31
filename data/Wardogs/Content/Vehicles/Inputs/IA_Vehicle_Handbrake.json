@@ -1,0 +1,66 @@
+--- export: UDataAsset / IA_Vehicle_Handbrake ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Handbrake",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Handbrake"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_Handbrake:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake.2"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Handbrake:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake.3"
+      }
+    ],
+    "PlayerMappableKeySettings": {
+      "ObjectName": "BHPlayerMappableKeySettings'IA_Vehicle_Handbrake:BHPlayerMappableKeySettings_0'",
+      "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake.1"
+    }
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Handbrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake.0"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Handbrake"
+    },
+    "Name": "Input.NamedActions.Vehicle.Handbrake"
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Handbrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Handbrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Handbrake.0"
+  }
+}

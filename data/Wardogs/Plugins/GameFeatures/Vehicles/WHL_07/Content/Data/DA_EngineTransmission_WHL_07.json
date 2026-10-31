@@ -1,0 +1,37 @@
+--- export: UDataAsset / DA_EngineTransmission_WHL_07 ---
+{
+  "Type": "MWheeledVehicleEngineTransmissionDataAsset",
+  "Name": "DA_EngineTransmission_WHL_07",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleEngineTransmissionDataAsset'",
+  "Package": "/WHL_07/Data/DA_EngineTransmission_WHL_07",
+  "Properties": {
+    "EngineData": {
+      "TorqueCurve": {
+        "ObjectName": "CurveFloat'CRV_Torque_WHL_07'",
+        "ObjectPath": "/WHL_07/Curves/CRV_Torque_WHL_07.0"
+      },
+      "TorqueScale": 2.0,
+      "IdleRPM": 650.0,
+      "LimitRpm": 2600.0,
+      "LimiterTime": 50.0,
+      "EngineInertia": 1.0,
+      "BoostScale": 1.03
+    },
+    "TransmissionData": {
+      "bUseRevMatching": false,
+      "ChangeTime": 40.0,
+      "GearUpRatio": 85.0,
+      "GearDownRatio": 70.0,
+      "GearRatios": [
+        5.62,
+        2.89,
+        1.64,
+        1.25,
+        1.1,
+        3.25
+      ],
+      "FinalGearRatio": 7.32
+    }
+  }
+}

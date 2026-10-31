@@ -1,0 +1,1096 @@
+--- export: UDataTable / DT_Settings_Accessibility ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Settings_Accessibility",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Settings/Accessibility/DT_Settings_Accessibility",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHUserSettingDataTableRow'",
+      "ObjectPath": "/Script/BHUserSettings"
+    }
+  },
+  "Rows": {
+    "UserSettings.Accessibility.Language": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Language",
+          "SourceString": "Language",
+          "LocalizedString": "Language"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Language",
+          "SourceString": "The language all text in the game displays in.",
+          "LocalizedString": "The language all text in the game displays in."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_Language.T_UI_Settings_720p_Language",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_Language.DA_Setting_Accessibility_Language",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.Language"
+      }
+    },
+    "UserSettings.Accessibility.NameplateBackgroundOpacity": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.NameplateBackgroundOpacity",
+          "SourceString": "Nameplate Background Opacity",
+          "LocalizedString": "Nameplate Background Opacity"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.NameplateBackgroundOpacity",
+          "SourceString": "The opacity of the nameplate background above players and vehicles.",
+          "LocalizedString": "The opacity of the nameplate background above players and vehicles."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_NameplayOpacity.T_UI_Settings_NameplayOpacity",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_NameplateBackgroundOpacity.DA_Setting_Accessibility_NameplateBackgroundOpacity",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.NameplateBackgroundOpacity"
+      }
+    },
+    "UserSettings.Accessibility.HUD.AlwaysDisplayAllQuickSlots": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.AlwaysDisplayAllQuickSlots",
+          "SourceString": "Display All Quick Slots on Item Switch",
+          "LocalizedString": "Display All Quick Slots on Item Switch"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.AlwaysDisplayAllQuickSlots",
+          "SourceString": "If enabled, then all of the player's quick slots will be displayed when changing equipped item.\r\nIf disabled, then the primary/sidearm/specialist & the tactical vest slots will be displayed separately, dependent on which item is equipped.",
+          "LocalizedString": "If enabled, then all of the player's quick slots will be displayed when changing equipped item.\r\nIf disabled, then the primary/sidearm/specialist & the tactical vest slots will be displayed separately, dependent on which item is equipped."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_AllQuickSlots.T_UI_Settings_AllQuickSlots",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.AlwaysDisplayAllQuickSlots"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Global": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Global",
+          "SourceString": "HUD Visibility Preset",
+          "LocalizedString": "HUD Visibility Preset"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Global",
+          "SourceString": "The visibility to globally apply to all HUD elements.",
+          "LocalizedString": "The visibility to globally apply to all HUD elements."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_HUD.T_UI_Settings_HUD",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_Global.DA_Setting_Accessibility_HUD_Visibility_Global",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Global"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Cash": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Cash",
+          "SourceString": "Cash",
+          "LocalizedString": "Cash"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Cash",
+          "SourceString": "The visibility of the cash on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the cash on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_CashFeedIsolated.T_UI_Settings_720p_CashFeedIsolated",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Cash"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.CentralHUDReward": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.CentralHUDReward",
+          "SourceString": "Central HUD Reward",
+          "LocalizedString": "Central HUD Reward"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.CentralHUDReward",
+          "SourceString": "The visibility of the central reward feedback on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the central reward feedback on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_CentralWidgetIsolated.T_UI_Settings_720p_CentralWidgetIsolated",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.CentralHUDReward"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Chatbox": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Chatbox",
+          "SourceString": "Chatbox",
+          "LocalizedString": "Chatbox"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Chatbox",
+          "SourceString": "The visibility of the chatbox on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the chatbox on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Chatbox2.T_UI_Settings_Chatbox2",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.DA_Setting_Accessibility_HUD_Visibility",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Chatbox"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Compass": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Compass",
+          "SourceString": "Compass",
+          "LocalizedString": "Compass"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Compass",
+          "SourceString": "The visibility of the compass on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the compass on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Compass.T_UI_Settings_Compass",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Compass"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.EquippedItem": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.EquippedItem",
+          "SourceString": "Equipped Item",
+          "LocalizedString": "Equipped Item"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.EquippedItem",
+          "SourceString": "The visibility of the equipped item information on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the equipped item information on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_EquippedItems.T_UI_Settings_EquippedItems",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.DA_Setting_Accessibility_HUD_Visibility",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.EquippedItem"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.EventFeed": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.EventFeed",
+          "SourceString": "Event Feed",
+          "LocalizedString": "Event Feed"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.EventFeed",
+          "SourceString": "The visibility of the event feed on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the event feed on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_EventFeedIsolated.T_UI_Settings_720p_EventFeedIsolated",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.EventFeed"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Faction": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Faction",
+          "SourceString": "Faction",
+          "LocalizedString": "Faction"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Faction",
+          "SourceString": "The visibility of the faction information on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the faction information on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Faction.T_UI_Settings_Faction",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.DA_Setting_Accessibility_HUD_Visibility",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Faction"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.GameModeStatus": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.GameModeStatus",
+          "SourceString": "Game Information",
+          "LocalizedString": "Game Information"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.GameModeStatus",
+          "SourceString": "The visibility of the game status on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the game status on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_ScoreTicker.T_UI_Settings_ScoreTicker",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.GameModeStatus"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Killfeed": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Killfeed",
+          "SourceString": "Killfeed",
+          "LocalizedString": "Killfeed"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Killfeed",
+          "SourceString": "The visibility of the killfeed on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the killfeed on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Killfeed.T_UI_Settings_Killfeed",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Killfeed"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Minimap": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Minimap",
+          "SourceString": "Minimap",
+          "LocalizedString": "Minimap"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Minimap",
+          "SourceString": "The visibility of the minimap on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the minimap on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Minimap.T_UI_Settings_Minimap",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Minimap"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.LocationContext": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.LocationContext",
+          "SourceString": "Location Context",
+          "LocalizedString": "Location Context"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.LocationContext",
+          "SourceString": "The visibility of the location context on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the location context on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Location.T_UI_Settings_Location",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.DA_Setting_Accessibility_HUD_Visibility",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.LocationContext"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Health": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Health",
+          "SourceString": "Health",
+          "LocalizedString": "Health"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Health",
+          "SourceString": "The visibility of the health information on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the health information on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_HealthBar.T_UI_Settings_HealthBar",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.DA_Setting_Accessibility_HUD_Visibility",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Health"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Parachute": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Parachute",
+          "SourceString": "Parachute",
+          "LocalizedString": "Parachute"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Parachute",
+          "SourceString": "The visibility of the parachute information on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the parachute information on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Paracute.T_UI_Settings_Paracute",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Parachute"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Passengers": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Passengers",
+          "SourceString": "Passengers",
+          "LocalizedString": "Passengers"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Passengers",
+          "SourceString": "The visibility of the passengers on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the passengers on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VehicleSeats.T_UI_Settings_VehicleSeats",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Passengers"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.PromotionToast": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.PromotionToast",
+          "SourceString": "Promotion Toast",
+          "LocalizedString": "Promotion Toast"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.PromotionToast",
+          "SourceString": "The visibility of the promotion toast on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the promotion toast on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_LevelUp.T_UI_Settings_LevelUp",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.PromotionToast"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Prompts": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.VehiclePromptState",
+          "SourceString": "Vehicle Keybind Prompts",
+          "LocalizedString": "Vehicle Keybind Prompts"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Prompts",
+          "SourceString": "The visibility of the additional prompts on the vehicle HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the additional prompts on the vehicle HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VehiclePrompt.T_UI_Settings_VehiclePrompt",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Prompts"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.QuickSlots": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.QuickSlots",
+          "SourceString": "Quick Slots",
+          "LocalizedString": "Quick Slots"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.QuickSlots",
+          "SourceString": "The visibility of the quick slots on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the quick slots on the HUD.\r\n\r\nOn = Always visible\r\nDynamic = Only displayed when relevant.\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Quickslots.T_UI_Settings_Quickslots",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility.DA_Setting_Accessibility_HUD_Visibility",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.QuickSlots"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.SpatialTrackers": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.SpatialTrackers",
+          "SourceString": "Spatial Trackers",
+          "LocalizedString": "Spatial Trackers"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.SpatialTrackers",
+          "SourceString": "The visibility of the overhead trackers on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the overhead trackers on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_SpatialMarkers.T_UI_Settings_SpatialMarkers",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.SpatialTrackers"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Tip": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Tip",
+          "SourceString": "Tip",
+          "LocalizedString": "Tip"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Tip",
+          "SourceString": "The visibility of the tip indicator on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the tip indicator on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Tip.T_UI_Settings_Tip",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Tip"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Vehicle": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Vehicle",
+          "SourceString": "Vehicle",
+          "LocalizedString": "Vehicle"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Vehicle",
+          "SourceString": "The visibility of the vehicle information on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the vehicle information on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VehicleWidget.T_UI_Settings_VehicleWidget",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Vehicle"
+      }
+    },
+    "UserSettings.Accessibility.HUD.MapRotation.MiniMap": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Minimap.Rotation",
+          "SourceString": "Minimap Rotation",
+          "LocalizedString": "Minimap Rotation"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Minimap.Rotation",
+          "SourceString": "When enabled minimap rotates around player instead of always facing north",
+          "LocalizedString": "When enabled minimap rotates around player instead of always facing north"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_MiniMapRotation.T_UI_Settings_MiniMapRotation",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.MapRotation.MiniMap"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Map.InvertZoom": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Map.InvertZoomPreset",
+          "SourceString": "Invert Map Preset Zoom",
+          "LocalizedString": "Invert Map Preset Zoom"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Map.InvertZoomPreset",
+          "SourceString": "When enabled the map preset key will zoom in instead of out.",
+          "LocalizedString": "When enabled the map preset key will zoom in instead of out."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_MinimapZoomInvert.T_UI_Settings_720p_MinimapZoomInvert",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Map.InvertZoom"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Map.SyncZooms": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Map.SyncZooms",
+          "SourceString": "Sync Map Zoom",
+          "LocalizedString": "Sync Map Zoom"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Map.SyncZooms",
+          "SourceString": "When enabled the minimap and tactical map will both sync zoom levels.",
+          "LocalizedString": "When enabled the minimap and tactical map will both sync zoom levels."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Map.SyncZooms"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.NetStatus": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.NetStatus",
+          "SourceString": "Network Status",
+          "LocalizedString": "Network Status"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.NetStatus",
+          "SourceString": "The visibility of the network status indicators on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the network status indicators on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_NetworkIcons.T_UI_Settings_NetworkIcons",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.NetStatus"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.WagerToast": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.WagerToast",
+          "SourceString": "Wager Toast",
+          "LocalizedString": "Wager Toast"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.WagerToast",
+          "SourceString": "The visibility of the wager result toast on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the wager result toast on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_CashDisplay.T_UI_Settings_CashDisplay",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.WagerToast"
+      }
+    },
+    "UserSettings.Accessibility.HUD.Visibility.Wager": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "DisplayName.Visibility.Wager",
+          "SourceString": "Wager",
+          "LocalizedString": "Wager"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Accessibility.STRINGS_Settings_Accessibility",
+          "Key": "Description.Visibility.Wager",
+          "SourceString": "The visibility of the running wager on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden",
+          "LocalizedString": "The visibility of the running wager on the HUD.\r\n\r\nOn = Always visible\r\nOff = Always hidden"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_CashDisplay.T_UI_Settings_CashDisplay",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/Accessibility/DA_Setting_Accessibility_HUD_Visibility_NonDynamic.DA_Setting_Accessibility_HUD_Visibility_NonDynamic",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.Accessibility.HUD.Visibility.Wager"
+      }
+    }
+  }
+}

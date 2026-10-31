@@ -1,0 +1,133 @@
+--- export: UObject / WDCharacterModifier_Ladder_0 ---
+{
+  "Type": "WDCharacterModifier_Ladder",
+  "Name": "WDCharacterModifier_Ladder_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_Ladder'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Ladder'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.4"
+  }
+}
+--- export: UObject / WDCharacterModifier_LadderCameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_LadderCameraLock",
+  "Name": "WDCharacterModifier_LadderCameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_LadderCameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Ladder'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.4"
+  },
+  "Properties": {
+    "PitchLockSettings": {
+      "LockAngle": 45.0,
+      "LockCentreOffset": 30.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.7
+    },
+    "YawLockSettings": {
+      "LockAngle": 40.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.7
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_MovementMode_0 ---
+{
+  "Type": "WDCharacterModifierCondition_MovementMode",
+  "Name": "WDCharacterModifierCondition_MovementMode_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_MovementMode'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Ladder'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.4"
+  },
+  "Properties": {
+    "MovementModeTag": {
+      "TagName": "Mover.Mode.LadderClimbing"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Ladder'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.4"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        3,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "UserDescription": "We are alive and not in a vehicle",
+      "AutoDescription": " NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead, State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Ladder ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Ladder",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Ladder"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_Ladder'DA_CharacterModifierState_Ladder:WDCharacterModifier_Ladder_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.0"
+      },
+      {
+        "ObjectName": "WDCharacterModifier_LadderCameraLock'DA_CharacterModifierState_Ladder:WDCharacterModifier_LadderCameraLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.1"
+      }
+    ],
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Ladder:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.3"
+      },
+      {
+        "ObjectName": "WDCharacterModifierCondition_MovementMode'DA_CharacterModifierState_Ladder:WDCharacterModifierCondition_MovementMode_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Ladder.2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+--- export: UPrimaryDataAsset / AnimSet_Bandage ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_Bandage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/Game/Items/Consumables/Bandage/AnimSet_Bandage",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Bandage_Inspect'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/Rework/AM_FP_Bandage_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Bandage_Inspect'",
+              "ObjectPath": "/Game/Animation/Utilities/Bandage/Rework/AM_Weap_Bandage_Inspect.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Bandage_Self_Heal'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/Rework/AM_FP_Bandage_Self_Heal.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Bandage_Self_Heal'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/TP/Rework/AM_TP_Bandage_Self_Heal.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Bandage_Self_Heal'",
+              "ObjectPath": "/Game/Animation/Utilities/Bandage/Rework/AM_Weap_Bandage_Self_Heal.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Bandage_Self_Heal'",
+              "ObjectPath": "/Game/Animation/Utilities/Bandage/Rework/TP/AM_Weap_Bandage_Self_Heal.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Bandage_Teammate_Heal'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/Rework/AM_FP_Bandage_Teammate_Heal.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Bandage_Teammate_Heal'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Bandage/TP/Rework/AM_TP_Bandage_Teammate_Heal.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Bandage_Teammate_Heal'",
+              "ObjectPath": "/Game/Animation/Utilities/Bandage/Rework/AM_Weap_Bandage_Teammate_Heal.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Bandage_Teammate_Heal'",
+              "ObjectPath": "/Game/Animation/Utilities/Bandage/Rework/TP/AM_Weap_Bandage_Teammate_Heal.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Equipment1H_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Equipment1H_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Nothing_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Nothing_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Gunsmith'",
+    "ObjectPath": "/Gunsmith/Gunsmith.2"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/GunsmithRuntime.WDGunsmithPlayerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Gunsmith'",
+    "ObjectPath": "/Gunsmith/Gunsmith.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "DevMenuMapsData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/Gunsmith/UI/Data/Entities/DT_Gunsmith_DevMenuMaps.DT_Gunsmith_DevMenuMaps",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UISceneData_Frontend",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/Gunsmith/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.DT_SceneData_Frontend_Gunsmith",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Gunsmith ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Gunsmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Gunsmith/Gunsmith",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'Gunsmith:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/Gunsmith/Gunsmith.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Gunsmith:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Gunsmith/Gunsmith.1"
+      }
+    ]
+  }
+}

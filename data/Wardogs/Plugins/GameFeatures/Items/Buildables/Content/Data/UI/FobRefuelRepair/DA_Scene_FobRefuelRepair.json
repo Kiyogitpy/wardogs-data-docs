@@ -1,0 +1,526 @@
+--- export: UDataAsset / DA_Scene_FobRefuelRepair ---
+{
+  "Type": "WDUIFobRefuelRepairData",
+  "Name": "DA_Scene_FobRefuelRepair",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIFobRefuelRepairData'",
+  "Package": "/Buildables/Data/UI/FobRefuelRepair/DA_Scene_FobRefuelRepair",
+  "Properties": {
+    "StationData": [
+      {
+        "Key": {
+          "TagName": "Buildable.RefuelStation"
+        },
+        "Value": {
+          "StationImage": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_FuelIndicator.T_UI_Icon_FuelIndicator",
+            "SubPathString": ""
+          },
+          "MatchingResource": {
+            "TagName": "Id.Item.FuelSupplies"
+          },
+          "ResourceName": {
+            "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+            "Key": "Refuel.ResourceLabel",
+            "SourceString": "Fuel: ",
+            "LocalizedString": "Fuel: "
+          },
+          "RestockType": "EFobRestockType::Refuel",
+          "ItemCostPerSingleRestock": 5,
+          "UnavailableStationText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+            "Key": "Refuel.Unavailable",
+            "SourceString": "NO REFUEL STATION",
+            "LocalizedString": "NO REFUEL STATION"
+          },
+          "RestockingText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+            "Key": "Refuel.Progress",
+            "SourceString": "REFUELING...",
+            "LocalizedString": "REFUELING..."
+          },
+          "RestockData": [
+            {
+              "Key": "EFobRestockSpeed::Fast",
+              "Value": {
+                "MaxAmount": 0.05,
+                "Cost": 75,
+                "RestockTime": 3.0,
+                "RestockText": {
+                  "Namespace": "",
+                  "Key": "6FBFCA3F4D067F3A354AF7B611D1DE8A",
+                  "SourceString": "REFUEL [FAST]",
+                  "LocalizedString": "REFUEL [FAST]"
+                },
+                "RestockingCueTag": {
+                  "TagName": "GameplayCue.Buildable.RefuelRepairStation.Refueling"
+                }
+              }
+            },
+            {
+              "Key": "EFobRestockSpeed::Max",
+              "Value": {
+                "MaxAmount": 1.0,
+                "Cost": 1500,
+                "RestockTime": 9.0,
+                "RestockText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+                  "Key": "Refuel.Button.Max",
+                  "SourceString": "REFUEL [MAX]",
+                  "LocalizedString": "REFUEL [MAX]"
+                },
+                "RestockingCueTag": {
+                  "TagName": "GameplayCue.Buildable.RefuelRepairStation.Refueling"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Buildable.RepairStation"
+        },
+        "Value": {
+          "StationImage": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Map_ToolTip_SparePartsSupplies.T_UI_Map_ToolTip_SparePartsSupplies",
+            "SubPathString": ""
+          },
+          "MatchingResource": {
+            "TagName": "Id.Item.SparePartsSupplies"
+          },
+          "ResourceName": {
+            "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+            "Key": "Repair.ResourceLabel",
+            "SourceString": "Repair: ",
+            "LocalizedString": "Repair: "
+          },
+          "RestockType": "EFobRestockType::Repair",
+          "ItemCostPerSingleRestock": 5,
+          "UnavailableStationText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+            "Key": "Repair.Unavailable",
+            "SourceString": "NO REPAIR STATION",
+            "LocalizedString": "NO REPAIR STATION"
+          },
+          "RestockingText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+            "Key": "Repair.Progress",
+            "SourceString": "REPAIRING...",
+            "LocalizedString": "REPAIRING..."
+          },
+          "RestockData": [
+            {
+              "Key": "EFobRestockSpeed::Fast",
+              "Value": {
+                "MaxAmount": 0.05,
+                "Cost": 100,
+                "RestockTime": 3.0,
+                "RestockText": {
+                  "Namespace": "",
+                  "Key": "85CEC9B14F03414025ABBAAD721BE9D7",
+                  "SourceString": "REPAIR [FAST]",
+                  "LocalizedString": "REPAIR [FAST]"
+                },
+                "RestockingCueTag": {
+                  "TagName": "GameplayCue.Buildable.RefuelRepairStation.Repairing"
+                }
+              }
+            },
+            {
+              "Key": "EFobRestockSpeed::Max",
+              "Value": {
+                "MaxAmount": 1.0,
+                "Cost": 2000,
+                "RestockTime": 9.0,
+                "RestockText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_FOBStations.STRINGS_FOBStations",
+                  "Key": "Repair.Button.Max",
+                  "SourceString": "REPAIR [MAX]",
+                  "LocalizedString": "REPAIR [MAX]"
+                },
+                "RestockingCueTag": {
+                  "TagName": "GameplayCue.Buildable.RefuelRepairStation.Repairing"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "StationEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIFobRefuelRepairStationEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "ButtonEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIFobRefuelRepairButtonViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UsingItemColour": {
+      "R": 0.132868,
+      "G": 0.0,
+      "B": 0.0,
+      "A": 1.0,
+      "Hex": "660000"
+    },
+    "VehicleHealthVariants": [
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_01.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Havoc.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Engine",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Heavy"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Engine",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Minigun"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Middle",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Middle",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Battle"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Middle",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Middle",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Middle",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Middle",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Rotor.Tail",
+          "Attribute.Gameplay.Health.Rotor.Main",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Engine",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_04.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Tracks.Right",
+          "Attribute.Gameplay.Health.Engine",
+          "Attribute.Gameplay.Health.Tracks.Left",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+        },
+        "Value": [
+          "Attribute.Gameplay.Health.FuelTank",
+          "Attribute.Gameplay.Health.Wheel.Left.Front",
+          "Attribute.Gameplay.Health.Wheel.Left.Rear",
+          "Attribute.Gameplay.Health.Wheel.Right.Front",
+          "Attribute.Gameplay.Health.Wheel.Right.Rear",
+          "Attribute.Gameplay.Health"
+        ]
+      }
+    ],
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.FobRefuelRepair"
+    },
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Vehicle.Close"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+--- export: UDataAsset / DA_ROT_02_CameraBehaviourSettings_FP ---
+{
+  "Type": "MRotaryVehicleSpringArmDataAsset",
+  "Name": "DA_ROT_02_CameraBehaviourSettings_FP",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MRotaryVehicleSpringArmDataAsset'",
+  "Package": "/ROT_02/Data/DA_ROT_02_CameraBehaviourSettings_FP",
+  "Properties": {
+    "PitchMapBoundsInput": {
+      "X": -45.0,
+      "Y": 45.0
+    },
+    "PitchMapBoundsOutput": {
+      "X": -25.0,
+      "Y": 10.0
+    },
+    "VelocityMapBoundsInput": {
+      "X": 100.0,
+      "Y": 7000.0
+    },
+    "VelocityMapBoundsOutput": {
+      "X": 0.3,
+      "Y": 5.0
+    },
+    "DefaultLerpSpeed": 5.0,
+    "CameraBehaviourMinVelocity": 1.0,
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -30.0
+      }
+    },
+    "FreeLookMinPitchYawCurve": {
+      "ObjectName": "CurveFloat'CRV_FreeLookPitchRange_ROT_02'",
+      "ObjectPath": "/ROT_02/Curves/CRV_FreeLookPitchRange_ROT_02.0"
+    },
+    "SocketOffset": {
+      "X": 207.5,
+      "Y": 0.0,
+      "Z": 285.0
+    },
+    "TargetArmLength": 2400.0,
+    "RotationLagVsVehicleRotation": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'DA_ROT_02_CameraRotationCurve'",
+        "ObjectPath": "/ROT_02/Camera/DA_ROT_02_CameraRotationCurve.0"
+      }
+    },
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 5.0,
+    "CameraRotationLagSpeed": 3.0,
+    "CameraLagMaxDistance": 300.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {},
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'DA_ROT_02_SpeedFOVCurve'",
+          "ObjectPath": "/ROT_02/Camera/DA_ROT_02_SpeedFOVCurve.0"
+        }
+      },
+      "FirstPersonLagSettings": {
+        "EnableLagInYaw": true,
+        "LagSpeedInYaw": 15.0,
+        "EnableLagInPitch": true,
+        "LagSpeedInPitch": 25.0,
+        "EnableLagInRoll": true,
+        "LagSpeedInRoll": 25.0
+      }
+    }
+  }
+}

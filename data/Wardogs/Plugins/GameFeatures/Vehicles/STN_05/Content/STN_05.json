@@ -1,0 +1,290 @@
+--- export: UObject / BHGameFeatureAction_AddGameplayCuePath_0 ---
+{
+  "Type": "BHGameFeatureAction_AddGameplayCuePath",
+  "Name": "BHGameFeatureAction_AddGameplayCuePath_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddGameplayCuePath'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'STN_05'",
+    "ObjectPath": "/STN_05/STN_05.4"
+  },
+  "Properties": {
+    "DirectoryPathsToAdd": [
+      {
+        "Path": "/STN_05/Blueprints/GameplayCues"
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'STN_05'",
+    "ObjectPath": "/STN_05/STN_05.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDStationaryVehicle",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/STN_05/Data/B_DroneReloadComponent.B_DroneReloadComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'STN_05'",
+    "ObjectPath": "/STN_05/STN_05.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_STN_05'",
+      "ObjectPath": "/STN_05/DataLayer/EDL_STN_05.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'STN_05'",
+    "ObjectPath": "/STN_05/STN_05.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "RadialWheelSlotTypeRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/BuildableData/DT_STN_05_RadialWheelSlotType_BuildToolData.DT_STN_05_RadialWheelSlotType_BuildToolData",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "Buildables_LargeHammer",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/BuildableData/DT_STN_05_Buildable_Data.DT_STN_05_Buildable_Data",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VehicleCrosshair_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/DataTable/DT_VehicleCrosshair_STN_05.DT_VehicleCrosshair_STN_05",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "GlobalDamageData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/DataTable/DT_GlobalDamage_VehicleData_STN_05.DT_GlobalDamage_VehicleData_STN_05",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/DataTable/DT_EntityData_UI_Vehicles_STN_05.DT_EntityData_UI_Vehicles_STN_05",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UISceneData_Match",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": false,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/Data/UI/DT_SceneData_Match_STN_05.DT_SceneData_Match_STN_05",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VehicleSeatNameOverrides",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/STN_05/DataTable/DT_VehicleSeatOverrides_STN_05.DT_VehicleSeatOverrides_STN_05",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / STN_05 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "STN_05",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/STN_05/STN_05",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'STN_05:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/STN_05/STN_05.3"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'STN_05:BHGameFeatureAction_AddGameplayCuePath_0'",
+        "ObjectPath": "/STN_05/STN_05.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'STN_05:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/STN_05/STN_05.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'STN_05:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/STN_05/STN_05.1"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/STN_05/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "ModularVehicleVariant",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/ModularVehicles.ModularVehicleVariant",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/STN_05/Varient"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/STN_05"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "WD.Projectile",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDProjectileData",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/STN_05/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

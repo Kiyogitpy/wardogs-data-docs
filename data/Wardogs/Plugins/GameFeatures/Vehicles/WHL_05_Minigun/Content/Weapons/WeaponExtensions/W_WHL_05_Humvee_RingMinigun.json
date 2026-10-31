@@ -1,0 +1,202 @@
+--- export: UDataAsset / W_WHL_05_Humvee_RingMinigun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_WHL_05_Humvee_RingMinigun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/WHL_05_Minigun/Weapons/WeaponExtensions/W_WHL_05_Humvee_RingMinigun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.WHL_05.RingMinigun"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/WHL_05/Meshes/Components/SK_WHL_05_PassengerGun_01b.SK_WHL_05_PassengerGun_01b",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceId": "TurretSkeleton",
+      "SocketName": "S_Attach_MountedMinigun_Player"
+    },
+    "GamepadRotationSensitivity": 100.0,
+    "GamepadRotationUpdateMax": {
+      "X": 110.0,
+      "Y": 110.0
+    },
+    "MouseRotationSensitivity": 25.0,
+    "MouseRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "KeyRotationSensitivity": 100.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": -60.0,
+      "MaxWeaponYawAngle": 60.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -22.5,
+      "MaxWeaponPitchAngle": 30.0,
+      "_aaabkahggicllllkkgeko": 0.2,
+      "RotationSpeed": 150.0,
+      "TurretSkeletalMeshTag": "TurretSkeleton",
+      "YawJointSocket": "vehicleRotation_J",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.HipFire"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "TurretSkeleton",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_HipFire",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "TurretSkeleton",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_ADS",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.2,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "TurretSkeleton",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_Crouch",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Land"
+    },
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/WHL_05_Minigun/Weapons/WeaponExtensions/WE_WHL_05_RingMinigun.WE_WHL_05_RingMinigun",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

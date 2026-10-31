@@ -1,0 +1,60 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_DefenceSystem_Flares ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_DefenceSystem_Flares",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_DefenceSystem_Flares",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.DefenceSystem.Flares"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_DefenceSystem_Flares:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_DefenceSystem_Flares.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_DefenceSystem_Flares:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_DefenceSystem_Flares.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 402.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_DefenceSystem_Flares'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_DefenceSystem_Flares.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.DefenceSystem.Flares"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_DefenceSystem_Flares'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_DefenceSystem_Flares.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_DefenceSystem_Flares_Deploy'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/DefenceSystem/MSS/MSS_Vehicle_DefenceSystem_Flares_Deploy.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.DefenceSystem.Flares"
+    }
+  }
+}

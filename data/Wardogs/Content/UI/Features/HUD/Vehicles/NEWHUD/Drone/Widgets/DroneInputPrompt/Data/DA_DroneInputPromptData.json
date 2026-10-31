@@ -1,0 +1,64 @@
+--- export: UDataAsset / DA_DroneInputPromptData ---
+{
+  "Type": "WDUIProjectileCameraInputPromptData",
+  "Name": "DA_DroneInputPromptData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIProjectileCameraInputPromptData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/NEWHUD/Drone/Widgets/DroneInputPrompt/Data/DA_DroneInputPromptData",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInputPromptEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "_aaaallknmkdmpggoihpcb": {
+      "Map": [
+        {
+          "Key": {
+            "TagName": "Input.NamedActions.Drone.Projectile.Boost"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD_Drone_Action_Boost",
+            "SourceString": "Boost",
+            "LocalizedString": "Boost"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Input.NamedActions.Drone.Projectile.Brake"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD_Drone_Action_Brake",
+            "SourceString": "Brake",
+            "LocalizedString": "Brake"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD_Drone_Action_FreeLook",
+            "SourceString": "Free Look",
+            "LocalizedString": "Free Look"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Input.NamedActions.Projectile.Eject"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+            "Key": "HUD_Drone_Action_Eject",
+            "SourceString": "Eject",
+            "LocalizedString": "Eject"
+          }
+        }
+      ]
+    }
+  }
+}

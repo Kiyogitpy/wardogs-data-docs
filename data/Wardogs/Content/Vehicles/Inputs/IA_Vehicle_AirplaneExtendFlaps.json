@@ -1,0 +1,59 @@
+--- export: UDataAsset / IA_Vehicle_AirplaneExtendFlaps ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_AirplaneExtendFlaps",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneExtendFlaps",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.FlapsExtend"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerDown'IA_Vehicle_AirplaneExtendFlaps:InputTriggerDown_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneExtendFlaps.2"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierScalar'IA_Vehicle_AirplaneExtendFlaps:InputModifierScalar_1'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneExtendFlaps.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierScalar_1 ---
+{
+  "Type": "InputModifierScalar",
+  "Name": "InputModifierScalar_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierScalar'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneExtendFlaps'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneExtendFlaps.0"
+  },
+  "Properties": {
+    "Scalar": {
+      "X": 0.05,
+      "Y": 0.05,
+      "Z": 0.05
+    }
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneExtendFlaps'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneExtendFlaps.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

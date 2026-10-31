@@ -1,0 +1,198 @@
+--- export: UPrimaryDataAsset / AnimSet_SmokeGrenade ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_SmokeGrenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/SmokeGrenade/Data/AnimSet_SmokeGrenade",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Equip"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_SmokeGrenade_Equip'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_SmokeGrenade_Equip.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Equip'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Equip.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Holster"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_SmokeGrenade_Holster'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_SmokeGrenade_Holster.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Holster'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Holster.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Throwable.Overarm"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_SmokeGrenade_Throw_Overarm'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_SmokeGrenade_Throw_Overarm.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Throw_Overhand'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Throw_Overhand.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Smoke_Throw'",
+              "ObjectPath": "/SmokeGrenade/Animations/Weapons/Montages/AM_Weap_Smoke_Throw.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Throwable.Underarm"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_SmokeGrenade_Throw_Underarm'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_SmokeGrenade_Throw_Underarm.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Grenade_Throw_Underhand'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/M67_Frag/TP/Player/Montages/AM_TP_Grenade_Throw_Underhand.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_Smoke_Throw'",
+              "ObjectPath": "/SmokeGrenade/Animations/Weapons/Montages/AM_Weap_Smoke_Throw.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Smoke_Inspect'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Throwable/SmokeGrenade/AM_FP_Smoke_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Equipment1H_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Equipment1H_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Nothing_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Nothing_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

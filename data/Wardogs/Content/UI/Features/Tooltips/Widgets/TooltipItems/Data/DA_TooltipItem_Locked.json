@@ -1,0 +1,39 @@
+--- export: UDataAsset / DA_TooltipItem_Locked ---
+{
+  "Type": "WDUITooltipItemLockedData",
+  "Name": "DA_TooltipItem_Locked",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipItemLockedData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/TooltipItems/Data/DA_TooltipItem_Locked",
+  "Properties": {
+    "TextUnlockFormatting": [
+      {
+        "Key": "EWDUILockState::FromLevel",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_TooltipItems.STRINGS_TooltipItems",
+          "Key": "Tooltip.Text.Locked.Level",
+          "SourceString": "Reach {Reason}",
+          "LocalizedString": "Reach {Reason}"
+        }
+      },
+      {
+        "Key": "EWDUILockState::FromCurrency",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_TooltipItems.STRINGS_TooltipItems",
+          "Key": "Tooltip.Text.Locked.Currency",
+          "SourceString": "Unlock for {Reason}",
+          "LocalizedString": "Unlock for {Reason}"
+        }
+      },
+      {
+        "Key": "EWDUILockState::Unknown",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_TooltipItems.STRINGS_TooltipItems",
+          "Key": "Tooltip.Text.Locked.Unknown",
+          "SourceString": "Locked",
+          "LocalizedString": "Locked"
+        }
+      }
+    ]
+  }
+}

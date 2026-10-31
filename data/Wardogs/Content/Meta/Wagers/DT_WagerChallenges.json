@@ -1,0 +1,344 @@
+--- export: UDataTable / DT_WagerChallenges ---
+{
+  "Type": "DataTable",
+  "Name": "DT_WagerChallenges",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Wagers/DT_WagerChallenges",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Challenge.Wager.Kills": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "3362E0DA4DDF9C30B391E181AB9DE641",
+        "SourceString": "Get Kills",
+        "LocalizedString": "Get Kills"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "30D4AFA047CED8C1B97871AA7E43ECDB",
+        "SourceString": "Get Kills",
+        "LocalizedString": "Get Kills"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedKills'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedKills.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "5FEE7615-49121BF0-F725C5AD-1132E96A",
+              "Name": "NumPlayersToKill",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.Kills"
+      }
+    },
+    "Challenges.Challenge.Wager.PlayerDelivery": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "7AEA7B234C4786561E183CBCEADF09B0",
+        "SourceString": "Dropoff People",
+        "LocalizedString": "Dropoff People"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "02D13D05454CDF5576B1E8B6AF45D65E",
+        "SourceString": "Dropoff People",
+        "LocalizedString": "Dropoff People"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_PassengersDelivered'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_PassengersDelivered.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "6CF23E4B-46E6B704-A09F1E9F-FE5944AB",
+              "Name": "NumPassengersToDeliver",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.PlayerDelivery"
+      }
+    },
+    "Challenges.Challenge.Wager.Revives": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "BBEE649949A6366E915A138AF1D3F19D",
+        "SourceString": "Revive Teammates",
+        "LocalizedString": "Revive Teammates"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "0B4A6C1E4821D083D7C78ABBED07FEF4",
+        "SourceString": "Revive Teammates",
+        "LocalizedString": "Revive Teammates"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedRevives'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedRevives.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "F921FC51-448F931C-F4B7AEB7-B0C7B1B8",
+              "Name": "NumPlayersToRevive",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "7D7F4762-4D0C61C8-7580A780-E6781412",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "B614E27E-42DD00EE-077AB786-0BF779EA",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 54
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.Revives"
+      }
+    },
+    "Challenges.Challenge.Wager.VehiclesDestroyed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "653319464CCB28A07B65C9A6714331AB",
+        "SourceString": "Destroy Occupied Vehicles",
+        "LocalizedString": "Destroy Occupied Vehicles"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "384E6A5D47E934571558808E58E2D384",
+        "SourceString": "Destroy Occupied Vehicles",
+        "LocalizedString": "Destroy Occupied Vehicles"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedVehiclesDestroyed'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedVehiclesDestroyed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "92E66293-47D3EC46-05EC1AB1-24B1AB50",
+              "Name": "NumVehiclesToDestroy",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 62
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.VehiclesDestroyed"
+      }
+    }
+  }
+}

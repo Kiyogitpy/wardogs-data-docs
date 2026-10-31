@@ -1,0 +1,46 @@
+--- export: UDataAsset / IA_Look ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Look",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Look"
+    },
+    "bConsumeInput": false,
+    "ValueType": "EInputActionValueType::Axis2D",
+    "Modifiers": [
+      {
+        "ObjectName": "WDAimAssistInputModifier'IA_Look:WDAimAssistInputModifier_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAimAssistInputModifier_0 ---
+{
+  "Type": "WDAimAssistInputModifier",
+  "Name": "WDAimAssistInputModifier_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAimAssistInputModifier'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Look'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.0"
+  },
+  "Properties": {
+    "DefaultFilterData": {
+      "ObjectName": "BHAimAssistFilterData'DA_AimAssistFilter'",
+      "ObjectPath": "/Game/Items/Weapons/DA_AimAssistFilter.0"
+    },
+    "DefaultSettingsData": {
+      "ObjectName": "BHAimAssistSettingsData'DA_AimAssistSettings_Melee'",
+      "ObjectPath": "/Game/Items/Weapons/DA_AimAssistSettings_Melee.0"
+    },
+    "MoveInputAction": {
+      "ObjectName": "BHInputAction'IA_Player_MoveDirectional'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_MoveDirectional.0"
+    }
+  }
+}

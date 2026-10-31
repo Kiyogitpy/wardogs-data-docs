@@ -1,0 +1,53 @@
+--- export: UObject / BHUserSettingBoolDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingBoolDiscreteValues",
+  "Name": "BHUserSettingBoolDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingBoolDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_ActionBehaviour_RotaryMouse'",
+    "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_ActionBehaviour_RotaryMouse.1"
+  },
+  "Properties": {
+    "Values": [
+      {
+        "Key": "True",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Toggle.On",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "False",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Toggle.Off",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UDataAsset / DA_Setting_Controls_ActionBehaviour_RotaryMouse ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_ActionBehaviour_RotaryMouse",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Controls/DA_Setting_Controls_ActionBehaviour_RotaryMouse",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingBoolDiscreteValues'DA_Setting_Controls_ActionBehaviour_RotaryMouse:BHUserSettingBoolDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_ActionBehaviour_RotaryMouse.0"
+      }
+    },
+    "DisplayType": {
+      "TagName": "UserSettings.Common.DisplayType.Discrete.Switch"
+    }
+  }
+}

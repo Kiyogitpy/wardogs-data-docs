@@ -1,0 +1,77 @@
+--- export: UDataTable / DT_TrackerData_Map_Scenario ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_Scenario",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/BaseScenario/UI/Trackers/DT_TrackerData_Map_Scenario",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.PVE.Objective": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/BaseScenario/UI/Trackers/MapTracker/W_Tracker_Map_ObjectiveArea.W_Tracker_Map_ObjectiveArea_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BaseScenarioRuntime.WDUIObjectiveAreaMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/BaseScenario/UI/Trackers/MapTracker/DA_ObjectiveArea.DA_ObjectiveArea",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.PVE.Objective"
+      }
+    },
+    "Trackers.Type.VIP": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.VIP.Data",
+        "Trackers.Type.VIP.Transforms"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Player.W_Tracker_Map_Player_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BaseScenarioRuntime.WDUIVIPMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/BaseScenario/UI/Trackers/MapTracker/DA_VIPMapData.DA_VIPMapData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.VIP"
+      }
+    }
+  }
+}

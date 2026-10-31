@@ -1,0 +1,121 @@
+--- export: UDataAsset / W_ROT_02_30mmCannon ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_ROT_02_30mmCannon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/ROT_02/Weapons/Cannon/W_ROT_02_30mmCannon",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.ROT_02.30mmCannon"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/ROT_02/BigBirdTurret/SK_Helicopter_Turret.SK_Helicopter_Turret",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "S_MuzzleFlash"
+    ],
+    "GamepadRotationSensitivity": 60.0,
+    "GamepadRotationUpdateMax": {
+      "X": 115.0,
+      "Y": 115.0
+    },
+    "MouseRotationSensitivity": 35.0,
+    "MouseRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "KeyRotationSensitivity": 95.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "bLimitWeaponYaw": true,
+      "MinWeaponYawAngle": -65.0,
+      "MaxWeaponYawAngle": 65.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -65.0,
+      "MaxWeaponPitchAngle": 12.0,
+      "_aaabmfpipieikbjnplbgi": true,
+      "_aaablfpjekhjhbadibljp": -20.0,
+      "bStabilisationPermitted": true,
+      "SimulationType": "EWDVehicleWeaponRotationSimType::FullSim",
+      "YawDriveStrength": 10000.0,
+      "YawDampingFactor": 0.05,
+      "PitchDriveStrength": 10000.0,
+      "PitchDampingFactor": 0.05,
+      "RotationSpeed": 75.0,
+      "_aaabfncmhojkliegpjanl": {
+        "X": 150.0,
+        "Y": 150.0
+      },
+      "CollisionTargetFactor": 0.1,
+      "TurretSkeletalMeshTag": "WeaponExtension_0",
+      "YawJointSocket": "weaponYaw_J",
+      "PitchJointSocket": "weaponPitch_J",
+      "PitchBodyBone": "weaponBarrel_J",
+      "YawBodyBone": "weaponYaw_J",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "WeaponExtension_0",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "S_BarrelCamera",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Air"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/ROT_02/Weapons/Cannon/WE_ROT_02_Weapon_30mmCannon.WE_ROT_02_Weapon_30mmCannon",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+--- export: UObject / AEB_PlayTutorialVideoSound_C_0 ---
+{
+  "Type": "AEB_PlayTutorialVideoSound_C",
+  "Name": "AEB_PlayTutorialVideoSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayTutorialVideoSound.AEB_PlayTutorialVideoSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_TutorialVideo'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_TutorialVideo.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayTutorialVideoSound_C'Default__AEB_PlayTutorialVideoSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayTutorialVideoSound.0"
+  },
+  "Properties": {
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.FrontEnd.TutorialVideo"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_TutorialVideo ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_TutorialVideo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_TutorialVideo",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.TutorialVideo"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayTutorialVideoSound_C'AE_TutorialVideo:AEB_PlayTutorialVideoSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_TutorialVideo.0"
+      }
+    ]
+  }
+}

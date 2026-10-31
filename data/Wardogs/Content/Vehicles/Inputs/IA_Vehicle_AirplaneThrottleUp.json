@@ -1,0 +1,53 @@
+--- export: UDataAsset / IA_Vehicle_AirplaneThrottleUp ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_AirplaneThrottleUp",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.ThrottleUp"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_AirplaneThrottleUp:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_AirplaneThrottleUp:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleUp'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneThrottleUp'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneThrottleUp.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

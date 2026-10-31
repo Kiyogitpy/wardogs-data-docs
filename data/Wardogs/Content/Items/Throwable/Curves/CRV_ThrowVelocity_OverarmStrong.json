@@ -1,0 +1,47 @@
+--- export: UCurveFloat / CRV_ThrowVelocity_OverarmStrong ---
+{
+  "Type": "CurveFloat",
+  "Name": "CRV_ThrowVelocity_OverarmStrong",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CurveFloat'",
+  "Package": "/Game/Items/Throwable/Curves/CRV_ThrowVelocity_OverarmStrong",
+  "Properties": {
+    "FloatCurve": {
+      "Keys": [
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_Break",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 0.0,
+          "Value": 2200.0,
+          "ArriveTangent": 21.572807,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 16.076384,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 45.0,
+          "Value": 2750.0,
+          "ArriveTangent": -0.0006491427,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": -0.0006491427,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_User",
+          "TangentWeightMode": "RCTWM_WeightedBoth",
+          "Time": 90.1,
+          "Value": 2200.0,
+          "ArriveTangent": -2066.172,
+          "ArriveTangentWeight": 234.2892,
+          "LeaveTangent": -2066.172,
+          "LeaveTangentWeight": 234.2892
+        }
+      ]
+    }
+  }
+}

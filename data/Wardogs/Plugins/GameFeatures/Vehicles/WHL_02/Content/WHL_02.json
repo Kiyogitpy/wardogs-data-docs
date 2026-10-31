@@ -1,0 +1,181 @@
+--- export: UObject / BHGameFeatureAction_AddGameplayCuePath_0 ---
+{
+  "Type": "BHGameFeatureAction_AddGameplayCuePath",
+  "Name": "BHGameFeatureAction_AddGameplayCuePath_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddGameplayCuePath'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WHL_02'",
+    "ObjectPath": "/WHL_02/WHL_02.3"
+  },
+  "Properties": {
+    "DirectoryPathsToAdd": [
+      {
+        "Path": "/WHL_02/Blueprints/GameplayCues"
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WHL_02'",
+    "ObjectPath": "/WHL_02/WHL_02.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_WHL_02'",
+      "ObjectPath": "/WHL_02/ExternalDataLayers/EDL_WHL_02.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WHL_02'",
+    "ObjectPath": "/WHL_02/WHL_02.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/WHL_02/DataTables/DT_EntityData_UI_Vehicles_WHL_02.DT_EntityData_UI_Vehicles_WHL_02",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/WHL_02/DataTables/DT_VehicleMarket_WHL_02.DT_VehicleMarket_WHL_02",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "GlobalDamageData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/WHL_02/DataTables/DT_GlobalDamage_VehicleData_WHL_02.DT_GlobalDamage_VehicleData_WHL_02",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WHL_02 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WHL_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WHL_02/WHL_02",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'WHL_02:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/WHL_02/WHL_02.2"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'WHL_02:BHGameFeatureAction_AddGameplayCuePath_0'",
+        "ObjectPath": "/WHL_02/WHL_02.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'WHL_02:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/WHL_02/WHL_02.1"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WHL_02/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "ModularVehicleVariant",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/ModularVehicles.ModularVehicleVariant",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WHL_02/Variants"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/WHL_02/Variants"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+--- export: UObject / AEB_DustKickup_C_0 ---
+{
+  "Type": "AEB_DustKickup_C",
+  "Name": "AEB_DustKickup_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DustKickup.AEB_DustKickup_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Helicopter_DustKickup'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_DustKickup_C'Default__AEB_DustKickup_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DustKickup.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.DustKickup"
+    },
+    "bPersistent": true
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Helicopter_DustKickup'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Helicopter_DustKickup ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Helicopter_DustKickup",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.DustKickup"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_DustKickup_C'AE_Vehicle_Helicopter_DustKickup:AEB_DustKickup_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_Helicopter_DustKickup:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup.3"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Helicopter_DustKickup:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Helicopter_DustKickup'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_Helicopter_DustKickup.2"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Helicopter_DustKickup'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/Helicopter/MSS_Vehicle_Helicopter_DustKickup.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.DustKickup"
+    }
+  }
+}

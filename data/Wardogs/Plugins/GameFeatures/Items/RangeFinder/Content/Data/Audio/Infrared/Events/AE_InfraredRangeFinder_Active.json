@@ -1,0 +1,102 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_InfraredRangeFinder_Active'",
+    "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_1 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_InfraredRangeFinder_Active'",
+    "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Item.UsePrimary.3p"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_InfraredRangeFinder_Active'",
+    "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_InfraredRangeFinder_Active_1p'",
+      "ObjectPath": "/RangeFinder/Data/Audio/Infrared/MSS/MSS_Item_InfraredRangeFinder_Active_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_InfraredRangeFinder_Active_3p'",
+      "ObjectPath": "/RangeFinder/Data/Audio/Infrared/MSS/MSS_Item_InfraredRangeFinder_Active_3p.0"
+    },
+    "FriendlyOnly": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_InfraredRangeFinder_Active ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_InfraredRangeFinder_Active",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.RangeFinder.Active"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_InfraredRangeFinder_Active:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active.0"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_InfraredRangeFinder_Active:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active.2"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_InfraredRangeFinder_Active:AEB_PlayHeldItemPerspectiveSound_C_1'",
+        "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_Active.1"
+      }
+    ]
+  }
+}

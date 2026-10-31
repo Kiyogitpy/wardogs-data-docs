@@ -1,0 +1,174 @@
+--- export: UObject / BHGameFeatureAction_AddGameplayCuePath_0 ---
+{
+  "Type": "BHGameFeatureAction_AddGameplayCuePath",
+  "Name": "BHGameFeatureAction_AddGameplayCuePath_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddGameplayCuePath'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ROT_04'",
+    "ObjectPath": "/ROT_04/ROT_04.2"
+  },
+  "Properties": {
+    "DirectoryPathsToAdd": [
+      {
+        "Path": "/ROT_04/Blueprints/GameplayCues"
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'ROT_04'",
+    "ObjectPath": "/ROT_04/ROT_04.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ROT_04/DataTables/DT_EntityData_UI_Vehicles_ROT_04.DT_EntityData_UI_Vehicles_ROT_04",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ROT_04/DataTables/DT_VehicleMarket_ROT_04.DT_VehicleMarket_ROT_04",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "GlobalDamageData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ROT_04/DataTables/DT_GlobalDamage_VehicleData_ROT_04.DT_GlobalDamage_VehicleData_ROT_04",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VehicleSeatNameOverrides",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/ROT_04/DataTables/DT_VehicleSeatOverrides_ROT_04.DT_VehicleSeatOverrides_ROT_04",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ROT_04 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "ROT_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/ROT_04/ROT_04",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'ROT_04:BHGameFeatureAction_AddGameplayCuePath_0'",
+        "ObjectPath": "/ROT_04/ROT_04.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'ROT_04:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/ROT_04/ROT_04.1"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "ModularVehicleVariant",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/ModularVehicles.ModularVehicleVariant",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/ROT_04/Variants"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/ROT_04/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/ROT_04/Variants"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      }
+    ]
+  }
+}

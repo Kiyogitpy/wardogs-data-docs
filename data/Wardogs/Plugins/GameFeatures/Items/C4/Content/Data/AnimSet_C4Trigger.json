@@ -1,0 +1,179 @@
+--- export: UPrimaryDataAsset / AnimSet_C4Trigger ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_C4Trigger",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/C4/Data/AnimSet_C4Trigger",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Throwable.Overarm"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_C4_Throw'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_FP_C4_Throw.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_C4_Throw'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_TP_C4_Throw.1"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_C4_Throw_3P'",
+              "ObjectPath": "/C4/Animation/Weapon/Montages/AM_Weap_C4_Throw_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Trigger"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_C4_Use'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_FP_C4_Use.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_C4_Use'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_TP_C4_Use.0"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_C4_Use'",
+              "ObjectPath": "/C4/Animation/Weapon/Montages/AM_Weap_C4_Use.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_C4_Detonator_Use_3P'",
+              "ObjectPath": "/C4/Animation/Weapon/Montages/AM_Weap_C4_Detonator_Use_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_C4_Inspect'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_FP_C4_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_C4_Inspect'",
+              "ObjectPath": "/C4/Animation/Weapon/Montages/AM_Weap_C4_Inspect.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Equipment1H_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Equipment1H_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Throwable.Underarm"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_C4_Throw'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_FP_C4_Throw.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_C4_Throw'",
+              "ObjectPath": "/C4/Animation/Character/Montages/AM_TP_C4_Throw.1"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_C4_Throw_3P'",
+              "ObjectPath": "/C4/Animation/Weapon/Montages/AM_Weap_C4_Throw_3P.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Nothing_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Nothing_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

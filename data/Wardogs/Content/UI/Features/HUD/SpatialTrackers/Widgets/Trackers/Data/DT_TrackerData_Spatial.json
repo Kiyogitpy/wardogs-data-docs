@@ -1,0 +1,400 @@
+--- export: UDataTable / DT_TrackerData_Spatial ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Spatial",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DT_TrackerData_Spatial",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.Character": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.Character.Data",
+        "Trackers.Type.Character.Transforms"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Player.W_Tracker_Spatial_Player_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPlayerSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.DA_Tracker_Spatial_Player",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Character"
+      }
+    },
+    "Trackers.Type.Spawn": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Spawn.W_Tracker_Spatial_Spawn_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISpawnSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Spawn.DA_Tracker_Spatial_Spawn",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Spawn"
+      }
+    },
+    "Trackers.Type.Vehicle": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Trackers.Type.Vehicle.Data",
+        "Trackers.Type.Vehicle.Transforms",
+        "Vehicle"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Vehicle.W_Tracker_Spatial_Vehicle_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Vehicle.DA_Tracker_Spatial_Vehicle",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vehicle"
+      }
+    },
+    "Trackers.Type.Ping": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Ping.W_Tracker_Spatial_Ping_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPingSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Ping.DA_Tracker_Spatial_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping"
+      }
+    },
+    "Trackers.Type.InteractableActor": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIInteractableActorTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Interactable_Actor.W_Tracker_Spatial_Interactable_Actor_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIInteractableActorSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_Actor.DA_Tracker_Spatial_Interactable_Actor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.InteractableActor"
+      }
+    },
+    "Trackers.Type.InteractableActor.ScreenClamped": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIInteractableActorTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Interactable_Actor.W_Tracker_Spatial_Interactable_Actor_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIInteractableActorSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Interactable_ScreenClampingActor.DA_Tracker_Spatial_Interactable_ScreenClampingActor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.InteractableActor.ScreenClamped"
+      }
+    },
+    "Trackers.Type.Healing": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIActorTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/Healing/W_SpatialTracker_Healing.W_SpatialTracker_Healing_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIHealingSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Healing.DA_Tracker_Spatial_Healing",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Healing"
+      }
+    },
+    "Trackers.Type.AssistanceRequest": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_AssistanceRequest.W_Tracker_Spatial_AssistanceRequest_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIAssistanceRequestSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_AssistanceRequest.DA_Tracker_Spatial_AssistanceRequest",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.AssistanceRequest"
+      }
+    },
+    "Trackers.Type.Ping.Contextual": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPingTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_ContextualPing.W_Tracker_Spatial_ContextualPing_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIContextualPingSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ContextualPing.DA_Tracker_Spatial_ContextualPing",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Ping.Contextual"
+      }
+    },
+    "Trackers.Type.Deployable": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": false,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Item.W_Tracker_Spatial_Item_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Deployable.DA_Tracker_Spatial_Deployable",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Deployable"
+      }
+    },
+    "Trackers.Type.Corpse": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/W_Tracker_Map_Corpse.W_Tracker_Map_Corpse_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUICorpseMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Corpse.DA_Tracker_Minimap_Corpse",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Corpse"
+      }
+    },
+    "Trackers.Type.Vehicle.ActiveZone": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIActiveZoneTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_ActiveZone.W_Tracker_Spatial_ActiveZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleActiveZoneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_ActiveZone.DA_Tracker_Spatial_ActiveZone",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vehicle.ActiveZone"
+      }
+    },
+    "Trackers.Type.Vehicle.OnScreen": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIActorTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/W_Tracker_Spatial_Vehicle_LockOn.W_Tracker_Spatial_Vehicle_LockOn_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIDroneVehicleSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial__Vehicle_LockOn.DA_Tracker_Spatial__Vehicle_LockOn",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.Vehicle.OnScreen"
+      }
+    }
+  }
+}

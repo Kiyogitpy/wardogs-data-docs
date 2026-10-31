@@ -1,0 +1,128 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HunterKiller_01'",
+    "ObjectPath": "/HunterKiller_01/HunterKiller_01.4"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/B_FactionSetup_CreateThreeTeams.B_FactionSetup_CreateThreeTeams_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HunterKiller_01'",
+    "ObjectPath": "/HunterKiller_01/HunterKiller_01.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Blockout_HunterKiller'",
+      "ObjectPath": "/HunterKiller_01/Datalayers/EDL_Blockout_HunterKiller.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_1 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HunterKiller_01'",
+    "ObjectPath": "/HunterKiller_01/HunterKiller_01.4"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_Gameplay_HunterKiller'",
+      "ObjectPath": "/HunterKiller_01/Datalayers/EDL_Gameplay_HunterKiller.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HunterKiller_01'",
+    "ObjectPath": "/HunterKiller_01/HunterKiller_01.4"
+  }
+}
+--- export: UPrimaryDataAsset / HunterKiller_01 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "HunterKiller_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/HunterKiller_01/HunterKiller_01",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'HunterKiller_01:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/HunterKiller_01/HunterKiller_01.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddScenarioState'HunterKiller_01:WDGameFeatureAction_AddScenarioState_0'",
+        "ObjectPath": "/HunterKiller_01/HunterKiller_01.5"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'HunterKiller_01:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/HunterKiller_01/HunterKiller_01.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'HunterKiller_01:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/HunterKiller_01/HunterKiller_01.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'HunterKiller_01:GameFeatureAction_AddWorldPartitionContent_1'",
+        "ObjectPath": "/HunterKiller_01/HunterKiller_01.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddScenarioState_0 ---
+{
+  "Type": "WDGameFeatureAction_AddScenarioState",
+  "Name": "WDGameFeatureAction_AddScenarioState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddScenarioState'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HunterKiller_01'",
+    "ObjectPath": "/HunterKiller_01/HunterKiller_01.4"
+  },
+  "Properties": {
+    "ScenarioData": {
+      "DeathRuleSetClass": {
+        "ObjectName": "BlueprintGeneratedClass'B_DeathRuleSet_NoRespawns_C'",
+        "ObjectPath": "/BaseScenario/DeathRuleSets/B_DeathRuleSet_NoRespawns.1"
+      },
+      "ScenarioQuest": {
+        "AssetPathName": "/HunterKiller_01/Q_HunterKiller_01.Q_HunterKiller_01",
+        "SubPathString": ""
+      }
+    }
+  }
+}

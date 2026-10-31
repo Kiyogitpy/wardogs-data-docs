@@ -1,0 +1,163 @@
+--- export: UDataAsset / DA_VendorPanel_GarageOverview ---
+{
+  "Type": "WDUIVendorPanelData_GarageOverview",
+  "Name": "DA_VendorPanel_GarageOverview",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_GarageOverview'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_GarageOverview",
+  "Properties": {
+    "NoLogisticsSlotsText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.NoLogisticsSlots",
+      "SourceString": "No Logistics Slots",
+      "LocalizedString": "No Logistics Slots"
+    },
+    "LogisticsSlotsFullText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.LogisticsSlotsFull",
+      "SourceString": "Logistics Slots Full",
+      "LocalizedString": "Logistics Slots Full"
+    },
+    "_aaabpekiepgcpjmdofdkg": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.NoWeaponsSupported",
+      "SourceString": "VEHICLE DOES NOT HAVE WEAPONS / COUNTER MEASURES",
+      "LocalizedString": "VEHICLE DOES NOT HAVE WEAPONS / COUNTER MEASURES"
+    },
+    "_aaacaehnlpnafggegdbpo": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+      "Key": "Vendor.Garage.VehicleInventoryFull",
+      "SourceString": "VEHICLE INVENTORY IS FULL",
+      "LocalizedString": "VEHICLE INVENTORY IS FULL"
+    },
+    "VehicleInventoryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInventoryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/InventoryComponent/Data/DA_InventoryComponent_Vendor_Vehicle.DA_InventoryComponent_Vendor_Vehicle",
+        "SubPathString": ""
+      }
+    },
+    "VehicleInformationViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInformationViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Widgets/Garage/Data/DA_VehicleInformation.DA_VehicleInformation",
+        "SubPathString": ""
+      }
+    },
+    "InsufficientFundsPopup": {
+      "Tag": {
+        "TagName": "UI.Popup.Vendor.InsufficientFunds"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.InsufficientFunds.Title",
+        "SourceString": "Insufficient Funds",
+        "LocalizedString": "Insufficient Funds"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.InsufficientFunds.Subtitle",
+        "SourceString": " Not Enough Cash",
+        "LocalizedString": " Not Enough Cash"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Popup.InsufficientFunds.Description.Item",
+        "SourceString": "You have insufficient funds to purchase that item.",
+        "LocalizedString": "You have insufficient funds to purchase that item."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+              "Key": "Popup.InsufficientFunds.Options.Cancel",
+              "SourceString": "Back",
+              "LocalizedString": "Back"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "PurchasableEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPurchasableItemCardViewModel_Vendor",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/ItemCard/Data/DA_ItemCard_Vendor_Garage_Purchasable.DA_ItemCard_Vendor_Garage_Purchasable",
+        "SubPathString": ""
+      }
+    },
+    "PreviousSubcategoryActionTag": {
+      "TagName": "UI.Action.Feature.Vendor.Filter.Previous"
+    },
+    "NextSubcategoryActionTag": {
+      "TagName": "UI.Action.Feature.Vendor.Filter.Next"
+    },
+    "PurchasableCardTypes": [
+      {
+        "Key": "EWDUIVendorPanelCardSize::Small",
+        "Value": {
+          "CategoriesForType": [
+            "Vendor.Category.Ammo",
+            "Vendor.Category.Attachment",
+            "Vendor.Category.Utility"
+          ],
+          "NumberOfVisibleCards": {
+            "X": 8,
+            "Y": 4
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVendorPanelCardSize::Medium",
+        "Value": {
+          "CategoriesForType": [
+            "Vendor.Category.Gear.Armor",
+            "Vendor.Category.Gear.Backpack",
+            "Vendor.Category.Gear.Headgear",
+            "Vendor.Category.Gear.Helmet",
+            "Vendor.Category.Gear.Traversal",
+            "Vendor.Category.Gear.Vest"
+          ],
+          "NumberOfVisibleCards": {
+            "X": 6,
+            "Y": 3
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVendorPanelCardSize::Large",
+        "Value": {
+          "CategoriesForType": [
+            "Vendor.Category.Weapon.Primary",
+            "Vendor.Category.Weapon.Secondary",
+            "Vendor.Category.Weapon.Sidearm"
+          ],
+          "NumberOfVisibleCards": {
+            "X": 4,
+            "Y": 2
+          }
+        }
+      }
+    ]
+  }
+}

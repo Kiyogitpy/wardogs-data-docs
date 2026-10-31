@@ -1,0 +1,87 @@
+--- export: UDataAsset / DA_Setting_Controls_LookAccelerationCurveType ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_LookAccelerationCurveType",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_LookAccelerationCurveType",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_LookAccelerationCurveType:BHUserSettingEnumDiscreteValues_1'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_LookAccelerationCurveType.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_1 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_LookAccelerationCurveType'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_LookAccelerationCurveType.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDLookAccelerationCurveType::Standard",
+        "Value": {
+          "Namespace": "",
+          "Key": "D38DCA0848CB702B0CEFA28F2320ED7B",
+          "SourceString": "Standard",
+          "LocalizedString": "Standard"
+        }
+      },
+      {
+        "Key": "EWDLookAccelerationCurveType::Linear",
+        "Value": {
+          "Namespace": "",
+          "Key": "1D48585A4636063A3573789DD9BB26A6",
+          "SourceString": "Linear",
+          "LocalizedString": "Linear"
+        }
+      },
+      {
+        "Key": "EWDLookAccelerationCurveType::Aggressive",
+        "Value": {
+          "Namespace": "",
+          "Key": "E926CB144BD08F8623AE58B9BDA1C1D4",
+          "SourceString": "Aggressive",
+          "LocalizedString": "Aggressive"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "Namespace": "",
+          "Key": "D38DCA0848CB702B0CEFA28F2320ED7B",
+          "SourceString": "Standard",
+          "LocalizedString": "Standard"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "Namespace": "",
+          "Key": "1D48585A4636063A3573789DD9BB26A6",
+          "SourceString": "Linear",
+          "LocalizedString": "Linear"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "Namespace": "",
+          "Key": "E926CB144BD08F8623AE58B9BDA1C1D4",
+          "SourceString": "Aggressive",
+          "LocalizedString": "Aggressive"
+        }
+      }
+    ]
+  }
+}

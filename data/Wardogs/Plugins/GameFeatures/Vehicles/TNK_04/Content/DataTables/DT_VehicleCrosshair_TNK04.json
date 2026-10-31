@@ -1,0 +1,60 @@
+--- export: UDataTable / DT_VehicleCrosshair_TNK04 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_VehicleCrosshair_TNK04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/TNK_04/DataTables/DT_VehicleCrosshair_TNK04",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIVehicleCrosshairDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Id.Vehicle.WeaponExtension.TNK_04.Default": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/TNK_01/Widgets/W_Tank01_02.W_Tank01_02_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleCrosshairViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/NEWHUD/Crosshair/Data/DA_VehicleCrosshairData.DA_VehicleCrosshairData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.TNK_04.Default"
+      }
+    },
+    "Id.Vehicle.WeaponExtension.TNK_04.MachineGun": {
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/TNK_01/Widgets/W_Tank01_01.W_Tank01_01_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleCrosshairViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/NEWHUD/Crosshair/Data/DA_VehicleCrosshairData.DA_VehicleCrosshairData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Id.Vehicle.WeaponExtension.TNK_04.MachineGun"
+      }
+    }
+  }
+}

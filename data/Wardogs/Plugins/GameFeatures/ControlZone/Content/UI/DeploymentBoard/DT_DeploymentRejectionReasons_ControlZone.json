@@ -1,0 +1,27 @@
+--- export: UDataTable / DT_DeploymentRejectionReasons_ControlZone ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DeploymentRejectionReasons_ControlZone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ControlZone/UI/DeploymentBoard/DT_DeploymentRejectionReasons_ControlZone",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIDeploymentBoardRejectionTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interactive.Deployment.Rejection.NotInControlZone": {
+      "RejectionText": {
+        "TableId": "/ControlZone/UI/STRINGS_ControlZone.STRINGS_ControlZone",
+        "Key": "RejectionReasons.NotInControlZone",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "Tag": {
+        "TagName": "Interactive.Deployment.Rejection.NotInControlZone"
+      }
+    }
+  }
+}

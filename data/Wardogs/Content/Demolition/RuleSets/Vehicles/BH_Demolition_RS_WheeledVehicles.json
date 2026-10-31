@@ -1,0 +1,44 @@
+--- export: UObject / BHDemolitionRule_Vehicle_0 ---
+{
+  "Type": "BHDemolitionRule_Vehicle",
+  "Name": "BHDemolitionRule_Vehicle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRule_Vehicle'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_WheeledVehicles'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_WheeledVehicles.1"
+  },
+  "Properties": {
+    "PermittedVehicles": [
+      "Vehicle.Variant.Land.Wheeled.Bobcat.Default",
+      "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default",
+      "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun",
+      "Vehicle.Variant.Land.Wheeled.Humvee.Default",
+      "Vehicle.Variant.Land.Wheeled.Kodiak.Default",
+      "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun",
+      "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup",
+      "Vehicle.Variant.Land.Wheeled.Humvee.Minigun",
+      "Vehicle.Variant.Land.Wheeled.Ural.Attack",
+      "Vehicle.Variant.Land.Wheeled.Ural.Battle",
+      "Vehicle.Variant.Land.Wheeled.Ural.Default",
+      "Vehicle.Variant.Land.Wheeled.WHL_08.Default",
+      "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+    ],
+    "bPermitOverlaps": true,
+    "bPermitBlockingHits": true
+  }
+}
+--- export: UDataAsset / BH_Demolition_RS_WheeledVehicles ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_WheeledVehicles",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_WheeledVehicles",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "BHDemolitionRule_Vehicle'BH_Demolition_RS_WheeledVehicles:BHDemolitionRule_Vehicle_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Vehicles/BH_Demolition_RS_WheeledVehicles.0"
+    }
+  }
+}

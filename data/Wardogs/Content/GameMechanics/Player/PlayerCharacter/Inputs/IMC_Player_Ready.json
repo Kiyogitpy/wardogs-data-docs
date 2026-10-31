@@ -1,0 +1,97 @@
+--- export: UObject / BHPlayerMappableKeySettings_14 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_14",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_Ready'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Ready"
+    },
+    "Name": "Input.NamedActions.Player.Ready"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_15 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_15",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_Ready'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Ready"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Player.Ready"
+  }
+}
+--- export: UDataAsset / IMC_Player_Ready ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Player_Ready",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_ReadyUp'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_ReadyUp.0"
+          },
+          "Key": {
+            "KeyName": "F5"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Player_Ready:BHPlayerMappableKeySettings_14'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready.0"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerReleased'IMC_Player_Ready:InputTriggerReleased_0'",
+              "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready.3"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_ReadyUp'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_ReadyUp.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Player_Ready:BHPlayerMappableKeySettings_15'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready.1"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_Ready'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Ready.2"
+  }
+}

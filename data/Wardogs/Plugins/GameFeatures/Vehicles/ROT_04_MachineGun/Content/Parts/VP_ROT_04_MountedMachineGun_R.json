@@ -1,0 +1,113 @@
+--- export: UPrimaryDataAsset / VP_ROT_04_MountedMachineGun_R ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_04_MountedMachineGun_R",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_R",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Turret"
+    ],
+    "Fragments": [
+      {
+        "Key": "TurretSkeleton",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_ROT_04_MountedMachineGun_R:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_R.1"
+          }
+        }
+      },
+      {
+        "Key": "Weapon",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_ROT_04_MountedMachineGun_R:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_R.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_MountedMachineGun_R'",
+    "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_R.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "Constraint": {
+        "ConeLimit": {
+          "Swing1LimitDegrees": 0.0,
+          "Swing2LimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "TwistLimit": {
+          "TwistLimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "bParentDominates": true,
+        "bEnableMassConditioning": false
+      },
+      "AttachQuery": {
+        "SourceId": "TurretsMount_Right",
+        "SocketName": "S_Turret_R"
+      },
+      "bAttachSource": true,
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "TurretSkeleton_R"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/ROT_04/Meshes/Components/Mount/SK/SK_ROT_04_PassengerGun_01b.SK_ROT_04_PassengerGun_01b",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/ROT_04/Meshes/Components/Mount/SK/ABP_ROT_04_PassengerGun_01a.ABP_ROT_04_PassengerGun_01a_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_MountedMachineGun_R'",
+    "ObjectPath": "/ROT_04_MachineGun/Parts/VP_ROT_04_MountedMachineGun_R.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "TurretSkeleton_R",
+    "WeaponDataAsset": {
+      "AssetPathName": "/ROT_04_MachineGun/Weapons/W_ROT_04_MountedMachineGun_R.W_ROT_04_MountedMachineGun_R",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      2
+    ],
+    "TargetInventoryIndex": 1
+  }
+}

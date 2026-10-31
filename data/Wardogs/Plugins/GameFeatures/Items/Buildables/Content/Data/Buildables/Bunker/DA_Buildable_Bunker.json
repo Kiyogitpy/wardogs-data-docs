@@ -1,0 +1,794 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_Bunker'",
+    "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_Bunker_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/B_Buildable_Bunker.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_Bunker ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_Bunker",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_Bunker:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.Bunker"
+    },
+    "Cost": 200,
+    "RepairSpeedMultiplier": 6.67,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.Bunker",
+      "SourceString": "Bunker",
+      "LocalizedString": "Bunker"
+    },
+    "MaxHealth": 5000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "StackCheckOffset": 25.0,
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -222.62955,
+          "Y": 300.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -71.409256,
+          "Y": 300.0,
+          "Z": -4.0872743E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 75.67716,
+          "Y": 300.0,
+          "Z": -3.9053774E-07
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 0.70710677,
+          "W": 0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 227.01833,
+          "Y": 300.0,
+          "Z": -4.3375967E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 6.083986E-09,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 302.90298,
+          "Y": 225.27272,
+          "Z": -5.0273698E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 6.083986E-09,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 302.90298,
+          "Y": 73.30311,
+          "Z": -5.965016E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 6.083986E-09,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 302.90298,
+          "Y": -76.799866,
+          "Z": -5.7490874E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": -0.0,
+          "Z": 6.083986E-09,
+          "W": 1.0,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 302.90298,
+          "Y": -224.52109,
+          "Z": -5.0819285E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 228.27542,
+          "Y": -300.16122,
+          "Z": -5.0448275E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 75.74411,
+          "Y": -300.16122,
+          "Z": -4.5409224E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -74.1154,
+          "Y": -300.16122,
+          "Z": -6.4772994E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -221.46823,
+          "Y": -300.16122,
+          "Z": -6.004268E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -301.0,
+          "Y": -225.27495,
+          "Z": -5.06674E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -301.0,
+          "Y": -76.58253,
+          "Z": -6E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -299.0,
+          "Y": 225.12701,
+          "Z": -6E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -297.0,
+          "Y": 75.12701,
+          "Z": -6E-06
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": 75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": -75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": -75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": 75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 225.0,
+          "Y": 75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 225.0,
+          "Y": -75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -225.0,
+          "Y": 75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -225.0,
+          "Y": -75.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -225.0,
+          "Y": -225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": -225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": -225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 225.0,
+          "Y": -225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -225.0,
+          "Y": 224.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": -75.0,
+          "Y": 225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 75.0,
+          "Y": 225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 1.0,
+          "W": -1.8251942E-08,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 225.0,
+          "Y": 225.0,
+          "Z": 305.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "SnapHalfSize": 15.0,
+    "PlacePivotVerticalOffset": 75.0,
+    "StartingPlacementRotationAngle": -90.0,
+    "PlacementBlockedPenetrationBuffer": 30.0,
+    "SnappedPlacementBlockedPenetrationBuffer": 30.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Bunker.SM_Foundation_Bunker",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_Bunker_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/Bunker/DA_Buildable_Bunker_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -75.0,
+        "Y": -75.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 75.0,
+        "Y": 75.0,
+        "Z": 300.0
+      },
+      "IsValid": 1
+    },
+    "bOverridesFinalStage": true,
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.Bunker"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.Bunker"
+    }
+  }
+}

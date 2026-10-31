@@ -1,0 +1,32 @@
+--- export: UDataAsset / IA_Itemsmith_Previous ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_Previous",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_Previous",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.Previous"
+    },
+    "bTriggerWhenPaused": true,
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Itemsmith_Previous:InputTriggerPressed_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_Previous'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_Previous.0"
+  }
+}

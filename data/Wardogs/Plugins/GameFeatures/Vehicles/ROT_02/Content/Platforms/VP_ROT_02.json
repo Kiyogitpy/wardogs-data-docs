@@ -1,0 +1,2621 @@
+--- export: UPrimaryDataAsset / VP_ROT_02 ---
+{
+  "Type": "ModularVehiclePlatform",
+  "Name": "VP_ROT_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePlatform'",
+  "Package": "/ROT_02/Platforms/VP_ROT_02",
+  "Properties": {
+    "ImplementationClass": {
+      "AssetPathName": "/Script/WDGame.WDRotaryVehicle",
+      "SubPathString": ""
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -1200.0,
+        "Y": -770.0,
+        "Z": -14.0
+      },
+      "Max": {
+        "X": 770.0,
+        "Y": 770.0,
+        "Z": 500.0
+      }
+    },
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_ROT_02:WD_MVF_Seats_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.8"
+          }
+        }
+      },
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_ROT_02:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.9"
+          }
+        }
+      },
+      {
+        "Key": "Reticle",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02:MVF_StaticMesh_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.10"
+          }
+        }
+      },
+      {
+        "Key": "DoorR",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02:MVF_StaticMesh_3'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.12"
+          }
+        }
+      },
+      {
+        "Key": "DoorL",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02:MVF_StaticMesh_2'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.11"
+          }
+        }
+      },
+      {
+        "Key": "WheelL",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02:MVF_StaticMesh_4'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.13"
+          }
+        }
+      },
+      {
+        "Key": "WheelR",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02:MVF_StaticMesh_5'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.14"
+          }
+        }
+      },
+      {
+        "Key": "StorageInventorySlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_ROT_02:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.18"
+          }
+        }
+      },
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_ROT_02:MVF_VehicleConfig_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.15"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_ROT_02:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.19"
+          }
+        }
+      },
+      {
+        "Key": "Destruction",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_DestructionInvokerFragment'VP_ROT_02:WD_MVF_DestructionInvokerFragment_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.16"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_ROT_02:WD_MVF_Interactions_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.17"
+          }
+        }
+      },
+      {
+        "Key": "Health",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_HealthSections'VP_ROT_02:MVF_HealthSections_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.7"
+          }
+        }
+      },
+      {
+        "Key": "DestructibleMeshes",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_DestructibleMeshes'VP_ROT_02:MVF_DestructibleMeshes_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.6"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "FrontTurret",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_02:ModularVehicleSlot_1'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.2"
+          }
+        }
+      },
+      {
+        "Key": "WingWeaponry1",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_02:ModularVehicleSlot_0'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.1"
+          }
+        }
+      },
+      {
+        "Key": "WingWeaponry2",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_02:ModularVehicleSlot_2'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.3"
+          }
+        }
+      },
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_02:ModularVehicleSlot_5'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.5"
+          }
+        }
+      },
+      {
+        "Key": "Bobblehead",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_ROT_02:ModularVehicleSlot_3'",
+            "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.4"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Id.Vehicle.WeaponExtension"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_1 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Id.Vehicle.WeaponExtension"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_2 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Id.Vehicle.WeaponExtension"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_3 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "Type": "EModularVehicleSlotType::Optional",
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Bobblehead"
+      ]
+    }
+  }
+}
+--- export: UObject / ModularVehicleSlot_5 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/ROT_02/Parts/VP_ROT_02_MainBody_Default.VP_ROT_02_MainBody_Default",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.MainBody"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_DestructibleMeshes_0 ---
+{
+  "Type": "MVF_DestructibleMeshes",
+  "Name": "MVF_DestructibleMeshes_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_DestructibleMeshes'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "DestructibleMeshesData": [
+      {
+        "DestructibleMeshGroupTag": {
+          "TagName": "Vehicle.DestructibleMesh.Rotor.Main"
+        },
+        "DestructibleMeshesSettings": [
+          {
+            "bEnableConing": true,
+            "OverrideMaterials": [],
+            "MeshType": "EModularDestructibleMeshTypes::StaticMesh",
+            "ComponentSettings": {
+              "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+              "Constraint": {
+                "ProjectionLinearTolerance": 5.0,
+                "ProjectionAngularTolerance": 180.0,
+                "ProjectionLinearAlpha": 1.0,
+                "ProjectionAngularAlpha": 0.0,
+                "ShockPropagationAlpha": 0.3,
+                "LinearBreakThreshold": 300.0,
+                "LinearPlasticityThreshold": 0.1,
+                "AngularBreakThreshold": 500.0,
+                "AngularPlasticityThreshold": 10.0,
+                "ContactTransferScale": 0.0,
+                "LinearLimit": {
+                  "Limit": 0.0,
+                  "XMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "YMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "ZMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "Stiffness": 0.0,
+                  "Damping": 0.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 5.0,
+                  "bSoftConstraint": false
+                },
+                "ConeLimit": {
+                  "Swing1LimitDegrees": 45.0,
+                  "Swing2LimitDegrees": 45.0,
+                  "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Swing2Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "TwistLimit": {
+                  "TwistLimitDegrees": 45.0,
+                  "TwistMotion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "bDisableCollision": true,
+                "bParentDominates": false,
+                "bEnableShockPropagation": false,
+                "bEnableProjection": false,
+                "bEnableMassConditioning": true,
+                "bUseLinearJointSolver": true,
+                "bAngularBreakable": false,
+                "bAngularPlasticity": false,
+                "bLinearBreakable": false,
+                "bLinearPlasticity": false,
+                "LinearDrive": {
+                  "PositionTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "VelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "XDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "YDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "ZDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "bAccelerationMode": true
+                },
+                "AngularDrive": {
+                  "TwistDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SwingDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SlerpDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "OrientationTarget": {
+                    "Pitch": 0.0,
+                    "Yaw": 0.0,
+                    "Roll": 0.0
+                  },
+                  "AngularVelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "AngularDriveMode": "EAngularDriveMode::SLERP",
+                  "bAccelerationMode": true
+                },
+                "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+              },
+              "AttachQuery": {
+                "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+                "SocketMode": "EAttachSocketMatchMode::Explicit",
+                "SourceId": "Chassis",
+                "SourceFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                },
+                "SocketName": "mainRotorSpin_J",
+                "SocketFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                }
+              },
+              "bAttachSource": false,
+              "AttachSource": {
+                "SourceTags": [],
+                "TaggedSockets": []
+              },
+              "Method": "EModularVehicleComponentMode::CreateNew",
+              "Identifier": "Mesh",
+              "Tags": []
+            },
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Main.Base"
+            },
+            "MeshComponentClass": {
+              "AssetPathName": "/Script/Mechanized.MRotorStaticMeshComponent",
+              "SubPathString": ""
+            },
+            "Mesh": {
+              "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Main_Rotor_Hub.SM_ROT_02_Main_Rotor_Hub",
+              "SubPathString": ""
+            },
+            "RelativeTransform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CollisionProfile": {
+              "Settings": {
+                "Type": "EModularVehicleCollisionType::MVCT_QueryProxy",
+                "Profile": "NoCollision",
+                "Flags": 3
+              },
+              "bEnablePerShape": false,
+              "ShapeOverrides": []
+            },
+            "bHitEvents": true,
+            "bRegisterComplexSurface": true,
+            "SurfaceGroup": {
+              "TagName": "ComplexSurface.Group.Default"
+            },
+            "SurfaceType": "EBHComplexSurfaceType::Default",
+            "AnimInstance": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bUseMinimalAnimInstance": false,
+            "AnimInstanceMinimal": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bAllowRigidBodyNodeOnDedicatedServer": false,
+            "bReceiveDecals": false,
+            "PhysicsGroup": {
+              "Group": {
+                "TagName": "Vehicle.PhysicsGroup.Rotor"
+              },
+              "bEnablePerShape": false,
+              "PerShapeOverrides": []
+            }
+          },
+          {
+            "bEnableConing": true,
+            "OverrideMaterials": [
+              {
+                "Key": "MaterialInstanceConstant'/ROT_02/Materials/MI_ROT_02_Exterior03.MI_ROT_02_Exterior03'",
+                "Value": {
+                  "ObjectName": "MaterialInstanceConstant'Mi_ConingRotors_ROT02'",
+                  "ObjectPath": "/Game/VFX/Vehicles/Helicopter/FadingRotors/Mi_ConingRotors_ROT02.0"
+                }
+              }
+            ],
+            "MeshType": "EModularDestructibleMeshTypes::StaticMesh",
+            "ComponentSettings": {
+              "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+              "Constraint": {
+                "ProjectionLinearTolerance": 5.0,
+                "ProjectionAngularTolerance": 180.0,
+                "ProjectionLinearAlpha": 1.0,
+                "ProjectionAngularAlpha": 0.0,
+                "ShockPropagationAlpha": 0.3,
+                "LinearBreakThreshold": 300.0,
+                "LinearPlasticityThreshold": 0.1,
+                "AngularBreakThreshold": 500.0,
+                "AngularPlasticityThreshold": 10.0,
+                "ContactTransferScale": 0.0,
+                "LinearLimit": {
+                  "Limit": 0.0,
+                  "XMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "YMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "ZMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "Stiffness": 0.0,
+                  "Damping": 0.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 5.0,
+                  "bSoftConstraint": false
+                },
+                "ConeLimit": {
+                  "Swing1LimitDegrees": 45.0,
+                  "Swing2LimitDegrees": 45.0,
+                  "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Swing2Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "TwistLimit": {
+                  "TwistLimitDegrees": 45.0,
+                  "TwistMotion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "bDisableCollision": true,
+                "bParentDominates": false,
+                "bEnableShockPropagation": false,
+                "bEnableProjection": false,
+                "bEnableMassConditioning": true,
+                "bUseLinearJointSolver": true,
+                "bAngularBreakable": false,
+                "bAngularPlasticity": false,
+                "bLinearBreakable": false,
+                "bLinearPlasticity": false,
+                "LinearDrive": {
+                  "PositionTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "VelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "XDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "YDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "ZDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "bAccelerationMode": true
+                },
+                "AngularDrive": {
+                  "TwistDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SwingDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SlerpDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "OrientationTarget": {
+                    "Pitch": 0.0,
+                    "Yaw": 0.0,
+                    "Roll": 0.0
+                  },
+                  "AngularVelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "AngularDriveMode": "EAngularDriveMode::SLERP",
+                  "bAccelerationMode": true
+                },
+                "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+              },
+              "AttachQuery": {
+                "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+                "SocketMode": "EAttachSocketMatchMode::Explicit",
+                "SourceId": "Chassis",
+                "SourceFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                },
+                "SocketName": "mainRotorSpin_J",
+                "SocketFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                }
+              },
+              "bAttachSource": false,
+              "AttachSource": {
+                "SourceTags": [],
+                "TaggedSockets": []
+              },
+              "Method": "EModularVehicleComponentMode::CreateNew",
+              "Identifier": "Mesh",
+              "Tags": []
+            },
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Main.Blades"
+            },
+            "MeshComponentClass": {
+              "AssetPathName": "/Script/Mechanized.MRotorStaticMeshComponent",
+              "SubPathString": ""
+            },
+            "Mesh": {
+              "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Main_Rotor_Blades.SM_ROT_02_Main_Rotor_Blades",
+              "SubPathString": ""
+            },
+            "RelativeTransform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CollisionProfile": {
+              "Settings": {
+                "Type": "EModularVehicleCollisionType::MVCT_Profile",
+                "Profile": "WDRotorCollision",
+                "Flags": 3
+              },
+              "bEnablePerShape": false,
+              "ShapeOverrides": []
+            },
+            "bHitEvents": true,
+            "bRegisterComplexSurface": true,
+            "SurfaceGroup": {
+              "TagName": "ComplexSurface.Group.Default"
+            },
+            "SurfaceType": "EBHComplexSurfaceType::Default",
+            "AnimInstance": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bUseMinimalAnimInstance": false,
+            "AnimInstanceMinimal": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bAllowRigidBodyNodeOnDedicatedServer": false,
+            "bReceiveDecals": false,
+            "PhysicsGroup": {
+              "Group": {
+                "TagName": "Vehicle.PhysicsGroup.Rotor"
+              },
+              "bEnablePerShape": false,
+              "PerShapeOverrides": []
+            }
+          },
+          {
+            "bEnableConing": true,
+            "OverrideMaterials": [
+              {
+                "Key": "0",
+                "Value": {
+                  "ObjectName": "MaterialInstanceConstant'M_RotorCircleBlur_Inst'",
+                  "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/ROT_03/M_RotorCircleBlur_Inst.0"
+                }
+              }
+            ],
+            "MeshType": "EModularDestructibleMeshTypes::StaticMesh",
+            "ComponentSettings": {
+              "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+              "Constraint": {
+                "ProjectionLinearTolerance": 5.0,
+                "ProjectionAngularTolerance": 180.0,
+                "ProjectionLinearAlpha": 1.0,
+                "ProjectionAngularAlpha": 0.0,
+                "ShockPropagationAlpha": 0.3,
+                "LinearBreakThreshold": 300.0,
+                "LinearPlasticityThreshold": 0.1,
+                "AngularBreakThreshold": 500.0,
+                "AngularPlasticityThreshold": 10.0,
+                "ContactTransferScale": 0.0,
+                "LinearLimit": {
+                  "Limit": 0.0,
+                  "XMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "YMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "ZMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "Stiffness": 0.0,
+                  "Damping": 0.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 5.0,
+                  "bSoftConstraint": false
+                },
+                "ConeLimit": {
+                  "Swing1LimitDegrees": 45.0,
+                  "Swing2LimitDegrees": 45.0,
+                  "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Swing2Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "TwistLimit": {
+                  "TwistLimitDegrees": 45.0,
+                  "TwistMotion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "bDisableCollision": true,
+                "bParentDominates": false,
+                "bEnableShockPropagation": false,
+                "bEnableProjection": false,
+                "bEnableMassConditioning": true,
+                "bUseLinearJointSolver": true,
+                "bAngularBreakable": false,
+                "bAngularPlasticity": false,
+                "bLinearBreakable": false,
+                "bLinearPlasticity": false,
+                "LinearDrive": {
+                  "PositionTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "VelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "XDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "YDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "ZDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "bAccelerationMode": true
+                },
+                "AngularDrive": {
+                  "TwistDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SwingDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SlerpDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "OrientationTarget": {
+                    "Pitch": 0.0,
+                    "Yaw": 0.0,
+                    "Roll": 0.0
+                  },
+                  "AngularVelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "AngularDriveMode": "EAngularDriveMode::SLERP",
+                  "bAccelerationMode": true
+                },
+                "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+              },
+              "AttachQuery": {
+                "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+                "SocketMode": "EAttachSocketMatchMode::Explicit",
+                "SourceId": "Chassis",
+                "SourceFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                },
+                "SocketName": "mainRotorSpin_J",
+                "SocketFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                }
+              },
+              "bAttachSource": false,
+              "AttachSource": {
+                "SourceTags": [],
+                "TaggedSockets": []
+              },
+              "Method": "EModularVehicleComponentMode::CreateNew",
+              "Identifier": "Mesh",
+              "Tags": []
+            },
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Main.Spin"
+            },
+            "MeshComponentClass": {
+              "AssetPathName": "/Script/Mechanized.MRotorStaticMeshComponent",
+              "SubPathString": ""
+            },
+            "Mesh": {
+              "AssetPathName": "/Game/Vehicles/Pawns/Air/Helicopter/ROT_03/SM_RotorSpeedmesh.SM_RotorSpeedmesh",
+              "SubPathString": ""
+            },
+            "RelativeTransform": {
+              "Rotation": {
+                "X": -0.707107,
+                "Y": -0.0,
+                "Z": 0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 90.0
+              },
+              "Scale3D": {
+                "X": 2.0,
+                "Y": 1.0,
+                "Z": 2.0
+              }
+            },
+            "CollisionProfile": {
+              "Settings": {
+                "Type": "EModularVehicleCollisionType::MVCT_Profile",
+                "Profile": "NoCollision",
+                "Flags": 3
+              },
+              "bEnablePerShape": false,
+              "ShapeOverrides": []
+            },
+            "bHitEvents": false,
+            "bRegisterComplexSurface": false,
+            "SurfaceGroup": {
+              "TagName": "None"
+            },
+            "SurfaceType": "EBHComplexSurfaceType::Default",
+            "AnimInstance": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bUseMinimalAnimInstance": false,
+            "AnimInstanceMinimal": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bAllowRigidBodyNodeOnDedicatedServer": false,
+            "bReceiveDecals": false,
+            "PhysicsGroup": {
+              "Group": {
+                "TagName": "Vehicle.PhysicsGroup.Rotor"
+              },
+              "bEnablePerShape": false,
+              "PerShapeOverrides": []
+            }
+          }
+        ],
+        "GroupRules": [
+          {
+            "TargetRPM": 200.0,
+            "RotorBladeMeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Main.Blades"
+            },
+            "RotorSpinMeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Main.Spin"
+            },
+            "RotorMaterialCurve": {
+              "ObjectName": "CurveFloat'FC_ROT_02_MainRotorRPM_MaterialValue'",
+              "ObjectPath": "/ROT_02/Data/FC_ROT_02_MainRotorRPM_MaterialValue.0"
+            },
+            "RotorReturnMeshCurve": {
+              "ObjectName": "CurveFloat'FC_ROT_02_MainRotorRPM_MeshValue'",
+              "ObjectPath": "/ROT_02/Data/FC_ROT_02_MainRotorRPM_MeshValue.0"
+            },
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnTick",
+            "bApplyOnAuthority": false,
+            "bApplyOnlyOnAuthority": false,
+            "bTickIfDestroyed": true,
+            "TickingFrequency": 1.0
+          },
+          {
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Main.Blades"
+            },
+            "LinkedHealthSectionTag": {
+              "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+            },
+            "TraceTag": "CheckRotorOverlaps",
+            "QueryShapeSizeOffsetPercent": 0.0,
+            "OverlapCueTag": {
+              "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+            },
+            "IgnoredInterfaces": [],
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnTick",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": true,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 0.15
+          },
+          {
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnDelegateBroadcast",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": true,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 1.0
+          },
+          {
+            "AttributeTag": {
+              "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+            },
+            "RepairThreshold": 0.5,
+            "DestroyedCueTag": {
+              "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+            },
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnDelegateBroadcast",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": true,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 1.0
+          }
+        ]
+      },
+      {
+        "DestructibleMeshGroupTag": {
+          "TagName": "Vehicle.DestructibleMesh.Rotor.Tail"
+        },
+        "DestructibleMeshesSettings": [
+          {
+            "bEnableConing": true,
+            "OverrideMaterials": [],
+            "MeshType": "EModularDestructibleMeshTypes::StaticMesh",
+            "ComponentSettings": {
+              "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+              "Constraint": {
+                "ProjectionLinearTolerance": 5.0,
+                "ProjectionAngularTolerance": 180.0,
+                "ProjectionLinearAlpha": 1.0,
+                "ProjectionAngularAlpha": 0.0,
+                "ShockPropagationAlpha": 0.3,
+                "LinearBreakThreshold": 300.0,
+                "LinearPlasticityThreshold": 0.1,
+                "AngularBreakThreshold": 500.0,
+                "AngularPlasticityThreshold": 10.0,
+                "ContactTransferScale": 0.0,
+                "LinearLimit": {
+                  "Limit": 0.0,
+                  "XMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "YMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "ZMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "Stiffness": 0.0,
+                  "Damping": 0.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 5.0,
+                  "bSoftConstraint": false
+                },
+                "ConeLimit": {
+                  "Swing1LimitDegrees": 45.0,
+                  "Swing2LimitDegrees": 45.0,
+                  "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Swing2Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "TwistLimit": {
+                  "TwistLimitDegrees": 45.0,
+                  "TwistMotion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "bDisableCollision": true,
+                "bParentDominates": false,
+                "bEnableShockPropagation": false,
+                "bEnableProjection": false,
+                "bEnableMassConditioning": true,
+                "bUseLinearJointSolver": true,
+                "bAngularBreakable": false,
+                "bAngularPlasticity": false,
+                "bLinearBreakable": false,
+                "bLinearPlasticity": false,
+                "LinearDrive": {
+                  "PositionTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "VelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "XDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "YDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "ZDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "bAccelerationMode": true
+                },
+                "AngularDrive": {
+                  "TwistDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SwingDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SlerpDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "OrientationTarget": {
+                    "Pitch": 0.0,
+                    "Yaw": 0.0,
+                    "Roll": 0.0
+                  },
+                  "AngularVelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "AngularDriveMode": "EAngularDriveMode::SLERP",
+                  "bAccelerationMode": true
+                },
+                "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+              },
+              "AttachQuery": {
+                "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+                "SocketMode": "EAttachSocketMatchMode::Explicit",
+                "SourceId": "Chassis",
+                "SourceFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                },
+                "SocketName": "rearRotorSpin_J",
+                "SocketFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                }
+              },
+              "bAttachSource": true,
+              "AttachSource": {
+                "SourceTags": [],
+                "TaggedSockets": []
+              },
+              "Method": "EModularVehicleComponentMode::CreateNew",
+              "Identifier": "Mesh",
+              "Tags": []
+            },
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Tail.Base"
+            },
+            "MeshComponentClass": {
+              "AssetPathName": "/Script/Mechanized.MRotorStaticMeshComponent",
+              "SubPathString": ""
+            },
+            "Mesh": {
+              "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Rear_Rotor.SM_ROT_02_Rear_Rotor",
+              "SubPathString": ""
+            },
+            "RelativeTransform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -1.0,
+                "Z": 0.0,
+                "W": 6.123234E-17,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CollisionProfile": {
+              "Settings": {
+                "Type": "EModularVehicleCollisionType::MVCT_QueryProxy",
+                "Profile": "NoCollision",
+                "Flags": 3
+              },
+              "bEnablePerShape": false,
+              "ShapeOverrides": []
+            },
+            "bHitEvents": true,
+            "bRegisterComplexSurface": true,
+            "SurfaceGroup": {
+              "TagName": "ComplexSurface.Group.Default"
+            },
+            "SurfaceType": "EBHComplexSurfaceType::Default",
+            "AnimInstance": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bUseMinimalAnimInstance": false,
+            "AnimInstanceMinimal": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bAllowRigidBodyNodeOnDedicatedServer": false,
+            "bReceiveDecals": false,
+            "PhysicsGroup": {
+              "Group": {
+                "TagName": "Vehicle.PhysicsGroup.Rotor.Tail"
+              },
+              "bEnablePerShape": false,
+              "PerShapeOverrides": []
+            }
+          },
+          {
+            "bEnableConing": true,
+            "OverrideMaterials": [
+              {
+                "Key": "MaterialInstanceConstant'/ROT_02/Materials/MI_ROT_02_Exterior03.MI_ROT_02_Exterior03'",
+                "Value": {
+                  "ObjectName": "MaterialInstanceConstant'Mi_FadingTailRotors_ROT02'",
+                  "ObjectPath": "/Game/VFX/Vehicles/Helicopter/FadingRotors/Mi_FadingTailRotors_ROT02.0"
+                }
+              }
+            ],
+            "MeshType": "EModularDestructibleMeshTypes::StaticMesh",
+            "ComponentSettings": {
+              "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+              "Constraint": {
+                "ProjectionLinearTolerance": 5.0,
+                "ProjectionAngularTolerance": 180.0,
+                "ProjectionLinearAlpha": 1.0,
+                "ProjectionAngularAlpha": 0.0,
+                "ShockPropagationAlpha": 0.3,
+                "LinearBreakThreshold": 300.0,
+                "LinearPlasticityThreshold": 0.1,
+                "AngularBreakThreshold": 500.0,
+                "AngularPlasticityThreshold": 10.0,
+                "ContactTransferScale": 0.0,
+                "LinearLimit": {
+                  "Limit": 0.0,
+                  "XMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "YMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "ZMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "Stiffness": 0.0,
+                  "Damping": 0.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 5.0,
+                  "bSoftConstraint": false
+                },
+                "ConeLimit": {
+                  "Swing1LimitDegrees": 45.0,
+                  "Swing2LimitDegrees": 45.0,
+                  "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Swing2Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "TwistLimit": {
+                  "TwistLimitDegrees": 45.0,
+                  "TwistMotion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "bDisableCollision": true,
+                "bParentDominates": false,
+                "bEnableShockPropagation": false,
+                "bEnableProjection": false,
+                "bEnableMassConditioning": true,
+                "bUseLinearJointSolver": true,
+                "bAngularBreakable": false,
+                "bAngularPlasticity": false,
+                "bLinearBreakable": false,
+                "bLinearPlasticity": false,
+                "LinearDrive": {
+                  "PositionTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "VelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "XDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "YDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "ZDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "bAccelerationMode": true
+                },
+                "AngularDrive": {
+                  "TwistDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SwingDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SlerpDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "OrientationTarget": {
+                    "Pitch": 0.0,
+                    "Yaw": 0.0,
+                    "Roll": 0.0
+                  },
+                  "AngularVelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "AngularDriveMode": "EAngularDriveMode::SLERP",
+                  "bAccelerationMode": true
+                },
+                "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+              },
+              "AttachQuery": {
+                "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+                "SocketMode": "EAttachSocketMatchMode::Explicit",
+                "SourceId": "Chassis",
+                "SourceFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                },
+                "SocketName": "rearRotorSpin_J",
+                "SocketFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                }
+              },
+              "bAttachSource": false,
+              "AttachSource": {
+                "SourceTags": [],
+                "TaggedSockets": []
+              },
+              "Method": "EModularVehicleComponentMode::CreateNew",
+              "Identifier": "Mesh",
+              "Tags": []
+            },
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Tail.Blades"
+            },
+            "MeshComponentClass": {
+              "AssetPathName": "/Script/Mechanized.MRotorStaticMeshComponent",
+              "SubPathString": ""
+            },
+            "Mesh": {
+              "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Rear_Rotor_Blades.SM_ROT_02_Rear_Rotor_Blades",
+              "SubPathString": ""
+            },
+            "RelativeTransform": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": -1.0,
+                "Z": 0.0,
+                "W": 6.123234E-17,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CollisionProfile": {
+              "Settings": {
+                "Type": "EModularVehicleCollisionType::MVCT_Profile",
+                "Profile": "WDRotorCollision",
+                "Flags": 3
+              },
+              "bEnablePerShape": false,
+              "ShapeOverrides": [
+                {
+                  "Key": "None",
+                  "Value": {
+                    "Type": "EModularVehicleCollisionType::MVCT_Physics",
+                    "Profile": "NoCollision",
+                    "Flags": 3
+                  }
+                }
+              ]
+            },
+            "bHitEvents": true,
+            "bRegisterComplexSurface": true,
+            "SurfaceGroup": {
+              "TagName": "ComplexSurface.Group.Default"
+            },
+            "SurfaceType": "EBHComplexSurfaceType::Default",
+            "AnimInstance": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bUseMinimalAnimInstance": false,
+            "AnimInstanceMinimal": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bAllowRigidBodyNodeOnDedicatedServer": false,
+            "bReceiveDecals": false,
+            "PhysicsGroup": {
+              "Group": {
+                "TagName": "Vehicle.PhysicsGroup.Rotor.Tail"
+              },
+              "bEnablePerShape": false,
+              "PerShapeOverrides": []
+            }
+          },
+          {
+            "bEnableConing": true,
+            "OverrideMaterials": [
+              {
+                "Key": "MaterialInstanceConstant'/Game/Vehicles/Pawns/Air/Helicopter/ROT_03/M_RotorCircleBlur_Inst.M_RotorCircleBlur_Inst'",
+                "Value": {
+                  "ObjectName": "MaterialInstanceConstant'M_RotorCircleBlur_Inst'",
+                  "ObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/ROT_03/M_RotorCircleBlur_Inst.0"
+                }
+              }
+            ],
+            "MeshType": "EModularDestructibleMeshTypes::StaticMesh",
+            "ComponentSettings": {
+              "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+              "Constraint": {
+                "ProjectionLinearTolerance": 5.0,
+                "ProjectionAngularTolerance": 180.0,
+                "ProjectionLinearAlpha": 1.0,
+                "ProjectionAngularAlpha": 0.0,
+                "ShockPropagationAlpha": 0.3,
+                "LinearBreakThreshold": 300.0,
+                "LinearPlasticityThreshold": 0.1,
+                "AngularBreakThreshold": 500.0,
+                "AngularPlasticityThreshold": 10.0,
+                "ContactTransferScale": 0.0,
+                "LinearLimit": {
+                  "Limit": 0.0,
+                  "XMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "YMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "ZMotion": "ELinearConstraintMotion::LCM_Locked",
+                  "Stiffness": 0.0,
+                  "Damping": 0.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 5.0,
+                  "bSoftConstraint": false
+                },
+                "ConeLimit": {
+                  "Swing1LimitDegrees": 45.0,
+                  "Swing2LimitDegrees": 45.0,
+                  "Swing1Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Swing2Motion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "TwistLimit": {
+                  "TwistLimitDegrees": 45.0,
+                  "TwistMotion": "EAngularConstraintMotion::ACM_Locked",
+                  "Stiffness": 50.0,
+                  "Damping": 5.0,
+                  "Restitution": 0.0,
+                  "ContactDistance": 1.0,
+                  "bSoftConstraint": true
+                },
+                "bDisableCollision": true,
+                "bParentDominates": false,
+                "bEnableShockPropagation": false,
+                "bEnableProjection": false,
+                "bEnableMassConditioning": true,
+                "bUseLinearJointSolver": true,
+                "bAngularBreakable": false,
+                "bAngularPlasticity": false,
+                "bLinearBreakable": false,
+                "bLinearPlasticity": false,
+                "LinearDrive": {
+                  "PositionTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "VelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "XDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "YDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "ZDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "bAccelerationMode": true
+                },
+                "AngularDrive": {
+                  "TwistDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SwingDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "SlerpDrive": {
+                    "Stiffness": 50.0,
+                    "Damping": 1.0,
+                    "MaxForce": 0.0,
+                    "bEnablePositionDrive": false,
+                    "bEnableVelocityDrive": false
+                  },
+                  "OrientationTarget": {
+                    "Pitch": 0.0,
+                    "Yaw": 0.0,
+                    "Roll": 0.0
+                  },
+                  "AngularVelocityTarget": {
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.0
+                  },
+                  "AngularDriveMode": "EAngularDriveMode::SLERP",
+                  "bAccelerationMode": true
+                },
+                "LinearPlasticityType": "EConstraintPlasticityType::CCPT_Free"
+              },
+              "AttachQuery": {
+                "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+                "SocketMode": "EAttachSocketMatchMode::Explicit",
+                "SourceId": "Chassis",
+                "SourceFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                },
+                "SocketName": "rearRotorSpin_J",
+                "SocketFilter": {
+                  "RequireTags": [],
+                  "IgnoreTags": [],
+                  "TagQuery": {
+                    "TokenStreamVersion": 0,
+                    "TagDictionary": [],
+                    "QueryTokenStream": [],
+                    "UserDescription": "",
+                    "AutoDescription": ""
+                  }
+                }
+              },
+              "bAttachSource": false,
+              "AttachSource": {
+                "SourceTags": [],
+                "TaggedSockets": []
+              },
+              "Method": "EModularVehicleComponentMode::CreateNew",
+              "Identifier": "Mesh",
+              "Tags": []
+            },
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Tail.Spin"
+            },
+            "MeshComponentClass": {
+              "AssetPathName": "/Script/Mechanized.MRotorStaticMeshComponent",
+              "SubPathString": ""
+            },
+            "Mesh": {
+              "AssetPathName": "/Game/Vehicles/Pawns/Air/Helicopter/ROT_03/SM_RotorSpeedmesh.SM_RotorSpeedmesh",
+              "SubPathString": ""
+            },
+            "RelativeTransform": {
+              "Rotation": {
+                "X": -0.707107,
+                "Y": -0.0,
+                "Z": 0.0,
+                "W": 0.707107,
+                "IsNormalized": true,
+                "Size": 1.0000002,
+                "SizeSquared": 1.0000006
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 35.0
+              },
+              "Scale3D": {
+                "X": 0.5,
+                "Y": 0.5,
+                "Z": 0.5
+              }
+            },
+            "CollisionProfile": {
+              "Settings": {
+                "Type": "EModularVehicleCollisionType::MVCT_Profile",
+                "Profile": "NoCollision",
+                "Flags": 3
+              },
+              "bEnablePerShape": false,
+              "ShapeOverrides": []
+            },
+            "bHitEvents": false,
+            "bRegisterComplexSurface": false,
+            "SurfaceGroup": {
+              "TagName": "None"
+            },
+            "SurfaceType": "EBHComplexSurfaceType::Default",
+            "AnimInstance": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bUseMinimalAnimInstance": false,
+            "AnimInstanceMinimal": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bAllowRigidBodyNodeOnDedicatedServer": false,
+            "bReceiveDecals": false,
+            "PhysicsGroup": {
+              "Group": {
+                "TagName": "Vehicle.PhysicsGroup.Rotor"
+              },
+              "bEnablePerShape": false,
+              "PerShapeOverrides": []
+            }
+          }
+        ],
+        "GroupRules": [
+          {
+            "TargetRPM": 1000.0,
+            "RotorBladeMeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Tail.Blades"
+            },
+            "RotorSpinMeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Tail.Spin"
+            },
+            "RotorMaterialCurve": {
+              "ObjectName": "CurveFloat'FC_ROT_02_TailRotorRPM_MaterialValue'",
+              "ObjectPath": "/ROT_02/Data/FC_ROT_02_TailRotorRPM_MaterialValue.0"
+            },
+            "RotorReturnMeshCurve": {
+              "ObjectName": "CurveFloat'FC_ROT_02_MainRotorRPM_MeshValue'",
+              "ObjectPath": "/ROT_02/Data/FC_ROT_02_MainRotorRPM_MeshValue.0"
+            },
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnTick",
+            "bApplyOnAuthority": false,
+            "bApplyOnlyOnAuthority": false,
+            "bTickIfDestroyed": true,
+            "TickingFrequency": 1.0
+          },
+          {
+            "MeshTag": {
+              "TagName": "Vehicle.DestructibleMesh.Rotor.Tail.Blades"
+            },
+            "LinkedHealthSectionTag": {
+              "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+            },
+            "TraceTag": "CheckRotorOverlaps",
+            "QueryShapeSizeOffsetPercent": 0.0,
+            "OverlapCueTag": {
+              "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+            },
+            "IgnoredInterfaces": [],
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnTick",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": true,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 0.2
+          },
+          {
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnDelegateBroadcast",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": true,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 1.0
+          },
+          {
+            "AttributeTag": {
+              "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+            },
+            "RepairThreshold": 0.5,
+            "DestroyedCueTag": {
+              "TagName": "GameplayCue.Vehicle.Collision.Rotor"
+            },
+            "ApplyTypes": "EBHModularDestructibleMeshGroupRuleApplyTypes::OnDelegateBroadcast",
+            "bApplyOnAuthority": true,
+            "bApplyOnlyOnAuthority": true,
+            "bTickIfDestroyed": false,
+            "TickingFrequency": 1.0
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_HealthSections_0 ---
+{
+  "Type": "MVF_HealthSections",
+  "Name": "MVF_HealthSections_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_HealthSections'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "HealthSections": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health"
+        },
+        "Value": {
+          "MaxHealth": 800.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.MainBody"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Engine"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Engine"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.FuelTank"
+        },
+        "Value": {
+          "MaxHealth": 200.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.FuelTank"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.FuelTank"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.FuelTank"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Engine"
+        },
+        "Value": {
+          "MaxHealth": 200.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Engine"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "None"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "None"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+        },
+        "Value": {
+          "MaxHealth": 300.0,
+          "Tags": [
+            "Vehicle.HealthSection.CrashPriority",
+            "Meta.Damage.HitLocation.Vehicle.Tail"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Rotor.Tail"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Rotor.Tail"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+        },
+        "Value": {
+          "MaxHealth": 400.0,
+          "Tags": [
+            "Vehicle.HealthSection.CrashPriority",
+            "Meta.Damage.HitLocation.Vehicle.MainRotor"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.5,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Rotor.Main"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Rotor.Main"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+        },
+        "Value": {
+          "MaxHealth": 100.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Left"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Left.Front"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Left.Front"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+        },
+        "Value": {
+          "MaxHealth": 100.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Right"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Right.Front"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Right.Front"
+          }
+        }
+      }
+    ],
+    "ComplexSurfaceMappings": {
+      "SurfaceGroups": [
+        {
+          "Key": {
+            "TagName": "ComplexSurface.Group.Default"
+          },
+          "Value": {
+            "bUseDefault": true,
+            "Default": {
+              "TagName": "Attribute.Gameplay.Health"
+            },
+            "SlotMap": [
+              {
+                "Key": "CC_FuelTank",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.FuelTank"
+                }
+              },
+              {
+                "Key": "CC_Engine",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Engine"
+                }
+              },
+              {
+                "Key": "CC_TailRotor",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+                }
+              },
+              {
+                "Key": "CC_MainRotor",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+                }
+              },
+              {
+                "Key": "CC_Wheel_0",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+                }
+              },
+              {
+                "Key": "CC_Wheel_1",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "PhysicsGroupMappings": [
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.Wheel"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": false,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 18.5
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.PhysicsGroup.MainBody"
+        },
+        "Value": {
+          "bExecuteCollisionEffects": true,
+          "CollisionDamageModifier": 1.0,
+          "DamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": 21.5
+            }
+          ],
+          "SimultaneousDamageRouting": []
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "WD_MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/ROT_02/Data/DA_ROT_02_SeatSettings.DA_ROT_02_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "Tags": [
+        "Chassis"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SK_ROT_02.SK_ROT_02",
+      "SubPathString": ""
+    },
+    "PhysicsAssetOverride": {
+      "AssetPathName": "/ROT_02/Meshes/PA_ROT_02.PA_ROT_02",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/ROT_02/Animation/ABP_ROT_02.ABP_ROT_02_C",
+      "SubPathString": ""
+    },
+    "PhysicsGroups": {
+      "Group": {
+        "TagName": "Vehicle.PhysicsGroup.MainBody"
+      },
+      "bEnablePerShape": true,
+      "PerShapeOverrides": [
+        {
+          "Key": "WheelFrontR",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.Wheel"
+          }
+        },
+        {
+          "Key": "WheelFrontL",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.Wheel"
+          }
+        },
+        {
+          "Key": "WheelRear",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.Wheel"
+          }
+        },
+        {
+          "Key": "Tail",
+          "Value": {
+            "TagName": "Vehicle.PhysicsGroup.MainBody.Tail"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "body_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Reticle.SM_ROT_02_Reticle",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "frontDoorL_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Front_Door_Left.SM_ROT_02_Front_Door_Left",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_3 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "midDoorR_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Middle_Door_Right.SM_ROT_02_Middle_Door_Right",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_4 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "rearLDoor_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Left_Wheel.SM_ROT_02_Left_Wheel",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "PhysicsGroups": {
+      "Group": {
+        "TagName": "Vehicle.PhysicsGroup.Wheel"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_5 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "rearRDoor_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/SM_ROT_02_Right_Wheel.SM_ROT_02_Right_Wheel",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "PhysicsGroups": {
+      "Group": {
+        "TagName": "Vehicle.PhysicsGroup.Wheel"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/ROT_02/Data/DA_ROT_02_Config.DA_ROT_02_Config",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_DestructionInvokerFragment_0 ---
+{
+  "Type": "WD_MVF_DestructionInvokerFragment",
+  "Name": "WD_MVF_DestructionInvokerFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_DestructionInvokerFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "VehicleCollisionCentre": {
+      "X": 50.0,
+      "Y": 0.0,
+      "Z": 200.0
+    },
+    "VehicleCollisionExtents": {
+      "X": 1000.0,
+      "Y": 300.0,
+      "Z": 180.0
+    },
+    "DamageRecievedWhenChunkDestroyed": 200.0,
+    "CounterForceMultiplier": 0.0,
+    "VehicleMass": 1200.0,
+    "VelocityOffsetMultiplier": 0.2
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/ROT_02/Data/DA_VehicleInteractions_ROT_02.DA_VehicleInteractions_ROT_02",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Storage/ID_VehicleStorageMedium.ID_VehicleStorageMedium",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_ROT_02'",
+    "ObjectPath": "/ROT_02/Platforms/VP_ROT_02.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/ROT_02/Data/DA_ROT_02_Stats.DA_ROT_02_Stats",
+      "SubPathString": ""
+    }
+  }
+}

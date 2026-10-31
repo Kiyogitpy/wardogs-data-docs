@@ -1,0 +1,53 @@
+--- export: UDataAsset / DA_SoftwareCursor ---
+{
+  "Type": "WDUISoftwareCursorData",
+  "Name": "DA_SoftwareCursor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISoftwareCursorData'",
+  "Package": "/Game/UI/Cursors/Data/DA_SoftwareCursor",
+  "Properties": {
+    "CursorInfoMap": [
+      {
+        "Key": {
+          "TagName": "Input.Cursor.Mouse"
+        },
+        "Value": {
+          "CursorTexture": {
+            "AssetPathName": "/Game/UI/Cursors/Textures/T_UI_MouseCursor.T_UI_MouseCursor",
+            "SubPathString": ""
+          },
+          "bUseOverrideTextureSize": true,
+          "CursorSize": {
+            "X": 18.0,
+            "Y": 21.333332
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.Cursor.Gamepad"
+        },
+        "Value": {
+          "CursorTexture": {
+            "AssetPathName": "/Game/UI/Cursors/T_UI_Free_Cursor.T_UI_Free_Cursor",
+            "SubPathString": ""
+          },
+          "bUseOverrideTextureSize": true,
+          "CursorSize": {
+            "X": 60.0,
+            "Y": 60.0
+          }
+        }
+      }
+    ],
+    "FallbackCursorSize": {
+      "X": 18.0,
+      "Y": 21.333332
+    },
+    "DeadZoneRadius": 0.15,
+    "AnalogStickResponseCurve": {
+      "ObjectName": "CurveFloat'C_CursorAnalogStickResponseCurve'",
+      "ObjectPath": "/Game/UI/Cursors/C_CursorAnalogStickResponseCurve.0"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+--- export: UDataTable / DT_GameplayTagToText_Prompts ---
+{
+  "Type": "DataTable",
+  "Name": "DT_GameplayTagToText_Prompts",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Prompts",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIGameplayTagToTextTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Action.Feature.Vendor.Purchase": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Prompt.Purchase.AddToLoadout",
+        "SourceString": "Add to Loadout ",
+        "LocalizedString": "Add to Loadout "
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "UI.Action.Feature.Vendor.Purchase"
+      }
+    },
+    "UI.Action.Feature.Vendor.Refund": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Prompt.Refund.RemoveFromLoadout",
+        "SourceString": "Remove from Loadout",
+        "LocalizedString": "Remove from Loadout"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "UI.Action.Feature.Vendor.Refund"
+      }
+    },
+    "UI.Action.Feature.Vendor.Destroy": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+        "Key": "Prompt.Destroy.DestroyFromLoadout",
+        "SourceString": "Delete Item / Stack",
+        "LocalizedString": "Delete Item / Stack"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "UI.Action.Feature.Vendor.Destroy"
+      }
+    },
+    "UI.Action.Feature.Inventory.Discard": {
+      "Text": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InventoryTooltip.STRINGS_InventoryTooltip",
+        "Key": "Prompt.Discard",
+        "SourceString": "Drop",
+        "LocalizedString": "Drop"
+      },
+      "TaggedText": [],
+      "Tag": {
+        "TagName": "UI.Action.Feature.Inventory.Discard"
+      }
+    }
+  }
+}

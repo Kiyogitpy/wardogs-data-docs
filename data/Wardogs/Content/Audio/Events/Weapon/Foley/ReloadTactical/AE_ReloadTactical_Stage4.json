@@ -1,0 +1,92 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ReloadTactical_Stage4'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ReloadTactical_Stage4'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.ReloadTactical.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.ReloadTactical.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_ReloadTactical_Stage4 ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_ReloadTactical_Stage4",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.ReloadTactical.Stage4"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_ReloadTactical_Stage4:AEB_PlayHeldWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_ReloadTactical_Stage4:CrosstalkAudioEventBehaviorExecuteTriggerParameter_3'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4.3"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_ReloadTactical_Stage4:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_3 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_ReloadTactical_Stage4'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/ReloadTactical/AE_ReloadTactical_Stage4.2"
+  },
+  "Properties": {
+    "ParameterName": "Stage4",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

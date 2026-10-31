@@ -1,0 +1,35 @@
+--- export: UPrimaryDataAsset / AE_UI_Inventory_ExtractAmmo_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Inventory_ExtractAmmo_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_ExtractAmmo_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Inventory.ExtractAmmo.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_UI_Inventory_ExtractAmmo_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_ExtractAmmo_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_ExtractAmmo_Stop'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_ExtractAmmo_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.Inventory.ExtractAmmo"
+    }
+  }
+}

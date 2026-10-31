@@ -1,0 +1,244 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pouch'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pouch'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Backpack/Pouch/SM_Backpack_Pouch.SM_Backpack_Pouch",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 10.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 13.0,
+      "Y": 20.0,
+      "Z": 21.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pouch'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.5"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked",
+            "Inventory.Slot.SupplyContainer"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 1,
+          "Y": 2
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 1,
+          "Y": 2
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 1,
+          "Y": 2
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 6,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pouch'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pouch'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.5"
+  },
+  "Properties": {
+    "Weight": 0.3
+  }
+}
+--- export: UPrimaryDataAsset / ID_Pouch ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Pouch",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Clothing/Backpacks/ID_Pouch",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Pouch"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Backpack",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "A1D79BF841537F29D83D06B796BD7F99",
+      "SourceString": "Pouch",
+      "LocalizedString": "Pouch"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Pouch:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Pouch:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Pouch:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Pouch:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Pouch:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Pouch:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pouch'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_Pouch.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}

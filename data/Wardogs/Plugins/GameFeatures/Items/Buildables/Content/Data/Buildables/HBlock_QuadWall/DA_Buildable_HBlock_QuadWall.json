@@ -1,0 +1,117 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_HBlock_QuadWall'",
+    "ObjectPath": "/Buildables/Data/Buildables/HBlock_QuadWall/DA_Buildable_HBlock_QuadWall.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_HBlock_QuadWall_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/HBlock_QuadWall/B_Buildable_HBlock_QuadWall.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_HBlock_QuadWall ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_HBlock_QuadWall",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/HBlock_QuadWall/DA_Buildable_HBlock_QuadWall",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_HBlock_QuadWall:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/HBlock_QuadWall/DA_Buildable_HBlock_QuadWall.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.HBlockQuadWall"
+    },
+    "Cost": 75,
+    "RepairSpeedMultiplier": 5.0,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "BuildTool.HBlockQuadWall.Slot.Title",
+      "SourceString": "Hesco Wall",
+      "LocalizedString": "Hesco Wall"
+    },
+    "MaxHealth": 4600.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "PlacePivotVerticalOffset": 150.0,
+    "PlacePivotHorizontalOffset": 50.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_QuadWall.SM_Foundation_QuadWall",
+      "SubPathString": ""
+    },
+    "MaxDepthUnderTerrain": 45.0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_HBlock_QuadWall_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/HBlock_QuadWall/DA_Buildable_HBlock_QuadWall_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -75.0,
+        "Y": -300.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 75.0,
+        "Y": 300.0,
+        "Z": 310.8
+      },
+      "IsValid": 1
+    },
+    "bOverridesFinalStage": true,
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.QuadLargeHescoWall"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.HBlockQuadWall"
+    }
+  }
+}

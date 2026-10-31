@@ -1,0 +1,27 @@
+--- export: UDataAsset / DA_ContainerGridSlot_Vendor_SupplyCrate_Storage ---
+{
+  "Type": "WDUIContainerGridSlotData",
+  "Name": "DA_ContainerGridSlot_Vendor_SupplyCrate_Storage",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIContainerGridSlotData'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/ContainerGridSlot/Data/DA_ContainerGridSlot_Vendor_SupplyCrate_Storage",
+  "Properties": {
+    "HintIconType": {
+      "TagName": "UI.Icon.Inventory"
+    },
+    "States": [
+      {
+        "Key": {
+          "TagName": "UI.Shared.ShapeGrid.SlotState.Available"
+        },
+        "Value": 0
+      },
+      {
+        "Key": {
+          "TagName": "UI.Shared.ShapeGrid.SlotState.Unavailable"
+        },
+        "Value": 1
+      }
+    ]
+  }
+}

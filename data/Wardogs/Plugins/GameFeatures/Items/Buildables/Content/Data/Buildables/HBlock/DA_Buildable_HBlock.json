@@ -1,0 +1,117 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_HBlock'",
+    "ObjectPath": "/Buildables/Data/Buildables/HBlock/DA_Buildable_HBlock.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_HBlock ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_HBlock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/HBlock/DA_Buildable_HBlock",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_HBlock:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/HBlock/DA_Buildable_HBlock.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.HBlock"
+    },
+    "Cost": 15,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "BuildTool.HBlock.Text.Slot.Title",
+      "SourceString": "Hesco Block (Small)",
+      "LocalizedString": "Hesco Block (Small)"
+    },
+    "MaxHealth": 1600.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "StackCheckOffset": 30.0,
+    "MaxStack": 5,
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "PlacePivotVerticalOffset": 75.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Hesco.SM_Foundation_Hesco",
+      "SubPathString": ""
+    },
+    "MaxDepthUnderTerrain": 30.0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_HBlock_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/HBlock/DA_Buildable_HBlock_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -80.18016,
+        "Y": -80.32065,
+        "Z": -0.5461426
+      },
+      "Max": {
+        "X": 80.0699,
+        "Y": 81.2926,
+        "Z": 159.55206
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.SmallHesco"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.HBlock"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Build_FOB_Disabled ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Build_FOB_Disabled",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Disabled",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Build.FOB.State.Disabled"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Build_FOB_Disabled:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Disabled.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Disabled'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Disabled.0"
+  },
+  "Properties": {
+    "ParameterName": "Disabled",
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.State"
+    }
+  }
+}

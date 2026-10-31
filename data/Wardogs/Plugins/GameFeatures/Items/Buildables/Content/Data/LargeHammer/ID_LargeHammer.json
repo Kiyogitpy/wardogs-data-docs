@@ -1,0 +1,700 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 4,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Buildables/Data/LargeHammer/Meshes/SM_LargeHammer.SM_LargeHammer",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": -2.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -11.0,
+      "Y": -0.0,
+      "Z": 14.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 14.0,
+      "Y": 11.0,
+      "Z": 35.0
+    },
+    "ThrowingForce": 300.0
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  },
+  "Properties": {
+    "Weight": 3.18
+  }
+}
+--- export: UPrimaryDataAsset / ID_LargeHammer ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_LargeHammer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Buildables/Data/LargeHammer/ID_LargeHammer",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.BuildTool.Hammer.Large"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable",
+      "Item.Context.BuildingTool",
+      "Inventory.Slot.Secondary",
+      "Item.Context.Animation.Archetype.EquipTwoHandsHeavy",
+      "Item.Context.Animation.Type.LargeHammer"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.LargeHammer",
+      "SourceString": "Large Hammer",
+      "LocalizedString": "Large Hammer"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_LargeHammer:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_LargeHammer:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Durability'ID_LargeHammer:WDInventoryFragment_Durability_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_LargeHammer:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_LargeHammer:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_LargeHammer:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_BuildTool_LargeHammer_Audio'",
+      "ObjectPath": "/Buildables/Data/LargeHammer/Audio/DA_Item_BuildTool_LargeHammer_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Durability_0 ---
+{
+  "Type": "WDInventoryFragment_Durability",
+  "Name": "WDInventoryFragment_Durability_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Durability'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  },
+  "Properties": {
+    "ReplicatedData": {
+      "Durability": 3000.0
+    },
+    "bIsVisibleOnEquippedUI": true
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LargeHammer'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.16"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_BuildTool'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_BuildTool_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CriticalHitSpotManager'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CriticalHitSpotManager_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_BuildableDismantle'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_BuildableDismantle_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CharacterMelee'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CharacterMelee_0'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.12"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_BuildToolHammerLarge'",
+      "ObjectPath": "/Buildables/Data/LargeHammer/AnimSet_BuildToolHammerLarge.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_BuildTool_LargeHammer_Audio'",
+      "ObjectPath": "/Buildables/Data/LargeHammer/Audio/DA_Item_BuildTool_LargeHammer_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_BuildableDismantle_0 ---
+{
+  "Type": "WDItemExtensionData_BuildableDismantle",
+  "Name": "WDItemExtensionData_BuildableDismantle_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_BuildableDismantle'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "DismantleRatePerSecond": 250.0,
+    "DismantleRatePerHit": 250.0,
+    "DismantleTraceDistance": 275.0,
+    "DismantleModifiers": [
+      {
+        "Key": "ETeamAttitude::Neutral",
+        "Value": 0.5
+      },
+      {
+        "Key": "ETeamAttitude::Hostile",
+        "Value": 0.5
+      },
+      {
+        "Key": "ETeamAttitude::Friendly",
+        "Value": 1.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_BuildTool_0 ---
+{
+  "Type": "WDItemExtensionData_BuildTool",
+  "Name": "WDItemExtensionData_BuildTool_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_BuildTool'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "DataRegistryName": "Buildables_LargeHammer",
+    "BuildablePlacementData": {
+      "ObjectName": "WDBuildablePlacementDataAsset'DA_BuildablePlacementData'",
+      "ObjectPath": "/Buildables/Data/Buildables/DA_BuildablePlacementData.0"
+    },
+    "BuildAmount": 1.5,
+    "HitVFX": {
+      "AssetPathName": "/Game/VFX/Building/Systems/NS_VFX_Building_HitNorm_Large.NS_VFX_Building_HitNorm_Large",
+      "SubPathString": ""
+    },
+    "CritHitVFX": {
+      "AssetPathName": "/Game/VFX/Building/Systems/NS_VFX_Building_HitCrit_Large_designPass.NS_VFX_Building_HitCrit_Large_designPass",
+      "SubPathString": ""
+    },
+    "BuildAnimationTag": {
+      "TagName": "Animation.Asset.BuildTool.Hammer.Use"
+    },
+    "HitGameplayCueTag": {
+      "TagName": "GameplayCue.BuildTool.Hit"
+    },
+    "FovDeltaCurve": {
+      "ObjectName": "CurveFloat'C_BuildTool_CameraFovCurve_LargeHammer'",
+      "ObjectPath": "/Buildables/Data/BuildTool/C_BuildTool_CameraFovCurve_LargeHammer.0"
+    },
+    "MaxConstructTraceDistance": 350.0
+  }
+}
+--- export: UObject / WDItemExtensionData_CharacterMelee_0 ---
+{
+  "Type": "WDItemExtensionData_CharacterMelee",
+  "Name": "WDItemExtensionData_CharacterMelee_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CharacterMelee'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "MeleeActions": [
+      {
+        "Key": {
+          "TagName": "Action.BuildBuildable.Construct"
+        },
+        "Value": {
+          "HitBoxSize": {
+            "X": 30.0,
+            "Y": 30.0,
+            "Z": 30.0
+          },
+          "Damage": 150.0,
+          "TraceDistance": 120.0
+        }
+      }
+    ],
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Utility.LargeHammer"
+      }
+    },
+    "ExtensionComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_WDItemExtension_ItemMelee_C'",
+      "ObjectPath": "/Game/GameMechanics/ExtensionComponents/B_WDItemExtension_ItemMelee.1"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_CriticalHitSpotManager_0 ---
+{
+  "Type": "WDItemExtensionData_CriticalHitSpotManager",
+  "Name": "WDItemExtensionData_CriticalHitSpotManager_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CriticalHitSpotManager'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "CriticalHitSpotDecalComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CriticalHitSpotDecalComponent_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_CriticalHitSpotDecalComponent.1"
+    },
+    "BuildAmountWhenTargetIsHit": 8.0,
+    "CriticalHitSpotMaxDistanceAwayFromPlayerView": 340.0,
+    "CriticalHitSpotMaxDegreesFacingAwayFromCameraAtSpawn": 135.0,
+    "_aaabelcphphddcjabdjpf": 0.5,
+    "_aaabhadacjcdeiobkadgi": 20.0,
+    "_aaabobdpapdbepipcbjlm": 1,
+    "DefaultDecalColor": {
+      "B": 2,
+      "G": 207,
+      "R": 255,
+      "A": 255,
+      "Hex": "FFCF02"
+    },
+    "HighlightedDecalColor": {
+      "B": 209,
+      "G": 239,
+      "R": 255,
+      "A": 255,
+      "Hex": "FFEFD1"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_LargeHammer'",
+      "ObjectPath": "/Buildables/Data/LargeHammer/Meshes/SK_LargeHammer.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_LargeHammer'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/Materials/MI_LargeHammer.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_LargeHammer_C'",
+      "ObjectPath": "/Buildables/Data/LargeHammer/Animations/Weapon/Blueprints/ABP_LargeHammer.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "bShowDot": true,
+      "Type": "EWDCrosshairType::BuildTool",
+      "BuildableCheckRadius": 350.0
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Large_Hammer_Equip'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/Animations/Character/Montage/AM_FP_Large_Hammer_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Large_Hammer_Holster'",
+        "ObjectPath": "/Buildables/Data/LargeHammer/Animations/Character/Montage/AM_FP_Large_Hammer_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Buildables/Data/LargeHammer/Animations/Character/Blueprints/ABP_FP_LargeHammer_Layer_RW.ABP_FP_LargeHammer_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Buildables/Data/LargeHammer/Animations/Character/Blueprints/ABP_TP_LargeHammer_Layer_RW.ABP_TP_LargeHammer_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_BuildTool'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_BuildTool.11"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateBuildToolAction'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateBuildToolAction_0'",
+          "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.21"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.ToggleSnapping"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_3'",
+          "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.17"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.Rotate"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_4'",
+          "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.20"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
+          "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateBuildToolAction'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateBuildToolAction_1'",
+          "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.22"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_LargeHammer:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.7"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.BuildBuildable.Construct"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.BuildBuildable.Construct"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BuildToolSupply"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Supplies"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.BuildTool.PlaceSchematic"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.BuildToolSupply"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Id.Item.BuildToolSupply"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_2 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_3 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.ToggleSnapping"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_4 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.Rotate"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateBuildToolAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateBuildToolAction",
+  "Name": "WDItemInputBehavior_ActivateBuildToolAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateBuildToolAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+  },
+  "Properties": {
+    "ActionsPerInteractionState": [
+      {
+        "Key": "EWDBuildToolInteractionState::Construction",
+        "Value": {
+          "TagName": "Action.BuildBuildable.Construct"
+        }
+      },
+      {
+        "Key": "EWDBuildToolInteractionState::Placement",
+        "Value": {
+          "TagName": "Action.BuildTool.PlaceSchematic"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateBuildToolAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateBuildToolAction",
+  "Name": "WDItemInputBehavior_ActivateBuildToolAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateBuildToolAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_LargeHammer:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/LargeHammer/ID_LargeHammer.15"
+  },
+  "Properties": {
+    "ActionsPerInteractionState": [
+      {
+        "Key": "EWDBuildToolInteractionState::Construction",
+        "Value": {
+          "TagName": "Action.BuildTool.Dismantle"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / DA_Action_Throw_Swap ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Throw_Swap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Weapons/DA_Action_Throw_Swap",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Throw.Swap"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_SwapThrow_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Weapons/B_Action_SwapThrow.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "bInstantAction": true
+  }
+}

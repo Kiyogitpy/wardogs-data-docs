@@ -1,0 +1,46 @@
+--- export: UDataAsset / DA_PassengerEntry ---
+{
+  "Type": "WDUIPassengersEntryData",
+  "Name": "DA_PassengerEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPassengersEntryData'",
+  "Package": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Data/DA_PassengerEntry",
+  "Properties": {
+    "RoleTextures": [
+      {
+        "Key": "EWDUIPassengerRole::Gunner",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Textures/T_UI_Icon_VehicleGunner_White_256.T_UI_Icon_VehicleGunner_White_256",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDUIPassengerRole::Driver",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Textures/T_UI_Icon_VehicleDriver_White_256.T_UI_Icon_VehicleDriver_White_256",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDUIPassengerRole::Passenger",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/HUD/Passengers/Widgets/PassengersEntry/Textures/T_UI_Icon_VehiclePassenger_White_256.T_UI_Icon_VehiclePassenger_White_256",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "UnoccupiedColor": {
+      "R": 0.332452,
+      "G": 0.337164,
+      "B": 0.323143,
+      "A": 1.0,
+      "Hex": "9C9D9A"
+    },
+    "EmptySeatText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.EmptySeat.Text",
+      "SourceString": "Empty",
+      "LocalizedString": "Empty"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+--- export: UPrimaryDataAsset / DA_Action_BowRelease ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_BowRelease",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/CombatBow/Data/Actions/NewBowActions/DA_Action_BowRelease",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Weapon.Bow.Release"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.OneHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_BowRelease_C'",
+      "ObjectPath": "/CombatBow/Data/Actions/NewBowActions/B_Action_BowRelease.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect",
+            "Action.Weapon.Bow.Draw"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Item.Inspect"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptBuffered",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptBuffered",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Buffer",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Buffer",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": [
+            {
+              "ActionTag": {
+                "TagName": "Action.Weapon.Bow.Draw"
+              },
+              "BufferType": "EBHActionBufferType::FullBuffer",
+              "BufferTime": -10.0
+            }
+          ]
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

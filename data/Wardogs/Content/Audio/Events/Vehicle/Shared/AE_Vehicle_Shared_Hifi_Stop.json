@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_Hifi_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_Hifi_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Hifi.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Shared_Hifi_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Hifi_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Hifi"
+    }
+  }
+}

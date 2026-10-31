@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ROT_04_MountedMachineGuns'",
+    "ObjectPath": "/ROT_04_MachineGun/Variants/ID_ROT_04_MountedMachineGuns.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 5,
+      "Y": 4
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_ROT_04_MountedMachineGuns ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_ROT_04_MountedMachineGuns",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/ROT_04_MachineGun/Variants/ID_ROT_04_MountedMachineGuns",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_ROT_04_MountedMachineGuns:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/ROT_04_MachineGun/Variants/ID_ROT_04_MountedMachineGuns.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_ROT_04_MountedMachineGuns:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/ROT_04_MachineGun/Variants/ID_ROT_04_MountedMachineGuns.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ROT_04_MountedMachineGuns'",
+    "ObjectPath": "/ROT_04_MachineGun/Variants/ID_ROT_04_MountedMachineGuns.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_ROT_04_Audio'",
+      "ObjectPath": "/ROT_04/Config/DA_ROT_04_Audio.0"
+    }
+  }
+}

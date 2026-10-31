@@ -1,0 +1,1179 @@
+--- export: UObject / AEB_PlayerJumpLand_C_0 ---
+{
+  "Type": "AEB_PlayLandSound_C",
+  "Name": "AEB_PlayerJumpLand_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayLandSound.AEB_PlayLandSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayLandSound_C'Default__AEB_PlayLandSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayLandSound.0"
+  },
+  "Properties": {
+    "RestartBehaviour": "ESoundRestartBehavior::IfDifferentSound",
+    "Hard Threshold": 450.0,
+    "Medium Threshold": 250.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Land"
+    }
+  }
+}
+--- export: UObject / AEB_SetSoundWaveArrayParameterByHeldItem_C_0 ---
+{
+  "Type": "AEB_SetSoundWaveArrayParameterByHeldItem_C",
+  "Name": "AEB_SetSoundWaveArrayParameterByHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetSoundWaveArrayParameterByHeldItem.AEB_SetSoundWaveArrayParameterByHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSoundWaveArrayParameterByHeldItem_C'Default__AEB_SetSoundWaveArrayParameterByHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSoundWaveArrayParameterByHeldItem.0"
+  },
+  "Properties": {
+    "HeldItemSoundSet": {
+      "TagName": "Audio.Asset.Item.Footstep.Sprint"
+    },
+    "SoundParameterName": "Item",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Land"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Land ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Land",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Land"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Land:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.3"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorSetPlayerWeight'AE_Player_Land:WDAudioEventBehaviorSetPlayerWeight_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.4"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourSetMultipleSurfaceProperties'AE_Player_Land:WDAudioEventBehaviourSetMultipleSurfaceProperties_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.5"
+      },
+      {
+        "ObjectName": "AEB_SetSoundWaveArrayParameterByHeldItem_C'AE_Player_Land:AEB_SetSoundWaveArrayParameterByHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.1"
+      },
+      {
+        "ObjectName": "AEB_PlayLandSound_C'AE_Player_Land:AEB_PlayerJumpLand_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Land"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorSetPlayerWeight_0 ---
+{
+  "Type": "WDAudioEventBehaviorSetPlayerWeight",
+  "Name": "WDAudioEventBehaviorSetPlayerWeight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorSetPlayerWeight'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.2"
+  },
+  "Properties": {
+    "WeightData": [
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Lightest"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.0,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Lightest"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Light"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.0,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Light"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Medium"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.0,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Medium"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.Heavy"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.0,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.Heavy"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Weight.SuperHeavy"
+        },
+        "Value": {
+          "WeightLayerGain": 1.0,
+          "FootstepGain": 1.0,
+          "WeightLayerDelay": 0.0,
+          "AudioWeightTag": {
+            "TagName": "Audio.Asset.Player.Weight.SuperHeavy"
+          }
+        }
+      }
+    ],
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Weight_Land'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Jump/DA/DA_Player_Weight_Land.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Land"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourSetMultipleSurfaceProperties_0 ---
+{
+  "Type": "WDAudioEventBehaviourSetMultipleSurfaceProperties",
+  "Name": "WDAudioEventBehaviourSetMultipleSurfaceProperties_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourSetMultipleSurfaceProperties'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Jump/AE_Player_Land.2"
+  },
+  "Properties": {
+    "AudioSurfacePropertiesInput": [
+      {
+        "GainName": "Gain",
+        "SurfaceWavesName": "SurfaceSoft",
+        "AudioData": {
+          "ObjectName": "WDAudioData'DA_Player_LandSurface_Soft'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/DA/DA_Player_LandSurface_Soft.0"
+        },
+        "AudioSurfaceToSurfacePropertiesMap": [
+          {
+            "Key": "EWDAudioSurface::Flesh",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Concrete",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Dirt",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Mud",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Grass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Leaves",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Foliage",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Gravel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Sand",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Metal",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalSheet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalVehicle",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalChainLink",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalGrate",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalCorrugated",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalDebris",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Glass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::GlassBulletProof",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Carpet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Fabric",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Wood",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodBox",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodPlank",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Plastic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBag",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Water",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Snow",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ice",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubble",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ceramic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubber",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Paper",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Unspecified",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "GainName": "Gain",
+        "SurfaceWavesName": "SurfaceMedium",
+        "AudioData": {
+          "ObjectName": "WDAudioData'DA_Player_LandSurface_Medium'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/DA/DA_Player_LandSurface_Medium.0"
+        },
+        "AudioSurfaceToSurfacePropertiesMap": [
+          {
+            "Key": "EWDAudioSurface::Flesh",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Concrete",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Dirt",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Mud",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Grass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Leaves",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Foliage",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Gravel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Sand",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Metal",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalSheet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalVehicle",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalChainLink",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalGrate",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalCorrugated",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalDebris",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Glass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::GlassBulletProof",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Carpet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Fabric",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Wood",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodBox",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodPlank",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Plastic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBag",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Water",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Snow",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ice",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubble",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ceramic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubber",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Paper",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Unspecified",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          }
+        ]
+      },
+      {
+        "GainName": "Gain",
+        "SurfaceWavesName": "SurfaceHard",
+        "AudioData": {
+          "ObjectName": "WDAudioData'DA_Player_LandSurface_Medium'",
+          "ObjectPath": "/Game/Audio/Player/Movement/Jump/DA/DA_Player_LandSurface_Medium.0"
+        },
+        "AudioSurfaceToSurfacePropertiesMap": [
+          {
+            "Key": "EWDAudioSurface::Flesh",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Concrete",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Dirt",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Mud",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Grass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Leaves",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Foliage",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Grass"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Gravel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Sand",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Metal",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalSheet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalVehicle",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalChainLink",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalGrate",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalCorrugated",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::MetalDebris",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.MetalResonant"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Glass",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::GlassBulletProof",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Carpet",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Fabric",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Wood",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodBox",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::WoodPlank",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Wood"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Plastic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBarrel",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::PlasticBag",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Water",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Water"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Snow",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Dirt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ice",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubble",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Gravel"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Ceramic",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Rubber",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Paper",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          },
+          {
+            "Key": "EWDAudioSurface::Unspecified",
+            "Value": {
+              "SurfaceTypeTag": {
+                "TagName": "Audio.Asset.Surface.Asphalt"
+              },
+              "Gain": 1.0
+            }
+          }
+        ]
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Land"
+    }
+  }
+}

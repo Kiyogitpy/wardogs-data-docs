@@ -1,0 +1,41 @@
+--- export: UDataAsset / DA_TeamOffencePrompt ---
+{
+  "Type": "WDUITeamOffencePromptData",
+  "Name": "DA_TeamOffencePrompt",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITeamOffencePromptData'",
+  "Package": "/TeamOffence/UI/DA_TeamOffencePrompt",
+  "Properties": {
+    "_aaabjkjgjcklipbfclgcm": {
+      "TableId": "/TeamOffence/UI/StringTables/STRINGS_TeamOffence.STRINGS_TeamOffence",
+      "Key": "Prompt_OffenderNameFormat",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "_aaaapkpgilikeeidfdjon": {
+      "TagName": "UI.Action.Feature.TeamOffence.Forgive"
+    },
+    "_aaaapghjdpcfgdmbccflk": {
+      "TagName": "UI.Action.Feature.TeamOffence.Punish"
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/TeamOffence/UI/DA_TeamOffencePromptsBar.DA_TeamOffencePromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "_aaabcmaihlilmklkialpf": [
+      "UI.Scene.Shared.Popups"
+    ],
+    "_aaabaldmcbgmnpkahmbkf": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "_aaabapcgghpjnlfpolbek": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    }
+  }
+}

@@ -1,0 +1,1851 @@
+--- export: UDataTable / DT_PassiveMissionChallenges ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PassiveMissionChallenges",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Missions/DT_PassiveMissionChallenges",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Challenge.Mission.Passive.EarnCash.1": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "563C6D414E55326B6FE4CA85AAE05EF6",
+        "SourceString": "Earn Cash",
+        "LocalizedString": "Earn Cash"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "240E741D47C5C4D5A5DBC4ACC9F764B8",
+        "SourceString": "Earn X Cash",
+        "LocalizedString": "Earn X Cash"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 100
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.CashEarned"
+          },
+          "Value": 5000
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 31
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.1"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnCash.2": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "563C6D414E55326B6FE4CA85AAE05EF6",
+        "SourceString": "Earn Cash",
+        "LocalizedString": "Earn Cash"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "240E741D47C5C4D5A5DBC4ACC9F764B8",
+        "SourceString": "Earn X Cash",
+        "LocalizedString": "Earn X Cash"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 200
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.CashEarned"
+          },
+          "Value": 12000
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 31
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.2"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnCash.3": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "563C6D414E55326B6FE4CA85AAE05EF6",
+        "SourceString": "Earn Cash",
+        "LocalizedString": "Earn Cash"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "240E741D47C5C4D5A5DBC4ACC9F764B8",
+        "SourceString": "Earn X Cash",
+        "LocalizedString": "Earn X Cash"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 300
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.CashEarned"
+          },
+          "Value": 30000
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 31
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.3"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnCash.4": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "563C6D414E55326B6FE4CA85AAE05EF6",
+        "SourceString": "Earn Cash",
+        "LocalizedString": "Earn Cash"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "240E741D47C5C4D5A5DBC4ACC9F764B8",
+        "SourceString": "Earn X Cash",
+        "LocalizedString": "Earn X Cash"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 400
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.CashEarned"
+          },
+          "Value": 80000
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 31
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.4"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnCash.5": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "563C6D414E55326B6FE4CA85AAE05EF6",
+        "SourceString": "Earn Cash",
+        "LocalizedString": "Earn Cash"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "240E741D47C5C4D5A5DBC4ACC9F764B8",
+        "SourceString": "Earn X Cash",
+        "LocalizedString": "Earn X Cash"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 500
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.CashEarned"
+          },
+          "Value": 200000
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 31
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.5"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnRoleXp.1": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "AB8CA12C4BB9687F0508E980788F1913",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "E7DCB81E43856A8DECC8C9A9F0C33991",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 100
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.RoleXpEarned"
+          },
+          "Value": 500
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 71
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.1"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnRoleXp.2": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0E78EF2C0D295E431614C76C0D295E43",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "0E78EF2CDF157E711614C76CDF157E71",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 200
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.RoleXpEarned"
+          },
+          "Value": 500
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 71
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.2"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnRoleXp.3": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0E78EF2C0D295E431614C76C0D295E43",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "0E78EF2CDF157E711614C76CDF157E71",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 300
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.RoleXpEarned"
+          },
+          "Value": 500
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 71
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.3"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnRoleXp.4": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0E78EF2C0D295E431614C76C0D295E43",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "0E78EF2CDF157E711614C76CDF157E71",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 400
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.RoleXpEarned"
+          },
+          "Value": 500
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 71
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.4"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.EarnRoleXp.5": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0E78EF2C0D295E431614C76C0D295E43",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "0E78EF2CDF157E711614C76CDF157E71",
+        "SourceString": "Earn Role XP",
+        "LocalizedString": "Earn Role XP"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 500
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.RoleXpEarned"
+          },
+          "Value": 500
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_EarnResource'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_EarnResource.4"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "229DD68E-49DA8759-001AA8A0-5A30997D",
+              "Name": "ApplicableResources",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 71
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "229DD68E-49DA8759-001AA8A0-5A30997D",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.5"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.TimePlayed.1": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6AB88D3A40645FEA2AF9539496C299D2",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C375BC9B48ED27E1BCF895A382AF7103",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 100
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.TimePlayed"
+          },
+          "Value": 1800
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_TimePlayed'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_TimePlayed.6"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "5EB57F8D-45C5B8F6-D28DF795-F956DDFE",
+              "Name": "UpdateInterval",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "AA026575-45C28224-0EDCB8A7-23CA35EC",
+              "Name": "TimePlayed",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 28
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.1"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.TimePlayed.2": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6AB88D3A40645FEA2AF9539496C299D2",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C375BC9B48ED27E1BCF895A382AF7103",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 200
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.TimePlayed"
+          },
+          "Value": 1800
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_TimePlayed'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_TimePlayed.6"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "5EB57F8D-45C5B8F6-D28DF795-F956DDFE",
+              "Name": "UpdateInterval",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "AA026575-45C28224-0EDCB8A7-23CA35EC",
+              "Name": "TimePlayed",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 28
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.2"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.TimePlayed.3": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6AB88D3A40645FEA2AF9539496C299D2",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C375BC9B48ED27E1BCF895A382AF7103",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 300
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.TimePlayed"
+          },
+          "Value": 1800
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_TimePlayed'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_TimePlayed.6"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "5EB57F8D-45C5B8F6-D28DF795-F956DDFE",
+              "Name": "UpdateInterval",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "AA026575-45C28224-0EDCB8A7-23CA35EC",
+              "Name": "TimePlayed",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 28
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.3"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.TimePlayed.4": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6AB88D3A40645FEA2AF9539496C299D2",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C375BC9B48ED27E1BCF895A382AF7103",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 400
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.TimePlayed"
+          },
+          "Value": 1800
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_TimePlayed'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_TimePlayed.6"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "5EB57F8D-45C5B8F6-D28DF795-F956DDFE",
+              "Name": "UpdateInterval",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "AA026575-45C28224-0EDCB8A7-23CA35EC",
+              "Name": "TimePlayed",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 28
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.4"
+      }
+    },
+    "Challenges.Challenge.Mission.Passive.TimePlayed.5": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "6AB88D3A40645FEA2AF9539496C299D2",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "C375BC9B48ED27E1BCF895A382AF7103",
+        "SourceString": "Time Played",
+        "LocalizedString": "Time Played"
+      },
+      "Rewards": [
+        {
+          "RewardTag": {
+            "TagName": "Attribute.Meta.Currency.Intel"
+          },
+          "Type": "EGameDataMetaRewardType::REWARD_TYPE_INVALID",
+          "Quantity": 500
+        }
+      ],
+      "Objectives": [
+        {
+          "Key": {
+            "TagName": "Challenges.Objective.TimePlayed"
+          },
+          "Value": 1800
+        }
+      ],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenge_TimePlayed'",
+          "ObjectPath": "/Game/Meta/Missions/StateTrees/ST_Challenge_TimePlayed.6"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+              "Name": "RequiredAmount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDChallengeObjectiveProgress'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8BD117C8-4008CC5F-CD806FB4-7EFA0632",
+              "Name": "Objective",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "5EB57F8D-45C5B8F6-D28DF795-F956DDFE",
+              "Name": "UpdateInterval",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "AA026575-45C28224-0EDCB8A7-23CA35EC",
+              "Name": "TimePlayed",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 28
+        },
+        "PropertyOverrides": [
+          "52F9CFB4-4C47CA0F-02F23286-2A811F26",
+          "8BD117C8-4008CC5F-CD806FB4-7EFA0632"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.5"
+      }
+    }
+  }
+}

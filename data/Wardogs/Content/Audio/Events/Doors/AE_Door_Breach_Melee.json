@@ -1,0 +1,114 @@
+--- export: UObject / AEB_AttachSoundToDoorHandle_C_0 ---
+{
+  "Type": "AEB_AttachSoundToDoorHandle_C",
+  "Name": "AEB_AttachSoundToDoorHandle_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.AEB_AttachSoundToDoorHandle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Breach_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToDoorHandle_C'Default__AEB_AttachSoundToDoorHandle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door.Breach"
+    }
+  }
+}
+--- export: UObject / AEB_SelectDoorSound_C_0 ---
+{
+  "Type": "AEB_SelectDoorSound_C",
+  "Name": "AEB_SelectDoorSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SelectDoorSound.AEB_SelectDoorSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Breach_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SelectDoorSound_C'Default__AEB_SelectDoorSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SelectDoorSound.0"
+  },
+  "Properties": {
+    "Doors": [
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Door.Metal"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Door_Metal_Breach'",
+          "ObjectPath": "/Game/Audio/Doors/Metal/MSS/MSS_Door_Metal_Breach.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Door.Wooden"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Door_Breach'",
+          "ObjectPath": "/Game/Audio/Doors/MSS_Door_Breach.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Door.Metal.Large"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Door_Metal_Breach'",
+          "ObjectPath": "/Game/Audio/Doors/Metal/MSS/MSS_Door_Metal_Breach.0"
+        }
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Door.Breach"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Door_Breach_Melee ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Door_Breach_Melee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Door.Breach.Melee"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SelectDoorSound_C'AE_Door_Breach_Melee:AEB_SelectDoorSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToDoorHandle_C'AE_Door_Breach_Melee:AEB_AttachSoundToDoorHandle_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Door_Breach_Melee:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 70.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Breach_Melee'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Breach_Melee.2"
+  },
+  "Properties": {
+    "ParameterName": "BreachMelee",
+    "ContextTag": {
+      "TagName": "Audio.Context.Door.Breach"
+    }
+  }
+}

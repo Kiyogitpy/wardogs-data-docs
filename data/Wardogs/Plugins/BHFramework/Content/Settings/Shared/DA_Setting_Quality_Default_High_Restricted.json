@@ -1,0 +1,126 @@
+--- export: UDataAsset / DA_Setting_Quality_Default_High_Restricted ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Quality_Default_High_Restricted",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Shared/DA_Setting_Quality_Default_High_Restricted",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Quality_Default_High_Restricted:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Shared/DA_Setting_Quality_Default_High_Restricted.1"
+      },
+      "MinIndex": 1,
+      "MaxIndex": 3
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Quality_Default_High_Restricted'",
+    "ObjectPath": "/BHFramework/Settings/Shared/DA_Setting_Quality_Default_High_Restricted.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EBHQualitySetting::Potato",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Cinematic",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EBHQualitySetting::Low",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Low",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EBHQualitySetting::Medium",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Medium",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EBHQualitySetting::High",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.High",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EBHQualitySetting::Overkill",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Ultra",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "4",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Cinematic",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Low",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Medium",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.High",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "3",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Quality.Ultra",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}

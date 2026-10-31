@@ -1,0 +1,53 @@
+--- export: UObject / WDPingAction_AssistanceRequest_Pickup_0 ---
+{
+  "Type": "WDPingAction_AssistanceRequest_Pickup",
+  "Name": "WDPingAction_AssistanceRequest_Pickup_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_AssistanceRequest_Pickup'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Request_Pickup'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Pickup.1"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Pickup_Other",
+      "SourceString": "Requesting pickup",
+      "LocalizedString": "Requesting pickup"
+    },
+    "PingActionChatLocTextWithLocation": {
+      "TableId": "/Game/UI/StringTables/STRINGS_ChatBox_AssistanceRequests.STRINGS_ChatBox_AssistanceRequests",
+      "Key": "Type_Request_Pickup_Other_WithLoc",
+      "SourceString": "Requesting pickup X{X}, Y{Y}",
+      "LocalizedString": "Requesting pickup X{X}, Y{Y}"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Request_Pickup ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Request_Pickup",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Pickup",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Request.Pickup",
+      "SourceString": "Pickup",
+      "LocalizedString": "Pickup"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_PickUp_64x65.T_UI_Icon_PingWheel_PickUp_64x65",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "bRequestPlayerMapCoordinates": true,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_AssistanceRequest_Pickup'DA_PingAction_Request_Pickup:WDPingAction_AssistanceRequest_Pickup_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Requests/DA_PingAction_Request_Pickup.0"
+      }
+    ]
+  }
+}

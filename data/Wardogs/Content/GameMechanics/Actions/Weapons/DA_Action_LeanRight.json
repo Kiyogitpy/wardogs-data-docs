@@ -1,0 +1,33 @@
+--- export: UPrimaryDataAsset / DA_Action_LeanRight ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_LeanRight",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Weapons/DA_Action_LeanRight",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Lean.Right"
+    },
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Lean_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Weapons/B_Action_Lean.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Lean.Left"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_GearChange'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_GearChange ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_GearChange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.GearChange"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_GearChange:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_GearChange:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange.3"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_GearChange:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 40.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_GearChange'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange.1"
+  },
+  "Properties": {
+    "SocketName": "gasPedal_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.GearChange"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_GearChange'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_GearChange.1"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.GearChange"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.GearChange"
+    },
+    "bPersistent": true
+  }
+}

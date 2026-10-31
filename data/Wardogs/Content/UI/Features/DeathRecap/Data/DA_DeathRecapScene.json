@@ -1,0 +1,32 @@
+--- export: UDataAsset / DA_DeathRecapScene ---
+{
+  "Type": "WDUIDeathRecapData",
+  "Name": "DA_DeathRecapScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDeathRecapData'",
+  "Package": "/Game/UI/Features/DeathRecap/Data/DA_DeathRecapScene",
+  "Properties": {
+    "HealthReportViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIHealthReportViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/DeathRecap/Widgets/HealthReport/Data/DA_HealthReport.DA_HealthReport",
+        "SubPathString": ""
+      }
+    },
+    "DeathRecapMiscViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIDeathRecapMiscViewModel",
+        "SubPathString": ""
+      }
+    },
+    "EventLogViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIEventLogViewModel",
+        "SubPathString": ""
+      }
+    }
+  }
+}

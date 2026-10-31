@@ -1,0 +1,158 @@
+--- export: UDataAsset / W_STN_01_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_STN_01_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/STN_01/Weapon/W_STN_01_MountedMachineGun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.STN_01.MistralAA"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/STN_01/Meshes/Mistral_AA/SK_Mistral_Anti_Aircraft.SK_Mistral_Anti_Aircraft",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceId": "Chassis",
+      "SocketName": "S_Player_Seat"
+    },
+    "GamepadRotationSensitivity": 100.0,
+    "GamepadRotationUpdateMax": {
+      "X": 150.0,
+      "Y": 150.0
+    },
+    "MouseRotationSensitivity": 20.0,
+    "MouseRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "KeyRotationSensitivity": 100.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -20.0,
+      "MaxWeaponPitchAngle": 55.0,
+      "RotationSpeed": 125.0,
+      "TurretSkeletalMeshTag": "Chassis",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.HipFire"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "Chassis",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "AA_Camera_HipFire",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "Chassis",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "AA_Camera_ADS",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": {
+            "ObjectName": "MLandVehicleSpringArmDataAsset'DA_STN_01_CameraBehaviour_FP'",
+            "ObjectPath": "/STN_01/Data/DA_STN_01_CameraBehaviour_FP.0"
+          },
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 3.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      }
+    ],
+    "InitialWeaponPossessFovLerpTime": 0.22,
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Land.Stationary"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/STN_01/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun.WE_STN_01_Heavy_MountedMachineGun",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,394 @@
+--- export: UDataTable / DT_PilotSkills ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PilotSkills",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CharacterSkills/DT_PilotSkills",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Pilot.HorizontalRecoil.MountedGun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_PilotSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_PilotSkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_MountedGun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Id.Item.ROT_01.MountedMachineGun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Pilot.HorizontalRecoil.MountedGun"
+      }
+    },
+    "Meta.Role.Pilot.VerticalRecoil.MountedGun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_PilotSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_PilotSkills.0"
+                        },
+                        "RowName": "VerticalRecoil_MountedGun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Id.Item.ROT_01.MountedMachineGun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Pilot.VerticalRecoil.MountedGun"
+      }
+    },
+    "Meta.Role.Pilot.ImpactDamageReduction": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Vehicle"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Vehicle_ImpactReductionMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Vehicle/GE_Vehicle_ImpactReductionMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Health.ImpactReductionMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_PilotSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_PilotSkills.0"
+                        },
+                        "RowName": "ImpactDamageReduction"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "VehicleApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Vehicle.Variant.Air"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Vehicle.Variant.Air )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Pilot.ImpactDamageReduction"
+      }
+    },
+    "Meta.Role.Pilot.FuelUsageReduction": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Vehicle"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Vehicle_FuelUsageReductionMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Vehicle/GE_Vehicle_FuelUsageReductionMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.FuelUsageReductionMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_PilotSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_PilotSkills.0"
+                        },
+                        "RowName": "FuelUsageReduction"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "VehicleApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Vehicle.Variant.Air"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Vehicle.Variant.Air )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Pilot.FuelUsageReduction"
+      }
+    },
+    "Meta.Role.Pilot.AimDownSightSpeed.MountedGun": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_PilotSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_PilotSkills.0"
+                        },
+                        "RowName": "AimDownSight_MountedGun"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Id.Item.ROT_01.MountedMachineGun"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Pilot.AimDownSightSpeed.MountedGun"
+      }
+    },
+    "Meta.Role.Pilot.IncreasedHealth.SupplyCrate": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.SupplyCrate"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Vehicle_Health_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Vehicle/GE_Vehicle_Health.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Health"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_PilotSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_PilotSkills.0"
+                        },
+                        "RowName": "IncreasedHealth_SupplyCrate"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "VehicleApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Vehicle.Variant.Air"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Vehicle.Variant.Air )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Pilot.IncreasedHealth.SupplyCrate"
+      }
+    }
+  }
+}

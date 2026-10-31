@@ -1,0 +1,137 @@
+--- export: UObject / WDCharacterModifier_CameraLock_0 ---
+{
+  "Type": "WDCharacterModifier_CameraLock",
+  "Name": "WDCharacterModifier_CameraLock_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifier_CameraLock'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_BodyDragging'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging.3"
+  },
+  "Properties": {
+    "PitchLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::CapsuleRotation",
+      "LockActivationMode": "EWDAxisLockActivationMode::Interpolated",
+      "LockAngle": 45.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.8,
+      "LockSmoothMaxTurnSpeed": 5.0,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_Camera_LockSmoothCurve_BodyDragging'",
+        "ObjectPath": "/Game/MoverTesting/Curves/CRV_Camera_LockSmoothCurve_BodyDragging.0"
+      },
+      "bInterpolateTarget": false,
+      "LockActivationInterpolationSpeed": 2.0
+    },
+    "YawLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::NetworkSmoothingComponentRotation",
+      "LockMode": "EWDAxisLockMode::TargetNetworkSmoothingComponentRotation",
+      "LockAngle": 45.0,
+      "bSmoothLock": true,
+      "LockSmoothPercent": 0.8,
+      "LockSmoothMaxTurnSpeed": 5.0,
+      "LockSmoothCurve": {
+        "ObjectName": "CurveFloat'CRV_Camera_LockSmoothCurve_BodyDragging'",
+        "ObjectPath": "/Game/MoverTesting/Curves/CRV_Camera_LockSmoothCurve_BodyDragging.0"
+      },
+      "bInterpolateTarget": false
+    },
+    "RollLockSettings": {
+      "LockActivationType": "EWDAxisLockActivationType::None"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_MovementMode_0 ---
+{
+  "Type": "WDCharacterModifierCondition_MovementMode",
+  "Name": "WDCharacterModifierCondition_MovementMode_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_MovementMode'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_BodyDragging'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging.3"
+  },
+  "Properties": {
+    "MovementModeTag": {
+      "TagName": "Mover.Mode.BodyDragging"
+    }
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_BodyDragging'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vitality.Dead"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        3,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "UserDescription": "We are alive and not in a vehicle",
+      "AutoDescription": " NONE( State.Player.Vitality.Critical, State.Player.Vitality.Dead, State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_BodyDragging ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_BodyDragging",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.BodyDragging"
+    },
+    "CharacterModifiers": [
+      {
+        "ObjectName": "WDCharacterModifier_CameraLock'DA_CharacterModifierState_BodyDragging:WDCharacterModifier_CameraLock_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging.0"
+      }
+    ],
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_BodyDragging:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging.2"
+      },
+      {
+        "ObjectName": "WDCharacterModifierCondition_MovementMode'DA_CharacterModifierState_BodyDragging:WDCharacterModifierCondition_MovementMode_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_BodyDragging.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_07_Attack'",
+    "ObjectPath": "/WHL_07_ArmouredBattle/Variants/ID_WHL_07_Attack.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 5,
+      "Y": 4
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_WHL_07_Attack ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_WHL_07_Attack",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/WHL_07_ArmouredBattle/Variants/ID_WHL_07_Attack",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_WHL_07_Attack:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/WHL_07_ArmouredBattle/Variants/ID_WHL_07_Attack.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_WHL_07_Attack:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/WHL_07_ArmouredBattle/Variants/ID_WHL_07_Attack.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_WHL_07_Attack'",
+    "ObjectPath": "/WHL_07_ArmouredBattle/Variants/ID_WHL_07_Attack.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_WHL_07_Audio'",
+      "ObjectPath": "/WHL_07/Data/DA_WHL_07_Audio.0"
+    }
+  }
+}

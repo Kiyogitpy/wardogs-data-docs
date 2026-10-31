@@ -1,0 +1,79 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Humvee_RingTurret'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/WHL_05/ID_Humvee_RingTurret.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.556mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 150,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.556mm.Tracer"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_Humvee_RingTurret ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Humvee_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/WHL_05/ID_Humvee_RingTurret",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.HumveeVehicleRingTurret"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.WHL_05.MountedMachineGun",
+      "Item.Context.MovementBlocked"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "CC37EA0D46D09B47A33CC4B6882F8BC4",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Humvee_RingTurret:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/WHL_05/ID_Humvee_RingTurret.0"
+      }
+    ]
+  }
+}

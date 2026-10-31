@@ -1,0 +1,47 @@
+--- export: UDataAsset / DA_ReloadingMinigame ---
+{
+  "Type": "WDUIVehicleReloadingMinigameData",
+  "Name": "DA_ReloadingMinigame",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleReloadingMinigameData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/NEWHUD/Minigame/Data/DA_ReloadingMinigame",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleReloadingMinigameEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/Vehicles/NEWHUD/Minigame/Data/DA_ReloadingMinigameEntry.DA_ReloadingMinigameEntry",
+        "SubPathString": ""
+      }
+    },
+    "UnloadedShellOpacity": 0.0,
+    "CorrectKeyPressAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.CorrectKey"
+    },
+    "IncorrectKeyPressAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.IncorrectKey"
+    },
+    "SuccessfulQuadrantAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.SuccessfulQuadrant"
+    },
+    "FinalQuadrantSuccessAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.FinalQuadrant"
+    },
+    "CompletedWithoutErrorAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.ReloadingMinigame.CompleteWithoutError"
+    },
+    "UIElementsToKeepDisplaying": [
+      "UI.HUD.Element.CentralFeedback",
+      "UI.HUD.Element.EventFeed",
+      "UI.HUD.Element.RewardFeed",
+      "UI.HUD.Element.Killfeed",
+      "UI.HUD.Element.Vehicle.ActiveReload",
+      "UI.HUD.Element.Vehicle.ThreatIndicator"
+    ],
+    "WhitelistedVehicleTags": [
+      "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+    ]
+  }
+}

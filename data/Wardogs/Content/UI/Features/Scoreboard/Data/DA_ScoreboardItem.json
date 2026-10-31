@@ -1,0 +1,101 @@
+--- export: UDataAsset / DA_ScoreboardItem ---
+{
+  "Type": "WDUIScoreboardItemData",
+  "Name": "DA_ScoreboardItem",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScoreboardItemData'",
+  "Package": "/Game/UI/Features/Scoreboard/Data/DA_ScoreboardItem",
+  "Properties": {
+    "CareerLevelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleLevelViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_RoleLevelToolltipData.DA_RoleLevelToolltipData",
+        "SubPathString": ""
+      }
+    },
+    "FormatToTextColorData": [
+      {
+        "Key": "EWDUINumberFormatType::Cash",
+        "Value": {
+          "NeutralTextColor": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "PositiveTextColor": {
+            "R": 0.15,
+            "G": 1.0,
+            "B": 0.15,
+            "A": 1.0,
+            "Hex": "6CFF6C"
+          },
+          "NegativeTextColor": {
+            "R": 1.0,
+            "G": 0.25,
+            "B": 0.25,
+            "A": 1.0,
+            "Hex": "FF8989"
+          }
+        }
+      }
+    ],
+    "MutedTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/x256/T_UI_Icon_VOIP_Muted_256.T_UI_Icon_VOIP_Muted_256",
+      "SubPathString": ""
+    },
+    "UnmutedTexture": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/x256/T_UI_Icon_VOIP_Unmuted_256.T_UI_Icon_VOIP_Unmuted_256",
+      "SubPathString": ""
+    },
+    "DisabledMuteButtonReason": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_Scoreboard_MuteButton.DisableReason",
+      "SourceString": "Cannot mute self.",
+      "LocalizedString": "Cannot mute self."
+    },
+    "_aaabbllhbbnlecdpdhgmj": {
+      "TagName": "Audio.Event.UI.FrontEnd.Hover"
+    },
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_ContextMenu'DA_ScoreboardItem:WDUIViewModelExtension_ContextMenu_1'",
+        "ObjectPath": "/Game/UI/Features/Scoreboard/Data/DA_ScoreboardItem.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDUIViewModelExtension_ContextMenu_1 ---
+{
+  "Type": "WDUIViewModelExtension_ContextMenu",
+  "Name": "WDUIViewModelExtension_ContextMenu_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_ContextMenu'",
+  "Outer": {
+    "ObjectName": "WDUIScoreboardItemData'DA_ScoreboardItem'",
+    "ObjectPath": "/Game/UI/Features/Scoreboard/Data/DA_ScoreboardItem.0"
+  },
+  "Properties": {
+    "ContextMenuActionTags": [
+      {
+        "TagName": "ContextMenu.Action.MutePlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.UnmutePlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.ReportPlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.KickPlayer"
+      },
+      {
+        "TagName": "ContextMenu.Action.BlockPlayer"
+      }
+    ]
+  }
+}

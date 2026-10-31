@@ -1,0 +1,106 @@
+--- export: UDataAsset / DA_Setting_Controls_GamepadResponseCurveType ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_GamepadResponseCurveType",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_GamepadResponseCurveType",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_GamepadResponseCurveType:BHUserSettingEnumDiscreteValues_1'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_GamepadResponseCurveType.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_1 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_GamepadResponseCurveType'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_GamepadResponseCurveType.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDGamepadResponseCurveType::Linear",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Linear",
+          "SourceString": "Linear",
+          "LocalizedString": "Linear"
+        }
+      },
+      {
+        "Key": "EWDGamepadResponseCurveType::Standard",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Standard",
+          "SourceString": "Standard",
+          "LocalizedString": "Standard"
+        }
+      },
+      {
+        "Key": "EWDGamepadResponseCurveType::Classic",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Classic",
+          "SourceString": "Classic",
+          "LocalizedString": "Classic"
+        }
+      },
+      {
+        "Key": "EWDGamepadResponseCurveType::Dynamic",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Dynamic",
+          "SourceString": "Dynamic",
+          "LocalizedString": "Dynamic"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Linear",
+          "SourceString": "Linear",
+          "LocalizedString": "Linear"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Standard",
+          "SourceString": "Standard",
+          "LocalizedString": "Standard"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Classic",
+          "SourceString": "Classic",
+          "LocalizedString": "Classic"
+        }
+      },
+      {
+        "Key": "3",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Controls.STRINGS_Settings_Controls",
+          "Key": "Value.ResponseCurve.Dynamic",
+          "SourceString": "Dynamic",
+          "LocalizedString": "Dynamic"
+        }
+      }
+    ]
+  }
+}

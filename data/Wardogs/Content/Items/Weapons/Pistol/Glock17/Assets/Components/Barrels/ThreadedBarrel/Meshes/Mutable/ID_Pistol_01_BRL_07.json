@@ -1,0 +1,125 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pistol_01_BRL_07'",
+    "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Muzzle"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_Pistol_01_BRL_07 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Pistol_01_BRL_07",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.Pistol_01_BRL_07"
+    },
+    "ItemContext": [
+      "Item.Attachment.Barrel.Glock"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_Pistol_01_BRL_07:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_Pistol_01_BRL_07:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_Pistol_01_BRL_07:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pistol_01_BRL_07'",
+    "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Barrel"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Pistol_01_BRL_07'",
+    "ObjectPath": "/Game/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.1"
+  },
+  "Properties": {
+    "TextureParamDefaults": [
+      {
+        "Key": {
+          "TagName": "Item.Flair.BaseTexture.Barrel"
+        },
+        "Value": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

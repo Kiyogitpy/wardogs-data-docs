@@ -1,0 +1,327 @@
+--- export: UObject / BHFloatModifier_Operation_0 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Magnitude": 19.0
+  }
+}
+--- export: UObject / BHFloatModifier_Operation_1 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Magnitude": 12.0
+  }
+}
+--- export: UObject / BHFloatModifier_Operation_2 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Magnitude": 7.0
+  }
+}
+--- export: UObject / BHFloatModifier_Operation_4 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Operation": "EBHFloatValueOperationType::Multiply",
+    "Magnitude": 0.8
+  }
+}
+--- export: UObject / BHFloatModifier_Operation_5 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Magnitude": 40.0
+  }
+}
+--- export: UObject / BHFloatModifier_Operation_6 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Operation": "EBHFloatValueOperationType::Multiply",
+    "Magnitude": 0.15
+  }
+}
+--- export: UObject / BHFloatModifier_Operation_7 ---
+{
+  "Type": "BHFloatModifier_Operation",
+  "Name": "BHFloatModifier_Operation_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHFloatModifier_Operation'",
+  "Outer": {
+    "ObjectName": "BHGroundMovementData'DA_GroundMovement'",
+    "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.7"
+  },
+  "Properties": {
+    "Operation": "EBHFloatValueOperationType::Multiply",
+    "Magnitude": 0.5
+  }
+}
+--- export: UDataAsset / DA_GroundMovement ---
+{
+  "Type": "BHGroundMovementData",
+  "Name": "DA_GroundMovement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGroundMovementData'",
+  "Package": "/Game/MoverTesting/Settings/DA_GroundMovement",
+  "Properties": {
+    "MinSpeed": 80.0,
+    "Friction": 6.0,
+    "BackMaxSpeedScale": 0.7,
+    "StrafeMaxSpeedScale": 0.7,
+    "ForwardStrafeScale": 0.6,
+    "bUseSlopeMovementContributionCurve": true,
+    "SlopeMovementContributionCurve": {
+      "ObjectName": "CurveFloat'CRV_SlopeGroundSpeedContribution'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_SlopeGroundSpeedContribution.0"
+    },
+    "JumpVelocity": 320.0,
+    "MaxJumpStamina": 150.0,
+    "JumpStaminaCost": 50.0,
+    "JumpStaminaRegenPerSecond": 50.0,
+    "JumpCooldown": 0.05,
+    "LandSlowdownFrictionScale": {
+      "ObjectName": "CurveFloat'CRV_LandSlowdownFriction_Scale'",
+      "ObjectPath": "/Game/MoverTesting/Curves/CRV_LandSlowdownFriction_Scale.0"
+    },
+    "LandSlowdownFrictionScaleTime": {
+      "ObjectName": "CurveFloat'CRV_LandSlowdownFriction_Scale_Time'",
+      "ObjectPath": "/Game/MoverTesting/Curves/CRV_LandSlowdownFriction_Scale_Time.0"
+    },
+    "JumpHeightScalar": {
+      "ObjectName": "CurveFloat'CRV_JumpHeightScalar'",
+      "ObjectPath": "/Game/MoverTesting/Curves/CRV_JumpHeightScalar.0"
+    },
+    "PostVaultFrictionTime": 0.6,
+    "SlowWalkSpeedSettings": [
+      {
+        "Key": "EBHSlowWalkSettings::Slow",
+        "Value": 0.2
+      },
+      {
+        "Key": "EBHSlowWalkSettings::Moderate",
+        "Value": 0.4
+      },
+      {
+        "Key": "EBHSlowWalkSettings::Fast",
+        "Value": 0.6
+      }
+    ],
+    "ForwardStrafeScaleSprinting": 0.3503,
+    "ForwardStrafeScaleTacSprinting": 0.3503,
+    "BlockSprintTime": 0.8,
+    "BlockTacSprintTime": 0.6,
+    "MinStartTacSprintPercentage": 0.2,
+    "LeftLeanTransitionCurve": {
+      "ObjectName": "CurveFloat'CRV_Lean_ToLeft'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Leaning/CRV_Lean_ToLeft.0"
+    },
+    "RightLeanTransitionCurve": {
+      "ObjectName": "CurveFloat'CRV_Lean_ToRight'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Leaning/CRV_Lean_ToRight.0"
+    },
+    "LeftUnleanTransitionCurve": {
+      "ObjectName": "CurveFloat'CRV_Lean_FromLeft'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Leaning/CRV_Lean_FromLeft.0"
+    },
+    "RightUnleanTransitionCurve": {
+      "ObjectName": "CurveFloat'CRV_Lean_FromRight'",
+      "ObjectPath": "/Game/MoverTesting/Curves/Leaning/CRV_Lean_FromRight.0"
+    },
+    "LeanTime": 0.55,
+    "UnleanTime": 0.35,
+    "UnleanInterpolationSpeedCollided": 15.0,
+    "LeanTraceRadius": 10.0,
+    "StanceCooldown": 0.15,
+    "StanceStaminaRegenPerSecond": 50.0,
+    "StanceStaminaRegenDelay": 0.0,
+    "bDisallowStanceChangesFromStamina": false,
+    "bUseStanceSpeedMultiplierCurve": true,
+    "StanceSpeedMultiplierStaminaCurve": {
+      "ObjectName": "CurveFloat'CRV_StanceSpeedStaminaMultiplier'",
+      "ObjectPath": "/Game/MoverTesting/Curves/CRV_StanceSpeedStaminaMultiplier.0"
+    },
+    "bUseStanceStaminaRegenCurve": true,
+    "StanceStaminaRegenSpeedCurve": {
+      "ObjectName": "CurveFloat'CRV_StanceStaminaMultiplier'",
+      "ObjectPath": "/Game/MoverTesting/Curves/CRV_StanceStaminaMultiplier.0"
+    },
+    "ProneSweepDistance": 125.0,
+    "bValidateProneFeetLocation": false,
+    "StanceSettings": [
+      {
+        "Key": "EBHPlayerStance::Stand",
+        "Value": {
+          "CapsuleHalfHeight": 96.0,
+          "CapsuleRadius": 34.0,
+          "EyeHeight": 168.0,
+          "StanceStaminaCost": 20.0,
+          "AccelerationModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_2'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.2"
+          },
+          "MaxSpeedModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_4'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.3"
+          },
+          "MinSpeedModifier": null,
+          "MaxStopSpeedModifier": null,
+          "FrictionModifier": null,
+          "MaxStepHeightModifier": null,
+          "MaxWalkableSlopeAngleModifier": null,
+          "BackAccelerationScaleModifier": null,
+          "BackMaxSpeedScaleModifier": null,
+          "StrafeAccelerationScaleModifier": null,
+          "StrafeMaxSpeedScaleModifier": null,
+          "ForwardStrafeScaleModifier": null,
+          "BackwardStrafeScaleModifier": null,
+          "InertiaMaxModifier": null,
+          "InertiaAngleModifier": null
+        }
+      },
+      {
+        "Key": "EBHPlayerStance::Crouch",
+        "Value": {
+          "CapsuleHalfHeight": 68.0,
+          "CapsuleRadius": 34.0,
+          "EyeHeight": 118.0,
+          "StanceStaminaCost": 30.0,
+          "AccelerationModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_1'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.1"
+          },
+          "MaxSpeedModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_7'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.6"
+          },
+          "MinSpeedModifier": null,
+          "MaxStopSpeedModifier": null,
+          "FrictionModifier": null,
+          "MaxStepHeightModifier": null,
+          "MaxWalkableSlopeAngleModifier": null,
+          "BackAccelerationScaleModifier": null,
+          "BackMaxSpeedScaleModifier": null,
+          "StrafeAccelerationScaleModifier": null,
+          "StrafeMaxSpeedScaleModifier": null,
+          "ForwardStrafeScaleModifier": null,
+          "BackwardStrafeScaleModifier": null,
+          "InertiaMaxModifier": null,
+          "InertiaAngleModifier": null
+        }
+      },
+      {
+        "Key": "EBHPlayerStance::Prone",
+        "Value": {
+          "CapsuleHalfHeight": 34.0,
+          "CapsuleRadius": 34.0,
+          "EyeHeight": 36.0,
+          "StanceStaminaCost": 50.0,
+          "AccelerationModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_0'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.0"
+          },
+          "MaxSpeedModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_6'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.5"
+          },
+          "MinSpeedModifier": null,
+          "MaxStopSpeedModifier": null,
+          "FrictionModifier": null,
+          "MaxStepHeightModifier": null,
+          "MaxWalkableSlopeAngleModifier": {
+            "ObjectName": "BHFloatModifier_Operation'DA_GroundMovement:BHFloatModifier_Operation_5'",
+            "ObjectPath": "/Game/MoverTesting/Settings/DA_GroundMovement.4"
+          },
+          "BackAccelerationScaleModifier": null,
+          "BackMaxSpeedScaleModifier": null,
+          "StrafeAccelerationScaleModifier": null,
+          "StrafeMaxSpeedScaleModifier": null,
+          "ForwardStrafeScaleModifier": null,
+          "BackwardStrafeScaleModifier": null,
+          "InertiaMaxModifier": null,
+          "InertiaAngleModifier": null
+        }
+      }
+    ],
+    "StanceTransitionSettings": [
+      {
+        "Key": {
+          "FromStance": "EBHPlayerStance::Stand",
+          "ToStance": "EBHPlayerStance::Crouch"
+        },
+        "Value": {
+          "TransitionTime": 0.3
+        }
+      },
+      {
+        "Key": {
+          "FromStance": "EBHPlayerStance::Crouch",
+          "ToStance": "EBHPlayerStance::Prone"
+        },
+        "Value": {
+          "TransitionTime": 0.4
+        }
+      },
+      {
+        "Key": {
+          "FromStance": "EBHPlayerStance::Prone",
+          "ToStance": "EBHPlayerStance::Crouch"
+        },
+        "Value": {
+          "TransitionTime": 0.5
+        }
+      },
+      {
+        "Key": {
+          "FromStance": "EBHPlayerStance::Crouch",
+          "ToStance": "EBHPlayerStance::Stand"
+        },
+        "Value": {
+          "TransitionTime": 0.3
+        }
+      }
+    ]
+  }
+}

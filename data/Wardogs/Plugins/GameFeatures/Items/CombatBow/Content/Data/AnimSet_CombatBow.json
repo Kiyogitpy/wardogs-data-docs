@@ -1,0 +1,309 @@
+--- export: UPrimaryDataAsset / AnimSet_CombatBow ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_CombatBow",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/CombatBow/Data/AnimSet_CombatBow",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.MeleeBash"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Melee'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Melee.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Gen_Bow_Melee'",
+              "ObjectPath": "/CombatBow/Animation/Character/Sequence/TP/AM_TP_Gen_Bow_Melee.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Fire"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Fire'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Fire.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Fire'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/TP/AM_TP_CombatBow_Fire.2"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_CombatBow_Fire'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/AM_Weap_CombatBow_Fire.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Fire_Weapon'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/TP/AM_TP_CombatBow_Fire_Weapon.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Empty"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Rechamber'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Rechamber.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Rechamber'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/TP/AM_TP_CombatBow_Rechamber.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_CombatBow_Rechamber'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/AM_Weap_CombatBow_Rechamber.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Rechamber_Weapon'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/TP/AM_TP_CombatBow_Rechamber_Weapon.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.Inspect"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Inspect'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Inspect.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Inventory.Weapon.Base"
+        },
+        "Value": {
+          "BaseAsset": {
+            "Asset": {
+              "ObjectName": "AnimSequence'A_NPC_Inventory_Rifle_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Inventory/A_NPC_Inventory_Rifle_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Draw"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Draw'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Draw.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Draw'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/TP/AM_TP_CombatBow_Draw.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_CombatBow_Draw'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/AM_Weap_CombatBow_Draw.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Draw_Weapon'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/TP/AM_TP_CombatBow_Draw_Weapon.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Fire.DryFire"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Dry_Fire'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Dry_Fire.0"
+            },
+            "ThirdPersonPlayerAnimation": null,
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_ComabatBow_Dry_Fire'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/AM_Weap_ComabatBow_Dry_Fire.0"
+            },
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Draw.Cancel"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Cancel_Draw'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Cancel_Draw.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Cancel_Draw'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/TP/AM_TP_CombatBow_Cancel_Draw.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_CombatBow_Cancel_Draw'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/AM_Weap_CombatBow_Cancel_Draw.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Cancel_Draw_Weapon'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/TP/AM_TP_CombatBow_Cancel_Draw_Weapon.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Weapon.Reload.Tactical"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_CombatBow_Rechamber'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/AM_FP_CombatBow_Rechamber.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Rechamber'",
+              "ObjectPath": "/CombatBow/Animation/Character/Montage/TP/AM_TP_CombatBow_Rechamber.1"
+            },
+            "FirstPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_Weap_CombatBow_Rechamber'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/AM_Weap_CombatBow_Rechamber.0"
+            },
+            "ThirdPersonItemAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_CombatBow_Rechamber_Weapon'",
+              "ObjectPath": "/CombatBow/Animation/Weapon/Montage/TP/AM_TP_CombatBow_Rechamber_Weapon.0"
+            },
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Holdable.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Nothing_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_FP_Nothing_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Bow_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_TP_Bow_Door_Interact.0"
+            },
+            "FirstPersonItemAnimation": null,
+            "ThirdPersonItemAnimation": null,
+            "bOverrideLength": false,
+            "OverrideLength": 1.0,
+            "ItemBlendOutTime": 0.1,
+            "PlayerBlendOutTime": 0.1
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

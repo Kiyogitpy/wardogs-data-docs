@@ -1,0 +1,177 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Attachments/Foregrips/FGP_03/Assets/SM_FGP_03.SM_FGP_03",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  },
+  "Properties": {
+    "Weight": 0.08
+  }
+}
+--- export: UPrimaryDataAsset / ID_FGP_03 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_FGP_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.FGP_03"
+    },
+    "ItemContext": [
+      "Item.Attachment.Underbarrel",
+      "Item.Context.Equippable",
+      "Item.Context.Animation.Archetype.Foregrip.Angled"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Attachments.STRINGS_Items_Attachments",
+      "Key": "Items.Attachments.MagpulAFG",
+      "SourceString": "AFG Angled Foregrip",
+      "LocalizedString": "AFG Angled Foregrip"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_FGP_03:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_FGP_03:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_FGP_03:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_FGP_03:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_FGP_03:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_FGP_03:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_FGP_03:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Grip"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGP_03_C'",
+          "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/GE_FGP_03.0"
+        }
+      ],
+      "AppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGP_03_CharacterEffects_C'",
+          "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/GE_FGP_03_CharacterEffects.0"
+        }
+      ],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGP_03'",
+    "ObjectPath": "/Game/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.4"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

@@ -1,0 +1,980 @@
+--- export: UDataTable / DT_InfantrySkills ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InfantrySkills",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CharacterSkills/DT_InfantrySkills",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Infantry.SprintBreach": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_GrantSkill_DoorBreach_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Skills/GE_GrantSkill_DoorBreach.0"
+                },
+                "CustomMagnitudes": [],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.SprintBreach"
+      }
+    },
+    "Meta.Role.Infantry.ReturnToFireSpeed.AssaultRifle": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_ReadyToFirePlayRate_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_ReadyToFirePlayRate.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "ReadyToFireSpeed_AssaultRifle"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.AR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.ReturnToFireSpeed.AssaultRifle"
+      }
+    },
+    "Meta.Role.Infantry.AimMoveSpeed.AssaultRifle": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Aiming_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Aiming.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "AimMoveSpeed_AssaultRifle"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.AR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.AimMoveSpeed.AssaultRifle"
+      }
+    },
+    "Meta.Role.Infantry.HorizontalRecoil.AssaultRifle": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_AssaultRifle"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.AR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.HorizontalRecoil.AssaultRifle"
+      }
+    },
+    "Meta.Role.Infantry.VerticalRecoil.AssaultRifle": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "VerticalRecoil_AssaultRifle"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.AR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.VerticalRecoil.AssaultRifle"
+      }
+    },
+    "Meta.Role.Infantry.AimDownSightSpeed.AssaultRifle": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "AimDownSightSpeed_AssaultRifle"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.AR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.AimDownSightSpeed.AssaultRifle"
+      }
+    },
+    "Meta.Role.Infantry.WeaponSwitchSpeed": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_EquipSpeedMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_EquipSpeedMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "WeaponSwitchSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Item.Archetype.AR"
+                          },
+                          {
+                            "TagName": "Item.Archetype.SMG"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          2,
+                          0,
+                          1
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Item.Archetype.AR, Item.Archetype.SMG )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.WeaponSwitchSpeed"
+      }
+    },
+    "Meta.Role.Infantry.HorizontalRecoil.SMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_SMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.SMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.HorizontalRecoil.SMG"
+      }
+    },
+    "Meta.Role.Infantry.VerticalRecoil.SMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "VerticalRecoil_SMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.SMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.VerticalRecoil.SMG"
+      }
+    },
+    "Meta.Role.Infantry.AimDownSightSpeed.SMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "AimDownSightSpeed_SMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.SMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.AimDownSightSpeed.SMG"
+      }
+    },
+    "Meta.Role.Infantry.ReturnToFireSpeed.SMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_ReadyToFirePlayRate_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_ReadyToFirePlayRate.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "ReadyToFireSpeed_SMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.SMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.ReturnToFireSpeed.SMG"
+      }
+    },
+    "Meta.Role.Infantry.AimMoveSpeed.SMG": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Aiming_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Aiming.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "AimMoveSpeed_SMG"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.SMG"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.AimMoveSpeed.SMG"
+      }
+    },
+    "Meta.Role.Infantry.UnarmedSprintSpeed": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_SprintSpeedMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_SprintSpeedMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.SprintSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "UnarmedSprintSpeed_SprintSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  },
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.TacSprintSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "UnarmedSprintSpeed_TacSprintSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Id.Item.Fists"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.UnarmedSprintSpeed"
+      }
+    },
+    "Meta.Role.Infantry.TacticalSprintRecovery": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_StaminaRegenPerSecondMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_StaminaRegenPerSecondMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.StaminaRegenPerSecondMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "TacticalSprintRecovery"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.TacticalSprintRecovery"
+      }
+    },
+    "Meta.Role.Infantry.CovertStaminaRegen": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_StaminaRegenPerSecondMultiplier_Covert_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_StaminaRegenPerSecondMultiplier_Covert.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.StaminaRegenPerSecondMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "CovertStaminaRegen"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.CovertStaminaRegen"
+      }
+    },
+    "Meta.Role.Infantry.TacticalSprintDuration": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_TacSprintStaminaUsageMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_TacSprintStaminaUsageMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.TacSprintStaminaUsageMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "TacticalSprintDuration"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.TacticalSprintDuration"
+      }
+    },
+    "Meta.Role.Infantry.CovertMovementSpeed": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Covert_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Covert.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_InfantrySkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_InfantrySkills.0"
+                        },
+                        "RowName": "CovertMovementSpeed"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Infantry.CovertMovementSpeed"
+      }
+    }
+  }
+}

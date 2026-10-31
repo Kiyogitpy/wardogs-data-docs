@@ -1,0 +1,71 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_AdrenalinePen_Use'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Use.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_AdrenalinePen_Use'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Use.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.HealOther.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.HealOther.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Item_AdrenalinePen_Use ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Item_AdrenalinePen_Use",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Use",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.AdrenalinePen.Use"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Player_Item_AdrenalinePen_Use:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Use.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Player_Item_AdrenalinePen_Use:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Use.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 55.0
+  }
+}

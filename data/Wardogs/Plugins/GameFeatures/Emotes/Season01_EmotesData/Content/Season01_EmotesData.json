@@ -1,0 +1,59 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Season01_EmotesData'",
+    "ObjectPath": "/Season01_EmotesData/Season01_EmotesData.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Season01_EmotesData/Data/DT_EntityData_Ext_Emotes.DT_EntityData_Ext_Emotes",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "CosmeticData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Season01_EmotesData/Data/DT_Cosmetics_Season01_Emotes.DT_Cosmetics_Season01_Emotes",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Season01_EmotesData ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Season01_EmotesData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Season01_EmotesData/Season01_EmotesData",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Season01_EmotesData:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Season01_EmotesData/Season01_EmotesData.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MWSY_001_MountedMachineGun'",
+    "ObjectPath": "/MWSY_001/Weapons/ID_MWSY_001_MountedMachineGun.1"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.50Cal"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 1,
+        "MaxSlotAmountStackSize": 60,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_MWSY_001_MountedMachineGun ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MWSY_001_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/MWSY_001/Weapons/ID_MWSY_001_MountedMachineGun",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MWSY_001.MountedMachineGun"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.MWSY_001.MountedMachineGun"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "0434F1464CCA592045E552A3F81C7B05",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_MWSY_001_MountedMachineGun:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/MWSY_001/Weapons/ID_MWSY_001_MountedMachineGun.0"
+      }
+    ]
+  }
+}

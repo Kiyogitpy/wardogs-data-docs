@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_STN_02_Seats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_STN_02_Seats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/STN_02/Parts/VP_STN_02_Seats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Seat"
+    ],
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_STN_02_Seats:MVF_Seats_0'",
+            "ObjectPath": "/STN_02/Parts/VP_STN_02_Seats.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_STN_02_Seats'",
+    "ObjectPath": "/STN_02/Parts/VP_STN_02_Seats.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/STN_02/Data/DA_SeatSettings_STN_02.DA_SeatSettings_STN_02",
+      "SubPathString": ""
+    }
+  }
+}

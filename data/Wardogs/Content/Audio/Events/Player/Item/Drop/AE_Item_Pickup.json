@@ -1,0 +1,104 @@
+--- export: UObject / AEB_PlayItemPickup_C_0 ---
+{
+  "Type": "AEB_PlayItemPickup_C",
+  "Name": "AEB_PlayItemPickup_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayItemPickup.AEB_PlayItemPickup_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Pickup'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayItemPickup_C'Default__AEB_PlayItemPickup_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayItemPickup.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Dropped.Stop"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Pickup'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Item_Pickup ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Pickup",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Pickup"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Item_Pickup:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.3"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Item_Pickup:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Item_Pickup:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.4"
+      },
+      {
+        "ObjectName": "AEB_PlayItemPickup_C'AE_Item_Pickup:AEB_PlayItemPickup_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 40.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Pickup'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Pickup'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Pickup.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Dropped.Stop"
+    }
+  }
+}

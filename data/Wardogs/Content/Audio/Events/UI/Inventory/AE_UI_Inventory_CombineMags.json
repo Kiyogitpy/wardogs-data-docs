@@ -1,0 +1,85 @@
+--- export: UObject / AEB_MoveUISoundToCharacter_C_0 ---
+{
+  "Type": "AEB_MoveUISoundToCharacter_C",
+  "Name": "AEB_MoveUISoundToCharacter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_MoveUISoundToCharacter.AEB_MoveUISoundToCharacter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_CombineMags'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_MoveUISoundToCharacter_C'Default__AEB_MoveUISoundToCharacter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_MoveUISoundToCharacter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_Inventory_CombineMags ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Inventory_CombineMags",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.Inventory.CombineMags"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_MoveUISoundToCharacter_C'AE_UI_Inventory_CombineMags:AEB_MoveUISoundToCharacter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_Inventory_CombineMags:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_UI_Inventory_CombineMags:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_CombineMags'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Inventory_CombineMags'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Inventory/MSS_UI_InGame_Inventory_CombineMags.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Inventory_CombineMags'",
+    "ObjectPath": "/Game/Audio/Events/UI/Inventory/AE_UI_Inventory_CombineMags.1"
+  },
+  "Properties": {
+    "FadeOut": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.Inventory.CombineMags"
+    }
+  }
+}

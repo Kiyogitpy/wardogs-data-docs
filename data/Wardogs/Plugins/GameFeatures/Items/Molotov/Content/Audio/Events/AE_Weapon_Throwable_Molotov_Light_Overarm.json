@@ -1,0 +1,68 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Light_Overarm'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Overarm.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Molotov_Player_Light_Overarm_1p'",
+      "ObjectPath": "/Molotov/Audio/MSS/MSS_Weapon_Throwable_Molotov_Player_Light_Overarm_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Molotov_Player_Light_3p'",
+      "ObjectPath": "/Molotov/Audio/MSS/MSS_Weapon_Throwable_Molotov_Player_Light_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Throwable_Molotov_Light_Overarm ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Throwable_Molotov_Light_Overarm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Overarm",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Molotov.Light.Overarm"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Throwable_Molotov_Light_Overarm:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Overarm.2"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Weapon_Throwable_Molotov_Light_Overarm:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Overarm.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Light_Overarm'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Light_Overarm.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

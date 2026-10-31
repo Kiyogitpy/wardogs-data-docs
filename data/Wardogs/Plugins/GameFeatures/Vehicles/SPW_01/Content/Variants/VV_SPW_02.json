@@ -1,0 +1,128 @@
+--- export: UPrimaryDataAsset / VV_SPW_02 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_SPW_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/SPW_01/Variants/VV_SPW_02",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -371.11514,
+        "Y": -176.17609,
+        "Z": -0.007212889
+      },
+      "Max": {
+        "X": 385.6212,
+        "Y": 176.17601,
+        "Z": 415.42966
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -371.11514,
+        "Y": -176.17609,
+        "Z": -0.007212889
+      },
+      "Max": {
+        "X": 385.6212,
+        "Y": 176.17601,
+        "Z": 415.42966
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_SPW'",
+        "ObjectPath": "/SPW_01/Platforms/VP_SPW.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Radar"
+            },
+            "Part": {
+              "AssetPathName": "/SPW_01/Parts/VP_SPW_Radar_Manticore.VP_SPW_Radar_Manticore",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":MainBody"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": [
+                {
+                  "Key": "4",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_02_Camo.MI_SPW_02_Camo",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "3",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_LightMetal.MI_SPW_LightMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "2",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_02_PaintedMetal.MI_SPW_02_PaintedMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "1",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_DarkMetal.MI_SPW_DarkMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "0",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_02_Tracks_Manticore.MI_SPW_02_Tracks_Manticore",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": [
+                {
+                  "Key": "1",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_02_Tracks_Manticore.MI_SPW_02_Tracks_Manticore",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

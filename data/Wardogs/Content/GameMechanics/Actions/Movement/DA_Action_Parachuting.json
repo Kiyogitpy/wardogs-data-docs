@@ -1,0 +1,84 @@
+--- export: UPrimaryDataAsset / DA_Action_Parachuting ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Parachuting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Parachuting",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Parachuting"
+    },
+    "ActionClass": {
+      "ObjectName": "Class'WDGameplayAction'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Holdable",
+            "Action.Context.Interaction",
+            "Action.Context.TwoHanded",
+            "Action.Context.Weapon"
+          ],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [
+            "Action.Context.Holdable",
+            "Action.Context.Interaction",
+            "Action.Context.Weapon",
+            "Action.Context.TwoHanded"
+          ],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.ChangeToNextQuickSlot",
+            "Action.Player.ChangeQuickSlot",
+            "Action.Player.ChangeToPreviousQuickSlot",
+            "Action.Player.ToggleHands"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

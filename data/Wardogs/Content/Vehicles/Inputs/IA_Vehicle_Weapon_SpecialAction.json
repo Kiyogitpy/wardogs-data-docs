@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_SpecialAction ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_SpecialAction",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_SpecialAction",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.SpecialAction"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_Weapon_SpecialAction:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_SpecialAction.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_SpecialAction'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_SpecialAction.0"
+  }
+}

@@ -17,7 +17,16 @@ aes.*
 tools/**/bin/
 tools/**/obj/
 
-# Raw game exports and the class dump: generated locally, not published
-/data/
+# Track raw JSON exports; keep other extracted files local
+/data/**
+!/data/**/
+!/data/**/*.json
+
+# Class dump: generated locally, not published
 /sdk/raw/
 docs/Wardogs_AntiCheat_Elytra_Research.md
+
+# Local project notes
+/docs/INTENT.md
+/docs/METHODOLOGY.md
+/docs/SCOPE.md

@@ -1,0 +1,66 @@
+--- export: UDataTable / DT_Bobblehead_Warpup_Cosmetics ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Bobblehead_Warpup_Cosmetics",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Bobblehead_Warpup/Data/DT_Bobblehead_Warpup_Cosmetics",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCosmeticData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Cosmetic.Bobblehead.Warpup": {
+      "EntityId": {
+        "TagName": "Id.Bobblehead"
+      },
+      "Category": {
+        "TagName": "Meta.Cosmetic.Bobblehead"
+      },
+      "Archetype": {
+        "TagName": "Item.Archetype.Bobblehead"
+      },
+      "UITextures": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/T_UI_OptionsScreen_PlaceholderImage.T_UI_OptionsScreen_PlaceholderImage",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/Vendor/Textures/T_UI_Icon_Placeholder_Supplier.T_UI_Icon_Placeholder_Supplier",
+            "Value": [
+              "UI.Icon.Collection",
+              "UI.Icon.GoldMarket",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment"
+            ]
+          }
+        ]
+      },
+      "SkinDefinition": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "_aaabbmoejhdkcblgikdmm": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Textures/T_UI_Icon_Placeholder_Supplier.T_UI_Icon_Placeholder_Supplier",
+        "SubPathString": ""
+      },
+      "_aaabgjcoeenikjdfgmfkl": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "NameOverride": {
+        "TableId": "/Bobblehead_Warpup/Strings/STRINGS_Bobblehead_Warpup.STRINGS_Bobblehead_Warpup",
+        "Key": "Cosmetic.Bobblehead.Warpup.DisplayName",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "Tag": {
+        "TagName": "Meta.Cosmetic.Bobblehead.Warpup"
+      }
+    }
+  }
+}

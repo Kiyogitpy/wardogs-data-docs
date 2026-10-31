@@ -1,0 +1,89 @@
+--- export: UObject / AEB_Play_Buildable_Sound_C_0 ---
+{
+  "Type": "AEB_Play_Buildable_Sound_C",
+  "Name": "AEB_Play_Buildable_Sound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Buildables/Data/Buildables/Audio/AEB_Play_Buildable_Sound.AEB_Play_Buildable_Sound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Damaged'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_Play_Buildable_Sound_C'Default__AEB_Play_Buildable_Sound_C'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AEB_Play_Buildable_Sound.0"
+  },
+  "Properties": {
+    "Sound Asset Tag": {
+      "TagName": "Audio.Asset.Buildable.Damaged"
+    },
+    "Restart Behavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "_aaabhgndclheajnnlnade": 39.0
+  }
+}
+--- export: UObject / AEB_SetBuildableDamageValue_C_0 ---
+{
+  "Type": "AEB_SetBuildableDamageValue_C",
+  "Name": "AEB_SetBuildableDamageValue_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Buildables/Data/Buildables/Audio/AEB_SetBuildableDamageValue.AEB_SetBuildableDamageValue_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Damaged'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetBuildableDamageValue_C'Default__AEB_SetBuildableDamageValue_C'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AEB_SetBuildableDamageValue.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Buildable_Damaged ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Buildable_Damaged",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Buildable.Damaged"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Buildable_Damaged:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged.3"
+      },
+      {
+        "ObjectName": "AEB_Play_Buildable_Sound_C'AE_Buildable_Damaged:AEB_Play_Buildable_Sound_C_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged.0"
+      },
+      {
+        "ObjectName": "AEB_SetBuildableDamageValue_C'AE_Buildable_Damaged:AEB_SetBuildableDamageValue_C_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Buildable_Damaged'",
+    "ObjectPath": "/Buildables/Data/Buildables/Audio/AE_Buildable_Damaged.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "_aaabhgndclheajnnlnade": 39.0
+  }
+}

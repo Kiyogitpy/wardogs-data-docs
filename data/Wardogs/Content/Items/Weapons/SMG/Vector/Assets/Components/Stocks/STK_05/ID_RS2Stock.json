@@ -1,0 +1,96 @@
+--- export: UPrimaryDataAsset / ID_RS2Stock ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_RS2Stock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.SMG_01_STK_05"
+    },
+    "ItemContext": [
+      "Item.Attachment.Stock.Vector"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "B6DA9CE148173C1C69E786B4C1C0EB54",
+      "SourceString": "RS2 Slim",
+      "LocalizedString": "RS2 Slim"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_RS2Stock:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_RS2Stock:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_RS2Stock:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RS2Stock'",
+    "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Stock"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RS2Stock'",
+    "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock.0"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_RS2Stock'",
+    "ObjectPath": "/Game/Items/Weapons/SMG/Vector/Assets/Components/Stocks/STK_05/ID_RS2Stock.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

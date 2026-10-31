@@ -1,0 +1,93 @@
+--- export: UPrimaryDataAsset / DA_120x800mm_Standard_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_120x800mm_Standard_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/120x800mm/DA_120x800mm_Standard_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.120x800mm.Standard"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Rocket.120x800mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 120.0,
+        "ExplosiveRadius": 1000.0,
+        "MinimumExplosiveDamage": 15.0,
+        "EffectiveExplosiveRadius": 500.0,
+        "ExplosiveDamageFallOff": 0.45,
+        "ExplosiveBluntDamage": 120.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "ImpulseScale": 2500.0,
+          "ImpulseZScale": 2.0
+        }
+      },
+      "ProjectileDimensions": {
+        "Length": 8.0,
+        "Diameter": 12.0,
+        "Mass": 15.0,
+        "DragModel": {
+          "Value": 11.5,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.Mortar"
+        },
+        "_aaabfkkepdhgkocnpdbdn": 3.37
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.9,
+        "DistanceFalloffRange": {
+          "Min": 2.0,
+          "Max": 5.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Rocket'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Rocket.0"
+          }
+        }
+      },
+      "bHasArmingDelay": true,
+      "ArmingDelay": 0.1,
+      "MaxProjectileLifetime": 40.0,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_155mm.NS_ProjectileTrail_155mm",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/Game/Vehicles/Weapons/WeaponExtensions/ProjectileActors/BP_120x800mm.BP_120x800mm_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 15000.0,
+      "bShouldPenetrate": false,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "bClientPredictive": false,
+      "PerceivedImpactRange": 100000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

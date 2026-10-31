@@ -1,0 +1,78 @@
+--- export: UPrimaryDataAsset / ID_DCVR_002 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_DCVR_002",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/DCVR_002/Data/ID_DCVR_002",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.DCVR_002"
+    },
+    "ItemContext": [
+      "Item.Attachment.DustCover"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "FC2CC11C426F03ACB3B9B19F12202161",
+      "SourceString": "AK74 Railed Dust Cover",
+      "LocalizedString": "AK74 Railed Dust Cover"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_DCVR_002:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/DCVR_002/Data/ID_DCVR_002.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_DCVR_002:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/DCVR_002/Data/ID_DCVR_002.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_DCVR_002:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/DCVR_002/Data/ID_DCVR_002.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DCVR_002'",
+    "ObjectPath": "/DCVR_002/Data/ID_DCVR_002.0"
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DCVR_002'",
+    "ObjectPath": "/DCVR_002/Data/ID_DCVR_002.0"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_DCVR_002'",
+    "ObjectPath": "/DCVR_002/Data/ID_DCVR_002.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

@@ -1,0 +1,97 @@
+--- export: UObject / AEB_AttachToGCObject_C_0 ---
+{
+  "Type": "AEB_AttachToGCObject_C",
+  "Name": "AEB_AttachToGCObject_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachToGCObject.AEB_AttachToGCObject_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Exit_WHL_Ural'",
+    "ObjectPath": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachToGCObject_C'Default__AEB_AttachToGCObject_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachToGCObject.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Exit"
+    }
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Exit_WHL_Ural'",
+    "ObjectPath": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_WHL_Ural_Exit_1p'",
+      "ObjectPath": "/WHL_07/Audio/MSS/MSS_Vehicle_WHL_Ural_Exit_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_WHL_Ural_Exit_3p'",
+      "ObjectPath": "/WHL_07/Audio/MSS/MSS_Vehicle_WHL_Ural_Exit_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Exit"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Exit_WHL_Ural'",
+    "ObjectPath": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Exit"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Exit_WHL_Ural ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Exit_WHL_Ural",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Exit.WHL_07"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachToGCObject_C'AE_Vehicle_Exit_WHL_Ural:AEB_AttachToGCObject_C_0'",
+        "ObjectPath": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural.0"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Vehicle_Exit_WHL_Ural:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural.1"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Exit_WHL_Ural:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/WHL_07/Audio/Events/AE_Vehicle_Exit_WHL_Ural.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 62.0
+  }
+}

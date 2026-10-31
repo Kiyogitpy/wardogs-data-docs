@@ -1,0 +1,67 @@
+--- export: UPrimaryDataAsset / VP_BobbleHead_Grenade ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_BobbleHead_Grenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/Bobblehead_Grenade/VP_BobbleHead_Grenade",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Bobblehead"
+    ],
+    "Fragments": [
+      {
+        "Key": "BobbleHead",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_BobbleHead_Grenade:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/Bobblehead_Grenade/VP_BobbleHead_Grenade.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_BobbleHead_Grenade'",
+    "ObjectPath": "/Bobblehead_Grenade/VP_BobbleHead_Grenade.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "Bobblehead_Socket"
+      },
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Identifier": "Chassis"
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/Bobblehead_Grenade/Meshes/SK_Bobblehead_005.SK_Bobblehead_005",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/Bobblehead_Grenade/Meshes/ABP_Bobblehead_005.ABP_Bobblehead_005_C",
+      "SubPathString": ""
+    },
+    "bReceiveDecals": false,
+    "bHitEvents": false,
+    "bGenerateOverlapsOnServer": false,
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_Kinematic",
+        "Flags": 0
+      }
+    },
+    "MeshComponentClass": {
+      "ObjectName": "Class'MOccupancyGatedMeshComponent'",
+      "ObjectPath": "/Script/Mechanized"
+    }
+  }
+}

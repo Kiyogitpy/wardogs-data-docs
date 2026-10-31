@@ -1,0 +1,88 @@
+--- export: UObject / WDPingAction_CheckSquadStatus_0 ---
+{
+  "Type": "WDPingAction_CheckSquadStatus",
+  "Name": "WDPingAction_CheckSquadStatus_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_CheckSquadStatus'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Squad_OnMyWay'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay.3"
+  }
+}
+--- export: UObject / WDPingAction_SendTextMessage_0 ---
+{
+  "Type": "WDPingAction_SendTextMessage",
+  "Name": "WDPingAction_SendTextMessage_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_SendTextMessage'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Squad_OnMyWay'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay.3"
+  },
+  "Properties": {
+    "PingActionChatLocText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Squad.OnMyWay",
+      "SourceString": "On my way",
+      "LocalizedString": "On my way"
+    },
+    "ChannelType": "EWDChannelType::Squad"
+  }
+}
+--- export: UObject / WDPingAction_VoxRequest_0 ---
+{
+  "Type": "WDPingAction_VoxRequest",
+  "Name": "WDPingAction_VoxRequest_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_VoxRequest'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Squad_OnMyWay'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay.3"
+  },
+  "Properties": {
+    "GameplayCueTag": {
+      "TagName": "GameplayCue.Comms.Squad.OnMyWay"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Squad_OnMyWay ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Squad_OnMyWay",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Squad.OnMyWay",
+      "SourceString": "On my way",
+      "LocalizedString": "On my way"
+    },
+    "LockedDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Squad.State.Locked",
+      "SourceString": "Must be in a squad",
+      "LocalizedString": "Must be in a squad"
+    },
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_OnMyWay_64x64.T_UI_Icon_PingWheel_OnMyWay_64x64",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_SendTextMessage'DA_PingAction_Squad_OnMyWay:WDPingAction_SendTextMessage_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay.1"
+      },
+      {
+        "ObjectName": "WDPingAction_CheckSquadStatus'DA_PingAction_Squad_OnMyWay:WDPingAction_CheckSquadStatus_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay.0"
+      },
+      {
+        "ObjectName": "WDPingAction_VoxRequest'DA_PingAction_Squad_OnMyWay:WDPingAction_VoxRequest_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Squad/DA_PingAction_Squad_OnMyWay.2"
+      }
+    ]
+  }
+}

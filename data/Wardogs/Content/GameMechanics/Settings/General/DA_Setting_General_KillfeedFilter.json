@@ -1,0 +1,105 @@
+--- export: UDataAsset / DA_Setting_General_KillfeedFilter ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_General_KillfeedFilter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/General/DA_Setting_General_KillfeedFilter",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_General_KillfeedFilter:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_General_KillfeedFilter.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_General_KillfeedFilter'",
+    "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_General_KillfeedFilter.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDKillfeedFilter::All",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.All",
+          "SourceString": "Show All",
+          "LocalizedString": "Show All"
+        }
+      },
+      {
+        "Key": "EWDKillfeedFilter::Squad",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.Squad",
+          "SourceString": "Show Squad Only",
+          "LocalizedString": "Show Squad Only"
+        }
+      },
+      {
+        "Key": "EWDKillfeedFilter::Self",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.Self",
+          "SourceString": "Show Self Only",
+          "LocalizedString": "Show Self Only"
+        }
+      },
+      {
+        "Key": "EWDKillfeedFilter::SquadAndProximity",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.SquadAndProximity",
+          "SourceString": "Show Squad + Proximity",
+          "LocalizedString": "Show Squad + Proximity"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.All",
+          "SourceString": "Show All",
+          "LocalizedString": "Show All"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.Squad",
+          "SourceString": "Show Squad Only",
+          "LocalizedString": "Show Squad Only"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.Self",
+          "SourceString": "Show Self Only",
+          "LocalizedString": "Show Self Only"
+        }
+      },
+      {
+        "Key": "3",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.KillfeedFilter.SquadAndProximity",
+          "SourceString": "Show Squad + Proximity",
+          "LocalizedString": "Show Squad + Proximity"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_SupplyPallet_Unload_Fail ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_SupplyPallet_Unload_Fail",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyPallet_Unload_Fail",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.SupplyPallet.Unload.Fail"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_SupplyPallet_Unload_Fail:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyPallet_Unload_Fail.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_SupplyPallet_Unload_Fail:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyPallet_Unload_Fail.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyPallet_Unload_Fail'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyPallet_Unload_Fail.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 250.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.SupplyPallet"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_SupplyPallet_Unload_Fail'",
+    "ObjectPath": "/SupplyCrates/Audio/Events/AE_Vehicle_SupplyPallet_Unload_Fail.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_SupplyPallet_Unload_Fail'",
+      "ObjectPath": "/SupplyCrates/Audio/MSS/MSS_Item_SupplyPallet_Unload_Fail.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

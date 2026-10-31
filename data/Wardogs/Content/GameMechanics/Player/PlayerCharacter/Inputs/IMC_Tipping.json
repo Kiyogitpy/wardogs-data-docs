@@ -1,0 +1,143 @@
+--- export: UObject / BHPlayerMappableKeySettings_18 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_18",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Tipping'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.3"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Tip.Reject"
+    },
+    "Name": "Input.NamedActions.Player.Tip.Reject"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_27 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_27",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Tipping'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.3"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Tip"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Player.Tip"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_28 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_28",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Tipping'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.3"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Tip"
+    },
+    "Name": "Input.NamedActions.Player.Tip"
+  }
+}
+--- export: UDataAsset / IMC_Tipping ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Tipping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Tip'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip.0"
+          },
+          "Key": {
+            "KeyName": "F1"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Tipping:BHPlayerMappableKeySettings_28'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.2"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_Tipping:InputTriggerTap_0'",
+              "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.4"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Tip'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Special_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Tipping:BHPlayerMappableKeySettings_27'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.1"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Tip_Reject'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip_Reject.0"
+          },
+          "Key": {
+            "KeyName": "F2"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Tipping:BHPlayerMappableKeySettings_18'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Tip_Reject'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip_Reject.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_Special_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Tipping'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Tipping.3"
+  }
+}

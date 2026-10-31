@@ -1,0 +1,90 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_STN_03'",
+    "ObjectPath": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_STN_Enter_1p'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/SwapSeat/MSS_Vehicles_STN_Enter_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicles_STN_Enter_3p_Preset'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/SwapSeat/MSS_Vehicles_STN_Enter_3p_Preset.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Enter_STN_03 ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Enter_STN_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Enter.STN_03"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Enter_STN_03:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03.2"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Vehicle_Enter_STN_03:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Enter_STN_03:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 62.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_STN_03'",
+    "ObjectPath": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Enter_STN_03'",
+    "ObjectPath": "/STN_03/Audio/Events/AE_Vehicle_Enter_STN_03.1"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Foliage"
+    }
+  }
+}

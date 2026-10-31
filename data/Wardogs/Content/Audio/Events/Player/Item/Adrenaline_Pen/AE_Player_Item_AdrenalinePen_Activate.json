@@ -1,0 +1,37 @@
+--- export: UPrimaryDataAsset / AE_Player_Item_AdrenalinePen_Activate ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Item_AdrenalinePen_Activate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Activate",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.AdrenalinePen.Activate"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Player_Item_AdrenalinePen_Activate:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Activate.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 55.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Item_AdrenalinePen_Activate'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Adrenaline_Pen/AE_Player_Item_AdrenalinePen_Activate.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

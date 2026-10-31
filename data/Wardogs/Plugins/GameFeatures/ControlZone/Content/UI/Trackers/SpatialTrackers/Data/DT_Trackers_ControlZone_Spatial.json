@@ -1,0 +1,45 @@
+--- export: UDataTable / DT_Trackers_ControlZone_Spatial ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Trackers_ControlZone_Spatial",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DT_Trackers_ControlZone_Spatial",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.ControlZone": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/ControlZone/UI/Trackers/SpatialTrackers/W_Tracker_Spatial_ControlZone.W_Tracker_Spatial_ControlZone_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/ControlZoneRuntime.WDUIControlZoneSpatialTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/ControlZone/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.DA_ControlZone_SpatialTracker",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.ControlZone"
+      }
+    }
+  }
+}

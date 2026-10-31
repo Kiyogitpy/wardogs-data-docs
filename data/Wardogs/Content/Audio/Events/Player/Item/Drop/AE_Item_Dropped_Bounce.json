@@ -1,0 +1,65 @@
+--- export: UObject / AEB_PlayItemDrop_C_0 ---
+{
+  "Type": "AEB_PlayItemDrop_C",
+  "Name": "AEB_PlayItemDrop_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayItemDrop.AEB_PlayItemDrop_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Dropped_Bounce'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Dropped_Bounce.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayItemDrop_C'Default__AEB_PlayItemDrop_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayItemDrop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Dropped.Bounce"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Item_Dropped_Bounce ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Dropped_Bounce",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Dropped_Bounce",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Dropped.Bounce"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Item_Dropped_Bounce:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Dropped_Bounce.2"
+      },
+      {
+        "ObjectName": "AEB_PlayItemDrop_C'AE_Item_Dropped_Bounce:AEB_PlayItemDrop_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Dropped_Bounce.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Dropped_Bounce'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/Drop/AE_Item_Dropped_Bounce.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 25.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Dropped.Bounce"
+    }
+  }
+}

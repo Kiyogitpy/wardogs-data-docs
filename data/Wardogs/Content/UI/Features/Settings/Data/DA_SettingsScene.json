@@ -1,0 +1,747 @@
+--- export: UDataAsset / DA_SettingsScene ---
+{
+  "Type": "WDUISettingsData",
+  "Name": "DA_SettingsScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingsData'",
+  "Package": "/Game/UI/Features/Settings/Data/DA_SettingsScene",
+  "Properties": {
+    "SettingsPanelParams": [
+      {
+        "Key": "EWDUISettingsPanel::General",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_General.DA_SettingsPanel_General",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.General"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.General",
+              "SourceString": "Gameplay",
+              "LocalizedString": "Gameplay"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Video",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Video.DA_SettingsPanel_Video",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Video"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Video",
+              "SourceString": "Video",
+              "LocalizedString": "Video"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Audio",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Audio.DA_SettingsPanel_Audio",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Audio"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Audio",
+              "SourceString": "Audio",
+              "LocalizedString": "Audio"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Controls",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Controls.DA_SettingsPanel_Controls",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Controls"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Controls",
+              "SourceString": "Controls",
+              "LocalizedString": "Controls"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Controller",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsControllerPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingControllerPanel/Data/DA_SettingControllerPanel.DA_SettingControllerPanel",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Controller"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Gamepad",
+              "SourceString": "Gamepad",
+              "LocalizedString": "Gamepad"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Accessibility",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Accessibility.DA_SettingsPanel_Accessibility",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Accessibility"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+              "Key": "Tab.Accessibility",
+              "SourceString": "Interface",
+              "LocalizedString": "Interface"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      },
+      {
+        "Key": "EWDUISettingsPanel::Extra",
+        "Value": {
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUISettingsPanelViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_Extras.DA_SettingsPanel_Extras",
+              "SubPathString": ""
+            }
+          },
+          "TabButtonParams": {
+            "Tag": {
+              "TagName": "UI.Settings.Tab.Extras"
+            },
+            "OverrideButtonClass": null,
+            "Action": null,
+            "Text": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Settings_Extra.STRINGS_Settings_Extra",
+              "Key": "Button.Extras",
+              "SourceString": "Extras",
+              "LocalizedString": "Extras"
+            },
+            "MinimumSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Icon": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "bDisabled": false,
+            "DisabledReason": {
+              "CultureInvariantString": null
+            }
+          }
+        }
+      }
+    ],
+    "RestartPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.Restart"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.RestartRequired",
+        "SourceString": "Restart",
+        "LocalizedString": "Restart"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.RestartRequired",
+        "SourceString": "A Restart Is Required to Apply Some Settings",
+        "LocalizedString": "A Restart Is Required to Apply Some Settings"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.RestartRequired",
+        "SourceString": "Would you like to restart or discard your changes",
+        "LocalizedString": "Would you like to restart or discard your changes"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Discard",
+              "SourceString": "Discard",
+              "LocalizedString": "Discard"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.ApplyAndRestart",
+              "SourceString": "Restart",
+              "LocalizedString": "Restart"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Apply",
+              "SourceString": "Apply",
+              "LocalizedString": "Apply"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "DiscardPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.DiscardSettings"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.DiscardSettings",
+        "SourceString": "Unsaved Changes",
+        "LocalizedString": "Unsaved Changes"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.DiscardSettings",
+        "SourceString": "Any unsaved changes will be reverted.",
+        "LocalizedString": "Any unsaved changes will be reverted."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.DiscardSettings",
+        "SourceString": "You have unsaved changes.\r\n\r\nAre you sure you want to exit & discard your changes?",
+        "LocalizedString": "You have unsaved changes.\r\n\r\nAre you sure you want to exit & discard your changes?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Apply",
+              "SourceString": "Apply",
+              "LocalizedString": "Apply"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Middle",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Discard",
+              "SourceString": "Discard",
+              "LocalizedString": "Discard"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Cancel",
+              "SourceString": "Cancel",
+              "LocalizedString": "Cancel"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "ResetToDefaultPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.ResetSettingsToDefault"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Reset.Default",
+        "SourceString": "Reset to default settings",
+        "LocalizedString": "Reset to default settings"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.Reset.Default",
+        "SourceString": "Current settings will be bound to their defaults",
+        "LocalizedString": "Current settings will be bound to their defaults"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Reset.Default",
+        "SourceString": "Are you sure you want to reset the current settings to their default values?",
+        "LocalizedString": "Are you sure you want to reset the current settings to their default values?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "ResetToConfigPopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.ResetSettingsToConfig"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.Reset.Config",
+        "SourceString": "Reset current changes",
+        "LocalizedString": "Reset current changes"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.Reset.Config",
+        "SourceString": "Current settings will be bound to their last custom value",
+        "LocalizedString": "Current settings will be bound to their last custom value"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.Reset.Config",
+        "SourceString": "Are you sure you want to reset the current settings to their last saved values?",
+        "LocalizedString": "Are you sure you want to reset the current settings to their last saved values?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "AutodetectHardwarePopupData": {
+      "Tag": {
+        "TagName": "UI.Popup.AutodetectHardware"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.AutodetectHardware",
+        "SourceString": "Auto-detect Hardware",
+        "LocalizedString": "Auto-detect Hardware"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.AutodetectHardware",
+        "SourceString": "Settings will be set, based upon your current hardware.",
+        "LocalizedString": "Settings will be set, based upon your current hardware."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.AutodetectHardware",
+        "SourceString": "Are you sure you want to reset the current settings to their auto-detected values?",
+        "LocalizedString": "Are you sure you want to reset the current settings to their auto-detected values?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaablnahkcgmbdeaocime": {
+      "Tag": {
+        "TagName": "UI.Popup.BestForPerformance"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.BestForPerformance",
+        "SourceString": "Best For Performance",
+        "LocalizedString": "Best For Performance"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.BestForPerformance",
+        "SourceString": "Settings will be set, based upon achieving best performance.",
+        "LocalizedString": "Settings will be set, based upon achieving best performance."
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.BestForPerformance",
+        "SourceString": "Are you sure you want to change the current settings to be best for performance?",
+        "LocalizedString": "Are you sure you want to change the current settings to be best for performance?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Yes",
+              "SourceString": "Yes",
+              "LocalizedString": "Yes"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.No",
+              "SourceString": "No",
+              "LocalizedString": "No"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "SettingMaterial": {
+      "AssetPathName": "/Game/UI/Features/Settings/Materials/MI_UI_Image_DisplayedSetting.MI_UI_Image_DisplayedSetting",
+      "SubPathString": ""
+    },
+    "DefaultSettingTexture": {
+      "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_WDDefault.T_UI_Settings_720p_WDDefault",
+      "SubPathString": ""
+    },
+    "_aaacgbfnnhingidgknemn": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIUserSettingDisplay_DeadZoneAnalogueViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Data/DA_DeadZoneAnalogue.DA_DeadZoneAnalogue",
+        "SubPathString": ""
+      }
+    },
+    "_aaacfobbibonhhfninnie": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIUserSettingDisplay_DeadZoneTriggerViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Data/DA_DeadZoneTrigger.DA_DeadZoneTrigger",
+        "SubPathString": ""
+      }
+    },
+    "_aaabgmoklplijmhokooeb": [
+      "UserSettings.Controls.Gamepad.DeadZone.LookStick",
+      "UserSettings.Controls.Gamepad.DeadZone.MoveStick"
+    ],
+    "_aaabdmhaoaebakdaebdfb": [
+      "UserSettings.Controls.Gamepad.DeadZone.RightTrigger",
+      "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger",
+      "UserSettings.Controls.Gamepad.DeadZone.Triggers"
+    ],
+    "_aaabgdeifnjhaglhmlbjm": [
+      "UserSettings.Audio.MicrophoneTest.Enabled",
+      "UserSettings.Audio.Volume.Microphone"
+    ],
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.SubMenu"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Close.SubMenu"
+    }
+  }
+}

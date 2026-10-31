@@ -1,0 +1,443 @@
+--- export: UPrimaryDataAsset / VP_WHL_02_SUV_RingTurret ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_02_SUV_RingTurret",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Turret"
+    ],
+    "Fragments": [
+      {
+        "Key": "TurretSkeleton",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_WHL_02_SUV_RingTurret:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.1"
+          }
+        }
+      },
+      {
+        "Key": "Weapon",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_WHL_02_SUV_RingTurret:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.7"
+          }
+        }
+      },
+      {
+        "Key": "HeavyWeaponExtensionSlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_WHL_02_SUV_RingTurret:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.5"
+          }
+        }
+      },
+      {
+        "Key": "Mount01",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_SUV_RingTurret:MVF_StaticMesh_1'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.3"
+          }
+        }
+      },
+      {
+        "Key": "Mount02",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_SUV_RingTurret:MVF_StaticMesh_2'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.4"
+          }
+        }
+      },
+      {
+        "Key": "TurretHousing",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_SUV_RingTurret:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.2"
+          }
+        }
+      },
+      {
+        "Key": "WeatherResponse",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_WHL_02_SUV_RingTurret:WD_MVF_VehicleWeatherResponse_0'",
+            "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.6"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "Constraint": {
+        "ConeLimit": {
+          "Swing1LimitDegrees": 0.0,
+          "Swing2LimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "TwistLimit": {
+          "TwistLimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "bParentDominates": true,
+        "bEnableMassConditioning": false
+      },
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "MG_Turret_Socket"
+      },
+      "bAttachSource": true,
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "TurretSkeleton"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/Game/Items/Weapons/Mounted/M249/SK_M249_Mounted.SK_M249_Mounted",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/WEPN_009/Animation/Weapon/Blueprint/ABP_M249Mounted.ABP_M249Mounted_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "TurretSkeleton",
+        "SocketName": "vehicleTurretHousing_Attach"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/Components/Turrets/SUV/SM_WHL_02_TurretHousing.SM_WHL_02_TurretHousing",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "TurretSkeleton",
+        "SocketName": "vehicleRotation_JSocket"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WEPN_009/Mounts/Standard/SM_WHL_02_Pickup_Mount_01.SM_WHL_02_Pickup_Mount_01",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "TurretSkeleton",
+        "SocketName": "vehicleWeapon_Pitch_JSocket"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WEPN_009/Mounts/Standard/SM_WHL_02_Pickup_Mount_02.SM_WHL_02_Pickup_Mount_02",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/WHL_02/SUV/ID_VehicleRingTurret.ID_VehicleRingTurret",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleWeatherResponse_0 ---
+{
+  "Type": "WD_MVF_VehicleWeatherResponse",
+  "Name": "WD_MVF_VehicleWeatherResponse_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleWeatherResponse'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "Effects": [
+      {
+        "ObjectName": "WDVehicleWeatherEffect_Wipers'VP_WHL_02_SUV_RingTurret:WD_MVF_VehicleWeatherResponse_0.WDVehicleWeatherEffect_Wipers_0'",
+        "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.8"
+      }
+    ],
+    "_aaabcojnkdpbgjpjdhdnd": [
+      {
+        "_aaaajnjfabibibopalcoc": 0,
+        "_aaaahabkpakalmkkipako": false,
+        "bFlat": false,
+        "_aaaagklhbbogdedhnfpil": 0.0,
+        "_aaaahnbmpndbipoobkebo": 0.0,
+        "_aaaafiidgfeibdmckpcaj": 0.0,
+        "_aaaaickcmfiamoahbhpdf": 10.0,
+        "RotationOffset": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "LocationOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaannfbbjadjnncagbng": 0.0,
+        "_aaaamikjnmmjokkdcflpn": false,
+        "_aaaaonfemdhclpedmcnoh": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "_aaaahegfnkjfjcaodmbhb": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahoeapedhfbndccmoa": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        }
+      },
+      {
+        "_aaaajnjfabibibopalcoc": 1,
+        "_aaaahabkpakalmkkipako": false,
+        "bFlat": false,
+        "_aaaagklhbbogdedhnfpil": 15.0,
+        "_aaaahnbmpndbipoobkebo": 15.0,
+        "_aaaafiidgfeibdmckpcaj": 0.0,
+        "_aaaaickcmfiamoahbhpdf": 0.0,
+        "RotationOffset": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "LocationOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaannfbbjadjnncagbng": 0.0,
+        "_aaaamikjnmmjokkdcflpn": false,
+        "_aaaaonfemdhclpedmcnoh": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "_aaaahegfnkjfjcaodmbhb": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahoeapedhfbndccmoa": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        }
+      },
+      {
+        "_aaaajnjfabibibopalcoc": 6,
+        "_aaaahabkpakalmkkipako": false,
+        "bFlat": false,
+        "_aaaagklhbbogdedhnfpil": 20.0,
+        "_aaaahnbmpndbipoobkebo": 0.0,
+        "_aaaafiidgfeibdmckpcaj": 0.0,
+        "_aaaaickcmfiamoahbhpdf": 0.0,
+        "RotationOffset": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "LocationOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaannfbbjadjnncagbng": 0.0,
+        "_aaaamikjnmmjokkdcflpn": false,
+        "_aaaaonfemdhclpedmcnoh": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "_aaaahegfnkjfjcaodmbhb": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahoeapedhfbndccmoa": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        }
+      },
+      {
+        "_aaaajnjfabibibopalcoc": 7,
+        "_aaaahabkpakalmkkipako": false,
+        "bFlat": false,
+        "_aaaagklhbbogdedhnfpil": 0.0,
+        "_aaaahnbmpndbipoobkebo": 20.0,
+        "_aaaafiidgfeibdmckpcaj": 0.0,
+        "_aaaaickcmfiamoahbhpdf": 0.0,
+        "RotationOffset": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "LocationOffset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaannfbbjadjnncagbng": 0.0,
+        "_aaaamikjnmmjokkdcflpn": false,
+        "_aaaaonfemdhclpedmcnoh": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "_aaaahegfnkjfjcaodmbhb": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "_aaaahoeapedhfbndccmoa": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_SUV_RingTurret'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "TurretSkeleton",
+    "WeaponDataAsset": {
+      "AssetPathName": "/WHL_02_RingTurret/Weapons/WeaponExtensions/W_SUV_RingTurret.W_SUV_RingTurret",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      1
+    ]
+  }
+}
+--- export: UObject / WDVehicleWeatherEffect_Wipers_0 ---
+{
+  "Type": "WDVehicleWeatherEffect_Wipers",
+  "Name": "WDVehicleWeatherEffect_Wipers_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeatherEffect_Wipers'",
+  "Outer": {
+    "ObjectName": "WD_MVF_VehicleWeatherResponse'VP_WHL_02_SUV_RingTurret:WD_MVF_VehicleWeatherResponse_0'",
+    "ObjectPath": "/WHL_02_RingTurret/Parts/VP_WHL_02_SUV_RingTurret.6"
+  },
+  "Properties": {
+    "_aaabdcbemgbnfjlgadoan": 1.3,
+    "_aaabgbfpmdjbffogdofkk": {
+      "X": 0.0,
+      "Y": 1.0,
+      "Z": 0.0
+    }
+  }
+}

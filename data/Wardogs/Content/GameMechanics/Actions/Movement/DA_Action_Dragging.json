@@ -1,0 +1,94 @@
+--- export: UPrimaryDataAsset / DA_Action_Dragging ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Dragging",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Movement/DA_Action_Dragging",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Dragging"
+    },
+    "ActionContext": [
+      "Action.Context.TwoHanded",
+      "Action.Context.Movement"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Dragging_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Movement/B_Action_Dragging.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Melee.PrimaryUse",
+            "Action.Weapon.Fire",
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Player.Prone",
+            "Action.Player.ChangeQuickSlot",
+            "Action.Player.ChangeToNextQuickSlot",
+            "Action.Player.ChangeToPreviousQuickSlot",
+            "Action.Player.ToggleHands",
+            "Action.Player.Jump",
+            "Action.Player.UseDoor",
+            "Action.Player.Stand",
+            "Action.VehicleRepairTool.ContinuousUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.MedKit.PrimaryUse",
+            "Action.Appliable.MedKit.SecondaryUse"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Weapon"
+          ],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

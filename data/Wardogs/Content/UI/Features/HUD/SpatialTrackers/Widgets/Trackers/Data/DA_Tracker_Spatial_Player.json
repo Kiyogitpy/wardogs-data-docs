@@ -1,0 +1,672 @@
+--- export: UObject / WDUIDistanceTextRules_0 ---
+{
+  "Type": "WDUIDistanceTextRules",
+  "Name": "WDUIDistanceTextRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDistanceTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  }
+}
+--- export: UObject / WDUIDistanceTextRules_2 ---
+{
+  "Type": "WDUIDistanceTextRules",
+  "Name": "WDUIDistanceTextRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDistanceTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  }
+}
+--- export: UObject / WDUIFocusFadeInOpacityRules_0 ---
+{
+  "Type": "WDUIFocusFadeInOpacityRules",
+  "Name": "WDUIFocusFadeInOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIFocusFadeInOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "Targets": 6
+  }
+}
+--- export: UObject / WDUILineOfSightRules_0 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "Range": 30.0,
+    "bRequireRenderedComponent": true,
+    "TraceChannel": "ECollisionChannel::ECC_GameTraceChannel4",
+    "SquaredRange": 9000000.0
+  }
+}
+--- export: UObject / WDUILineOfSightRules_1 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "bEnableWithinRangeOnly": true,
+    "Range": 50.0,
+    "bInvertRange": true,
+    "SquaredRange": 25000000.0
+  }
+}
+--- export: UObject / WDUILineOfSightRules_2 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "SquaredRange": 100000000.0,
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUILineOfSightRules_5 ---
+{
+  "Type": "WDUILineOfSightRules",
+  "Name": "WDUILineOfSightRules_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILineOfSightRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "SquaredRange": 100000000.0,
+    "State": "EWDUIRuleState::Disable"
+  }
+}
+--- export: UObject / WDUILocationOffsetRules_3 ---
+{
+  "Type": "WDUILocationOffsetRules",
+  "Name": "WDUILocationOffsetRules_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILocationOffsetRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "DynamicOffsetDistanceCurve": {
+      "ObjectName": "CurveFloat'C_DynamicLocationOffsetPlayerTracker'",
+      "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/C_DynamicLocationOffsetPlayerTracker.0"
+    },
+    "DynamicCurveRange": {
+      "X": 0.0,
+      "Y": 15000.0
+    },
+    "Offset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 25.0
+    },
+    "AttachBone": "Head"
+  }
+}
+--- export: UObject / WDUINameTextRules_4 ---
+{
+  "Type": "WDUINameTextRules",
+  "Name": "WDUINameTextRules_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUINameTextRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  }
+}
+--- export: UDataAsset / DA_Tracker_Spatial_Player ---
+{
+  "Type": "WDUIPlayerSpatialTrackerData",
+  "Name": "DA_Tracker_Spatial_Player",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPlayerSpatialTrackerData'",
+  "Package": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player",
+  "Properties": {
+    "VitalityStateTextures": [
+      {
+        "Key": {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Player_Critical.T_UI_Icon_Player_Critical",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 30.0
+        }
+      }
+    ],
+    "AssistanceRequestTextures": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Ammo"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Ammo.T_UI_Icon_Request_Ammo",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Backup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Backup_Request_Icon.T_UI_Backup_Request_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Refueling"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_FuelRequest_Icon.T_UI_FuelRequest_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Healing"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Medical.T_UI_Icon_Request_Medical",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Repair"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_RepairRequest_Icon.T_UI_RepairRequest_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Revive"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Player_Critical.T_UI_Icon_Player_Critical",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Pickup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_PickRequest_Icon.T_UI_PickRequest_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_DropOff_Request_Icon.T_UI_DropOff_Request_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      }
+    ],
+    "AcknowledgedAssistanceRequestTextures": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Ammo"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Ammo_Acknowledged.T_UI_Icon_Request_Ammo_Acknowledged",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Backup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Backup_Request_Filled_Icon.T_UI_Backup_Request_Filled_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Refueling"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_FuelRequest_Filled_Icon.T_UI_FuelRequest_Filled_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Healing"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Medical_Acknowledged.T_UI_Icon_Request_Medical_Acknowledged",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Repair"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_RepairRequest_Filled_Icon.T_UI_RepairRequest_Filled_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Revive"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_Icon_Request_Revive_Acknowledged.T_UI_Icon_Request_Revive_Acknowledged",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Pickup"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_PickRequest_Approved_Icon.T_UI_PickRequest_Approved_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_DropOff_Request_Approved_Icon.T_UI_DropOff_Request_Approved_Icon",
+            "SubPathString": ""
+          },
+          "IconHeightScale": 32.0
+        }
+      }
+    ],
+    "EpauletObserveColor": {
+      "R": 1.0,
+      "G": 1.0,
+      "B": 1.0,
+      "A": 1.0,
+      "Hex": "FFFFFF"
+    },
+    "RuleSets": [
+      {
+        "Key": "EWDUISpatialRulesetType::InFieldOfView",
+        "Value": {
+          "Priority": 1,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUILocationOffsetRules'DA_Tracker_Spatial_Player:WDUILocationOffsetRules_3'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.7"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Player:WDUILineOfSightRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.3"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceScaleRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.18"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::InLocalUserSquad",
+        "Value": {
+          "Priority": 5,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Player:WDUILineOfSightRules_5'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.6"
+            },
+            {
+              "ObjectName": "WDUIScreenClampingRules'DA_Tracker_Spatial_Player:WDUIScreenClampingRules_2'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.10"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceOpacityRules_4'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.15"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Focused",
+        "Value": {
+          "Priority": 3,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUINameTextRules'DA_Tracker_Spatial_Player:WDUINameTextRules_4'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.8"
+            },
+            {
+              "ObjectName": "WDUIDistanceTextRules'DA_Tracker_Spatial_Player:WDUIDistanceTextRules_2'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.1"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceOpacityRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.13"
+            },
+            {
+              "ObjectName": "WDUIFocusFadeInOpacityRules'DA_Tracker_Spatial_Player:WDUIFocusFadeInOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.2"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::LocalUser_InADS",
+        "Value": {
+          "Priority": 2,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIScreenDistanceOpacityRules'DA_Tracker_Spatial_Player:WDUIScreenDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.11"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Player_Critical",
+        "Value": {
+          "Priority": 4,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceScaleRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceScaleRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.17"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceOpacityRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.12"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Player:WDUILineOfSightRules_1'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.4"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::Player_InVehicle",
+        "Value": {
+          "Priority": 7,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceOpacityRules_2'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.14"
+            }
+          ]
+        }
+      },
+      {
+        "Key": "EWDUISpatialRulesetType::RequestPinged",
+        "Value": {
+          "Priority": 6,
+          "OptionalRules": [
+            {
+              "ObjectName": "WDUIDistanceTextRules'DA_Tracker_Spatial_Player:WDUIDistanceTextRules_0'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.0"
+            },
+            {
+              "ObjectName": "WDUIWorldDistanceOpacityRules'DA_Tracker_Spatial_Player:WDUIWorldDistanceOpacityRules_6'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.16"
+            },
+            {
+              "ObjectName": "WDUILineOfSightRules'DA_Tracker_Spatial_Player:WDUILineOfSightRules_2'",
+              "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.5"
+            }
+          ]
+        }
+      }
+    ],
+    "MaximumDistanceFromScreenCenter": {
+      "X": 0.95,
+      "Y": 0.95
+    },
+    "bUseOcclusionFade": true,
+    "OcclusionFadeDuration": 0.5,
+    "ZOrder": 3,
+    "DefaultSize": {
+      "X": 150.0,
+      "Y": 150.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenClampingRules_2 ---
+{
+  "Type": "WDUIScreenClampingRules",
+  "Name": "WDUIScreenClampingRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenClampingRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "ClampingAsPixels": {
+      "X": 25.0,
+      "Y": 25.0
+    }
+  }
+}
+--- export: UObject / WDUIScreenDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIScreenDistanceOpacityRules",
+  "Name": "WDUIScreenDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScreenDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": {
+      "X": 0.075,
+      "Y": 0.5
+    },
+    "FalloffRangeMaximum": {
+      "X": 0.05,
+      "Y": 0.05
+    },
+    "OpacityRange": {
+      "Min": 0.4
+    },
+    "bInvertOpacity": true,
+    "Targets": 7
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_0 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 200.0,
+    "FalloffRangeMaximum": 5.0,
+    "Targets": 7,
+    "SquaredFalloffRangeMaximum": 19750016.0,
+    "SquaredMaximumVisibleDistance": 400000000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_1 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 30.0,
+    "FalloffRangeMaximum": 5.0,
+    "Targets": 6,
+    "SquaredFalloffRangeMaximum": 2750000.0,
+    "SquaredMaximumVisibleDistance": 9000000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_2 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 15.0,
+    "FalloffRangeMaximum": 2.0,
+    "Targets": 7,
+    "SquaredFalloffRangeMaximum": 560000.0,
+    "SquaredMaximumVisibleDistance": 2250000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_4 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 1000.0,
+    "FalloffRangeMaximum": 5.0,
+    "Targets": 7,
+    "SquaredFalloffRangeMaximum": 99749890.0,
+    "SquaredMaximumVisibleDistance": 1E+10
+  }
+}
+--- export: UObject / WDUIWorldDistanceOpacityRules_6 ---
+{
+  "Type": "WDUIWorldDistanceOpacityRules",
+  "Name": "WDUIWorldDistanceOpacityRules_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceOpacityRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "MaximumVisibleDistance": 1000.0,
+    "FalloffRangeMaximum": 5.0,
+    "Targets": 7,
+    "SquaredFalloffRangeMaximum": 99749890.0,
+    "SquaredMaximumVisibleDistance": 1E+10
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_0 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "DistanceForScalingEnd": 70.0,
+    "EndScale": 0.8,
+    "SquaredDistanceForScalingEnd": 49000000.0
+  }
+}
+--- export: UObject / WDUIWorldDistanceScaleRules_1 ---
+{
+  "Type": "WDUIWorldDistanceScaleRules",
+  "Name": "WDUIWorldDistanceScaleRules_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIWorldDistanceScaleRules'",
+  "Outer": {
+    "ObjectName": "WDUIPlayerSpatialTrackerData'DA_Tracker_Spatial_Player'",
+    "ObjectPath": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Data/DA_Tracker_Spatial_Player.9"
+  },
+  "Properties": {
+    "DistanceForScalingEnd": 70.0,
+    "StartScale": 0.25,
+    "EndScale": 0.35,
+    "SquaredDistanceForScalingEnd": 49000000.0
+  }
+}

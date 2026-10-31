@@ -1,0 +1,475 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_1 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Tools/InHandFOB/SM_FOB_InHand_Rotated.SM_FOB_InHand_Rotated",
+      "SubPathString": ""
+    },
+    "Lifetime": 300.0,
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 29.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 18.0,
+      "Y": 23.0,
+      "Z": 33.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  },
+  "Properties": {
+    "Weight": 6.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_ForwardOperatingBase ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_ForwardOperatingBase",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.FOB"
+    },
+    "ItemContext": [
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipTwoHandsHeavy"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.FOB",
+      "SourceString": "Forward Operating Base",
+      "LocalizedString": "Forward Operating Base"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_ForwardOperatingBase:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_ForwardOperatingBase:BHInventoryFragment_Droppable_1'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Purchaser'ID_ForwardOperatingBase:WDInventoryFragment_Purchaser_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.7"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_ForwardOperatingBase:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_ForwardOperatingBase:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_ForwardOperatingBase:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_FOB_Audio'",
+      "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Audio/DA_Item_FOB_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_BuildablePlacement'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_BuildablePlacement_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_DeployFOB'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_DeployFOB_0'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.11"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Purchaser_0 ---
+{
+  "Type": "WDInventoryFragment_Purchaser",
+  "Name": "WDInventoryFragment_Purchaser_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Purchaser'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_ForwardOperatingBase'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.4"
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_FOB'",
+      "ObjectPath": "/Buildables/Data/ForwardOperatingBase/AnimSet_FOB.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_FOB_Audio'",
+      "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Audio/DA_Item_FOB_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_BuildablePlacement_0 ---
+{
+  "Type": "WDItemExtensionData_BuildablePlacement",
+  "Name": "WDItemExtensionData_BuildablePlacement_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_BuildablePlacement'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  },
+  "Properties": {
+    "BuildablePlacementData": {
+      "ObjectName": "WDBuildablePlacementDataAsset'DA_BuildablePlacementData'",
+      "ObjectPath": "/Buildables/Data/Buildables/DA_BuildablePlacementData.0"
+    },
+    "BuildableData": {
+      "ObjectName": "WDBuildableDataAsset'DA_Buildable_FOB'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/DA_Buildable_FOB.1"
+    },
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UsePlaceable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UsePlaceable.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_DeployFOB_0 ---
+{
+  "Type": "WDItemExtensionData_DeployFOB",
+  "Name": "WDItemExtensionData_DeployFOB_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_DeployFOB'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_InHandFOB'",
+      "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Meshes/SK_InHandFOB.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_FOB_InHand_01b'",
+        "ObjectPath": "/Game/Items/Tools/InHandFOB/Materials/Bespoke/MI_FOB_InHand_01b.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_LaptopScreenAnimated_01c'",
+        "ObjectPath": "/Game/Environment/Shared/Props/Tech/Laptop/Materials/MI_LaptopScreenAnimated_01c.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_LaptopScreenAnimated_01c'",
+        "ObjectPath": "/Game/Environment/Shared/Props/Tech/Laptop/Materials/MI_LaptopScreenAnimated_01c.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_InHandFOB_C'",
+      "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Animation/Blueprint/ABP_InHandFOB.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_FOB_Equip'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Animation/FP/Character/Montage/AM_FP_FOB_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_FOB_Equip_Weap'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Animation/FP/Item/Montage/AM_FP_FOB_Equip_Weap.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_FOB_Holster'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Animation/FP/Character/Montage/AM_FP_FOB_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Holster.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_FOB_Holster_Weap'",
+        "ObjectPath": "/Buildables/Data/ForwardOperatingBase/Animation/FP/Item/Montage/AM_FP_FOB_Holster_Weap.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Buildables/Data/ForwardOperatingBase/Animation/Blueprint/ABP_FP_FOB_Layer_RW.ABP_FP_FOB_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Buildables/Data/ForwardOperatingBase/Animation/Blueprint/ABP_TP_FOB_Layer_RW.ABP_TP_FOB_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.05
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_DeployableItem'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_DeployableItem.7"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.BuildTool.Rotate"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_4'",
+          "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.17"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_1'",
+          "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.16"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.18"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.6"
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.13"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.FOBPlacement.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.13"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_4 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.13"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.BuildTool.Rotate"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_ForwardOperatingBase:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Buildables/Data/ForwardOperatingBase/ID_ForwardOperatingBase.13"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.FOBPlacement.PrimaryUse"
+    }
+  }
+}

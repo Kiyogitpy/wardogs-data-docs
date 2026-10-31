@@ -67,8 +67,7 @@ The gap-resolution pass covering the SDK bucket is tracked in
 
 ## Generation methodology
 
-See [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md) for the full
-pipeline. Short version:
+The class dump stays local. Generation steps:
 
 1. Launch the game locally (author's own hardware, author's own copy)
 2. Load Dumper-7 into the process
@@ -93,5 +92,5 @@ pipeline. Short version:
   all `../Wardogs_*.md` files at the repo root
 - IDA mappings (what the compiled binary looks like):
   [`../mappings/`](../mappings/)
-- Methodology (how SDK + data + IDA combine):
-  [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md)
+- Extraction and update pipeline:
+  [`../docs/UPDATE_PIPELINE.md`](../docs/UPDATE_PIPELINE.md)

@@ -1,0 +1,129 @@
+--- export: UDataTable / DT_EntityData_UI_Vehicles_WHL_01 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Vehicles_WHL_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/WHL_01/DataTables/DT_EntityData_UI_Vehicles_WHL_01",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Vehicle.Variant.Land.Wheeled.Bobcat.Default": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Name.Bobcat",
+        "SourceString": "Bobcat",
+        "LocalizedString": "Bobcat"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Description.Bobcat",
+        "SourceString": "2 Seat Cheap Transport Vehicle",
+        "LocalizedString": "2 Seat Cheap Transport Vehicle"
+      },
+      "Category": {
+        "TagName": "Vehicle.Archetype.Land.Wheeled"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Driver"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Vehicle"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipSubtitle.Vehicle.Quad",
+            "SourceString": "Quad Bike",
+            "LocalizedString": "Quad Bike"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipDescription.Vehicle.Bobcat",
+            "SourceString": "- 1 Driver + 1 Passenger\r\n- Unarmored",
+            "LocalizedString": "- 1 Driver + 1 Passenger\r\n- Unarmored"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipFlavor.Vehicle.Bobcat",
+            "SourceString": "Manufactured by PATRIOT\r\nThe Bobcat provides exceptional off-road driving at a very low cost.",
+            "LocalizedString": "Manufactured by PATRIOT\r\nThe Bobcat provides exceptional off-road driving at a very low cost."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/WHL_01/UI/T_UI_Icon_Vehicle_WHL_01_512x512.T_UI_Icon_Vehicle_WHL_01_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/3D/T_UI_Icon_Vehicle_WHL_01_Bobcat_Textured_512x512.T_UI_Icon_Vehicle_WHL_01_Bobcat_Textured_512x512",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Tooltip"
+            ]
+          },
+          {
+            "Key": "/WHL_01/UI/T_UI_Icon_Spatial_WHL_01_256px.T_UI_Icon_Spatial_WHL_01_256px",
+            "Value": [
+              "UI.Icon.Tracker.Spatial",
+              "UI.Icon.Tracker.TacticalMap"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/HUD/Vehicles/Materials/Textures/T_UI_Icon_Bobcat_VehicleHUD_512x512.T_UI_Icon_Bobcat_VehicleHUD_512x512",
+            "Value": [
+              "UI.Icon.Vehicle.State"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_WHL.T_UI_Icon_Killfeed_WHL",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
+      }
+    }
+  }
+}

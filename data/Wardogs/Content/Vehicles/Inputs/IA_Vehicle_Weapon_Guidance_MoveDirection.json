@@ -1,0 +1,36 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_Guidance_MoveDirection ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_Guidance_MoveDirection",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Guidance_MoveDirection",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.Guidance.MoveDirectional"
+    },
+    "ValueType": "EInputActionValueType::Axis2D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerHold'IA_Vehicle_Weapon_Guidance_MoveDirection:InputTriggerHold_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Guidance_MoveDirection.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Guidance_MoveDirection'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Guidance_MoveDirection.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.2
+  }
+}

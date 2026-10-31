@@ -1,0 +1,67 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_GiveUp'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Death_GiveUp_1p'",
+      "ObjectPath": "/Game/Audio/Player/Death/GiveUp/MSS/MSS_Player_Damage_Death_GiveUp_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Death_GiveUp_3p'",
+      "ObjectPath": "/Game/Audio/Player/Death/GiveUp/MSS/MSS_Player_Damage_Death_GiveUp_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Death.GIveUp"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_GiveUp ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_GiveUp",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.GiveUp"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_GiveUp:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp.2"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_GiveUp:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_GiveUp'",
+    "ObjectPath": "/Game/Audio/Events/Player/Death/AE_Player_GiveUp.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Death.GIveUp"
+    }
+  }
+}

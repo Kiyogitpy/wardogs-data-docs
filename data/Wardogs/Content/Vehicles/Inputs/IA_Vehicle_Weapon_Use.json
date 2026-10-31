@@ -1,0 +1,52 @@
+--- export: UDataAsset / IA_Vehicle_Weapon_Use ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Weapon_Use",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.Fire"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_Weapon_Use:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Weapon_Use:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Use'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Use'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

@@ -1,0 +1,69 @@
+--- export: UObject / AEB_PlaySoundDelayed_C_0 ---
+{
+  "Type": "AEB_PlaySoundDelayed_C",
+  "Name": "AEB_PlaySoundDelayed_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlaySoundDelayed.AEB_PlaySoundDelayed_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Wager_Result_Fail_Death'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Fail_Death.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlaySoundDelayed_C'Default__AEB_PlaySoundDelayed_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlaySoundDelayed.0"
+  },
+  "Properties": {
+    "PlaySound": {
+      "ObjectName": "MetaSoundSource'MSS_Vendor_Wager_Result_Fail_Death_Preset'",
+      "ObjectPath": "/Game/Audio/Convo/Neutral/Wager/MSS_Vendor_Wager_Result_Fail_Death_Preset.0"
+    },
+    "Delay": 2.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Dial.Equipment.Vendor"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vendor_Wager_Result_Fail_Death ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vendor_Wager_Result_Fail_Death",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Fail_Death",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vendor.Wager.Result.Fail.Death"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vendor_Wager_Result_Fail_Death:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Fail_Death.2"
+      },
+      {
+        "ObjectName": "AEB_PlaySoundDelayed_C'AE_Vendor_Wager_Result_Fail_Death:AEB_PlaySoundDelayed_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Fail_Death.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vendor_Wager_Result_Fail_Death'",
+    "ObjectPath": "/Game/Audio/Events/Vendor/AE_Vendor_Wager_Result_Fail_Death.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Vendor_Wager_Failure'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Vendor/Wager/MSS_UI_InGame_Vendor_Wager_Failure.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

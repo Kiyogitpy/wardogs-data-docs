@@ -1,0 +1,122 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_CrowsNest_FirstFloor'",
+    "ObjectPath": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_FirstFloor.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_CrowsNest_FirstFloor ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_CrowsNest_FirstFloor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_FirstFloor",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_CrowsNest_FirstFloor:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_FirstFloor.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.CrowsNest.FirstFloor"
+    },
+    "Cost": 10,
+    "RepairSpeedMultiplier": 0.67,
+    "DisplayName": {
+      "TableId": "/Buildables/Data/STRINGS_BuildableDescriptions.STRINGS_BuildableDescriptions",
+      "Key": "Buildable.CrowsNest.Roof.DisplayName",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "MaxHealth": 2250.0,
+    "MaxStack": 0,
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_CrowsNest_FirstFloor_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_FirstFloor_Stages.0"
+    },
+    "BuildingStages": [
+      {
+        "Mesh": {
+          "AssetPathName": "/Buildables/Data/Buildables/CrowsNest/SM_Crows_Nest_First_Floor.SM_Crows_Nest_First_Floor",
+          "SubPathString": ""
+        },
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": -311.4002,
+            "Y": -312.5746,
+            "Z": -354.9803
+          },
+          "Max": {
+            "X": 320.24432,
+            "Y": 314.52795,
+            "Z": 28.457703
+          },
+          "IsValid": 1
+        },
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "CriticalHitSpotTransforms": []
+      }
+    ],
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -311.4002,
+        "Y": -312.5746,
+        "Z": -354.9803
+      },
+      "Max": {
+        "X": 320.24432,
+        "Y": 314.52795,
+        "Z": 28.457703
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.CrowsNest"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      }
+    ],
+    "bUsesCriticalHitSpots": false
+  }
+}

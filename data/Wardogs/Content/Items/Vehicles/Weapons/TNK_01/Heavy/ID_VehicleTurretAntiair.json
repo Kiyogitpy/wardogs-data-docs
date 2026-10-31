@@ -1,0 +1,79 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_VehicleTurretAntiair'",
+    "ObjectPath": "/Game/Items/Vehicles/Weapons/TNK_01/Heavy/ID_VehicleTurretAntiair.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.35x228mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 150,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": true,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "ID.Item.35x228mm"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_VehicleTurretAntiair ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_VehicleTurretAntiair",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Vehicles/Weapons/TNK_01/Heavy/ID_VehicleTurretAntiair",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.VehicleTurretAntiAir"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.TNK_03.Turret",
+      "Item.Context.MovementBlocked"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "4A90370B41FB17C2B80DABA91C0CD975",
+      "SourceString": "Anti-Air Turret",
+      "LocalizedString": "Anti-Air Turret"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_VehicleTurretAntiair:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Vehicles/Weapons/TNK_01/Heavy/ID_VehicleTurretAntiair.0"
+      }
+    ]
+  }
+}

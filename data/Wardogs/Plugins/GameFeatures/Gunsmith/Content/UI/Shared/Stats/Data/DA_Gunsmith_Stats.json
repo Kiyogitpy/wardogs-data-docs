@@ -1,0 +1,46 @@
+--- export: UDataAsset / DA_Gunsmith_Stats ---
+{
+  "Type": "WDUIItemsmithStatsData",
+  "Name": "DA_Gunsmith_Stats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithStatsData'",
+  "Package": "/Gunsmith/UI/Shared/Stats/Data/DA_Gunsmith_Stats",
+  "Properties": {
+    "WeaponAccuracyTypeText": [
+      {
+        "Key": "EWDWeaponAccuracyType::Milliradians",
+        "Value": {
+          "Namespace": "",
+          "Key": "390C6B0C4181B4AF88FF06BE8B85C03E",
+          "SourceString": "MRAD",
+          "LocalizedString": "MRAD"
+        }
+      },
+      {
+        "Key": "EWDWeaponAccuracyType::MinutesOfAngle",
+        "Value": {
+          "Namespace": "",
+          "Key": "CCC6D4D149E778C1762A5B9E5FFDD370",
+          "SourceString": "MOA",
+          "LocalizedString": "MOA"
+        }
+      }
+    ],
+    "ExpandedStatsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/GunsmithRuntime.WDUIGunsmithExpandedAccuracyViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Gunsmith/UI/Shared/Stats/ExpandedStats/Data/DA_GunsmithExpandedAccuracy.DA_GunsmithExpandedAccuracy",
+        "SubPathString": ""
+      }
+    },
+    "ExpandStatsTextTag": {
+      "TagName": "Input.NamedActions.ItemSmith.ExpandStats"
+    },
+    "CollapseStatsTextTag": {
+      "TagName": "Input.NamedActions.ItemSmith.CollapseStats"
+    }
+  }
+}

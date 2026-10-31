@@ -62,7 +62,7 @@ Run `audit` any time: it fails when a script in `_tools/` is missing from the re
 
 ```
 manifest.json         the fingerprint
-data/                 the export the generators read (a junction target; never committed)
+data/                 the export the generators read (a junction target; JSON exports tracked, other files local)
 data_progress.log     CueDump's log: CUE4Parse warnings and per-package errors
 wdextract/            files/files.txt, ge/, icons/, config/raw/ (the full DefaultGame.ini is here; never commit it)
 extract-meta.json     timings, warnings/errors, number of hashed property names, config files copied
@@ -116,7 +116,7 @@ deliberately wrong usmap (the 507 closed-beta one): 9 packages errored.
 The pipeline will not fix this and does not run the game. Yourself:
 
 1. Run the new build with Dumper-7 (`E:/Reverse_Engineer/tools/Dumper-7`) to get the SDK and a fresh `.usmap`
-   (the project procedure is in [`docs/METHODOLOGY.md`](METHODOLOGY.md) and [`mappings/README.md`](../mappings/README.md)).
+   (see [`sdk/README.md`](../sdk/README.md) and [`mappings/README.md`](../mappings/README.md)).
 2. Restore property names the way `mappings/README.md` describes (`WdExtract deobfuscate --names ... --sdk sdk/raw`,
    then the export-usmap fills), and rebuild `normal-order.usmap` if the property-bag recovery changed
    ([`tools/cue4parse_extractor/README.md`](../tools/cue4parse_extractor/README.md)).

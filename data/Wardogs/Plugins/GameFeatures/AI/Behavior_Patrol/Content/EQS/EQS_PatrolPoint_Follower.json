@@ -1,0 +1,121 @@
+--- export: UDataAsset / EQS_PatrolPoint_Follower ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_PatrolPoint_Follower",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower",
+  "Properties": {
+    "QueryName": "EQS_PatrolPoint_Follower",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_PatrolPoint_Follower:EnvQueryOption_2'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_SD_Donut_0 ---
+{
+  "Type": "EnvQueryGenerator_SD_Donut",
+  "Name": "EnvQueryGenerator_SD_Donut_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_SD_Donut'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint_Follower'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.0"
+  },
+  "Properties": {
+    "SpacingMethod": "ESpacingMethod::DistanceBetweenPoints",
+    "DistanceBetweenPoints": {
+      "DefaultValue": 200
+    },
+    "InnerRadius": {
+      "DefaultValue": 1.0
+    },
+    "OuterRadius": {
+      "DefaultValue": 600.0
+    },
+    "bUseSpiralPattern": true,
+    "Center": {
+      "ObjectName": "Class'EnvQueryContext_SDAIMovementLocationWithinSquad'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_2 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint_Follower'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_SD_Donut'EQS_PatrolPoint_Follower:EnvQueryGenerator_SD_Donut_0'",
+      "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_PathfindingBatch'EQS_PatrolPoint_Follower:EnvQueryTest_PathfindingBatch_1'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_PatrolPoint_Follower:EnvQueryTest_Distance_3'",
+        "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_3 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_3",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint_Follower'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestDistance::Distance2D",
+    "DistanceTo": {
+      "ObjectName": "Class'EnvQueryContext_SDAIMovementLocationWithinSquad'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "TestOrder": 1,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 20.0
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_PathfindingBatch_1 ---
+{
+  "Type": "EnvQueryTest_PathfindingBatch",
+  "Name": "EnvQueryTest_PathfindingBatch_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_PathfindingBatch'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_PatrolPoint_Follower'",
+    "ObjectPath": "/Behavior_Patrol/EQS/EQS_PatrolPoint_Follower.0"
+  },
+  "Properties": {
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FloatValueMin": {
+      "DefaultValue": 0.0
+    },
+    "VerNum": 2
+  }
+}

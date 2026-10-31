@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_StopEventFadeTrigger ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_StopEventFadeTrigger",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/AE_StopEventFadeTrigger",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.StopSoundFade"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_StopEventFadeTrigger:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/AE_StopEventFadeTrigger.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_StopEventFadeTrigger'",
+    "ObjectPath": "/Game/Audio/Events/AE_StopEventFadeTrigger.0"
+  },
+  "Properties": {
+    "FadeOut": 0.3,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

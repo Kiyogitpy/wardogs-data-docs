@@ -1,0 +1,43 @@
+--- export: UObject / AEB_PlayHealingSound_C_0 ---
+{
+  "Type": "AEB_PlayHealingSound_C",
+  "Name": "AEB_PlayHealingSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHealingSound.AEB_PlayHealingSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Heal_Notify_End'",
+    "ObjectPath": "/Game/Audio/Events/UX/Healing/AE_UX_Heal_Notify_End.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHealingSound_C'Default__AEB_PlayHealingSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHealingSound.0"
+  },
+  "Properties": {
+    "Heal Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Healing_Notify_End'",
+      "ObjectPath": "/Game/Audio/UX/Healing/MSS/MSS_UX_Healing_Notify_End.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.UX.Healing.NotifyEnd"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UX_Heal_Notify_End ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Heal_Notify_End",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Healing/AE_UX_Heal_Notify_End",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Healing.NotifyEnd"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHealingSound_C'AE_UX_Heal_Notify_End:AEB_PlayHealingSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Healing/AE_UX_Heal_Notify_End.0"
+      }
+    ]
+  }
+}

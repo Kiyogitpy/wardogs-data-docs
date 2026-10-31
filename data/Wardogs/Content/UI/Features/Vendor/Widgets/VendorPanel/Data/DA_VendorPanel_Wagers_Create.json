@@ -1,0 +1,358 @@
+--- export: UDataAsset / DA_VendorPanel_Wagers_Create ---
+{
+  "Type": "WDUIVendorPanelData_Wagers",
+  "Name": "DA_VendorPanel_Wagers_Create",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorPanelData_Wagers'",
+  "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Wagers_Create",
+  "Properties": {
+    "_aaabcloceiijkdjjkniic": {
+      "ObjectName": "WDUIWagerStatusData'DA_WagerStatus'",
+      "ObjectPath": "/Game/UI/Features/Wagers/Status/DA_WagerStatus.0"
+    },
+    "_aaacaglgmnllofmadmegc": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWagerObjectiveSelectorViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/WagerObjectiveSelector/Data/DA_Wagers_ObjectiveSelector.DA_Wagers_ObjectiveSelector",
+        "SubPathString": ""
+      }
+    },
+    "_aaaappifnkacjgkmdjlce": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CreateWagerText",
+      "SourceString": "Create new wager",
+      "LocalizedString": "Create new wager"
+    },
+    "_aaabaaechemedhdkdnbma": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_UnlockWagersText",
+      "SourceString": "Unlock wagers",
+      "LocalizedString": "Unlock wagers"
+    },
+    "_aaabdjljgmnbmiglkpiko": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_RequiresLevelFormat",
+      "SourceString": "Requires Wardog level {Level}",
+      "LocalizedString": "Requires Wardog level {Level}"
+    },
+    "_aaabchlkngapkcfhndjpp": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CooldownDaysFormat",
+      "SourceString": "{Days}D",
+      "LocalizedString": "{Days}D"
+    },
+    "_aaabdafomkmhiclhfnkgi": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CooldownHoursFormat",
+      "SourceString": "{Hours}{Hours}|plural(one=HR,other=HRS)",
+      "LocalizedString": "{Hours}{Hours}|plural(one=HR,other=HRS)"
+    },
+    "_aaabfgbcpikjoldplmndf": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CooldownMinutesFormat",
+      "SourceString": "{Minutes}{Minutes}|plural(one=MIN,other=MINS)",
+      "LocalizedString": "{Minutes}{Minutes}|plural(one=MIN,other=MINS)"
+    },
+    "_aaabfdaiglopbkdmiainc": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CooldownSecondsFormat",
+      "SourceString": "{Seconds}{Seconds}|plural(one=SEC,other=SECS)",
+      "LocalizedString": "{Seconds}{Seconds}|plural(one=SEC,other=SECS)"
+    },
+    "_aaabbmhcihflclpenhgja": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_FoldBonusIdleText",
+      "SourceString": "Multi bonus",
+      "LocalizedString": "Multi bonus"
+    },
+    "_aaabieojjkodgjeaddamk": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_FoldBonusStartHintFormat",
+      "SourceString": "Every objective after the first adds x{Step}",
+      "LocalizedString": "Every objective after the first adds x{Step}"
+    },
+    "_aaabhhdcnkcgoimafbgch": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_FoldBonusNextHintFormat",
+      "SourceString": "1 objective - add one for x{Odds}",
+      "LocalizedString": "1 objective - add one for x{Odds}"
+    },
+    "_aaabhndklegpefjkbbjck": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_FoldBonusLegsHintFormat",
+      "SourceString": "{Legs} objectives",
+      "LocalizedString": "{Legs} objectives"
+    },
+    "_aaabhfpjaabfkikaglofl": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ActionCoolingLineFormat",
+      "SourceString": "{Action} on cooldown",
+      "LocalizedString": "{Action} on cooldown"
+    },
+    "_aaabackoapgbemnplbpem": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_NoConditionsText",
+      "SourceString": "No conditions",
+      "LocalizedString": "No conditions"
+    },
+    "_aaabfbicemmdhlopggbcp": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_SlipCoolingReasonText",
+      "SourceString": "A row on this slip is on cooldown",
+      "LocalizedString": "A row on this slip is on cooldown"
+    },
+    "_aaabdojmnphdopkplhhnm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_NotEnoughCashFormat",
+      "SourceString": "Not enough cash - you have {Amount}",
+      "LocalizedString": "Not enough cash - you have {Amount}"
+    },
+    "_aaabcoeiojnmboajdnpkh": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_MinimumStakeFormat",
+      "SourceString": "Minimum stake is {Amount}",
+      "LocalizedString": "Minimum stake is {Amount}"
+    },
+    "_aaaalclielfbeillpjkkk": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_RefusedText",
+      "SourceString": "Couldn't place that wager - check the slip and try again",
+      "LocalizedString": "Couldn't place that wager - check the slip and try again"
+    },
+    "_aaabelcemcejpcjfejabm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownDeathsLabel",
+      "SourceString": "Deaths",
+      "LocalizedString": "Deaths"
+    },
+    "_aaabdchcohfpehgomeiao": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReceiptNoDeathsText",
+      "SourceString": "None allowed",
+      "LocalizedString": "None allowed"
+    },
+    "_aaabdfhpldmjlcdmcjnaj": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_DeathsAllowedFormat",
+      "SourceString": "{Deaths} allowed",
+      "LocalizedString": "{Deaths} allowed"
+    },
+    "_aaabnmjdiocaacddjplof": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownObjectiveLabelFormat",
+      "SourceString": "Objective {Index}",
+      "LocalizedString": "Objective {Index}"
+    },
+    "_aaabcedkihmaeddieafjl": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_FoldBonusIdleText",
+      "SourceString": "Multi bonus",
+      "LocalizedString": "Multi bonus"
+    },
+    "_aaabhfgejmpggpalikagb": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownFoldOneLegText",
+      "SourceString": "1 objective: no bonus for one",
+      "LocalizedString": "1 objective: no bonus for one"
+    },
+    "_aaabhboekafjlcndkfoed": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownFoldLegsFormat",
+      "SourceString": "{Legs} objectives: 1 + {Extra} x {Step}",
+      "LocalizedString": "{Legs} objectives: 1 + {Extra} x {Step}"
+    },
+    "_aaabddcnhgimkmkgmgloa": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownTotalLabel",
+      "SourceString": "Total odds",
+      "LocalizedString": "Total odds"
+    },
+    "_aaabceicgllafholnbbgm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownEmptyText",
+      "SourceString": "Add an objective to see the total",
+      "LocalizedString": "Add an objective to see the total"
+    },
+    "_aaabemihkgdcbhjpgicgj": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownReturnLabel",
+      "SourceString": "Return",
+      "LocalizedString": "Return"
+    },
+    "_aaabfdanbbndeelgjdkec": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_BreakdownCappedFormat",
+      "SourceString": "{Line} (capped)",
+      "LocalizedString": "{Line} (capped)"
+    },
+    "_aaabdgiapecknibdhmflb": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReceiptNoDeathsText",
+      "SourceString": "None allowed",
+      "LocalizedString": "None allowed"
+    },
+    "_aaabhfnlgnpjibefiamgm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReceiptDeathsUsedFormat",
+      "SourceString": "{Used} of {Allowed} used",
+      "LocalizedString": "{Used} of {Allowed} used"
+    },
+    "_aaabkldeopidkdanbhaal": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReceiptPotentialReturnText",
+      "SourceString": "Potential return",
+      "LocalizedString": "Potential return"
+    },
+    "_aaaapckmnldbnkafbhmbi": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReceiptPaidText",
+      "SourceString": "Paid",
+      "LocalizedString": "Paid"
+    },
+    "_aaabeijblicoadfhofmhk": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReceiptStakeLostText",
+      "SourceString": "Stake lost",
+      "LocalizedString": "Stake lost"
+    },
+    "_aaaapkjcbelagooojhgcg": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CancelWagerText",
+      "SourceString": "Cancel wager",
+      "LocalizedString": "Cancel wager"
+    },
+    "_aaabkjdkhlgicjdfdomfc": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CancelWagerStakeLostFormat",
+      "SourceString": "The {Amount} stake will be lost.",
+      "LocalizedString": "The {Amount} stake will be lost."
+    },
+    "_aaaanoffhmopbemealcco": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ClearSlipText",
+      "SourceString": "Clear slip",
+      "LocalizedString": "Clear slip"
+    },
+    "_aaabfmhpbbkgajcaacnil": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_TooltipActionKindText",
+      "SourceString": "Action",
+      "LocalizedString": "Action"
+    },
+    "_aaabbemldfnfljiceklbj": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_TooltipLockFormat",
+      "SourceString": "Attempting this locks it for {Time}",
+      "LocalizedString": "Attempting this locks it for {Time}"
+    },
+    "_aaabekbamcondpjphnimj": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_TooltipOddsLabelText",
+      "SourceString": "Odds",
+      "LocalizedString": "Odds"
+    },
+    "_aaabgnjpcdjclgmihfhpb": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_TooltipReturnLabelText",
+      "SourceString": "Return if picked",
+      "LocalizedString": "Return if picked"
+    },
+    "_aaabineddoaodplgfpgfb": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_TooltipSlipOddsLabelText",
+      "SourceString": "Slip odds if picked",
+      "LocalizedString": "Slip odds if picked"
+    },
+    "_aaabcioflpdhbaipaahfk": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ReturnNoChangeText",
+      "SourceString": "No change",
+      "LocalizedString": "No change"
+    },
+    "_aaabegideahdfkkcjhmkn": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_CooldownReasonFormat",
+      "SourceString": "Available again in {Time}",
+      "LocalizedString": "Available again in {Time}"
+    },
+    "_aaaballdebhlfnaameeje": {
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Panel_CancelWagerTitleText",
+        "SourceString": "Cancel wager?",
+        "LocalizedString": "Cancel wager?"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Panel_CancelWagerStakeLostFormat",
+        "SourceString": "The {Amount} stake will be lost.",
+        "LocalizedString": "The {Amount} stake will be lost."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+              "Key": "Panel_KeepWagerText",
+              "SourceString": "Keep wager",
+              "LocalizedString": "Keep wager"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+              "Key": "Panel_CancelWagerText",
+              "SourceString": "Cancel wager",
+              "LocalizedString": "Cancel wager"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaabfcmdfghnephokacfh": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Objective.Added"
+    },
+    "_aaabccjkbkahmnnoanhic": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "_aaabebgjlcmajlppopnnb": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "_aaabfdmnoefbcobnmnbbn": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Objective.Added"
+    },
+    "_aaabgfpjepcfgnanifkpn": {
+      "TagName": "Audio.Event.UI.Vendor.Unlock.Fail"
+    },
+    "_aaabfmfbiiiiinidafake": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Create.New"
+    },
+    "PageTextFormat": {
+      "Namespace": "",
+      "Key": "3B9E7C1A5F2D48C6A0E4B87D19F63C52",
+      "SourceString": "PG.{Page} //",
+      "LocalizedString": "PG.{Page} //"
+    }
+  }
+}

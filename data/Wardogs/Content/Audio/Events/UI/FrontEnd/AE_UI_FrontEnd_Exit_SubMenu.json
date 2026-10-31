@@ -1,0 +1,69 @@
+--- export: UObject / AEB_DeactivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_DeactivateControlBusMix_C",
+  "Name": "AEB_DeactivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.AEB_DeactivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Exit_SubMenu'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_SubMenu.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_DeactivateControlBusMix_C'Default__AEB_DeactivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DeactivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_UIScene'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_UIScene.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Exit_SubMenu ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Exit_SubMenu",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_SubMenu",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.Close.SubMenu"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_FrontEnd_Exit_SubMenu:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_SubMenu.2"
+      },
+      {
+        "ObjectName": "AEB_DeactivateControlBusMix_C'AE_UI_FrontEnd_Exit_SubMenu:AEB_DeactivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_SubMenu.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Exit_SubMenu'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_SubMenu.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_FrontEnd_General_Select'",
+      "ObjectPath": "/Game/Audio/UI/FrontEnd/MSS_UI_FrontEnd_General_Select.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bSourceObjectInstanced": false
+  }
+}

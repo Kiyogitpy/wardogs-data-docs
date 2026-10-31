@@ -1,0 +1,74 @@
+--- export: UDataAsset / WE_TNK_04 ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_TNK_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/TNK_04/Weapons/WeaponExtensions/WE_TNK_04",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.TNK_04.Default"
+    },
+    "WeaponItemId": {
+      "TagName": "ID.Item.VehicleTurret_TNK_04"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.TNK_04.Turret"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.Heavy"
+      }
+    },
+    "WeaponExtensionName": "Heavy Turret",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_TNK_04_Weapon_Stats'",
+      "ObjectPath": "/TNK_04/Weapons/WeaponExtensions/DA_TNK_04_Weapon_Stats.0"
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 4.0,
+      "bHasAdditionalReloadTime": true,
+      "AdditionalReloadTimes": [
+        {
+          "Key": {
+            "TagName": "State.Player.Vehicle.Role.Driver"
+          },
+          "Value": 3.0
+        },
+        {
+          "Key": {
+            "TagName": "State.Player.Vehicle.Role.Gunner"
+          },
+          "Value": 3.0
+        }
+      ],
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "ID.Item.125x570mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.125x570mm"
+    },
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "ID.Item.125x570mm"
+        },
+        "Value": 9
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_TNK_04_Weapon_Audio'",
+      "ObjectPath": "/TNK_04/Weapons/WeaponExtensions/DA_TNK_04_Weapon_Audio.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_TankCannon_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_TankCannon.1"
+    }
+  }
+}

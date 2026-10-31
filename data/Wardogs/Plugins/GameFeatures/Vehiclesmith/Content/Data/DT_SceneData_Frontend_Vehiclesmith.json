@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_SceneData_Frontend_Vehiclesmith ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Frontend_Vehiclesmith",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Vehiclesmith/Data/DT_SceneData_Frontend_Vehiclesmith",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Frontend.Vehiclesmith": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 1,
+        "WidgetClass": {
+          "AssetPathName": "/Vehiclesmith/UI/Scene/W_VehiclesmithScene.W_VehiclesmithScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/VehiclesmithRuntime.WDUIVehiclesmithSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Vehiclesmith/UI/Scene/Data/DA_Vehiclesmith_Scene.DA_Vehiclesmith_Scene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Vehiclesmith"
+      }
+    }
+  }
+}

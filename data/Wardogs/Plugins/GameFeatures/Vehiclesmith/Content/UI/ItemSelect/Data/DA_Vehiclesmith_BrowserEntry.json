@@ -1,0 +1,23 @@
+--- export: UDataAsset / DA_Vehiclesmith_BrowserEntry ---
+{
+  "Type": "WDUIItemsmithBrowserItemData",
+  "Name": "DA_Vehiclesmith_BrowserEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithBrowserItemData'",
+  "Package": "/Vehiclesmith/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry",
+  "Properties": {
+    "EntryIconStretchRule": "EStretch::ScaleToFitX",
+    "IconType": {
+      "TagName": "UI.Icon.Vendor"
+    },
+    "ItemIconLoadingTexture": {
+      "ObjectName": "Texture2D'T_UI_Empty'",
+      "ObjectPath": "/Game/UI/Shared/Textures/T_UI_Empty.0"
+    },
+    "DefaultPersistentActions": [
+      {
+        "TagName": "Itemsmith.Actions.Persistent.Favourite"
+      }
+    ]
+  }
+}

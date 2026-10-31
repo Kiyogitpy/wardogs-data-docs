@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_WHL_07_Interactions_ArmouredBattle ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_07_Interactions_ArmouredBattle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_Interactions_ArmouredBattle",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Interactions"
+    ],
+    "Fragments": [
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_WHL_07_Interactions_ArmouredBattle:WD_MVF_Interactions_0'",
+            "ObjectPath": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_Interactions_ArmouredBattle.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Interactions_ArmouredBattle'",
+    "ObjectPath": "/WHL_07_ArmouredBattle/Parts/VP_WHL_07_Interactions_ArmouredBattle.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/WHL_07_ArmouredBattle/Data/ArmouredBattleUral/DA_VehicleInteractions_WHL_07_ArmouredBattleNew.DA_VehicleInteractions_WHL_07_ArmouredBattleNew",
+      "SubPathString": ""
+    }
+  }
+}

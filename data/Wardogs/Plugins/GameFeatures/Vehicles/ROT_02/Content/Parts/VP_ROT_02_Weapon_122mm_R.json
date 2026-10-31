@@ -1,0 +1,159 @@
+--- export: UPrimaryDataAsset / VP_ROT_02_Weapon_122mm_R ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_02_Weapon_122mm_R",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R",
+  "Properties": {
+    "Tags": [
+      "Id.Vehicle.WeaponExtension"
+    ],
+    "Fragments": [
+      {
+        "Key": "RocketLauncherR",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_ROT_02_Weapon_122mm_R:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.1"
+          }
+        }
+      },
+      {
+        "Key": "RocketLauncherL",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_02_Weapon_122mm_R:MVF_StaticMesh_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.2"
+          }
+        }
+      },
+      {
+        "Key": "WeaponInventory",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_ROT_02_Weapon_122mm_R:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.3"
+          }
+        }
+      },
+      {
+        "Key": "WeaponExtension",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_ROT_02_Weapon_122mm_R:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.4"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_122mm_R'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "weaponInnerR_J"
+      },
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "WeaponExtension"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/ROT_02/Meshes/Components/Mount/SKM_ROT_02_MisslePods_01a.SKM_ROT_02_MisslePods_01a",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_122mm_R'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "weaponInnerL_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_02/Meshes/Components/Mount/SM_ROT_02_MisslePods_01a.SM_ROT_02_MisslePods_01a",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_122mm_R'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/ROT_02/ID_VehicleHelicopterRockets.ID_VehicleHelicopterRockets",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_02_Weapon_122mm_R'",
+    "ObjectPath": "/ROT_02/Parts/VP_ROT_02_Weapon_122mm_R.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "WeaponExtension",
+    "WeaponDataAsset": {
+      "AssetPathName": "/ROT_02/Weapons/122mm/W_ROT_02_122mm.W_ROT_02_122mm",
+      "SubPathString": ""
+    },
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Driver"
+      ]
+    },
+    "AllowList": [
+      0
+    ]
+  }
+}

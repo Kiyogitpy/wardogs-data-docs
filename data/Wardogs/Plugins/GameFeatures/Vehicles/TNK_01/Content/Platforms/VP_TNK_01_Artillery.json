@@ -1,0 +1,748 @@
+--- export: UPrimaryDataAsset / VP_TNK_01_Artillery ---
+{
+  "Type": "ModularVehiclePlatform",
+  "Name": "VP_TNK_01_Artillery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePlatform'",
+  "Package": "/TNK_01/Platforms/VP_TNK_01_Artillery",
+  "Properties": {
+    "ImplementationClass": {
+      "AssetPathName": "/TNK_01/Blueprints/B_TNK_01.B_TNK_01_C",
+      "SubPathString": ""
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -534.0774,
+        "Y": -175.70679,
+        "Z": -3.687144
+      },
+      "Max": {
+        "X": 734.8396,
+        "Y": 181.2888,
+        "Z": 345.6961
+      }
+    },
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_TNK_01_Artillery:WD_MVF_Seats_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.3"
+          }
+        }
+      },
+      {
+        "Key": "Chassis",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_TNK_01_Artillery:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.4"
+          }
+        }
+      },
+      {
+        "Key": "MainBody",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_Artillery:MVF_StaticMesh_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.5"
+          }
+        }
+      },
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_TNK_01_Artillery:MVF_VehicleConfig_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.6"
+          }
+        }
+      },
+      {
+        "Key": "StorageInventorySlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_TNK_01_Artillery:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.9"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_TNK_01_Artillery:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.11"
+          }
+        }
+      },
+      {
+        "Key": "Destruction",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_DestructionInvokerFragment'VP_TNK_01_Artillery:WD_MVF_DestructionInvokerFragment_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.7"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_TNK_01_Artillery:WD_MVF_Interactions_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.8"
+          }
+        }
+      },
+      {
+        "Key": "Health",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_HealthSections'VP_TNK_01_Artillery:MVF_HealthSections_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.2"
+          }
+        }
+      },
+      {
+        "Key": "Stabilization",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_TrackedStabilizationFragment'VP_TNK_01_Artillery:WD_MVF_TrackedStabilizationFragment_1'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.10"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "MainTurret",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_TNK_01_Artillery:ModularVehicleSlot_0'",
+            "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_0 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/TNK_01/Parts/Artillery/VP_TNK_01_Turret_Artillery.VP_TNK_01_Turret_Artillery",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "ID.Vehicle.Turret.TNK_01.Artillery"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_HealthSections_0 ---
+{
+  "Type": "MVF_HealthSections",
+  "Name": "MVF_HealthSections_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_HealthSections'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "HealthSections": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health"
+        },
+        "Value": {
+          "MaxHealth": 650.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.MainBody"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.05,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Engine"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Engine"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.FuelTank"
+        },
+        "Value": {
+          "MaxHealth": 100.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.FuelTank"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.FuelTank"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.FuelTank"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Engine"
+        },
+        "Value": {
+          "MaxHealth": 150.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Engine"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Body"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Body"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+        },
+        "Value": {
+          "MaxHealth": 125.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Tracks.Left"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.5,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": true,
+          "SimultaneousDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Tracks.Left"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Tracks.Left"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+        },
+        "Value": {
+          "MaxHealth": 125.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Tracks.Right"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.5,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": true,
+          "SimultaneousDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 1.0,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Tracks.Right"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Tracks.Right"
+          }
+        }
+      }
+    ],
+    "ComplexSurfaceMappings": {
+      "SurfaceGroups": [
+        {
+          "Key": {
+            "TagName": "ComplexSurface.Group.Default"
+          },
+          "Value": {
+            "bUseDefault": true,
+            "Default": {
+              "TagName": "Attribute.Gameplay.Health"
+            },
+            "SlotMap": [
+              {
+                "Key": "CC_FuelTank",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.FuelTank"
+                }
+              },
+              {
+                "Key": "CC_Engine",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Engine"
+                }
+              },
+              {
+                "Key": "CC_Tracks_L",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+                }
+              },
+              {
+                "Key": "CC_Tracks_R",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+                }
+              },
+              {
+                "Key": "CC_MainBody",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WD_MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "WD_MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/TNK_01/Data/Artillery/DA_TNK_01_Artillery_SeatSettings.DA_TNK_01_Artillery_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "Tags": [
+        "Chassis"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/TNK_01/Mesh/TNK_02/SK/SK_TNK_02.SK_TNK_02",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/TNK_01/Animation/Blueprints/ABP_TNK_01_Artillery.ABP_TNK_01_Artillery_C",
+      "SubPathString": ""
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "body_J"
+      },
+      "Tags": [
+        "MainBody",
+        "BrakeLight"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/TNK_01/Mesh/TNK_02/SM/SM_TNK_02_Body.SM_TNK_02_Body",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy",
+        "Profile": "IgnoreOnlyPawn"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/TNK_01/Config/DA_Config_TNK_01_Artillery.DA_Config_TNK_01_Artillery",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_DestructionInvokerFragment_0 ---
+{
+  "Type": "WD_MVF_DestructionInvokerFragment",
+  "Name": "WD_MVF_DestructionInvokerFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_DestructionInvokerFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "VehicleCollisionCentre": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 152.1
+    },
+    "VehicleCollisionExtents": {
+      "X": 675.0,
+      "Y": 286.0,
+      "Z": 198.0
+    },
+    "DamageRecievedWhenChunkDestroyed": 3.0,
+    "CounterForceMultiplier": 5.0,
+    "VehicleMass": 1900.0,
+    "VelocityOffsetMultiplier": 0.25
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/TNK_01/Data/Artillery/DA_VehicleInteractions_TNK_01_Artillery.DA_VehicleInteractions_TNK_01_Artillery",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Storage/ID_VehicleStorageLarge.ID_VehicleStorageLarge",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_TrackedStabilizationFragment_1 ---
+{
+  "Type": "WD_MVF_TrackedStabilizationFragment",
+  "Name": "WD_MVF_TrackedStabilizationFragment_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_TrackedStabilizationFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "StabilizationData": {
+      "StabilizationStateDefinitions": [
+        {
+          "StabilizingStateTag": {
+            "TagName": "State.Vehicle.Stabilization.Stabilized"
+          },
+          "ChangingStateTag": {
+            "TagName": "State.Vehicle.Stabilization.Stabilizing"
+          },
+          "AddedTagsOnState": [],
+          "AddedTagsOnChange": [
+            "Vehicle.Movement.Disabled.Stabilized"
+          ],
+          "TagsTextMappings": [
+            {
+              "StabilizingStateTag": {
+                "TagName": "State.Vehicle.Stabilization.Stabilized"
+              },
+              "DisplayName": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehiclesStabilizing.STRINGS_VehiclesStabilizing",
+                "Key": "Vehicle.StabilzingState.Stabilized",
+                "SourceString": "Stabilized",
+                "LocalizedString": "Stabilized"
+              }
+            },
+            {
+              "StabilizingStateTag": {
+                "TagName": "State.Vehicle.Stabilization.Stabilizing"
+              },
+              "DisplayName": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehiclesStabilizing.STRINGS_VehiclesStabilizing",
+                "Key": "Vehicle.StabilzingState.Stabilizing",
+                "SourceString": "STABILIZING",
+                "LocalizedString": "STABILIZING"
+              }
+            }
+          ],
+          "ChangeTime": 2.0
+        },
+        {
+          "StabilizingStateTag": {
+            "TagName": "State.Vehicle.Stabilization.Unstabilized"
+          },
+          "ChangingStateTag": {
+            "TagName": "State.Vehicle.Stabilization.Unstabilizing"
+          },
+          "AddedTagsOnState": [],
+          "AddedTagsOnChange": [],
+          "TagsTextMappings": [
+            {
+              "StabilizingStateTag": {
+                "TagName": "State.Vehicle.Stabilization.Unstabilized"
+              },
+              "DisplayName": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehiclesStabilizing.STRINGS_VehiclesStabilizing",
+                "Key": "Vehicle.StabilzingState.Unstabilized",
+                "SourceString": "Unstabilized",
+                "LocalizedString": "Unstabilized"
+              }
+            },
+            {
+              "StabilizingStateTag": {
+                "TagName": "State.Vehicle.Stabilization.Unstabilizing"
+              },
+              "DisplayName": {
+                "TableId": "/Game/UI/StringTables/STRINGS_VehiclesStabilizing.STRINGS_VehiclesStabilizing",
+                "Key": "Vehicle.StabilzingState.Unstabilizing",
+                "SourceString": "UNSTABILIZING",
+                "LocalizedString": "UNSTABILIZING"
+              }
+            }
+          ],
+          "ChangeTime": 1.0
+        }
+      ],
+      "StabilizationCueTag": {
+        "TagName": "GameplayCue.Vehicle.Stabilizing"
+      },
+      "StabilizationChangeCompleteCueTag": {
+        "TagName": "GameplayCue.Vehicle.Stabilizing.Complete"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_TNK_01_Artillery'",
+    "ObjectPath": "/TNK_01/Platforms/VP_TNK_01_Artillery.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/TNK_01/Data/Artillery/DA_TNK_02_Stats.DA_TNK_02_Stats",
+      "SubPathString": ""
+    }
+  }
+}

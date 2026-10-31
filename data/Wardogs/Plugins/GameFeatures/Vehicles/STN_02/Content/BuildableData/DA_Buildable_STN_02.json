@@ -1,0 +1,115 @@
+--- export: UDataAsset / DA_Buildable_STN_02 ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_STN_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/STN_02/BuildableData/DA_Buildable_STN_02",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDVehicleBuildSpawner'DA_Buildable_STN_02:WDVehicleBuildSpawner_0'",
+      "ObjectPath": "/STN_02/BuildableData/DA_Buildable_STN_02.1"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.Phalanx"
+    },
+    "Cost": 1200,
+    "_aaabkhhnlcojdebfcnjfd": 1.25,
+    "RepairSpeedMultiplier": 100.0,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.Phalanx",
+      "SourceString": "Vanguard CIWS",
+      "LocalizedString": "Vanguard CIWS"
+    },
+    "MaxHealth": 5000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 6,
+    "PlacementFlags": 9,
+    "PlacePivotVerticalOffset": 110.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Phalanx.SM_Foundation_Phalanx",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Phalanx_Stages'",
+      "ObjectPath": "/STN_02/BuildableData/DA_Phalanx_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -324.8781,
+        "Y": -348.6623,
+        "Z": -99.04817
+      },
+      "Max": {
+        "X": 323.1031,
+        "Y": 318.90594,
+        "Z": 572.1755
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_Default_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/Audio/DA_Buildable_Default_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.Phalanx"
+    }
+  }
+}
+--- export: UObject / WDVehicleBuildSpawner_0 ---
+{
+  "Type": "WDVehicleBuildSpawner",
+  "Name": "WDVehicleBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_STN_02'",
+    "ObjectPath": "/STN_02/BuildableData/DA_Buildable_STN_02.0"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_StationaryVehicle_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable_StationaryVehicle.2"
+    },
+    "VehicleTag": {
+      "TagName": "Vehicle.Variant.Stationary.Phalanx"
+    }
+  }
+}

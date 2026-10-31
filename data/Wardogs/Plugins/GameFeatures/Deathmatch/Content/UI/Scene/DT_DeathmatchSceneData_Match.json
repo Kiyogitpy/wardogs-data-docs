@@ -1,0 +1,57 @@
+--- export: UDataTable / DT_DeathmatchSceneData_Match ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DeathmatchSceneData_Match",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Deathmatch/UI/Scene/DT_DeathmatchSceneData_Match",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Deathmatch.WeaponSelect": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Deathmatch/UI/Scene/Widgets/W_DeathmatchWeaponSelectScene.W_DeathmatchWeaponSelectScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/DeathmatchRuntime.WDUIDeathmatchWeaponSelectViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Deathmatch/UI/Scene/DA_WeaponSelectData.DA_WeaponSelectData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Deathmatch.WeaponSelect"
+      }
+    }
+  }
+}

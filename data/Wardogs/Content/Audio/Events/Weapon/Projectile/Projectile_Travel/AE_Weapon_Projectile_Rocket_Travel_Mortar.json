@@ -1,0 +1,82 @@
+--- export: UObject / AEB_UpdateProjectileSoundLocation_C_0 ---
+{
+  "Type": "AEB_HandleProjectileSimulation_C",
+  "Name": "AEB_UpdateProjectileSoundLocation_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_HandleProjectileSimulation.AEB_HandleProjectileSimulation_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_Mortar'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_HandleProjectileSimulation_C'Default__AEB_HandleProjectileSimulation_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_HandleProjectileSimulation.0"
+  }
+}
+--- export: UObject / AEB_HandleRocketIncoming_C_0 ---
+{
+  "Type": "AEB_HandleRocketIncoming_C",
+  "Name": "AEB_HandleRocketIncoming_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_HandleRocketIncoming.AEB_HandleRocketIncoming_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_Mortar'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_HandleRocketIncoming_C'Default__AEB_HandleRocketIncoming_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_HandleRocketIncoming.0"
+  },
+  "Properties": {
+    "IncomingSound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Projectile_Mortar_Incoming_Preset'",
+      "ObjectPath": "/Game/Audio/Weapon/Projectile/Mortar/MSS_Weapon_Projectile_Mortar_Incoming_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket.Incoming"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Rocket_Travel_Mortar ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Rocket_Travel_Mortar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Projectile.Rocket.Travel.Mortar"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_HandleProjectileSimulation_C'AE_Weapon_Projectile_Rocket_Travel_Mortar:AEB_UpdateProjectileSoundLocation_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Projectile_Rocket_Travel_Mortar:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar.3"
+      },
+      {
+        "ObjectName": "AEB_HandleRocketIncoming_C'AE_Weapon_Projectile_Rocket_Travel_Mortar:AEB_HandleRocketIncoming_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Rocket_Travel_Mortar'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Projectile/Projectile_Travel/AE_Weapon_Projectile_Rocket_Travel_Mortar.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket"
+    }
+  }
+}

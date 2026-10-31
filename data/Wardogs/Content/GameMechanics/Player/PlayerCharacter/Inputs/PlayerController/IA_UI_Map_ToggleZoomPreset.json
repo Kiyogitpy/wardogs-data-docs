@@ -1,0 +1,33 @@
+--- export: UDataAsset / IA_UI_Map_ToggleZoomPreset ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_UI_Map_ToggleZoomPreset",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Map_ToggleZoomPreset",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.UI.Minimap.ToggleZoomPreset"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_UI_Map_ToggleZoomPreset:InputTriggerTap_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Map_ToggleZoomPreset.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_UI_Map_ToggleZoomPreset'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Map_ToggleZoomPreset.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.49
+  }
+}

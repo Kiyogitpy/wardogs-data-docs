@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_Player_FastSwim_Toggle ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Player_FastSwim_Toggle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_FastSwim_Toggle",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.FastSwim.Toggle"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Player_FastSwim_Toggle:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_FastSwim_Toggle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Player_FastSwim_Toggle'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_FastSwim_Toggle.0"
+  }
+}

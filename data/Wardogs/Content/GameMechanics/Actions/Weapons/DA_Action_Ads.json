@@ -1,0 +1,129 @@
+--- export: UPrimaryDataAsset / DA_Action_ADS ---
+{
+  "Type": "WDActionDefinition",
+  "Name": "DA_Action_ADS",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Weapons/DA_Action_Ads",
+  "Properties": {
+    "ActionEffects": [
+      {
+        "Key": "GameplayEffect_ADS",
+        "Value": {
+          "ObjectName": "BlueprintGeneratedClass'GE_ADS_C'",
+          "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_ADS.0"
+        }
+      }
+    ],
+    "ActionTag": {
+      "TagName": "Action.Weapon.ADS"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Ads_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Weapons/B_Action_Ads.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::InterruptOnComplete",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptOnComplete",
+          "ActionResponses": [
+            "Action.Player.Focus"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect",
+            "Action.Player.ChangeToNextQuickSlot",
+            "Action.Player.AccessRadialWheel"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Block.MenuOpen"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptBuffered",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptBuffered",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::BlockCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [
+            "Action.Context.Emote"
+          ],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

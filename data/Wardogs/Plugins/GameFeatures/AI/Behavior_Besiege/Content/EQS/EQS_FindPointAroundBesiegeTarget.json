@@ -1,0 +1,196 @@
+--- export: UDataAsset / EQS_FindPointAroundBesiegeTarget ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindPointAroundBesiegeTarget",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget",
+  "Properties": {
+    "QueryName": "EQS_FindPointAroundBesiegeTarget",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindPointAroundBesiegeTarget:EnvQueryOption_0'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_SD_Donut_0 ---
+{
+  "Type": "EnvQueryGenerator_SD_Donut",
+  "Name": "EnvQueryGenerator_SD_Donut_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_SD_Donut'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPointAroundBesiegeTarget'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.0"
+  },
+  "Properties": {
+    "SpacingMethod": "ESpacingMethod::DistanceBetweenPoints",
+    "DistanceBetweenPoints": {
+      "DefaultValue": 500
+    },
+    "InnerRadius": {
+      "DefaultValue": 200.0
+    },
+    "OuterRadius": {
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_VolumeSize'EQS_FindPointAroundBesiegeTarget:EnvQueryGenerator_SD_Donut_0.WDAIDataProvider_VolumeSize_0'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.7"
+      },
+      "DataField": "DataValue"
+    },
+    "Center": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceMode": "EEnvQueryTrace::Navigation"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPointAroundBesiegeTarget'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_SD_Donut'EQS_FindPointAroundBesiegeTarget:EnvQueryGenerator_SD_Donut_0'",
+      "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_PathfindingBatch'EQS_FindPointAroundBesiegeTarget:EnvQueryTest_PathfindingBatch_0'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.5"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindPointAroundBesiegeTarget:EnvQueryTest_Distance_1'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindPointAroundBesiegeTarget:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.3"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Volume'EQS_FindPointAroundBesiegeTarget:EnvQueryTest_Volume_0'",
+        "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.6"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPointAroundBesiegeTarget'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_FriendsMovementLocations_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/BP_EnvQueryContext_FriendsMovementLocations.0"
+    },
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_1 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPointAroundBesiegeTarget'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "TestOrder": 1,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_PathfindingBatch_0 ---
+{
+  "Type": "EnvQueryTest_PathfindingBatch",
+  "Name": "EnvQueryTest_PathfindingBatch_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_PathfindingBatch'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPointAroundBesiegeTarget'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.0"
+  },
+  "Properties": {
+    "SkipUnreachable": {
+      "DefaultValue": false
+    },
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FloatValueMin": {
+      "DefaultValue": 100.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Volume_0 ---
+{
+  "Type": "EnvQueryTest_Volume",
+  "Name": "EnvQueryTest_Volume_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Volume'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPointAroundBesiegeTarget'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.0"
+  },
+  "Properties": {
+    "VolumeContext": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "VolumeClass": {
+      "ObjectName": "Class'WDTargetAreaVolume'",
+      "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+    },
+    "TestOrder": 3,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "VerNum": 2
+  }
+}
+--- export: UObject / WDAIDataProvider_VolumeSize_0 ---
+{
+  "Type": "WDAIDataProvider_VolumeSize",
+  "Name": "WDAIDataProvider_VolumeSize_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_VolumeSize'",
+  "Outer": {
+    "ObjectName": "EnvQueryGenerator_SD_Donut'EQS_FindPointAroundBesiegeTarget:EnvQueryGenerator_SD_Donut_0'",
+    "ObjectPath": "/Behavior_Besiege/EQS/EQS_FindPointAroundBesiegeTarget.1"
+  },
+  "Properties": {
+    "VolumeContext": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    }
+  }
+}

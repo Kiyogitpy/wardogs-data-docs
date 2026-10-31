@@ -1,0 +1,35 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Drone_Fuel_Low_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Drone_Fuel_Low_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Low_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Projectile.Fuel.Low.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Weapon_Projectile_Drone_Fuel_Low_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Low_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Drone_Fuel_Low_Stop'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Drone_Fuel_Low_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Fuel"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+--- export: UDataTable / DT_CurrenciesDefinitions ---
+{
+  "Type": "DataTable",
+  "Name": "DT_CurrenciesDefinitions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCurrencyDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Attribute.Meta.Currency.Cash": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "7AA881BE49C2155CBD4E2DBEF80B9E2D",
+        "SourceString": "Cash",
+        "LocalizedString": "Cash"
+      },
+      "InitialBalance": 10000,
+      "Tag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      }
+    },
+    "Attribute.Meta.Currency.GoldBars": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "8E28344E41B9D5159E2A82AA1EFBDC6D",
+        "SourceString": "Gold Bars",
+        "LocalizedString": "Gold Bars"
+      },
+      "InitialBalance": 0,
+      "Tag": {
+        "TagName": "Attribute.Meta.Currency.GoldBars"
+      }
+    }
+  }
+}

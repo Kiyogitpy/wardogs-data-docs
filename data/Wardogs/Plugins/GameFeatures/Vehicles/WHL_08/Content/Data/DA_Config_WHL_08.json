@@ -1,0 +1,188 @@
+--- export: UPrimaryDataAsset / DA_Config_WHL_08 ---
+{
+  "Type": "MWheeledVehicleConfigDataAsset",
+  "Name": "DA_Config_WHL_08",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MWheeledVehicleConfigDataAsset'",
+  "Package": "/WHL_08/Data/DA_Config_WHL_08",
+  "Properties": {
+    "CharacteristicsDataAsset": {
+      "ObjectName": "MWheeledVehicleCharacteristicsDataAsset'DA_Characteristics_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_Characteristics_WHL_08.0"
+    },
+    "EngineTransmissionDataAsset": {
+      "ObjectName": "MWheeledVehicleEngineTransmissionDataAsset'DA_EngineTransmission_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_EngineTransmission_WHL_08.0"
+    },
+    "AxleDataAssets": [
+      {
+        "ObjectName": "MWheeledVehicleAxlesDataAsset'DA_FrontAxle_WHL_08'",
+        "ObjectPath": "/WHL_08/Data/AxleData/DA_FrontAxle_WHL_08.0"
+      },
+      {
+        "ObjectName": "MWheeledVehicleAxlesDataAsset'DA_RearAxle_WHL_08'",
+        "ObjectPath": "/WHL_08/Data/AxleData/DA_RearAxle_WHL_08.0"
+      }
+    ],
+    "ArcadeDataAsset": {
+      "ObjectName": "MWheeledVehicleArcadeDataAsset'DA_ArcadeControls_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_ArcadeControls_WHL_08.0"
+    },
+    "InputDataAsset": {
+      "ObjectName": "MWheeledVehicleInputDataAsset'DA_Input_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_Input_WHL_08.0"
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_GameplaySystems_WHL_08.22"
+    },
+    "_aaabljnlghahlkidgdeii": {
+      "ObjectName": "MVehiclePredictionSettings_Wheeled'DA_PredictionSettings_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_PredictionSettings_WHL_08.0"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MLandVehicleSpringArmDataAsset'DA_TP_CameraBehaviour_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_TP_CameraBehaviour_WHL_08.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MLandVehicleSpringArmDataAsset'DA_FP_CameraBehaviour_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_FP_CameraBehaviour_WHL_08.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "MVehicleSensorsDataAsset'DA_VehicleSensors_WHL_08'",
+      "ObjectPath": "/WHL_08/Data/DA_VehicleSensors_WHL_08.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MLandInputControlsDataAsset'DA_WHL_08_InputControls'",
+      "ObjectPath": "/WHL_08/Data/DA_WHL_08_InputControls.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.4W"
+    },
+    "ExitVehicleDamageType": {
+      "ObjectName": "Class'WDImpactDamageType'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.WHL_08"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.WHL_08"
+    },
+    "MovingGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Moving.WHL_08"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.WHL_08"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.WHL_08"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter.WHL_08"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit.WHL_08"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "UseHornGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Horn"
+    },
+    "ItemAddedToInventoryCueTag": {
+      "TagName": "GameplayCue.Vehicle.DepositSupplies"
+    },
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "VehicleFlipCheckThreshold": 120.0,
+    "EntryOffsetTolerance": 1000.0,
+    "VehicleConfigExtensions": [
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_WHL_08_Audio'",
+          "ObjectPath": "/WHL_08/Data/DA_WHL_08_Audio.0"
+        }
+      },
+      {
+        "Key": "SurfaceSlow",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Surface_Slow_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_Surface_Slow_WHL_08.0"
+        }
+      },
+      {
+        "Key": "SurfaceMedium",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Surface_Medium_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_Surface_Medium_WHL_08.0"
+        }
+      },
+      {
+        "Key": "SurfaceFast",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Surface_Fast_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_Surface_Fast_WHL_08.0"
+        }
+      },
+      {
+        "Key": "BrakingSurface",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_BrakingSurface_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_BrakingSurface_WHL_08.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceSlow",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Skidding_Slow_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_Skidding_Slow_WHL_08.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceMedium",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Skidding_Medium_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_Skidding_Medium_WHL_08.0"
+        }
+      },
+      {
+        "Key": "SkiddingSurfaceFast",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Skidding_Fast_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_Skidding_Fast_WHL_08.0"
+        }
+      },
+      {
+        "Key": "CBM",
+        "Value": null
+      },
+      {
+        "Key": "WheelSpinSurface",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_WheelSpinSurface_WHL_08'",
+          "ObjectPath": "/WHL_08/Audio/DA/DA_Vehicle_WheelSpinSurface_WHL_08.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_WHL_08_Destroyed'",
+      "ObjectPath": "/WHL_08/Meshes/SM_WHL_08_Destroyed.2"
+    },
+    "ThirdPersonSpringArmComponentTransform": {
+      "Translation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 115.0
+      }
+    },
+    "MovingEffectSpeedThreshold": 80.0
+  }
+}

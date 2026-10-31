@@ -1,0 +1,84 @@
+--- export: UDataAsset / DA_VaultPromptsBar ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_VaultPromptsBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/Frontend/Vault/Data/DA_VaultPromptsBar",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Generic.Backward"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings.STRINGS_Settings",
+          "Key": "Button.Back",
+          "SourceString": "Back",
+          "LocalizedString": "Back"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Vault.AutoSort"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+          "Key": "Prompt.Sort",
+          "SourceString": "Auto Sort",
+          "LocalizedString": "Auto Sort"
+        },
+        "IsHoldable": true,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Inventory.Rotate"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+          "Key": "Prompt.Rotate",
+          "SourceString": "Rotate Item",
+          "LocalizedString": "Rotate Item"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      }
+    ]
+  }
+}

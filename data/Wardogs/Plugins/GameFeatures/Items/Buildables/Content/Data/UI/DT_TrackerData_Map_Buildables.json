@@ -1,0 +1,135 @@
+--- export: UDataTable / DT_TrackerData_Map_Buildables ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_Buildables",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/UI/DT_TrackerData_Map_Buildables",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.FOB": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/UI/W_Tracker_Map_FOB.W_Tracker_Map_FOB_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIFobMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_Tracker_Map_FOB.DA_Tracker_Map_FOB",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.FOB"
+      }
+    },
+    "Trackers.Type.BuildableHotZoneMagnet": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Meta.Alignment.Faction",
+        "Trackers.Type.BuildableHotZoneMagnet"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/UI/W_Tracker_Map_BuildableHotZoneMagnet.W_Tracker_Map_BuildableHotZoneMagnet_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/HotZoneMagnetRuntime.WDUIHotZoneMagnetHitPointMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_Tracker_Map_BuildableHotZoneMagnet.DA_Tracker_Map_BuildableHotZoneMagnet",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableHotZoneMagnet"
+      }
+    },
+    "Trackers.Type.BuildableRefuelStation": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/UI/W_Tracker_Map_Buildable.W_Tracker_Map_Buildable_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildableMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_Tracker_Map_Buildable.DA_Tracker_Map_Buildable",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableRefuelStation"
+      }
+    },
+    "Trackers.Type.BuildableRepairStation": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables/Data/UI/W_Tracker_Map_Buildable.W_Tracker_Map_Buildable_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/BuildablesRuntime.WDUIBuildableMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables/Data/UI/DA_Tracker_Map_Buildable.DA_Tracker_Map_Buildable",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableRepairStation"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+--- export: UPrimaryDataAsset / DA_Action_Vehicle_Horn ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Vehicle_Horn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Vehicle/Weapons/DA_Action_Vehicle_Horn",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Vehicle.Horn"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

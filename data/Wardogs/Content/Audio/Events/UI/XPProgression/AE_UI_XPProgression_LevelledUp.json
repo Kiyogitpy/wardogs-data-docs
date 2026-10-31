@@ -1,0 +1,95 @@
+--- export: UObject / AEB_XPProgression_PlayRoleLevelUp_C_0 ---
+{
+  "Type": "AEB_XPProgression_PlayRoleLevelUp_C",
+  "Name": "AEB_XPProgression_PlayRoleLevelUp_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_XPProgression_PlayRoleLevelUp.AEB_XPProgression_PlayRoleLevelUp_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_XPProgression_LevelledUp'",
+    "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_LevelledUp.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_XPProgression_PlayRoleLevelUp_C'Default__AEB_XPProgression_PlayRoleLevelUp_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_XPProgression_PlayRoleLevelUp.0"
+  },
+  "Properties": {
+    "Sound Map": [
+      {
+        "Key": {
+          "TagName": "Meta.Role.Infantry"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_LevelUp_Infantry_Preset'",
+          "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_LevelUp_Infantry_Preset.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Role.Medic"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_LevelUp_Medic_Preset'",
+          "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_LevelUp_Medic_Preset.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Role.Recon"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_LevelUp_Recon_Preset'",
+          "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_LevelUp_Recon_Preset.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Role.Support"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_LevelUp_Support_Preset'",
+          "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_LevelUp_Support_Preset.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Role.Driver"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_LevelUp_Driver_Preset'",
+          "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_LevelUp_Driver_Preset.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Role.Pilot"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_UI_EndGame_XP_LevelUp_Pilot_Preset'",
+          "ObjectPath": "/Game/Audio/UI/EndGame/XP/MSS_UI_EndGame_XP_LevelUp_Pilot_Preset.0"
+        }
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.XPProgression.LevelledUp"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_XPProgression_LevelledUp ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_XPProgression_LevelledUp",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_LevelledUp",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.XPProgression.LevelledUp"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_XPProgression_PlayRoleLevelUp_C'AE_UI_XPProgression_LevelledUp:AEB_XPProgression_PlayRoleLevelUp_C_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/XPProgression/AE_UI_XPProgression_LevelledUp.0"
+      }
+    ]
+  }
+}

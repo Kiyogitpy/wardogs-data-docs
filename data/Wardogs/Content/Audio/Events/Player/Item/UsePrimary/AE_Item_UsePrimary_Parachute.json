@@ -1,0 +1,70 @@
+--- export: UPrimaryDataAsset / AE_Item_UsePrimary_Parachute ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_UsePrimary_Parachute",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/UsePrimary/AE_Item_UsePrimary_Parachute",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.UsePrimary.Parachute"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Item_UsePrimary_Parachute:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/UsePrimary/AE_Item_UsePrimary_Parachute.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Item_UsePrimary_Parachute:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/UsePrimary/AE_Item_UsePrimary_Parachute.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 75.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_UsePrimary_Parachute'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/UsePrimary/AE_Item_UsePrimary_Parachute.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.Parachute.Use"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_UsePrimary_Parachute'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/UsePrimary/AE_Item_UsePrimary_Parachute.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Parachute.Deploy.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Parachute.Deploy.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Parachute.Deploy.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Item_Parachute_Use'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Parachute/DA/DA_Item_Parachute_Use.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.Parachute.Use"
+    },
+    "bStatic": true
+  }
+}

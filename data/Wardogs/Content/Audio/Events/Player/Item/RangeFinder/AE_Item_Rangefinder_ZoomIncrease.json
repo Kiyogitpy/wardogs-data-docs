@@ -1,0 +1,66 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_1 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Rangefinder_ZoomIncrease'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/RangeFinder/AE_Item_Rangefinder_ZoomIncrease.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Use"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldItemPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldItemPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Rangefinder_ZoomIncrease'",
+    "ObjectPath": "/Game/Audio/Events/Player/Item/RangeFinder/AE_Item_Rangefinder_ZoomIncrease.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Zoom.Increase"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Use"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Item_Rangefinder_ZoomIncrease ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Rangefinder_ZoomIncrease",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Item/RangeFinder/AE_Item_Rangefinder_ZoomIncrease",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.RangeFinder.ZoomIn"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Item_Rangefinder_ZoomIncrease:AEB_AttachSoundToHeldItem_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/RangeFinder/AE_Item_Rangefinder_ZoomIncrease.0"
+      },
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Item_Rangefinder_ZoomIncrease:AEB_PlayHeldItemPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Item/RangeFinder/AE_Item_Rangefinder_ZoomIncrease.1"
+      }
+    ]
+  }
+}

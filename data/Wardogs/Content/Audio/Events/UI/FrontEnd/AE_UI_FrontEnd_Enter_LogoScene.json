@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Enter_LogoScene ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Enter_LogoScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_LogoScene",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.LogoScene.Enter"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_FrontEnd_Enter_LogoScene:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_LogoScene.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Enter_LogoScene'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_LogoScene.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "SoundWave'SFX_UI_FrontEnd_BootScreenVideo'",
+      "ObjectPath": "/Game/Audio/UI/FrontEnd/Wavs/SFX_UI_FrontEnd_BootScreenVideo.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

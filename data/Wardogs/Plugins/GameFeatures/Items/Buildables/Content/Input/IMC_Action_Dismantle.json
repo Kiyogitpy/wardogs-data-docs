@@ -1,0 +1,106 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_Dismantle'",
+    "ObjectPath": "/Buildables/Input/IMC_Action_Dismantle.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+    },
+    "Name": "Input.NamedActions.HoldableItem.BuildTool.Dismantle"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_1 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_Dismantle'",
+    "ObjectPath": "/Buildables/Input/IMC_Action_Dismantle.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.PrimaryUse"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.HoldableItem.PrimaryUse"
+  }
+}
+--- export: UDataAsset / IMC_Action_Dismantle ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Action_Dismantle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Buildables/Input/IMC_Action_Dismantle",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BuildTool_Dismantle_Release'",
+            "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Dismantle_Release.0"
+          },
+          "Key": {
+            "KeyName": "V"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_Dismantle:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Buildables/Input/IMC_Action_Dismantle.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Action_Dismantle:WDDeadZoneInputModifier_1'",
+              "ObjectPath": "/Buildables/Input/IMC_Action_Dismantle.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_BuildTool_Dismantle_Release'",
+            "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Dismantle_Release.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_RightThumbstick"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_Dismantle:BHPlayerMappableKeySettings_1'",
+            "ObjectPath": "/Buildables/Input/IMC_Action_Dismantle.1"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_Dismantle'",
+    "ObjectPath": "/Buildables/Input/IMC_Action_Dismantle.2"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.RightTrigger.Max"
+    }
+  }
+}

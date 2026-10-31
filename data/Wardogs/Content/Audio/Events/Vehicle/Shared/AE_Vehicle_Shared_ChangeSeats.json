@@ -1,0 +1,73 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_ChangeSeats'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_ChangeSeats.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_ChangeSeats_Generic_1p'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/SwapSeat/MSS_Vehicle_Shared_ChangeSeats_Generic_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_ChangeSeats_Generic_3p'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/SwapSeat/MSS_Vehicle_Shared_ChangeSeats_Generic_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.ChangedSeat"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_ChangeSeats'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_ChangeSeats.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_ChangeSeats ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_ChangeSeats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_ChangeSeats",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.ChangedSeat"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Vehicle_Shared_ChangeSeats:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_ChangeSeats.0"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Shared_ChangeSeats:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_ChangeSeats.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 18.0
+  }
+}

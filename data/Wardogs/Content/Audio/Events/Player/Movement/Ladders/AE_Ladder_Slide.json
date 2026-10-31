@@ -1,0 +1,90 @@
+--- export: UPrimaryDataAsset / AE_Ladder_Slide ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Ladder_Slide",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Ladder.Slide"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'AE_Ladder_Slide:WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Ladder_Slide:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Ladder_Slide:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_Slide'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder.Slide"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_Slide'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide.0"
+  },
+  "Properties": {
+    "ParameterName": "Play",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder.Slide"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0 ---
+{
+  "Type": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware",
+  "Name": "WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Ladder_Slide'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Ladders/AE_Ladder_Slide.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Climb.Ladder.Slide.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Climb.Ladder.Slide.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.Climb.Ladder.Slide.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Ladder_Slide'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Ladder/DA/DA_Player_Ladder_Slide.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Ladder.Slide"
+    },
+    "bStatic": true
+  }
+}

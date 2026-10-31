@@ -1,0 +1,417 @@
+--- export: UDataAsset / DA_ControllerConfig_Button_Helicopter_Veteran ---
+{
+  "Type": "BHEnhancedInputPlayerBindsPresetData",
+  "Name": "DA_ControllerConfig_Button_Helicopter_Veteran",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHEnhancedInputPlayerBindsPresetData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran",
+  "Properties": {
+    "_aaabaicghomcadipfiemj": [
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Camera.HoldFreeLook"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Camera_HoldFreeLook'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_HoldFreeLook.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_RightShoulder"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Pedals"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Pedals'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Pedals.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftX"
+        },
+        "Triggers": [
+          {
+            "ObjectName": "InputTriggerHold'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerHold_1'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.3"
+          },
+          {
+            "ObjectName": "InputTriggerReleased'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerReleased_7'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.8"
+          }
+        ],
+        "Modifiers": [
+          {
+            "ObjectName": "WDDeadZoneInputModifier'DA_ControllerConfig_Button_Helicopter_Veteran:WDDeadZoneInputModifier_1'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.14"
+          },
+          {
+            "ObjectName": "WDApplyAxisConfig'DA_ControllerConfig_Button_Helicopter_Veteran:WDApplyAxisConfig_4'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.13"
+          }
+        ]
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Collective.Raise"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Collective'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Collective.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftStick_Up"
+        },
+        "Triggers": [
+          {
+            "ObjectName": "InputTriggerHold'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerHold_2'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.4"
+          },
+          {
+            "ObjectName": "InputTriggerReleased'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerReleased_8'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.9"
+          }
+        ],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Collective.Lower"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Collective'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Collective.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftStick_Down"
+        },
+        "Triggers": [
+          {
+            "ObjectName": "InputTriggerHold'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerHold_3'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.5"
+          },
+          {
+            "ObjectName": "InputTriggerReleased'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerReleased_9'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.10"
+          }
+        ],
+        "Modifiers": [
+          {
+            "ObjectName": "InputModifierNegate'DA_ControllerConfig_Button_Helicopter_Veteran:InputModifierNegate_1'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.1"
+          }
+        ]
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.MountedWeapon.Fire"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Use'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_RightTrigger"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Cyclic"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Cyclic'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Cyclic.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_Right2D"
+        },
+        "Triggers": [
+          {
+            "ObjectName": "InputTriggerHold'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerHold_4'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.6"
+          },
+          {
+            "ObjectName": "InputTriggerReleased'DA_ControllerConfig_Button_Helicopter_Veteran:InputTriggerReleased_6'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.7"
+          }
+        ],
+        "Modifiers": [
+          {
+            "ObjectName": "WDDeadZoneInputModifier'DA_ControllerConfig_Button_Helicopter_Veteran:WDDeadZoneInputModifier_3'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.15"
+          },
+          {
+            "ObjectName": "InputModifierSwizzleAxis'DA_ControllerConfig_Button_Helicopter_Veteran:InputModifierSwizzleAxis_0'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.2"
+          },
+          {
+            "ObjectName": "WDApplyAxisConfig'DA_ControllerConfig_Button_Helicopter_Veteran:WDApplyAxisConfig_3'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.12"
+          },
+          {
+            "ObjectName": "MInputBlocker'DA_ControllerConfig_Button_Helicopter_Veteran:MInputBlocker_0'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.11"
+          }
+        ]
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Camera.FreeLook"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Camera_FreeLook'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_FreeLook.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_Right2D"
+        },
+        "Triggers": [],
+        "Modifiers": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "_aaaboaooajonfjdipnbea": [
+      {
+        "AssetPathName": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_DriverGunner.IMC_RotaryVehicles_DriverGunner",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Game/Vehicles/Inputs/IMC_RotaryVehicles_Driver.IMC_RotaryVehicles_Driver",
+        "SubPathString": ""
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierNegate_1 ---
+{
+  "Type": "InputModifierNegate",
+  "Name": "InputModifierNegate_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierNegate'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  }
+}
+--- export: UObject / InputModifierSwizzleAxis_0 ---
+{
+  "Type": "InputModifierSwizzleAxis",
+  "Name": "InputModifierSwizzleAxis_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierSwizzleAxis'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  }
+}
+--- export: UObject / InputTriggerHold_1 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_2 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_3 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerHold_4 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_6 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_7 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_8 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_9 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_9",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / MInputBlocker_0 ---
+{
+  "Type": "MInputBlocker",
+  "Name": "MInputBlocker_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MInputBlocker'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  }
+}
+--- export: UObject / WDApplyAxisConfig_3 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "bIsGamepad": true
+  }
+}
+--- export: UObject / WDApplyAxisConfig_4 ---
+{
+  "Type": "WDApplyAxisConfig",
+  "Name": "WDApplyAxisConfig_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDApplyAxisConfig'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "bIsGamepad": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_1 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LookStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_3 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_Helicopter_Veteran'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/Helicopter/DA_ControllerConfig_Button_Helicopter_Veteran.0"
+  },
+  "Properties": {
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Centre"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.MaxInput"
+    },
+    "RadiusAxialThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.MoveStick.Axial"
+    },
+    "bInvertMaxThreshold": true
+  }
+}

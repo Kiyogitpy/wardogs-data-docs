@@ -1,0 +1,800 @@
+--- export: UDataTable / DT_ReconSkills ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ReconSkills",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/CharacterSkills/DT_ReconSkills",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMetaSkillEffectsTaggedTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Role.Recon.SniperKillFocusReset": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_GrantSkill_SniperKillFocusRefresh_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Skills/GE_GrantSkill_SniperKillFocusRefresh.0"
+                },
+                "CustomMagnitudes": [],
+                "AdditionalData": []
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.SniperKillFocusReset"
+      }
+    },
+    "Meta.Role.Recon.ReadyToFireSpeed.Sniper": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_ReadyToFirePlayRate_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_ReadyToFirePlayRate.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "ReadyToFireSpeed_Sniper"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Sniper"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.ReadyToFireSpeed.Sniper"
+      }
+    },
+    "Meta.Role.Recon.AimMoveSpeed.Sniper": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Aiming_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Aiming.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "AimMoveSpeed_Sniper"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Sniper"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.AimMoveSpeed.Sniper"
+      }
+    },
+    "Meta.Role.Recon.HorizontalRecoil.Sniper": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_Sniper"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Sniper"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.HorizontalRecoil.Sniper"
+      }
+    },
+    "Meta.Role.Recon.VerticalRecoil.Sniper": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "VerticalRecoil_Sniper"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Sniper"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.VerticalRecoil.Sniper"
+      }
+    },
+    "Meta.Role.Recon.AimDownSightSpeed.Sniper": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "AimDownSightSpeed_Sniper"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Sniper"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.AimDownSightSpeed.Sniper"
+      }
+    },
+    "Meta.Role.Recon.WeaponSwitchSpeed.ReconWeaponry": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_EquipSpeedMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_EquipSpeedMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "WeaponSwitchSpeed_ReconWeaponry"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Item.Archetype.Sniper"
+                          },
+                          {
+                            "TagName": "Item.Archetype.DMR"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          2,
+                          0,
+                          1
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Item.Archetype.Sniper, Item.Archetype.DMR )"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.WeaponSwitchSpeed.ReconWeaponry"
+      }
+    },
+    "Meta.Role.Recon.HorizontalRecoil.Marksman": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_HorizontalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_HorizontalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.HorizontalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "HorizontalRecoil_DMR"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.DMR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.HorizontalRecoil.Marksman"
+      }
+    },
+    "Meta.Role.Recon.VerticalRecoil.Marksman": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_VerticalRecoilMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_VerticalRecoilMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.VerticalRecoilMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "VerticalRecoil_DMR"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.DMR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.VerticalRecoil.Marksman"
+      }
+    },
+    "Meta.Role.Recon.AimDownSightSpeed.Marksman": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_AimTime_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_AimTime.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.AimTime"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "AimDownSightSpeed_DMR"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.DMR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.AimDownSightSpeed.Marksman"
+      }
+    },
+    "Meta.Role.Recon.ReadyToFireSpeed.Marksman": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_ReadyToFirePlayRate_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_ReadyToFirePlayRate.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "ReadyToFireSpeed_DMR"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Movement.ReadyToFirePlayRate"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.DMR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.ReadyToFireSpeed.Marksman"
+      }
+    },
+    "Meta.Role.Recon.AimMoveSpeed.Marksman": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Character.HeldItemUpdated"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Player_MaxSpeedMultiplier_Aiming_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Player/GE_Player_MaxSpeedMultiplier_Aiming.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Movement.MaxSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "AimMoveSpeed_DMR"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.DMR"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.AimMoveSpeed.Marksman"
+      }
+    },
+    "Meta.Role.Recon.WeaponSwitchSpeed.Pistol": {
+      "SkillEffects": [
+        {
+          "Key": {
+            "TagName": "Meta.Skill.Item"
+          },
+          "Value": {
+            "SkillEffects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_Weapon_EquipSpeedMultiplier_C'",
+                  "ObjectPath": "/Game/GameMechanics/GameplayEffects/Weapons/GE_Weapon_EquipSpeedMultiplier.0"
+                },
+                "CustomMagnitudes": [
+                  {
+                    "Key": {
+                      "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                    },
+                    "Value": {
+                      "Value": 1.0,
+                      "Curve": {
+                        "CurveTable": {
+                          "ObjectName": "CurveTable'CT_ReconSkills'",
+                          "ObjectPath": "/Game/Meta/CharacterSkills/CT_ReconSkills.0"
+                        },
+                        "RowName": "WeaponSwitchSpeed_Pistol"
+                      },
+                      "RegistryType": {
+                        "Name": "None"
+                      }
+                    }
+                  }
+                ],
+                "AdditionalData": [
+                  {
+                    "DefaultAttributes": [
+                      {
+                        "Key": {
+                          "TagName": "Attribute.Gameplay.Weapon.EquipSpeedMultiplier"
+                        },
+                        "Value": 1.0
+                      }
+                    ]
+                  },
+                  {
+                    "ItemApplicationRequirements": {
+                      "RequireTags": [
+                        "Item.Archetype.Pistol"
+                      ],
+                      "IgnoreTags": [],
+                      "TagQuery": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [],
+                        "QueryTokenStream": [],
+                        "UserDescription": "",
+                        "AutoDescription": ""
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Role.Recon.WeaponSwitchSpeed.Pistol"
+      }
+    }
+  }
+}

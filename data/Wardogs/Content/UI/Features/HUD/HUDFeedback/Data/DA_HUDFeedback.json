@@ -1,0 +1,776 @@
+--- export: UDataAsset / DA_HUDFeedback ---
+{
+  "Type": "WDUIHUDFeedbackData",
+  "Name": "DA_HUDFeedback",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIHUDFeedbackData'",
+  "Package": "/Game/UI/Features/HUD/HUDFeedback/Data/DA_HUDFeedback",
+  "Properties": {
+    "IconEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIHUDFeedbackIconEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/HUDFeedback/Entries/Data/DA_HUDFeedbackIconEntry.DA_HUDFeedbackIconEntry",
+        "SubPathString": ""
+      }
+    },
+    "TextEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIHUDFeedbackTextEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/HUDFeedback/Entries/Data/DA_HUDFeedbackTextEntry.DA_HUDFeedbackTextEntry",
+        "SubPathString": ""
+      }
+    },
+    "FeedbackEventData": [
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.PlayerKill"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.RessedByEnemy"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.RessedByEnemy )"
+              },
+              "EventEntryText": {
+                "CultureInvariantString": null
+              },
+              "Icon": {
+                "TagName": "None"
+              }
+            },
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.FriendlyKill"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.FriendlyKill )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "PlayerKill.TeamKill",
+                "SourceString": "Team Kill",
+                "LocalizedString": "Team Kill"
+              },
+              "Icon": {
+                "TagName": "Challenges.Context.FriendlyKill"
+              }
+            },
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.Headshot"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.Headshot )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "PlayerKill",
+                "SourceString": "Kill Confirmed",
+                "LocalizedString": "Kill Confirmed"
+              },
+              "Icon": {
+                "TagName": "Challenges.Context.Headshot"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "PlayerKill",
+            "SourceString": "Kill Confirmed",
+            "LocalizedString": "Kill Confirmed"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.RevivePlayer"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "PlayerRevive",
+            "SourceString": "Player Revive",
+            "LocalizedString": "Player Revive"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.PlayerDelivered"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PlayerDelivered",
+            "SourceString": "Tactical Deployment",
+            "LocalizedString": "Tactical Deployment"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.PassengerSurvived"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.PassengerSurvived",
+            "SourceString": "Passenger Survived",
+            "LocalizedString": "Passenger Survived"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.ZoneEntry.SpawnVehicle"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "SVDelivered",
+            "SourceString": "Spawn Vehicle Delivered",
+            "LocalizedString": "Spawn Vehicle Delivered"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.HotZoneMagnet.MagnetActivated"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "MagnetAcitivated",
+            "SourceString": "Hotzone Magnet Activated",
+            "LocalizedString": "Hotzone Magnet Activated"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.PlayerKill.Assist"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.FriendlyKill"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.FriendlyKill )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "PlayerKill.Assist.TeamKill",
+                "SourceString": "Team Kill Assist",
+                "LocalizedString": "Team Kill Assist"
+              },
+              "Icon": {
+                "TagName": "Challenges.Context.FriendlyKill"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "PlayerKill.Assist",
+            "SourceString": "Kill Assist",
+            "LocalizedString": "Kill Assist"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.Buildables.BuildableDestroyed"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Id.Buildable.FOB"
+                  },
+                  {
+                    "TagName": "Challenges.Context.Buildables.Friendly"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  5,
+                  2,
+                  2,
+                  1,
+                  0,
+                  3,
+                  1,
+                  1
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ALL(  ALL( Id.Buildable.FOB ),  NONE( Challenges.Context.Buildables.Friendly ) )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "FOBDestroyed",
+                "SourceString": "FOB Destroyed",
+                "LocalizedString": "FOB Destroyed"
+              },
+              "Icon": {
+                "TagName": "Challenges.Rewards.Buildables.BuildableDestroyed.FOB"
+              }
+            },
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Id.Buildable.HotzoneMagnet"
+                  },
+                  {
+                    "TagName": "Challenges.Context.Buildables.Friendly"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  5,
+                  2,
+                  2,
+                  1,
+                  0,
+                  3,
+                  1,
+                  1
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ALL(  ALL( Id.Buildable.HotzoneMagnet ),  NONE( Challenges.Context.Buildables.Friendly ) )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "BuildableMagnetDestroyed",
+                "SourceString": "Buildable Drill Destroyed",
+                "LocalizedString": "Buildable Drill Destroyed"
+              },
+              "Icon": {
+                "TagName": "Challenges.Rewards.Buildables.BuildableDestroyed.HotZoneMagnet"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.VehicleDestroyed"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar"
+                  },
+                  {
+                    "TagName": "Meta.Progression.Context.Vehicle.Faction.Friendly"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  5,
+                  2,
+                  1,
+                  4,
+                  0,
+                  1,
+                  2,
+                  3,
+                  3,
+                  1,
+                  4
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ALL(  ANY( Challenges.Rewards.VehicleDestroyed.SpawnVehicle, Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore, Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra, Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar ),  NONE( Meta.Progression.Context.Vehicle.Faction.Friendly ) )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "SVDestroyed",
+                "SourceString": "Spawn Vehicle Destroyed",
+                "LocalizedString": "Spawn Vehicle Destroyed"
+              },
+              "Icon": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+              }
+            },
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Meta.Progression.Context.Vehicle.Faction.Friendly"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Meta.Progression.Context.Vehicle.Faction.Friendly )"
+              },
+              "EventEntryText": {
+                "CultureInvariantString": null
+              },
+              "Icon": {
+                "TagName": "None"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "VehicleDestroyed",
+            "SourceString": "Vehicle Destroyed",
+            "LocalizedString": "Vehicle Destroyed"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.Buildables.BuildableFinished"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Id.Buildable.AirRaidShelter"
+                  },
+                  {
+                    "TagName": "Id.Buildable.Bunker"
+                  },
+                  {
+                    "TagName": "Id.Buildable.CrowsNest"
+                  },
+                  {
+                    "TagName": "Id.Buildable.FOB"
+                  },
+                  {
+                    "TagName": "Id.Buildable.HotzoneMagnet"
+                  },
+                  {
+                    "TagName": "Id.Buildable.MistralAA"
+                  },
+                  {
+                    "TagName": "Id.Buildable.Mortar"
+                  },
+                  {
+                    "TagName": "Id.Buildable.Phalanx"
+                  },
+                  {
+                    "TagName": "Id.Buildable.Radio"
+                  },
+                  {
+                    "TagName": "Id.Buildable.RefuelStation"
+                  },
+                  {
+                    "TagName": "Id.Buildable.RepairStation"
+                  },
+                  {
+                    "TagName": "Id.Buildable.Loudspeaker"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  12,
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Id.Buildable.AirRaidShelter, Id.Buildable.Bunker, Id.Buildable.CrowsNest, Id.Buildable.FOB, Id.Buildable.HotzoneMagnet, Id.Buildable.MistralAA, Id.Buildable.Mortar, Id.Buildable.Phalanx, Id.Buildable.Radio, Id.Buildable.RefuelStation, Id.Buildable.RepairStation, Id.Buildable.Loudspeaker )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "BuildFinished",
+                "SourceString": "Building Complete",
+                "LocalizedString": "Building Complete"
+              },
+              "Icon": {
+                "TagName": "Challenges.Rewards.Buildables.BuildableFinished"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.SupplyPalletDropped"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "SuppliesDeployed",
+            "SourceString": "Supplies Delivered",
+            "LocalizedString": "Supplies Delivered"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.DeploySupplyCrate"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "SuppliesDeployed",
+            "SourceString": "Supplies Delivered",
+            "LocalizedString": "Supplies Delivered"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.Spotting.Removed"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Id.Buildable"
+                  },
+                  {
+                    "TagName": "Id.Item"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  3,
+                  3,
+                  0,
+                  1,
+                  2
+                ],
+                "UserDescription": "",
+                "AutoDescription": " NONE( Id.Buildable, Id.Item, Vehicle.Variant )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "SpottingRemoved",
+                "SourceString": "Spotted Kill Assist",
+                "LocalizedString": "Spotted Kill Assist"
+              },
+              "Icon": {
+                "TagName": "Challenges.Rewards.Spotting.Removed.Player"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.Buildables.FOBHacked"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Buildables.FOBHacked",
+            "SourceString": "FOB Hacked",
+            "LocalizedString": "FOB Hacked"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.PlayerKill.CrewAssist"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.FriendlyKill"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.FriendlyKill )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "PlayerKill.TeamKill",
+                "SourceString": "Team Kill",
+                "LocalizedString": "Team Kill"
+              },
+              "Icon": {
+                "TagName": "Challenges.Context.FriendlyKill"
+              }
+            },
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.Headshot"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.Headshot )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "PlayerKill",
+                "SourceString": "Kill Confirmed",
+                "LocalizedString": "Kill Confirmed"
+              },
+              "Icon": {
+                "TagName": "Challenges.Context.Headshot"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "PlayerKill",
+            "SourceString": "Kill Confirmed",
+            "LocalizedString": "Kill Confirmed"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.PlayerKill.Assist.CrewAssist"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Context.FriendlyKill"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  0
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ANY( Challenges.Context.FriendlyKill )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "PlayerKill.Assist.TeamKill",
+                "SourceString": "Team Kill Assist",
+                "LocalizedString": "Team Kill Assist"
+              },
+              "Icon": {
+                "TagName": "Challenges.Context.FriendlyKill"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "PlayerKill.Assist",
+            "SourceString": "Kill Assist",
+            "LocalizedString": "Kill Assist"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.Assist.VehicleDestroyed.CrewAssist"
+        },
+        "Value": {
+          "ConditionalEvents": [
+            {
+              "Condition": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [
+                  {
+                    "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
+                  },
+                  {
+                    "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar"
+                  },
+                  {
+                    "TagName": "Meta.Progression.Context.Vehicle.Faction.Friendly"
+                  }
+                ],
+                "QueryTokenStream": [
+                  0,
+                  1,
+                  5,
+                  2,
+                  1,
+                  4,
+                  0,
+                  1,
+                  2,
+                  3,
+                  3,
+                  1,
+                  4
+                ],
+                "UserDescription": "",
+                "AutoDescription": " ALL(  ANY( Challenges.Rewards.VehicleDestroyed.SpawnVehicle, Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore, Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra, Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar ),  NONE( Meta.Progression.Context.Vehicle.Faction.Friendly ) )"
+              },
+              "EventEntryText": {
+                "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+                "Key": "SVDestroyed",
+                "SourceString": "Spawn Vehicle Destroyed",
+                "LocalizedString": "Spawn Vehicle Destroyed"
+              },
+              "Icon": {
+                "TagName": "Challenges.Rewards.VehicleDestroyed.SpawnVehicle"
+              }
+            }
+          ],
+          "EventEntryText": {
+            "CultureInvariantString": null
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Challenges.Rewards.RevivePlayer.Contributor"
+        },
+        "Value": {
+          "ConditionalEvents": [],
+          "EventEntryText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_HUDFeedback.STRINGS_HUDFeedback",
+            "Key": "PlayerReviveAssist",
+            "SourceString": "Player Revive Assist",
+            "LocalizedString": "Player Revive Assist"
+          }
+        }
+      }
+    ],
+    "EntryDuration": 4.5
+  }
+}

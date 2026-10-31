@@ -1,0 +1,601 @@
+--- export: UPrimaryDataAsset / DA_CustomOperationRules ---
+{
+  "Type": "BHCustomInventoryOperationRulesDataAsset",
+  "Name": "DA_CustomOperationRules",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHCustomInventoryOperationRulesDataAsset'",
+  "Package": "/Game/GameMechanics/Inventory/DA_CustomOperationRules",
+  "Properties": {
+    "OperationRules": [
+      {
+        "OperationDescription": "Block loose ammo swaps with a magazine in vendor",
+        "RequiredSourceItemContext": [
+          "Item.Context.ForceToStorage"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Block'DA_CustomOperationRules:WDCustomInventoryOperationRule_Block_0'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.1"
+        }
+      },
+      {
+        "OperationDescription": "Weapons mag being swapped with another mag",
+        "RequiredSourceItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_0'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.4"
+        }
+      },
+      {
+        "OperationDescription": "Mag being swapped with a weapons mag",
+        "RequiredSourceItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_1'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.5"
+        }
+      },
+      {
+        "OperationDescription": "Mag being swapped with a weapon (dragged onto the weapon)",
+        "RequiredSourceItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Weapon"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_2'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.9"
+        }
+      },
+      {
+        "OperationDescription": "Mag being put into a weapons empty mag slot",
+        "RequiredSourceItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_3'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.10"
+        }
+      },
+      {
+        "OperationDescription": "Weapons mag being taken out into an empty slot",
+        "RequiredSourceItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Magazine"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_7'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.14"
+        }
+      },
+      {
+        "OperationDescription": "Loose ammo being dragged into the magazine",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_LoadAmmo'DA_CustomOperationRules:WDCustomInventoryOperationRule_LoadAmmo_0'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.2"
+        }
+      },
+      {
+        "OperationDescription": "Loose ammo being dragged into another loose ammo stack",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_LoadAmmo'DA_CustomOperationRules:WDCustomInventoryOperationRule_LoadAmmo_1'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.3"
+        }
+      },
+      {
+        "OperationDescription": "Ammo being dragged onto a magazine",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Attachment.Magazine"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_6'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.13"
+        }
+      },
+      {
+        "OperationDescription": "Ammo being swapped with a weapon (dragged onto the weapon)",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Weapon"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_8'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.15"
+        }
+      },
+      {
+        "OperationDescription": "Ammo being put into a weapons chamber slot",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Chamber"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_9'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.16"
+        }
+      },
+      {
+        "OperationDescription": "loose ammo swapping from chamber into inventory",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Chamber"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_4'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.11"
+        }
+      },
+      {
+        "OperationDescription": "loose ammo swapping from mag to inventory",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "RequiredDestinationItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_11'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.7"
+        }
+      },
+      {
+        "OperationDescription": "Ammo being taken out from chamber into an empty slot",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "Item.Attachment.Chamber"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_10'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.6"
+        }
+      },
+      {
+        "OperationDescription": "loose ammo being taken out of internal mag into an empty slot",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_12'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.8"
+        }
+      },
+      {
+        "OperationDescription": "Ammo being put into a weapons ammo slot",
+        "RequiredSourceItemContext": [
+          "Item.Ammo"
+        ],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Reload'DA_CustomOperationRules:WDCustomInventoryOperationRule_Reload_5'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.12"
+        }
+      },
+      {
+        "OperationDescription": "Item being transfered between inventories or to / from equipment slots",
+        "RequiredSourceItemContext": [],
+        "RequiredSourceSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "RequiredDestinationItemContext": [],
+        "RequiredDestinationSlotContainerIdentifier": {
+          "TagName": "None"
+        },
+        "OperationRuleClass": {
+          "ObjectName": "WDCustomInventoryOperationRule_Transfer'DA_CustomOperationRules:WDCustomInventoryOperationRule_Transfer_0'",
+          "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.17"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Block_0 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Block",
+  "Name": "WDCustomInventoryOperationRule_Block_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Block'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_LoadAmmo_0 ---
+{
+  "Type": "WDCustomInventoryOperationRule_LoadAmmo",
+  "Name": "WDCustomInventoryOperationRule_LoadAmmo_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_LoadAmmo'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "_aaaaoogkiejahcaafhlao": {
+      "ObjectName": "WDInventoryMagPackingData'DA_InventoryMagPackingData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/DA_InventoryMagPackingData.0"
+    }
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_LoadAmmo_1 ---
+{
+  "Type": "WDCustomInventoryOperationRule_LoadAmmo",
+  "Name": "WDCustomInventoryOperationRule_LoadAmmo_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_LoadAmmo'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "_aaaaoogkiejahcaafhlao": {
+      "ObjectName": "WDInventoryMagPackingData'DA_InventoryMagPackingData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/InventoryMagPacking/DA_InventoryMagPackingData.0"
+    }
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_0 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Magazine",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::SwapOrInsert",
+    "WeaponSlotType": "EBHCustomInventoryOperationRuleSlotType::Source"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_1 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Magazine",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::SwapOrInsert",
+    "WeaponSlotType": "EBHCustomInventoryOperationRuleSlotType::Destination"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_10 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_10",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Remove"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_11 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_11",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert",
+    "InsertAmmoType": "EWDCustomInventoryOperationRuleInsertAmmoType::Weapon"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_12 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_12",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Remove"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_2 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Magazine",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::SwapOrInsert"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_3 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Magazine",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_4 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert",
+    "InsertAmmoType": "EWDCustomInventoryOperationRuleInsertAmmoType::Weapon"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_5 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert",
+    "InsertAmmoType": "EWDCustomInventoryOperationRuleInsertAmmoType::Weapon"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_6 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert",
+    "InsertAmmoType": "EWDCustomInventoryOperationRuleInsertAmmoType::Magazine"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_7 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Magazine",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Remove"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_8 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_8",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert",
+    "InsertAmmoType": "EWDCustomInventoryOperationRuleInsertAmmoType::Weapon"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Reload_9 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Reload",
+  "Name": "WDCustomInventoryOperationRule_Reload_9",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Reload'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "ReloadType": "EWDCustomInventoryOperationRuleReloadType::Ammo",
+    "ContextType": "EWDCustomInventoryOperationRuleReloadContextType::Insert",
+    "InsertAmmoType": "EWDCustomInventoryOperationRuleInsertAmmoType::Weapon"
+  }
+}
+--- export: UObject / WDCustomInventoryOperationRule_Transfer_0 ---
+{
+  "Type": "WDCustomInventoryOperationRule_Transfer",
+  "Name": "WDCustomInventoryOperationRule_Transfer_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCustomInventoryOperationRule_Transfer'",
+  "Outer": {
+    "ObjectName": "BHCustomInventoryOperationRulesDataAsset'DA_CustomOperationRules'",
+    "ObjectPath": "/Game/GameMechanics/Inventory/DA_CustomOperationRules.0"
+  },
+  "Properties": {
+    "DefaultTransferTime": 0.5,
+    "EquipmentContainerIdentifiers": [
+      "Inventory.Slot.Primary",
+      "Inventory.Slot.Secondary",
+      "Inventory.Slot.Sidearm",
+      "Inventory.Slot.Specialist",
+      "Inventory.Slot.Backpack",
+      "Inventory.Slot.Vest",
+      "Inventory.Slot.Armor",
+      "Inventory.Slot.Helmet",
+      "Inventory.Slot.Traversal",
+      "Item.Attachment.Muzzle",
+      "Item.Attachment.Bipod",
+      "Item.Attachment.Sight",
+      "Item.Attachment.Barrel",
+      "Item.Attachment.Grip",
+      "Item.Attachment.Pistolgrip",
+      "Item.Attachment.SightMount",
+      "Item.Attachment.Stock",
+      "Item.Attachment.Underbarrel"
+    ]
+  }
+}

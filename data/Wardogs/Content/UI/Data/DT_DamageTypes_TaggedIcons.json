@@ -1,0 +1,79 @@
+--- export: UDataTable / DT_DamageTypes_TaggedIcons ---
+{
+  "Type": "DataTable",
+  "Name": "DT_DamageTypes_TaggedIcons",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/DT_DamageTypes_TaggedIcons",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITaggedIconRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Damage.DamageType.Fall": {
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Generic/T_UI_Icon_Killfeed_FallDamage.T_UI_Icon_Killfeed_FallDamage",
+            "Value": [
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.DamageType.Fall"
+      }
+    },
+    "Meta.Damage.DamageType.Impact": {
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Generic/T_UI_Icon_Killfeed_Roadkill.T_UI_Icon_Killfeed_Roadkill",
+            "Value": [
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.DamageType.Impact"
+      }
+    },
+    "Meta.Damage.DamageType.Explosive": {
+      "TaggedIcons": {
+        "FallbackIcon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.T_UI_IntelIcon",
+            "Value": [
+              "UI.Icon.Default",
+              "UI.Icon.EventLog.Overview",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.DamageType.Explosive"
+      }
+    }
+  }
+}

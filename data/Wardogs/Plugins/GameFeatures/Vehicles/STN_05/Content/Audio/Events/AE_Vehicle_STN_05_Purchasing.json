@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_STN_05_Purchasing ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_STN_05_Purchasing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Vehicle_STN_05_Purchasing",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.Purchasing.STN_05"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_STN_05_Purchasing:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_STN_05_Purchasing.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_STN_05_Purchasing'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Vehicle_STN_05_Purchasing.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_STN_05_Rearm_1p_Preset'",
+      "ObjectPath": "/STN_05/Audio/MSS/MSS_Weapon_STN_05_Rearm_1p_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.Purchasing"
+    }
+  }
+}

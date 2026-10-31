@@ -1,0 +1,27 @@
+--- export: UDataAsset / DA_ScoreboardScene ---
+{
+  "Type": "WDUIScoreboardSceneData",
+  "Name": "DA_ScoreboardScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIScoreboardSceneData'",
+  "Package": "/Game/UI/Features/Scoreboard/Data/DA_ScoreboardScene",
+  "Properties": {
+    "ScoreboardViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIScoreboardViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Scoreboard/Widgets/Scoreboard/Data/DA_Scoreboard.DA_Scoreboard",
+        "SubPathString": ""
+      }
+    },
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.CloseScene"
+    },
+    "bUseGamepadOverrides": true,
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Scoreboard.Exit"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+--- export: UDataTable / DT_SceneData_Match_SniperShowdown ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Match_SniperShowdown",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SniperShowdown/UI/DT_SceneData_Match_SniperShowdown",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Match.EndgameMovie": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": true,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [
+        {
+          "bEnableNavigationRibbon": false
+        }
+      ],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/SniperShowdown/UI/W_SniperShowdown_GameOverScene.W_SniperShowdown_GameOverScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/SniperShowdownRuntime.WDSniperShowdownGameOverSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/SniperShowdown/UI/DA_SniperShowdown_GameOverScene.DA_SniperShowdown_GameOverScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Match.EndgameMovie"
+      }
+    }
+  }
+}

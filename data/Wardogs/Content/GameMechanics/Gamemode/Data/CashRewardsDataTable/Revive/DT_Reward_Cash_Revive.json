@@ -1,0 +1,178 @@
+--- export: UDataTable / DT_Reward_Cash_Revive ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Reward_Cash_Revive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/CashRewardsDataTable/Revive/DT_Reward_Cash_Revive",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCustomRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Context.DefaultReward": {
+      "Description": {
+        "Namespace": "",
+        "Key": "A6B7A0204B14F4CBBA8A4EA55D07ADBA",
+        "SourceString": "Revive Reward if the player doesnt use a item",
+        "LocalizedString": "Revive Reward if the player doesnt use a item"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 1500.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.33,
+      "ModifierHZ": 2.0,
+      "ModifierHZM": 2.0,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.33,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.DefaultReward"
+      }
+    },
+    "Id.Item.Defibrillator": {
+      "Description": {
+        "Namespace": "",
+        "Key": "AD57377447A4F213B54D0C815664DC32",
+        "SourceString": "Revive reward for if the player uses a defib. Reward Scales on health restored on revive",
+        "LocalizedString": "Revive reward for if the player uses a defib. Reward Scales on health restored on revive"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 1000.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.2,
+      "ModifierHZ": 1.8,
+      "ModifierHZM": 1.8,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.5,
+      "Tag": {
+        "TagName": "Id.Item.Defibrillator"
+      }
+    },
+    "Id.Item.StimPen": {
+      "Description": {
+        "Namespace": "",
+        "Key": "474373DA47D46080CE0BFD86941269A9",
+        "SourceString": "Revive reward for if the player uses a addrenaline pen",
+        "LocalizedString": "Revive reward for if the player uses a addrenaline pen"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 400.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.25,
+      "ModifierHZ": 1.5,
+      "ModifierHZM": 1.75,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.062,
+      "Tag": {
+        "TagName": "Id.Item.StimPen"
+      }
+    },
+    "Id.Item.AdrenalinePen": {
+      "Description": {
+        "Namespace": "",
+        "Key": "709C093F4C728CAA8CDAC4B75130ED8B",
+        "SourceString": "Revive Reward for if the player uses the stim pen. Reward scales depending on health restored",
+        "LocalizedString": "Revive Reward for if the player uses the stim pen. Reward scales depending on health restored"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 100.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.25,
+      "ModifierHZ": 1.5,
+      "ModifierHZM": 1.75,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.1,
+      "Tag": {
+        "TagName": "Id.Item.AdrenalinePen"
+      }
+    },
+    "Id.Item.MedKit": {
+      "Description": {
+        "Namespace": "",
+        "Key": "503337A54503B558A0C9AFBD469DA525",
+        "SourceString": "Revive reward for if the player uses a MedKit. Reward Scales on health restored on revive",
+        "LocalizedString": "Revive reward for if the player uses a MedKit. Reward Scales on health restored on revive"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 800.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.25,
+      "ModifierHZ": 2.0,
+      "ModifierHZM": 2.0,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.63,
+      "Tag": {
+        "TagName": "Id.Item.MedKit"
+      }
+    },
+    "Id.Item.Resuscitator": {
+      "Description": {
+        "Namespace": "",
+        "Key": "A23EA0F8409F1CDF91A771BEB74AE9CA",
+        "SourceString": "Revive reward for if the player uses a Resuscitator. Reward Scales on health restored on revive",
+        "LocalizedString": "Revive reward for if the player uses a Resuscitator. Reward Scales on health restored on revive"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 1000.0,
+      "FriendlyModifier": 1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 0.0,
+      "ModifierCZ": 1.2,
+      "ModifierHZ": 1.5,
+      "ModifierHZM": 1.5,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.0,
+      "AssistScalingModifier": 0.0,
+      "CrewAssistModifier": 0.0,
+      "LogisticAssistModifier": 0.5,
+      "Tag": {
+        "TagName": "Id.Item.Resuscitator"
+      }
+    }
+  }
+}

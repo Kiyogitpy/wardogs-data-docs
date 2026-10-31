@@ -1,0 +1,28 @@
+--- export: UDataAsset / DA_Significance_KavkaziRiver ---
+{
+  "Type": "BHSignificanceSettingsAsset",
+  "Name": "DA_Significance_KavkaziRiver",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSignificanceSettingsAsset'",
+  "Package": "/Game/Audio/Ambience/DA_Significance_KavkaziRiver",
+  "Properties": {
+    "SignificanceEvaluators": [
+      {
+        "ObjectName": "BHSignificanceEvaluator_Sphere'DA_Significance_Kavkazi_Sphere_Evaluator'",
+        "ObjectPath": "/Game/Audio/Ambience/DA_Significance_Kavkazi_Sphere_Evaluator.0"
+      }
+    ],
+    "LevelSettings": [
+      {
+        "TickRate": 0.0,
+        "SignificanceUpdateRate": 0.03,
+        "LocationUpdateRate": 0.1
+      },
+      {
+        "TickRate": 2.0,
+        "SignificanceUpdateRate": 2.0,
+        "LocationUpdateRate": 2.0
+      }
+    ]
+  }
+}

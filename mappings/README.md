@@ -326,10 +326,10 @@ changing the designated map requires an explicit user instruction.
   UnrealMappingsDumper, FModel, CUE4Parse
 - `.idmap` format: Dumper-7's published binary mapping layout, linked above
 - Generation details for this build: see
-  [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md)
+  [`../docs/UPDATE_PIPELINE.md`](../docs/UPDATE_PIPELINE.md)
 
 ## Related
 
 - SDK: [`../sdk/`](../sdk/) — class declarations derived from these mappings
-- Methodology: [`../docs/METHODOLOGY.md`](../docs/METHODOLOGY.md)
+- Methodology: [`../docs/UPDATE_PIPELINE.md`](../docs/UPDATE_PIPELINE.md)
 - Tools: [`../tools/`](../tools/)

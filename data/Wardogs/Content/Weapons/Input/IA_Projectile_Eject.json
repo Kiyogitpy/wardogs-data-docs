@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_Projectile_Eject ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Projectile_Eject",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_Projectile_Eject",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Projectile.Eject"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Projectile_Eject:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_Projectile_Eject.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Projectile_Eject'",
+    "ObjectPath": "/Game/Weapons/Input/IA_Projectile_Eject.0"
+  }
+}

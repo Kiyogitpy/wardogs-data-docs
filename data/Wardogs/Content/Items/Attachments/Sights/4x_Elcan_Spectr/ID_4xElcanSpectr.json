@@ -1,0 +1,862 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/Assets/SM_Specter_01.SM_Specter_01",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  },
+  "Properties": {
+    "Weight": 0.66
+  }
+}
+--- export: UPrimaryDataAsset / ID_4xElcanSpectr ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_4xElcanSpectr",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.4xElcanSpectr"
+    },
+    "ItemContext": [
+      "Item.Context.Equippable",
+      "Item.Attachment.Sight.Medium"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "B2E7918145C2575D138D4BB1E32F9A2C",
+      "SourceString": "4x Elcan Spectr",
+      "LocalizedString": "4x Elcan Spectr"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_4xElcanSpectr:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_4xElcanSpectr:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_4xElcanSpectr:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_4xElcanSpectr:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_4xElcanSpectr:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_4xElcanSpectr:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_4xElcanSpectr:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "SightsData": [
+        {
+          "Key": "S_Aim01",
+          "Value": {
+            "AppliedEffects": [
+              {
+                "ObjectName": "BlueprintGeneratedClass'GE_4xElcanSpectr_MainSight_C'",
+                "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/GE_4xElcanSpectr_MainSight.0"
+              }
+            ],
+            "bIsMaskedScope": true,
+            "WeightedBlendables": {
+              "Array": []
+            },
+            "bOverrideAdsWeaponMaterialFOV": true,
+            "AdsWeaponMaterialFOVOverride": 75.0,
+            "bOverrideSightCameraOffset": true,
+            "SightCameraOffsetOverride": 0.0,
+            "SightCameraOffsetOverridePerWeapon": [
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_036"
+                },
+                "Value": -1.6
+              }
+            ],
+            "bOverrideSightSwayDistanceOffset": true,
+            "SightSwayDistanceOffset": 0.0,
+            "SightSwayDistanceOffsetOverridePerWeapon": [
+              {
+                "Key": {
+                  "TagName": "Id.Item.Mosin"
+                },
+                "Value": 27.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SV98"
+                },
+                "Value": 8.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.MK22"
+                },
+                "Value": 6.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SR_04"
+                },
+                "Value": 2.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SKS"
+                },
+                "Value": -2.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SVDM"
+                },
+                "Value": 2.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.RFB"
+                },
+                "Value": -6.0
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.M249"
+                },
+                "Value": -1.6
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.LMG_02"
+                },
+                "Value": 0.0
+              }
+            ],
+            "bOverrideWeaponSwayStabilizationData": true,
+            "SightStabilizationOverrideMultipliers": [
+              {
+                "Key": {
+                  "TagName": "Item.Archetype.Sniper"
+                },
+                "Value": {
+                  "WeaponTranslationStabilizationSwayCurveMultiplier": 1.3,
+                  "WeaponRotationStabilizationSwayCurveMultiplier": 1.3
+                }
+              }
+            ],
+            "bOverrideScopeHipOffset": false,
+            "ScopeHipOffsetOverride": {
+              "X": 0.0,
+              "Y": 2.016066,
+              "Z": -1.234262
+            },
+            "bOverrideScopeHipOffsetPerWeapon": true,
+            "ScopeHipOffsetOverridePerWeapon": [
+              {
+                "Key": {
+                  "TagName": "Id.Item.LMG_02"
+                },
+                "Value": {
+                  "X": -5.020688,
+                  "Y": 4.719424,
+                  "Z": -9.0
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.M249"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 1.625699,
+                  "Z": -3.201339
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SKS"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 4.719424,
+                  "Z": -4.684961
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SVDM"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.0,
+                  "Z": -5.0
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.RFB"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 0.0,
+                  "Z": -3.263611
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SV98"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.109425
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.MK22"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.796421
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SR_04"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.215144
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.TAR21"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.0,
+                  "Z": -1.18
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.AK74M"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.8,
+                  "Z": -4.4
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_029"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.8,
+                  "Z": -3.870072
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_030"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 0.7,
+                  "Z": -2.7
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.M500"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 3.6,
+                  "Z": -3.9
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_035"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.109425
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_034"
+                },
+                "Value": {
+                  "X": 0.0,
+                  "Y": 1.11637,
+                  "Z": -3.682224
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_037"
+                },
+                "Value": {
+                  "X": 0.0,
+                  "Y": 2.8,
+                  "Z": -1.18
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_036"
+                },
+                "Value": {
+                  "X": 0.0,
+                  "Y": 2.3,
+                  "Z": -2.0
+                }
+              }
+            ],
+            "bOverrideScopeHipRotateOffset": false,
+            "ScopeHipRotateOffsetOverride": {
+              "Pitch": 0.167532,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "bOverrideScopeHipRotateOffsetPerWeapon": false,
+            "ScopeHipRotateOffsetOverridePerWeapon": [],
+            "bOverrideCameraOffset": false,
+            "SightCameraAnimationTranslationOffset": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bOverridePerWeaponCameraOffset": false,
+            "PerWeaponSightCameraAnimationTranslationOffsets": [],
+            "ScopeRenderTarget": {
+              "ObjectName": "TextureRenderTarget2D'RT_Scope'",
+              "ObjectPath": "/Game/Items/Weapons/MasterMaterials/Textures/RT_Scope.0"
+            },
+            "ScopeSocketName": "S_Aim01",
+            "SightWidgetRetainerBoxMaterial": {
+              "ObjectName": "MaterialInstanceConstant'M_UI_ReticleMask_4x_ElcanSpectr'",
+              "ObjectPath": "/Game/UI/Features/HUD/ScopeReticle/Materials/Masks/M_UI_ReticleMask_4x_ElcanSpectr.0"
+            },
+            "BaseReticleSize": 0.75,
+            "bFirstFocalPlane": true,
+            "FovMultiplierFrameOfReference": 4.0,
+            "ReticleColor": {
+              "R": 1.0,
+              "G": 1.0,
+              "B": 1.0,
+              "A": 1.0,
+              "Hex": "FFFFFF"
+            },
+            "ScopeWidgetSocketName": "S_Aim01",
+            "ScopeMask": {
+              "ObjectName": "StaticMesh'Disc_9DB5994C'",
+              "ObjectPath": "/Game/Maps/Gyms/Range/Assets/_GENERATED/AshleyDavenport/Disc_9DB5994C.1"
+            },
+            "ScopeMaskMaterial": {
+              "ObjectName": "Material'M_ScopeMaskMesh'",
+              "ObjectPath": "/Game/Items/Weapons/MasterMaterials/M_ScopeMaskMesh.0"
+            },
+            "ScopeMaskScale": {
+              "X": 0.018,
+              "Y": 0.018,
+              "Z": 0.018
+            },
+            "ScopeMaskRotation": {
+              "Pitch": 180.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "ScopeMaskRelativeLocation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bScopeBlur": true,
+            "ScopeBlurBlendPercentageMax": 70.0,
+            "ScopeBlurCurve": {
+              "ObjectName": "CurveFloat'ADS_Blur_Curve'",
+              "ObjectPath": "/Game/Weapons/ADS_Blur_Curve.0"
+            },
+            "ScopeVignettePercentageMax": 60.0,
+            "ScopeVignetteCurve": null,
+            "VariableZoomData": {
+              "bCanVariableZoom": false,
+              "ZoomMultiplierMin": 4.0,
+              "ZoomMultiplierMax": 8.0,
+              "MouseZoomMultiplierStep": 1.0,
+              "ControllerZoomMultiplierStep": 1.0,
+              "ZoomMultiplierInterpTime": 0.5
+            },
+            "AdsZoomMultiplier": 4.0,
+            "AdsTransitionData": {
+              "OutSettlePlayTime": 0.9,
+              "OutSettleWeight": 0.4,
+              "OutSettlePlayRate": 0.7,
+              "TransitionVelocity": 0.1,
+              "TransitionDamping": 0.4,
+              "TransitionStrength": 1.0,
+              "SpringLerpWeight": 0.2,
+              "AttachmentOffsetAlphaLerpSpeed": 25.0,
+              "AttachmentEndRange": 0.8,
+              "CameraOffsetLerpSpeed": 35.0,
+              "MinWallCollisionAlpha": 0.9,
+              "MinBlockAdsWallCollisionAlpha": 0.4
+            },
+            "DefaultCycleSightTransitionData": {
+              "AdsZoomMultiplierInterpTime": 0.2,
+              "AnimationSpeed": 15.0
+            },
+            "CycleSightTransitionData": [],
+            "ZoomInAudioEvent": {
+              "TagName": "None"
+            },
+            "ZoomOutAudioEvent": {
+              "TagName": "None"
+            },
+            "_aaabidndddnampoeehbli": false,
+            "_aaabaehmmeimejkapkogn": false
+          }
+        },
+        {
+          "Key": "S_Aim02",
+          "Value": {
+            "AppliedEffects": [
+              {
+                "ObjectName": "BlueprintGeneratedClass'GE_4xElcanSpectr_TopSight_C'",
+                "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/GE_4xElcanSpectr_TopSight.0"
+              }
+            ],
+            "bIsMaskedScope": false,
+            "WeightedBlendables": {
+              "Array": []
+            },
+            "bOverrideAdsWeaponMaterialFOV": true,
+            "AdsWeaponMaterialFOVOverride": 75.0,
+            "bOverrideSightCameraOffset": true,
+            "SightCameraOffsetOverride": 0.0,
+            "SightCameraOffsetOverridePerWeapon": [
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_036"
+                },
+                "Value": -1.6
+              }
+            ],
+            "bOverrideSightSwayDistanceOffset": false,
+            "SightSwayDistanceOffset": 0.0,
+            "SightSwayDistanceOffsetOverridePerWeapon": [],
+            "bOverrideWeaponSwayStabilizationData": false,
+            "SightStabilizationOverrideMultipliers": [],
+            "bOverrideScopeHipOffset": false,
+            "ScopeHipOffsetOverride": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bOverrideScopeHipOffsetPerWeapon": true,
+            "ScopeHipOffsetOverridePerWeapon": [
+              {
+                "Key": {
+                  "TagName": "Id.Item.LMG_02"
+                },
+                "Value": {
+                  "X": -5.020688,
+                  "Y": 4.719424,
+                  "Z": -9.0
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.M249"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 1.625699,
+                  "Z": -3.201339
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SKS"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 4.719424,
+                  "Z": -4.684961
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SVDM"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.0,
+                  "Z": -5.0
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.RFB"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 0.0,
+                  "Z": -3.263611
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SV98"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.109425
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.MK22"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.796421
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.SR_04"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.215144
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.TAR21"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.0,
+                  "Z": -1.18
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.AK74M"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.8,
+                  "Z": -4.4
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_029"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 5.8,
+                  "Z": -3.870072
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_030"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 0.7,
+                  "Z": -2.7
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.M500"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 3.6,
+                  "Z": -3.9
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_035"
+                },
+                "Value": {
+                  "X": -2.0,
+                  "Y": 2.495912,
+                  "Z": -2.109425
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_034"
+                },
+                "Value": {
+                  "X": 0.0,
+                  "Y": 1.11637,
+                  "Z": -3.682224
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_037"
+                },
+                "Value": {
+                  "X": 0.0,
+                  "Y": 2.8,
+                  "Z": -1.18
+                }
+              },
+              {
+                "Key": {
+                  "TagName": "Id.Item.WEPN_036"
+                },
+                "Value": {
+                  "X": 0.0,
+                  "Y": 2.3,
+                  "Z": -2.0
+                }
+              }
+            ],
+            "bOverrideScopeHipRotateOffset": false,
+            "ScopeHipRotateOffsetOverride": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "bOverrideScopeHipRotateOffsetPerWeapon": false,
+            "ScopeHipRotateOffsetOverridePerWeapon": [],
+            "bOverrideCameraOffset": false,
+            "SightCameraAnimationTranslationOffset": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bOverridePerWeaponCameraOffset": false,
+            "PerWeaponSightCameraAnimationTranslationOffsets": [],
+            "ScopeRenderTarget": null,
+            "ScopeSocketName": "None",
+            "SightWidgetRetainerBoxMaterial": null,
+            "BaseReticleSize": 0.35,
+            "bFirstFocalPlane": true,
+            "FovMultiplierFrameOfReference": 10.0,
+            "ReticleColor": {
+              "R": 0.0,
+              "G": 0.0,
+              "B": 0.0,
+              "A": 1.0,
+              "Hex": "000000"
+            },
+            "ScopeWidgetSocketName": "None",
+            "ScopeMask": null,
+            "ScopeMaskMaterial": null,
+            "ScopeMaskScale": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "ScopeMaskRotation": {
+              "Pitch": 0.0,
+              "Yaw": 0.0,
+              "Roll": 0.0
+            },
+            "ScopeMaskRelativeLocation": {
+              "X": 0.0,
+              "Y": 0.0,
+              "Z": 0.0
+            },
+            "bScopeBlur": false,
+            "ScopeBlurBlendPercentageMax": 100.0,
+            "ScopeBlurCurve": null,
+            "ScopeVignettePercentageMax": 100.0,
+            "ScopeVignetteCurve": null,
+            "VariableZoomData": {
+              "bCanVariableZoom": false,
+              "ZoomMultiplierMin": 1.5,
+              "ZoomMultiplierMax": 3.0,
+              "MouseZoomMultiplierStep": 0.5,
+              "ControllerZoomMultiplierStep": 0.5,
+              "ZoomMultiplierInterpTime": 0.25
+            },
+            "AdsZoomMultiplier": 1.5,
+            "AdsTransitionData": {
+              "OutSettlePlayTime": 0.9,
+              "OutSettleWeight": 0.4,
+              "OutSettlePlayRate": 0.7,
+              "TransitionVelocity": 0.1,
+              "TransitionDamping": 0.4,
+              "TransitionStrength": 1.0,
+              "SpringLerpWeight": 0.2,
+              "AttachmentOffsetAlphaLerpSpeed": 25.0,
+              "AttachmentEndRange": 0.8,
+              "CameraOffsetLerpSpeed": 35.0,
+              "MinWallCollisionAlpha": 0.9,
+              "MinBlockAdsWallCollisionAlpha": 0.4
+            },
+            "DefaultCycleSightTransitionData": {
+              "AdsZoomMultiplierInterpTime": 0.2,
+              "AnimationSpeed": 15.0
+            },
+            "CycleSightTransitionData": [],
+            "ZoomInAudioEvent": {
+              "TagName": "None"
+            },
+            "ZoomOutAudioEvent": {
+              "TagName": "None"
+            },
+            "_aaabidndddnampoeehbli": false,
+            "_aaabaehmmeimejkapkogn": false
+          }
+        }
+      ],
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Sight"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_4xElcanSpectr_C'",
+          "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/GE_4xElcanSpectr.0"
+        }
+      ],
+      "AppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_4xElcanSpectr_CharacterEffects_C'",
+          "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/GE_4xElcanSpectr_CharacterEffects.0"
+        }
+      ],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_4xElcanSpectr'",
+    "ObjectPath": "/Game/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.4"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

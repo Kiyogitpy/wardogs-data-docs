@@ -1,0 +1,50 @@
+--- export: UPrimaryDataAsset / DebugCockpit ---
+{
+  "Type": "GameFeatureData",
+  "Name": "DebugCockpit",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/DebugCockpit/DebugCockpit",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_AddWidgetElements'DebugCockpit:WDGameFeatureAction_AddWidgetElements_0'",
+        "ObjectPath": "/DebugCockpit/DebugCockpit.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWidgetElements_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWidgetElements",
+  "Name": "WDGameFeatureAction_AddWidgetElements_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'DebugCockpit'",
+    "ObjectPath": "/DebugCockpit/DebugCockpit.0"
+  },
+  "Properties": {
+    "PersistentWidgets": [
+      {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/DebugCockpit/WBP_DebugCockpit.WBP_DebugCockpit_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      }
+    ]
+  }
+}

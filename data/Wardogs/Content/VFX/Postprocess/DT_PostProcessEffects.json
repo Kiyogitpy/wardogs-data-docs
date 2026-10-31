@@ -1,0 +1,973 @@
+--- export: UDataTable / DT_PostProcessEffects ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PostProcessEffects",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/VFX/Postprocess/DT_PostProcessEffects",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPostProcessEffect'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "PostProcessEffect.DamageType.Fall": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.1,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.DamageType.Fall"
+      }
+    },
+    "PostProcessEffect.DamageType.Explosive": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 5.0,
+      "ProgressParams": [
+        {
+          "ProgressParameterName": "DirtProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.2,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 5.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 1.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "BlurProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.015,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.6,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "DamageVignetteProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.15,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.8,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "HealthProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        }
+      ],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.DamageType.Explosive"
+      }
+    },
+    "PostProcessEffect.Injured.Static": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.Injured.Static"
+      }
+    },
+    "PostProcessEffect.Injured.Delta": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 1.0,
+      "ProgressParams": [
+        {
+          "ProgressParameterName": "BlurProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.01,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.25,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "DamageVignetteProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.01,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.5,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        }
+      ],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.Injured.Delta"
+      }
+    },
+    "PostProcessEffect.Suppression.Default": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.Suppression.Default"
+      }
+    },
+    "PostProcessEffect.Suppression.Concussive": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 2.0,
+      "ProgressParams": [
+        {
+          "ProgressParameterName": "DarkenProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "BlurProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "DesaturationProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        }
+      ],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": false,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.Suppression.Concussive"
+      }
+    },
+    "PostProcessEffect.DirectionalIndicator": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.DirectionalIndicator"
+      }
+    },
+    "PostProcessEffect.DeathState.Critical": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [
+        {
+          "Value": 1.0,
+          "ParameterName": "BlurProgress"
+        }
+      ],
+      "OnRemoveParameterValues": [
+        {
+          "Value": 0.0,
+          "ParameterName": "BlurProgress"
+        },
+        {
+          "Value": 0.0,
+          "ParameterName": "DarkenProgress"
+        }
+      ],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": true,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.DeathState.Critical"
+      }
+    },
+    "PostProcessEffect.DeathState.CloseEyes": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_Postprocess_Death_Eyes'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_Postprocess_Death_Eyes.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": false,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.DeathState.CloseEyes"
+      }
+    },
+    "PostProcessEffect.VehicleProjectileCamera": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [],
+      "ParameterValuesOnEffectApplication": [
+        {
+          "Value": 0.05,
+          "ParameterName": "BlurProgress"
+        },
+        {
+          "Value": 1.0,
+          "ParameterName": "DarkenProgress"
+        }
+      ],
+      "OnRemoveParameterValues": [
+        {
+          "Value": 0.0,
+          "ParameterName": "BlurProgress"
+        },
+        {
+          "Value": 0.0,
+          "ParameterName": "DarkenProgress"
+        }
+      ],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": true,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.VehicleProjectileCamera"
+      }
+    },
+    "PostProcessEffect.Backblast": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Damage'",
+        "ObjectPath": "/Game/VFX/Postprocess/MI_PP_Damage.0"
+      },
+      "Duration": 5.0,
+      "ProgressParams": [
+        {
+          "ProgressParameterName": "DirtProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.2,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 4.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 5.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 1.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "BlurProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.015,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.6,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "DamageVignetteProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.15,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.8,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "HealthProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        },
+        {
+          "ProgressParameterName": "DarkenProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.015,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.6,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": false,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "LoopPlayRate": 1.0
+        }
+      ],
+      "ParameterValuesOnEffectApplication": [
+        {
+          "Value": 15.0,
+          "ParameterName": "DarkenMaxIntensity"
+        },
+        {
+          "Value": 2.0,
+          "ParameterName": "BlurIntensityMax"
+        },
+        {
+          "Value": -1.0,
+          "ParameterName": "DarkenSmoothStepMin"
+        },
+        {
+          "Value": 10.0,
+          "ParameterName": "DarkenSmoothStepMax"
+        }
+      ],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": true,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.Backblast"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+--- export: UPrimaryDataAsset / DA_Action_Enox_SecondaryUse ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Enox_SecondaryUse",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Enox/Data/Actions/DA_Action_Enox_SecondaryUse",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Appliable.Enox.SecondaryUse"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Enox_Use_C'",
+      "ObjectPath": "/Enox/Data/Actions/B_Action_Enox_Use.1"
+    },
+    "ActivationContextType": {
+      "ObjectName": "Class'WDAppliableItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

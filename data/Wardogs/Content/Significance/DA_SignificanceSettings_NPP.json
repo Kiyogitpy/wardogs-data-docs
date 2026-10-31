@@ -1,0 +1,52 @@
+--- export: UDataAsset / DA_SignificanceSettings_NPP ---
+{
+  "Type": "BHSignificanceSettingsAsset",
+  "Name": "DA_SignificanceSettings_NPP",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHSignificanceSettingsAsset'",
+  "Package": "/Game/Significance/DA_SignificanceSettings_NPP",
+  "Properties": {
+    "SignificanceEvaluators": [
+      {
+        "ObjectName": "BHSignificanceEvaluator_Sphere'DA_Significance_Evaluator_Sphere_NPP'",
+        "ObjectPath": "/Game/Significance/Evaluators/DA_Significance_Evaluator_Sphere_NPP.0"
+      },
+      {
+        "ObjectName": "BHSignificanceEvaluator_FOV'DA_Significance_Evaluator_FOV_NPP'",
+        "ObjectPath": "/Game/Significance/Evaluators/DA_Significance_Evaluator_FOV_NPP.0"
+      }
+    ],
+    "LevelSettings": [
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 0.03,
+        "LocationUpdateRate": 0.03
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 0.03,
+        "LocationUpdateRate": 0.03
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 0.06,
+        "LocationUpdateRate": 0.06
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 0.09,
+        "LocationUpdateRate": 0.09
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 0.12,
+        "LocationUpdateRate": 0.12
+      },
+      {
+        "TickRate": -1.0,
+        "SignificanceUpdateRate": 0.12,
+        "LocationUpdateRate": 0.12
+      }
+    ]
+  }
+}

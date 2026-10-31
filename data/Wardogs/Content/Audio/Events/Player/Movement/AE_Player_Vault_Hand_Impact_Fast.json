@@ -1,0 +1,74 @@
+--- export: UObject / AEB_ExecuteTriggerOnPlayerCharacter_C_0 ---
+{
+  "Type": "AEB_ExecuteTriggerOnPlayerCharacter_C",
+  "Name": "AEB_ExecuteTriggerOnPlayerCharacter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ExecuteTriggerOnPlayerCharacter.AEB_ExecuteTriggerOnPlayerCharacter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault_Hand_Impact_Fast'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Hand_Impact_Fast.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_ExecuteTriggerOnPlayerCharacter_C'Default__AEB_ExecuteTriggerOnPlayerCharacter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ExecuteTriggerOnPlayerCharacter.0"
+  },
+  "Properties": {
+    "Trigger Name": "Trigger",
+    "Context Name Tag": {
+      "TagName": "Audio.Context.Player.Vault"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vault"
+    }
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault_Hand_Impact_Fast'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Hand_Impact_Fast.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.Vaulting.Fast"
+      },
+      "Perspective": "EWDVoxPerspective::FirstPerson"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Vault_Hand_Impact_Fast ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Vault_Hand_Impact_Fast",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Hand_Impact_Fast",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Vault.HandImpact.Fast"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_ExecuteTriggerOnPlayerCharacter_C'AE_Player_Vault_Hand_Impact_Fast:AEB_ExecuteTriggerOnPlayerCharacter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Hand_Impact_Fast.0"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Player_Vault_Hand_Impact_Fast:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Hand_Impact_Fast.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.0
+  }
+}

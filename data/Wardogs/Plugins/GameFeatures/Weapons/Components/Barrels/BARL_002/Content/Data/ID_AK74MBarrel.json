@@ -1,0 +1,138 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74MBarrel'",
+    "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Muzzle"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockPriority",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Attachment.Muzzle.AK74M",
+            "Item.Attachment.Muzzle.545"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_AK74MBarrel ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_AK74MBarrel",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/BARL_002/Data/ID_AK74MBarrel",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.AK74MBarrel"
+    },
+    "ItemContext": [
+      "Item.Attachment.Barrel.AK74M"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_AK74MBarrel:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_AK74MBarrel:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_AK74MBarrel:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_AK74MBarrel:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74MBarrel'",
+    "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Barrel"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74MBarrel'",
+    "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AK74MBarrel'",
+    "ObjectPath": "/BARL_002/Data/ID_AK74MBarrel.1"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

@@ -1,0 +1,61 @@
+--- export: UDataTable / DT_AmmoModifiers ---
+{
+  "Type": "DataTable",
+  "Name": "DT_AmmoModifiers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/DamageSystem/DT_AmmoModifiers",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDAmmoModifierTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Damage.AmmoModifier.HollowPoint": {
+      "AmmoModifierDataAsset": {
+        "ObjectName": "WDAmmoModifierDataAsset'DA_AmmoModifier_HollowPoint'",
+        "ObjectPath": "/Game/GameMechanics/DamageSystem/AmmoModifiers/DA_AmmoModifier_HollowPoint.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.HollowPoint"
+      }
+    },
+    "Meta.Damage.AmmoModifier.ArmorPiercing": {
+      "AmmoModifierDataAsset": {
+        "ObjectName": "WDAmmoModifierDataAsset'DA_AmmoModifier_ArmorPiercing'",
+        "ObjectPath": "/Game/GameMechanics/DamageSystem/AmmoModifiers/DA_AmmoModifier_ArmorPiercing.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.ArmorPiercing"
+      }
+    },
+    "Meta.Damage.AmmoModifier.Tracer": {
+      "AmmoModifierDataAsset": {
+        "ObjectName": "WDAmmoModifierDataAsset'DA_AmmoModifier_Tracer'",
+        "ObjectPath": "/Game/GameMechanics/DamageSystem/AmmoModifiers/DA_AmmoModifier_Tracer.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.Tracer"
+      }
+    },
+    "Meta.Damage.AmmoModifier.HollowPoint.Tracer": {
+      "AmmoModifierDataAsset": {
+        "ObjectName": "WDAmmoModifierDataAsset'DA_AmmoModifier_HollowPoint_Tracer'",
+        "ObjectPath": "/Game/GameMechanics/DamageSystem/AmmoModifiers/DA_AmmoModifier_HollowPoint_Tracer.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.HollowPoint.Tracer"
+      }
+    },
+    "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer": {
+      "AmmoModifierDataAsset": {
+        "ObjectName": "WDAmmoModifierDataAsset'DA_AmmoModifier_ArmorPiercing_Tracer'",
+        "ObjectPath": "/Game/GameMechanics/DamageSystem/AmmoModifiers/DA_AmmoModifier_ArmorPiercing_Tracer.0"
+      },
+      "Tag": {
+        "TagName": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer"
+      }
+    }
+  }
+}

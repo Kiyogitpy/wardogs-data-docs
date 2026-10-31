@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_DeploymentBoard_Close ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_DeploymentBoard_Close",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_DeploymentBoard_Close",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.DeploymentBoard.Close"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_DeploymentBoard_Close:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_DeploymentBoard_Close.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_DeploymentBoard_Close'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_DeploymentBoard_Close.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_DeploymentBoard_Close'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/DeploymentBoard/MSS_UI_DeploymentBoard_Close.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

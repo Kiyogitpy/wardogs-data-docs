@@ -1,0 +1,33 @@
+--- export: UPrimaryDataAsset / DA_AmmoModifier_HollowPoint ---
+{
+  "Type": "WDAmmoModifierDataAsset",
+  "Name": "DA_AmmoModifier_HollowPoint",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAmmoModifierDataAsset'",
+  "Package": "/Game/GameMechanics/DamageSystem/AmmoModifiers/DA_AmmoModifier_HollowPoint",
+  "Properties": {
+    "AmmoModifierTag": {
+      "TagName": "Meta.Damage.AmmoModifier.HollowPoint"
+    },
+    "AttributeModificationMultipliers": [
+      {
+        "Key": {
+          "TagName": "Projectile.Attributes.PenetrationEffectivenessMultiplier"
+        },
+        "Value": 0.1
+      },
+      {
+        "Key": {
+          "TagName": "Projectile.Attributes.EffectiveRangeMultiplier"
+        },
+        "Value": 0.8
+      },
+      {
+        "Key": {
+          "TagName": "Projectile.Attributes.PenetrationExitSpeedMultiplier"
+        },
+        "Value": 0.15
+      }
+    ]
+  }
+}

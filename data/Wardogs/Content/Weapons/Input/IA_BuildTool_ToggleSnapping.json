@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_BuildTool_ToggleSnapping ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_BuildTool_ToggleSnapping",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_BuildTool_ToggleSnapping",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.BuildTool.ToggleSnapping"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_BuildTool_ToggleSnapping:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_ToggleSnapping.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_BuildTool_ToggleSnapping'",
+    "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_ToggleSnapping.0"
+  }
+}

@@ -1,0 +1,33 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_2 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'MAGZ_001'",
+    "ObjectPath": "/MAGZ_001/MAGZ_001.1"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_MAGZ_001'",
+      "ObjectPath": "/MAGZ_001/EDL_MAGZ_001.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / MAGZ_001 ---
+{
+  "Type": "GameFeatureData",
+  "Name": "MAGZ_001",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/MAGZ_001/MAGZ_001",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'MAGZ_001:GameFeatureAction_AddWorldPartitionContent_2'",
+        "ObjectPath": "/MAGZ_001/MAGZ_001.0"
+      }
+    ]
+  }
+}

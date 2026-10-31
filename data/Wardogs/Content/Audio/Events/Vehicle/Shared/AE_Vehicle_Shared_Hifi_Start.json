@@ -1,0 +1,88 @@
+--- export: UObject / AEB_VehiclePerspective_C_0 ---
+{
+  "Type": "AEB_VehiclePerspective_C",
+  "Name": "AEB_VehiclePerspective_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePerspective.AEB_VehiclePerspective_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Hifi_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePerspective_C'Default__AEB_VehiclePerspective_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePerspective.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_VehiclePlayTape_C_0 ---
+{
+  "Type": "AEB_VehiclePlayTape_C",
+  "Name": "AEB_VehiclePlayTape_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehiclePlayTape.AEB_VehiclePlayTape_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Hifi_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehiclePlayTape_C'Default__AEB_VehiclePlayTape_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehiclePlayTape.0"
+  },
+  "Properties": {
+    "HiFi Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_HiFi_Master'",
+      "ObjectPath": "/Game/Audio/Music/HiFi/MSS/MSS_Vehicle_HiFi_Master.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Hifi"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_Hifi_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_Hifi_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Hifi.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_VehiclePlayTape_C'AE_Vehicle_Shared_Hifi_Start:AEB_VehiclePlayTape_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Shared_Hifi_Start:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start.3"
+      },
+      {
+        "ObjectName": "AEB_VehiclePerspective_C'AE_Vehicle_Shared_Hifi_Start:AEB_VehiclePerspective_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Hifi_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Hifi_Start.2"
+  },
+  "Properties": {
+    "SocketName": "radio_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Hifi"
+    }
+  }
+}

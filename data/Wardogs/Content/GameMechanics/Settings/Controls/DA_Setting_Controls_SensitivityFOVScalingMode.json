@@ -1,0 +1,69 @@
+--- export: UDataAsset / DA_Setting_Controls_SensitivityFOVScalingMode ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_SensitivityFOVScalingMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_SensitivityFOVScalingMode",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_SensitivityFOVScalingMode:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_SensitivityFOVScalingMode.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_SensitivityFOVScalingMode'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_SensitivityFOVScalingMode.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDAimingFovSensitivityMode::Relative",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityMode.Relative",
+          "SourceString": "Relative",
+          "LocalizedString": "Relative"
+        }
+      },
+      {
+        "Key": "EWDAimingFovSensitivityMode::Legacy",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityMode.Legacy",
+          "SourceString": "Legacy",
+          "LocalizedString": "Legacy"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityMode.Relative",
+          "SourceString": "Relative",
+          "LocalizedString": "Relative"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVSensitivityMode.Legacy",
+          "SourceString": "Legacy",
+          "LocalizedString": "Legacy"
+        }
+      }
+    ]
+  }
+}

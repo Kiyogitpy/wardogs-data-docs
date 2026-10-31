@@ -1,0 +1,91 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_1 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SPW_AccessibleInventory'",
+    "ObjectPath": "/SPW_01/Data/ID_SPW_AccessibleInventory.1"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Inventory.Slot.Vehicle.Storage"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Ammo"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Vehicle.Storage",
+            "Inventory.Slot.Vehicle.Weapon",
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest"
+          ]
+        },
+        "SizeType": "EBHContainerType::List",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 2,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.FuelCan"
+            },
+            "Amount": 1
+          },
+          {
+            "Item": {
+              "TagName": "ID.Item.RepairTool.Wrench.Standard"
+            },
+            "Amount": 1
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_SPW_AccessibleInventory ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SPW_AccessibleInventory",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SPW_01/Data/ID_SPW_AccessibleInventory",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SpawnVehicleAccessibleStorage"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Storage",
+      "Item.Context.MovementBlocked"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "CE2A5F464536C56F59F7249BB29572E1",
+      "SourceString": "Spawn Vehicle Accessible Vehicle Storage",
+      "LocalizedString": "Spawn Vehicle Accessible Vehicle Storage"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_SPW_AccessibleInventory:BHInventoryFragment_SubSlotSupport_1'",
+        "ObjectPath": "/SPW_01/Data/ID_SPW_AccessibleInventory.0"
+      }
+    ]
+  }
+}

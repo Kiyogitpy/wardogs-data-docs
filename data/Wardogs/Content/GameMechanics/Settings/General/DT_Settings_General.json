@@ -1,0 +1,916 @@
+--- export: UDataTable / DT_Settings_General ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Settings_General",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Settings/General/DT_Settings_General",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHUserSettingDataTableRow'",
+      "ObjectPath": "/Script/BHUserSettings"
+    }
+  },
+  "Rows": {
+    "UserSettings.General.Clan.Tag": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.Clan.Tag",
+          "SourceString": "Clan Tag",
+          "LocalizedString": "Clan Tag"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.Clan.Tag",
+          "SourceString": "The name of your clan, added to the front of your player name.",
+          "LocalizedString": "The name of your clan, added to the front of your player name."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_ClanTag.T_UI_Settings_ClanTag",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_General_Clan_Tag.DA_Setting_General_Clan_Tag",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.Clan.Tag"
+      }
+    },
+    "UserSettings.General.Show.IdentityIcon": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.IdentityIcon",
+          "SourceString": "Show Identity Icon",
+          "LocalizedString": "Show Identity Icon"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.IdentityIcon",
+          "SourceString": "Show your identity icon next to your name on the scoreboard.",
+          "LocalizedString": "Show your identity icon next to your name on the scoreboard."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Yes.DA_Setting_Toggle_Default_Yes",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.Show.IdentityIcon"
+      }
+    },
+    "UserSettings.General.StreamerMode": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.StreamerMode",
+          "SourceString": "Streamer Mode",
+          "LocalizedString": "Streamer Mode"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.StreamerMode",
+          "SourceString": "If enabled, all other players are shown by unique, player friendly names. Your own name stays as it is. These names are synchronized between all players on the server, so everyone with Streamer Mode enabled sees the same player names.",
+          "LocalizedString": "If enabled, all other players are shown by unique, player friendly names. Your own name stays as it is. These names are synchronized between all players on the server, so everyone with Streamer Mode enabled sees the same player names."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_StreamerMode.T_UI_Settings_StreamerMode",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.StreamerMode"
+      }
+    },
+    "UserSettings.General.Disable.Chatbox": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.DisableChatbox",
+          "SourceString": "Disable Chatbox",
+          "LocalizedString": "Disable Chatbox"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.DisableChatbox",
+          "SourceString": "If enabled, you will no longer be able to open or view the chat box.",
+          "LocalizedString": "If enabled, you will no longer be able to open or view the chat box."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Chatbox.T_UI_Settings_Chatbox",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_No.DA_Setting_Toggle_Default_No",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.Disable.Chatbox"
+      }
+    },
+    "UserSettings.General.FieldOfView.Base": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FieldOfView",
+          "SourceString": "Field Of View (FOV)",
+          "LocalizedString": "Field Of View (FOV)"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FieldOfView",
+          "SourceString": "The extent of the observable world that is seen on the display at any given moment, measured as an angle.",
+          "LocalizedString": "The extent of the observable world that is seen on the display at any given moment, measured as an angle."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_InfantryFOV.T_UI_Settings_InfantryFOV",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General_FieldOfView.DA_Setting_General_FieldOfView",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.FieldOfView.Base"
+      }
+    },
+    "UserSettings.General.FieldOfView.FirstPersonMesh": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FieldOfView.FirstPersonMesh",
+          "SourceString": "Weapon View Model Scale",
+          "LocalizedString": "Weapon View Model Scale"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FieldOfView.FirstPersonMesh",
+          "SourceString": "Adjusts the size of your held weapon on the screen. Increasing this value makes the weapon appear smaller, increasing your visibility of the environment.",
+          "LocalizedString": "Adjusts the size of your held weapon on the screen. Increasing this value makes the weapon appear smaller, increasing your visibility of the environment."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_WeaponFOV.T_UI_Settings_WeaponFOV",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_General_FieldOfView_FirstPersonMesh.DA_Setting_General_FieldOfView_FirstPersonMesh",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.FieldOfView.FirstPersonMesh"
+      }
+    },
+    "UserSettings.General.FieldOfView.Vehicle.FirstPerson": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FieldOfView.Vehicle.FirstPerson",
+          "SourceString": "First Person FOV – Vehicles",
+          "LocalizedString": "First Person FOV – Vehicles"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FieldOfView.Vehicle.FirstPerson",
+          "SourceString": "The extent of the observable world that is seen on the display at any given moment while inside a vehicle using first person, measured as an angle.",
+          "LocalizedString": "The extent of the observable world that is seen on the display at any given moment while inside a vehicle using first person, measured as an angle."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_VehicleFPFOV.T_UI_Settings_720p_VehicleFPFOV",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General_FieldOfView_Vehicle.DA_Setting_General_FieldOfView_Vehicle",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.FieldOfView.Vehicle.FirstPerson"
+      }
+    },
+    "UserSettings.General.FieldOfView.Vehicle.ThirdPerson": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FieldOfView.Vehicle.ThirdPerson",
+          "SourceString": "Third Person FOV – Vehicles",
+          "LocalizedString": "Third Person FOV – Vehicles"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FieldOfView.Vehicle.ThirdPerson",
+          "SourceString": "The extent of the observable world that is seen on the display at any given moment while inside a vehicle using third person, measured as an angle.",
+          "LocalizedString": "The extent of the observable world that is seen on the display at any given moment while inside a vehicle using third person, measured as an angle."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_VehicleFOV.T_UI_Settings_VehicleFOV",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General_FieldOfView_Vehicle.DA_Setting_General_FieldOfView_Vehicle",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.FieldOfView.Vehicle.ThirdPerson"
+      }
+    },
+    "UserSettings.General.FieldOfView.AimingMode": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FieldOfView.AimingMode",
+          "SourceString": "Aim Down Sight (FOV)",
+          "LocalizedString": "Aim Down Sight (FOV)"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FieldOfView.AimingMode",
+          "SourceString": "Changes how your Field of View setting affects your Aim Down Sights Field of View.\r\n\r\nAffected: Aim Down Sights Field of View is based on user's Field of View setting at low magnification levels (below 3.25x).\r\n\r\nIndependent: Aim Down Sights Field of View is always based on a base Field of View constant.",
+          "LocalizedString": "Changes how your Field of View setting affects your Aim Down Sights Field of View.\r\n\r\nAffected: Aim Down Sights Field of View is based on user's Field of View setting at low magnification levels (below 3.25x).\r\n\r\nIndependent: Aim Down Sights Field of View is always based on a base Field of View constant."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_ADSFOV.T_UI_Settings_ADSFOV",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_General_AimingFOVMode.DA_Setting_General_AimingFOVMode",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.FieldOfView.AimingMode"
+      }
+    },
+    "UserSettings.General.KillfeedFilter": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.KillfeedFilter",
+          "SourceString": "Killfeed Filter",
+          "LocalizedString": "Killfeed Filter"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.KillfeedFilter",
+          "SourceString": "Filters the killfeed to only display certain kills, based on the option selected.",
+          "LocalizedString": "Filters the killfeed to only display certain kills, based on the option selected."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_KillfeedFilter.T_UI_Settings_KillfeedFilter",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_General_KillfeedFilter.DA_Setting_General_KillfeedFilter",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.KillfeedFilter"
+      }
+    },
+    "UserSettings.General.PictureInPictureScope": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.PictureInPictureScope",
+          "SourceString": "Picture-in-Picture Scope",
+          "LocalizedString": "Picture-in-Picture Scope"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.PictureInPictureScope",
+          "SourceString": "When PIP is enabled telescopic sight attachments will have a separate FOV to the rest of your screen, giving you more peripheral vision around the scope. However, having this setting enabled will have a significant effect on client performance as you are effectively rendering the world twice. We recommend disabling this on most systems.",
+          "LocalizedString": "When PIP is enabled telescopic sight attachments will have a separate FOV to the rest of your screen, giving you more peripheral vision around the scope. However, having this setting enabled will have a significant effect on client performance as you are effectively rendering the world twice. We recommend disabling this on most systems."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_PictureInPicture.T_UI_Settings_PictureInPicture",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.PictureInPictureScope"
+      }
+    },
+    "UserSettings.General.AdvancedVehicle.VehicleFreelookOnByDefault": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.VehicleFreelookOnByDefault",
+          "SourceString": "Freelook On By Default",
+          "LocalizedString": "Freelook On By Default"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.VehicleFreelookOnByDefault",
+          "SourceString": "When enabled free look will persist through camera perspective changes. If false it will always default to off. ",
+          "LocalizedString": "When enabled free look will persist through camera perspective changes. If false it will always default to off. "
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_FreeLook.T_UI_Settings_720p_FreeLook",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AdvancedVehicle.VehicleFreelookOnByDefault"
+      }
+    },
+    "UserSettings.General.AdvancedVehicle.FirstPersonCameraSensitivity": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FirstPersonCameraSensitivity",
+          "SourceString": "First Person Free Cam Sensitivity",
+          "LocalizedString": "First Person Free Cam Sensitivity"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FirstPersonCameraSensitivity",
+          "SourceString": "The sensitivity of the first person free camera in a vehicle",
+          "LocalizedString": "The sensitivity of the first person free camera in a vehicle"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_WDDefault.T_UI_Settings_720p_WDDefault",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General__AdvancedVehicle_FirstPersonFreeCamSensitivity.DA_Setting_General__AdvancedVehicle_FirstPersonFreeCamSensitivity",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AdvancedVehicle.FirstPersonCameraSensitivity"
+      }
+    },
+    "UserSettings.General.AdvancedVehicle.ThirdPersonCameraSensitivity": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.ThirdPersonCameraSensitivity",
+          "SourceString": "Third Person Free Cam Sensitivity",
+          "LocalizedString": "Third Person Free Cam Sensitivity"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.ThirdPersonCameraSensitivity",
+          "SourceString": "The sensitivity of the third person free camera in a vehicle",
+          "LocalizedString": "The sensitivity of the third person free camera in a vehicle"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_WDDefault.T_UI_Settings_720p_WDDefault",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General__AdvancedVehicle_ThirdPersonFreeCamSensitivity.DA_Setting_General__AdvancedVehicle_ThirdPersonFreeCamSensitivity",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AdvancedVehicle.ThirdPersonCameraSensitivity"
+      }
+    },
+    "UserSettings.General.AdvancedVehicle.TransmissionType": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.TransmissionType",
+          "SourceString": "Transmission Type",
+          "LocalizedString": "Transmission Type"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.TransmissionType",
+          "SourceString": "The type of transmission to be used in manual vehicles",
+          "LocalizedString": "The type of transmission to be used in manual vehicles"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_TransmissionType.T_UI_Settings_720p_TransmissionType",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General__AdvancedVehicle_TransmissionType.DA_Setting_General__AdvancedVehicle_TransmissionType",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AdvancedVehicle.TransmissionType"
+      }
+    },
+    "UserSettings.General.Movement.SlowWalkSpeed": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.SlowWalkSpeed",
+          "SourceString": "Slow Walk Speed",
+          "LocalizedString": "Slow Walk Speed"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.SlowWalkSpeed",
+          "SourceString": "Slow walk speed between the Min and Max speed of the player",
+          "LocalizedString": "Slow walk speed between the Min and Max speed of the player"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_SlowWalk.T_UI_Settings_720p_SlowWalk",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_SlowWalkSpeed.DA_Setting_SlowWalkSpeed",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.Movement.SlowWalkSpeed"
+      }
+    },
+    "UserSettings.General.Controller.EnableFreeCursor": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.EnableFreeCursor",
+          "SourceString": "Enable Free Cursor",
+          "LocalizedString": "Enable Free Cursor"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.EnableFreeCursor",
+          "SourceString": "Enables the gamepad free cursor",
+          "LocalizedString": "Enables the gamepad free cursor"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_FreeCursor.T_UI_Settings_720p_FreeCursor",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.Controller.EnableFreeCursor"
+      }
+    },
+    "UserSettings.General.AdaptiveCrosshair": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.AdaptiveCrosshair",
+          "SourceString": "Adaptive Crosshair",
+          "LocalizedString": "Adaptive Crosshair"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.AdaptiveCrosshair",
+          "SourceString": "When enabled the crosshair will move on the screen to visualize potential disruptions to your weapons hip fire.",
+          "LocalizedString": "When enabled the crosshair will move on the screen to visualize potential disruptions to your weapons hip fire."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Crosshair.T_UI_Settings_Crosshair",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AdaptiveCrosshair"
+      }
+    },
+    "UserSettings.General.Controller.FreeCursorSensitivity": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.FreeCursorSensitivity",
+          "SourceString": "Free Cursor Sensitivity",
+          "LocalizedString": "Free Cursor Sensitivity"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.FreeCursorSensitivity",
+          "SourceString": "The sensitivity level for the gamepad free cursor",
+          "LocalizedString": "The sensitivity level for the gamepad free cursor"
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_FreeCursorSensitivity.T_UI_Settings_720p_FreeCursorSensitivity",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/General/DA_Setting_General_Controller_FreeCursorSensitivity.DA_Setting_General_Controller_FreeCursorSensitivity",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.Controller.FreeCursorSensitivity"
+      }
+    },
+    "UserSettings.General.BipodDeployMode": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.BipodDeployMode",
+          "SourceString": "Bipod Deployment",
+          "LocalizedString": "Bipod Deployment"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.BipodDeployMode",
+          "SourceString": "Changes how you deploy onto the bipod.\r\n\r\nAutomatic: Bipod deployment is automatically triggered when possible.\r\n\r\nManual: Bipod deployment must manually be triggered by using the bipod deployment input.",
+          "LocalizedString": "Changes how you deploy onto the bipod.\r\n\r\nAutomatic: Bipod deployment is automatically triggered when possible.\r\n\r\nManual: Bipod deployment must manually be triggered by using the bipod deployment input."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_Bipod.T_UI_Settings_720p_Bipod",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_General_BipodDeployMode.DA_Setting_General_BipodDeployMode",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.BipodDeployMode"
+      }
+    },
+    "UserSettings.General.ChatProfanityFilter": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.ChatProfanityFilter",
+          "SourceString": "Chat Profanity Filter",
+          "LocalizedString": "Chat Profanity Filter"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.ChatProfanityFilter",
+          "SourceString": "If enabled, offensive words in chat messages are censored using your platform's language and text filtering preferences.",
+          "LocalizedString": "If enabled, offensive words in chat messages are censored using your platform's language and text filtering preferences."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_Chatbox.T_UI_Settings_Chatbox",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_On.DA_Setting_Toggle_Default_On",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.ChatProfanityFilter"
+      }
+    },
+    "UserSettings.General.AnonymousMode": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.AnonymousMode",
+          "SourceString": "Anonymous Mode",
+          "LocalizedString": "Anonymous Mode"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.AnonymousMode",
+          "SourceString": "If enabled, every player on the server sees you by a hidden name instead of your real name, and you see it too. Your clan tag is hidden while this is on.",
+          "LocalizedString": "If enabled, every player on the server sees you by a hidden name instead of your real name, and you see it too. Your clan tag is hidden while this is on."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_StreamerMode.T_UI_Settings_StreamerMode",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AnonymousMode"
+      }
+    },
+    "UserSettings.General.ScoreboardBadge": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.ScoreboardBadge",
+          "SourceString": "Scoreboard Badge",
+          "LocalizedString": "Scoreboard Badge"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.ScoreboardBadge",
+          "SourceString": "Choose which of your identity icons is shown next to your name on the scoreboard. Auto shows your highest priority identity.",
+          "LocalizedString": "Choose which of your identity icons is shown next to your name on the scoreboard. Auto shows your highest priority identity."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/Game/GameMechanics/Settings/General/DA_Setting_General_ScoreboardBadge.DA_Setting_General_ScoreboardBadge",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.ScoreboardBadge"
+      }
+    },
+    "UserSettings.General.AdvancedVehicle.PublicVehicleInventoryAccess": {
+      "UIData": {
+        "DisplayName": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "DisplayName.PublicVehicleAccessInventory",
+          "SourceString": "Public Vehicle Inventory Access",
+          "LocalizedString": "Public Vehicle Inventory Access"
+        },
+        "Description": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Description.PublicVehicleAccessInventory",
+          "SourceString": "When enabled, anyone riding in an unlocked vehicle you are driving can access its inventory. When disabled, the inventory stays available to you and your squad only. Free vehicles are always public.",
+          "LocalizedString": "When enabled, anyone riding in an unlocked vehicle you are driving can access its inventory. When disabled, the inventory stays available to you and your squad only. Free vehicles are always public."
+        },
+        "_aaabglmepnifcbccoonea": false,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::None",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::None",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::None",
+        "Texture": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/Settings/T_UI_Settings_720p_WDDefault.T_UI_Settings_720p_WDDefault",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_Off.DA_Setting_Toggle_Default_Off",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.AdvancedVehicle.PublicVehicleInventoryAccess"
+      }
+    },
+    "UserSettings.General.CharacterRenderDisabled": {
+      "UIData": {
+        "DisplayName": {
+          "Namespace": "",
+          "Key": "2001475B4988176448DF39BF226737D0",
+          "SourceString": "Disable Character Render",
+          "LocalizedString": "Disable Character Render"
+        },
+        "Description": {
+          "Namespace": "",
+          "Key": "4854AEC54369A422779BECA6363E8C68",
+          "SourceString": "Replaces the 3D character preview in the inventory with a static image. Improves performance and reduces stuttering, especially on lower-end hardware.",
+          "LocalizedString": "Replaces the 3D character preview in the inventory with a static image. Improves performance and reduces stuttering, especially on lower-end hardware."
+        },
+        "_aaabglmepnifcbccoonea": true,
+        "_aaaajimcnkepbaligmjmb": "EBHUserSettingPerformanceImpact::Moderate",
+        "_aaaajnlpbogffjgknckdo": "EBHUserSettingPerformanceImpact::Moderate",
+        "_aaaakkohnoeddkdanmdkg": "EBHUserSettingPerformanceImpact::Minor",
+        "Texture": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bAllowDiscreteValueWrapping": true,
+        "LoadableData": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      "TypeData": {
+        "AssetPathName": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_No.DA_Setting_Toggle_Default_No",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "UserSettings.General.CharacterRenderDisabled"
+      }
+    }
+  }
+}

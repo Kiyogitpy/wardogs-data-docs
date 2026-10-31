@@ -1,0 +1,57 @@
+--- export: UPrimaryDataAsset / VV_WHL_06_DuneBuggy_Default ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_WHL_06_DuneBuggy_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/WHL_06/Variants/VV_WHL_06_DuneBuggy_Default",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -346.63126,
+        "Y": -143.75768,
+        "Z": -8.534672
+      },
+      "Max": {
+        "X": 299.10556,
+        "Y": 143.76756,
+        "Z": 288.5581
+      }
+    },
+    "FixedBounds": {
+      "Min": {
+        "X": -263.7057,
+        "Y": -143.38152,
+        "Z": -1.0
+      },
+      "Max": {
+        "X": 265.6612,
+        "Y": 143.38211,
+        "Z": 274.47153
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_WHL_06_DuneBuggy'",
+        "ObjectPath": "/WHL_06/Platforms/VP_WHL_06_DuneBuggy.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Interaction"
+            },
+            "Part": {
+              "AssetPathName": "/WHL_06/Parts/VP_WHL_06_Chassis_DuneBuggy.VP_WHL_06_Chassis_DuneBuggy",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+--- export: UObject / BHPlayerMappableKeySettings_27 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_27",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_Parachuting'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Parachuting.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.CutParachute"
+    },
+    "Name": "Input.NamedActions.Player.CutParachute"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_28 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_28",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Player_Parachuting'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Parachuting.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.CutParachute"
+    },
+    "SlotContext": "EBHMappableSlotContext::NoSlot",
+    "Name": "Input.NamedActions.Player.CutParachute"
+  }
+}
+--- export: UDataAsset / IMC_Player_Parachuting ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Player_Parachuting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Parachuting",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_CutParachute'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CutParachute.0"
+          },
+          "Key": {
+            "KeyName": "C"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Player_Parachuting:BHPlayerMappableKeySettings_27'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Parachuting.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Player_CutParachute'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_CutParachute.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Player_Parachuting:BHPlayerMappableKeySettings_28'",
+            "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IMC_Player_Parachuting.1"
+          }
+        }
+      ]
+    }
+  }
+}

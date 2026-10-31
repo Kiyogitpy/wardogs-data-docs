@@ -1,0 +1,32 @@
+--- export: UDataAsset / IA_Itemsmith_HeroTitle ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_HeroTitle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_HeroTitle",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.HeroTitle"
+    },
+    "bTriggerWhenPaused": true,
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Itemsmith_HeroTitle:InputTriggerPressed_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_HeroTitle.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_HeroTitle'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_HeroTitle.0"
+  }
+}

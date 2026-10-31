@@ -1,0 +1,97 @@
+--- export: UDataAsset / DA_Demolition_Fences_SmallConcrete_01_C ---
+{
+  "Type": "BHDemolitionDataAsset",
+  "Name": "DA_Demolition_Fences_SmallConcrete_01_C",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionDataAsset'",
+  "Package": "/Game/Demolition/DA_Demolition_Fences_SmallConcrete_01_C",
+  "Properties": {
+    "SourceMeshes": [
+      {
+        "Key": "StaticMesh'/Game/Environment/Props/Walls_and_Fences/Crouch_Cover/Wall_Concrete_Residential_01/SM_Low_Wall_Right_01.SM_Low_Wall_Right_01'",
+        "Value": {
+          "FarRepresentationMesh": {
+            "AssetPathName": "/Game/Environment/Props/Walls_and_Fences/Crouch_Cover/Wall_Concrete_Residential_01/Demolition/SM_FarRep_Low_Wall_Right_01.SM_FarRep_Low_Wall_Right_01",
+            "SubPathString": ""
+          },
+          "RemnantMeshes": {
+            "ObjectName": "BHDemolitionRemnantMeshesAsset'DA_Demolition_RM_Fences_SmallConcrete_01_C'",
+            "ObjectPath": "/Game/Demolition/Remnants/DA/DA_Demolition_RM_Fences_SmallConcrete_01_C.0"
+          },
+          "Remnant_BaseCPD": {
+            "CustomPrimitiveColor": {
+              "R": 0.155926,
+              "G": 0.141263,
+              "B": 0.122139,
+              "A": 0.0,
+              "Hex": "6E6962"
+            },
+            "CustomPrimitiveValue": [
+              0.0,
+              1.0
+            ]
+          },
+          "FarRepresentationData": {
+            "Offset": {
+              "Rotation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0,
+                "W": 1.0,
+                "IsNormalized": true,
+                "Size": 1.0,
+                "SizeSquared": 1.0
+              },
+              "Translation": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Scale3D": {
+                "X": 1.0,
+                "Y": 1.0,
+                "Z": 1.0
+              }
+            },
+            "CPD": {
+              "CustomPrimitiveColor": {
+                "R": 0.155926,
+                "G": 0.141263,
+                "B": 0.122139,
+                "A": 0.0,
+                "Hex": "6E6962"
+              },
+              "CustomPrimitiveValue": []
+            }
+          }
+        }
+      }
+    ],
+    "DemolitionComponentSettings": {
+      "ObjectName": "BHDemolitionComponentSettings'DA_Demolition_CS_Default_Tank'",
+      "ObjectPath": "/Game/Demolition/ComponentSettings/DA_Demolition_CS_Default_Tank.0"
+    },
+    "DemolitionRuleSet": {
+      "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_TanksAndLargeExplosions'",
+      "ObjectPath": "/Game/Demolition/RuleSets/BH_Demolition_RS_TanksAndLargeExplosions.3"
+    },
+    "PermittedZones": [
+      "Demolition.Zone.Important",
+      "Demolition.Zone.Distant"
+    ],
+    "DemolitionVFX": [
+      {
+        "AssetPathName": "/Game/VFX/Environmental/Destruction/Demolition/Concrete_Brick/NS_ConcreteSmash.NS_ConcreteSmash",
+        "SubPathString": ""
+      }
+    ],
+    "CrosstalkEventTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceConcrete"
+    },
+    "DemolitionFragments": [
+      {
+        "RestitutionImpulseMultiplier": 0.4
+      }
+    ]
+  }
+}

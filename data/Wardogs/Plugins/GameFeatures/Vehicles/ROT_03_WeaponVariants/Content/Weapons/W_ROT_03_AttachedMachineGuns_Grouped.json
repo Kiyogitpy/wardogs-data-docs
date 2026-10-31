@@ -1,0 +1,42 @@
+--- export: UDataAsset / W_ROT_03_AttachedMachineGuns_Grouped ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_ROT_03_AttachedMachineGuns_Grouped",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/ROT_03_WeaponVariants/Weapons/W_ROT_03_AttachedMachineGuns_Grouped",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.ROT_03.MachineGun"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/ROT_03/Meshes/AttackMeshes/Components/Mount/SK_Littlebird_Turrets.SK_Littlebird_Turrets",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension_L",
+      "muzzleFlash_WeaponExtension_R"
+    ],
+    "_aaabnaimneicegloegdmi": true,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "bLimitWeaponYaw": true,
+      "MinWeaponYawAngle": -170.0,
+      "MaxWeaponYawAngle": -5.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -30.0,
+      "MaxWeaponPitchAngle": 22.0,
+      "RotationSpeed": 75.0
+    },
+    "bUseWeaponAsViewTarget": false,
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Air"
+    },
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/ROT_03_WeaponVariants/Weapons/WE_ROT_03_AttachedMachineGuns.WE_ROT_03_AttachedMachineGuns",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

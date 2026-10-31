@@ -1,0 +1,287 @@
+--- export: UPrimaryDataAsset / VP_WHL_08_MainBody_MachineGun ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_08_MainBody_MachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun",
+  "Properties": {
+    "Tags": [
+      "Vehicle.MainBody"
+    ],
+    "Fragments": [
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_08_MainBody_MachineGun:MVF_StaticMesh_6'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.3"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_WHL_08_MainBody_MachineGun:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.6"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_WHL_08_MainBody_MachineGun:WD_MVF_Interactions_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.4"
+          }
+        }
+      },
+      {
+        "Key": "SupplyCrate",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_WHL_08_MainBody_MachineGun:WD_MVF_SupplyCrateFragment_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.5"
+          }
+        }
+      },
+      {
+        "Key": "Roof",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_08_MainBody_MachineGun:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.2"
+          }
+        }
+      }
+    ],
+    "Slots": [
+      {
+        "Key": "Turret",
+        "Value": {
+          "bEnabled": true,
+          "Slot": {
+            "ObjectName": "ModularVehicleSlot'VP_WHL_08_MainBody_MachineGun:ModularVehicleSlot_2'",
+            "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / ModularVehicleSlot_2 ---
+{
+  "Type": "ModularVehicleSlot",
+  "Name": "ModularVehicleSlot_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleSlot'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "DefaultPart": {
+      "AssetPathName": "/WHL_08_RingTurret/Parts/VP_WHL_08_RingTurret.VP_WHL_08_RingTurret",
+      "SubPathString": ""
+    },
+    "CompatibilityTags": {
+      "RequireTags": [
+        "Vehicle.Turret"
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_08/Meshes/SM_WHL_08_Roof_Turret.SM_WHL_08_Roof_Turret",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_6 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      },
+      "Tags": [
+        "BrakeLight"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_08/Meshes/SM_WHL_08_Body.SM_WHL_08_Body",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/WHL_08_RingTurret/Data/RingTurretDefender/DA_VehicleInteractions_WHL_08_RingTurret.DA_VehicleInteractions_WHL_08_RingTurret",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_0 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "DeployOffset": {
+        "X": -600.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "bShouldUseVehicleSpeedCheck": false,
+      "LogisticsSlotSettings": [
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.BackSlot",
+            "SourceString": "Back Slot",
+            "LocalizedString": "Back Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": -0.0,
+              "Z": 0.707107,
+              "W": 0.707107,
+              "IsNormalized": true,
+              "Size": 1.0000002,
+              "SizeSquared": 1.0000006
+            },
+            "Translation": {
+              "X": -76.14211,
+              "Y": -0.0,
+              "Z": 104.8212
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 4,
+            "Y": 1
+          },
+          "SpaceEdgeLength": 25.0,
+          "SpaceDimensions": {
+            "X": 75.0,
+            "Y": 75.0,
+            "Z": 132.5
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabfpidgmbniihagpoap": false,
+          "DeployOffset": {
+            "X": -750.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        }
+      ],
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_MachineGun'",
+    "ObjectPath": "/WHL_08_RingTurret/Parts/VP_WHL_08_MainBody_MachineGun.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/WHL_08_RingTurret/Data/RingTurretDefender/DA_WHL_08_RingTurretStats.DA_WHL_08_RingTurretStats",
+      "SubPathString": ""
+    }
+  }
+}

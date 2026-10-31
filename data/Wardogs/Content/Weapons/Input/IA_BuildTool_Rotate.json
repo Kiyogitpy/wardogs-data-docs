@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_BuildTool_Rotate ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_BuildTool_Rotate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Weapons/Input/IA_BuildTool_Rotate",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.BuildTool.Rotate"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_BuildTool_Rotate:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Rotate.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_BuildTool_Rotate'",
+    "ObjectPath": "/Game/Weapons/Input/IA_BuildTool_Rotate.0"
+  }
+}

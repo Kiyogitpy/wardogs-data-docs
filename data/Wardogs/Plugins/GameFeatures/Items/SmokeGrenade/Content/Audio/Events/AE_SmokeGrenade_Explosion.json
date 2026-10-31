@@ -1,0 +1,129 @@
+--- export: UObject / AEB_SetSmokeGrenadeDuration_C_0 ---
+{
+  "Type": "AEB_SetSmokeGrenadeDuration_C",
+  "Name": "AEB_SetSmokeGrenadeDuration_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetSmokeGrenadeDuration.AEB_SetSmokeGrenadeDuration_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SmokeGrenade_Explosion'",
+    "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSmokeGrenadeDuration_C'Default__AEB_SetSmokeGrenadeDuration_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetSmokeGrenadeDuration.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Deplete"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_SmokeGrenade_Explosion ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_SmokeGrenade_Explosion",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.SmokeGrenade.Explosion"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_SmokeGrenade_Explosion:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_SmokeGrenade_Explosion:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_SmokeGrenade_Explosion:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.3"
+      },
+      {
+        "ObjectName": "AEB_SetSmokeGrenadeDuration_C'AE_SmokeGrenade_Explosion:AEB_SetSmokeGrenadeDuration_C_0'",
+        "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_SmokeGrenade_Explosion:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.5"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 61.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SmokeGrenade_Explosion'",
+    "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SmokeGrenade_Explosion'",
+    "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Deplete"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SmokeGrenade_Explosion'",
+    "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_SmokeGrenade_Explode'",
+      "ObjectPath": "/SmokeGrenade/Audio/MSS/MSS_Weapon_Throwable_SmokeGrenade_Explode.0"
+    },
+    "FadeIn": 0.05,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_SmokeGrenade_Explosion'",
+    "ObjectPath": "/SmokeGrenade/Audio/Events/AE_SmokeGrenade_Explosion.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_SmokeGrenade_Deplete'",
+      "ObjectPath": "/SmokeGrenade/Audio/MSS/MSS_Weapon_Throwable_SmokeGrenade_Deplete.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Deplete"
+    }
+  }
+}

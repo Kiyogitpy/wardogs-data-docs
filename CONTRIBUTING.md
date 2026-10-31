@@ -3,7 +3,7 @@
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 Thanks for your interest. This repository documents Wardogs' game
-data. See [`docs/SCOPE.md`](docs/SCOPE.md) before contributing.
+data. The contribution boundaries are listed below.
 
 ## What contributions are welcome
 
@@ -23,8 +23,9 @@ data. See [`docs/SCOPE.md`](docs/SCOPE.md) before contributing.
 - Notes on classes and fields from a newer game build
 - SDK class ↔ data doc cross-reference additions
 
-Raw exports, class dumps and mapping files are not committed; cite
-assets and classes by name instead.
+Raw JSON asset exports are committed under `data/`; preserve their
+original extractor format and cite the asset path and game build.
+Class dumps and mapping files remain local; cite classes by name.
 
 ### ✅ Tooling for the research pipeline
 
@@ -45,10 +46,11 @@ assets and classes by name instead.
 Overlays, aim or input automation, memory readers, loaders, or
 anything else meant for an advantage in online play.
 
-### ❌ Raw game files
+### ❌ Binaries, keys and other local-only files
 
-Pak files, keys, raw exports or class dumps. Cite the asset or class
-by name and path instead.
+Pak files, game binaries, keys, mapping files, non-JSON extracted files
+and class dumps are not committed. Raw JSON asset exports under `data/`
+are permitted; cite the asset by name and path.
 
 ### ❌ Open security issues
 
@@ -82,7 +84,7 @@ bundle exec jekyll serve
 ```
 
 Data parsing / regeneration workflow lives in
-[`docs/METHODOLOGY.md`](docs/METHODOLOGY.md).
+[`docs/UPDATE_PIPELINE.md`](docs/UPDATE_PIPELINE.md).
 
 ## Code of conduct
 

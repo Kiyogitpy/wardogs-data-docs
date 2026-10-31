@@ -1,0 +1,253 @@
+--- export: UPrimaryDataAsset / VP_WHL_08_MainBody_Default ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_08_MainBody_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_08/Parts/VP_WHL_08_MainBody_Default",
+  "Properties": {
+    "Tags": [
+      "Vehicle.MainBody"
+    ],
+    "Fragments": [
+      {
+        "Key": "Body",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_08_MainBody_Default:MVF_StaticMesh_6'",
+            "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.2"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_WHL_08_MainBody_Default:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.5"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_WHL_08_MainBody_Default:WD_MVF_Interactions_0'",
+            "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.3"
+          }
+        }
+      },
+      {
+        "Key": "SupplyCrate",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_WHL_08_MainBody_Default:WD_MVF_SupplyCrateFragment_0'",
+            "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.4"
+          }
+        }
+      },
+      {
+        "Key": "Roof",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_08_MainBody_Default:MVF_StaticMesh_0'",
+            "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_0 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_Default'",
+    "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_08/Meshes/SM_WHL_08_Roof.SM_WHL_08_Roof",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_6 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_Default'",
+    "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      },
+      "Tags": [
+        "BrakeLight"
+      ]
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_08/Meshes/SM_WHL_08_Body.SM_WHL_08_Body",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_Default'",
+    "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/WHL_08/Data/DA_VehicleInteractions_WHL_08.DA_VehicleInteractions_WHL_08",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_0 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_Default'",
+    "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "DeployOffset": {
+        "X": -600.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "bShouldUseVehicleSpeedCheck": false,
+      "LogisticsSlotSettings": [
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.BackSlot",
+            "SourceString": "Back Slot",
+            "LocalizedString": "Back Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": -0.0,
+              "Z": 0.707107,
+              "W": 0.7071066,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": -170.0,
+              "Y": -0.0,
+              "Z": 115.0
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 4,
+            "Y": 1
+          },
+          "SpaceEdgeLength": 25.0,
+          "SpaceDimensions": {
+            "X": 75.0,
+            "Y": 75.0,
+            "Z": 132.5
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabfpidgmbniihagpoap": false,
+          "DeployOffset": {
+            "X": -750.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        }
+      ],
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_08_MainBody_Default'",
+    "ObjectPath": "/WHL_08/Parts/VP_WHL_08_MainBody_Default.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/WHL_08/Data/DA_WHL_08_Stats.DA_WHL_08_Stats",
+      "SubPathString": ""
+    }
+  }
+}

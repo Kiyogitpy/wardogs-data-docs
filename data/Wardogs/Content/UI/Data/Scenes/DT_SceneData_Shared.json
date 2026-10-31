@@ -1,0 +1,208 @@
+--- export: UDataTable / DT_SceneData_Shared ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Shared",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Scenes/DT_SceneData_Shared",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Shared.Popups": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Popup",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Popups/W_PopupsScene.W_PopupsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIPopupsViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Popups/Data/DA_PopupsScene.DA_PopupsScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": true,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Shared.Popups"
+      }
+    },
+    "UI.Scene.Shared.Settings": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "CloseSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 1,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Settings/W_SettingsScene.W_SettingsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISettingsViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Settings/Data/DA_SettingsScene.DA_SettingsScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Shared.Settings"
+      }
+    },
+    "UI.Scene.Frontend.Loadouts": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [],
+      "CloseSceneActions": [],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Loadouts/W_LoadoutsScene.W_LoadoutsScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUILoadoutsViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Loadouts/Data/DA_LoadoutsScene.DA_LoadoutsScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Frontend.Loadouts"
+      }
+    },
+    "UI.Scene.Match.Vendor.Equipment": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": true,
+      "Group": {
+        "TagName": "None"
+      },
+      "SceneRules": [],
+      "OpenSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "CloseSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 0,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Vendor/W_VendorScene_New.W_VendorScene_New_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVendorViewModel_Rework",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Vendor/Data/DA_VendorScene_New.DA_VendorScene_New",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": true,
+      "bShowBackButton": true,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": true,
+      "Tag": {
+        "TagName": "UI.Scene.Match.Vendor.Equipment"
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / ID_SMG_03PistolGrip ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SMG_03PistolGrip",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/SMG_03/Data/Components/ID_SMG_03PistolGrip",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SMG_03PistolGrip"
+    },
+    "ItemContext": [
+      "Item.Attachment.Grip"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_SMG_03PistolGrip:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/SMG_03/Data/Components/ID_SMG_03PistolGrip.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_SMG_03PistolGrip:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/SMG_03/Data/Components/ID_SMG_03PistolGrip.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SMG_03PistolGrip'",
+    "ObjectPath": "/SMG_03/Data/Components/ID_SMG_03PistolGrip.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Grip"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SMG_03PistolGrip'",
+    "ObjectPath": "/SMG_03/Data/Components/ID_SMG_03PistolGrip.0"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

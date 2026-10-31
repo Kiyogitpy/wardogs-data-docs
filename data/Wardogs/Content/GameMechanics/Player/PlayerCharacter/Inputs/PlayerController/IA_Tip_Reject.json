@@ -1,0 +1,30 @@
+--- export: UDataAsset / IA_Tip_Reject ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Tip_Reject",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip_Reject",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Player.Tip.Reject"
+    },
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Tip_Reject:InputTriggerTap_0'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip_Reject.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Tip_Reject'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Tip_Reject.0"
+  }
+}

@@ -1,0 +1,45 @@
+--- export: UPrimaryDataAsset / VV_ROT_04_Default ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_ROT_04_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/ROT_04/Variants/VV_ROT_04_Default",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -1500.0,
+        "Y": -1100.0,
+        "Z": -1.7
+      },
+      "Max": {
+        "X": 1000.0,
+        "Y": 1100.0,
+        "Z": 1000.0
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_ROT_04'",
+        "ObjectPath": "/ROT_04/Platforms/VP_ROT_04.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "SideDoors"
+            },
+            "Part": {
+              "AssetPathName": "/ROT_04/Parts/VP_ROT_04_SideDoors_Default.VP_ROT_04_SideDoors_Default",
+              "SubPathString": ""
+            }
+          }
+        ]
+      }
+    }
+  }
+}

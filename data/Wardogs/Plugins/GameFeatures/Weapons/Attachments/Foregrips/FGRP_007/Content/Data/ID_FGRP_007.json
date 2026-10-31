@@ -1,0 +1,183 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/FGRP_007/Meshes/SM_FGRP_007.SM_FGRP_007",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_FGRP_007'",
+        "ObjectPath": "/FGRP_007/Materials/MI_FGRP_007.0"
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  },
+  "Properties": {
+    "Weight": 0.12
+  }
+}
+--- export: UPrimaryDataAsset / ID_FGRP_007 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_FGRP_007",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/FGRP_007/Data/ID_FGRP_007",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.FGRP_007"
+    },
+    "ItemContext": [
+      "Item.Attachment.Underbarrel",
+      "Item.Context.Equippable",
+      "Item.Context.Animation.Archetype.Foregrip.Vertical"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Attachments.STRINGS_Items_Attachments",
+      "Key": "Items.Attachments.FortisShift",
+      "SourceString": "Shift Foregrip",
+      "LocalizedString": "Shift Foregrip"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_FGRP_007:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_FGRP_007:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_FGRP_007:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_FGRP_007:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_FGRP_007:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_FGRP_007:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_FGRP_007:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Grip"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_007_C'",
+          "ObjectPath": "/FGRP_007/Data/GE_FGRP_007.0"
+        }
+      ],
+      "AppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_007_CharacterEffects_C'",
+          "ObjectPath": "/FGRP_007/Data/GE_FGRP_007_CharacterEffects.0"
+        }
+      ],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_GripPod_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/Bipod/ID_Attachment_GripPod_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_007'",
+    "ObjectPath": "/FGRP_007/Data/ID_FGRP_007.4"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

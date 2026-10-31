@@ -1,0 +1,836 @@
+--- export: UObject / Default__B_SupplyCrate_Free_C ---
+{
+  "Type": "B_SupplyCrate_Free_C",
+  "Name": "Default__B_SupplyCrate_Free_C",
+  "Flags": "RF_Public | RF_Transactional | RF_ClassDefaultObject | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/SupplyCrates/Blueprints/B_SupplyCrate_Free.B_SupplyCrate_Free_C'",
+  "Package": "/SupplyCrates/Blueprints/B_SupplyCrate_Free",
+  "Template": {
+    "ObjectName": "B_SupplyCrate_Base_C'Default__B_SupplyCrate_Base_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.0"
+  },
+  "Properties": {
+    "UberGraphFrame": {},
+    "ScaleFactor": {
+      "X": 1.25,
+      "Y": 1.25,
+      "Z": 1.25
+    },
+    "DefaultSceneRootComponent": {
+      "ObjectName": "SceneComponent'Default__B_SupplyCrate_Free_C:Default Root Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.12"
+    },
+    "WorldInteractableComponent": {
+      "ObjectName": "WDSupplyCrateInteractableComponent'Default__B_SupplyCrate_Free_C:World Interactable Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.23"
+    },
+    "FactionComponent": {
+      "ObjectName": "WDFactionComponent'Default__B_SupplyCrate_Free_C:Faction Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.21"
+    },
+    "GameplayEffectComponent": {
+      "ObjectName": "BHGameplayEffectComponent'Default__B_SupplyCrate_Free_C:Gameplay Effect Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.1"
+    },
+    "VitalityComponent": {
+      "ObjectName": "WDVitalityComponent'Default__B_SupplyCrate_Free_C:Vitality Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.24"
+    },
+    "DamageEntityComponent": {
+      "ObjectName": "WDDamageEntityComponent'Default__B_SupplyCrate_Free_C:Damage Entity Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.20"
+    },
+    "GameplayCueComponent": {
+      "ObjectName": "WDGameplayCueComponent'Default__B_SupplyCrate_Free_C:Gameplay Cue Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.22"
+    },
+    "SupplyCrateInventoryComponent": {
+      "ObjectName": "BHInventoryComponent'Default__B_SupplyCrate_Free_C:Vehicle Inventory Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.2"
+    },
+    "DestructionVelocityThreshold": 2750.0,
+    "RootComponent": {
+      "ObjectName": "SceneComponent'Default__B_SupplyCrate_Free_C:Default Root Component'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.12"
+    }
+  }
+}
+--- export: UActorComponent / Gameplay Effect Component ---
+{
+  "Type": "BHGameplayEffectComponent",
+  "Name": "Gameplay Effect Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameplayEffectComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "BHGameplayEffectComponent'Default__B_SupplyCrate_Base_C:Gameplay Effect Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.1"
+  }
+}
+--- export: UActorComponent / Vehicle Inventory Component ---
+{
+  "Type": "BHInventoryComponent",
+  "Name": "Vehicle Inventory Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "BHInventoryComponent'Default__B_SupplyCrate_Base_C:Vehicle Inventory Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.2"
+  }
+}
+--- export: UBlueprintGeneratedClass / B_SupplyCrate_Free_C ---
+{
+  "Type": "BlueprintGeneratedClass",
+  "Name": "B_SupplyCrate_Free_C",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BlueprintGeneratedClass'",
+  "Package": "/SupplyCrates/Blueprints/B_SupplyCrate_Free",
+  "Super": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Base_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.3"
+  },
+  "Properties": {
+    "Timelines": [
+      {
+        "ObjectName": "TimelineTemplate'B_SupplyCrate_Free_C:MoveCrateLid_Template'",
+        "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.19"
+      }
+    ],
+    "SimpleConstructionScript": {
+      "ObjectName": "SimpleConstructionScript'B_SupplyCrate_Free_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.16"
+    },
+    "InheritableComponentHandler": {
+      "ObjectName": "InheritableComponentHandler'B_SupplyCrate_Free_C:InheritableComponentHandler'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.10"
+    },
+    "UberGraphFunction": {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:ExecuteUbergraph_B_SupplyCrate_Free'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.5"
+    }
+  },
+  "Children": [
+    {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:MoveCrateLid__FinishedFunc'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.6"
+    },
+    {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:MoveCrateLid__UpdateFunc'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.7"
+    },
+    {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:OnSuppyCrateInteractionSuccess'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.8"
+    },
+    {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:ReceiveBeginPlay'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.9"
+    },
+    {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:ExecuteUbergraph_B_SupplyCrate_Free'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.5"
+    }
+  ],
+  "ChildProperties": [
+    {
+      "Type": "StructProperty",
+      "Name": "UberGraphFrame",
+      "Flags": "RF_Public | RF_LoadCompleted",
+      "ElementSize": 16,
+      "PropertyFlags": "Transient | DuplicateTransient",
+      "Struct": {
+        "ObjectName": "Class'PointerToUberGraphFrame'",
+        "ObjectPath": "/Script/Engine"
+      }
+    },
+    {
+      "Type": "ObjectProperty",
+      "Name": "CrateLid",
+      "Flags": "RF_Public | RF_LoadCompleted",
+      "ElementSize": 8,
+      "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+      "PropertyClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      }
+    },
+    {
+      "Type": "ObjectProperty",
+      "Name": "CrateBody",
+      "Flags": "RF_Public | RF_LoadCompleted",
+      "ElementSize": 8,
+      "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+      "PropertyClass": {
+        "ObjectName": "Class'StaticMeshComponent'",
+        "ObjectPath": "/Script/Engine"
+      }
+    },
+    {
+      "Type": "FloatProperty",
+      "Name": "MoveCrateLid_MoveLid_C55E7B82434E3C038B8D9A9998D72FA0",
+      "Flags": "RF_Public | RF_LoadCompleted",
+      "ElementSize": 4
+    },
+    {
+      "Type": "ByteProperty",
+      "Name": "MoveCrateLid__Direction_C55E7B82434E3C038B8D9A9998D72FA0",
+      "Flags": "RF_Public | RF_LoadCompleted",
+      "ElementSize": 1,
+      "Enum": {
+        "ObjectName": "Class'ETimelineDirection'",
+        "ObjectPath": "/Script/Engine"
+      }
+    },
+    {
+      "Type": "ObjectProperty",
+      "Name": "MoveCrateLid",
+      "Flags": "RF_Public | RF_LoadCompleted",
+      "ElementSize": 8,
+      "PropertyFlags": "BlueprintVisible | InstancedReference",
+      "PropertyClass": {
+        "ObjectName": "Class'TimelineComponent'",
+        "ObjectPath": "/Script/Engine"
+      }
+    }
+  ],
+  "FuncMap": {
+    "ExecuteUbergraph_B_SupplyCrate_Free": {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:ExecuteUbergraph_B_SupplyCrate_Free'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.5"
+    },
+    "ReceiveBeginPlay": {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:ReceiveBeginPlay'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.9"
+    },
+    "OnSuppyCrateInteractionSuccess": {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:OnSuppyCrateInteractionSuccess'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.8"
+    },
+    "MoveCrateLid__UpdateFunc": {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:MoveCrateLid__UpdateFunc'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.7"
+    },
+    "MoveCrateLid__FinishedFunc": {
+      "ObjectName": "Function'B_SupplyCrate_Free_C:MoveCrateLid__FinishedFunc'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.6"
+    }
+  },
+  "ClassFlags": "CLASS_Config | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference | CLASS_Deprecated",
+  "ClassWithin": {
+    "ObjectName": "Class'Object'",
+    "ObjectPath": "/Script/CoreUObject"
+  },
+  "ClassConfigName": "Engine",
+  "bCooked": true,
+  "ClassDefaultObject": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "EditorTags": {
+    "BlueprintType": "BPTYPE_Normal"
+  }
+}
+--- export: UCurveFloat / CurveFloat_0 ---
+{
+  "Type": "CurveFloat",
+  "Name": "CurveFloat_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CurveFloat'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Properties": {
+    "FloatCurve": {
+      "Keys": [
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_Auto",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 0.0,
+          "Value": 0.0,
+          "ArriveTangent": 0.0,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.0,
+          "LeaveTangentWeight": 0.0
+        },
+        {
+          "InterpMode": "RCIM_Cubic",
+          "TangentMode": "RCTM_Auto",
+          "TangentWeightMode": "RCTWM_WeightedNone",
+          "Time": 0.25,
+          "Value": 1.0,
+          "ArriveTangent": 0.0,
+          "ArriveTangentWeight": 0.0,
+          "LeaveTangent": 0.0,
+          "LeaveTangentWeight": 0.0
+        }
+      ]
+    }
+  }
+}
+--- export: UFunction / ExecuteUbergraph_B_SupplyCrate_Free ---
+{
+  "Type": "Function",
+  "Name": "ExecuteUbergraph_B_SupplyCrate_Free",
+  "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'Function'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "ChildProperties": [
+    {
+      "Type": "IntProperty",
+      "Name": "EntryPoint",
+      "Flags": "RF_Public",
+      "ElementSize": 4,
+      "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+    },
+    {
+      "Type": "DoubleProperty",
+      "Name": "CallFunc_Lerp_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 8
+    },
+    {
+      "Type": "StrProperty",
+      "Name": "CallFunc_Conv_DoubleToString_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 16
+    },
+    {
+      "Type": "StructProperty",
+      "Name": "CallFunc_GetFactionTag_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 12,
+      "PropertyFlags": "ConstParm",
+      "Struct": {
+        "ObjectName": "Class'GameplayTag'",
+        "ObjectPath": "/Script/GameplayTags"
+      }
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "GameplayTagsK2Node_SwitchGameplayTag_CmpSuccess",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_SetStaticMesh_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_SetStaticMesh_ReturnValue_1",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_SetStaticMesh_ReturnValue_2",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_Not_PreBool_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "StructProperty",
+      "Name": "CallFunc_K2_GetComponentLocation_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 24,
+      "Struct": {
+        "ObjectName": "Class'Vector'",
+        "ObjectPath": "/Script/CoreUObject"
+      }
+    },
+    {
+      "Type": "DoubleProperty",
+      "Name": "CallFunc_BreakVector_X",
+      "Flags": "RF_Public",
+      "ElementSize": 8
+    },
+    {
+      "Type": "DoubleProperty",
+      "Name": "CallFunc_BreakVector_Y",
+      "Flags": "RF_Public",
+      "ElementSize": 8
+    },
+    {
+      "Type": "DoubleProperty",
+      "Name": "CallFunc_BreakVector_Z",
+      "Flags": "RF_Public",
+      "ElementSize": 8
+    },
+    {
+      "Type": "DoubleProperty",
+      "Name": "CallFunc_Add_DoubleDouble_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 8
+    },
+    {
+      "Type": "StructProperty",
+      "Name": "CallFunc_MakeVector_ReturnValue",
+      "Flags": "RF_Public",
+      "ElementSize": 24,
+      "Struct": {
+        "ObjectName": "Class'Vector'",
+        "ObjectPath": "/Script/CoreUObject"
+      }
+    },
+    {
+      "Type": "StructProperty",
+      "Name": "CallFunc_K2_SetWorldLocation_SweepHitResult",
+      "Flags": "RF_Public",
+      "ElementSize": 264,
+      "PropertyFlags": "ContainsInstancedReference",
+      "Struct": {
+        "ObjectName": "Class'HitResult'",
+        "ObjectPath": "/Script/Engine"
+      }
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_SetStaticMesh_ReturnValue_3",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_SetStaticMesh_ReturnValue_4",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "BoolProperty",
+      "Name": "CallFunc_SetStaticMesh_ReturnValue_5",
+      "Flags": "RF_Public",
+      "ElementSize": 1,
+      "FieldSize": 1,
+      "ByteOffset": 0,
+      "ByteMask": 1,
+      "FieldMask": 255,
+      "BoolSize": 1,
+      "bIsNativeBool": true
+    },
+    {
+      "Type": "DoubleProperty",
+      "Name": "CallFunc_Lerp_Alpha_ImplicitCast",
+      "Flags": "RF_Public",
+      "ElementSize": 8
+    }
+  ],
+  "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction | FUNC_HasDefaults"
+}
+--- export: UFunction / MoveCrateLid__FinishedFunc ---
+{
+  "Type": "Function",
+  "Name": "MoveCrateLid__FinishedFunc",
+  "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'Function'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "FunctionFlags": "FUNC_BlueprintEvent"
+}
+--- export: UFunction / MoveCrateLid__UpdateFunc ---
+{
+  "Type": "Function",
+  "Name": "MoveCrateLid__UpdateFunc",
+  "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'Function'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "FunctionFlags": "FUNC_BlueprintEvent"
+}
+--- export: UFunction / OnSuppyCrateInteractionSuccess ---
+{
+  "Type": "Function",
+  "Name": "OnSuppyCrateInteractionSuccess",
+  "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'Function'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Super": {
+    "ObjectName": "Function'B_SupplyCrate_Base_C:OnSuppyCrateInteractionSuccess'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.9"
+  },
+  "FunctionFlags": "FUNC_Event | FUNC_Public | FUNC_BlueprintEvent"
+}
+--- export: UFunction / ReceiveBeginPlay ---
+{
+  "Type": "Function",
+  "Name": "ReceiveBeginPlay",
+  "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'Function'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Super": {
+    "ObjectName": "Function'B_SupplyCrate_Base_C:ReceiveBeginPlay'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.13"
+  },
+  "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+}
+--- export: UInheritableComponentHandler / InheritableComponentHandler ---
+{
+  "Type": "InheritableComponentHandler",
+  "Name": "InheritableComponentHandler",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InheritableComponentHandler'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  }
+}
+--- export: USceneComponent / DefaultSceneRoot_GEN_VARIABLE ---
+{
+  "Type": "SceneComponent",
+  "Name": "DefaultSceneRoot_GEN_VARIABLE",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SceneComponent'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  }
+}
+--- export: USceneComponent / Default Root Component ---
+{
+  "Type": "SceneComponent",
+  "Name": "Default Root Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SceneComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "SceneComponent'Default__B_SupplyCrate_Base_C:Default Root Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.17"
+  }
+}
+--- export: USCS_Node / SCS_Node_0 ---
+{
+  "Type": "SCS_Node",
+  "Name": "SCS_Node_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SCS_Node'",
+  "Outer": {
+    "ObjectName": "SimpleConstructionScript'B_SupplyCrate_Free_C:SimpleConstructionScript_0'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.16"
+  },
+  "Properties": {
+    "ComponentClass": {
+      "ObjectName": "Class'SceneComponent'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ComponentTemplate": {
+      "ObjectName": "SceneComponent'B_SupplyCrate_Free_C:DefaultSceneRoot_GEN_VARIABLE'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.11"
+    },
+    "VariableGuid": "F22E2E40-47C90AF9-BCB03B89-AF354955",
+    "InternalVariableName": "DefaultSceneRoot"
+  }
+}
+--- export: USCS_Node / SCS_Node_1 ---
+{
+  "Type": "SCS_Node",
+  "Name": "SCS_Node_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SCS_Node'",
+  "Outer": {
+    "ObjectName": "SimpleConstructionScript'B_SupplyCrate_Free_C:SimpleConstructionScript_0'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.16"
+  },
+  "Properties": {
+    "ComponentClass": {
+      "ObjectName": "Class'StaticMeshComponent'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ComponentTemplate": {
+      "ObjectName": "StaticMeshComponent'B_SupplyCrate_Free_C:CrateBody_GEN_VARIABLE'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.17"
+    },
+    "ParentComponentOrVariableName": "Default Root Component",
+    "bIsParentComponentNative": true,
+    "ChildNodes": [
+      {
+        "ObjectName": "SCS_Node'B_SupplyCrate_Free_C:SimpleConstructionScript_0.SCS_Node_2'",
+        "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.15"
+      }
+    ],
+    "VariableGuid": "90764CD9-402EAAF5-06F3C095-A1110601",
+    "InternalVariableName": "CrateBody"
+  }
+}
+--- export: USCS_Node / SCS_Node_2 ---
+{
+  "Type": "SCS_Node",
+  "Name": "SCS_Node_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SCS_Node'",
+  "Outer": {
+    "ObjectName": "SimpleConstructionScript'B_SupplyCrate_Free_C:SimpleConstructionScript_0'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.16"
+  },
+  "Properties": {
+    "ComponentClass": {
+      "ObjectName": "Class'StaticMeshComponent'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ComponentTemplate": {
+      "ObjectName": "StaticMeshComponent'B_SupplyCrate_Free_C:CrateLid_GEN_VARIABLE'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.18"
+    },
+    "VariableGuid": "97CDD9DF-4DDC29D9-7B817288-93B6BBD2",
+    "InternalVariableName": "CrateLid"
+  }
+}
+--- export: USimpleConstructionScript / SimpleConstructionScript_0 ---
+{
+  "Type": "SimpleConstructionScript",
+  "Name": "SimpleConstructionScript_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SimpleConstructionScript'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Properties": {
+    "RootNodes": [
+      {
+        "ObjectName": "SCS_Node'B_SupplyCrate_Free_C:SimpleConstructionScript_0.SCS_Node_1'",
+        "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.14"
+      }
+    ],
+    "AllNodes": [
+      {
+        "ObjectName": "SCS_Node'B_SupplyCrate_Free_C:SimpleConstructionScript_0.SCS_Node_1'",
+        "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.14"
+      },
+      {
+        "ObjectName": "SCS_Node'B_SupplyCrate_Free_C:SimpleConstructionScript_0.SCS_Node_2'",
+        "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.15"
+      }
+    ],
+    "DefaultSceneRootNode": {
+      "ObjectName": "SCS_Node'B_SupplyCrate_Free_C:SimpleConstructionScript_0.SCS_Node_0'",
+      "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.13"
+    }
+  }
+}
+--- export: UStaticMeshComponent / CrateBody_GEN_VARIABLE ---
+{
+  "Type": "StaticMeshComponent",
+  "Name": "CrateBody_GEN_VARIABLE",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'StaticMeshComponent'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Properties": {
+    "StaticMesh": {
+      "ObjectName": "StaticMesh'SM_FOB_Crate_01a'",
+      "ObjectPath": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_01a.1"
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": -90.0,
+      "Roll": 0.0
+    }
+  }
+}
+--- export: UStaticMeshComponent / CrateLid_GEN_VARIABLE ---
+{
+  "Type": "StaticMeshComponent",
+  "Name": "CrateLid_GEN_VARIABLE",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'StaticMeshComponent'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Properties": {
+    "StaticMesh": {
+      "ObjectName": "StaticMesh'SM_FOB_Crate_01b'",
+      "ObjectPath": "/Game/Environment/Props/Military/Crates/SM_FOB_Crate_01b.1"
+    },
+    "RelativeLocation": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 35.0
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": -3.5527137E-15,
+      "Roll": 0.0
+    }
+  }
+}
+--- export: UObject / MoveCrateLid_Template ---
+{
+  "Type": "TimelineTemplate",
+  "Name": "MoveCrateLid_Template",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'TimelineTemplate'",
+  "Outer": {
+    "ObjectName": "BlueprintGeneratedClass'B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.3"
+  },
+  "Properties": {
+    "TimelineLength": 0.25,
+    "FloatTracks": [
+      {
+        "CurveFloat": {
+          "ObjectName": "CurveFloat'B_SupplyCrate_Free_C:CurveFloat_0'",
+          "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.4"
+        },
+        "PropertyName": "MoveCrateLid_MoveLid_C55E7B82434E3C038B8D9A9998D72FA0",
+        "TrackName": "MoveLid",
+        "bIsExternalCurve": false
+      }
+    ],
+    "TimelineGuid": "C55E7B82-434E3C03-8B8D9A99-98D72FA0",
+    "VariableName": "MoveCrateLid",
+    "DirectionPropertyName": "MoveCrateLid__Direction_C55E7B82434E3C038B8D9A9998D72FA0",
+    "UpdateFunctionName": "MoveCrateLid__UpdateFunc",
+    "FinishedFunctionName": "MoveCrateLid__FinishedFunc"
+  }
+}
+--- export: UActorComponent / Damage Entity Component ---
+{
+  "Type": "WDDamageEntityComponent",
+  "Name": "Damage Entity Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDamageEntityComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "WDDamageEntityComponent'Default__B_SupplyCrate_Base_C:Damage Entity Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.20"
+  }
+}
+--- export: UActorComponent / Faction Component ---
+{
+  "Type": "WDFactionComponent",
+  "Name": "Faction Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFactionComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "WDFactionComponent'Default__B_SupplyCrate_Base_C:Faction Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.21"
+  }
+}
+--- export: UActorComponent / Gameplay Cue Component ---
+{
+  "Type": "WDGameplayCueComponent",
+  "Name": "Gameplay Cue Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "WDGameplayCueComponent'Default__B_SupplyCrate_Base_C:Gameplay Cue Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.22"
+  }
+}
+--- export: UActorComponent / World Interactable Component ---
+{
+  "Type": "WDSupplyCrateInteractableComponent",
+  "Name": "World Interactable Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDSupplyCrateInteractableComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "WDSupplyCrateInteractableComponent'Default__B_SupplyCrate_Base_C:World Interactable Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.23"
+  }
+}
+--- export: UActorComponent / Vitality Component ---
+{
+  "Type": "WDVitalityComponent",
+  "Name": "Vitality Component",
+  "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVitalityComponent'",
+  "Outer": {
+    "ObjectName": "B_SupplyCrate_Free_C'Default__B_SupplyCrate_Free_C'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Free.0"
+  },
+  "Template": {
+    "ObjectName": "WDVitalityComponent'Default__B_SupplyCrate_Base_C:Vitality Component'",
+    "ObjectPath": "/SupplyCrates/Blueprints/B_SupplyCrate_Base.24"
+  }
+}

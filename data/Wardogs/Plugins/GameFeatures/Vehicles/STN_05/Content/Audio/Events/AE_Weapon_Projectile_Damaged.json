@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Damaged ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Damaged",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Weapon_Projectile_Damaged",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Projectile.Damaged"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Projectile_Damaged:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Damaged.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Projectile_Damaged:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Damaged.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Damaged'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Damaged.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Damaged'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Damaged.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Shared_Impacts_Medium_Metal'",
+      "ObjectPath": "/Game/Audio/Weapon/Shared/Impacts/Medium/MSS_Weapon_Shared_Impacts_Medium_Metal.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

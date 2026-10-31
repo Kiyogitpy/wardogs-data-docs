@@ -1,0 +1,1613 @@
+--- export: UDataTable / DT_TooltipData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TooltipData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Features/Tooltips/Data/DT_TooltipData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITooltipDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Tooltip.Data.SettingsIcon": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InventoryTooltip.STRINGS_InventoryTooltip",
+        "Key": "Description.GameMenu",
+        "SourceString": "Game Menu",
+        "LocalizedString": "Game Menu"
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.SettingsIcon"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Vehicle": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_VehicleVendor",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Vendor_Vehicle.DA_ContainerTooltipData_Vendor_Vehicle",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 5.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Vehicle"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Gear": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_VendorItemCard",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Vendor.DA_ContainerTooltipData_Vendor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Gear"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Gear.Backpack": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_VendorItemCard",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Vendor_Backpack.DA_ContainerTooltipData_Vendor_Backpack",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Gear.Backpack"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Weapon": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_WeaponTooltip.W_WeaponTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIWeaponTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_WeaponTooltipData.DA_WeaponTooltipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Weapon"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Item": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_VendorItemCard",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Vendor.DA_ContainerTooltipData_Vendor",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Item"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.Gear": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_Inventory",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Inventory_Gear.DA_ContainerTooltipData_Inventory_Gear",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.Gear"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.Weapon": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_WeaponTooltip.W_WeaponTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIWeaponTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_WeaponTooltipData.DA_WeaponTooltipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.Weapon"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.Item": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_Inventory",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Inventory.DA_ContainerTooltipData_Inventory",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.Item"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.LockedBackpackSlot": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InventoryTooltip.STRINGS_InventoryTooltip",
+        "Key": "Description.Inventory.LockedBackpackSlot",
+        "SourceString": "Need to equip a backpack.",
+        "LocalizedString": "Need to equip a backpack."
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.LockedBackpackSlot"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.LockedTacticalVestSlot": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InventoryTooltip.STRINGS_InventoryTooltip",
+        "Key": "Description.Inventory.LockedTacticalVestSlot",
+        "SourceString": "Need to equip a tactical vest.",
+        "LocalizedString": "Need to equip a tactical vest."
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.LockedTacticalVestSlot"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.Weight": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_WeightTooltip.W_WeightTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIWeightToolTipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_WeightToolTipData.DA_WeightToolTipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Tooltips_Weight.STRINGS_Tooltips_Weight",
+        "Key": "WeightTooltip.Header",
+        "SourceString": "WEIGHT",
+        "LocalizedString": "WEIGHT"
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.Weight"
+      }
+    },
+    "UI.Tooltip.Data.Inventory.QuickAccess": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Inventory_QuickAccess.DA_ContainerTooltipData_Inventory_QuickAccess",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.Player": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel_PlayerMapTracker",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_PlayerMapTracker.DA_ContainerTooltipData_PlayerMapTracker",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.Player"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.PlayerJustName": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTitleTextTooltip.W_SingleTitleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTitleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.PlayerJustName"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.Vehicle": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_VehicleTooltip.W_VehicleTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIVehicleTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_VehicleTooltipData.DA_VehicleTooltipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+        "Key": "Tracker.Vehicle",
+        "SourceString": "Vehicle",
+        "LocalizedString": "Vehicle"
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.Vehicle"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.Ping": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Ping.DA_ContainerTooltipData_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.Ping"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.SupplyCrate": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/SupplyCrate/W_SupplyCrateTooltip.W_SupplyCrateTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISupplyCrateTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Data/DA_Tooltip_SupplyCrateItemsData.DA_Tooltip_SupplyCrateItemsData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+        "Key": "Tracker.SupplyCrate",
+        "SourceString": "Supply Crate",
+        "LocalizedString": "Supply Crate"
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.SupplyCrate"
+      }
+    },
+    "UI.Tooltip.Data.MetaTreeNode": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Mastery/NodeTooltip/W_TreeNodeTooltip.W_TreeNodeTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipTreeNodeViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Mastery/NodeTooltip/DA_TreeNodeTooltipData.DA_TreeNodeTooltipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 5.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": true,
+      "MenuAnchorName": "TooltipSlot",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.MetaTreeNode"
+      }
+    },
+    "UI.Tooltip.Data.UnlockTreeNode": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Unlocks/Shared/W_UnlockTree_Tooltip.W_UnlockTree_Tooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipUnlocksTreeNodeViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/BlackMarket/Unlocks/Data/DA_UnlockTreeNodeTooltipData.DA_UnlockTreeNodeTooltipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.UnlockTreeNode"
+      }
+    },
+    "UI.Tooltip.Data.ContextMenu": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContextMenu.W_ContextMenu_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContextMenuViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContextMenuData.DA_ContextMenuData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": true,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": 0.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.ContextMenu"
+      }
+    },
+    "UI.Tooltip.Data.RoleLevel": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_RoleLevelTooltip.W_RoleLevelTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipRoleLevelViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_RoleLevelToolltipData.DA_RoleLevelToolltipData",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": 0.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.RoleLevel"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.Deployable": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Ping.DA_ContainerTooltipData_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.Deployable"
+      }
+    },
+    "UI.Tooltip.Data.Stationary": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Stationary.DA_ContainerTooltipData_Stationary",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Stationary"
+      }
+    },
+    "UI.Tooltip.Data.Buildable": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Ping.DA_ContainerTooltipData_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Buildable"
+      }
+    },
+    "UI.Tooltip.Data.Vendor": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_Ping.DA_ContainerTooltipData_Ping",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor"
+      }
+    },
+    "UI.Tooltip.Data.InfoPrompt": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_InfoPrompt.DA_ContainerTooltipData_InfoPrompt",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.InfoPrompt"
+      }
+    },
+    "UI.Tooltip.Data.ComingSoon.VaultUpgrade": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ComingSoonTooltip.W_ComingSoonTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ComingSoonTooltip.STRINGS_ComingSoonTooltip",
+        "Key": "Text.VaultUpgrade",
+        "SourceString": "Upgrade your vault space to hold more items available for use in-game!",
+        "LocalizedString": "Upgrade your vault space to hold more items available for use in-game!"
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.ComingSoon.VaultUpgrade"
+      }
+    },
+    "UI.Tooltip.Data.TacticalMap.SupplyPallet": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_ContainerTooltip.W_ContainerTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipContainerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/SupplyCrate/Pallets/DA_TooltipContainer_Pallet.DA_TooltipContainer_Pallet",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+        "Key": "Tracker.SupplyCrate",
+        "SourceString": "Supply Crate",
+        "LocalizedString": "Supply Crate"
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.TacticalMap.SupplyPallet"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Warning.NoAmmo": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+        "Key": "Text.NoAmmo",
+        "SourceString": "No Ammo",
+        "LocalizedString": "No Ammo"
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Warning.NoAmmo"
+      }
+    },
+    "UI.Tooltip.Data.Vendor.Warning.NoMedical": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISingleTextTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Inventory_2_0.STRINGS_Inventory_2_0",
+        "Key": "Text.NoMedical",
+        "SourceString": "No Medical",
+        "LocalizedString": "No Medical"
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.Vendor.Warning.NoMedical"
+      }
+    },
+    "UI.Tooltip.Data.ServerDescriptor": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIServerDescriptorTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.ServerDescriptor"
+      }
+    },
+    "UI.Tooltip.Data.OfficialServer": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTextTooltip.W_SingleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIServerDescriptorTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+        "Key": "Tooltip.Text.OfficialServer",
+        "SourceString": "Official Server",
+        "LocalizedString": "Official Server"
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 18.0,
+        "Y": 18.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.OfficialServer"
+      }
+    },
+    "UI.Tooltip.Data.SquadIntent": {
+      "WidgetParams": {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/W_SingleTitleTextTooltip.W_SingleTitleTextTooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUISquadIntentTooltipViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Title": {
+        "CultureInvariantString": null
+      },
+      "Subtitle": {
+        "CultureInvariantString": null
+      },
+      "ContentImage": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "ContentDescription": {
+        "CultureInvariantString": null
+      },
+      "bManuallySetWidgetPosition": false,
+      "bAlwaysAttachToWidgetPosition": false,
+      "bCanFollowMousePosition": true,
+      "TooltipOffset": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "TooltipDisplayDelay": -1.0,
+      "bAttachToMenuAnchor": false,
+      "MenuAnchorName": "None",
+      "bShouldOverrideDataOnViewModel": false,
+      "Tag": {
+        "TagName": "UI.Tooltip.Data.SquadIntent"
+      }
+    }
+  }
+}

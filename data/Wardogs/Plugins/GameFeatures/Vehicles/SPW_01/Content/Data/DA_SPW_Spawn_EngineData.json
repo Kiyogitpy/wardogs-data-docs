@@ -1,0 +1,49 @@
+--- export: UDataAsset / DA_SPW_Spawn_EngineData ---
+{
+  "Type": "MTrackedVehicleEngineData",
+  "Name": "DA_SPW_Spawn_EngineData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MTrackedVehicleEngineData'",
+  "Package": "/SPW_01/Data/DA_SPW_Spawn_EngineData",
+  "Properties": {
+    "TrackMass": 700.0,
+    "SprocketMass": 100.0,
+    "SprocketRadius": 40.0,
+    "GravityOnSlope": 1.25,
+    "SpeedToBrakeForce": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CRV_SpawnVehicle_SpeedToBrakeRatio'",
+        "ObjectPath": "/SPW_01/Curves/CRV_SpawnVehicle_SpeedToBrakeRatio.0"
+      }
+    },
+    "BrakeForce": 14.0,
+    "DifferentialRatio": 3.5,
+    "ChangeTime": 1000.0,
+    "GearRatios": [
+      0.8,
+      2.16,
+      6.0,
+      0.0,
+      3.485,
+      2.787,
+      2.2,
+      1.978,
+      1.5,
+      1.2
+    ],
+    "ThrottleIncrement": 1.5,
+    "EngineExtraPowerRatio": 10.0,
+    "BoostScale": 1.5,
+    "TorqueCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'CRV_TrackedVehicle_TorqueCurve_APC'",
+        "ObjectPath": "/Game/Vehicles/Pawns/Tracked/Curves/CRV_TrackedVehicle_TorqueCurve_APC.0"
+      }
+    },
+    "MuYStatic": 1.5,
+    "MuYKinetic": 1.2,
+    "SleepLinearThreshold": 5.0,
+    "SleepAngularThreshold": 5.0,
+    "SleepWaitingTime": 3.0
+  }
+}

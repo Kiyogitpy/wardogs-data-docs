@@ -1,0 +1,45 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Helmet_Tanker_Active_Start'",
+    "ObjectPath": "/Game/Audio/Events/Gear/Helmets/Tanker/AE_Helmet_Tanker_Active_Start.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'Am_CBM_Tanker_Helmet_Active'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/Am_CBM_Tanker_Helmet_Active.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    },
+    "bLocalOnly": true
+  }
+}
+--- export: UPrimaryDataAsset / AE_Helmet_Tanker_Active_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Helmet_Tanker_Active_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Gear/Helmets/Tanker/AE_Helmet_Tanker_Active_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.State.Helmet.Tank.Active.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_Helmet_Tanker_Active_Start:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Gear/Helmets/Tanker/AE_Helmet_Tanker_Active_Start.0"
+      }
+    ]
+  }
+}

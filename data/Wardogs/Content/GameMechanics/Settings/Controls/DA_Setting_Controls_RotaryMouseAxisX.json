@@ -1,0 +1,87 @@
+--- export: UDataAsset / DA_Setting_Controls_RotaryMouseAxisX ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_RotaryMouseAxisX",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_RotaryMouseAxisX",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_RotaryMouseAxisX:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_RotaryMouseAxisX.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_RotaryMouseAxisX'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/DA_Setting_Controls_RotaryMouseAxisX.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDRotaryMouseXFunction::Roll",
+        "Value": {
+          "Namespace": "",
+          "Key": "9C27E38D444F05E574DB4B9FB49CAA4D",
+          "SourceString": "Roll",
+          "LocalizedString": "Roll"
+        }
+      },
+      {
+        "Key": "EWDRotaryMouseXFunction::Yaw",
+        "Value": {
+          "Namespace": "",
+          "Key": "7ACBBEE24B8135D7C059C9A0B9530537",
+          "SourceString": "Yaw",
+          "LocalizedString": "Yaw"
+        }
+      },
+      {
+        "Key": "EWDRotaryMouseXFunction::Disabled",
+        "Value": {
+          "Namespace": "",
+          "Key": "5B5F1B7B4C569E1E630AF695C9F7EFF9",
+          "SourceString": "Disabled",
+          "LocalizedString": "Disabled"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "Namespace": "",
+          "Key": "9C27E38D444F05E574DB4B9FB49CAA4D",
+          "SourceString": "Roll",
+          "LocalizedString": "Roll"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "Namespace": "",
+          "Key": "7ACBBEE24B8135D7C059C9A0B9530537",
+          "SourceString": "Yaw",
+          "LocalizedString": "Yaw"
+        }
+      },
+      {
+        "Key": "2",
+        "Value": {
+          "Namespace": "",
+          "Key": "5B5F1B7B4C569E1E630AF695C9F7EFF9",
+          "SourceString": "Disabled",
+          "LocalizedString": "Disabled"
+        }
+      }
+    ]
+  }
+}

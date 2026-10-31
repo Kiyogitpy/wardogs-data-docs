@@ -1,0 +1,97 @@
+--- export: UDataTable / DT_Reward_Cash_PlayerKill ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Reward_Cash_PlayerKill",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore/DT_Reward_Cash_PlayerKill",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCustomRewardTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Progression.Context.DefaultReward": {
+      "Description": {
+        "Namespace": "",
+        "Key": "FB81B5BF42316BF91FA9C098E2BCCDB1",
+        "SourceString": "Kill reward if a the instigator kills another player",
+        "LocalizedString": "Kill reward if a the instigator kills another player"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 250.0,
+      "FriendlyModifier": -6.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 4.0,
+      "ModifierHZ": 8.0,
+      "ModifierHZM": 8.0,
+      "InstigatorLocationRatioModifier": 0.5,
+      "TargetLocationRatioModifier": 0.5,
+      "AssistBaseModifier": 0.1,
+      "AssistScalingModifier": 0.9,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 0.5,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.DefaultReward"
+      }
+    },
+    "Vehicle.Variant.Land.Tracked.TNK_01.Artillery": {
+      "Description": {
+        "Namespace": "",
+        "Key": "8DDD0DC5476EFD5B58AAB7B282CCB1D0",
+        "SourceString": "Kill reward if the instigator kills another player while in artillery and the instighator is in no mans land",
+        "LocalizedString": "Kill reward if the instigator kills another player while in artillery and the instighator is in no mans land"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 5000.0,
+      "FriendlyModifier": -1.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.1,
+      "ModifierHZ": 1.25,
+      "ModifierHZM": 1.25,
+      "InstigatorLocationRatioModifier": 0.0,
+      "TargetLocationRatioModifier": 1.0,
+      "AssistBaseModifier": 0.1,
+      "AssistScalingModifier": 0.9,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 0.25,
+      "Tag": {
+        "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+      }
+    },
+    "Meta.Progression.Context.DefaultReward.Vehicle.InZone": {
+      "Description": {
+        "Namespace": "",
+        "Key": "8A25EAA34831058D0E49BFA0F91B448A",
+        "SourceString": "Kill reward if the instigator kills another player while in artillery is in the zone",
+        "LocalizedString": "Kill reward if the instigator kills another player while in artillery is in the zone"
+      },
+      "ResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "base": 100.0,
+      "FriendlyModifier": -50.0,
+      "NeutralModifier": 0.0,
+      "OwnerModifier": 1.0,
+      "ModifierCZ": 1.0,
+      "ModifierHZ": 1.0,
+      "ModifierHZM": 1.0,
+      "InstigatorLocationRatioModifier": 1.0,
+      "TargetLocationRatioModifier": 0.0,
+      "AssistBaseModifier": 0.1,
+      "AssistScalingModifier": 0.9,
+      "CrewAssistModifier": 1.0,
+      "LogisticAssistModifier": 0.25,
+      "Tag": {
+        "TagName": "Meta.Progression.Context.DefaultReward.Vehicle.InZone"
+      }
+    }
+  }
+}

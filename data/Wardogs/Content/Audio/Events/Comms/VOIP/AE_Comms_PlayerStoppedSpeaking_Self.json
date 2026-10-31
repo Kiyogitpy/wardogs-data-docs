@@ -1,0 +1,48 @@
+--- export: UObject / AEB_Comms_SelfSpeaking_C_0 ---
+{
+  "Type": "AEB_Comms_SelfSpeaking_C",
+  "Name": "AEB_Comms_SelfSpeaking_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Comms_SelfSpeaking.AEB_Comms_SelfSpeaking_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_PlayerStoppedSpeaking_Self'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking_Self.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Comms_SelfSpeaking_C'Default__AEB_Comms_SelfSpeaking_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Comms_SelfSpeaking.0"
+  },
+  "Properties": {
+    "SquadSound": {
+      "ObjectName": "MetaSoundSource'MSS_Comms_SelfSpeaking'",
+      "ObjectPath": "/Game/Audio/Comms/VOIP/MSS_Comms_SelfSpeaking.0"
+    },
+    "FailSound": {
+      "ObjectName": "MetaSoundSource'MSS_Comms_SelfSpeaking_Fail'",
+      "ObjectPath": "/Game/Audio/Comms/VOIP/MSS_Comms_SelfSpeaking_Fail.0"
+    },
+    "Trigger Name": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_PlayerStoppedSpeaking_Self ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_PlayerStoppedSpeaking_Self",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking_Self",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.VOIP.TransmitRelease"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Comms_SelfSpeaking_C'AE_Comms_PlayerStoppedSpeaking_Self:AEB_Comms_SelfSpeaking_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking_Self.0"
+      }
+    ]
+  }
+}

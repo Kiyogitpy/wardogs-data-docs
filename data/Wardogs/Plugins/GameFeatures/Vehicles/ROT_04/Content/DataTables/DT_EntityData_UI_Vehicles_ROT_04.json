@@ -1,0 +1,112 @@
+--- export: UDataTable / DT_EntityData_UI_Vehicles_ROT_04 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Vehicles_ROT_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ROT_04/DataTables/DT_EntityData_UI_Vehicles_ROT_04",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Vehicle.Variant.Air.Rotary.ROT_04.Default": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Name.Rotary.Z20",
+        "SourceString": "Z20 Lakota",
+        "LocalizedString": "Z20 Lakota"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Vehicles.STRINGS_Vehicles",
+        "Key": "Vehicle.Description.Rotary.Z20",
+        "SourceString": "Large 13 Seated Transport Helicopter",
+        "LocalizedString": "Large 13 Seated Transport Helicopter"
+      },
+      "Category": {
+        "TagName": "Vehicle.Archetype.Air.Rotary"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Pilot"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Vehicle"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipSubtitle.Vehicle.Helicopter",
+            "SourceString": "Helicopter",
+            "LocalizedString": "Helicopter"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipDescriptions.Vehicle.Lakota",
+            "SourceString": "- 2 Crew + 11 Passengers\r\n- Optional Logistics Crates",
+            "LocalizedString": "- 2 Crew + 11 Passengers\r\n- Optional Logistics Crates"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Spatial_Chopper_256px.T_UI_Icon_Spatial_Chopper_256px",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/T_UI_VendorIcon_ROT_4.T_UI_VendorIcon_ROT_4",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Tooltip"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/T_UI_Icon_Spatial_Chopper_256px.T_UI_Icon_Spatial_Chopper_256px",
+            "Value": [
+              "UI.Icon.Tracker.Spatial",
+              "UI.Icon.Tracker.TacticalMap"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/T_UI_Killfeed_ROT_04.T_UI_Killfeed_ROT_04",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+      }
+    }
+  }
+}

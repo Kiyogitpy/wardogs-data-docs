@@ -1,0 +1,170 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableHotZoneMagnetDataAsset'DA_Buildable_HotzoneMagnet'",
+    "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_HotzoneMagnet_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/B_Buildable_HotzoneMagnet.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_HotzoneMagnet ---
+{
+  "Type": "WDBuildableHotZoneMagnetDataAsset",
+  "Name": "DA_Buildable_HotzoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableHotZoneMagnetDataAsset'",
+  "Package": "/Buildables/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet",
+  "Properties": {
+    "InitialDelayDuration": 15.0,
+    "HotZoneMagnetRechargeDuration": 900.0,
+    "HotZoneMagnetMinimumFuel": 2000.0,
+    "HotZoneMagnetDurationPerFuel": 0.03,
+    "FuelSuppliesResourceItemTag": {
+      "TagName": "Id.Item.FuelSupplies"
+    },
+    "MaxFuel": 10000.0,
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_HotzoneMagnet:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.HotzoneMagnet"
+    },
+    "Cost": 2750,
+    "_aaabkhhnlcojdebfcnjfd": 2.0,
+    "RepairSpeedMultiplier": 150.0,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.Magnet",
+      "SourceString": "Drill Rig",
+      "LocalizedString": "Drill Rig"
+    },
+    "MaxHealth": 2500.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "MaxStack": 0,
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": -122.0,
+          "Y": -186.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      },
+      {
+        "Rotation": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.70710677,
+          "W": -0.70710677,
+          "IsNormalized": true,
+          "Size": 0.99999994,
+          "SizeSquared": 0.99999994
+        },
+        "Translation": {
+          "X": 126.0,
+          "Y": -186.0,
+          "Z": 0.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "PlacementFlags": 9,
+    "PlacePivotVerticalOffset": 75.0,
+    "StartingPlacementRotationAngle": 90.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_HotzoneMagnet.SM_Foundation_HotzoneMagnet",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_HotzoneMagnet_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -208.54376,
+        "Y": -198.16992,
+        "Z": -60.329224
+      },
+      "Max": {
+        "X": 231.00958,
+        "Y": 389.28638,
+        "Z": 2007.0548
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.BuildableHotzoneMagnet"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "Class'WDPlacementZoneCondition'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      {
+        "ObjectName": "Class'WDWithinControlZonePlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.HotzoneMagnet"
+    }
+  }
+}

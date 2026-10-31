@@ -1,0 +1,90 @@
+--- export: UDataAsset / DA_SettingsPanel_General ---
+{
+  "Type": "WDUISettingsPanelData",
+  "Name": "DA_SettingsPanel_General",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISettingsPanelData'",
+  "Package": "/Game/UI/Features/Settings/Widgets/SettingPanel/Data/DA_SettingsPanel_General",
+  "Properties": {
+    "CategorizedSettings": [
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Category.Gameplay",
+          "SourceString": "Gameplay - Camera",
+          "LocalizedString": "Gameplay - Camera"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.General.FieldOfView.Base"
+          },
+          {
+            "TagName": "UserSettings.General.FieldOfView.FirstPersonMesh"
+          },
+          {
+            "TagName": "UserSettings.General.FieldOfView.Vehicle.FirstPerson"
+          },
+          {
+            "TagName": "UserSettings.General.FieldOfView.Vehicle.ThirdPerson"
+          },
+          {
+            "TagName": "UserSettings.General.FieldOfView.AimingMode"
+          },
+          {
+            "TagName": "UserSettings.General.PictureInPictureScope"
+          }
+        ]
+      },
+      {
+        "CategoryText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_General.STRINGS_Settings_General",
+          "Key": "Category.Social",
+          "SourceString": "Social",
+          "LocalizedString": "Social"
+        },
+        "TabTag": {
+          "TagName": "None"
+        },
+        "Settings": [
+          {
+            "TagName": "UserSettings.General.Clan.Tag"
+          },
+          {
+            "TagName": "UserSettings.General.Show.IdentityIcon"
+          },
+          {
+            "TagName": "UserSettings.General.ScoreboardBadge"
+          },
+          {
+            "TagName": "UserSettings.General.StreamerMode"
+          },
+          {
+            "TagName": "UserSettings.General.AnonymousMode"
+          },
+          {
+            "TagName": "UserSettings.General.Disable.Chatbox"
+          },
+          {
+            "TagName": "UserSettings.General.ChatProfanityFilter"
+          },
+          {
+            "TagName": "UserSettings.General.AdvancedVehicle.PublicVehicleInventoryAccess"
+          }
+        ]
+      }
+    ],
+    "SettingEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUISettingEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Settings/Widgets/SettingEntry/Data/DA_SettingEntry.DA_SettingEntry",
+        "SubPathString": ""
+      }
+    }
+  }
+}

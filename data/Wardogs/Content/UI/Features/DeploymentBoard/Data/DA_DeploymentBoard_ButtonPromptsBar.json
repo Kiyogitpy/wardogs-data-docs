@@ -1,0 +1,84 @@
+--- export: UDataAsset / DA_DeploymentBoard_ButtonPromptsBar ---
+{
+  "Type": "WDUIButtonPromptsBarData",
+  "Name": "DA_DeploymentBoard_ButtonPromptsBar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIButtonPromptsBarData'",
+  "Package": "/Game/UI/Features/DeploymentBoard/Data/DA_DeploymentBoard_ButtonPromptsBar",
+  "Properties": {
+    "ButtonPromptViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptViewModel",
+        "SubPathString": ""
+      }
+    },
+    "UIActionTags": [
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Zoom.In"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Zoom.Out"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.Zoom",
+          "SourceString": "Zoom",
+          "LocalizedString": "Zoom"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.ToggleZoomPreset"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.ToggleZoom",
+          "SourceString": "Toggle Zoom",
+          "LocalizedString": "Toggle Zoom"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      },
+      {
+        "ActionPromptTag": {
+          "TagName": "UI.Action.Feature.Map.Recenter"
+        },
+        "ChordedActionPromptTag": {
+          "TagName": "None"
+        },
+        "ActionPromptText": {
+          "TableId": "/Game/UI/StringTables/STRINGS_ButtonPrompts.STRINGS_ButtonPrompts",
+          "Key": "ButtonPrompts.TacMap.RecenterPlayer",
+          "SourceString": "Recenter",
+          "LocalizedString": "Recenter"
+        },
+        "IsHoldable": false,
+        "bUseActionShortName": false,
+        "bUseChordedActionShortName": false,
+        "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+        "_aaabgjoifgdeldclgnnih": [],
+        "_aaabggkaikegbmaklkobl": [],
+        "_aaabhpalibppnlgjfpafh": [],
+        "_aaabhnpjdjoppohnihice": []
+      }
+    ]
+  }
+}

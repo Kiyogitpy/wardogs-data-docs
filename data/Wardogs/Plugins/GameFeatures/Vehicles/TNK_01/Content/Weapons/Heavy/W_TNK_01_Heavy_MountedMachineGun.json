@@ -1,0 +1,202 @@
+--- export: UDataAsset / W_TNK_01_Heavy_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_TNK_01_Heavy_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/TNK_01/Weapons/Heavy/W_TNK_01_Heavy_MountedMachineGun",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.TNK_01.MountedMachineGun"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/Game/Items/Weapons/Mounted/M249/SK_M249_Mounted.SK_M249_Mounted",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "muzzleFlash_WeaponExtension"
+    ],
+    "PlayerAttachSocket": {
+      "SourceId": "MountedMachineGun",
+      "SocketName": "S_Attach_MountedMachineGun_Player"
+    },
+    "GamepadRotationSensitivity": 80.0,
+    "GamepadRotationUpdateMax": {
+      "X": 85.0,
+      "Y": 85.0
+    },
+    "MouseRotationSensitivity": 15.0,
+    "MouseRotationUpdateMax": {
+      "X": 125.0,
+      "Y": 125.0
+    },
+    "KeyRotationSensitivity": 80.0,
+    "bApplyFovScale": false,
+    "WeaponRotationComponentData": {
+      "MinWeaponYawAngle": 90.0,
+      "MaxWeaponYawAngle": -90.0,
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": -20.0,
+      "MaxWeaponPitchAngle": 30.0,
+      "bStabilisationPermitted": true,
+      "RotationSpeed": 110.0,
+      "TurretSkeletalMeshTag": "MountedMachineGun",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.HipFire"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "MountedMachineGun",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_HipFire",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "MountedMachineGun",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_ADS",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.2,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.Crouch"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "MountedMachineGun",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "vehicleWeapon_PlayerCameraSocket_Crouch",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": true,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Crew.Land"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/TNK_01/Weapons/WeaponExtensions/Heavy/Mounted_MachineGun/WE_TNK_01_Heavy_MountedMachineGun.WE_TNK_01_Heavy_MountedMachineGun",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

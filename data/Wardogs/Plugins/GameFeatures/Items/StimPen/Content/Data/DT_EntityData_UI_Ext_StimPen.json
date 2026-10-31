@@ -1,0 +1,127 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_StimPen ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_StimPen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/StimPen/Data/DT_EntityData_UI_Ext_StimPen",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.StimPen": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.AdrenalinePen",
+        "SourceString": "Adrenaline Pen",
+        "LocalizedString": "Adrenaline Pen"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+        "Key": "Items.Medical.AdrenalinePen.Description",
+        "SourceString": "- Unlimited Tactical Sprint for Short Time\r\n- Reduces Equipment Weight Class\r\n- Single-Use item",
+        "LocalizedString": "- Unlimited Tactical Sprint for Short Time\r\n- Reduces Equipment Weight Class\r\n- Single-Use item"
+      },
+      "Category": {
+        "TagName": "Item.Category.Health"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Medic"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Medical",
+            "SourceString": "Medical // Quick Slot",
+            "LocalizedString": "Medical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+            "Key": "Items.Medical.AdrenalinePen.Description",
+            "SourceString": "- Unlimited Tactical Sprint for Short Time\r\n- Reduces Equipment Weight Class\r\n- Single-Use item",
+            "LocalizedString": "- Unlimited Tactical Sprint for Short Time\r\n- Reduces Equipment Weight Class\r\n- Single-Use item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+            "Key": "Items.Medical.AdrenalinePen.Flavor",
+            "SourceString": "For that extra boost when you need it.",
+            "LocalizedString": "For that extra boost when you need it."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/t_ui_icon_stimpen_512x512.t_ui_icon_stimpen_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Item_Stim_BC.T_UI_Item_Stim_BC",
+            "Value": [
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Vendor"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.StimPen"
+      }
+    }
+  }
+}

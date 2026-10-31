@@ -1,0 +1,72 @@
+--- export: UDataAsset / AIC_Lonestar_Sniper ---
+{
+  "Type": "WDAICharacterConfigData",
+  "Name": "AIC_Lonestar_Sniper",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAICharacterConfigData'",
+  "Package": "/BaseScenario/AIConfigs/Lonestar/AIC_Lonestar_Sniper",
+  "Properties": {
+    "AICharacterClass": {
+      "AssetPathName": "/WDCore/Character/B_WDCore_MoverPlayerCharacter.B_WDCore_MoverPlayerCharacter_C",
+      "SubPathString": ""
+    },
+    "AIControllerClass": {
+      "AssetPathName": "/WDAIPvEAICore/BP_CoreAIController.BP_CoreAIController_C",
+      "SubPathString": ""
+    },
+    "ShootingConfigData": {
+      "FireModePriority": [
+        "EWDFireMode::Burst",
+        "EWDFireMode::Automatic",
+        "EWDFireMode::SemiAutomatic"
+      ]
+    },
+    "FactionTag": {
+      "TagName": "Meta.Alignment.Faction.Alpha"
+    },
+    "AIInventory": [
+      {
+        "Key": {
+          "TagName": "Id.Item.MK22"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.LightArmor"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.LightHelmet"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.SniperScope10x"
+        },
+        "Value": 1
+      },
+      {
+        "Key": {
+          "TagName": "Id.Item.MK22Mag"
+        },
+        "Value": 2
+      }
+    ],
+    "BehaviorTree": {
+      "ObjectName": "BehaviorTree'BT_WDAIPvECore_Base'",
+      "ObjectPath": "/WDAIPvEAICore/BehaviorTrees/BT_WDAIPvECore_Base.0"
+    },
+    "AlertStatesWithThreashold": {
+      "ObjectName": "WDAIAlertStateThresholdData'AlertStateThreashold_DataConfig'",
+      "ObjectPath": "/WDAIPvEAICore/DataAssets/AlertStateThreashold_DataConfig.0"
+    },
+    "AIInfluenceDataAsset": {
+      "ObjectName": "WDAIInfluenceData'AIInfluence_DataConfig'",
+      "ObjectPath": "/WDAIPvEAICore/DataAssets/AIInfluence_DataConfig.0"
+    }
+  }
+}

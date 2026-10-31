@@ -1,0 +1,217 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TankHelmet'",
+    "ObjectPath": "/Armor/Data/ID_TankHelmet.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TankHelmet'",
+    "ObjectPath": "/Armor/Data/ID_TankHelmet.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Helmet/Tank/000/SM/SM_Helmet_Tank_000.SM_Helmet_Tank_000",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Helmet_Tank_000'",
+        "ObjectPath": "/Game/Characters/Player/Helmet/Tank/000/MAT/MI_Helmet_Tank_000.0"
+      }
+    ],
+    "Scale": {
+      "X": 1.0,
+      "Y": 1.0,
+      "Z": 1.0
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -5.0,
+      "Y": 0.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TankHelmet'",
+    "ObjectPath": "/Armor/Data/ID_TankHelmet.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TankHelmet'",
+    "ObjectPath": "/Armor/Data/ID_TankHelmet.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_TankHelmet ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_TankHelmet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Armor/Data/ID_TankHelmet",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.TankHelmet"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Helmet",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "7141F3504DC5E83FD70634BC6AED9FA3",
+      "SourceString": "Tank Helmet",
+      "LocalizedString": "Tank Helmet"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_TankHelmet:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Armor/Data/ID_TankHelmet.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_TankHelmet:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Armor/Data/ID_TankHelmet.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_TankHelmet:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Armor/Data/ID_TankHelmet.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Armor'ID_TankHelmet:WDInventoryFragment_Armor_0'",
+        "ObjectPath": "/Armor/Data/ID_TankHelmet.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_TankHelmet:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Armor/Data/ID_TankHelmet.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_TankHelmet:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Armor/Data/ID_TankHelmet.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Armor_0 ---
+{
+  "Type": "WDInventoryFragment_Armor",
+  "Name": "WDInventoryFragment_Armor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Armor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TankHelmet'",
+    "ObjectPath": "/Armor/Data/ID_TankHelmet.4"
+  },
+  "Properties": {
+    "DamageContextTag": {
+      "TagName": "Meta.Damage.Helmet.Tank"
+    },
+    "CoveredHitLocations": [
+      "Meta.Damage.HitLocation.Infantry.Head",
+      "Meta.Damage.HitLocation.Infantry.Neck"
+    ],
+    "ReplicatedData": {
+      "Durability": 180.0
+    },
+    "DurabilityStagesSetupData": [
+      {
+        "DamagePercentageReduction": 55.0,
+        "Thickness": 1.0,
+        "Density": 100.0
+      },
+      {
+        "DamagePercentageReduction": 55.0,
+        "Thickness": 1.0,
+        "Density": 90.0
+      },
+      {
+        "DamagePercentageReduction": 55.0,
+        "Thickness": 1.0,
+        "Density": 80.0
+      },
+      {
+        "DamagePercentageReduction": 55.0,
+        "Thickness": 1.0,
+        "Density": 60.0
+      }
+    ],
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_TankHelmet_Active_C'",
+        "ObjectPath": "/Armor/Data/GameplayEffects/GE_TankHelmet_Active.0"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_TankHelmet_Passive_C'",
+        "ObjectPath": "/Armor/Data/GameplayEffects/GE_TankHelmet_Passive.0"
+      }
+    ],
+    "GameplayCueStateTags": [
+      {
+        "Key": {
+          "TagName": "State.Player.Armor.TankHelmet.Active"
+        },
+        "Value": {
+          "TagName": "GameplayCue.Player.Armor.TankHelmet.Active"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Armor.TankHelmet.Passive"
+        },
+        "Value": {
+          "TagName": "GameplayCue.Player.Armor.TankHelmet.Passive"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TankHelmet'",
+    "ObjectPath": "/Armor/Data/ID_TankHelmet.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Helmet_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Helmet_Audio.0"
+    }
+  }
+}

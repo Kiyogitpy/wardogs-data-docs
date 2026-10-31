@@ -1,0 +1,53 @@
+--- export: UObject / BHUserSettingBoolDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingBoolDiscreteValues",
+  "Name": "BHUserSettingBoolDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingBoolDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Toggle_Default_No'",
+    "ObjectPath": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_No.1"
+  },
+  "Properties": {
+    "Values": [
+      {
+        "Key": "True",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Toggle.Yes",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "False",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Toggle.No",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UDataAsset / DA_Setting_Toggle_Default_No ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Toggle_Default_No",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_No",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingBoolDiscreteValues'DA_Setting_Toggle_Default_No:BHUserSettingBoolDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Shared/DA_Setting_Toggle_Default_No.0"
+      }
+    },
+    "DisplayType": {
+      "TagName": "UserSettings.Common.DisplayType.Discrete.Switch"
+    }
+  }
+}

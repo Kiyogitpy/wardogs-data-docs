@@ -1,0 +1,44 @@
+--- export: UDataAsset / DA_STN_01_CameraBehaviour_FP ---
+{
+  "Type": "MLandVehicleSpringArmDataAsset",
+  "Name": "DA_STN_01_CameraBehaviour_FP",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MLandVehicleSpringArmDataAsset'",
+  "Package": "/STN_01/Data/DA_STN_01_CameraBehaviour_FP",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Value": -110.0
+      },
+      "UpperBound": {
+        "Value": 110.0
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -30.0
+      },
+      "UpperBound": {
+        "Value": 45.0
+      }
+    },
+    "FreeLookMinPitchYawCurve": {
+      "ObjectName": "CurveFloat'CRV_FreeLookPitchRange_STN_01'",
+      "ObjectPath": "/STN_01/Curves/CRV_FreeLookPitchRange_STN_01.0"
+    },
+    "SocketOffset": {
+      "X": -2.5,
+      "Y": -54.0,
+      "Z": 180.0
+    },
+    "bClampToMaxPhysicsDeltaTime": true,
+    "CameraLagSpeed": 0.1,
+    "CameraRotationLagSpeed": 0.1,
+    "CameraLagMaxDistance": 1.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      }
+    }
+  }
+}

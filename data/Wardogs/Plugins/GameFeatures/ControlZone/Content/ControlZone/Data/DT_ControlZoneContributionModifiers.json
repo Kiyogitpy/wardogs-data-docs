@@ -1,0 +1,34 @@
+--- export: UDataTable / DT_ControlZoneContributionModifiers ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ControlZoneContributionModifiers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ControlZone/ControlZone/Data/DT_ControlZoneContributionModifiers",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDControlZoneContributionModifierTableRow'",
+      "ObjectPath": "/Script/ControlZoneRuntime"
+    }
+  },
+  "Rows": {
+    "Alive": {
+      "ModifierTag": {
+        "TagName": "State.Player.Vitality.Alive"
+      },
+      "Multiplier": 1.0
+    },
+    "Critical": {
+      "ModifierTag": {
+        "TagName": "State.Player.Vitality.Critical"
+      },
+      "Multiplier": 0.0
+    },
+    "Dead": {
+      "ModifierTag": {
+        "TagName": "State.Player.Vitality.Dead"
+      },
+      "Multiplier": 0.0
+    }
+  }
+}

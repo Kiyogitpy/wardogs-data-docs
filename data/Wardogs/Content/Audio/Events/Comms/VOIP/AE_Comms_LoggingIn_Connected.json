@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_Comms_LoggingIn_Connected ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_LoggingIn_Connected",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Connected",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.LoggingIn.Connected"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Comms_LoggingIn_Connected:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Connected.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_LoggingIn_Connected'",
+    "ObjectPath": "/Game/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Connected.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Comms_LoggingIn_Connected_Preset'",
+      "ObjectPath": "/Game/Audio/Comms/VOIP/MSS_Comms_LoggingIn_Connected_Preset.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::IfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

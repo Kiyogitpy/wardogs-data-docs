@@ -1,0 +1,208 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SuperHeavyHelmet'",
+    "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SuperHeavyHelmet'",
+    "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Helmet/SuperHeavy/002/SM/SM_Super_Heavy_Helmet_002_drop.SM_Super_Heavy_Helmet_002_drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Helmet_SuperHeavy_002_drop'",
+        "ObjectPath": "/Game/Characters/Player/Helmet/SuperHeavy/002/MAT/MI_Helmet_SuperHeavy_002_drop.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -6.0,
+      "Y": 0.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SuperHeavyHelmet'",
+    "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SuperHeavyHelmet'",
+    "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.4"
+  },
+  "Properties": {
+    "Weight": 4.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_SuperHeavyHelmet ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SuperHeavyHelmet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Armor/Data/ID_SuperHeavyHelmet",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SuperHeavyHelmet"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Helmet",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "A8C643B0472DEF130163B0A0067682A8",
+      "SourceString": "Level 4 Helmet",
+      "LocalizedString": "Level 4 Helmet"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SuperHeavyHelmet:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_SuperHeavyHelmet:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SuperHeavyHelmet:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Armor'ID_SuperHeavyHelmet:WDInventoryFragment_Armor_0'",
+        "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SuperHeavyHelmet:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SuperHeavyHelmet:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Armor_0 ---
+{
+  "Type": "WDInventoryFragment_Armor",
+  "Name": "WDInventoryFragment_Armor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Armor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SuperHeavyHelmet'",
+    "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.4"
+  },
+  "Properties": {
+    "DamageContextTag": {
+      "TagName": "Meta.Damage.Helmet.SuperHeavy"
+    },
+    "CoveredHitLocations": [
+      "Meta.Damage.HitLocation.Infantry.Head",
+      "Meta.Damage.HitLocation.Infantry.Neck"
+    ],
+    "ReplicatedData": {
+      "Durability": 200.0
+    },
+    "DurabilityStagesSetupData": [
+      {
+        "DamagePercentageReduction": 60.0,
+        "Thickness": 1.5,
+        "Density": 130.0
+      },
+      {
+        "DamagePercentageReduction": 60.0,
+        "Thickness": 1.5,
+        "Density": 120.0
+      },
+      {
+        "DamagePercentageReduction": 60.0,
+        "Thickness": 1.5,
+        "Density": 110.0
+      },
+      {
+        "DamagePercentageReduction": 60.0,
+        "Thickness": 1.5,
+        "Density": 100.0
+      }
+    ],
+    "OverlayMaterial": {
+      "AssetPathName": "/Armor/Data/UI/Materials/M_SuperHeavyHelmetOverlay.M_SuperHeavyHelmetOverlay",
+      "SubPathString": ""
+    },
+    "_aaaapiaclojajolnlefjh": true,
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_SuperHeavyHelmet_Passive_C'",
+        "ObjectPath": "/Armor/Data/GameplayEffects/GE_SuperHeavyHelmet_Passive.0"
+      }
+    ],
+    "GameplayCueStateTags": [
+      {
+        "Key": {
+          "TagName": "State.Player.Armor.SuperHeavyHelmet.Passive"
+        },
+        "Value": {
+          "TagName": "GameplayCue.Player.Armor.SuperHeavyHelmet.Passive"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SuperHeavyHelmet'",
+    "ObjectPath": "/Armor/Data/ID_SuperHeavyHelmet.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Helmet_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Helmet_Audio.0"
+    }
+  }
+}

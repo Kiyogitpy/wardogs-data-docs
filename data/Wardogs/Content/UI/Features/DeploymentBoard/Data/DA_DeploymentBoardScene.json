@@ -1,0 +1,81 @@
+--- export: UDataAsset / DA_DeploymentBoardScene ---
+{
+  "Type": "WDUIDeploymentBoardData",
+  "Name": "DA_DeploymentBoardScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDeploymentBoardData'",
+  "Package": "/Game/UI/Features/DeploymentBoard/Data/DA_DeploymentBoardScene",
+  "Properties": {
+    "TacticalMapViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUITacticalMapViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/DeploymentBoard/Data/DA_DeploymentBoardMap.DA_DeploymentBoardMap",
+        "SubPathString": ""
+      }
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/DeploymentBoard/Data/DA_DeploymentBoard_ButtonPromptsBar.DA_DeploymentBoard_ButtonPromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "RejectionReasonsDataRegistryName": {
+      "Name": "DeploymentRejectionReasons"
+    },
+    "SpawnRisks": [
+      {
+        "Key": "EWDSpawnRisk::Contested",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+          "Key": "SpawnRisk.Contested",
+          "SourceString": "WARNING: Recent Conflict - High Risk Deployment",
+          "LocalizedString": "WARNING: Recent Conflict - High Risk Deployment"
+        }
+      },
+      {
+        "Key": "EWDSpawnRisk::Lethal",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_DeploymentBoard.STRINGS_DeploymentBoard",
+          "Key": "SpawnRisk.Lethal",
+          "SourceString": "WARNING: Recent Conflict - High Risk Deployment",
+          "LocalizedString": "WARNING: Recent Conflict - High Risk Deployment"
+        }
+      }
+    ],
+    "SpawnRiskColors": [
+      {
+        "Key": "EWDSpawnRisk::Contested",
+        "Value": {
+          "R": 1.0,
+          "G": 0.376262,
+          "B": 0.0,
+          "A": 1.0,
+          "Hex": "FFA500"
+        }
+      },
+      {
+        "Key": "EWDSpawnRisk::Lethal",
+        "Value": {
+          "R": 1.0,
+          "G": 0.0,
+          "B": 0.0,
+          "A": 1.0,
+          "Hex": "FF0000"
+        }
+      }
+    ],
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.DeploymentBoard.Open"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.InGame.DeploymentBoard.Close"
+    }
+  }
+}

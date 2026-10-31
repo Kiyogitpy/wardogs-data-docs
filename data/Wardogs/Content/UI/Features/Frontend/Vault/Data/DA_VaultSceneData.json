@@ -1,0 +1,200 @@
+--- export: UDataAsset / DA_VaultSceneData ---
+{
+  "Type": "WDUIVaultData",
+  "Name": "DA_VaultSceneData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVaultData'",
+  "Package": "/Game/UI/Features/Frontend/Vault/Data/DA_VaultSceneData",
+  "Properties": {
+    "VaultContainerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIContainerLayoutViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ContainerLayout/Data/DA_ContainerLayout_Inventory_Storage.DA_ContainerLayout_Inventory_Storage",
+        "SubPathString": ""
+      }
+    },
+    "VaultPageButtonViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVaultPageButtonViewModel",
+        "SubPathString": ""
+      }
+    },
+    "_aaabjclbanhfgchdlbojj": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVaultPanelViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Vault/Data/DA_VaultPanelData.DA_VaultPanelData",
+        "SubPathString": ""
+      }
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Frontend/Vault/Data/DA_VaultPromptsBar.DA_VaultPromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "_aaabcojodnhbeoiehbhpi": [
+      {
+        "Tag": {
+          "TagName": "Inventory.Slot.StorageVault.Items"
+        },
+        "OverrideButtonClass": null,
+        "Action": null,
+        "Text": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+          "Key": "Button.Items",
+          "SourceString": "Items",
+          "LocalizedString": "Items"
+        },
+        "MinimumSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Icon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bDisabled": false,
+        "DisabledReason": {
+          "CultureInvariantString": null
+        }
+      },
+      {
+        "Tag": {
+          "TagName": "Inventory.Slot.StorageVault.Vehicles"
+        },
+        "OverrideButtonClass": null,
+        "Action": null,
+        "Text": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+          "Key": "Button.Vehicles",
+          "SourceString": "Vehicles",
+          "LocalizedString": "Vehicles"
+        },
+        "MinimumSize": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Icon": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        },
+        "bDisabled": false,
+        "DisabledReason": {
+          "CultureInvariantString": null
+        }
+      }
+    ],
+    "_aaabchabmhoccgapcghpg": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.StorageVault.Items"
+        },
+        "Value": {
+          "Filters": [
+            {
+              "CategoryTag": {
+                "TagName": "Item.Category.Weapon"
+              },
+              "Icon": {
+                "AssetPathName": "/Game/UI/Shared/Icons/Weapons/T_UI_Icon_Weapon_Pistol_Textured_512x512.T_UI_Icon_Weapon_Pistol_Textured_512x512",
+                "SubPathString": ""
+              },
+              "Tooltip": {
+                "TableId": "/Game/UI/StringTables/STRINGS_Vendor.STRINGS_Vendor",
+                "Key": "Button.Weapons",
+                "SourceString": "Weapons",
+                "LocalizedString": "Weapons"
+              }
+            },
+            {
+              "CategoryTag": {
+                "TagName": "Item.Category.Ammunition"
+              },
+              "Icon": {
+                "AssetPathName": "/Game/UI/Shared/Icons/Attachments/T_UI_Icon_Attachment_KHammo_Textured_512x512.T_UI_Icon_Attachment_KHammo_Textured_512x512",
+                "SubPathString": ""
+              },
+              "Tooltip": {
+                "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+                "Key": "Item.Ammo.Text",
+                "SourceString": "Ammo",
+                "LocalizedString": "Ammo"
+              }
+            },
+            {
+              "CategoryTag": {
+                "TagName": "Item.Category.Health"
+              },
+              "Icon": {
+                "AssetPathName": "/Game/UI/Shared/Textures/T_Health_Inner.T_Health_Inner",
+                "SubPathString": ""
+              },
+              "Tooltip": {
+                "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+                "Key": "Item.Category.Health",
+                "SourceString": "Health",
+                "LocalizedString": "Health"
+              }
+            },
+            {
+              "CategoryTag": {
+                "TagName": "Item.Category.Armor"
+              },
+              "Icon": {
+                "AssetPathName": "/Game/UI/Features/DeathRecap/Textures/T_UI_CombatLog_ArmorMit.T_UI_CombatLog_ArmorMit",
+                "SubPathString": ""
+              },
+              "Tooltip": {
+                "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+                "Key": "Item.Category.Armor",
+                "SourceString": "Armor",
+                "LocalizedString": "Armor"
+              }
+            },
+            {
+              "CategoryTag": {
+                "TagName": "Item.Category.Attachment"
+              },
+              "Icon": {
+                "AssetPathName": "/Game/UI/Shared/Icons/Attachments/T_UI_Icon_Attachment_StubbyVerticalGrip_Textured_512x512.T_UI_Icon_Attachment_StubbyVerticalGrip_Textured_512x512",
+                "SubPathString": ""
+              },
+              "Tooltip": {
+                "TableId": "/Game/UI/StringTables/STRINGS_GameplayTags.STRINGS_GameplayTags",
+                "Key": "Item.Category.Attachment",
+                "SourceString": "Attachment",
+                "LocalizedString": "Attachment"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "_aaaapfcacpghagmmmeehc": {
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Frontend/T_UI_VaultIcon_02.T_UI_VaultIcon_02",
+        "SubPathString": ""
+      },
+      "Tooltip": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+        "Key": "VaultSceneData.AllFilterButton.Tooltip",
+        "SourceString": "Any",
+        "LocalizedString": "Any"
+      }
+    },
+    "_aaabdbedchhikmblepinn": 0.25,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.Open.Vault"
+    }
+  }
+}

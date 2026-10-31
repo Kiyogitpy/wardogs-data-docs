@@ -1,0 +1,139 @@
+--- export: UObject / GameplayBehaviorSmartObjectBehaviorDefinition_1 ---
+{
+  "Type": "GameplayBehaviorSmartObjectBehaviorDefinition",
+  "Name": "GameplayBehaviorSmartObjectBehaviorDefinition_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameplayBehaviorSmartObjectBehaviorDefinition'",
+  "Outer": {
+    "ObjectName": "SmartObjectDefinition'SOD_Hack'",
+    "ObjectPath": "/StrikeDisarm_01/Blueprints/SOD_Hack.1"
+  },
+  "Properties": {
+    "GameplayBehaviorConfig": {
+      "ObjectName": "WDGameplayBehaviorConfig_Action'SOD_Hack:GameplayBehaviorSmartObjectBehaviorDefinition_1.WDGameplayBehaviorConfig_Action_0'",
+      "ObjectPath": "/StrikeDisarm_01/Blueprints/SOD_Hack.2"
+    }
+  }
+}
+--- export: UDataAsset / SOD_Hack ---
+{
+  "Type": "SmartObjectDefinition",
+  "Name": "SOD_Hack",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SmartObjectDefinition'",
+  "Package": "/StrikeDisarm_01/Blueprints/SOD_Hack",
+  "Properties": {
+    "ParametersID": "A57F5F23-C014388C-94EB2484-142D66DC",
+    "RootID": "283ACC90-81963120-8F9D4487-045E7266",
+    "BindingCollection": {
+      "BindableStructs": [
+        {
+          "DataHandle": {
+            "SlotIndex": 65533,
+            "DataIndex": 65535
+          },
+          "Struct": null,
+          "Name": "Parameters"
+        },
+        {
+          "DataHandle": {
+            "SlotIndex": 65534,
+            "DataIndex": 65535
+          },
+          "Struct": {
+            "ObjectName": "Class'SmartObjectDefinition'",
+            "ObjectPath": "/Script/SmartObjectsModule"
+          },
+          "Name": "Root"
+        },
+        {
+          "DataHandle": {
+            "SlotIndex": 0,
+            "DataIndex": 65535
+          },
+          "Struct": {
+            "ObjectName": "Class'SmartObjectSlotDefinition'",
+            "ObjectPath": "/Script/SmartObjectsModule"
+          },
+          "Name": "Slot"
+        }
+      ]
+    },
+    "Slots": [
+      {
+        "Offset": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "Rotation": {
+          "Pitch": 0.0,
+          "Yaw": 0.0,
+          "Roll": 0.0
+        },
+        "bEnabled": true,
+        "UserTagFilter": {
+          "TokenStreamVersion": 0,
+          "TagDictionary": [],
+          "QueryTokenStream": [],
+          "UserDescription": "",
+          "AutoDescription": ""
+        },
+        "ActivityTags": [],
+        "RuntimeTags": [],
+        "SelectionPreconditions": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'SmartObjectWorldConditionSchema'",
+              "ObjectPath": "/Script/SmartObjectsModule"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        },
+        "BehaviorDefinitions": [
+          {
+            "ObjectName": "GameplayBehaviorSmartObjectBehaviorDefinition'SOD_Hack:GameplayBehaviorSmartObjectBehaviorDefinition_1'",
+            "ObjectPath": "/StrikeDisarm_01/Blueprints/SOD_Hack.0"
+          }
+        ],
+        "DefinitionData": []
+      }
+    ],
+    "Preconditions": {
+      "StaticStruct": {
+        "SchemaClass": {
+          "ObjectName": "Class'SmartObjectWorldConditionSchema'",
+          "ObjectPath": "/Script/SmartObjectsModule"
+        },
+        "EditableConditions": []
+      },
+      "SharedDefinition": null
+    },
+    "ActivityTags": [
+      "Quest.Actor.State.Scenario.StrikeSwipe.Laptop"
+    ]
+  }
+}
+--- export: UObject / WDGameplayBehaviorConfig_Action_0 ---
+{
+  "Type": "WDGameplayBehaviorConfig_Action",
+  "Name": "WDGameplayBehaviorConfig_Action_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayBehaviorConfig_Action'",
+  "Outer": {
+    "ObjectName": "GameplayBehaviorSmartObjectBehaviorDefinition'SOD_Hack:GameplayBehaviorSmartObjectBehaviorDefinition_1'",
+    "ObjectPath": "/StrikeDisarm_01/Blueprints/SOD_Hack.0"
+  },
+  "Properties": {
+    "ActionKey": {
+      "TagName": "Action.SmartObject.UseComputer"
+    },
+    "IsTimeLimited": true,
+    "ShouldHolsterHeldItem": true,
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_SO_StopHackBehavior_C'",
+      "ObjectPath": "/StrikeDisarm_01/Blueprints/BP_SO_StopHackBehavior.0"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Build_FOB_Hack_Siren_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Build_FOB_Hack_Siren_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Build.FOB.Hack.Siren.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_Build_FOB_Hack_Siren_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Hack_Siren_Stop'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Hack_Siren_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.Hack.Siren"
+    }
+  }
+}

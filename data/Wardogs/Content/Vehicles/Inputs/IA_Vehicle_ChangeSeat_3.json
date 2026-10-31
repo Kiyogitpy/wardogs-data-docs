@@ -1,0 +1,46 @@
+--- export: UDataAsset / IA_Vehicle_ChangeSeat_3 ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_ChangeSeat_3",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_3",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.ChangeSeat.Seat_3"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerDown'IA_Vehicle_ChangeSeat_3:InputTriggerDown_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_3.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_ChangeSeat_3:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_3.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerDown_0 ---
+{
+  "Type": "InputTriggerDown",
+  "Name": "InputTriggerDown_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerDown'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_ChangeSeat_3'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_3.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_ChangeSeat_3'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_3.0"
+  }
+}

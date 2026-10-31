@@ -1,0 +1,63 @@
+--- export: UDataTable / DT_Cosmetics_Taxi ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Cosmetics_Taxi",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Taxi_SkinsData/Data/DT_Cosmetics_Taxi",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDCosmeticData'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Cosmetic.Taxi.Littlebird": {
+      "EntityId": {
+        "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.Default"
+      },
+      "Category": {
+        "TagName": "Meta.Cosmetic.Taxi"
+      },
+      "Archetype": {
+        "TagName": "Vehicle.Archetype.Air.Rotary"
+      },
+      "UITextures": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Features/Settings/Textures/T_UI_OptionsScreen_PlaceholderImage.T_UI_OptionsScreen_PlaceholderImage",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vehicles/3D/T_UI_Vendor_Littlebird_3.T_UI_Vendor_Littlebird_3",
+            "Value": [
+              "UI.Icon.Collection",
+              "UI.Icon.GoldMarket",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment"
+            ]
+          }
+        ]
+      },
+      "SkinDefinition": {
+        "AssetPathName": "/Taxi_SkinsData/Data/Skin_Taxi.Skin_Taxi",
+        "SubPathString": ""
+      },
+      "_aaabbmoejhdkcblgikdmm": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "_aaabgjcoeenikjdfgmfkl": {
+        "AssetPathName": "/Taxi_SkinsData/Textures/T_UI_SkinIcon_SupporterPack_Taxi.T_UI_SkinIcon_SupporterPack_Taxi",
+        "SubPathString": ""
+      },
+      "NameOverride": {
+        "CultureInvariantString": null
+      },
+      "Tag": {
+        "TagName": "Meta.Cosmetic.Taxi.Littlebird"
+      }
+    }
+  }
+}

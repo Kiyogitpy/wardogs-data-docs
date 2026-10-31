@@ -1,0 +1,73 @@
+--- export: UDataAsset / WE_ROT_04_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_ROT_04_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/ROT_04_MachineGun/Weapons/WE_ROT_04_MountedMachineGun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.ROT_04.MountedMachineGun"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.ROT_04.MountedMachineGun"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.Minigun"
+      }
+    },
+    "WeaponExtensionName": "MachineGun",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_ROT_04_MountedMachineGun_Stats'",
+      "ObjectPath": "/ROT_04_MachineGun/Weapons/DA_ROT_04_MountedMachineGun_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "StableMountedMachineGun"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 5.0,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAutomaticallyReload": true,
+    "AmmoTag": {
+      "TagName": "Id.Item.308Win"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.308Win"
+    },
+    "AmmoInsertionMethod": "EWDAmmoInsertionMethod::PullsAmmoFromReserve",
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.308Win.Tracer"
+        },
+        "Value": 150
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_ROT_04_MountedMachineGun_Audio'",
+      "ObjectPath": "/ROT_04_MachineGun/Weapons/DA_ROT_04_MountedMachineGun_Audio.0"
+    },
+    "OperatorIdleSequence": {
+      "ObjectName": "AnimSequence'A_FP_ROT_04_MountedGun_Pose'",
+      "ObjectPath": "/ROT_04/Animation/FP/A_FP_ROT_04_MountedGun_Pose.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'BP_ROT_04_Camera_MachineGun_FiringShake_C'",
+      "ObjectPath": "/ROT_04_MachineGun/Weapons/Camera/BP_ROT_04_Camera_MachineGun_FiringShake.0"
+    },
+    "FireCameraShakeMultiplier": 0.15
+  }
+}

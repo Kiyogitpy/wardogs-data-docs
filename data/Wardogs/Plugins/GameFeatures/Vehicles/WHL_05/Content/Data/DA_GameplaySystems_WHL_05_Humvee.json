@@ -1,0 +1,1358 @@
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_0 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.10"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDWheeledVehicleEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.23"
+          }
+        ],
+        "bCheckIfAboveThreshold": true,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 25.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDGameplayCueEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.11"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDWheeledVehicleEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.24"
+          },
+          {
+            "ObjectName": "WDVehicleEngineEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDVehicleEngineEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.20"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 10.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDVehicleEngineEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDVehicleEngineEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.19"
+          },
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0.WDGameplayCueEffect_2'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.12"
+          }
+        ],
+        "bCheckIfAboveThreshold": true,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_1 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health.FuelTank"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 80.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDFuelComponentEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1.WDFuelComponentEffect_2'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.7"
+          },
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.13"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDFuelComponentEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1.WDFuelComponentEffect_3'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.8"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 0.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDFuelComponentEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1.WDFuelComponentEffect_5'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.9"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_2 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2.WDWheeledVehicleEffect_2'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.26"
+          },
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.14"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelDragEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2.WDWheeledVehicleWheelDragEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.33"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelFrictionEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2.WDWheeledVehicleWheelFrictionEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.37"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2.WDWheeledVehicleEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.25"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 0.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_3 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.15"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelDragEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3.WDWheeledVehicleWheelDragEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.34"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelFrictionEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3.WDWheeledVehicleWheelFrictionEffect_2'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.38"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3.WDWheeledVehicleEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.27"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 0.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_4 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4.WDWheeledVehicleEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.28"
+          },
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.16"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelDragEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4.WDWheeledVehicleWheelDragEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.35"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelFrictionEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4.WDWheeledVehicleWheelFrictionEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.39"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4.WDWheeledVehicleEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.29"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 0.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_5 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.17"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelDragEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5.WDWheeledVehicleWheelDragEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.36"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleWheelFrictionEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5.WDWheeledVehicleWheelFrictionEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.40"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5.WDWheeledVehicleEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.30"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 0.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDAttributeEffectsTrigger_VehicleHealth_7 ---
+{
+  "Type": "WDAttributeEffectsTrigger_VehicleHealth",
+  "Name": "WDAttributeEffectsTrigger_VehicleHealth_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAttributeEffectsTrigger_VehicleHealth'",
+  "Outer": {
+    "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_GameplaySystems_WHL_05_Humvee'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.22"
+  },
+  "Properties": {
+    "AttributeTag": {
+      "TagName": "Attribute.Gameplay.Health.Engine"
+    },
+    "ThresholdTriggers": [
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 55.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDGameplayCueEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7.WDGameplayCueEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.18"
+          },
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7.WDWheeledVehicleEffect_0'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.31"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 25.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDWheeledVehicleEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7.WDWheeledVehicleEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.32"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      },
+      {
+        "bCheckAsPercentage": true,
+        "_aaabopdkmhffilljkkpjf": false,
+        "_aaabombapndjiojekgmaj": false,
+        "AttributeThreshold": 0.0,
+        "bRemoveEffectInReverse": true,
+        "bCheckIfBelowThreshold": true,
+        "_aaabnahjdapbipodkegjf": 0.0,
+        "BelowThresholdEffects": [
+          {
+            "ObjectName": "WDVehicleEngineEffect'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7.WDVehicleEngineEffect_1'",
+            "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.21"
+          }
+        ],
+        "bCheckIfAboveThreshold": false,
+        "_aaabngpkplbppfiaakoaa": 0.0,
+        "AboveThresholdEffects": []
+      }
+    ]
+  }
+}
+--- export: UObject / WDFuelComponentEffect_2 ---
+{
+  "Type": "WDFuelComponentEffect",
+  "Name": "WDFuelComponentEffect_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFuelComponentEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.1"
+  },
+  "Properties": {
+    "FuelLeakPerSecondValue": 0.25
+  }
+}
+--- export: UObject / WDFuelComponentEffect_3 ---
+{
+  "Type": "WDFuelComponentEffect",
+  "Name": "WDFuelComponentEffect_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFuelComponentEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.1"
+  },
+  "Properties": {
+    "FuelLeakPerSecondValue": 0.75
+  }
+}
+--- export: UObject / WDFuelComponentEffect_5 ---
+{
+  "Type": "WDFuelComponentEffect",
+  "Name": "WDFuelComponentEffect_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFuelComponentEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.1"
+  },
+  "Properties": {
+    "FuelLeakPerSecondValue": 2.0
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.Smoking.WHL_05"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_1 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.Smoking.WHL_05"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ],
+    "GameplayCuesToRemove": [
+      {
+        "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05.Minor"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_2 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.Smoking.WHL_05"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.1"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.FuelComponent"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.2"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Front"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.3"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Left.Rear"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.4"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Front"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.5"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.WheelPop.Right.Rear"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameplayCueEffect_0 ---
+{
+  "Type": "WDGameplayCueEffect",
+  "Name": "WDGameplayCueEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameplayCueEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.6"
+  },
+  "Properties": {
+    "GameplayCuesToApply": [
+      {
+        "GameplayCue": {
+          "TagName": "GameplayCue.Vehicle.HIDZ.Damaged.Engine.WHL_05"
+        },
+        "bHasLifetime": false,
+        "Lifetime": 0.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDVehicleEngineEffect_0 ---
+{
+  "Type": "WDVehicleEngineEffect",
+  "Name": "WDVehicleEngineEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleEngineEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  }
+}
+--- export: UObject / WDVehicleEngineEffect_1 ---
+{
+  "Type": "WDVehicleEngineEffect",
+  "Name": "WDVehicleEngineEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleEngineEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  }
+}
+--- export: UObject / WDVehicleEngineEffect_1 ---
+{
+  "Type": "WDVehicleEngineEffect",
+  "Name": "WDVehicleEngineEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleEngineEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.6"
+  }
+}
+--- export: UDataAsset / DA_GameplaySystems_WHL_05_Humvee ---
+{
+  "Type": "WDVehicleGameplayComponentsDataAsset",
+  "Name": "DA_GameplaySystems_WHL_05_Humvee",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleGameplayComponentsDataAsset'",
+  "Package": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee",
+  "Properties": {
+    "HudSettings": {
+      "DriverHUDLayoutTag": {
+        "TagName": "UI.HUD.Layout.Vehicle.Crew.Land"
+      },
+      "PassengerHUDLayoutTag": {
+        "TagName": "UI.HUD.Layout.Vehicle.Passenger.Active"
+      }
+    },
+    "FuelSettings": {
+      "MaxFuel": 65.0,
+      "KML": 0.3,
+      "RPML": 110.0,
+      "AddFuelInputActionTag": {
+        "TagName": "Input.NamedActions.Player.Interact"
+      }
+    },
+    "ActorEffectSettings": {
+      "EventTriggers": [
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+        },
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_1'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.1"
+        },
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.2"
+        },
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.3"
+        },
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.4"
+        },
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.5"
+        },
+        {
+          "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7'",
+          "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.6"
+        }
+      ]
+    },
+    "DamageEntitySettings": {
+      "VehicleDamageTag": {
+        "TagName": "Meta.Damage.Vehicle.Land.Wheeled.Humvee.Default"
+      },
+      "VehicleCollisionCurve": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_VehicleCollisionDamage_WHL_05_Humvee'",
+          "ObjectPath": "/WHL_05/Curves/CRV_VehicleCollisionDamage_WHL_05_Humvee.0"
+        }
+      },
+      "_aaabmcdflcmmnldemipma": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_ForeignVehicleCollisionDamage_WHL_05'",
+          "ObjectPath": "/WHL_05/Curves/CRV_ForeignVehicleCollisionDamage_WHL_05.0"
+        }
+      },
+      "CollisionCurve": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_CollisionDamage_WHL_05'",
+          "ObjectPath": "/WHL_05/Curves/CRV_CollisionDamage_WHL_05.0"
+        }
+      },
+      "PlayerCollisionCurve": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_VehiclePlayerCollision'",
+          "ObjectPath": "/Game/Vehicles/Shared/CRV_VehiclePlayerCollision.0"
+        }
+      },
+      "DestroyedExplosionDamageValues": {
+        "ExplosiveRadius": 1000.0,
+        "EffectiveExplosiveRadius": 500.0,
+        "ExplosiveDamageFallOff": 0.6
+      },
+      "RotationDamageMultiplier": {
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'DA_VehicleRotationDamageMultiplier'",
+          "ObjectPath": "/Game/Vehicles/Shared/DA_VehicleRotationDamageMultiplier.0"
+        }
+      }
+    },
+    "HealthSettings": {
+      "InitialVehicleHealth": 500.0,
+      "CriticalStateThreshold": 50.0,
+      "BleedOutTimer": 15.0,
+      "RepairWidgetLocations": [
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health"
+            }
+          ],
+          "WidgetLocation": {
+            "X": 275.0,
+            "Y": 0.0,
+            "Z": 105.0
+          }
+        },
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health.FuelTank"
+            }
+          ],
+          "WidgetLocation": {
+            "X": -132.5,
+            "Y": 130.0,
+            "Z": 137.5
+          }
+        },
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+            }
+          ],
+          "WidgetLocation": {
+            "X": 192.5,
+            "Y": -135.0,
+            "Z": 55.0
+          }
+        },
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+            }
+          ],
+          "WidgetLocation": {
+            "X": -185.0,
+            "Y": -135.0,
+            "Z": 55.0
+          }
+        },
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+            }
+          ],
+          "WidgetLocation": {
+            "X": 192.5,
+            "Y": 135.0,
+            "Z": 55.0
+          }
+        },
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+            }
+          ],
+          "WidgetLocation": {
+            "X": -185.0,
+            "Y": 135.0,
+            "Z": 55.0
+          }
+        }
+      ]
+    },
+    "ActiveZonesSettings": {
+      "ActiveZones": [
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Fuel"
+              },
+              "Value": [
+                "Attribute.Gameplay.Fuel"
+              ]
+            },
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health.FuelTank"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": -132.5,
+            "Y": 130.0,
+            "Z": 137.5
+          }
+        },
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": 275.0,
+            "Y": 0.0,
+            "Z": 105.0
+          }
+        },
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health.Wheel.Left.Front"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": 192.5,
+            "Y": -135.0,
+            "Z": 55.0
+          }
+        },
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": -185.0,
+            "Y": -135.0,
+            "Z": 55.0
+          }
+        },
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health.Wheel.Right.Front"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": 192.5,
+            "Y": 135.0,
+            "Z": 55.0
+          }
+        },
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": -185.0,
+            "Y": 135.0,
+            "Z": 55.0
+          }
+        }
+      ]
+    },
+    "LockSettings": {
+      "VehicleLockGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.LockStateChange"
+      }
+    },
+    "InventorySettings": {
+      "bIsInventoryAccessible": true
+    }
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_0 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Throttle",
+    "ModifierAmount": 0.35
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_1 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_0'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.0"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Throttle",
+    "ModifierAmount": 1.0
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_1 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.2"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Braking",
+    "ModifierAmount": 0.05
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_2 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.2"
+  },
+  "Properties": {
+    "ModifierAmount": -0.125
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_1 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.3"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Braking",
+    "ModifierAmount": 0.1
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_0 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.4"
+  },
+  "Properties": {
+    "ModifierAmount": 0.125
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_1 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.4"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Braking",
+    "ModifierAmount": 0.05
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_1 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.5"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Braking",
+    "ModifierAmount": 0.1
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_0 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.6"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Throttle",
+    "ModifierAmount": 0.8
+  }
+}
+--- export: UObject / WDWheeledVehicleEffect_1 ---
+{
+  "Type": "WDWheeledVehicleEffect",
+  "Name": "WDWheeledVehicleEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_7'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.6"
+  },
+  "Properties": {
+    "DrivingModifierType": "EWDDrivingModifier::Throttle"
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelDragEffect_0 ---
+{
+  "Type": "WDWheeledVehicleWheelDragEffect",
+  "Name": "WDWheeledVehicleWheelDragEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelDragEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.2"
+  },
+  "Properties": {
+    "DragAdditive": 1.5
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelDragEffect_0 ---
+{
+  "Type": "WDWheeledVehicleWheelDragEffect",
+  "Name": "WDWheeledVehicleWheelDragEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelDragEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.3"
+  },
+  "Properties": {
+    "AxlePosition": 1,
+    "DragAdditive": 1.75
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelDragEffect_1 ---
+{
+  "Type": "WDWheeledVehicleWheelDragEffect",
+  "Name": "WDWheeledVehicleWheelDragEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelDragEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.4"
+  },
+  "Properties": {
+    "WheelSide": "EMWheelSide::Right",
+    "DragAdditive": 1.5
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelDragEffect_1 ---
+{
+  "Type": "WDWheeledVehicleWheelDragEffect",
+  "Name": "WDWheeledVehicleWheelDragEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelDragEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.5"
+  },
+  "Properties": {
+    "AxlePosition": 1,
+    "WheelSide": "EMWheelSide::Right",
+    "DragAdditive": 1.75
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelFrictionEffect_0 ---
+{
+  "Type": "WDWheeledVehicleWheelFrictionEffect",
+  "Name": "WDWheeledVehicleWheelFrictionEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelFrictionEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_2'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.2"
+  },
+  "Properties": {
+    "FrictionMultiplierAdditive": -0.35
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelFrictionEffect_2 ---
+{
+  "Type": "WDWheeledVehicleWheelFrictionEffect",
+  "Name": "WDWheeledVehicleWheelFrictionEffect_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelFrictionEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_3'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.3"
+  },
+  "Properties": {
+    "AxlePosition": 1,
+    "FrictionMultiplierAdditive": -0.35
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelFrictionEffect_1 ---
+{
+  "Type": "WDWheeledVehicleWheelFrictionEffect",
+  "Name": "WDWheeledVehicleWheelFrictionEffect_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelFrictionEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_4'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.4"
+  },
+  "Properties": {
+    "WheelSide": "EMWheelSide::Right",
+    "FrictionMultiplierAdditive": -0.35
+  }
+}
+--- export: UObject / WDWheeledVehicleWheelFrictionEffect_0 ---
+{
+  "Type": "WDWheeledVehicleWheelFrictionEffect",
+  "Name": "WDWheeledVehicleWheelFrictionEffect_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDWheeledVehicleWheelFrictionEffect'",
+  "Outer": {
+    "ObjectName": "WDAttributeEffectsTrigger_VehicleHealth'DA_GameplaySystems_WHL_05_Humvee:WDAttributeEffectsTrigger_VehicleHealth_5'",
+    "ObjectPath": "/WHL_05/Data/DA_GameplaySystems_WHL_05_Humvee.5"
+  },
+  "Properties": {
+    "AxlePosition": 1,
+    "WheelSide": "EMWheelSide::Right",
+    "FrictionMultiplierAdditive": -0.35
+  }
+}

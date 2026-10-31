@@ -1,0 +1,341 @@
+--- export: UDataTable / DT_PostProcessEffects_Molotov ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PostProcessEffects_Molotov",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Molotov/Data/DT_PostProcessEffects_Molotov",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDPostProcessEffect'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "PostProcessEffect.Molotov.Burning": {
+      "MaterialClass": {
+        "ObjectName": "MaterialInstanceConstant'MI_PP_Burning'",
+        "ObjectPath": "/Molotov/Data/MI_PP_Burning.0"
+      },
+      "Duration": 0.0,
+      "ProgressParams": [
+        {
+          "ProgressParameterName": "DamageVignetteProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 8.689456,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 8.689456,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.25,
+                  "Value": 0.75,
+                  "ArriveTangent": 0.006992,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.029335,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.33225,
+                  "Value": 0.74761,
+                  "ArriveTangent": -0.015132,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 3.40616,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.35975,
+                  "Value": 0.802391,
+                  "ArriveTangent": 0.043362,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.043362,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.387375,
+                  "Value": 0.75,
+                  "ArriveTangent": -4.798163,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 4.282003,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.44225,
+                  "Value": 0.999602,
+                  "ArriveTangent": 4.79704,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -4.969267,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.512375,
+                  "Value": 0.559163,
+                  "ArriveTangent": -6.39093,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 5.095374,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.60725,
+                  "Value": 0.751992,
+                  "ArriveTangent": -5.687162,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -7.822059,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.641625,
+                  "Value": 0.754183,
+                  "ArriveTangent": 10.624326,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.181201,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.75,
+                  "Value": 0.75,
+                  "ArriveTangent": -0.027532,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.010955,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": -7.344527,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -7.344556,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": true,
+          "LoopStartEnd": {
+            "X": 0.25,
+            "Y": 0.75
+          },
+          "LoopPlayRate": 0.1
+        },
+        {
+          "ProgressParameterName": "BlurProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 8.689456,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 8.689456,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.25,
+                  "Value": 0.75,
+                  "ArriveTangent": 0.006992,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.029335,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.75,
+                  "Value": 0.75,
+                  "ArriveTangent": -0.027532,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.010955,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": -7.344527,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -7.344556,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": true,
+          "LoopStartEnd": {
+            "X": 0.25,
+            "Y": 0.75
+          },
+          "LoopPlayRate": 0.1
+        },
+        {
+          "ProgressParameterName": "DarkenProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 0.0,
+                  "ArriveTangent": 8.689456,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 8.689456,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.25,
+                  "Value": 0.75,
+                  "ArriveTangent": 0.006992,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.029335,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Break",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.75,
+                  "Value": 0.75,
+                  "ArriveTangent": -0.027532,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -0.010955,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_User",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1.0,
+                  "Value": 0.0,
+                  "ArriveTangent": -7.344527,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": -7.344556,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": true,
+          "LoopStartEnd": {
+            "X": 0.25,
+            "Y": 0.75
+          },
+          "LoopPlayRate": 0.1
+        },
+        {
+          "ProgressParameterName": "DesaturationProgress",
+          "ProgressEvaluationCurve": {
+            "EditorCurveData": {
+              "Keys": [
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.0,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.57805,
+                  "Value": 1.0,
+                  "ArriveTangent": 0.0,
+                  "ArriveTangentWeight": 0.0,
+                  "LeaveTangent": 0.0,
+                  "LeaveTangentWeight": 0.0
+                }
+              ],
+              "DefaultValue": 3.4028235E+38,
+              "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+              "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+            },
+            "ExternalCurve": null
+          },
+          "bLoopProgressCurveOnCompletion": true,
+          "LoopStartEnd": {
+            "X": 0.0,
+            "Y": 1.0
+          },
+          "LoopPlayRate": 0.175
+        }
+      ],
+      "ParameterValuesOnEffectApplication": [],
+      "OnRemoveParameterValues": [],
+      "bIgnoreMaterialRemoval": false,
+      "bRemoveOnPawnPossessed": true,
+      "bKeepInitialParameterValuesConstant": false,
+      "BlendWeight": 1.0,
+      "Tag": {
+        "TagName": "PostProcessEffect.Molotov.Burning"
+      }
+    }
+  }
+}

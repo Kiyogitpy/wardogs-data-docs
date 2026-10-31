@@ -1,0 +1,544 @@
+--- export: UPrimaryDataAsset / VP_WHL_07_Wheels ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_07_Wheels",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_07/Parts/VP_WHL_07_Wheels",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Wheel"
+    ],
+    "Fragments": [
+      {
+        "Key": "Meshes",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_InstancedWheels'VP_WHL_07_Wheels:MVF_InstancedWheels_0'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Wheels.2"
+          }
+        }
+      },
+      {
+        "Key": "Health",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_HealthSections'VP_WHL_07_Wheels:MVF_HealthSections_0'",
+            "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Wheels.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_HealthSections_0 ---
+{
+  "Type": "MVF_HealthSections",
+  "Name": "MVF_HealthSections_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_HealthSections'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Wheels'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Wheels.0"
+  },
+  "Properties": {
+    "HealthSections": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+        },
+        "Value": {
+          "MaxHealth": 75.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Front"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Left.Front"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Left.Front"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+        },
+        "Value": {
+          "MaxHealth": 75.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Middle"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Left.Middle"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Left.Middle"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+        },
+        "Value": {
+          "MaxHealth": 75.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Left.Rear"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Left.Rear"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Left.Rear"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+        },
+        "Value": {
+          "MaxHealth": 75.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Front"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Right.Front"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Right.Front"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+        },
+        "Value": {
+          "MaxHealth": 75.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Middle"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Right.Middle"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Right.Middle"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+        },
+        "Value": {
+          "MaxHealth": 75.0,
+          "Tags": [
+            "Meta.Damage.HitLocation.Vehicle.Wheel.Right.Rear"
+          ],
+          "_aaachkphmgcampdlhdkkf": false,
+          "PreDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": false
+              }
+            }
+          ],
+          "_aaacikmpjffpcggjhonpl": false,
+          "PostDamageRouting": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": {
+                "Scalar": {
+                  "Value": 0.25,
+                  "Curve": {
+                    "CurveTable": null,
+                    "RowName": "None"
+                  },
+                  "RegistryType": {
+                    "Name": "None"
+                  }
+                },
+                "bUseAbsoluteHealth": false,
+                "bOnlyWhenDepleted": true
+              }
+            }
+          ],
+          "_aaadafjbjhkkggmmjaeba": false,
+          "SimultaneousDamageRouting": [],
+          "RepairInteractionContextTag": {
+            "TagName": "Interaction.Context.Vehicle.Repair.Wheel.Right.Rear"
+          },
+          "RepairInteractionTrackerPointTag": {
+            "TagName": "UI.Trackers.InteractionPoint.Vehicle.RepairPoint.Wheel.Right.Rear"
+          }
+        }
+      }
+    ],
+    "ComplexSurfaceMappings": {
+      "SurfaceGroups": [
+        {
+          "Key": {
+            "TagName": "ComplexSurface.Group.Wheel"
+          },
+          "Value": {
+            "bUseDefault": false,
+            "Default": {
+              "TagName": "None"
+            },
+            "SlotMap": [
+              {
+                "Key": "CC_Wheel_0",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+                }
+              },
+              {
+                "Key": "CC_Wheel_1",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+                }
+              },
+              {
+                "Key": "CC_Wheel_2",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+                }
+              },
+              {
+                "Key": "CC_Wheel_3",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+                }
+              },
+              {
+                "Key": "CC_Wheel_4",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+                }
+              },
+              {
+                "Key": "CC_Wheel_5",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+                }
+              },
+              {
+                "Key": "CC_Tyre_0",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+                }
+              },
+              {
+                "Key": "CC_Tyre_1",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+                }
+              },
+              {
+                "Key": "CC_Tyre_2",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+                }
+              },
+              {
+                "Key": "CC_Tyre_3",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+                }
+              },
+              {
+                "Key": "CC_Tyre_4",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+                }
+              },
+              {
+                "Key": "CC_Tyre_5",
+                "Value": {
+                  "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / MVF_InstancedWheels_0 ---
+{
+  "Type": "MVF_InstancedWheels",
+  "Name": "MVF_InstancedWheels_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_InstancedWheels'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_07_Wheels'",
+    "ObjectPath": "/WHL_07/Parts/VP_WHL_07_Wheels.0"
+  },
+  "Properties": {
+    "WheelMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Wheel.SM_WHL_07_Wheel",
+      "SubPathString": ""
+    },
+    "IndexedSlotNames": [
+      "CC_Wheel",
+      "CC_Tyre"
+    ],
+    "bSupportTyreDestruction": true,
+    "DestroyedMeshMode": "ETyreMeshSwapMode::All",
+    "DestructionMesh": {
+      "AssetPathName": "/WHL_07/Meshes/SM_WHL_07_Wheel_rim.SM_WHL_07_Wheel_rim",
+      "SubPathString": ""
+    }
+  }
+}

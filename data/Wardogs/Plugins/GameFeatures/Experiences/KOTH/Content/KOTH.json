@@ -1,0 +1,126 @@
+--- export: UObject / BHGameFeatureAction_RegisterMatchStates_0 ---
+{
+  "Type": "BHGameFeatureAction_RegisterMatchStates",
+  "Name": "BHGameFeatureAction_RegisterMatchStates_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_RegisterMatchStates'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'KOTH'",
+    "ObjectPath": "/KOTH/KOTH.3"
+  },
+  "Properties": {
+    "MatchStates": [
+      {
+        "AssetPathName": "/Script/WDGame.WDMatchState_PreMatch_WaitingForWorldLoad",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/WDGame.WDMatchState_PreMatch_WaitingForPlayerCount",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/ControlZoneRuntime.WDMatchState_Playing_KOTH",
+        "SubPathString": ""
+      },
+      {
+        "AssetPathName": "/Script/WDGame.WDMatchState_PostMatch",
+        "SubPathString": ""
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'KOTH'",
+    "ObjectPath": "/KOTH/KOTH.3"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Game/GameMechanics/Gamemode/B_FactionSetup_CreateThreeTeams.B_FactionSetup_CreateThreeTeams_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameModeSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/KOTHRuntime.WDKOTHPlayerSpawnManagerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": false,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameStateSession",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDGame.WDItemRequirementsEvaluatorComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'KOTH'",
+    "ObjectPath": "/KOTH/KOTH.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_KOTH'",
+      "ObjectPath": "/KOTH/EDL_KOTH.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / KOTH ---
+{
+  "Type": "GameFeatureData",
+  "Name": "KOTH",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/KOTH/KOTH",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'KOTH:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/KOTH/KOTH.1"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_RegisterMatchStates'KOTH:BHGameFeatureAction_RegisterMatchStates_0'",
+        "ObjectPath": "/KOTH/KOTH.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'KOTH:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/KOTH/KOTH.2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+--- export: UDataAsset / EQS_FindPeekPointToStimulus ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindPeekPointToStimulus",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/WDAIPvEAICore/Cover/EQS/EQS_FindPeekPointToStimulus",
+  "Properties": {
+    "QueryName": "EQS_FindPeekPointToStimulus",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindPeekPointToStimulus:EnvQueryOption_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindPeekPointToStimulus.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPeekPointToStimulus'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindPeekPointToStimulus.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_PeekPoints'EQS_FindPeekPointToStimulus:SDEnvQueryGenerator_PeekPoints_0'",
+      "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindPeekPointToStimulus.2"
+    }
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_PeekPoints_0 ---
+{
+  "Type": "SDEnvQueryGenerator_PeekPoints",
+  "Name": "SDEnvQueryGenerator_PeekPoints_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_PeekPoints'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindPeekPointToStimulus'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindPeekPointToStimulus.0"
+  },
+  "Properties": {
+    "VerNum": 1
+  }
+}

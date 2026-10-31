@@ -1,0 +1,115 @@
+--- export: UDataAsset / W_TNK_01_Artillery ---
+{
+  "Type": "WDVehicleWeaponDataAsset",
+  "Name": "W_TNK_01_Artillery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponDataAsset'",
+  "Package": "/TNK_01/Weapons/Artillery/W_TNK_01_Artillery",
+  "Properties": {
+    "WeaponTag": {
+      "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.Artillery"
+    },
+    "SkeletalMeshAsset": {
+      "AssetPathName": "/TNK_01/Mesh/TNK_02/SK/SK_TNK_02_Turret.SK_TNK_02_Turret",
+      "SubPathString": ""
+    },
+    "MuzzleSockets": [
+      "S_MuzzleFlash"
+    ],
+    "PlayerAttachSocket": {
+      "SourceId": "TurretSkeleton",
+      "SocketName": "S_Attach_TankTurret_Player"
+    },
+    "GamepadRotationSensitivity": 5.0,
+    "GamepadRotationUpdateMax": {
+      "X": 60.0,
+      "Y": 60.0
+    },
+    "KeyRotationSensitivity": 6.0,
+    "WeaponRotationComponentData": {
+      "bLimitWeaponPitch": true,
+      "MinWeaponPitchAngle": 2.0,
+      "MaxWeaponPitchAngle": 80.0,
+      "bStabilisationPermitted": true,
+      "AccelerationCompensationStrength": 5.0,
+      "SimulationType": "EWDVehicleWeaponRotationSimType::FullSim",
+      "YawDampingFactor": 0.2,
+      "PitchDriveStrength": 2000.0,
+      "_aaabfncmhojkliegpjanl": {
+        "X": 10.0,
+        "Y": 10.0
+      },
+      "bTurretAffectsBase": true,
+      "CollisionStiffness": 40.0,
+      "CollisionDamping": 10.0,
+      "MaxCollisionForce": 10000.0,
+      "TurretSkeletalMeshTag": "TurretSkeleton",
+      "YawJointSocket": "turretYaw_Attach",
+      "PitchJointSocket": "turretPitch_Attach",
+      "PitchBodyBone": "turretBarrel_01_Attach",
+      "YawBodyBone": "turretYaw_Attach",
+      "WeaponRotationGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.Weapon.Aim"
+      }
+    },
+    "WeaponStatesCameraData": [
+      {
+        "Key": {
+          "TagName": "State.Vehicle.Weapon.ADS"
+        },
+        "Value": {
+          "bSupported": true,
+          "AttachQuery": {
+            "SourceMode": "EAttachSourceQueryMode::ComponentTag",
+            "SocketMode": "EAttachSocketMatchMode::Explicit",
+            "SourceId": "TurretSkeleton",
+            "SourceFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            },
+            "SocketName": "S_WeaponCamera",
+            "SocketFilter": {
+              "RequireTags": [],
+              "IgnoreTags": [],
+              "TagQuery": {
+                "TokenStreamVersion": 0,
+                "TagDictionary": [],
+                "QueryTokenStream": [],
+                "UserDescription": "",
+                "AutoDescription": ""
+              }
+            }
+          },
+          "CameraBehaviourData": null,
+          "bAlignWithTarget": false,
+          "ZeroingDistance": 200.0,
+          "FOVMultiplier": 1.0,
+          "_aaabokgmbjbllidnailcp": false,
+          "_aaabfcjmfdhlfmlfijgpg": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabejnhnhahophgdkgfl": false
+        }
+      }
+    ],
+    "HUDLayoutTag": {
+      "TagName": "UI.HUD.Layout.Vehicle.Gunner.Artillery"
+    },
+    "HUDScopeBlurAlpha": 1.0,
+    "WeaponExtensionsDataAssets": [
+      {
+        "AssetPathName": "/TNK_01/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.WE_TNK_01_Artillery",
+        "SubPathString": ""
+      }
+    ]
+  }
+}

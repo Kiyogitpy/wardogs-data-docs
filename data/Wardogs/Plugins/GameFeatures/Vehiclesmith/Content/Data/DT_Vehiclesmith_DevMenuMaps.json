@@ -1,0 +1,35 @@
+--- export: UDataTable / DT_Vehiclesmith_DevMenuMaps ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Vehiclesmith_DevMenuMaps",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Vehiclesmith/Data/DT_Vehiclesmith_DevMenuMaps",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDDevMenuMapsDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "DevMaps.Vehiclesmith": {
+      "MapName": {
+        "Namespace": "",
+        "Key": "E451CBA345E6B2A04AD3EA953372D641",
+        "SourceString": "Vehiclesmith",
+        "LocalizedString": "Vehiclesmith"
+      },
+      "MapToLoad": {
+        "AssetPathName": "/Vehiclesmith/Maps/Vehiclesmith_Main_P.Vehiclesmith_Main_P",
+        "SubPathString": ""
+      },
+      "CustomLoadingScreenWidgetClass": {
+        "ObjectName": "WidgetBlueprintGeneratedClass'W_VehiclesmithLoadingScreen_C'",
+        "ObjectPath": "/Vehiclesmith/UI/LoadingScreen/W_VehiclesmithLoadingScreen.16"
+      },
+      "Tag": {
+        "TagName": "DevMaps.Vehiclesmith"
+      }
+    }
+  }
+}

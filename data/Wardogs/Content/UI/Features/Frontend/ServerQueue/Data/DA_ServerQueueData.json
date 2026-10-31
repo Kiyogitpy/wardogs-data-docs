@@ -1,0 +1,156 @@
+--- export: UDataAsset / DA_ServerQueueData ---
+{
+  "Type": "WDUIServerQueueData",
+  "Name": "DA_ServerQueueData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIServerQueueData'",
+  "Package": "/Game/UI/Features/Frontend/ServerQueue/Data/DA_ServerQueueData",
+  "Properties": {
+    "LeaveQueuePopupData": {
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.ServerQueue.Leave",
+        "SourceString": "Leave Queue?",
+        "LocalizedString": "Leave Queue?"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.ServerQueue.Leave",
+        "SourceString": "Are you sure you want to leave the server queue?",
+        "LocalizedString": "Are you sure you want to leave the server queue?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Text.ServerQueue.ButtonOption.Left",
+              "SourceString": "Stay In Queue",
+              "LocalizedString": "Stay In Queue"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Text.ServerQueue.ButtonOption.Right",
+              "SourceString": "Leave Queue",
+              "LocalizedString": "Leave Queue"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaabdgcokjahdedkgikcf": {
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.ServerJoin.Leave",
+        "SourceString": "Cancel Joining?",
+        "LocalizedString": "Cancel Joining?"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.ServerJoin.Leave",
+        "SourceString": "Are you sure you want to stop joining this server?",
+        "LocalizedString": "Are you sure you want to stop joining this server?"
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "Namespace": "",
+              "Key": "BFA2A80F43FC4F3FA53D57A27682E694",
+              "SourceString": "Keep Joining",
+              "LocalizedString": "Keep Joining"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "Namespace": "",
+              "Key": "4FAE7DBF48AB7F5F0BA962ABC2476178",
+              "SourceString": "Stop Joining",
+              "LocalizedString": "Stop Joining"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    },
+    "_aaabdlegolhghejcagkia": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.QueuePosition.Format",
+      "SourceString": "Position {0} of {1}",
+      "LocalizedString": "Position {0} of {1}"
+    },
+    "_aaabfaiiofhakofofhclm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.ConnectingToServer",
+      "SourceString": "Connecting...",
+      "LocalizedString": "Connecting..."
+    },
+    "_aaabboobmjhfmkjjjkeof": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.InServerQueue",
+      "SourceString": "In Server Queue...",
+      "LocalizedString": "In Server Queue..."
+    },
+    "_aaabdmmohjaibkfobmhmm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.JoiningServer",
+      "SourceString": "Joining Server...",
+      "LocalizedString": "Joining Server..."
+    },
+    "_aaabdlmbfhefoinieocdb": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.EstimatedWaitTime.Format",
+      "SourceString": "QueueEstimate: ~{0}s",
+      "LocalizedString": "QueueEstimate: ~{0}s"
+    },
+    "_aaabboldcbeobhjidooad": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Text.PlayerCount.Format",
+      "SourceString": "PlayerCount, {0} / {1}",
+      "LocalizedString": "PlayerCount, {0} / {1}"
+    }
+  }
+}

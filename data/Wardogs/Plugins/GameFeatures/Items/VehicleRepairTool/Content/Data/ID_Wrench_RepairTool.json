@@ -1,0 +1,496 @@
+--- export: UObject / BH_VehicleRepairToolExtensionData_C_0 ---
+{
+  "Type": "BH_VehicleRepairToolExtensionData_C",
+  "Name": "BH_VehicleRepairToolExtensionData_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/VehicleRepairTool/Data/BH_VehicleRepairToolExtensionData.BH_VehicleRepairToolExtensionData_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Template": {
+    "ObjectName": "BH_VehicleRepairToolExtensionData_C'Default__BH_VehicleRepairToolExtensionData_C'",
+    "ObjectPath": "/VehicleRepairTool/Data/BH_VehicleRepairToolExtensionData.0"
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Wrench_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Wrench_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/VehicleRepairTool/Data/Wrench/Meshes/SM_Wrench.SM_Wrench",
+      "SubPathString": ""
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -5.2,
+      "Y": 0.0,
+      "Z": -4.5
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 5.5,
+      "Y": 3.6,
+      "Z": 14.8
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Wrench_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Wrench_RepairTool ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Wrench_RepairTool",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/VehicleRepairTool/Data/ID_Wrench_RepairTool",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.RepairTool.Wrench.Standard"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Inventory.Slot.Secondary",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.Wrench",
+      "SourceString": "Wrench",
+      "LocalizedString": "Wrench"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Wrench_RepairTool:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Wrench_RepairTool:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Durability'ID_Wrench_RepairTool:WDInventoryFragment_Durability_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Wrench_RepairTool:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Wrench_RepairTool:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Wrench_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_VehicleRepairTool_Audio'",
+      "ObjectPath": "/VehicleRepairTool/Data/ID_VehicleRepairTool_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Durability_0 ---
+{
+  "Type": "WDInventoryFragment_Durability",
+  "Name": "WDInventoryFragment_Durability_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Durability'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Wrench_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.4"
+  },
+  "Properties": {
+    "ReplicatedData": {
+      "Durability": 600.0
+    },
+    "bIsVisibleOnEquippedUI": true
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Wrench_RepairTool'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.14"
+      },
+      {
+        "ObjectName": "BH_VehicleRepairToolExtensionData_C'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.BH_VehicleRepairToolExtensionData_C_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AttributeExtension_1'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.10"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_RepairToolWrenchStandard'",
+      "ObjectPath": "/VehicleRepairTool/Data/AnimSet_RepairToolWrenchStandard.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Health"
+    },
+    "AttributeValue": 5.0,
+    "bApplyAsDelta": true,
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.VehicleRepairTool.PrimaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "Namespace": "",
+              "Key": "B54EBF5143319D668DFE01A1DAD98AAB",
+              "SourceString": "Repairing",
+              "LocalizedString": "Repairing"
+            },
+            "TargetText": {
+              "Namespace": "",
+              "Key": "98C59B6045D5193380216491CDFD224E",
+              "SourceString": "Being Repaired",
+              "LocalizedString": "Being Repaired"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::UntilItemEmptyOrTargetFull",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.PrimaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": true,
+          "WorldInteractionContextClass": {
+            "ObjectName": "Class'WDVehicleRepairInteractionContext'",
+            "ObjectPath": "/Script/WDGame"
+          },
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": false
+        }
+      }
+    ],
+    "bContainerAppliable": true,
+    "ContainerData": {
+      "UpdateTime": 0.68,
+      "UpdateAmount": 10.0
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_VehicleRepairTool_Audio'",
+      "ObjectPath": "/VehicleRepairTool/Data/ID_VehicleRepairTool_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AttributeExtension_1 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_AttributeExtension_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Wrench'",
+      "ObjectPath": "/VehicleRepairTool/Data/Wrench/Meshes/SK_Wrench.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Wrench_WeaponMaster'",
+        "ObjectPath": "/VehicleRepairTool/Data/Wrench/Materials/MI_Wrench_WeaponMaster.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Wrench_C'",
+      "ObjectPath": "/VehicleRepairTool/Data/Wrench/Animation/Blueprint/ABP_Wrench.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "Opacity": 0.6,
+      "HairLength": 7.5,
+      "Gap": 5.0,
+      "SpreadMultiplier": 0.0
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Wrench_Equip'",
+        "ObjectPath": "/VehicleRepairTool/Data/Wrench/Animation/FP/Character/Montages/AM_FP_Wrench_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Wrench_Holster'",
+        "ObjectPath": "/VehicleRepairTool/Data/Wrench/Animation/FP/Character/Montages/AM_FP_Wrench_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      },
+      "ThirdPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_Wrench_Holster_TP'",
+        "ObjectPath": "/VehicleRepairTool/Data/Wrench/Animation/TP/Item/Montages/AM_Weap_Wrench_Holster_TP.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/VehicleRepairTool/Data/Wrench/Animation/Blueprint/ABP_FP_Wrench_Layer_RW.ABP_FP_Wrench_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/VehicleRepairTool/Data/Wrench/Animation/Blueprint/ABP_TP_Wrench_Layer_RW.ABP_TP_Wrench_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_RepairingTools'",
+      "ObjectPath": "/VehicleRepairTool/Data/IMC_RepairingTools.1"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateVehicleRepairAction'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateVehicleRepairAction_0'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.16"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_1'",
+          "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.17"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.7"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.VehicleRepairTool.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.13"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateVehicleRepairAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateVehicleRepairAction",
+  "Name": "WDItemInputBehavior_ActivateVehicleRepairAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateVehicleRepairAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.13"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.VehicleRepairTool.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_1 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Wrench_RepairTool:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/VehicleRepairTool/Data/ID_Wrench_RepairTool.13"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.VehicleRepairTool.PrimaryUse"
+    }
+  }
+}

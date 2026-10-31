@@ -1,0 +1,77 @@
+--- export: UDataTable / DT_SceneData_Match_Wagers ---
+{
+  "Type": "DataTable",
+  "Name": "DT_SceneData_Match_Wagers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Scenes/DT_SceneData_Match_Wagers",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDSceneDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "UI.Scene.Match.WagerStatus": {
+      "InputMode": "EWDInputMode::UI",
+      "bResetFocusOnEnter": true,
+      "bShouldBlockBack": false,
+      "bIsFocusable": true,
+      "bShouldPreload": false,
+      "Group": {
+        "TagName": "UI.SceneGroup.Session"
+      },
+      "SceneRules": [
+        {
+          "_aaabogpkidlhgbejcobka": "EWDOpenSceneRuleRegardingGameOver::OnlyShowWhenGameIsNotOver"
+        },
+        {}
+      ],
+      "OpenSceneActions": [
+        {},
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "CloseSceneActions": [
+        {
+          "WidgetClass": {
+            "ObjectName": "WidgetBlueprintGeneratedClass'W_Chatbox_C'",
+            "ObjectPath": "/Game/UI/Features/HUD/Chatbox/W_Chatbox.125"
+          }
+        }
+      ],
+      "Params": {
+        "Layer": "EWDWidgetLayer::Normal",
+        "ZOrder": 1,
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Wagers/Status/W_WagerStatusScene.W_WagerStatusScene_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIWagerStatusSceneViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Wagers/Status/DA_WagerStatusScene.DA_WagerStatusScene",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "bBlockTopBarUpdates": false,
+      "bShowSceneTitle": false,
+      "bShowBackButton": false,
+      "bShowSeasonalCountdown": false,
+      "bOpenOnTop": false,
+      "_aaabfeppjajiiglgbhgoo": false,
+      "Tag": {
+        "TagName": "UI.Scene.Match.WagerStatus"
+      }
+    }
+  }
+}

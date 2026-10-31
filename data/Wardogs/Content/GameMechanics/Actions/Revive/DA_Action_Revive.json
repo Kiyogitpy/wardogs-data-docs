@@ -1,0 +1,58 @@
+--- export: UPrimaryDataAsset / DA_Action_Revive ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Revive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/Revive/DA_Action_Revive",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Revive"
+    },
+    "ActionContext": [
+      "Action.Context.Interaction",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Revive_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/Revive/B_Action_Revive.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [
+            "Action.Context.Weapon",
+            "Action.Context.Interaction",
+            "Action.Context.Holdable"
+          ],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::InterruptCategories",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::InterruptCategories",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [
+            "Action.Context.Weapon",
+            "Action.Context.Holdable"
+          ],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGameplayAction_InteractionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

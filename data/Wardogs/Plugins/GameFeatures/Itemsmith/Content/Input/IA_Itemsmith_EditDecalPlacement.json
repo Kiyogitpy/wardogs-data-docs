@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_Itemsmith_EditDecalPlacement ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_EditDecalPlacement",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_EditDecalPlacement",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.Flair.EditDecalPlacement"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Itemsmith_EditDecalPlacement:InputTriggerPressed_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_EditDecalPlacement.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_EditDecalPlacement'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_EditDecalPlacement.0"
+  }
+}

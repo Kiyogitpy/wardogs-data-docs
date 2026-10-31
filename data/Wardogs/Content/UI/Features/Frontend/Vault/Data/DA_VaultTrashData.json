@@ -1,0 +1,66 @@
+--- export: UDataAsset / DA_VaultTrashData ---
+{
+  "Type": "WDUIVaultTrashData",
+  "Name": "DA_VaultTrashData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVaultTrashData'",
+  "Package": "/Game/UI/Features/Frontend/Vault/Data/DA_VaultTrashData",
+  "Properties": {
+    "_aaabcepngekglkfaolnnh": {
+      "Tag": {
+        "TagName": "UI.Popup.Vault.DeleteConfirm"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+        "Key": "Popup.Delete.Title",
+        "SourceString": "Delete Item?",
+        "LocalizedString": "Delete Item?"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+        "Key": "Popup.Delete.Description",
+        "SourceString": "This will permanently remove the item from your vault.",
+        "LocalizedString": "This will permanently remove the item from your vault."
+      },
+      "bShouldBlockBack": true,
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+              "Key": "Popup.Delete.ConfirmNo",
+              "SourceString": "Cancel",
+              "LocalizedString": "Cancel"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": true
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Vault.STRINGS_Vault",
+              "Key": "Popup.Delete.ConfirmYes",
+              "SourceString": "Delete",
+              "LocalizedString": "Delete"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        }
+      ]
+    }
+  }
+}

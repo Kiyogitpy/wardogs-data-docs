@@ -1,0 +1,82 @@
+--- export: UPrimaryDataAsset / VP_FWG_01 ---
+{
+  "Type": "ModularVehiclePlatform",
+  "Name": "VP_FWG_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePlatform'",
+  "Package": "/Game/Vehicles/Platforms/Air/VP_FWG_01",
+  "Properties": {
+    "ImplementationClass": {
+      "AssetPathName": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/B_FWG_01.B_FWG_01_C",
+      "SubPathString": ""
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -969.18933,
+        "Y": -664.4212,
+        "Z": -3.784244
+      },
+      "Max": {
+        "X": 967.563,
+        "Y": 664.4213,
+        "Z": 576.80273
+      }
+    },
+    "Fragments": [
+      {
+        "Key": "Config",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_VehicleConfig'VP_FWG_01:MVF_VehicleConfig_0'",
+            "ObjectPath": "/Game/Vehicles/Platforms/Air/VP_FWG_01.2"
+          }
+        }
+      },
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_FWG_01:WD_MVF_Seats_0'",
+            "ObjectPath": "/Game/Vehicles/Platforms/Air/VP_FWG_01.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "WD_MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_FWG_01'",
+    "ObjectPath": "/Game/Vehicles/Platforms/Air/VP_FWG_01.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_SeatSettings.DA_FWG_01_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / MVF_VehicleConfig_0 ---
+{
+  "Type": "MVF_VehicleConfig",
+  "Name": "MVF_VehicleConfig_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_VehicleConfig'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePlatform'VP_FWG_01'",
+    "ObjectPath": "/Game/Vehicles/Platforms/Air/VP_FWG_01.0"
+  },
+  "Properties": {
+    "VehicleConfig": {
+      "AssetPathName": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_Config.DA_FWG_01_Config",
+      "SubPathString": ""
+    }
+  }
+}

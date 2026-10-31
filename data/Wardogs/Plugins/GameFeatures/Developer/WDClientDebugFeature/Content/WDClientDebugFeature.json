@@ -1,0 +1,44 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDClientDebugFeature'",
+    "ObjectPath": "/WDClientDebugFeature/WDClientDebugFeature.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDClientDebug.WDClientDebugComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WDClientDebugFeature ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WDClientDebugFeature",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WDClientDebugFeature/WDClientDebugFeature",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'WDClientDebugFeature:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/WDClientDebugFeature/WDClientDebugFeature.0"
+      }
+    ]
+  }
+}

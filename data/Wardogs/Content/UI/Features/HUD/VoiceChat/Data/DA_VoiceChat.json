@@ -1,0 +1,88 @@
+--- export: UDataAsset / DA_VoiceChat ---
+{
+  "Type": "WDUIVoiceChatData",
+  "Name": "DA_VoiceChat",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVoiceChatData'",
+  "Package": "/Game/UI/Features/HUD/VoiceChat/Data/DA_VoiceChat",
+  "Properties": {
+    "LocalSpeakerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVoiceChatSpeakerViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Data/DA_VoiceChatLocalSpeaker.DA_VoiceChatLocalSpeaker",
+        "SubPathString": ""
+      }
+    },
+    "RemoteSpeakerViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVoiceChatSpeakerViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Data/DA_VoiceChatRemoteSpeaker.DA_VoiceChatRemoteSpeaker",
+        "SubPathString": ""
+      }
+    },
+    "VoiceChatStateData": [
+      {
+        "Key": "EWDUIVoiceChatState::Connecting",
+        "Value": {
+          "VoiceChatStateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VoiceChat.STRINGS_VoiceChat",
+            "Key": "VoiceChat.Connecting",
+            "SourceString": "[CONNECTING...]",
+            "LocalizedString": "[CONNECTING...]"
+          },
+          "VoiceChatStateEvent": {
+            "TagName": "Audio.Event.Comms.LoggingIn.Connecting"
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVoiceChatState::Connected",
+        "Value": {
+          "VoiceChatStateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VoiceChat.STRINGS_VoiceChat",
+            "Key": "VoiceChat.Connected",
+            "SourceString": "[CONNECTED]",
+            "LocalizedString": "[CONNECTED]"
+          },
+          "VoiceChatStateEvent": {
+            "TagName": "Audio.Event.Comms.LoggingIn.Connected"
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVoiceChatState::Disconnecting",
+        "Value": {
+          "VoiceChatStateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VoiceChat.STRINGS_VoiceChat",
+            "Key": "VoiceChat.Disconnecting",
+            "SourceString": "[DISCONNECTING...]",
+            "LocalizedString": "[DISCONNECTING...]"
+          },
+          "VoiceChatStateEvent": {
+            "TagName": "Audio.Event.Comms.LoggingIn.Disconnecting"
+          }
+        }
+      },
+      {
+        "Key": "EWDUIVoiceChatState::Disconnected",
+        "Value": {
+          "VoiceChatStateText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VoiceChat.STRINGS_VoiceChat",
+            "Key": "VoiceChat.Disconnected",
+            "SourceString": "[DISCONNECTED]",
+            "LocalizedString": "[DISCONNECTED]"
+          },
+          "VoiceChatStateEvent": {
+            "TagName": "Audio.Event.Comms.LoggingIn.Disconnected"
+          }
+        }
+      }
+    ]
+  }
+}

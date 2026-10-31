@@ -1,0 +1,35 @@
+--- export: UPrimaryDataAsset / AE_UI_FrontEnd_Exit_LogoScene ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_FrontEnd_Exit_LogoScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_LogoScene",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.FrontEnd.LogoScene.Exit"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_UI_FrontEnd_Exit_LogoScene:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_LogoScene.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_FrontEnd_Exit_LogoScene'",
+    "ObjectPath": "/Game/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Exit_LogoScene.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

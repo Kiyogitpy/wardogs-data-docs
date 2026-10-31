@@ -1,0 +1,41 @@
+--- export: UObject / AEB_SetTinnitusMix_C_0 ---
+{
+  "Type": "AEB_SetTinnitusMix_C",
+  "Name": "AEB_SetTinnitusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetTinnitusMix.AEB_SetTinnitusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_State_BackBlast'",
+    "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_BackBlast.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetTinnitusMix_C'Default__AEB_SetTinnitusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetTinnitusMix.0"
+  },
+  "Properties": {
+    "IsBackBlast": true,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.State.Tinnitus"
+    },
+    "ConcurrentInstanceLimit": 3
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_State_BackBlast ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_State_BackBlast",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/State/AE_Player_State_BackBlast",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.State.BackBlast"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SetTinnitusMix_C'AE_Player_State_BackBlast:AEB_SetTinnitusMix_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/State/AE_Player_State_BackBlast.0"
+      }
+    ]
+  }
+}

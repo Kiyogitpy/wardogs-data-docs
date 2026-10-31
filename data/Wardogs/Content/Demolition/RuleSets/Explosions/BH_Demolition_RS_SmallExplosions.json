@@ -1,0 +1,64 @@
+--- export: UDataAsset / BH_Demolition_RS_SmallExplosions ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_SmallExplosions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_SmallExplosions",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "WDDemolitionRule_Explosion'BH_Demolition_RS_SmallExplosions:WDDemolitionRule_Explosion_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_SmallExplosions.1"
+    }
+  }
+}
+--- export: UObject / WDDemolitionRule_Explosion_0 ---
+{
+  "Type": "WDDemolitionRule_Explosion",
+  "Name": "WDDemolitionRule_Explosion_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDemolitionRule_Explosion'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_SmallExplosions'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_SmallExplosions.0"
+  },
+  "Properties": {
+    "PermittedDamageSources": {
+      "TagDictionary": [
+        {
+          "TagName": "Meta.Damage.C4"
+        },
+        {
+          "TagName": "Meta.Damage.Grenade"
+        },
+        {
+          "TagName": "Meta.Damage.Explosive.Grenade.40mm"
+        },
+        {
+          "TagName": "Meta.Damage.Explosive.Utility.C4"
+        },
+        {
+          "TagName": "Meta.Damage.Explosive.Utility.Claymore"
+        },
+        {
+          "TagName": "Meta.Damage.Explosive.Utility.IED"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        1,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "UserDescription": "Small explosives",
+      "AutoDescription": " ANY( Meta.Damage.C4, Meta.Damage.Grenade, Meta.Damage.Explosive.Grenade.40mm, Meta.Damage.Explosive.Utility.C4, Meta.Damage.Explosive.Utility.Claymore, Meta.Damage.Explosive.Utility.IED )"
+    },
+    "MinimumDistanceFromExplosionSource": 300.0
+  }
+}

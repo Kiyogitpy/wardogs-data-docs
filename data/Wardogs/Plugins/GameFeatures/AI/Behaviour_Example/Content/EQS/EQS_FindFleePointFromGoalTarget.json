@@ -1,0 +1,88 @@
+--- export: UDataAsset / EQS_FindFleePointFromGoalTarget ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindFleePointFromGoalTarget",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget",
+  "Properties": {
+    "QueryName": "EQS_FindFleePointFromGoalTarget",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindFleePointFromGoalTarget:EnvQueryOption_0'",
+        "ObjectPath": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_Donut_0 ---
+{
+  "Type": "EnvQueryGenerator_Donut",
+  "Name": "EnvQueryGenerator_Donut_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_Donut'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindFleePointFromGoalTarget'",
+    "ObjectPath": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget.0"
+  },
+  "Properties": {
+    "ArcDirection": {
+      "LineTo": {
+        "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+        "ObjectPath": "/Script/SDAIGoalsRuntime"
+      }
+    },
+    "ArcAngle": {
+      "DefaultValue": 180.0
+    },
+    "bDefineArc": true,
+    "ProjectionData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceMode": "EEnvQueryTrace::Navigation"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindFleePointFromGoalTarget'",
+    "ObjectPath": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_Donut'EQS_FindFleePointFromGoalTarget:EnvQueryGenerator_Donut_0'",
+      "ObjectPath": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindFleePointFromGoalTarget:EnvQueryTest_Distance_1'",
+        "ObjectPath": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_1 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindFleePointFromGoalTarget'",
+    "ObjectPath": "/Behaviour_Example/EQS/EQS_FindFleePointFromGoalTarget.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "VerNum": 2
+  }
+}

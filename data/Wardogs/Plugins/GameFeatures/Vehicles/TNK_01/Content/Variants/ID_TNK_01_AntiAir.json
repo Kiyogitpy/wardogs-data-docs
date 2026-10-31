@@ -1,0 +1,57 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TNK_01_AntiAir'",
+    "ObjectPath": "/TNK_01/Variants/ID_TNK_01_AntiAir.1"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 6,
+      "Y": 4
+    }
+  }
+}
+--- export: UPrimaryDataAsset / ID_TNK_01_AntiAir ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_TNK_01_AntiAir",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/TNK_01/Variants/ID_TNK_01_AntiAir",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_TNK_01_AntiAir:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/TNK_01/Variants/ID_TNK_01_AntiAir.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_TNK_01_AntiAir:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/TNK_01/Variants/ID_TNK_01_AntiAir.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_TNK_01_AntiAir'",
+    "ObjectPath": "/TNK_01/Variants/ID_TNK_01_AntiAir.1"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_TNK_03_Audio'",
+      "ObjectPath": "/TNK_01/Audio/DA/DA_TNK_03_Audio.0"
+    }
+  }
+}

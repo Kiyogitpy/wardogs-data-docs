@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Build_FOB_Destroyed ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Build_FOB_Destroyed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Destroyed",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Build.FOB.State.Destroyed"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Build_FOB_Destroyed:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Destroyed.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Destroyed'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Destroyed.0"
+  },
+  "Properties": {
+    "FadeOut": 0.2,
+    "ContextTag": {
+      "TagName": "Audio.Context.Build.FOB.State"
+    }
+  }
+}

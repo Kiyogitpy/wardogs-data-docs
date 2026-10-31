@@ -1,0 +1,70 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Inspect'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Inspect.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / AEB_PlayHeldWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayHeldItemPerspectiveSound_C",
+  "Name": "AEB_PlayHeldWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.AEB_PlayHeldItemPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Inspect'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Inspect.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'Default__AEB_PlayHeldItemPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayHeldItemPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Inspect.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Weapon.Inspect.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Inspect"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Weapon_Inspect ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Inspect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Inspect",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Inspect"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHeldItemPerspectiveSound_C'AE_Weapon_Inspect:AEB_PlayHeldWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Inspect.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_Weapon_Inspect:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Weapon_Inspect.0"
+      }
+    ]
+  }
+}

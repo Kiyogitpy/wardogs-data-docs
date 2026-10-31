@@ -1,0 +1,54 @@
+--- export: UPrimaryDataAsset / DA_Action_KeyCard ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_KeyCard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Keycard/Data/Actions/DA_Action_KeyCard",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Keycard.Use"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.OneHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Use_KeyCard_C'",
+      "ObjectPath": "/Keycard/Data/Actions/B_Action_Use_KeyCard.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

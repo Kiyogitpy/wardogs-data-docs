@@ -1,0 +1,80 @@
+--- export: UDataAsset / EQS_LeapFrogTokenHandling ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_LeapFrogTokenHandling",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/SquadExample/EQS/EQS_LeapFrogTokenHandling",
+  "Properties": {
+    "QueryName": "EQS_LeapFrogTokenHandling",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_LeapFrogTokenHandling:EnvQueryOption_0'",
+        "ObjectPath": "/SquadExample/EQS/EQS_LeapFrogTokenHandling.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_LeapFrogTokenHandling'",
+    "ObjectPath": "/SquadExample/EQS/EQS_LeapFrogTokenHandling.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_TokenRequests'EQS_LeapFrogTokenHandling:SDEnvQueryGenerator_TokenRequests_0'",
+      "ObjectPath": "/SquadExample/EQS/EQS_LeapFrogTokenHandling.3"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_LeapFrogTokenHandling:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/SquadExample/EQS/EQS_LeapFrogTokenHandling.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_LeapFrogTokenHandling'",
+    "ObjectPath": "/SquadExample/EQS/EQS_LeapFrogTokenHandling.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "Class'EnvQueryContext_SDAIGoalTarget'",
+      "ObjectPath": "/Script/SDAIGoalsRuntime"
+    },
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "FilterType": "EEnvTestFilterType::Maximum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "FloatValueMax": {
+      "DataField": "DataValue"
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_TokenRequests_0 ---
+{
+  "Type": "SDEnvQueryGenerator_TokenRequests",
+  "Name": "SDEnvQueryGenerator_TokenRequests_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_TokenRequests'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_LeapFrogTokenHandling'",
+    "ObjectPath": "/SquadExample/EQS/EQS_LeapFrogTokenHandling.0"
+  },
+  "Properties": {
+    "VerNum": 1
+  }
+}

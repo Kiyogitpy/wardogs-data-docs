@@ -1,0 +1,127 @@
+--- export: UDataAsset / WE_STN_01_Heavy_MountedMachineGun ---
+{
+  "Type": "WDVehicleWeaponExtensionDataAsset",
+  "Name": "WE_STN_01_Heavy_MountedMachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleWeaponExtensionDataAsset'",
+  "Package": "/STN_01/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun",
+  "Properties": {
+    "WeaponExtensionTag": {
+      "TagName": "Id.Vehicle.WeaponExtension.STN_01.MistralAA"
+    },
+    "WeaponItemId": {
+      "TagName": "Id.Item.MistralAA"
+    },
+    "ItemSlotTag": {
+      "TagName": "Inventory.Slot.Vehicle.Weapon.STN_01.MistralAA"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Weapon.Vehicle.Turret.STN_01"
+      }
+    },
+    "WeaponExtensionName": "Mounted Verba",
+    "WeaponStatsData": {
+      "ObjectName": "WDWeaponStatsData'DA_STN_01_Heavy_MountedMachineGun_Stats'",
+      "ObjectPath": "/STN_01/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.0"
+    },
+    "bDoesWeaponUseSpread": true,
+    "SpreadValue": {
+      "Value": 1.0,
+      "Curve": {
+        "CurveTable": {
+          "ObjectName": "CurveTable'CT_Weapon_Spread'",
+          "ObjectPath": "/Game/Items/Weapons/Curves/CT_Weapon_Spread.0"
+        },
+        "RowName": "Launcher.Stand"
+      }
+    },
+    "ReloadSetupData": {
+      "ReloadType": "EWDVehicleWeaponReloadType::Standard",
+      "ReloadTime": 5.0,
+      "StartDelayTime": 1.0,
+      "EndDelayTime": 1.0
+    },
+    "bAllowsRestocking": true,
+    "RestockSuppliesTag": {
+      "TagName": "Id.Item.MunitionsSupplies"
+    },
+    "RestockSuppliesNeeded": 200,
+    "RestockInventoryTag": {
+      "TagName": "Vehicle.AssociatedInventory.FOB"
+    },
+    "AmmoTag": {
+      "TagName": "Id.Item.72mm"
+    },
+    "AmmoCaliberTag": {
+      "TagName": "Item.Caliber.72mm"
+    },
+    "AmmoInsertionMethod": "EWDAmmoInsertionMethod::PullsAmmoFromReserve",
+    "WeaponStartingInventoryItems": [
+      {
+        "Key": {
+          "TagName": "Id.Item.72mm"
+        },
+        "Value": 1
+      }
+    ],
+    "WeaponAudioData": {
+      "ObjectName": "WDAudioData'DA_STN_01_Audio'",
+      "ObjectPath": "/STN_01/Data/DA_STN_01_Audio.0"
+    },
+    "bShakeOnWeaponFire": true,
+    "FireCameraShakeClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_CameraShake_TankMG_C'",
+      "ObjectPath": "/Game/VFX/Explosions/Data/B_CameraShake_TankMG.1"
+    },
+    "WeaponType": "EWDVehicleWeaponType::Targeting",
+    "TargetingSetup": {
+      "bSupportsTargeting": true,
+      "MaxTargetingAngleCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 0.0,
+              "Value": 5.0,
+              "ArriveTangent": -0.396109,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": -0.395951,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_User",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 1.0,
+              "Value": 1.5,
+              "ArriveTangent": -4.411169,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": -4.411166,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "TargetingDistance": {
+        "Max": 100000.0
+      },
+      "TimeToTarget": 2.0,
+      "FireDelayAfterLock": 0.5,
+      "AllowedTargets": [
+        "Vehicle.Variant.Air.Rotary.Littlebird.Default",
+        "Vehicle.Variant.Air.Airplane.FWG.Default",
+        "Vehicle.Variant.Air.Rotary.Havoc.Default",
+        "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns",
+        "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods",
+        "Vehicle.Variant.Air.Rotary.ROT_01.Default",
+        "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns",
+        "Vehicle.Variant.Air.Rotary.ROT_04.Default",
+        "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+      ],
+      "bOnlyFireWhenLockedOn": true
+    }
+  }
+}

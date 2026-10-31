@@ -1,0 +1,78 @@
+--- export: UPrimaryDataAsset / DA_30mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_30mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/30mm/DA_30mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.30mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Cannon.30mm"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 100.0,
+        "ExplosiveRadius": 300.0,
+        "MinimumExplosiveDamage": 20.0,
+        "EffectiveExplosiveRadius": 100.0,
+        "ExplosiveDamageFallOff": 1.0,
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 29.0,
+        "Diameter": 3.0,
+        "Mass": 0.22,
+        "DragModel": {
+          "Value": 2.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.75,
+        "DistanceFalloffRange": {
+          "Min": 1.5,
+          "Max": 5.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Special'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Special.0"
+          }
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_30mm.NS_Tracer_30mm",
+        "SubPathString": ""
+      },
+      "TracerChance": 1.0,
+      "TypicalSpeed": 80000.0,
+      "PenetrationEffectivenessMultiplier": 2.0,
+      "MinImpactAngleForRicochet": 85.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 20000.0,
+      "DistanceToPlayerForWhizBy": 2000.0,
+      "PerceivedImpactRange": 60000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

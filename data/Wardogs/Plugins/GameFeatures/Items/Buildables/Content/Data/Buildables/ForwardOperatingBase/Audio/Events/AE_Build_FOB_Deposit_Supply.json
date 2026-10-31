@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Build_FOB_Deposit_Supply ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Build_FOB_Deposit_Supply",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Deposit_Supply",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Build.FOB.Deposit.Supply"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Build_FOB_Deposit_Supply:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Deposit_Supply.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Build_FOB_Deposit_Supply:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Deposit_Supply.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 49.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Deposit_Supply'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Deposit_Supply.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Build_FOB_Deposit_Supply'",
+    "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/Events/AE_Build_FOB_Deposit_Supply.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_FOB_Deposit_3p'",
+      "ObjectPath": "/Buildables/Data/Buildables/ForwardOperatingBase/Audio/MSS/3p/MSS_Item_FOB_Deposit_3p.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

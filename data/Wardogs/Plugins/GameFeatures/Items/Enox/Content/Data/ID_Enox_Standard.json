@@ -1,0 +1,448 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Enox_Standard'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Enox_Standard'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Enox/Meshes/SM_Enox.SM_Enox",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 5.0,
+      "Y": 0.0,
+      "Z": 0.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Enox_Standard'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Enox_Standard'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_Enox_Standard ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Enox_Standard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Enox/Data/ID_Enox_Standard",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.Enox.Standard"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "2872D82E41CF64DA2E473994CA108883",
+      "SourceString": "Enox",
+      "LocalizedString": "Enox"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Enox_Standard:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Enox_Standard:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Enox_Standard:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Enox_Standard:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Enox_Standard:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Enox_Standard'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Enox_Audio'",
+      "ObjectPath": "/Enox/Data/ID_Enox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Enox_Standard'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Enox/Data/ID_Enox_Standard.7"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_EnoxStandard'",
+      "ObjectPath": "/Enox/Data/AnimSet_EnoxStandard.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Health"
+    },
+    "AttributeValue": 40.0,
+    "bApplyAsDelta": true,
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.Appliable.Enox.SecondaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [
+            "State.Player.Vitality.Alive",
+            "State.Player.Injured"
+          ],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "Namespace": "",
+              "Key": "21C777524F5F6EF2CD9D22BF184AC6D3",
+              "SourceString": "Using Enox",
+              "LocalizedString": "Using Enox"
+            },
+            "TargetText": {
+              "CultureInvariantString": null
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::AnimationLength",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.SecondaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": []
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": false,
+          "bInteractionSystemAppliable": false,
+          "WorldInteractionContextClass": null,
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": true
+        }
+      }
+    ],
+    "ExtraData": {
+      "DecayHealAmount": 40.0
+    },
+    "bPlayAnimationBeforeConsume": true,
+    "ConsumeAnimationTag": {
+      "TagName": "Animation.Asset.Appliable.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Enox_Audio'",
+      "ObjectPath": "/Enox/Data/ID_Enox_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Enox'",
+      "ObjectPath": "/Enox/Meshes/SK_Enox.1"
+    },
+    "MaterialOverrides": [
+      null,
+      null
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Enox_C'",
+      "ObjectPath": "/Enox/Animation/Item/Blueprint/ABP_Enox.1"
+    },
+    "AttachTransform": {
+      "Rotation": {
+        "X": -1.0,
+        "Y": -0.0,
+        "Z": 0.0,
+        "W": 6.123234E-17,
+        "IsNormalized": true,
+        "Size": 1.0,
+        "SizeSquared": 1.0
+      }
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Enox_Equip'",
+        "ObjectPath": "/Enox/Animation/Character/Montage/AM_FP_Enox_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Enox_Holster'",
+        "ObjectPath": "/Enox/Animation/Character/Montage/AM_FP_Enox_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Enox/Animation/Character/Blueprint/ABP_FP_Enox_Layer_RW.ABP_FP_Enox_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Enox/Animation/Character/Blueprint/ABP_TP_Enox_Layer_RW.ABP_TP_Enox_Layer_RW_C",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Input_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_Input_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Appliable'",
+      "ObjectPath": "/Game/Items/ItemExtensionDefaults/IMC_Appliable.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0.WDItemInputBehavior_ActivateAppliableAction_0'",
+          "ObjectPath": "/Enox/Data/ID_Enox_Standard.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/Enox/Data/ID_Enox_Standard.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0.WDItemInputBehavior_ActivateAction_6'",
+          "ObjectPath": "/Enox/Data/ID_Enox_Standard.13"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Enox_Standard:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.6"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Appliable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_6 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.11"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.Enox.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Enox_Standard:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Input_0'",
+    "ObjectPath": "/Enox/Data/ID_Enox_Standard.11"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.Enox.SecondaryUse"
+    }
+  }
+}

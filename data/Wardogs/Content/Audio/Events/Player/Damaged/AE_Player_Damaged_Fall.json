@@ -1,0 +1,141 @@
+--- export: UObject / AEB_ModifyCosmeticExertion_C_0 ---
+{
+  "Type": "AEB_ModifyCosmeticExertion_C",
+  "Name": "AEB_ModifyCosmeticExertion_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.AEB_ModifyCosmeticExertion_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Fall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_ModifyCosmeticExertion_C'Default__AEB_ModifyCosmeticExertion_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ModifyCosmeticExertion.0"
+  },
+  "Properties": {
+    "Amount": 0.3,
+    "ExertionBump": true
+  }
+}
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Fall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromFall_1p'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromFall/MSS/MSS_Player_Damage_FromFall_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromFall_3p'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromFall/MSS/MSS_Player_Damage_FromFall_3p.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Fall"
+    },
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / AEB_RequestDamagedVox_C_0 ---
+{
+  "Type": "AEB_RequestDamagedVox_C",
+  "Name": "AEB_RequestDamagedVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestDamagedVox.AEB_RequestDamagedVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Fall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestDamagedVox_C'Default__AEB_RequestDamagedVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestDamagedVox.0"
+  },
+  "Properties": {
+    "Under Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Light"
+    },
+    "Over Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Heavy"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Damaged_Fall ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Damaged_Fall",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Damaged.Fall"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_Damaged_Fall:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Damaged_Fall:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Damaged_Fall:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.5"
+      },
+      {
+        "ObjectName": "AEB_ModifyCosmeticExertion_C'AE_Player_Damaged_Fall:AEB_ModifyCosmeticExertion_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.0"
+      },
+      {
+        "ObjectName": "AEB_RequestDamagedVox_C'AE_Player_Damaged_Fall:AEB_RequestDamagedVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Fall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.3"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Fall"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Fall'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Fall.3"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}

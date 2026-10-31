@@ -1,0 +1,83 @@
+--- export: UDataAsset / DA_GameplaySystems_STN_01 ---
+{
+  "Type": "WDVehicleGameplayComponentsDataAsset",
+  "Name": "DA_GameplaySystems_STN_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleGameplayComponentsDataAsset'",
+  "Package": "/STN_01/Data/DA_GameplaySystems_STN_01",
+  "Properties": {
+    "HudSettings": {
+      "DriverHUDLayoutTag": {
+        "TagName": "UI.HUD.Layout.Vehicle.Crew.Land"
+      },
+      "PassengerHUDLayoutTag": {
+        "TagName": "UI.HUD.Layout.Vehicle.Passenger.Active"
+      }
+    },
+    "FactionSettings": {
+      "bShouldFactionChange": false
+    },
+    "DamageEntitySettings": {
+      "VehicleDamageTag": {
+        "TagName": "Meta.Damage.Vehicle.Stationary.Mistral"
+      },
+      "DestroyedExplosionDamageValues": {
+        "BaseDamage": 0.0,
+        "ExplosiveRadius": 0.0,
+        "EffectiveExplosiveRadius": 500.0,
+        "ExplosiveDamageFallOff": 0.6
+      }
+    },
+    "HealthSettings": {
+      "InitialVehicleHealth": 3000.0,
+      "CriticalStateThreshold": 40.0,
+      "BleedOutTimer": 15.0,
+      "RepairWidgetLocations": [
+        {
+          "HealthSectionTags": [
+            {
+              "TagName": "Attribute.Gameplay.Health"
+            }
+          ],
+          "WidgetLocation": {
+            "X": 300.0,
+            "Y": 0.0,
+            "Z": 125.0
+          }
+        }
+      ]
+    },
+    "ActiveZonesSettings": {
+      "ActiveZones": [
+        {
+          "PerActiveZoneTypeTags": [
+            {
+              "Key": {
+                "TagName": "Vehicle.ActiveLocation.Repair"
+              },
+              "Value": [
+                "Attribute.Gameplay.Health"
+              ]
+            }
+          ],
+          "WidgetLocation": {
+            "X": 300.0,
+            "Y": 0.0,
+            "Z": 125.0
+          }
+        }
+      ]
+    },
+    "InactivitySettings": {
+      "InactivityLifetimeOutSafeZone": 30000.0
+    },
+    "LockSettings": {
+      "VehicleLockGameplayCueTag": {
+        "TagName": "GameplayCue.Vehicle.LockStateChange"
+      }
+    },
+    "InventorySettings": {
+      "bIsInventoryAccessible": true
+    }
+  }
+}

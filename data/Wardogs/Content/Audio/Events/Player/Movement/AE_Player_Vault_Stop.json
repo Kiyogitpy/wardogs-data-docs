@@ -1,0 +1,60 @@
+--- export: UObject / AEB_Vaulting_Stop_C_0 ---
+{
+  "Type": "AEB_Vaulting_Stop_C",
+  "Name": "AEB_Vaulting_Stop_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Vaulting_Stop.AEB_Vaulting_Stop_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Stop.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Vaulting_Stop_C'Default__AEB_Vaulting_Stop_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Vaulting_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Vault_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Vault_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Vault.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_Player_Vault_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Stop.2"
+      },
+      {
+        "ObjectName": "AEB_Vaulting_Stop_C'AE_Player_Vault_Stop:AEB_Vaulting_Stop_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Stop.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Vault_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/AE_Player_Vault_Stop.1"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vault"
+    }
+  }
+}

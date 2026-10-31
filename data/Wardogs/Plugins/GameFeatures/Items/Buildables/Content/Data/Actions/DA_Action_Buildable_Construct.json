@@ -1,0 +1,78 @@
+--- export: UPrimaryDataAsset / DA_Action_Buildable_Construct ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_Buildable_Construct",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Buildables/Data/Actions/DA_Action_Buildable_Construct",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.BuildBuildable.Construct"
+    },
+    "ActionContext": [
+      "Action.Context.Holdable",
+      "Action.Context.Weapon",
+      "Action.Context.TwoHanded"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_Buildable_Construct_C'",
+      "ObjectPath": "/Buildables/Data/Actions/B_Action_Buildable_Construct.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::BlockingStates",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::BlockingStates",
+          "ActionResponses": [],
+          "BlockingStates": [
+            "State.Player.Vitality.Critical",
+            "State.Player.Vitality.Dead"
+          ],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.BuildTool.Rotate",
+            "Action.BuildTool.ToggleSnapping",
+            "Action.BuildTool.PlaceSchematic",
+            "Action.BuildBuildable.Construct",
+            "Action.BuildTool.Dismantle"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      },
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [
+            "Action.Player.Sprint",
+            "Action.Player.TacSprint",
+            "Action.Item.Inspect",
+            "Action.BuildTool.Dismantle"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDGenericItemActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

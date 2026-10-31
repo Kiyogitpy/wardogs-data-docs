@@ -1,0 +1,586 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/StimPen/Data/Stim/Meshes/SM_Stim_Pen_01a.SM_Stim_Pen_01a",
+      "SubPathString": ""
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -3.3,
+      "Y": 0.0,
+      "Z": -1.5
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 4.5,
+      "Y": 1.225693,
+      "Z": 10.675034
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  },
+  "Properties": {
+    "MaxStackSize": 3
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_1 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  },
+  "Properties": {
+    "Weight": 0.06
+  }
+}
+--- export: UPrimaryDataAsset / ID_StimPen ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_StimPen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/StimPen/Data/ID_StimPen",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.StimPen"
+    },
+    "ItemContext": [
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Context.Medical"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Medical.STRINGS_Items_Medical",
+      "Key": "Items.Medical.StimPen",
+      "SourceString": "Stim Pen",
+      "LocalizedString": "Stim Pen"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_StimPen:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_StimPen:BHInventoryFragment_Weight_1'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_StimPen:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_StimPen:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_StimPen:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_StimPen:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_StimPen_Audio'",
+      "ObjectPath": "/StimPen/Data/ID_StimPen_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_StimPen'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.5"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InventoryItem_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Appliable'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Appliable_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/StimPen/Data/ID_StimPen.8"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_StimPen'",
+      "ObjectPath": "/StimPen/Data/AnimSet_StimPen.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Appliable_0 ---
+{
+  "Type": "WDItemExtensionData_Appliable",
+  "Name": "WDItemExtensionData_Appliable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Appliable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+  },
+  "Properties": {
+    "Attribute": {
+      "TagName": "Attribute.Gameplay.Health"
+    },
+    "AppliedEffects": [
+      {
+        "ObjectName": "BlueprintGeneratedClass'GE_UseAppliable_C'",
+        "ObjectPath": "/Game/GameMechanics/GameplayEffects/Actions/GE_UseAppliable.0"
+      }
+    ],
+    "AppliableActionData": [
+      {
+        "Key": {
+          "TagName": "Action.Appliable.StimPen.SecondaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [
+            "State.Player.Vitality.Alive"
+          ],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.StimPen.Owner",
+              "SourceString": "Applying Stim",
+              "LocalizedString": "Applying Stim"
+            },
+            "TargetText": {
+              "CultureInvariantString": null
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::AnimationLength",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.SecondaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_UnlimitedTacSprint_C'",
+                  "ObjectPath": "/StimPen/Data/Stim/Actions/GE_UnlimitedTacSprint.0"
+                },
+                "Stacks": 1,
+                "CustomMagnitudes": []
+              }
+            ]
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": false,
+          "bInteractionSystemAppliable": false,
+          "WorldInteractionContextClass": {
+            "ObjectName": "BlueprintGeneratedClass'WIC_StimPenInteractionContext_C'",
+            "ObjectPath": "/StimPen/Data/WIC_StimPenInteractionContext.0"
+          },
+          "RequiredTargetStates": [],
+          "bShowOnScreenHoldProgressWheel": true
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Appliable.StimPen.PrimaryUse"
+        },
+        "Value": {
+          "RequiredOwnerStates": [
+            "State.Player.Vitality.Alive"
+          ],
+          "ProgressWheelTextData": {
+            "OwnerText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.StimPen.Owner",
+              "SourceString": "Applying Stim",
+              "LocalizedString": "Applying Stim"
+            },
+            "TargetText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Healing_ActionText.STRINGS_Healing_ActionText",
+              "Key": "ActionText.StimPen.Target",
+              "SourceString": "Being Buffed By",
+              "LocalizedString": "Being Buffed By"
+            }
+          },
+          "InteractionTimeMethod": "EWDAppliableInteractionTimeMethod::AnimationLength",
+          "AnimationTag": {
+            "TagName": "Animation.Asset.Appliable.PrimaryUse"
+          },
+          "Notifier": "None",
+          "bUseAppliableProgressWheel": false,
+          "CurrentAppliable": {
+            "TagName": "None"
+          },
+          "MaxAppliable": {
+            "TagName": "None"
+          },
+          "EffectsToApply": {
+            "Effects": [
+              {
+                "Effect": {
+                  "ObjectName": "BlueprintGeneratedClass'GE_UnlimitedTacSprint_C'",
+                  "ObjectPath": "/StimPen/Data/Stim/Actions/GE_UnlimitedTacSprint.0"
+                },
+                "Stacks": 1,
+                "CustomMagnitudes": []
+              }
+            ]
+          },
+          "AmountConsumedOnUse": 1,
+          "bWorldInteractableUse": true,
+          "bInteractionSystemAppliable": false,
+          "WorldInteractionContextClass": {
+            "ObjectName": "BlueprintGeneratedClass'WIC_StimPenInteractionContext_C'",
+            "ObjectPath": "/StimPen/Data/WIC_StimPenInteractionContext.0"
+          },
+          "RequiredTargetStates": [
+            "State.Player.Vitality.Alive"
+          ],
+          "bShowOnScreenHoldProgressWheel": true
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_StimPen_Audio'",
+      "ObjectPath": "/StimPen/Data/ID_StimPen_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Stim_Pen'",
+      "ObjectPath": "/StimPen/Data/Stim/Meshes/SK_Stim_Pen.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Stim_Pen_01a'",
+        "ObjectPath": "/StimPen/Data/Stim/Materials/MI_Stim_Pen_01a.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Glass_WHL_02'",
+        "ObjectPath": "/Game/Vehicles/Shared/Materials/MI_Glass_WHL_02.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_StimPen_C'",
+      "ObjectPath": "/StimPen/Data/Stim/Animation/Weapon/Blueprint/ABP_StimPen.1"
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_StimPen_Equip'",
+        "ObjectPath": "/StimPen/Data/Stim/Animation/Character/FP/Montages/AM_FP_StimPen_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_StimPen_Holster'",
+        "ObjectPath": "/StimPen/Data/Stim/Animation/Character/FP/Montages/AM_FP_StimPen_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/StimPen/Data/Stim/Animation/Character/FP/Blueprint/ABP_FP_Stim_Layer_RW.ABP_FP_Stim_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/StimPen/Data/Stim/Animation/Character/TP/Blueprint/ABP_TP_Stim_Layer_RW.ABP_TP_Stim_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.01
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Appliable'",
+      "ObjectPath": "/Game/Items/ItemExtensionDefaults/IMC_Appliable.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.SecondaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_0'",
+          "ObjectPath": "/StimPen/Data/ID_StimPen.15"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.SecondaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_0'",
+          "ObjectPath": "/StimPen/Data/ID_StimPen.17"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/StimPen/Data/ID_StimPen.14"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Appliable.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAppliableAction'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAppliableAction_1'",
+          "ObjectPath": "/StimPen/Data/ID_StimPen.16"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.PrimaryUse.Release"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_CompleteAction'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_CompleteAction_1'",
+          "ObjectPath": "/StimPen/Data/ID_StimPen.18"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_InventoryItem_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_InventoryItem_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_StimPen:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.7"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Appliable.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.StimPen.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAppliableAction_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAppliableAction",
+  "Name": "WDItemInputBehavior_ActivateAppliableAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAppliableAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Appliable.StimPen.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_0 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.12"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.StimPen.SecondaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_CompleteAction_1 ---
+{
+  "Type": "WDItemInputBehavior_CompleteAction",
+  "Name": "WDItemInputBehavior_CompleteAction_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_CompleteAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_StimPen:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/StimPen/Data/ID_StimPen.12"
+  },
+  "Properties": {
+    "ActionToComplete": {
+      "TagName": "Action.Appliable.StimPen.PrimaryUse"
+    }
+  }
+}

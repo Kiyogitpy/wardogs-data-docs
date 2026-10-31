@@ -1,0 +1,34 @@
+--- export: UDataAsset / DA_Drone_Camera ---
+{
+  "Type": "MVehicleSpringArmDataAsset",
+  "Name": "DA_Drone_Camera",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpringArmDataAsset'",
+  "Package": "/Game/Vehicles/Weapons/WeaponExtensions/ProjectileActors/DA_Drone_Camera",
+  "Properties": {
+    "CameraProbeMinDistance": 20.0,
+    "bAllowAdditionalAxisRotationLagInFreeCam": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 0.5,
+    "CameraRotationLagSpeed": 14.0,
+    "CameraLagMaxDistance": 1.0,
+    "VelocityRange": {
+      "UpperBound": {
+        "Value": 100.0
+      }
+    },
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      },
+      "FirstPersonLagSettings": {
+        "EnableLagInYaw": true,
+        "LagSpeedInYaw": 12.0,
+        "EnableLagInPitch": true,
+        "LagSpeedInPitch": 30.0,
+        "EnableLagInRoll": true,
+        "LagSpeedInRoll": 12.0
+      }
+    }
+  }
+}

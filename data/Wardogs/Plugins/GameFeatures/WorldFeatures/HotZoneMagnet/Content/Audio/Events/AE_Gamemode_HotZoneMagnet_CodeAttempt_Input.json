@@ -1,0 +1,62 @@
+--- export: UPrimaryDataAsset / AE_Gamemode_HotZoneMagnet_CodeAttempt_Input ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_HotZoneMagnet_CodeAttempt_Input",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Input",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.HotZoneMagnet.CodeAttempt.Input"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Gamemode_HotZoneMagnet_CodeAttempt_Input:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Input.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Gamemode_HotZoneMagnet_CodeAttempt_Input:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Input.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_CodeAttempt_Input'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Input.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_CodeAttempt_Input'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_CodeAttempt_Input.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_HotZoneMagnet_KeyPad'",
+      "ObjectPath": "/Game/Audio/Gamemode/HotZoneMagnet/MSS/MSS_Gamemode_HotZoneMagnet_KeyPad.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "CancelFadeOutDuration": 0.5,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

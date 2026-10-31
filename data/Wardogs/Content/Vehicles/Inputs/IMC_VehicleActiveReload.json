@@ -1,0 +1,458 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Up"
+    },
+    "SlotContext": "EBHMappableSlotContext::SecondarySlot",
+    "Name": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Up"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_2 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Down"
+    },
+    "SlotContext": "EBHMappableSlotContext::SecondarySlot",
+    "Name": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Down"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_3 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Left"
+    },
+    "SlotContext": "EBHMappableSlotContext::SecondarySlot",
+    "Name": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Left"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_4 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Right"
+    },
+    "SlotContext": "EBHMappableSlotContext::SecondarySlot",
+    "Name": "Input.NamedActions.Vehicle.WeaponExtension.ActiveReload.Right"
+  }
+}
+--- export: UDataAsset / IMC_VehicleActiveReload ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_VehicleActiveReload",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.5"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Down'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Down.0"
+          },
+          "Key": {
+            "KeyName": "Down"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.7"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Left'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Left.0"
+          },
+          "Key": {
+            "KeyName": "Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_4'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.9"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Right'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Right.0"
+          },
+          "Key": {
+            "KeyName": "Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_6'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.11"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Up'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Up.0"
+          },
+          "Key": {
+            "KeyName": "Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_VehicleActiveReload:InputTriggerTap_0'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.13"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Down'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Down.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Down"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_VehicleActiveReload:InputTriggerTap_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.14"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Left'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Left.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Left"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_VehicleActiveReload:InputTriggerTap_2'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.15"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Right'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Right.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Right"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_VehicleActiveReload:InputTriggerTap_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.16"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Up'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Up.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_DPad_Up"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.6"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Down'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Down.0"
+          },
+          "Key": {
+            "KeyName": "S"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_VehicleActiveReload:BHPlayerMappableKeySettings_2'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.1"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_5'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.10"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Right'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Right.0"
+          },
+          "Key": {
+            "KeyName": "D"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_VehicleActiveReload:BHPlayerMappableKeySettings_4'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.3"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_3'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.8"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Left'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Left.0"
+          },
+          "Key": {
+            "KeyName": "A"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_VehicleActiveReload:BHPlayerMappableKeySettings_3'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.2"
+          }
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerPressed'IMC_VehicleActiveReload:InputTriggerPressed_7'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.12"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_ActiveReload_Up'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_ActiveReload_Up.0"
+          },
+          "Key": {
+            "KeyName": "W"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_VehicleActiveReload:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.0"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_1 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_2 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_3 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_4 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_5 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_5",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_6 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_6",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerPressed_7 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "TapReleaseTimeThreshold": 0.3
+  }
+}
+--- export: UObject / InputTriggerTap_1 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "TapReleaseTimeThreshold": 0.3
+  }
+}
+--- export: UObject / InputTriggerTap_2 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "TapReleaseTimeThreshold": 0.3
+  }
+}
+--- export: UObject / InputTriggerTap_3 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_VehicleActiveReload'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_VehicleActiveReload.4"
+  },
+  "Properties": {
+    "TapReleaseTimeThreshold": 0.3
+  }
+}

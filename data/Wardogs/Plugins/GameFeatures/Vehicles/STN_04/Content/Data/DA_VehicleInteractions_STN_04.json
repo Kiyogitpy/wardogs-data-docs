@@ -1,0 +1,95 @@
+--- export: UDataAsset / DA_VehicleInteractions_STN_04 ---
+{
+  "Type": "WDVehicleInteractionsDataAsset",
+  "Name": "DA_VehicleInteractions_STN_04",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleInteractionsDataAsset'",
+  "Package": "/STN_04/Data/DA_VehicleInteractions_STN_04",
+  "Properties": {
+    "VehicleInteractionContextsData": [
+      {
+        "ObjectName": "WDVehicleInteractionContextsData'VehicleInteractionContext_StationaryVehicles'",
+        "ObjectPath": "/Game/Vehicles/Interaction/VehicleInteractionContext_StationaryVehicles.0"
+      }
+    ],
+    "PerContextOverrides": [
+      {
+        "WorldInteractionContextTags": [
+          "Interaction.Context.Vehicle.Enter"
+        ],
+        "WorldInteractionContextConfig": {
+          "InteractionTag": {
+            "TagName": "None"
+          },
+          "InteractionBehavior": null,
+          "InteractionBehaviorGamepad": null,
+          "bAllowMultipleInteractors": null,
+          "bBypassLookAtCheck": null,
+          "bBypassConditionCheck": null,
+          "bRequirePlayerDragging": null,
+          "InputActionTag": null,
+          "InteractionDuration": null,
+          "InteractionRange": null,
+          "InteractionAngle": null,
+          "bTraceLookAtCameraForward": null,
+          "bSendSuccessRPC": null,
+          "bSendFailureRPC": null,
+          "bShowInteractionPrompt": null,
+          "InteractionBeginGameplayCueTag": null,
+          "InteractionSuccessGameplayCueTag": null,
+          "InteractionFailedGameplayCueTag": null,
+          "InteractionDeniedGameplayCueTag": null,
+          "InteractionPointTag": {
+            "TagName": "None"
+          },
+          "InteractorBlockingTags": []
+        },
+        "ContextOverride": {
+          "_aaabfjnidcanknmopgiip": [
+            {
+              "Key": "0",
+              "Value": 0
+            }
+          ]
+        }
+      }
+    ],
+    "InteractionTrackerPoints": [
+      {
+        "InteractionContextTagContainer": [
+          "UI.Trackers.InteractionPoint.Vehicle.AccessPoint",
+          "UI.Trackers.InteractionPoint.Vehicle.ExitPoint"
+        ],
+        "InteractionTrackerIcon": null,
+        "InteractionPointRange": 75.0,
+        "PriorityContextTag": {
+          "TagName": "Interaction.Context.Vehicle.Enter.Basic"
+        },
+        "bUseScreenClampingInteractablePoints": false,
+        "bRequiresLineOfSightCheck": false,
+        "_aaabakocikhebnffepkad": false,
+        "LineOfSightThreshold": -0.5,
+        "bOverrideContextDisplayOrder": false,
+        "ContextDisplayOrder": [],
+        "Location": {
+          "X": 68.59959,
+          "Y": 2.5068052,
+          "Z": 511.11804
+        },
+        "Rotation": {
+          "Pitch": 158.7769,
+          "Yaw": 4.0,
+          "Roll": 0.0
+        },
+        "bAttachToComponent": false,
+        "ComponentToAttachTo": {
+          "OtherActor": null,
+          "ComponentProperty": "None",
+          "PathToComponent": ""
+        },
+        "SocketToAttachToName": "frontRDoorHandle_J",
+        "bIsInvisible": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M12G_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.2"
+  },
+  "Properties": {
+    "bCanRemoveItem": false,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.12g"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 6,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.12g.7mmBuck"
+            },
+            "Amount": null
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M12G_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.2"
+  }
+}
+--- export: UPrimaryDataAsset / ID_M12G_Mag_Internal ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_M12G_Mag_Internal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.M500Magazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "8C7347BC4C11FF854BCC77B0DEFC6C61",
+      "SourceString": "M500 Internal Mag",
+      "LocalizedString": "M500 Internal Mag"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_M12G_Mag_Internal:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_M12G_Mag_Internal:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_M12G_Mag_Internal:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_M12G_Mag_Internal:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M12G_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.2"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_M12G_Mag_Internal'",
+    "ObjectPath": "/Game/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.2"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_7mmBuck_Audio'",
+      "ObjectPath": "/Game/Items/Resources/Ammo/12Guage/7mmBuck/Audio/ID_7mmBuck_Audio.0"
+    }
+  }
+}

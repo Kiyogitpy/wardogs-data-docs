@@ -1,0 +1,1536 @@
+--- export: UDataAsset / DA_FuelHealth ---
+{
+  "Type": "WDUIVehicleFuelHealthData",
+  "Name": "DA_FuelHealth",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleFuelHealthData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/NEWHUD/FuelHealthBars/Data/DA_FuelHealth",
+  "Properties": {
+    "LowFuelThreshold": 0.2,
+    "FuelTankTag": {
+      "TagName": "Attribute.Gameplay.Health.FuelTank"
+    },
+    "HUDVariants": [
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_01.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_ROT_01_HIDZ_Inst.MI_Vehicle_ROT_01_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_01.MountedMachineGuns"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_ROT_01_HIDZ_Inst.MI_Vehicle_ROT_01_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Havoc.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/Mi_Vehicle_Havoc_HIDZ_Inst.Mi_Vehicle_Havoc_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_LittleBird_HIDZ_Inst.MI_Vehicle_LittleBird_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_SpawnVehicle_HIDZ_Inst.MI_Vehicle_SpawnVehicle_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Heavy"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_HeavyTank_HIDZ_Inst.MI_Vehicle_HeavyTank_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Body.StrongArea"
+              },
+              "Value": "Armor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_HeavyTank.MI_Vehicle_Turret_HeavyTank",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.Heavy"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Bobcat_HIDZ_Inst.MI_Vehicle_Bobcat_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Kodiak_HIDZ_Inst.MI_Vehicle_Kodiak_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Kodiak_HIDZ_Inst.MI_Vehicle_Kodiak_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_MachineGun.MI_Vehicle_Turret_MachineGun",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.WHL_02.SUV.RingTurret"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Kodiak_HIDZ_Inst.MI_Vehicle_Kodiak_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_HumVee_HIDZ_Inst.MI_Vehicle_HumVee_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_HumVee_HIDZ_Inst.MI_Vehicle_HumVee_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_MachineGun.MI_Vehicle_Turret_MachineGun",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.WHL_05.RingTurret"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_DuneBuggy_HIDZ_Inst.MI_Vehicle_DuneBuggy_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_SpawnVehicle_HIDZ_Inst.MI_Vehicle_SpawnVehicle_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_SpawnVehicle_HIDZ_Inst.MI_Vehicle_SpawnVehicle_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_LittleBird_HIDZ_Inst.MI_Vehicle_LittleBird_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Minigun"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_HumVee_HIDZ_Inst.MI_Vehicle_HumVee_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_MachineGun.MI_Vehicle_Turret_MachineGun",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.WHL_05.RingMinigun"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_LittleBird_HIDZ_Inst.MI_Vehicle_LittleBird_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_URAL_HIDZ_Inst.MI_Vehicle_URAL_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+              },
+              "Value": "ML Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+              },
+              "Value": "MR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Battle"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_URAL_HIDZ_Inst.MI_Vehicle_URAL_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+              },
+              "Value": "ML Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+              },
+              "Value": "MR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_URAL_HIDZ_Inst.MI_Vehicle_URAL_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Middle"
+              },
+              "Value": "ML Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Middle"
+              },
+              "Value": "MR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_AATank_HIDZ_Inst.MI_Vehicle_AATank_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_TNK_01_AntiAir.MI_Vehicle_Turret_TNK_01_AntiAir",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.AntiAir"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Artillery_HIDZ_Inst.MI_Vehicle_Artillery_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_Artillery.MI_Vehicle_Turret_Artillery",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.TNK_01.Turret.Artillery"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/M_Vehicle_ROT_04_HIDZ_Inst.M_Vehicle_ROT_04_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/M_Vehicle_ROT_04_HIDZ_Inst.M_Vehicle_ROT_04_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Tail"
+              },
+              "Value": "Rear Rotor Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Rotor.Main"
+              },
+              "Value": "Rotor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_04.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Artillery_HIDZ_Inst.MI_Vehicle_Artillery_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Left"
+              },
+              "Value": "LeftTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Tracks.Right"
+              },
+              "Value": "RightTrack Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Body.StrongArea"
+              },
+              "Value": "Armor Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_TNK_04.MI_Vehicle_Turret_TNK_04",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.TNK_04.Turret.Default"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_WHL_08_HIDZ_Inst.MI_Vehicle_WHL_08_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "None"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun"
+        },
+        "Value": {
+          "HUDMaterial": {
+            "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_WHL_08_HIDZ_Inst.MI_Vehicle_WHL_08_HIDZ_Inst",
+            "SubPathString": ""
+          },
+          "HealthSections": [
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health"
+              },
+              "Value": "Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.FuelTank"
+              },
+              "Value": "None"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Front"
+              },
+              "Value": "FL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Left.Rear"
+              },
+              "Value": "RL Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Front"
+              },
+              "Value": "FR Wheel Health"
+            },
+            {
+              "Key": {
+                "TagName": "Attribute.Gameplay.Health.Wheel.Right.Rear"
+              },
+              "Value": "RR Wheel Health"
+            }
+          ],
+          "_aaaanbkbjjhgjilpgpaaf": {
+            "Material": {
+              "AssetPathName": "/Game/UI/Features/HUD/Vehicles/Materials/MI_Vehicle_Turret_MachineGun.MI_Vehicle_Turret_MachineGun",
+              "SubPathString": ""
+            },
+            "WeaponTag": {
+              "TagName": "Id.Vehicle.Weapon.WHL_08.RingTurret"
+            },
+            "YawOffsetDegrees": 0.0
+          }
+        }
+      }
+    ]
+  }
+}

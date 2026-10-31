@@ -1,0 +1,82 @@
+--- export: UPrimaryDataAsset / DA_Arrow_Explosive_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_Arrow_Explosive_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/CombatBow/Data/DataAssets/Arrow/DA_Arrow_Explosive_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.Arrow.Explosive"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.Arrow.Explosive"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 150.0,
+        "ExplosiveRadius": 400.0,
+        "EffectiveExplosiveRadius": 200.0,
+        "ExplosiveDamageFallOff": 1.0,
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 75.0,
+        "Diameter": 0.85,
+        "Mass": 0.045,
+        "DragModel": {
+          "Value": 10.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        }
+      },
+      "SuppressionData": {
+        "BaseSuppression": 0.5,
+        "DistanceFalloffRange": {
+          "Max": 3.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "MaxProjectileLifetime": 20.0,
+      "AttachedEffect": {
+        "AssetPathName": "/CombatBow/Data/VFX/NS_ProjectileTrail_Arrow.NS_ProjectileTrail_Arrow",
+        "SubPathString": ""
+      },
+      "_aaabahajclnlmdmaabope": true,
+      "ProjectileActor": {
+        "AssetPathName": "/CombatBow/Data/DataAssets/Arrow/BP_Arrow.BP_Arrow_C",
+        "SubPathString": ""
+      },
+      "TracerChance": 1.0,
+      "TypicalSpeed": 18000.0,
+      "EffectiveRangeMultiplier": 0.75,
+      "bShouldPenetrate": false,
+      "bForcePenetrateThinSurfaces": true,
+      "MinImpactAngleForRicochet": 50.0,
+      "bShouldPreSimulate": false,
+      "TravelDistanceForWhizBy": 1500.0,
+      "DistanceToPlayerForWhizBy": 1200.0,
+      "IgnoreInstigatorVehicleTime": 0.5,
+      "PickUpProjectileData": {
+        "MaxPickUpLifeSpan": 0.0
+      }
+    }
+  }
+}

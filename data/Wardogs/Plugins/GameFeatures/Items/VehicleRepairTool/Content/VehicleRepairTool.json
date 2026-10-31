@@ -1,0 +1,204 @@
+--- export: UObject / BHGameFeatureAction_AddInputContextMapping_0 ---
+{
+  "Type": "BHGameFeatureAction_AddInputContextMapping",
+  "Name": "BHGameFeatureAction_AddInputContextMapping_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHGameFeatureAction_AddInputContextMapping'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRepairTool'",
+    "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.4"
+  },
+  "Properties": {
+    "InputMappings": [
+      {
+        "InputMapping": {
+          "AssetPathName": "/VehicleRepairTool/Data/IMC_RepairingTools.IMC_RepairingTools",
+          "SubPathString": ""
+        },
+        "Priority": 0,
+        "bRegisterWithSettings": true,
+        "bAddMappingContextOnLoad": false
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRepairTool'",
+    "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/VehicleRepairTool/Data/DT_EntityData_UI_Ext_VehicleRepairTool.DT_EntityData_UI_Ext_VehicleRepairTool",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRepairTool'",
+    "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/VehicleRepairTool/Data/DT_VendorData_Ext_VehicleRepairTool.DT_VendorData_Ext_VehicleRepairTool",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_3 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'VehicleRepairTool'",
+    "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.4"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "TaggedIcons",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/VehicleRepairTool/Data/UI/SpatialTrackers/DT_Ext_RepairLocations_TaggedIcons.DT_Ext_RepairLocations_TaggedIcons",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / VehicleRepairTool ---
+{
+  "Type": "GameFeatureData",
+  "Name": "VehicleRepairTool",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/VehicleRepairTool/VehicleRepairTool",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'VehicleRepairTool:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'VehicleRepairTool:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'VehicleRepairTool:GameFeatureAction_DataRegistrySource_3'",
+        "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.3"
+      },
+      {
+        "ObjectName": "BHGameFeatureAction_AddInputContextMapping'VehicleRepairTool:BHGameFeatureAction_AddInputContextMapping_0'",
+        "ObjectPath": "/VehicleRepairTool/VehicleRepairTool.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/VehicleRepairTool/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/VehicleRepairTool/Data/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/VehicleRepairTool/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

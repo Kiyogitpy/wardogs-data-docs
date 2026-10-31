@@ -1,0 +1,129 @@
+--- export: UDataAsset / DA_ItemCard_Inventory_Attachment ---
+{
+  "Type": "WDUIItemCardData_Inventory",
+  "Name": "DA_ItemCard_Inventory_Attachment",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemCardData_Inventory'",
+  "Package": "/Game/UI/Features/Inventory_2_0/Widgets/ItemCard/Data/DA_ItemCard_Inventory_Attachment",
+  "Properties": {
+    "ItemCardTooltipPrompts": [
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Inventory.Discard"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Inventory.Discard"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Misc.STRINGS_Misc",
+            "Key": "ItemCard.Drop",
+            "SourceString": "Drop",
+            "LocalizedString": "Drop"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": true,
+          "bUseChordedActionShortName": false,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Action.Feature.Inventory.Transfer"
+        },
+        "Value": {
+          "ActionPromptTag": {
+            "TagName": "UI.Action.Feature.Inventory.Transfer"
+          },
+          "ChordedActionPromptTag": {
+            "TagName": "None"
+          },
+          "ActionPromptText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Misc.STRINGS_Misc",
+            "Key": "ItemCard.Transfer",
+            "SourceString": "Swap / Move",
+            "LocalizedString": "Swap / Move"
+          },
+          "IsHoldable": false,
+          "bUseActionShortName": true,
+          "bUseChordedActionShortName": true,
+          "PromptProgressVisualType": "EWDUIPromptProgressVisualType::PromptOutline",
+          "_aaabgjoifgdeldclgnnih": [],
+          "_aaabggkaikegbmaklkobl": [],
+          "_aaabhpalibppnlgjfpafh": [],
+          "_aaabhnpjdjoppohnihice": []
+        }
+      }
+    ],
+    "ItemGridViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIItemGridViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/ItemGrid/Data/DA_ItemGrid.DA_ItemGrid",
+        "SubPathString": ""
+      }
+    },
+    "FillRanges": [
+      {
+        "Range": {
+          "Min": 0.5,
+          "Max": 1.0
+        },
+        "Color": {
+          "R": 1.0,
+          "G": 1.0,
+          "B": 1.0,
+          "A": 1.0,
+          "Hex": "FFFFFF"
+        }
+      },
+      {
+        "Range": {
+          "Min": 0.25,
+          "Max": 0.5
+        },
+        "Color": {
+          "R": 1.0,
+          "G": 1.0,
+          "B": 0.0,
+          "A": 1.0,
+          "Hex": "FFFF00"
+        }
+      },
+      {
+        "Range": {
+          "Min": 0.0,
+          "Max": 0.25
+        },
+        "Color": {
+          "R": 1.0,
+          "G": 0.0,
+          "B": 0.0,
+          "A": 1.0,
+          "Hex": "FF0000"
+        }
+      }
+    ],
+    "IconType": {
+      "TagName": "UI.Icon.Inventory.Container"
+    },
+    "TooltipContext": {
+      "TagName": "UI.Tooltip.Context.Inventory"
+    },
+    "_aaabeldgebdhiiiacflnh": {
+      "TableId": "/Game/UI/StringTables/STRINGS_TooltipDescriptions.STRINGS_TooltipDescriptions",
+      "Key": "TooltipDescription.RoleXP.Formatting",
+      "SourceString": "\r\nREWARDS {Emoji} {RoleName} XP",
+      "LocalizedString": "\r\nREWARDS {Emoji} {RoleName} XP"
+    }
+  }
+}

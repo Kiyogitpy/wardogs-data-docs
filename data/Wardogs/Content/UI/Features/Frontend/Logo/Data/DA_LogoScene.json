@@ -1,0 +1,23 @@
+--- export: UDataAsset / DA_LogoScene ---
+{
+  "Type": "WDUIMovieSceneData",
+  "Name": "DA_LogoScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIMovieSceneData'",
+  "Package": "/Game/UI/Features/Frontend/Logo/Data/DA_LogoScene",
+  "Properties": {
+    "MediaPlayer": {
+      "AssetPathName": "/Game/Binks/UI_BootScreenVideo_Video.UI_BootScreenVideo_Video",
+      "SubPathString": ""
+    },
+    "MovieURL": "Binks/UI_RevealTrailer_Video.bk2",
+    "SkipTime": 0.0,
+    "bPlayMediaOnOpen": true,
+    "PlayMovieEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.LogoScene.Enter"
+    },
+    "PauseMovieEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.LogoScene.Exit"
+    }
+  }
+}

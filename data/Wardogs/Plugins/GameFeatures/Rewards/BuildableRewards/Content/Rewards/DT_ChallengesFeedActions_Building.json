@@ -1,0 +1,268 @@
+--- export: UDataTable / DT_ChallengesFeedActions_Building ---
+{
+  "Type": "DataTable",
+  "Name": "DT_ChallengesFeedActions_Building",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/BuildableRewards/Rewards/DT_ChallengesFeedActions_Building",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDRewardFeedActionDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Challenges.Rewards.Buildables.BuildableDamaged": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Buildables.Friendly"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.Buildables.Friendly )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Buildables.BuildableDamaged.Friendly",
+            "SourceString": "Team Buildable Damaged",
+            "LocalizedString": "Team Buildable Damaged"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildableDamaged",
+        "SourceString": "Buildable Damaged",
+        "LocalizedString": "Buildable Damaged"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildableDamaged"
+      }
+    },
+    "Challenges.Rewards.Buildables.BuildableDestroyed": {
+      "ConditionalExpressions": [
+        {
+          "Condition": {
+            "TokenStreamVersion": 0,
+            "TagDictionary": [
+              {
+                "TagName": "Challenges.Context.Buildables.Friendly"
+              }
+            ],
+            "QueryTokenStream": [
+              0,
+              1,
+              1,
+              1,
+              0
+            ],
+            "UserDescription": "",
+            "AutoDescription": " ANY( Challenges.Context.Buildables.Friendly )"
+          },
+          "DisplayText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+            "Key": "Challenges.Rewards.Buildables.BuildableDestroyed.Friendly",
+            "SourceString": "Friendly Buildable Destroyed",
+            "LocalizedString": "Friendly Buildable Destroyed"
+          },
+          "bOverrideAudio": false,
+          "AudioEventTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildableDestroyed",
+        "SourceString": "Buildable Destroyed",
+        "LocalizedString": "Buildable Destroyed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildableDestroyed"
+      }
+    },
+    "Challenges.Rewards.Buildables.BuildableDestroyed.Assist": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildableDestroyed.Assist",
+        "SourceString": "Buildable Destroyed Assist",
+        "LocalizedString": "Buildable Destroyed Assist"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.BuiltScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildableDestroyed.Assist"
+      }
+    },
+    "Challenges.Rewards.Buildables.Building": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.Building",
+        "SourceString": "Building",
+        "LocalizedString": "Building"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.Building"
+      }
+    },
+    "Challenges.Rewards.Buildables.BuildableFinished": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildableFinished",
+        "SourceString": "Building Complete",
+        "LocalizedString": "Building Complete"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.HealedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildableFinished"
+      }
+    },
+    "Challenges.Rewards.Buildables.SchematicPlaced": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.SchematicPlaced",
+        "SourceString": "Build Schematic Placed",
+        "LocalizedString": "Build Schematic Placed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.SchematicPlaced"
+      }
+    },
+    "Challenges.Rewards.Buildables.BuildSuppliesDeposited": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildSuppliesDeposited",
+        "SourceString": "Supplies Deposited",
+        "LocalizedString": "Supplies Deposited"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.HotzoneReward"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildSuppliesDeposited"
+      }
+    },
+    "Challenges.Rewards.Buildables.BuildSuppliesConsumed.Owner": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildSuppliesConsumed.Owner",
+        "SourceString": "Supplies Used ",
+        "LocalizedString": "Supplies Used "
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildSuppliesConsumed.Owner"
+      }
+    },
+    "Challenges.Rewards.Buildables.BuildSuppliesConsumed.Instigator": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.BuildSuppliesConsumed.Repair",
+        "SourceString": "Supplies Consumed",
+        "LocalizedString": "Supplies Consumed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.BuildSuppliesConsumed.Instigator"
+      }
+    },
+    "Challenges.Rewards.Buildables.FOBOwnerPayed": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.FOBOwnerPayed",
+        "SourceString": "FOB Resources Used",
+        "LocalizedString": "FOB Resources Used"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.FOBOwnerPayed"
+      }
+    },
+    "Challenges.Rewards.Buildables.FOBHacked": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.FOBHacked",
+        "SourceString": "FOB Hacked",
+        "LocalizedString": "FOB Hacked"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.RevivedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.FOBHacked"
+      }
+    },
+    "Challenges.Rewards.Buildables.FOBDoorClosed": {
+      "ConditionalExpressions": [],
+      "DisplayText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_ChallengesRewardFeed.STRINGS_ChallengesRewardFeed",
+        "Key": "Challenges.Rewards.Buildables.FOBDoorClosed",
+        "SourceString": "FOB Door Closed",
+        "LocalizedString": "FOB Door Closed"
+      },
+      "bIsTip": false,
+      "AudioEventTag": {
+        "TagName": "Audio.Event.UX.Cash.HealedScore"
+      },
+      "Tag": {
+        "TagName": "Challenges.Rewards.Buildables.FOBDoorClosed"
+      }
+    }
+  }
+}

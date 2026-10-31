@@ -1,0 +1,77 @@
+--- export: UDataAsset / DA_BuildablePlacementData ---
+{
+  "Type": "WDBuildablePlacementDataAsset",
+  "Name": "DA_BuildablePlacementData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildablePlacementDataAsset'",
+  "Package": "/Buildables/Data/Buildables/DA_BuildablePlacementData",
+  "Properties": {
+    "PlacementMaterial": {
+      "ObjectName": "Material'M_BuildablePlacement'",
+      "ObjectPath": "/Buildables/Data/Materials/M_BuildablePlacement.0"
+    },
+    "InvalidPlacementColor": {
+      "B": 0,
+      "G": 0,
+      "R": 255,
+      "A": 64,
+      "Hex": "40FF0000"
+    },
+    "ValidPlacementColor": {
+      "B": 255,
+      "G": 255,
+      "R": 255,
+      "A": 64,
+      "Hex": "40FFFFFF"
+    },
+    "MaxPlaceTraceDistance": 600.0,
+    "SupportHeightLimit": 1500.0,
+    "IgnoreFoundationBlockedActorClasses": [
+      {
+        "ObjectName": "Class'LandscapeStreamingProxy'",
+        "ObjectPath": "/Script/Landscape"
+      },
+      {
+        "ObjectName": "Class'PCGPartitionActor'",
+        "ObjectPath": "/Script/PCG"
+      }
+    ],
+    "IgnoreSnappedPlacementBlockedActorClasses": [
+      {
+        "ObjectName": "Class'LandscapeStreamingProxy'",
+        "ObjectPath": "/Script/Landscape"
+      },
+      {
+        "ObjectName": "Class'WDDroppedItem'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ],
+    "_aaabianihbjoelpiopcli": 40.0,
+    "_aaabkiihkncnneionnkkg": [
+      {
+        "ObjectName": "Class'WDVendor'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ],
+    "_aaacgdjjommeklakdeggk": [
+      {
+        "ObjectName": "Class'Pawn'",
+        "ObjectPath": "/Script/Engine"
+      },
+      {
+        "ObjectName": "Class'PCGPartitionActor'",
+        "ObjectPath": "/Script/PCG"
+      },
+      {
+        "ObjectName": "Class'WDDemolitionCellRepresentation_Near'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ],
+    "_aaabklhjfbeimhkhhdaji": [
+      {
+        "ObjectName": "Class'WDVendor'",
+        "ObjectPath": "/Script/WDGame"
+      }
+    ]
+  }
+}

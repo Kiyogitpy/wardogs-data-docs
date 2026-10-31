@@ -1,0 +1,674 @@
+--- export: UObject / BH_C4_Data_C_0 ---
+{
+  "Type": "BH_C4_Data_C",
+  "Name": "BH_C4_Data_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/C4/Data/Blueprints/BH_C4_Data.BH_C4_Data_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Template": {
+    "ObjectName": "BH_C4_Data_C'Default__BH_C4_Data_C'",
+    "ObjectPath": "/C4/Data/Blueprints/BH_C4_Data.0"
+  },
+  "Properties": {
+    "MaxDetonationDistance": 200.0
+  }
+}
+--- export: UObject / BH_ExtensionData_ItemChargeManager_C_0 ---
+{
+  "Type": "BH_ExtensionData_ItemChargeManager_C",
+  "Name": "BH_ExtensionData_ItemChargeManager_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_ItemChargeManager.BH_ExtensionData_ItemChargeManager_C'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Template": {
+    "ObjectName": "BH_ExtensionData_ItemChargeManager_C'Default__BH_ExtensionData_ItemChargeManager_C'",
+    "ObjectPath": "/Game/GameMechanics/ExtensionComponents/BH_ExtensionData_ItemChargeManager.0"
+  }
+}
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/C4/Data/Meshes/SM_C4_Detonator.SM_C4_Detonator",
+      "SubPathString": ""
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -3.1,
+      "Y": 1.0,
+      "Z": -2.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 3.5,
+      "Y": 6.387502,
+      "Z": 10.359856
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  },
+  "Properties": {
+    "bCanRemoveItem": false,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Chamber"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [
+            "Id.Item.C4Explosive"
+          ],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 1,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [
+          "Id.Item.C4Explosive"
+        ],
+        "DefaultContainerItems": [
+          {
+            "Item": {
+              "TagName": "Id.Item.C4Explosive"
+            },
+            "Amount": 1
+          }
+        ]
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  },
+  "Properties": {
+    "Weight": 0.02
+  }
+}
+--- export: UPrimaryDataAsset / ID_C4_Trigger ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_C4_Trigger",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/C4/Data/ID_C4_Trigger",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.C4Trigger"
+    },
+    "ItemContext": [
+      "Item.Resource.HiddenConsumable",
+      "Item.Ammo",
+      "Item.Resource.Ammo",
+      "Item.Context.UtilityItem",
+      "Item.Context.QuickSlot",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.C4Trigger",
+      "SourceString": "Remote Detonator",
+      "LocalizedString": "Remote Detonator"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_C4_Trigger:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.4"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_C4_Trigger:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_C4_Trigger:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.8"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_C4_Trigger:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_C4_Trigger:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_C4_Trigger:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_C4_Audio'",
+      "ObjectPath": "/C4/Data/ID_C4_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_C4_Trigger'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.7"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.14"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.15"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.10"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Throwable'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemFragment_Throwable_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.16"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Trigger'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Trigger_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.17"
+      },
+      {
+        "ObjectName": "BH_C4_Data_C'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.BH_C4_Data_C_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.0"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_GameplayEffects'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_GameplayEffects_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.12"
+      },
+      {
+        "ObjectName": "BH_ExtensionData_ItemChargeManager_C'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.BH_ExtensionData_ItemChargeManager_C_0'",
+        "ObjectPath": "/C4/Data/ID_C4_Trigger.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_C4Trigger'",
+      "ObjectPath": "/C4/Data/AnimSet_C4Trigger.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_C4_Audio'",
+      "ObjectPath": "/C4/Data/ID_C4_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_GameplayEffects_0 ---
+{
+  "Type": "WDItemExtensionData_GameplayEffects",
+  "Name": "WDItemExtensionData_GameplayEffects_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_GameplayEffects'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "DefaultAttributes": [
+      {
+        "Key": {
+          "TagName": "Attribute.Gameplay.Weapon.DetonatorRangeMultiplier"
+        },
+        "Value": 1.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_C4_Merged'",
+      "ObjectPath": "/C4/Data/Meshes/SK_C4_Merged.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_C4_Detonator'",
+        "ObjectPath": "/C4/Data/Materials/MI_C4_Detonator.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_C4'",
+        "ObjectPath": "/C4/Data/Materials/MI_C4.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_C4_Screen'",
+        "ObjectPath": "/C4/Data/Materials/MI_C4_Screen.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_C4_C'",
+      "ObjectPath": "/C4/Data/Animation/Blueprints/Item/ABP_C4.1"
+    },
+    "bShowCrosshair": true,
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "bShowDot": true,
+      "HairLength": 0.0,
+      "Gap": 0.0,
+      "SpreadMultiplier": 0.0
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_C4_Equip'",
+        "ObjectPath": "/C4/Animation/Character/Montages/AM_FP_C4_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
+      },
+      "FirstPersonItemAnimation": {
+        "ObjectName": "AnimMontage'AM_Weap_C4_Equip'",
+        "ObjectPath": "/C4/Animation/Weapon/Montages/AM_Weap_C4_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_C4_Holster'",
+        "ObjectPath": "/C4/Animation/Character/Montages/AM_FP_C4_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_EquipmentRH_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/C4/Animation/Character/Blueprints/ABP_FP_C4_Layer_RW.ABP_FP_C4_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/C4/Animation/Blueprints/ABP_TP_C4_Layer_RW.ABP_TP_C4_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "Significance": 0.03
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_C4Weapon'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_C4Weapon.3"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateActionAlternate'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateActionAlternate_0'",
+          "ObjectPath": "/C4/Data/ID_C4_Trigger.19"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.Inspect"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/C4/Data/ID_C4_Trigger.18"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.HoldableItem.TriggerUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateActionAlternate'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateActionAlternate_1'",
+          "ObjectPath": "/C4/Data/ID_C4_Trigger.20"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Throw.Primary.C4"
+    },
+    "ActionResourceRequirements": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Dropped"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.C4Trigger"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "None"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Supplies"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Primary.C4"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.C4Explosive"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "Item.Attachment.Magazine"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Ammo"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Action.Throw.Secondary"
+        },
+        "Value": {
+          "RequiredResource": {
+            "TagName": "Id.Item.C4Explosive"
+          },
+          "ResourcesUsed": 1,
+          "bLimitSearchToItem": false,
+          "OptionalRequiredSubSlotCategory": {
+            "TagName": "Item.Attachment.Magazine"
+          },
+          "ResourceType": {
+            "TagName": "Item.Resource.Ammo"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemFragment_Throwable_0 ---
+{
+  "Type": "WDItemExtensionData_Throwable",
+  "Name": "WDItemFragment_Throwable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Throwable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  },
+  "Properties": {
+    "ThrowableClass": {
+      "AssetPathName": "/C4/Data/Blueprints/B_ThrowableC4.B_ThrowableC4_C",
+      "SubPathString": ""
+    },
+    "ThrowActions": [
+      {
+        "Key": {
+          "TagName": "Action.Throw.Secondary"
+        },
+        "Value": {
+          "bUseConsistentVelocity": true,
+          "ThrowVelocity": 900.0,
+          "VelocityCurve": null,
+          "OwnerVerticalVelocityInfluence": 1.0,
+          "OwnerHorizontalVelocityInfluence": 0.45,
+          "PitchCurve": {
+            "ObjectName": "CurveFloat'CRV_ThrowPitch_OverarmStrong'",
+            "ObjectPath": "/Game/Items/Throwable/Curves/CRV_ThrowPitch_OverarmStrong.0"
+          },
+          "MinAngularVelocity": {
+            "X": 25.0,
+            "Y": 100.0,
+            "Z": 25.0
+          },
+          "MaxAngularVelocity": {
+            "X": 40.0,
+            "Y": 150.0,
+            "Z": 40.0
+          },
+          "SpawnOffset": {
+            "X": 40.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "BlockEquipAfterDestroyTime": 0.5,
+          "ThrowTypeTag": {
+            "TagName": "Action.Throw.Secondary"
+          },
+          "ThrowAnimationTag": {
+            "TagName": "Animation.Asset.Throwable.Overarm"
+          },
+          "ThrowInputReleaseTag": {
+            "TagName": "Input.NamedActions.Throwable.Throw.Primary.Release"
+          },
+          "SwapThrowTypeTag": {
+            "TagName": "None"
+          }
+        }
+      }
+    ],
+    "bDropOnInterrupt": false,
+    "ItemToConsume": {
+      "TagName": "Id.Item.C4Explosive"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Trigger_0 ---
+{
+  "Type": "WDItemExtensionData_Trigger",
+  "Name": "WDItemExtensionData_Trigger_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Trigger'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_C4_Trigger:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.9"
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.14"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Item.Inspect"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateActionAlternate_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateActionAlternate",
+  "Name": "WDItemInputBehavior_ActivateActionAlternate_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateActionAlternate'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.14"
+  },
+  "Properties": {
+    "SettingTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.InvertC4Input"
+    },
+    "_aaablklgfkmmmggcidffl": {
+      "TagName": "Action.Throw.Primary.C4"
+    },
+    "ActionToActivate": {
+      "TagName": "Action.Trigger.Primary"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateActionAlternate_1 ---
+{
+  "Type": "WDItemInputBehavior_ActivateActionAlternate",
+  "Name": "WDItemInputBehavior_ActivateActionAlternate_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateActionAlternate'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_C4_Trigger:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/C4/Data/ID_C4_Trigger.14"
+  },
+  "Properties": {
+    "SettingTag": {
+      "TagName": "UserSettings.Controls.ActionBehavior.InvertC4Input"
+    },
+    "_aaablklgfkmmmggcidffl": {
+      "TagName": "Action.Trigger.Primary"
+    },
+    "ActionToActivate": {
+      "TagName": "Action.Throw.Primary.C4"
+    }
+  }
+}

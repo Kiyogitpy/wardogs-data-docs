@@ -1,0 +1,101 @@
+--- export: UPrimaryDataAsset / DA_FWG_01_Config ---
+{
+  "Type": "BHAirplaneVehicleConfigDataAsset",
+  "Name": "DA_FWG_01_Config",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAirplaneVehicleConfigDataAsset'",
+  "Package": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_Config",
+  "Properties": {
+    "BodyDataAsset": {
+      "ObjectName": "BHAirplaneBodyDataAsset'DA_FWG_01_Body'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_Body.0"
+    },
+    "EngineDataAsset": {
+      "ObjectName": "BHAirplaneEngineDataAsset'DA_FWG_01_Engine'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_Engine.0"
+    },
+    "DragDataAsset": {
+      "ObjectName": "BHAirplaneDragDataAsset'DA_FWG_01_Drag'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_Drag.0"
+    },
+    "FlightCharacteristicsDataAsset": {
+      "ObjectName": "BHAirplaneFlightDataAsset'DA_FWG_01_FlightCharacteristics'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_FlightCharacteristics.0"
+    },
+    "DustKickupGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.DustKickup"
+    },
+    "GameplayConfigDataAsset": {
+      "ObjectName": "WDVehicleGameplayComponentsDataAsset'DA_FWG_01_GameplaySystems'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_GameplaySystems.7"
+    },
+    "ThirdPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_FWG_01_CameraBehaviourSettings'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_CameraBehaviourSettings.0"
+    },
+    "FirstPersonCameraBehaviourDataAsset": {
+      "ObjectName": "MRotaryVehicleSpringArmDataAsset'DA_FWG_01_CameraBehaviourSettings'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_CameraBehaviourSettings.0"
+    },
+    "VehicleSensorsDataAsset": {
+      "ObjectName": "BHRotaryVehicleSensorsDataAsset'DA_FWG_01_SensorsData'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_SensorsData.0"
+    },
+    "VehicleInputControlsDataAsset": {
+      "ObjectName": "MAirplaneInputControlsDataAsset'DA_FWG_01_InputControls'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_InputControls.0"
+    },
+    "VehicleClassTag": {
+      "TagName": "State.Player.Vehicle.Airplane"
+    },
+    "EngineRunningGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Engine.Running.FWG_01"
+    },
+    "CollisionGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Collision.FWG_01"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Destroyed.FWG_01"
+    },
+    "PostDestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.PostDestroyed.FWG_01"
+    },
+    "PlayerChangedSeatGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ChangedSeats"
+    },
+    "PlayerEnteredVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Enter"
+    },
+    "PlayerExitedVehicleGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.Exit"
+    },
+    "PlayerToggleChaseCamGameplayCueTag": {
+      "TagName": "GameplayCue.Vehicle.ToggleChaseCam"
+    },
+    "HornMinimumHoldTime": 0.05,
+    "VehicleExitDamageCurve": {
+      "ObjectName": "CurveFloat'CRV_ExitVehiclePunishment_Damage'",
+      "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Curves/CRV_ExitVehiclePunishment_Damage.0"
+    },
+    "VehicleConfigExtensions": [
+      {
+        "Key": "CBM",
+        "Value": {
+          "ObjectName": "PDA_CBM_Map_C'DA_Vehicle_Air_Helicopter_CBM_Map'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/Helicopter/DA/DA_Vehicle_Air_Helicopter_CBM_Map.0"
+        }
+      },
+      {
+        "Key": "Audio",
+        "Value": {
+          "ObjectName": "WDAudioData'DA_Vehicle_Helicopter_Shared_Audio'",
+          "ObjectPath": "/Game/Audio/Vehicles/Shared/Helicopter/DA/DA_Vehicle_Helicopter_Shared_Audio.0"
+        }
+      }
+    ],
+    "DestroyedStaticMesh": {
+      "ObjectName": "StaticMesh'SM_FWG_01_Destroyed'",
+      "ObjectPath": "/Game/Vehicles/Pawns/Air/Airplane/FWG_01/Meshes/SM_FWG_01_Destroyed.2"
+    }
+  }
+}

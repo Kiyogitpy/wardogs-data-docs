@@ -1,0 +1,65 @@
+--- export: UObject / WDPingAction_Emote_0 ---
+{
+  "Type": "WDPingAction_Emote",
+  "Name": "WDPingAction_Emote_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingAction_Emote'",
+  "Outer": {
+    "ObjectName": "WDPingActionAsset'DA_PingAction_Rock'",
+    "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Rock.1"
+  },
+  "Properties": {
+    "_aaaaofflhbiijaegojgpg": {
+      "TagName": "Action.Player.Emote.Rock"
+    },
+    "_aaabbckaapghokdcjpnho": {
+      "TagName": "Meta.Cosmetic.Emote.RockPaperScissors"
+    }
+  }
+}
+--- export: UDataAsset / DA_PingAction_Rock ---
+{
+  "Type": "WDPingActionAsset",
+  "Name": "DA_PingAction_Rock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDPingActionAsset'",
+  "Package": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Rock",
+  "Properties": {
+    "Text": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Action.Emote.Rock",
+      "SourceString": "Rock",
+      "LocalizedString": "Rock"
+    },
+    "LockedDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+      "Key": "Emote.State.Locked",
+      "SourceString": "Must be unlocked",
+      "LocalizedString": "Must be unlocked"
+    },
+    "NonTriggerableDescriptions": [
+      {
+        "Key": {
+          "TagName": "Tag.PingAction.NonTriggerable.Critical"
+        },
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_PingWheel.STRINGS_PingWheel",
+          "Key": "Action.Request.Emote.NonTriggerable.Critical",
+          "SourceString": "Health Critical",
+          "LocalizedString": "Health Critical"
+        }
+      }
+    ],
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Rock.T_UI_Icon_PingWheel_Rock",
+      "SubPathString": ""
+    },
+    "bIsWorkInProgress": false,
+    "Actions": [
+      {
+        "ObjectName": "WDPingAction_Emote'DA_PingAction_Rock:WDPingAction_Emote_0'",
+        "ObjectPath": "/Game/UI/Features/PingWheel/Data/Actions/Emote/DA_PingAction_Rock.0"
+      }
+    ]
+  }
+}

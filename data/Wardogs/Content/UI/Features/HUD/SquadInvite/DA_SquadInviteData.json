@@ -1,0 +1,48 @@
+--- export: UDataAsset / DA_SquadInviteData ---
+{
+  "Type": "WDUISquadInviteData",
+  "Name": "DA_SquadInviteData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISquadInviteData'",
+  "Package": "/Game/UI/Features/HUD/SquadInvite/DA_SquadInviteData",
+  "Properties": {
+    "_aaabdechpbegpegnelaeg": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+      "Key": "Text.InvitePrompt",
+      "SourceString": "{PlayerName} invited you to squad.",
+      "LocalizedString": "{PlayerName} invited you to squad."
+    },
+    "_aaabipmocndajbccbbeip": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Squads.STRINGS_Squads",
+      "Key": "Text.RequestJoinPrompt",
+      "SourceString": "{PlayerName} requested to join your squad.",
+      "LocalizedString": "{PlayerName} requested to join your squad."
+    },
+    "Priority": 10,
+    "_aaaapkpgilikeeidfdjon": {
+      "TagName": "UI.Action.Feature.SquadInvite.Accept"
+    },
+    "_aaaapghjdpcfgdmbccflk": {
+      "TagName": "UI.Action.Feature.SquadInvite.Reject"
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/HUD/SquadInvite/DA_SquadInvitePromptsBar.DA_SquadInvitePromptsBar",
+        "SubPathString": ""
+      }
+    },
+    "_aaabcmaihlilmklkialpf": [
+      "UI.Scene.Shared.Popups"
+    ],
+    "_aaabaldmcbgmnpkahmbkf": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    },
+    "_aaabapcgghpjnlfpolbek": {
+      "TagName": "Audio.Event.UI.FrontEnd.Select"
+    }
+  }
+}

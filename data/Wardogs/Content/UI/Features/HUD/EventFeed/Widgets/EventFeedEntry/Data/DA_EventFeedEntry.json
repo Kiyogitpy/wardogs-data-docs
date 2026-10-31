@@ -1,0 +1,27 @@
+--- export: UDataAsset / DA_EventFeedEntry ---
+{
+  "Type": "WDUIEventFeedEntryData",
+  "Name": "DA_EventFeedEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIEventFeedEntryData'",
+  "Package": "/Game/UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data/DA_EventFeedEntry",
+  "Properties": {
+    "EntryDuration": 5.0,
+    "SelfPlayerName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+      "Key": "Entry_Self",
+      "SourceString": "<span color=\"#{PlayerColor}\" style=\"bold\">You</>",
+      "LocalizedString": "<span color=\"#{PlayerColor}\" style=\"bold\">You</>"
+    },
+    "OtherPlayerName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_EventFeed.STRINGS_EventFeed",
+      "Key": "Entry_Other",
+      "SourceString": "<span color=\"#{PlayerColor}\" style=\"bold\">{PlayerName}</>",
+      "LocalizedString": "<span color=\"#{PlayerColor}\" style=\"bold\">{PlayerName}</>"
+    },
+    "AcknowledgeIconTexture": {
+      "AssetPathName": "/Game/UI/Features/PingWheel/Widgets/Action/Textures/T_UI_Icon_PingWheel_Affirmative_64x64.T_UI_Icon_PingWheel_Affirmative_64x64",
+      "SubPathString": ""
+    }
+  }
+}

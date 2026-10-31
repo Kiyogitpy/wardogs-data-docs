@@ -1,0 +1,301 @@
+--- export: UPrimaryDataAsset / VP_WHL_02_RearBack_Pickup_Chassis ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_02_RearBack_Pickup_Chassis",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Chassis.Rear"
+    ],
+    "Fragments": [
+      {
+        "Key": "ExtraSeats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_WHL_02_RearBack_Pickup_Chassis:WD_MVF_Seats_1'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.1"
+          }
+        }
+      },
+      {
+        "Key": "Interior_Rear",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_RearBack_Pickup_Chassis:MVF_StaticMesh_7'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.2"
+          }
+        }
+      },
+      {
+        "Key": "Chassis_Rear",
+        "Value": {
+          "bEnabled": false,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_WHL_02_RearBack_Pickup_Chassis:MVF_StaticMesh_9'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.3"
+          }
+        }
+      },
+      {
+        "Key": "Stats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_VehicleStats'VP_WHL_02_RearBack_Pickup_Chassis:WD_MVF_VehicleStats_0'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.7"
+          }
+        }
+      },
+      {
+        "Key": "Interactions",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_Interactions'VP_WHL_02_RearBack_Pickup_Chassis:WD_MVF_Interactions_0'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.4"
+          }
+        }
+      },
+      {
+        "Key": "Inventory",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_WHL_02_RearBack_Pickup_Chassis:WD_MVF_InventoryFragment_1'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.5"
+          }
+        }
+      },
+      {
+        "Key": "Supplycrate",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_SupplyCrateFragment'VP_WHL_02_RearBack_Pickup_Chassis:WD_MVF_SupplyCrateFragment_2'",
+            "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.6"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_Seats_1 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "WD_MVF_Seats_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/WHL_02/Data/WHL_02_Pickup/DA_WHL_02_Pickup_ExtraSeats.DA_WHL_02_Pickup_ExtraSeats",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_7 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_7",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_Pickup_Interior.SM_WHL_02_Pickup_Interior",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_9 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_9",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "chassis_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WHL_02/StaticMeshes/SM_WHL_02_Pickup_Variant.SM_WHL_02_Pickup_Variant",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Default"
+    }
+  }
+}
+--- export: UObject / WD_MVF_Interactions_0 ---
+{
+  "Type": "WD_MVF_Interactions",
+  "Name": "WD_MVF_Interactions_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_Interactions'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "VehicleInteractionsDataAsset": {
+      "AssetPathName": "/WHL_02/Data/WHL_02_Pickup/DA_VehicleInteractions_WHL_02_Pickup.DA_VehicleInteractions_WHL_02_Pickup",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_1 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Storage/ID_VehicleStorageSmall.ID_VehicleStorageSmall",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_SupplyCrateFragment_2 ---
+{
+  "Type": "WD_MVF_SupplyCrateFragment",
+  "Name": "WD_MVF_SupplyCrateFragment_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_SupplyCrateFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "SupplyCrateSettings": {
+      "bCanSupportSupplyCrates": true,
+      "DeployOffset": {
+        "X": -600.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "bShouldUseVehicleSpeedCheck": false,
+      "LogisticsSlotSettings": [
+        {
+          "Identifier": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleSettings.STRINGS_VehicleSettings",
+            "Key": "Text.Settings.SupplyCrate.Id.BackSlot",
+            "SourceString": "Back Slot",
+            "LocalizedString": "Back Slot"
+          },
+          "bAccessibleInVehicle": true,
+          "SlotTransform": {
+            "Rotation": {
+              "X": 0.0,
+              "Y": -0.0,
+              "Z": 1.0,
+              "W": 6.123234E-17,
+              "IsNormalized": true,
+              "Size": 1.0,
+              "SizeSquared": 1.0
+            },
+            "Translation": {
+              "X": -235.0,
+              "Y": 0.0,
+              "Z": 104.8212
+            },
+            "Scale3D": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 1.0
+            }
+          },
+          "SlotSize": {
+            "X": 4,
+            "Y": 1
+          },
+          "SpaceEdgeLength": 25.0,
+          "SpaceDimensions": {
+            "X": 50.0,
+            "Y": 250.0,
+            "Z": 124.5
+          },
+          "MeshAdditionalRotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          },
+          "MeshAdditionalLocationOffset": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "_aaabfpidgmbniihagpoap": false,
+          "DeployOffset": {
+            "X": -750.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "DeployRotationOffset": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        }
+      ],
+      "SupplyCrateData": {
+        "ObjectName": "WDUISupplyCrateData'DA_SupplyCrateData'",
+        "ObjectPath": "/Game/UI/Features/Vendor/Widgets/LogisticsSlots/Data/DA_SupplyCrateData.0"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_VehicleStats_0 ---
+{
+  "Type": "WD_MVF_VehicleStats",
+  "Name": "WD_MVF_VehicleStats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_VehicleStats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_02_RearBack_Pickup_Chassis'",
+    "ObjectPath": "/WHL_02/Parts/Pickup/VP_WHL_02_RearBack_Pickup_Chassis.0"
+  },
+  "Properties": {
+    "VehiclesStatsDataAsset": {
+      "AssetPathName": "/WHL_02/Data/WHL_02_Pickup/DA_WHL_02_Pickup_Stats.DA_WHL_02_Pickup_Stats",
+      "SubPathString": ""
+    }
+  }
+}

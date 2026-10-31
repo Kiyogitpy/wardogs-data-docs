@@ -1,0 +1,244 @@
+--- export: UPrimaryDataAsset / VP_TNK_01_MountedHeavy_MachineGun ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_TNK_01_MountedHeavy_MachineGun",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Turret"
+    ],
+    "Fragments": [
+      {
+        "Key": "TurretSkeleton",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_SkeletalMesh'VP_TNK_01_MountedHeavy_MachineGun:MVF_SkeletalMesh_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.2"
+          }
+        }
+      },
+      {
+        "Key": "Weapon",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_WeaponFragment'VP_TNK_01_MountedHeavy_MachineGun:WD_MVF_WeaponFragment_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.6"
+          }
+        }
+      },
+      {
+        "Key": "HeavyWeaponExtensionSlot",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "WD_MVF_InventoryFragment'VP_TNK_01_MountedHeavy_MachineGun:WD_MVF_InventoryFragment_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.5"
+          }
+        }
+      },
+      {
+        "Key": "Seat",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_TNK_01_MountedHeavy_MachineGun:WD_MVF_Seats_0'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.1"
+          }
+        }
+      },
+      {
+        "Key": "TurretHousing",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_MountedHeavy_MachineGun:MVF_StaticMesh_1'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.3"
+          }
+        }
+      },
+      {
+        "Key": "TurretMountPitch",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_TNK_01_MountedHeavy_MachineGun:MVF_StaticMesh_2'",
+            "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.4"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WD_MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "WD_MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_MountedHeavy_MachineGun'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/TNK_01/Data/Heavy/MountedMachineGun/DA_TNK_01_Heavy_MountedMachineGun_SeatSettings.DA_TNK_01_Heavy_MountedMachineGun_SeatSettings",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / MVF_SkeletalMesh_0 ---
+{
+  "Type": "MVF_SkeletalMesh",
+  "Name": "MVF_SkeletalMesh_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_SkeletalMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_MountedHeavy_MachineGun'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "PhysicsMode": "EModularVehiclePhysicsMode::AttachOnly",
+      "Constraint": {
+        "ConeLimit": {
+          "Swing1LimitDegrees": 0.0,
+          "Swing2LimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "TwistLimit": {
+          "TwistLimitDegrees": 0.0,
+          "bSoftConstraint": false
+        },
+        "bParentDominates": true,
+        "bEnableMassConditioning": false
+      },
+      "AttachQuery": {
+        "SourceId": "TurretSkeleton",
+        "SocketName": "S_Attach_MountedMachineGun"
+      },
+      "bAttachSource": true,
+      "Method": "EModularVehicleComponentMode::CreateNew",
+      "Tags": [
+        "MountedMachineGun"
+      ]
+    },
+    "SkeletalMesh": {
+      "AssetPathName": "/Game/Items/Weapons/Mounted/M249/SK_M249_Mounted.SK_M249_Mounted",
+      "SubPathString": ""
+    },
+    "AnimInstance": {
+      "AssetPathName": "/WEPN_009/Animation/Weapon/Blueprint/ABP_M249Mounted.ABP_M249Mounted_C",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_MountedHeavy_MachineGun'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "MountedMachineGun",
+        "SocketName": "S_Tracked_vehicleHatch_Attach_TNK_Heavy"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/TNK_01/Mesh/Hatch/SM_TNK_Gunner_Hatch.SM_TNK_Gunner_Hatch",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_2 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_MountedHeavy_MachineGun'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "MountedMachineGun",
+        "SocketName": "vehicleWeapon_Pitch_JSocket"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/WEPN_009/Mounts/Standard/SM_WHL_02_Pickup_Mount_02.SM_WHL_02_Pickup_Mount_02",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    }
+  }
+}
+--- export: UObject / WD_MVF_InventoryFragment_0 ---
+{
+  "Type": "WD_MVF_InventoryFragment",
+  "Name": "WD_MVF_InventoryFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_InventoryFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_MountedHeavy_MachineGun'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.0"
+  },
+  "Properties": {
+    "ItemDefinition": {
+      "AssetPathName": "/Game/Items/Vehicles/Weapons/TNK_01/Heavy/ID_Heavy_MountedMachineGun.ID_Heavy_MountedMachineGun",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WD_MVF_WeaponFragment_0 ---
+{
+  "Type": "WD_MVF_WeaponFragment",
+  "Name": "WD_MVF_WeaponFragment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WD_MVF_WeaponFragment'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_TNK_01_MountedHeavy_MachineGun'",
+    "ObjectPath": "/TNK_01/Parts/Heavy/VP_TNK_01_MountedHeavy_MachineGun.0"
+  },
+  "Properties": {
+    "WeaponMeshTagName": "MountedMachineGun",
+    "WeaponDataAsset": {
+      "AssetPathName": "/TNK_01/Weapons/Heavy/W_TNK_01_Heavy_MountedMachineGun.W_TNK_01_Heavy_MountedMachineGun",
+      "SubPathString": ""
+    },
+    "bIsDockedWeapon": true,
+    "WeaponMeshToDockInto": "TurretSkeleton",
+    "RoleRequirements": {
+      "RequireTags": [
+        "State.Player.Vehicle.Role.Gunner"
+      ]
+    },
+    "AllowList": [
+      2
+    ]
+  }
+}

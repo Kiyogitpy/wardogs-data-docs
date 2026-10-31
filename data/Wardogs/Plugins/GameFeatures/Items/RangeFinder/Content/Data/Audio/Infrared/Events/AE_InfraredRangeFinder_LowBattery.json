@@ -1,0 +1,63 @@
+--- export: UObject / AEB_AttachSoundToHeldItem_C_0 ---
+{
+  "Type": "AEB_AttachSoundToHeldItem_C",
+  "Name": "AEB_AttachSoundToHeldItem_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.AEB_AttachSoundToHeldItem_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_InfraredRangeFinder_LowBattery'",
+    "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_LowBattery.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToHeldItem_C'Default__AEB_AttachSoundToHeldItem_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToHeldItem.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.IRRangeFinder.Battery"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_InfraredRangeFinder_LowBattery ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_InfraredRangeFinder_LowBattery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_LowBattery",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.RangeFinder.LowBattery"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_AttachSoundToHeldItem_C'AE_InfraredRangeFinder_LowBattery:AEB_AttachSoundToHeldItem_C_0'",
+        "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_LowBattery.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_InfraredRangeFinder_LowBattery:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_LowBattery.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_InfraredRangeFinder_LowBattery'",
+    "ObjectPath": "/RangeFinder/Data/Audio/Infrared/Events/AE_InfraredRangeFinder_LowBattery.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Item_InfraredRangeFinder_Low_Battery'",
+      "ObjectPath": "/RangeFinder/Data/Audio/Infrared/MSS/MSS_Item_InfraredRangeFinder_Low_Battery.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.IRRangeFinder.Battery"
+    }
+  }
+}

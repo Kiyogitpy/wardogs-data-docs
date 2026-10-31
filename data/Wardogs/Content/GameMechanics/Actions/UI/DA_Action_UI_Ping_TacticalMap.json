@@ -1,0 +1,31 @@
+--- export: UPrimaryDataAsset / DA_Action_UI_Ping_TacticalMap ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_UI_Ping_TacticalMap",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/UI/DA_Action_UI_Ping_TacticalMap",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.Ping.TacticalMap"
+    },
+    "ActionClass": {
+      "ObjectName": "Class'WDGameplayAction'",
+      "ObjectPath": "/Script/WDGame"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Interrupt",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Interrupt",
+          "ActionResponses": [],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ]
+  }
+}

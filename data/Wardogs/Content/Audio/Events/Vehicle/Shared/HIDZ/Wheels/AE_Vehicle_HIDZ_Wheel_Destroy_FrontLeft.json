@@ -1,0 +1,62 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.Wheel.Destroy.FrontLeft"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft.2"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 150.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft.0"
+  },
+  "Properties": {
+    "SocketName": "frontLWheelSpin_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.Destroy.FrontLeft"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_Wheel_Destroy_FrontLeft.0"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.HIDZ.Wheel.Destroy"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.Destroy.FrontLeft"
+    },
+    "bPersistent": true
+  }
+}

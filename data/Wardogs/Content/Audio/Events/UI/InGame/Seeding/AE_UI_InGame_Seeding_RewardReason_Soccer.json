@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_Seeding_RewardReason_Soccer ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Seeding_RewardReason_Soccer",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/Seeding/AE_UI_InGame_Seeding_RewardReason_Soccer",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.ServerSeeding.RewardReason.Soccer"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Seeding_RewardReason_Soccer:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/Seeding/AE_UI_InGame_Seeding_RewardReason_Soccer.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Seeding_RewardReason_Soccer'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/Seeding/AE_UI_InGame_Seeding_RewardReason_Soccer.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Seeding_Reward'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Seeding/MSS_UI_InGame_Seeding_Reward.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

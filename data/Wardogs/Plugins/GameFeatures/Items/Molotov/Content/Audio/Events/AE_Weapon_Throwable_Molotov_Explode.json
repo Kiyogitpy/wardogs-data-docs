@@ -1,0 +1,84 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Throwable_Molotov_Explode ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Throwable_Molotov_Explode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.Molotov.Explode"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Weapon_Throwable_Molotov_Explode:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_Throwable_Molotov_Explode:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Throwable_Molotov_Explode:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Explode'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Explode"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Explode'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_Molotov_Impact'",
+      "ObjectPath": "/Molotov/Audio/MSS/MSS_Weapon_Throwable_Molotov_Impact.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Explode"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Throwable_Molotov_Explode'",
+    "ObjectPath": "/Molotov/Audio/Events/AE_Weapon_Throwable_Molotov_Explode.0"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "bSetFadeOut": true,
+    "FadeOutDuration": 2.0,
+    "FadeOutCurve": "EAudioFaderCurve::Logarithmic",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Molotov.Explode"
+    }
+  }
+}

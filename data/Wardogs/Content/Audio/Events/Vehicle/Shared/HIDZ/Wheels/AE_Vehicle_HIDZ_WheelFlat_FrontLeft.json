@@ -1,0 +1,61 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_HIDZ_WheelFlat_FrontLeft ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_HIDZ_WheelFlat_FrontLeft",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_WheelFlat_FrontLeft",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.Wheel.FlatLoop.FrontLeft"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_HIDZ_WheelFlat_FrontLeft:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_WheelFlat_FrontLeft.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorPlayVehicleSound'AE_Vehicle_HIDZ_WheelFlat_FrontLeft:WDAudioEventBehaviorPlayVehicleSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_WheelFlat_FrontLeft.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_WheelFlat_FrontLeft'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_WheelFlat_FrontLeft.0"
+  },
+  "Properties": {
+    "SocketName": "frontLWheelSpin_J",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.FlatLoop.FrontLeft"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorPlayVehicleSound_0 ---
+{
+  "Type": "WDAudioEventBehaviorPlayVehicleSound",
+  "Name": "WDAudioEventBehaviorPlayVehicleSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorPlayVehicleSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_HIDZ_WheelFlat_FrontLeft'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/Wheels/AE_Vehicle_HIDZ_WheelFlat_FrontLeft.0"
+  },
+  "Properties": {
+    "SoundAssetTag": {
+      "TagName": "Audio.Asset.Vehicle.Shared.HIDZ.Wheel.FlatLoop"
+    },
+    "RestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.HIDZ.Wheel.FlatLoop.FrontLeft"
+    },
+    "bPersistent": true
+  }
+}

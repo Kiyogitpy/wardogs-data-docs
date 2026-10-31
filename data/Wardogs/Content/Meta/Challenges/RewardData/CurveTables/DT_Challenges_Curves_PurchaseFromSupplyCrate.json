@@ -1,0 +1,43 @@
+--- export: UDataTable / DT_Challenges_Curves_PurchaseFromSupplyCrate ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Challenges_Curves_PurchaseFromSupplyCrate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Challenges/RewardData/CurveTables/DT_Challenges_Curves_PurchaseFromSupplyCrate",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDLiveCurveTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "LiveCurves.Challenges.SessionEvents.PurchaseFromSupplyCrate.XP": {
+      "CurveAsset": {
+        "ObjectName": "CurveFloat'CRV_Challenges_Curves_PurchaseFromSupplyCrate_XP'",
+        "ObjectPath": "/Game/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_PurchaseFromSupplyCrate_XP.0"
+      },
+      "Tag": {
+        "TagName": "LiveCurves.Challenges.SessionEvents.PurchaseFromSupplyCrate.XP"
+      }
+    },
+    "LiveCurves.Challenges.SessionEvents.DeploySupplyCrate.XP": {
+      "CurveAsset": {
+        "ObjectName": "CurveFloat'CRV_Challenges_Curves_DeploySupplyCrate_XP'",
+        "ObjectPath": "/Game/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_DeploySupplyCrate_XP.0"
+      },
+      "Tag": {
+        "TagName": "LiveCurves.Challenges.SessionEvents.DeploySupplyCrate.XP"
+      }
+    },
+    "LiveCurves.Challenges.SessionEvents.DestroySupplyCrate.Cash": {
+      "CurveAsset": {
+        "ObjectName": "CurveFloat'CRV_Challenges_Curves_DestroySupplyCrate_Cash'",
+        "ObjectPath": "/Game/Meta/Challenges/RewardData/CurveTables/CRV_Challenges_Curves_DestroySupplyCrate_Cash.0"
+      },
+      "Tag": {
+        "TagName": "LiveCurves.Challenges.SessionEvents.DestroySupplyCrate.Cash"
+      }
+    }
+  }
+}

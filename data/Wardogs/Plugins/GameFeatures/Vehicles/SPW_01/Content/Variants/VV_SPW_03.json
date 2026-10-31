@@ -1,0 +1,128 @@
+--- export: UPrimaryDataAsset / VV_SPW_03 ---
+{
+  "Type": "ModularVehicleVariant",
+  "Name": "VV_SPW_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehicleVariant'",
+  "Package": "/SPW_01/Variants/VV_SPW_03",
+  "Properties": {
+    "bIncludeInBuildCommandLine": true,
+    "VariantID": {
+      "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar"
+    },
+    "SpawnParams": {
+      "Min": {
+        "X": -371.11514,
+        "Y": -176.17609,
+        "Z": -0.007212889
+      },
+      "Max": {
+        "X": 385.6212,
+        "Y": 176.17601,
+        "Z": 406.32684
+      }
+    },
+    "bUseFixedBounds": true,
+    "FixedBounds": {
+      "Min": {
+        "X": -371.11514,
+        "Y": -176.17609,
+        "Z": -0.007212889
+      },
+      "Max": {
+        "X": 385.6212,
+        "Y": 176.17601,
+        "Z": 406.32684
+      }
+    },
+    "AssemblyData": {
+      "VehicleBase": {
+        "ObjectName": "ModularVehiclePlatform'VP_SPW'",
+        "ObjectPath": "/SPW_01/Platforms/VP_SPW.0"
+      },
+      "CustomData": {
+        "SlotOverrides": [
+          {
+            "Path": {
+              "Path": "Radar"
+            },
+            "Part": {
+              "AssetPathName": "/SPW_01/Parts/VP_SPW_Radar_Lonestar.VP_SPW_Radar_Lonestar",
+              "SubPathString": ""
+            }
+          }
+        ],
+        "CustomFragmentData": [
+          {
+            "Path": {
+              "Path": ":MainBody"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": [
+                {
+                  "Key": "4",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_03_Camo.MI_SPW_03_Camo",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "3",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_LightMetal.MI_SPW_LightMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "2",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_PaintedMetal_Parent.MI_SPW_PaintedMetal_Parent",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "1",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_DarkMetal.MI_SPW_DarkMetal",
+                    "SubPathString": ""
+                  }
+                },
+                {
+                  "Key": "0",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_03_Tracks.MI_SPW_03_Tracks",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "Path": {
+              "Path": ":Chassis"
+            },
+            "Data": {
+              "OverrideMesh": {
+                "AssetPathName": "",
+                "SubPathString": ""
+              },
+              "OverrideMaterials": [
+                {
+                  "Key": "1",
+                  "Value": {
+                    "AssetPathName": "/SPW_01/Materials/MI_SPW_03_Tracks.MI_SPW_03_Tracks",
+                    "SubPathString": ""
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

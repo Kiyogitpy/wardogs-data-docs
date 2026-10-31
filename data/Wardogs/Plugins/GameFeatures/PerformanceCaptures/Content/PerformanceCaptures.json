@@ -1,0 +1,44 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'PerformanceCaptures'",
+    "ObjectPath": "/PerformanceCaptures/PerformanceCaptures.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/PerformanceCaptures/B_PerformanceCaptureGameStateComponent.B_PerformanceCaptureGameStateComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / PerformanceCaptures ---
+{
+  "Type": "GameFeatureData",
+  "Name": "PerformanceCaptures",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/PerformanceCaptures/PerformanceCaptures",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'PerformanceCaptures:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/PerformanceCaptures/PerformanceCaptures.0"
+      }
+    ]
+  }
+}

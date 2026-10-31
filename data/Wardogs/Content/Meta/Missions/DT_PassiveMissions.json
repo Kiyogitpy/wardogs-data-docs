@@ -1,0 +1,124 @@
+--- export: UDataTable / DT_PassiveMissions ---
+{
+  "Type": "DataTable",
+  "Name": "DT_PassiveMissions",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Missions/DT_PassiveMissions",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDMissionDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Mission.Passive.EarnCash": {
+      "UnlockPrerequisite": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "Challenges": [
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.1"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.2"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.3"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.4"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnCash.5"
+        }
+      ],
+      "Context": [],
+      "DifficultyWeight": 1,
+      "Tag": {
+        "TagName": "Mission.Passive.EarnCash"
+      }
+    },
+    "Mission.Passive.EarnAnyRoleXp": {
+      "UnlockPrerequisite": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "Challenges": [
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.1"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.2"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.3"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.4"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.EarnRoleXp.5"
+        }
+      ],
+      "Context": [],
+      "DifficultyWeight": 1,
+      "Tag": {
+        "TagName": "Mission.Passive.EarnAnyRoleXp"
+      }
+    },
+    "Mission.Passive.TimePlayed": {
+      "UnlockPrerequisite": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "Challenges": [
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.1"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.2"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.3"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.4"
+        },
+        {
+          "TagName": "Challenges.Challenge.Mission.Passive.TimePlayed.5"
+        }
+      ],
+      "Context": [],
+      "DifficultyWeight": 1,
+      "Tag": {
+        "TagName": "Mission.Passive.TimePlayed"
+      }
+    }
+  }
+}

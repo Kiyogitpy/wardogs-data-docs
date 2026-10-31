@@ -1,0 +1,69 @@
+--- export: UObject / AEB_ActivateControlBusMix_C_0 ---
+{
+  "Type": "AEB_ActivateControlBusMix_C",
+  "Name": "AEB_ActivateControlBusMix_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_ActivateControlBusMix.AEB_ActivateControlBusMix_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Projectile_SignalLost'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_UI_Projectile_SignalLost.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_ActivateControlBusMix_C'Default__AEB_ActivateControlBusMix_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_ActivateControlBusMix.0"
+  },
+  "Properties": {
+    "Mix": {
+      "ObjectName": "SoundControlBusMix'AM_CBM_SignalLost'",
+      "ObjectPath": "/Game/Audio/AudioModulation/ControlBusMixes/AM_CBM_SignalLost.0"
+    },
+    "Local Only": false,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_UI_Projectile_SignalLost ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_Projectile_SignalLost",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_UI_Projectile_SignalLost",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.Projectile.SignalLost"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_Projectile_SignalLost:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_UI_Projectile_SignalLost.2"
+      },
+      {
+        "ObjectName": "AEB_ActivateControlBusMix_C'AE_UI_Projectile_SignalLost:AEB_ActivateControlBusMix_C_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_UI_Projectile_SignalLost.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_Projectile_SignalLost'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_UI_Projectile_SignalLost.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_Projectile_Drone_SignalLost'",
+      "ObjectPath": "/STN_05/Audio/MSS/MSS_UI_Projectile_Drone_SignalLost.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

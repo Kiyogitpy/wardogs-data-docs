@@ -1,0 +1,95 @@
+--- export: UObject / AEB_PlaySoundDelayed_C_0 ---
+{
+  "Type": "AEB_PlaySoundDelayed_C",
+  "Name": "AEB_PlaySoundDelayed_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlaySoundDelayed.AEB_PlaySoundDelayed_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Capture_Success'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlaySoundDelayed_C'Default__AEB_PlaySoundDelayed_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlaySoundDelayed.0"
+  },
+  "Properties": {
+    "PlaySound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_HotZoneMagnet_Code_Correct'",
+      "ObjectPath": "/Game/Audio/Gamemode/HotZoneMagnet/MSS/MSS_Gamemode_HotZoneMagnet_Code_Correct.0"
+    },
+    "Delay": 0.5,
+    "Sound Restart Behaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_PlaySoundDelayed_C_1 ---
+{
+  "Type": "AEB_PlaySoundDelayed_C",
+  "Name": "AEB_PlaySoundDelayed_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlaySoundDelayed.AEB_PlaySoundDelayed_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Capture_Success'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlaySoundDelayed_C'Default__AEB_PlaySoundDelayed_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlaySoundDelayed.0"
+  },
+  "Properties": {
+    "PlaySound": {
+      "ObjectName": "MetaSoundSource'MSS_Gamemode_HotZoneMagnet_Tower_Captured'",
+      "ObjectPath": "/Game/Audio/Gamemode/HotZoneMagnet/MSS/MSS_Gamemode_HotZoneMagnet_Tower_Captured.0"
+    },
+    "Delay": 2.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Gamemode_HotZoneMagnet_Capture_Success ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Gamemode_HotZoneMagnet_Capture_Success",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Gamemode.HotZoneMagnet.Capture.Success"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_Gamemode_HotZoneMagnet_Capture_Success:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.3"
+      },
+      {
+        "ObjectName": "AEB_PlaySoundDelayed_C'AE_Gamemode_HotZoneMagnet_Capture_Success:AEB_PlaySoundDelayed_C_1'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.1"
+      },
+      {
+        "ObjectName": "AEB_PlaySoundDelayed_C'AE_Gamemode_HotZoneMagnet_Capture_Success:AEB_PlaySoundDelayed_C_0'",
+        "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 360.0
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Gamemode_HotZoneMagnet_Capture_Success'",
+    "ObjectPath": "/HotZoneMagnet/Audio/Events/AE_Gamemode_HotZoneMagnet_Capture_Success.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

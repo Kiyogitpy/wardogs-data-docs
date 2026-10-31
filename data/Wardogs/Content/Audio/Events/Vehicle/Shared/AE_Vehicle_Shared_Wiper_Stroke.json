@@ -1,0 +1,80 @@
+--- export: UPrimaryDataAsset / AE_Vehicle_Shared_Wiper_Stroke ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Shared_Wiper_Stroke",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Wiper.Stroke"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorSetWiperParameters'AE_Vehicle_Shared_Wiper_Stroke:WDAudioEventBehaviorSetWiperParameters_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke.3"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Shared_Wiper_Stroke:WDAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Vehicle_Shared_Wiper_Stroke:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Wiper_Stroke'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Shared_Wipers'",
+      "ObjectPath": "/Game/Audio/Vehicles/Shared/Wipers/MSS/MSS_Vehicle_Shared_Wipers.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "WDAudioEventBehaviorAttachSoundToActor",
+  "Name": "WDAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Wiper_Stroke'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorSetWiperParameters_0 ---
+{
+  "Type": "WDAudioEventBehaviorSetWiperParameters",
+  "Name": "WDAudioEventBehaviorSetWiperParameters_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorSetWiperParameters'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Shared_Wiper_Stroke'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/AE_Vehicle_Shared_Wiper_Stroke.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

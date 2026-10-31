@@ -1,0 +1,65 @@
+--- export: UPrimaryDataAsset / AE_Weapon_IED_ReceiveCall ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_IED_ReceiveCall",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/IED/Audio/Events/AE_Weapon_IED_ReceiveCall",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.IED.ReceiveCall"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_IED_ReceiveCall:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_ReceiveCall.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_IED_ReceiveCall:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_ReceiveCall.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_IED_ReceiveCall'",
+    "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_ReceiveCall.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 15.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.IED.Deploy"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_IED_ReceiveCall'",
+    "ObjectPath": "/IED/Audio/Events/AE_Weapon_IED_ReceiveCall.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_IED_ReceiveCall'",
+      "ObjectPath": "/IED/Audio/MSS/MSS_Weapon_Throwable_IED_ReceiveCall.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.IED.Deploy"
+    }
+  }
+}

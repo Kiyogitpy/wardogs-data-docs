@@ -1,0 +1,65 @@
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Social_Yes'",
+    "ObjectPath": "/Game/Audio/Events/Comms/Social/AE_Comms_Social_Yes.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Social.Yes"
+      }
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Comms_Social_Yes ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Comms_Social_Yes",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Comms/Social/AE_Comms_Social_Yes",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Comms.Social.Yes"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Comms_Social_Yes:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/Social/AE_Comms_Social_Yes.2"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Comms_Social_Yes:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Comms/Social/AE_Comms_Social_Yes.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 80.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Comms_Social_Yes'",
+    "ObjectPath": "/Game/Audio/Events/Comms/Social/AE_Comms_Social_Yes.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

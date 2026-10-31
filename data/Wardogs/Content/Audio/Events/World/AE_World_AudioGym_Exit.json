@@ -1,0 +1,146 @@
+--- export: UObject / AEB_DiscardCachedMetasoundOperators_C_0 ---
+{
+  "Type": "AEB_DiscardCachedMetasoundOperators_C",
+  "Name": "AEB_DiscardCachedMetasoundOperators_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_DiscardCachedMetasoundOperators.AEB_DiscardCachedMetasoundOperators_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_AudioGym_Exit'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_DiscardCachedMetasoundOperators_C'Default__AEB_DiscardCachedMetasoundOperators_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_DiscardCachedMetasoundOperators.0"
+  },
+  "Properties": {
+    "MetasoundsToCache": [
+      {
+        "ObjectName": "MetaSoundSource'MSS_Footstep_MasterPreset'",
+        "ObjectPath": "/Game/Audio/Player/Movement/Footsteps/MSS/MSS_Footstep_MasterPreset.0"
+      },
+      {
+        "ObjectName": "MetaSoundSource'MSS_Weapon_Fire_3p_MasterPreset'",
+        "ObjectPath": "/Game/Audio/Weapon/Templates/MSS_Weapon_Fire_3p_MasterPreset.0"
+      }
+    ],
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / AEB_EndBehavior_C_0 ---
+{
+  "Type": "AEB_EndBehavior_C",
+  "Name": "AEB_EndBehavior_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EndBehavior.AEB_EndBehavior_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_AudioGym_Exit'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_EndBehavior_C'Default__AEB_EndBehavior_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EndBehavior.0"
+  },
+  "Properties": {
+    "BehaviorClass": {
+      "ObjectName": "BlueprintGeneratedClass'AEB_SetPhysicalExertionParameters_C'",
+      "ObjectPath": "/Game/Audio/Behaviours/AEB_SetPhysicalExertionParameters.1"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Character.Voice"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_World_AudioGym_Exit ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_World_AudioGym_Exit",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/World/AE_World_AudioGym_Exit",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.World.AudioGym.Exit"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_EndBehavior_C'AE_World_AudioGym_Exit:AEB_EndBehavior_C_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.1"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_World_AudioGym_Exit:WDAudioEventBehaviorDisableMusicState_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.3"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_World_AudioGym_Exit:WDAudioEventBehaviorDisableMusicState_1'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.4"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorDisableMusicState'AE_World_AudioGym_Exit:WDAudioEventBehaviorDisableMusicState_2'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.5"
+      },
+      {
+        "ObjectName": "AEB_DiscardCachedMetasoundOperators_C'AE_World_AudioGym_Exit:AEB_DiscardCachedMetasoundOperators_C_0'",
+        "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_0 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_AudioGym_Exit'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.2"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.Death"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_1 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_AudioGym_Exit'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.2"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.FirstSpawn"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorDisableMusicState_2 ---
+{
+  "Type": "WDAudioEventBehaviorDisableMusicState",
+  "Name": "WDAudioEventBehaviorDisableMusicState_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorDisableMusicState'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_World_AudioGym_Exit'",
+    "ObjectPath": "/Game/Audio/Events/World/AE_World_AudioGym_Exit.2"
+  },
+  "Properties": {
+    "StateToDisable": {
+      "TagName": "Audio.Music.Last10Points"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

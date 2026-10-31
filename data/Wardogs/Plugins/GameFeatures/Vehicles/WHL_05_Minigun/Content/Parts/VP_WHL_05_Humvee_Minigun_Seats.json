@@ -1,0 +1,42 @@
+--- export: UPrimaryDataAsset / VP_WHL_05_Humvee_Minigun_Seats ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_WHL_05_Humvee_Minigun_Seats",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/WHL_05_Minigun/Parts/VP_WHL_05_Humvee_Minigun_Seats",
+  "Properties": {
+    "Tags": [
+      "Vehicle.Seat"
+    ],
+    "Fragments": [
+      {
+        "Key": "Seats",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_Seats'VP_WHL_05_Humvee_Minigun_Seats:MVF_Seats_0'",
+            "ObjectPath": "/WHL_05_Minigun/Parts/VP_WHL_05_Humvee_Minigun_Seats.1"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_Seats_0 ---
+{
+  "Type": "MVF_Seats",
+  "Name": "MVF_Seats_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_Seats'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_WHL_05_Humvee_Minigun_Seats'",
+    "ObjectPath": "/WHL_05_Minigun/Parts/VP_WHL_05_Humvee_Minigun_Seats.0"
+  },
+  "Properties": {
+    "SeatSettingsDataAsset": {
+      "AssetPathName": "/WHL_05/Data/Minigun/DA_SeatSettings_WHL_05_Humvee_Minigun.DA_SeatSettings_WHL_05_Humvee_Minigun",
+      "SubPathString": ""
+    }
+  }
+}

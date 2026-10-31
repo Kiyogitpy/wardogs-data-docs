@@ -1,0 +1,155 @@
+--- export: UObject / WDFactoryInvestment_0 ---
+{
+  "Type": "WDFactoryInvestment",
+  "Name": "WDFactoryInvestment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDFactoryInvestment'",
+  "Outer": {
+    "ObjectName": "WDInvestmentDefinition'DA_FactoryInvestment_01'",
+    "ObjectPath": "/FactoryInvestment_01/Data/DA_FactoryInvestment_01.1"
+  },
+  "Properties": {
+    "ProductionLineSetup": [
+      {
+        "AvailableRecipes": [
+          "Id.Item.AK74M",
+          "Id.Item.M4"
+        ]
+      },
+      {
+        "AvailableRecipes": [
+          "Id.Item.Vector",
+          "Id.Item.MP9"
+        ]
+      },
+      {
+        "AvailableRecipes": [
+          "Id.Item.4xElcanSpectr",
+          "Id.Item.EotechHoloSight"
+        ]
+      }
+    ],
+    "UpgradeValues": [
+      {
+        "Key": {
+          "TagName": "Meta.Investment.Upgrade.Factory.ProductionLineOneQueueSize"
+        },
+        "Value": {
+          "Value": 1.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Factory_UpgradeValues'",
+              "ObjectPath": "/FactoryInvestment/Data/CT_Factory_UpgradeValues.0"
+            },
+            "RowName": "QueueSize"
+          },
+          "RegistryType": {
+            "Name": "None"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Investment.Upgrade.Factory.ProductionLineTwoQueueSize"
+        },
+        "Value": {
+          "Value": 1.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Factory_UpgradeValues'",
+              "ObjectPath": "/FactoryInvestment/Data/CT_Factory_UpgradeValues.0"
+            },
+            "RowName": "QueueSize"
+          },
+          "RegistryType": {
+            "Name": "None"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Investment.Upgrade.Factory.ProductionLineThreeQueueSize"
+        },
+        "Value": {
+          "Value": 1.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Factory_UpgradeValues'",
+              "ObjectPath": "/FactoryInvestment/Data/CT_Factory_UpgradeValues.0"
+            },
+            "RowName": "QueueSize"
+          },
+          "RegistryType": {
+            "Name": "None"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Meta.Investment.Upgrade.Factory.StorageSize"
+        },
+        "Value": {
+          "Value": 1.0,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Factory_UpgradeValues'",
+              "ObjectPath": "/FactoryInvestment/Data/CT_Factory_UpgradeValues.0"
+            },
+            "RowName": "StorageSize"
+          },
+          "RegistryType": {
+            "Name": "None"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / DA_FactoryInvestment_01 ---
+{
+  "Type": "WDInvestmentDefinition",
+  "Name": "DA_FactoryInvestment_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInvestmentDefinition'",
+  "Package": "/FactoryInvestment_01/Data/DA_FactoryInvestment_01",
+  "Properties": {
+    "ID": {
+      "TagName": "Id.Investment.Factory01"
+    },
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "A5EEC62A4D09BFE57D97E48A6F6F4FAF",
+      "SourceString": "Zaystev Foundry",
+      "LocalizedString": "Zaystev Foundry"
+    },
+    "Description": {
+      "Namespace": "",
+      "Key": "AB366EB14F6815C7FB149AA42CF075D9",
+      "SourceString": "The Zaystev Foundry is the most reliable and consistent Investment to get specific items from over the season and save cash.",
+      "LocalizedString": "The Zaystev Foundry is the most reliable and consistent Investment to get specific items from over the season and save cash."
+    },
+    "PurchaseCost": [
+      {
+        "Key": {
+          "TagName": "Attribute.Meta.Currency.Cash"
+        },
+        "Value": 200
+      }
+    ],
+    "Type": "EWDInvestmentType::Passive",
+    "MapIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_FullAuto_White_256.T_UI_Icon_FiringMode_FullAuto_White_256",
+      "SubPathString": ""
+    },
+    "TaggedIcons": {
+      "FallbackIcon": {
+        "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_FullAuto_White_256.T_UI_Icon_FiringMode_FullAuto_White_256",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeObject": {
+      "ObjectName": "WDFactoryInvestment'DA_FactoryInvestment_01:WDFactoryInvestment_0'",
+      "ObjectPath": "/FactoryInvestment_01/Data/DA_FactoryInvestment_01.0"
+    }
+  }
+}

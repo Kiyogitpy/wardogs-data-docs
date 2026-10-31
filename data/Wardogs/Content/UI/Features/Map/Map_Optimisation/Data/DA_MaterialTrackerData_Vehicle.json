@@ -1,0 +1,311 @@
+--- export: UDataAsset / DA_MaterialTrackerData_Vehicle ---
+{
+  "Type": "WDUIMaterialTrackerDataAsset",
+  "Name": "DA_MaterialTrackerData_Vehicle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIMaterialTrackerDataAsset'",
+  "Package": "/Game/UI/Features/Map/Map_Optimisation/Data/DA_MaterialTrackerData_Vehicle",
+  "Properties": {
+    "TooltipTag": {
+      "TagName": "UI.Tooltip.Data.TacticalMap.Vehicle"
+    },
+    "ToolTipsRange": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Acknowledge"
+        },
+        "Value": {
+          "ToolTipTitleText": {
+            "CultureInvariantString": null
+          },
+          "TooltipDescriptionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+            "Key": "Tooltip.Vehicle.RequestPickup",
+            "SourceString": "Request Pickup",
+            "LocalizedString": "Request Pickup"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Disacknowledged"
+        },
+        "Value": {
+          "ToolTipTitleText": {
+            "CultureInvariantString": null
+          },
+          "TooltipDescriptionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Map.STRINGS_Map",
+            "Key": "Tooltip.Vehicle.CancelPickUp",
+            "SourceString": "Cancel Request ",
+            "LocalizedString": "Cancel Request "
+          }
+        }
+      }
+    ],
+    "_aaaamlfganmpghjehfbhn": {
+      "MapIconIndex": 20
+    },
+    "_aaaanffeponpoffecgblf": [
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Havoc"
+        },
+        "Value": {
+          "MapIconIndex": 12,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_01"
+        },
+        "Value": {
+          "MapIconIndex": 13,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.ROT_04"
+        },
+        "Value": {
+          "MapIconIndex": 13,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Air.Rotary.Littlebird"
+        },
+        "Value": {
+          "MapIconIndex": 14,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.SpawnVehicle"
+        },
+        "Value": {
+          "MapIconIndex": 15,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir"
+        },
+        "Value": {
+          "MapIconIndex": 71,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+        },
+        "Value": {
+          "MapIconIndex": 16,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Heavy"
+        },
+        "Value": {
+          "MapIconIndex": 16,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_01.Light"
+        },
+        "Value": {
+          "MapIconIndex": 16,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat"
+        },
+        "Value": {
+          "MapIconIndex": 17,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 0.8,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy"
+        },
+        "Value": {
+          "MapIconIndex": 18,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Humvee"
+        },
+        "Value": {
+          "MapIconIndex": 19,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak"
+        },
+        "Value": {
+          "MapIconIndex": 20,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.Ural"
+        },
+        "Value": {
+          "MapIconIndex": 21,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Refueling"
+        },
+        "Value": {
+          "MapIconIndex": 6,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Repair"
+        },
+        "Value": {
+          "MapIconIndex": 8,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.GetIn"
+        },
+        "Value": {
+          "MapIconIndex": 10,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.GetOut"
+        },
+        "Value": {
+          "MapIconIndex": 11,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        "Value": {
+          "MapIconIndex": 7,
+          "_aaaaoknbmlkgjpplcemdi": true,
+          "IconScale": 0.75,
+          "_aaabbgkgoaobfbflmlika": 128
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Tracked.TNK_04.Default"
+        },
+        "Value": {
+          "MapIconIndex": 75,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.25,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08"
+        },
+        "Value": {
+          "MapIconIndex": 73,
+          "_aaaaoknbmlkgjpplcemdi": false,
+          "IconScale": 1.0,
+          "_aaabbgkgoaobfbflmlika": 0
+        }
+      }
+    ],
+    "ZoomScaleCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

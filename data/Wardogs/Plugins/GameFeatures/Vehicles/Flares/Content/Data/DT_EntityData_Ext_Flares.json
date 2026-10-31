@@ -1,0 +1,109 @@
+--- export: UDataTable / DT_EntityData_Ext_Flares ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_Ext_Flares",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Flares/Data/DT_EntityData_Ext_Flares",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.Flares": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_VehicleVendor_Stats.STRINGS_VehicleVendor_Stats",
+        "Key": "VehicleStats.Equipment.Flares",
+        "SourceString": "Flares",
+        "LocalizedString": "Flares"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+        "Key": "TooltipDescription.Countermeasure.Flares",
+        "SourceString": "- Anti-air countermeasure\r\n- Deploys 3x bursts of flares",
+        "LocalizedString": "- Anti-air countermeasure\r\n- Deploys 3x bursts of flares"
+      },
+      "Category": {
+        "TagName": "Vendor.Category.Vehicle.CounterMeasures"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.CounterMeasure",
+            "SourceString": "Countermeasure",
+            "LocalizedString": "Countermeasure"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipDescription.Countermeasure.Flares",
+            "SourceString": "- Anti-air countermeasure\r\n- Deploys 3x bursts of flares",
+            "LocalizedString": "- Anti-air countermeasure\r\n- Deploys 3x bursts of flares"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VendorTooltips_Vehicles.STRINGS_VendorTooltips_Vehicles",
+            "Key": "TooltipFlavor.Countermeasure.Flares",
+            "SourceString": "Designed to distract incoming heat-seeking missiles by creating a hotter infrared signature.",
+            "LocalizedString": "Designed to distract incoming heat-seeking missiles by creating a hotter infrared signature."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Flares/Textures/T_UI_Vehicle_Flares.T_UI_Vehicle_Flares",
+          "SubPathString": ""
+        },
+        "TaggedIcons": []
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.Flares"
+      }
+    }
+  }
+}

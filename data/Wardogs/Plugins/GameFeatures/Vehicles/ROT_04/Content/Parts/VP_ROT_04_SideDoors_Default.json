@@ -1,0 +1,97 @@
+--- export: UPrimaryDataAsset / VP_ROT_04_SideDoors_Default ---
+{
+  "Type": "ModularVehiclePart",
+  "Name": "VP_ROT_04_SideDoors_Default",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'ModularVehiclePart'",
+  "Package": "/ROT_04/Parts/VP_ROT_04_SideDoors_Default",
+  "Properties": {
+    "Tags": [
+      "Vehicle.ExtraDoors"
+    ],
+    "Fragments": [
+      {
+        "Key": "SideDoors",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_04_SideDoors_Default:MVF_StaticMesh_1'",
+            "ObjectPath": "/ROT_04/Parts/VP_ROT_04_SideDoors_Default.1"
+          }
+        }
+      },
+      {
+        "Key": "SideDoorsGlass",
+        "Value": {
+          "bEnabled": true,
+          "Fragment": {
+            "ObjectName": "MVF_StaticMesh'VP_ROT_04_SideDoors_Default:MVF_StaticMesh_3'",
+            "ObjectPath": "/ROT_04/Parts/VP_ROT_04_SideDoors_Default.2"
+          }
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / MVF_StaticMesh_1 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_SideDoors_Default'",
+    "ObjectPath": "/ROT_04/Parts/VP_ROT_04_SideDoors_Default.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "body_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_04/Meshes/SM_ROT_04_GunnerDoors_Closed.SM_ROT_04_GunnerDoors_Closed",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Increase"
+    }
+  }
+}
+--- export: UObject / MVF_StaticMesh_3 ---
+{
+  "Type": "MVF_StaticMesh",
+  "Name": "MVF_StaticMesh_3",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVF_StaticMesh'",
+  "Outer": {
+    "ObjectName": "ModularVehiclePart'VP_ROT_04_SideDoors_Default'",
+    "ObjectPath": "/ROT_04/Parts/VP_ROT_04_SideDoors_Default.0"
+  },
+  "Properties": {
+    "ComponentSettings": {
+      "AttachQuery": {
+        "SourceId": "Chassis",
+        "SocketName": "body_J"
+      }
+    },
+    "StaticMesh": {
+      "AssetPathName": "/ROT_04/Meshes/SM_ROT_04_GunnerGlass_Closed.SM_ROT_04_GunnerGlass_Closed",
+      "SubPathString": ""
+    },
+    "CollisionProfile": {
+      "Settings": {
+        "Type": "EModularVehicleCollisionType::MVCT_QueryProxy"
+      }
+    },
+    "WalkableSlopeOverride": {
+      "WalkableSlopeBehavior": "EWalkableSlopeBehavior::WalkableSlope_Increase"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+--- export: UDataAsset / DA_VoiceChatRemoteSpeaker ---
+{
+  "Type": "WDUIVoiceChatSpeakerData",
+  "Name": "DA_VoiceChatRemoteSpeaker",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVoiceChatSpeakerData'",
+  "Package": "/Game/UI/Features/HUD/VoiceChat/Data/DA_VoiceChatRemoteSpeaker",
+  "Properties": {
+    "VoiceRecognitionActiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_VOIP_Squad_64x64.T_UI_Icon_VOIP_Squad_64x64",
+      "SubPathString": ""
+    },
+    "VoiceRecognitionInactiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_VOIP_Inactive_64x64.T_UI_Icon_VOIP_Inactive_64x64",
+      "SubPathString": ""
+    },
+    "LoudSpeakerVoiceRecognitionActiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_Loudspeaker.T_UI_Icon_Loudspeaker",
+      "SubPathString": ""
+    },
+    "LoudSpeakerVoiceRecognitionInactiveIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_Loudspeaker_Inactive.T_UI_Icon_Loudspeaker_Inactive",
+      "SubPathString": ""
+    },
+    "ChannelIcons": [
+      {
+        "Key": "EWDChannelType::Squad",
+        "Value": {
+          "Color": {
+            "R": 0.610496,
+            "G": 0.376262,
+            "B": 0.025187,
+            "A": 1.0,
+            "Hex": "CDA52C"
+          },
+          "Icon": {
+            "AssetPathName": "/Game/UI/Features/HUD/SpatialTrackers/Widgets/Trackers/Textures/T_UI_SquadMarker_Icon.T_UI_SquadMarker_Icon",
+            "SubPathString": ""
+          }
+        }
+      },
+      {
+        "Key": "EWDChannelType::Proximity",
+        "Value": {
+          "Color": {
+            "R": 1.0,
+            "G": 1.0,
+            "B": 1.0,
+            "A": 1.0,
+            "Hex": "FFFFFF"
+          },
+          "Icon": {
+            "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/T_UI_Icon_VOIP_Proximity_64x64.T_UI_Icon_VOIP_Proximity_64x64",
+            "SubPathString": ""
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+--- export: UDataAsset / DA_Tracker_Minimap_AssistanceRequestPing ---
+{
+  "Type": "WDUIAssistanceRequestMapTrackerData",
+  "Name": "DA_Tracker_Minimap_AssistanceRequestPing",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIAssistanceRequestMapTrackerData'",
+  "Package": "/Game/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_AssistanceRequestPing",
+  "Properties": {
+    "AssistanceRequestTextures": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "Texture": {
+            "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_DropOff_Request_Icon.T_UI_DropOff_Request_Icon",
+            "SubPathString": ""
+          },
+          "Scale": 1.0
+        }
+      }
+    ],
+    "PingTypeColors": [
+      {
+        "Key": {
+          "TagName": "Communication.AssistanceRequest.Dropoff"
+        },
+        "Value": {
+          "R": 1.0,
+          "G": 1.0,
+          "B": 1.0,
+          "A": 1.0,
+          "Hex": "FFFFFF"
+        }
+      }
+    ],
+    "TrackerExceptions": [
+      "Communication.AssistanceRequest.Dropoff"
+    ],
+    "bDisplayText": false,
+    "ZOrder": 40,
+    "DefaultSize": {
+      "X": 16.0,
+      "Y": 16.0
+    }
+  }
+}

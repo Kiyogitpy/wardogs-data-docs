@@ -1,0 +1,31 @@
+--- export: UDataAsset / IA_UI_Scoreboard ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_UI_Scoreboard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Scoreboard",
+  "Properties": {
+    "InputTag": {
+      "TagName": "UI.Action.Feature.Scoreboard.ToggleScene"
+    },
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_UI_Scoreboard:InputTriggerPressed_1'",
+        "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Scoreboard.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_1 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_UI_Scoreboard'",
+    "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_UI_Scoreboard.0"
+  }
+}

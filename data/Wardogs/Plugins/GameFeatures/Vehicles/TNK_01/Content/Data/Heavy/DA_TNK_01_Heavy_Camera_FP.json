@@ -1,0 +1,47 @@
+--- export: UDataAsset / DA_TNK_01_Heavy_Camera_FP ---
+{
+  "Type": "MVehicleSpringArmDataAsset",
+  "Name": "DA_TNK_01_Heavy_Camera_FP",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MVehicleSpringArmDataAsset'",
+  "Package": "/TNK_01/Data/Heavy/DA_TNK_01_Heavy_Camera_FP",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Value": -35.0
+      },
+      "UpperBound": {
+        "Value": 35.0
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -27.5
+      },
+      "UpperBound": {
+        "Value": 30.0
+      }
+    },
+    "SocketOffset": {
+      "X": 302.05957,
+      "Y": 60.0,
+      "Z": 159.96864
+    },
+    "bClampToMaxPhysicsDeltaTime": true,
+    "CameraLagSpeed": 12.0,
+    "CameraRotationLagSpeed": 8.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      },
+      "FirstPersonLagSettings": {
+        "EnableLagInYaw": true,
+        "LagSpeedInYaw": 8.0,
+        "EnableLagInPitch": true,
+        "LagSpeedInPitch": 2.0,
+        "EnableLagInRoll": true,
+        "LagSpeedInRoll": 2.0
+      }
+    }
+  }
+}

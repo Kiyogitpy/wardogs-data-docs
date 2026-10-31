@@ -1,0 +1,141 @@
+--- export: UDataAsset / DA_Tutorials_Loadout_TabData ---
+{
+  "Type": "WDUITabData",
+  "Name": "DA_Tutorials_Loadout_TabData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITabData'",
+  "Package": "/Game/UI/Features/Frontend/LearnToPlay/Data/ContentSceneData/TabData/BuyingYourLoadout/DA_Tutorials_Loadout_TabData",
+  "Properties": {
+    "TabContentArray": [
+      {
+        "ButtonParameters": {
+          "Tag": {
+            "TagName": "Tutorials.Content.Tab.1"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/Features/Frontend/LearnToPlay/StringTables/STRINGS_Tutorials_BuyingYourLoadout.STRINGS_Tutorials_BuyingYourLoadout",
+            "Key": "Tut.BuyingYourLoadout.Header.Vendors",
+            "SourceString": "Vendors",
+            "LocalizedString": "Vendors"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        "WidgetParams": {
+          "WidgetClass": {
+            "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Widgets/W_TutorialsContent.W_TutorialsContent_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUITutorialsContentViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Data/ContentSceneData/TabData/BuyingYourLoadout/ContentTabData/DA_Tutorials_Vendors.DA_Tutorials_Vendors",
+              "SubPathString": ""
+            }
+          }
+        }
+      },
+      {
+        "ButtonParameters": {
+          "Tag": {
+            "TagName": "Tutorials.Content.Tab.2"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/Features/Frontend/LearnToPlay/StringTables/STRINGS_Tutorials_BuyingYourLoadout.STRINGS_Tutorials_BuyingYourLoadout",
+            "Key": "Tut.BuyingYourLoadout.Header.Weapons",
+            "SourceString": "Weapons",
+            "LocalizedString": "Weapons"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        "WidgetParams": {
+          "WidgetClass": {
+            "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Widgets/W_TutorialsContent.W_TutorialsContent_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUITutorialsContentViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Data/ContentSceneData/TabData/BuyingYourLoadout/ContentTabData/DA_Tutorials_PurchasingWeapons.DA_Tutorials_PurchasingWeapons",
+              "SubPathString": ""
+            }
+          }
+        }
+      },
+      {
+        "ButtonParameters": {
+          "Tag": {
+            "TagName": "Tutorials.Content.Tab.3"
+          },
+          "OverrideButtonClass": null,
+          "Action": null,
+          "Text": {
+            "TableId": "/Game/UI/Features/Frontend/LearnToPlay/StringTables/STRINGS_Tutorials_BuyingYourLoadout.STRINGS_Tutorials_BuyingYourLoadout",
+            "Key": "Tut.BuyingYourLoadout.Header.Gear",
+            "SourceString": "Gear",
+            "LocalizedString": "Gear"
+          },
+          "MinimumSize": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Icon": {
+            "AssetPathName": "",
+            "SubPathString": ""
+          },
+          "bDisabled": false,
+          "DisabledReason": {
+            "CultureInvariantString": null
+          }
+        },
+        "WidgetParams": {
+          "WidgetClass": {
+            "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Widgets/W_TutorialsContent.W_TutorialsContent_C",
+            "SubPathString": ""
+          },
+          "ViewModelParams": {
+            "ViewModelClass": {
+              "AssetPathName": "/Script/WDGame.WDUITutorialsContentViewModel",
+              "SubPathString": ""
+            },
+            "Data": {
+              "AssetPathName": "/Game/UI/Features/Frontend/LearnToPlay/Data/ContentSceneData/TabData/BuyingYourLoadout/ContentTabData/DA_Tutorials_PurchasingGearAndUtility.DA_Tutorials_PurchasingGearAndUtility",
+              "SubPathString": ""
+            }
+          }
+        }
+      }
+    ]
+  }
+}

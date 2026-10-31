@@ -1,0 +1,62 @@
+--- export: UObject / AEB_PlayHelicopterDestroyCrashSound_C_0 ---
+{
+  "Type": "AEB_PlayHelicopterDestroyCrashSound_C",
+  "Name": "AEB_PlayHelicopterDestroyCrashSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/VehicleAEBs/AEB_PlayHelicopterDestroyCrashSound.AEB_PlayHelicopterDestroyCrashSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_ROT_Destroyed_Crash'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroyed_Crash.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayHelicopterDestroyCrashSound_C'Default__AEB_PlayHelicopterDestroyCrashSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/VehicleAEBs/AEB_PlayHelicopterDestroyCrashSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Destroy.Crash"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_ROT_Destroyed_Crash ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_ROT_Destroyed_Crash",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroyed_Crash",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Destroy.Crash.ROT_03"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayHelicopterDestroyCrashSound_C'AE_Vehicle_ROT_Destroyed_Crash:AEB_PlayHelicopterDestroyCrashSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroyed_Crash.0"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorApplyImpulseResonance'AE_Vehicle_ROT_Destroyed_Crash:WDAudioEventBehaviorApplyImpulseResonance_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroyed_Crash.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorApplyImpulseResonance_0 ---
+{
+  "Type": "WDAudioEventBehaviorApplyImpulseResonance",
+  "Name": "WDAudioEventBehaviorApplyImpulseResonance_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorApplyImpulseResonance'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_ROT_Destroyed_Crash'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroyed_Crash.1"
+  },
+  "Properties": {
+    "DefaultResonanceRange": 2500.0,
+    "bSuppressImpulseOnMissingIdProperties": false,
+    "CollisionChannel": "ECollisionChannel::ECC_GameTraceChannel12",
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Impact"
+    }
+  }
+}

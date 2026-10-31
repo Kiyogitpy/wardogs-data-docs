@@ -1,0 +1,920 @@
+--- export: UDataTable / DT_EntityData_UI_Ext_SmokeGrenade ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_UI_Ext_SmokeGrenade",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SmokeGrenade/Data/DT_EntityData_UI_Ext_SmokeGrenade",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "ID.Item.SmokeGrenade.Yellow": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Yellow",
+        "SourceString": "M18  Signal Grenade: Alert",
+        "LocalizedString": "M18  Signal Grenade: Alert"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Yellow.Description",
+        "SourceString": "- Emits a Column of Yellow Smoke\r\n- Adds an Alert Marker to the Map",
+        "LocalizedString": "- Emits a Column of Yellow Smoke\r\n- Adds an Alert Marker to the Map"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Tactical",
+            "SourceString": "Tactical // Quick Slot",
+            "LocalizedString": "Tactical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Yellow.Description",
+            "SourceString": "- Emits a Column of Yellow Smoke\r\n- Adds an Alert Marker to the Map",
+            "LocalizedString": "- Emits a Column of Yellow Smoke\r\n- Adds an Alert Marker to the Map"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Yellow.Flavor",
+            "SourceString": "Provides a thick streak of smoke to designate generic or pre-arranged signals.",
+            "LocalizedString": "Provides a thick streak of smoke to designate generic or pre-arranged signals."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Yellow_512x512.T_UI_Icon_Utility_Smoke_Textured_Yellow_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Yellow_512x512.T_UI_Icon_Utility_Smoke_Textured_Yellow_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Yellow"
+      }
+    },
+    "ID.Item.SmokeGrenade.White": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade",
+        "SourceString": "M18 Smoke Grenade: White",
+        "LocalizedString": "M18 Smoke Grenade: White"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Description",
+        "SourceString": "- Emits a cloud of White Smoke",
+        "LocalizedString": "- Emits a cloud of White Smoke"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Tactical",
+            "SourceString": "Tactical // Quick Slot",
+            "LocalizedString": "Tactical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Description",
+            "SourceString": "- Emits a cloud of White Smoke",
+            "LocalizedString": "- Emits a cloud of White Smoke"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Flavor",
+            "SourceString": "Provides a thick cloud of smoke to conceal vehicle or troop movement.",
+            "LocalizedString": "Provides a thick cloud of smoke to conceal vehicle or troop movement."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_512x512_TEMP.T_UI_Icon_Utility_Smoke_Textured_512x512_TEMP",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_512x512_TEMP.T_UI_Icon_Utility_Smoke_Textured_512x512_TEMP",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.White"
+      }
+    },
+    "ID.Item.SmokeGrenade.Red": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Red",
+        "SourceString": "M18  Signal Grenade: Hostile",
+        "LocalizedString": "M18  Signal Grenade: Hostile"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Red.Description",
+        "SourceString": "- Emits a Column of Red Smoke\r\n- Adds a Hostile Marker to the Map",
+        "LocalizedString": "- Emits a Column of Red Smoke\r\n- Adds a Hostile Marker to the Map"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Tactical",
+            "SourceString": "Tactical // Quick Slot",
+            "LocalizedString": "Tactical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Red.Description",
+            "SourceString": "- Emits a Column of Red Smoke\r\n- Adds a Hostile Marker to the Map",
+            "LocalizedString": "- Emits a Column of Red Smoke\r\n- Adds a Hostile Marker to the Map"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Red.Flavor",
+            "SourceString": "Provides a thick streak of smoke to mark Enemy locations.",
+            "LocalizedString": "Provides a thick streak of smoke to mark Enemy locations."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Red_512x512.T_UI_Icon_Utility_Smoke_Textured_Red_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Red_512x512.T_UI_Icon_Utility_Smoke_Textured_Red_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Red"
+      }
+    },
+    "ID.Item.SmokeGrenade.Blue": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Blue",
+        "SourceString": "M18  Signal Grenade: Friendly",
+        "LocalizedString": "M18  Signal Grenade: Friendly"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Blue.Description",
+        "SourceString": "- Emits a Column of Blue Smoke\r\n- Adds a Friendly Marker to the Map",
+        "LocalizedString": "- Emits a Column of Blue Smoke\r\n- Adds a Friendly Marker to the Map"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Tactical",
+            "SourceString": "Tactical // Quick Slot",
+            "LocalizedString": "Tactical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Blue.Description",
+            "SourceString": "- Emits a Column of Blue Smoke\r\n- Adds a Friendly Marker to the Map",
+            "LocalizedString": "- Emits a Column of Blue Smoke\r\n- Adds a Friendly Marker to the Map"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Blue.Flavor",
+            "SourceString": "Provides a thick streak of smoke to mark Friendly positions.",
+            "LocalizedString": "Provides a thick streak of smoke to mark Friendly positions."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Blue_512x512.T_UI_Icon_Utility_Smoke_Textured_Blue_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Blue_512x512.T_UI_Icon_Utility_Smoke_Textured_Blue_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Blue"
+      }
+    },
+    "ID.Item.SmokeGrenade.Green": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Green",
+        "SourceString": "M18  Signal Grenade: Supply Request",
+        "LocalizedString": "M18  Signal Grenade: Supply Request"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Green.Description",
+        "SourceString": "- Emits a Column of Green Smoke\r\n- Adds a Supply Request Marker to the Map",
+        "LocalizedString": "- Emits a Column of Green Smoke\r\n- Adds a Supply Request Marker to the Map"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Logistics",
+            "SourceString": "Logistics // Quick Slot",
+            "LocalizedString": "Logistics // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Green.Description",
+            "SourceString": "- Emits a Column of Green Smoke\r\n- Adds a Supply Request Marker to the Map",
+            "LocalizedString": "- Emits a Column of Green Smoke\r\n- Adds a Supply Request Marker to the Map"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Green.Flavor",
+            "SourceString": "Provides a thick streak of Green smoke to designate the location for a Logistics Supply Drop.",
+            "LocalizedString": "Provides a thick streak of Green smoke to designate the location for a Logistics Supply Drop."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Green_512x512.T_UI_Icon_Utility_Smoke_Textured_Green_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Green_512x512.T_UI_Icon_Utility_Smoke_Textured_Green_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Green"
+      }
+    },
+    "ID.Item.SmokeGrenade.Black": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Black",
+        "SourceString": "M18 Smoke Grenade: Black",
+        "LocalizedString": "M18 Smoke Grenade: Black"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Black.Description",
+        "SourceString": "- Emits a cloud of Black Smoke",
+        "LocalizedString": "- Emits a cloud of Black Smoke"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Tactical",
+            "SourceString": "Tactical // Quick Slot",
+            "LocalizedString": "Tactical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Black.Description",
+            "SourceString": "- Emits a cloud of Black Smoke",
+            "LocalizedString": "- Emits a cloud of Black Smoke"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Black.Flavor",
+            "SourceString": "Provides a thick cloud of smoke to conceal vehicle or troop movement. \"Dirty smoke\".",
+            "LocalizedString": "Provides a thick cloud of smoke to conceal vehicle or troop movement. \"Dirty smoke\"."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Black_512x512.T_UI_Icon_Utility_Smoke_Textured_Black_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Black_512x512.T_UI_Icon_Utility_Smoke_Textured_Black_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Black"
+      }
+    },
+    "ID.Item.SmokeGrenade.Purple": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Purple",
+        "SourceString": "M18  Signal Grenade: Landing Zone",
+        "LocalizedString": "M18  Signal Grenade: Landing Zone"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Purple.Description",
+        "SourceString": "- Emits a Column of Purple Smoke\r\n- Adds a Landing Zone Marker to the Map",
+        "LocalizedString": "- Emits a Column of Purple Smoke\r\n- Adds a Landing Zone Marker to the Map"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Logistics",
+            "SourceString": "Logistics // Quick Slot",
+            "LocalizedString": "Logistics // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Purple.Description",
+            "SourceString": "- Emits a Column of Purple Smoke\r\n- Adds a Landing Zone Marker to the Map",
+            "LocalizedString": "- Emits a Column of Purple Smoke\r\n- Adds a Landing Zone Marker to the Map"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Purple.Flavor",
+            "SourceString": "Provides a thick streak of smoke to designate a Landing Zone for Aircrafts.",
+            "LocalizedString": "Provides a thick streak of smoke to designate a Landing Zone for Aircrafts."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_POurple_512x512.T_UI_Icon_Utility_Smoke_Textured_POurple_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_POurple_512x512.T_UI_Icon_Utility_Smoke_Textured_POurple_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Purple"
+      }
+    },
+    "ID.Item.SmokeGrenade.Orange": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Orange",
+        "SourceString": "M18  Signal Grenade: Damaged Vehicle",
+        "LocalizedString": "M18  Signal Grenade: Damaged Vehicle"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+        "Key": "Items.Throwable.SmokeGrenade.Orange.Description",
+        "SourceString": "- Emits a Column of Orange Smoke\r\n- Adds a Damaged vehicle Marker to the Map",
+        "LocalizedString": "- Emits a Column of Orange Smoke\r\n- Adds a Damaged vehicle Marker to the Map"
+      },
+      "Category": {
+        "TagName": "None"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory.QuickAccess"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.QuickAccess"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.QuickSlot.Tactical",
+            "SourceString": "Tactical // Quick Slot",
+            "LocalizedString": "Tactical // Quick Slot"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Orange.Description",
+            "SourceString": "- Emits a Column of Orange Smoke\r\n- Adds a Damaged vehicle Marker to the Map",
+            "LocalizedString": "- Emits a Column of Orange Smoke\r\n- Adds a Damaged vehicle Marker to the Map"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Throwables.STRINGS_Items_Throwables",
+            "Key": "Items.Throwable.SmokeGrenade.Orange.Flavor",
+            "SourceString": "Provides a thick streak of smoke to mark a vehicle in need of repairs.",
+            "LocalizedString": "Provides a thick streak of smoke to mark a vehicle in need of repairs."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Orange_512x512.T_UI_Icon_Utility_Smoke_Textured_Orange_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Icon_Utility_Smoke_Textured_Orange_512x512.T_UI_Icon_Utility_Smoke_Textured_Orange_512x512",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "ID.Item.SmokeGrenade.Orange"
+      }
+    }
+  }
+}

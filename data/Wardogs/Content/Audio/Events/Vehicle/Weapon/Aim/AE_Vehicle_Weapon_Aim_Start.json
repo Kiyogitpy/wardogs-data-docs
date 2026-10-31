@@ -1,0 +1,81 @@
+--- export: UObject / AEB_PlayVehicleWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayVehicleWeaponPerspectiveSound_C",
+  "Name": "AEB_PlayVehicleWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.AEB_PlayVehicleWeaponPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Aim_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'Default__AEB_PlayVehicleWeaponPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Vehicle.Weapon.Aim.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Vehicle.Weapon.Aim.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Aim"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Aim_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Aim_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.Aim"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Vehicle_Weapon_Aim_Start:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorSetVehicleWeaponAim'AE_Vehicle_Weapon_Aim_Start:WDAudioEventBehaviorSetVehicleWeaponAim_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start.3"
+      },
+      {
+        "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'AE_Vehicle_Weapon_Aim_Start:AEB_PlayVehicleWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Aim_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start.1"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Weapon.Aim"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorSetVehicleWeaponAim_0 ---
+{
+  "Type": "WDAudioEventBehaviorSetVehicleWeaponAim",
+  "Name": "WDAudioEventBehaviorSetVehicleWeaponAim_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorSetVehicleWeaponAim'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Aim_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Aim/AE_Vehicle_Weapon_Aim_Start.1"
+  }
+}

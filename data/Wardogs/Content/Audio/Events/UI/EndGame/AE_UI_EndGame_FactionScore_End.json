@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_UI_EndGame_FactionScore_End ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_EndGame_FactionScore_End",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_FactionScore_End",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.EndGame.FactionScore.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_UI_EndGame_FactionScore_End:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_FactionScore_End.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_EndGame_FactionScore_End'",
+    "ObjectPath": "/Game/Audio/Events/UI/EndGame/AE_UI_EndGame_FactionScore_End.0"
+  },
+  "Properties": {
+    "FadeOut": 0.1,
+    "ContextTag": {
+      "TagName": "Audio.Context.UI.EndGame.FactionScore"
+    }
+  }
+}

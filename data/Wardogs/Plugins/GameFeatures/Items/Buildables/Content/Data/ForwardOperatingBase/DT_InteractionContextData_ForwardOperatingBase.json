@@ -1,0 +1,204 @@
+--- export: UDataTable / DT_InteractionContextData_ForwardOperatingBase ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData_ForwardOperatingBase",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables/Data/ForwardOperatingBase/DT_InteractionContextData_ForwardOperatingBase",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.Buildables.Fob.Access": {
+      "OutcomeText": {
+        "CultureInvariantString": "F.O.B"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Door.Open",
+            "SourceString": "OPEN",
+            "LocalizedString": "OPEN"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Fob.Access"
+      }
+    },
+    "Interaction.Context.Buildables.HotZoneMagnet.Activate": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.FOB.Activate.Drill",
+        "SourceString": "Buildable Drill",
+        "LocalizedString": "Buildable Drill"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.BuildableDrill.Activate",
+            "SourceString": "ACTIVATE",
+            "LocalizedString": "ACTIVATE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.BuildableDrill.Activate",
+            "SourceString": "ACTIVATE",
+            "LocalizedString": "ACTIVATE"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "TableId": "/Buildables/Data/STRINGS_BuildableDescriptions.STRINGS_BuildableDescriptions",
+            "Key": "Interaction.Context.Buildables.HotZoneMagnet.Activate.InteractionContextActionConditionData.RequiresFuel.NotifyText",
+            "SourceString": null,
+            "LocalizedString": ""
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.HotZoneMagnet.Activate"
+      }
+    },
+    "Interaction.Context.Buildables.HotZoneMagnet.Fuel": {
+      "OutcomeText": {
+        "CultureInvariantString": null
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Fuel.Add",
+            "SourceString": "REFUEL",
+            "LocalizedString": "REFUEL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.Vehicle.Fuel.Add",
+            "SourceString": "REFUEL",
+            "LocalizedString": "REFUEL"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": {
+            "ObjectName": "Texture2D'T_UI_IntelIcon'",
+            "ObjectPath": "/Game/UI/Features/Popups/Widgets/Textures/T_UI_IntelIcon.0"
+          },
+          "NotifyText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Vehicle.Fuel.Add.NotifyText",
+            "SourceString": "(Equip a fuel can)",
+            "LocalizedString": "(Equip a fuel can)"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.HotZoneMagnet.Fuel"
+      }
+    },
+    "Interaction.Context.Buildables.Fob.Hacking": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.FOB.Hacking",
+        "SourceString": "Hack",
+        "LocalizedString": "Hack"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "CultureInvariantString": "F.O.B"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.ContextualFail"
+          },
+          "IdentifierTag": {
+            "TagName": "Interaction.Context.State.Identifier.Occupied"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+            "Key": "Interaction.Context.Buildables.HackInProgress",
+            "SourceString": "Hack In Progress",
+            "LocalizedString": "Hack In Progress"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Buildables.Fob.Hacking"
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+--- export: UObject / AEB_PlayVehicleWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayVehicleWeaponPerspectiveSound_C",
+  "Name": "AEB_PlayVehicleWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.AEB_PlayVehicleWeaponPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_PreFire_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'Default__AEB_PlayVehicleWeaponPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Vehicle.Weapon.PreFire.1P"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Vehicle.Weapon.PreFire.3P"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.PreFire"
+    },
+    "ConcurrentInstanceLimit": 1
+  }
+}
+--- export: UObject / AEB_VehicleWeaponPreFireParameters_C_0 ---
+{
+  "Type": "AEB_VehicleWeaponPreFireParameters_C",
+  "Name": "AEB_VehicleWeaponPreFireParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehicleWeaponPreFireParameters.AEB_VehicleWeaponPreFireParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_PreFire_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehicleWeaponPreFireParameters_C'Default__AEB_VehicleWeaponPreFireParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehicleWeaponPreFireParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.PreFire"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_PreFire_Start ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_PreFire_Start",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.StartPreFire"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'AE_Vehicle_Weapon_PreFire_Start:AEB_PlayVehicleWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start.0"
+      },
+      {
+        "ObjectName": "AEB_VehicleWeaponPreFireParameters_C'AE_Vehicle_Weapon_PreFire_Start:AEB_VehicleWeaponPreFireParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Weapon_PreFire_Start:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start.3"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_PreFire_Start'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_PreFire_Start.2"
+  },
+  "Properties": {
+    "ParameterName": "StartPreFire",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.PreFire"
+    }
+  }
+}

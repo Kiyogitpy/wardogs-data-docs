@@ -1,0 +1,50 @@
+--- export: UDataAsset / DA_GameModeStatus ---
+{
+  "Type": "WDUIGameModeStatusData",
+  "Name": "DA_GameModeStatus",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGameModeStatusData'",
+  "Package": "/ControlZone/UI/GameModeStatus/Data/DA_GameModeStatus",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ControlZoneRuntime.WDUIGameModeStatusEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/ControlZone/UI/GameModeStatus/Widgets/Entry/Data/DA_GameModeStatusEntry.DA_GameModeStatusEntry",
+        "SubPathString": ""
+      }
+    },
+    "ControlledStateTexts": [
+      {
+        "Key": "EWDControlledState::Contested",
+        "Value": {
+          "TableId": "/ControlZone/UI/STRINGS_ControlZone.STRINGS_ControlZone",
+          "Key": "ControlZone.HUD.GameModeStatus.State.Contested",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EWDControlledState::Controlled",
+        "Value": {
+          "TableId": "/ControlZone/UI/STRINGS_ControlZone.STRINGS_ControlZone",
+          "Key": "ControlZone.HUD.GameModeStatus.State.Controlled",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ],
+    "ControlledStateTextFormat": {
+      "CultureInvariantString": "{State} {Faction}"
+    },
+    "WaitingToStartText": {
+      "TableId": "/ControlZone/UI/STRINGS_ControlZone.STRINGS_ControlZone",
+      "Key": "ControlZone.HUD.GameModeStatus.State.WaitingToStart",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "WaitingToStartOpacity": 0.7
+  }
+}

@@ -1,0 +1,60 @@
+--- export: UDataAsset / DA_Tracker_Minimap_Vendor ---
+{
+  "Type": "WDUIVendorMapTrackerData",
+  "Name": "DA_Tracker_Minimap_Vendor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVendorMapTrackerData'",
+  "Package": "/Game/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DA_Tracker_Minimap_Vendor",
+  "Properties": {
+    "VendorTextures": [
+      {
+        "Key": {
+          "TagName": "Vendor.Type.Equipment"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_TacMap_WeaponVendor.T_UI_TacMap_WeaponVendor",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Vendor.Type.Vehicle"
+        },
+        "Value": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Trackers/T_UI_TacMap_GarageVendor.T_UI_TacMap_GarageVendor",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "bDisplayText": false,
+    "ZoomScaleCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "ZOrder": 20
+  }
+}

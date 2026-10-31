@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_Popup_SeasonRewards ---
+{
+  "Type": "WDUISeasonRewardsPopupData",
+  "Name": "DA_Popup_SeasonRewards",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUISeasonRewardsPopupData'",
+  "Package": "/Game/UI/Features/Popups/Widgets/Custom/Data/DA_Popup_SeasonRewards",
+  "Properties": {
+    "RoleLevelViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleLevelViewModel",
+        "SubPathString": ""
+      }
+    },
+    "TitleFormat": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+      "Key": "Title.SeasonRewards",
+      "SourceString": "SEASON {SeasonName}",
+      "LocalizedString": "SEASON {SeasonName}"
+    },
+    "Options": [
+      {
+        "Key": "EWDPopupOption::Left",
+        "Value": {
+          "ButtonText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Button.Continue",
+            "SourceString": "Continue",
+            "LocalizedString": "Continue"
+          },
+          "bAutoCloseOnSelected": true,
+          "bAutoFocusOnOpen": true,
+          "ButtonTypeOverride": {
+            "TagName": "None"
+          },
+          "ButtonConfig": null,
+          "bCallOnSceneEscape": false
+        }
+      }
+    ]
+  }
+}

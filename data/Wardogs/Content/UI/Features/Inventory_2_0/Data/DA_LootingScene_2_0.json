@@ -1,0 +1,42 @@
+--- export: UDataAsset / DA_LootingScene_2_0 ---
+{
+  "Type": "WDUILootingData",
+  "Name": "DA_LootingScene_2_0",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUILootingData'",
+  "Package": "/Game/UI/Features/Inventory_2_0/Data/DA_LootingScene_2_0",
+  "Properties": {
+    "PlayerInventoryComponentViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIInventoryComponentViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Widgets/InventoryComponent/Data/DA_InventoryComponent_2_0.DA_InventoryComponent_2_0",
+        "SubPathString": ""
+      }
+    },
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Inventory_2_0/Data/DA_LootingScene_Prompts.DA_LootingScene_Prompts",
+        "SubPathString": ""
+      }
+    },
+    "InputTagCloseScene": {
+      "TagName": "UI.Action.Feature.Inventory.ToggleScene"
+    },
+    "InputEventCloseScene": "EInputEvent::IE_Released",
+    "bConsumesInput": false,
+    "bExitOnPlayerDeath": true,
+    "EnterSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Inventory.SceneEnter"
+    },
+    "ExitSceneBeginAudioEvent": {
+      "TagName": "Audio.Event.UI.Inventory.SceneExit"
+    }
+  }
+}

@@ -1,0 +1,130 @@
+--- export: UDataAsset / DA_GameOverScene ---
+{
+  "Type": "WDUIGameOverData",
+  "Name": "DA_GameOverScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIGameOverData'",
+  "Package": "/Game/UI/Features/GameOver/Data/DA_GameOverScene",
+  "Properties": {
+    "FactionScoreEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIGameOverFactionScoreEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "NextMatchTimerText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameOver.STRINGS_GameOver",
+      "Key": "Text.NextMatchTimer",
+      "SourceString": "Next Round in {Minutes}:{Seconds}",
+      "LocalizedString": "Next Round in {Minutes}:{Seconds}"
+    },
+    "_aaabhnlajapoapnciddjj": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameOver.STRINGS_GameOver",
+      "Key": "Text.ShutdownTimer",
+      "SourceString": "Server shutting down in {Minutes}:{Seconds}",
+      "LocalizedString": "Server shutting down in {Minutes}:{Seconds}"
+    },
+    "_aaabgepkhcdggbbnljhcn": {
+      "TableId": "/Game/UI/StringTables/STRINGS_GameOver.STRINGS_GameOver",
+      "Key": "Text.RestartTimer",
+      "SourceString": "Server restarting in {Minutes} {Seconds}",
+      "LocalizedString": "Server restarting in {Minutes} {Seconds}"
+    },
+    "WinningMessageText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_TeamWins",
+      "SourceString": "{0} Wins",
+      "LocalizedString": "{0} Wins"
+    },
+    "VictoryTitleText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Victory",
+      "SourceString": "Victory",
+      "LocalizedString": "Victory"
+    },
+    "DefeatTitleText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Defeat",
+      "SourceString": "Defeat",
+      "LocalizedString": "Defeat"
+    },
+    "_aaabmhbhfjcebgmhpbnng": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed1stCompletionBonus",
+      "SourceString": "1st Place + Contribution",
+      "LocalizedString": "1st Place + Contribution"
+    },
+    "_aaabmlmgdfoiacllkndmi": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed2ndCompletionBonus",
+      "SourceString": "2nd Place + Contribution",
+      "LocalizedString": "2nd Place + Contribution"
+    },
+    "_aaabmpcgcapocjabjapfl": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed3rdCompletionBonus",
+      "SourceString": "3rd Place + Contribution",
+      "LocalizedString": "3rd Place + Contribution"
+    },
+    "Placed1stBonusText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed1stBonus",
+      "SourceString": "1st Place Bonus",
+      "LocalizedString": "1st Place Bonus"
+    },
+    "Placed2ndBonusText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed2ndBonus",
+      "SourceString": "2nd Place Bonus",
+      "LocalizedString": "2nd Place Bonus"
+    },
+    "Placed3rdBonusText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_Placed3rdBonus",
+      "SourceString": "3rd Place Bonus",
+      "LocalizedString": "3rd Place Bonus"
+    },
+    "_aaabdllmcipajinokkhmh": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_MatchCompletion",
+      "SourceString": "Match Contribution",
+      "LocalizedString": "Match Contribution"
+    },
+    "_aaabdkejljhdbbcmekiic": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_LonestarWinBonus",
+      "SourceString": "Lonestar Win Bonus",
+      "LocalizedString": "Lonestar Win Bonus"
+    },
+    "_aaabdpalgppiloejabono": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_ValkyraWinBonus",
+      "SourceString": "Valkyra Win Bonus",
+      "LocalizedString": "Valkyra Win Bonus"
+    },
+    "_aaabfpcbbnkcclaefbjgc": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD_GameOver_ManticoreWinBonus",
+      "SourceString": "Manticore Win Bonus",
+      "LocalizedString": "Manticore Win Bonus"
+    },
+    "PositiveCashColor": {
+      "B": 168,
+      "G": 229,
+      "R": 73,
+      "A": 255,
+      "Hex": "49E5A8"
+    },
+    "NegativeCashColor": {
+      "B": 0,
+      "G": 33,
+      "R": 238,
+      "A": 255,
+      "Hex": "EE2100"
+    },
+    "FadeTime": 15.0,
+    "DelayAfterRecapPoints": 3.0,
+    "bShouldOpenContextDrawerOnCloseRequested": true,
+    "bExitPreviousSceneOnContextDrawerOpened": false
+  }
+}

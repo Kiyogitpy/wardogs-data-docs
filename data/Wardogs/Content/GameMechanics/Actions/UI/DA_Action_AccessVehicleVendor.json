@@ -1,0 +1,69 @@
+--- export: UPrimaryDataAsset / DA_Action_AccessVehicleVendor ---
+{
+  "Type": "BHActionDefinition",
+  "Name": "DA_Action_AccessVehicleVendor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHActionDefinition'",
+  "Package": "/Game/GameMechanics/Actions/UI/DA_Action_AccessVehicleVendor",
+  "Properties": {
+    "ActionTag": {
+      "TagName": "Action.Player.AccessVehicleVendor"
+    },
+    "ActionContext": [
+      "Action.Context.UI"
+    ],
+    "ActionClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Action_OpenScene_Vendor_Vehicle_C'",
+      "ObjectPath": "/Game/GameMechanics/Actions/UI/B_Action_OpenScene_Vendor_Vehicle.1"
+    },
+    "ActionResponseData": [
+      {
+        "Key": "EBHActionResponseType::Block",
+        "Value": {
+          "ResponseType": "EBHActionResponseType::Block",
+          "ActionResponses": [
+            "Action.Player.Ping",
+            "Action.Weapon.ADS",
+            "Action.Weapon.Fire",
+            "Action.VehicleRepairTool.PrimaryUse",
+            "Action.Trigger.Primary",
+            "Action.Throw.Primary",
+            "Action.Player.Melee.PrimaryUse",
+            "Action.Placeable.PrimaryUse",
+            "Action.Place.Primary",
+            "Action.Item.PrimaryUse",
+            "Action.DrillTool.PrimaryUse",
+            "Action.Defibrillator.PrimaryUse",
+            "Action.Appliable.Injector.PrimaryUse",
+            "Action.Appliable.PrimaryUse",
+            "Action.Appliable.Bandage.PrimaryUse",
+            "Action.Appliable.Bandage.SecondaryUse",
+            "Action.Appliable.SecondaryUse",
+            "Action.BuildTool.SecondaryUse",
+            "Action.Item.SecondaryUse",
+            "Action.Place.Secondary",
+            "Action.Player.Melee.SecondaryUse",
+            "Action.Throw.Secondary",
+            "Action.VehicleRepairTool.SecondaryUse",
+            "Action.Weapon.Reload",
+            "Action.RangeFinder.ADS",
+            "Action.BuildTool.PlaceSchematic",
+            "Action.BuildBuildable.Construct",
+            "Action.VehicleRepairTool.ContinuousUse",
+            "Action.VehicleRepairTool.Reload",
+            "Action.Player.AccessTacticalMap"
+          ],
+          "BlockingStates": [],
+          "RequiredStates": [],
+          "BlockedCategories": [],
+          "InterruptedCategories": [],
+          "BufferedResponses": []
+        }
+      }
+    ],
+    "ActivationContextType": {
+      "ObjectName": "Class'WDVendorActionContext'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  }
+}

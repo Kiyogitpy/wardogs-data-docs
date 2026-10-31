@@ -1,0 +1,139 @@
+--- export: UObject / AEB_EnemyAccuracyScaling_Vehicle_C_0 ---
+{
+  "Type": "AEB_EnemyAccuracyScaling_Vehicle_C",
+  "Name": "AEB_EnemyAccuracyScaling_Vehicle_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_EnemyAccuracyScaling_Vehicle.AEB_EnemyAccuracyScaling_Vehicle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_Start_Burst'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_EnemyAccuracyScaling_Vehicle_C'Default__AEB_EnemyAccuracyScaling_Vehicle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_EnemyAccuracyScaling_Vehicle.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / AEB_PlayVehicleWeaponPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayVehicleWeaponPerspectiveSound_C",
+  "Name": "AEB_PlayVehicleWeaponPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.AEB_PlayVehicleWeaponPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_Start_Burst'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'Default__AEB_PlayVehicleWeaponPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayVehicleWeaponPerspectiveSound.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Vehicle.Weapon.Fire.1p"
+    },
+    "ThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Vehicle.Weapon.Fire.3p"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::PlayBothIfDifferentSound",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / AEB_SetHostilityParameter_C_0 ---
+{
+  "Type": "AEB_SetHostilityParameter_C",
+  "Name": "AEB_SetHostilityParameter_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SetHostilityParameter.AEB_SetHostilityParameter_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_Start_Burst'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetHostilityParameter_C'Default__AEB_SetHostilityParameter_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SetHostilityParameter.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UObject / AEB_VehicleWeaponStartFireParameters_C_0 ---
+{
+  "Type": "AEB_VehicleWeaponStartFireParameters_C",
+  "Name": "AEB_VehicleWeaponStartFireParameters_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_VehicleWeaponStartFireParameters.AEB_VehicleWeaponStartFireParameters_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_Start_Burst'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.4"
+  },
+  "Template": {
+    "ObjectName": "AEB_VehicleWeaponStartFireParameters_C'Default__AEB_VehicleWeaponStartFireParameters_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_VehicleWeaponStartFireParameters.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Vehicle_Weapon_Fire_Start_Burst ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Vehicle_Weapon_Fire_Start_Burst",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Shared.Weapon.Fire.Start.Burst"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayVehicleWeaponPerspectiveSound_C'AE_Vehicle_Weapon_Fire_Start_Burst:AEB_PlayVehicleWeaponPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.1"
+      },
+      {
+        "ObjectName": "AEB_VehicleWeaponStartFireParameters_C'AE_Vehicle_Weapon_Fire_Start_Burst:AEB_VehicleWeaponStartFireParameters_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.3"
+      },
+      {
+        "ObjectName": "AEB_SetHostilityParameter_C'AE_Vehicle_Weapon_Fire_Start_Burst:AEB_SetHostilityParameter_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Vehicle_Weapon_Fire_Start_Burst:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.5"
+      },
+      {
+        "ObjectName": "AEB_EnemyAccuracyScaling_Vehicle_C'AE_Vehicle_Weapon_Fire_Start_Burst:AEB_EnemyAccuracyScaling_Vehicle_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.0"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Vehicle_Weapon_Fire_Start_Burst'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Burst.4"
+  },
+  "Properties": {
+    "ParameterName": "Burst",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Fire"
+    }
+  }
+}

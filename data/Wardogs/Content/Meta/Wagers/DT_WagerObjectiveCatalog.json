@@ -1,0 +1,385 @@
+--- export: UDataTable / DT_WagerObjectiveCatalog ---
+{
+  "Type": "DataTable",
+  "Name": "DT_WagerObjectiveCatalog",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Wagers/DT_WagerObjectiveCatalog",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDWagerObjectiveCatalogDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Wager.ObjectiveCatalog": {
+      "Objectives": [
+        {
+          "ID": "Kills3",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 3,
+          "Conditions": [],
+          "Odds": 1.001,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Kills2WithHeadshot",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 2,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithHeadshot"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.2012,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Revives2",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 2,
+          "Conditions": [],
+          "Odds": 1.001,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "PlayerDelivery3",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.PlayerDelivery"
+          },
+          "Count": 3,
+          "Conditions": [],
+          "Odds": 1.001,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "VehiclesDestroyed1",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.VehiclesDestroyed"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 1.001,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "TestParked",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 1.5,
+          "CooldownSeconds": 300.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "TestLockedWagerNode",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 1.5,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "Meta.Unlocks.Wager"
+          }
+        },
+        {
+          "ID": "TestLockedNodeInNoTree",
+          "_aaaakgfoodihlgbfboeka": false,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 1.5,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "Wager.Pricing"
+          }
+        },
+        {
+          "ID": "Hammertime1",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithSmallHammer"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.5,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hammertime2",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 20,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithSmallHammer"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.64,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hammertime3",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 25,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLargeHammer"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.72,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "MedicMarathon1",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 30,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.MagicHands"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.37,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "MedicMarathon2",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 40,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.MagicHands"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.44,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "MedicMarathon3",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 50,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.MagicHands"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.51,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "AllDrillerNoFiller1",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 15,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLightDrill"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.57,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "AllDrillerNoFiller2",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 20,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLightDrill"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.64,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "AllDrillerNoFiller3",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 25,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLightDrill"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotzone"
+              },
+              "_aaaalheeonlpfokfcbcmh": 0
+            }
+          ],
+          "Odds": 1.72,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.ObjectiveCatalog"
+      }
+    }
+  }
+}

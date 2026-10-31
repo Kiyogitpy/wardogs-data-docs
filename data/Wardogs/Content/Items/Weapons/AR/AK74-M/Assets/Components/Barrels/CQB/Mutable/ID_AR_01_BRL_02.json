@@ -1,0 +1,125 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AR_01_BRL_02'",
+    "ObjectPath": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.1"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Attachment.Muzzle"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_AR_01_BRL_02 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_AR_01_BRL_02",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02",
+  "Properties": {
+    "ItemId": {
+      "TagName": "ID.Item.AR_01_BRL_02"
+    },
+    "ItemContext": [
+      "Item.Attachment.Barrel.AK74M"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_AR_01_BRL_02:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_AR_01_BRL_02:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_AR_01_BRL_02:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AR_01_BRL_02'",
+    "ObjectPath": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.1"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Barrel"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_AR_01_BRL_02'",
+    "ObjectPath": "/Game/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.1"
+  },
+  "Properties": {
+    "TextureParamDefaults": [
+      {
+        "Key": {
+          "TagName": "Item.Flair.BaseTexture.Barrel"
+        },
+        "Value": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

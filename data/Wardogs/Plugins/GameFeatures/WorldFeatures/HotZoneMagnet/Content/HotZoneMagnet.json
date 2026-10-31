@@ -1,0 +1,266 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HotZoneMagnet'",
+    "ObjectPath": "/HotZoneMagnet/HotZoneMagnet.3"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDGameState",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/HotZoneMagnet/Data/B_HotZoneMagnetGameStateComponent.B_HotZoneMagnetGameStateComponent_C",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Game/MoverTesting/B_WDMoverPlayerCharacter.B_WDMoverPlayerCharacter_C",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/HotZoneMagnetRuntime.WDHotZoneMagnetWidgetInteractionComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": false,
+        "AdditionFlags": 0
+      },
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/HotZoneMagnetRuntime.WDHotZoneMagnetPlayerComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HotZoneMagnet'",
+    "ObjectPath": "/HotZoneMagnet/HotZoneMagnet.3"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_HotZoneMagnet'",
+      "ObjectPath": "/HotZoneMagnet/DataLayers/EDL_HotZoneMagnet.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_1 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'HotZoneMagnet'",
+    "ObjectPath": "/HotZoneMagnet/HotZoneMagnet.3"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "RewardFeed",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/RewardFeed/DT_RewardFeedActions_HotZoneMagnet.DT_RewardFeedActions_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_Minimap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/DT_TrackerData_Map_HotZoneMagnet.DT_TrackerData_Map_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/DT_TrackerData_Map_HotZoneMagnet.DT_TrackerData_Map_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TooltipData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/UI/MapTrackers/DT_TooltipData_HotZoneMagnet.DT_TooltipData_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextV1",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/DT_InteractionContexts_HotZoneMagnet.DT_InteractionContexts_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "UIInteractionContextData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/DT_InteractionContextData_HotZoneMagnet.DT_InteractionContextData_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "Challenges",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.DT_Challenges_SessionEvents_KOTH_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "ChallengeRewards",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/HotZoneMagnet/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.DT_ChallengeRewards_SessionEvents_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / HotZoneMagnet ---
+{
+  "Type": "GameFeatureData",
+  "Name": "HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/HotZoneMagnet/HotZoneMagnet",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'HotZoneMagnet:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/HotZoneMagnet/HotZoneMagnet.0"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'HotZoneMagnet:GameFeatureAction_DataRegistrySource_1'",
+        "ObjectPath": "/HotZoneMagnet/HotZoneMagnet.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'HotZoneMagnet:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/HotZoneMagnet/HotZoneMagnet.1"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/HotZoneMagnet/Data/Item"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/HotZoneMagnet/Audio/Events"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+--- export: UDataAsset / DA_Setting_General_AimingFOVMode ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_General_AimingFOVMode",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/Game/GameMechanics/Settings/General/DA_Setting_General_AimingFOVMode",
+  "Properties": {
+    "Parameters": {
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_General_AimingFOVMode:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_General_AimingFOVMode.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_General_AimingFOVMode'",
+    "ObjectPath": "/Game/GameMechanics/Settings/General/DA_Setting_General_AimingFOVMode.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EWDAimingFovMode::Affected",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVMode.Affected",
+          "SourceString": "Affected",
+          "LocalizedString": "Affected"
+        }
+      },
+      {
+        "Key": "EWDAimingFovMode::Independent",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVMode.Independent",
+          "SourceString": "Independent",
+          "LocalizedString": "Independent"
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVMode.Affected",
+          "SourceString": "Affected",
+          "LocalizedString": "Affected"
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/Game/UI/StringTables/STRINGS_Settings_Values.STRINGS_Settings_Values",
+          "Key": "Value.AimingFOVMode.Independent",
+          "SourceString": "Independent",
+          "LocalizedString": "Independent"
+        }
+      }
+    ]
+  }
+}

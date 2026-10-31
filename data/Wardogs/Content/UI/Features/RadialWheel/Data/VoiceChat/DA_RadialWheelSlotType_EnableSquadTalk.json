@@ -1,0 +1,32 @@
+--- export: UDataAsset / DA_RadialWheelSlotType_EnableSquadTalk ---
+{
+  "Type": "WDUIRadialWheelVoiceChatSlotTypeDataAsset",
+  "Name": "DA_RadialWheelSlotType_EnableSquadTalk",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIRadialWheelVoiceChatSlotTypeDataAsset'",
+  "Package": "/Game/UI/Features/RadialWheel/Data/VoiceChat/DA_RadialWheelSlotType_EnableSquadTalk",
+  "Properties": {
+    "ChannelType": "EWDChannelType::Squad",
+    "Action": "EWDVoiceChatSlotAction::EnableTalking",
+    "Icon": {
+      "AssetPathName": "/Game/UI/Features/HUD/VoiceChat/Textures/x256/T_UI_Icon_VOIP_Squad_256.T_UI_Icon_VOIP_Squad_256",
+      "SubPathString": ""
+    },
+    "IconScale": {
+      "X": 0.6,
+      "Y": 0.6
+    },
+    "SelectedSlotTitle": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "VoiceChat.EnableSquadTalk.Text.SelectedSlot.Title",
+      "SourceString": "Squad",
+      "LocalizedString": "Squad"
+    },
+    "SelectedSlotDescription": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "VoiceChat.EnableSquadTalk.Text.SelectedSlot.Description",
+      "SourceString": "Current - {TalkingChannel}",
+      "LocalizedString": "Current - {TalkingChannel}"
+    }
+  }
+}

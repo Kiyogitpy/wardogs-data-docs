@@ -1,0 +1,105 @@
+--- export: UObject / BHPlayerMappableKeySettings_0 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_KeyCard'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+  }
+}
+--- export: UObject / BHPlayerMappableKeySettings_1 ---
+{
+  "Type": "BHPlayerMappableKeySettings",
+  "Name": "BHPlayerMappableKeySettings_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHPlayerMappableKeySettings'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_KeyCard'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.2"
+  },
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+    },
+    "Name": "Input.NamedActions.HoldableItem.Keycard.PrimaryUse"
+  }
+}
+--- export: UDataAsset / IMC_Action_KeyCard ---
+{
+  "Type": "InputMappingContext",
+  "Name": "IMC_Action_KeyCard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputMappingContext'",
+  "Package": "/Game/Weapons/Input/IMC_Action_KeyCard",
+  "Properties": {
+    "DefaultKeyMappings": {
+      "Mappings": [
+        {
+          "Triggers": [],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_KeyCard_Use'",
+            "ObjectPath": "/Game/Weapons/Input/IA_KeyCard_Use.0"
+          },
+          "Key": {
+            "KeyName": "LeftMouseButton"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_KeyCard:BHPlayerMappableKeySettings_0'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.0"
+          }
+        },
+        {
+          "Triggers": [],
+          "Modifiers": [
+            {
+              "ObjectName": "WDDeadZoneInputModifier'IMC_Action_KeyCard:WDDeadZoneInputModifier_0'",
+              "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.3"
+            }
+          ],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_KeyCard_Use'",
+            "ObjectPath": "/Game/Weapons/Input/IA_KeyCard_Use.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_LeftTriggerAxis"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
+          "PlayerMappableKeySettings": {
+            "ObjectName": "BHPlayerMappableKeySettings'IMC_Action_KeyCard:BHPlayerMappableKeySettings_1'",
+            "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.1"
+          }
+        }
+      ]
+    }
+  }
+}
+--- export: UObject / WDDeadZoneInputModifier_0 ---
+{
+  "Type": "WDDeadZoneInputModifier",
+  "Name": "WDDeadZoneInputModifier_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDeadZoneInputModifier'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_Action_KeyCard'",
+    "ObjectPath": "/Game/Weapons/Input/IMC_Action_KeyCard.2"
+  },
+  "Properties": {
+    "Type": "EDeadZoneType::Axial",
+    "MinThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Min"
+    },
+    "MaxThresholdSettingTag": {
+      "TagName": "UserSettings.Controls.Gamepad.DeadZone.LeftTrigger.Max"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+--- export: UDataAsset / DA_DeploymentSelectScene ---
+{
+  "Type": "WDUIDeploymentSelectData",
+  "Name": "DA_DeploymentSelectScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIDeploymentSelectData'",
+  "Package": "/Game/UI/Features/Frontend/DeploymentSelect/Data/DA_DeploymentSelectScene",
+  "Properties": {
+    "_aaaaninjmfjibingdafpp": {
+      "SceneTag": {
+        "TagName": "UI.Scene.Frontend.FindMatch"
+      },
+      "_aaaaojfpjpflcbfknenfi": {
+        "Title": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_DeploymentSelection.STRINGS_DeploymentSelection",
+          "Key": "Title.Text.Official",
+          "SourceString": "Official",
+          "LocalizedString": "Official"
+        }
+      }
+    },
+    "_aaaaoonanjpiagmgdhnke": {
+      "SceneTag": {
+        "TagName": "UI.Scene.Frontend.FindMatch"
+      },
+      "_aaaaojfpjpflcbfknenfi": {
+        "Mode": "EWDServerBrowserMode::Community",
+        "Title": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_DeploymentSelection.STRINGS_DeploymentSelection",
+          "Key": "Title.Text.Community",
+          "SourceString": "Community",
+          "LocalizedString": "Community"
+        }
+      }
+    },
+    "_aaaanajidpjnceidbhpkp": {
+      "SceneTag": {
+        "TagName": "UI.Scene.Frontend.FindMatch"
+      },
+      "_aaaaojfpjpflcbfknenfi": {
+        "Mode": "EWDServerBrowserMode::All",
+        "_aaabbpkgdfpcibahejkco": true,
+        "_aaaanebfnekbegbmgpmjh": {
+          "_aaaamoeoigbndglngpkcm": [
+            {
+              "Tag": {
+                "TagName": "UI.Features.ServerBrowser.Filter.Slider.MaxLevel"
+              },
+              "Value": 30
+            }
+          ]
+        },
+        "_aaabfdilhejpajmpbgglm": false,
+        "Title": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_DeploymentSelection.STRINGS_DeploymentSelection",
+          "Key": "Title.Text.LowLevelServer",
+          "SourceString": "Low Level",
+          "LocalizedString": "Low Level"
+        }
+      }
+    },
+    "_aaabbakjabankkaphlgcc": {
+      "SceneTag": {
+        "TagName": "UI.Scene.Frontend.FindMatch"
+      },
+      "_aaaaojfpjpflcbfknenfi": {
+        "Mode": "EWDServerBrowserMode::All",
+        "_aaabbpkgdfpcibahejkco": true,
+        "_aaaanebfnekbegbmgpmjh": {
+          "GameModeTags": [
+            "Server.Descriptor.InfantryOnly"
+          ]
+        },
+        "_aaabfdilhejpajmpbgglm": false,
+        "Title": {
+          "TableId": "/Game/UI/StringTables/Frontend/STRINGS_DeploymentSelection.STRINGS_DeploymentSelection",
+          "Key": "Title.Text.InfantryMode",
+          "SourceString": "Infantry Mode",
+          "LocalizedString": "Infantry Mode"
+        }
+      }
+    },
+    "_aaabaplhkklklhdahgpfc": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+      "Key": "DeploymentSelect.Bonus.Cash",
+      "SourceString": "Cash Bonus",
+      "LocalizedString": "Cash Bonus"
+    },
+    "_aaaaoodjepicjfdmcjbdd": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_ServerBrowser.STRINGS_ServerBrowser",
+      "Key": "DeploymentSelect.Bonus.XP",
+      "SourceString": "XP Bonus",
+      "LocalizedString": "XP Bonus"
+    }
+  }
+}

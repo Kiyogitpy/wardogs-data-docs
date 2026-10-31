@@ -1,0 +1,113 @@
+--- export: UObject / WDUIItemsmithAttachmentSelectBrowserFilter_0 ---
+{
+  "Type": "WDUIItemsmithAttachmentSelectBrowserFilter",
+  "Name": "WDUIItemsmithAttachmentSelectBrowserFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithAttachmentSelectBrowserFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Itemsmith_AttachmentSelect'",
+    "ObjectPath": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Build.Attachment"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/AttachmentNodeFocus/Data/STRINGS_Itemsmith_AttachmentSelect.STRINGS_Itemsmith_AttachmentSelect",
+      "Key": "Itemsmith.Build.AttachmentSelect.All",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect_BrowserList.DA_Itemsmith_AttachmentSelect_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UObject / WDUIItemsmithFavouriteAttachmentSelectBrowserFilter_0 ---
+{
+  "Type": "WDUIItemsmithFavouriteAttachmentSelectBrowserFilter",
+  "Name": "WDUIItemsmithFavouriteAttachmentSelectBrowserFilter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithFavouriteAttachmentSelectBrowserFilter'",
+  "Outer": {
+    "ObjectName": "WDUIItemsmithItemSelectData'DA_Itemsmith_AttachmentSelect'",
+    "ObjectPath": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect.2"
+  },
+  "Properties": {
+    "FilterIdTag": {
+      "TagName": "Item.Archetype.Build.Attachment.Favourite"
+    },
+    "FilterTitleText": {
+      "TableId": "/Itemsmith/UI/AttachmentNodeFocus/Data/STRINGS_Itemsmith_AttachmentSelect.STRINGS_Itemsmith_AttachmentSelect",
+      "Key": "Itemsmith.Build.AttachmentSelect.Favourites",
+      "SourceString": null,
+      "LocalizedString": ""
+    },
+    "ResultViewModelData": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithBrowserViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect_BrowserList.DA_Itemsmith_AttachmentSelect_BrowserList",
+        "SubPathString": ""
+      }
+    }
+  }
+}
+--- export: UDataAsset / DA_Itemsmith_AttachmentSelect ---
+{
+  "Type": "WDUIItemsmithItemSelectData",
+  "Name": "DA_Itemsmith_AttachmentSelect",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIItemsmithItemSelectData'",
+  "Package": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect",
+  "Properties": {
+    "PlatformViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithPlatformViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/Platform/Data/DA_Itemsmith_Platform.DA_Itemsmith_Platform",
+        "SubPathString": ""
+      }
+    },
+    "ArchetypeTabsViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/ItemsmithRuntime.WDUIItemsmithTabGroupViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Itemsmith/UI/SharedWidgets/TabGroup/Data/DA_Itemsmith_TabGroup.DA_Itemsmith_TabGroup",
+        "SubPathString": ""
+      }
+    },
+    "DefaultArchetype": {
+      "TagName": "Item.Archetype.Build.Attachment.Favourite"
+    },
+    "BrowserFilters": [
+      {
+        "ObjectName": "WDUIItemsmithFavouriteAttachmentSelectBrowserFilter'DA_Itemsmith_AttachmentSelect:WDUIItemsmithFavouriteAttachmentSelectBrowserFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect.1"
+      },
+      {
+        "ObjectName": "WDUIItemsmithAttachmentSelectBrowserFilter'DA_Itemsmith_AttachmentSelect:WDUIItemsmithAttachmentSelectBrowserFilter_0'",
+        "ObjectPath": "/Itemsmith/UI/AttachmentNodeFocus/Data/DA_Itemsmith_AttachmentSelect.0"
+      }
+    ],
+    "PageType": "EWDUIItemsmithPages::AttachmentNodeFocus",
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_Itemsmith_ItemSelect'",
+      "ObjectPath": "/Itemsmith/Input/IMC_Itemsmith_ItemSelect.0"
+    },
+    "InputMappingContextPriority": 1
+  }
+}

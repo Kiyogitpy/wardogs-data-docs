@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UX_Cash_PurchaseSupplies ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UX_Cash_PurchaseSupplies",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_PurchaseSupplies",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UX.Cash.PurchaseSupplies"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UX_Cash_PurchaseSupplies:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_PurchaseSupplies.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UX_Cash_PurchaseSupplies'",
+    "ObjectPath": "/Game/Audio/Events/UX/Cash/AE_UX_Cash_PurchaseSupplies.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UX_Cash_PurchaseSupply'",
+      "ObjectPath": "/Game/Audio/UX/Cash/MSS_UX_Cash_PurchaseSupply.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

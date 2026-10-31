@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_InteractionContextData_StrikeDisarm_01 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractionContextData_StrikeDisarm_01",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/StrikeDisarm_01/DT_InteractionContextData_StrikeDisarm_01",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractionContextDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.Context.Laptop.Interact": {
+      "OutcomeText": {
+        "TableId": "/StrikeDisarm_01/STRINGS_StrikeDisarm_01.STRINGS_StrikeDisarm_01",
+        "Key": "Laptop",
+        "SourceString": null,
+        "LocalizedString": ""
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/StrikeDisarm_01/STRINGS_StrikeDisarm_01.STRINGS_StrikeDisarm_01",
+            "Key": "Hack",
+            "SourceString": null,
+            "LocalizedString": ""
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.Laptop.Interact"
+      }
+    }
+  }
+}

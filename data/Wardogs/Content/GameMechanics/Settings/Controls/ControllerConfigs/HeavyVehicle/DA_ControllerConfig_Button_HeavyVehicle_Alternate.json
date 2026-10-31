@@ -1,0 +1,174 @@
+--- export: UDataAsset / DA_ControllerConfig_Button_HeavyVehicle_Alternate ---
+{
+  "Type": "BHEnhancedInputPlayerBindsPresetData",
+  "Name": "DA_ControllerConfig_Button_HeavyVehicle_Alternate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHEnhancedInputPlayerBindsPresetData'",
+  "Package": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate",
+  "Properties": {
+    "_aaabaicghomcadipfiemj": [
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Horn"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_UseHorn'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_UseHorn.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_RightTrigger"
+        },
+        "Triggers": [
+          {
+            "ObjectName": "InputTriggerPressed'DA_ControllerConfig_Button_HeavyVehicle_Alternate:InputTriggerPressed_0'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate.1"
+          },
+          {
+            "ObjectName": "InputTriggerReleased'DA_ControllerConfig_Button_HeavyVehicle_Alternate:InputTriggerReleased_0'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate.2"
+          }
+        ],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Ping"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Ping'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/IA_Ping.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_RightShoulder"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Throttle"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Throttle'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Throttle.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftStick_Up"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Camera.ToggleFreeLook"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Camera_ToggleFreeLook'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ToggleFreeLook.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftThumbstick"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Brake"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Brake'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Brake.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftStick_Down"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Vehicle.Camera.ZoomOut"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_Vehicle_Camera_ZoomOut'",
+          "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Camera_ZoomOut.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftTrigger"
+        },
+        "Triggers": [
+          {
+            "ObjectName": "InputTriggerReleased'DA_ControllerConfig_Button_HeavyVehicle_Alternate:InputTriggerReleased_1'",
+            "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate.3"
+          }
+        ],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "Input.NamedActions.Player.VOIP.ToggleTalk"
+        },
+        "Action": {
+          "ObjectName": "BHInputAction'IA_VoiceChat_ToggleTalk'",
+          "ObjectPath": "/Game/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_VoiceChat_ToggleTalk.0"
+        },
+        "Key": {
+          "KeyName": "Gamepad_LeftShoulder"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      },
+      {
+        "ActionTag": {
+          "TagName": "None"
+        },
+        "Action": null,
+        "Key": {
+          "KeyName": "None"
+        },
+        "Triggers": [],
+        "Modifiers": []
+      }
+    ],
+    "_aaaboaooajonfjdipnbea": [
+      {
+        "AssetPathName": "/Game/Vehicles/Inputs/IMC_TrackedVehicles_Driver.IMC_TrackedVehicles_Driver",
+        "SubPathString": ""
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_HeavyVehicle_Alternate'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_HeavyVehicle_Alternate'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_1 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHEnhancedInputPlayerBindsPresetData'DA_ControllerConfig_Button_HeavyVehicle_Alternate'",
+    "ObjectPath": "/Game/GameMechanics/Settings/Controls/ControllerConfigs/HeavyVehicle/DA_ControllerConfig_Button_HeavyVehicle_Alternate.0"
+  }
+}

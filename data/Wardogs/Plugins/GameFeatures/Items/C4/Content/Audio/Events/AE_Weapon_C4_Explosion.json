@@ -1,0 +1,141 @@
+--- export: UPrimaryDataAsset / AE_Weapon_C4_Explosion ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_C4_Explosion",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/C4/Audio/Events/AE_Weapon_C4_Explosion",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Weapon.Throwable.C4.Explosion"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Weapon_C4_Explosion:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPriorityDecay'AE_Weapon_C4_Explosion:CrosstalkAudioEventBehaviorPriorityDecay_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Weapon_C4_Explosion:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_C4_Explosion:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorApplyImpulseResonance'AE_Weapon_C4_Explosion:WDAudioEventBehaviorApplyImpulseResonance_0'",
+        "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.5"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 405.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Explosion'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.0"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 25.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Explosion'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Throwable_C4_Explosion_Preset'",
+      "ObjectPath": "/C4/Audio/MSS/MSS_Weapon_Throwable_C4_Explosion_Preset.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPriorityDecay_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPriorityDecay",
+  "Name": "CrosstalkAudioEventBehaviorPriorityDecay_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPriorityDecay'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Explosion'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.0"
+  },
+  "Properties": {
+    "_aaaapolaggcbciclahlkk": 50.0,
+    "_aaaapfkkhfjhdcnkdeoon": 25.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Explosion'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.0"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Explosion"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorApplyImpulseResonance_0 ---
+{
+  "Type": "WDAudioEventBehaviorApplyImpulseResonance",
+  "Name": "WDAudioEventBehaviorApplyImpulseResonance_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorApplyImpulseResonance'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_C4_Explosion'",
+    "ObjectPath": "/C4/Audio/Events/AE_Weapon_C4_Explosion.0"
+  },
+  "Properties": {
+    "DefaultResonanceRange": 1500.0,
+    "IdImpulseProperties": [
+      {
+        "Key": {
+          "TagName": "Id.Item.C4Explosive"
+        },
+        "Value": {
+          "ResonanceRange": 3500.0,
+          "VolumeScaling": 0.2
+        }
+      }
+    ],
+    "CollisionChannel": "ECollisionChannel::ECC_GameTraceChannel12",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.C4.Explosion"
+    }
+  }
+}

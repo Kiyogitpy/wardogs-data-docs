@@ -1,0 +1,550 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Attachments/Utilities/FGRP_008/Assets/Meshes/SM_FGRP_008.SM_FGRP_008",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  },
+  "Properties": {
+    "Weight": 0.47
+  }
+}
+--- export: UPrimaryDataAsset / ID_FGRP_010 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_FGRP_010",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/FGRP_010/Data/ID_FGRP_010",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.FGRP_010"
+    },
+    "ItemContext": [
+      "Item.Attachment.Underbarrel",
+      "Item.Context.Equippable",
+      "Item.Attachment.Bipod.Attached"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Attachments.STRINGS_Items_Attachments",
+      "Key": "Items.Attachments.SKSBipod",
+      "SourceString": "SKS Bipod",
+      "LocalizedString": "SKS Bipod"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_FGRP_010:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_FGRP_010:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_FGRP_010:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.1"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_FGRP_010:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_FGRP_010:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_FGRP_010:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_FGRP_010:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.6"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "bFiringCancelsTransition": false,
+      "BipodMountLocationSocketName": "S_BipodMountLocation",
+      "BipodMountedSurfaceTraceRange": 8.0,
+      "CameraLocationFOVOffsetCurve": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 40.0,
+              "Value": -80.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 50.0,
+              "Value": -50.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 60.0,
+              "Value": -20.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 70.0,
+              "Value": 0.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 80.0,
+              "Value": 12.5,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 90.0,
+              "Value": 25.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 100.0,
+              "Value": 35.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 110.0,
+              "Value": 45.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Linear",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 120.0,
+              "Value": 55.0,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ],
+          "DefaultValue": 3.4028235E+38,
+          "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+          "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+        },
+        "ExternalCurve": {
+          "ObjectName": "CurveFloat'CRV_FGRP_010_CameraLocationFOVOffset'",
+          "ObjectPath": "/FGRP_010/Data/CRV_FGRP_010_CameraLocationFOVOffset.0"
+        }
+      },
+      "StanceData": [
+        {
+          "Key": "EBHPlayerStance::Stand",
+          "Value": {
+            "PlayerStance": "EBHPlayerStance::Stand",
+            "bTryMountOnUnfold": false,
+            "bADSOnTransitionFinish": false,
+            "bLockPitch": true,
+            "PitchLockAngle": 50.0,
+            "bLockYaw": true,
+            "YawLockAngle": 55.0,
+            "MaxYawChange": 45.0,
+            "MaxPitchChange": 45.0,
+            "bTryAnotherStanceOnFail": true,
+            "PlayerStanceToTryOnFail": "EBHPlayerStance::Crouch",
+            "BipodMountLocationHeight": 125.0,
+            "_aaabebjffdpjhcemcaaoo": 30.0,
+            "BipodMountLocationHorizontalDistance": 20.0,
+            "BipodMountLocationVerticalDistance": 40.0,
+            "MinBipodToPlayerHorizontalDistance": 37.5,
+            "MaxBipodToPlayerHorizontalDistance": 75.0,
+            "BipodToPlayerHorizontalDistanceIncrementAmount": 2.5,
+            "MaxWallToLedgeHorizontalDistance": 10.0,
+            "WallToLedgeHorizontalDistanceIncrementAmount": 2.0,
+            "BipodWidth": 15.0,
+            "BipodLength": 5.0,
+            "BipodSpaceCheckHeightLeeway": 5.0,
+            "MaxWallHeight": 145.0,
+            "MinWallHeight": 105.0,
+            "WallTraceDistance": 100.0,
+            "WallTraceRadius": 10.0,
+            "MinLedgeAngle": -15.0,
+            "MaxLedgeAngle": 15.0,
+            "FloorTraceDistance": 120.0,
+            "LedgeSpaceTraceRadius": 10.0,
+            "LedgeSpaceTraceHalfHeight": 20.0,
+            "LedgeSpaceTraceHeightOffset": 4.0,
+            "bUseLocationTransitionCurve": false,
+            "LocationTransitionCurve": {
+              "VectorCurves": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "VectorCurves[1]": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "VectorCurves[2]": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "ExternalCurve": null
+            },
+            "bUseRotationTransitionCurve": false,
+            "RotationTransitionCurve": {
+              "EditorCurveData": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "ExternalCurve": null
+            },
+            "bScaleTransitionDurationWithDistance": true,
+            "MaxLocationTransitionTimeDistance": 120.0,
+            "MaxRotationTransitionTimeAngle": 35.0,
+            "TransitionDuration": 0.5,
+            "MinTransitionDuration": 0.2,
+            "MaxTransitionDuration": 0.5
+          }
+        },
+        {
+          "Key": "EBHPlayerStance::Crouch",
+          "Value": {
+            "PlayerStance": "EBHPlayerStance::Crouch",
+            "bTryMountOnUnfold": false,
+            "bADSOnTransitionFinish": false,
+            "bLockPitch": true,
+            "PitchLockAngle": 50.0,
+            "bLockYaw": true,
+            "YawLockAngle": 55.0,
+            "MaxYawChange": 45.0,
+            "MaxPitchChange": 45.0,
+            "bTryAnotherStanceOnFail": true,
+            "PlayerStanceToTryOnFail": "EBHPlayerStance::Stand",
+            "BipodMountLocationHeight": 85.0,
+            "_aaabebjffdpjhcemcaaoo": 30.0,
+            "BipodMountLocationHorizontalDistance": 20.0,
+            "BipodMountLocationVerticalDistance": 40.0,
+            "MinBipodToPlayerHorizontalDistance": 37.5,
+            "MaxBipodToPlayerHorizontalDistance": 75.0,
+            "BipodToPlayerHorizontalDistanceIncrementAmount": 2.5,
+            "MaxWallToLedgeHorizontalDistance": 10.0,
+            "WallToLedgeHorizontalDistanceIncrementAmount": 2.0,
+            "BipodWidth": 15.0,
+            "BipodLength": 5.0,
+            "BipodSpaceCheckHeightLeeway": 5.0,
+            "MaxWallHeight": 105.0,
+            "MinWallHeight": 1.0,
+            "WallTraceDistance": 100.0,
+            "WallTraceRadius": 10.0,
+            "MinLedgeAngle": -15.0,
+            "MaxLedgeAngle": 15.0,
+            "FloorTraceDistance": 8000.0,
+            "LedgeSpaceTraceRadius": 10.0,
+            "LedgeSpaceTraceHalfHeight": 20.0,
+            "LedgeSpaceTraceHeightOffset": 4.0,
+            "bUseLocationTransitionCurve": false,
+            "LocationTransitionCurve": {
+              "VectorCurves": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "VectorCurves[1]": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "VectorCurves[2]": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "ExternalCurve": null
+            },
+            "bUseRotationTransitionCurve": false,
+            "RotationTransitionCurve": {
+              "EditorCurveData": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "ExternalCurve": null
+            },
+            "bScaleTransitionDurationWithDistance": true,
+            "MaxLocationTransitionTimeDistance": 120.0,
+            "MaxRotationTransitionTimeAngle": 35.0,
+            "TransitionDuration": 0.5,
+            "MinTransitionDuration": 0.2,
+            "MaxTransitionDuration": 0.5
+          }
+        },
+        {
+          "Key": "EBHPlayerStance::Prone",
+          "Value": {
+            "PlayerStance": "EBHPlayerStance::Prone",
+            "bTryMountOnUnfold": true,
+            "bADSOnTransitionFinish": false,
+            "bLockPitch": true,
+            "PitchLockAngle": 15.0,
+            "bLockYaw": true,
+            "YawLockAngle": 35.0,
+            "MaxYawChange": 45.0,
+            "MaxPitchChange": 45.0,
+            "bTryAnotherStanceOnFail": false,
+            "PlayerStanceToTryOnFail": "EBHPlayerStance::Stand",
+            "BipodMountLocationHeight": 0.0,
+            "_aaabebjffdpjhcemcaaoo": 30.0,
+            "BipodMountLocationHorizontalDistance": 30.0,
+            "BipodMountLocationVerticalDistance": 60.0,
+            "MinBipodToPlayerHorizontalDistance": 37.5,
+            "MaxBipodToPlayerHorizontalDistance": 75.0,
+            "BipodToPlayerHorizontalDistanceIncrementAmount": 2.5,
+            "MaxWallToLedgeHorizontalDistance": 20.0,
+            "WallToLedgeHorizontalDistanceIncrementAmount": 2.0,
+            "BipodWidth": 2.0,
+            "BipodLength": 2.0,
+            "BipodSpaceCheckHeightLeeway": 5.0,
+            "MaxWallHeight": 125.0,
+            "MinWallHeight": 85.0,
+            "WallTraceDistance": 100.0,
+            "WallTraceRadius": 15.0,
+            "MinLedgeAngle": -15.0,
+            "MaxLedgeAngle": 15.0,
+            "FloorTraceDistance": 100.0,
+            "LedgeSpaceTraceRadius": 20.0,
+            "LedgeSpaceTraceHalfHeight": 10.0,
+            "LedgeSpaceTraceHeightOffset": 2.5,
+            "bUseLocationTransitionCurve": false,
+            "LocationTransitionCurve": {
+              "VectorCurves": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "VectorCurves[1]": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "VectorCurves[2]": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "ExternalCurve": null
+            },
+            "bUseRotationTransitionCurve": false,
+            "RotationTransitionCurve": {
+              "EditorCurveData": {
+                "Keys": [],
+                "DefaultValue": 3.4028235E+38,
+                "PreInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant",
+                "PostInfinityExtrap": "ERichCurveExtrapolation::RCCE_Constant"
+              },
+              "ExternalCurve": null
+            },
+            "bScaleTransitionDurationWithDistance": false,
+            "MaxLocationTransitionTimeDistance": 120.0,
+            "MaxRotationTransitionTimeAngle": 35.0,
+            "TransitionDuration": 0.2,
+            "MinTransitionDuration": 0.5,
+            "MaxTransitionDuration": 1.0
+          }
+        }
+      ],
+      "_aaabgkhkknepnbcppjkao": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_010_UnfoldedBipodState_C'",
+          "ObjectPath": "/FGRP_010/Data/GE_FGRP_010_UnfoldedBipodState.0"
+        }
+      ],
+      "_aaabpbaanpfnnepnbpekp": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_010_UnfoldedBipodState_CharacterEffects_C'",
+          "ObjectPath": "/FGRP_010/Data/GE_FGRP_010_UnfoldedBipodState_CharacterEffects.0"
+        }
+      ],
+      "MountedAppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_010_BipodState_C'",
+          "ObjectPath": "/FGRP_010/Data/GE_FGRP_010_BipodState.0"
+        }
+      ],
+      "MountedAppliedCharacterEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_010_BipodState_CharacterEffects_C'",
+          "ObjectPath": "/FGRP_010/Data/GE_FGRP_010_BipodState_CharacterEffects.0"
+        }
+      ],
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Bipod"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_FGRP_010_NonBipodState_C'",
+          "ObjectPath": "/FGRP_010/Data/GE_FGRP_010_NonBipodState.0"
+        }
+      ],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": {
+        "ObjectName": "BHAnimationSet'AnimSet_FGRP_010'",
+        "ObjectPath": "/FGRP_010/Data/AnimSet_FGRP_010.0"
+      },
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Bipod_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/Bipod/ID_Attachment_Bipod_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_FGRP_010'",
+    "ObjectPath": "/FGRP_010/Data/ID_FGRP_010.4"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

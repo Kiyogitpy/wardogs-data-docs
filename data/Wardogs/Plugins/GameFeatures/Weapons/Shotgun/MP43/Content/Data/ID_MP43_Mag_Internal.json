@@ -1,0 +1,145 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MP43_Mag_Internal'",
+    "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.2"
+  },
+  "Properties": {
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.12g"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": -2,
+        "MaxSlotAmountStackSize": 2,
+        "bAllowsStackedPacking": true,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MP43_Mag_Internal'",
+    "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.2"
+  }
+}
+--- export: UPrimaryDataAsset / ID_MP43_Mag_Internal ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MP43_Mag_Internal",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/MP43/Data/ID_MP43_Mag_Internal",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MP43Magazine"
+    },
+    "ItemContext": [
+      "Item.Attachment.Magazine"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "1727C1B24B03105083A6598F02B81F00",
+      "SourceString": "MP43 Internal Mag",
+      "LocalizedString": "MP43 Internal Mag"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_MP43_Mag_Internal:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_MP43_Mag_Internal:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_MP43_Mag_Internal:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_MP43_Mag_Internal:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MP43_Mag_Internal'",
+    "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.2"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MP43_Mag_Internal'",
+    "ObjectPath": "/MP43/Data/ID_MP43_Mag_Internal.2"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}

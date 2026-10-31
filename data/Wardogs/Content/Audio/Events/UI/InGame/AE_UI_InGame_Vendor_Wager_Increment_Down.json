@@ -1,0 +1,40 @@
+--- export: UPrimaryDataAsset / AE_UI_InGame_Vendor_Wager_Increment_Down ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_UI_InGame_Vendor_Wager_Increment_Down",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Wager_Increment_Down",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Increment.Down"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_UI_InGame_Vendor_Wager_Increment_Down:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Wager_Increment_Down.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_UI_InGame_Vendor_Wager_Increment_Down'",
+    "ObjectPath": "/Game/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Wager_Increment_Down.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_UI_InGame_Vendor_Wager_Increment_Down'",
+      "ObjectPath": "/Game/Audio/UI/InGame/MSS/Vendor/Wager/MSS_UI_InGame_Vendor_Wager_Increment_Down.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

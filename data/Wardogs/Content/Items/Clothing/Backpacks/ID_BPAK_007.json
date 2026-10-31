@@ -1,0 +1,246 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BPAK_007'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.5"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 3
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BPAK_007'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Backpack/Heavy/001/SM/SM_Backpack_Heavy_001_drop.SM_Backpack_Heavy_001_drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Backpack_Heavy_001_drop'",
+        "ObjectPath": "/Game/Characters/Player/Backpack/Heavy/001/MAT/MI_Backpack_Heavy_001_drop.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": 90.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 23.2,
+      "Y": 30.4,
+      "Z": 44.6
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BPAK_007'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.5"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked",
+            "Inventory.Slot.SupplyContainer"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 1,
+          "Y": 5
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 18,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": [
+            "Inventory.Slot.Backpack",
+            "Inventory.Slot.Vest",
+            "Inventory.Slot.Locked"
+          ]
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 4,
+          "Y": 5
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 18,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      },
+      {
+        "ContainerIdentifier": {
+          "TagName": "None"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::BlockList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Grid",
+        "GridSize": {
+          "X": 1,
+          "Y": 5
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 1,
+        "MaxSlotAmountStackSize": 0,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BPAK_007'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BPAK_007'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.5"
+  },
+  "Properties": {
+    "Weight": 2.78
+  }
+}
+--- export: UPrimaryDataAsset / ID_BPAK_007 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_BPAK_007",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Clothing/Backpacks/ID_BPAK_007",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.BPAK_007"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Backpack",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "C3AC1E8C4C912D87BAE9AAA02E278FBF",
+      "SourceString": "Halftrack Backpack",
+      "LocalizedString": "Halftrack Backpack"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_BPAK_007:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_BPAK_007:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_BPAK_007:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.4"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_BPAK_007:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_BPAK_007:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_BPAK_007:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_BPAK_007'",
+    "ObjectPath": "/Game/Items/Clothing/Backpacks/ID_BPAK_007.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Backpack_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Backpack_Audio.0"
+    }
+  }
+}

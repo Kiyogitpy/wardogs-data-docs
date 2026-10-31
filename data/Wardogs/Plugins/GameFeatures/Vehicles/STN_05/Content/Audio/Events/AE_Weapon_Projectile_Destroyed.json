@@ -1,0 +1,122 @@
+--- export: UPrimaryDataAsset / AE_Weapon_Projectile_Destroyed ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Weapon_Projectile_Destroyed",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Projectile.Destroyed"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'AE_Weapon_Projectile_Destroyed:CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.2"
+      },
+      {
+        "ObjectName": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation'AE_Weapon_Projectile_Destroyed:WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.5"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Weapon_Projectile_Destroyed:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.1"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Weapon_Projectile_Destroyed:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.3"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Weapon_Projectile_Destroyed:CrosstalkAudioEventBehaviorStopSound_1'",
+        "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.4"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 405.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Destroyed'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Weapon_Projectile_Drone_BluntImpact_Master'",
+      "ObjectPath": "/STN_05/Audio/MSS/BluntImpacts/MSS_Weapon_Projectile_Drone_BluntImpact_Master.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings",
+  "Name": "CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorSetExecutionContextAbandonmentSettings'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Destroyed'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.0"
+  },
+  "Properties": {
+    "ExpirationDelay": 10.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Destroyed'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket.Wind"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Destroyed'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Projectile.Rocket"
+    }
+  }
+}
+--- export: UObject / WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0 ---
+{
+  "Type": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation",
+  "Name": "WDAudioEventBehaviorMoveSoundToGameplayCueLocation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorMoveSoundToGameplayCueLocation'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Weapon_Projectile_Destroyed'",
+    "ObjectPath": "/STN_05/Audio/Events/AE_Weapon_Projectile_Destroyed.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

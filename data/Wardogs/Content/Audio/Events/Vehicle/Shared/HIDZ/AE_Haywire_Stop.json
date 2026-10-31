@@ -1,0 +1,36 @@
+--- export: UPrimaryDataAsset / AE_Haywire_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Haywire_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Haywire_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.HIDZ.Haywire.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'AE_Haywire_Stop:WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Haywire_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0 ---
+{
+  "Type": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized",
+  "Name": "WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioEventBehaviorExecuteTriggerParameterOrStopIfVirtualized'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Haywire_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/Shared/HIDZ/AE_Haywire_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Vehicle.Damage.Haywire"
+    }
+  }
+}

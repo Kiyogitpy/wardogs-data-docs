@@ -1,0 +1,119 @@
+--- export: UDataAsset / DA_Buildable_STN_03 ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_STN_03",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/STN_03/BuildableData/DA_Buildable_STN_03",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDVehicleBuildSpawner'DA_Buildable_STN_03:WDVehicleBuildSpawner_0'",
+      "ObjectPath": "/STN_03/BuildableData/DA_Buildable_STN_03.1"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.Mortar"
+    },
+    "Cost": 600,
+    "RepairSpeedMultiplier": 10.0,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_BuildTool.STRINGS_BuildTool",
+      "Key": "Buildable.Mortar",
+      "SourceString": "L81 Mortar",
+      "LocalizedString": "L81 Mortar"
+    },
+    "MaxHealth": 3000.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "StackCheckOffset": 15.0,
+    "MaxStack": 6,
+    "PlacementFlags": 9,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Mortar.SM_Foundation_Mortar",
+      "SubPathString": ""
+    },
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Mortar_Stages'",
+      "ObjectPath": "/STN_03/BuildableData/DA_Mortar_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage_NoOffset.NS_BuildStage_NoOffset",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -235.6391,
+        "Y": -226.79993,
+        "Z": -46.609364
+      },
+      "Max": {
+        "X": 246.20132,
+        "Y": 228.21405,
+        "Z": 104.47829
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle.Stationary.Mortar"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "AudioData": {
+      "ObjectName": "WDAudioData'DA_Buildable_Default_Audio'",
+      "ObjectPath": "/Buildables/Data/Buildables/Audio/DA_Buildable_Default_Audio.0"
+    },
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.Mortar"
+    }
+  }
+}
+--- export: UObject / WDVehicleBuildSpawner_0 ---
+{
+  "Type": "WDVehicleBuildSpawner",
+  "Name": "WDVehicleBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDVehicleBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_STN_03'",
+    "ObjectPath": "/STN_03/BuildableData/DA_Buildable_STN_03.0"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_StationaryVehicle_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable_StationaryVehicle.2"
+    },
+    "VehicleTag": {
+      "TagName": "Vehicle.Variant.Stationary.Mortar"
+    }
+  }
+}

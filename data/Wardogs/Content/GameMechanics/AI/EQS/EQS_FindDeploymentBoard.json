@@ -1,0 +1,80 @@
+--- export: UDataAsset / EQS_FindDeploymentBoard ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindDeploymentBoard",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard",
+  "Properties": {
+    "QueryName": "EQS_FindDeploymentBoard",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindDeploymentBoard:EnvQueryOption_2'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_ActorsOfClass_2 ---
+{
+  "Type": "EnvQueryGenerator_ActorsOfClass",
+  "Name": "EnvQueryGenerator_ActorsOfClass_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_ActorsOfClass'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindDeploymentBoard'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.0"
+  },
+  "Properties": {
+    "SearchedActorClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_VehicleDeploymentBoard_C'",
+      "ObjectPath": "/Game/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/DeploymentBoard/B_VehicleDeploymentBoard.2"
+    },
+    "SearchRadius": {
+      "DefaultValue": 10000.0
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_2 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_2",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindDeploymentBoard'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_ActorsOfClass'EQS_FindDeploymentBoard:EnvQueryGenerator_ActorsOfClass_2'",
+      "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindDeploymentBoard:EnvQueryTest_Distance_1'",
+        "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_1 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindDeploymentBoard'",
+    "ObjectPath": "/Game/GameMechanics/AI/EQS/EQS_FindDeploymentBoard.0"
+  },
+  "Properties": {
+    "TestMode": "EEnvTestDistance::Distance2D",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "ScoringFactor": {
+      "DefaultValue": -1.0
+    },
+    "VerNum": 2
+  }
+}

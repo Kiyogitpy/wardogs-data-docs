@@ -1,0 +1,52 @@
+--- export: UDataAsset / DA_FP_CameraBehaviour_WHL_08 ---
+{
+  "Type": "MLandVehicleSpringArmDataAsset",
+  "Name": "DA_FP_CameraBehaviour_WHL_08",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MLandVehicleSpringArmDataAsset'",
+  "Package": "/WHL_08/Data/DA_FP_CameraBehaviour_WHL_08",
+  "Properties": {
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Value": -95.0
+      },
+      "UpperBound": {
+        "Value": 105.0
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -25.0
+      },
+      "UpperBound": {
+        "Value": 45.0
+      }
+    },
+    "FreeLookMinPitchYawCurve": {
+      "ObjectName": "CurveFloat'CRV_FreeLookPitchRange_WHL_08'",
+      "ObjectPath": "/WHL_08/Curves/CRV_FreeLookPitchRange_WHL_08.0"
+    },
+    "SocketOffset": {
+      "X": 20.0,
+      "Y": -50.5,
+      "Z": 183.0
+    },
+    "bClampToMaxPhysicsDeltaTime": true,
+    "CameraLagSpeed": 0.1,
+    "CameraRotationLagSpeed": 0.1,
+    "CameraLagMaxDistance": 1.0,
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {}
+      },
+      "FirstPersonLagSettings": {
+        "EnableLagInYaw": true,
+        "LagSpeedInYaw": 14.0,
+        "EnableLagInPitch": true,
+        "LagSpeedInPitch": 10.0,
+        "EnableLagInRoll": true,
+        "LagSpeedInRoll": 10.0
+      }
+    }
+  }
+}

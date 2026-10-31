@@ -1,0 +1,889 @@
+--- export: UDataTable / DT_Challenges_SessionEvents_Shared ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Challenges_SessionEvents_Shared",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/Meta/Challenges/DT_Challenges_SessionEvents_Shared",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Achievement.Economy.LoadoutSpend": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "654C8D014501DB4F8DA17DB03E45B095",
+        "SourceString": "Loadout Spender",
+        "LocalizedString": "Loadout Spender"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Economy.LoadoutSpend"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Economy.LoadoutSpend"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_LoadoutSpend'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_LoadoutSpend.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "97936D73-48650C40-A7C8D388-5CD18B2E",
+              "Name": "CashThreshold",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": [
+          "97936D73-48650C40-A7C8D388-5CD18B2E"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Economy.LoadoutSpend"
+      }
+    },
+    "Achievement.Tutorial.Completed": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "E240CE7446A65988155677938E3E40CB",
+        "SourceString": "Complete The Tutorial",
+        "LocalizedString": "Complete The Tutorial"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Tutorial.Completed"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "ExperienceID": "ShootingRangeTutorial",
+                  "bRequireExactMatch": false,
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Tutorial.Completed"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_TutorialCompleted'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_TutorialCompleted.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Tutorial.Completed"
+      }
+    },
+    "Achievement.Tutorial.PunchKristopher": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "3462DF4941C79986627482A2C6ED5806",
+        "SourceString": "Punch Kristopher",
+        "LocalizedString": "Punch Kristopher"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Tutorial.PunchKristopher"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "ExperienceID": "ShootingRangeTutorial",
+                  "bRequireExactMatch": false,
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Tutorial.PunchKristopher"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_PunchKristopher'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_PunchKristopher.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Tutorial.PunchKristopher"
+      }
+    },
+    "Achievement.Economy.TopCashEarner": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C93817FA406B1F5975E3049C92DCE811",
+        "SourceString": "Top Cash Earner",
+        "LocalizedString": "Top Cash Earner"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Economy.TopCashEarner"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "MatchStateTag": {
+                    "TagName": "MatchState.PostMatch"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Economy.TopCashEarner"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_TopCashEarner'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_TopCashEarner.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Economy.TopCashEarner"
+      }
+    },
+    "Achievement.Survival.ControlZoneSurvivor": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C7F3F37540F7A50C965191881904BEAE",
+        "SourceString": "Control Zone Survivor",
+        "LocalizedString": "Control Zone Survivor"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Survival.ControlZoneSurvivor"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Survival.ControlZoneSurvivor"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_ControlZoneSurvivor'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_ControlZoneSurvivor.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "691AF475-414BD91D-3C40CFB2-EC5B88B0",
+              "Name": "RequiredSeconds",
+              "ValueType": "EPropertyBagPropertyType::Float",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": [
+          "691AF475-414BD91D-3C40CFB2-EC5B88B0"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Survival.ControlZoneSurvivor"
+      }
+    },
+    "Achievement.Economy.SingleLifeProfit": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "95474FE647415950C9662FA04D9A16B3",
+        "SourceString": "Single Life Profit",
+        "LocalizedString": "Single Life Profit"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Economy.SingleLifeProfit"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Economy.SingleLifeProfit"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_SingleLifeProfit'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_SingleLifeProfit.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "2660206F-4EDC0274-D0750083-A7B2CF63",
+              "Name": "CashThreshold",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": [
+          "2660206F-4EDC0274-D0750083-A7B2CF63"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Economy.SingleLifeProfit"
+      }
+    },
+    "Achievement.Combat.LongShot": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "4EB9677E4E1E4C8E3FCAE0B50CA1863A",
+        "SourceString": "Long Shot",
+        "LocalizedString": "Long Shot"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Combat.LongShot"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Combat.LongShot"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_LongShot'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_LongShot.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "BD1E3E64-4EBD1C97-B2AED692-82AF3F75",
+              "Name": "DistanceThreshold",
+              "ValueType": "EPropertyBagPropertyType::Float",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 6
+        },
+        "PropertyOverrides": [
+          "BD1E3E64-4EBD1C97-B2AED692-82AF3F75"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Combat.LongShot"
+      }
+    },
+    "Achievement.Combat.RicochetKill": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "0F835216465F9B7B66BD34937332C8DE",
+        "SourceString": "Ricochet Kill",
+        "LocalizedString": "Ricochet Kill"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "F28D52354D9A96D255F3FAAA5CEC9408",
+        "SourceString": "Kill an enemy with a ricocheted projectile.",
+        "LocalizedString": "Kill an enemy with a ricocheted projectile."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Combat.RicochetKill"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Combat.RicochetKill"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_RicochetKill'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_RicochetKill.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Combat.RicochetKill"
+      }
+    },
+    "Achievement.Combat.DefibrillatorKill": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "7B52BC164F3D90E9EAF236BF07CFBCFC",
+        "SourceString": "Defibrillator Kill",
+        "LocalizedString": "Defibrillator Kill"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "B4E82FB942069DD03EE7A0BE6F614896",
+        "SourceString": "Kill an enemy with the defibrillator.",
+        "LocalizedString": "Kill an enemy with the defibrillator."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Combat.DefibrillatorKill"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "FeatureName": "Defibrillator",
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Combat.DefibrillatorKill"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_DefibrillatorKill'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_DefibrillatorKill.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Combat.DefibrillatorKill"
+      }
+    },
+    "Achievement.Match.CleanSweep": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C982DFA8424DCC2121C8659E2060BB7E",
+        "SourceString": "Clean Sweep",
+        "LocalizedString": "Clean Sweep"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "16C71CC5439037080D53BF90FA273288",
+        "SourceString": "Win a KOTH match without the opposing faction scoring.",
+        "LocalizedString": "Win a KOTH match without the opposing faction scoring."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.Match.CleanSweep"
+                  },
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "bInvert": true,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "MatchStateTag": {
+                    "TagName": "MatchState.PostMatch"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "FeatureName": "KOTH",
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.Match.CleanSweep"
+                  },
+                  "bInvert": false,
+                  "Operator": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_CleanSweep'",
+          "ObjectPath": "/Game/Meta/Achievements/StateTrees/ST_Achievement_CleanSweep.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 2
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.Match.CleanSweep"
+      }
+    }
+  }
+}

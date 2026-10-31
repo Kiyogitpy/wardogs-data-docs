@@ -1,0 +1,72 @@
+--- export: UObject / BHInventoryFragment_SubSlotSupport_0 ---
+{
+  "Type": "BHInventoryFragment_SubSlotSupport",
+  "Name": "BHInventoryFragment_SubSlotSupport_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_SubSlotSupport'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_STN_02_MainCannon'",
+    "ObjectPath": "/STN_02/Weapons/ID_STN_02_MainCannon.1"
+  },
+  "Properties": {
+    "bIsStorage": true,
+    "Containers": [
+      {
+        "ContainerIdentifier": {
+          "TagName": "Item.Ammo"
+        },
+        "Filter": {
+          "SupportFilter": "EBHSupportFilterMethod::AllowList",
+          "AllowedSubSlotItems": [],
+          "AllowedSubSlotContext": [
+            "Item.Caliber.20x102mm"
+          ],
+          "BlockedSubSlotItems": [],
+          "BlockedSubSlotContext": []
+        },
+        "SizeType": "EBHContainerType::Item",
+        "GridSize": {
+          "X": 1,
+          "Y": 1
+        },
+        "ExcludedGridSlots": [],
+        "ListSize": 1,
+        "MaxSlotAmountStackSize": 2000,
+        "bAllowsStackedPacking": false,
+        "bIsHiddenContainer": false,
+        "_aaabefidebfnobnbphclo": true,
+        "ContainerContextTags": [],
+        "DefaultItems": [],
+        "DefaultContainerItems": []
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / ID_STN_02_MainCannon ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_STN_02_MainCannon",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/STN_02/Weapons/ID_STN_02_MainCannon",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.STN_02.MainCannon"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Vehicle.Weapon.STN_02.MainCannon"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "FD0A68534013BF5087F29298330A6CC4",
+      "SourceString": "Machine Gun",
+      "LocalizedString": "Machine Gun"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_SubSlotSupport'ID_STN_02_MainCannon:BHInventoryFragment_SubSlotSupport_0'",
+        "ObjectPath": "/STN_02/Weapons/ID_STN_02_MainCannon.0"
+      }
+    ]
+  }
+}

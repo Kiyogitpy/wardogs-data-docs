@@ -1,0 +1,22 @@
+--- export: UDataAsset / DA_RoleMasteryProgression ---
+{
+  "Type": "WDUIRoleMasteryProgressionData",
+  "Name": "DA_RoleMasteryProgression",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIRoleMasteryProgressionData'",
+  "Package": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/RoleMastery/Data/DA_RoleMasteryProgression",
+  "Properties": {
+    "UnrankedLevelTextOverride": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "Text.Unranked",
+      "SourceString": "-",
+      "LocalizedString": "-"
+    },
+    "XPTextFormat": {
+      "TableId": "/Game/UI/StringTables/Frontend/STRINGS_Progression.STRINGS_Progression",
+      "Key": "RoleMasteryProgression.XPTextFormat",
+      "SourceString": "{CurrentXP} /\n\n{NextLevelXP}XP",
+      "LocalizedString": "{CurrentXP} /\n\n{NextLevelXP}XP"
+    }
+  }
+}

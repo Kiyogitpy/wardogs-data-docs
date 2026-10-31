@@ -1,0 +1,178 @@
+--- export: UDataAsset / EQS_FindCoverNearby ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindCoverNearby",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby",
+  "Properties": {
+    "QueryName": "EQS_FindCoverNearby",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindCoverNearby:EnvQueryOption_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.1"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryOption_0 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverNearby'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "SDEnvQueryGenerator_Covers'EQS_FindCoverNearby:SDEnvQueryGenerator_Covers_0'",
+      "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.5"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Dot'EQS_FindCoverNearby:EnvQueryTest_Dot_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.4"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverNearby:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.2"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindCoverNearby:EnvQueryTest_Distance_1'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverNearby'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.0"
+  },
+  "Properties": {
+    "TestOrder": 1,
+    "TestPurpose": "EEnvTestPurpose::Score",
+    "ScoringEquation": "EEnvTestScoreEquation::InverseLinear",
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_1 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverNearby'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.0"
+  },
+  "Properties": {
+    "DistanceTo": {
+      "ObjectName": "BlueprintGeneratedClass'BP_EnvQueryContext_AliveTeammates_C'",
+      "ObjectPath": "/WDAIPvEAICore/EQS/Context/BP_EnvQueryContext_AliveTeammates.0"
+    },
+    "TestOrder": 2,
+    "TestPurpose": "EEnvTestPurpose::Filter",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 200.0
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Dot_1 ---
+{
+  "Type": "EnvQueryTest_Dot",
+  "Name": "EnvQueryTest_Dot_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Dot'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverNearby'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.0"
+  },
+  "Properties": {
+    "LineA": {
+      "Rotation": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    },
+    "LineB": {
+      "LineFrom": {
+        "ObjectName": "Class'EnvQueryContext_Item'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "LineTo": {
+        "ObjectName": "Class'WDEnvQueryContext_HighestThreatLocation'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      }
+    },
+    "TestMode": "EEnvTestDot::Dot2D",
+    "FilterType": "EEnvTestFilterType::Minimum",
+    "FloatValueMin": {
+      "DefaultValue": 0.5
+    },
+    "FloatValueMax": {
+      "DefaultValue": 1.0
+    },
+    "ScoringEquation": "EEnvTestScoreEquation::Square",
+    "NormalizationType": "EEQSNormalizationType::RelativeToScores",
+    "ScoringFactor": {
+      "DefaultValue": 0.5
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / SDEnvQueryGenerator_Covers_0 ---
+{
+  "Type": "SDEnvQueryGenerator_Covers",
+  "Name": "SDEnvQueryGenerator_Covers_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'SDEnvQueryGenerator_Covers'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindCoverNearby'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.0"
+  },
+  "Properties": {
+    "CenterContext": {
+      "ObjectName": "Class'EnvQueryContext_Querier'",
+      "ObjectPath": "/Script/AIModule"
+    },
+    "Radius": {
+      "DefaultValue": 3000.0,
+      "DataBinding": {
+        "ObjectName": "WDAIDataProvider_AIConfigData'EQS_FindCoverNearby:SDEnvQueryGenerator_Covers_0.WDAIDataProvider_AIConfigData_0'",
+        "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.6"
+      },
+      "DataField": "DataValue"
+    },
+    "OnlyFreeCovers": {
+      "DefaultValue": true
+    },
+    "IncludeReservedByMe": {
+      "DefaultValue": true
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / WDAIDataProvider_AIConfigData_0 ---
+{
+  "Type": "WDAIDataProvider_AIConfigData",
+  "Name": "WDAIDataProvider_AIConfigData_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAIDataProvider_AIConfigData'",
+  "Outer": {
+    "ObjectName": "SDEnvQueryGenerator_Covers'EQS_FindCoverNearby:SDEnvQueryGenerator_Covers_0'",
+    "ObjectPath": "/WDAIPvEAICore/Cover/EQS/EQS_FindCoverNearby.5"
+  },
+  "Properties": {
+    "AIConfigDataField": "EAIConfigDataField::RadiusToSearchForCovers"
+  }
+}

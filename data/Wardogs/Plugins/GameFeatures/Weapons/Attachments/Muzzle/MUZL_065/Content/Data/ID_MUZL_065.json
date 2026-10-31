@@ -1,0 +1,209 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 1,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/MUZL_065/Meshes/SM_MUZL_065.SM_MUZL_065",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_WEPN_036_Muzzle'",
+        "ObjectPath": "/WEPN_036/Materials/MI_WEPN_036_Muzzle.0"
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  },
+  "Properties": {
+    "Weight": 0.38
+  }
+}
+--- export: UPrimaryDataAsset / ID_MUZL_065 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_MUZL_065",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/MUZL_065/Data/ID_MUZL_065",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.MUZL_065"
+    },
+    "ItemContext": [
+      "Item.Context.Equippable",
+      "Item.Attachment.Muzzle.WEPN_036"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Attachments.STRINGS_Items_Attachments",
+      "Key": "Items.Attachments.MUZL_058",
+      "SourceString": "QD-5 Suppressor",
+      "LocalizedString": "QD-5 Suppressor"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_MUZL_065:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_MUZL_065:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_MUZL_065:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_MUZL_065:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_MUZL_065:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_MUZL_065:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_MUZL_065:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "FireAudioContextTag": {
+        "TagName": "Attachment.Cue.Suppressor"
+      },
+      "FireMuzzleFlashScaleMultiplier": 0.2,
+      "bOverrideShotgunData": false,
+      "ShotgunData": {
+        "ChokeFactor": 0.8,
+        "bSeparateOuterConeHalfAngles": false,
+        "OuterConeHalfAngle": 10.0,
+        "OuterConeHorizontalHalfAngle": 10.0,
+        "OuterConeVerticalHalfAngle": 10.0,
+        "bSeparateRandomConeHalfAnglesRanges": false,
+        "RandomConeHalfAngleRange": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "RandomConeHorizontalHalfAngleRange": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "RandomConeVerticalHalfAngleRange": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "InnerConeHalfAngleMultiplier": 0.5
+      },
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Muzzle"
+      },
+      "AppliedEffects": [
+        {
+          "ObjectName": "BlueprintGeneratedClass'GE_MUZL_065_C'",
+          "ObjectPath": "/MUZL_065/Data/GE_MUZL_065.0"
+        }
+      ],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": true,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "Audio.Event.UI.Inventory.Attach.Suppressor"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "Audio.Event.UI.Inventory.Detach.Suppressor"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Suppressor_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Suppressor_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_MUZL_065'",
+    "ObjectPath": "/MUZL_065/Data/ID_MUZL_065.4"
+  },
+  "Properties": {
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

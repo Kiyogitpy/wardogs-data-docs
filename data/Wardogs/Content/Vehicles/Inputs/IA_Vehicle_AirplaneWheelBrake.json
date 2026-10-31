@@ -1,0 +1,64 @@
+--- export: UDataAsset / IA_Vehicle_AirplaneWheelBrake ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_AirplaneWheelBrake",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.WheelBraking"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerPressed'IA_Vehicle_AirplaneWheelBrake:InputTriggerPressed_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.2"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_AirplaneWheelBrake:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.3"
+      }
+    ],
+    "Modifiers": [
+      {
+        "ObjectName": "InputModifierDeadZone'IA_Vehicle_AirplaneWheelBrake:InputModifierDeadZone_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputModifierDeadZone_0 ---
+{
+  "Type": "InputModifierDeadZone",
+  "Name": "InputModifierDeadZone_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputModifierDeadZone'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneWheelBrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.0"
+  }
+}
+--- export: UObject / InputTriggerPressed_0 ---
+{
+  "Type": "InputTriggerPressed",
+  "Name": "InputTriggerPressed_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerPressed'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneWheelBrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.0"
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_AirplaneWheelBrake'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_AirplaneWheelBrake.0"
+  }
+}

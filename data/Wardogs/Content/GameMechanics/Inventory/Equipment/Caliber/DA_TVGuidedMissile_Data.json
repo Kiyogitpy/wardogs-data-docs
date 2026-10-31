@@ -1,0 +1,72 @@
+--- export: UPrimaryDataAsset / DA_TVGuidedMissile_Data ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_TVGuidedMissile_Data",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/DA_TVGuidedMissile_Data",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.84mm.TVGuided"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Rocket.60mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 100.0,
+        "ExplosiveRadius": 1000.0,
+        "EffectiveExplosiveRadius": 400.0,
+        "ExplosiveDamageFallOff": 0.5,
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 25.4,
+        "Diameter": 8.4,
+        "Mass": 2.3,
+        "DragModel": {
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.84mm"
+        }
+      },
+      "SuppressionData": {
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {}
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_84mm.NS_ProjectileTrail_84mm",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/Game/Developers/ryangoldsmith/Movement/Mover/BP_MoverProjectile.BP_MoverProjectile_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 22400.0,
+      "bShouldPenetrate": false,
+      "MinImpactAngleForRicochet": 85.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 22000.0,
+      "bClientPredictive": false,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

@@ -1,0 +1,32 @@
+--- export: UDataAsset / IA_Itemsmith_TestingGround ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Itemsmith_TestingGround",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Itemsmith/Input/IA_Itemsmith_TestingGround",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.ItemSmith.TestingGround"
+    },
+    "bTriggerWhenPaused": true,
+    "bConsumeInput": false,
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerTap'IA_Itemsmith_TestingGround:InputTriggerTap_0'",
+        "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_TestingGround.1"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerTap_0 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Itemsmith_TestingGround'",
+    "ObjectPath": "/Itemsmith/Input/IA_Itemsmith_TestingGround.0"
+  }
+}

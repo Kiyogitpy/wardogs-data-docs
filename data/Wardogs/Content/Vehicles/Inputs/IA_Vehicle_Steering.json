@@ -1,0 +1,54 @@
+--- export: UDataAsset / IA_Vehicle_Steering ---
+{
+  "Type": "BHInputAction",
+  "Name": "IA_Vehicle_Steering",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInputAction'",
+  "Package": "/Game/Vehicles/Inputs/IA_Vehicle_Steering",
+  "Properties": {
+    "InputTag": {
+      "TagName": "Input.NamedActions.Vehicle.Steering"
+    },
+    "ValueType": "EInputActionValueType::Axis1D",
+    "AccumulationBehavior": "EInputActionAccumulationBehavior::Cumulative",
+    "Triggers": [
+      {
+        "ObjectName": "InputTriggerHold'IA_Vehicle_Steering:InputTriggerHold_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Steering.1"
+      },
+      {
+        "ObjectName": "InputTriggerReleased'IA_Vehicle_Steering:InputTriggerReleased_0'",
+        "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Steering.2"
+      }
+    ]
+  }
+}
+--- export: UObject / InputTriggerHold_0 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Steering'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Steering.0"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.0,
+    "ActuationThreshold": 0.01
+  }
+}
+--- export: UObject / InputTriggerReleased_0 ---
+{
+  "Type": "InputTriggerReleased",
+  "Name": "InputTriggerReleased_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerReleased'",
+  "Outer": {
+    "ObjectName": "BHInputAction'IA_Vehicle_Steering'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Steering.0"
+  },
+  "Properties": {
+    "ActuationThreshold": 0.01
+  }
+}

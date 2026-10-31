@@ -1,0 +1,186 @@
+--- export: UObject / GameFeatureAction_AddWorldPartitionContent_0 ---
+{
+  "Type": "GameFeatureAction_AddWorldPartitionContent",
+  "Name": "GameFeatureAction_AddWorldPartitionContent_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddWorldPartitionContent'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'StimPen'",
+    "ObjectPath": "/StimPen/StimPen.2"
+  },
+  "Properties": {
+    "ExternalDataLayerAsset": {
+      "ObjectName": "ExternalDataLayerAsset'EDL_StimPen'",
+      "ObjectPath": "/StimPen/EDL_StimPen.0"
+    }
+  }
+}
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'StimPen'",
+    "ObjectPath": "/StimPen/StimPen.2"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "EntityData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/StimPen/Data/DT_EntityData_UI_Ext_StimPen.DT_EntityData_UI_Ext_StimPen",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "VendorData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/StimPen/Data/DT_VendorData_Ext_StimPen.DT_VendorData_Ext_StimPen",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "PostProcessEffectsData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/StimPen/Data/DT_PostProcessEffects_StimPen.DT_PostProcessEffects_StimPen",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / StimPen ---
+{
+  "Type": "GameFeatureData",
+  "Name": "StimPen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/StimPen/StimPen",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'StimPen:WDGameFeatureActions_AddWorldInteractableContextToActor_0'",
+        "ObjectPath": "/StimPen/StimPen.3"
+      },
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'StimPen:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/StimPen/StimPen.1"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddWorldPartitionContent'StimPen:GameFeatureAction_AddWorldPartitionContent_0'",
+        "ObjectPath": "/StimPen/StimPen.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "BH.Item",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHInventory.BHInventoryItemDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/StimPen/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.Action",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/BHActionSystem.BHActionDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/StimPen/Data/Stim/Actions"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
+        }
+      },
+      {
+        "PrimaryAssetType": "BH.CharacterModifierState",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/WDGame.WDCharacterModifierStateDefinition",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/StimPen/Data"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_0 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'StimPen'",
+    "ObjectPath": "/StimPen/StimPen.2"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/StimPen/Data/WIC_StimPenInteractionContext.WIC_StimPenInteractionContext_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Script/WDGame.WDMoverCharacter",
+      "SubPathString": ""
+    }
+  }
+}

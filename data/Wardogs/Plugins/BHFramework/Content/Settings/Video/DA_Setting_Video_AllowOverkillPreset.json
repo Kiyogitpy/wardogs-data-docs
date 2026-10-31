@@ -1,0 +1,117 @@
+--- export: UObject / BHUserSettingBoolDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingBoolDiscreteValues",
+  "Name": "BHUserSettingBoolDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingBoolDiscreteValues'",
+  "Outer": {
+    "ObjectName": "WDUserSettingToggleConfirmedData'DA_Setting_Video_AllowOverkillPreset'",
+    "ObjectPath": "/BHFramework/Settings/Video/DA_Setting_Video_AllowOverkillPreset.1"
+  },
+  "Properties": {
+    "Values": [
+      {
+        "Key": "True",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Toggle.On",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "False",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.Toggle.Off",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UDataAsset / DA_Setting_Video_AllowOverkillPreset ---
+{
+  "Type": "WDUserSettingToggleConfirmedData",
+  "Name": "DA_Setting_Video_AllowOverkillPreset",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUserSettingToggleConfirmedData'",
+  "Package": "/BHFramework/Settings/Video/DA_Setting_Video_AllowOverkillPreset",
+  "Properties": {
+    "_aaabfnfdondmilbjjiklk": {
+      "Tag": {
+        "TagName": "UI.Popup.AllowOverkillMode"
+      },
+      "Type": {
+        "TagName": "UI.Popup.Type.Warning"
+      },
+      "Title": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Title.AllowOverkillMode",
+        "SourceString": "Are You Sure?",
+        "LocalizedString": "Are You Sure?"
+      },
+      "Subtitle": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Subtitle.AllowOverkillMode",
+        "SourceString": "These settings will affect PC performance",
+        "LocalizedString": "These settings will affect PC performance"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+        "Key": "Description.AllowOverkillMode",
+        "SourceString": "You are attempting to enable overkill without the recommended hardware specifications.",
+        "LocalizedString": "You are attempting to enable overkill without the recommended hardware specifications."
+      },
+      "Options": [
+        {
+          "Key": "EWDPopupOption::Right",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Confirm",
+              "SourceString": "Confirm",
+              "LocalizedString": "Confirm"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": true,
+            "ButtonTypeOverride": {
+              "TagName": "UI.Popup.Button.Main.Timed"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": false
+          }
+        },
+        {
+          "Key": "EWDPopupOption::Left",
+          "Value": {
+            "ButtonText": {
+              "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+              "Key": "Button.Cancel",
+              "SourceString": "Cancel",
+              "LocalizedString": "Cancel"
+            },
+            "bAutoCloseOnSelected": true,
+            "bAutoFocusOnOpen": false,
+            "ButtonTypeOverride": {
+              "TagName": "None"
+            },
+            "ButtonConfig": null,
+            "bCallOnSceneEscape": true
+          }
+        }
+      ]
+    },
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingBoolDiscreteValues'DA_Setting_Video_AllowOverkillPreset:BHUserSettingBoolDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Video/DA_Setting_Video_AllowOverkillPreset.0"
+      }
+    },
+    "DisplayType": {
+      "TagName": "UserSettings.Common.DisplayType.Discrete.SwitchConfirmed"
+    }
+  }
+}

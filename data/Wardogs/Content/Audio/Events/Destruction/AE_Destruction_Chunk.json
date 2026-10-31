@@ -1,0 +1,64 @@
+--- export: UObject / AEB_Destruction_Chunk_v2_C_1 ---
+{
+  "Type": "AEB_Destruction_Chunk_v2_C",
+  "Name": "AEB_Destruction_Chunk_v2_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_Destruction_Chunk_v2.AEB_Destruction_Chunk_v2_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Destruction_Chunk'",
+    "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Chunk.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_Destruction_Chunk_v2_C'Default__AEB_Destruction_Chunk_v2_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_Destruction_Chunk_v2.0"
+  },
+  "Properties": {
+    "Transient Audio Data Small": {
+      "ObjectName": "WDAudioData'DA_Destruction_Building_Chunk_Small_Transients'",
+      "ObjectPath": "/Game/Audio/Destruction/DAs/DA_Destruction_Building_Chunk_Small_Transients.0"
+    },
+    "Tail Audio Data Small": {
+      "ObjectName": "WDAudioData'DA_Destruction_Building_Chunk_Small_Tails'",
+      "ObjectPath": "/Game/Audio/Destruction/DAs/DA_Destruction_Building_Chunk_Small_Tails.0"
+    },
+    "Transient Audio Data Medium": {
+      "ObjectName": "WDAudioData'DA_Destruction_Building_Chunk_Medium_Transients'",
+      "ObjectPath": "/Game/Audio/Destruction/DAs/DA_Destruction_Building_Chunk_Medium_Transients.0"
+    },
+    "Tail Audio Data Medium": {
+      "ObjectName": "WDAudioData'DA_Destruction_Building_Chunk_Medium_Tails'",
+      "ObjectPath": "/Game/Audio/Destruction/DAs/DA_Destruction_Building_Chunk_Medium_Tails.0"
+    },
+    "Transient Audio Data Large": {
+      "ObjectName": "WDAudioData'DA_Destruction_Building_Chunk_Large_Transients'",
+      "ObjectPath": "/Game/Audio/Destruction/DAs/DA_Destruction_Building_Chunk_Large_Transients.0"
+    },
+    "Tail Audio Data Large": {
+      "ObjectName": "WDAudioData'DA_Destruction_Building_Chunk_Large_Tails'",
+      "ObjectPath": "/Game/Audio/Destruction/DAs/DA_Destruction_Building_Chunk_Large_Tails.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Destruction.Building.Chunk"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Destruction_Chunk ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Destruction_Chunk",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Destruction/AE_Destruction_Chunk",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Destruction.Chunk"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_Destruction_Chunk_v2_C'AE_Destruction_Chunk:AEB_Destruction_Chunk_v2_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Destruction/AE_Destruction_Chunk.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 405.0
+  }
+}

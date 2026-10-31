@@ -1,0 +1,70 @@
+--- export: UDataAsset / DA_Setting_Controls_ActionBehavior_Default_Toggle ---
+{
+  "Type": "BHUserSettingDiscreteData",
+  "Name": "DA_Setting_Controls_ActionBehavior_Default_Toggle",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingDiscreteData'",
+  "Package": "/BHFramework/Settings/Controls/DA_Setting_Controls_ActionBehavior_Default_Toggle",
+  "Properties": {
+    "Parameters": {
+      "DefaultIndex": 1,
+      "DefaultValues": {
+        "ObjectName": "BHUserSettingEnumDiscreteValues'DA_Setting_Controls_ActionBehavior_Default_Toggle:BHUserSettingEnumDiscreteValues_0'",
+        "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_ActionBehavior_Default_Toggle.1"
+      }
+    }
+  }
+}
+--- export: UObject / BHUserSettingEnumDiscreteValues_0 ---
+{
+  "Type": "BHUserSettingEnumDiscreteValues",
+  "Name": "BHUserSettingEnumDiscreteValues_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHUserSettingEnumDiscreteValues'",
+  "Outer": {
+    "ObjectName": "BHUserSettingDiscreteData'DA_Setting_Controls_ActionBehavior_Default_Toggle'",
+    "ObjectPath": "/BHFramework/Settings/Controls/DA_Setting_Controls_ActionBehavior_Default_Toggle.0"
+  },
+  "Properties": {
+    "NamedValues": [
+      {
+        "Key": "EBHActionBehaviorSetting::Hold",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.ActionBehavior.Hold",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "EBHActionBehaviorSetting::Toggle",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.ActionBehavior.Toggle",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ],
+    "Values": [
+      {
+        "Key": "0",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.ActionBehavior.Hold",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      },
+      {
+        "Key": "1",
+        "Value": {
+          "TableId": "/BHFramework/StringTables/STRINGS_BH_Settings_Values.STRINGS_BH_Settings_Values",
+          "Key": "Value.ActionBehavior.Toggle",
+          "SourceString": null,
+          "LocalizedString": ""
+        }
+      }
+    ]
+  }
+}

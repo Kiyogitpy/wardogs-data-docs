@@ -1,0 +1,135 @@
+--- export: UPrimaryDataAsset / AnimSet_MoverCharacter ---
+{
+  "Type": "BHAnimationSet",
+  "Name": "AnimSet_MoverCharacter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHAnimationSet'",
+  "Package": "/WDCore/Character/AnimSet_MoverCharacter",
+  "Properties": {
+    "Animations": [
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.Revive"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_Revive'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Revive/AM_FP_Revive.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_Revive'",
+              "ObjectPath": "/Game/Animation/Characters/Utilities/Revive/AM_TP_Revive.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.Drop"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Item_Drop'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Item_Drop.0"
+            },
+            "ThirdPersonPlayerAnimation": null
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.PickUp"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Item_Pickup'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Item_Pickup.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AK74M_Item_Pick_Up'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Item_Pick_Drop/AM_TP_AK74M_Item_Pick_Up.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.DoorInteraction"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_FP_AR_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/AssaultRifle/AM_FP_AR_Door_Interact.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_AR_Door_Interact'",
+              "ObjectPath": "/Game/Animation/Characters/Weapons/Doors/AM_TP_AR_Door_Interact.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.NPCIdle"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_NPC_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Rifle/AM_TP_NPC_Idle.0"
+            },
+            "ThirdPersonPlayerAnimation": {
+              "ObjectName": "AnimMontage'AM_TP_NPC_Idle'",
+              "ObjectPath": "/Game/Animation/Characters/NPC/Rifle/AM_TP_NPC_Idle.0"
+            }
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Animation.Asset.Character.DoorBreach"
+        },
+        "Value": {
+          "BaseAsset": {
+            "FirstPersonPlayerAnimation": null,
+            "ThirdPersonPlayerAnimation": null
+          },
+          "Overrides": [],
+          "ConditionSchema": {
+            "ObjectName": "Class'BHAnimationAssetConditionSchema'",
+            "ObjectPath": "/Script/BHAnimationData"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,224 @@
+--- export: UDataTable / DT_GlobalDamage_SupplyCrate ---
+{
+  "Type": "DataTable",
+  "Name": "DT_GlobalDamage_SupplyCrate",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SupplyCrates/DataTables/DT_GlobalDamage_SupplyCrate",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDDamageableEntityTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Meta.Damage.Vehicle.SupplyCrate": {
+      "DamageModificationEntries": [
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -60.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": 100.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.DamageType.Melee"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -80.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Melee"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle.SupplyCrate"
+      }
+    },
+    "Meta.Damage.Vehicle.SupplyCrate.Large": {
+      "DamageModificationEntries": [],
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle.SupplyCrate.Large"
+      }
+    },
+    "Meta.Damage.Vehicle.SupplyCrate.Small": {
+      "DamageModificationEntries": [],
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle.SupplyCrate.Small"
+      }
+    },
+    "Meta.Damage.Vehicle.SupplyCrate.Large.Armoured": {
+      "DamageModificationEntries": [
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -25.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -50.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle.SupplyCrate.Large.Armoured"
+      }
+    },
+    "Meta.Damage.Vehicle.SupplyCrate.Small.Armoured": {
+      "DamageModificationEntries": [
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Bullet"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -25.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -50.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Meta.Damage.Vehicle.SupplyCrate.Small.Armoured"
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 2,
+      "Y": 2
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Items/Resources/Ammo/SM_40mm_Ammo.SM_40mm_Ammo",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  },
+  "Properties": {
+    "MaxStackSize": 50,
+    "MaxStackSizeOverrides": [
+      {
+        "Key": {
+          "TagName": "Inventory.Slot.Vehicle.Storage"
+        },
+        "Value": 200
+      }
+    ]
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  }
+}
+--- export: UPrimaryDataAsset / ID_30mm ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_30mm",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Game/Items/Resources/Ammo/30mm/ID_30mm",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.30mm"
+    },
+    "ItemContext": [
+      "Item.Ammo",
+      "Item.Caliber.30mm",
+      "Item.Ammo.Type.FMJ.Tracer",
+      "Item.Context.ForceToStorage"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "9879796B4CB1370F0683059267075635",
+      "SourceString": "30mm",
+      "LocalizedString": "30mm"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_30mm:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_30mm:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_30mm:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Projectile'ID_30mm:WDInventoryFragment_Projectile_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_30mm:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_30mm:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Magazine_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Magazine_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Projectile_0 ---
+{
+  "Type": "WDInventoryFragment_Projectile",
+  "Name": "WDInventoryFragment_Projectile_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Projectile'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_30mm'",
+    "ObjectPath": "/Game/Items/Resources/Ammo/30mm/ID_30mm.4"
+  },
+  "Properties": {
+    "ProjectileData": {
+      "ObjectName": "WDProjectileData'DA_30mm_ProjectileData'",
+      "ObjectPath": "/Game/GameMechanics/Inventory/Equipment/Caliber/30mm/DA_30mm_ProjectileData.0"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+--- export: UObject / WDActorBuildSpawner_0 ---
+{
+  "Type": "WDActorBuildSpawner",
+  "Name": "WDActorBuildSpawner_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDActorBuildSpawner'",
+  "Outer": {
+    "ObjectName": "WDBuildableDataAsset'DA_Buildable_TallHBlock'",
+    "ObjectPath": "/Buildables/Data/Buildables/TallHBlock/DA_Buildable_TallHBlock.1"
+  },
+  "Properties": {
+    "BaseBuildableClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_Buildable_C'",
+      "ObjectPath": "/Buildables/Data/Buildables/B_Buildable.2"
+    }
+  }
+}
+--- export: UDataAsset / DA_Buildable_TallHBlock ---
+{
+  "Type": "WDBuildableDataAsset",
+  "Name": "DA_Buildable_TallHBlock",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDBuildableDataAsset'",
+  "Package": "/Buildables/Data/Buildables/TallHBlock/DA_Buildable_TallHBlock",
+  "Properties": {
+    "SpawnerOverride": {
+      "ObjectName": "WDActorBuildSpawner'DA_Buildable_TallHBlock:WDActorBuildSpawner_0'",
+      "ObjectPath": "/Buildables/Data/Buildables/TallHBlock/DA_Buildable_TallHBlock.0"
+    },
+    "EntityTag": {
+      "TagName": "Id.Buildable.TallHBlock"
+    },
+    "Cost": 22,
+    "RepairSpeedMultiplier": 1.47,
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_RadialWheels.STRINGS_RadialWheels",
+      "Key": "BuildTool.TallHBlock.Text.Slot.Title",
+      "SourceString": "Hesco Block (Large)",
+      "LocalizedString": "Hesco Block (Large)"
+    },
+    "MaxHealth": 2250.0,
+    "bUseCurveToUpdateHealthVisuals": true,
+    "HealthVisualsPercentageCurve": {
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'C_DamageTintCurve'",
+        "ObjectPath": "/Buildables/Data/Buildables/C_DamageTintCurve.0"
+      }
+    },
+    "_aaabhmbpigcbckbdmafaf": 0,
+    "PlacePivotVerticalOffset": 150.0,
+    "PlacePivotHorizontalOffset": 50.0,
+    "FoundationStaticMesh": {
+      "AssetPathName": "/Buildables/Data/Foundations/Meshes/SM_Foundation_Hesco.SM_Foundation_Hesco",
+      "SubPathString": ""
+    },
+    "MaxDepthUnderTerrain": 30.0,
+    "BuildingStagesDefinition": {
+      "ObjectName": "BuildingStagesDefinition'DA_Buildable_TallHblock_Stages'",
+      "ObjectPath": "/Buildables/Data/Buildables/TallHBlock/DA_Buildable_TallHblock_Stages.0"
+    },
+    "BuildingStageChangedVFX": {
+      "AssetPathName": "/Buildables/Data/Buildables/NS_BuildStage.NS_BuildStage",
+      "SubPathString": ""
+    },
+    "NiagaraDataChannelAsset": {
+      "AssetPathName": "/Game/VFX/Building/DataChannel/NDC_Buildable.NDC_Buildable",
+      "SubPathString": ""
+    },
+    "FinalStageBoundingBox": {
+      "Min": {
+        "X": -77.40427,
+        "Y": -76.08807,
+        "Z": -0.63897705
+      },
+      "Max": {
+        "X": 76.84442,
+        "Y": 79.10834,
+        "Z": 311.82812
+      },
+      "IsValid": 1
+    },
+    "ConstructedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Constructed"
+    },
+    "DestroyedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Destroyed"
+    },
+    "PlacedGameplayCueTag": {
+      "TagName": "GameplayCue.Buildable.Placed"
+    },
+    "_aaabiaddhgfankgbapcoa": {
+      "TagName": "GameplayCue.Buildable.Dismantle"
+    },
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Buildable.LargeHesco"
+      }
+    },
+    "PlacementConditions": [
+      {
+        "ObjectName": "Class'WDWithinFobBoundsPlacementCondition'",
+        "ObjectPath": "/Script/BuildablesRuntime"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_WithinLadderBoundsPlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_WithinLadderBoundsPlacementCondition.1"
+      },
+      {
+        "ObjectName": "BlueprintGeneratedClass'B_SafeZonePlacementCondition_C'",
+        "ObjectPath": "/Buildables/Data/Buildables/B_SafeZonePlacementCondition.1"
+      }
+    ],
+    "RadialWheelSlotTag": {
+      "TagName": "UI.RadialWheel.BuildTool.SlotType.TallHBlock"
+    }
+  }
+}

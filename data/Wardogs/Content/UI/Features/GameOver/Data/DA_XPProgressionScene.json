@@ -1,0 +1,63 @@
+--- export: UDataAsset / DA_XPProgressionScene ---
+{
+  "Type": "WDUIXPProgressionData",
+  "Name": "DA_XPProgressionScene",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIXPProgressionData'",
+  "Package": "/Game/UI/Features/GameOver/Data/DA_XPProgressionScene",
+  "Properties": {
+    "RoleEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIRoleXPProgressionEntryViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/GameOver/Data/DA_RoleXPProgressionEntry.DA_RoleXPProgressionEntry",
+        "SubPathString": ""
+      }
+    },
+    "MetaRolePriority": [
+      {
+        "TagName": "Meta.Role.Infantry"
+      },
+      {
+        "TagName": "Meta.Role.Medic"
+      },
+      {
+        "TagName": "Meta.Role.Recon"
+      },
+      {
+        "TagName": "Meta.Role.Support"
+      },
+      {
+        "TagName": "Meta.Role.Driver"
+      },
+      {
+        "TagName": "Meta.Role.Pilot"
+      }
+    ],
+    "NextMatchTimerText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_XPProgression.STRINGS_XPProgression",
+      "Key": "Text.NextMatchTimer.Formatting",
+      "SourceString": "Next Round in {Minutes}:{Seconds}",
+      "LocalizedString": "Next Round in {Minutes}:{Seconds}"
+    },
+    "_aaabhnlajapoapnciddjj": {
+      "TableId": "/Game/UI/StringTables/STRINGS_XPProgression.STRINGS_XPProgression",
+      "Key": "Text.ShutdownTimer",
+      "SourceString": "Server shutting down in {Minutes}:{Seconds}",
+      "LocalizedString": "Server shutting down in {Minutes}:{Seconds}"
+    },
+    "_aaabgepkhcdggbbnljhcn": {
+      "TableId": "/Game/UI/StringTables/STRINGS_XPProgression.STRINGS_XPProgression",
+      "Key": "Text.RestartTimer",
+      "SourceString": "Server restarting in {Minutes} {Seconds}",
+      "LocalizedString": "Server restarting in {Minutes} {Seconds}"
+    },
+    "SkippedRevealAudioEvent": {
+      "TagName": "Audio.Event.UI.XPProgression.SkipReveal"
+    },
+    "bShouldOpenContextDrawerOnCloseRequested": true,
+    "bExitPreviousSceneOnContextDrawerOpened": false
+  }
+}

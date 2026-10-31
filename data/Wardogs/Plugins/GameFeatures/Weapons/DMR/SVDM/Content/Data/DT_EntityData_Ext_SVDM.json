@@ -1,0 +1,224 @@
+--- export: UDataTable / DT_EntityData_Ext_SVDM ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_Ext_SVDM",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SVDM/Data/DT_EntityData_Ext_SVDM",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.SVDMMagazine": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+        "Key": "Items.Magazine.SVDM.Standard",
+        "SourceString": "SVD 10 RND Magazine",
+        "LocalizedString": "SVD 10 RND Magazine"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+        "Key": "Description.Magazine.SVDM.Standard",
+        "SourceString": "- 10 Rounds\r\n- 7.62x54R ammo\r\n- SVD only",
+        "LocalizedString": "- 10 Rounds\r\n- 7.62x54R ammo\r\n- SVD only"
+      },
+      "Category": {
+        "TagName": "Item.Category.Ammunition"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Ammunition",
+            "SourceString": "Ammunition",
+            "LocalizedString": "Ammunition"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+            "Key": "Description.Magazine.SVDM.Standard",
+            "SourceString": "- 10 Rounds\r\n- 7.62x54R ammo\r\n- SVD only",
+            "LocalizedString": "- 10 Rounds\r\n- 7.62x54R ammo\r\n- SVD only"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Attachments/T_UI_Icon_Attachment_AK_Magazine_Bullets_Textured_512x512.T_UI_Icon_Attachment_AK_Magazine_Bullets_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Magazines/T_UI_Vendor_MAGZ_SVDM.T_UI_Vendor_MAGZ_SVDM",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Pickup.Tooltip"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.SVDMMagazine"
+      }
+    },
+    "Id.Item.SVDM": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+        "Key": "Items.Weapons.SVDM",
+        "SourceString": "SVD",
+        "LocalizedString": "SVD"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+        "Key": "Description.Weapon.SVDM",
+        "SourceString": "- Semi automatic\r\n- 7.62x54mm",
+        "LocalizedString": "- Semi automatic\r\n- 7.62x54mm"
+      },
+      "Category": {
+        "TagName": "Item.Category.Weapon.Ranged"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Recon"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Weapon"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Weapon"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+            "Key": "Items.Weapons.DMR",
+            "SourceString": "Marksman Rifle",
+            "LocalizedString": "Marksman Rifle"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Description.Weapon.SVDM",
+            "SourceString": "- Semi automatic\r\n- 7.62x54mm",
+            "LocalizedString": "- Semi automatic\r\n- 7.62x54mm"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Flavor.Weapon.SVDM",
+            "SourceString": "Versatile marksman rifle designed for maximum damage at medium to long range.",
+            "LocalizedString": "Versatile marksman rifle designed for maximum damage at medium to long range."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_SVDM.T_UI_Icon_Killfeed_SVDM",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/DeathRecap/T_UI_DeathRecap_SVD.T_UI_DeathRecap_SVD",
+            "Value": [
+              "UI.Icon.EventLog.Overview"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Weapons/T_UI_Vendor_WEPN_015.T_UI_Vendor_WEPN_015",
+            "Value": [
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Container"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_SVDM.T_UI_Icon_Killfeed_SVDM",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.SVDM"
+      }
+    }
+  }
+}

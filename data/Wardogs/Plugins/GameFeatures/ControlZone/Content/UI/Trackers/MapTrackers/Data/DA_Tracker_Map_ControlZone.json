@@ -1,0 +1,101 @@
+--- export: UDataAsset / DA_Tracker_Map_ControlZone ---
+{
+  "Type": "WDUIControlZoneMapTrackerData",
+  "Name": "DA_Tracker_Map_ControlZone",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIControlZoneMapTrackerData'",
+  "Package": "/ControlZone/UI/Trackers/MapTrackers/Data/DA_Tracker_Map_ControlZone",
+  "Properties": {
+    "ZoneContestedColor": {
+      "B": 158,
+      "G": 159,
+      "R": 159,
+      "A": 255,
+      "Hex": "9F9F9E"
+    },
+    "ZoneUnownedColor": {
+      "B": 190,
+      "G": 190,
+      "R": 190,
+      "A": 255,
+      "Hex": "BEBEBE"
+    },
+    "ShapeMaterials": [
+      {
+        "Key": "EWDZoneShape::Cylinder",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_Zone_Circle.MI_UI_Zone_Circle",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDZoneShape::Box",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_Zone_Rectangle.MI_UI_Zone_Rectangle",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDZoneShape::Ellipse",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_Zone_Circle.MI_UI_Zone_Circle",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "HotZoneShapeMaterials": [
+      {
+        "Key": "EWDZoneShape::Cylinder",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_HotZone_Circle.MI_UI_HotZone_Circle",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDZoneShape::Box",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_HotZone_Rectangle.MI_UI_HotZone_Rectangle",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDZoneShape::Ellipse",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Materials/MI_UI_HotZone_Circle.MI_UI_HotZone_Circle",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "bDisplayText": false,
+    "bShouldMapZoomToScale": false,
+    "ZoomScaleCurve": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 1.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 1.0,
+            "Value": 0.25,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      }
+    },
+    "ZOrder": 21
+  }
+}

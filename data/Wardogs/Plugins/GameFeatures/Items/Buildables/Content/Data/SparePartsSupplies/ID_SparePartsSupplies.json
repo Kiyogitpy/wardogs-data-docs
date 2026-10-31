@@ -1,0 +1,150 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SparePartsSupplies'",
+    "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SparePartsSupplies'",
+    "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.5"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Buildables/Data/SM_Buildtool_00a.SM_Buildtool_00a",
+      "SubPathString": ""
+    },
+    "RelativeRotation": {
+      "Pitch": -90.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": 27.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 15.0,
+      "Y": 27.7,
+      "Z": 18.2
+    },
+    "_aaaankomdlipjpppmphif": 2.0
+  }
+}
+--- export: UObject / BHInventoryFragment_Stackable_0 ---
+{
+  "Type": "BHInventoryFragment_Stackable",
+  "Name": "BHInventoryFragment_Stackable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Stackable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SparePartsSupplies'",
+    "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.5"
+  },
+  "Properties": {
+    "MaxStackSize": 50
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SparePartsSupplies'",
+    "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.5"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SparePartsSupplies'",
+    "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.5"
+  },
+  "Properties": {
+    "Weight": 0.03
+  }
+}
+--- export: UPrimaryDataAsset / ID_SparePartsSupplies ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_SparePartsSupplies",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.SparePartsSupplies"
+    },
+    "ItemContext": [
+      "Item.SparePartsSupplies"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "A97C18204FFCD339BCA4E295906A23AA",
+      "SourceString": "Spare Parts",
+      "LocalizedString": "Spare Parts"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_Stackable'ID_SparePartsSupplies:BHInventoryFragment_Stackable_0'",
+        "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_SparePartsSupplies:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_SparePartsSupplies:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_SparePartsSupplies:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_SparePartsSupplies:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_SparePartsSupplies:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.4"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_SparePartsSupplies'",
+    "ObjectPath": "/Buildables/Data/SparePartsSupplies/ID_SparePartsSupplies.5"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_MechanicalSupplies_Audio'",
+      "ObjectPath": "/Buildables/Data/SparePartsSupplies/DA_Item_MechanicalSupplies_Audio.0"
+    }
+  }
+}

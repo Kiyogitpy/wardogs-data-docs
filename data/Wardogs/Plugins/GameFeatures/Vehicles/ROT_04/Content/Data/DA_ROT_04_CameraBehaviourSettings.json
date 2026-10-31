@@ -1,0 +1,189 @@
+--- export: UDataAsset / DA_ROT_04_CameraBehaviourSettings ---
+{
+  "Type": "MRotaryVehicleSpringArmDataAsset",
+  "Name": "DA_ROT_04_CameraBehaviourSettings",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'MRotaryVehicleSpringArmDataAsset'",
+  "Package": "/ROT_04/Data/DA_ROT_04_CameraBehaviourSettings",
+  "Properties": {
+    "PitchMapBoundsInput": {
+      "X": -45.0,
+      "Y": 45.0
+    },
+    "PitchMapBoundsOutput": {
+      "X": -25.0,
+      "Y": 2.5
+    },
+    "VelocityMapBoundsInput": {
+      "X": 0.0,
+      "Y": 7000.0
+    },
+    "VelocityMapBoundsOutput": {
+      "X": 0.3,
+      "Y": 5.0
+    },
+    "DefaultLerpSpeed": 5.0,
+    "FreelookYawRange": {
+      "LowerBound": {
+        "Type": "ERangeBoundTypes::Open"
+      },
+      "UpperBound": {
+        "Type": "ERangeBoundTypes::Open"
+      }
+    },
+    "FreelookPitchRange": {
+      "LowerBound": {
+        "Value": -85.0
+      },
+      "UpperBound": {
+        "Value": 90.0
+      }
+    },
+    "CameraProbeMinDistance": 150.0,
+    "CameraUpwardsZOffset": 600.0,
+    "SocketOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 261.27036
+    },
+    "TargetArmLength": 1587.0831,
+    "bMapArmLengthFromFOV": true,
+    "bMapArmHeightFromFOV": true,
+    "FOVMappingRange": {
+      "LowerBound": {
+        "Value": 60.0
+      },
+      "UpperBound": {
+        "Value": 110.0
+      }
+    },
+    "ArmLengthAtFOVRange": {
+      "X": 3000.0,
+      "Y": 1910.5706
+    },
+    "ArmHeightAtFOVRange": {
+      "X": 200.0,
+      "Y": 100.0
+    },
+    "RotationLagVsVehicleRotation": {
+      "EditorCurveData": {
+        "Keys": [
+          {
+            "InterpMode": "RCIM_Linear",
+            "TangentMode": "RCTM_Auto",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 0.0,
+            "Value": 4.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 48.0,
+            "Value": 4.0,
+            "ArriveTangent": 0.0,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 0.0,
+            "LeaveTangentWeight": 0.0
+          },
+          {
+            "InterpMode": "RCIM_Cubic",
+            "TangentMode": "RCTM_User",
+            "TangentWeightMode": "RCTWM_WeightedNone",
+            "Time": 72.0,
+            "Value": 14.0,
+            "ArriveTangent": 1.2900908,
+            "ArriveTangentWeight": 0.0,
+            "LeaveTangent": 1.2900908,
+            "LeaveTangentWeight": 0.0
+          }
+        ]
+      },
+      "ExternalCurve": {
+        "ObjectName": "CurveFloat'DA_ROT_04_CameraRotationCurve'",
+        "ObjectPath": "/ROT_04/Curves/DA_ROT_04_CameraRotationCurve.0"
+      }
+    },
+    "RotationLagLerpSpeed": 2.0,
+    "bInheritRoll": false,
+    "bEnableCameraLag": true,
+    "bEnableCameraRotationLag": true,
+    "CameraLagSpeed": 8.0,
+    "CameraRotationLagSpeed": 10.0,
+    "CameraLagMaxDistance": 150.0,
+    "OffsetSwingYRange": {
+      "LowerBound": {
+        "Value": 0.0
+      },
+      "UpperBound": {
+        "Value": 0.0
+      }
+    },
+    "OffsetSwingXRange": {
+      "LowerBound": {
+        "Value": 0.0
+      },
+      "UpperBound": {
+        "Value": 0.0
+      }
+    },
+    "SteeringRange": {
+      "LowerBound": {
+        "Value": 0.0
+      },
+      "UpperBound": {
+        "Value": 0.0
+      }
+    },
+    "CameraComponentSettings": {
+      "FieldOfViewVsSpeed": {
+        "EditorCurveData": {
+          "Keys": [
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 180.0,
+              "Value": 4.734527E-06,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 250.0,
+              "Value": 24.163683,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            },
+            {
+              "InterpMode": "RCIM_Cubic",
+              "TangentMode": "RCTM_Auto",
+              "TangentWeightMode": "RCTWM_WeightedNone",
+              "Time": 350.0,
+              "Value": 37.962803,
+              "ArriveTangent": 0.0,
+              "ArriveTangentWeight": 0.0,
+              "LeaveTangent": 0.0,
+              "LeaveTangentWeight": 0.0
+            }
+          ]
+        }
+      },
+      "RotationOverride": {
+        "Pitch": -2.5,
+        "Yaw": 0.0,
+        "Roll": 0.0
+      }
+    }
+  }
+}

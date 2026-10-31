@@ -1,0 +1,137 @@
+--- export: UObject / B_CharacterModifier_IgnoreLookInput_C_0 ---
+{
+  "Type": "B_CharacterModifier_IgnoreLookInput_C",
+  "Name": "B_CharacterModifier_IgnoreLookInput_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/MoverTesting/CharacterModifierStates/CharacterModifiers/B_CharacterModifier_IgnoreLookInput.B_CharacterModifier_IgnoreLookInput_C'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Critical'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical.3"
+  },
+  "Template": {
+    "ObjectName": "B_CharacterModifier_IgnoreLookInput_C'Default__B_CharacterModifier_IgnoreLookInput_C'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/CharacterModifiers/B_CharacterModifier_IgnoreLookInput.0"
+  }
+}
+--- export: UObject / WDCameraModifier_Critical_0 ---
+{
+  "Type": "WDCameraModifier_Critical",
+  "Name": "WDCameraModifier_Critical_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCameraModifier_Critical'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Critical'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical.3"
+  },
+  "Properties": {
+    "DefaultState": {
+      "TransformMode": "EWDCriticalTransformMode::Character",
+      "OffsetMode": "EWDCriticalOffsetMode::RelativeWorldOffset",
+      "TransitionTime": 0.0,
+      "BoneName": "head",
+      "WorldLocationOffset": {
+        "X": 0.0,
+        "Y": -200.0,
+        "Z": 0.0
+      }
+    },
+    "DraggedState": {
+      "TransformMode": "EWDCriticalTransformMode::Character",
+      "OffsetMode": "EWDCriticalOffsetMode::RelativeOffset",
+      "TransitionTime": 0.0,
+      "BoneName": "pelvis",
+      "RelativeLocationOffset": {
+        "X": 3.0,
+        "Y": 20.0,
+        "Z": 0.0
+      },
+      "RelativeRotationOffset": {
+        "Pitch": 0.0,
+        "Yaw": 110.0,
+        "Roll": -90.0
+      }
+    },
+    "PitchLockAngle": 40.0
+  }
+}
+--- export: UObject / WDCharacterModifierCondition_StateTags_0 ---
+{
+  "Type": "WDCharacterModifierCondition_StateTags",
+  "Name": "WDCharacterModifierCondition_StateTags_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierCondition_StateTags'",
+  "Outer": {
+    "ObjectName": "WDCharacterModifierStateDefinition'DA_CharacterModifierState_Critical'",
+    "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical.3"
+  },
+  "Properties": {
+    "StateQuery": {
+      "TagDictionary": [
+        {
+          "TagName": "State.Player.Vitality.Critical"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.ActivePassenger"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Driver"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.Gunner"
+        },
+        {
+          "TagName": "State.Player.Vehicle.Role.PassivePassenger"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        5,
+        2,
+        1,
+        1,
+        0,
+        3,
+        4,
+        1,
+        2,
+        3,
+        4
+      ],
+      "UserDescription": "We are in a critical state and not in a vehicle.",
+      "AutoDescription": " ALL(  ANY( State.Player.Vitality.Critical ),  NONE( State.Player.Vehicle.Role.ActivePassenger, State.Player.Vehicle.Role.Driver, State.Player.Vehicle.Role.Gunner, State.Player.Vehicle.Role.PassivePassenger ) )"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / DA_CharacterModifierState_Critical ---
+{
+  "Type": "WDCharacterModifierStateDefinition",
+  "Name": "DA_CharacterModifierState_Critical",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDCharacterModifierStateDefinition'",
+  "Package": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical",
+  "Properties": {
+    "StateTag": {
+      "TagName": "State.CharacterModifier.Critical"
+    },
+    "CameraModifiers": [
+      {
+        "ObjectName": "WDCameraModifier_Critical'DA_CharacterModifierState_Critical:WDCameraModifier_Critical_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical.1"
+      }
+    ],
+    "CharacterModifiers": [
+      {
+        "ObjectName": "B_CharacterModifier_IgnoreLookInput_C'DA_CharacterModifierState_Critical:B_CharacterModifier_IgnoreLookInput_C_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical.0"
+      }
+    ],
+    "Priority": 0,
+    "Conditions": [
+      {
+        "ObjectName": "WDCharacterModifierCondition_StateTags'DA_CharacterModifierState_Critical:WDCharacterModifierCondition_StateTags_0'",
+        "ObjectPath": "/Game/MoverTesting/CharacterModifierStates/DA_CharacterModifierState_Critical.2"
+      }
+    ]
+  }
+}

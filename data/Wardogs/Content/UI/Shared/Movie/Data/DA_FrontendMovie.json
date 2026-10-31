@@ -1,0 +1,28 @@
+--- export: UDataAsset / DA_FrontendMovie ---
+{
+  "Type": "WDUIBackgroundMovieData",
+  "Name": "DA_FrontendMovie",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIBackgroundMovieData'",
+  "Package": "/Game/UI/Shared/Movie/Data/DA_FrontendMovie",
+  "Properties": {
+    "MovieID": {
+      "TagName": "UI.Scene.Frontend.Home"
+    },
+    "MediaPlayer": {
+      "AssetPathName": "/Game/Binks/MV_UI_HomeSceneBackground.MV_UI_HomeSceneBackground",
+      "SubPathString": ""
+    },
+    "MovieURL": "Binks/UI_FrontendVideo_S02.bk2",
+    "MediaMaterial": {
+      "AssetPathName": "/Game/UI/Features/Frontend/Home/Movie/MI_UI_TextureParam_HomeMovie.MI_UI_TextureParam_HomeMovie",
+      "SubPathString": ""
+    },
+    "PlayMovieEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.BackgroundMovie.Start"
+    },
+    "PauseMovieEvent": {
+      "TagName": "Audio.Event.UI.FrontEnd.BackgroundMovie.Stop"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+--- export: UObject / AEB_HandlePropDemolitionSound_C_0 ---
+{
+  "Type": "AEB_HandlePropDemolitionSound_C",
+  "Name": "AEB_HandlePropDemolitionSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_HandlePropDemolitionSound.AEB_HandlePropDemolitionSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_PropDemolition_Fence_Metal_Chainlink'",
+    "ObjectPath": "/Game/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Metal_Chainlink.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_HandlePropDemolitionSound_C'Default__AEB_HandlePropDemolitionSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_HandlePropDemolitionSound.0"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_PropDemolition_Fence_Metal_Chainlink_Preset'",
+      "ObjectPath": "/Game/Audio/Props/PropDemolition/MSS/MSS_PropDemolition_Fence_Metal_Chainlink_Preset.0"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_PropDemolition_Fence_Metal_Chainlink ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_PropDemolition_Fence_Metal_Chainlink",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Metal_Chainlink",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Prop.Demolition.FenceMetalChainlink"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_HandlePropDemolitionSound_C'AE_PropDemolition_Fence_Metal_Chainlink:AEB_HandlePropDemolitionSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Metal_Chainlink.0"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 203.5
+  }
+}

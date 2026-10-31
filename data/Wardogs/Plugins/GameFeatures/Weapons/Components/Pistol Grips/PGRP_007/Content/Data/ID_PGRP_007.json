@@ -1,0 +1,107 @@
+--- export: UPrimaryDataAsset / ID_PGRP_007 ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_PGRP_007",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/PGRP_007/Data/ID_PGRP_007",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.PGRP_007"
+    },
+    "ItemContext": [
+      "Item.Attachment.Grip"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "2B25F50B46BEF16B9AC202BB55ED1F70",
+      "SourceString": "AK74 Archangel OPFOR Pistol Grip",
+      "LocalizedString": "AK74 Archangel OPFOR Pistol Grip"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_PGRP_007:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/PGRP_007/Data/ID_PGRP_007.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Gunsmith'ID_PGRP_007:WDInventoryFragment_Gunsmith_0'",
+        "ObjectPath": "/PGRP_007/Data/ID_PGRP_007.3"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_PGRP_007:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/PGRP_007/Data/ID_PGRP_007.2"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PGRP_007'",
+    "ObjectPath": "/PGRP_007/Data/ID_PGRP_007.0"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Grip"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PGRP_007'",
+    "ObjectPath": "/PGRP_007/Data/ID_PGRP_007.0"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Attachment_Audio'",
+      "ObjectPath": "/Game/Audio/Weapon/Attachments/ID_Attachment_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Gunsmith_0 ---
+{
+  "Type": "WDInventoryFragment_Gunsmith",
+  "Name": "WDInventoryFragment_Gunsmith_0",
+  "Flags": "RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Gunsmith'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_PGRP_007'",
+    "ObjectPath": "/PGRP_007/Data/ID_PGRP_007.0"
+  },
+  "Properties": {
+    "TextureParamDefaults": [
+      {
+        "Key": {
+          "TagName": "Item.Flair.BaseTexture.Grip"
+        },
+        "Value": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "ItemType": "EWDGunsmithItemType::Attachment"
+  }
+}

@@ -1,0 +1,34 @@
+--- export: UDataTable / DT_InteractableComponentStateData ---
+{
+  "Type": "DataTable",
+  "Name": "DT_InteractableComponentStateData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Game/UI/Data/Interaction/DT_InteractableComponentStateData",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIInteractableComponentStateDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Interaction.ComponentState.None": {
+      "Icon": {
+        "ObjectName": "Texture2D'T_Interaction_State_Default'",
+        "ObjectPath": "/Game/UI/Features/Interaction/Textures/T_Interaction_State_Default.0"
+      },
+      "Tag": {
+        "TagName": "Interaction.ComponentState.None"
+      }
+    },
+    "Interaction.ComponentState.Locked": {
+      "Icon": {
+        "ObjectName": "Texture2D'T_UI_Icon_SquadLock'",
+        "ObjectPath": "/Game/UI/Features/ContextDrawer/Tabs/Party/Textures/T_UI_Icon_SquadLock.0"
+      },
+      "Tag": {
+        "TagName": "Interaction.ComponentState.Locked"
+      }
+    }
+  }
+}

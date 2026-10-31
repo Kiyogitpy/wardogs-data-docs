@@ -1,0 +1,230 @@
+--- export: UDataTable / DT_EntityData_Ext_MK22 ---
+{
+  "Type": "DataTable",
+  "Name": "DT_EntityData_Ext_MK22",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/MK22/Data/DT_EntityData_Ext_MK22",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'BHEntityData_UI'",
+      "ObjectPath": "/Script/BHFramework"
+    }
+  },
+  "Rows": {
+    "Id.Item.MK22": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+        "Key": "Items.Weapons.MK22",
+        "SourceString": "MK22",
+        "LocalizedString": "MK22"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+        "Key": "Description.Weapon.MK22",
+        "SourceString": "- Bolt-action / Magazine fed\r\n- .308 Win",
+        "LocalizedString": "- Bolt-action / Magazine fed\r\n- .308 Win"
+      },
+      "Category": {
+        "TagName": "Item.Category.Weapon.Ranged"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "Attribute.Meta.XP.Role.Recon"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Weapon"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Weapon"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_Weapons.STRINGS_Items_Weapons",
+            "Key": "Items.Weapons.SR",
+            "SourceString": "Sniper Rifle",
+            "LocalizedString": "Sniper Rifle"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Description.Weapon.MK22",
+            "SourceString": "- Bolt-action / Magazine fed\r\n- .308 Win",
+            "LocalizedString": "- Bolt-action / Magazine fed\r\n- .308 Win"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemFlavor"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Weapon_Descriptions.STRINGS_Weapon_Descriptions",
+            "Key": "Flavor.Weapon.MK22",
+            "SourceString": "Precision sniper rifle that excels in taking down armored individuals over long distances.",
+            "LocalizedString": "Precision sniper rifle that excels in taking down armored individuals over long distances."
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_MK22.T_UI_Icon_Killfeed_MK22",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/DeathRecap/T_UI_DeathRecap_MK22.T_UI_DeathRecap_MK22",
+            "Value": [
+              "UI.Icon.EventLog.Overview"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/3D/Equip/T_UI_Icon_Weapon_MK22_Textured_512x256_equip.T_UI_Icon_Weapon_MK22_Textured_512x256_equip",
+            "Value": [
+              "UI.Icon.DeathRecap.KillCause"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Weapons/T_UI_Vendor_WEPN_018.T_UI_Vendor_WEPN_018",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Equipment",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.Inventory.Tooltip",
+              "UI.Icon.Vendor"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_MK22.T_UI_Icon_Killfeed_MK22",
+            "Value": [
+              "UI.Icon.Killfeed"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.MK22"
+      }
+    },
+    "Id.Item.MK22Mag": {
+      "FriendlyName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines.STRINGS_Magazines",
+        "Key": "Items.Magazine.MK22.Standard",
+        "SourceString": "MK22 10 RND Magazine",
+        "LocalizedString": "MK22 10 RND Magazine"
+      },
+      "FriendlyShortName": {
+        "CultureInvariantString": null
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+        "Key": "Description.Magazine.MK22.Standard",
+        "SourceString": "- 10 Rounds \r\n- .308 Win ammo \r\n- MK22 only",
+        "LocalizedString": "- 10 Rounds \r\n- .308 Win ammo \r\n- MK22 only"
+      },
+      "Category": {
+        "TagName": "Item.Category.Ammunition"
+      },
+      "PlatformXPTag": {
+        "TagName": "None"
+      },
+      "RoleXPTag": {
+        "TagName": "None"
+      },
+      "TooltipTags": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Inventory"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Inventory.Item"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Context.Vendor"
+          },
+          "Value": {
+            "TagName": "UI.Tooltip.Data.Vendor.Item"
+          }
+        }
+      ],
+      "AdditionalTexts": [
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemSubtitle"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Items_General.STRINGS_Items_General",
+            "Key": "Items.General.Ammunition",
+            "SourceString": "Ammunition",
+            "LocalizedString": "Ammunition"
+          }
+        },
+        {
+          "Key": {
+            "TagName": "UI.Tooltip.Layout.ItemDescription"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Magazines_Descriptions.STRINGS_Magazines_Descriptions",
+            "Key": "Description.Magazine.MK22.Standard",
+            "SourceString": "- 10 Rounds \r\n- .308 Win ammo \r\n- MK22 only",
+            "LocalizedString": "- 10 Rounds \r\n- .308 Win ammo \r\n- MK22 only"
+          }
+        }
+      ],
+      "Icons": {
+        "FallbackIcon": {
+          "AssetPathName": "/Game/UI/Shared/Icons/Attachments/T_UI_Icon_Attachment_SKS_Mag_Extended_Textured_512x512.T_UI_Icon_Attachment_SKS_Mag_Extended_Textured_512x512",
+          "SubPathString": ""
+        },
+        "TaggedIcons": [
+          {
+            "Key": "/Game/UI/Shared/Icons/Vendor/Magazines/T_UI_Vendor_MAGZ_MK22.T_UI_Vendor_MAGZ_MK22",
+            "Value": [
+              "UI.Icon.Inventory.Container",
+              "UI.Icon.Inventory.Pickup.Tooltip",
+              "UI.Icon.Vendor",
+              "UI.Icon.Inventory.Equipment"
+            ]
+          }
+        ]
+      },
+      "AdditionalData": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Tag": {
+        "TagName": "Id.Item.MK22Mag"
+      }
+    }
+  }
+}

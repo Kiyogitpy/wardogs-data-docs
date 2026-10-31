@@ -1,0 +1,138 @@
+--- export: UObject / AEB_SetSmokeScreenActiveTime_C_1 ---
+{
+  "Type": "AEB_SetSmokeScreenActiveTime_C",
+  "Name": "AEB_SetSmokeScreenActiveTime_C_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Vehicles/Countermeasures/AEB_SetSmokeScreenActiveTime.AEB_SetSmokeScreenActiveTime_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Countermeasures_SmokeScreen'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_SetSmokeScreenActiveTime_C'Default__AEB_SetSmokeScreenActiveTime_C'",
+    "ObjectPath": "/Game/Audio/Vehicles/Countermeasures/AEB_SetSmokeScreenActiveTime.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Countermeasures_SmokeScreen ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Countermeasures_SmokeScreen",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Vehicle.Countermeasures.SmokeScreen"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Countermeasures_SmokeScreen:CrosstalkAudioEventBehaviorAttachSoundToActor_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.2"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Countermeasures_SmokeScreen:CrosstalkAudioEventBehaviorPlaySound_0'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.4"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Countermeasures_SmokeScreen:CrosstalkAudioEventBehaviorAttachSoundToActor_2'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.3"
+      },
+      {
+        "ObjectName": "AEB_SetSmokeScreenActiveTime_C'AE_Countermeasures_SmokeScreen:AEB_SetSmokeScreenActiveTime_C_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorPlaySound'AE_Countermeasures_SmokeScreen:CrosstalkAudioEventBehaviorPlaySound_1'",
+        "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.5"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Countermeasures_SmokeScreen'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 100.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_2 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_2",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Countermeasures_SmokeScreen'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.1"
+  },
+  "Properties": {
+    "AttachmentOffset": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 100.0
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Countermeasures_SmokeScreen'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Countermeasures_SmokeScreen_Detonation'",
+      "ObjectPath": "/Game/Audio/Vehicles/Countermeasures/MSS_Vehicle_Countermeasures_SmokeScreen_Detonation.0"
+    },
+    "SoundRestartBehavior": "ESoundRestartBehavior::PlayBoth",
+    "ContextTag": {
+      "TagName": "Audio.Context.Weapon.Grenade.Explosion"
+    }
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorPlaySound_1 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorPlaySound",
+  "Name": "CrosstalkAudioEventBehaviorPlaySound_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorPlaySound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Countermeasures_SmokeScreen'",
+    "ObjectPath": "/Game/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.1"
+  },
+  "Properties": {
+    "Sound": {
+      "ObjectName": "MetaSoundSource'MSS_Vehicle_Countermeasures_SmokeScreen_Loop'",
+      "ObjectPath": "/Game/Audio/Vehicles/Countermeasures/MSS_Vehicle_Countermeasures_SmokeScreen_Loop.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}

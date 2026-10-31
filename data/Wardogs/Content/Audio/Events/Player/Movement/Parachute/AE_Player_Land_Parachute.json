@@ -1,0 +1,69 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land_Parachute'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Land_Parachute.1"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Parachute_Land_1p'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Parachute/MSS/1p/MSS_Player_Movement_Parachute_Land_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Movement_Parachute_Land_3p_Enemy'",
+      "ObjectPath": "/Game/Audio/Player/Movement/Parachute/MSS/Enemy/MSS_Player_Movement_Parachute_Land_3p_Enemy.0"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Land.Parachute"
+    },
+    "_aaabhgndclheajnnlnade": 55.0
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Land_Parachute ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Land_Parachute",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Land_Parachute",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Land.Parachute"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_Land_Parachute:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Land_Parachute.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Player_Land_Parachute:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Land_Parachute.2"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Land_Parachute'",
+    "ObjectPath": "/Game/Audio/Events/Player/Movement/Parachute/AE_Player_Land_Parachute.1"
+  },
+  "Properties": {
+    "FadeOut": 1.0,
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Fall.Parachute"
+    }
+  }
+}

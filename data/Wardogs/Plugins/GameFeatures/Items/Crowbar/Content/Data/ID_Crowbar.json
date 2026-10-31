@@ -1,0 +1,413 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 1
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Crowbar/Meshes/SM_Halligan.SM_Halligan",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Halligan'",
+        "ObjectPath": "/Crowbar/Materials/MI_Halligan.0"
+      }
+    ],
+    "RelativeRotation": {
+      "Pitch": -2.0,
+      "Yaw": 0.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -11.0,
+      "Y": -0.0,
+      "Z": 14.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 14.0,
+      "Y": 11.0,
+      "Z": 35.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  },
+  "Properties": {
+    "Weight": 2.8
+  }
+}
+--- export: UPrimaryDataAsset / ID_Crowbar ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_Crowbar",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Crowbar/Data/ID_Crowbar",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.Crowbar"
+    },
+    "ItemContext": [
+      "Item.Context.Animation.Archetype.EquipTwoHandsHeavy",
+      "Inventory.Slot.Specialist",
+      "Item.Context.Equippable",
+      "Inventory.Slot.Secondary",
+      "Item.Context.UtilityItem",
+      "Item.Context.Animation.Type.LargeHammer",
+      "Item.Context.QuickSlot"
+    ],
+    "DisplayName": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Items_Utility.STRINGS_Items_Utility",
+      "Key": "Items.Utility.Crowbar",
+      "SourceString": "Halligan Bar",
+      "LocalizedString": "Halligan Bar"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_Crowbar:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.2"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_Crowbar:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Durability'ID_Crowbar:WDInventoryFragment_Durability_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.6"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_Crowbar:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_Crowbar:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.0"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_Crowbar:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_Crowbar_Audio'",
+      "ObjectPath": "/Crowbar/Data/DA_Item_Crowbar_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Durability_0 ---
+{
+  "Type": "WDInventoryFragment_Durability",
+  "Name": "WDInventoryFragment_Durability_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Durability'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  },
+  "Properties": {
+    "ReplicatedData": {
+      "Durability": 7000.0
+    },
+    "bIsVisibleOnEquippedUI": true
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_Crowbar'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.11"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Input'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.12"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Inventory'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.13"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_Animation'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_CharacterMelee'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_CharacterMelee_0'",
+        "ObjectPath": "/Crowbar/Data/ID_Crowbar.10"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Animation_0 ---
+{
+  "Type": "WDItemExtensionData_Animation",
+  "Name": "WDItemExtensionData_Animation_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Animation'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+  },
+  "Properties": {
+    "AnimationSet": {
+      "ObjectName": "BHAnimationSet'AnimSet_Crowbar'",
+      "ObjectPath": "/Crowbar/AnimSet_Crowbar.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'DA_Item_Crowbar_Audio'",
+      "ObjectPath": "/Crowbar/Data/DA_Item_Crowbar_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_CharacterMelee_0 ---
+{
+  "Type": "WDItemExtensionData_CharacterMelee",
+  "Name": "WDItemExtensionData_CharacterMelee_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_CharacterMelee'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+  },
+  "Properties": {
+    "MeleeActions": [
+      {
+        "Key": {
+          "TagName": "Action.Crowbar.PrimaryUse"
+        },
+        "Value": {
+          "HitBoxSize": {
+            "X": 20.0,
+            "Y": 20.0,
+            "Z": 20.0
+          },
+          "Damage": 100.0,
+          "TraceDistance": 120.0
+        }
+      }
+    ],
+    "DamageEntityData": {
+      "Tag": {
+        "TagName": "Meta.Damage.Utility.Crowbar"
+      }
+    },
+    "ExtensionComponentClass": {
+      "ObjectName": "BlueprintGeneratedClass'B_WDItemExtension_ItemMelee_C'",
+      "ObjectPath": "/Game/GameMechanics/ExtensionComponents/B_WDItemExtension_ItemMelee.1"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_Halligan'",
+      "ObjectPath": "/Crowbar/Meshes/SK_Halligan.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Halligan'",
+        "ObjectPath": "/Crowbar/Materials/MI_Halligan.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Crowbar_C'",
+      "ObjectPath": "/Crowbar/Animation/WeaponBlueprint/ABP_Crowbar.1"
+    },
+    "bOverrideDefaultCrosshairSettings": true,
+    "CrosshairSettings": {
+      "bShowDot": true,
+      "Type": "EWDCrosshairType::BuildTool",
+      "BuildableCheckRadius": 275.0
+    },
+    "EquipAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Halligan_Equip'",
+        "ObjectPath": "/Crowbar/Animation/Character/Sequence/FP/AM_FP_Halligan_Equip.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Equip'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Equip.0"
+      }
+    },
+    "HolsterAnimation": {
+      "FirstPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_FP_Halligan_Holster'",
+        "ObjectPath": "/Crowbar/Animation/Character/Sequence/FP/AM_FP_Halligan_Holster.0"
+      },
+      "ThirdPersonPlayerAnimation": {
+        "ObjectName": "AnimMontage'AM_TP_Gen_Equipment2H_Heavy_Holster'",
+        "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/Equipment2H/Actions/AM_TP_Gen_Equipment2H_Heavy_Holster.0"
+      }
+    },
+    "EquippedAnimSet": {
+      "DefaultFirstPersonLayer": {
+        "AssetPathName": "/Crowbar/Animation/Character/Blueprint/ABP_FP_Crowbar_Layer_RW.ABP_FP_Crowbar_Layer_RW_C",
+        "SubPathString": ""
+      },
+      "DefaultThirdPersonLayer": {
+        "AssetPathName": "/Crowbar/Animation/Character/Blueprint/ABP_TP_Crowbar_Layer_RW.ABP_TP_Crowbar_Layer_RW_C",
+        "SubPathString": ""
+      }
+    },
+    "FallbackMeshSignificanceThreshold": {
+      "DistanceSignificance": 1.0,
+      "LookAtSignificance": 1.0,
+      "ScreenSizeSignificance": 1.0
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_InputActionExtension_0 ---
+{
+  "Type": "WDItemExtensionData_Input",
+  "Name": "WDItemExtensionData_InputActionExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Input'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+  },
+  "Properties": {
+    "InputMappingContext": {
+      "ObjectName": "InputMappingContext'IMC_BuildTool'",
+      "ObjectPath": "/Game/Weapons/Input/IMC_BuildTool.11"
+    },
+    "InputBehaviors": [
+      {
+        "Key": {
+          "TagName": "Input.NamedActions.Player.PrimaryUse"
+        },
+        "Value": {
+          "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
+          "ObjectPath": "/Crowbar/Data/ID_Crowbar.14"
+        }
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_Inventory_0 ---
+{
+  "Type": "WDItemExtensionData_Inventory",
+  "Name": "WDItemExtensionData_Inventory_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Inventory'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Crowbar:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.7"
+  },
+  "Properties": {
+    "PrimaryUseTag": {
+      "TagName": "Action.Crowbar.PrimaryUse"
+    }
+  }
+}
+--- export: UObject / WDItemInputBehavior_ActivateAction_0 ---
+{
+  "Type": "WDItemInputBehavior_ActivateAction",
+  "Name": "WDItemInputBehavior_ActivateAction_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemInputBehavior_ActivateAction'",
+  "Outer": {
+    "ObjectName": "WDItemExtensionData_Input'ID_Crowbar:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0'",
+    "ObjectPath": "/Crowbar/Data/ID_Crowbar.12"
+  },
+  "Properties": {
+    "ActionToActivate": {
+      "TagName": "Action.Crowbar.PrimaryUse"
+    }
+  }
+}

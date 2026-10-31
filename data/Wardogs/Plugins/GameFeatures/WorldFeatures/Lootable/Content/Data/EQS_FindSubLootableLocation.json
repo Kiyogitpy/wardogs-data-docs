@@ -1,0 +1,121 @@
+--- export: UDataAsset / EQS_FindSubLootableLocation ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_FindSubLootableLocation",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Lootable/Data/EQS_FindSubLootableLocation",
+  "Properties": {
+    "QueryName": "EQS_FindSubLootableLocation",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_FindSubLootableLocation:EnvQueryOption_9'",
+        "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_SimpleGrid_1 ---
+{
+  "Type": "EnvQueryGenerator_SimpleGrid",
+  "Name": "EnvQueryGenerator_SimpleGrid_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_SimpleGrid'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindSubLootableLocation'",
+    "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.0"
+  },
+  "Properties": {
+    "GridSize": {
+      "DefaultValue": 80.0
+    },
+    "SpaceBetween": {
+      "DefaultValue": 40.0
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "ProjectDown": 80.0,
+      "ProjectUp": 0.0,
+      "ExtentX": 150.0,
+      "PostProjectionVerticalOffset": 0.1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceMode": "EEnvQueryTrace::GeometryByChannel"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_9 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_9",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindSubLootableLocation'",
+    "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_SimpleGrid'EQS_FindSubLootableLocation:EnvQueryGenerator_SimpleGrid_1'",
+      "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Distance'EQS_FindSubLootableLocation:EnvQueryTest_Distance_0'",
+        "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.3"
+      },
+      {
+        "ObjectName": "EnvQueryTest_Trace'EQS_FindSubLootableLocation:EnvQueryTest_Trace_1'",
+        "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.4"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Distance_0 ---
+{
+  "Type": "EnvQueryTest_Distance",
+  "Name": "EnvQueryTest_Distance_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Distance'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindSubLootableLocation'",
+    "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.0"
+  },
+  "Properties": {
+    "FloatValueMin": {
+      "DefaultValue": 40.0
+    },
+    "FloatValueMax": {
+      "DefaultValue": 180.0
+    },
+    "ScoringFactor": {
+      "DefaultValue": 0.5
+    },
+    "VerNum": 2
+  }
+}
+--- export: UObject / EnvQueryTest_Trace_1 ---
+{
+  "Type": "EnvQueryTest_Trace",
+  "Name": "EnvQueryTest_Trace_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Trace'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_FindSubLootableLocation'",
+    "ObjectPath": "/Lootable/Data/EQS_FindSubLootableLocation.0"
+  },
+  "Properties": {
+    "TraceData": {
+      "VersionNum": 1,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility"
+    },
+    "TestOrder": 1,
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "ScoringFactor": {
+      "DefaultValue": 0.5
+    },
+    "VerNum": 2
+  }
+}

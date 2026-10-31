@@ -1,0 +1,92 @@
+--- export: UPrimaryDataAsset / DA_40mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_40mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/40mm/DA_40mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.40mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Explosive.Grenade.40mm"
+        }
+      },
+      "DamageValues": {
+        "BaseDamage": 100.0,
+        "ExplosiveRadius": 1000.0,
+        "EffectiveExplosiveRadius": 250.0,
+        "ExplosiveDamageFallOff": 1.0,
+        "ExplosiveBluntDamage": 80.0,
+        "ImpulseValues": {
+          "bApplyImpulse": true,
+          "bVelocityChange": true,
+          "ImpulseScale": 750.0,
+          "ImpulseZScale": 1.0
+        },
+        "bPreferUpwardsTrace": false
+      },
+      "ProjectileDimensions": {
+        "Length": 9.8806,
+        "Diameter": 4.0,
+        "Mass": 0.23,
+        "DragModel": {
+          "Value": 0.8,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "GC (Cylinder)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.RocketProjectile"
+        },
+        "AudioEventTag": {
+          "TagName": "Audio.Event.Projectile.Rocket.Travel.40mm"
+        }
+      },
+      "SuppressionData": {
+        "DistanceFalloffRange": {
+          "Min": 0.3,
+          "Max": 3.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {},
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_GrenadeLauncher'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_GrenadeLauncher.0"
+          }
+        }
+      },
+      "bHasArmingDelay": true,
+      "ArmingDelay": 0.07,
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/RocketLauncher/NS_ProjectileTrail_40mm.NS_ProjectileTrail_40mm",
+        "SubPathString": ""
+      },
+      "bUseProjectileActor": true,
+      "ProjectileActor": {
+        "AssetPathName": "/Game/GameMechanics/Inventory/Equipment/Caliber/40mm/BP_40mm.BP_40mm_C",
+        "SubPathString": ""
+      },
+      "bActorHandlesProjectileMovement": true,
+      "TracerChance": 1.0,
+      "TypicalSpeed": 7500.0,
+      "bShouldPenetrate": false,
+      "bForcePenetrateThinSurfaces": true,
+      "MinImpactAngleForRicochet": 91.0,
+      "bShouldPreSimulate": false,
+      "ThrustSpeed": 20000.0,
+      "bClientPredictive": false,
+      "PerceivedImpactRange": 60000.0,
+      "IgnoreInstigatorVehicleTime": 0.5
+    }
+  }
+}

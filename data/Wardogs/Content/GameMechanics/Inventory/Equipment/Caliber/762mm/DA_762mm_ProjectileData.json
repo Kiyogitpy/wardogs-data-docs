@@ -1,0 +1,92 @@
+--- export: UPrimaryDataAsset / DA_762mm_ProjectileData ---
+{
+  "Type": "WDProjectileData",
+  "Name": "DA_762mm_ProjectileData",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDProjectileData'",
+  "Package": "/Game/GameMechanics/Inventory/Equipment/Caliber/762mm/DA_762mm_ProjectileData",
+  "Properties": {
+    "ProjectileId": {
+      "TagName": "Item.Caliber.762mm"
+    },
+    "ProjectileStats": {
+      "DamageEntityData": {
+        "Tag": {
+          "TagName": "Meta.Damage.Bullet.762mm"
+        },
+        "Context": [
+          "Meta.Damage.Arms.High"
+        ]
+      },
+      "DamageValues": {
+        "BaseDamage": 34.0
+      },
+      "ProjectileDimensions": {
+        "Length": 1.4986,
+        "Diameter": 0.792,
+        "Mass": 0.008,
+        "DragModel": {
+          "Value": 1.2,
+          "Curve": {
+            "CurveTable": {
+              "ObjectName": "CurveTable'CT_Projectile_DragCoefficients'",
+              "ObjectPath": "/Game/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.0"
+            },
+            "RowName": "G7 (Boat Tail)"
+          }
+        }
+      },
+      "ProjectileEffects": {
+        "GameplayCueTag": {
+          "TagName": "GameplayCue.Weapon.Projectile"
+        }
+      },
+      "SuppressionData": {
+        "DistanceFalloffRange": {
+          "Min": 1.0
+        },
+        "DistanceFalloffCurve": {
+          "EditorCurveData": {
+            "Keys": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0,
+                "Value": 1.0,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.0,
+                "Value": 0.578926,
+                "ArriveTangent": 0.0,
+                "ArriveTangentWeight": 0.0,
+                "LeaveTangent": 0.0,
+                "LeaveTangentWeight": 0.0
+              }
+            ]
+          },
+          "ExternalCurve": {
+            "ObjectName": "CurveFloat'CR_SuppressionCurve_Medium'",
+            "ObjectPath": "/Game/GameMechanics/Inventory/CR_SuppressionCurve_Medium.0"
+          }
+        }
+      },
+      "AttachedEffect": {
+        "AssetPathName": "/Game/VFX/Weapons/Tracers/NS_Tracer_762mm.NS_Tracer_762mm",
+        "SubPathString": ""
+      },
+      "TypicalSpeed": 38600.0,
+      "PenetrationExitSpeedMultiplier": 0.15,
+      "bShouldPreSimulate": false,
+      "TravelDistanceForWhizBy": 1000.0,
+      "DistanceToPlayerForWhizBy": 1000.0
+    }
+  }
+}

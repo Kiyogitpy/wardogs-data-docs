@@ -1,0 +1,244 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/IED/Meshes/SM_IED_Planted.SM_IED_Planted",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_THRW_007_b'",
+        "ObjectPath": "/IED/Materials/MI_THRW_007_b.0"
+      }
+    ],
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -4.0,
+      "Y": 0.0,
+      "Z": 0.5
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 5.5,
+      "Y": 6.197502,
+      "Z": 15.41051
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  },
+  "Properties": {
+    "Weight": 1.5
+  }
+}
+--- export: UPrimaryDataAsset / ID_IED_Explosive ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_IED_Explosive",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/IED/Data/ID_IED_Explosive",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.IED.Explosive"
+    },
+    "ItemContext": [
+      "Item.Resource.HiddenConsumable",
+      "Item.Context.UtilityItem",
+      "Item.Context.Animation.Type.Unarmed",
+      "Item.Context.Animation.Archetype.EquipRightHand",
+      "Item.Ammo",
+      "Item.Caliber.IEDCharge"
+    ],
+    "DataFragments": [
+      {
+        "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Explosive:WDInventoryFragment_ItemActor_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.7"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_IED_Explosive:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_IED_Explosive:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_IED_Explosive:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.0"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Attachment'ID_IED_Explosive:WDInventoryFragment_Attachment_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.5"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_IED_Explosive:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_IED_Explosive:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.3"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Attachment_0 ---
+{
+  "Type": "WDInventoryFragment_Attachment",
+  "Name": "WDInventoryFragment_Attachment_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Attachment'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  },
+  "Properties": {
+    "AttachmentData": {
+      "ReloadAnimationPlayRate": 1.0,
+      "bAllowsInspect": true,
+      "WeaponInspectIgnoreList": [],
+      "_aaabcedhgdocfgafjkign": 1.0,
+      "_aaabfbhbgfmafmfmaajnd": 1.0,
+      "AttachmentType": {
+        "TagName": "Item.Attachment.Magazine"
+      },
+      "AppliedEffects": [],
+      "AppliedCharacterEffects": [],
+      "bCanBeRemovedInGame": false,
+      "bDiscardWhenEmptyOnReload": false,
+      "AnimationSet": null,
+      "AttachedAudioEvent": {
+        "TagName": "None"
+      },
+      "DetachedAudioEvent": {
+        "TagName": "None"
+      }
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_C4_Audio'",
+      "ObjectPath": "/C4/Data/ID_C4_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDInventoryFragment_ItemActor_0 ---
+{
+  "Type": "WDInventoryFragment_ItemActor",
+  "Name": "WDInventoryFragment_ItemActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_ItemActor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_IED_Explosive'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.4"
+  },
+  "Properties": {
+    "ExtensionDataFragments": [
+      {
+        "ObjectName": "WDItemExtensionData_Holdable'ID_IED_Explosive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Holdable_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.9"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_AudioExtension'ID_IED_Explosive:WDInventoryFragment_ItemActor_0.WDItemExtensionData_AudioExtension_0'",
+        "ObjectPath": "/IED/Data/ID_IED_Explosive.8"
+      }
+    ]
+  }
+}
+--- export: UObject / WDItemExtensionData_AudioExtension_0 ---
+{
+  "Type": "WDItemExtensionData_AudioExtension",
+  "Name": "WDItemExtensionData_AudioExtension_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_AudioExtension'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Explosive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.7"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_IED_Audio'",
+      "ObjectPath": "/IED/Data/ID_IED_Audio.0"
+    }
+  }
+}
+--- export: UObject / WDItemExtensionData_Holdable_0 ---
+{
+  "Type": "WDItemExtensionData_Holdable",
+  "Name": "WDItemExtensionData_Holdable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_Holdable'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_IED_Explosive:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/IED/Data/ID_IED_Explosive.7"
+  },
+  "Properties": {
+    "HoldableMesh": {
+      "ObjectName": "SkeletalMesh'SK_IED'",
+      "ObjectPath": "/IED/Meshes/SK_IED.1"
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_THRW_007_b'",
+        "ObjectPath": "/IED/Materials/MI_THRW_007_b.0"
+      },
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_THRW_007_a'",
+        "ObjectPath": "/IED/Materials/MI_THRW_007_a.0"
+      }
+    ],
+    "MeshAnimClass": {
+      "ObjectName": "AnimBlueprintGeneratedClass'ABP_Explosive_C'",
+      "ObjectPath": "/C4/Data/Animation/Blueprints/Item/ABP_Explosive.1"
+    }
+  }
+}

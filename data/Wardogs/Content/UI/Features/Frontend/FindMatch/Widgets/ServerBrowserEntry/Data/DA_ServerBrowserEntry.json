@@ -1,0 +1,64 @@
+--- export: UDataAsset / DA_ServerBrowserEntry ---
+{
+  "Type": "WDUIServerBrowserEntryData",
+  "Name": "DA_ServerBrowserEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIServerBrowserEntryData'",
+  "Package": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Data/DA_ServerBrowserEntry",
+  "Properties": {
+    "PlayersTextFormat": {
+      "CultureInvariantString": "{CurrentPlayers}/{Capacity}{ReservedSpaces}"
+    },
+    "ServerStateTextures": [
+      {
+        "Key": "EWDUIServerBrowserEntryState::Locked",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Materials/MI_UI_Image_ServerBrowserEntry__Lock.MI_UI_Image_ServerBrowserEntry__Lock",
+          "SubPathString": ""
+        }
+      },
+      {
+        "Key": "EWDUIServerBrowserEntryState::Open",
+        "Value": {
+          "AssetPathName": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Materials/MI_UI_Triangle_ServerBrowserEntry_Play.MI_UI_Triangle_ServerBrowserEntry_Play",
+          "SubPathString": ""
+        }
+      }
+    ],
+    "CustomLoadingScreenWidgetClass": {
+      "AssetPathName": "/Game/UI/Features/Frontend/LoadingScreen/W_LoadingScreen_Bakurani.W_LoadingScreen_Bakurani_C",
+      "SubPathString": ""
+    },
+    "_aaabnkcbnbcbfcjffmgen": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIServerDescriptorViewModel",
+        "SubPathString": ""
+      }
+    },
+    "_aaabbfdhohfpgicgbemnd": [
+      "Server.Descriptor.PersistentProgression",
+      "Server.Descriptor.CommunityHosted",
+      "Server.Descriptor.Hardcore",
+      "Server.Descriptor.InfantryOnly",
+      "Experience.Rules.InfantryOnly",
+      "Experience.Rules.Hardcore"
+    ],
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_HideReasons'DA_ServerBrowserEntry:WDUIViewModelExtension_HideReasons_1'",
+        "ObjectPath": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Data/DA_ServerBrowserEntry.1"
+      }
+    ]
+  }
+}
+--- export: UObject / WDUIViewModelExtension_HideReasons_1 ---
+{
+  "Type": "WDUIViewModelExtension_HideReasons",
+  "Name": "WDUIViewModelExtension_HideReasons_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_HideReasons'",
+  "Outer": {
+    "ObjectName": "WDUIServerBrowserEntryData'DA_ServerBrowserEntry'",
+    "ObjectPath": "/Game/UI/Features/Frontend/FindMatch/Widgets/ServerBrowserEntry/Data/DA_ServerBrowserEntry.0"
+  }
+}

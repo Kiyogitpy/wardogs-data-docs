@@ -1,0 +1,96 @@
+--- export: UDataAsset / EQS_SpawnQuery_800 ---
+{
+  "Type": "EnvQuery",
+  "Name": "EQS_SpawnQuery_800",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQuery'",
+  "Package": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800",
+  "Properties": {
+    "QueryName": "EQS_SpawnQuery_800",
+    "Options": [
+      {
+        "ObjectName": "EnvQueryOption'EQS_SpawnQuery_800:EnvQueryOption_1'",
+        "ObjectPath": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.2"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryGenerator_SimpleGrid_0 ---
+{
+  "Type": "EnvQueryGenerator_SimpleGrid",
+  "Name": "EnvQueryGenerator_SimpleGrid_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryGenerator_SimpleGrid'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_SpawnQuery_800'",
+    "ObjectPath": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.0"
+  },
+  "Properties": {
+    "GridSize": {
+      "DefaultValue": 800.0
+    },
+    "SpaceBetween": {
+      "DefaultValue": 200.0
+    },
+    "ProjectionData": {
+      "VersionNum": 1,
+      "ProjectDown": 50024.0,
+      "ProjectUp": 50.0,
+      "SerializedChannel": "ECollisionChannel::ECC_Visibility",
+      "TraceShape": "EEnvTraceShape::Capsule",
+      "TraceMode": "EEnvQueryTrace::GeometryByChannel"
+    },
+    "VerNum": 1
+  }
+}
+--- export: UObject / EnvQueryOption_1 ---
+{
+  "Type": "EnvQueryOption",
+  "Name": "EnvQueryOption_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryOption'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_SpawnQuery_800'",
+    "ObjectPath": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.0"
+  },
+  "Properties": {
+    "Generator": {
+      "ObjectName": "EnvQueryGenerator_SimpleGrid'EQS_SpawnQuery_800:EnvQueryGenerator_SimpleGrid_0'",
+      "ObjectPath": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.1"
+    },
+    "Tests": [
+      {
+        "ObjectName": "EnvQueryTest_Overlap'EQS_SpawnQuery_800:EnvQueryTest_Overlap_0'",
+        "ObjectPath": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.3"
+      }
+    ]
+  }
+}
+--- export: UObject / EnvQueryTest_Overlap_0 ---
+{
+  "Type": "EnvQueryTest_Overlap",
+  "Name": "EnvQueryTest_Overlap_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'EnvQueryTest_Overlap'",
+  "Outer": {
+    "ObjectName": "EnvQuery'EQS_SpawnQuery_800'",
+    "ObjectPath": "/Game/GameMechanics/Gamemode/Objects/EQS_SpawnQuery_800.0"
+  },
+  "Properties": {
+    "OverlapData": {
+      "ExtentX": 40.0,
+      "ExtentY": 40.0,
+      "ExtentZ": 5.0,
+      "ShapeOffset": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 10.0
+      },
+      "OverlapChannel": "ECollisionChannel::ECC_Visibility"
+    },
+    "BoolValue": {
+      "DefaultValue": false
+    },
+    "VerNum": 2
+  }
+}

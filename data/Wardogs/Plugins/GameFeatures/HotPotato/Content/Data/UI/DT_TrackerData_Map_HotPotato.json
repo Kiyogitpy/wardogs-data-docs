@@ -1,0 +1,45 @@
+--- export: UDataTable / DT_TrackerData_Map_HotPotato ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_HotPotato",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/HotPotato/Data/UI/DT_TrackerData_Map_HotPotato",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.HotPotato": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": false,
+      "RequiredTags": [],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/HotPotato/Data/UI/W_Tracker_Map_HotPotato.W_Tracker_Map_HotPotato_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUIMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/HotPotato/Data/UI/DA_Tracker_Map_HotPotato.DA_Tracker_Map_HotPotato",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.HotPotato"
+      }
+    }
+  }
+}

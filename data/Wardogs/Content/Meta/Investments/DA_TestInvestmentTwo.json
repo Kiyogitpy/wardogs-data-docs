@@ -1,0 +1,52 @@
+--- export: UObject / WDInvestmentCore_0 ---
+{
+  "Type": "WDInvestmentCore",
+  "Name": "WDInvestmentCore_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInvestmentCore'",
+  "Outer": {
+    "ObjectName": "WDInvestmentDefinition'DA_TestInvestmentTwo'",
+    "ObjectPath": "/Game/Meta/Investments/DA_TestInvestmentTwo.1"
+  }
+}
+--- export: UPrimaryDataAsset / DA_TestInvestmentTwo ---
+{
+  "Type": "WDInvestmentDefinition",
+  "Name": "DA_TestInvestmentTwo",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInvestmentDefinition'",
+  "Package": "/Game/Meta/Investments/DA_TestInvestmentTwo",
+  "Properties": {
+    "ID": {
+      "TagName": "Id.Investment.DebugTwo"
+    },
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "0E0046A84479531959B78BB16953AAFB",
+      "SourceString": "Debug Two Title",
+      "LocalizedString": "Debug Two Title"
+    },
+    "Description": {
+      "Namespace": "",
+      "Key": "0E0046A84479531959B78BB16953AAFB",
+      "SourceString": "Debug Two Title",
+      "LocalizedString": "Debug Two Title"
+    },
+    "PurchaseCost": [
+      {
+        "Key": {
+          "TagName": "Attribute.Meta.Currency.Cash"
+        },
+        "Value": 200
+      }
+    ],
+    "MapIcon": {
+      "AssetPathName": "/Game/UI/Features/HUD/EquippedItem/Textures/T_UI_Icon_FiringMode_FullAuto_White_256.T_UI_Icon_FiringMode_FullAuto_White_256",
+      "SubPathString": ""
+    },
+    "ArchetypeObject": {
+      "ObjectName": "WDInvestmentCore'DA_TestInvestmentTwo:WDInvestmentCore_0'",
+      "ObjectPath": "/Game/Meta/Investments/DA_TestInvestmentTwo.0"
+    }
+  }
+}

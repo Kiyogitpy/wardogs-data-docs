@@ -1,0 +1,165 @@
+--- export: UObject / PoseSearchFeatureChannel_Group_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Group",
+  "Name": "PoseSearchFeatureChannel_Group_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Group'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.6"
+  },
+  "Properties": {
+    "SubChannels": [
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Position'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Position_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.2"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.4"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Velocity'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Velocity_1'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.5"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Heading'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0.PoseSearchFeatureChannel_Heading_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.1"
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Heading_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Heading",
+  "Name": "PoseSearchFeatureChannel_Heading_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Heading'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "pelvis"
+    },
+    "HeadingAxis": "EHeadingAxis::Y",
+    "ComponentStripping": "EComponentStrippingVector::StripZ"
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Position_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Position",
+  "Name": "PoseSearchFeatureChannel_Position_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Position'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    },
+    "OriginBone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Trajectory_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Trajectory",
+  "Name": "PoseSearchFeatureChannel_Trajectory_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Trajectory'",
+  "Outer": {
+    "ObjectName": "PoseSearchSchema'PSS_TPCharacter'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.6"
+  },
+  "Properties": {
+    "Samples": [
+      {
+        "Offset": -0.05,
+        "Flags": 32
+      },
+      {
+        "Offset": 0.0,
+        "Flags": 144
+      },
+      {
+        "Offset": 0.35,
+        "Flags": 160
+      },
+      {
+        "Offset": 0.7,
+        "Flags": 176
+      },
+      {
+        "Offset": 1.0,
+        "Flags": 4
+      }
+    ]
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_0 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_l"
+    }
+  }
+}
+--- export: UObject / PoseSearchFeatureChannel_Velocity_1 ---
+{
+  "Type": "PoseSearchFeatureChannel_Velocity",
+  "Name": "PoseSearchFeatureChannel_Velocity_1",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchFeatureChannel_Velocity'",
+  "Outer": {
+    "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0'",
+    "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.0"
+  },
+  "Properties": {
+    "bone": {
+      "BoneName": "foot_r"
+    }
+  }
+}
+--- export: UDataAsset / PSS_TPCharacter ---
+{
+  "Type": "PoseSearchSchema",
+  "Name": "PSS_TPCharacter",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'PoseSearchSchema'",
+  "Package": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter",
+  "Properties": {
+    "Skeletons": [
+      {
+        "Skeleton": {
+          "ObjectName": "Skeleton'SKEL_TP_Character_Refactor'",
+          "ObjectPath": "/Game/Characters/Default_PlayerMesh/TP/SKEL_TP_Character_Refactor.38"
+        },
+        "MirrorDataTable": null,
+        "Role": "None"
+      }
+    ],
+    "Channels": [
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Trajectory'PSS_TPCharacter:PoseSearchFeatureChannel_Trajectory_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.3"
+      },
+      {
+        "ObjectName": "PoseSearchFeatureChannel_Group'PSS_TPCharacter:PoseSearchFeatureChannel_Group_0'",
+        "ObjectPath": "/Game/Animation/Characters/MotionMatching/PSS_TPCharacter.0"
+      }
+    ]
+  }
+}

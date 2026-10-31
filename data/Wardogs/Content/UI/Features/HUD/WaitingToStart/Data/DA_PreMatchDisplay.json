@@ -1,0 +1,69 @@
+--- export: UDataAsset / DA_PreMatchDisplay ---
+{
+  "Type": "WDUIPreMatchDisplayData",
+  "Name": "DA_PreMatchDisplay",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIPreMatchDisplayData'",
+  "Package": "/Game/UI/Features/HUD/WaitingToStart/Data/DA_PreMatchDisplay",
+  "Properties": {
+    "PlayerListEntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIPlayerListEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "ReadyKeyPrompt": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.PreMatch.ReadyButtonPrompt",
+      "SourceString": "TO READY UP",
+      "LocalizedString": "TO READY UP"
+    },
+    "ReadyMessageText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.PreMatch.ReadyMessage",
+      "SourceString": "READY",
+      "LocalizedString": "READY"
+    },
+    "WaitingForPlayersMessageText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.PreMatch.WaitingForPlayers",
+      "SourceString": "WAITING FOR PLAYERS",
+      "LocalizedString": "WAITING FOR PLAYERS"
+    },
+    "ReadyPlayersFormatText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.PreMatch.ReadyUp.PlayersReadyFormat",
+      "SourceString": "{PlayersReady}/{PlayersConnected} PLAYERS READY",
+      "LocalizedString": "{PlayersReady}/{PlayersConnected} PLAYERS READY"
+    },
+    "PlayerCountFormatText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.PreMatch.PlayerCount.PlayersReadyFormat",
+      "SourceString": "{PlayersReady}/{PlayerLimit} IN SERVER - NEED {PlayersRequired} TO START",
+      "LocalizedString": "{PlayersReady}/{PlayerLimit} IN SERVER - NEED {PlayersRequired} TO START"
+    },
+    "PlayerCountUnknownMaxFormatText": {
+      "TableId": "/Game/UI/StringTables/STRINGS_HUD.STRINGS_HUD",
+      "Key": "HUD.PreMatch.PlayerCount.PlayersReadFormatNoMax",
+      "SourceString": "{PlayersReady} IN SERVER - NEED {PlayersRequired} TO START",
+      "LocalizedString": "{PlayersReady} IN SERVER - NEED {PlayersRequired} TO START"
+    },
+    "ReadyAction": {
+      "TagName": "Input.NamedActions.Player.Ready"
+    },
+    "ReadyColor": {
+      "R": 0.071777,
+      "G": 0.21875,
+      "B": 0.071777,
+      "A": 1.0,
+      "Hex": "4C814C"
+    },
+    "NotReadyColor": {
+      "R": 0.140625,
+      "G": 0.022705,
+      "B": 0.022705,
+      "A": 1.0,
+      "Hex": "692929"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+--- export: UObject / AEB_AttachSoundToStaticMesh_C_0 ---
+{
+  "Type": "AEB_AttachSoundToDoorHandle_C",
+  "Name": "AEB_AttachSoundToStaticMesh_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.AEB_AttachSoundToDoorHandle_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Close'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Close.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_AttachSoundToDoorHandle_C'Default__AEB_AttachSoundToDoorHandle_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_AttachSoundToDoorHandle.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}
+--- export: UObject / AEB_SelectDoorSound_C_0 ---
+{
+  "Type": "AEB_SelectDoorSound_C",
+  "Name": "AEB_SelectDoorSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SelectDoorSound.AEB_SelectDoorSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Close'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Close.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_SelectDoorSound_C'Default__AEB_SelectDoorSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SelectDoorSound.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Door_Close ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Door_Close",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Doors/AE_Door_Close",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Door.Close"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "AEB_SelectDoorSound_C'AE_Door_Close:AEB_SelectDoorSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Close.1"
+      },
+      {
+        "ObjectName": "AEB_AttachSoundToDoorHandle_C'AE_Door_Close:AEB_AttachSoundToStaticMesh_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Close.0"
+      },
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Door_Close:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Close.3"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 25.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Door_Close'",
+    "ObjectPath": "/Game/Audio/Events/Doors/AE_Door_Close.2"
+  },
+  "Properties": {
+    "ParameterName": "Close",
+    "ContextTag": {
+      "TagName": "Audio.Context.Door"
+    }
+  }
+}

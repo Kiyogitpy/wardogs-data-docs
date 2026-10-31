@@ -1,0 +1,199 @@
+--- export: UObject / BHInventoryFragment_CustomShape_0 ---
+{
+  "Type": "BHInventoryFragment_CustomShape",
+  "Name": "BHInventoryFragment_CustomShape_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_CustomShape'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightArmor'",
+    "ObjectPath": "/Armor/Data/ID_LightArmor.4"
+  },
+  "Properties": {
+    "Dimensions": {
+      "X": 3,
+      "Y": 4
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_Droppable_0 ---
+{
+  "Type": "BHInventoryFragment_Droppable",
+  "Name": "BHInventoryFragment_Droppable_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Droppable'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightArmor'",
+    "ObjectPath": "/Armor/Data/ID_LightArmor.4"
+  },
+  "Properties": {
+    "DroppedMesh": {
+      "AssetPathName": "/Game/Characters/Player/Armour/Light/001/SM/SM_Armour_Light_001_drop.SM_Armour_Light_001_drop",
+      "SubPathString": ""
+    },
+    "MaterialOverrides": [
+      {
+        "ObjectName": "MaterialInstanceConstant'MI_Armour_Light_001_drop'",
+        "ObjectPath": "/Game/Characters/Player/Armour/Light/001/MAT/MI_Armour_Light_001_drop.0"
+      }
+    ],
+    "Scale": {
+      "X": 1.25,
+      "Y": 0.4,
+      "Z": 1.25
+    },
+    "RelativeRotation": {
+      "Pitch": 0.0,
+      "Yaw": -90.0,
+      "Roll": 0.0
+    },
+    "bOverrideDroppedRelativeLocation": true,
+    "OverridedRelativeLocation": {
+      "X": -2.0,
+      "Y": 0.0,
+      "Z": -22.0
+    },
+    "bOverrideDroppedBoxExtent": true,
+    "OverridedBoxExtent": {
+      "X": 11.0,
+      "Y": 20.0,
+      "Z": 25.0
+    }
+  }
+}
+--- export: UObject / BHInventoryFragment_UserInterface_0 ---
+{
+  "Type": "BHInventoryFragment_UserInterface",
+  "Name": "BHInventoryFragment_UserInterface_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_UserInterface'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightArmor'",
+    "ObjectPath": "/Armor/Data/ID_LightArmor.4"
+  }
+}
+--- export: UObject / BHInventoryFragment_Weight_0 ---
+{
+  "Type": "BHInventoryFragment_Weight",
+  "Name": "BHInventoryFragment_Weight_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryFragment_Weight'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightArmor'",
+    "ObjectPath": "/Armor/Data/ID_LightArmor.4"
+  },
+  "Properties": {
+    "Weight": 3.0
+  }
+}
+--- export: UPrimaryDataAsset / ID_LightArmor ---
+{
+  "Type": "BHInventoryItemDefinition",
+  "Name": "ID_LightArmor",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHInventoryItemDefinition'",
+  "Package": "/Armor/Data/ID_LightArmor",
+  "Properties": {
+    "ItemId": {
+      "TagName": "Id.Item.LightArmor"
+    },
+    "ItemContext": [
+      "Inventory.Slot.Armor",
+      "Item.Context.Equippable"
+    ],
+    "DisplayName": {
+      "Namespace": "",
+      "Key": "F0DECB1548ADC67D49C8B3BF23A41477",
+      "SourceString": "Level 1 Armor",
+      "LocalizedString": "Level 1 Armor"
+    },
+    "DataFragments": [
+      {
+        "ObjectName": "BHInventoryFragment_UserInterface'ID_LightArmor:BHInventoryFragment_UserInterface_0'",
+        "ObjectPath": "/Armor/Data/ID_LightArmor.2"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Weight'ID_LightArmor:BHInventoryFragment_Weight_0'",
+        "ObjectPath": "/Armor/Data/ID_LightArmor.3"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_Droppable'ID_LightArmor:BHInventoryFragment_Droppable_0'",
+        "ObjectPath": "/Armor/Data/ID_LightArmor.1"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Armor'ID_LightArmor:WDInventoryFragment_Armor_0'",
+        "ObjectPath": "/Armor/Data/ID_LightArmor.5"
+      },
+      {
+        "ObjectName": "WDInventoryFragment_Audio'ID_LightArmor:WDInventoryFragment_Audio_0'",
+        "ObjectPath": "/Armor/Data/ID_LightArmor.6"
+      },
+      {
+        "ObjectName": "BHInventoryFragment_CustomShape'ID_LightArmor:BHInventoryFragment_CustomShape_0'",
+        "ObjectPath": "/Armor/Data/ID_LightArmor.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Armor_0 ---
+{
+  "Type": "WDInventoryFragment_Armor",
+  "Name": "WDInventoryFragment_Armor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Armor'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightArmor'",
+    "ObjectPath": "/Armor/Data/ID_LightArmor.4"
+  },
+  "Properties": {
+    "DamageContextTag": {
+      "TagName": "Meta.Damage.Armor.Light"
+    },
+    "CoveredHitLocations": [
+      "Meta.Damage.HitLocation.Infantry.Torso.Lower",
+      "Meta.Damage.HitLocation.Infantry.Torso.Middle",
+      "Meta.Damage.HitLocation.Infantry.Torso.Upper"
+    ],
+    "ReplicatedData": {
+      "Durability": 200.0
+    },
+    "DurabilityStagesSetupData": [
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 50.0
+      },
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 40.0
+      },
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 30.0
+      },
+      {
+        "DamagePercentageReduction": 30.0,
+        "Thickness": 0.5,
+        "Density": 20.0
+      }
+    ]
+  }
+}
+--- export: UObject / WDInventoryFragment_Audio_0 ---
+{
+  "Type": "WDInventoryFragment_Audio",
+  "Name": "WDInventoryFragment_Audio_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDInventoryFragment_Audio'",
+  "Outer": {
+    "ObjectName": "BHInventoryItemDefinition'ID_LightArmor'",
+    "ObjectPath": "/Armor/Data/ID_LightArmor.4"
+  },
+  "Properties": {
+    "AudioDataAsset": {
+      "ObjectName": "WDAudioData'ID_Armor_Audio'",
+      "ObjectPath": "/Game/Audio/Player/Item/Data/ID_Armor_Audio.0"
+    }
+  }
+}

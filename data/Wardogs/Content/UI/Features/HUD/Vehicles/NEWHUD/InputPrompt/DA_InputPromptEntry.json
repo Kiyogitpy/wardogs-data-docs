@@ -1,0 +1,31 @@
+--- export: UDataAsset / DA_InputPromptEntry ---
+{
+  "Type": "WDUIVehicleInputPromptData",
+  "Name": "DA_InputPromptEntry",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIVehicleInputPromptData'",
+  "Package": "/Game/UI/Features/HUD/Vehicles/NEWHUD/InputPrompt/DA_InputPromptEntry",
+  "Properties": {
+    "EntryViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIVehicleInputPromptEntryViewModel",
+        "SubPathString": ""
+      }
+    },
+    "DefaultVehicleInputs": {
+      "Map": [
+        {
+          "Key": {
+            "TagName": "Input.NamedActions.Player.Interact"
+          },
+          "Value": {
+            "TableId": "/Game/UI/StringTables/STRINGS_VehicleInputs.STRINGS_VehicleInputs",
+            "Key": "Vehicle.Input.Interact",
+            "SourceString": "Interact",
+            "LocalizedString": "Interact"
+          }
+        }
+      ]
+    }
+  }
+}

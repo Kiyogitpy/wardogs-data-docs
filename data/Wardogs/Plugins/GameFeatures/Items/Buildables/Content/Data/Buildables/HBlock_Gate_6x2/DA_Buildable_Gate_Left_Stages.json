@@ -1,0 +1,70 @@
+--- export: UDataAsset / DA_Buildable_Gate_Left_Stages ---
+{
+  "Type": "BuildingStagesDefinition",
+  "Name": "DA_Buildable_Gate_Left_Stages",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BuildingStagesDefinition'",
+  "Package": "/Buildables/Data/Buildables/HBlock_Gate_6x2/DA_Buildable_Gate_Left_Stages",
+  "Properties": {
+    "BoundingBox": {
+      "Min": {
+        "X": -75.0,
+        "Y": -450.0,
+        "Z": 0.0
+      },
+      "Max": {
+        "X": 75.0,
+        "Y": 450.0,
+        "Z": 450.0
+      },
+      "IsValid": 1
+    },
+    "SnapTransforms": [
+      {
+        "Rotation": {
+          "X": -0.5,
+          "Y": -0.5,
+          "Z": 0.5,
+          "W": 0.5,
+          "IsNormalized": true,
+          "Size": 1.0,
+          "SizeSquared": 1.0
+        },
+        "Translation": {
+          "X": 0.0,
+          "Y": 75.0,
+          "Z": -15.0
+        },
+        "Scale3D": {
+          "X": 1.0,
+          "Y": 1.0,
+          "Z": 1.0
+        }
+      }
+    ],
+    "Stages": [
+      {
+        "StageName": "Stage 5",
+        "RequiredBuildingProgress": 1.0,
+        "BuildingStageChangedVFXHeightFromBase": 0.0,
+        "MeshLocalBoundingBox": {
+          "Min": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "Max": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "IsValid": 0
+        },
+        "MeshToPlacements": [],
+        "CriticalHitSpots": [],
+        "bOverrideCollisionProfile": false,
+        "CollisionProfileName": "None"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+--- export: UDataAsset / BH_Demolition_RS_LargeExplosives ---
+{
+  "Type": "BHDemolitionRuleset",
+  "Name": "BH_Demolition_RS_LargeExplosives",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'BHDemolitionRuleset'",
+  "Package": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_LargeExplosives",
+  "Properties": {
+    "Rule": {
+      "ObjectName": "WDDemolitionRule_Explosion'BH_Demolition_RS_LargeExplosives:WDDemolitionRule_Explosion_0'",
+      "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_LargeExplosives.1"
+    }
+  }
+}
+--- export: UObject / WDDemolitionRule_Explosion_0 ---
+{
+  "Type": "WDDemolitionRule_Explosion",
+  "Name": "WDDemolitionRule_Explosion_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDDemolitionRule_Explosion'",
+  "Outer": {
+    "ObjectName": "BHDemolitionRuleset'BH_Demolition_RS_LargeExplosives'",
+    "ObjectPath": "/Game/Demolition/RuleSets/Explosions/BH_Demolition_RS_LargeExplosives.0"
+  },
+  "Properties": {
+    "PermittedDamageSources": {
+      "TagDictionary": [
+        {
+          "TagName": "Meta.Damage.Explosive.Utility.ATMine"
+        },
+        {
+          "TagName": "Meta.Damage.Explosive.VehicleExplosion"
+        },
+        {
+          "TagName": "Meta.Damage.Landmine"
+        },
+        {
+          "TagName": "Meta.Damage.Cannon.30mm"
+        },
+        {
+          "TagName": "Meta.Damage.Explosive.Rocket.120mm"
+        }
+      ],
+      "QueryTokenStream": [
+        0,
+        1,
+        1,
+        5,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "UserDescription": "Large Explosives",
+      "AutoDescription": " ANY( Meta.Damage.Explosive.Utility.ATMine, Meta.Damage.Explosive.VehicleExplosion, Meta.Damage.Landmine, Meta.Damage.Cannon.30mm, Meta.Damage.Explosive.Rocket.120mm )"
+    },
+    "MinimumDistanceFromExplosionSource": 500.0
+  }
+}
