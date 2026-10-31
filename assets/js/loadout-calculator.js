@@ -138,7 +138,8 @@
     lo = n.loadout;
     dropped = n.dropped || [];
     var lv = parseInt(h.lvl, 10);
-    gate.role = h.cls && roles().indexOf(h.cls) >= 0 ? h.cls : "";
+    var role = L.roleKey(h.cls);
+    gate.role = role && roles().indexOf(role) >= 0 ? role : "";
     gate.level = lv >= 1 ? Math.min(lv, 150) : null;
     bal.ammo = h.ammo || null;
     bal.vest = VESTS.some(function (v) { return v[0] === h.vest; }) ? h.vest : "None";
@@ -156,7 +157,7 @@
   function unlockText(id) {
     var u = X && X.unlocks[id];
     if (!u) return "";
-    return Object.keys(u).sort().map(function (r) { return r + " L" + u[r][0]; }).join(", ");
+    return Object.keys(u).sort().map(function (r) { return L.roleLabel(r) + " L" + u[r][0]; }).join(", ");
   }
 
   // Whether the class and level limit allows the item: items in no tree are always allowed; with a class
@@ -178,7 +179,7 @@
     var locked = equippedIds().filter(function (id) { return !allowed(id); });
     els.gateHint.textContent = !X ? "" : gate.level == null
       ? "Set a class level to grey out what that class has not unlocked yet. Items that no class tree lists are always available."
-      : (gate.role || "Any class") + " at level " + gate.level + ": locked items are greyed out." +
+      : (L.roleLabel(gate.role) || "Any class") + " at level " + gate.level + ": locked items are greyed out." +
         (locked.length ? " Equipped but locked: " + locked.map(display).join(", ") + "." : "");
     els.gateHint.classList.toggle("lc-warn", locked.length > 0);
   }
@@ -195,7 +196,7 @@
     var sel = els.weapon, groups = {}, order = [];
     sel.textContent = "";
     weapons().forEach(function (w) {
-      var g = w.archetype || "Other";
+      var g = L.weaponGroup(w.id, w.archetype);
       if (!groups[g]) { groups[g] = el("optgroup"); groups[g].label = g; order.push(g); }
       var o = el("option", null, weaponLabel(w) + gateSuffix(w.id));
       o.value = w.id;
@@ -591,7 +592,7 @@
     var any = el("option", null, "Any class");
     any.value = "";
     els.role.appendChild(any);
-    roles().forEach(function (r) { var o = el("option", null, r); o.value = r; els.role.appendChild(o); });
+    roles().forEach(function (r) { var o = el("option", null, L.roleLabel(r)); o.value = r; els.role.appendChild(o); });
     els.role.disabled = els.level.disabled = false;
   }
 
@@ -634,7 +635,7 @@
   }
 
   function recommendationScope() {
-    return (gate.level == null ? "All levels" : (gate.role || "Any class") + " L" + gate.level) +
+    return (gate.level == null ? "All levels" : (L.roleLabel(gate.role) || "Any class") + " L" + gate.level) +
       " · " + lo.stance + " · bipod " + lo.bipod + (lo.bipod === "folded" ? "" : " (if equipped)") + " · optic kept";
   }
 

@@ -13,9 +13,9 @@ const os = require('node:os');
 const puppeteer = require(process.env.PUPPETEER_MODULE || 'puppeteer-core');
 const repo = path.resolve(__dirname, '..');
 const mime = { '.js': 'text/javascript', '.json': 'application/json', '.css': 'text/css', '.png': 'image/png' };
-function pageHtml() {
-  const md = fs.readFileSync(path.join(repo, 'content/loadout-calculator.md'), 'utf8');
-  let body = md.slice(md.indexOf('<div class="vv lc"'), md.indexOf('<div class="vv-nojs"'));
+function pageHtml(builder = false) {
+  const md = fs.readFileSync(path.join(repo, builder ? 'content/loadout-builder.md' : 'content/loadout-calculator.md'), 'utf8');
+  let body = md.slice(md.indexOf(builder ? '<div class="lb"' : '<div class="vv lc"'), md.indexOf(builder ? '<div class="lb-nojs"' : '<div class="vv-nojs"'));
   body = body.replace(/\{\{\s*'([^']*)'\s*\|\s*relative_url\s*\}\}/g, '$1')
     .replace(/\{\{\s*site\.time[^}]*\}\}/g, 'test');
   return '<!doctype html><html class="js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">' +
@@ -27,7 +27,7 @@ function pageHtml() {
 test('calculator compares three recoil goals, applies a build, and shares it', { timeout: 180000 }, async () => {
   const server = http.createServer((req, res) => {
     const url = new URL(req.url, 'http://localhost');
-    if (url.pathname === '/content/loadout-calculator.html') { res.setHeader('Content-Type', 'text/html'); res.end(pageHtml()); return; }
+    if (url.pathname === '/content/loadout-calculator.html' || url.pathname === '/loadout/') { res.setHeader('Content-Type', 'text/html'); res.end(pageHtml(url.pathname === '/loadout/')); return; }
     const file = url.pathname === '/preview.css' ? process.env.LOADOUT_PREVIEW_CSS : path.resolve(repo, '.' + decodeURIComponent(url.pathname));
     if (!file || (url.pathname !== '/preview.css' && !file.startsWith(repo + path.sep)) || !fs.existsSync(file) || !fs.statSync(file).isFile()) {
       res.writeHead(404); res.end('not found'); return;
@@ -48,6 +48,9 @@ test('calculator compares three recoil goals, applies a build, and shares it', {
     await page.setViewport({ width: 1440, height: 1000 });
     await page.goto(origin + '/content/loadout-calculator.html#w=ID_AK74M&cls=Support&lvl=21');
     await page.waitForSelector('#lc.lc-ready');
+    assert.deepEqual(await page.$$eval('#lc-role option', es => es.filter(e => e.value === 'Infantry').map(e => e.textContent)), ['Assault']);
+    assert.equal(await page.$eval('#lc-weapon option[value="ID_WEPN_037"]', e => e.parentElement.label), 'AR', 'Spear belongs with assault rifles, not internal DMR archetypes');
+    assert.doesNotMatch(await page.$eval('#lc-weapon', e => e.textContent), /Infantry/);
     assert.equal(await page.$('#lc-recommendations') !== null, true, 'recoil comparison must exist above the manual editor');
     await page.waitForFunction(() => document.querySelectorAll('[data-recoil-goal]').length === 3 && document.querySelector('#lc-recommendations').getAttribute('aria-busy') === 'false', { timeout: 60000 });
     assert.deepEqual(await page.$$eval('[data-recoil-goal]', es => es.map(e => e.dataset.recoilGoal)), ['vertical', 'horizontal', 'overall']);
@@ -134,6 +137,21 @@ test('calculator compares three recoil goals, applies a build, and shares it', {
     await page.waitForFunction(() => document.querySelector('#lc-recommendations').getAttribute('aria-busy') === 'false');
     assert.equal(await page.$eval('#lc-bipod button[aria-checked="true"]', e => e.value), 'unfolded');
     assert.match(await page.evaluate(() => location.hash), /bipod=unfolded/);
+    // Both tools use player-facing Assault labels while old Infantry links still gate correctly.
+    await page.goto(origin + '/loadout/#p=ID_WEPN_037&cls=Infantry&lvl=20');
+    await page.waitForSelector('#lb.lb-ready');
+    assert.equal(await page.$eval('#lb-role option:checked', e => e.textContent), 'Assault');
+    assert.match(await page.$eval('#lb-gate-hint', e => e.textContent), /Assault level 20/);
+    assert.equal(await page.$eval('.lb-whead-class', e => e.textContent), 'Assault Rifle');
+    await page.select('#lb-role', 'Support');
+    await page.evaluate(() => { location.hash = '#p=ID_WEPN_037&cls=Assault&lvl=20'; });
+    await page.waitForFunction(() => document.querySelector('#lb-role').value === 'Infantry');
+    assert.equal(await page.$eval('#lb-role option:checked', e => e.textContent), 'Assault');
+    await page.goto(origin + '/content/loadout-calculator.html#w=ID_WEPN_037&cls=Assault&lvl=20');
+    await page.waitForFunction(() => document.querySelector('#lc.lc-ready') && document.querySelector('#lc-recommendations').getAttribute('aria-busy') === 'false');
+    assert.equal(await page.$eval('#lc-role option:checked', e => e.textContent), 'Assault');
+    assert.match(await page.$eval('#lc-recommendation-status', e => e.textContent), /Assault L20/);
+    assert.doesNotMatch(await page.$eval('#lc-gate-hint', e => e.textContent), /Infantry/);
     // Failure states must not strand the page in an infinite loading state.
     await page.evaluateOnNewDocument(() => { window.Worker = undefined; });
     await page.reload();

@@ -79,7 +79,7 @@
   function unlockText(id) {
     var u = X && X.unlocks[id];
     if (!u) return "";
-    return Object.keys(u).sort().map(function (r) { return r + " level " + u[r][0]; }).join(", ");
+    return Object.keys(u).sort().map(function (r) { return L.roleLabel(r) + " level " + u[r][0]; }).join(", ");
   }
   // Items in no tree are always allowed. A Wardog tree item needs the Wardog level; a class tree item needs the
   // class level, in that class's tree when a class is chosen, in any tree with "Any class". An unset level allows all.
@@ -226,7 +226,8 @@
     if (WSLOTS.some(function (w) { return w[0] === kv.on; })) S.active = kv.on;
     if (stances().indexOf(kv.stance) >= 0) S.stance = kv.stance;
     S.focus = kv.focus === "1";
-    S.role = kv.cls && classRoles().indexOf(kv.cls) >= 0 ? kv.cls : "";
+    var role = L.roleKey(kv.cls);
+    S.role = role && classRoles().indexOf(role) >= 0 ? role : "";
     S.level = levelOf(kv.lvl);
     S.wardog = levelOf(kv.wd);
     if (kv.cls === WARDOG && S.wardog == null) { S.wardog = S.level; S.level = null; }   // links from before the Wardog level box
@@ -1077,7 +1078,7 @@
   function gateText() {
     var p = [];
     if (S.wardog != null) p.push("Wardog level " + S.wardog);
-    if (S.level != null) p.push((S.role || "any class") + " level " + S.level);
+    if (S.level != null) p.push((L.roleLabel(S.role) || "any class") + " level " + S.level);
     return p.join(", ");
   }
 
@@ -1176,7 +1177,7 @@
         any.value = "";
         clear(els.role);
         els.role.appendChild(any);
-        classRoles().forEach(function (r) { var o = el("option", null, r); o.value = r; els.role.appendChild(o); });
+        classRoles().forEach(function (r) { var o = el("option", null, L.roleLabel(r)); o.value = r; els.role.appendChild(o); });
         els.role.disabled = els.level.disabled = els.wardog.disabled = !X;
         els.copy.disabled = false;
         els.reset.disabled = false;

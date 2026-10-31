@@ -129,6 +129,13 @@
   // ge_values.short(): every "Attribute.Gameplay." removed, "?" for an empty tag.
   function pyShort(tag) { return tag ? replaceAll(tag, "Attribute.Gameplay.", "") : "?"; }
   function slotLabel(tag) { return replaceAll(tag, "Item.Attachment.", ""); }
+  // Player-facing labels are separate from data keys used by unlocks and effect presets.
+  function roleLabel(role) { return role === "Infantry" ? "Assault" : role; }
+  function roleKey(role) { return role === "Assault" ? "Infantry" : role; }
+  function weaponGroup(id, archetype) {
+    // TCX-SPR / Spear is sold as an Assault Rifle; its internal DMR archetype stays unchanged.
+    return id === "ID_WEPN_037" ? "AR" : (archetype || "Other");
+  }
   function attrLabel(tag) {
     if (!tag) return "?";
     var w = "Attribute.Gameplay.Weapon.";
@@ -628,6 +635,6 @@
   return {
     model: model, defaultLoadout: defaultLoadout, slots: slots, setItem: setItem, normalize: normalize,
     sights: sights, hasBipod: hasBipod, evaluate: evaluate, cli: cli, withItems: withItems, effect: effect,
-    attrLabel: attrLabel, slotLabel: slotLabel, fmt: fmt, OPS: OPS
+    attrLabel: attrLabel, slotLabel: slotLabel, roleLabel: roleLabel, roleKey: roleKey, weaponGroup: weaponGroup, fmt: fmt, OPS: OPS
   };
 });
