@@ -1,102 +1,114 @@
 # Wardogs Data Docs
 
-[![Repo](https://img.shields.io/badge/repo-Kiyogitpy%2Fwardogs--data--docs-blue?logo=github)](https://github.com/Kiyogitpy/wardogs-data-docs)
-[![Site](https://img.shields.io/badge/pages-live-brightgreen)](https://kiyogitpy.github.io/wardogs-data-docs/)
-[![License](https://img.shields.io/badge/license-CC--BY--SA--4.0%20%2F%20MIT-lightgrey)](LICENSE)
+[![Site](https://img.shields.io/badge/wiki-live-brightgreen)](https://kiyogitpy.github.io/wardogs-data-docs/)
+[![License](https://img.shields.io/badge/docs-CC--BY--SA--4.0-blue)](LICENSE)
+[![Code](https://img.shields.io/badge/code-MIT-blue)](LICENSE)
 
-Reference documentation for the game data of **Wardogs** (Bulkhead, published by Team17,
-UE 5.7, build `++Wardogs+Live-CL-516586`): the numbers, tables, curves
-and rules behind weapons, vehicles, items, progression, game modes and
-maps, read from the game's cooked data and tied to the engine classes
-that use it.
+Game data, reference pages and a player wiki for **Wardogs**. This repository
+includes the raw JSON asset exports, the scripts that read them, and the
+generated data behind the site's tables and interactive tools.
 
-- **Live site:** <https://kiyogitpy.github.io/wardogs-data-docs/>
-- **Repository:** <https://github.com/Kiyogitpy/wardogs-data-docs>
-- **Extraction and updates:** [`docs/UPDATE_PIPELINE.md`](docs/UPDATE_PIPELINE.md)
-- **Contributing:** [`CONTRIBUTING.md`](CONTRIBUTING.md)
+**[Read the wiki](https://kiyogitpy.github.io/wardogs-data-docs/)** ·
+**[Browse the data reference](https://kiyogitpy.github.io/wardogs-data-docs/reference/)** ·
+**[Browse raw exports](data/)**
 
----
+## What you'll find
 
-## What's in this repo
+- Weapon stats, damage calculations, penetration, spread and recoil.
+- Vehicle stats, damage routing, hitboxes and collision viewers.
+- Equipment, attachments, building, progression and the economy.
+- Game modes, maps and Season 1 to Season 2 comparisons.
+- Source asset paths and evidence notes for checking where a value came from.
+
+The wiki explains the mechanics. The reference pages go into the underlying
+fields, tables and formulas. Where a value is unknown or inferred, check the
+page's evidence and limitations before treating it as an in-game result.
+
+## Repository layout
 
 | Path | Contents |
-|---|---|
-| `content/`, `game-features/`, `plugins/`, `pipelines/` | Per-category reference docs (weapons, vehicles, items, game mechanics, UI, maps, meta, and more) |
-| `season-2-changes/` | Season 1 → Season 2 changes |
-| `_wiki/` | Player-facing wiki pages |
-| `assets/data/` | Generated JSON behind the site's tables and viewers |
-| `_tools/` | Python generators that build the tables and JSON from a local export |
-| `tools/` | The C# extractor (CUE4Parse) and its notes |
-| `mappings/` | Notes on the `.usmap` / `.idmap` mappings (the map files themselves are not committed) |
-| `sdk/` | Notes and a package index for the Dumper-7 class dump (the dump itself is not committed) |
-| `docs/` | Methodology, units, evidence notes per research round |
-| `_includes/`, `_layouts/`, `_sass/` | Jekyll theme for the GitHub Pages site |
+| --- | --- |
+| [`_wiki/`](_wiki/) | Player wiki articles |
+| [`content/`](content/), [`game-features/`](game-features/), [`plugins/`](plugins/) | Detailed game-data reference pages |
+| [`pipelines/`](pipelines/) | Mechanics, calculations and interactive viewers |
+| [`data/`](data/) | Raw JSON asset exports, retaining their original game paths |
+| [`assets/data/`](assets/data/) | Generated JSON used by the site and its tools |
+| [`season-2-changes/`](season-2-changes/) | Season 1 to Season 2 data comparisons |
+| [`_tools/`](_tools/) | Generators, data checks and the update pipeline |
+| [`tools/`](tools/) | CUE4Parse-based extraction tools and setup notes |
+| [`docs/`](docs/) | Evidence notes, units, update instructions and wiki conventions |
+| [`sdk/`](sdk/), [`mappings/`](mappings/) | Class and mapping documentation; dumps and binary mappings stay local |
+| `_includes/`, `_layouts/`, `_sass/` | Jekyll site templates and styles |
 
-### Raw exports and local-only files
+## Working with the JSON
 
-Raw JSON asset exports are tracked under `data/` alongside the generated
-site JSON in `assets/data/`. The exports retain the extractor's original
-format, including `--- export: ... ---` separators where an asset contains
-one or more exported objects. The docs cite assets by name and path so
-readers can check the source values or reproduce them with `tools/`.
+There are two kinds of data in the repository:
 
-The Dumper-7 header dump (`sdk/raw/`), non-JSON extracted files, game
-binaries, pak files, keys and mapping files remain local and are not
-published. Publishing the exports does not grant a licence to the game's
-underlying material.
+- **Raw exports in `data/`** preserve the extractor output. Their paths mirror
+  the cooked assets, so an asset named in a reference page can be found here.
+- **Site data in `assets/data/`** contains the generated records used by tables,
+  calculators and viewers. Start here if you want the processed values.
 
-## How it was built
+Many raw `.json` files contain one or more JSON objects separated by export
+headers:
 
-1. **Extract.** CUE4Parse reads the game's `.pak`/`.utoc` files and writes each
-   cooked asset as JSON ([`tools/`](tools/)).
-2. **Map the code.** Dumper-7, run once against the author's own local
-   copy of the game, produces the UE class hierarchy (classes, properties,
-   offsets). It names the fields in the cooked data and connects assets
-   to the native classes that read them.
-3. **Read the binary.** Static analysis of the shipping executable in IDA
-   fills in native defaults and formulas that the data does not hold
-   (how multipliers combine, how damage resolves).
-4. **Generate.** The scripts in [`_tools/`](_tools/) turn the local
-   export into the tables and JSON on the site, so a new game build
-   is a rerun, not a rewrite.
+```text
+--- export: UDataTable / DT_GlobalDamage_InfantryData ---
+```
 
-Apart from that one class dump, the work reads files on disk and an
-offline binary; nothing runs against online matches. Extraction and update
-steps are in [`docs/UPDATE_PIPELINE.md`](docs/UPDATE_PIPELINE.md).
+These files are export streams, not a single JSON document. Split them at the
+headers before parsing each object. The generators in [`_tools/`](_tools/)
+handle this format; [`damage_tables.py`](_tools/damage_tables.py) is one example.
+Files without export headers can be parsed as ordinary JSON.
 
-## Target build
+The raw exports are tracked in Git. Game executables, pak files, AES keys,
+binary mappings, the `sdk/raw/` class dump and non-JSON extracted files are not.
+
+## How the reference is built
+
+CUE4Parse reads the cooked assets from the game files. Class information from
+a local Dumper-7 dump helps identify properties, while static analysis of the
+shipping executable supplies native defaults and formulas missing from the
+assets. The Python generators turn those inputs into reference tables and
+site JSON.
+
+For extraction requirements, configuration and the update procedure, see
+[`docs/UPDATE_PIPELINE.md`](docs/UPDATE_PIPELINE.md). Regenerating everything
+requires local inputs that are not included in a clone, including the game
+files, the matching keys and mappings, and the SDK dump used by some generators.
+
+## Documented build
 
 | Attribute | Value |
-|---|---|
+| --- | --- |
 | Game | Wardogs |
 | Developer / publisher | Bulkhead / Team17 |
+| Platform | PC, Steam AppID `1867240` |
 | Engine | Unreal Engine 5.7 |
 | Build | `++Wardogs+Live-CL-516586` |
-| Platform | PC (Steam AppID 1867240) |
-| Season | Season 02 (data as of 2026-10-15) |
+| Season | Season 02 |
 
-## Contributing
+Values describe this build, not necessarily a later patch or a server-side
+override. A stored asset value alone does not establish how it behaves in a match.
 
-Corrections and new data pages are welcome. See
-[`CONTRIBUTING.md`](CONTRIBUTING.md). If you find something that looks
-like a security problem in the game, report it to the developer rather
-than in a public issue; [`SECURITY.md`](SECURITY.md) says how.
+## Corrections and contributions
 
-## Attribution
+Found a wrong number or a missing explanation? Include the page, asset path,
+game build and evidence for the correction. For generator changes, include the
+updated output. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-- **Wardogs** © Bulkhead Ltd, published by Team17
-- **Unreal Engine 5.7** © Epic Games
-- Community tooling: CUE4Parse, FModel, Dumper-7, IDA Pro
+Report security findings through the channel in [`SECURITY.md`](SECURITY.md),
+not a public issue.
 
-This is an unofficial fan project, not affiliated with or endorsed by
-Bulkhead or Team17.
+## Credits and licensing
 
-## License
+Wardogs is developed by Bulkhead and published by Team17. Unreal Engine belongs
+to Epic Games. This is an unofficial fan project with no affiliation or
+endorsement from those companies.
 
-- **Documentation** (`*.md` files, data analysis, methodology):
-  [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- **Code** (`_tools/`, `tools/`, site scripts): MIT License
-- **Game names, values and asset names** quoted in the docs belong to
-  their owners and are quoted for reference and commentary.
+The workflow uses community tools including CUE4Parse, FModel and Dumper-7,
+alongside IDA Pro.
 
-Full text in [`LICENSE`](LICENSE).
+Documentation and analysis are licensed under **CC BY-SA 4.0**; project code is
+licensed under **MIT**. The game's assets and other third-party material are
+not relicensed under those terms. See [`LICENSE`](LICENSE).
