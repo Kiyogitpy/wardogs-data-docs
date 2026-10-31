@@ -2,18 +2,18 @@
 title: "Weapon Loadout Calculator"
 redirect_from: ["/loadout-calculator.html", "/loadout-calculator"]
 parent: "Interactive Tools"
-description: "Use this to check a setup you already have: pick any weapon, attachments, sight, stance and bipod state yourself and see every weapon attribute, the reticle and damage per body part and over distance for each ammunition"
+description: "Find the best compatible attachment builds for vertical, horizontal and overall recoil at your class level, compare the trade-offs, and apply a build or inspect every weapon attribute."
 ---
 
 # Weapon Loadout Calculator
 
 *Data: [`assets/data/weapon-loadouts.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-loadouts.json), built by `python _tools/weapon_attributes.py --json`; class levels, reticles and ballistics from [`assets/data/loadout-extras.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/loadout-extras.json), built by `python -I _tools/loadout_extras.py`*
 
-Choose a class and a class level to grey out the weapons and attachments that class has not unlocked yet (from the class unlock trees; items no tree lists are always available). Below the attributes, the page shows the equipped sight's reticle and, for the chosen ammunition, target vest, helmet and distance, the damage per shot to every body part, shots and time to kill a 100 HP target, and the damage drop-off over distance.
+Pick your weapon and progression below. Compare **best vertical**, **best horizontal** and **best overall recoil**, then apply the build you want. Recommendations search compatible attachment combinations, including the sub-slots opened by barrels and handguards. Your optic, stance and bipod setting stay yours.
 
-Pick a weapon, fill each of its sub-slots with any attachment the slot accepts, and choose a sight, a stance and a bipod state. The calculator shows every `Attribute.Gameplay.Weapon.*` value with its base, each modifier that reaches it and the final value, and lists the effects that go to the character instead. It is the browser version of `python _tools/weapon_attributes.py`, and the rules are the ones on [Weapon Attributes](Wardogs_WeaponAttributes_v1.md#rules): what applies to a weapon, the stance and bipod lists, and the current-value formula of the [Gameplay Effects Pipeline](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#44-current-value) §4.4.
+The manual editor and full attribute breakdown remain below. Values follow [Weapon Attributes](Wardogs_WeaponAttributes_v1.md#rules) and the [Gameplay Effects Pipeline](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#44-current-value) §4.4; these are recoil multipliers, not a prediction of hit rate.
 
-<div class="vv lc" id="lc" markdown="0" data-json="{{ '/assets/data/weapon-loadouts.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-extras="{{ '/assets/data/loadout-extras.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-base="{{ '/' | relative_url }}">
+<div class="vv lc" id="lc" markdown="0" data-json="{{ '/assets/data/weapon-loadouts.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-extras="{{ '/assets/data/loadout-extras.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-base="{{ '/' | relative_url }}" data-optimizer-worker="{{ '/assets/js/loadout-optimize-worker.js' | relative_url }}?v={{ site.time | date: '%s' }}">
   <div class="vv-controls lc-controls">
     <div class="vv-field lc-field-weapon">
       <label for="lc-weapon">Weapon</label>
@@ -33,9 +33,20 @@ Pick a weapon, fill each of its sub-slots with any attachment the slot accepts, 
   </div>
   <p class="lc-status" id="lc-status" role="status"></p>
   <p class="lc-hint lc-gate-hint" id="lc-gate-hint" aria-live="polite"></p>
+  <section class="lc-card lc-recommendations" id="lc-recommendations" aria-labelledby="lc-recommendations-title" aria-busy="true">
+    <h2 class="lc-card-title no_anchor" id="lc-recommendations-title">Choose your recoil build</h2>
+    <p class="lc-card-lead" id="lc-recommendation-status" role="status">Loading recoil recommendations…</p>
+    <div class="lc-recoil-current" id="lc-recoil-current"></div>
+    <div class="lc-recoil-compare" id="lc-recoil-compare"></div>
+    <details class="lc-scoring">
+      <summary>How the builds are ranked</summary>
+      <p>Lower is better. Vertical minimizes the final vertical recoil multiplier, breaking ties with horizontal. Horizontal does the reverse. Overall minimizes the equal-weight RMS of both multipliers relative to the default loadout at the same stance and bipod setting: √(((V / default V)² + (H / default H)²) / 2). This penalizes a large weakness on either axis; ADS time, spread, price and magazine capacity do not affect this score.</p>
+      <p>Each build uses the same weapon, optic, sight entry, stance and bipod setting; bipod bonuses apply only if a bipod is equipped in that build. Default-fitted mechanical parts are not stripped. Unlocked parts can replace them; empty is considered for optional slots. Items absent from the unlock trees are treated as available, as in the manual editor. Ties prefer fewer equipment changes. Percentage changes compare with the default loadout in the same stance, not with bare weapon stats. This is attachment optimization for recoil multipliers, not the weapon's physical spray pattern or a guarantee of the best handling.</p>
+    </details>
+  </section>
   <div class="lc-layout">
     <section class="lc-card lc-loadout" aria-labelledby="lc-loadout-title">
-      <h2 class="lc-card-title no_anchor" id="lc-loadout-title">Loadout</h2>
+      <h2 class="lc-card-title no_anchor" id="lc-loadout-title">Manual loadout editor</h2>
       <p class="lc-card-lead">Each sub-slot lists the attachments it accepts. A barrel or handguard brings its own sub-slots, which open below it.</p>
       <div class="lc-slots" id="lc-slots"></div>
       <div class="lc-mods">
@@ -129,6 +140,7 @@ Pick a weapon, fill each of its sub-slots with any attachment the slot accepts, 
 </div>
 
 <script src="{{ '/assets/js/loadout-eval.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ '/assets/js/loadout-optimize.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ '/assets/js/loadout-calculator.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
 
 <div class="vv-nojs" markdown="1">

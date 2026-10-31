@@ -23,6 +23,7 @@
 
   var L, model, root, els = {}, lo = null, defEval = null, dropped = [], copyTimer = null;
   var X = null, base = "/", gate = { role: "", level: null }, bal = { ammo: null, vest: "None", helmet: "None", range: 0 };
+  var optimizerJson = null, optimizerWorker = null, optimizerTimer = null, optimizerJob = 0, optimizerKey = null;
 
   // Player-facing names for the extras.
   var PART_NAMES = { "Head": "Head", "Neck": "Neck", "Torso.Upper": "Upper torso", "Torso.Middle": "Middle torso",
@@ -138,7 +139,7 @@
     dropped = n.dropped || [];
     var lv = parseInt(h.lvl, 10);
     gate.role = h.cls && roles().indexOf(h.cls) >= 0 ? h.cls : "";
-    gate.level = lv >= 1 ? lv : null;
+    gate.level = lv >= 1 ? Math.min(lv, 150) : null;
     bal.ammo = h.ammo || null;
     bal.vest = VESTS.some(function (v) { return v[0] === h.vest; }) ? h.vest : "None";
     bal.helmet = HELMETS.some(function (v) { return v[0] === h.helmet; }) ? h.helmet : "None";
@@ -613,6 +614,142 @@
     renderBallistics();
   }
 
+  /* ---------- recoil recommendations ---------- */
+
+  var RECOIL_GOALS = [["vertical", "Best vertical", "Lowest vertical; horizontal breaks ties."],
+    ["horizontal", "Best horizontal", "Lowest horizontal; vertical breaks ties."],
+    ["overall", "Best overall recoil", "Balanced reduction across both recoil axes."]];
+
+  function recoilValues(loadout) {
+    var values = {};
+    L.evaluate(model, loadout).weapon.forEach(function (r) { values[r.label] = r.final; });
+    return { vertical: values.VerticalRecoilMultiplier, horizontal: values.HorizontalRecoilMultiplier };
+  }
+
+  function recoilChange(value, reference) {
+    if (!(reference > 0) || !Number.isFinite(value)) return "No reference";
+    var pct = (value / reference - 1) * 100;
+    if (Math.abs(pct) < 0.05) return "Same as default";
+    return Math.abs(pct).toFixed(1) + "% " + (pct < 0 ? "less" : "more") + " than default";
+  }
+
+  function recommendationScope() {
+    return (gate.level == null ? "All levels" : (gate.role || "Any class") + " L" + gate.level) +
+      " · " + lo.stance + " · bipod " + lo.bipod + (lo.bipod === "folded" ? "" : " (if equipped)") + " · optic kept";
+  }
+
+  function renderRecommendations(result) {
+    els.recommendations.setAttribute("aria-busy", "false");
+    els.recoilCompare.textContent = "";
+    var reference = L.defaultLoadout(model, lo.weapon);
+    reference.stance = lo.stance; reference.bipod = lo.bipod;
+    var ref = recoilValues(reference), current = recoilValues(lo);
+    els.recoilCurrent.textContent = "Equipped: vertical ×" + fmt(current.vertical) + " / horizontal ×" + fmt(current.horizontal) +
+      ". Default at this stance: ×" + fmt(ref.vertical) + " / ×" + fmt(ref.horizontal) + ". Lower is better.";
+    var candidates = RECOIL_GOALS.map(function (g) { return result[g[0]]; });
+    if (!candidates.some(Boolean)) {
+      els.recommendationStatus.textContent = !allowed(lo.weapon)
+        ? "This weapon is locked for " + recommendationScope() + ". Choose an unlocked weapon or remove the class-level limit."
+        : "No fully evaluable, unlocked recoil build is available with this weapon and optic. Check the class/level limit and any locked equipped optic. Missing or uncertain recoil values are not ranked.";
+      return;
+    }
+    els.recommendationStatus.textContent = recommendationScope() + ". Compared " + Number(result.count || 0).toLocaleString("en-US") +
+      " recoil-distinct combinations; effect-equivalent parts are represented by the fewest-change build.";
+    if (result.rejected) els.recommendationStatus.appendChild(document.createTextNode(" Excluded " + result.rejected + " combinations with unresolved recoil values."));
+    var slotsNow = L.slots(model, lo), currentItems = {};
+    slotsNow.forEach(function (s) { currentItems[s.key] = s.choice; });
+    RECOIL_GOALS.forEach(function (goal, i) {
+      var candidate = candidates[i];
+      var col = el("article", "lc-recoil-build");
+      col.setAttribute("data-recoil-goal", goal[0]);
+      var heading = el("h3", "lc-recoil-title no_anchor", goal[1]);
+      heading.id = "lc-recoil-" + goal[0]; col.setAttribute("aria-labelledby", heading.id);
+      col.appendChild(heading);
+      col.appendChild(el("p", "lc-hint lc-recoil-intent", goal[2]));
+      if (!candidate) { col.appendChild(el("p", "lc-hint", "No evaluable build for this goal.")); els.recoilCompare.appendChild(col); return; }
+      var dl = el("dl", "lc-recoil-metrics");
+      [["Vertical", candidate.vertical, ref.vertical], ["Horizontal", candidate.horizontal, ref.horizontal]].forEach(function (m) {
+        var row = el("div"), term = el("dt", null, m[0]), dd = el("dd", null, "×" + fmt(m[1]));
+        dd.appendChild(el("small", m[1] < m[2] ? "lc-recoil-better" : m[1] > m[2] ? "lc-warn" : "", recoilChange(m[1], m[2])));
+        row.appendChild(term); row.appendChild(dd); dl.appendChild(row);
+      });
+      col.appendChild(dl);
+      var target = candidate.loadout, targetSlots = L.slots(model, target);
+      var changes = targetSlots.filter(function (s) { return s.choice !== currentItems[s.key]; }).length +
+        slotsNow.filter(function (s) { return !targetSlots.some(function (t) { return t.key === s.key; }) && s.choice != null; }).length;
+      col.appendChild(el("p", "lc-recoil-score", "Overall index " + fmt(candidate.score, 4) + " · " +
+        (changes ? changes + (changes === 1 ? " slot change" : " slot changes") : "Already equipped")));
+      var parts = el("dl", "lc-recoil-parts");
+      targetSlots.forEach(function (s) {
+        if (!s.accepts.length) return;
+        var row = el("div", s.choice !== currentItems[s.key] ? "lc-recoil-part-changed" : "");
+        row.appendChild(el("dt", null, s.key));
+        var dd = el("dd", null, s.choice == null ? "Empty" : display(s.choice));
+        if (s.choice != null) dd.title = s.choice;
+        if (s.choice !== currentItems[s.key]) dd.appendChild(el("span", "lc-sr", " (change)"));
+        row.appendChild(dd); parts.appendChild(row);
+      });
+      col.appendChild(parts);
+      var apply = el("button", "lc-btn lc-recoil-apply", changes ? "Apply " + goal[1].toLowerCase() : "Already equipped");
+      apply.type = "button"; apply.disabled = !changes;
+      apply.addEventListener("click", function () {
+        // The optimizer returns a normalized loadout. Do not settle() here: it would
+        // rewrite an unfolded/mounted setting if the recommended parts remove a bipod.
+        lo = JSON.parse(JSON.stringify(target)); dropped = []; update(true);
+        var focusTarget = $("lc-recommendations-title");
+        focusTarget.setAttribute("tabindex", "-1"); focusTarget.focus({ preventScroll: true });
+      });
+      col.appendChild(apply); els.recoilCompare.appendChild(col);
+    });
+    if (result.vertical && result.horizontal && result.overall &&
+        JSON.stringify(result.vertical.loadout.items) === JSON.stringify(result.horizontal.loadout.items) &&
+        JSON.stringify(result.vertical.loadout.items) === JSON.stringify(result.overall.loadout.items)) {
+      els.recommendationStatus.appendChild(document.createTextNode(" The same build wins all three goals under these limits."));
+    }
+  }
+
+  function scheduleRecommendations() {
+    if (!els.recommendations) return;
+    var key = JSON.stringify([lo, gate]);
+    if (key === optimizerKey) return;
+    optimizerKey = key;
+    clearTimeout(optimizerTimer);
+    if (optimizerWorker) { optimizerWorker.terminate(); optimizerWorker = null; }
+    var job = ++optimizerJob;
+    els.recoilCompare.textContent = ""; els.recoilCurrent.textContent = "";
+    els.recommendations.setAttribute("aria-busy", "true");
+    els.recommendationStatus.textContent = "Comparing compatible recoil builds… " + recommendationScope();
+    function finish(result, error) {
+      if (job !== optimizerJob) return;
+      if (optimizerWorker) { optimizerWorker.terminate(); optimizerWorker = null; }
+      if (error) {
+        els.recommendations.setAttribute("aria-busy", "false");
+        els.recommendationStatus.textContent = error;
+      } else renderRecommendations(result);
+    }
+    if (!X) { finish(null, "Unlock data could not be loaded. Recommendations are disabled rather than guessing which parts you can use; the manual editor still works."); return; }
+    if (!window.WDLoadoutOptimizer) { finish(null, "The recoil optimizer did not load. Reload the page; the manual editor still works."); return; }
+    var snapshot = JSON.parse(JSON.stringify(lo));
+    var allowedIds = Object.keys(model.items).filter(allowed);
+    function fallback() {
+      finish(null, "Background Workers are unavailable, so recoil search is paused to keep the manual editor responsive. Reload in a browser with Workers enabled to retry.");
+    }
+    optimizerTimer = setTimeout(function () {
+      if (job !== optimizerJob) return;
+      if (!window.Worker) { fallback(); return; }
+      try {
+        optimizerWorker = new Worker(root.getAttribute("data-optimizer-worker"));
+        optimizerWorker.onmessage = function (event) {
+          if (job !== optimizerJob || event.data.id !== job) return;
+          if (event.data.error) finish(null, "Recoil recommendations could not be calculated (" + event.data.error + ").");
+          else finish(event.data.result);
+        };
+        optimizerWorker.onerror = function (event) { event.preventDefault(); fallback(); };
+        optimizerWorker.postMessage({ id: job, json: optimizerJson, loadout: snapshot, allowedIds: allowedIds });
+      } catch (err) { fallback(); }
+    }, 80);
+  }
+
   function update(hash) {
     var res;
     try { res = L.evaluate(model, lo); }
@@ -631,6 +768,7 @@
     renderNotes(res);
     renderCli();
     renderExtras(res);
+    scheduleRecommendations();
     els.reset.disabled = isDefault();
     if (hash) writeHash();
   }
@@ -685,6 +823,10 @@
     els.partsRows = $("lc-parts-rows");
     els.dropHead = $("lc-drop-head");
     els.dropRows = $("lc-drop-rows");
+    els.recommendations = $("lc-recommendations");
+    els.recommendationStatus = $("lc-recommendation-status");
+    els.recoilCompare = $("lc-recoil-compare");
+    els.recoilCurrent = $("lc-recoil-current");
     base = root.getAttribute("data-base") || "/";
     L = window.WDLoadout;
     if (!L || typeof L.model !== "function") { fail("The calculator's evaluator (loadout-eval.js) did not load."); return; }
@@ -695,6 +837,7 @@
     Promise.all([getJson(root.getAttribute("data-json")), extras])
       .then(function (both) {
         var json = both[0];
+        optimizerJson = json;
         X = both[1];
         if (X) {
           fillBalControls();

@@ -409,3 +409,78 @@ $lc-warn: #ffc79a;                        // the vehicle viewer's note colour
   tbody tr.lc-row-on th { color: $lc-changed; }
 }
 .lc-reticle-lens .lc-reticle-pane { background: radial-gradient(circle, #2b3a33 0%, #18201c 75%, #0d110f 100%); }
+
+// Recoil-first comparison: aligned metrics, exact parts, then the apply action.
+.lc-recommendations { margin-bottom: 1.25rem; }
+.lc-recoil-current {
+  color: $ue-text-dim;
+  font-size: 0.82rem;
+  margin: 0 0 1rem;
+  font-variant-numeric: tabular-nums;
+  &:empty { display: none; }
+}
+.lc-recoil-compare {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid $ue-border-strong;
+  &:empty { display: none; }
+}
+.lc-recoil-build {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem;
+  & + & { border-left: 1px solid $ue-border-strong; }
+  .main-content & h3.lc-recoil-title {
+    color: $ue-white;
+    font-size: 1rem !important;
+    margin: 0 0 0.4rem;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+.main-content .lc-recoil-intent { min-height: 2.8em; }
+.main-content dl.lc-recoil-metrics,
+.main-content dl.lc-recoil-parts {
+  display: block;
+  dt, dd { float: none; width: auto; text-align: left; padding: 0; }
+}
+.main-content dl.lc-recoil-metrics {
+  margin: 1rem 0 0.6rem;
+  > div { display: grid; grid-template-columns: 1fr auto; gap: 0.75rem; padding: 0.4rem 0; }
+  dt { color: $ue-text-dim; font-size: 0.85rem; }
+  dd { margin: 0; color: $ue-white; font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+  small { display: block; font-size: 0.75rem; font-weight: 400; color: $ue-text-dim; }
+  small.lc-recoil-better { color: $lc-changed; }
+  small.lc-warn { color: $lc-warn; }
+}
+.main-content .lc-recoil-score { font-size: 0.8rem; color: $ue-text-dim; margin: 0 0 0.75rem; }
+.lc-recoil-parts {
+  margin: 0 0 1rem;
+  border-top: 1px solid $ue-border;
+  > div { padding: 0.45rem 0; border-bottom: 1px solid $ue-border; }
+  dt { color: $ue-text-dim; font-size: 0.7rem; overflow-wrap: anywhere; }
+  dd { color: $ue-text; font-size: 0.82rem; margin: 0.15rem 0 0; overflow-wrap: anywhere; }
+  .lc-recoil-part-changed dd { color: $lc-changed; }
+}
+.lc-recoil-apply { width: 100%; min-height: 44px; margin-top: auto; white-space: normal; }
+.lc-scoring {
+  padding: 0.7rem 0 0.25rem;
+  border-top: 1px solid $ue-border;
+  color: $ue-text-dim;
+  font-size: 0.8rem;
+  summary { padding: 0.4rem 0; cursor: pointer; }
+  summary:focus-visible { outline: 2px solid $ue-blue; outline-offset: 2px; }
+  .main-content & p { margin: 0.5rem 0; }
+}
+@media (max-width: 56rem) {
+  .lc-recoil-compare { grid-template-columns: minmax(0, 1fr); }
+  .lc-recoil-build {
+    padding: 1rem 0;
+    & + & { border-left: 0; border-top: 1px solid $ue-border-strong; }
+  }
+  .main-content .lc-recoil-intent { min-height: 0; }
+  .lc-recoil-parts > div { display: grid; grid-template-columns: minmax(5rem, 0.7fr) minmax(0, 1.3fr); gap: 0.7rem; }
+  .lc-recoil-parts dd { margin-top: 0; }
+}
+.lc-no-data .lc-recommendations { display: none; }
