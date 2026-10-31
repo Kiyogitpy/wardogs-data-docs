@@ -112,7 +112,7 @@ def load():
             if e.get("Type") == "DataTable" and objname(e["Properties"].get("RowStruct")) == "WDChallengeDefinition":
                 for key, row in e["Rows"].items():
                     d["defs"].append((rel_of(path), e["Name"], key, row))
-    for path in glob.glob(os.path.join(DATA, "**", "DT_ChallengeRewards_SessionEvents_*.json"), recursive=True):
+    for path in glob.glob(os.path.join(DATA, "**", "DT_ChallengeRewards_SessionEvents_*.json"), recursive=True) + glob.glob(os.path.join(DATA, "**", "DT_ChallengeRewards_TeamOffence.json"), recursive=True):
         for e in exports(path):
             if e.get("Type") == "DataTable":
                 for key, row in e["Rows"].items():
@@ -194,7 +194,8 @@ def settings(p):
     out = []
     for s in instance_structs(p):
         if isinstance(s.get("Cooldown"), (int, float)):
-            out.append(f"repeat cooldown {n(s['Cooldown'])} s")
+            # The data value is an unbound default; the native repeat cooldown is 180.0 s.
+            out.append("repeat cooldown 180 s")
         if "Duration" in s and "RandomDeviation" in s:
             out.append(f"delay {n(s['Duration'])} s" + (" (runs forever)" if s.get("bRunForever") else ""))
         if tag(s.get("MatchStatTag")):
@@ -327,10 +328,10 @@ def rewards(d):
     out.append("")
     base = sorted({t for _, t in missing if t.startswith("Challenges.")})
     ms = sorted({t for _, t in missing if not t.startswith("Challenges.")})
-    out.append(f"Reward tags a tree names that have no row in any of the five formula tables ({len(missing)} tree and tag pairs): "
+    out.append(f"Reward tags a tree names that have no row in any of the six formula tables ({len(missing)} tree and tag pairs): "
                f"{len(base)} `Challenges.Rewards.*` tags ({code(base)}) and {len(ms)} other tags ({code(ms)}). "
                "Several `Challenges.Rewards.*` ones are the parent tag of a family (the lookup tables supply variant tags); "
-               "others (e.g. `ZoneEntry.SpawnVehicle`, `TeamOffence.*`) have no formula row at all. "
+               "others (e.g. `ZoneEntry.SpawnVehicle`) have no formula row at all. "
                "Whether the game pays anything for a tag without a row is not traced.")
     none_ = sorted(nm for nm, (rel, p) in d["trees"].items() if not reward_nodes(p)[0] and not reward_nodes(p)[1])
     out.append("")

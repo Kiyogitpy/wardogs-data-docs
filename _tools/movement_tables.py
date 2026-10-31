@@ -267,14 +267,14 @@ def b_modes():
 
 CURVE_USE = {
     "CRV_DamageIndicator_IntensityResponse": "Damage-indicator intensity (UI response); time 0 to 1",
-    "CRV_ExitVehiclePunishment_Damage": "Damage on leaving a vehicle; input unit not exported (the 40 to 75 range suggests a speed in m/s, not traced)",
+    "CRV_ExitVehiclePunishment_Damage": "Damage on leaving a vehicle; input is the vehicle speed in km/h (cm/s × 0.036)",
     "CRV_LandingPunishment_Damage": "Fall damage by impact speed (input unit not exported, cm/s presumed); `DA_FallingMovement.DamageLookup`",
     "CRV_ParachutePunishment_Damage": "Landing damage under parachute by impact speed (unit as above); referenced by the parachute settings",
     "CRV_SlopeGroundSpeedContribution": "Ground speed scale by slope; used by `DA_GroundMovement.SlopeMovementContributionCurve`",
-    "CRV_LookAcceleration": "Look-input acceleration ramp (default)",
-    "CRV_LookAcceleration_Aggressive": "Look-input acceleration ramp, faster",
-    "CRV_LookAcceleration_Linear": "Look-input acceleration ramp, linear",
-    "CRV_LandGunBob": "Vector curve; only the Z channel has keys: weapon dip after landing",
+    "CRV_LookAcceleration": "Gamepad look ramp (default); input is seconds of stick deflection past the controller's delay",
+    "CRV_LookAcceleration_Aggressive": "Gamepad look ramp, faster; input is seconds of stick deflection past the controller's delay",
+    "CRV_LookAcceleration_Linear": "Gamepad look ramp, linear; input is seconds of stick deflection past the controller's delay",
+    "CRV_LandGunBob": "Vector curve; only the Z channel has keys: walk gun-bob rotation (pawn `WalkGunBobRotation`); consumer not in native code",
 }
 
 

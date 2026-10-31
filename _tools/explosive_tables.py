@@ -38,7 +38,7 @@ WEAPON_NAMES = {"CGM4": "MAAWS", "Launcher_04": "9K333 Verba", "MMGL": "MGL-40",
 ACTOR_ITEMS = {"M67 frag grenade": "M67 frag grenade", "C4": "C4 Charge (`Id.Item.C4Explosive`)",
                "AT mine": "AT mine", "Claymore": "Claymore", "IED": "Improvised Explosive Device (`Id.Item.IED.Trigger`)",
                "Molotov": "Molotov (initial burst only)"}
-NO_ITEM = {"Item.Caliber.70mm": "no weapon item lists it (vehicle rocket pods not traced)",
+NO_ITEM = {"Item.Caliber.70mm": "no weapon item lists it (the vehicle rocket pods use the 122mm asset)",
            "Item.Caliber.84mm.TVGuided": "no weapon item lists it (TV-guided missile asset)",
            "Item.Caliber.122mm.Havoc": "no weapon item lists it (Havoc rocket asset)",
            "Item.Caliber.155mm.Expensive.Sandbox": "no weapon item (sandbox copy)",
@@ -253,7 +253,7 @@ def t_fuses(rows):
     row("Molotov (`Id.Item.Molotov`)", "B_Molotov", "BaseFuseTime", "`BaseFuseTime`",
         "`B_Molotov` does not set it, so the grenade base class value stands; `bCanBeCooked` is also native (`+0x624` false, store `0x6CADCBB`, round 18; "
         "the Molotov constructor `0x86A0200` runs the grenade base `0x6CADED0`, same zero at `0x6CADEEE`), so it cannot be cooked; "
-        "whether the Molotov bursts on impact or on the fuse is not traced")
+        "the Molotov bursts on its first impact (round 39, round 92); the fuse is a backstop")
     row("C4 charge (`Id.Item.C4Explosive`)", "B_ThrowableC4", "TimerBeforeExplosion", "`TimerBeforeExplosion` on the charge",
         "set on the actor; `B_ThrowableIED` inherits it")
     row("C4 detonator (`Id.Item.C4Trigger`)", "ID_C4_Trigger", "DelayTillExplosion", "`DelayTillExplosion` after the trigger press",

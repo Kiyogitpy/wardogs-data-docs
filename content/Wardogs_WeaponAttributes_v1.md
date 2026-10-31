@@ -60,7 +60,7 @@ weapon), [§4.2](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers
   Override modifier, so its place does not matter). On the authority the equip path follows the sub-slot
   update messages (`WDItemSubslotUpdated`, `0x6C99030`), slot by slot; the attachment array is replayed in
   array order at registration and on replication (`0x6C9A330`), which changes only slots whose item
-  differs. The order across the weapon and its attachments is not traced.
+  differs. The order across the weapon and its attachments is not traced. **Round 92, still open:** the value evaluator `0x522E5C0` was re-read in the second corpus: when the Override list holds an active entry it returns that entry's magnitude (`0x522E5EC` jumps to `0x522E74E`, which loads the magnitude and returns) and skips every other operation, so an Override replaces the attribute and ignores base, Add and Multiply entries. The list order is the order the effects were appended (`0x5227C20`) with swap-removal (`0x52357B0`), so across attachments it follows the sequence of the sub-slot update messages, which depends on the equip history and on message arrival; no static code order exists to read. The only order that is fixed in code is the per-attachment one above and the array-order replay on replication (`0x6C9A330` calling `0x6C9D170` per slot). No computed value changes, because no two parts that fit one weapon override the same attribute.
 - **Data: initial sight.** §1 and §2 use the `SightsData` entry `S_Aim01`, per
   [Effects §7.1](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon); §3 lists every entry.
   [`ID_CantedIrons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/CantedIronsTest/ID_CantedIrons.json), whose only entry is `S_AimCanted1`, has no `S_Aim01`. Natively there is no first-entry
@@ -1337,7 +1337,7 @@ Results above that rest on something not traced or on an odd piece of data.
 ## 5. Not traced
 
 - The order of the sub-slot update messages across the weapon and its attachments (no value depends on
-  it, see Override order above).
+  it, see Override order above; round 92 confirmed it is a run-time sequence, not a fixed code order).
 - The normal spawn grant path and whether a custom saved preset replaces defaults. Both Cash and StorageVault branches of `Server_ApplyLoadout` can reach a validated vendor purchase continuation; on success `0x6BD5860` calls default helper `0x6784010` at `0x6BD604C`. This is not a proven spawn hook ([Round-8 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout.md)). The separate [rejoin restore path](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-restore.md) rebuilds the player inventory map and restores economy metadata from duplicated session state, after an initialization/wait callback requests restoration; it does not identify a custom preset or establish ordering against spawn defaults.
   (`0x6784010` adds them only when the create-defaults flag is set; `0x6BD5860` sets it).
   The separate [player registration hook](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-initialization.md)
@@ -1356,3 +1356,4 @@ Results above that rest on something not traced or on an odd piece of data.
 | 2026-10-18 | Round-7 correction: 16 magazine ammo slots also differ between the two default lists (no attribute change). |
 | 2026-10-18 | Interactive loadout calculator page added (`loadout-calculator.md`): choose a weapon, attachments, sight, stance and bipod state and see base, modifiers and final for every `Attribute.Gameplay.Weapon.*` value. It runs `assets/js/loadout-eval.js`, a port of this tool's evaluation over `assets/data/weapon-loadouts.json` (`--json`); `--check` compares the two on every default loadout and 400 seeded random loadouts. No §1 value changed. |
 | 2026-10-18 | Round 8: §5 distinguishes the known defaults-helper call from the unestablished top-level spawn caller and saved-preset replacement order. |
+| 2026-10-31 | Round 92: Override evaluation re-read in the second decompilation corpus (an active Override replaces the value); the cross-attachment Override order is a run-time sequence, still open, no §1 value changed. |
