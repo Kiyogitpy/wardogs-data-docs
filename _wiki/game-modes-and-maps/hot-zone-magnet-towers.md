@@ -35,15 +35,15 @@ Every King of the Hill map has a few numbered towers near the middle of the play
 ## Capturing a tower
 
 - **How.** Walk up to the tower and hold the use key for 10 seconds, within 2.5 m. The game lists it as a hold, so the capture does not finish if you let go early (inferred from the hold type). Only one player can capture a tower at a time.
-- **Who.** A player on any team can capture a tower that their own team does not already hold. The game refuses the capture while that tower is cooling down and while a magnet is running (inferred from the game's access check).
-- **Neutral and hostile.** A neutral tower belongs to no team. A hostile tower belongs to another team when you take it. The capture reward is higher for a hostile tower, because the game passes the previous owner on to the reward (the exact comparison was not traced, so this reading is inferred).
-- **Reward.** Players on the capturing team who are within 80 m of the tower, and are neither dead nor critically wounded, are paid. The base amounts are in [Hot Zone Magnet Challenges](../progression-and-economy/hot-zone-magnet-challenges.md): 250 cash for a neutral tower and more for a hostile one. The same player is paid for repeat captures with a 180 s cooldown on the reward (inferred from the reward rule).
+- **Who.** A player on any team can capture a tower that their own team does not already hold. The game refuses the capture while that tower is cooling down and while a magnet is running.
+- **Neutral and hostile.** A neutral tower belongs to no team. A hostile tower belonged to another team at the moment you took it. The game notes the tower's owner just before the capture takes effect and passes it to the reward, and the reward treats the tower as hostile whenever that owner is any team at all. There is no other test: it does not compare distances, scores or how long the other team held the tower.
+- **Reward.** Players on the capturing team who are within 80 m of the tower, and are neither dead nor critically wounded, are paid. The base amounts are in [Hot Zone Magnet Challenges](../progression-and-economy/hot-zone-magnet-challenges.md): 250 cash for a neutral tower and more for a hostile one. If the same player is paid for the same tower again within 180 s of the last payout, each earlier payout in that window cuts the new one by 25 percent, down to nothing at the fifth; the window is renewed by each payout.
 
 ## The secret code
 
 - **What it is.** The server picks one random digit from 0 to 9 for each tower when the match starts. The whole code therefore has as many digits as there are towers: 5 on Bakurani, 4 on Ozeti, 3 on Zestafona and 5 on Saburtulo.
 - **What a team sees.** A team learns the digit of every tower it holds. On a map with 4 or more towers the tower screen shows the digits the team knows and blanks for the rest. On a map with fewer than 4 towers (Zestafona) it shows nothing until the team holds every tower, and the screen says "All towers required for code" (inferred from the game's code and that screen text).
-- **When it changes.** A new code is drawn after each magnet's recharge ends, and the towers reset (inferred).
+- **When it changes.** A new code is drawn after each magnet's recharge ends, and every tower goes back to neutral at the same moment (read from the game code; a map-specific override of the reset was not ruled out). The game's code runs the same reset when the match starts.
 
 ## Typing the code
 
@@ -63,9 +63,7 @@ When the whole code is right:
 
 ## What is not known
 
-- Whether the towers return to neutral when a recharge ends was not traced.
 - Which player the 5,000 activation cash goes to is not stated.
-- The exact test for a hostile tower was not traced.
 - The numbers above come from the game's settings. A live server could change them.
 
 ## See also
@@ -82,3 +80,4 @@ When the whole code is right:
 - [Tower positions and map extents (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-magnets-extents.json)
 - [Round 67 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round67-maps.md)
 - [Round 45 evidence: the Hot Zone pull](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md)
+- [Round 92 evidence: the hostile test, the reset and the repeat payout](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-modes-economy.md)

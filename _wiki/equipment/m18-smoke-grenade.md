@@ -31,11 +31,11 @@ The M18 Smoke Grenade makes a cloud of white or black smoke that lasts 120 s. It
 
 There are two M18 Smoke Grenades in the item shop, White and Black. They are the same item apart from the colour of the smoke. Each costs 100 cash.
 
-The coloured signal grenades use the same smoke but also place a marker on the map. See [M18 Signal Grenade](m18-signal-grenade.md).
+The coloured signal grenades use the same smoke but also place a marker on the map (all colours except Orange, which probably places none). See [M18 Signal Grenade](m18-signal-grenade.md).
 
 ## How it works
 
-**Throwing.** The smoke grenade has the same two throws as the Molotov. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s).
+**Throwing.** The smoke grenade has the same two throws as the Molotov. The speed depends on how high you aim. An overarm throw sends it at 22 m/s when you aim level or down, up to 27.5 m/s at 45 degrees up, and falls back to about 22 m/s when you aim straight up. An underarm throw sends it at 14 m/s when you aim within 5 degrees below the horizon or higher, down to 8 m/s when you aim straight down.
 
 **Fuse.** It releases its smoke 3 s after it is thrown.
 

@@ -43,8 +43,8 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 
 | Throw | Speed | Notes |
 |---|---:|---|
-| Overarm (primary) | 25 m/s (2,500 cm/s) | The longest throw |
-| Underarm (secondary) | 14 m/s (1,400 cm/s) | Short range |
+| Overarm (primary) | 22 to 27.5 m/s depending on aim (the 2,500 cm/s in the data is not used) | The longest throw |
+| Underarm (secondary) | 8 to 14 m/s depending on aim | Short range |
 | Back throw | 18 m/s (1,800 cm/s) | Third throw action in the data; never applies as shipped (see Fuse) |
 
 **Contact.** A grenade that hits something before it goes off does 10 HP of thrown-contact damage.

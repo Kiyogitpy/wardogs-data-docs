@@ -75,7 +75,7 @@ Two curves in the game rank destructible buildings by how much the player is loo
 
 - The angle curve is the angle in degrees between where you are looking and the building. It starts at 0.7 straight ahead, falls to 0.2 at 90 degrees, and reaches 0 at 100 degrees.
 - The distance curve is 1.0 up to 2,000, falls to 0.5 at 50,000 and to 0.1 at 75,000. The distance is in the game's length unit, which is probably centimetres (20 m, 500 m and 750 m); the unit itself is not stated (inferred).
-- What the refresh itself changes on a building was not traced.
+- The refresh looks like a level-of-detail switch: its code writes no health, force or destroyed state. It also places pooled objects at the building's stored positions, which was not worked out. The game keeps four distance bands for each building near you. When you cross a band, the pieces of the building that belong to that band are switched on or off (shown or hidden), and only a few buildings are handled per frame, in the order of the score above. This is read from the shape of the game's code and setup, not seen in play, and which exact meshes belong to each band is not stated.
 
 World props and building pieces hold no health, hit count or fall time in the game. The building pieces carry only a debris look and, for one piece, an indestructible flag. A piece breaks when a hit passes the force thresholds above, so there is no health to state.
 
@@ -121,4 +121,5 @@ Vehicles not in this table, such as the [T-72B3](../vehicles/t-72b3.md), use one
 - [VFX (explosion sequences)](../../content/Wardogs_VFX_v2.md)
 - [Round 42 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-modes-ai-other.md): which explosion sequence each destroyed item uses
 - [Round 43 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md)
+- [Round 92 items, utility, explosives and building evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-items-utility.md): what the building refresh changes
 - [Round 45 C, FOB health, build messages, skill curve and destruction evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-c.md)

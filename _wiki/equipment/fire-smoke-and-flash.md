@@ -60,18 +60,18 @@ The smoke effect's own defaults are a 180 s total, a 20 s fade in and a 10 s fad
 
 ### Signal grenades
 
-Signal grenades release a column of coloured smoke and place a marker on the map. Most colours give 180 s of cloud length, and the blue one 64 s. Each costs 50 cash.
+Signal grenades release a column of coloured smoke and place a marker on the map in every colour except Orange, which probably places none. Most colours give 180 s of cloud length, and the blue one 64 s. Each costs 50 cash.
 
 | Colour | Shop name | Map marker | Type |
 |---|---|---|---|
 | Yellow | Alert | Alert | Tactical |
 | Red | Hostile | Hostile | Tactical |
 | Blue | Friendly | Friendly | Tactical |
-| Orange | Damaged Vehicle | Damaged vehicle | Tactical |
+| Orange | Damaged Vehicle | None (probably) | Tactical |
 | Green | Supply Request | Supply Request | Logistics |
 | Purple | Landing Zone | Landing Zone | Logistics |
 
-Each colour adds its marker through the deployable map tracker, which places the marker on the map. The game names the smoke types "Covering" and "Signal". It is not known who else can see the marker.
+The other five colours add their marker through the deployable map tracker, which places the marker on the map. Orange probably adds none: the game data has no map or minimap marker for it. This is inferred from the data and not seen in play. The game names the smoke types "Covering" and "Signal". It is not known who else can see the marker.
 
 ### Mines and placed explosives
 
@@ -97,14 +97,16 @@ Notes:
 
 ### Throwing
 
-The Molotov and smoke grenades use the same throw speeds:
+The Molotov and smoke grenades use the same throw speeds. The speed depends on how high you aim:
 
 | Throw | Speed (cm/s) | Speed (m/s) |
 |---|---:|---:|
-| Overarm (primary) | 2,000 | 20 |
-| Underarm (secondary) | 1,200 | 12 |
+| Overarm (primary) | 2,200 to 2,750 | 22 to 27.5 |
+| Underarm (secondary) | 800 to 1,400 | 8 to 14 |
 
-Each throw also has a speed curve in the game files. A static reading of the throw code (not checked in play) scales the flat speed by a curve of how high you aim, and then adds part of your own horizontal and vertical movement speed.
+An overarm throw is 22 m/s when you aim level or down, rises to 27.5 m/s at 45 degrees up, and falls back to about 22 m/s when you aim straight up. An underarm throw is 14 m/s when you aim within 5 degrees below the horizon or higher, then falls to 12 m/s at 15 degrees down, 10 m/s at 45 degrees down and 8 m/s straight down.
+
+The aim curve sets the speed in place of a fixed value. A static reading of the throw code (not checked in play) also adds part of your own horizontal and vertical movement speed.
 
 ## Use and timing
 

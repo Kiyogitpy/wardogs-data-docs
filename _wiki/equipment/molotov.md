@@ -42,7 +42,7 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 ## How it works
 
-**Throwing.** The Molotov has two throws. An overarm throw sends it at 20 m/s (2,000 cm/s). An underarm throw sends it at 12 m/s (1,200 cm/s). Thrown contact adds 10 HP of impact damage.
+**Throwing.** The Molotov has two throws, and the speed depends on how high you aim. An overarm throw sends it at 22 m/s when you aim level or down, up to 27.5 m/s at 45 degrees up, and falls back to about 22 m/s when you aim straight up. An underarm throw sends it at 14 m/s when you aim within 5 degrees below the horizon or higher, down to 8 m/s when you aim straight down. Thrown contact adds 10 HP of impact damage.
 
 **Water.** When the Molotov goes off, the game reads the water depth at the point of impact from the map's water height grid. The explosion code uses that depth to decide what happens to the fire. The result in play is not given.
 

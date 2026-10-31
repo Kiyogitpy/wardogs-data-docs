@@ -27,7 +27,7 @@ These challenges pay when a Hot Zone Magnet is activated or deactivated, or when
 | Magnet Deactivated | Players in range of a deactivated magnet | 2,500 | None (cash only) |
 | Tower Captured | Players in range of a captured tower | 250 for a neutral tower, 1,500 for a hostile tower (six times the neutral amount) | 100 (300 for a hostile tower) |
 
-The Tower Captured row pays players on the capturing team who are within 80 m of the tower and are neither dead nor critically wounded. A neutral tower belongs to no team and a hostile tower belongs to another team when it is taken (the exact test was not traced, so this is inferred). The tower row pays a neutral and a hostile tower at different amounts: a hostile tower pays six times the neutral cash and 300 Role XP instead of 100. The Magnet Deactivated row pays cash only. The cash table also has a magnet destroyed row worth 150 cash, which the game marks as unused.
+The Tower Captured row pays players on the capturing team who are within 80 m of the tower and are neither dead nor critically wounded. A neutral tower belongs to no team. A tower is hostile when any team owned it at the moment it was taken: the game passes the previous owner to the reward, and the reward adds the hostile modifier whenever that owner is not "no team". The tower row pays a neutral and a hostile tower at different amounts: a hostile tower pays six times the neutral cash and 300 Role XP instead of 100. A player paid for the same tower again within 180 s of an earlier payout gets 25 percent less for each earlier payout in that window, down to nothing at the fifth. The Magnet Deactivated row pays cash only. The cash table also has a magnet destroyed row worth 150 cash, which the game marks as unused.
 
 This challenge table and the match cash table give different tower amounts: the cash table pays 1,000 for a hostile tower and 250 for a neutral one (see [Cash and Rewards](cash-and-rewards.md#zones-and-towers)). Both are in the game, and which set a match pays is decided by the server, as for the other [King of the Hill rewards](king-of-the-hill-challenges.md).
 
@@ -49,4 +49,5 @@ The sources list no Season 2 changes for these challenges.
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
 - Hot Zone Magnet challenge table (JSON)
 - [Round 67 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round67-maps.md): the capture rule and the 80 m reward range.
+- [Round 92 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-modes-economy.md): the hostile test and the repeat payout.
 - [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the reward and hit-count rows used on this page.

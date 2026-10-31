@@ -81,7 +81,7 @@ Fuel capacity and fuel economy for every drivable vehicle, from the vendor stats
 | [Wolf-110](wolf-110.md) | 60 | 4.0 |
 | [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 60 | 4.0 |
 
-A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). It equals one divided by the vehicle's kilometres-per-litre figure, so the range on a full tank is capacity times that figure: about 19.5 km for the Humvee and 29 km for the Havoc (derived). Driving burns fuel in proportion to speed; see [Vehicle Config Fields](../../game-features/Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine itself spends fuel in play was not traced. The fixed-wing airplane has no vendor stats.
+A higher fuel economy number means more fuel used per kilometre, which is worse (the vendor label is litres per kilometre). It equals one divided by the vehicle's kilometres-per-litre figure, so the range on a full tank is capacity times that figure: about 19.5 km for the Humvee and 29 km for the Havoc (derived). Driving burns fuel in proportion to speed; see [Vehicle Config Fields](../../game-features/Wardogs_VehicleConfigFields_v1.md#5-fuel-settings-fuelsettings-in-each-gameplaysystems-asset). The tracked and heavy vehicles have the highest numbers and the Bobcat the lowest. The number is the vendor's listed stat; how the engine spends fuel in play is described under "How fuel is used up" above. The fixed-wing airplane has no vendor stats.
 
 Season 2 changed no fuel capacity or fuel economy value.
 
@@ -111,3 +111,4 @@ Season 2 changed no fuel capacity or fuel economy value.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): Empty-tank engine stop, fuel leak steps and canister refuel rate.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.
 - [Round 41 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-vehicles-explosives.md): the empty-tank restart block and the Refuel Max charge rule.
+- [Round 92 movement and camera evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-movement-camera.md): the fuel drain of a running engine, re-read in the executable

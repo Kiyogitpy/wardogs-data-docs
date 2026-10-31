@@ -2,7 +2,7 @@
 title: M18 Signal Grenade
 parent: "Equipment"
 group: "Explosives and throwables"
-description: "The six coloured M18 Signal Grenades: each releases a column of coloured smoke and adds a marker to the map."
+description: "The six coloured M18 Signal Grenades: each releases a column of coloured smoke and adds a map marker, except Orange, which probably does not."
 ---
 
 # M18 Signal Grenade
@@ -13,7 +13,7 @@ description: "The six coloured M18 Signal Grenades: each releases a column of co
 | **General** | |
 | Type | Tactical or logistics, thrown smoke with a map marker (quick slot) |
 | Variants | Six colours: Alert, Hostile, Friendly, Damaged Vehicle, Supply Request, Landing Zone |
-| How it is used | Thrown. Releases a column of coloured smoke and adds a marker to the map |
+| How it is used | Thrown. Releases a column of coloured smoke and adds a map marker (Orange probably none) |
 | Fuse | 3 s |
 | **Cloud** | |
 | Cloud length | 180 s for five colours; 64 s for Friendly |
@@ -25,7 +25,7 @@ description: "The six coloured M18 Signal Grenades: each releases a column of co
 | Internal name | `ID.Item.SmokeGrenade.Yellow`, `.Red`, `.Blue`, `.Orange`, `.Green`, `.Purple` |
 {: .wiki-infobox }
 
-The M18 Signal Grenade releases a column of coloured smoke and adds a marker of the same meaning to the map. There are six colours, and each one has its own shop name and marker. They are cheap, and they are a way to call attention to a point on the map.
+The M18 Signal Grenade releases a column of coloured smoke and adds a marker of the same meaning to the map, except Orange, which probably adds none. There are six colours, and each one has its own shop name. They are cheap, and they are a way to call attention to a point on the map.
 
 ## Overview
 
@@ -36,15 +36,15 @@ The six signal grenades are sold for 50 cash each. Four are tactical (Alert, Hos
 | M18 Signal Grenade: Alert | Yellow | Alert | Tactical | 180 s |
 | M18 Signal Grenade: Hostile | Red | Hostile | Tactical | 180 s |
 | M18 Signal Grenade: Friendly | Blue | Friendly | Tactical | 64 s |
-| M18 Signal Grenade: Damaged Vehicle | Orange | Damaged vehicle | Tactical | 180 s |
+| M18 Signal Grenade: Damaged Vehicle | Orange | None (probably) | Tactical | 180 s |
 | M18 Signal Grenade: Supply Request | Green | Supply Request | Logistics | 180 s |
 | M18 Signal Grenade: Landing Zone | Purple | Landing Zone | Logistics | 180 s |
 
-The shop text says each one "adds a marker to the map". Each colour adds its marker through the deployable map tracker. It is not known who else can see the marker.
+The shop text says each one "adds a marker to the map". The other five colours add their marker through the deployable map tracker. Orange probably adds none: the game data has no map or minimap marker for it. This is inferred from the data and not seen in play. It is not known who else can see the marker.
 
 ## How it works
 
-**Throwing.** The signal grenades use the same two throws as the M18 Smoke Grenade. An overarm throw sends one at 20 m/s (2,000 cm/s). An underarm throw sends one at 12 m/s (1,200 cm/s).
+**Throwing.** The signal grenades use the same two throws as the M18 Smoke Grenade. The throw speed depends on how high you aim. An overarm throw sends one at 22 m/s when you aim level or down, up to 27.5 m/s at 45 degrees up, and falls back to about 22 m/s when you aim straight up. An underarm throw sends one at 14 m/s when you aim within 5 degrees below the horizon or higher, down to 8 m/s when you aim straight down.
 
 **Fuse.** The smoke starts 3 s after it is thrown.
 

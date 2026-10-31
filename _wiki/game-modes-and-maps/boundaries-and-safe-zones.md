@@ -14,7 +14,7 @@ description: "Where the play area ends and what happens if you leave it, plus ho
 | Warning | "Return to the Combat Area" with a countdown |
 | Countdown on foot | 20 s |
 | Countdown in a vehicle | 22 s (the game's default; the vehicle files do not change it) |
-| When it runs out | The character dies (inferred for vehicles: they are destroyed) |
+| When it runs out | The character dies; a vehicle loses all its health and is destroyed |
 | Coming back in | The countdown runs down at the same speed |
 | **Spawn safe zones** | |
 | Shape | A box, one per team per spawn area |
@@ -44,7 +44,7 @@ The "zone area" here is the box around all the map's named zone regions plus 500
 - **Countdown.** On foot you have 20 seconds. The game's own default is 10 seconds, but the player character is set to 20.
 - **Coming back.** While you are inside the rectangle again, the timer counts down at the same speed it counted up. If you step out a second time, it continues from what is left rather than starting at zero (read from the game code, not timed in play).
 - **When it runs out.** The character dies. No damage over time, no health drain and no other penalty was found.
-- **Vehicles.** Vehicles run the same check with the same rectangle. The default time limit in the game code is 22 seconds. When it runs out, the game calls something that looks like destroying the vehicle (inferred; the three vehicle files that carry the setting do not change the limit, and the effect was not traced further).
+- **Vehicles.** Vehicles run the same check with the same rectangle, counted in seconds of game time. The default time limit in the game code is 22 seconds, and the three vehicle files that carry the setting do not change it. When it runs out, the server sets the vehicle's health below zero, so the vehicle is destroyed as if it had taken all its damage. Stationary weapons are built from the same vehicle data and follow the same rule (read from the data type; no emplacement was checked in play).
 - **Enemy safe zone.** Standing in an enemy team's spawn safe zone counts as being out of bounds. The screen says "HOSTILE SAFE ZONE" and the same countdown runs, so staying there for the full time ends in death.
 - **Sniper Showdown.** The mode adds the same out-of-bounds state when you are in neither the Control Zone nor the Hot Zone, so leaving both starts the 20-second countdown. See [Sniper Showdown](sniper-showdown.md).
 
@@ -74,7 +74,7 @@ The box size is the placed scale times the engine's default box size, because th
 - **No building.** Structures cannot be placed in a safe zone or within 3 m of one, and mines and explosives cannot be placed in one. See [Building](../building.md).
 - **Rewards.** Healing, refuelling and repairing a target in a safe zone earns no reward, and the transport-assist cash has a 0 modifier in a safe zone. Entering your safe zone after a successful logistics run pays a one-off reward (see [King of the Hill challenges](../progression-and-economy/king-of-the-hill-challenges.md)).
 - **Spotting.** The binoculars, the monocular and the range finders list the three safe zone states in one of their tag lists. The meaning is not named in the game (inferred: targets standing in a safe zone cannot be spotted).
-- **Vehicles.** Vehicles are repaired and refuelled by returning to your team's safe zone or a Forward Operating Base, according to the in-game tip, and the game's refuel code checks for your own safe zone. The game also sets a time that a vehicle may stay out of a safe zone before it is cleaned up when nobody uses it: 90 for the Havoc, 10 for the MH-6 and AH-6, and 30,000 for the stationary weapons (the unit is not named; seconds is inferred, and the code that uses it was not traced).
+- **Vehicles.** Vehicles are repaired and refuelled by returning to your team's safe zone or a Forward Operating Base, according to the in-game tip, and the game's refuel code checks for your own safe zone. The game also sets a time that a vehicle may stay out of a safe zone before it is cleaned up when nobody uses it: 90 for the Havoc, 10 for the MH-6 and AH-6, and 30,000 for the stationary weapons. The game files store this number but no game code that this build holds reads it, so which program uses it, and for what, is not known; the unit is not named (seconds is a guess from the name) and the game's own default for it is 300. No game code was found that repairs or refuels a vehicle just because it is in a safe zone. The code does hold a vehicle service area (a box tied to one team, with set repair and refuel rates per update and a price per litre), but no map places one, so how the safe zone service works is not known.
 
 **What is not known**
 
@@ -114,4 +114,5 @@ Each team spawn area holds 3 moving targets (45 are placed in the four world fil
 - [Play-area boundaries and safe zone data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-boundaries.json)
 - [Placed gameplay actors (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/map-gameplay-actors.json)
 - [Round 68 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round68-boundaries.md)
+- [Round 92 evidence: the vehicle limit and the safe zone service](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-modes-economy.md)
 - [Round 66 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round66-map-actors.md)

@@ -45,9 +45,14 @@ These are the only sources in the game. The pitch and the targets are described 
 
 ## How long it lasts
 
-The lobby ends in two steps. First the match waits for enough players: the settings ask for 60 players and give it up to 10 seconds. If that does not fill, a ready-up step of up to 5 seconds needs at least 9 players (see [King of the Hill](king-of-the-hill.md)). How those clocks start was not traced, so the real length of the wait is not known from the game, and a server owner can set other values.
+The lobby ends in two steps, and each one has a countdown that starts only once its condition is met (see [King of the Hill](king-of-the-hill.md)).
 
-Points stop being accepted when the lobby is declared ready, or once 60 or more players are in it. After that, new points are refused. Because of this, the 250-points-per-minute award only matters if the wait runs past a minute (inferred).
+1. **Player count.** The match waits until 60 players have been placed on a team. Until then this step has no time limit at all. When the 60th player is on a team, a 10 second countdown starts.
+2. **Ready-up.** This step needs at least 9 players and every one of them ready. When that holds, a 5 second countdown starts.
+
+So the wait has no fixed length: it lasts as long as it takes to fill the lobby, plus about 15 seconds of countdown once it is full and ready. A lobby that is already full when the step begins starts its countdown at once. A server owner can set other counts and times. The game's code also has a pause flag on the server that holds the countdown while it is set; what sets it was not found.
+
+Points stop being accepted when the lobby is declared ready, or once 60 or more players are in it. After that, new points are refused. Because the wait for players has no time limit, the 250-points-per-minute award can pay out for as long as the lobby stays open and unfilled; in a lobby that fills in under a minute it never fires.
 
 ## What happens at match start
 
@@ -75,6 +80,7 @@ The starting balance in the game's currency table is 10,000 Cash. It is the same
 - [Round 70 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round70-maps-matchstart.md)
 - [Match start data (JSON)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/match-start.json)
 - [Round 69 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round69-prelobby.md)
+- [Round 92 evidence: how the wait clocks start](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-modes-economy.md)
 - [Round 68 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round68-boundaries.md)
 - [Round 40 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md)
 - [Round 39 modes, AI and other gaps (evidence)](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-modes-ai-other.md)

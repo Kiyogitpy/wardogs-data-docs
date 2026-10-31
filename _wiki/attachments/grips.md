@@ -39,7 +39,7 @@ Foregrips (10 parts with effects):
 
 A multiplier of 0.70 means 30 percent less of that stat. The table lists each foregrip's values.
 
-Pistol grips (grip slot): they have no effect, with one exception. The unnamed M4 grip sets vertical and horizontal recoil to 0 as a fixed value rather than a multiplier. The data gives that value; whether it matches in-game feel is not traced here.
+Pistol grips (grip slot): they have no effect, with one exception. The unnamed M4 grip sets vertical and horizontal recoil to 0 as a fixed value rather than a multiplier. The game's stat rules treat such a value as a replacement: while the grip is fitted, the weapon's recoil multipliers are 0 and every other multiplier on them (foregrips, muzzles, stance) is ignored. How that feels in play has not been measured.
 
 ## Parts
 
