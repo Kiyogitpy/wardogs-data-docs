@@ -27,9 +27,9 @@ The exported `WDItemExtensionData_RangedWeapon.DamageEntityData` has tag `Meta.D
 
 | Item file | Source anchor |
 |---|---|
-| `data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json` | `DamageEntityData`, line 1270 |
-| `data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json` | `DamageEntityData`, line 1297 |
-| `data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json` | `DamageEntityData`, line 1249 |
+| [`data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json) | `DamageEntityData`, line 1270 |
+| [`data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json) | `DamageEntityData`, line 1297 |
+| [`data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json) | `DamageEntityData`, line 1249 |
 
 The fallback-only case instead starts with BackBlast as its source tag. Do not universally replace the normal handheld source with that fallback tag.
 
@@ -101,9 +101,9 @@ These values are read from each `BackBlast` object, with bEnabled=true. B/M are 
 
 | Stats asset | A degrees | D | B | M | Dc | K | C | Seated P | Fc plateau ends at distance |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `DA_Launcher_04_Stats` | 35 | 200 | 80 | 15 | 300 | 0.3 | 1 | 24 | 120 |
-| `DA_RPG7_Stats` | 40 | 500 | 130 | 30 | 1000 | 0.7 | 0.8 | 72.8 | 250 |
-| `DA_CGM4_Stats` | 45 | 600 | 150 | 40 | 1200 | 0.45 | 0.8 | 54 | 300 |
+| [`DA_Launcher_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/DA_Launcher_04_Stats.json) | 35 | 200 | 80 | 15 | 300 | 0.3 | 1 | 24 | 120 |
+| [`DA_RPG7_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/DA_RPG7_Stats.json) | 40 | 500 | 130 | 30 | 1000 | 0.7 | 0.8 | 72.8 | 250 |
+| [`DA_CGM4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/DA_CGM4_Stats.json) | 45 | 600 | 150 | 40 | 1200 | 0.45 | 0.8 | 54 | 300 |
 
 Stats sources are beside their respective ID files above: Launcher_04 `DA_Launcher_04_Stats.json:687`, RPG7 `DA_RPG7_Stats.json:699`, CGM4 `DA_CGM4_Stats.json:641`.
 

@@ -63,7 +63,7 @@ suffix wins over the default.
   projectile path evaluates it with the shot-origin-to-hit distance in engine
   units ([DamagePipeline §7.6](../pipelines/Wardogs_DamagePipeline_v2.md#76-the-bullet-event)),
   so a key at 50000 is 500 m.
-- `CT_Projectile_DragCoefficients` — `Time` is the projectile **speed in m/s**. Native
+- [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json) — `Time` is the projectile **speed in m/s**. Native
   code evaluates the row at `|v| × 0.01` with `v` in cm/s
   ([Projectile Flight §5](../pipelines/Wardogs_ProjectileFlight_v1.md#5-drag))
 - `CF_*_ADS_Curve` — `Time` is a distance; its unit has not been traced in code

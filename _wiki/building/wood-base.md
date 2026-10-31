@@ -24,7 +24,7 @@ description: "A wood base structure built with any hammer from 15 Build Supplies
 | Rockets | +650% |
 | C4 | +200% |
 | IEDs | +500% |
-| Internal name | `DA_Buildable_WoodBase` |
+| Internal name | [`DA_Buildable_WoodBase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/WoodBase/DA_Buildable_WoodBase.json) |
 {: .wiki-infobox }
 
 The Wood base is a 735 HP structure that any hammer can build. It takes the same damage as the [Sandbag Wall](sandbag-wall.md), but unlike the Sandbag Wall it must be placed inside a friendly base radius.

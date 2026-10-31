@@ -6,7 +6,7 @@ description: "The Spotting package: its challenge calculator, match-score payout
 ---
 
 # Wardogs — GameFeature: Spotting Reference
-*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/Spotting/` (28 JSON files).*
+*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Spotting/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Spotting) (28 JSON files).*
 
 > **Overlap with the main doc:** the flat Spotting cash min and max values (15 / 275 and 50 / 500) are in `Wardogs_Rewards_and_Progression_v2.md`, section 9. This doc adds the **per-target challenge formulas**, the **modifier table** behind those min and max values, the **variant lookups**, **skills**, **feed strings**, **trackers**, **input bindings** and **audio** for spotting.
 
@@ -14,14 +14,14 @@ description: "The Spotting package: its challenge calculator, match-score payout
 
 ## Season 02 update (2026-10-15)
 
-- **Challenge calculator:** 44 rows become 130 (22 Added and 22 Removed become 65 and 65). The new rows are variant-level entries, the new vehicles `TNK_04` and `WHL_08`, and the stationary and buildable entries `Loudspeaker`, `MGNest`, `STN_05`, `BuildableRadio`, `BuildableRepairStation` and `BuildableRefuelStation`.
+- **Challenge calculator:** 44 rows become 130 (22 Added and 22 Removed become 65 and 65). The new rows are variant-level entries, the new vehicles [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) and [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json), and the stationary and buildable entries `Loudspeaker`, `MGNest`, [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json), `BuildableRadio`, `BuildableRepairStation` and `BuildableRefuelStation`.
 - **New `BuildProgress` factor:** `BuildProgress` is a new factor in 10 buildable and stationary rows of each of the Added and Removed sets (20 rows). Four of those (`BuildableHotZoneMagnet`, `MistralAA`, `Mortar`, `Phalanx`) are existing rows that gained it, and six are new rows (section 3a). No other formula changed.
-- **Lookup tables:** 47 rows become 51 in both lookups. Every reward tag is now specific to one variant, and `MistralAA`, `Mortar` and `STN_05` no longer share a tag (section 5).
+- **Lookup tables:** 47 rows become 51 in both lookups. Every reward tag is now specific to one variant, and `MistralAA`, `Mortar` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) no longer share a tag (section 5).
 - **Values, old -> new (Added):** TNK_01.Heavy XP 75 -> 60. TNK_01.Artillery cash 1500 -> 400 and XP 75 -> 60. MistralAA cash 200 -> 75 and XP 50 -> 20. Mortar cash 100 -> 75 and XP 50 -> 20.
 - **Values, old -> new (Removed):** TNK_01.Heavy cash 5000 -> 3300 and XP 375 -> 200. TNK_01.Artillery cash 8000 -> 1200. Phalanx cash 1500 -> 725 and XP 125 -> 100.
-- **KOTH challenge definitions:** `DT_Challenges_SessionEvents_KOTH_Spotting` goes from 0 rows to 2 (`Challenges.SessionEvents.Spotting.Added` and `.Removed`).
-- **Trackers:** the map and spatial trackers gain per-vehicle overrides for `WHL_08` (reward tag `VehicleDestroyed.WHL_08`) and `TNK_04` (reward tag `VehicleDestroyed.TNK_04.Default`). The material tracker gains icon entries for both.
-- **Input:** `IMC_Spotting` adds reload bindings on `R` and gamepad face button left (`IA_Weapon_Reload`).
+- **KOTH challenge definitions:** [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) goes from 0 rows to 2 (`Challenges.SessionEvents.Spotting.Added` and `.Removed`).
+- **Trackers:** the map and spatial trackers gain per-vehicle overrides for [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json) (reward tag `VehicleDestroyed.WHL_08`) and [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) (reward tag `VehicleDestroyed.TNK_04.Default`). The material tracker gains icon entries for both.
+- **Input:** [`IMC_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_Spotting.json) adds reload bindings on `R` and gamepad face button left ([`IA_Weapon_Reload`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IA_Weapon_Reload.json)).
 - **Unchanged:** state tree states (22 and 21), skills, feed strings, audio, and the match-score cash min and max values.
 
 Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
@@ -45,24 +45,24 @@ Both events pay out, and both are split by target type (player, vehicle, buildab
 
 | Group | Files | Contents |
 |---|---|---|
-| Root bundle | 1 | `Spotting.json` (`GameFeatureData`): data registry and sources, a gameplay cue path, components, and a widget element. |
-| Challenge rewards | 2 | `DT_ChallengeRewards_SessionEvents_Spotting` (130 rows, the calculator). `DT_Challenges_SessionEvents_KOTH_Spotting` (2 rows, challenge definitions). |
-| Variant lookups | 2 | `DT_RewardLookup_SessionEvent_Spotting_Added` (51 rows), `..._Removed` (51 rows). |
-| State trees | 2 | `ST_Challenges_SessionEvents_KOTH_Spotting_Added` (22 states), `..._Removed` (21 states). Each has a `WDChallengeStateTreeSchema`. |
-| Match-score rewards | 2 | `DT_Reward_Cash_Spotting` (4 rows, live min and max values). `DT_Rewards_Spotting` (3 rows, all zero). |
-| Skills | 1 | `DT_Skills_Spotting` (2 rows, Recon skills). |
-| Feed | 2 | `DT_ChallengesFeedActions_Spotting` (3), `DT_RewardFeedActions_Spotting` (3). |
+| Root bundle | 1 | [`Spotting.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Spotting.json) (`GameFeatureData`): data registry and sources, a gameplay cue path, components, and a widget element. |
+| Challenge rewards | 2 | [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) (130 rows, the calculator). [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) (2 rows, challenge definitions). |
+| Variant lookups | 2 | [`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json) (51 rows), `..._Removed` (51 rows). |
+| State trees | 2 | [`ST_Challenges_SessionEvents_KOTH_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Added.json) (22 states), `..._Removed` (21 states). Each has a `WDChallengeStateTreeSchema`. |
+| Match-score rewards | 2 | [`DT_Reward_Cash_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Rewards/DT_Reward_Cash_Spotting.json) (4 rows, live min and max values). [`DT_Rewards_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/DT_Rewards_Spotting.json) (3 rows, all zero). |
+| Skills | 1 | [`DT_Skills_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Skills/DT_Skills_Spotting.json) (2 rows, Recon skills). |
+| Feed | 2 | [`DT_ChallengesFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.json) (3), [`DT_RewardFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_RewardFeedActions_Spotting.json) (3). |
 | Trackers and HUD | 8 | Map and spatial trackers (`DA_` and `DT_`), material tracker, overlay, and the dynamic offset curve. |
-| Input | 2 | `IMC_Spotting`, `IMC_SpottingAds`. |
-| Audio | 6 | `AE_Comms_Spotted`, `AE_Comms_Spotted_VehicleEmpty`, `AE_UX_Spotted_Target`, `AE_UX_Spotting_Start`, `_Stop`, `_Complete`. |
+| Input | 2 | [`IMC_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_Spotting.json), [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json). |
+| Audio | 6 | [`AE_Comms_Spotted`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_Comms_Spotted.json), [`AE_Comms_Spotted_VehicleEmpty`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_Comms_Spotted_VehicleEmpty.json), [`AE_UX_Spotted_Target`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_UX_Spotted_Target.json), [`AE_UX_Spotting_Start`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_UX_Spotting_Start.json), `_Stop`, `_Complete`. |
 
 ---
 
-## 3. Challenge Calculator (`DT_ChallengeRewards_SessionEvents_Spotting`, 130 rows)
+## 3. Challenge Calculator ([`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json), 130 rows)
 
-There are **65 Added rows and 65 Removed rows**. The original 22 target types keep one row per event. The rest are variant-level rows (for example `Bobcat.Default` and `Kodiak.MachineGun`), the new vehicles `TNK_04` and `WHL_08`, and the stationary and buildable entries listed below. Each row has a cash resource and an XP resource.
+There are **65 Added rows and 65 Removed rows**. The original 22 target types keep one row per event. The rest are variant-level rows (for example `Bobcat.Default` and `Kodiak.MachineGun`), the new vehicles [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) and [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json), and the stationary and buildable entries listed below. Each row has a cash resource and an XP resource.
 
-Target types (the original 22 names, on both events): `Player`, `Bobcat`, `Kodiak`, `LittleBird`, `Huey`, `Blackhawk`, `Havoc`, `SpawnVehicle`, `TNK_01.Heavy`, `TNK_01.Artillery`, `TNK_01.AntiAir`, `Humvee`, `DuneBuggy`, `Ural`, `Claymore`, `ATMine`, `BuildableHotZoneMagnet`, `FOB`, `SupplyCrate`, `MistralAA`, `Phalanx`, `Mortar`. New row names in this update: `TNK_04`, `WHL_08`, `Loudspeaker`, `MGNest`, `STN_05`, `BuildableRadio`, `BuildableRepairStation`, `BuildableRefuelStation`, plus variant rows for the vehicles, spawn vehicles and supply crates.
+Target types (the original 22 names, on both events): `Player`, `Bobcat`, `Kodiak`, `LittleBird`, `Huey`, `Blackhawk`, `Havoc`, `SpawnVehicle`, `TNK_01.Heavy`, `TNK_01.Artillery`, `TNK_01.AntiAir`, `Humvee`, `DuneBuggy`, `Ural`, [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json), `ATMine`, `BuildableHotZoneMagnet`, `FOB`, `SupplyCrate`, `MistralAA`, `Phalanx`, `Mortar`. New row names in this update: [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json), [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json), `Loudspeaker`, `MGNest`, [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json), `BuildableRadio`, `BuildableRepairStation`, `BuildableRefuelStation`, plus variant rows for the vehicles, spawn vehicles and supply crates.
 
 ### 3a. Formulas
 
@@ -79,7 +79,7 @@ Target types (the original 22 names, on both events): `Player`, `Bobcat`, `Kodia
 
 Note the difference. **Added** pays down by how many times the target was already spotted (the "last victim" count). **Removed** has no victim reduction, but adds `DestroyedByTeamModifier`.
 
-The 10 rows marked "see note" are the buildable and stationary entries: `BuildableHotZoneMagnet`, `BuildableRadio`, `BuildableRefuelStation`, `BuildableRepairStation`, `Loudspeaker`, `MistralAA`, `Mortar`, `Phalanx`, `MGNest` and `STN_05`. They multiply by `BuildProgress`, a variable whose source is not in this folder.
+The 10 rows marked "see note" are the buildable and stationary entries: `BuildableHotZoneMagnet`, `BuildableRadio`, `BuildableRefuelStation`, `BuildableRepairStation`, `Loudspeaker`, `MistralAA`, `Mortar`, `Phalanx`, `MGNest` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json). They multiply by `BuildProgress`, a variable whose source is not in this folder.
 
 ### 3b. Selectors
 
@@ -102,7 +102,7 @@ The numeric values behind `BaseReward`, the faction factors and the zone factors
 
 ## 4. Match-Score Payouts
 
-### 4a. Live min and max (`DT_Reward_Cash_Spotting`, 4 rows)
+### 4a. Live min and max ([`DT_Reward_Cash_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Rewards/DT_Reward_Cash_Spotting.json), 4 rows)
 
 These are the values the v2 doc's section 9 quotes. The modifier columns are the part that doesn't appear there.
 
@@ -117,13 +117,13 @@ All four rows also carry these modifiers at 1.0: `FriendlyModifier`, `NeutralMod
 
 So the **owner** (the player who spotted) gets a reduced share of the max value (20% for a spot, 75% for a destroy). The **assist** share is driven by `AssistBaseModifier` and `AssistScalingModifier`. The spread between min and max is set by the assist-scaling curve (in the v2 doc's terms).
 
-### 4b. Placeholder rows (`DT_Rewards_Spotting`, 3 rows, all zero)
+### 4b. Placeholder rows ([`DT_Rewards_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/DT_Rewards_Spotting.json), 3 rows, all zero)
 
-`Meta.Progression.Resources.MatchScore.SpottingOwner`, `...SpottingAssist` and `...SpottingDestroyed`. Each has `ResourceValue = 0.0`, `ResourceTag = Attribute.Meta.Currency.Cash`. These are the same stale layer the v1 Rewards doc found: the live numbers are in `DT_Reward_Cash_Spotting` above.
+`Meta.Progression.Resources.MatchScore.SpottingOwner`, `...SpottingAssist` and `...SpottingDestroyed`. Each has `ResourceValue = 0.0`, `ResourceTag = Attribute.Meta.Currency.Cash`. These are the same stale layer the v1 Rewards doc found: the live numbers are in [`DT_Reward_Cash_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Rewards/DT_Reward_Cash_Spotting.json) above.
 
 ---
 
-## 5. Variant Lookups (`DT_RewardLookup_SessionEvent_Spotting_Added` and `_Removed`)
+## 5. Variant Lookups ([`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json) and `_Removed`)
 
 Each lookup has 51 rows and maps the spotted variant to its reward tag. Each row now has its own reward tag, so the table below lists each one (Added shown; Removed uses the same variants with the `.Removed.` prefix). The Added and Removed tables are identical in layout. Only the reward tag prefix differs (`.Added.` or `.Removed.`).
 
@@ -182,8 +182,8 @@ Each lookup has 51 rows and maps the spotted variant to its reward tag. Each row
 | `Spotting.*.MGNest` | `Vehicle.Variant.Stationary.MGNest` |
 
 Observations:
-- **51 reward tags**, one per lookup row, appear in each lookup. The `Player` target is not in either lookup. It is paid through the fallback tag of the lookup step: `Lookup Reward Tag for Variant` in `ST_Challenges_SessionEvents_KOTH_Spotting_Added` has the filter tags `Vehicle.Variant`, `Id.Item` and `Id.Buildable` and the fallback reward tag `Challenges.Rewards.Spotting.Added.Player` (the `_Removed` tree uses `Challenges.Rewards.Spotting.Removed.Player`). A spotted player carries none of the three tag families, so the lookup has nothing to return and the fallback applies (**Derived** from the node's data; the task's code was not read).
-- Each reward tag now maps to a single variant tag. `MistralAA`, `Mortar` and `STN_05` have separate tags, and the Loudspeaker, Radio, RepairStation and RefuelStation buildables each have their own.
+- **51 reward tags**, one per lookup row, appear in each lookup. The `Player` target is not in either lookup. It is paid through the fallback tag of the lookup step: `Lookup Reward Tag for Variant` in [`ST_Challenges_SessionEvents_KOTH_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Added.json) has the filter tags `Vehicle.Variant`, `Id.Item` and `Id.Buildable` and the fallback reward tag `Challenges.Rewards.Spotting.Added.Player` (the `_Removed` tree uses `Challenges.Rewards.Spotting.Removed.Player`). A spotted player carries none of the three tag families, so the lookup has nothing to return and the fallback applies (**Derived** from the node's data; the task's code was not read).
+- Each reward tag now maps to a single variant tag. `MistralAA`, `Mortar` and [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) have separate tags, and the Loudspeaker, Radio, RepairStation and RefuelStation buildables each have their own.
 
 ---
 
@@ -200,22 +200,22 @@ The `Removed` tree is the only one that carries the `Analytics.Player.Assists` t
 
 ---
 
-## 7. Skills (`DT_Skills_Spotting`, 2 rows)
+## 7. Skills ([`DT_Skills_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Skills/DT_Skills_Spotting.json), 2 rows)
 
 Both skills are **Recon** role skills.
 
 | Skill tag | Skill key | Gameplay effect | Attribute | Magnitude source |
 |---|---|---|---|---|
-| `Meta.Role.Recon.IncreasedSpottedTime` | `Meta.Skill.Character` | `GE_Spotting_IncreasedSpottedTime` | `Attribute.Gameplay.Spotting.SpottedTimeMultiplier` | Base 1.0, scaled by curve `CT_ReconSkills`, row `IncreasedSpottedTime` |
-| `Meta.Role.Recon.IncreasedSpottingDuration` | `Meta.Skill.Item` | `GE_Spotting_IncreasedSpottingDuration` | `Attribute.Gameplay.Spotting.SpottingDurationMultiplier` | Base 1.0, scaled by curve `CT_ReconSkills`, row `IncreasedSpottingDuration` |
+| `Meta.Role.Recon.IncreasedSpottedTime` | `Meta.Skill.Character` | `GE_Spotting_IncreasedSpottedTime` | `Attribute.Gameplay.Spotting.SpottedTimeMultiplier` | Base 1.0, scaled by curve [`CT_ReconSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/CT_ReconSkills.json), row `IncreasedSpottedTime` |
+| `Meta.Role.Recon.IncreasedSpottingDuration` | `Meta.Skill.Item` | `GE_Spotting_IncreasedSpottingDuration` | `Attribute.Gameplay.Spotting.SpottingDurationMultiplier` | Base 1.0, scaled by curve [`CT_ReconSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/CT_ReconSkills.json), row `IncreasedSpottingDuration` |
 
-The skill attribute is a multiplier on how long a spot lasts (`SpottedTimeMultiplier` on the target side, `SpottingDurationMultiplier` on the spotter side). The actual per-rank values are in `CT_ReconSkills`, which is outside this folder.
+The skill attribute is a multiplier on how long a spot lasts (`SpottedTimeMultiplier` on the target side, `SpottingDurationMultiplier` on the spotter side). The actual per-rank values are in [`CT_ReconSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/CT_ReconSkills.json), which is outside this folder.
 
 ---
 
 ## 8. Feed Strings
 
-### 8a. Challenge feed (`DT_ChallengesFeedActions_Spotting`, 3 rows)
+### 8a. Challenge feed ([`DT_ChallengesFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.json), 3 rows)
 
 | Feed tag | Default text | Conditional text (tag → text, audio) |
 |---|---|---|
@@ -225,7 +225,7 @@ The skill attribute is a multiplier on how long a spot lasts (`SpottedTimeMultip
 
 The default audio for the Removed row is `Audio.Event.UX.Spotted.DestroyAssist.Player`.
 
-### 8b. Match-score feed (`DT_RewardFeedActions_Spotting`, 3 rows)
+### 8b. Match-score feed ([`DT_RewardFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_RewardFeedActions_Spotting.json), 3 rows)
 
 | Match-score tag | Text | Audio |
 |---|---|---|
@@ -233,7 +233,7 @@ The default audio for the Removed row is `Audio.Event.UX.Spotted.DestroyAssist.P
 | `Meta.Progression.Resources.MatchScore.SpottingAssist` | Target Spotted Assist | none |
 | `Meta.Progression.Resources.MatchScore.SpottingDestroyed` | Spotted Target Destroyed | `Audio.Event.UX.Spotted.DestroyAssist` |
 
-### 8c. Overlay (`DA_SpottingOverlay`)
+### 8c. Overlay ([`DA_SpottingOverlay`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/DA_SpottingOverlay.json))
 
 | Setting | Value |
 |---|---|
@@ -247,7 +247,7 @@ The default audio for the Removed row is `Audio.Event.UX.Spotted.DestroyAssist.P
 
 Spotting has three tracker assets. The map and spatial trackers share the tag `Trackers.Type.SpottingTarget`.
 
-### 9a. Map tracker (`DT_TrackerData_Map_Spotting` → `DA_Tracker_Map_Spotting`)
+### 9a. Map tracker ([`DT_TrackerData_Map_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Map/Data/DT_TrackerData_Map_Spotting.json) → [`DA_Tracker_Map_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Map/Data/DA_Tracker_Map_Spotting.json))
 
 | Setting | Value |
 |---|---|
@@ -256,7 +256,7 @@ Spotting has three tracker assets. The map and spatial trackers share the tag `T
 | Required tags | `Meta.Alignment.Faction`, `Trackers.Type.SpottingTarget` |
 | Recreate on faction change | Yes |
 
-### 9b. Spatial tracker (`DT_TrackerData_Spatial_Spotting` → `DA_Tracker_Spatial_Spotting`)
+### 9b. Spatial tracker ([`DT_TrackerData_Spatial_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Spatial/Data/DT_TrackerData_Spatial_Spotting.json) → [`DA_Tracker_Spatial_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.json))
 
 | Element | Setting |
 |---|---|
@@ -267,13 +267,13 @@ Spotting has three tracker assets. The map and spatial trackers share the tag `T
 | Reward tag on the default texture | `Challenges.Rewards.PlayerKill` |
 | Distance text | Forced to metres |
 | Line-of-sight rules | 3 rules, trace channel `ECC_GameTraceChannel4`. One rule has squared range 100,000,000 (about 10,000 units). Rendered-component check on. |
-| Location offset | Base offset Z = 300. Second rule uses dynamic offset curve `C_DynamicLocationOffsetSpottingTracker` (range about 252) and attaches to the `Head` bone. |
+| Location offset | Base offset Z = 300. Second rule uses dynamic offset curve [`C_DynamicLocationOffsetSpottingTracker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Spatial/Data/C_DynamicLocationOffsetSpottingTracker.json) (range about 252) and attaches to the `Head` bone. |
 | Screen clamping | 250 × 250 px |
 | World distance scale | 2 rules |
 
 The spatial tracker has per-vehicle texture overrides, so the marker changes by target. The Littlebird override uses `T_UI_Map_Spotted_Heli` with rotation 90°, and each vehicle override carries its own `RewardTag` (for example `Challenges.Rewards.VehicleDestroyed.LittleBird`, `...Huey`, `...Havoc`, `...Blackhawk`).
 
-### 9c. Material tracker (`DT_MaterialTrackerSettingsData_Spotting` → `DA_MaterialTrackerData_Spotting`)
+### 9c. Material tracker ([`DT_MaterialTrackerSettingsData_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Optimization/Data/DT_MaterialTrackerSettingsData_Spotting.json) → [`DA_MaterialTrackerData_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Optimization/Data/DA_MaterialTrackerData_Spotting.json))
 
 This tracker is for **stationary and artillery gunner positions**. It is shown only when the local player is a gunner.
 
@@ -294,14 +294,14 @@ It also keys a reward tag by target class (player → `Challenges.Rewards.Player
 
 | Context | Binding | Action | Notes |
 |---|---|---|---|
-| `IMC_SpottingAds` | Left mouse button | `IA_Player_PrimaryUse` | |
-| `IMC_SpottingAds` | Gamepad right trigger (axis) | `IA_Player_PrimaryUse` | Has a `WDDeadZoneInputModifier` |
-| `IMC_SpottingAds` | Mouse wheel up / down | `IA_Player_IncreaseScopeZoom` / `DecreaseScopeZoom` | |
-| `IMC_SpottingAds` | Left Shift | `IA_Player_Focus` | Gamepad left stick click also maps to Focus |
-| `IMC_SpottingAds` | Gamepad left / right shoulder | `IA_Player_Lean_Left` / `Lean_Right` | |
-| `IMC_SpottingAds` | (unbound) | `IA_Player_ToggleScopeZoom` | Inherits settings from the action |
-| `IMC_SpottingAds` | Gamepad D-pad right / left | `IncreaseScopeZoom` / `DecreaseScopeZoom` | `InputTriggerPulse` with interval 0.2 s |
-| `IMC_Spotting` | (2 mappable key settings, 2 dead-zone modifiers) | | Not individually decoded |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | Left mouse button | [`IA_Player_PrimaryUse`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.json) | |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | Gamepad right trigger (axis) | [`IA_Player_PrimaryUse`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_PrimaryUse.json) | Has a `WDDeadZoneInputModifier` |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | Mouse wheel up / down | [`IA_Player_IncreaseScopeZoom`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_IncreaseScopeZoom.json) / `DecreaseScopeZoom` | |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | Left Shift | [`IA_Player_Focus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Focus.json) | Gamepad left stick click also maps to Focus |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | Gamepad left / right shoulder | [`IA_Player_Lean_Left`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_Lean_Left.json) / `Lean_Right` | |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | (unbound) | [`IA_Player_ToggleScopeZoom`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/IA_Player_ToggleScopeZoom.json) | Inherits settings from the action |
+| [`IMC_SpottingAds`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_SpottingAds.json) | Gamepad D-pad right / left | `IncreaseScopeZoom` / `DecreaseScopeZoom` | `InputTriggerPulse` with interval 0.2 s |
+| [`IMC_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_Spotting.json) | (2 mappable key settings, 2 dead-zone modifiers) | | Not individually decoded |
 
 The dead-zone modifiers mean stick and trigger input is filtered in both contexts.
 
@@ -311,16 +311,16 @@ The dead-zone modifiers mean stick and trigger input is filtered in both context
 
 | Event asset | Behaviours | Use (inferred) |
 |---|---|---|
-| `AE_Comms_Spotted` | Request spotted vox, play perspective sound, crosstalk | Radio call when a target is spotted |
-| `AE_Comms_Spotted_VehicleEmpty` | Same types as above | Variant for an empty spotted vehicle |
-| `AE_UX_Spotted_Target` | Play spotted-target sound, crosstalk | UX cue on spot |
-| `AE_UX_Spotting_Start` | Set spotting parameters, execute trigger, play sound, crosstalk | Spotting mode opens |
-| `AE_UX_Spotting_Stop` | Execute trigger, crosstalk | Spotting mode closes |
-| `AE_UX_Spotting_Complete` | Execute trigger, crosstalk | Spot completed |
+| [`AE_Comms_Spotted`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_Comms_Spotted.json) | Request spotted vox, play perspective sound, crosstalk | Radio call when a target is spotted |
+| [`AE_Comms_Spotted_VehicleEmpty`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_Comms_Spotted_VehicleEmpty.json) | Same types as above | Variant for an empty spotted vehicle |
+| [`AE_UX_Spotted_Target`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_UX_Spotted_Target.json) | Play spotted-target sound, crosstalk | UX cue on spot |
+| [`AE_UX_Spotting_Start`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_UX_Spotting_Start.json) | Set spotting parameters, execute trigger, play sound, crosstalk | Spotting mode opens |
+| [`AE_UX_Spotting_Stop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_UX_Spotting_Stop.json) | Execute trigger, crosstalk | Spotting mode closes |
+| [`AE_UX_Spotting_Complete`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Audio/Events/AE_UX_Spotting_Complete.json) | Execute trigger, crosstalk | Spot completed |
 
 ### 7b. Spot timing per target (round 39)
 
-Read from the `BH_SpottingExtensionData` of each spotter item (**Data**; `Binoculars_Standard`, `Monocular`, `RangeFinder_Standard`, `RangeFinder_Expensive`). For every target class the spotter item lists four times: the time the crosshair must stay on the target (`SpotTime`), the time to refresh an existing spot (`SpotRefreshTime`), how long the spot fades (`DecayTime`) and how long a persistent spot is kept (`PersistentSpotTime`). Infantry (`WDMoverCharacter`): 0.5 s to spot, 30 s decay, 180 s persistent. The two Recon skills multiply spot time by the `CT_ReconSkills` rows `IncreasedSpottedTime` and `IncreasedSpottingDuration` (**Data**: skill level 0: 1.0, level 2: 1.2, level 4: 1.4). The units are not exported; seconds are presumed from the values (30, 90, 180, 900, 3600). Generated by `_tools/round39_medical_tables.py` into [`medical-status-r39.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/medical-status-r39.json).
+Read from the `BH_SpottingExtensionData` of each spotter item (**Data**; `Binoculars_Standard`, `Monocular`, `RangeFinder_Standard`, `RangeFinder_Expensive`). For every target class the spotter item lists four times: the time the crosshair must stay on the target (`SpotTime`), the time to refresh an existing spot (`SpotRefreshTime`), how long the spot fades (`DecayTime`) and how long a persistent spot is kept (`PersistentSpotTime`). Infantry (`WDMoverCharacter`): 0.5 s to spot, 30 s decay, 180 s persistent. The two Recon skills multiply spot time by the [`CT_ReconSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/CT_ReconSkills.json) rows `IncreasedSpottedTime` and `IncreasedSpottingDuration` (**Data**: skill level 0: 1.0, level 2: 1.2, level 4: 1.4). The units are not exported; seconds are presumed from the values (30, 90, 180, 900, 3600). Generated by `_tools/round39_medical_tables.py` into [`medical-status-r39.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/medical-status-r39.json).
 
 <!-- r39_med spot_times -->
 | Target class | Spot time (s) | Refresh time (s) | Decay time (s) | Persistent spot time (s) | Spotter items |
@@ -371,8 +371,8 @@ Per-item spotting fields (**Data**; generated by `_tools/item_extension_tables.p
 - **The `Player` target** has a calculator row but no lookup row. It is reached through the `FallbackRewardTag` of the lookup node (see section 5): `Challenges.Rewards.Spotting.Added.Player` and `...Removed.Player` (**Derived**).
 - **Meaning of `DestroyedByTeamModifier`** is taken from its option name `KilledByEnemyFactor`. Its direction (boost or penalty) was not checked.
 - **Zone and faction factor values** are not in this folder.
-- **The `Spotting` root bundle's widget element** and the gameplay cue path were not decoded in this pass.
-- **The `IMC_Spotting` input context** was listed but not decoded to individual bindings.
+- **The [`Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Spotting.json) root bundle's widget element** and the gameplay cue path were not decoded in this pass.
+- **The [`IMC_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Input/IMC_Spotting.json) input context** was listed but not decoded to individual bindings.
 - **The spatial tracker's second line-of-sight and world-scale rules** were counted but not individually checked for values.
-- **The Recon skill magnitudes** come from `CT_ReconSkills`, which is outside this folder.
-- **`DT_Rewards_Spotting`** is zero-valued (placeholder). Do not use it for live numbers.
+- **The Recon skill magnitudes** come from [`CT_ReconSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/CT_ReconSkills.json), which is outside this folder.
+- **[`DT_Rewards_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/DT_Rewards_Spotting.json)** is zero-valued (placeholder). Do not use it for live numbers.

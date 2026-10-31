@@ -26,6 +26,8 @@ import os
 import re
 import sys
 
+from raw_source_links import source_link, link_generated
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 PAGE = "game-features/Wardogs_Challenges_v1.md"
@@ -44,7 +46,7 @@ def rel_of(path):
 
 
 def link(rel, label=None):
-    return f"`{label or os.path.basename(rel)[:-5]}`"
+    return source_link("data/" + rel, label or os.path.basename(rel)[:-5])
 
 
 def n(x):
@@ -453,7 +455,7 @@ def write(d):
     nl = "\r\n" if "\r\n" in text else "\n"
 
     def regen(m):
-        body = MODES[m.group(1)](d).split("\n")
+        body = link_generated(MODES[m.group(1)](d)).split("\n")
         return nl.join([f"<!-- challenge_tables {m.group(1)} -->"] + body + ["<!-- /challenge_tables -->"])
     new, count = BLOCK.subn(regen, text)
     if new != text:
@@ -469,7 +471,7 @@ def main():
     if "--write" in args:
         write(d)
     else:
-        print(MODES[next((a for a in args if a in MODES), "counts")](d))
+        print(link_generated(MODES[next((a for a in args if a in MODES), "counts")](d)))
 
 
 if __name__ == "__main__":

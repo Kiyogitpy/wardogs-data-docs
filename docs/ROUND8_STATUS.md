@@ -98,7 +98,7 @@ parity are still open. No game or service was used.
   uncorroborated, pending a concrete UI action, store or consumer.
   The [Deathmatch callback](evidence/round8-loadout-deathmatch.md)
   now has a verified click-to-RPC tag handoff and a `DeathmatchWeaponsData`
-  registry binding to `DT_DeathmatchWeaponSelect`. Component registration
+  registry binding to [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json). Component registration
   requests the scene directly outside PreMatch, or registers its opening for
   Playing.Deathmatch while PreMatch is active. Automatic item granting at
   spawn remains unproved.
@@ -363,7 +363,7 @@ work. In particular:
   `0x8494AA0`, entry construction `0x8495360`, and component RPC-delegate
   binding `0x8490B30` are now verified. The native `DeathmatchWeaponsData`
   key resolves through `DR_DeathmatchWeaponsData` to the 20-row
-  `DT_DeathmatchWeaponSelect`. The registration hook requests the scene
+  [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json). The registration hook requests the scene
   directly outside PreMatch or registers the request for Playing.Deathmatch
   while PreMatch is active. An automatic selection event or first-spawn
   item grant remains unproved.

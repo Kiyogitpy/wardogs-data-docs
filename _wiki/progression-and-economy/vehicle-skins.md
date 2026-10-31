@@ -12,7 +12,7 @@ description: "Every vehicle skin, the MH-6 taxi skin and the bobbleheads, with G
 | Skin sets | Two-Tone Desert, Black and Gold, Taxi |
 | Vehicle skins | 6 priced rows, plus 1 taxi skin and 4 bobbleheads with no price |
 | Currency | Gold Bars, sold on the Gold Market |
-| Internal name | Vehicle skin tables and the taxi skin data (`DT_Cosmetics_Season01_Skins`, `DT_Cosmetics_Season02_Skins`, `DT_Cosmetics_Taxi`, `DT_Bobblehead_Faction_Cosmetics`) |
+| Internal name | Vehicle skin tables and the taxi skin data ([`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json), [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json), [`DT_Cosmetics_Taxi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/DT_Cosmetics_Taxi.json), [`DT_Bobblehead_Faction_Cosmetics`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/BobbleHeads/Bobblehead_Faction/Content/Data/DT_Bobblehead_Faction_Cosmetics.json)) |
 {: .wiki-infobox }
 
 A vehicle skin repaints a vehicle with a pattern and colour set. Most vehicle skins are bought on the Gold Market for 5 to 30 Gold Bars. The taxi skin and the bobbleheads have no price.

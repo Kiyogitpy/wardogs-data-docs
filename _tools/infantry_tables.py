@@ -32,6 +32,7 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import strip_source_links  # noqa: E402
 import damage_tables as dt  # noqa: E402  (shared helpers: exports, rule row, evaluate, weapons, falloff)
 from check_links import slug  # noqa: E402  (the site's GitHub-style heading ids)
 
@@ -79,7 +80,7 @@ def section(page, number):
     """(heading title, body) of the numbered heading `number` ("7.1", "2b") on a doc page."""
     if page not in _HEAD:
         with open(os.path.join(ROOT, page), encoding="utf-8") as f:
-            text = f.read()
+            text = strip_source_links(f.read())
         _HEAD[page] = (text, list(re.finditer(r"^(#{1,6})\s+(.*?)\s*$", text, re.M)))
     text, heads = _HEAD[page]
     for i, m in enumerate(heads):

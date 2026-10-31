@@ -33,7 +33,7 @@ permalink: /reference/
 ## Finding things
 
 - **Search** from the bar at the top of every page (press `/` or `Ctrl+K`). It covers the full text of every page, including tables, and opens the matching section.
-- **Asset and table names match on their parts.** `PlayerKill` finds `DT_Reward_Cash_PlayerKill`, and `Havoc` finds every page that mentions the Havoc.
+- **Asset and table names match on their parts.** `PlayerKill` finds [`DT_Reward_Cash_PlayerKill`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/KillScore/DT_Reward_Cash_PlayerKill.json), and `Havoc` finds every page that mentions the Havoc.
 - **Items, Weapons and Vehicles appear in more than one category.** The base definitions and the per-item, per-weapon and per-vehicle data are separate pages, so check both.
 - **Every page ends with its limitations:** what was inferred, and what the game files don't contain.
 </div>

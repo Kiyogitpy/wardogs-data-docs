@@ -12,7 +12,7 @@ description: "The six emotes, which three are sold on the Gold Market for 5 Gold
 | Emotes | 6 in the data: Shh, Rock, Paper, Scissors, Rock Paper Scissors, Middle Finger |
 | Priced | 3 emotes, 5 Gold Bars each |
 | Currency | Gold Bars, sold on the Gold Market |
-| Internal name | Emote entity and cosmetic tables (`DT_EntityData_Ext_Emotes`, `DT_Cosmetics_Season01_Emotes`) |
+| Internal name | Emote entity and cosmetic tables ([`DT_EntityData_Ext_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_EntityData_Ext_Emotes.json), [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json)) |
 {: .wiki-infobox }
 
 An emote is an action a player can perform with their character. Each emote has a name and an action. Three emotes are sold on the Gold Market. Rock, Paper and Scissors have no sale entry.

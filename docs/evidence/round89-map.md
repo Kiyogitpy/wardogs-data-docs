@@ -1,6 +1,6 @@
 # Round 89: map height grids and map asset unnamed fields (V4-22)
 
-Static data read only. Nothing was run, no native code was traced. Evidence level: cooked JSON exports (`data/Wardogs/Content/Environment/Water/FluidFlux/**`, `Content/Maps/Gyms/Water`, `Content/Maps/SightBlockers`). Generator: `_tools/map_height_grids.py` (`--check`). Outputs: `assets/data/map-height-grids.json`, `assets/img/maps/{bakurani,ozeti,gym}-water-height.png`, the generated table in `content/Wardogs_Environment_v2.md` section 13b, section 4b and 7 of `content/Wardogs_Maps_v2.md`, a "Water height" section on the Bakurani and Ozeti wiki pages.
+Static data read only. Nothing was run, no native code was traced. Evidence level: cooked JSON exports (`data/Wardogs/Content/Environment/Water/FluidFlux/**`, [`Content/Maps/Gyms/Water`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/Gyms/Water), [`Content/Maps/SightBlockers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/SightBlockers)). Generator: `_tools/map_height_grids.py` (`--check`). Outputs: `assets/data/map-height-grids.json`, `assets/img/maps/{bakurani,ozeti,gym}-water-height.png`, the generated table in `content/Wardogs_Environment_v2.md` section 13b, section 4b and 7 of `content/Wardogs_Maps_v2.md`, a "Water height" section on the Bakurani and Ozeti wiki pages.
 
 ## Statuses
 

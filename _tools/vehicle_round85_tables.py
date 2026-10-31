@@ -21,6 +21,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "Wardogs")
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
@@ -661,7 +664,7 @@ def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "--write"
     stale = 0
     for rel, fn in PAGES.items():
-        text = fn()
+        text = link_source_output(fn())
         path = os.path.join(ROOT, rel)
         old = ""
         if os.path.exists(path):

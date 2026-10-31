@@ -80,12 +80,12 @@ The trace brief's export audit (repository baseline
 damage-system files it inspected. They identify those inputs, not the
 executable.
 
-| File under `data/Wardogs/Content/GameMechanics/DamageSystem/` | SHA-256 |
+| File under [`data/Wardogs/Content/GameMechanics/DamageSystem/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem) | SHA-256 |
 |---|---|
-| `DamageDataTables/DT_GlobalDamage_InfantryData.json` | `81698c8a24e46992ddcf24158ae92c4d2beb67594407491db83ecf631f5f72ff` |
-| `DA_GlobalDamage_Categories.json` | `f0303f8bb71ba829d6ea8cf661e43ce1b1167d70f9781641f538f513f02c2f47` |
-| `DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json` | `faefd350303877e23e045d79fb960f1e881849b57797225f9e22c507a70f1d33` |
-| `DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json` | `e6a0b4befde7dcce495c484619460be0e714d344717a8a5d9429add9889fa64f` |
+| [`DamageDataTables/DT_GlobalDamage_InfantryData.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | `81698c8a24e46992ddcf24158ae92c4d2beb67594407491db83ecf631f5f72ff` |
+| [`DA_GlobalDamage_Categories.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json) | `f0303f8bb71ba829d6ea8cf661e43ce1b1167d70f9781641f538f513f02c2f47` |
+| [`DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json) | `faefd350303877e23e045d79fb960f1e881849b57797225f9e22c507a70f1d33` |
+| [`DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) | `e6a0b4befde7dcce495c484619460be0e714d344717a8a5d9429add9889fa64f` |
 
 ### Local work directories and result files
 
@@ -556,8 +556,8 @@ are not functions.
 | `0x6E6DCC0` | Character `IWDDamageable` slot 8 (sub-vtable `0xB40C038`): empties the radial hits while the seat flag (`+0x3D0`) is clear, else `0x6C2A790` | §1.1 | `corpus body` (r6 T2-8, verifier-confirmed round 6) |
 | `0x6E6EBA0` | Shooter's vehicle: `VehicleOperatorComponent` (`+0x768`) → `CurrentSeat` (`+0x188`) → `0x532DD70` | §1.1, §9 | `[exe]`: no functions row; `mov rcx, [rcx+0x768]; add rcx, 0x188; jmp 0x532DD70` (r6 T2-12, verifier-confirmed round 6) |
 | `0x6E72D90` | Unnamed caller, bool 1 | §1.1 | `corpus body` |
-| `0x6E74C40` | `ReceiveDamage` (interface slot 2), jumps to the vitality component | §10 | `corpus body` |
-| `0x6E77C40` | Character `TakeDamage` override | §10 | `corpus body` |
+| `0x6E74C40` | [`ReceiveDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) (interface slot 2), jumps to the vitality component | §10 | `corpus body` |
+| `0x6E77C40` | Character [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) override | §10 | `corpus body` |
 | `0x6E7F0B0` | `ProcessEvent` stub, parameter shape of `Client_ForceTakeHitCue` | §10 | `corpus body` |
 | `0x6E7F420` | `ProcessEvent` stub, parameter shape of `Client_TriggerHitMarker` | §10 | `corpus body` |
 | `0x6EF8DE0` | Event to `FWDModifyDamageData` conversion | §1, §11, Change log | `[exe]`: no functions row; sole caller `0x6F02EC0` |
@@ -565,7 +565,7 @@ are not functions.
 | `0x6EF8E37` | Stores it as `ModifyDamageData.Amount` (in `0x6EF8DE0`) | §1 | `[exe]` |
 | `0x6EF944F` | Builds the Unreal damage event | §1.1 | `corpus body`, misaligned: the entry is `0x6EF9450` |
 | `0x6EF9450` | Real entry of the Unreal damage-event builder (row `0x6EF944F`) | §1.1, Change log | `corpus body`, misaligned: filed under row `0x6EF944F` |
-| `0x6EF9840` | Apply step: `WDDamageable` path or `TakeDamage` | §1.1 | `corpus body` |
+| `0x6EF9840` | Apply step: `WDDamageable` path or [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) | §1.1 | `corpus body` |
 | `0x6EFFD40` | Selects the first active damage system | §1 | `corpus body` |
 | `0x6F01BB0` | Hit-location lookup: asset by actor class (`ClassToHitLocations`), then an exact bone-name match; called by the armor hook | §7.6 | `corpus body`; [exe] call `0x6B52B8B`, store `0x6B52BB1` (r6 T2-16, T2-18, verifier-confirmed round 6) |
 | `0x6F02EC0` | Native `UWDDamageSubsystem::ModifyDamage` | §1, §1.1 | `corpus body` |

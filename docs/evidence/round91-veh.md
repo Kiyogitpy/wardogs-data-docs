@@ -1,6 +1,6 @@
 # Round 91: vehicles (veh)
 
-Items V5-01 and V5-08 of `BACKLOG-v5.md`. Evidence: cooked JSON exports under `data/Wardogs` (static) and the decompiled corpus `decompiled_cl516586_20261017_mmvpuc__` plus capstone over the restored executable (static; nothing was run, nothing devirtualized). All addresses are RVAs. Work scripts were kept in `E:/r91/work/veh/`, not committed.
+Items V5-01 and V5-08 of `BACKLOG-v5.md`. Evidence: cooked JSON exports under [`data/Wardogs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs) (static) and the decompiled corpus `decompiled_cl516586_20261017_mmvpuc__` plus capstone over the restored executable (static; nothing was run, nothing devirtualized). All addresses are RVAs. Work scripts were kept in `E:/r91/work/veh/`, not committed.
 
 Generator: `_tools/vehicle_round85_tables.py` (`--write`, `--check`) now also writes `assets/data/vehicle-gameplay-settings.json` and section 6 of `game-features/Wardogs_VehicleConfigFields_v1.md`.
 

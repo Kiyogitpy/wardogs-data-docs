@@ -1,17 +1,17 @@
 # Round 91, teammate itm: item extensions, placeables, Molotov selection, Medical Bag steps
 
-Backlog items V5-02, V5-03, V5-04, V5-05 of `BACKLOG-v5.md` (census v5, `round90-census-v5.md`). Static work only: the exported `ID_*` and `DT_GlobalDamage_*` JSON under `data/Wardogs`, and the Blueprint listings from round 86 (`E:/r86/work/bp/lst`, produced with WdExtract and `tools/cue4parse_extractor/kismet_listing.py`, method in `round86-bp.md`). No Elytra-protected code touched; the game was not run.
+Backlog items V5-02, V5-03, V5-04, V5-05 of `BACKLOG-v5.md` (census v5, `round90-census-v5.md`). Static work only: the exported `ID_*` and `DT_GlobalDamage_*` JSON under [`data/Wardogs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs), and the Blueprint listings from round 86 (`E:/r86/work/bp/lst`, produced with WdExtract and `tools/cue4parse_extractor/kismet_listing.py`, method in `round86-bp.md`). No Elytra-protected code touched; the game was not run.
 
 ## Status per item
 
 | Item | Part | Status | Result |
 |---|---|---|---|
-| V5-02 | `WDInventoryFragment_Armor.DamageContextTag`, 14 pieces | FOUND | Table of piece, tag, covered hit locations, durability and every rule row (`DT_GlobalDamage_InfantryData` and `_ArmorData`) that names the tag. Level 2 Helmet, Pilot Helmet and Tank Helmet are named by no rule. ItemShop section 9.1. |
+| V5-02 | `WDInventoryFragment_Armor.DamageContextTag`, 14 pieces | FOUND | Table of piece, tag, covered hit locations, durability and every rule row ([`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) and `_ArmorData`) that names the tag. Level 2 Helmet, Pilot Helmet and Tank Helmet are named by no rule. ItemShop section 9.1. |
 | V5-02 | `Throwable.bDropOnInterrupt`, `ItemToConsume` | FOUND | `bDropOnInterrupt` false on 14 of 16 throwables (the two frag grenades do not set it); C4 trigger consumes `Id.Item.C4Explosive`, IED trigger consumes `Id.Item.IED.Explosive`. Section 9.2. |
 | V5-02 | `RangedWeapon.bDropAfterUse`, `FireChargeTime` | FOUND | Only `Id.Item.Launcher_04` (9K333 Verba): true, 0.5 s. Section 9.3. |
 | V5-02 | `RangedBow` | FOUND | Full draw 1.4 s, wait before completion 0.33 s, draw FOV shift type `ActiveCurve`, curve keys 0 : 0, 0.25 : 0, 0.5 : 1.02. Section 9.3. |
 | V5-02 | `Appliable` extras | FOUND | Only Enox (animation tag, play-before-consume true, `DecayHealAmount` 40) and the two resuscitators (consume animation tag) set them. Section 9.4. |
-| V5-02 | `Keycard` faction and number | FOUND | Six cards. Data oddity: `Bravo.1` carries number 2 (same as `Bravo.2`). Door table: ABSENT (no reader or door names a card; round 75). Section 9.5, wiki `keycards`. |
+| V5-02 | [`Keycard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Keycard/Content/Keycard.json) faction and number | FOUND | Six cards. Data oddity: `Bravo.1` carries number 2 (same as `Bravo.2`). Door table: ABSENT (no reader or door names a card; round 75). Section 9.5, wiki `keycards`. |
 | V5-02 | `Droppable` box-extent override and `ThrowingForce` | FOUND | 45 items override the box; `ThrowingForce` 300 only on the Large Hammer. Section 9.6. |
 | V5-03 | Placeable ext, 4 assets | FOUND | Start and max health 1 / 1 on AT mine, Claymore, IED; 100 / 100 with lifetime 20 s on the ammo crate; collision sizes, blocked classes, `bCanPlaceOnOtherPlaceable` false. Fire page 5.1b. `Items_v2` 268 and 485 rewritten. |
 | V5-03 | Fuel Can `Trace Distance` 500 | FOUND | Bytecode confirms the use: one line trace from the eye point along the view for 500 cm in `B_Action_FuelCan_Refuel.CheckDistance` and `B_Action_FuelCan_ReFill.DistanceCheck`. The 20 L can exports the item id `Id.Item`. |
@@ -39,7 +39,7 @@ Medical Bag: `B_Action_MedKit_MultiUse` listing (functions `CalculateProgressWhe
 
 Molotov: `B_Molotov_FireField` listing (`TryDamagePlayer`, `OnActorsArrayLoop`), `pipelines/Wardogs_DamagePipeline_v2.md` sections 4 and 6, `pipelines/Wardogs_HitRegistration_v1.md` section 6.4 (alignment), and the rule tables. The selection was executed by the generator block `molotov` (counts per table, section 4.1 of the Damage Pipeline).
 
-Side finding (Data): `ST_Challenges_SessionEvents_TeamOffencePunish` state "Environment Kill" tests the cause tag `Meta.Damage.DamageType.Enviroment` and adds `Challenges.Context.EnvironmentKill`; the "Barbed Wire Kill" state completes immediately. What the context does to the punishment was not traced.
+Side finding (Data): [`ST_Challenges_SessionEvents_TeamOffencePunish`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/ST_Challenges_SessionEvents_TeamOffencePunish.json) state "Environment Kill" tests the cause tag `Meta.Damage.DamageType.Enviroment` and adds `Challenges.Context.EnvironmentKill`; the "Barbed Wire Kill" state completes immediately. What the context does to the punishment was not traced.
 
 ## Update pipeline (for the lead)
 

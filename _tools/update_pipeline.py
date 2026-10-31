@@ -944,6 +944,13 @@ def cmd_regen(args):
                 if e and n not in skip:
                     run_generator(repo, e, "write", extra_env, fills, log)
         say("GE: " + ge_state)
+        # Restore source links after every generator, including GE dependants.
+        if "link_sources" not in skip:
+            rc, secs, tail = run_cmd(
+                [sys.executable, "-I", os.path.join(repo, "_tools", "link_sources.py"), "--write"],
+                cwd=repo, log=log, timeout=1800, env=extra_env)
+            results["link_sources.py"].append({"pass": 1, "rc": rc, "seconds": secs, "tail": tail[-300:]})
+            say("  %-34s rc=%d %5.1fs (source links)" % ("link_sources.py", rc, secs))
         # checks
         say("--- checks")
         checks = []

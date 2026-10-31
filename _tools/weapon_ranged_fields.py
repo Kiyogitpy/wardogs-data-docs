@@ -15,6 +15,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
 import challenge_tables as ct  # noqa: E402
 
 ROOT, DATA = ct.ROOT, ct.DATA
@@ -140,7 +141,7 @@ def main():
         print(b[a[0]])
         return 0
     text = open(PAGE, encoding="utf-8", newline="").read()
-    new = render(text.replace("\r\n", "\n"), b)
+    new = link_source_output(render(text.replace("\r\n", "\n"), b))
     if "--check" in a:
         if new != text.replace("\r\n", "\n"):
             print("stale: " + PAGE)

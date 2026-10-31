@@ -6,7 +6,7 @@ description: "Building and decorator definitions, damage-tag whitelists and the 
 ---
 
 # Wardogs — External Assets Reference
-*Extracted from cooked game data (`Content/ExternalAssets`, 147 JSON exports, UE 5.7 build `++Wardogs+Live-CL-516586`). Every number below was parsed from the export files by script. Where a field's meaning is inferred from its name rather than confirmed, the doc says so.*
+*Extracted from cooked game data ([`Content/ExternalAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets), 147 JSON exports, UE 5.7 build `++Wardogs+Live-CL-516586`). Every number below was parsed from the export files by script. Where a field's meaning is inferred from its name rather than confirmed, the doc says so.*
 
 > **Scope note:** This folder is almost entirely **building destruction data** (`Flix/Blueprints/**`), plus two damage-tag whitelists and one VFX mapping. It holds no weapons, economy or progression data. All 147 files parsed without error.
 
@@ -36,9 +36,9 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 | `BHDestructionBuildingDefinitionDataAsset` | 74 | Destructible building: chunk layout, junctions, required meshes, Niagara refs |
 | `BHDestructionBuildingDecoratorDefinitionDataAsset` | 70 | Decorator layer for a building: spawned actors, cosmetic props, authoritative props, preload lists |
 | `BHDestructionDecoratorMeshDamageTagsDataAsset` | 2 | Per-mesh damage-tag whitelists (ballistic and explosive) |
-| `BHDestructionBuildingVFXDataAsset` | 1 | `D_BuildingVFX`: chunk classification to Niagara data channel and Houdini point caches |
+| `BHDestructionBuildingVFXDataAsset` | 1 | [`D_BuildingVFX`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/VFX/Environmental/Destruction/SharedEmitterSystem/DataChannels/D_BuildingVFX.json): chunk classification to Niagara data channel and Houdini point caches |
 
-Folders: `Flix/Blueprints/Bakurani` (30 buildings), `Flix/Blueprints/Madrid` (10), `Flix/Blueprints/Industrial` (14), `Flix/Blueprints/Commercial/Office` (1), `Flix/Blueprints/Commercial/Highstreet` (14), `Flix/Blueprints/Commercial/Hospital` (4), `Flix/Blueprints/Commercial/WorkShop` (1), `Flix/DataAssets`, and `Flix/VFX/.../DataChannels`.
+Folders: [`Flix/Blueprints/Bakurani`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani) (30 buildings), [`Flix/Blueprints/Madrid`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid) (10), [`Flix/Blueprints/Industrial`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial) (14), [`Flix/Blueprints/Commercial/Office`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Office) (1), [`Flix/Blueprints/Commercial/Highstreet`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Highstreet) (14), [`Flix/Blueprints/Commercial/Hospital`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/Hospital) (4), [`Flix/Blueprints/Commercial/WorkShop`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Commercial/WorkShop) (1), [`Flix/DataAssets`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/DataAssets), and `Flix/VFX/.../DataChannels`.
 
 ---
 
@@ -53,7 +53,7 @@ Folders: `Flix/Blueprints/Bakurani` (30 buildings), `Flix/Blueprints/Madrid` (10
 | `SaveID` | GUID string | Building identifier. Madrid copies get a different SaveID from their Bakurani source (checked on apartment and house pairs). Purpose not confirmed. |
 | `RequiredMeshes` | list of `{StaticMesh, MaterialOverrideArray, PhysicalMaterialOverride, MeshCenter, RefCount, StringISMOverrides}` | Static meshes the building needs. `RefCount` is how many chunks use it. `MeshCenter` is the pivot offset (high confidence, from field names). |
 | `ChunkData` | list of chunk records | One record per destructible piece. Fields in 2b. |
-| `ChunkIDLookupMap` | list of `{Key: ChunkId, Value: index}` | Same length as `ChunkData`. Maps chunk GUID to array index (confirmed by inspection on `DA_Warehouse_Small_Hut_02a`). |
+| `ChunkIDLookupMap` | list of `{Key: ChunkId, Value: index}` | Same length as `ChunkData`. Maps chunk GUID to array index (confirmed by inspection on [`DA_Warehouse_Small_Hut_02a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_Small_Hut_02a/DA_Warehouse_Small_Hut_02a.json)). |
 | `JunctionData` | list of `{JunctionLocation, JunctionEdgeData[]}` | Points where several chunk edges meet. Each edge has `ChunkIndex` and `EdgePieceData.EdgeOffset`. Absent on every industrial building and on the Factory Awnings. |
 | `RequiredNiagaraAssets` | list of `{NiagaraAsset}` | Niagara systems referenced by index, e.g. `NS_FullWallBreak_1`, `NS_BalconyBreak`. 0 to 2 per building. |
 
@@ -67,13 +67,13 @@ Folders: `Flix/Blueprints/Bakurani` (30 buildings), `Flix/Blueprints/Madrid` (10
 | `NiagaraAssetRefIndex` | Index into `RequiredNiagaraAssets`, -1 when none (inferred from name). |
 | `StructuralSupports.VitalConnections` / `ProportionalConnections` | Chunk-to-chunk support links as index lists. "Vital" probably means the chunk falls if the link breaks; "proportional" probably means load is shared. Both inferred from names, not confirmed. |
 | `EdgePieces` | Edge geometry used when the chunk breaks. Counted per building in section 2c. |
-| `NiagaraBespokeEffectFormat` | Enum: `NoBespokeFormat`, `Wall2m`, `Wall4m`, `Wall6m`. Picks a bespoke debris effect by wall length. On `DA_ApartmentBuilding_01_a`, `Wall4m` (481) is the most common non-default format. |
+| `NiagaraBespokeEffectFormat` | Enum: `NoBespokeFormat`, `Wall2m`, `Wall4m`, `Wall6m`. Picks a bespoke debris effect by wall length. On [`DA_ApartmentBuilding_01_a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01_a.json), `Wall4m` (481) is the most common non-default format. |
 | `NiagaraDataChannelParameters` | Debris tags: `DebrisMeshType` (Wall, Ceiling, Roof, Balcony, Generic), `DebrisShape` (e.g. `Wall_4m`, `Corner_J_2m_x_2m`, `Roof_Slope_4m_x_4m`, or `None`), `DebrisMaterial` (Concrete, Wood, Metal). |
 | `ChunkTraits` | Present on every chunk, empty on every sampled chunk. |
 | `ChunkCustomPrimitiveData` | Four floats (e.g. `0.4, 0.12, 0.085, 1.0`). Meaning not stated, probably shader parameters. Not decoded. |
 | `Prefab` / `PrefabHash` | Optional prefab class reference (e.g. `CP_ModKit04_Roof_Panel_Short_2m_A`). Mostly on apartments (47, 23, 36 chunks in the three Bakurani apartment blocks), Office (15), houses and bungalows (0 to 17 each), Highstreet buildings (0 to 3 each) and hospitals (1 each). |
 | `AudioPhysMaterialArray` | Audio physical materials. Empty on sampled chunks. |
-| `Properties` | Integer flag field. Non-zero on 882 of 1,550 chunks in `DA_ApartmentBuilding_01_a`. Meaning not confirmed. |
+| `Properties` | Integer flag field. Non-zero on 882 of 1,550 chunks in [`DA_ApartmentBuilding_01_a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01_a.json). Meaning not confirmed. |
 
 ### 2c. Per-building table
 
@@ -157,7 +157,7 @@ Columns: mesh entries (`RequiredMeshes` count), unique `StaticMesh` names, chunk
 | D_Residential_House_Madrid_05 | Madrid/Residential | 90 | 83 | 163 | 98 | 1 | 2 | 168 | 172 | 74 | 331 |
 
 **Reading the table:**
-- `DA_ApartmentBuilding_01_b` is the largest building: 1,979 chunks, 1,115 junctions.
+- [`DA_ApartmentBuilding_01_b`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01_b.json) is the largest building: 1,979 chunks, 1,115 junctions.
 - Industrial buildings have no junctions and no edge pieces, but many chunks. They break into flat pieces with no junction layer.
 - The Madrid apartment and bungalow definitions match their Bakurani sources chunk for chunk (section 7).
 
@@ -259,9 +259,9 @@ Columns: actor-class references, `ActorDecoratorData` count, `CosmeticDecoratorD
 | D_Decorator_Residential_Bungalow_Madrid_03 | Madrid/Residential | 7 | 18 | 211 | 30 | 78 | 24 | 0 |
 
 **Notes:**
-- Four decorators hold a single property and no decoration data: `FA_Factory_Awning_01a_Decorator`, `DA_Factory_Awning_02a_Decorator`, `DA_Warehouse_Garage_01a_Decorator`, `DA_Warehouse_Scrapyard_01a_Decorator`. Those buildings get no decoration.
-- `DA_Warehouse_04a_Decorator` has 29 actor decorators and no cosmetic or authoritative data.
-- The Madrid apartment decorators carry about the same counts as the Bakurani ones but are not identical (cosmetic 3,617 for `DA_Ozeti_ApartmentBuilding_Decorator_01a` vs 3,573 for `DA_ApartmentBuilding_Decorator_01a`).
+- Four decorators hold a single property and no decoration data: [`FA_Factory_Awning_01a_Decorator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial/Factory_Awning_01a/FA_Factory_Awning_01a_Decorator.json), [`DA_Factory_Awning_02a_Decorator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial/Factory_Awning_02a/DA_Factory_Awning_02a_Decorator.json), [`DA_Warehouse_Garage_01a_Decorator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_Garage_01a/DA_Warehouse_Garage_01a_Decorator.json), [`DA_Warehouse_Scrapyard_01a_Decorator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_Scrapyard_01a/DA_Warehouse_Scrapyard_01a_Decorator.json). Those buildings get no decoration.
+- [`DA_Warehouse_04a_Decorator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Industrial/Warehouse_04a/DA_Warehouse_04a_Decorator.json) has 29 actor decorators and no cosmetic or authoritative data.
+- The Madrid apartment decorators carry about the same counts as the Bakurani ones but are not identical (cosmetic 3,617 for [`DA_Ozeti_ApartmentBuilding_Decorator_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Apartments/DA_Ozeti_ApartmentBuilding_Decorator_01a.json) vs 3,573 for [`DA_ApartmentBuilding_Decorator_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_Decorator_01a.json)).
 
 ### 3c. Actor classes used by decorators (top 25 by reference count)
 
@@ -301,8 +301,8 @@ These are soft references (`AssetPathName`). Most are doors (`BP_InteractableDoo
 
 | Asset | Entries | Content |
 |---|---|---|
-| `DA_DestructionDecoratorBallisticsTagWhitelist` | 68 | Each entry is `Key` (a `/Game/...` static mesh path: decorative room props such as `SM_DecorativePlate01`, and Megascans assets) and `Value` (a list of damage-tag strings). 67 entries carry 13 tags. One entry (`S_Wooden_Floor_Lamp_vi5hbjgga_high_Var2`) carries 12. |
-| `DA_DestructionDecoratorExplosiveTagWhitelist` | 0 | Header only, no `Properties`. Empty. |
+| [`DA_DestructionDecoratorBallisticsTagWhitelist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/DataAssets/DA_DestructionDecoratorBallisticsTagWhitelist.json) | 68 | Each entry is `Key` (a `/Game/...` static mesh path: decorative room props such as `SM_DecorativePlate01`, and Megascans assets) and `Value` (a list of damage-tag strings). 67 entries carry 13 tags. One entry (`S_Wooden_Floor_Lamp_vi5hbjgga_high_Var2`) carries 12. |
+| [`DA_DestructionDecoratorExplosiveTagWhitelist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/DataAssets/DA_DestructionDecoratorExplosiveTagWhitelist.json) | 0 | Header only, no `Properties`. Empty. |
 
 **The 13 distinct ballistic tags** (all `Meta.Damage.Bullet.*`): `9mm`, `12g`, `30mm`, `308Win`, `338Nor`, `45ACP`, `45Colt`, `50Cal`, `545mm`, `556mm`, `762mm`, `762x51mm`, `762x54mm`. 67 of the 68 meshes carry all 13.
 
@@ -310,7 +310,7 @@ Meaning, inferred from the name: a mesh gets bullet decoration only if the incom
 
 ---
 
-## 5. Chunk-Classification VFX (`D_BuildingVFX`, `BHDestructionBuildingVFXDataAsset`)
+## 5. Chunk-Classification VFX ([`D_BuildingVFX`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/VFX/Environmental/Destruction/SharedEmitterSystem/DataChannels/D_BuildingVFX.json), `BHDestructionBuildingVFXDataAsset`)
 
 | Entry | Niagara data channel | Houdini point caches |
 |---|---|---|
@@ -335,21 +335,21 @@ Meaning, inferred from the name: a mesh gets bullet decoration only if the incom
 
 ## 7. Madrid Reskins
 
-The `Flix/Blueprints/Madrid` folder re-uses Bakurani geometry under new SaveIDs. Chunk-ID lists were compared pairwise:
+The [`Flix/Blueprints/Madrid`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid) folder re-uses Bakurani geometry under new SaveIDs. Chunk-ID lists were compared pairwise:
 
 | Madrid asset | Bakurani source | Same chunk IDs |
 |---|---|---|
-| `DA_Ozeti_ApartmentBuilding_01_a` | `DA_ApartmentBuilding_01_a` | yes |
-| `DA_Ozeti_ApartmentBuilding_01c` | `DA_ApartmentBuilding_01c` | yes |
-| `D_Residential_Bungalow_Madrid_01` | `D_Residential_Bungalow_01` | yes |
-| `D_Residential_Bungalow_Madrid_02` | `D_Residential_Bungalow_02` | yes |
-| `D_Residential_Bungalow_Madrid_03` | `D_Residential_Bungalow_03` | yes |
-| `D_Residential_House_Madrid_01` | `D_Residential_House_01` | no (148 vs 143 edge pieces) |
-| `D_Residential_House_Madrid_03` | `D_Residential_House_03` | no |
-| `D_Residential_House_Madrid_04` | `D_Residential_House_04` | yes |
-| `D_Residential_House_Madrid_05` | `D_Residential_House_05` | yes |
+| [`DA_Ozeti_ApartmentBuilding_01_a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Apartments/DA_Ozeti_ApartmentBuilding_01_a.json) | [`DA_ApartmentBuilding_01_a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01_a.json) | yes |
+| [`DA_Ozeti_ApartmentBuilding_01c`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Apartments/DA_Ozeti_ApartmentBuilding_01c.json) | [`DA_ApartmentBuilding_01c`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01c.json) | yes |
+| [`D_Residential_Bungalow_Madrid_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_Bungalow_Madrid_01.json) | [`D_Residential_Bungalow_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_Bungalow_01.json) | yes |
+| [`D_Residential_Bungalow_Madrid_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_Bungalow_Madrid_02.json) | [`D_Residential_Bungalow_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_Bungalow_02.json) | yes |
+| [`D_Residential_Bungalow_Madrid_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_Bungalow_Madrid_03.json) | [`D_Residential_Bungalow_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_Bungalow_03.json) | yes |
+| [`D_Residential_House_Madrid_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_House_Madrid_01.json) | [`D_Residential_House_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_House_01.json) | no (148 vs 143 edge pieces) |
+| [`D_Residential_House_Madrid_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_House_Madrid_03.json) | [`D_Residential_House_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_House_03.json) | no |
+| [`D_Residential_House_Madrid_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_House_Madrid_04.json) | [`D_Residential_House_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_House_04.json) | yes |
+| [`D_Residential_House_Madrid_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Residential/D_Residential_House_Madrid_05.json) | [`D_Residential_House_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_House_05.json) | yes |
 
-So 7 of 9 pairs share chunk IDs. `D_FootballStadium_Building_01a` (Madrid, 463 chunks, no junctions) has no Bakurani source in this folder.
+So 7 of 9 pairs share chunk IDs. [`D_FootballStadium_Building_01a`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Madrid/Commercial/FootballStadium/D_FootballStadium_Building_01a.json) (Madrid, 463 chunks, no junctions) has no Bakurani source in this folder.
 
 ---
 
@@ -364,4 +364,4 @@ So 7 of 9 pairs share chunk IDs. `D_FootballStadium_Building_01a` (Madrid, 463 c
 - **One ballistic entry with 12 tags.** The mesh `S_Wooden_Floor_Lamp_vi5hbjgga_high_Var2` is missing one of the 13 tags. Which one was not checked.
 - **Units.** `Transform` values are reported raw. The dump does not state units.
 - **Houdini point caches not expanded.** Section 5 gives names and counts only.
-- **Large files summarised, not read entry by entry.** The largest file (`DA_ApartmentBuilding_01_b`, about 7.5 MB) was parsed in full by script, and its chunk arrays were summarised rather than inspected individually.
+- **Large files summarised, not read entry by entry.** The largest file ([`DA_ApartmentBuilding_01_b`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/ExternalAssets/Flix/Blueprints/Bakurani/Apartments/DA_ApartmentBuilding_01_b.json), about 7.5 MB) was parsed in full by script, and its chunk arrays were summarised rather than inspected individually.

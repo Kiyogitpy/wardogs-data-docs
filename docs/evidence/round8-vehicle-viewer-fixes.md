@@ -23,7 +23,7 @@ Section colors now use complete health-section tags, distinguishing left/right
 tracks, individual wheels and main/tail rotors. Parts sharing a health section
 share its color. All 16 current section tags have distinct palette entries.
 
-Variant discovery includes nested `Variants/Air` and STN_05's `Varient`
+Variant discovery includes nested [`Variants/Air`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles/Variants/Air) and STN_05's `Varient`
 directory. STN_05 now exposes its health/slot data with a no-model fallback;
 impact placement stays disabled there. The fixed-wing variant has no health
 sections or slot map and remains unsupported. Blast availability follows an

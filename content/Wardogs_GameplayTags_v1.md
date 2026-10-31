@@ -6,7 +6,7 @@ description: "All 7,177 gameplay tags by source file, with dev comments"
 ---
 
 # Wardogs — Gameplay Tag Definitions
-*Extracted from the game's packed config files (`Wardogs/Config/`). Source copies are in `data/Wardogs/Config/`. Each entry is a `GameplayTagList` line.*
+*Extracted from the game's packed config files ([`Wardogs/Config/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config)). Source copies are in [`data/Wardogs/Config/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config). Each entry is a `GameplayTagList` line.*
 
 > **Scope:** the tag names and dev comments defined in `DefaultGameplayTags.ini` and `Config/Tags/`. Engine tags are not included. How tags match at runtime is engine logic and is not in these files.
 

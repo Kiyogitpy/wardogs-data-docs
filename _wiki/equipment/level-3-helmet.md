@@ -22,7 +22,7 @@ description: "Third helmet tier: 50% reduction for the head and neck, 180 durabi
 | Price | 2,000 cash (1,500 in Season 1) |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_HeavyHelmet` (item `Id.Item.HeavyHelmet`) |
+| Internal name | [`ID_HeavyHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_HeavyHelmet.json) (item `Id.Item.HeavyHelmet`) |
 {: .wiki-infobox }
 
 Level 3 Helmet is the third of the four helmet tiers. It protects the head and neck and cuts damage there by 50%. In Season 2 its reduction went down and its price went up. It needs no unlock.

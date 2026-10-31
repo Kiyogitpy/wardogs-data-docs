@@ -8,10 +8,10 @@ Result in one line: the airplane has a start health number (150) and health-thre
 
 | Finding | Status | Source |
 |---|---|---|
-| `InitialVehicleHealth` = 150.0 | FOUND | `DA_FWG_01_GameplaySystems` `HealthSettings` |
-| Smoke cue at main health below 90%; fuel-leak effects at fuel tank below 90% / 50% / 0% (0.1 / 0.4 / 0.5 per second) | FOUND | `DA_FWG_01_GameplaySystems` threshold triggers (also `assets/data/vehicle-health-effects.json`) |
-| Damage rule row `Meta.Damage.Vehicle.Air.Rotary.LittleBird` (copied from the Little Bird family; 7.5% rifle factor) | FOUND | `DA_FWG_01_GameplaySystems` `DamageEntitySettings.VehicleDamageTag` |
-| `MVF_HealthSections` fragment on `VP_FWG_01` | ABSENT | The platform has only two fragments, `MVF_VehicleConfig` and `MVF_Seats`. Every other vehicle with a damage model (ROT_02, ROT_03, ROT_04, SPW, STN, TNK, WHL) carries `MVF_HealthSections` in its platform or parts. `_tools/damage_tables.py` `sections()` returns `{}` for `VV_FWG_01_Default`. |
+| `InitialVehicleHealth` = 150.0 | FOUND | [`DA_FWG_01_GameplaySystems`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_GameplaySystems.json) `HealthSettings` |
+| Smoke cue at main health below 90%; fuel-leak effects at fuel tank below 90% / 50% / 0% (0.1 / 0.4 / 0.5 per second) | FOUND | [`DA_FWG_01_GameplaySystems`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_GameplaySystems.json) threshold triggers (also `assets/data/vehicle-health-effects.json`) |
+| Damage rule row `Meta.Damage.Vehicle.Air.Rotary.LittleBird` (copied from the Little Bird family; 7.5% rifle factor) | FOUND | [`DA_FWG_01_GameplaySystems`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_GameplaySystems.json) `DamageEntitySettings.VehicleDamageTag` |
+| `MVF_HealthSections` fragment on [`VP_FWG_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Platforms/Air/VP_FWG_01.json) | ABSENT | The platform has only two fragments, `MVF_VehicleConfig` and `MVF_Seats`. Every other vehicle with a damage model (ROT_02, ROT_03, ROT_04, SPW, STN, TNK, WHL) carries `MVF_HealthSections` in its platform or parts. `_tools/damage_tables.py` `sections()` returns `{}` for [`VV_FWG_01_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Variants/Air/VV_FWG_01_Default.json). |
 | Collision-slot-to-section map (`ComplexSurfaceMappings`) and physics-group map | ABSENT | Both come only from `MVF_HealthSections` (pipeline section 3, registration `0x53214A0`). None exists. |
 | Collision slots on the model | ABSENT | `SM_FWG_01_Body` has only the collision tag `CC_WorldStatic`; `SK_FWG_01` has no `CC_*` tag. Other vehicles use `CC_MainBody`, `CC_Engine`, `CC_FuelTank` and so on. |
 | Physics asset `PA_FWG_01` | FOUND (no hit zones) | 10 bodies: `body_J` and the wheel bones only. The physics asset takes no part in damage zone lookup (pipeline section 3.1). |
@@ -26,7 +26,7 @@ Conclusion for the explosive tables: with no section, `hits_to_destroy` has noth
 
 | Finding | Status | Source |
 |---|---|---|
-| Variant tag `Vehicle.Variant.Air.Airplane.FWG.Default` is declared | FOUND | `Config/Tags/VehicleGameplayTags.ini`, `VV_FWG_01_Default` |
+| Variant tag `Vehicle.Variant.Air.Airplane.FWG.Default` is declared | FOUND | `Config/Tags/VehicleGameplayTags.ini`, [`VV_FWG_01_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Variants/Air/VV_FWG_01_Default.json) |
 | 20 of 21 air yards allow the generic `Air` tag, which covers every air variant tag, so their yard rule admits the airplane | FOUND (rule); tag hierarchy inferred | `assets/data/vehicle-spawns.json`, volumes of kind `air` (15 exclude `Land`, 5 exclude the faction APC tags) |
 | The 21st air yard (NorthAmerica, no data layer, `WDSpawnVolume_UAID_E89C25C716F293DC02_1095813688`) lists Havoc, Little Bird, ROT_01 and ROT_04 only | FOUND | same JSON; it does not admit the airplane |
 | 27 APC and light yards list `Air.Airplane` among their excluded tags | FOUND | same JSON. The level designers named the airplane family when keeping air out of ground yards. |
@@ -39,27 +39,27 @@ So: allowed by the tag rules of 20 air yards, never named. The data does not sho
 
 | Finding | Status | Source |
 |---|---|---|
-| Not in the market table | ABSENT | `Meta/Collection/DT_GoldMarket.json` has helicopter vehicle rows, no airplane |
-| Not in a role or unlock tree | ABSENT | `Meta/CharacterSkills/DT_MetaTree_Roles.json`, `DA_UI_PlatformMastery_SceneData` and the skin tables (`Skin_*`, `DT_Cosmetics_Season02_Skins`) name helicopters; none names the airplane |
+| Not in the market table | ABSENT | [`Meta/Collection/DT_GoldMarket.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json) has helicopter vehicle rows, no airplane |
+| Not in a role or unlock tree | ABSENT | [`Meta/CharacterSkills/DT_MetaTree_Roles.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json), [`DA_UI_PlatformMastery_SceneData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Mastery/Platforms/Data/DA_UI_PlatformMastery_SceneData.json) and the skin tables (`Skin_*`, [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json)) name helicopters; none names the airplane |
 | No vehicle UI entity row, display name or description | ABSENT | helicopters have `DT_EntityData_UI_Vehicles_*` rows in their plugins; the airplane has none, and no other file mentions it (`Airplane/rawfiles.txt` finds only the input assets) |
-| No destroy-vehicle reward row, no wager row | ABSENT | `DT_RewardLookup_SessionEvent_DestroyVehicle*` and `DT_WagerConditions` name helicopter variants, not the airplane |
-| No seat damage reduction row | ABSENT | `DT_InfantryData_VehicleSeatDamageReduction` has helicopter rows only |
+| No destroy-vehicle reward row, no wager row | ABSENT | `DT_RewardLookup_SessionEvent_DestroyVehicle*` and [`DT_WagerConditions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerConditions.json) name helicopter variants, not the airplane |
+| No seat damage reduction row | ABSENT | [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) has helicopter rows only |
 
 ## 4. Wired in elsewhere
 
 | Finding | Status | Source |
 |---|---|---|
-| Six weapons list it as an allowed lock-on target: 9K333 Verba (`Launcher_04`) and the stationary weapons STN_01, STN_02, STN_03, STN_05, STN_06 | FOUND | `AllowedTargets` in `ID_Launcher_04` and `WE_STN_01/02/03/05/06_*` |
-| Demolition ruleset lets it hit destructible objects | FOUND | `BH_Demolition_RS_AirVehicles` `PermittedVehicles` |
-| Input context `IMC_Airplane_Driver` is registered with settings and mapped | FOUND | `DefaultGame.excerpt.ini`, `PIMC_Default_Config`; round 40 |
-| Spotting tracker and range-finder entries for the class `WDAirplaneVehicle` | FOUND | `DA_Tracker_Spatial_Spotting`, `DA_Tracker_Map_Spotting`, `ID_RangeFinder_*`, `ID_Binoculars_Standard`, `ID_Monocular` |
+| Six weapons list it as an allowed lock-on target: 9K333 Verba ([`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json)) and the stationary weapons STN_01, STN_02, STN_03, STN_05, STN_06 | FOUND | `AllowedTargets` in [`ID_Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json) and `WE_STN_01/02/03/05/06_*` |
+| Demolition ruleset lets it hit destructible objects | FOUND | [`BH_Demolition_RS_AirVehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/RuleSets/Vehicles/BH_Demolition_RS_AirVehicles.json) `PermittedVehicles` |
+| Input context [`IMC_Airplane_Driver`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Inputs/IMC_Airplane_Driver.json) is registered with settings and mapped | FOUND | `DefaultGame.excerpt.ini`, [`PIMC_Default_Config`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/PIMC_Default_Config.json); round 40 |
+| Spotting tracker and range-finder entries for the class `WDAirplaneVehicle` | FOUND | [`DA_Tracker_Spatial_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.json), [`DA_Tracker_Map_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Map/Data/DA_Tracker_Map_Spotting.json), `ID_RangeFinder_*`, [`ID_Binoculars_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Binoculars/Content/Data/ID_Binoculars_Standard.json), [`ID_Monocular`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/RangeFinder/Content/Data/ID_Monocular.json) |
 | Flares: 3 starting, 3.5 s; fuel and fuel-leak effects | FOUND | `assets/data/vehicle-flares.json`, health-effects JSON; no flare logic in the Blueprint (round 40) |
 
 ## 5. Is it a test or unfinished vehicle?
 
 Evidence is FOUND; the verdict is an inference.
 
-- It lives in the base game `Content/Vehicles` folder. Every shipped vehicle is a game-feature plugin with its own UI and damage data.
+- It lives in the base game [`Content/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles) folder. Every shipped vehicle is a game-feature plugin with its own UI and damage data.
 - The meshes still use `M_F15E_*` and `MI_F15E_Interior` materials, a placeholder look taken from an F-15E model. The exhaust effects are named jet engine exhausts.
 - No display name, shop row, unlock, reward, UI row or health sections.
 - It has a complete flight model, destroyed mesh, seat data, inputs and spotting entries, so it was built far enough to fly. The combat and economy side was never finished.

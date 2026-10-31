@@ -23,6 +23,8 @@ import os
 import re
 import sys
 
+from raw_source_links import source_link, link_generated
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
@@ -316,7 +318,7 @@ def block_index():
                   f"{len(ts)} table(s), {nrows} rows, {len(ts) - undoc} named in docs. {disposition(s)}.", ""]
         lines += ["| Table | Rows | Folder | Documented in |", "|---|---|---|---|"]
         for t in ts:
-            link = f"`{t['name']}`"
+            link = source_link(t["path"], t["name"])
             pages = ment[t["name"]]
             shown = ", ".join(f"[{os.path.basename(p)[:-3]}]({doc_href(p)})" for p in pages[:3])
             if len(pages) > 3:
@@ -359,7 +361,7 @@ def write_all():
 
         def sub(m):
             n[0] += 1
-            return f"<!-- datatable_catalog {m.group(1)} -->\n{render(m.group(1))}\n<!-- /datatable_catalog -->"
+            return f"<!-- datatable_catalog {m.group(1)} -->\n{link_generated(render(m.group(1)))}\n<!-- /datatable_catalog -->"
         new = BLOCK.sub(sub, text)
         if new != text:
             with open(p, "w", encoding="utf-8", newline="") as f:
@@ -378,9 +380,9 @@ def main():
     elif a[0] == "stats":
         print(stats())
     elif a[0] == "index":
-        print(block_index())
+        print(link_generated(block_index()))
     elif a[0] == "struct" and len(a) > 1:
-        print(block_struct(a[1]))
+        print(link_generated(block_struct(a[1])))
     else:
         print(__doc__)
 

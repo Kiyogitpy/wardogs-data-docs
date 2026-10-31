@@ -22,7 +22,7 @@ description: "Third vest tier: 50% damage reduction on the torso, 250 durability
 | Price | 2,500 cash (2,000 in Season 1) |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_HeavyArmor` (item `Id.Item.HeavyArmor`) |
+| Internal name | [`ID_HeavyArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_HeavyArmor.json) (item `Id.Item.HeavyArmor`) |
 {: .wiki-infobox }
 
 Level 3 Armor is the third of the four vests. It protects the upper, middle and lower torso and cuts damage there by 50%. In Season 2 its reduction went down and its price went up. It needs no unlock.

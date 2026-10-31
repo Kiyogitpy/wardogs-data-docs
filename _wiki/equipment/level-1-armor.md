@@ -22,7 +22,7 @@ description: "The lightest vest in the Armor group: 30% damage reduction on the 
 | Price | 400 cash |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_LightArmor` (item `Id.Item.LightArmor`) |
+| Internal name | [`ID_LightArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_LightArmor.json) (item `Id.Item.LightArmor`) |
 {: .wiki-infobox }
 
 Level 1 Armor is the lightest of the four vests and the cheapest of them. It protects the upper, middle and lower torso and cuts damage there by 30%. It needs no unlock, so it can be bought from the start.

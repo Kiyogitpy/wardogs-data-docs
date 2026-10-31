@@ -6,7 +6,7 @@ description: "The aim-assist tuning curves: each maps a value, usually distance,
 ---
 
 # Wardogs — Plugin: BHAimAssist
-*Extracted from cooked game data (UE 5.7 export JSON). Source folder: `Plugins/BHAimAssist/` — 16 JSON files, all `CurveFloat` assets under `Content/AimAssist/`. Curve keys were read directly; units are not stated in the export.*
+*Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/BHAimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist) — 16 JSON files, all `CurveFloat` assets under [`Content/AimAssist/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist). Curve keys were read directly; units are not stated in the export.*
 
 ---
 
@@ -15,7 +15,7 @@ description: "The aim-assist tuning curves: each maps a value, usually distance,
 - **Hipfire curves removed.** All 11 hipfire pull and slow curves are gone (AR, LMG, Melee, Pistol, SMG and Shotgun for pull; AR, LMG, Pistol, SMG and Shotgun for slow). Only the ADS curves remain, plus the new Default curves.
 - **New Default curves.** `PullStrengthDistanceCurve_Default` (0:0, 600:1, 2000:1, 2500:0) and `SlowStrengthDistanceCurve_Default` (0:0, 600:1, 2000:1, 2500:0) were added.
 - **Reticle edge falloff reduced to one curve.** The AR, LMG, Pistol, SMG and Shotgun falloff curves were removed. `ReticleEdgeFalloff_Default` now has two keys (0:0.2, 1:1), was 0:0.05, 0.5:0.2, 0.8:0.55, 1:1.
-- **Target weight.** `C_AimAssistTargetWeightCurve` now reaches 1 at input 0.01 (was 0.5 at 0.05, 1 at 1.0).
+- **Target weight.** [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) now reaches 1 at input 0.01 (was 0.5 at 0.05, 1 at 1.0).
 - **Pull ramp.** ADS pull curves now reach full strength at 200 (was 400). The sniper pull is still 0 at 150 and reaches full at 200.
 - **Pull plateau ends and fall-off, ADS (old → new):**
   - AR: plateau end 12000 → 22500, falls to 0 at 30000 → 25000
@@ -99,7 +99,7 @@ This is the only reticle edge falloff curve in the current data. The AR, LMG, Pi
 
 | Curve | Key points (input: weight) |
 |---|---|
-| `C_AimAssistTargetWeightCurve` | 0:0, 0.01:1, 1:1 |
+| [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) | 0:0, 0.01:1, 1:1 |
 
 Target weight reaches 1 at input 0.01 and holds at 1 through 1.0.
 

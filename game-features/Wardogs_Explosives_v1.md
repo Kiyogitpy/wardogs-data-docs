@@ -15,7 +15,7 @@ Which props these explosions can demolish (damage-source tags and minimum distan
 
 | Label | Source |
 |---|---|
-| **Data** | Projectile assets (`WDProjectileData` under `Content/GameMechanics/Inventory/Equipment/Caliber`, plus the drone, arrow, 70 mm and TV-guided assets): `BaseDamage`, `ExplosiveRadius`, `EffectiveExplosiveRadius`, `ExplosiveDamageFallOff`, `MinimumExplosiveDamage`, `bPreferUpwardsTrace`, `ExplosiveBluntDamage`, `bHasArmingDelay` / `ArmingDelay`. Thrown and placed actors: the reviewed defaults in [`assets/data/explosive-actors.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json) ([evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md)). Rule rows: `DT_GlobalDamage_InfantryData`, `DT_GlobalDamage_VehicleData*`. |
+| **Data** | Projectile assets (`WDProjectileData` under [`Content/GameMechanics/Inventory/Equipment/Caliber`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber), plus the drone, arrow, 70 mm and TV-guided assets): `BaseDamage`, `ExplosiveRadius`, `EffectiveExplosiveRadius`, `ExplosiveDamageFallOff`, `MinimumExplosiveDamage`, `bPreferUpwardsTrace`, `ExplosiveBluntDamage`, `bHasArmingDelay` / `ArmingDelay`. Thrown and placed actors: the reviewed defaults in [`assets/data/explosive-actors.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/explosive-actors.json) ([evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-explosive-actors.md)). Rule rows: [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json), `DT_GlobalDamage_VehicleData*`. |
 | **Native** | The radial amount rule, the Inner/Outer ring tags, the line-of-sight and trace behavior, and thrown-contact damage: [Damage Pipeline](../pipelines/Wardogs_DamagePipeline_v2.md) section 1.1 (radial falloff, radial distance and gather, projectile blast context). Not repeated here. |
 | **Derived** | Every damage-to-target column: the amounts above run through the existing code paths (`_tools/infantry_tables.py` rule evaluation for characters, `_tools/damage_tables.py` rule factor and section routing for vehicles). |
 
@@ -49,11 +49,11 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `84mm` | MAAWS | projectile | `Explosive.Rocket.84mm` | 100 | 4 | 10 | 1 | - | not upwards-preferred |
 | `93mm` | RPG-7 | projectile | `Explosive.Rocket.93mm` | 110 | 2.5 | 12 | 0.9 | - | not upwards-preferred |
 | `M67 frag grenade` | M67 frag grenade | actor | `Grenade` | 100 | 5 | 10 | 1 | 10 | upwards-preferred |
-| `C4` | C4 Charge (`Id.Item.C4Explosive`) | actor | `Explosive.Utility.C4` | 250 | 2.5 | 6 | 1 | 20 | not upwards-preferred |
+| [`C4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/C4.json) | C4 Charge (`Id.Item.C4Explosive`) | actor | `Explosive.Utility.C4` | 250 | 2.5 | 6 | 1 | 20 | not upwards-preferred |
 | `AT mine` | AT mine | actor | `Explosive.Utility.ATMine` | 300 | 3.8 | 7.5 | 0.5 | 50 | upwards-preferred |
-| `Claymore` | Claymore | actor | `Explosive.Utility.Claymore` | 150 | 1.5 | 3 | 0.5 | 30 | upwards-preferred |
-| `IED` | Improvised Explosive Device (`Id.Item.IED.Trigger`) | actor | `Explosive.Utility.IED` | 300 | 4 | 8 | 1 | 60 | not upwards-preferred |
-| `Molotov` | Molotov (initial burst only) | actor | `Molotov` | 40 | 2.5 | 5 | 1 | 10 | upwards-preferred |
+| [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json) | Claymore | actor | `Explosive.Utility.Claymore` | 150 | 1.5 | 3 | 0.5 | 30 | upwards-preferred |
+| [`IED`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/IED.json) | Improvised Explosive Device (`Id.Item.IED.Trigger`) | actor | `Explosive.Utility.IED` | 300 | 4 | 8 | 1 | 60 | not upwards-preferred |
+| [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | Molotov (initial burst only) | actor | [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | 40 | 2.5 | 5 | 1 | 10 | upwards-preferred |
 <!-- /explosive_tables -->
 
 **Anomaly (Data).** The `122mm.Havoc` asset has `ExplosiveRadius` 300 and `EffectiveExplosiveRadius` 600, so E is larger than R. The native rule takes the Inner branch first, so the amount is the full 300 out to 3 m and 0 beyond; the pair looks swapped in the export. No weapon item in the export lists this asset, and only the asset itself and two UI tables reference its tag, so it has no gameplay effect (Damage Pipeline O-9, closed as unused data).
@@ -117,11 +117,11 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `84mm` | 100 | 100 | 83.3 | 41.7 | 0 | 0 | 0 | 0 |
 | `93mm` | 110 | 110 | 83.9 | 57.9 | 31.8 | 0 | 0 | 0 |
 | `M67 frag grenade` | 100 | 100 | 100 | 50 | 0 | 0 | 0 | 0 |
-| `C4` | 250 | 250 | 71.4 | 0 | 0 | 0 | 0 | 0 |
+| [`C4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/C4.json) | 250 | 250 | 71.4 | 0 | 0 | 0 | 0 | 0 |
 | `AT mine` | 300 | 300 | 250 | 0 | 0 | 0 | 0 | 0 |
-| `Claymore` | 150 | 100 | 0 | 0 | 0 | 0 | 0 | 0 |
-| `IED` | 300 | 300 | 225 | 60 | 0 | 0 | 0 | 0 |
-| `Molotov` | 40 | 40 | 0 | 0 | 0 | 0 | 0 | 0 |
+| [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json) | 150 | 100 | 0 | 0 | 0 | 0 | 0 | 0 |
+| [`IED`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/IED.json) | 300 | 300 | 225 | 60 | 0 | 0 | 0 | 0 |
+| [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | 40 | 40 | 0 | 0 | 0 | 0 | 0 | 0 |
 <!-- /explosive_tables -->
 
 ## 4. Damage to an unarmored infantry torso
@@ -150,21 +150,21 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `84mm` | x1.01 | x0.5 | 101 | 5 | Outer | 83.3 | 41.7 |
 | `93mm` | x1 | x0.5 | 110 | 6 | Outer | 73.5 | 36.8 |
 | `M67 frag grenade` | x1 | x1 | 100 | 5 | Inner | 100 | 100 |
-| `C4` | x1 | x0.6 | 250 | 3 | Outer | 214.3 | 128.6 |
+| [`C4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/C4.json) | x1 | x0.6 | 250 | 3 | Outer | 214.3 | 128.6 |
 | `AT mine` | x1 | x1 | 300 | 3.8 | Inner | 300 | 300 |
-| `Claymore` | x1 | x1 | 150 | 1.5 | Inner | 150 | 150 |
-| `IED` | x1 | x1 | 300 | 4 | Inner | 300 | 300 |
-| `Molotov` | x1 | x1 | 40 | 2.5 | Inner | 40 | 40 |
+| [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json) | x1 | x1 | 150 | 1.5 | Inner | 150 | 150 |
+| [`IED`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/IED.json) | x1 | x1 | 300 | 4 | Inner | 300 | 300 |
+| [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | x1 | x1 | 40 | 2.5 | Inner | 40 | 40 |
 <!-- /explosive_tables -->
 
 ## 5. Vehicle point-blank hits to destroy
 
 **Derived**, `explosive_tables vehicles`. Hits to destroy the vehicle's main health section with the explosion centred on it (distance 0, so the Inner ring and the full Base amount), with the rule factor in brackets. The factor uses the vehicle's own damage row plus the generic row for the source tag, its context and `Radius.Inner` (`source_rule_factor` in `_tools/damage_tables.py`), applied once to the main-body section; section routing then runs with each section's radial skip flags honored (`hits_to_destroy`, [Vehicle Damage Pipeline](../pipelines/Wardogs_VehicleDamagePipeline_v1.md) section 5.4). A "-" means the rules reduce the damage to 0 or it never reaches the main health.
 
-Assumption, stated plainly: one radial application resolving to the main health section. The [Vehicle Viewer](../pipelines/vehicle-viewer.md) resolves the section from the first component hit and lets each component hit evaluate separately, so a real blast near several parts can do more than one hit's worth; this table is the single-hit case. Blast falloff, line of sight and overlap multiplicity at larger distances are not modelled (the vehicle catalog note says the same, Vehicle Damage Pipeline section 5.3). Vehicles: Little Bird `ROT_03_Default`, Humvee `WHL_05_Humvee_Default`, T-72 `TNK_04`, Leopard spawn `SPW_01`.
+Assumption, stated plainly: one radial application resolving to the main health section. The [Vehicle Viewer](../pipelines/vehicle-viewer.md) resolves the section from the first component hit and lets each component hit evaluate separately, so a real blast near several parts can do more than one hit's worth; this table is the single-hit case. Blast falloff, line of sight and overlap multiplicity at larger distances are not modelled (the vehicle catalog note says the same, Vehicle Damage Pipeline section 5.3). Vehicles: Little Bird `ROT_03_Default`, Humvee `WHL_05_Humvee_Default`, T-72 [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json), Leopard spawn [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json).
 
 <!-- explosive_tables vehicles -->
-| Source | Inner amount | Little Bird (`ROT_03_Default`, 400 HP) | Humvee (`WHL_05_Humvee_Default`, 500 HP) | T-72 (TNK_04) (`TNK_04`, 750 HP) | Leopard spawn (`SPW_01`, 1000 HP) |
+| Source | Inner amount | Little Bird (`ROT_03_Default`, 400 HP) | Humvee (`WHL_05_Humvee_Default`, 500 HP) | T-72 (TNK_04) ([`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json), 750 HP) | Leopard spawn ([`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json), 1000 HP) |
 |---|---:|---|---|---|---|
 | `Arrow.Explosive` | 150 | 36 (x0.075) | 134 (x0.025) | - (x0) | - (x0) |
 | `30mm` | 100 | 7 (x0.595) | 17 (x0.3) | 38 (x0.21) | 51 (x0.21) |
@@ -185,11 +185,11 @@ Assumption, stated plainly: one radial application resolving to the main health 
 | `84mm` | 100 | 1 (x6.5) | 2 (x3.9) | 3 (x3.35) | 3 (x3.8) |
 | `93mm` | 110 | 1 (x4.62) | 6 (x0.9) | 5 (x1.71) | 5 (x2) |
 | `M67 frag grenade` | 100 | 1 (x5) | 2 (x3) | 7 (x1.18) | 6 (x2) |
-| `C4` | 250 | 2 (x1) | 3 (x0.8) | 5 (x0.75) | 4 (x1.15) |
+| [`C4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/C4.json) | 250 | 2 (x1) | 3 (x0.8) | 5 (x0.75) | 4 (x1.15) |
 | `AT mine` | 300 | 1 (x3) | 1 (x3) | 2 (x2.45) | 2 (x2) |
-| `Claymore` | 150 | 6 (x0.5) | 14 (x0.25) | 106 (x0.05) | 141 (x0.05) |
-| `IED` | 300 | 2 (x1.25) | 1 (x2.5) | 3 (x1.3) | 2 (x2.5) |
-| `Molotov` | 40 | 10 (x1) | 13 (x1) | 20 (x1) | 27 (x1) |
+| [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json) | 150 | 6 (x0.5) | 14 (x0.25) | 106 (x0.05) | 141 (x0.05) |
+| [`IED`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/IED.json) | 300 | 2 (x1.25) | 1 (x2.5) | 3 (x1.3) | 2 (x2.5) |
+| [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | 40 | 10 (x1) | 13 (x1) | 20 (x1) | 27 (x1) |
 <!-- /explosive_tables -->
 
 ### Fuse and arming values per item
@@ -204,7 +204,7 @@ Assumption, stated plainly: one radial application resolving to the main health 
 | Molotov (`Id.Item.Molotov`) | `BaseFuseTime` | 5 | **Native** (ctor `0x6CADC90`) | `B_Molotov` does not set it, so the grenade base class value stands; `bCanBeCooked` is also native (`+0x624` false, store `0x6CADCBB`, round 18; the Molotov constructor `0x86A0200` runs the grenade base `0x6CADED0`, same zero at `0x6CADEEE`), so it cannot be cooked; whether the Molotov bursts on impact or on the fuse is not traced |
 | C4 charge (`Id.Item.C4Explosive`) | `TimerBeforeExplosion` on the charge | 0.2 | **Data (Blueprint CDO)** `B_ThrowableC4` | set on the actor; `B_ThrowableIED` inherits it |
 | C4 detonator (`Id.Item.C4Trigger`) | `DelayTillExplosion` after the trigger press | 0 | **Data (Blueprint CDO)**, type default | the item and its Blueprint leave it unset, so it is the Blueprint variable's default 0 (immediate) |
-| IED detonator (`Id.Item.IED.Trigger`) | `DelayTillExplosion` after the trigger press | 3 | **Data (Blueprint CDO)** `ID_IED_Trigger` | set on the item instance |
+| IED detonator (`Id.Item.IED.Trigger`) | `DelayTillExplosion` after the trigger press | 3 | **Data (Blueprint CDO)** [`ID_IED_Trigger`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/Data/ID_IED_Trigger.json) | set on the item instance |
 | AT mine (`ID.Item.ATMine`) | `ArmingDelay` after placement | 1 | **Data (Blueprint CDO)**, inherited `BH_AT_MineExtensionData` | from `BH_AT_MineExtensionData`; the item sets only the trigger box and `UniversalVehicleSpeed` |
 | Claymore (`Id.Item.Claymore`) | `ActivationDelayTimer` after placement | 2 | **Data (Blueprint CDO)**, inherited `BH_ClaymoreExtensionData` | from `BH_ClaymoreExtensionData`; the item sets only the trigger box |
 <!-- /explosive_tables -->
@@ -212,5 +212,5 @@ Assumption, stated plainly: one radial application resolving to the main health 
 ## Open items
 
 - Per-item fuse overrides and the mine and Claymore trigger defaults are settled in round 17 (fuse table above, [Fire, Smoke and Mines](Wardogs_FireAndUtility_v1.md) section 5). Round 39: a thrown Molotov bursts on its first impact (its Blueprint sets the impact-explode bool `AWDExplosive +0x49C` true, handler `0x6CAB030`; no other throwable does), the fuse is a backstop ([round 39 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md) E-1). Still open: what the frag `GrenadeInteractionData.MinimumRemainingFuseTime` 5.0 (above the 4.0 s fuse) gates.
-- Round 39 mapped the vehicle weapons ([round 39 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md) V-12): the Havoc and ROT_03 rocket pods name `Item.Caliber.122mm` (asset `DA_122mm_ProjectileData`), and no vehicle weapon, item or stats asset references the `122mm.Havoc` asset; no vehicle weapon names `70mm`, `84mm` or `84mm.TVGuided`; the sandbox shells (`ID.Item.155mm.Sandbox`) belong to the item `ID_VehicleTurretArtillery_SB` and have a row in `DT_WeaponMarket`. Not read: how native code picks the projectile asset from the caliber tag.
+- Round 39 mapped the vehicle weapons ([round 39 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md) V-12): the Havoc and ROT_03 rocket pods name `Item.Caliber.122mm` (asset [`DA_122mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json)), and no vehicle weapon, item or stats asset references the `122mm.Havoc` asset; no vehicle weapon names `70mm`, `84mm` or `84mm.TVGuided`; the sandbox shells (`ID.Item.155mm.Sandbox`) belong to the item [`ID_VehicleTurretArtillery_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_01/ID_VehicleTurretArtillery_SB.json) and have a row in [`DT_WeaponMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_WeaponMarket.json). Not read: how native code picks the projectile asset from the caliber tag.
 - Armored targets and several-component blasts are not tabulated; use the [Infantry Viewer](../pipelines/infantry-viewer.md) and [Vehicle Viewer](../pipelines/vehicle-viewer.md).

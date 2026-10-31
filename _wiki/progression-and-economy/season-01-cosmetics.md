@@ -14,7 +14,7 @@ description: "Every Season 1 cosmetic: three skin sets and three emotes, their G
 | Priced | 19 of 20 rows on the Gold Market, 5 to 15 Gold Bars each |
 | Reward track | None in the data. The season schedule is a server value |
 | Currency | Gold Bars, sold on the Gold Market |
-| Internal name | Season 1 cosmetic tables and the Season 1 season definition table (`DT_Cosmetics_Season01_Skins`, `DT_Cosmetics_Season01_Emotes`, `DT_SeasonDefinitions`) |
+| Internal name | Season 1 cosmetic tables and the Season 1 season definition table ([`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json), [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json), [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json)) |
 {: .wiki-infobox }
 
 Season 1 added three skin sets and three emotes. Every Season 1 cosmetic that has a price is sold on the Gold Market. The game does not say when a Season 1 cosmetic could be obtained, because there is no season reward track and the season schedule is a server value.

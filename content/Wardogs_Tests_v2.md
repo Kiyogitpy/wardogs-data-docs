@@ -6,7 +6,7 @@ description: "Automated load-test profiles: how many clients join a test server 
 ---
 
 # Wardogs: Tests Data Reference
-*Extracted from cooked game data (`Wardogs/Content/Tests`, 2 files). These are automated load-test profiles, not gameplay data.*
+*Extracted from cooked game data ([`Wardogs/Content/Tests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Tests), 2 files). These are automated load-test profiles, not gameplay data.*
 
 > **Scope:** the load-test (bot) setup: how many clients to launch per server profile, and what each automated client does. These are the test profiles the Random Scatter orchestrator uses.
 
@@ -21,7 +21,7 @@ description: "Automated load-test profiles: how many clients join a test server 
 
 ---
 
-## 2. Server Profiles (`DT_ServerTestingProfiles`)
+## 2. Server Profiles ([`DT_ServerTestingProfiles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Tests/LoadTests/Data/DT_ServerTestingProfiles.json))
 
 Each row sets how many automated clients join a test server, and which orchestrator blueprint runs the test.
 
@@ -43,7 +43,7 @@ Client counts run from 1 (`SoloTest`) to 100 (the `Default`, `100*` and `Movemen
 
 ---
 
-## 3. Client Profiles (`DT_ClientTestingProfiles`)
+## 3. Client Profiles ([`DT_ClientTestingProfiles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Tests/LoadTests/Orchestrators/RandomScatter/Data/DT_ClientTestingProfiles.json))
 
 Each client profile is a sequence of automated inputs for the test pawn `B_WDMoverPlayerCharacter`. An input is either a key press or an action (`InputAction`) fired at a random interval and held for a random duration, drawn from the Min to Max ranges.
 

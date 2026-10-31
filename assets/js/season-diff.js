@@ -205,6 +205,17 @@
     return box;
   }
 
+  // Current season JSON targets are checked against Git by generator_source_links_check.js.
+  // Removed assets and local-only/non-JSON exports must not get source links.
+  function assetPathNode(a) {
+    var published = a.status !== 'removed' && /^(?:Wardogs|Engine)\/.+\.json$/.test(a.path);
+    return h(published ? 'a' : 'code', {
+      class: 'sd-path', text: a.path,
+      href: published ? 'https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/' +
+        a.path.split('/').map(encodeURIComponent).join('/') : null
+    });
+  }
+
   // ---------- browser ----------
   function renderBrowser(root) {
     var base = root.getAttribute('data-sd-base');
@@ -396,7 +407,7 @@
         h('span', { class: 'sd-count', text: a.status === 'added' ? (a.exports != null ? fmtNum(a.exports) + ' exports' : '') : a.status === 'removed' ? 'removed in Season 2' : n ? fmtNum(n) + (n === 1 ? ' change' : ' changes') + (rows ? ' match' : '') : 'no property changes' })
       ]);
       var meta = h('div', { class: 'sd-meta-row' });
-      meta.appendChild(h('code', { class: 'sd-path', text: a.path }));
+      meta.appendChild(assetPathNode(a));
       if (a.status === 'removed') {
         meta.appendChild(h('span', { class: 'sd-removed-note', text: 'removed in Season 2' }));
       }

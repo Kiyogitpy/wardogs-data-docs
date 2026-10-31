@@ -11,34 +11,34 @@ description: "Rate and range of every vehicle weapon, flare and smoke settings, 
 
 ## 1. Vehicle weapons: rate and range
 
-Each row is a `WDVehicleWeaponExtensionDataAsset` with the `WDWeaponStatsData` it names. `Rounds/min` marked `*` is the native constructor default of `FWDWeaponStats` (600, offset `+0x138`): the stats asset omits the field. The T-72B3 coaxial PKTM reuses the infantry `DA_LMG_02_Stats` asset, four vehicles reuse the infantry `DA_M249_Stats`, and three share one M2 Browning stats asset. Range is `EffectiveRange` (metres, as the other weapon pages read it).
+Each row is a `WDVehicleWeaponExtensionDataAsset` with the `WDWeaponStatsData` it names. `Rounds/min` marked `*` is the native constructor default of `FWDWeaponStats` (600, offset `+0x138`): the stats asset omits the field. The T-72B3 coaxial PKTM reuses the infantry [`DA_LMG_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json) asset, four vehicles reuse the infantry [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json), and three share one M2 Browning stats asset. Range is `EffectiveRange` (metres, as the other weapon pages read it).
 
 | Extension asset | Name | Stats asset | Rounds/min | Range (m) | Caliber | Muzzle speed | Reload (s) |
 |---|---|---|---|---|---|---|---|
-| `WE_ROT_02_Weapon_122mm` | 122mm Rockets | `DA_ROT_02_Weapon_122mm_Stats` | 500 | 1000 | Item.Caliber.122mm | 45000 | 6.0 |
-| `WE_ROT_02_Weapon_30mmCannon` | 30mm Cannon | `DA_ROT_02_Weapon_30mmCannon_Stats` | 250 | 600 | Item.Caliber.30mm | 90000 | 8.0 |
-| `WE_ROT_03_AttachedMachineGuns` | 308mm Machine Gun | `DA_ROT_03_AttachedMachineGuns_Stats` | 1500 | 800 | Item.Caliber.308Win | 85300 | 4.25 |
-| `WE_ROT_03_Weapon_122mm` | 122mm Rockets | `DA_ROT_03_Weapon_122mm_Stats` | 350 | 1000 | Item.Caliber.122mm | 45000 | 6.0 |
-| `WE_ROT_04_MountedMachineGun` | MachineGun | `DA_ROT_04_MountedMachineGun_Stats` | 1500 | 1500 | Item.Caliber.308Win | 85300 | 5.0 |
-| `WE_ROT_04_MountedMachineGun_L` | MachineGun | `DA_ROT_04_MountedMachineGun_Stats` | 1500 | 1500 | Item.Caliber.308Win | 85300 | 5.0 |
-| `WE_STN_01_Heavy_MountedMachineGun` | Mounted Verba | `DA_STN_01_Heavy_MountedMachineGun_Stats` | 100 | 1000 | Item.Caliber.72mm | 2000 | 5.0 |
-| `WE_STN_02_Heavy_MainCannon` | Mounted Verba | `DA_STN_02_Heavy_MainCannon_Stats` | 1800 | 1000 | Item.Caliber.20x102mm | 110000 | 3.0 |
-| `WE_STN_03_Heavy_MainBarrel` | Mortar | `DA_STN_03_Heavy_MainBarrel_Stats` | 50 | 1000 | Item.Caliber.120x800mm | 80000 | 4.5 |
-| `WE_STN_05_Heavy_MainBarrel` | Stingray | `DA_STN_05_Heavy_MainBarrel_Stats` | 50 | 10000 | Item.Caliber.DroneProjectile | 11000 | 0.0 |
-| `WE_STN_06_MountedMachineGun` | Mounted M2 Browning | `DA_MWSY_001_Heavy_MountedMachineGun_Stats` | 600* | 1000 | Item.Caliber.50Cal | 89000 | 8.0 |
-| `WE_TNK_03` | 35mm Cannons | `DA_TNK_03_Weapon_Stats` | 1100 | 1000 | Item.Caliber.35x228mm | 117500 | 4.0 |
-| `WE_TNK_01_Artillery` | Artillery | `DA_TNK_01_Artillery_Weapon_Stats` | 50 | 10000 | Item.Caliber.155mm | 30000 | 25.0 |
-| `WE_TNK_01_Heavy_MountedMachineGun` | Mounted M249 | `DA_M249_Stats` | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
-| `WE_TNK_01_Heavy` | Heavy Turret | `DA_TNK_01_Heavy_Weapon_Stats` | 50 | 10000 | Item.Caliber.120x570mm | 60000 | 4.0 |
-| `WE_TNK_01_MachineGun` | Machine Gun | `DA_TNK_01_MachineGun_Weapon_Stats` | 650 | 200 | Item.Caliber.308Win | 82000 | 4.25 |
-| `WE_TNK_04_MachineGun` | Machine Gun | `DA_LMG_02_Stats` | 600* | 1000 | Item.Caliber.762x54mm | 82500 | 4.25 |
-| `WE_TNK_04_MountedMachineGun` | Mounted M2 Browning | `DA_MWSY_001_Heavy_MountedMachineGun_Stats` | 600* | 1000 | Item.Caliber.50Cal | 89000 | 8.0 |
-| `WE_TNK_04` | Heavy Turret | `DA_TNK_04_Weapon_Stats` | 50 | 10000 | Item.Caliber.125x570mm | 46000 | 4.0 |
-| `WE_WHL_02_RingTurret` | Mounted M249 | `DA_M249_Stats` | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
-| `WE_WHL_05_RingMinigun` | Minigun | `DA_WHL_05_RingMinigun_Stats` | 1500 | 800 | Item.Caliber.308Win | 85300 | 4.25 |
-| `WE_WHL_05_RingTurret` | Mounted M249 | `DA_M249_Stats` | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
-| `WE_WHL_07_Turret` | Mounted M249 | `DA_M249_Stats` | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
-| `WE_WHL_08_RingTurret` | Mounted M2 Browning | `DA_MWSY_001_Heavy_MountedMachineGun_Stats` | 600* | 1000 | Item.Caliber.50Cal | 89000 | 8.0 |
+| [`WE_ROT_02_Weapon_122mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/WE_ROT_02_Weapon_122mm.json) | 122mm Rockets | [`DA_ROT_02_Weapon_122mm_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.json) | 500 | 1000 | Item.Caliber.122mm | 45000 | 6.0 |
+| [`WE_ROT_02_Weapon_30mmCannon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/WE_ROT_02_Weapon_30mmCannon.json) | 30mm Cannon | [`DA_ROT_02_Weapon_30mmCannon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.json) | 250 | 600 | Item.Caliber.30mm | 90000 | 8.0 |
+| [`WE_ROT_03_AttachedMachineGuns`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/WE_ROT_03_AttachedMachineGuns.json) | 308mm Machine Gun | [`DA_ROT_03_AttachedMachineGuns_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.json) | 1500 | 800 | Item.Caliber.308Win | 85300 | 4.25 |
+| [`WE_ROT_03_Weapon_122mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/WE_ROT_03_Weapon_122mm.json) | 122mm Rockets | [`DA_ROT_03_Weapon_122mm_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.json) | 350 | 1000 | Item.Caliber.122mm | 45000 | 6.0 |
+| [`WE_ROT_04_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/WE_ROT_04_MountedMachineGun.json) | MachineGun | [`DA_ROT_04_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.json) | 1500 | 1500 | Item.Caliber.308Win | 85300 | 5.0 |
+| [`WE_ROT_04_MountedMachineGun_L`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/WE_ROT_04_MountedMachineGun_L.json) | MachineGun | [`DA_ROT_04_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.json) | 1500 | 1500 | Item.Caliber.308Win | 85300 | 5.0 |
+| [`WE_STN_01_Heavy_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/WeaponExtensions/WE_STN_01_Heavy_MountedMachineGun.json) | Mounted Verba | [`DA_STN_01_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.json) | 100 | 1000 | Item.Caliber.72mm | 2000 | 5.0 |
+| [`WE_STN_02_Heavy_MainCannon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/WeaponExtensions/WE_STN_02_Heavy_MainCannon.json) | Mounted Verba | [`DA_STN_02_Heavy_MainCannon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.json) | 1800 | 1000 | Item.Caliber.20x102mm | 110000 | 3.0 |
+| [`WE_STN_03_Heavy_MainBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/WeaponExtensions/WE_STN_03_Heavy_MainBarrel.json) | Mortar | [`DA_STN_03_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json) | 50 | 1000 | Item.Caliber.120x800mm | 80000 | 4.5 |
+| [`WE_STN_05_Heavy_MainBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/WeaponExtensions/WE_STN_05_Heavy_MainBarrel.json) | Stingray | [`DA_STN_05_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.json) | 50 | 10000 | Item.Caliber.DroneProjectile | 11000 | 0.0 |
+| [`WE_STN_06_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Weapons/WeaponExtensions/WE_STN_06_MountedMachineGun.json) | Mounted M2 Browning | [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json) | 600* | 1000 | Item.Caliber.50Cal | 89000 | 8.0 |
+| [`WE_TNK_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/AntiAir/WE_TNK_03.json) | 35mm Cannons | [`DA_TNK_03_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/AntiAir/DA_TNK_03_Weapon_Stats.json) | 1100 | 1000 | Item.Caliber.35x228mm | 117500 | 4.0 |
+| [`WE_TNK_01_Artillery`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json) | Artillery | [`DA_TNK_01_Artillery_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json) | 50 | 10000 | Item.Caliber.155mm | 30000 | 25.0 |
+| [`WE_TNK_01_Heavy_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/Mounted_MachineGun/WE_TNK_01_Heavy_MountedMachineGun.json) | Mounted M249 | [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json) | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
+| [`WE_TNK_01_Heavy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/WE_TNK_01_Heavy.json) | Heavy Turret | [`DA_TNK_01_Heavy_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Heavy/DA_TNK_01_Heavy_Weapon_Stats.json) | 50 | 10000 | Item.Caliber.120x570mm | 60000 | 4.0 |
+| [`WE_TNK_01_MachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/MachineGun/WE_TNK_01_MachineGun.json) | Machine Gun | [`DA_TNK_01_MachineGun_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/MachineGun/DA_TNK_01_MachineGun_Weapon_Stats.json) | 650 | 200 | Item.Caliber.308Win | 82000 | 4.25 |
+| [`WE_TNK_04_MachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/MachineGun/WE_TNK_04_MachineGun.json) | Machine Gun | [`DA_LMG_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/DA_LMG_02_Stats.json) | 600* | 1000 | Item.Caliber.762x54mm | 82500 | 4.25 |
+| [`WE_TNK_04_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/MountedMachineGun/WE_TNK_04_MountedMachineGun.json) | Mounted M2 Browning | [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json) | 600* | 1000 | Item.Caliber.50Cal | 89000 | 8.0 |
+| [`WE_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/WE_TNK_04.json) | Heavy Turret | [`DA_TNK_04_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Weapons/WeaponExtensions/DA_TNK_04_Weapon_Stats.json) | 50 | 10000 | Item.Caliber.125x570mm | 46000 | 4.0 |
+| [`WE_WHL_02_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Weapons/WeaponExtensions/SUV_RingTurret/WE_WHL_02_RingTurret.json) | Mounted M249 | [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json) | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
+| [`WE_WHL_05_RingMinigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/WE_WHL_05_RingMinigun.json) | Minigun | [`DA_WHL_05_RingMinigun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.json) | 1500 | 800 | Item.Caliber.308Win | 85300 | 4.25 |
+| [`WE_WHL_05_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/Weapons/WeaponExtensions/WE_WHL_05_RingTurret.json) | Mounted M249 | [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json) | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
+| [`WE_WHL_07_Turret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Weapons/WeaponExtensions/WE_WHL_07_Turret.json) | Mounted M249 | [`DA_M249_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json) | 850 | 700 | Item.Caliber.556mm | 91500 | 4.25 |
+| [`WE_WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/Weapons/WeaponExtensions/WE_WHL_08_RingTurret.json) | Mounted M2 Browning | [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json) | 600* | 1000 | Item.Caliber.50Cal | 89000 | 8.0 |
 
 ## 2. Flares and smoke countermeasures
 
@@ -66,38 +66,38 @@ One row per seat asset: the roles of its seats in order (`D` driver, `G` gunner,
 
 | Plugin | Seat asset | Seats | Roles |
 |---|---|---|---|
-| FWG_01 | `DA_FWG_01_SeatSettings` | 2 | D A |
-| ROT_02 | `DA_ROT_02_SeatSettings` | 2 | D G |
-| ROT_03 | `DA_ROT_03_SeatSettings` | 6 | D A Ax Ax Ax Ax |
-| ROT_03_WeaponVariants | `DA_ROT_03_Attack_SeatSettings` | 2 | D A |
-| ROT_04 | `DA_ROT_04_SeatSettings` | 13 | D A A A A A A A A A A A A |
-| ROT_04_MachineGun | `DA_ROT_04_SeatSettings_MachineGun` | 13 | D A G G A A A A A A A A A |
-| SPW_01 | `DA_SeatSettings_SPW` | 10 | D P P P P P P P P P |
-| STN_01 | `DA_SeatSettings_STN_01` | 1 | Gx |
-| STN_02 | `DA_SeatSettings_STN_02` | 1 | Gx |
-| STN_03 | `DA_SeatSettings_STN_03` | 1 | Gx |
-| STN_04 | `DA_SeatSettings_STN_04` | 1 | -x |
-| STN_05 | `DA_SeatSettings_STN_05` | 1 | Gx |
-| STN_06 | `DA_SeatSettings_STN_06` | 1 | Gx |
-| TNK_01 | `DA_TNK_03_SeatSettings` | 2 | D G |
-| TNK_01 | `DA_TNK_01_Artillery_MountedMachineGun_SeatSettings` | 1 | Gx |
-| TNK_01 | `DA_TNK_01_Artillery_SeatSettings` | 2 | D G |
-| TNK_01 | `DA_TNK_01_Heavy_SeatSettings` | 2 | D G |
-| TNK_01 | `DA_TNK_01_Heavy_MountedMachineGun_SeatSettings` | 1 | Gx |
-| TNK_04 | `DA_TNK_04_SeatSettings` | 2 | D G |
-| TNK_04 | `DA_TNK_04_MountedMachineGun_SeatSettings` | 1 | Gx |
-| WHL_01 | `DA_WHL_01_SeatSettings` | 2 | Dx Ax |
-| WHL_02 | `DA_SeatSettings_WHL_02` | 4 | D A A A |
-| WHL_02 | `DA_WHL_02_Pickup_ExtraSeats` | 6 | D A A A Ax Ax |
-| WHL_02_RingTurret | `DA_WHL_02_SUV_RingTurret_SeatSettings` | 5 | D Gx A A A |
-| WHL_05 | `DA_SeatSettings_WHL_05_Humvee` | 4 | D A A A |
-| WHL_05 | `DA_SeatSettings_WHL_05_Humvee_Minigun` | 5 | D Gx A A A |
-| WHL_05_RingTurret | `DA_SeatSettings_WHL_05_Humvee_RingTurret` | 5 | D Gx A A A |
-| WHL_06 | `DA_SeatSettings_WHL_06_DuneBuggy` | 3 | D A A |
-| WHL_07 | `DA_SeatSettings_WHL_07` | 3 | D A A |
-| WHL_07_ArmouredBattle | `DA_SeatSettings_WHL_07_ArmouredBattle` | 5 | D Gx Gx A A |
-| WHL_08 | `DA_SeatSettings_WHL_08` | 4 | D A A A |
-| WHL_08_RingTurret | `DA_SeatSettings_WHL_08_RingTurret` | 5 | D A Gx A A |
+| FWG_01 | [`DA_FWG_01_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_SeatSettings.json) | 2 | D A |
+| ROT_02 | [`DA_ROT_02_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_SeatSettings.json) | 2 | D G |
+| ROT_03 | [`DA_ROT_03_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_SeatSettings.json) | 6 | D A Ax Ax Ax Ax |
+| ROT_03_WeaponVariants | [`DA_ROT_03_Attack_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_Attack_SeatSettings.json) | 2 | D A |
+| ROT_04 | [`DA_ROT_04_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_SeatSettings.json) | 13 | D A A A A A A A A A A A A |
+| ROT_04_MachineGun | [`DA_ROT_04_SeatSettings_MachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Data/MachineGun/DA_ROT_04_SeatSettings_MachineGun.json) | 13 | D A G G A A A A A A A A A |
+| SPW_01 | [`DA_SeatSettings_SPW`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SeatSettings_SPW.json) | 10 | D P P P P P P P P P |
+| STN_01 | [`DA_SeatSettings_STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Data/DA_SeatSettings_STN_01.json) | 1 | Gx |
+| STN_02 | [`DA_SeatSettings_STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Data/DA_SeatSettings_STN_02.json) | 1 | Gx |
+| STN_03 | [`DA_SeatSettings_STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Data/DA_SeatSettings_STN_03.json) | 1 | Gx |
+| STN_04 | [`DA_SeatSettings_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/Data/DA_SeatSettings_STN_04.json) | 1 | -x |
+| STN_05 | [`DA_SeatSettings_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/DA_SeatSettings_STN_05.json) | 1 | Gx |
+| STN_06 | [`DA_SeatSettings_STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Data/DA_SeatSettings_STN_06.json) | 1 | Gx |
+| TNK_01 | [`DA_TNK_03_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/AntiAir/DA_TNK_03_SeatSettings.json) | 2 | D G |
+| TNK_01 | [`DA_TNK_01_Artillery_MountedMachineGun_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Artillery/DA_TNK_01_Artillery_MountedMachineGun_SeatSettings.json) | 1 | Gx |
+| TNK_01 | [`DA_TNK_01_Artillery_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Artillery/DA_TNK_01_Artillery_SeatSettings.json) | 2 | D G |
+| TNK_01 | [`DA_TNK_01_Heavy_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Heavy/DA_TNK_01_Heavy_SeatSettings.json) | 2 | D G |
+| TNK_01 | [`DA_TNK_01_Heavy_MountedMachineGun_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Heavy/MountedMachineGun/DA_TNK_01_Heavy_MountedMachineGun_SeatSettings.json) | 1 | Gx |
+| TNK_04 | [`DA_TNK_04_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Data/DA_TNK_04_SeatSettings.json) | 2 | D G |
+| TNK_04 | [`DA_TNK_04_MountedMachineGun_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Data/MountedMachineGun/DA_TNK_04_MountedMachineGun_SeatSettings.json) | 1 | Gx |
+| WHL_01 | [`DA_WHL_01_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_SeatSettings.json) | 2 | Dx Ax |
+| WHL_02 | [`DA_SeatSettings_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_SeatSettings_WHL_02.json) | 4 | D A A A |
+| WHL_02 | [`DA_WHL_02_Pickup_ExtraSeats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/WHL_02_Pickup/DA_WHL_02_Pickup_ExtraSeats.json) | 6 | D A A A Ax Ax |
+| WHL_02_RingTurret | [`DA_WHL_02_SUV_RingTurret_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_RingTurret_SeatSettings.json) | 5 | D Gx A A A |
+| WHL_05 | [`DA_SeatSettings_WHL_05_Humvee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_SeatSettings_WHL_05_Humvee.json) | 4 | D A A A |
+| WHL_05 | [`DA_SeatSettings_WHL_05_Humvee_Minigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/Minigun/DA_SeatSettings_WHL_05_Humvee_Minigun.json) | 5 | D Gx A A A |
+| WHL_05_RingTurret | [`DA_SeatSettings_WHL_05_Humvee_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/Data/RingTurretHumvee/DA_SeatSettings_WHL_05_Humvee_RingTurret.json) | 5 | D Gx A A A |
+| WHL_06 | [`DA_SeatSettings_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_SeatSettings_WHL_06_DuneBuggy.json) | 3 | D A A |
+| WHL_07 | [`DA_SeatSettings_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_SeatSettings_WHL_07.json) | 3 | D A A |
+| WHL_07_ArmouredBattle | [`DA_SeatSettings_WHL_07_ArmouredBattle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_SeatSettings_WHL_07_ArmouredBattle.json) | 5 | D Gx Gx A A |
+| WHL_08 | [`DA_SeatSettings_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_SeatSettings_WHL_08.json) | 4 | D A A A |
+| WHL_08_RingTurret | [`DA_SeatSettings_WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/Data/RingTurretDefender/DA_SeatSettings_WHL_08_RingTurret.json) | 5 | D A Gx A A |
 
 ## 4. Health-trigger effects
 
@@ -225,6 +225,6 @@ Every vehicle `GameplaySystems` asset holds `WDAttributeEffectsTrigger_VehicleHe
 
 | Item | Health per application | Seconds per application | Health per second | Durability | Time to empty | `AttributeValue` (not read) |
 |---|---|---|---|---|---|---|
-| `ID_HeavyDrill_RepairTool` | 14.5 | 0.5 | 29.00 | none | - | 5.0 |
-| `ID_LightDrill_RepairTool` | 14.5 | 0.75 | 19.33 | none | - | 5.0 |
-| `ID_Wrench_RepairTool` | 10.0 | 0.68 | 14.71 | 600.0 | 40.8 s | 5.0 |
+| [`ID_HeavyDrill_RepairTool`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_HeavyDrill_RepairTool.json) | 14.5 | 0.5 | 29.00 | none | - | 5.0 |
+| [`ID_LightDrill_RepairTool`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_LightDrill_RepairTool.json) | 14.5 | 0.75 | 19.33 | none | - | 5.0 |
+| [`ID_Wrench_RepairTool`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_Wrench_RepairTool.json) | 10.0 | 0.68 | 14.71 | 600.0 | 40.8 s | 5.0 |

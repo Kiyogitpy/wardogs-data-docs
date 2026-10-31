@@ -118,18 +118,18 @@ Each row is one reward value: event (Added or Removed), challenge row, resource,
 
 ## Other changes
 
-- `DA_MaterialTrackerData_Spotting` (WDUISpottingMaterialTrackerDataAsset): 3 added.
-- `DA_Tracker_Map_Spotting` (WDUISpottingTargetMapTrackerData): 2 added.
-- `DA_Tracker_Spatial_Spotting` (WDUISpottingSpatialTrackerData): 5 added, 3 removed.
-- `DT_Challenges_SessionEvents_KOTH_Spotting` (DataTable): 2 added.
-- `DT_RewardLookup_SessionEvent_Spotting_Added` (DataTable): 4 added, 37 changed.
-- `DT_RewardLookup_SessionEvent_Spotting_Removed` (DataTable): 4 added, 37 changed.
-- `ST_Challenges_SessionEvents_KOTH_Spotting_Added` (StateTree): 5 added, 79 changed.
-- `ST_Challenges_SessionEvents_KOTH_Spotting_Removed` (StateTree): 5 added, 79 changed.
+- [`DA_MaterialTrackerData_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Optimization/Data/DA_MaterialTrackerData_Spotting.json) (WDUISpottingMaterialTrackerDataAsset): 3 added.
+- [`DA_Tracker_Map_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Map/Data/DA_Tracker_Map_Spotting.json) (WDUISpottingTargetMapTrackerData): 2 added.
+- [`DA_Tracker_Spatial_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Spatial/Data/DA_Tracker_Spatial_Spotting.json) (WDUISpottingSpatialTrackerData): 5 added, 3 removed.
+- [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) (DataTable): 2 added.
+- [`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json) (DataTable): 4 added, 37 changed.
+- [`DT_RewardLookup_SessionEvent_Spotting_Removed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Removed.json) (DataTable): 4 added, 37 changed.
+- [`ST_Challenges_SessionEvents_KOTH_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Added.json) (StateTree): 5 added, 79 changed.
+- [`ST_Challenges_SessionEvents_KOTH_Spotting_Removed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/ST_Challenges_SessionEvents_KOTH_Spotting_Removed.json) (StateTree): 5 added, 79 changed.
 
 The two `ST_Challenges_SessionEvents_KOTH_Spotting_*` state trees have 132 numeric values that change. They are compiled property-binding indexes and hashes, not balance changes. They are in the browser.
 
-`DA_DefaultPlayerMovementAudioConfiguration` is now noise-only. Its 42 former effect and gameplay cue changes are swapped key values (42 swapped keys in the index), so they are not listed.
+[`DA_DefaultPlayerMovementAudioConfiguration`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Audio/DA_DefaultPlayerMovementAudioConfiguration.json) is now noise-only. Its 42 former effect and gameplay cue changes are swapped key values (42 swapped keys in the index), so they are not listed.
 
 [All 575 spotting changes →]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=player-movement&q=Spotting)
 

@@ -6,13 +6,13 @@ description: "The shooting range mode: its folder contents, match flow and compo
 ---
 
 # Wardogs — GameFeatures: ShootingRange
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/ShootingRange/` — 1 JSON file (`Content/ShootingRange.json`, 6 exports).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/ShootingRange/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ShootingRange) — 1 JSON file ([`Content/ShootingRange.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/ShootingRange.json), 6 exports).*
 
 ---
 
 ## Season 02 update (2026-10-15)
 
-- Added a data registry source action that adds `DT_SceneData_Match_ShootingRange` to the `UISceneData_Match` registry (client and server source, asset priority 0).
+- Added a data registry source action that adds [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) to the `UISceneData_Match` registry (client and server source, asset priority 0).
 - Export count in this file: 5 → 6.
 
 Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-changes/game-modes-maps.html' | relative_url }}).
@@ -34,8 +34,8 @@ The base shooting-range experience: a match state, a three-team faction setup, a
 | Component on `WDGameState` | `WDShootingRangeComponent` (ShootingRangeRuntime) |
 | Component on `WDGameModeSession` | `WDShootingRangePlayerSpawnManagerComponent` |
 | World layer | `EDL_ShootingRange` (external data layer) |
-| Minimap registry | `TrackerData_Minimap` → `DT_TrackerData_Minimap` |
-| Scene data registry | `UISceneData_Match` ← `DT_SceneData_Match_ShootingRange` |
+| Minimap registry | `TrackerData_Minimap` → [`DT_TrackerData_Minimap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Minimap/Widgets/Trackers/Data/DT_TrackerData_Minimap.json) |
+| Scene data registry | `UISceneData_Match` ← [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) |
 
 ---
 

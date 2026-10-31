@@ -18,22 +18,22 @@ Pull and slow strength are multiplied by these curves. The key is the distance t
 <!-- aim_assist curves -->
 | Curve | Keys (distance in cm, strength 0 to 1) |
 |---|---|
-| `C_AimAssistPullStrengthDistanceCurve_AR_ADS` | (0, 0), (200, 1), (22500, 1), (25000, 0) |
-| `C_AimAssistPullStrengthDistanceCurve_Default` | (0, 0), (600, 1), (2000, 1), (2500, 0) |
-| `C_AimAssistPullStrengthDistanceCurve_LMG_ADS` | (0, 0), (200, 1), (20000, 1), (22500, 0) |
-| `C_AimAssistPullStrengthDistanceCurve_Pistol_ADS` | (0, 0), (200, 1), (10000, 1), (12500, 0) |
-| `C_AimAssistPullStrengthDistanceCurve_SMG_ADS` | (0, 0), (200, 1), (12500, 1), (15000, 0) |
-| `C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS` | (0, 0), (200, 1), (17500, 1), (20000, 0) |
-| `C_AimAssistPullStrengthDistanceCurve_Sniper` | (0, 0), (150, 0), (200, 1), (15000, 1), (20000, 0) |
-| `C_AimAssistReticleEdgeFalloff_Default` | (0, 0.2), (1, 1) (key is the position inside the reticle, 0 at the centre and 1 at the edge, not a distance) |
-| `C_AimAssistSlowStrengthDistanceCurvePistol_ADS` | (0, 0), (2000, 0.8), (4000, 1), (10000, 1), (12500, 0) |
-| `C_AimAssistSlowStrengthDistanceCurveShotgun_ADS` | (0, 0), (2000, 0.8), (4000, 1), (17500, 1), (20000, 0) |
-| `C_AimAssistSlowStrengthDistanceCurve_AR_ADS` | (0, 0), (2000, 0.8), (4000, 1), (20000, 1), (22500, 0) |
-| `C_AimAssistSlowStrengthDistanceCurve_Default` | (0, 0), (600, 1), (2000, 1), (2500, 0) |
-| `C_AimAssistSlowStrengthDistanceCurve_LMG_ADS` | (0, 0), (2000, 0.8), (4000, 1), (20000, 1), (30000, 0) |
-| `C_AimAssistSlowStrengthDistanceCurve_SMG_ADS` | (0, 0), (2000, 0.8), (4000, 1), (15000, 1), (20000, 0) |
-| `C_AimAssistSlowStrengthDistanceCurve_Sniper` | (0, 0), (2000, 1), (27500, 1), (30000, 0) |
-| `C_AimAssistTargetWeightCurve` | (0, 0), (0.01, 1), (1, 1) (key unit not named in the export) |
+| [`C_AimAssistPullStrengthDistanceCurve_AR_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_AR_ADS.json) | (0, 0), (200, 1), (22500, 1), (25000, 0) |
+| [`C_AimAssistPullStrengthDistanceCurve_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Default.json) | (0, 0), (600, 1), (2000, 1), (2500, 0) |
+| [`C_AimAssistPullStrengthDistanceCurve_LMG_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_LMG_ADS.json) | (0, 0), (200, 1), (20000, 1), (22500, 0) |
+| [`C_AimAssistPullStrengthDistanceCurve_Pistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Pistol_ADS.json) | (0, 0), (200, 1), (10000, 1), (12500, 0) |
+| [`C_AimAssistPullStrengthDistanceCurve_SMG_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_SMG_ADS.json) | (0, 0), (200, 1), (12500, 1), (15000, 0) |
+| [`C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Shotgun_ADS.json) | (0, 0), (200, 1), (17500, 1), (20000, 0) |
+| [`C_AimAssistPullStrengthDistanceCurve_Sniper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Sniper.json) | (0, 0), (150, 0), (200, 1), (15000, 1), (20000, 0) |
+| [`C_AimAssistReticleEdgeFalloff_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistReticleEdgeFalloff_Default.json) | (0, 0.2), (1, 1) (key is the position inside the reticle, 0 at the centre and 1 at the edge, not a distance) |
+| [`C_AimAssistSlowStrengthDistanceCurvePistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurvePistol_ADS.json) | (0, 0), (2000, 0.8), (4000, 1), (10000, 1), (12500, 0) |
+| [`C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurveShotgun_ADS.json) | (0, 0), (2000, 0.8), (4000, 1), (17500, 1), (20000, 0) |
+| [`C_AimAssistSlowStrengthDistanceCurve_AR_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_AR_ADS.json) | (0, 0), (2000, 0.8), (4000, 1), (20000, 1), (22500, 0) |
+| [`C_AimAssistSlowStrengthDistanceCurve_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_Default.json) | (0, 0), (600, 1), (2000, 1), (2500, 0) |
+| [`C_AimAssistSlowStrengthDistanceCurve_LMG_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_LMG_ADS.json) | (0, 0), (2000, 0.8), (4000, 1), (20000, 1), (30000, 0) |
+| [`C_AimAssistSlowStrengthDistanceCurve_SMG_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_SMG_ADS.json) | (0, 0), (2000, 0.8), (4000, 1), (15000, 1), (20000, 0) |
+| [`C_AimAssistSlowStrengthDistanceCurve_Sniper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_Sniper.json) | (0, 0), (2000, 1), (27500, 1), (30000, 0) |
+| [`C_AimAssistTargetWeightCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistTargetWeightCurve.json) | (0, 0), (0.01, 1), (1, 1) (key unit not named in the export) |
 <!-- /aim_assist -->
 
 ## Which curve each class uses (Data)

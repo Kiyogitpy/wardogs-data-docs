@@ -6,23 +6,23 @@ description: "Weapon data: stat assets, aim-sway curve families, ADS curves, inp
 ---
 
 # Wardogs — Weapons Reference
-*Extracted from cooked game data (JSON export, `Wardogs/Content/Weapons/`, 92 source files). Parsed with a Python script; 15 Input files contain several `--- export:` blocks each and were split on those headers. Numbers are the raw exported values.*
+*Extracted from cooked game data (JSON export, [`Wardogs/Content/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Weapons), 92 source files). Parsed with a Python script; 15 Input files contain several `--- export:` blocks each and were split on those headers. Numbers are the raw exported values.*
 
-> **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here; the stat tables themselves live under `Plugins/GameFeatures/Weapons`, all 45 listed in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
+> **Scope note:** this folder holds only **8 weapon stat assets** (`WDWeaponStatsData`). The main rifle, SMG, LMG, shotgun and pistol stat tables are not in this folder. Their aim-sway curves are here; the stat tables themselves live under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), all 45 listed in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
 
 ---
 
 ## Season 02 update (2026-10-15)
 
-- **Moved, not removed:** the Mosin sniper package moved from `Plugins/GameFeatures/Weapons/Sniper/Mosin` to `Plugins/GameFeatures/Weapons/Platforms/WEPN_017`. 11 files moved: `DA_Mosin_Stats` became `DA_WEPN_017_Stats` (WeaponId still `Id.Item.Mosin`), `ID_Mosin` became `ID_WEPN_017` and `ID_Mosin_Audio` became `ID_WEPN_017_Audio`; the other 8 kept their file names. Only `Content/Mosin.json` stays in the old folder. Nothing in the tables below changes because the Mosin was never in this folder.
-- **Added:** 143 new files under `Plugins/GameFeatures/Weapons`, mostly attachments: foregrips FGRP_019 and FGRP_020, magazines MAGZ_051 and MAGZ_067 to MAGZ_071, and muzzles MUZL_064 to MUZL_067. Five new weapon stat assets (the Mosin stats asset `DA_WEPN_017_Stats` is the moved one above, not new): `DA_WEPN_031_Stats`, `DA_WEPN_034_Stats`, `DA_WEPN_036_Stats`, `DA_WEPN_037_Stats` and `DA_MWSY_001_Heavy_MountedMachineGun_Stats`.
-- **SKS recoil pattern (`DA_SKS_Stats`):** all 20 vertical (Y) values are 2.5x the old values (first point 0.95 → 2.375, last point 1.05 → 2.625). Horizontal (X) values now range from −2.399 to +0.613, where they previously ranged from −0.055 to +0.136. This fits the patch note "new recoil pass across all DMRs".
+- **Moved, not removed:** the Mosin sniper package moved from [`Plugins/GameFeatures/Weapons/Sniper/Mosin`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin) to [`Plugins/GameFeatures/Weapons/Platforms/WEPN_017`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017). 11 files moved: `DA_Mosin_Stats` became [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json) (WeaponId still `Id.Item.Mosin`), `ID_Mosin` became [`ID_WEPN_017`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json) and `ID_Mosin_Audio` became [`ID_WEPN_017_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017_Audio.json); the other 8 kept their file names. Only [`Content/Mosin.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Mosin.json) stays in the old folder. Nothing in the tables below changes because the Mosin was never in this folder.
+- **Added:** 143 new files under [`Plugins/GameFeatures/Weapons`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons), mostly attachments: foregrips FGRP_019 and FGRP_020, magazines MAGZ_051 and MAGZ_067 to MAGZ_071, and muzzles MUZL_064 to MUZL_067. Five new weapon stat assets (the Mosin stats asset [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json) is the moved one above, not new): [`DA_WEPN_031_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DA_WEPN_031_Stats.json), [`DA_WEPN_034_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DA_WEPN_034_Stats.json), [`DA_WEPN_036_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/DA_WEPN_036_Stats.json), [`DA_WEPN_037_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DA_WEPN_037_Stats.json) and [`DA_MWSY_001_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/VehicleWeaponry/MWSY_001/Content/Weapons/DA_MWSY_001_Heavy_MountedMachineGun_Stats.json).
+- **SKS recoil pattern ([`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json)):** all 20 vertical (Y) values are 2.5x the old values (first point 0.95 → 2.375, last point 1.05 → 2.625). Horizontal (X) values now range from −2.399 to +0.613, where they previously ranged from −0.055 to +0.136. This fits the patch note "new recoil pass across all DMRs".
 - **SKS fields:** `ViewKickMagnitudeMultiplier` 1.1 is gone, and `SuppressionMultiplier` 1.1 is new. This fits the suppression rebuild in the patch notes.
 - **SKS and Judge stabilisation:** two entries that the Season 01 export showed as CooldownRate and ExitGracePeriod (SKS 9.0, Judge 4.0) are unnamed keys in this export, with the same values. Round 5 places those keys at the sight-sway translation and rotation length limits (`AdsStabilizationData` `+0x128` / `+0x12C`, §5b), not at those two fields. This export's `AdsStabilizeCooldownRate` key is SKS 0.2 and Judge 0.1, and neither asset sets `AdsStabilizeExitGracePeriod`.
-- **M2 Browning (`DA_M2Browning_Stats`):** `SuppressionMultiplier` 0.8 is new.
+- **M2 Browning ([`DA_M2Browning_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.json)):** `SuppressionMultiplier` 0.8 is new.
 - **Vendor prices (weapons):** AK74M 1600 → 800, Vector 2600 → 5600, MMGL 6000 → 7500, LMG_02 4500 → 4100, RPG7 2000 → 1800, TAR21 600 → 1200.
 - **Vendor prices (attachments):** FGRP_007 1150 → 840, FGRP_014 1100 → 950, MUZL_013 1000 → 820, MUZL_012 400 → 1200. Attachment prices are not in this doc's tables.
-- **SR_04 (`ID_SR_04`):** `TimeAfterFireToRechamber` 0.24 → 0.2.
+- **SR_04 ([`ID_SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json)):** `TimeAfterFireToRechamber` 0.24 → 0.2.
 - The folder still holds 92 files and 8 stat assets. No files were added or removed here.
 
 Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-changes/weapons-ammo.html' | relative_url }}).
@@ -33,18 +33,18 @@ Full before/after list: [Season 2 Changes → Weapons & Ammo]({{ '/season-2-chan
 
 | Asset | WeaponId tag | Caliber | RPM | Fire modes | Init. bullet speed | Effective range | Max zeroing | Melee dmg |
 |---|---|---|---|---|---|---|---|---|
-| `DA_SKS_Stats` | `Id.Item.SKS` | `Item.Caliber.762mm` | 420 | SemiAutomatic | 73,500 | 400 | 1,000 | 35 |
-| `DA_Judge_Stats` | `Id.Item.Judge` | `Item.Caliber.45Colt` | 200 | SemiAutomatic | 33,500 | 50 | 25 (min 25, step 25) | 20 |
-| `DA_AT4_Stats` | `Id.Item.AT4` | `Item.Caliber.84mm` | 100 | SemiAutomatic | 29,000 | 300 | none | 25 (class default) |
-| `DA_ArtilleryBarrelTest_Stats` | `Id.Item.ArtilleryBarrelTest` | `Item.Caliber.155mm` | 150 | SemiAutomatic (RoundsPerBurst 1) | 46,400 | 10,000 | 1,000 | 0 |
-| `DA_TankBarrelTest_Stats` | `Id.Item.LeapordBarrel` | `Item.Caliber.120x570mm` | 100 | SemiAutomatic | 55,000 | 3,500 | 1,000 | 25 (class default) |
-| `DA_M2Browning_Stats` | `Id.Item.BrowningMG` | `Item.Caliber.762mm` | 500 | Automatic | 71,500 | 100 (class default) | 1,000 | 25 (class default) |
-| `DA_Fists_Stats` | `Id.Item.Fists` | none | 300 | SemiAutomatic | 100,000 (class default) | 100 (class default) | none | 25 (class default) |
-| `DA_BuildTool_Stats` | `ID.Item.BuildTool` | none | 600 (class default) | none (class default) | 100,000 (class default) | 100 (class default) | none | 25 (class default) |
+| [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json) | `Id.Item.SKS` | `Item.Caliber.762mm` | 420 | SemiAutomatic | 73,500 | 400 | 1,000 | 35 |
+| [`DA_Judge_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json) | `Id.Item.Judge` | `Item.Caliber.45Colt` | 200 | SemiAutomatic | 33,500 | 50 | 25 (min 25, step 25) | 20 |
+| [`DA_AT4_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/AT4/Data/DA_AT4_Stats.json) | `Id.Item.AT4` | `Item.Caliber.84mm` | 100 | SemiAutomatic | 29,000 | 300 | none | 25 (class default) |
+| [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json) | `Id.Item.ArtilleryBarrelTest` | `Item.Caliber.155mm` | 150 | SemiAutomatic (RoundsPerBurst 1) | 46,400 | 10,000 | 1,000 | 0 |
+| [`DA_TankBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.json) | `Id.Item.LeapordBarrel` | `Item.Caliber.120x570mm` | 100 | SemiAutomatic | 55,000 | 3,500 | 1,000 | 25 (class default) |
+| [`DA_M2Browning_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Stationary/M2Browning/Data/DA_M2Browning_Stats.json) | `Id.Item.BrowningMG` | `Item.Caliber.762mm` | 500 | Automatic | 71,500 | 100 (class default) | 1,000 | 25 (class default) |
+| [`DA_Fists_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.json) | `Id.Item.Fists` | none | 300 | SemiAutomatic | 100,000 (class default) | 100 (class default) | none | 25 (class default) |
+| [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json) | `ID.Item.BuildTool` | none | 600 (class default) | none (class default) | 100,000 (class default) | 100 (class default) | none | 25 (class default) |
 
 Notes:
-- `DA_BuildTool_Stats` contains only `WeaponId`. Its tag uses `ID.Item.` where every other asset uses `Id.Item.`.
-- `DA_TankBarrelTest_Stats` uses the tag `Id.Item.LeapordBarrel` (misspelling of "Leopard" is in the source).
+- [`DA_BuildTool_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/BuildTool/Data/DA_BuildTool_Stats.json) contains only `WeaponId`. Its tag uses `ID.Item.` where every other asset uses `Id.Item.`.
+- [`DA_TankBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/TankBarrelTest/Data/DA_TankBarrelTest_Stats.json) uses the tag `Id.Item.LeapordBarrel` (misspelling of "Leopard" is in the source).
 - Units are not stated in the export. `InitialBulletSpeed` is in Unreal cm/s (SKS 73,500 cm/s = 735 m/s; AT4 29,000 = 290 m/s) and `EffectiveRange` is in metres: both confirmed by native code in [Projectile Flight section 9](../pipelines/Wardogs_ProjectileFlight_v1.md) (`0x6BBD420` multiplies `EffectiveRange` by 100; the launch velocity is a unit direction times `InitialBulletSpeed`). `RandomDeviationDegree` is degrees; the `WeaponAccuracy` unit is the `AccuracyType` field (MOA or mrad, [Weapon Spread](../pipelines/Wardogs_WeaponSpread_v1.md) section 12).
 
 ### 1a. Per-weapon details beyond the table
@@ -70,10 +70,10 @@ Notes:
 | MaxZeroingRange | 1,000 |
 | MeleeHitBoxSize | 55 × 35 × 25 |
 | Distance damage falloff | `bUseDistanceDamageFalloffCurve = True`; curve 0→1, 40,000→1, 120,000→0.2 |
-| AdsCameraCurve | `CF_DMR_ADS_Curve` |
+| AdsCameraCurve | [`CF_DMR_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_DMR_ADS_Curve.json) |
 | AimSway | Persistent=False, CrouchOffsetMultiplier 0.55, ProneOffsetMultiplier 0.35, TotalPatternDuration 6.0, NoFocusEnergySpeedMultiplier 2.5, PlayerCameraOffsetMultiplier 0.75 |
 | AimSway stabilisation | AdsStabilizeTime 2.0, sight-sway translation and rotation length limits 9.0 each (unnamed keys, §5b), CooldownRateMovingMultiplier 2.0, MovementProgressPenalty 0.75, `AdsStabilizeCooldownRate` 0.2 and the `StabilizationTimeMultiplier` cap 2.5 (unnamed key) |
-| Animation sway | ADSPitch/Yaw multiplier curves both `CRV_WeaponAnimSwayMultiplier_DMR_Harsh` |
+| Animation sway | ADSPitch/Yaw multiplier curves both [`CRV_WeaponAnimSwayMultiplier_DMR_Harsh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/DMR/CRV_WeaponAnimSwayMultiplier_DMR_Harsh.json) |
 
 The distance falloff times are in cm: the native projectile path evaluates the curve with the shot-origin-to-hit distance in engine units ([DamagePipeline §7.6](../pipelines/Wardogs_DamagePipeline_v2.md#76-the-bullet-event)). 40,000 cm = 400 m, matching `EffectiveRange = 400`.
 
@@ -91,7 +91,7 @@ The distance falloff times are in cm: the native projectile path evaluates the c
 | RecoilPatternYawMinMax | −22.5 … +22.5; Pitch max 45.0 |
 | RandomDeviationDegree | 10.0 |
 | PostPatternRandomYaw / Pitch | Yaw (−0.5, 0.5); Pitch (0.5, 1.0) |
-| AdsCameraCurve | `CF_Pistol_ADS_Curve` |
+| AdsCameraCurve | [`CF_Pistol_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Pistol_ADS_Curve.json) |
 | AimSway stabilisation | AdsStabilizeTime 1.5, sight-sway translation and rotation length limits 4.0 each (unnamed keys, §5b), `AdsStabilizeCooldownRate` 0.1 and the `StabilizationTimeMultiplier` cap 2.0 (unnamed key) |
 | MeleeDamage | 20 |
 
@@ -138,9 +138,9 @@ Each weaponry class has a set of aim-sway curves. The `DA_*_Stats` assets refere
 
 Observations:
 - DMR and SniperRifles have identical horizontal and vertical ranges (to the printed precision). They may share a template.
-- The LMG has two extra ADS-stabilisation scalars: `AdsStabilization_AimSwayScale_LMG` (1.2 → 0.8) and `AdsStabilization_AimSwaySpeed_LMG` (1.12 → 1.0).
+- The LMG has two extra ADS-stabilisation scalars: [`AdsStabilization_AimSwayScale_LMG`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/AimSway/LMG/AdsStabilization_AimSwayScale_LMG.json) (1.2 → 0.8) and [`AdsStabilization_AimSwaySpeed_LMG`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/AimSway/LMG/AdsStabilization_AimSwaySpeed_LMG.json) (1.12 → 1.0).
 
-**Shared root curves** (in `Weapons/`): `AimSway_SpeedCurve` (0.5–1.0), `HorizontalAimSway_MovementCurve` (−0.015 – +0.02), `VerticalAimSway_MovementCurve` (−0.2 – +0.15). `ADS_Blur_Curve` goes 0 → 1 over 0–1.
+**Shared root curves** (in `Weapons/`): [`AimSway_SpeedCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/AimSway_SpeedCurve.json) (0.5–1.0), [`HorizontalAimSway_MovementCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/HorizontalAimSway_MovementCurve.json) (−0.015 – +0.02), [`VerticalAimSway_MovementCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/VerticalAimSway_MovementCurve.json) (−0.2 – +0.15). [`ADS_Blur_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/ADS_Blur_Curve.json) goes 0 → 1 over 0–1.
 
 ### 2a. ADS stabilisation (`CurveVector`)
 
@@ -161,20 +161,20 @@ The third channel (`FloatCurves[2]`) is near zero for every class except that th
 
 ---
 
-## 3. ADS Curves (`Curves/ADSCurves/`)
+## 3. ADS Curves ([`Curves/ADSCurves/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Weapons/Curves/ADSCurves))
 
 Eight `CurveFloat` assets, one per class. Each has 3 keys over t = 0–1. They rise from about 0 to 1.0 (the sniper curve starts at exactly 0).
 
 | Asset | Used by (confirmed) |
 |---|---|
-| `CF_AssaultRifle_ADS_Curve` | no `DA_*_Stats` in this folder reference it |
-| `CF_DMR_ADS_Curve` | `DA_SKS_Stats` (`AdsCameraCurve`) |
-| `CF_LMG_ADS_Curve` | not referenced here |
-| `CF_Launcher_ADS_Curve` | not referenced here |
-| `CF_Pistol_ADS_Curve` | `DA_Judge_Stats` (`AdsCameraCurve`) |
-| `CF_SMG_ADS_Curve` | not referenced here |
-| `CF_Shotgun_ADS_Curve` | not referenced here |
-| `CF_SniperRifles_ADS_Curve` | not referenced here |
+| [`CF_AssaultRifle_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_AssaultRifle_ADS_Curve.json) | no `DA_*_Stats` in this folder reference it |
+| [`CF_DMR_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_DMR_ADS_Curve.json) | [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json) (`AdsCameraCurve`) |
+| [`CF_LMG_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_LMG_ADS_Curve.json) | not referenced here |
+| [`CF_Launcher_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Launcher_ADS_Curve.json) | not referenced here |
+| [`CF_Pistol_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Pistol_ADS_Curve.json) | [`DA_Judge_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Pistol/Judge/Data/DA_Judge_Stats.json) (`AdsCameraCurve`) |
+| [`CF_SMG_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_SMG_ADS_Curve.json) | not referenced here |
+| [`CF_Shotgun_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_Shotgun_ADS_Curve.json) | not referenced here |
+| [`CF_SniperRifles_ADS_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Curves/ADSCurves/CF_SniperRifles_ADS_Curve.json) | not referenced here |
 
 The meaning of the curve value (for example, FOV or blend fraction) is not stated in the export. The shape is the same for all classes.
 
@@ -219,7 +219,7 @@ The meaning of the curve value (for example, FOV or blend fraction) is not state
 | IMC_Drone_Projectile (20) | Eject = C / LB; Vehicle Reload = R / Face Left; ToggleFreeLook = LAlt / DPad Left; HoldFreeLook = LAlt / RB; Steer = W, A, S, D and Mouse2D; Boost = LShift / left stick press; Brake = LCtrl / LT; FreeLook = Mouse2D / right stick |
 | IMC_ProjectileCamera (10) | Eject = C / LB; Reload = R / Face Left; FreeLook = Mouse2D / right stick; ToggleFreeLook = LAlt / DPad Left; HoldFreeLook = LAlt / DPad Left |
 
-The 25-entry `IMC_BaseWeapon` also binds the `IA_Player_*` actions for Inspect, Holdable Secondary Use and Holdable Primary Use Release.
+The 25-entry [`IMC_BaseWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IMC_BaseWeapon.json) also binds the `IA_Player_*` actions for Inspect, Holdable Secondary Use and Holdable Primary Use Release.
 
 ---
 
@@ -246,14 +246,14 @@ The export lists the inputs to each system but not the formulas that combine the
    - The random numbers come from the C runtime's `rand()`. `RecoilPatternYawMinMax` and `RecoilPatternPitchMax` are not read here.
 3. **Focus and size** (weapon behavior component, `0x6B85D30`):
    - While focusing (the focus blend is above `MinFocusInterpRequiredForRecoilReduction` / 100; that field is 80 by default and no asset changes it: no character Blueprint's `WeaponBehaviorComponent` sets it or `MaxFocusEnergy`), the kick shrinks by `RecoilReductionWhenFocussing` percent.
-   - While focusing, and for a short window after focus ends (an unnamed stats field at `+0x98`, exported as `_aaabimbpohdlmnphjbidm`, `_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$` before 2026-10-18; native default 0.5 s, 1.0 s on the SKS, RFB, SVDM, SV98, Mosin (`WEPN_017`), `WEPN_034`, `WEPN_037`, MK22 and SR_04, and 0.001 s on `WEPN_035`), each shot drains `FocusEnergyReductionPerShot` percent of `MaxFocusEnergy` (10), down to 0.
+   - While focusing, and for a short window after focus ends (an unnamed stats field at `+0x98`, exported as `_aaabimbpohdlmnphjbidm`, `_aaabijhbknckndgboaemo_$971AD2AD361E04CE$_$24$` before 2026-10-18; native default 0.5 s, 1.0 s on the SKS, RFB, SVDM, SV98, Mosin ([`WEPN_017`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/WEPN_017.json)), [`WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/WEPN_034.json), [`WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/WEPN_037.json), MK22 and SR_04, and 0.001 s on [`WEPN_035`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/WEPN_035.json)), each shot drains `FocusEnergyReductionPerShot` percent of `MaxFocusEnergy` (10), down to 0.
    - The kick is then multiplied by `ViewKickMagnitudeMultiplier` and queued.
 4. **Applying it** (`TickComponent` `0x6B891F0` → `0x6B89A20` → `0x6B89BB0`), for a pawn with a player controller. Each queued kick follows `ViewKickCurve`, read as a value between 0 and 1. Every frame, pitch and yaw move by (curve value now − curve value last frame) × kick. A curve that rises from 0 to 1 therefore applies the whole kick over the curve's length. A curve that falls back hands part of the kick back: the SKS curve reaches 1 at 0.15 s and 0.75 at 0.4 s, so a quarter of each kick returns. When the player has a camera manager with non-zero pitch limits, pitch is kept within them, and any part cut off there is remembered.
-5. **Recovery.** When a kick's curve ends, the kick (less any pitch that was cut off) is added to a recovery amount, and the view moves back along `RecoveryKickCurve` the same way. A kick that ends during a recovery restarts it with the rest of the old amount plus the new kick. Every firearm's `RecoveryKickCurve` is a single key at 0, so no firearm recovers by itself: the player pulls the view back. Three launchers (the grenade launcher, `Launcher_04`, `RPG7`) return the whole kick, over 1 s or 0.35 s; the MMGL does not. Outside the table, the M2 Browning returns 20% of each kick over 0.3 s and the fists all of it over 0.3 s. After each frame, behavior `+0x3D0` holds the recoil still applied to the view (Σ c × kick over the queued kicks plus (1 − c) × the recovery amount, `0x6B89BB0`); no native reader of it was found.
+5. **Recovery.** When a kick's curve ends, the kick (less any pitch that was cut off) is added to a recovery amount, and the view moves back along `RecoveryKickCurve` the same way. A kick that ends during a recovery restarts it with the rest of the old amount plus the new kick. Every firearm's `RecoveryKickCurve` is a single key at 0, so no firearm recovers by itself: the player pulls the view back. Three launchers (the grenade launcher, [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json), [`RPG7`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/RPG7.json)) return the whole kick, over 1 s or 0.35 s; the MMGL does not. Outside the table, the M2 Browning returns 20% of each kick over 0.3 s and the fists all of it over 0.3 s. After each frame, behavior `+0x3D0` holds the recoil still applied to the view (Σ c × kick over the queued kicks plus (1 − c) × the recovery amount, `0x6B89BB0`); no native reader of it was found.
 
 **Example.** An AK-74M without attachments, standing, not focusing. Both multipliers are 1: the AR stance effect is ×1 standing, ×0.85 crouched and ×0.7 prone. Shot 1 is `RecoilPattern[0]` = (0.01, 0.718) × 1.1: a kick of about 0.79°, pointing up to 13° either side of the pattern's direction (almost straight up), applied over 0.18 s. Shots 31 and on kick yaw −0.31 … 0.31° and pitch 0.50 … 0.83° (the post-pattern ranges × 1.1). Pausing longer than 0.65 s restarts the pattern.
 
-The table gives each weapon's inputs. Yaw and pitch are in degrees. A dagger (†) marks the native default from the `FWDWeaponStats` constructor (`0x699E6C0`), which the asset does not store. Attachment and stance multipliers are not applied. Curve values outside 0 … 1 count as 0 or 1: the `Launcher_04` and `RPG7` kick curves rise to 8, so their whole kick lands before 0.2 s.
+The table gives each weapon's inputs. Yaw and pitch are in degrees. A dagger (†) marks the native default from the `FWDWeaponStats` constructor (`0x699E6C0`), which the asset does not store. Attachment and stance multipliers are not applied. Curve values outside 0 … 1 count as 0 or 1: the [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json) and [`RPG7`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/RPG7.json) kick curves rise to 8, so their whole kick lands before 0.2 s.
 
 <!-- recoil_table -->
 | Weapon | Pattern shots | Shot 1 (yaw, pitch) | Deviation (°) | After pattern: yaw | After pattern: pitch | Reset (s) | Kick × | Kick curve | Recovery | Focus: recoil cut % / energy % per shot / drain window (s) |
@@ -261,13 +261,13 @@ The table gives each weapon's inputs. Yaw and pitch are in degrees. A dagger (�
 | `SKS` | 20 | -0.025538, 2.375 | ±5.5 | -0.28 … 0.38 | 0.55 … 0.85 | 0.95 | ×1† | 1 at 0.15 s, 0.75 at 0.4 s | none | 30 / 50 / 1 |
 | `Judge` | 1 | 0.09, 2.24775 | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 / 0.5† |
 | `AT4` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | none (no curve) | none | 0† / 0† / 0.5† |
-| `CombatBow` | 0 | — | ±4 | -1 … 1† | 2 … 3 | 0.2 | ×0 | 1 at 0.15 s, 0.5 at 0.4 s | none | 80 / 100 / 0.5† |
-| `GrenadeLauncher` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 1 at 1 s | 100% over 1 s | 0† / 0† / 0.5† |
-| `RFB` | 20 | 0.15, 2.34 | ±10 | -0.28 … 0.34 | 0.74 … 0.98 | 1 | ×1† | 1 at 0.15 s | none | 30 / 50 / 1 |
-| `SVDM` | 9 | -0.283, 3.683 | ±10 | 0.05 … 0.32 | 0.65 … 1.1 | 1.1 | ×1† | 1 at 0.15 s, 0.75 at 0.4 s | none | 30 / 50 / 1 |
-| `LMG_02` | 30 | 0.13, 1.68 | ±20 | -0.62 … 0.72 | 1.1 … 1.95 | 0.9 | ×1.25 | 1 at 0.3 s | none | 50 / 10 / 0.5† |
-| `Launcher_04` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 8 at 0.2 s | 100% over 0.35 s | 0† / 0† / 0.5† |
-| `RPG7` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 8 at 0.2 s | 100% over 0.35 s | 0† / 0† / 0.5† |
+| [`CombatBow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/CombatBow.json) | 0 | — | ±4 | -1 … 1† | 2 … 3 | 0.2 | ×0 | 1 at 0.15 s, 0.5 at 0.4 s | none | 80 / 100 / 0.5† |
+| [`GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 1 at 1 s | 100% over 1 s | 0† / 0† / 0.5† |
+| [`RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/RFB.json) | 20 | 0.15, 2.34 | ±10 | -0.28 … 0.34 | 0.74 … 0.98 | 1 | ×1† | 1 at 0.15 s | none | 30 / 50 / 1 |
+| [`SVDM`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/SVDM.json) | 9 | -0.283, 3.683 | ±10 | 0.05 … 0.32 | 0.65 … 1.1 | 1.1 | ×1† | 1 at 0.15 s, 0.75 at 0.4 s | none | 30 / 50 / 1 |
+| [`LMG_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/LMG_02.json) | 30 | 0.13, 1.68 | ±20 | -0.62 … 0.72 | 1.1 … 1.95 | 0.9 | ×1.25 | 1 at 0.3 s | none | 50 / 10 / 0.5† |
+| [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json) | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 8 at 0.2 s | 100% over 0.35 s | 0† / 0† / 0.5† |
+| [`RPG7`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/RPG7.json) | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 8 at 0.2 s | 100% over 0.35 s | 0† / 0† / 0.5† |
 | `AK74M` | 30 | 0.01, 0.717554 | ±13 | -0.28 … 0.28 | 0.45 … 0.75 | 0.65 | ×1.1 | 1 at 0.18 s | none | 20 / 25 / 0.5† |
 | `M4` | 30 | 0.037, 0.693 | ±10 | -0.26 … 0.26 | 0.4 … 0.65 | 0.55 | ×1.08 | 1 at 0.15 s | none | 20 / 25 / 0.5† |
 | `KH2002` | 30 | 0, 0.85 | ±15 | -0.25 … 0.25 | 0.5 … 0.72 | 0.78 | ×1† | 1 at 0.15 s | none | 30 / 40 / 0.5† |
@@ -280,24 +280,24 @@ The table gives each weapon's inputs. Yaw and pitch are in degrees. A dagger (�
 | `M12G (M500)` | 7 | 0.11, 1.8 | ±24 | -0.5 … 0.5 | 0.9 … 1.6 | 1 | ×1.6 | 1 at 0.5 s | none | 0† / 0† / 0.5† |
 | `MMGL` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | 1 at 1 s | none | 0† / 0† / 0.5† |
 | `CGM4` | 0 | — | ±5† | -1 … 1† | 1 … 2† | 0.5† | ×1† | none (no curve) | none | 0† / 0† / 0.5† |
-| `MP9` | 30 | 0.01815, 0.6292 | ±15 | -0.3 … 0.3 | 0.3 … 0.55 | 0.55 | ×1.1 | 1 at 0.1 s | none | 15 / 25 / 0.5† |
+| [`MP9`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/MP9/Content/MP9.json) | 30 | 0.01815, 0.6292 | ±15 | -0.3 … 0.3 | 0.3 … 0.55 | 0.55 | ×1.1 | 1 at 0.1 s | none | 15 / 25 / 0.5† |
 | `WEPN_017 (Mosin)` | 0 | — | ±4 | -1 … 1† | 2 … 3 | 0.2 | ×0.8 | 1 at 0.15 s | none | 0† / 100 / 1 |
-| `WEPN_026` | 0 | — | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1.85 | 1 at 0.15 s | none | 10 / 40 / 0.5† |
-| `WEPN_027` | 15 | 0, 1.16775 | ±5† | 0.25 … 1 | 0.25 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 / 0.5† |
-| `WEPN_028` | 30 | -0.088829, 0.7161 | ±20 | -0.32 … 0.32 | 0.35 … 0.58 | 0.5† | ×1.15 | 1 at 0.1 s | none | 15 / 25 / 0.5† |
-| `WEPN_029` | 30 | -0.01, 0.3969 | ±12 | -0.3 … 0.3 | 0.5 … 0.78 | 0.8 | ×0.95 | 1 at 0.18 s | none | 20 / 25 / 0.5† |
-| `WEPN_030` | 20 | 0.055, 1.09725 | ±16 | -0.35 … 0.35 | 0.7 … 1.1 | 0.7 | ×1† | 1 at 0.15 s | none | 20 / 25 / 0.5† |
-| `WEPN_031` | 30 | 0.0345, 1.13949 | ±17 | -0.2 … 0.2 | 0.4 … 0.62 | 0.6 | ×1† | 1 at 0.15 s | none | 30 / 50 / 0.5† |
-| `WEPN_032` | 50 | 0.0360022, 1.53 | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 / 0.5† |
+| [`WEPN_026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/WEPN_026.json) | 0 | — | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1.85 | 1 at 0.15 s | none | 10 / 40 / 0.5† |
+| [`WEPN_027`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/WEPN_027.json) | 15 | 0, 1.16775 | ±5† | 0.25 … 1 | 0.25 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 / 0.5† |
+| [`WEPN_028`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/WEPN_028.json) | 30 | -0.088829, 0.7161 | ±20 | -0.32 … 0.32 | 0.35 … 0.58 | 0.5† | ×1.15 | 1 at 0.1 s | none | 15 / 25 / 0.5† |
+| [`WEPN_029`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/WEPN_029.json) | 30 | -0.01, 0.3969 | ±12 | -0.3 … 0.3 | 0.5 … 0.78 | 0.8 | ×0.95 | 1 at 0.18 s | none | 20 / 25 / 0.5† |
+| [`WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/WEPN_030.json) | 20 | 0.055, 1.09725 | ±16 | -0.35 … 0.35 | 0.7 … 1.1 | 0.7 | ×1† | 1 at 0.15 s | none | 20 / 25 / 0.5† |
+| [`WEPN_031`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/WEPN_031.json) | 30 | 0.0345, 1.13949 | ±17 | -0.2 … 0.2 | 0.4 … 0.62 | 0.6 | ×1† | 1 at 0.15 s | none | 30 / 50 / 0.5† |
+| [`WEPN_032`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/WEPN_032.json) | 50 | 0.0360022, 1.53 | ±10 | -0.5 … 0.5 | 0.5 … 1 | 0.5† | ×1† | 1 at 0.15 s | none | 10 / 40 / 0.5† |
 | `WEPN_033 (TAR21)` | 30 | 0, 0.85 | ±15 | -0.25 … 0.25 | 0.5 … 0.72 | 0.78 | ×1† | 1 at 0.15 s | none | 30 / 40 / 0.5† |
-| `WEPN_034` | 32 | 0, 3.06 | ±10 | 0.05 … 0.32 | 0.65 … 1.1 | 1.1 | ×1† | 0.806773 at 0.0578813 s, 1 at 0.15 s | none | 30 / 50 / 1 |
-| `WEPN_035` | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×0.3 | 1 at 0.15 s | none | 0† / 100 / 0.001 |
-| `WEPN_036` | 40 | 0, 2.5306 | ±15 | -0.22 … 0.22 | 1.35 … 1.7 | 0.75 | ×1† | 1 at 0.15 s | none | 50 / 10 / 0.5† |
-| `WEPN_037` | 30 | 0.0154, 1.07484 | ±14 | -0.34 … 0.34 | 0.62 … 0.95 | 0.5† | ×0.9 | 1 at 0.15 s | none | 30 / 50 / 1 |
-| `SMG_03` | 30 | 0.033, 1.08994 | ±17 | -0.2 … 0.2 | 0.4 … 0.62 | 0.55 | ×1† | 1 at 0.1 s | none | 30 / 50 / 0.5† |
-| `MP43` | 2 | 0.840004, 1.71 | ±28 | -0.45 … 0.45 | 0.8 … 1.4 | 1.2 | ×1.15 | 1 at 0.15 s | none | 0† / 0† / 0.5† |
-| `MK22` | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×1.4 | 1 at 0.15 s | none | 0† / 100 / 1 |
-| `SR_04` | 0 | — | ±4 | -1 … 1† | 1 … 2.5 | 0.5† | ×1.45 | 1 at 0.124178 s | none | 0† / 100 / 1 |
+| [`WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/WEPN_034.json) | 32 | 0, 3.06 | ±10 | 0.05 … 0.32 | 0.65 … 1.1 | 1.1 | ×1† | 0.806773 at 0.0578813 s, 1 at 0.15 s | none | 30 / 50 / 1 |
+| [`WEPN_035`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/WEPN_035.json) | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×0.3 | 1 at 0.15 s | none | 0† / 100 / 0.001 |
+| [`WEPN_036`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/WEPN_036.json) | 40 | 0, 2.5306 | ±15 | -0.22 … 0.22 | 1.35 … 1.7 | 0.75 | ×1† | 1 at 0.15 s | none | 50 / 10 / 0.5† |
+| [`WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/WEPN_037.json) | 30 | 0.0154, 1.07484 | ±14 | -0.34 … 0.34 | 0.62 … 0.95 | 0.5† | ×0.9 | 1 at 0.15 s | none | 30 / 50 / 1 |
+| [`SMG_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/SMG_03.json) | 30 | 0.033, 1.08994 | ±17 | -0.2 … 0.2 | 0.4 … 0.62 | 0.55 | ×1† | 1 at 0.1 s | none | 30 / 50 / 0.5† |
+| [`MP43`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/MP43.json) | 2 | 0.840004, 1.71 | ±28 | -0.45 … 0.45 | 0.8 … 1.4 | 1.2 | ×1.15 | 1 at 0.15 s | none | 0† / 0† / 0.5† |
+| [`MK22`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/MK22.json) | 0 | — | ±4 | -1 … 1† | 1 … 2† | 0.5† | ×1.4 | 1 at 0.15 s | none | 0† / 100 / 1 |
+| [`SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/SR_04.json) | 0 | — | ±4 | -1 … 1† | 1 … 2.5 | 0.5† | ×1.45 | 1 at 0.124178 s | none | 0† / 100 / 1 |
 <!-- /recoil_table -->
 
 Focus column: the third value is the focus-drain window in seconds (`+0x98`, §5a step 3). `0.5†` means the asset does not set it, so the native default applies.
@@ -337,7 +337,7 @@ Focus column: the third value is the focus-drain window in seconds (`+0x98`, §5
 
 The names given to `0x6D54190` (control-rotation write), `0x3D84130` (`SetRelativeRotation`) and `0x1669260` (Perlin noise) rest on call shape only; `0x166D220` is the rotator → quaternion conversion (fmod 360, × π/360, sine and cosine of the half angles). `bPersistentValues` and `PersistentData` are not read by this code.
 
-**Recoil multipliers on vehicle weapons** (§5a). Only three native classes implement `IWDWeaponOwner`: the ranged-weapon item extension (`+0xF0`), `AWDVehicleWeaponExtension` and `AWDMountedWeapon` (both `+0x2B8`). The fire path asks the weapon component's outer for the interface (`0x6B95DD0`). The two actor classes keep the interface default in slots 22/23 (`0x19A4A50`, which returns 1.0), so vehicle-extension and mounted weapons always get × 1. `Horizontal/VerticalRecoilMultiplier` only act on item weapons. Blueprint implementers were not searched. Fists never reach `0x6B93610`: `ID_Fists` has no ranged-weapon extension (only `CharacterMelee`), and `0x6B93610` is called only from `UWDWeaponComponent` code. `DA_Fists_Stats` is unreferenced.
+**Recoil multipliers on vehicle weapons** (§5a). Only three native classes implement `IWDWeaponOwner`: the ranged-weapon item extension (`+0xF0`), `AWDVehicleWeaponExtension` and `AWDMountedWeapon` (both `+0x2B8`). The fire path asks the weapon component's outer for the interface (`0x6B95DD0`). The two actor classes keep the interface default in slots 22/23 (`0x19A4A50`, which returns 1.0), so vehicle-extension and mounted weapons always get × 1. `Horizontal/VerticalRecoilMultiplier` only act on item weapons. Blueprint implementers were not searched. Fists never reach `0x6B93610`: [`ID_Fists`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Fists/ID_Fists.json) has no ranged-weapon extension (only `CharacterMelee`), and `0x6B93610` is called only from `UWDWeaponComponent` code. [`DA_Fists_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Fists/Data/DA_Fists_Stats.json) is unreferenced.
 
 **ADS time and focus zoom.** The ADS time `+0x3E8` is the weapon's current `Attribute.Gameplay.Weapon.AimTime` (1 if absent). The ranged extension sets it through `0x6B879A0` on equip (`0x6C9A6A0`) and on every change of that attribute (`0x6C99CB0`); vehicle weapons set it through `0x763C845` / `0x763D073`, and one more caller (`0x8633CD4`) is not identified. The focus zoom offset `+0x3FC` starts at 0 and changes only on focus start and end, by ± `AdditionalFocusZoom` × 0.01 (`0x6B880D0`, `0x6B88310`). So the ADS FOV target is base × (1 + `AdditionalFocusZoom`/100) while focused.
 
@@ -351,9 +351,9 @@ Both multipliers default to 1. They require valid sight attachment data, the sel
 
 - The main AR, SMG, LMG, shotgun and pistol **stat tables** are not in this folder. Only their aim-sway and stabilisation curves are here. The stat tables are in [Infantry Weapon Stats](Wardogs_InfantryWeapons_Stats_v1.html).
 - **Units are not stated** in the export. Speeds are cm/s and `EffectiveRange` is metres, confirmed in code in round 23 and re-read in round 39 (Projectile Flight section 9). Recoil values are degrees of view rotation, confirmed in code (§5a).
-- `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. Round 39: the asset belongs to `ID_TankBarrelTest` in `Items/Weapons/Launcher/VehicleBarrelLaunchersTests`, which no other exported asset references (shop, loadout, vehicle), and its fire rate (100), speed (550 m/s) and range (3500 m) are authored; the aim time and accuracy look like inert test values, not checked in code.
+- `IronSightsAimTime = 50,000` on the tank barrel and `WeaponAccuracy = 70 MOA` look like placeholders or unused tuning. Round 39: the asset belongs to [`ID_TankBarrelTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Launcher/VehicleBarrelLaunchersTests/ID_TankBarrelTest.json) in [`Items/Weapons/Launcher/VehicleBarrelLaunchersTests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Launcher/VehicleBarrelLaunchersTests), which no other exported asset references (shop, loadout, vehicle), and its fire rate (100), speed (550 m/s) and range (3500 m) are authored; the aim time and accuracy look like inert test values, not checked in code.
 - The unnamed fields on the SKS and Judge are now placed: SKS 1.0 is the focus-drain window (§5a), and SKS 2.5 / Judge 2.0 is the `StabilizationTimeMultiplier` cap in `AdsStabilizationData` (§5b).
-- `CF_*_ADS_Curve` and `ADS_Blur_Curve` have no stated output meaning.
+- `CF_*_ADS_Curve` and [`ADS_Blur_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/ADS_Blur_Curve.json) have no stated output meaning.
 - Curve tangents and interpolation modes are not summarised. Only key times and values are reported.
 - The M2 recoil pattern has 29 points; the full list is not reproduced.
 - Input mapping contexts are shown only for their first key per action. Secondary keys and gamepad alternates are summarised, not listed in full.

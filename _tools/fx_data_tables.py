@@ -22,6 +22,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONTENT = os.path.join(ROOT, "data", "Wardogs", "Content")
 PAGE = os.path.join(ROOT, "content", "Wardogs_FX_Field_Tables_v1.md")
@@ -207,7 +210,7 @@ def main():
         print(BLOCKS[args[0]]())
         return 0
     page = read(PAGE)
-    new = render(page)
+    new = link_source_output(render(page))
     if "--write" in args:
         if new != page:
             with open(PAGE, "w", encoding="utf-8", newline="") as f:

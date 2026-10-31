@@ -22,7 +22,7 @@ description: "Second helmet tier: 40% head damage reduction, 100 durability, 500
 | Price | 500 cash |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_MediumHelmet` (item `Id.Item.MediumHelmet`) |
+| Internal name | [`ID_MediumHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_MediumHelmet.json) (item `Id.Item.MediumHelmet`) |
 {: .wiki-infobox }
 
 Level 2 Helmet is the second of the four helmet tiers. It protects the head and cuts head damage by 40%. It costs 500 cash and needs no unlock.

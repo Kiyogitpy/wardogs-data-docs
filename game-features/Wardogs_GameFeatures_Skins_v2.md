@@ -6,17 +6,17 @@ description: "The skin package: layout, cosmetic rows, skin data assets and how 
 ---
 
 # Wardogs: GameFeatures Skins Reference
-*Source: exported JSON under `Wardogs/Plugins/GameFeatures/Skins` (16 files, 5 folders). Numbers and tags are read from the export. Meanings of fields that are not named in the export are marked as unconfirmed.*
+*Source: exported JSON under [`Wardogs/Plugins/GameFeatures/Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Skins) (16 files, 5 folders). Numbers and tags are read from the export. Meanings of fields that are not named in the export are marked as unconfirmed.*
 
 ---
 
 ## Season 02 update (2026-10-15)
 
-- **New skin asset:** `Skin_ChocolateChip` (in `Season01_SkinsData`), pattern `T_Pattern_ChocolateChip`, LUT `T_LUT_Brown_001`, with 56 overrides, the largest set.
-- **New folder `Season02_SkinsData`:** cosmetic table `DT_Cosmetics_Season02_Skins` with 8 rows (3 of them ChocolateChip), registered to `CosmeticData` through the new feature file.
-- **`Skin_DigitalWood`:** overrides 43 → 46 (added `WEPN_034`, `Vehicle.Variant.Air.Rotary.Havoc.Default` and `Vehicle.Variant.Air.Rotary.Littlebird`). `WearThreshold` on 10 existing overrides 0.8 → 1.0.
-- **`Skin_TwoTone_Desert`:** overrides 3 → 8 (added `WEPN_036`, `KH2002`, `WEPN_033`, `WEPN_034` and `Vehicle.Variant.Air.Rotary.Havoc.Default`).
-- **`Skin_BlackAndGold`:** overrides 1 → 3 (added `WEPN_033` and `Vehicle.Variant.Air.Rotary.Havoc.Default`). Default accent UV Y 1.35187 → 0.1.
+- **New skin asset:** [`Skin_ChocolateChip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_ChocolateChip.json) (in [`Season01_SkinsData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Season01_SkinsData.json)), pattern `T_Pattern_ChocolateChip`, LUT `T_LUT_Brown_001`, with 56 overrides, the largest set.
+- **New folder [`Season02_SkinsData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Season02_SkinsData.json):** cosmetic table [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json) with 8 rows (3 of them ChocolateChip), registered to `CosmeticData` through the new feature file.
+- **[`Skin_DigitalWood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_DigitalWood.json):** overrides 43 → 46 (added [`WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/WEPN_034.json), `Vehicle.Variant.Air.Rotary.Havoc.Default` and `Vehicle.Variant.Air.Rotary.Littlebird`). `WearThreshold` on 10 existing overrides 0.8 → 1.0.
+- **[`Skin_TwoTone_Desert`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_TwoTone_Desert.json):** overrides 3 → 8 (added [`WEPN_036`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/WEPN_036.json), `KH2002`, [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json), [`WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/WEPN_034.json) and `Vehicle.Variant.Air.Rotary.Havoc.Default`).
+- **[`Skin_BlackAndGold`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_BlackAndGold.json):** overrides 1 → 3 (added [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json) and `Vehicle.Variant.Air.Rotary.Havoc.Default`). Default accent UV Y 1.35187 → 0.1.
 - No skin assets or cosmetic rows were removed.
 
 Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
@@ -88,7 +88,7 @@ Each `WDSkinDataAsset` holds one `Skin` struct with four fields: `Pattern_ID_Mas
 | Skin_TwoTone_Desert | Season01_SkinsData | T_Pattern_Solid_001 | T_LUT_Desert_002 | 8 | M4, Judge, Mosin, WEPN_036, KH2002, WEPN_033, WEPN_034, Vehicle.Variant.Air.Rotary.Havoc.Default |
 | Skin_ChocolateChip | Season01_SkinsData | T_Pattern_ChocolateChip | T_LUT_Brown_001 | 56 | WEPN_037, WEPN_029, MMGL, Defibrillator, M67Grenade, Vehicle.Variant.Land.Wheeled.Ural.Default, Vehicle.Variant.Land.Wheeled.Ural.Battle, Vehicle.Variant.Land.Wheeled.Ural.Attack, Vehicle.Variant.Land.Wheeled.Bobcat.Default, WEPN_030, M4, AK74M, TAR21, A91, KH2002, CombatBow, SKS, SVDM, M249, LMG_02, Judge, Glock17, WEPN_032, WEPN_026, WEPN_027, M500, MP43, SMG_03, WEPN_028, SV98, MK22, SR_04, CGM4, RPG7, Launcher_04, WEPN_036, Mosin, Vehicle.Variant.Land.Wheeled.Humvee.MachineGun, Vehicle.Variant.Land.Wheeled.DuneBuggy, Vehicle.Variant.Air.Rotary.ROT_01.Default, Vehicle.Variant.Land.Wheeled.Humvee.Minigun, Vehicle.Variant.Land.Wheeled.Kodiak.Default, Vehicle.Variant.Land.Tracked.TNK_01.Artillery, Vehicle.Variant.Land.Tracked.TNK_01.AntiAir, Vehicle.Variant.Land.Wheeled.Kodiak.Pickup, Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun, Vehicle.Variant.Land.Tracked.TNK_01.Heavy, Vehicle.Variant.Air.Rotary.Littlebird.Default, Vehicle.Variant.Land.Wheeled.DuneBuggy.Default, Vehicle.Variant.Land.Wheeled.Humvee.Default, WEPN_033, MP9, RFB, Vector, WEPN_034, Vehicle.Variant.Air.Rotary.ROT_02 |
 
-Override targets for `Skin_ChocolateChip` cover 56 items, the largest set. `Skin_DigitalWood` covers 46. The other five assets override 1 to 8 items each. Each override sets its own `DisplaySkin`, `WearThreshold`, `DisplayMastery` and `MasteryColour`, so one skin can look different on each item.
+Override targets for [`Skin_ChocolateChip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_ChocolateChip.json) cover 56 items, the largest set. [`Skin_DigitalWood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_DigitalWood.json) covers 46. The other five assets override 1 to 8 items each. Each override sets its own `DisplaySkin`, `WearThreshold`, `DisplayMastery` and `MasteryColour`, so one skin can look different on each item.
 
 ---
 
@@ -96,9 +96,9 @@ Override targets for `Skin_ChocolateChip` cover 56 items, the largest set. `Skin
 
 | Feature file | Action | Effect |
 |---|---|---|
-| FactionLogo_SkinsData | DataRegistrySource | Adds `DT_Cosmetics_FactionLogo` to registry `CosmeticData` (priority 0, client and server) |
-| Season01_SkinsData | DataRegistrySource | Adds `DT_Cosmetics_Season01_Skins` to registry `CosmeticData` (priority 0, client and server) |
-| Season02_SkinsData | DataRegistrySource | Adds `DT_Cosmetics_Season02_Skins` to registry `CosmeticData` (priority 0, client and server) |
+| FactionLogo_SkinsData | DataRegistrySource | Adds [`DT_Cosmetics_FactionLogo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/FactionLogo_SkinsData/Content/Data/DT_Cosmetics_FactionLogo.json) to registry `CosmeticData` (priority 0, client and server) |
+| Season01_SkinsData | DataRegistrySource | Adds [`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json) to registry `CosmeticData` (priority 0, client and server) |
+| Season02_SkinsData | DataRegistrySource | Adds [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json) to registry `CosmeticData` (priority 0, client and server) |
 | Season01_SkinsAssets | GameFeatureData | No properties exported; its role is not confirmed |
 | SkinsInSession | AddComponents | Adds `WDActorSkinComponent` to `BHItem`, `BHBaseVehiclePawn`, `WDDroppedItem` (client and server, one entry per actor class) |
 | SkinsInSession | SkinDisplayBadgeData | Preview material: `MM_SkinsPreview` |
@@ -118,11 +118,11 @@ Override targets for `Skin_ChocolateChip` cover 56 items, the largest set. `Skin
 - **Prices, unlock conditions and rarity** for cosmetics are not in this folder.
 - **Texture and material contents** (what `T_Pattern_*`, `T_LUT_*` and `MM_SkinsPreview` look like) are not decoded.
 - **`CPD` field meanings.** The UV, wear and mastery field names are as exported. Their effect on rendering is not confirmed.
-- **Component class** `WDActorSkinComponent` and the `SkinsInSession` runtime are only named here, not decoded.
+- **Component class** `WDActorSkinComponent` and the [`SkinsInSession`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/SkinsInSession/Content/SkinsInSession.json) runtime are only named here, not decoded.
 
 ### Other assets (round 73)
 
-`DA_SkindBadgeData` (misspelt as exported) is the `SkinDisplayBadgeData` asset listed above: one property, `BadgeMaterial = /Season01_SkinsAssets/Materials/MM_SkinsPreview`.
+[`DA_SkindBadgeData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/SkinsInSession/Content/DA_SkindBadgeData.json) (misspelt as exported) is the `SkinDisplayBadgeData` asset listed above: one property, `BadgeMaterial = /Season01_SkinsAssets/Materials/MM_SkinsPreview`.
 
 ## Change log
 

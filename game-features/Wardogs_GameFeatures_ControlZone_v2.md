@@ -6,7 +6,7 @@ description: "The Control Zone mode package: zone geometry, hot zone movement, b
 ---
 
 # Wardogs — GameFeature: ControlZone Reference
-*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/ControlZone/` (21 JSON files). Scripted pass over every file, then spot-checked against the configs and tables.*
+*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/ControlZone/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ControlZone) (21 JSON files). Scripted pass over every file, then spot-checked against the configs and tables.*
 
 > **Scope:** this folder defines **how Control Zones are shaped, placed and moved** per map, and the HUD, placement and reward-feed plumbing around them. The per-tick **reward cash values** for Control Zone and Hot Zone (contested, owned, entered, passenger events) are in `Wardogs_Rewards_and_Progression_v2.md`, section 6a. The **map-level zone regions** are in the sibling doc `Wardogs_GameFeatures_ControlZoneRegions_v2.md`.
 
@@ -14,7 +14,7 @@ description: "The Control Zone mode package: zone geometry, hot zone movement, b
 
 ## Season 02 update (2026-10-15)
 
-- Four zone configs added: `DA_ControlZoneConfig_SniperShowdown_NorthAmerica`, `DA_ControlZoneConfig_SniperShowdown_Russia`, `DA_ControlZone_Config_Africa` and `DA_ControlZone_Config_Russia` (zone configs 5 → 9; JSON files 17 → 21).
+- Four zone configs added: [`DA_ControlZoneConfig_SniperShowdown_NorthAmerica`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_NorthAmerica.json), [`DA_ControlZoneConfig_SniperShowdown_Russia`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_Russia.json), [`DA_ControlZone_Config_Africa`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Africa.json) and [`DA_ControlZone_Config_Russia`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Russia.json) (zone configs 5 → 9; JSON files 17 → 21).
 - Africa and Russia are 55,000 × 55,000 × 15,000 cylinders with 8,500-unit Hot Zones and 25 s move delay. Each has four alternators, all Ellipse zones of 50,000 × 50,000 × 50,000: Africa `Kenya.Default` weight 1.0 (North, East, West 0.0); Russia `Sabartulo.Hospital` weight 1.0 (Bazaar, River, Hillside 0.0).
 - The two new Sniper configs are 35,000 × 35,000 × 17,000 cylinders with 7,500-unit Hot Zones, no alternators, zero first and move delay, default speed 1.5 and the same speed table as the Sniper Bakurani config.
 
@@ -26,15 +26,15 @@ Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-c
 
 | Group | Files | Contents |
 |---|---|---|
-| Root bundle | 1 | `ControlZone.json` (`GameFeatureData`) with 4 actions: `AddComponents`, `AddWorldPartitionContent`, `DataRegistrySource`, and a `WDGameFeatureAction_AddWidgetElements` that adds 15 HUD widget instances. |
-| Zone configs (`ControlZone/Config/`) | 9 | `WDControlZoneConfigDataAsset`: Bakurani, Gym_Minimal, SniperShowdown_Bakurani, SniperShowdown_NorthAmerica, SniperShowdown_Russia, Europe, NorthAmerica, Africa, Russia. |
-| Balance | 1 | `DT_ControlZoneContributionModifiers` (3 rows): vitality multipliers. |
-| Reward feed | 1 | `DT_ControlZoneRewardFeedActions` (12 rows). |
-| Placement UX | 2 | `DT_ControlZone_PlacementDisplayTexts` (1 row), `DT_DeploymentRejectionReasons_ControlZone` (1 row). |
-| AI | 1 | `EQS_FindControlZoneTeleportLocation` (EnvQuery with 1 generator, 3 tests). |
-| HUD / trackers | 5 | `DA_GameModeStatus`, `DA_GameModeStatusEntry`, `DA_Tracker_Map_ControlZone`, `DT_TrackerData_Map_ControlZone`, `DA_ControlZone_SpatialTracker`, `DT_Trackers_ControlZone_Spatial`. |
+| Root bundle | 1 | [`ControlZone.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json) (`GameFeatureData`) with 4 actions: `AddComponents`, `AddWorldPartitionContent`, `DataRegistrySource`, and a `WDGameFeatureAction_AddWidgetElements` that adds 15 HUD widget instances. |
+| Zone configs ([`ControlZone/Config/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config)) | 9 | `WDControlZoneConfigDataAsset`: Bakurani, Gym_Minimal, SniperShowdown_Bakurani, SniperShowdown_NorthAmerica, SniperShowdown_Russia, Europe, NorthAmerica, Africa, Russia. |
+| Balance | 1 | [`DT_ControlZoneContributionModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Data/DT_ControlZoneContributionModifiers.json) (3 rows): vitality multipliers. |
+| Reward feed | 1 | [`DT_ControlZoneRewardFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/RewardFeed/Data/DT_ControlZoneRewardFeedActions.json) (12 rows). |
+| Placement UX | 2 | [`DT_ControlZone_PlacementDisplayTexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/DT_ControlZone_PlacementDisplayTexts.json) (1 row), [`DT_DeploymentRejectionReasons_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/DeploymentBoard/DT_DeploymentRejectionReasons_ControlZone.json) (1 row). |
+| AI | 1 | [`EQS_FindControlZoneTeleportLocation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/AI/EQS/EQS_FindControlZoneTeleportLocation.json) (EnvQuery with 1 generator, 3 tests). |
+| HUD / trackers | 5 | [`DA_GameModeStatus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/GameModeStatus/Data/DA_GameModeStatus.json), [`DA_GameModeStatusEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/GameModeStatus/Widgets/Entry/Data/DA_GameModeStatusEntry.json), [`DA_Tracker_Map_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/MapTrackers/Data/DA_Tracker_Map_ControlZone.json), [`DT_TrackerData_Map_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_ControlZone.json), [`DA_ControlZone_SpatialTracker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.json), [`DT_Trackers_ControlZone_Spatial`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/SpatialTrackers/Data/DT_Trackers_ControlZone_Spatial.json). |
 
-Note: `DT_TrackerData_Map_ControlZone` and `DT_Trackers_ControlZone_Spatial` are DataTables with 1 row each. Their rows point to the `DA_` data assets.
+Note: [`DT_TrackerData_Map_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_ControlZone.json) and [`DT_Trackers_ControlZone_Spatial`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/SpatialTrackers/Data/DT_Trackers_ControlZone_Spatial.json) are DataTables with 1 row each. Their rows point to the `DA_` data assets.
 
 ---
 
@@ -44,15 +44,15 @@ Every base zone is a **Cylinder** (`EWDZoneShape::Cylinder`); the Africa and Rus
 
 | Config | Control Zone extents (X × Y × Z) | Hot Zone extents (X × Y × Z) | Centre (X, Y, Z) | Alternators |
 |---|---|---|---|---|
-| `DA_ControlZoneConfig_Bakurani` | 50,000 × 50,000 × 17,000 | 8,500 × 8,500 × 17,000 | (-836,067, -1,123,312, -95,160) | **3** (see 2a) |
-| `DA_ControlZone_Config_Europe` | 55,000 × 55,000 × 15,000 | 8,500 × 8,500 × 15,000 | (-638,341, -620,784, n/a) | **4** (see 2a) |
-| `DA_ControlZone_Config_NorthAmerica` | 50,000 × 50,000 × 50,000 | 8,500 × 8,500 × **85,000** | (-112,728, -211,237, n/a) | **4** (see 2a) |
-| `DA_ControlZoneConfig_SniperShowdown_Bakurani` | 35,000 × 35,000 × 17,000 | 7,500 × 7,500 × 17,000 | (-672,688, -1,117,098, n/a) | none |
-| `DA_ControlZoneConfig_SniperShowdown_NorthAmerica` | 35,000 × 35,000 × 17,000 | 7,500 × 7,500 × 17,000 | (-61,478, -245,857, 3,641) | none |
-| `DA_ControlZoneConfig_SniperShowdown_Russia` | 35,000 × 35,000 × 17,000 | 7,500 × 7,500 × 17,000 | (-40,227, -65,866, 13,214) | none |
-| `DA_ControlZone_Config_Africa` | 55,000 × 55,000 × 15,000 | 8,500 × 8,500 × 15,000 | (231,528, 240,518, 0) | **4** (see 2a) |
-| `DA_ControlZone_Config_Russia` | 55,000 × 55,000 × 15,000 | 8,500 × 8,500 × 15,000 | (-18,147, -5,916, 13,214) | **4** (see 2a) |
-| `DA_ControlZoneConfig_Gym_Minimal` | 5,000 × 5,000 × 2,500 | none (shape only) | (9,290, -1,030, 0) | none |
+| [`DA_ControlZoneConfig_Bakurani`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_Bakurani.json) | 50,000 × 50,000 × 17,000 | 8,500 × 8,500 × 17,000 | (-836,067, -1,123,312, -95,160) | **3** (see 2a) |
+| [`DA_ControlZone_Config_Europe`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Europe.json) | 55,000 × 55,000 × 15,000 | 8,500 × 8,500 × 15,000 | (-638,341, -620,784, n/a) | **4** (see 2a) |
+| [`DA_ControlZone_Config_NorthAmerica`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_NorthAmerica.json) | 50,000 × 50,000 × 50,000 | 8,500 × 8,500 × **85,000** | (-112,728, -211,237, n/a) | **4** (see 2a) |
+| [`DA_ControlZoneConfig_SniperShowdown_Bakurani`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_Bakurani.json) | 35,000 × 35,000 × 17,000 | 7,500 × 7,500 × 17,000 | (-672,688, -1,117,098, n/a) | none |
+| [`DA_ControlZoneConfig_SniperShowdown_NorthAmerica`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_NorthAmerica.json) | 35,000 × 35,000 × 17,000 | 7,500 × 7,500 × 17,000 | (-61,478, -245,857, 3,641) | none |
+| [`DA_ControlZoneConfig_SniperShowdown_Russia`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_SniperShowdown_Russia.json) | 35,000 × 35,000 × 17,000 | 7,500 × 7,500 × 17,000 | (-40,227, -65,866, 13,214) | none |
+| [`DA_ControlZone_Config_Africa`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Africa.json) | 55,000 × 55,000 × 15,000 | 8,500 × 8,500 × 15,000 | (231,528, 240,518, 0) | **4** (see 2a) |
+| [`DA_ControlZone_Config_Russia`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZone_Config_Russia.json) | 55,000 × 55,000 × 15,000 | 8,500 × 8,500 × 15,000 | (-18,147, -5,916, 13,214) | **4** (see 2a) |
+| [`DA_ControlZoneConfig_Gym_Minimal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Config/DA_ControlZoneConfig_Gym_Minimal.json) | 5,000 × 5,000 × 2,500 | none (shape only) | (9,290, -1,030, 0) | none |
 
 Notes:
 - The NorthAmerica Hot Zone is 85,000 tall against a Control Zone that is 50,000 tall. That is about 1.7× the Control Zone height, unlike the other configs where the two heights are equal. It may be intentional, but the values look unusual and were not verified in-game.
@@ -117,7 +117,7 @@ How the fields read (inferred from names; no runtime check):
 
 ---
 
-## 4. Balance: Contribution Modifiers (`DT_ControlZoneContributionModifiers`)
+## 4. Balance: Contribution Modifiers ([`DT_ControlZoneContributionModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Data/DT_ControlZoneContributionModifiers.json))
 
 Applied to a player's contribution to the zone based on their vitality state.
 
@@ -131,7 +131,7 @@ So a critically wounded player does not contribute to capturing a zone. The mult
 
 ---
 
-## 5. Reward Feed Actions (`DT_ControlZoneRewardFeedActions`, 12 rows)
+## 5. Reward Feed Actions ([`DT_ControlZoneRewardFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/RewardFeed/Data/DT_ControlZoneRewardFeedActions.json), 12 rows)
 
 These rows are the reward-feed messages. Each is keyed by a `Meta.Progression.Resources.MatchScore.ObjectiveScore.*` tag. The rows have **no display text in this table** (`SourceString` is None) and their `Tag` column is None, so the strings are localised elsewhere.
 
@@ -160,8 +160,8 @@ Two strings handle the case where a player tries to place or deploy outside a Co
 
 | Table | Tag | Localised key |
 |---|---|---|
-| `DT_ControlZone_PlacementDisplayTexts` | `UI.Interactions.PlacementWarnings.NotInControlZone` | `PlacementWarning.LocationNotInControlZone` |
-| `DT_DeploymentRejectionReasons_ControlZone` | `Interactive.Deployment.Rejection.NotInControlZone` | `RejectionReasons.NotInControlZone` |
+| [`DT_ControlZone_PlacementDisplayTexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/DT_ControlZone_PlacementDisplayTexts.json) | `UI.Interactions.PlacementWarnings.NotInControlZone` | `PlacementWarning.LocationNotInControlZone` |
+| [`DT_DeploymentRejectionReasons_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/DeploymentBoard/DT_DeploymentRejectionReasons_ControlZone.json) | `Interactive.Deployment.Rejection.NotInControlZone` | `RejectionReasons.NotInControlZone` |
 
 Both live in `/ControlZone/UI/STRINGS_ControlZone`.
 
@@ -181,11 +181,11 @@ Localised strings used by this element:
 | `ControlZone.HUD.SpatialTrackers.AOZone` | Off-zone pointer text (Control Zone) |
 | `ControlZone.HUD.SpatialTrackers.HotZone` | Off-zone pointer text (Hot Zone) |
 
-The `DA_GameModeStatus` and `DA_GameModeStatusEntry` data assets hold the layout and per-entry settings. Their numeric content was not extracted in this pass (section 9).
+The [`DA_GameModeStatus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/GameModeStatus/Data/DA_GameModeStatus.json) and [`DA_GameModeStatusEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/GameModeStatus/Widgets/Entry/Data/DA_GameModeStatusEntry.json) data assets hold the layout and per-entry settings. Their numeric content was not extracted in this pass (section 9).
 
 ---
 
-## 8. AI: Teleport Location Query (`EQS_FindControlZoneTeleportLocation`)
+## 8. AI: Teleport Location Query ([`EQS_FindControlZoneTeleportLocation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/AI/EQS/EQS_FindControlZoneTeleportLocation.json))
 
 An Environment Query used to find a teleport destination near a Control Zone.
 
@@ -202,10 +202,10 @@ The purpose (where the AI teleports to) is inferred from the name and the tests.
 
 ## 9. Limitations
 
-- **Not extracted in this pass:** numeric content of `DA_GameModeStatus`, `DA_GameModeStatusEntry`, the map and spatial tracker assets (`DA_Tracker_Map_ControlZone`, `DA_ControlZone_SpatialTracker`), and the distance thresholds in the EQS tests. The files exist and are listed in section 1.
+- **Not extracted in this pass:** numeric content of [`DA_GameModeStatus`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/GameModeStatus/Data/DA_GameModeStatus.json), [`DA_GameModeStatusEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/GameModeStatus/Widgets/Entry/Data/DA_GameModeStatusEntry.json), the map and spatial tracker assets ([`DA_Tracker_Map_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/MapTrackers/Data/DA_Tracker_Map_ControlZone.json), [`DA_ControlZone_SpatialTracker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/SpatialTrackers/Data/DA_ControlZone_SpatialTracker.json)), and the distance thresholds in the EQS tests. The files exist and are listed in section 1.
 - **Reward cash values** are not in this folder. Use `Wardogs_Rewards_and_Progression_v2.md`, section 6a.
-- **Zone regions** (the polygon data that says which areas of the map count as capturable) are in `ControlZoneRegions`, not here. See the sibling doc.
-- **The 15 HUD widget instances** in the root bundle are listed as entries in `ControlZone.json`. Only the main `W_GameModeStatus` element was resolved to a class in this pass. The other 14 instances were not individually mapped.
+- **Zone regions** (the polygon data that says which areas of the map count as capturable) are in [`ControlZoneRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/ControlZoneRegions.json), not here. See the sibling doc.
+- **The 15 HUD widget instances** in the root bundle are listed as entries in [`ControlZone.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone.json). Only the main `W_GameModeStatus` element was resolved to a class in this pass. The other 14 instances were not individually mapped.
 - **Alternator weight 0 entries** (Europe Farmland, NorthAmerica SmallFactory, Africa North/East/West, Russia Bazaar/River/Hillside) are read as never selected. The game may use them elsewhere; this was not checked.
   - **See [`docs/CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md)** for the project-wide cross-reference index of where referenced assets are defined.
 - **The NorthAmerica Hot Zone height** (85,000 against 50,000) is reported as found and not interpreted.

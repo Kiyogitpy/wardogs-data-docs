@@ -6,7 +6,7 @@ description: "Significance settings (update rates per level) and the sphere and 
 ---
 
 # Wardogs — Significance Reference
-*Extracted from cooked game data (JSON export, `Wardogs/Content/Significance/`, 15 source files: 8 significance settings, 2 FOV evaluators, 5 sphere evaluators). Parsed with a Python script. Values are the raw exported values.*
+*Extracted from cooked game data (JSON export, [`Wardogs/Content/Significance/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Significance), 15 source files: 8 significance settings, 2 FOV evaluators, 5 sphere evaluators). Parsed with a Python script. Values are the raw exported values.*
 
 > **What this is:** the significance system decides how often each object type updates, based on distance and (for some types) whether it is in view. Each **settings** asset is one object category. It lists which **evaluators** to use and gives a timing row per significance level. The evaluators hold the distance and cone thresholds that place an object in a level.
 
@@ -28,14 +28,14 @@ Each row is one settings asset. Each cell gives the timing for that significance
 
 | Settings asset | Evaluators | L0 | L1 | L2 | L3 | L4 | L5 |
 |---|---|---|---|---|---|---|---|
-| `DA_SignificanceSettings_Default` | Sphere_Default | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.06 / 0.3 / 1.0 | 0.1 / 1.0 / 2.0 | | |
-| `DA_SignificanceSettings_PrimaryMovable` | Sphere_Default, FOV_Primary | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.06 / 0.3 / 1.0 | 0.1 / 1.0 / 2.0 | | |
-| `DA_SignificanceSettings_RotaryVehicle` | Sphere_Default, FOV_Primary | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.06 / 0.3 / 1.0 | 0.1 / 1.0 / 2.0 | | |
-| `DA_SignificanceSettings_HoldableWeapon` | Sphere_HoldableWeapon | 0 / 0.15 / 0.03 | 0.1 / 0.25 / 0.1 | 0.33 / 0.5 / 1.0 | 0.75 / 1.0 / 2.0 | | |
-| `DA_SignificanceSettings_NPP` | Sphere_NPP, FOV_NPP | −1 / 0.03 / 0.03 | −1 / 0.03 / 0.03 | −1 / 0.06 / 0.06 | −1 / 0.09 / 0.09 | −1 / 0.12 / 0.12 | −1 / 0.12 / 0.12 |
-| `DA_SignificanceSettings_WorldInteractionComponent` | Sphere_Default | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.3 / 0.3 / 0.3 | −1 / 1.0 / 1.0 | | |
-| `DA_SignificanceSettings_WorldMovementEffectsComponent` | Sphere_MovementEffectsComponent | 0 / 0.3 / 0.5 | −1 / 1.0 / 1.0 | | | | |
-| `DA_SignificanceSettings_BudgetedCharacterMesh` | Sphere_BudgetedCharacterMesh | 0 / 0.03 / 0.03 | 0 / 0.1 / 0.1 | 0 / 0.1 / 0.1 | | | |
+| [`DA_SignificanceSettings_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_Default.json) | Sphere_Default | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.06 / 0.3 / 1.0 | 0.1 / 1.0 / 2.0 | | |
+| [`DA_SignificanceSettings_PrimaryMovable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_PrimaryMovable.json) | Sphere_Default, FOV_Primary | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.06 / 0.3 / 1.0 | 0.1 / 1.0 / 2.0 | | |
+| [`DA_SignificanceSettings_RotaryVehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_RotaryVehicle.json) | Sphere_Default, FOV_Primary | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.06 / 0.3 / 1.0 | 0.1 / 1.0 / 2.0 | | |
+| [`DA_SignificanceSettings_HoldableWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_HoldableWeapon.json) | Sphere_HoldableWeapon | 0 / 0.15 / 0.03 | 0.1 / 0.25 / 0.1 | 0.33 / 0.5 / 1.0 | 0.75 / 1.0 / 2.0 | | |
+| [`DA_SignificanceSettings_NPP`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_NPP.json) | Sphere_NPP, FOV_NPP | −1 / 0.03 / 0.03 | −1 / 0.03 / 0.03 | −1 / 0.06 / 0.06 | −1 / 0.09 / 0.09 | −1 / 0.12 / 0.12 | −1 / 0.12 / 0.12 |
+| [`DA_SignificanceSettings_WorldInteractionComponent`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_WorldInteractionComponent.json) | Sphere_Default | 0 / 0.03 / 0.03 | 0.03 / 0.1 / 0.1 | 0.3 / 0.3 / 0.3 | −1 / 1.0 / 1.0 | | |
+| [`DA_SignificanceSettings_WorldMovementEffectsComponent`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_WorldMovementEffectsComponent.json) | Sphere_MovementEffectsComponent | 0 / 0.3 / 0.5 | −1 / 1.0 / 1.0 | | | | |
+| [`DA_SignificanceSettings_BudgetedCharacterMesh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/DA_SignificanceSettings_BudgetedCharacterMesh.json) | Sphere_BudgetedCharacterMesh | 0 / 0.03 / 0.03 | 0 / 0.1 / 0.1 | 0 / 0.1 / 0.1 | | | |
 
 Column notes:
 - `TickRate` of **−1** appears on every NPP level, on the last level of WorldInteractionComponent, and on the last level of WorldMovementEffectsComponent. It is probably a "do not tick" sentinel, but the export does not say.
@@ -55,11 +55,11 @@ Timing patterns:
 
 | Evaluator | Distance thresholds (`Settings[i].Distance`) | Levels |
 |---|---|---|
-| `DA_Significance_Evaluator_Sphere_BudgetedCharacterMesh` | 0, 500, 1,000 | 3 |
-| `DA_Significance_Evaluator_Sphere_Default` | 0, 1,000, 2,500, 5,000 | 4 |
-| `DA_Significance_Evaluator_Sphere_HoldableWeapon` | 0, 1,000, 3,000, 8,000 | 4 |
-| `DA_Significance_Evaluator_Sphere_MovementEffectsComponent` | 0, 7,500 | 2 |
-| `DA_Significance_Evaluator_Sphere_NPP` | 0, 1,000, 2,500, 5,000, 10,000, 25,000 | 6 |
+| [`DA_Significance_Evaluator_Sphere_BudgetedCharacterMesh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_Sphere_BudgetedCharacterMesh.json) | 0, 500, 1,000 | 3 |
+| [`DA_Significance_Evaluator_Sphere_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_Sphere_Default.json) | 0, 1,000, 2,500, 5,000 | 4 |
+| [`DA_Significance_Evaluator_Sphere_HoldableWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_Sphere_HoldableWeapon.json) | 0, 1,000, 3,000, 8,000 | 4 |
+| [`DA_Significance_Evaluator_Sphere_MovementEffectsComponent`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_Sphere_MovementEffectsComponent.json) | 0, 7,500 | 2 |
+| [`DA_Significance_Evaluator_Sphere_NPP`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_Sphere_NPP.json) | 0, 1,000, 2,500, 5,000, 10,000, 25,000 | 6 |
 
 Distances are in the export's engine units. If they are Unreal cm, the Default thresholds are 0, 10, 25 and 50 m.
 
@@ -71,8 +71,8 @@ Distances are in the export's engine units. If they are Unreal cm, the Default t
 
 | Evaluator | (Distance, ConeAngle°) pairs | Levels |
 |---|---|---|
-| `DA_Significance_Evaluator_FOV_Primary` | (50,000, 15), (35,000, 25), (20,000, 35), (10,000, 40) | 4 |
-| `DA_Significance_Evaluator_FOV_NPP` | (100,001, 15), (50,000, 20), (25,000, 30), (10,000, 50), (5,000, 60), (2,500, 90) | 6 |
+| [`DA_Significance_Evaluator_FOV_Primary`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_FOV_Primary.json) | (50,000, 15), (35,000, 25), (20,000, 35), (10,000, 40) | 4 |
+| [`DA_Significance_Evaluator_FOV_NPP`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Significance/Evaluators/DA_Significance_Evaluator_FOV_NPP.json) | (100,001, 15), (50,000, 20), (25,000, 30), (10,000, 50), (5,000, 60), (2,500, 90) | 6 |
 
 The cone angle widens as distance falls: the narrowest cone (15°) applies at the longest range, and the widest (90° for NPP) at the shortest. This reads as "far objects count only if nearly in front of the camera, close objects count from almost any angle". That is an inference from the values, not confirmed.
 

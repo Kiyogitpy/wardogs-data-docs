@@ -22,7 +22,7 @@ description: "Top vest tier: 60% damage reduction on the torso, pelvis and upper
 | Price | 5,000 cash (4,000 in Season 1) |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_SuperHeavyArmor` (item `Id.Item.SuperHeavyArmor`) |
+| Internal name | [`ID_SuperHeavyArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_SuperHeavyArmor.json) (item `Id.Item.SuperHeavyArmor`) |
 {: .wiki-infobox }
 
 Level 4 Armor is the top vest tier. It covers the same torso as the lower tiers, and also the pelvis and upper arms. It cuts damage at those parts by 60%. It is the heaviest vest and costs 5,000 cash.

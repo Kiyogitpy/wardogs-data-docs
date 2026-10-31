@@ -25,7 +25,7 @@ description: "A small camouflage tent built with any hammer from 7 Build Supplie
 | Rockets | +200% |
 | C4 | +150% |
 | IEDs | +500% |
-| Internal name | `DA_Buildable_CamoNetTent` |
+| Internal name | [`DA_Buildable_CamoNetTent`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/CamoNetTent/DA_Buildable_CamoNetTent.json) |
 {: .wiki-infobox }
 
 The Recon Tent is a small tent that any hammer can build. It costs 7 Build Supplies and has 300 HP. Its damage numbers are close to those of [Barbed Wire](barbed-wire.md), except that it has more health and takes more IED damage.

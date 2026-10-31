@@ -41,7 +41,7 @@ No sight in the data lands on a different side of 3.25 between the stored `AdsZo
 
 Not traced: the first evaluation of `0x6C9EEC0` after attach (its caller chain), so "starts at the attribute value" is read from the interpolator and the data, not from a traced first frame. Status: FOUND for the copy and its gate; FOUND (inferred from offsets) for the test input; the ramp start is partly inferred.
 
-**Correction to the premise.** The 6-10x MRAD and MOA scopes (`ID_10xScope`, `ID_10xScopeMoa`, `Content/Items/Attachments/Sights/10x_Scope`) do carry the zoom fields: bCanVariableZoom true, Min 6, Max 10, `AdsZoomMultiplier` 10. They are variable scopes and the attribute value 6 is their starting zoom.
+**Correction to the premise.** The 6-10x MRAD and MOA scopes ([`ID_10xScope`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/10x_Scope/ID_10xScope.json), [`ID_10xScopeMoa`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/10x_Scope/ID_10xScopeMoa.json), [`Content/Items/Attachments/Sights/10x_Scope`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Sights/10x_Scope)) do carry the zoom fields: bCanVariableZoom true, Min 6, Max 10, `AdsZoomMultiplier` 10. They are variable scopes and the attribute value 6 is their starting zoom.
 
 Data (cooked JSON; can zoom / Min / Max / stored AdsZoomMultiplier / zoom the effect sets):
 
@@ -51,7 +51,7 @@ Data (cooked JSON; can zoom / Min / Max / stored AdsZoomMultiplier / zoom the ef
 
 ## 2. Normal view: 106 or 90 (FOUND, static)
 
-`DA_PlayerCharacterComponents` (`WDFirstPersonCameraComponent_0`) has `FieldOfView` 106 and no first-person field of view override, so 106 is the camera component's starting value. The user setting (`BHUserSettings +0x26C`, override `+0x270` when flag `+0x274`; getter `0x4E38F20`) is applied in two ways:
+[`DA_PlayerCharacterComponents`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.json) ([`WDFirstPersonCameraComponent_0`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/DA_PlayerCharacterComponents.json)) has `FieldOfView` 106 and no first-person field of view override, so 106 is the camera component's starting value. The user setting (`BHUserSettings +0x26C`, override `+0x270` when flag `+0x274`; getter `0x4E38F20`) is applied in two ways:
 
 - `0x6D3F9E0` and `0x6D3F7A0` store it into the player camera manager's `DefaultFOV` (`+0x2D0`);
 - `0x6E84600` (call at `0x6E846C8`) calls virtual slot 200 (`+0x640`) of its camera object with the setting as the float argument. Slot 200 of the first-person camera component vtable `0xB2FAD78` is `0x394B1C0`, which is `movss [rcx+0x270], xmm1`: `SetFieldOfView`. So the setting overwrites the 106 at runtime.
@@ -107,7 +107,7 @@ Combo sights keep the 72 degree start in reflex mode because the test input does
 
 ## 4. Europe minimap row (FOUND)
 
-`DA_UI_Europe` stores `SizeX` 32,768, so the table row was a faithful copy of the stored field. The decoded texture `T_UI_Europe_VT` is 16,384 x 16,384 px (round 78 decode, size read with Pillow). The row now reads "32,768 stored; the texture file is 16,384" and the derived note says the implied 49.8 units per pixel does not match the file (99.6 with 16,384). File: `content/Wardogs_UI_v2.md`.
+[`DA_UI_Europe`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Tools/WorldCapture/Textures/Europe/DA_UI_Europe.json) stores `SizeX` 32,768, so the table row was a faithful copy of the stored field. The decoded texture `T_UI_Europe_VT` is 16,384 x 16,384 px (round 78 decode, size read with Pillow). The row now reads "32,768 stored; the texture file is 16,384" and the derived note says the implied 49.8 units per pixel does not match the file (99.6 with 16,384). File: `content/Wardogs_UI_v2.md`.
 
 ## Wiki updates
 

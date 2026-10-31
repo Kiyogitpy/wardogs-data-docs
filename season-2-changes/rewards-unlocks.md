@@ -24,7 +24,7 @@ Full filterable list: [Rewards & Unlocks in the change browser]({{ '/season-2-ch
 
 ### Role mastery XP
 
-`DT_RoleMasteryDefinitions` has 546 changed XP values: 6 roles (Driver, Infantry, Medic, Pilot, Recon, Support) with 91 levels each, levels 10 to 100. The values are the same for every role.
+[`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json) has 546 changed XP values: 6 roles (Driver, Infantry, Medic, Pilot, Recon, Support) with 91 levels each, levels 10 to 100. The values are the same for every role.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---:|---:|---:|
@@ -36,7 +36,7 @@ Full filterable list: [Rewards & Unlocks in the change browser]({{ '/season-2-ch
 | DT_RoleMasteryDefinitions | Driver · level 75 · XP | 2826750 | 2218000 | −608750 (−21.5%) |
 | DT_RoleMasteryDefinitions | Driver · level 100 · XP | 6000000 | 5132500 | −867500 (−14.5%) |
 
-### Unlock tree costs and level gates (`DT_MetaTree_Roles`)
+### Unlock tree costs and level gates ([`DT_MetaTree_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json))
 
 Nodes are matched by item ID, so each row is the same unlock in both seasons. 54 node cash costs and 118 node level gates (`MinLevel`) changed. 50 nodes were added and 19 removed. Node lists were also reordered in 7 roles.
 
@@ -158,7 +158,7 @@ Nodes added and removed, by role:
 | Support | 5 | 3 | `Id.Item.SGHT_030`, `Id.Item.WEPN_036`, `Id.Item.MAGZ_067`, `Id.Item.FGRP_019`, `Id.Item.MUZL_070` | `Id.Item.C4Trigger`, `Id.Item.C4Explosive`, `Id.Item.4xElcanSpectr` |
 | Wardog | 8 | 3 | `ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply`, `ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply`, `ID.Item.VehicleSupplyCrate.Pallet.FuelSupply`, `Id.Item.SGHT_038`, `Id.Item.SGHT_026`, `Id.Item.MusicTape.11`, `Id.Item.3xScope`, `Meta.Unlocks.GoldExchange` | `Id.Item.OPT_08`, `Id.Item.SGHT_029`, `Vehicle.Variant.Land.Tracked.TNK_01.Artillery` |
 
-### Challenge rewards (`DT_ChallengeRewards_SessionEvents_Shared`)
+### Challenge rewards ([`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json))
 
 50 numeric literal values changed and 47 non-numeric values changed. 735 values were added across 164 rows in 9 event groups, and 0 entry was removed.
 
@@ -234,7 +234,7 @@ Rows added, by event group:
 | SafeZoneEntered | 1 |
 | VehicleFlyThrough | 1 |
 
-### Buildable challenge rewards (`DT_ChallengeRewards_SessionEvents_Buildables`)
+### Buildable challenge rewards ([`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json))
 
 87 numeric literal values changed and 20 non-numeric values changed. 245 values were added across 38 rows, and 0 entries were removed.
 
@@ -302,7 +302,7 @@ Rows added, by group:
 | DT_Factory01_Recipes | Vector · production cost | 2080 | 4480 | +2400 (+115.4%) |
 | CRV_Challenges_Curves_PurchaseFromSupplyCrate_XP | Curve key 2 · time | 75.0 | 10.0 | −65 (−86.7%) |
 
-Cosmetic sort indexes in `DT_CosmeticSets_Debug` also changed (4 rows, each +1), and one cosmetic set was added (`ChocolateChip`).
+Cosmetic sort indexes in [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) also changed (4 rows, each +1), and one cosmetic set was added (`ChocolateChip`).
 
 ### Other tables with row-level changes
 
@@ -354,7 +354,7 @@ Non-zero input values in state tree instance data. Other scalar changes in these
 
 UI data (count only): 2 added assets are Wager UI tables. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=rewards-unlocks&q=Wagers).
 
-The Wagers system adds seven files under `Meta/Wagers`. Five are gameplay tables (pricing, actions, challenges, conditions, objective catalogue) and two are UI data.
+The Wagers system adds seven files under [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers). Five are gameplay tables (pricing, actions, challenges, conditions, objective catalogue) and two are UI data.
 
 ## Removed in Season 2
 

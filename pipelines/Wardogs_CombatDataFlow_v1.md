@@ -128,7 +128,7 @@ Build: `++Wardogs+Live-CL-516586` · Engine: UE 5.7
 | **Attachments GAS layer** (`GE_<Attachment>` applied via `UBHGameplayEffectComponent`) | Per-attachment modifiers to weapon attributes (ADS, recoil, mag capacity, etc.) | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) |
 | **Hit validation** (`BHHitValidationWorldSubsystem`) | Declared in the SDK; its edge into the damage event is not traced | — |
 | **Damage modification** (`UWDDamageSubsystem::ModifyDamage`) | Rule selection, ordering and arithmetic; five custom operations (bone, calibre, ammo type, seat, armor durability) | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1–7 |
-| **Damage hand-off** | Unreal damage event and `TakeDamage` on the target | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1.1 |
+| **Damage hand-off** | Unreal damage event and [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) on the target | [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1.1 |
 | **Vehicle damage** (same rule pipeline, per-vehicle rows) | 21 vehicle tables (23 rows, 581 selectable entries) through the same evaluator, then the section health model | [`Wardogs_VehicleDamagePipeline_v1.md`](Wardogs_VehicleDamagePipeline_v1.md) |
 | **Attribute application** (`UBHGameplayEffectComponent`) | Attribute storage and replication. Character damage writes the `Attribute.Gameplay.Health` base value directly (DamagePipeline §10) | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 |
 | **GameplayCue dispatch** | VFX, audio and animation cues through `UWDGameplayCueComponent`, separate from effects | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §6 |
@@ -141,7 +141,7 @@ How far the pipelines get for one hit, and where the numbers stop.
 
 | Input | Value | Source |
 |---|---|---|
-| Weapon stats | `DA_AK74M_Stats.json` | Fire data |
+| Weapon stats | [`DA_AK74M_Stats.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.json) | Fire data |
 | Caliber tag | `Item.Caliber.545mm` | `SupportedCaliber[0]` |
 | Weapon archetype tag | `Meta.Damage.Weapon.AR` | Classification |
 | Initial bullet speed | `89000.0` cm/s (= 890 m/s) | `InitialBulletSpeed` |
@@ -254,12 +254,12 @@ rules.
 | What's the GAS attribute system? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §4 — tag-keyed records with double base/current values, no `UAttributeSet` |
 | How many GE_* effect classes ship? | [`Wardogs_GameplayEffectsPipeline_v1.md`](Wardogs_GameplayEffectsPipeline_v1.md) §2 — 338 total |
 | What are the units on `InitialBulletSpeed`? | [`UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md) §1 — cm/s |
-| Where is `CT_Weapon_Spread` defined? | [`CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md) `CT_*` section |
+| Where is [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) defined? | [`CROSS_REFERENCE.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md) `CT_*` section |
 
 ## Change log
 
 | Date | Change |
 |---|---|
 | 2026-10-16 | v1 — First integration view. Covers end-to-end from fire event through damage pipelines to attribute application. Two worked examples: AK74M → infantry torso, 125mm rocket → tank front-plate. Remaining 4 blocking gaps catalogued for next-pass resolution. |
-| 2026-10-17 | Infantry path corrected against the damage pipeline: removed the "server-side" hit-validation claim and the untraced `SetAttributeBaseValue` write; replaced the multiplicative chain with the evaluator's arithmetic and the `TakeDamage` hand-off; withdrew the `× 1.10` example. Vehicle example unchanged pending the vehicle pass. |
+| 2026-10-17 | Infantry path corrected against the damage pipeline: removed the "server-side" hit-validation claim and the untraced `SetAttributeBaseValue` write; replaced the multiplicative chain with the evaluator's arithmetic and the [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) hand-off; withdrew the `× 1.10` example. Vehicle example unchanged pending the vehicle pass. |
 | 2026-10-17 | Rocket-to-tank example rewritten from the vehicle audit: same rule evaluator, real TNK_01 Heavy matches (×1.545), real section routing. |

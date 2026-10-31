@@ -6,7 +6,7 @@ description: "The free-fly spectator camera's input actions and the mapping cont
 ---
 
 # Wardogs — Plugin: BHSpectatorCamera
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/BHSpectatorCamera/` — 6 JSON files under `Content/Inputs/`: 5 input actions and 1 input mapping context.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/BHSpectatorCamera/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHSpectatorCamera) — 6 JSON files under [`Content/Inputs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs): 5 input actions and 1 input mapping context.*
 
 ---
 
@@ -20,15 +20,15 @@ The free-fly spectator camera's input setup. Five input actions define what the 
 
 | Action | Input tag | Value type | Purpose (from name) |
 |---|---|---|---|
-| `IA_BHSpectatorCameraMove` | `Input.NamedActions.SpectatorCam.Move` | Axis3D | Fly in three dimensions |
-| `IA_BHSpectatorCameraRotate` | `Input.NamedActions.SpectatorCam.Rotate` | Axis2D | Look around |
-| `IA_BHSpectatorCameraRoll` | `Input.NamedActions.SpectatorCam.Roll` | Axis1D | Roll the camera |
-| `IA_BHSpectatorCameraFast` | `Input.NamedActions.SpectatorCam.Fast` | (none set, button) | Speed boost while held |
-| `IA_BHSpectatorCameraLockOntoActor` | `Input.NamedActions.SpectatorCam.LockOntoActor` | (none set, button) | Lock the camera onto an actor |
+| [`IA_BHSpectatorCameraMove`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs/IA_BHSpectatorCameraMove.json) | `Input.NamedActions.SpectatorCam.Move` | Axis3D | Fly in three dimensions |
+| [`IA_BHSpectatorCameraRotate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs/IA_BHSpectatorCameraRotate.json) | `Input.NamedActions.SpectatorCam.Rotate` | Axis2D | Look around |
+| [`IA_BHSpectatorCameraRoll`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs/IA_BHSpectatorCameraRoll.json) | `Input.NamedActions.SpectatorCam.Roll` | Axis1D | Roll the camera |
+| [`IA_BHSpectatorCameraFast`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs/IA_BHSpectatorCameraFast.json) | `Input.NamedActions.SpectatorCam.Fast` | (none set, button) | Speed boost while held |
+| [`IA_BHSpectatorCameraLockOntoActor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs/IA_BHSpectatorCameraLockOntoActor.json) | `Input.NamedActions.SpectatorCam.LockOntoActor` | (none set, button) | Lock the camera onto an actor |
 
 ---
 
-## 3. Key Bindings (`IMC_BHSpectatorCamera`)
+## 3. Key Bindings ([`IMC_BHSpectatorCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHSpectatorCamera/Content/Inputs/IMC_BHSpectatorCamera.json))
 
 11 mappings. Each maps one key to one action, with optional triggers and modifiers.
 

@@ -22,6 +22,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import source_link, link_generated  # noqa: E402
 import weapon_attributes as wa  # noqa: E402
 from ge_values import OPS, num, short  # noqa: E402
 
@@ -108,7 +109,7 @@ def fits(d):
 # --- helpers ------------------------------------------------------------------------------------
 
 def link(item, label=None):
-    return f"`{label or item.asset}`"
+    return source_link(item.path, label or item.asset)
 
 
 def tname(d, tag):
@@ -227,7 +228,7 @@ def archetypes(d):
     cnt = collections.Counter(it.att_type for it in d.attachments)
     out = ["| Archetype asset | Slot tag | Attach bone | Category | Attachment items of this type |", "|---|---|---|---|---:|"]
     for path, name, tag, bone, cat in d.archetypes:
-        out.append(f"| `{name}` | `{tag}` | `{bone}` | {cat or '(not serialized)'} | {cnt.get(tag, 0)} |")
+        out.append(f"| {source_link(path, name)} | `{tag}` | `{bone}` | {cat or '(not serialized)'} | {cnt.get(tag, 0)} |")
     extra = sorted(t for t in cnt if t not in {a[2] for a in d.archetypes})
     if extra:
         out.append("")
@@ -472,7 +473,7 @@ def nullfrag(d):
             objs = [json.loads(p) for p in wa.EXPORT.split(f.read()) if p.strip()]
         p = next(o for o in objs if o.get("Type") == "BHInventoryItemDefinition")["Properties"]
         dn = (p.get("DisplayName") or {}).get("LocalizedString") or ""
-        out.append(f"| `{name}` | `{p['ItemId']['TagName']}` | {esc(dn) or '(blank)'} | "
+        out.append(f"| {source_link(rel, name)} | `{p['ItemId']['TagName']}` | {esc(dn) or '(blank)'} | "
                    + ", ".join(f"`{t}`" for t in p.get("ItemContext", []) if t.lower() not in HIDE_CTX) + " |")
     return "\n".join(out)
 
@@ -514,7 +515,7 @@ def regenerate(d, text):
     nl = "\r\n" if "\r\n" in text else "\n"
 
     def regen(m):
-        body = MODES[m.group(1)](d).split("\n")
+        body = link_generated(MODES[m.group(1)](d)).split("\n")
         return nl.join([f"<!-- attachment_tables {m.group(1)} -->"] + body + ["<!-- /attachment_tables -->"])
     return BLOCK.subn(regen, text)
 
@@ -539,7 +540,7 @@ def main():
                 f.write(new)
         print(f"{PAGE}: {count} tables {'updated' if new != text else 'unchanged'}")
         return 0
-    print(MODES[next((a for a in args if a in MODES), "counts")](d))
+    print(link_generated(MODES[next((a for a in args if a in MODES), "counts")](d)))
     return 0
 
 

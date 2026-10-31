@@ -16,7 +16,7 @@ exported platforms and their implementation families.
 
 The pass found and corrected two export errors. STN_05 was missed because
 its source directory is named `Varient`; it now appears as a table-only
-profile. Nested `Variants/Air` is also discovered, but FWG_01_Default has
+profile. Nested [`Variants/Air`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Vehicles/Variants/Air) is also discovered, but FWG_01_Default has
 no health sections or surface-slot mapping and remains explicitly unsupported.
 Its inherited LittleBird damage tag is not a substitute for those definitions.
 The 30 mm cannon's positive explosive radius was also hidden by a UI-category
@@ -42,19 +42,19 @@ inputs for every model.
 | `ROT_03_RocketPods` | Pass | Model present; 3 omitted |
 | `ROT_04_Default` | Pass | Model present; 1 omitted |
 | `ROT_04_MountedMachineGuns` | Pass | Model present; 2 omitted |
-| `SPW_01` | Pass | Model present; 0 omitted |
+| [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json) | Pass | Model present; 0 omitted |
 | `SPW_02` | Pass | Model present; 0 omitted |
 | `SPW_03` | Pass | Model present; 0 omitted |
-| `STN_01` | Pass | Model present; 0 omitted |
-| `STN_02` | Pass | Model present; 0 omitted |
-| `STN_03` | Pass | Model present; 1 omitted |
-| `STN_04` | Pass | Model present; 0 omitted |
-| `STN_05` | Pass | No model; table only; 1 omitted |
-| `STN_06` | Pass | Model present; 3 omitted |
+| [`STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/STN_01.json) | Pass | Model present; 0 omitted |
+| [`STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/STN_02.json) | Pass | Model present; 0 omitted |
+| [`STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/STN_03.json) | Pass | Model present; 1 omitted |
+| [`STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/STN_04.json) | Pass | Model present; 0 omitted |
+| [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) | Pass | No model; table only; 1 omitted |
+| [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) | Pass | Model present; 3 omitted |
 | `TNK_01_AntiAir` | Pass | Model present; 0 omitted |
 | `TNK_01_Artillery` | Pass | Model present; 1 omitted |
 | `TNK_01_Heavy` | Pass | Model present; 1 omitted |
-| `TNK_04` | Pass | Model present; 0 omitted |
+| [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) | Pass | Model present; 0 omitted |
 | `WHL_01_Default` | Pass | Model present; 0 omitted |
 | `WHL_02_Default` | Pass | Model present; 0 omitted |
 | `WHL_02_Pickup` | Pass | Model present; 0 omitted |
@@ -65,9 +65,9 @@ inputs for every model.
 | `WHL_06_DuneBuggy_Default` | Pass | Model present; 0 omitted |
 | `WHL_07_Battle` | Pass | Model present; 1 omitted |
 | `WHL_07_Default` | Pass | Model present; 0 omitted |
-| `WHL_07_ArmouredBattle` | Pass | Model present; 5 omitted |
+| [`WHL_07_ArmouredBattle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/WHL_07_ArmouredBattle.json) | Pass | Model present; 5 omitted |
 | `WHL_08_Default` | Pass | Model present; 0 omitted |
-| `WHL_08_RingTurret` | Pass | Model present; 0 omitted |
+| [`WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/WHL_08_RingTurret.json) | Pass | Model present; 0 omitted |
 
 ## Verified and remaining boundaries
 

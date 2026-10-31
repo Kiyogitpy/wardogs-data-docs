@@ -13,8 +13,8 @@ Reproduce: `python -I _tools/weapon_ranged_fields.py --check`, `python -I _tools
 | V4-05 `MaxPelletCount`, `MaxConsecutiveFullRefundedSubsteps` | FOUND | Pellet normaliser `0x6C25660`; sub-step loop `0x6F3CB80`. HitRegistration table rows and O-11 updated |
 | V4-08 ranged-weapon fields | FOUND | New generator and page `content/Wardogs_RangedWeaponFields_v1.md`: 38 ranged items and 24 crosshair overrides, row by row. Readers of the fields (rechamber, sight offsets, blend targets) not traced |
 | V4-09 aim assist | FOUND (partial native) | New generator and page `content/Wardogs_AimAssistCurves_v1.md`: 16 curves with keys, per-class curve map, target-score fields, formula from `0x6763510`, native defaults from `0x6760E9E`. Residual: five of the seven unnamed floats unmatched, the argument of `TargetWeightCurve`, body of `0x43AAA8D0` |
-| V4-10 mantle, climb, fall, ground | FOUND, mostly pre-existing | All named fields were already tabled under their curve names in `Wardogs_MoverTesting_v2.md` section 4 (the census counted field names). Added: stance transition times, base-velocity flags, `bUseForwardOnlyLeftAndRight`. Jump height and mantle reach: ABSENT (no gravity value in the exported data; searched `data/Wardogs/Config` and `Content/MoverTesting`) |
-| V4-19 weapon curve gaps | FOUND | The seven `CurveFloat` objects are five bipod camera-offset curves and two ADS curves; the `MAGZ_002` hidden prices are per-ammunition-type prices (all 33 magazines tabled); `TransferTime` on `Launcher_04` is 3.5 s. Reader of the fragment and of the bipod curves not traced |
+| V4-10 mantle, climb, fall, ground | FOUND, mostly pre-existing | All named fields were already tabled under their curve names in `Wardogs_MoverTesting_v2.md` section 4 (the census counted field names). Added: stance transition times, base-velocity flags, `bUseForwardOnlyLeftAndRight`. Jump height and mantle reach: ABSENT (no gravity value in the exported data; searched [`data/Wardogs/Config`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config) and `Content/MoverTesting`) |
+| V4-19 weapon curve gaps | FOUND | The seven `CurveFloat` objects are five bipod camera-offset curves and two ADS curves; the [`MAGZ_002`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_002/Content/MAGZ_002.json) hidden prices are per-ammunition-type prices (all 33 magazines tabled); `TransferTime` on [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json) is 3.5 s. Reader of the fragment and of the bipod curves not traced |
 
 ## V4-02: ground speed
 
@@ -42,5 +42,5 @@ Evidence chain (vtable slots confirmed from the corpus `aliases` table):
 
 ## Search notes (ABSENT items)
 
-- Gravity: a case-insensitive search for "gravity" over `data/Wardogs/Config` and `Content/MoverTesting` found nothing.
-- MedKit: `ID_MedKit_Standard.json` has `WDItemExtensionData_MedKit` with `UsageRateMultiplierAttribute`, `HealSelfAmount` 35, `HealSelfDuration` 5, `HealSelfDurabilityCost` 25; every value appears on the Medical page.
+- Gravity: a case-insensitive search for "gravity" over [`data/Wardogs/Config`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config) and `Content/MoverTesting` found nothing.
+- MedKit: [`ID_MedKit_Standard.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/MedKit/Content/Data/ID_MedKit_Standard.json) has `WDItemExtensionData_MedKit` with `UsageRateMultiplierAttribute`, `HealSelfAmount` 35, `HealSelfDuration` 5, `HealSelfDurabilityCost` 25; every value appears on the Medical page.

@@ -18,15 +18,15 @@ canonical doc where `<Thing>` IS covered.
 
 | Referenced in | Example reference | Defined in |
 |---|---|---|
-| `Wardogs_GameFeatures_Parachutes_v2.md` | `CRV_ParachutePunishment_Damage` | Raw curve values: `data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/` — covered contextually in [`Wardogs_GameMechanics_v2.md`](../content/Wardogs_GameMechanics_v2.md) and [`Wardogs_Characters_v2.md`](../content/Wardogs_Characters_v2.md) |
-| `Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md` | `CT_Weapon_Spread` | Full curve-table values in `data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json`; used by weapons documented in [`Wardogs_InfantryWeapons_Stats_v1.md`](../content/Wardogs_InfantryWeapons_Stats_v1.md), [`Wardogs_Weapons_v2.md`](../content/Wardogs_Weapons_v2.md), and the game-features weapon docs |
+| `Wardogs_GameFeatures_Parachutes_v2.md` | [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) | Raw curve values: [`data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves) — covered contextually in [`Wardogs_GameMechanics_v2.md`](../content/Wardogs_GameMechanics_v2.md) and [`Wardogs_Characters_v2.md`](../content/Wardogs_Characters_v2.md) |
+| `Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md` | [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) | Full curve-table values in [`data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json); used by weapons documented in [`Wardogs_InfantryWeapons_Stats_v1.md`](../content/Wardogs_InfantryWeapons_Stats_v1.md), [`Wardogs_Weapons_v2.md`](../content/Wardogs_Weapons_v2.md), and the game-features weapon docs |
 
 ### `DA_*` — DataAssets
 
 | Prefix | Doc |
 |---|---|
 | `DA_<Weapon>_Stats` | [`Wardogs_InfantryWeapons_Stats_v1.md`](../content/Wardogs_InfantryWeapons_Stats_v1.md) (infantry), [`Wardogs_Weapons_v2.md`](../content/Wardogs_Weapons_v2.md) (general) |
-| `DA_<Vehicle>_Stats` (e.g., `DA_WHL_07_Stats`, `DA_TNK_01_Stats`) | [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md) |
+| `DA_<Vehicle>_Stats` (e.g., [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json), [`DA_TNK_01_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Heavy/DA_TNK_01_Stats.json)) | [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md) |
 | `DA_AmmoModifier_*` | [`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md) §7.9 |
 | `DA_Explosion_*` | [`Wardogs_VFX_v2.md`](../content/Wardogs_VFX_v2.md) explosions section |
 | `DA_MuzzleFlash_*`, `DA_MF_MUZL_*` | [`Wardogs_VFX_v2.md`](../content/Wardogs_VFX_v2.md) muzzle flashes section |
@@ -37,15 +37,15 @@ canonical doc where `<Thing>` IS covered.
 
 | Prefix | Doc |
 |---|---|
-| `DT_GlobalDamage_InfantryData` + helpers | [`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md) §3 |
+| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) + helpers | [`Wardogs_DamagePipeline_v2.md`](../pipelines/Wardogs_DamagePipeline_v2.md) §3 |
 | `DT_GlobalDamage_VehicleData_<CODE>` | [`Wardogs_VehicleDamagePipeline_v1.md`](../pipelines/Wardogs_VehicleDamagePipeline_v1.md) §2.1 |
 | `DT_Challenges_*` | [`Wardogs_Meta_v2.md`](../content/Wardogs_Meta_v2.md) challenges section |
 | `DT_RewardLookup_*` | [`Wardogs_GameFeatures_Rewards_v2.md`](../game-features/Wardogs_GameFeatures_Rewards_v2.md) |
-| `DT_VehicleMarket` | [`Wardogs_GameFeatures_Vehicles_v2.md`](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) vendor section |
+| [`DT_VehicleMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorVehicles/DT_VehicleMarket.json) | [`Wardogs_GameFeatures_Vehicles_v2.md`](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) vendor section |
 | `DT_RadialWheelSlotType_*` | [`Wardogs_UI_v2.md`](../content/Wardogs_UI_v2.md) radial wheel section |
 | `DT_EntityData_UI_*` | [`Wardogs_UI_v2.md`](../content/Wardogs_UI_v2.md) entity data section |
-| `DT_GunsmithPopupOptions` | [`Wardogs_GameFeatures_Gunsmith_v2.md`](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md) popups section |
-| `DT_VehiclePropList` | [`Wardogs_Environment_v2.md`](../content/Wardogs_Environment_v2.md) |
+| [`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) | [`Wardogs_GameFeatures_Gunsmith_v2.md`](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md) popups section |
+| [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json) | [`Wardogs_Environment_v2.md`](../content/Wardogs_Environment_v2.md) |
 
 ### `B_<Blueprint>_C` — Blueprint classes
 
@@ -92,7 +92,7 @@ docs point to texture paths only. No dedicated texture doc exists.
 
 | Example | Doc |
 |---|---|
-| `ID_Backpack_Audio`, `ID_Vest_Audio` | [`Wardogs_Audio_v2.md`](../content/Wardogs_Audio_v2.md) player audio section |
+| [`ID_Backpack_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Backpack_Audio.json), [`ID_Vest_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Vest_Audio.json) | [`Wardogs_Audio_v2.md`](../content/Wardogs_Audio_v2.md) player audio section |
 | `ID_Vox_*` | [`Wardogs_Audio_v2.md`](../content/Wardogs_Audio_v2.md) vox section |
 
 ### `MirrorDataTable` (animation reference)
@@ -138,9 +138,9 @@ Tag family defined under:
 
 - Defined in [`Wardogs_Items_v2.md`](../content/Wardogs_Items_v2.md) — self-reference; partially decoded (required states, velocity curve references). Full decode is an EXPORT bucket item (not CROSS_REF).
 
-### `Ural.Battle` / `DA_WHL_07_Stats` — Vehicle naming mapping
+### `Ural.Battle` / [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) — Vehicle naming mapping
 
-Resolved: `Ural.Battle` tag points at `DA_WHL_07_Stats` (not an
+Resolved: `Ural.Battle` tag points at [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) (not an
 ArmouredBattle asset). Numbers identical across both references; this
 is a legacy naming artifact, not a data divergence.
 
@@ -162,7 +162,7 @@ Live map file: `data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Maps/Vehi
 - `CP_*_C` → resolved: internals not exported (Blueprint bytecode)
 
 ### [Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md](../game-features/Wardogs_GameFeatures_AlternativeCriticalCamera_v2.md)
-- `DT_AlternativeCriticalCamera` → file exists, empty row (confirmed in-plugin)
+- [`DT_AlternativeCriticalCamera`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AlternativeCriticalCamera/Content/DT_AlternativeCriticalCamera.json) → file exists, empty row (confirmed in-plugin)
 - `PostProcessEffect.DeathState.Killcam` → GameplayTag, see tag catalog
 
 ### [Wardogs_GameFeatures_FactoryInvestment_01_v2.md](../game-features/Wardogs_GameFeatures_FactoryInvestment_01_v2.md)
@@ -171,19 +171,19 @@ Live map file: `data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Maps/Vehi
 ### [Wardogs_GameFeatures_Gunsmith_v2.md](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md)
 - `T_Reticle_*`, `W_*`, `DL_*` → textures/widgets/data layers, binary
 - `Id.Item.OPT_08` → [`Wardogs_Items_v2.md`](../content/Wardogs_Items_v2.md) optics section
-- `DT_GunsmithPopupOptions` → self-reference, defined in this doc's Season 02 update
+- [`DT_GunsmithPopupOptions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Popups/DT_GunsmithPopupOptions.json) → self-reference, defined in this doc's Season 02 update
 
 ### [Wardogs_GameFeatures_Parachutes_v2.md](../game-features/Wardogs_GameFeatures_Parachutes_v2.md)
-- `CRV_ParachutePunishment_Damage` → data file in GameMechanics tree
-- `ID_Backpack_Audio`, `ID_Vest_Audio` → [`Wardogs_Audio_v2.md`](../content/Wardogs_Audio_v2.md)
+- [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) → data file in GameMechanics tree
+- [`ID_Backpack_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Backpack_Audio.json), [`ID_Vest_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Vest_Audio.json) → [`Wardogs_Audio_v2.md`](../content/Wardogs_Audio_v2.md)
 
 ### [Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md](../game-features/Wardogs_GameFeatures_UnderbarrelGrenadeLauncher_v2.md)
-- `CT_Weapon_Spread` → [`Wardogs_Items_v2.md`](../content/Wardogs_Items_v2.md) weapon curves section
+- [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) → [`Wardogs_Items_v2.md`](../content/Wardogs_Items_v2.md) weapon curves section
 - `TestGrenadeLauncher` → test-only asset, naming matches test-build convention
 
 ### [Wardogs_GameFeatures_Vehicles_v2.md](../game-features/Wardogs_GameFeatures_Vehicles_v2.md)
 - `_mps`, `_kmh`, `_deg` suffixes → units reference above
-- `Ural.Battle` / `DA_WHL_07_Stats` → [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
+- `Ural.Battle` / [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) → [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md)
 
 ### [Wardogs_GameFeatures_Vehiclesmith_v2.md](../game-features/Wardogs_GameFeatures_Vehiclesmith_v2.md)
 - Vehicle stats → [`Wardogs_AllVehicles_Stats_Damage_v1.md`](../content/Wardogs_AllVehicles_Stats_Damage_v1.md)

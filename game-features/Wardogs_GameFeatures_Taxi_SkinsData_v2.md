@@ -6,7 +6,7 @@ description: "The taxi cosmetic data for the Little Bird helicopter: one cosmeti
 ---
 
 # Wardogs — GameFeatures: Taxi_SkinsData
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/Taxi_SkinsData/` — 3 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/Taxi_SkinsData/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData) — 3 JSON files.*
 
 ---
 
@@ -16,9 +16,9 @@ The cosmetic data for the taxi (a Little Bird helicopter). One cosmetic entry, o
 
 | File | Type | Role |
 |---|---|---|
-| `Content/Taxi_SkinsData.json` | GameFeatureData + registry action | Registers the cosmetic table and scans skin assets |
-| `Content/Data/DT_Cosmetics_Taxi.json` | DataTable (`WDCosmeticData`) | One cosmetic row |
-| `Content/Data/Skin_Taxi.json` | `WDSkinDataAsset` | Skin with a material-swap mode |
+| [`Content/Taxi_SkinsData.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Taxi_SkinsData.json) | GameFeatureData + registry action | Registers the cosmetic table and scans skin assets |
+| [`Content/Data/DT_Cosmetics_Taxi.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/DT_Cosmetics_Taxi.json) | DataTable (`WDCosmeticData`) | One cosmetic row |
+| [`Content/Data/Skin_Taxi.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/Skin_Taxi.json) | `WDSkinDataAsset` | Skin with a material-swap mode |
 
 ---
 
@@ -26,12 +26,12 @@ The cosmetic data for the taxi (a Little Bird helicopter). One cosmetic entry, o
 
 | Item | Value |
 |---|---|
-| Registry | `CosmeticData` → `DT_Cosmetics_Taxi` (client and server source) |
+| Registry | `CosmeticData` → [`DT_Cosmetics_Taxi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/DT_Cosmetics_Taxi.json) (client and server source) |
 | Primary asset scan | `WDSkinDataAsset` (base `WDSkinDataAsset`, WDGame) |
 
 ---
 
-## 3. Cosmetic Row (`DT_Cosmetics_Taxi`)
+## 3. Cosmetic Row ([`DT_Cosmetics_Taxi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/DT_Cosmetics_Taxi.json))
 
 | Row | Field | Value |
 |---|---|---|
@@ -44,7 +44,7 @@ The only taxi cosmetic is for the Little Bird, and it binds to the variant `Vehi
 
 ---
 
-## 4. Skin (`Skin_Taxi`)
+## 4. Skin ([`Skin_Taxi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/Skin_Taxi.json))
 
 | Field | Value |
 |---|---|

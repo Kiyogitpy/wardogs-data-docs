@@ -6,7 +6,7 @@ description: "The audio event data: event structure, notable events, player dama
 ---
 
 # Wardogs — Audio Data Reference
-*Extracted from cooked game data under `/Game/Audio/` (UE 5.7 export, 1002 JSON files in `Wardogs/Content/Audio`). Every number below was counted by script over the whole folder. Behaviour meanings are inferred from property names unless marked as confirmed.*
+*Extracted from cooked game data under `/Game/Audio/` (UE 5.7 export, 1002 JSON files in [`Wardogs/Content/Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio)). Every number below was counted by script over the whole folder. Behaviour meanings are inferred from property names unless marked as confirmed.*
 
 > **Format note:** the files are not one-object-per-file. Each `.json` holds one primary export (the asset named after the file) followed by its sub-objects (`UObject` exports for behaviours, template-linked blueprint instances). Every export starts with its own `--- export: <Kind> / <Name> ---` line, so the parser splits on those lines and then `json.loads` each block. 956 primary exports + 1,626 sub-objects = 2,582 export blocks, 0 parse errors.
 
@@ -14,17 +14,17 @@ description: "The audio event data: event structure, notable events, player dama
 
 ## Season 02 update (2026-10-15)
 
-- **46 files added.** 42 are events, so the event count goes 633 → 675: 10 helmet-state events in a new `Events/Gear/` folder, 9 vendor UI events, 8 vendor wager and greeting/result events, 5 soccer-ball events, 3 seeding reward reasons, 2 windscreen-wiper events, 2 looting movement events, 2 weapon foley events and 1 rocket travel event.
-- **Four non-event assets added:** `DT_RainSpots` (DataTable, `Environment/`), `DA_Player_Looting`, `DA_Weapon_Projectile_125mm_Audio` and `DA_BulletCasings_Large` (all WDAudioData). The audio file total goes 956 → 1002.
+- **46 files added.** 42 are events, so the event count goes 633 → 675: 10 helmet-state events in a new [`Events/Gear/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Gear) folder, 9 vendor UI events, 8 vendor wager and greeting/result events, 5 soccer-ball events, 3 seeding reward reasons, 2 windscreen-wiper events, 2 looting movement events, 2 weapon foley events and 1 rocket travel event.
+- **Four non-event assets added:** [`DT_RainSpots`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Environment/DT_RainSpots.json) (DataTable, `Environment/`), [`DA_Player_Looting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Movement/Looting/DA_Player_Looting.json), [`DA_Weapon_Projectile_125mm_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Projectile/125mm/DA_Weapon_Projectile_125mm_Audio.json) and [`DA_BulletCasings_Large`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Large.json) (all WDAudioData). The audio file total goes 956 → 1002.
 - **Behaviour references** 1,626 → 1,704. Restart behaviour `Always` 137 → 154 and `PlayBoth` 63 → 65.
 - **`Audio.Music.SpawnBoardWait`** priority 6 → 62.
-- **Impulse resonance:** `DefaultResonanceRange` 7500 → 3500 on `AE_Vehicle_Shared_Destroy` and `AE_Vehicle_ROT_Destroy`. Most `IdImpulseProperties` ranges of `AE_Weapon_Projectile_Impact_Explosive` drop from 5000 or 7500 to 3500, and a `Item.Caliber.125x570mm` entry (3500) is added. `AE_Vehicle_ROT_Destroyed_Crash` gains an impulse behaviour with range 2500.
-- **`AE_Player_Death`:** the death sound changes from `MSS_Player_Death_FromMelee_3p` to `MSS_Player_Death_FromBullet_1p`, and `Is Local Character` is set to true.
-- **`AE_UX_Cash_Bribe`:** restart behaviour `Always` → `PlayBoth`.
-- **`AE_UI_InGame_Vendor_Unlock`:** vendor bark delay 2.0 → 1.5 s, context tag `Audio.Context.Default` → `Audio.Context.Dial.Equipment.Vendor`.
-- **`AE_Weapon_Fire_BulletCasing`:** four size entries change from `DA_BulletCasings_Medium` to `DA_BulletCasings_Large`.
-- **`AE_Weapon_Projectile_Impact`:** `DamageSize` 2 → 3, and the attenuation curve changes from `CC_HDR_ATT_SharedImpacts` to `CC_HDR_ATT_SharedImpacts_30mm`.
-- **Comms VOIP events** (`AE_Comms_Played`, `AE_Comms_PlayerStartedSpeaking`, `AE_Comms_PlayerStoppedSpeaking`) gain a `WDAudioEventBehaviorHelmetMuffle` behaviour.
+- **Impulse resonance:** `DefaultResonanceRange` 7500 → 3500 on [`AE_Vehicle_Shared_Destroy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/AE_Vehicle_Shared_Destroy.json) and [`AE_Vehicle_ROT_Destroy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroy.json). Most `IdImpulseProperties` ranges of [`AE_Weapon_Projectile_Impact_Explosive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Weapon/Projectile/AE_Weapon_Projectile_Impact_Explosive.json) drop from 5000 or 7500 to 3500, and a `Item.Caliber.125x570mm` entry (3500) is added. [`AE_Vehicle_ROT_Destroyed_Crash`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/ROT/AE_Vehicle_ROT_Destroyed_Crash.json) gains an impulse behaviour with range 2500.
+- **[`AE_Player_Death`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Player/Death/AE_Player_Death.json):** the death sound changes from `MSS_Player_Death_FromMelee_3p` to `MSS_Player_Death_FromBullet_1p`, and `Is Local Character` is set to true.
+- **[`AE_UX_Cash_Bribe`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UX/Cash/AE_UX_Cash_Bribe.json):** restart behaviour `Always` → `PlayBoth`.
+- **[`AE_UI_InGame_Vendor_Unlock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Unlock.json):** vendor bark delay 2.0 → 1.5 s, context tag `Audio.Context.Default` → `Audio.Context.Dial.Equipment.Vendor`.
+- **[`AE_Weapon_Fire_BulletCasing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Weapon/Firing/AE_Weapon_Fire_BulletCasing.json):** four size entries change from [`DA_BulletCasings_Medium`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.json) to [`DA_BulletCasings_Large`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Large.json).
+- **[`AE_Weapon_Projectile_Impact`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Weapon/Projectile/AE_Weapon_Projectile_Impact.json):** `DamageSize` 2 → 3, and the attenuation curve changes from [`CC_HDR_ATT_SharedImpacts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_ATT_SharedImpacts.json) to [`CC_HDR_ATT_SharedImpacts_30mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_ATT_SharedImpacts_30mm.json).
+- **Comms VOIP events** ([`AE_Comms_Played`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/AE_Comms_Played.json), [`AE_Comms_PlayerStartedSpeaking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/VOIP/AE_Comms_PlayerStartedSpeaking.json), [`AE_Comms_PlayerStoppedSpeaking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/VOIP/AE_Comms_PlayerStoppedSpeaking.json)) gain a `WDAudioEventBehaviorHelmetMuffle` behaviour.
 - **Six impact DAs** (30mm, Large, Medium, Rocket_BluntImpact, Small) gain an `Audio.Asset.Surface.Vehicle` entry.
 
 Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/season-2-changes/world-visuals-audio.html' | relative_url }}).
@@ -38,13 +38,13 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 | Folder | Files | Primary Type (count) | What it holds |
 |---|---|---|---|
 | `Events/` | 675 | CrosstalkAudioEvent (675) | Named audio events, one per gameplay trigger. Each lists behaviours. |
-| `Vox/` | 151 | WDAudioData (148), WDVoxSettings (1), DataTable (1), WDVoxAudioProfile (1) | Voice barks, exertions, narrator, vox table, profile mapping |
+| [`Vox/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox) | 151 | WDAudioData (148), WDVoxSettings (1), DataTable (1), WDVoxAudioProfile (1) | Voice barks, exertions, narrator, vox table, profile mapping |
 | `Player/` | 62 | WDAudioData (62) | Footsteps, movement, parachute, ladder, stance, item sounds |
 | `Vehicles/` | 16 | WDAudioData (11), PDA_CBM_Map_C (3), REVModelAsset (1), CurveFloat (1) | Vehicle surfaces, skids, CBM maps |
 | `Weapon/` | 22 | WDAudioData (22) | Projectile impacts, bullet casings, attachments |
-| `Attenuations/HDR/` | 34 | CurveFloat (34) | HDR attenuation curves |
-| `Convo/` | 23 | WDConversationData (23) | Valkyra vehicle conversations |
-| `Destruction/DAs/` | 6 | WDAudioData (6) | Building chunk tails and transients |
+| [`Attenuations/HDR/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Attenuations/HDR) | 34 | CurveFloat (34) | HDR attenuation curves |
+| [`Convo/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Convo) | 23 | WDConversationData (23) | Valkyra vehicle conversations |
+| [`Destruction/DAs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Destruction/DAs) | 6 | WDAudioData (6) | Building chunk tails and transients |
 | `Curves/` | 7 | CurveFloat (7) | Gameplay curves (exertion decay, SMG external curve, UI ping, lock-on) |
 | `Ambience/` | 2 | BHSignificanceSettingsAsset (1), BHSignificanceEvaluator_Sphere (1) | Significance settings for the Kavkazi river |
 | `Environment/` | 2 | DataTable (2) | DT_ImpulseResonance, DT_RainSpots |
@@ -56,15 +56,15 @@ Full before/after list: [Season 2 Changes → World, Visuals & Audio]({{ '/seaso
 
 | Sub-folder | Events | Sub-folder | Events |
 |---|---|---|---|
-| `Events/Player/` | 126 | `Events/Comms/` | 45 |
-| `Events/Vehicle/` | 125 | `Events/UX/` | 34 |
-| `Events/Weapon/` | 121 | `Events/World/` | 18 |
-| `Events/UI/` | 107 | `Events/Gamemode/` | 15 |
-| `Events/Environment/` | 13 | `Events/Doors/` | 10 |
-| `Events/Music/` | 9 | `Events/Prop/` | 14 |
-| `Events/Vendor/` | 15 | `Events/Destruction/` | 5 |
-| `Events/Ambience/` | 3 | `Events/` root (debug, stop, disconnect) | 5 |
-| `Events/Gear/` | 10 | | |
+| [`Events/Player/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Player) | 126 | [`Events/Comms/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Comms) | 45 |
+| [`Events/Vehicle/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Vehicle) | 125 | [`Events/UX/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/UX) | 34 |
+| [`Events/Weapon/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Weapon) | 121 | [`Events/World/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/World) | 18 |
+| [`Events/UI/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/UI) | 107 | [`Events/Gamemode/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Gamemode) | 15 |
+| [`Events/Environment/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Environment) | 13 | [`Events/Doors/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Doors) | 10 |
+| [`Events/Music/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Music) | 9 | [`Events/Prop/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Prop) | 14 |
+| [`Events/Vendor/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Vendor) | 15 | [`Events/Destruction/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Destruction) | 5 |
+| [`Events/Ambience/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Ambience) | 3 | `Events/` root (debug, stop, disconnect) | 5 |
+| [`Events/Gear/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Gear) | 10 | | |
 
 Total: **675 events**. Each event has a `NameTag` (a gameplay tag, e.g. `Audio.Event.Weapon.ReloadEmpty.Stage3`). Tag prefixes by area: Vehicle 123, UI 111, Player 109, Weapon 105, Comms 41, UX 34, Item 33, World 18, Environment 15, Vendor 15, Prop 14, Gamemode 13, Projectile 12, Door 10, Music 9, Destruction 5, Ambience 3, Debug 2, OnDisconnect/StopSound/StopSoundFade 1 each.
 
@@ -72,7 +72,7 @@ Total: **675 events**. Each event has a `NameTag` (a gameplay tag, e.g. `Audio.E
 
 ## 2. Event structure (CrosstalkAudioEvent)
 
-Every event has `NameTag` and `Behaviors` (an array of object references to sub-exports). Only one event carries `QueueLifetime` (`AE_UI_FrontEnd_Enter_ConfirmationPopUp` = 3.0 s).
+Every event has `NameTag` and `Behaviors` (an array of object references to sub-exports). Only one event carries `QueueLifetime` ([`AE_UI_FrontEnd_Enter_ConfirmationPopUp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_ConfirmationPopUp.json) = 3.0 s).
 
 Behaviour count per event (675 events, 1,704 behaviour references):
 
@@ -85,7 +85,7 @@ Behaviour count per event (675 events, 1,704 behaviour references):
 | 4 | 36 | | 10 | 8 |
 | 5 | 14 | | 11 / 12 / 15 / 16 | 2 / 1 / 0 / 2 |
 
-Events with zero behaviours (silent or stub): `AE_StartDistantWarfare`, `AE_Music_InGame_Last10Points_FinalPoint`, `AE_Player_EnteredControlZone`, `AE_Item_Dropped_Stop`, `AE_World_Blackmarket_Enter`, `AE_World_GymTDM_Exit`, `AE_World_ShootingRange_Exit`.
+Events with zero behaviours (silent or stub): [`AE_StartDistantWarfare`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Ambience/DistantWarfare/AE_StartDistantWarfare.json), [`AE_Music_InGame_Last10Points_FinalPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Music/InGame/AE_Music_InGame_Last10Points_FinalPoint.json), [`AE_Player_EnteredControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Player/AE_Player_EnteredControlZone.json), [`AE_Item_Dropped_Stop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Player/Item/Drop/AE_Item_Dropped_Stop.json), [`AE_World_Blackmarket_Enter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/World/AE_World_Blackmarket_Enter.json), [`AE_World_GymTDM_Exit`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/World/AE_World_GymTDM_Exit.json), [`AE_World_ShootingRange_Exit`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/World/AE_World_ShootingRange_Exit.json).
 
 ### 2a. Payload routing (what an event actually plays)
 
@@ -95,8 +95,8 @@ Counted across all 675 events (an event can reference more than one kind):
 |---|---|---|
 | Direct `MetaSoundSource` (`MSS_*`) reference | 294 | Most common. 280 distinct MSS names referenced by events. |
 | `WDAudioData` (`DA_*`) reference | 43 | Perspective and hostility variants (see 2c) |
-| Direct `SoundWave` (`SFX_*`) reference | 2 | `AE_Debug_23lufs` (`SFX_-23db`), `AE_UI_FrontEnd_Enter_LogoScene` |
-| Vox request (`AEB_RequestVox_C`, `AEB_RequestSquadVox_C`, `AEB_RequestDamagedVox_C`) | 46 | Resolves through `DT_VoxData` (section 6) |
+| Direct `SoundWave` (`SFX_*`) reference | 2 | [`AE_Debug_23lufs`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/AE_Debug_23lufs.json) (`SFX_-23db`), [`AE_UI_FrontEnd_Enter_LogoScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_LogoScene.json) |
+| Vox request (`AEB_RequestVox_C`, `AEB_RequestSquadVox_C`, `AEB_RequestDamagedVox_C`) | 46 | Resolves through [`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json) (section 6) |
 | Only stop/end/parameter/CBM behaviours (no new sound) | 91 | e.g. `StopSound`, `EndBehavior`, `TriggerParam` |
 
 ### 2b. Behaviour classes (UObject sub-exports, all folders)
@@ -119,7 +119,7 @@ Count = number of sub-export instances in the dump. "Key properties" are the one
 | `WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware` | 38 | `FirstPersonSoundTag`, `AlliedThirdPersonSoundTag`, `HostileThirdPersonSoundTag`, `SoundAssetData`, `bStatic` | 1p / ally / enemy variant set from a `WDAudioData` |
 | `AEB_VehiclePerspective_C` | 34 | `ContextTag` (horn) | Vehicle horn perspective; `ConcurrentInstanceLimit` = 0 here (meaning unclear) |
 | `WDAudioEventBehaviorDisableMusicState` | 32 | `StateToDisable` | Disables a music state (e.g. `Audio.Music.SpawnBoardWait`) |
-| `AEB_RequestVox_C` | 29 | `VoxRequest.LineID` | Requests a vox line by tag (`DT_VoxData`) |
+| `AEB_RequestVox_C` | 29 | `VoxRequest.LineID` | Requests a vox line by tag ([`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json)) |
 | `AEB_SetBooleanParameter_C` | 27 | `In Name` (`VehicleReady`, `HornOn`, `Destroyed`), `In Bool`, `Delay` | Sets a bool on the sound |
 | `AEB_StopSound_SpeedOfSoundDelay_C` | 17 | `Fade Out Duration` | Delayed stop for distant sources (by speed of sound) |
 | `AEB_SetImpulseResonanceParameters_C` | 13 | (impulse params) | Feeds impulse resonance (section 8) |
@@ -152,7 +152,7 @@ Tags on sound assets carry a suffix that picks the variant. Distinct tag names i
 | `.Ally` | 16 | Friendly-observer variant (from `HostilityAware` behaviours) |
 | `.Enemy` | 18 | Hostile-observer variant |
 
-Example. `WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware` on the ragdoll, ladder and stance events points at WDAudioData such as `DA_Stance_CrouchToStand_Audio`, with tags `Audio.Asset.Player.Stance.1p`, `.Ally` and `.Enemy`.
+Example. `WDAudioEventBehaviourPlayPerspectiveSound_HostilityAware` on the ragdoll, ladder and stance events points at WDAudioData such as [`DA_Stance_CrouchToStand_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Movement/Stance/DA/DA_Stance_CrouchToStand_Audio.json), with tags `Audio.Asset.Player.Stance.1p`, `.Ally` and `.Enemy`.
 
 ### 2d. Context tags and restart behaviour
 
@@ -169,7 +169,7 @@ Events and some behaviours carry a property whose name is an unresolved FName ha
 | Bipod fold/unfold | 50.5 |
 | Vehicle reload | 65.0 (55.0 once) |
 | HIDZ wheel pop / destroy | 150.0 |
-| Comms social (`AE_Comms_Social_Nice`, `_No`, `_Sorry`) | 80.0 |
+| Comms social ([`AE_Comms_Social_Nice`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/Social/AE_Comms_Social_Nice.json), `_No`, `_Sorry`) | 80.0 |
 | Most common overall | 50.5 (72 events) |
 
 Its meaning is **not confirmed**. It looks like a per-event range or distance value, but the dump does not name it.
@@ -180,35 +180,35 @@ Its meaning is **not confirmed**. It looks like a per-event range or distance va
 
 | Event asset | NameTag | Behaviours and payload |
 |---|---|---|
-| `AE_Debug_23lufs` | `Audio.Event.Debug.23lufs` | PlaySound `SFX_-23db` (loudness calibration reference) |
-| `AE_Debug_AnimSync` | `Audio.Event.Debug.AnimSync` | PlaySound `MSS_Debug_AnimSync` |
-| `AE_OnDisconnect_Reset` | `Audio.Event.OnDisconnect.Reset` | DeactivateAllControlBusMix, Submix_DeactivateEffect on `SBMIX_CriticalGroup_Heavy`, `_Medium`, `_Light` |
-| `AE_StopEvent` | `Audio.Event.StopSound` | StopSound, no fade |
-| `AE_StopEventFadeTrigger` | `Audio.Event.StopSoundFade` | StopSound, FadeOut 0.3 |
-| `AE_Comms_Social_Nice` | `Audio.Event.Comms.Social.Nice` | AttachToActor + RequestVox `Audio.Vox.Bark.Social.Nice`; hashed float 80.0 |
-| `AE_Comms_Request_Ammo` | `Audio.Event.Comms.Request.Ammo` | RequestVox `Audio.Vox.Bark.Request.Ammo` + AttachToActor |
-| `AE_Comms_Order_Attack` | `Audio.Event.Comms.Order.Attack` | RequestSquadVox `Audio.Vox.Bark.Order.Attack` |
-| `AE_Comms_Squad_Affirmative` | `Audio.Event.Comms.Squad.Affirmative` | RequestSquadVox `Audio.Vox.Bark.Squad.Affirmative` |
-| `AE_Comms_LoggingIn_Connected` | `Audio.Event.Comms.LoggingIn.Connected` | PlaySound `MSS_Comms_LoggingIn_Connected_Preset` |
-| `AE_Player_Damaged_Melee` | `Audio.Event.Player.Damaged.Melee` | Perspective sound `MSS_Player_Damage_FromMelee_1p/_3p` + RequestDamagedVox (`TakingDamage.Light`/`Heavy`) |
-| `AE_Footstep_Stealth` | `Audio.Event.Player.Footstep.CrouchWalk` | AttachToHeldItem `handguard_Attach`, PlayItemMovementSound `MSS_Player_Movement_Footstep_Item_1p`, SetAudioParameters, SetBlendedFootstepSurfaceTrigger `DA_Surface_Footstep_Stealth_Audio` |
-| `AE_Weapon_Fire_Start_Auto_Suppressed` | `Audio.Event.Weapon.Fire.Start.Auto.Suppressed` | Held-item attach `S_Muzzle`, EnemyAccuracyScaling, SetHeldWeaponStartFireParameters, WeaponFire_PlaySound (looping fire tags) |
-| `AE_Vehicle_Weapon_Fire_Start_Semi` | `Audio.Event.Vehicle.Shared.Weapon.Fire.Start.Semi` | PlayVehicleWeaponPerspectiveSound `Audio.Asset.Vehicle.Weapon.Fire.1p/3p` |
-| `AE_Vehicle_HIDZ_MainRotor_Damaged` | `Audio.Event.Vehicle.HIDZ.MainRotor.Damaged` | Doppler, SetVehicleHIDZAttribute `Attribute.Gameplay.Health.Rotor.Main` into `HIDZHealth`, horn perspective, attach `Collective_J` |
-| `AE_Vehicle_SpawnVehicle_RadarFold` | `Audio.Event.Vehicle.SpawnVehicle.RadarFold` | PlayAllegianceSound (`MSS_Vehicle_Land_SpawnVehicle_Radar_Lonestar`, `_Valkyra`, ...) + attach |
-| `AE_Engine_Running_ROT` | `Audio.Event.Vehicle.Engine.Running.ROT` | Doppler, 3 SetBool `Engine On`, SetVehicleHIDZAttribute `Rotor.Main` |
-| `AE_Vehicle_Stabilizing` | `Audio.Event.Vehicle.Stabilizing` | TriggerStabilizingState, horn perspective, attach, PlaySound `MSS_Vehicle_TNK_Stabilizing` |
-| `AE_Countermeasures_SmokeScreen` | `Audio.Event.Vehicle.Countermeasures.SmokeScreen` | SetSmokeScreenActiveTime, attach x2, PlaySound `MSS_Vehicle_Countermeasures_SmokeScreen_Detonation` |
-| `AE_Music_Deployed` | `Audio.Event.Music.Deployed` | DeactivateCBM `AM_CBM_UIScene_PopUpWindow`, DeactivateCBM `AM_CBM_UIScene_DeploymentScreen`, Music_Deployed |
-| `AE_Music_InGame_EndGame` | `Audio.Event.Music.InGame.EndGame` | ActivateCBM `AM_CBM_Main`, ActivateCBM `AM_CBM_EndGame`, DeactivateCBM `AM_CBM_Critical`, StopSoundOnPlayerCharacter, Submix effects |
-| `AE_Gamemode_SpawnBoardFinished` | `Audio.Event.Gamemode.SpawnBoard.Finished` | DeactivateCBM `AM_CBM_SpawnBoardWait`, DisableMusic `Audio.Music.SpawnBoardWait` |
-| `AE_UI_FrontEnd_Enter_Collection` | `Audio.Event.UI.FrontEnd.Open.Collection` | ActivateCBM `AM_CBM_UIScene`, DeactivateCBM `AM_CBM_FrontEnd_MainMenu`, PlaySound `MSS_UI_FrontEnd_Enter_Collection` |
-| `AE_UI_InGame_Vendor_Purchase` | `Audio.Event.UI.InGame.Vendor.Purchase` | PlayContextualPurchaseSound, PlaySound `MSS_UI_InGame_Vendor_PurchaseCart` |
-| `AE_UX_Combat_Kill` | `Audio.Event.UX.Combat.Kill` | EnemyKilledParameters, PlaySound `MSS_UX_Combat_Notify_KillConfirmed` |
-| `AE_UX_Spotted_SpottedConfirmation` | `Audio.Event.UX.Spotted.SpottedConfirmation` | PlaySound `MSS_UX_Spotting_SpottedConfirmation` |
-| `AE_Vehicle_Reversing_Start` | `Audio.Event.Vehicle.Shared.Reversing.Start` | Horn perspective, attach `gasPedal_J`, TriggerParam `Start`, PlayVehicleSound `Audio.Asset.Vehicle.Reversing` |
+| [`AE_Debug_23lufs`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/AE_Debug_23lufs.json) | `Audio.Event.Debug.23lufs` | PlaySound `SFX_-23db` (loudness calibration reference) |
+| [`AE_Debug_AnimSync`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/AE_Debug_AnimSync.json) | `Audio.Event.Debug.AnimSync` | PlaySound `MSS_Debug_AnimSync` |
+| [`AE_OnDisconnect_Reset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/AE_OnDisconnect_Reset.json) | `Audio.Event.OnDisconnect.Reset` | DeactivateAllControlBusMix, Submix_DeactivateEffect on `SBMIX_CriticalGroup_Heavy`, `_Medium`, `_Light` |
+| [`AE_StopEvent`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/AE_StopEvent.json) | `Audio.Event.StopSound` | StopSound, no fade |
+| [`AE_StopEventFadeTrigger`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/AE_StopEventFadeTrigger.json) | `Audio.Event.StopSoundFade` | StopSound, FadeOut 0.3 |
+| [`AE_Comms_Social_Nice`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/Social/AE_Comms_Social_Nice.json) | `Audio.Event.Comms.Social.Nice` | AttachToActor + RequestVox `Audio.Vox.Bark.Social.Nice`; hashed float 80.0 |
+| [`AE_Comms_Request_Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/AssistanceRequests/AE_Comms_Request_Ammo.json) | `Audio.Event.Comms.Request.Ammo` | RequestVox `Audio.Vox.Bark.Request.Ammo` + AttachToActor |
+| [`AE_Comms_Order_Attack`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/Orders/AE_Comms_Order_Attack.json) | `Audio.Event.Comms.Order.Attack` | RequestSquadVox `Audio.Vox.Bark.Order.Attack` |
+| [`AE_Comms_Squad_Affirmative`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/Squad/AE_Comms_Squad_Affirmative.json) | `Audio.Event.Comms.Squad.Affirmative` | RequestSquadVox `Audio.Vox.Bark.Squad.Affirmative` |
+| [`AE_Comms_LoggingIn_Connected`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Comms/VOIP/AE_Comms_LoggingIn_Connected.json) | `Audio.Event.Comms.LoggingIn.Connected` | PlaySound `MSS_Comms_LoggingIn_Connected_Preset` |
+| [`AE_Player_Damaged_Melee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Player/Damaged/AE_Player_Damaged_Melee.json) | `Audio.Event.Player.Damaged.Melee` | Perspective sound `MSS_Player_Damage_FromMelee_1p/_3p` + RequestDamagedVox (`TakingDamage.Light`/`Heavy`) |
+| [`AE_Footstep_Stealth`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.json) | `Audio.Event.Player.Footstep.CrouchWalk` | AttachToHeldItem `handguard_Attach`, PlayItemMovementSound `MSS_Player_Movement_Footstep_Item_1p`, SetAudioParameters, SetBlendedFootstepSurfaceTrigger [`DA_Surface_Footstep_Stealth_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Movement/Footsteps/DA/DA_Surface_Footstep_Stealth_Audio.json) |
+| [`AE_Weapon_Fire_Start_Auto_Suppressed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Weapon/Firing/AE_Weapon_Fire_Start_Auto_Suppressed.json) | `Audio.Event.Weapon.Fire.Start.Auto.Suppressed` | Held-item attach `S_Muzzle`, EnemyAccuracyScaling, SetHeldWeaponStartFireParameters, WeaponFire_PlaySound (looping fire tags) |
+| [`AE_Vehicle_Weapon_Fire_Start_Semi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/Weapon/Fire/AE_Vehicle_Weapon_Fire_Start_Semi.json) | `Audio.Event.Vehicle.Shared.Weapon.Fire.Start.Semi` | PlayVehicleWeaponPerspectiveSound `Audio.Asset.Vehicle.Weapon.Fire.1p/3p` |
+| [`AE_Vehicle_HIDZ_MainRotor_Damaged`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/Shared/HIDZ/AE_Vehicle_HIDZ_MainRotor_Damaged.json) | `Audio.Event.Vehicle.HIDZ.MainRotor.Damaged` | Doppler, SetVehicleHIDZAttribute `Attribute.Gameplay.Health.Rotor.Main` into `HIDZHealth`, horn perspective, attach `Collective_J` |
+| [`AE_Vehicle_SpawnVehicle_RadarFold`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/AE_Vehicle_SpawnVehicle_RadarFold.json) | `Audio.Event.Vehicle.SpawnVehicle.RadarFold` | PlayAllegianceSound (`MSS_Vehicle_Land_SpawnVehicle_Radar_Lonestar`, `_Valkyra`, ...) + attach |
+| [`AE_Engine_Running_ROT`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/ROT/AE_Engine_Running_ROT.json) | `Audio.Event.Vehicle.Engine.Running.ROT` | Doppler, 3 SetBool `Engine On`, SetVehicleHIDZAttribute `Rotor.Main` |
+| [`AE_Vehicle_Stabilizing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/Weapon/Stabilizers/AE_Vehicle_Stabilizing.json) | `Audio.Event.Vehicle.Stabilizing` | TriggerStabilizingState, horn perspective, attach, PlaySound `MSS_Vehicle_TNK_Stabilizing` |
+| [`AE_Countermeasures_SmokeScreen`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/AE_Countermeasures_SmokeScreen.json) | `Audio.Event.Vehicle.Countermeasures.SmokeScreen` | SetSmokeScreenActiveTime, attach x2, PlaySound `MSS_Vehicle_Countermeasures_SmokeScreen_Detonation` |
+| [`AE_Music_Deployed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Music/AE_Music_Deployed.json) | `Audio.Event.Music.Deployed` | DeactivateCBM `AM_CBM_UIScene_PopUpWindow`, DeactivateCBM `AM_CBM_UIScene_DeploymentScreen`, Music_Deployed |
+| [`AE_Music_InGame_EndGame`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Music/InGame/AE_Music_InGame_EndGame.json) | `Audio.Event.Music.InGame.EndGame` | ActivateCBM `AM_CBM_Main`, ActivateCBM `AM_CBM_EndGame`, DeactivateCBM `AM_CBM_Critical`, StopSoundOnPlayerCharacter, Submix effects |
+| [`AE_Gamemode_SpawnBoardFinished`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoardFinished.json) | `Audio.Event.Gamemode.SpawnBoard.Finished` | DeactivateCBM `AM_CBM_SpawnBoardWait`, DisableMusic `Audio.Music.SpawnBoardWait` |
+| [`AE_UI_FrontEnd_Enter_Collection`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UI/FrontEnd/AE_UI_FrontEnd_Enter_Collection.json) | `Audio.Event.UI.FrontEnd.Open.Collection` | ActivateCBM `AM_CBM_UIScene`, DeactivateCBM `AM_CBM_FrontEnd_MainMenu`, PlaySound `MSS_UI_FrontEnd_Enter_Collection` |
+| [`AE_UI_InGame_Vendor_Purchase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UI/InGame/AE_UI_InGame_Vendor_Purchase.json) | `Audio.Event.UI.InGame.Vendor.Purchase` | PlayContextualPurchaseSound, PlaySound `MSS_UI_InGame_Vendor_PurchaseCart` |
+| [`AE_UX_Combat_Kill`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UX/Combat/AE_UX_Combat_Kill.json) | `Audio.Event.UX.Combat.Kill` | EnemyKilledParameters, PlaySound `MSS_UX_Combat_Notify_KillConfirmed` |
+| [`AE_UX_Spotted_SpottedConfirmation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/UX/Spotted/AE_UX_Spotted_SpottedConfirmation.json) | `Audio.Event.UX.Spotted.SpottedConfirmation` | PlaySound `MSS_UX_Spotting_SpottedConfirmation` |
+| [`AE_Vehicle_Reversing_Start`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Vehicle/Shared/AE_Vehicle_Reversing_Start.json) | `Audio.Event.Vehicle.Shared.Reversing.Start` | Horn perspective, attach `gasPedal_J`, TriggerParam `Start`, PlayVehicleSound `Audio.Asset.Vehicle.Reversing` |
 
-Event tags do not always match the asset name. About 40 events differ. Examples: `AE_Door_Warehouse_Play` has tag `Audio.Event.Door.Warehouse`; `AE_Gamemode_SpawnBoard_Loop` has tag `Audio.Event.Gamemode.SpawnBoard`; `AE_Footstep_Stealth` has tag `Audio.Event.Player.Footstep.CrouchWalk`. Runtime code presumably looks events up by tag, not by asset name, but that is inferred.
+Event tags do not always match the asset name. About 40 events differ. Examples: [`AE_Door_Warehouse_Play`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Doors/AE_Door_Warehouse_Play.json) has tag `Audio.Event.Door.Warehouse`; [`AE_Gamemode_SpawnBoard_Loop`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Gamemode/SpawnBoard/AE_Gamemode_SpawnBoard_Loop.json) has tag `Audio.Event.Gamemode.SpawnBoard`; [`AE_Footstep_Stealth`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Player/Movement/Footstep/AE_Footstep_Stealth.json) has tag `Audio.Event.Player.Footstep.CrouchWalk`. Runtime code presumably looks events up by tag, not by asset name, but that is inferred.
 
 ---
 
@@ -218,21 +218,21 @@ WDAudioData holds a `SoundAssets` map (tag → MetaSoundSource or SoundWave) and
 
 | Folder | DAs | SoundAssets entries | SoundAssetSets entries | Notes |
 |---|---|---|---|---|
-| `Vox/Barks/` | 118 | 235 | 235 | Two status tags only: `Audio.Asset.Vox.Normal`, `Audio.Asset.Vox.LowHealth` |
+| [`Vox/Barks/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks) | 118 | 235 | 235 | Two status tags only: `Audio.Asset.Vox.Normal`, `Audio.Asset.Vox.LowHealth` |
 | `Player/Movement/` | 52 | 843 | 116 | 224 distinct tags: ladders (mount, down, slide, dismount), drag, footsteps, parachute, stance, swim, ragdoll |
-| `Vox/Exertions/` | 26 | 30 | 30 | Breath, focus, critical state, melee, throwing, vaulting, take-damage |
-| `Player/Item/` | 10 | 60 | 0 | Item data (`ID_Armor_Audio`, `ID_Backpack_Audio`, `ID_Helmet_Audio`, `ID_Magazine_Audio`, `ID_LooseAmmoBox_Audio`) |
+| [`Vox/Exertions/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Exertions) | 26 | 30 | 30 | Breath, focus, critical state, melee, throwing, vaulting, take-damage |
+| `Player/Item/` | 10 | 60 | 0 | Item data ([`ID_Armor_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Armor_Audio.json), [`ID_Backpack_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Backpack_Audio.json), [`ID_Helmet_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Helmet_Audio.json), [`ID_Magazine_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_Magazine_Audio.json), [`ID_LooseAmmoBox_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Item/Data/ID_LooseAmmoBox_Audio.json)) |
 | `Weapon/Projectile/` | 10 | 260 | 50 | Per-calibre impact DAs (40mm, 72mm, 84mm, 93mm, 120mm, 122mm, 125mm, 155mm, Drone, Mortar) |
-| `Vehicles/Land/` | 8 | 80 | 10 | PZH2000 surface, skid and braking DAs |
-| `Weapon/Shared/` | 8 | 229 | 18 | Bullet casings (`DA_BulletCasings_Medium`, `_Shotgun`), impacts (`DA_Impact_30mm_Audio`, `DA_Impact_Large_Audio`, ...) |
-| `Destruction/DAs/` | 6 | 199 | 36 | Building chunk tails and transients, small/medium/large |
-| `Vox/Narrator/` | 4 | 4 | 4 | Destroy-spotting barks (Buildable, Deployable, Player, Vehicle) |
-| `Weapon/Attachments/` | 4 | 36 | 0 | Attachment drag/drop and bipod fold (`ID_Attachment_Bipod_Audio`, `ID_Attachment_Suppressor_Audio`, ...) |
-| `Vehicles/Shared/` | 3 | 15 | 0 | `DA_Vehicle_Helicopter_Shared_Audio`, `DA_GarageVendor_Refuel_Audio`, `DA_GarageVendor_Repair_Audio` |
+| [`Vehicles/Land/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vehicles/Land) | 8 | 80 | 10 | PZH2000 surface, skid and braking DAs |
+| [`Weapon/Shared/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Weapon/Shared) | 8 | 229 | 18 | Bullet casings ([`DA_BulletCasings_Medium`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Shared/BulletCasings/AudioDataAssets/DA_BulletCasings_Medium.json), `_Shotgun`), impacts ([`DA_Impact_30mm_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Shared/Impacts/DA_Impact_30mm_Audio.json), [`DA_Impact_Large_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Shared/Impacts/DA_Impact_Large_Audio.json), ...) |
+| [`Destruction/DAs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Destruction/DAs) | 6 | 199 | 36 | Building chunk tails and transients, small/medium/large |
+| [`Vox/Narrator/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Narrator) | 4 | 4 | 4 | Destroy-spotting barks (Buildable, Deployable, Player, Vehicle) |
+| [`Weapon/Attachments/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Weapon/Attachments) | 4 | 36 | 0 | Attachment drag/drop and bipod fold ([`ID_Attachment_Bipod_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Attachments/Bipod/ID_Attachment_Bipod_Audio.json), [`ID_Attachment_Suppressor_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Weapon/Attachments/ID_Attachment_Suppressor_Audio.json), ...) |
+| `Vehicles/Shared/` | 3 | 15 | 0 | [`DA_Vehicle_Helicopter_Shared_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Shared/Helicopter/DA/DA_Vehicle_Helicopter_Shared_Audio.json), [`DA_GarageVendor_Refuel_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Shared/Refuel/DA_GarageVendor_Refuel_Audio.json), [`DA_GarageVendor_Repair_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Shared/Repair/DA_GarageVendor_Repair_Audio.json) |
 
-Footstep example. `DA_Footstep_CrouchWalk_Audio` maps `Audio.Asset.Player.Footstep.1p` → `MSS_Player_Movement_LayeredFootstep_Stealth_1p`, `…Ally` → `MSS_Player_Movement_LayeredFootstep_Stealth_Ally`, and `…Enemy` → `MSS_Player_Movement_LayeredFootstep_Stealth_Enemy`. This is the 1p/Ally/Enemy triple pattern from section 2c.
+Footstep example. [`DA_Footstep_CrouchWalk_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Movement/Footsteps/DA/DA_Footstep_CrouchWalk_Audio.json) maps `Audio.Asset.Player.Footstep.1p` → `MSS_Player_Movement_LayeredFootstep_Stealth_1p`, `…Ally` → `MSS_Player_Movement_LayeredFootstep_Stealth_Ally`, and `…Enemy` → `MSS_Player_Movement_LayeredFootstep_Stealth_Enemy`. This is the 1p/Ally/Enemy triple pattern from section 2c.
 
-Surface data. `DA_Surface_Footstep_Stealth_Audio` (and its siblings) hold a `SurfacePropertiesMap` keyed by `EWDAudioSurface` values (e.g. `EWDAudioSurface::Flesh`), each mapping to a surface tag set (e.g. `Audio.Asset.Surface.Concrete`). Surface families seen in the sets: Concrete, Dirt, Glass, Metal, Water, Wood, Grass, Gravel, Asphalt, Default.
+Surface data. [`DA_Surface_Footstep_Stealth_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Player/Movement/Footsteps/DA/DA_Surface_Footstep_Stealth_Audio.json) (and its siblings) hold a `SurfacePropertiesMap` keyed by `EWDAudioSurface` values (e.g. `EWDAudioSurface::Flesh`), each mapping to a surface tag set (e.g. `Audio.Asset.Surface.Concrete`). Surface families seen in the sets: Concrete, Dirt, Glass, Metal, Water, Wood, Grass, Gravel, Asphalt, Default.
 
 ---
 
@@ -242,7 +242,7 @@ Surface data. `DA_Surface_Footstep_Stealth_Audio` (and its siblings) hold a `Sur
 
 | Group | Assets | Duration range (s) | Lines per asset |
 |---|---|---|---|
-| Backstory | 1 (`DA_Convo_Valkyra_Vehicle_Back_C1`) | 14.2 | 4 |
+| Backstory | 1 ([`DA_Convo_Valkyra_Vehicle_Back_C1`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Convo/Valkyra/Vehicle/Backstory/DA_Convo_Valkyra_Vehicle_Back_C1.json)) | 14.2 | 4 |
 | Generic | 6 (`Gen_C1` to `Gen_C6`) | 6.6 to 15.5 | 3 to 5 |
 | Short | 16 (`Short_C01` to `Short_C19`, some numbers skipped) | 3.2 to 7.1 | 2 |
 
@@ -252,7 +252,7 @@ Each asset has `ConversationTag` (e.g. `Audio.Conversation.Valkyra.Vehicle.Dialo
 
 ## 6. Vox System
 
-### 6a. DT_VoxData (81 rows, `Vox/General/DT_VoxData`)
+### 6a. DT_VoxData (81 rows, [`Vox/General/DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json))
 
 Row struct `WDVoxBase`. Key = `LineID` tag (e.g. `Audio.Vox.Exertion.Breath.Inhale`).
 
@@ -274,7 +274,7 @@ Timing and interrupt fields:
 
 Two hidden fields (unnamed hashes) exist on every row: one bool (true on 3 rows) and one enum (`EWDVoxGroup::Exertion` on 3 rows, otherwise `NONE`). Their meaning is unknown.
 
-### 6b. DA_VoxSettings (`Vox/General/DA_VoxSettings`, class WDVoxSettings)
+### 6b. DA_VoxSettings ([`Vox/General/DA_VoxSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DA_VoxSettings.json), class WDVoxSettings)
 
 | Setting | Value |
 |---|---|
@@ -287,19 +287,19 @@ Two hidden fields (unnamed hashes) exist on every row: one bool (true on 3 rows)
 
 `Dialogue` (priority 4) has no rows in DT_VoxData. Conversations probably use it, but the dump does not say so.
 
-### 6c. DA_Vox_Profile01 (`Vox/Profiles/Profile01`, class WDVoxAudioProfile)
+### 6c. DA_Vox_Profile01 ([`Vox/Profiles/Profile01`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Profiles/Profile01), class WDVoxAudioProfile)
 
-81 `VoxLineAudio` entries, one per DT_VoxData row. Each maps a `VoxLine` tag to a `VoxAudioData` WDAudioData, with optional `VoxAudioData1P` and `VoxAudioData3P` (null in the sampled entry) and `bSeparatePerspectives` (false in the sampled entry). Example: `Audio.Vox.Exertion.Breath.Inhale` → `DA_Vox_Profile01_Exert_Norm_Breath_Inhale`.
+81 `VoxLineAudio` entries, one per DT_VoxData row. Each maps a `VoxLine` tag to a `VoxAudioData` WDAudioData, with optional `VoxAudioData1P` and `VoxAudioData3P` (null in the sampled entry) and `bSeparatePerspectives` (false in the sampled entry). Example: `Audio.Vox.Exertion.Breath.Inhale` → [`DA_Vox_Profile01_Exert_Norm_Breath_Inhale`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/Exertions/Breathing/DAs/DA_Vox_Profile01_Exert_Norm_Breath_Inhale.json).
 
-### 6d. Bark asset counts (WDAudioData under `Vox/Barks/`, 118 total)
+### 6d. Bark asset counts (WDAudioData under [`Vox/Barks/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks), 118 total)
 
 | Folder | DAs |
 |---|---|
-| `AssistanceRequest/DAs` | 26 |
-| `Spotting/DA` | 62 |
-| `Orders/DAs` | 10 |
-| `Social/DAs` | 10 |
-| `Squad/DAs` | 10 |
+| [`AssistanceRequest/DAs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks/AssistanceRequest/DAs) | 26 |
+| [`Spotting/DA`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks/Spotting/DA) | 62 |
+| [`Orders/DAs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks/Orders/DAs) | 10 |
+| [`Social/DAs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks/Social/DAs) | 10 |
+| [`Squad/DAs`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/Barks/Squad/DAs) | 10 |
 
 Naming pattern: `DA_Vox_Profile01_Bark_<Category>_<Line>_1p` and `_3p`. Each bark has one SoundAssets entry per status (`Normal`, `LowHealth`).
 
@@ -339,7 +339,7 @@ Row struct `WDImpulseResonanceEntry`. Key = static mesh name. Each row has `Stat
 | `AudioLocation` | `HitLocation` 109, `OwningActor` 7 |
 | Distinct `AudioEvent` tags | 14 |
 | Top events | `Environment.ImpulseResonance.MetalSmall` 43, `…ShippingContainer` 18, `…OilDrum` 12, `…CivilianVehicle.Alarm` 8, `…Fence.Chainlink` 7, `…MetalBarrier` 6, `…Locomotive.FreightCar` 4, `…CivilianVehicle.NoAlarm` 4, `…LargeMetal` 4, `…SmallMetalContainer` 4 |
-| Mesh folders | `Environment/Props` 80, `Environment/Architecture` 30, `Maps/WhiteBox_Assets` 3, `Megascans/3D_Assets` 3 |
+| Mesh folders | `Environment/Props` 80, [`Environment/Architecture`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Environment/Architecture) 30, `Maps/WhiteBox_Assets` 3, `Megascans/3D_Assets` 3 |
 
 Example row. `SM_Village_Fence_01` → `Audio.Event.Environment.ImpulseResonance.Fence` at `HitLocation`.
 
@@ -353,9 +353,9 @@ Each maps the `Audio.CBM.Interior` and `Audio.CBM.Exterior` tags to a `SoundCont
 
 | Asset | Interior | Exterior |
 |---|---|---|
-| `DA_Vehicle_Land_TankArtillery_Vehicle_CBM_Map` (PZH2000) | `AM_CBM_Vehicle_Exterior` | `AM_CBM_Vehicle_Exterior` |
-| `DA_Vehicle_Land_SpawnVehicle_CBM_Map` | `AM_CBM_Vehicle_Interior` | `AM_CBM_Vehicle_Exterior` |
-| `DA_Vehicle_Air_Helicopter_CBM_Map` | `AM_CBM_Helicopter_Interior` | `AM_CBM_Helicopter_Exterior` |
+| [`DA_Vehicle_Land_TankArtillery_Vehicle_CBM_Map`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Land/PZH2000/DA/DA_Vehicle_Land_TankArtillery_Vehicle_CBM_Map.json) (PZH2000) | `AM_CBM_Vehicle_Exterior` | `AM_CBM_Vehicle_Exterior` |
+| [`DA_Vehicle_Land_SpawnVehicle_CBM_Map`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Land/Spawn_Vehicle/DA/DA_Vehicle_Land_SpawnVehicle_CBM_Map.json) | `AM_CBM_Vehicle_Interior` | `AM_CBM_Vehicle_Exterior` |
+| [`DA_Vehicle_Air_Helicopter_CBM_Map`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Shared/Helicopter/DA/DA_Vehicle_Air_Helicopter_CBM_Map.json) | `AM_CBM_Helicopter_Interior` | `AM_CBM_Helicopter_Exterior` |
 
 The tank entry maps both tags to the Exterior mix. This may be intentional, or it may be a data error. Check it before relying on it.
 
@@ -367,10 +367,10 @@ Event-level mixes: 28 distinct `AM_CBM_*` names are referenced by events, for ex
 
 | Asset | Content |
 |---|---|
-| `DA_Significance_KavkaziRiver` (BHSignificanceSettingsAsset) | One sphere evaluator. Two LevelSettings entries: TickRate 0.0 / SignificanceUpdateRate 0.03 / LocationUpdateRate 0.1, and TickRate 2.0 / SignificanceUpdateRate 2.0 / LocationUpdateRate 2.0 |
-| `DA_Significance_Kavkazi_Sphere_Evaluator` (BHSignificanceEvaluator_Sphere) | Settings with `Distance` 0.0 and 6000.0 |
+| [`DA_Significance_KavkaziRiver`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Ambience/DA_Significance_KavkaziRiver.json) (BHSignificanceSettingsAsset) | One sphere evaluator. Two LevelSettings entries: TickRate 0.0 / SignificanceUpdateRate 0.03 / LocationUpdateRate 0.1, and TickRate 2.0 / SignificanceUpdateRate 2.0 / LocationUpdateRate 2.0 |
+| [`DA_Significance_Kavkazi_Sphere_Evaluator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Ambience/DA_Significance_Kavkazi_Sphere_Evaluator.json) (BHSignificanceEvaluator_Sphere) | Settings with `Distance` 0.0 and 6000.0 |
 
-The 6000.0 distance is probably UE centimetres (60 m). The meaning of the two LevelSettings entries is not stored. Ambience events: `AE_AMB_3D_Water_Lake` (MSS_AMB_3D_Water_Lake), `AE_AMB_3D_Water_River` (MSS_Amb_3D_RiverSpline), `AE_StartDistantWarfare` (no behaviours).
+The 6000.0 distance is probably UE centimetres (60 m). The meaning of the two LevelSettings entries is not stored. Ambience events: [`AE_AMB_3D_Water_Lake`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_Lake.json) (MSS_AMB_3D_Water_Lake), [`AE_AMB_3D_Water_River`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Ambience/3D/Water/AE_AMB_3D_Water_River.json) (MSS_Amb_3D_RiverSpline), [`AE_StartDistantWarfare`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Ambience/DistantWarfare/AE_StartDistantWarfare.json) (no behaviours).
 
 ---
 
@@ -378,11 +378,11 @@ The 6000.0 distance is probably UE centimetres (60 m). The meaning of the two Le
 
 | Folder | Count | Shape |
 |---|---|---|
-| `Attenuations/HDR/` | 34 | Mostly 1.0 → 0.0 over normalised time 0 to 1 (3 to 10 keys). Two peak at 0.8: `CC_HDR_ATT_Movement_Close_Enemy`, `CC_HDR_ATT_Movement_Stance`. Named by range or source, e.g. `CC_HDR_800m`, `CC_HDR_ATT_Weapon_Fire_Artillery`, `CC_HDR_ATT_Vehicle_Engine`, `CC_HDR_Falloff_Resonance`. |
-| `Curves/` | 7 | `AU_CRV_ExertionDecayRate` 0.03 → 0.06; `AU_CRV_ExertionDecayRate_ADS` 0.0 → 0.06; `CC_Amb_DistantWarfare_Kavkazi_Audio` 0 → 1; `CC_Vehicle_Destroy` 1 → 0; `CC_Weapon_SMG_Fire_ExternalCurve` 1 → 0.25; `CC_UI_Ping` 1 → 0.035 over 1.001; `CC_Targeting_LockOn` 1 → 0 |
-| `Vehicles/Shared/` | 1 | `AU_CRV_Reversing` 0 → 0.56 |
+| [`Attenuations/HDR/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Attenuations/HDR) | 34 | Mostly 1.0 → 0.0 over normalised time 0 to 1 (3 to 10 keys). Two peak at 0.8: [`CC_HDR_ATT_Movement_Close_Enemy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_ATT_Movement_Close_Enemy.json), [`CC_HDR_ATT_Movement_Stance`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_ATT_Movement_Stance.json). Named by range or source, e.g. [`CC_HDR_800m`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_800m.json), [`CC_HDR_ATT_Weapon_Fire_Artillery`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_ATT_Weapon_Fire_Artillery.json), [`CC_HDR_ATT_Vehicle_Engine`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_ATT_Vehicle_Engine.json), [`CC_HDR_Falloff_Resonance`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_Falloff_Resonance.json). |
+| `Curves/` | 7 | [`AU_CRV_ExertionDecayRate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/AU_CRV_ExertionDecayRate.json) 0.03 → 0.06; [`AU_CRV_ExertionDecayRate_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/AU_CRV_ExertionDecayRate_ADS.json) 0.0 → 0.06; [`CC_Amb_DistantWarfare_Kavkazi_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/Amb/CC_Amb_DistantWarfare_Kavkazi_Audio.json) 0 → 1; [`CC_Vehicle_Destroy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/Explosions/CC_Vehicle_Destroy.json) 1 → 0; [`CC_Weapon_SMG_Fire_ExternalCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/Gunshots/CC_Weapon_SMG_Fire_ExternalCurve.json) 1 → 0.25; [`CC_UI_Ping`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/Ping/CC_UI_Ping.json) 1 → 0.035 over 1.001; [`CC_Targeting_LockOn`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Curves/Targeting%2B/CC_Targeting_LockOn.json) 1 → 0 |
+| `Vehicles/Shared/` | 1 | [`AU_CRV_Reversing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Shared/AU_CRV_Reversing.json) 0 → 0.56 |
 
-The `HDR` prefix is not explained in the dump. The time axis unit is not stored. The `CC_HDR_800m` name suggests an 800 m range, but that is inferred.
+The `HDR` prefix is not explained in the dump. The time axis unit is not stored. The [`CC_HDR_800m`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Attenuations/HDR/CC_HDR_800m.json) name suggests an 800 m range, but that is inferred.
 
 ---
 
@@ -390,8 +390,8 @@ The `HDR` prefix is not explained in the dump. The time axis unit is not stored.
 
 | Asset | Content |
 |---|---|
-| `DA_MicLevelMeter` (WDMicLevelMeterData) | No exported properties |
-| `REVModelAsset` at `Vehicles/Land/PZH2000/Wavs/EngineRevs_Ignition_TurnOff/SFX_Vehicles_Land_PZH2000_Engine_02` | Properties are null in the export. The engine-revs model content is not in the dump. |
+| [`DA_MicLevelMeter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/UI/Data/DA_MicLevelMeter.json) (WDMicLevelMeterData) | No exported properties |
+| `REVModelAsset` at [`Vehicles/Land/PZH2000/Wavs/EngineRevs_Ignition_TurnOff/SFX_Vehicles_Land_PZH2000_Engine_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vehicles/Land/PZH2000/Wavs/EngineRevs_Ignition_TurnOff/SFX_Vehicles_Land_PZH2000_Engine_02.json) | Properties are null in the export. The engine-revs model content is not in the dump. |
 
 ---
 
@@ -423,7 +423,7 @@ The `HDR` prefix is not explained in the dump. The time axis unit is not stored.
 - **Curve units.** Time and value units for the 42 curves are not stored. Distances in UE units are assumed to be centimetres but not verified.
 - **Vox Dialogue group.** Priority 4 exists in settings but has no DT_VoxData rows.
 - **Possible data issues.** The tank CBM map sends both interior and exterior to the exterior mix. `ConcurrentInstanceLimit` 0 appears on 34 `AEB_VehiclePerspective_C` instances. Both are flagged for review, not corrected.
-- **Empty or null exports.** `DA_MicLevelMeter` has no properties. The `REVModelAsset` export has null properties.
+- **Empty or null exports.** [`DA_MicLevelMeter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/UI/Data/DA_MicLevelMeter.json) has no properties. The `REVModelAsset` export has null properties.
 - **Cross-references outside Audio.** Many references (`/Game/Maps/...`, `/Game/Environment/...` meshes, `SBMIX_*` submixes, weapon and vehicle BPs) point outside this folder and were not resolved.
 - **Event tag to asset mismatch.** Around 40 events have a tag that does not match the asset name. Runtime lookup by tag is inferred, not verified.
 
@@ -435,37 +435,37 @@ The `HDR` prefix is not explained in the dump. The time axis unit is not stored.
 
 | Asset | Owner | Sounds | Sets | First tags |
 |---|---|---:|---:|---|
-| `ID_HotPotato_Audio` | HotPotato | 20 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_Battery_Audio` | Items/Battery | 6 |  | `Item.Inventory.DragDrop.Start`, `Item.Inventory.DragDrop.Success`, `Vendor.MoveToCart`, `Item.Pickup` |
-| `ID_C4_Audio` | Items/C4 | 15 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_C4_Trigger_Audio` | Items/C4 | 15 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_Claymore_Audio` | Items/Claymore | 13 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_SuperBandage_Audio` | Items/Consumables/Bandage | 14 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `DA_Item_Crowbar_Audio` | Items/Crowbar | 18 |  | `Item.Drop`, `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p` |
-| `ID_Defibrillator_Audio` | Items/Defibrillator | 16 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_Enox_Audio` | Items/Enox | 16 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_IED_Audio` | Items/IED | 16 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_Rockets_Audio` | Items/Resources/Ammo | 6 |  | `Item.Drop`, `Item.Pickup`, `Item.Inventory.DragDrop.Start`, `Item.Inventory.DragDrop.Success` |
-| `ID_SmokeGrenade_Audio` | Items/SmokeGrenade | 18 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_StimPen_Audio` | Items/StimPen | 15 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_VehicleRepairTool_Audio` | Items/VehicleRepairTool | 14 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_Fists_Audio` | Items/Weapons/Fists | 9 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `DA_ROT_02_Audio` | Vehicles/ROT_02 | 23 |  | `Vendor.Purchase.Horn`, `Vendor.Purchase`, `Vehicle.Shared.LockState.Lock`, `Vehicle.Shared.LockState.Unlock` |
-| `DA_ROT_03_Audio` | Vehicles/ROT_03 | 23 |  | `Vehicle.Shared.Collision`, `Vehicle.Horn`, `Vehicle.Shared.LockState.Unlock`, `Vehicle.Shared.LockState.Lock` |
-| `DA_ROT_04_Audio` | Vehicles/ROT_04 | 23 |  | `Vehicle.Shared.Collision`, `Vehicle.Horn`, `Vehicle.Shared.LockState.Unlock`, `Vehicle.Shared.LockState.Lock` |
-| `DA_SPW_Spawn_Audio` | Vehicles/SPW_01 | 17 |  | `Vehicle.Horn`, `Vehicle.Shared.Collision`, `Vehicle.Shared.Damage`, `Vehicle.Shared.LockState.Unlock` |
-| `DA_STN_01_Audio` | Vehicles/STN_01 | 10 |  | `Vehicle.Weapon.Fire.1p`, `Vehicle.Weapon.Fire.3p`, `Vehicle.Weapon.PreFire.1P`, `Vehicle.Weapon.PreFire.3P` |
-| `DA_STN_03_Mortar_Audio` | Vehicles/STN_03 | 11 |  | `Vehicle.Weapon.PreFire.1P`, `Vehicle.Weapon.PreFire.3P`, `Vehicle.Weapon.Fire.1p`, `Vehicle.Weapon.Fire.3p` |
-| `DA_WHL_05_Audio` | Vehicles/WHL_05 | 21 |  | `Vehicle.Engine`, `Vehicle.Foley`, `Vehicle.Horn`, `Vehicle.Shared.BrakePedalDown` |
-| `DA_WHL_07_Audio` | Vehicles/WHL_07 | 22 |  | `Vehicle.Engine`, `Vehicle.Foley`, `Vehicle.Horn`, `Vehicle.Shared.BrakePedalDown` |
-| `ID_RFB_Audio` | Weapons/DMR | 50 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_SVDM_Audio` | Weapons/DMR | 46 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Footstep.Sprint.Wave01`, `Item.Footstep.Sprint.Wave02` |
-| `ID_LMG_02_Audio` | Weapons/LMG | 44 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_Judge_Audio` | Weapons/Pistols | 39 | 1 | `Weapon.ADSin.1p`, `Weapon.ADSin.3p`, `Weapon.ADSOut.1p`, `Weapon.ADSOut.3p` |
-| `ID_SMG_03_Audio` | Weapons/SMG | 49 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
-| `ID_MP43_Audio` | Weapons/Shotgun | 36 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Footstep.Sprint.Wave01`, `Item.Footstep.Sprint.Wave02` |
-| `ID_MK22_Audio` | Weapons/Sniper | 48 | 1 | `Item.Drop`, `Item.DryFire.1p`, `Item.DryFire.3p`, `Item.Equip.1p` |
-| `ID_SR_04_Audio` | Weapons/Sniper | 51 | 1 | `Item.Drop`, `Item.DryFire.1p`, `Item.DryFire.3p`, `Item.Equip.1p` |
+| [`ID_HotPotato_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/Data/ID_HotPotato_Audio.json) | HotPotato | 20 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_Battery_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Battery/Content/Data/ID_Battery_Audio.json) | Items/Battery | 6 |  | `Item.Inventory.DragDrop.Start`, `Item.Inventory.DragDrop.Success`, `Vendor.MoveToCart`, `Item.Pickup` |
+| [`ID_C4_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Audio.json) | Items/C4 | 15 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_C4_Trigger_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/Data/ID_C4_Trigger_Audio.json) | Items/C4 | 15 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_Claymore_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Data/ID_Claymore_Audio.json) | Items/Claymore | 13 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_SuperBandage_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Consumables/Bandage/ID_SuperBandage_Audio.json) | Items/Consumables/Bandage | 14 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`DA_Item_Crowbar_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/DA_Item_Crowbar_Audio.json) | Items/Crowbar | 18 |  | `Item.Drop`, `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p` |
+| [`ID_Defibrillator_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Defibrillator/Content/Data/ID_Defibrillator_Audio.json) | Items/Defibrillator | 16 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_Enox_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Enox/Content/Data/ID_Enox_Audio.json) | Items/Enox | 16 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_IED_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/Data/ID_IED_Audio.json) | Items/IED | 16 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_Rockets_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Rockets/ID_Rockets_Audio.json) | Items/Resources/Ammo | 6 |  | `Item.Drop`, `Item.Pickup`, `Item.Inventory.DragDrop.Start`, `Item.Inventory.DragDrop.Success` |
+| [`ID_SmokeGrenade_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/Data/ID_SmokeGrenade_Audio.json) | Items/SmokeGrenade | 18 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_StimPen_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/ID_StimPen_Audio.json) | Items/StimPen | 15 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_VehicleRepairTool_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/ID_VehicleRepairTool_Audio.json) | Items/VehicleRepairTool | 14 |  | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_Fists_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Fists/ID_Fists_Audio.json) | Items/Weapons/Fists | 9 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`DA_ROT_02_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Audio.json) | Vehicles/ROT_02 | 23 |  | `Vendor.Purchase.Horn`, `Vendor.Purchase`, `Vehicle.Shared.LockState.Lock`, `Vehicle.Shared.LockState.Unlock` |
+| [`DA_ROT_03_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_Audio.json) | Vehicles/ROT_03 | 23 |  | `Vehicle.Shared.Collision`, `Vehicle.Horn`, `Vehicle.Shared.LockState.Unlock`, `Vehicle.Shared.LockState.Lock` |
+| [`DA_ROT_04_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Config/DA_ROT_04_Audio.json) | Vehicles/ROT_04 | 23 |  | `Vehicle.Shared.Collision`, `Vehicle.Horn`, `Vehicle.Shared.LockState.Unlock`, `Vehicle.Shared.LockState.Lock` |
+| [`DA_SPW_Spawn_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_Spawn_Audio.json) | Vehicles/SPW_01 | 17 |  | `Vehicle.Horn`, `Vehicle.Shared.Collision`, `Vehicle.Shared.Damage`, `Vehicle.Shared.LockState.Unlock` |
+| [`DA_STN_01_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Data/DA_STN_01_Audio.json) | Vehicles/STN_01 | 10 |  | `Vehicle.Weapon.Fire.1p`, `Vehicle.Weapon.Fire.3p`, `Vehicle.Weapon.PreFire.1P`, `Vehicle.Weapon.PreFire.3P` |
+| [`DA_STN_03_Mortar_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Data/DA_STN_03_Mortar_Audio.json) | Vehicles/STN_03 | 11 |  | `Vehicle.Weapon.PreFire.1P`, `Vehicle.Weapon.PreFire.3P`, `Vehicle.Weapon.Fire.1p`, `Vehicle.Weapon.Fire.3p` |
+| [`DA_WHL_05_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Audio.json) | Vehicles/WHL_05 | 21 |  | `Vehicle.Engine`, `Vehicle.Foley`, `Vehicle.Horn`, `Vehicle.Shared.BrakePedalDown` |
+| [`DA_WHL_07_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Audio.json) | Vehicles/WHL_07 | 22 |  | `Vehicle.Engine`, `Vehicle.Foley`, `Vehicle.Horn`, `Vehicle.Shared.BrakePedalDown` |
+| [`ID_RFB_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB_Audio.json) | Weapons/DMR | 50 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_SVDM_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM_Audio.json) | Weapons/DMR | 46 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Footstep.Sprint.Wave01`, `Item.Footstep.Sprint.Wave02` |
+| [`ID_LMG_02_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02_Audio.json) | Weapons/LMG | 44 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_Judge_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/ID_Judge_Audio.json) | Weapons/Pistols | 39 | 1 | `Weapon.ADSin.1p`, `Weapon.ADSin.3p`, `Weapon.ADSOut.1p`, `Weapon.ADSOut.3p` |
+| [`ID_SMG_03_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03_Audio.json) | Weapons/SMG | 49 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Holster.1p`, `Item.Holster.3p` |
+| [`ID_MP43_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/ID_MP43_Audio.json) | Weapons/Shotgun | 36 | 1 | `Item.Equip.1p`, `Item.Equip.3p`, `Item.Footstep.Sprint.Wave01`, `Item.Footstep.Sprint.Wave02` |
+| [`ID_MK22_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22_Audio.json) | Weapons/Sniper | 48 | 1 | `Item.Drop`, `Item.DryFire.1p`, `Item.DryFire.3p`, `Item.Equip.1p` |
+| [`ID_SR_04_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04_Audio.json) | Weapons/Sniper | 51 | 1 | `Item.Drop`, `Item.DryFire.1p`, `Item.DryFire.3p`, `Item.Equip.1p` |
 
 ## Appendix A. All 675 events
 

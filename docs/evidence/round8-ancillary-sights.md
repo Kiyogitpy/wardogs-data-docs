@@ -42,7 +42,7 @@ The bounded negative checks were:
   indexed body hit. No absence claim about omitted functions follows.
 - The previously exported normal fire and reload Blueprint listings in
   `round8_weapon_context_20261018` contain no `Ancillary`, `Underbarrel`
-  or `GrenadeLauncher` spelling. The available action-asset listing has
+  or [`GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) spelling. The available action-asset listing has
   normal weapon, cycle-sight and vehicle actions, with no named ancillary
   action. These listings are bounded evidence, not an exhaustive cooked
   reference index.
@@ -88,12 +88,12 @@ to evidence that the ancillary shot shares that owner.
 
 ### Cooked input and interface-reference search
 
-The exported `IMC_BaseWeapon` maps `IA_Weapon_ToggleAncillaryFire` to
+The exported [`IMC_BaseWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IMC_BaseWeapon.json) maps [`IA_Weapon_ToggleAncillaryFire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IA_Weapon_ToggleAncillaryFire.json) to
 **H**, and the input action sets
 `Input.NamedActions.HoldableItem.Weapon.ToggleAncillaryFire` with a
 pressed trigger. That verifies the input mapping, not an executable
 fire-action binding. A fresh `findname` query under
-`Wardogs/Content/GameMechanics` for `Ancillary` finds only the settings
+[`Wardogs/Content/GameMechanics`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics) for `Ancillary` finds only the settings
 keybinding table.
 
 Two broader offline `findname Wardogs ...` scans of the mounted cooked
@@ -241,14 +241,14 @@ The reviewed export records corroborate meaningful, non-unit values:
 
 | Sight asset / `SightsData` record | Override | Exact archetype key | Translation | Rotation |
 |---|---|---|---:|---:|
-| `SGHT_034/Content/Data/ID_SGHT_034`, record 0 | true | `Item.Archetype.Sniper` | 1.2 | 1.2 |
-| `SGHT_030/Content/Data/ID_SGHT_030`, record 0 | true | `Item.Archetype.Sniper` | 1.3 | 1.3 |
-| `SGHT_030/Content/Data/ID_SGHT_030`, record 1 | false | empty map | 1 (fallback) | 1 (fallback) |
-| `/Game/Items/Attachments/Sights/10x_Scope/ID_10xScope`, record 0 | true | `Item.Archetype.Sniper` | 1.7 | 1.6 |
+| [`SGHT_034/Content/Data/ID_SGHT_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_034/Content/Data/ID_SGHT_034.json), record 0 | true | `Item.Archetype.Sniper` | 1.2 | 1.2 |
+| [`SGHT_030/Content/Data/ID_SGHT_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_030/Content/Data/ID_SGHT_030.json), record 0 | true | `Item.Archetype.Sniper` | 1.3 | 1.3 |
+| [`SGHT_030/Content/Data/ID_SGHT_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_030/Content/Data/ID_SGHT_030.json), record 1 | false | empty map | 1 (fallback) | 1 (fallback) |
+| [`/Game/Items/Attachments/Sights/10x_Scope/ID_10xScope`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/10x_Scope/ID_10xScope.json), record 0 | true | `Item.Archetype.Sniper` | 1.7 | 1.6 |
 
 The SGHT assets are under
-`data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/`; the legacy
-10x asset is under `data/Wardogs/Content/Items/Attachments/Sights/`.
+[`data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights); the legacy
+10x asset is under [`data/Wardogs/Content/Items/Attachments/Sights/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Sights).
 Only the selected socket record participates. These examples do not claim
 that every weapon can equip each sight or that the legacy 10x asset is
 selected in a shipping loadout.

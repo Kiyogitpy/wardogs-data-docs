@@ -31,6 +31,7 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import source_link, link_generated  # noqa: E402
 from ge_values import OPS, SRC, num, short  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -598,7 +599,7 @@ def page(data):
             out += [f"### {archetype}", ""]
         loadout, apps, char, attrs, flags = results[w.key]
         out += [f"#### {heading(w)}", ""]
-        out.append(f"Item `{w.item_id}`, `{os.path.basename(w.path)}`.")
+        out.append(f"Item `{w.item_id}`, {source_link(w.path, os.path.basename(w.path))}.")
         out.append("")
         lo = [f"{short_slot(t)}: `{it.asset}`" for t, it in loadout.attachments()]
         out.append("- **Loadout:** " + ("; ".join(lo) if lo else "no attachments") + ".")
@@ -742,7 +743,7 @@ def write():
     if not BLOCK.search(text):
         raise SystemExit(f"error: no BEGIN/END weapon_attributes markers in {os.path.basename(PAGE)}")
     nl = "\r\n" if "\r\n" in text else "\n"
-    body = page(Data()).replace("\n", nl)
+    body = link_generated(page(Data())).replace("\n", nl)
     new = BLOCK.sub(lambda _: f"<!-- BEGIN weapon_attributes -->{nl}{body}{nl}<!-- END weapon_attributes -->", text)
     if new != text:
         with open(PAGE, "w", encoding="utf-8", newline="") as f:

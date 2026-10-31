@@ -25,7 +25,7 @@ description: "A large multi-part structure built only with the Large Hammer from
 | Rockets | +45% |
 | C4 | +50% |
 | IEDs | +200% |
-| Internal name | `DA_Buildable_Bunker`, with parts `DA_Buildable_Bunker_Floor` and `DA_Buildable_Bunker_Roof` |
+| Internal name | [`DA_Buildable_Bunker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Bunker/DA_Buildable_Bunker.json), with parts [`DA_Buildable_Bunker_Floor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Bunker/DA_Buildable_Bunker_Floor.json) and [`DA_Buildable_Bunker_Roof`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Bunker/DA_Buildable_Bunker_Roof.json) |
 {: .wiki-infobox }
 
 The Bunker is a large structure that only the Large Hammer can build. It has 5,000 HP and two parts, a floor and a roof. It takes less grenade damage than most structures, and rockets, C4 and IEDs still do more damage to it than normal.

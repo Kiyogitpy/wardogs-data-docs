@@ -11,7 +11,7 @@ Points assumption. The default Points angle is 90/180 degrees. Per-target
 results are actor-sorted and component-filtered with swap removal; the
 nearest replacement below is local to one target's cloud traversal.
 
-Static CL-516586 executable review, 2026-10-19. This narrows [the Points-mode trace](round8-radial-points-components.md) for the Gepard (`VP_TNK_01_AntiAir`). Evidence is the offline restored executable SHA-256 `a5c3db107c29bfd92c3b5f317033f698a0c3a84dad712f32990ae302b4f0cc37`, its read-only decompilation corpus, the cooked platform/Blueprint exports and SDK. RVA ranges below were checked against original executable instructions. No game process or scene query was run.
+Static CL-516586 executable review, 2026-10-19. This narrows [the Points-mode trace](round8-radial-points-components.md) for the Gepard ([`VP_TNK_01_AntiAir`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Platforms/VP_TNK_01_AntiAir.json)). Evidence is the offline restored executable SHA-256 `a5c3db107c29bfd92c3b5f317033f698a0c3a84dad712f32990ae302b4f0cc37`, its read-only decompilation corpus, the cooked platform/Blueprint exports and SDK. RVA ranges below were checked against original executable instructions. No game process or scene query was run.
 
 ## Candidate construction and order
 

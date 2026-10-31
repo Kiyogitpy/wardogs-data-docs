@@ -12,7 +12,7 @@ Weapons, ammo, attachments and aim assist: what changed between Season 1 and Sea
 - **Added:** 162 assets
 - **Removed:** 16 assets (all aim assist curves)
 - **Modified with real changes:** 174 assets (251 more are noise-only: renamed keys, swapped key names or shifted references from the different Season 1 export, not listed)
-- **Moved:** 11 assets (the Mosin folder moved to `WEPN_017`)
+- **Moved:** 11 assets (the Mosin folder moved to [`WEPN_017`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/WEPN_017.json))
 - **Property changes:** 1,208 in modified and moved assets
 - **Removed properties:** 989 values in 16 removed assets
 Vector rows show the signed change on each axis, for example `X −0.4, Y −0.4`.
@@ -60,7 +60,7 @@ Shown: the 24 points with the largest change. The other 55 points are in the bro
 
 ### Other weapon stats
 
-On `DA_SKS_Stats`, `ViewKickMagnitudeMultiplier` was removed and `SuppressionMultiplier` was added. These are two separate properties, not a rename.
+On [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json), `ViewKickMagnitudeMultiplier` was removed and `SuppressionMultiplier` was added. These are two separate properties, not a rename.
 
 | Asset | Property | Season 1 | Season 2 | Change |
 |---|---|---|---|---|
@@ -264,7 +264,7 @@ Shown: the 30 largest changes by percentage (values that start at 0 are listed f
 | C_AimAssistSlowStrengthDistanceCurvePistol_ADS | Keys[1].Time | 9500.0 | 2000.0 | −7500.0 (−78.9%) |
 | C_AimAssistSlowStrengthDistanceCurve_AR_ADS | Keys[1].Value | 0.45 | 0.8 | +0.35 (+77.8%) |
 
-Added `DefaultValue` on 3 curves: `C_AimAssistSlowStrengthDistanceCurve_LMG_ADS` (0.0), `C_AimAssistSlowStrengthDistanceCurvePistol_ADS` (0.0), `C_AimAssistSlowStrengthDistanceCurveShotgun_ADS` (0.0).
+Added `DefaultValue` on 3 curves: [`C_AimAssistSlowStrengthDistanceCurve_LMG_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_LMG_ADS.json) (0.0), [`C_AimAssistSlowStrengthDistanceCurvePistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurvePistol_ADS.json) (0.0), [`C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurveShotgun_ADS.json) (0.0).
 
 Removed key entries: 36 (across 13 curves). Added key entries: 0.
 
@@ -462,21 +462,21 @@ These assets are not on GitHub, so there are no links.
 
 ### Moved in Season 2 (11 assets)
 
-The Mosin was moved, not removed. `DA_Mosin_Stats` became `DA_WEPN_017_Stats`, with WeaponId `Id.Item.Mosin`. It gains `SuppressionMultiplier` 1.5. The `ID_Mosin` item became `ID_WEPN_017`. Most of its 142 changes are path and reference updates.
+The Mosin was moved, not removed. `DA_Mosin_Stats` became [`DA_WEPN_017_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json), with WeaponId `Id.Item.Mosin`. It gains `SuppressionMultiplier` 1.5. The `ID_Mosin` item became [`ID_WEPN_017`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json). Most of its 142 changes are path and reference updates.
 
 | Asset | Type | Season 1 path → Season 2 path |
 |---|---|---|
-| AnimSet_Mosin | BHAnimationSet | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/AnimSet_Mosin.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/AnimSet_Mosin.json` |
-| DA_WEPN_017_Stats | WDWeaponStatsData | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/DA_Mosin_Stats.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json` |
-| DT_VendorData_Weapon_Mosin | DataTable | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/DT_VendorData_Weapon_Mosin.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DT_VendorData_Weapon_Mosin.json` |
-| ID_Mosin_MagInternal | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/ID_Mosin_MagInternal.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_Mosin_MagInternal.json` |
-| ID_MosinBarrel | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Components/ID_MosinBarrel.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinBarrel.json` |
-| ID_MosinStock | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Components/ID_MosinStock.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinStock.json` |
-| ID_SR_02_BRL_04 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Attachments/ID_SR_02_BRL_04.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_BRL_04.json` |
-| ID_SR_02_GRP_02 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Attachments/ID_SR_02_GRP_02.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_GRP_02.json` |
-| ID_SR_02_STK_01 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Attachments/ID_SR_02_STK_01.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_STK_01.json` |
-| ID_WEPN_017 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/ID_Mosin.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json` |
-| ID_WEPN_017_Audio | WDAudioData | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/ID_Mosin_Audio.json` → `Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017_Audio.json` |
+| AnimSet_Mosin | BHAnimationSet | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/AnimSet_Mosin.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/AnimSet_Mosin.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/AnimSet_Mosin.json) |
+| DA_WEPN_017_Stats | WDWeaponStatsData | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/DA_Mosin_Stats.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DA_WEPN_017_Stats.json) |
+| DT_VendorData_Weapon_Mosin | DataTable | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/DT_VendorData_Weapon_Mosin.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DT_VendorData_Weapon_Mosin.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/DT_VendorData_Weapon_Mosin.json) |
+| ID_Mosin_MagInternal | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/ID_Mosin_MagInternal.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_Mosin_MagInternal.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_Mosin_MagInternal.json) |
+| ID_MosinBarrel | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Components/ID_MosinBarrel.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinBarrel.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinBarrel.json) |
+| ID_MosinStock | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Components/ID_MosinStock.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinStock.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinStock.json) |
+| ID_SR_02_BRL_04 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Attachments/ID_SR_02_BRL_04.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_BRL_04.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_BRL_04.json) |
+| ID_SR_02_GRP_02 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Attachments/ID_SR_02_GRP_02.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_GRP_02.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_GRP_02.json) |
+| ID_SR_02_STK_01 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/Attachments/ID_SR_02_STK_01.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_STK_01.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Attachments/ID_SR_02_STK_01.json) |
+| ID_WEPN_017 | BHInventoryItemDefinition | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/ID_Mosin.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json) |
+| ID_WEPN_017_Audio | WDAudioData | `Wardogs/Plugins/GameFeatures/Weapons/Sniper/Mosin/Content/Data/ID_Mosin_Audio.json` → [`Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017_Audio.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017_Audio.json) |
 
 ## See also
 

@@ -6,7 +6,7 @@ description: "Buildable challenge rewards: calculator rows, feed strings, destro
 ---
 
 # Wardogs — GameFeature: Rewards (Buildables) Reference
-*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: `Wardogs/Plugins/GameFeatures/Rewards/` (18 JSON files). Scripted pass over every file, then spot-checked against representative rows.*
+*Extracted from cooked game data (build `++Wardogs+Live-CL-516586`, UE 5.7.4). Source: [`Wardogs/Plugins/GameFeatures/Rewards/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Rewards) (18 JSON files). Scripted pass over every file, then spot-checked against representative rows.*
 
 > **Overlap with the main doc:** the flat per-structure cash values (Built / Placed / Destroyed) are in `Wardogs_Rewards_and_Progression_v2.md`, section 7. This doc covers what that doc does not: the **formula structure** of the buildable reward calculator, the **variable and modifier selectors** it uses, the **feed/UI strings** that announce each reward, the **variant-to-reward lookup** for destroyed buildables, and the **assist damage curve**.
 
@@ -14,10 +14,10 @@ description: "Buildable challenge rewards: calculator rows, feed strings, destro
 
 ## Season 02 update (2026-10-15)
 
-- Calculator rows (`DT_ChallengeRewards_SessionEvents_Buildables`): 29 → 47. Added 18 rows: 17 destroyed-variant rows and `FOBDoorClosed`.
+- Calculator rows ([`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json)): 29 → 47. Added 18 rows: 17 destroyed-variant rows and `FOBDoorClosed`.
 - New destroyed-variant rows: AirRaidShelter.Ceiling, AirRaidShelter.Floor, Bunker.Floor, Bunker.Roof, CrowsNest.BaseFloor, CrowsNest.FirstFloor, CrowsNest.Roof, Door, Door.TopSegment, Gate.Ramp, Loudspeaker, MistralAA, Mortar, Phalanx, RefuelStation, SV_Shelter, WoodBase.
-- New `FOBDoorClosed` row: cash only (no XP), feed text "FOB Door Closed", new state tree `ST_Challenges_SessionEvents_Buildable_FOBDoorClosed`. State trees 10 → 11. Feed strings 11 → 12.
-- Destroyed-variant lookup (`DT_RewardLookup_SessionEvent_BuildableDestroyed`): 34 → 36 rows. Door, Gate.Ramp, and the floor and roof variants now have their own reward tags instead of sharing BarbedWire, Gate or BremmerWall. WoodBase and SV_Shelter are added.
+- New `FOBDoorClosed` row: cash only (no XP), feed text "FOB Door Closed", new state tree [`ST_Challenges_SessionEvents_Buildable_FOBDoorClosed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/ST_Challenges_SessionEvents_Buildable_FOBDoorClosed.json). State trees 10 → 11. Feed strings 11 → 12.
+- Destroyed-variant lookup ([`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json)): 34 → 36 rows. Door, Gate.Ramp, and the floor and roof variants now have their own reward tags instead of sharing BarbedWire, Gate or BremmerWall. WoodBase and SV_Shelter are added.
 - Destroyed XP: `BaseReward` → `(BaseReward) * BuildProgress` on the 18 existing destroyed rows. The 17 new destroyed-variant rows use the new form from the start, so all 35 destroyed rows now have it.
 - FOB destroyed row: adds a supplies term, with `FOBSuppliesBonus` 7500 (cash) and 250 (XP), `FOBSuppliesMax` 25000.
 - `BaseValue` (cash) changes: Gate 500 → 200, RepairStation 400 → 200, HotZoneMagnet 4500 → 2750, HBlockQuadWall 150 → 75, HBlock 30 → 15, SandbagWall 30 → 15, TallHBlock 44 → 20, TankTrap 44 → 20, BarbedWire 14 → 5, CamoNetTent 14 → 5, FloorBoard 10 → 5, Radio 40 → 20, Ramp 40 → 20.
@@ -32,27 +32,27 @@ Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-c
 
 | Export type | Count | Role |
 |---|---|---|
-| `GameFeatureData` (`BuildableRewards`) | 1 | Root bundle. Adds a data-registry source and a registry. |
+| `GameFeatureData` ([`BuildableRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/BuildableRewards.json)) | 1 | Root bundle. Adds a data-registry source and a registry. |
 | `StateTree` | 11 | One per buildable session event (section 3). |
 | `WDChallengeStateTreeSchema` | 11 | Empty schema objects, one per state tree. |
-| `DataTable` | 5 | Reward calculator (`DT_ChallengeRewards_SessionEvents_Buildables`), feed strings (`DT_ChallengesFeedActions_Building`), challenge definitions (`DT_Challenges_SessionEvents_Buildables`, **0 rows**), assist curve table, and the destroyed-variant lookup. |
-| `CurveFloat` | 1 | `CRV_Challenges_Curves_BuildableDestroyedAssist_DamageFraction` (section 6). |
+| `DataTable` | 5 | Reward calculator ([`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json)), feed strings ([`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json)), challenge definitions ([`DT_Challenges_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json), **0 rows**), assist curve table, and the destroyed-variant lookup. |
+| `CurveFloat` | 1 | [`CRV_Challenges_Curves_BuildableDestroyedAssist_DamageFraction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/CurveTables/CRV_Challenges_Curves_BuildableDestroyedAssist_DamageFraction.json) (section 6). |
 
 Files in the folder, with row counts:
 
 | File | Rows | Row struct |
 |---|---|---|
-| `DT_ChallengeRewards_SessionEvents_Buildables` | 47 | `WDChallengeRewardDefinition` (calculator) |
-| `DT_RewardLookup_SessionEvent_BuildableDestroyed` | 36 | `WDVariantRewardLookupRow` |
-| `DT_ChallengesFeedActions_Building` | 12 | `WDRewardFeedActionDataTableRow` |
-| `DT_Challenges_Curves_BuildableDestroyedAssist` | 1 | `WDLiveCurveTableRow` |
-| `DT_Challenges_SessionEvents_Buildables` | 0 | `WDChallengeDefinition` |
+| [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) | 47 | `WDChallengeRewardDefinition` (calculator) |
+| [`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json) | 36 | `WDVariantRewardLookupRow` |
+| [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | 12 | `WDRewardFeedActionDataTableRow` |
+| [`DT_Challenges_Curves_BuildableDestroyedAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/CurveTables/DT_Challenges_Curves_BuildableDestroyedAssist.json) | 1 | `WDLiveCurveTableRow` |
+| [`DT_Challenges_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json) | 0 | `WDChallengeDefinition` |
 
 ---
 
 ## 2. How the Calculator Works
 
-Each row of `DT_ChallengeRewards_SessionEvents_Buildables` has one or two **resources**, each a `DefaultExpression`:
+Each row of [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) has one or two **resources**, each a `DefaultExpression`:
 
 - **`Attribute.Meta.Currency.Cash`**: present on all 47 rows.
 - **`Attribute.Meta.XP.Role`**: present on 43 rows.
@@ -84,7 +84,7 @@ So a formula variable is not a number in the table. It is a choice of named fact
 
 Every condition is written as a tag query over `Challenges.Context.*` tags. Those tags are set by the state tree from the event (section 3).
 
-**Numbers are not in these tables.** The option variables (`DismantleValue`, `HotZoneMagnetFactor`, and the rest) carry no values here. Their values are defined in the shared challenge tables, which are covered by `Wardogs_Rewards_and_Progression_v2.md`, section 15 (`DT_ChallengeRewards_SessionEvents_Shared`). This doc does not guess them.
+**Numbers are not in these tables.** The option variables (`DismantleValue`, `HotZoneMagnetFactor`, and the rest) carry no values here. Their values are defined in the shared challenge tables, which are covered by `Wardogs_Rewards_and_Progression_v2.md`, section 15 ([`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json)). This doc does not guess them.
 
 ---
 
@@ -129,11 +129,11 @@ Notes:
 
 ### 3c. Assist entry without a calculator row
 
-The feed table has a `Challenges.Rewards.Buildables.BuildableDestroyed.Assist` entry ("Buildable Destroyed Assist", section 4). **There is no matching calculator row** in `DT_ChallengeRewards_SessionEvents_Buildables`. The assist credit appears to come through the `AssistCurve` and `AssistScalar` selectors inside the destroyed rows instead. This is an inference from the table layout, not a verified path.
+The feed table has a `Challenges.Rewards.Buildables.BuildableDestroyed.Assist` entry ("Buildable Destroyed Assist", section 4). **There is no matching calculator row** in [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json). The assist credit appears to come through the `AssistCurve` and `AssistScalar` selectors inside the destroyed rows instead. This is an inference from the table layout, not a verified path.
 
 ---
 
-## 4. Feed Strings (`DT_ChallengesFeedActions_Building`, 12 rows)
+## 4. Feed Strings ([`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json), 12 rows)
 
 These are the messages shown in the reward feed, and the audio event each one plays. Strings come from `/Game/UI/StringTables/STRINGS_ChallengesRewardFeed`.
 
@@ -158,7 +158,7 @@ Note: `BuildSuppliesConsumed.Instigator` has a localisation key that reads `...B
 
 ---
 
-## 5. Destroyed-Variant Lookup (`DT_RewardLookup_SessionEvent_BuildableDestroyed`, 36 rows)
+## 5. Destroyed-Variant Lookup ([`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json), 36 rows)
 
 Maps each **placed buildable variant** to the **reward tag** that the destroyed calculator (section 3a) uses. Every variant has its own reward tag.
 
@@ -212,9 +212,9 @@ Three things to note:
 
 | Item | Value |
 |---|---|
-| Table | `DT_Challenges_Curves_BuildableDestroyedAssist` (1 row) |
+| Table | [`DT_Challenges_Curves_BuildableDestroyedAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/CurveTables/DT_Challenges_Curves_BuildableDestroyedAssist.json) (1 row) |
 | Live curve tag | `LiveCurves.Challenges.SessionEvents.BuildableDestroyedAssist.DamageFraction` |
-| Curve asset | `CRV_Challenges_Curves_BuildableDestroyedAssist_DamageFraction` |
+| Curve asset | [`CRV_Challenges_Curves_BuildableDestroyedAssist_DamageFraction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/CurveTables/CRV_Challenges_Curves_BuildableDestroyedAssist_DamageFraction.json) |
 | Interpolation | Linear |
 | Keys | (time 0.0, value 0.0) and (time 1.0, value 1.0) |
 | Default value | 0.0 |
@@ -228,9 +228,9 @@ The curve is wired to `AssistCurve` through the `DamageAssistCurve` option (sect
 ## 7. Limitations
 
 - **No numeric reward values in this folder.** The calculator uses option variables (`DismantleValue`, `HotZoneMagnetFactor`, `ControlZoneFactor`, `BaseReward`, `DefaultValue`, and so on). Their values are defined outside this folder, in the shared challenge tables covered by the main doc. This doc names them but does not give values.
-- **Input sources and ranges need tracing.** The producers and ranges of `BuildProgress`, `BuildCost`, `BuildAmount`, `CashSpent`, `BuildSuppliesDeposited` and `LastVictimCount` are not established here. `LastVictimCountMax` is a configured literal of 2.0 in all three variable definitions in `DT_ChallengeRewards_SessionEvents_Buildables`, rather than an unknown event input in those definitions. See [runtime triage RT-015](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/RUNTIME.md).
+- **Input sources and ranges need tracing.** The producers and ranges of `BuildProgress`, `BuildCost`, `BuildAmount`, `CashSpent`, `BuildSuppliesDeposited` and `LastVictimCount` are not established here. `LastVictimCountMax` is a configured literal of 2.0 in all three variable definitions in [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json), rather than an unknown event input in those definitions. See [runtime triage RT-015](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/RUNTIME.md).
 - **The assist path is inferred.** No `BuildableDestroyed.Assist` calculator row exists (section 3c). The assist credit is assumed to flow through `AssistCurve` and `AssistScalar`.
 - **The `Repair` key mismatch** in section 4 is a localisation quirk, not a gameplay issue. It was not checked in-game.
-- **The buildable challenge definitions table** `DT_Challenges_SessionEvents_Buildables` has zero rows. The active buildable challenge list is not visible from this folder.
+- **The buildable challenge definitions table** [`DT_Challenges_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json) has zero rows. The active buildable challenge list is not visible from this folder.
 - **The 11 state trees** (`ST_Challenges_SessionEvents_Buildable_*`) are compiled StateTree bytecode. This doc names them (BuildableDamaged, BuildableDestroyed, BuildableDestroyed_Assist, Building, BuildingFinished, BuildSuppliesConsumed, BuildSuppliesDeposited, FOBDoorClosed, FOBHacked, FOBOwnerPayed, SchematicPlaced) but does not decode their states.
 - For the per-structure **cash base values**, see `Wardogs_Rewards_and_Progression_v2.md`, section 7. Modifier values for the zone factors are in section 15 of the same doc.

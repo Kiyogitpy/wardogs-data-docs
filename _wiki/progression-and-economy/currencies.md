@@ -14,7 +14,7 @@ description: "The money in Wardogs: Cash, Gold Bars (bought with cash at the Gol
 | Intel | Earned from passive missions. The data gives it no use |
 | Skill points | Reserved. Six per-role tags exist, and nothing grants or spends them |
 | Gold Exchange | Unlocks at Wardog level 35 for 150,000 cash |
-| Internal name | Currency definitions and exchange table (`DT_CurrenciesDefinitions`, `DT_ExchangeDefinitions`) |
+| Internal name | Currency definitions and exchange table ([`DT_CurrenciesDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions.json), [`DT_ExchangeDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/ExchangeDefinitions/DT_ExchangeDefinitions.json)) |
 {: .wiki-infobox }
 
 The game has three currencies a player sees: Cash, Gold Bars and Intel. Cash is the money of a match. Gold Bars come from exchanging cash and buy cosmetics. Intel is paid for passive missions, and the game gives it no use.

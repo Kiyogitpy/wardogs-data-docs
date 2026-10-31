@@ -136,7 +136,7 @@ algorithm shape per modifier **without the binary decompilation step**.
 ### 4.1 `B_ArchetypeCaliberModifiers_C.GetModificationAmount` (Function `0x16CDD`)
 
 Property field: `DataTable` at `0x28` (ObjectProperty, holds reference to
-`DT_InfantryData_ArchetypeCaliberModifiers`).
+[`DT_InfantryData_ArchetypeCaliberModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json)).
 
 Function locals (parameter block):
 

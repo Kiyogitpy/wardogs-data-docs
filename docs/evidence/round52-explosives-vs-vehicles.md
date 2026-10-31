@@ -69,7 +69,7 @@ Full tables: `assets/data/explosive-hits-vs-vehicles.json` (every vehicle varian
 | Havoc (800) | 3 | 2 | 2 | 11 | 15 | 2 | 4 | 1 | 2 | 22 | 2 |
 | Talon 9K SAM (3,000) | 4 | 4 | 2 | 14 | 30 | 4 | 1 | 10 | 4 | 20 | 25 |
 
-Coverage: 22 vehicle variants and emplacements in the JSON (Havoc, Little Bird family, Z20 Lakota, SPH-2, L2A6 and Gepard, T-72B3, M113 APC SV, Bobcat, Dune Buggy, Kodiak, three Humvees, Ural, Wolf-110, and the six emplacements) by 12 sources (11 plus the Molotov burst). The wiki page publishes 15 vehicle rows by 11 sources; the guide adds the emplacements. The `ROT_04_MountedMachineGuns`, `SPW_02`, `SPW_03`, other Kodiak, Ural and Wolf variants and `WHL_05` share a damage row and sections with a listed variant and give the same counts. The Fixed-wing airplane has no health model in the damage tables and is not covered.
+Coverage: 22 vehicle variants and emplacements in the JSON (Havoc, Little Bird family, Z20 Lakota, SPH-2, L2A6 and Gepard, T-72B3, M113 APC SV, Bobcat, Dune Buggy, Kodiak, three Humvees, Ural, Wolf-110, and the six emplacements) by 12 sources (11 plus the Molotov burst). The wiki page publishes 15 vehicle rows by 11 sources; the guide adds the emplacements. The `ROT_04_MountedMachineGuns`, `SPW_02`, `SPW_03`, other Kodiak, Ural and Wolf variants and [`WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/WHL_05.json) share a damage row and sections with a listed variant and give the same counts. The Fixed-wing airplane has no health model in the damage tables and is not covered.
 
 ## Cross-checks
 

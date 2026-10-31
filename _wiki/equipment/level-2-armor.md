@@ -22,7 +22,7 @@ description: "Second vest tier: 40% damage reduction on the torso, 220 durabilit
 | Price | 1,000 cash |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_MediumArmor` (item `Id.Item.MediumArmor`) |
+| Internal name | [`ID_MediumArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_MediumArmor.json) (item `Id.Item.MediumArmor`) |
 {: .wiki-infobox }
 
 Level 2 Armor is the second of the four vests. It protects the upper, middle and lower torso and cuts damage there by 40%. It costs 1,000 cash and needs no unlock.

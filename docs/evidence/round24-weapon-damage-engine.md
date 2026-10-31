@@ -6,8 +6,8 @@ Generator: `python _tools/weapon_damage_tables.py --json` writes `assets/data/we
 
 - `_tools/damage_tables.py`: `weapons()`, `projectiles()`, `evaluate()`, `HIT`, `LOCATIONS`, `CLASSES`, `ammo_table()`. Reused unchanged; no existing output was touched.
 - Ammo items under `data/Wardogs/Content/Items/Resources/Ammo/**/ID_*.json`: ItemId tag, `Item.Caliber.*` context tag, projectile fragment (data asset name).
-- Caliber data assets under `Content/GameMechanics/Inventory/Equipment/Caliber/`: asset name to ProjectileId, `NumberOfPellets`.
-- Weapon ID files and stats assets under `Plugins/GameFeatures/Weapons/`: display name, archetype (`Item.Archetype.*`), `RoundsPerMinute`, `SupportedFireModes`.
+- Caliber data assets under [`Content/GameMechanics/Inventory/Equipment/Caliber/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber): asset name to ProjectileId, `NumberOfPellets`.
+- Weapon ID files and stats assets under [`Plugins/GameFeatures/Weapons/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Weapons): display name, archetype (`Item.Archetype.*`), `RoundsPerMinute`, `SupportedFireModes`.
 - Rules: DamagePipeline v2 section 7.3 (ammo scalar), 7.7 (damage event), 7.9 (item tag to modifier tag).
 - `E:/r24/shared/ammo-availability.json` (teammate B), used only as a cross-check in `--check`. The engine derives availability itself, so the generator does not depend on that file.
 

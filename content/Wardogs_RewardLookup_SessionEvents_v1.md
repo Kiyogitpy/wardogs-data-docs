@@ -8,7 +8,7 @@ description: "Vehicle kills and assists, supply crates, buildables, spotting, ch
 # Wardogs — Session-Event Reward Lookups Reference
 *Exported from the game's own asset files. These are the lookup layer feeding the per-kill/per-event reward calculator whose formulas are in section 17 (`DT_ChallengeRewards_SessionEvents_*`).*
 
-> **Scope:** **16 tables pulled**, covering KOTH challenge events (`Challenges_KOTH`), buildable destruction (`Rewards/BuildableRewards`) and Spotting (`Spotting`). Each table maps a row key (a vehicle variant, item or buildable ID) to a `Challenges.Rewards.*` reward tag. Reward amounts and the calculator that consumes these tags are outside this file.
+> **Scope:** **16 tables pulled**, covering KOTH challenge events ([`Challenges_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/Challenges_KOTH.json)), buildable destruction ([`Rewards/BuildableRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards)) and Spotting ([`Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Spotting.json)). Each table maps a row key (a vehicle variant, item or buildable ID) to a `Challenges.Rewards.*` reward tag. Reward amounts and the calculator that consumes these tags are outside this file.
 
 > **Challenges and state trees:** which event each challenge waits for, what its state tree does and which of these lookup and formula rows it feeds are on [Challenges and Session Events](../game-features/Wardogs_Challenges_v1.md). That page also answers the "Event triggers" gap in section 19 from the tree data (event tags and payloads), though the in-game code that raises them is not traced.
 
@@ -19,22 +19,22 @@ description: "Vehicle kills and assists, supply crates, buildables, spotting, ch
 - **Supply crates (table 1):** `ID.Item.VehicleSupplyCrate.Container.Free` → `DestroySupplyCrate.Container.Free` (was `DestroySupplyCrate.Free`). The four `Pallet.*` keys were `DestroySupplyCrate.Pallet`; they are now `.Pallet.BuildSupply`, `.Pallet.FuelSupply`, `.Pallet.MunitionsSupply` and `.Pallet.SparePartsSupply`.
 - **Buildables (table 14):** 34 → 36 rows, adding `Id.Buildable.WoodBase` and `Id.Buildable.SV_Shelter`. Sub-part keys (e.g. `Bunker.Floor`) move from `BuildableDestroyed.BarbedWire` to their own tags. `Id.Buildable.Gate.Ramp` `BremmerWall` → `Gate.Ramp`, `Id.Buildable.Door` `Gate` → `Door`, and `Id.Buildable.RefuelStation` `RepairStation` → `RefuelStation`.
 - **Spotting (tables 15 and 16):** 47 → 51 rows each, adding the four vehicle keys `WHL_08.Default`, `WHL_08.MachineGun`, `TNK_04.Default` and `MGNest`. 37 of the 47 existing keys in each table have a new tag, e.g. `Spotting.Added.Huey` → `Spotting.Added.Huey.Default`.
-- **Reward formulas, 17a (`DT_ChallengeRewards_SessionEvents_Shared`):** 161 → 298 rows and 311 → 585 resource rows. 46 existing formulas changed, e.g. FOB-supplied assists are now divided by `NumberOfAssisters`, and `DeploySupplyCrate` gains a crate-streak term (`CrateStreak`).
+- **Reward formulas, 17a ([`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json)):** 161 → 298 rows and 311 → 585 resource rows. 46 existing formulas changed, e.g. FOB-supplied assists are now divided by `NumberOfAssisters`, and `DeploySupplyCrate` gains a crate-streak term (`CrateStreak`).
 - **Literal values, 17a:** `VehicleDestroyed.TNK_01.Heavy` 7000.0 → 5500.0; `VehicleDestroyed.Mortar` 300.0 → 650.0; `VehicleDestroyed.Phalanx` 3000.0 → 1200.0; `DestroySupplyCrate.Small.Armoured` 250.0 → 500.0; `DestroySupplyCrate.Large.Armoured` 500.0 → 800.0.
-- **Reward formulas, 17b and 17c:** `DT_ChallengeRewards_SessionEvents_Buildables` 29 → 47 rows and `DT_ChallengeRewards_SessionEvents_Spotting` 44 → 130 rows. 20 and 16 formulas changed respectively.
-- **Reward formulas, 17d:** `DT_ChallengeRewards_SessionEvents_HotZoneMagnet` has no formula changes (3 rows; two literal values changed, `HostileFactor` 3.0 → 6.0 on the cash resource and `HostileReward` 250.0 → 300.0 on the XP resource).
-- **Shared definitions:** `DT_Challenges_SessionEvents_Shared` goes from 0 to 10 rows (achievement definitions, see section 19).
+- **Reward formulas, 17b and 17c:** [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) 29 → 47 rows and [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) 44 → 130 rows. 20 and 16 formulas changed respectively.
+- **Reward formulas, 17d:** [`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json) has no formula changes (3 rows; two literal values changed, `HostileFactor` 3.0 → 6.0 on the cash resource and `HostileReward` 250.0 → 300.0 on the XP resource).
+- **Shared definitions:** [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) goes from 0 to 10 rows (achievement definitions, see section 19).
 - **Removed:** no files and no lookup rows were removed.
 
 Full before/after list: [Season 2 Changes → Rewards & Unlocks]({{ '/season-2-changes/rewards-unlocks.html' | relative_url }}).
 
 ---
 
-## 1. `DT_RewardLookup_SessionEvent_DestroySupplyCrate`
+## 1. [`DT_RewardLookup_SessionEvent_DestroySupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroySupplyCrate.json)
 
 Maps supply-crate item IDs to reward tags for the destroy-supply-crate event.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroySupplyCrate.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroySupplyCrate.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroySupplyCrate.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 10
 
@@ -58,11 +58,11 @@ Maps supply-crate item IDs to reward tags for the destroy-supply-crate event.
 
 ---
 
-## 2. `DT_RewardLookup_SessionEvent_DestroyVehicle`
+## 2. [`DT_RewardLookup_SessionEvent_DestroyVehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicle.json)
 
 Maps vehicle variant keys to `VehicleDestroyed` reward tags, grouped by vehicle family.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicle.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicle.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicle.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 34
 
@@ -109,11 +109,11 @@ Maps vehicle variant keys to `VehicleDestroyed` reward tags, grouped by vehicle 
 
 ---
 
-## 3. `DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist`
+## 3. [`DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist.json)
 
 Vehicle keys from table 2, mapped to the FOB-supplied assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 28
 
@@ -154,11 +154,11 @@ Vehicle keys from table 2, mapped to the FOB-supplied assist tag prefix.
 
 ---
 
-## 4. `DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist`
+## 4. [`DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist.json)
 
 Vehicle keys from table 2, mapped to the logistic-assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleLogisticAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 28
 
@@ -198,11 +198,11 @@ Vehicle keys from table 2, mapped to the logistic-assist tag prefix.
 
 ---
 
-## 5. `DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist`
+## 5. [`DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist.json)
 
 Vehicle keys from table 2, mapped to the revive-assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleReviveAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 28
 
@@ -242,11 +242,11 @@ Vehicle keys from table 2, mapped to the revive-assist tag prefix.
 
 ---
 
-## 6. `DT_RewardLookup_SessionEvent_DestroyVehicleSection`
+## 6. [`DT_RewardLookup_SessionEvent_DestroyVehicleSection`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleSection.json)
 
 Vehicle keys from table 2, mapped to `DestroyVehicleSection` reward tags.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleSection.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleSection.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleSection.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 28
 
@@ -286,11 +286,11 @@ Vehicle keys from table 2, mapped to `DestroyVehicleSection` reward tags.
 
 ---
 
-## 7. `DT_RewardLookup_SessionEvent_HealPlayer`
+## 7. [`DT_RewardLookup_SessionEvent_HealPlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer.json)
 
 Maps healing item IDs to the heal-player reward tag.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 6
 
@@ -308,11 +308,11 @@ Maps healing item IDs to the heal-player reward tag.
 
 ---
 
-## 8. `DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist`
+## 8. [`DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist.json)
 
 Same six healing item keys as table 7, mapped to the logistic-assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_LogisticAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 6
 
@@ -330,11 +330,11 @@ Same six healing item keys as table 7, mapped to the logistic-assist tag prefix.
 
 ---
 
-## 9. `DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist`
+## 9. [`DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist.json)
 
 Same six healing item keys as table 7, mapped to the revive-assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_HealPlayer_ReviveAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 6
 
@@ -352,11 +352,11 @@ Same six healing item keys as table 7, mapped to the revive-assist tag prefix.
 
 ---
 
-## 10. `DT_RewardLookup_SessionEvent_RepairVehicle`
+## 10. [`DT_RewardLookup_SessionEvent_RepairVehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RepairVehicle.json)
 
 Maps the three repair-tool IDs to repair-vehicle reward tags.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RepairVehicle.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RepairVehicle.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RepairVehicle.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 3
 
@@ -371,11 +371,11 @@ Maps the three repair-tool IDs to repair-vehicle reward tags.
 
 ---
 
-## 11. `DT_RewardLookup_SessionEvent_RevivePlayer`
+## 11. [`DT_RewardLookup_SessionEvent_RevivePlayer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayer.json)
 
 Maps revive-related item IDs to revive-player reward tags.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayer.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayer.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayer.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 6
 
@@ -389,16 +389,16 @@ Maps revive-related item IDs to revive-player reward tags.
 | `Id.Item.Resuscitator.Standard` | Challenges.Rewards.RevivePlayer.Resuscitator.Standard | Id.Item.Resuscitator.Standard |
 
 **Notes:**
-- `Id.Item.MedKit.Standard` maps to `RevivePlayer.Medkit` (lowercase k in the tag), while the heal table uses `MedKit`.
+- `Id.Item.MedKit.Standard` maps to `RevivePlayer.Medkit` (lowercase k in the tag), while the heal table uses [`MedKit`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/MedKit/Content/MedKit.json).
 - `Resuscitator.Cheap` and `Resuscitator.Standard` each have their own tag.
 
 ---
 
-## 12. `DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist`
+## 12. [`DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist.json)
 
 Same six item keys as table 11, mapped to the logistic-assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerLogisticAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 6
 
@@ -412,15 +412,15 @@ Same six item keys as table 11, mapped to the logistic-assist tag prefix.
 | `Id.Item.Resuscitator.Standard` | Challenges.Rewards.RevivePlayer.LogisticAssist.Resuscitator | Id.Item.Resuscitator.Standard |
 
 **Notes:**
-- The tag spellings are kept as exported: `Defibrilator` (not `Defibrillator`) and `Medkit`. Both `Resuscitator` keys share the tag `RevivePlayer.LogisticAssist.Resuscitator`.
+- The tag spellings are kept as exported: `Defibrilator` (not [`Defibrillator`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Defibrillator/Content/Defibrillator.json)) and `Medkit`. Both `Resuscitator` keys share the tag `RevivePlayer.LogisticAssist.Resuscitator`.
 
 ---
 
-## 13. `DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist`
+## 13. [`DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist.json)
 
 Same six item keys as table 11, mapped to the revive-assist tag prefix.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_RevivePlayerReviveAssist.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 6
 
@@ -438,11 +438,11 @@ Same six item keys as table 11, mapped to the revive-assist tag prefix.
 
 ---
 
-## 14. `DT_RewardLookup_SessionEvent_BuildableDestroyed`
+## 14. [`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json)
 
 Maps buildable IDs, including some sub-parts, to buildable-destroyed reward tags.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 36
 
@@ -490,15 +490,15 @@ Maps buildable IDs, including some sub-parts, to buildable-destroyed reward tags
 - `Id.Buildable.Gate.Ramp` maps to `BuildableDestroyed.Gate.Ramp`, separate from `Id.Buildable.Gate`.
 - `Id.Buildable.Door` maps to `BuildableDestroyed.Door`, and `Id.Buildable.Gate` to `BuildableDestroyed.Gate`.
 - `Id.Buildable.RefuelStation` and `Id.Buildable.RepairStation` each have their own tag.
-- This table sits in the BuildableRewards bundle, not in `Challenges_KOTH`.
+- This table sits in the BuildableRewards bundle, not in [`Challenges_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/Challenges_KOTH.json).
 
 ---
 
-## 15. `DT_RewardLookup_SessionEvent_Spotting_Added`
+## 15. [`DT_RewardLookup_SessionEvent_Spotting_Added`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json)
 
 Maps spotted vehicles, stationary weapons, mines, supply crates and some buildables to `Spotting.Added` reward tags.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Added.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 51
 
@@ -564,11 +564,11 @@ Maps spotted vehicles, stationary weapons, mines, supply crates and some buildab
 
 ---
 
-## 16. `DT_RewardLookup_SessionEvent_Spotting_Removed`
+## 16. [`DT_RewardLookup_SessionEvent_Spotting_Removed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Removed.json)
 
 Same key set as table 15, mapped to `Spotting.Removed` reward tags.
 
-- **Package:** `Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Removed.uasset`
+- **Package:** [`Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Removed.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_Spotting_Removed.json)
 - **Row struct:** `Class'WDVariantRewardLookupRow'`
 - **Row count:** 51
 
@@ -635,8 +635,8 @@ Same key set as table 15, mapped to `Spotting.Removed` reward tags.
 
 Each row gives the currency tag and a formula for the reward. Most formula variables are literals inside the row itself (each resource's `Selectors` and `Variables`); the rest are runtime game values such as the event's base reward or kill streak. The **Value** column is each row evaluated as written, for the state picked with the **Zone multiplier** switch in the sidebar (you and the target both in a control zone, or both in a hot zone; `_tools/zone_rewards.py`). A value written as ×N is N times a runtime amount: hover it to see which.
 
-### 17a. `DT_ChallengeRewards_SessionEvents_Shared` (298 rows)
-- **Package:** `Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.uasset`
+### 17a. [`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) (298 rows)
+- **Package:** [`Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json)
 
 | Row | Resource | Formula |
 |---|---|---|
@@ -1226,8 +1226,8 @@ Each row gives the currency tag and a formula for the reward. Most formula varia
 | `Challenges.Rewards.VehicleFlyThrough` | `Attribute.Meta.Currency.Cash` | `BaseReward * clamp(RepeatActionCount, 0, RepeatActionCountMax)` |
 | `Challenges.Rewards.Test` | `Attribute.Meta.Currency.Cash` | `BaseRewardModifier` |
 
-### 17b. `DT_ChallengeRewards_SessionEvents_Buildables` (47 rows)
-- **Package:** `Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.uasset`
+### 17b. [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) (47 rows)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json)
 
 | Row | Resource | Formula |
 |---|---|---|
@@ -1322,8 +1322,8 @@ Each row gives the currency tag and a formula for the reward. Most formula varia
 | `Challenges.Rewards.Buildables.FOBHacked` | `Attribute.Meta.XP.Role` | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseValue)` |
 | `Challenges.Rewards.Buildables.FOBDoorClosed` | `Attribute.Meta.Currency.Cash` | `(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * (BaseValue * InstigatorZoneModifier)` |
 
-### 17c. `DT_ChallengeRewards_SessionEvents_Spotting` (130 rows)
-- **Package:** `Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.uasset`
+### 17c. [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) (130 rows)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json)
 
 | Row | Resource | Formula |
 |---|---|---|
@@ -1588,8 +1588,8 @@ Each row gives the currency tag and a formula for the reward. Most formula varia
 | `Challenges.Rewards.Spotting.Removed.STN_05` | `Attribute.Meta.Currency.Cash` | `BaseReward * AlignmentModifier * TargetZoneModifier * DestroyedByTeamModifier * BuildProgress` |
 | `Challenges.Rewards.Spotting.Removed.STN_05` | `Attribute.Meta.XP.Role` | `(BaseReward) * BuildProgress` |
 
-### 17d. `DT_ChallengeRewards_SessionEvents_HotZoneMagnet` (3 rows)
-- **Package:** `Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.uasset`
+### 17d. [`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json) (3 rows)
+- **Package:** [`Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json)
 
 | Row | Resource | Formula |
 |---|---|---|
@@ -1607,15 +1607,15 @@ Each row gives the currency tag and a formula for the reward. Most formula varia
 - **Event families:** destroy supply crate (table 1); destroy vehicle, with four parallel tables for FOB-supplied assist, logistic assist, revive assist and section (tables 2 to 6); heal player (tables 7 to 9); repair vehicle (table 10); revive player (tables 11 to 13); buildable destroyed (table 14); spotting added and removed (tables 15 and 16).
 - **Parallel tables:** the assist and section tables reuse the vehicle keys from table 2 with a different tag prefix. The file does not say which in-game action selects which table.
 - **Shared keys:** some keys appear in more than one family. Examples: `Id.Buildable.FOB` (tables 14 and 15), `ID.Item.VehicleSupplyCrate.*` (tables 1, 15 and 16) and `Id.Item.MedKit.Standard` (tables 7 to 9 and 11 to 13). The file does not say how a key with more than one tag is resolved.
-- **Rewards:** tags are names only. Amounts, currency and the step from tag to value are not in this file. The header names `DT_ChallengeRewards_SessionEvents_Shared` as the calculator that consumes these lookups; that table is not included here, so the full combination is not verified.
+- **Rewards:** tags are names only. Amounts, currency and the step from tag to value are not in this file. The header names [`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) as the calculator that consumes these lookups; that table is not included here, so the full combination is not verified.
 
 ---
 
 ## 19. Still not pulled / limitations
 
 - **Formula variables:** literal values (`KillStreakValue`, `ControlZoneFactor`, `HotZoneFactor` and most others) are defined inside each row. Runtime game values (`LastVictimCount`, `KillStreak`, `CrewCount`, the event's base reward from the cash tables) and the `LiveCurves` scaling curves are not; the Value column takes a plain first kill with no repeat victim, a crew of one and a finished build, and shows rows that scale with a runtime amount as ×N.
-- **Shared definitions table:** `DT_Challenges_SessionEvents_Shared` has 10 rows in this build.
+- **Shared definitions table:** [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) has 10 rows in this build.
 - **Row fields:** the exported rows carry only the fields shown in each table (`Resources` and `Tag` for the reward tables; `RewardTag` and `Tag` for the lookup tables). No other fields exist in the export.
 - **Event triggers:** the file does not say which in-game action selects the destroy-vehicle, section or assist tables, or which heal and revive table applies to a given use.
-- **Spelling as exported:** `Defibrilator`, `Medkit` (vs `MedKit`), the `Id.` vs `ID.` prefixes, and `HotzoneMagnet` (key) vs `HotZoneMagnet` (tag) are kept as exported and not corrected.
+- **Spelling as exported:** `Defibrilator`, `Medkit` (vs [`MedKit`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/MedKit/Content/MedKit.json)), the `Id.` vs `ID.` prefixes, and `HotzoneMagnet` (key) vs [`HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/HotZoneMagnet.json) (tag) are kept as exported and not corrected.
 - **Single extraction:** all tables come from one extraction. No comparison across builds has been made.

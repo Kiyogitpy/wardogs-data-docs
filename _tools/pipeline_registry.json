@@ -1671,6 +1671,33 @@
    ],
    "needs_chain": "models",
    "notes": "regen runs --check only (door definitions vs data/); writes assets/data/object-blueprints.json from the dump; recipe in docs/evidence/round91-models.md"
+  },
+  {
+   "script": "link_sources.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": ["--check"],
+   "inputs": ["Git-tracked data/**/*.json", "Git-tracked Markdown"],
+   "notes": "regen runs --write after all generators, then --check verifies completeness and target existence; ambiguous and unpublished sources remain plain text"
+  },
+  {
+   "script": "raw_source_links.py",
+   "class": "library",
+   "tier": "manual",
+   "write": null,
+   "check": null,
+   "inputs": ["Git-tracked data/**/*.json"],
+   "notes": "Exact-path source links shared by generators; no writes"
+  },
+  {
+   "script": "test_generator_source_links.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["data", "tracked generator source"],
+   "notes": "Source-link regression tests; temporary page copies only"
   }
  ],
  "script_globs": [

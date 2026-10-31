@@ -44,7 +44,7 @@ does at runtime.
 ## 2. GameFeature actions that add components
 
 All `GameFeatureAction_AddComponents` rows under
-`data/Wardogs/Plugins/GameFeatures` were extracted: **96 rows**. Rows that
+[`data/Wardogs/Plugins/GameFeatures`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures) were extracted: **96 rows**. Rows that
 could grant items:
 
 | Feature | Host | Component | Item grant? |

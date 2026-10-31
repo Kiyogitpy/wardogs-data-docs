@@ -348,7 +348,7 @@ purchase continuation does not establish one or its overwrite order.
 extension-to-projectile tag path. The paragraph below records the earlier
 boundary; only underbarrel ownership remains open.
 
-The damage evidence generator still marks both paths not traced in [`_tools/infantry_tables.py`](../../_tools/infantry_tables.py#L397): vehicle `WE_*` assets carry `DamageEntityData.Tag` values in `Meta.Damage.Weapon.*`, while `GrenadeLauncher.json` has no such weapon tag. The missing native link is whether those values are placed in the hit's source context in the same way as infantry weapon tags. Do not present the cooked tags alone as proof that the vehicle bone-damage rows or an underbarrel weapon row are selected.
+The damage evidence generator still marks both paths not traced in [`_tools/infantry_tables.py`](../../_tools/infantry_tables.py#L397): vehicle `WE_*` assets carry `DamageEntityData.Tag` values in `Meta.Damage.Weapon.*`, while [`GrenadeLauncher.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) has no such weapon tag. The missing native link is whether those values are placed in the hit's source context in the same way as infantry weapon tags. Do not present the cooked tags alone as proof that the vehicle bone-damage rows or an underbarrel weapon row are selected.
 
 ## Caliber parent matching
 

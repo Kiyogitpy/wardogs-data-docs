@@ -25,7 +25,7 @@ description: "Three Hesco barriers, the Small and Large Hesco Blocks and the Hes
 | Rockets | +80% to +200% |
 | C4 | +150% to +220% |
 | IEDs | +300% to +500% |
-| Internal name | `DA_Buildable_HBlock`, `DA_Buildable_TallHBlock`, `DA_Buildable_HBlock_QuadWall` |
+| Internal name | [`DA_Buildable_HBlock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/HBlock/DA_Buildable_HBlock.json), [`DA_Buildable_TallHBlock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/TallHBlock/DA_Buildable_TallHBlock.json), [`DA_Buildable_HBlock_QuadWall`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/HBlock_QuadWall/DA_Buildable_HBlock_QuadWall.json) |
 {: .wiki-infobox }
 
 The Hesco Walls are three barriers: the Small Hesco Block, the Large Hesco Block and the Hesco Wall. The Small Block is the cheapest and weakest, and the Hesco Wall is the most expensive and has the most health. Each has its own cost, health and damage numbers, so they are listed in tables below.

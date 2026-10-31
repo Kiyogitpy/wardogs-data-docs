@@ -14,8 +14,8 @@ description: "Vehicle stat assets, mounted weapon stats, global damage tables, f
 
 ## Season 02 update (2026-10-15)
 
-- No vehicle stat assets (section 1) or weapon-stat rows (section 2) changed in the columns shown. No files were added or removed. Two vehicle weapon stats assets changed fields outside those columns: `DA_STN_02_Heavy_MainCannon_Stats` `InitialBulletSpeed` 85000.0 → 110000.0, and `DA_STN_03_Heavy_MainBarrel_Stats` `WindupTime` 0.85 → 2.5.
-- Damage entries went from 451 to 472 across the 17 tables (21 entries added, none removed). A new `Meta.Damage.Explosive.Rocket.125mm` entry was added to 16 of the 17 tables (all except the base `DT_GlobalDamage_VehicleData`): Havoc (150.0), Little Bird (100.0), ROT_04 (150.0), Leopard (-10.0), Mistral (50.0), Phalanx (-20.0), Mortar (-50.0), Radio Tower (250.0), STN_05 (-50.0), Bobcat (250.0), Kodiak (250.0), Humvee Default, Minigun and MachineGun (250.0 each), Dune Buggy (250.0) and Ural (75.0). Mistral, Phalanx, Mortar, Radio Tower and STN_05 each gained a second new entry, a `Meta.Damage.Cannon.20x102mm` entry of -70.0, at entry 6 in Mistral, Phalanx, Mortar and STN_05 and at entry 24 in Radio Tower.
+- No vehicle stat assets (section 1) or weapon-stat rows (section 2) changed in the columns shown. No files were added or removed. Two vehicle weapon stats assets changed fields outside those columns: [`DA_STN_02_Heavy_MainCannon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.json) `InitialBulletSpeed` 85000.0 → 110000.0, and [`DA_STN_03_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json) `WindupTime` 0.85 → 2.5.
+- Damage entries went from 451 to 472 across the 17 tables (21 entries added, none removed). A new `Meta.Damage.Explosive.Rocket.125mm` entry was added to 16 of the 17 tables (all except the base [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json)): Havoc (150.0), Little Bird (100.0), ROT_04 (150.0), Leopard (-10.0), Mistral (50.0), Phalanx (-20.0), Mortar (-50.0), Radio Tower (250.0), STN_05 (-50.0), Bobcat (250.0), Kodiak (250.0), Humvee Default, Minigun and MachineGun (250.0 each), Dune Buggy (250.0) and Ural (75.0). Mistral, Phalanx, Mortar, Radio Tower and STN_05 each gained a second new entry, a `Meta.Damage.Cannon.20x102mm` entry of -70.0, at entry 6 in Mistral, Phalanx, Mortar and STN_05 and at entry 24 in Radio Tower.
 - Humvee Default entry 13 `Amount`: -67.0 → -85.0.
 - Humvee Minigun entry 13 `Amount`: -71.0 → -88.0. Entry 27: -90.0 → -88.0.
 - Humvee MachineGun entry 13 `Amount`: -69.0 → -86.5. Entry 27: -87.5 → -86.5.
@@ -35,26 +35,26 @@ Full before/after list: [Season 2 Changes → Vehicles]({{ '/season-2-changes/ve
 
 | Asset | Package | MaxSpeed | MaxFuel | FuelEconomy | MaxSeats | Weaponry | Countermeasures |
 |---|---|---|---|---|---|---|---|
-| `DA_ROT_02_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Stats.uasset` | 400.0 | 130.0 | 4.4 | 2 | 2A42 Autocannon, B-13 Rocket Pods | Flares |
-| `DA_ROT_03_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_Stats.uasset` | 350.0 | 105.0 | 4.4 | 6 | — | Flares |
-| `DA_ROT_03_MachineGuns_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_MachineGuns_Stats.uasset` | 350.0 | 105.0 | 4.4 | 2 | Two M134D Miniguns | Flares |
-| `DA_ROT_03_RocketPods_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_RocketPods_Stats.uasset` | 350.0 | 105.0 | 4.4 | 2 | B-13 Rocket Pods | Flares |
-| `DA_ROT_04_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_Stats.uasset` | 445.0 | 120.0 | 4.4 | 13 | — | Flares |
-| `DA_ROT_04_MachineGun_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Data/MachineGun/DA_ROT_04_MachineGun_Stats.uasset` | 445.0 | 120.0 | 4.4 | 13 | Two M134D Miniguns | Flares |
-| `DA_SPW_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_Stats.uasset` | 71.0 | 100.0 | 5.7 | 10 | — | — |
-| `DA_WHL_01_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Stats.uasset` | 75.0 | 18.0 | 2.2 | 2 | — | — |
-| `DA_WHL_02_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_WHL_02_Stats.uasset` | 154.0 | 50.0 | 2.9 | 4 | — | — |
-| `DA_WHL_02_Pickup_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/WHL_02_Pickup/DA_WHL_02_Pickup_Stats.uasset` | 154.0 | 50.0 | 2.9 | 6 | — | — |
-| `DA_WHL_02_SUV_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_Stats.uasset` | 154.0 | 50.0 | 2.9 | 5 | M249 Machine Gun | — |
-| `DA_WHL_05_Humvee_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Humvee_Stats.uasset` | 113.2291 | 65.0 | 3.3 | 4 | — | — |
-| `DA_WHL_06_DuneBuggy_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_WHL_06_DuneBuggy_Stats.uasset` | 130.0 | 68.0 | 5.0 | 3 | — | — |
-| `DA_WHL_07_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.uasset` | 79.0 | 85.0 | 4.0 | 3 | — | — |
-| `DA_WHL_07_Battle_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.uasset` | 79.0 | 85.0 | 4.0 | 3 | — | — |
+| [`DA_ROT_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Stats.json) | 400.0 | 130.0 | 4.4 | 2 | 2A42 Autocannon, B-13 Rocket Pods | Flares |
+| [`DA_ROT_03_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_Stats.json) | 350.0 | 105.0 | 4.4 | 6 | — | Flares |
+| [`DA_ROT_03_MachineGuns_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_MachineGuns_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_MachineGuns_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_MachineGuns_Stats.json) | 350.0 | 105.0 | 4.4 | 2 | Two M134D Miniguns | Flares |
+| [`DA_ROT_03_RocketPods_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_RocketPods_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_RocketPods_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_RocketPods_Stats.json) | 350.0 | 105.0 | 4.4 | 2 | B-13 Rocket Pods | Flares |
+| [`DA_ROT_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_Stats.json) | 445.0 | 120.0 | 4.4 | 13 | — | Flares |
+| [`DA_ROT_04_MachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Data/MachineGun/DA_ROT_04_MachineGun_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Data/MachineGun/DA_ROT_04_MachineGun_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Data/MachineGun/DA_ROT_04_MachineGun_Stats.json) | 445.0 | 120.0 | 4.4 | 13 | Two M134D Miniguns | Flares |
+| [`DA_SPW_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_Stats.json) | 71.0 | 100.0 | 5.7 | 10 | — | — |
+| [`DA_WHL_01_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Stats.json) | 75.0 | 18.0 | 2.2 | 2 | — | — |
+| [`DA_WHL_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_WHL_02_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_WHL_02_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_WHL_02_Stats.json) | 154.0 | 50.0 | 2.9 | 4 | — | — |
+| [`DA_WHL_02_Pickup_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/WHL_02_Pickup/DA_WHL_02_Pickup_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/WHL_02_Pickup/DA_WHL_02_Pickup_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/WHL_02_Pickup/DA_WHL_02_Pickup_Stats.json) | 154.0 | 50.0 | 2.9 | 6 | — | — |
+| [`DA_WHL_02_SUV_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_Stats.json) | 154.0 | 50.0 | 2.9 | 5 | M249 Machine Gun | — |
+| [`DA_WHL_05_Humvee_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Humvee_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Humvee_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Humvee_Stats.json) | 113.2291 | 65.0 | 3.3 | 4 | — | — |
+| [`DA_WHL_06_DuneBuggy_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_WHL_06_DuneBuggy_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_WHL_06_DuneBuggy_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_WHL_06_DuneBuggy_Stats.json) | 130.0 | 68.0 | 5.0 | 3 | — | — |
+| [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) | 79.0 | 85.0 | 4.0 | 3 | — | — |
+| [`DA_WHL_07_Battle_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.json) | 79.0 | 85.0 | 4.0 | 3 | — | — |
 
 Notes:
 - A dash (`—`) in the Weaponry or Countermeasures column is how the export shows an empty cell. The file does not say whether that means none or unset.
 - The three ROT_03 rows share MaxSpeed, MaxFuel and FuelEconomy. They differ in MaxSeats (6 for the base asset, 2 for the variants) and in Weaponry.
-- `DA_WHL_05_Humvee_Stats` MaxSpeed is exported as 113.2291, the only value in the column with more than one decimal place.
+- [`DA_WHL_05_Humvee_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Humvee_Stats.json) MaxSpeed is exported as 113.2291, the only value in the column with more than one decimal place.
 
 ---
 
@@ -62,20 +62,20 @@ Notes:
 
 | Asset | Package | WeaponId | RPM | Fire modes |
 |---|---|---|---|---|
-| `DA_ROT_02_Weapon_122mm_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.uasset` | ID.Item.VehicleHelicopterRockets | 500.0 | Automatic |
-| `DA_ROT_02_Weapon_30mmCannon_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.uasset` | ID.Item.VehicleHelicopterCannon | 250.0 | Automatic |
-| `DA_ROT_03_AttachedMachineGuns_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.uasset` | Id.Item.ROT_03.MountedMachineGun | 1500.0 | Automatic |
-| `DA_ROT_03_Weapon_122mm_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.uasset` | ID.Item.VehicleHelicopterRockets_ROT_03 | 350.0 | Automatic |
-| `DA_ROT_04_MountedMachineGun_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.uasset` | Id.Item.ROT_04.MountedMachineGun | 1500.0 | Automatic |
-| `DA_STN_01_Heavy_MountedMachineGun_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.uasset` | Id.Item.MistralAA | 100.0 | SemiAutomatic |
-| `DA_STN_02_Heavy_MainCannon_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.uasset` | Id.Item.STN_02.MainCannon | 1800.0 | Automatic |
-| `DA_STN_03_Heavy_MainBarrel_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.uasset` | Id.Item.STN_03.MainBarrel | 50.0 | SemiAutomatic |
-| `DA_STN_05_Heavy_MainBarrel_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.uasset` | Id.Item.STN_03.MainBarrel | 50.0 | SemiAutomatic |
-| `DA_WHL_05_RingMinigun_Stats` | `Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.uasset` | Id.Item.HumveeVehicleRingMinigun | 1500.0 | Automatic |
+| [`DA_ROT_02_Weapon_122mm_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/122mm/DA_ROT_02_Weapon_122mm_Stats.json) | ID.Item.VehicleHelicopterRockets | 500.0 | Automatic |
+| [`DA_ROT_02_Weapon_30mmCannon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Weapons/Cannon/DA_ROT_02_Weapon_30mmCannon_Stats.json) | ID.Item.VehicleHelicopterCannon | 250.0 | Automatic |
+| [`DA_ROT_03_AttachedMachineGuns_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_AttachedMachineGuns_Stats.json) | Id.Item.ROT_03.MountedMachineGun | 1500.0 | Automatic |
+| [`DA_ROT_03_Weapon_122mm_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Weapons/DA_ROT_03_Weapon_122mm_Stats.json) | ID.Item.VehicleHelicopterRockets_ROT_03 | 350.0 | Automatic |
+| [`DA_ROT_04_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Weapons/DA_ROT_04_MountedMachineGun_Stats.json) | Id.Item.ROT_04.MountedMachineGun | 1500.0 | Automatic |
+| [`DA_STN_01_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.json) | Id.Item.MistralAA | 100.0 | SemiAutomatic |
+| [`DA_STN_02_Heavy_MainCannon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/Weapons/DA_STN_02_Heavy_MainCannon_Stats.json) | Id.Item.STN_02.MainCannon | 1800.0 | Automatic |
+| [`DA_STN_03_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json) | Id.Item.STN_03.MainBarrel | 50.0 | SemiAutomatic |
+| [`DA_STN_05_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.json) | Id.Item.STN_03.MainBarrel | 50.0 | SemiAutomatic |
+| [`DA_WHL_05_RingMinigun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.json) | [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/Weapons/WeaponExtensions/DA_WHL_05_RingMinigun_Stats.json) | Id.Item.HumveeVehicleRingMinigun | 1500.0 | Automatic |
 
 Notes:
-- `DA_STN_03_Heavy_MainBarrel_Stats` and `DA_STN_05_Heavy_MainBarrel_Stats` both use WeaponId `Id.Item.STN_03.MainBarrel` (50.0 RPM, SemiAutomatic).
-- `DA_STN_01_Heavy_MountedMachineGun_Stats` uses WeaponId `Id.Item.MistralAA`, not an STN_01 prefix.
+- [`DA_STN_03_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/Weapons/DA_STN_03_Heavy_MainBarrel_Stats.json) and [`DA_STN_05_Heavy_MainBarrel_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Weapons/DA_STN_05_Heavy_MainBarrel_Stats.json) both use WeaponId `Id.Item.STN_03.MainBarrel` (50.0 RPM, SemiAutomatic).
+- [`DA_STN_01_Heavy_MountedMachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/DA_STN_01_Heavy_MountedMachineGun_Stats.json) uses WeaponId `Id.Item.MistralAA`, not an STN_01 prefix.
 - WeaponId prefixes are shown as exported: `ID.Item.` on the ROT_02 and ROT_03 rocket and cannon rows, `Id.Item.` elsewhere.
 
 ---
@@ -90,8 +90,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 - **Change** is the `Amount`. For `Percentage_Ongoing` entries it reads as a percentage change, as on the [GameMechanics page](Wardogs_GameMechanics_v2.html#2f-infantry-damage-modification-rules-dt_globaldamage_infantrydata-row-metadamageinfantry); `Add` entries are marked flat. Section 6 covers what the file leaves open.
 - The fields that are empty or default on every entry (instigator and target requirements, alignment, custom operation, priority index) are left out. Section 5 lists them.
 
-### 3a. `DT_GlobalDamage_VehicleData`
-- **Package:** `Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.uasset`
+### 3a. [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json)
+- **Package:** [`Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json)
 - **Row:** `Meta.Damage.Vehicle`, 10 entries. The 6 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -102,8 +102,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 7 | Ricochet | Kinetic.Impact.Ricochet | — | 0% |
 
 
-### 3b. `DT_GlobalDamage_VehicleData_ROT_02`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.uasset`
+### 3b. [`DT_GlobalDamage_VehicleData_ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json)
 - **Row:** `Meta.Damage.Vehicle.Air.Rotary.Havoc`, 35 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -141,8 +141,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 34 | Calibre | Explosive.Rocket.125mm | — | +150% |
 
 
-### 3c. `DT_GlobalDamage_VehicleData_ROT_03`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.uasset`
+### 3c. [`DT_GlobalDamage_VehicleData_ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.json)
 - **Row:** `Meta.Damage.Vehicle.Air.Rotary.LittleBird`, 33 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -179,8 +179,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 32 | Calibre | Explosive.Rocket.125mm | — | +100% |
 
 
-### 3d. `DT_GlobalDamage_VehicleData_ROT_04`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.uasset`
+### 3d. [`DT_GlobalDamage_VehicleData_ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.json)
 - **Row:** `Meta.Damage.Vehicle.Air.Rotary.ROT_04`, 33 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -216,8 +216,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 32 | Calibre | Explosive.Rocket.125mm | — | +150% |
 
 
-### 3e. `DT_GlobalDamage_VehicleData_SPW_01`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.uasset`
+### 3e. [`DT_GlobalDamage_VehicleData_SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Tracked.Leopard.Spawn`, 32 entries. The 5 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -251,8 +251,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 31 | Calibre | Explosive.Rocket.125mm | — | −10% |
 
 
-### 3f. `DT_GlobalDamage_VehicleData_STN_01`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.uasset`
+### 3f. [`DT_GlobalDamage_VehicleData_STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.json)
 - **Row:** `Meta.Damage.Vehicle.Stationary.Mistral`, 26 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -281,8 +281,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 25 | CaliberEffectiveness | Explosive.Rocket.125mm | — | +50% |
 
 
-### 3g. `DT_GlobalDamage_VehicleData_STN_02`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.uasset`
+### 3g. [`DT_GlobalDamage_VehicleData_STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.json)
 - **Row:** `Meta.Damage.Vehicle.Stationary.Phalanx`, 26 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -311,8 +311,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 25 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −20% |
 
 
-### 3h. `DT_GlobalDamage_VehicleData_STN_03`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.uasset`
+### 3h. [`DT_GlobalDamage_VehicleData_STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.json)
 - **Row:** `Meta.Damage.Vehicle.Stationary.Mortar`, 24 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -339,8 +339,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 23 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −50% |
 
 
-### 3i. `DT_GlobalDamage_VehicleData_STN_04`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.uasset`
+### 3i. [`DT_GlobalDamage_VehicleData_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.json)
 - **Row:** `Meta.Damage.Vehicle.Stationary.RadioTower`, 27 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -371,8 +371,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 26 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3j. `DT_GlobalDamage_VehicleData_STN_05`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.uasset`
+### 3j. [`DT_GlobalDamage_VehicleData_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.json)
 - **Row:** `Meta.Damage.Vehicle.Stationary.STN_05`, 24 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -399,8 +399,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 23 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −50% |
 
 
-### 3k. `DT_GlobalDamage_VehicleData_WHL_01`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.uasset`
+### 3k. [`DT_GlobalDamage_VehicleData_WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Bobcat`, 20 entries. The 1 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -426,8 +426,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 19 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3l. `DT_GlobalDamage_VehicleData_WHL_02`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.uasset`
+### 3l. [`DT_GlobalDamage_VehicleData_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Patriot.Kodiak`, 29 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -460,8 +460,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 28 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3m. `DT_GlobalDamage_VehicleData_WHL_05_Humvee`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.uasset`
+### 3m. [`DT_GlobalDamage_VehicleData_WHL_05_Humvee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.Default`, 31 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -496,8 +496,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3n. `DT_GlobalDamage_VehicleData_WHL_05_Minigun`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.uasset`
+### 3n. [`DT_GlobalDamage_VehicleData_WHL_05_Minigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.Minigun`, 31 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -532,8 +532,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3o. `DT_GlobalDamage_VehicleData_WHL_05_RingTurret`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.uasset`
+### 3o. [`DT_GlobalDamage_VehicleData_WHL_05_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.MachineGun`, 31 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -568,8 +568,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3p. `DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.uasset`
+### 3p. [`DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.DuneBuggy`, 30 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -603,8 +603,8 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 29 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
-### 3q. `DT_GlobalDamage_VehicleData_WHL_07_Ural`
-- **Package:** `Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.uasset`
+### 3q. [`DT_GlobalDamage_VehicleData_WHL_07_Ural`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.json)
+- **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.json)
 - **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Ural`, 30 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
@@ -645,21 +645,21 @@ What each of the 15 vehicle stat assets holds beyond the six values in section 1
 
 | Asset | Vendor stat rows, in order | Weaponry keys | Countermeasure keys |
 |---|---|---|---|
-| `DA_ROT_02_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `30mmCannon`, `122mmRockets` | `Flares` |
-| `DA_ROT_03_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | `Flares` |
-| `DA_ROT_03_MachineGuns_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `DuelMiniguns` | `Flares` |
-| `DA_ROT_03_RocketPods_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `122mmRockets` | `Flares` |
-| `DA_ROT_04_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | `Flares` |
-| `DA_ROT_04_MachineGun_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `DuelMiniguns` | `Flares` |
-| `DA_SPW_Stats` | — | — | — |
-| `DA_WHL_01_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
-| `DA_WHL_02_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
-| `DA_WHL_02_Pickup_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
-| `DA_WHL_02_SUV_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `MountedM249` | — |
-| `DA_WHL_05_Humvee_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
-| `DA_WHL_06_DuneBuggy_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
-| `DA_WHL_07_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
-| `DA_WHL_07_Battle_Stats` | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_ROT_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `30mmCannon`, `122mmRockets` | [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) |
+| [`DA_ROT_03_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) |
+| [`DA_ROT_03_MachineGuns_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_MachineGuns_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `DuelMiniguns` | [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) |
+| [`DA_ROT_03_RocketPods_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_RocketPods_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `122mmRockets` | [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) |
+| [`DA_ROT_04_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) |
+| [`DA_ROT_04_MachineGun_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04_MachineGun/Content/Data/MachineGun/DA_ROT_04_MachineGun_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `DuelMiniguns` | [`Flares`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Flares/Content/Flares.json) |
+| [`DA_SPW_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_SPW_Stats.json) | — | — | — |
+| [`DA_WHL_01_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_WHL_02_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_WHL_02_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_WHL_02_Pickup_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/WHL_02_Pickup/DA_WHL_02_Pickup_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_WHL_02_SUV_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02_RingTurret/Content/Data/WHL_02_SUV_RingTurret/DA_WHL_02_SUV_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | `MountedM249` | — |
+| [`DA_WHL_05_Humvee_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_WHL_05_Humvee_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_WHL_06_DuneBuggy_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_WHL_06_DuneBuggy_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
+| [`DA_WHL_07_Battle_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.json) | Seats, MaxSpeed, FuelCapacity, FuelEconomy, CounterMeasures, Weapons | — | — |
 
 ---
 

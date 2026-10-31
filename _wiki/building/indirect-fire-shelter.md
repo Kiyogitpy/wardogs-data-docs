@@ -25,7 +25,7 @@ description: "A large multi-part shelter built only with the Large Hammer from 2
 | Rockets | +45% |
 | C4 | +50% |
 | IEDs | +200% |
-| Internal name | `DA_Buildable_AirRaidShelter`, with parts `DA_Buildable_AirRaidShelter_Floor` and `DA_Buildable_AirRaidShelter_Ceiling` |
+| Internal name | [`DA_Buildable_AirRaidShelter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter.json), with parts [`DA_Buildable_AirRaidShelter_Floor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Floor.json) and [`DA_Buildable_AirRaidShelter_Ceiling`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Ceiling.json) |
 {: .wiki-infobox }
 
 The Indirect Fire Shelter is a large shelter with a floor and a ceiling. Only the Large Hammer can build it. It has 5,000 HP and takes the same damage as the [Bunker](bunker.md). It is a different structure from the [Shelter](shelter.md).

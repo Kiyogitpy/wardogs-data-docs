@@ -86,8 +86,8 @@ S'      = S + (target − S) · clamp(25·dt, 0, 1)                  (FInterpTo;
 | `RandomDeviationDegree` | same | `+0xCE0` | **Recoil only** (rotates the recoil pattern, §10); not read by the shot-direction code |
 | `ShotgunData` | same | `+0xD40` (0x60 bytes) | Pellet pattern (§11) |
 | `InitialBulletSpeed` | same | `+0xDA0` | Muzzle speed; getter `0x6BBD500`. Not a spread input |
-| `SpreadValues` (stance → `FBHScalableFloat`) | `WDItemExtensionData_RangedWeapon` | `+0xA8` | Hip spread curve per stance: `Value` × row of `CT_Weapon_Spread` |
-| `InAirHipFireSpread` | same | `+0x1DC` | Spread while airborne, degrees. **Native default 10.0** (immediate `0x41200000` stored at `0x6C9102D` in the data constructor); only `GrenadeLauncher` sets it (10.0) |
+| `SpreadValues` (stance → `FBHScalableFloat`) | `WDItemExtensionData_RangedWeapon` | `+0xA8` | Hip spread curve per stance: `Value` × row of [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) |
+| `InAirHipFireSpread` | same | `+0x1DC` | Spread while airborne, degrees. **Native default 10.0** (immediate `0x41200000` stored at `0x6C9102D` in the data constructor); only [`GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) sets it (10.0) |
 | `bDoesWeaponUseSpread`, `SpreadValue` | `WDVehicleWeaponExtensionDataAsset` | `+0x88`, `+0x90` | Vehicle weapon extensions: spread = `Value` x curve row at level 0, eased toward at 25 per second by `0x764BED0`, zero in full ADS; stored at actor `+0x440` (§14 item 6) |
 | `NumberOfPellets`, `AmmunitionFactor` | `FWDProjectileStats` in the projectile data | `+0x18C`, `+0x190` | Pellet count and a choke scale |
 | `MaxPelletCount` | `UWDGameSettings.ProjectileSystemSettings` | settings `+0x5E4` | Pellet normaliser (§11); value not in the export |
@@ -187,7 +187,7 @@ range (`0x6C80000`–`0x6CA2000`) other than `UpdateSpread` writes `+0x3AC`/`+0x
 timer**: after the last shot the value is already at its movement target, and it moves only when speed, stance, air or aim blend change (§14 for the limits of this scan).
 The one cooked path from combat state into the cone is an effect on `Character.WeaponAccuracyMultiplier` (§5).
 
-### Hip spread curves (`CT_Weapon_Spread`, degrees, X = speed ratio 0 → 1, linear)
+### Hip spread curves ([`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json), degrees, X = speed ratio 0 → 1, linear)
 
 | Class | Stand | Crouch | Prone |
 |---|---|---|---|
@@ -198,8 +198,8 @@ The one cooked path from combat state into the cone is an effect on `Character.W
 | MountedMachineGun | 1 → 2 (single row) | | |
 | StableMountedMachineGun | 0.5 → 1 (single row) | | |
 
-Source: `CT_Weapon_Spread.json` (29 rows).
-Every infantry weapon uses its own class for all three stances (§12). The PKM (`LMG_02`) uses the Sniper rows.
+Source: [`CT_Weapon_Spread.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) (29 rows).
+Every infantry weapon uses its own class for all three stances (§12). The PKM ([`LMG_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/LMG_02.json)) uses the Sniper rows.
 
 ---
 
@@ -280,10 +280,10 @@ for each of N pellets:
     else     :  pellet = VRandCone(Centre, I·A·π/180, I·B·π/180)                  inner (choked) pellet
 ```
 
-`MaxPelletCount` is `UWDGameSettings.ProjectileSystemSettings` `+0x18C` (settings `+0x5E4`, read through `0x6C03540`); its value is **16** (packed `DefaultGame.ini`, [Hit Registration §4.6](Wardogs_HitRegistration_v1.md)). With `N` = 8 pellets (7mm Buckshot) and `AmmunitionFactor` 0.8: M500 `P` = 0.5 x 0.8 x 0.5 = **0.20**, MP43 `P` = 0.5 x 0.8 x 0.35 = **0.14**. The M500 choke attachments carry their own `ShotgunData` (`bOverrideShotgunData` true): Improved Cylinder Choke (`ID_MUZL_044`) choke 0.65, outer half-angle 1.36 degrees, random limit 0 to 1.75, inner multiplier 0.55, so `P` = 0.26; Full Choke (`ID_MUZL_045`) choke 0.85, outer 0.95 degrees, random limit 0 to 1.55, inner multiplier 0.6, so `P` = 0.34. The 54 other muzzle devices that have the field set it to false. The inner cone always fits inside the outer cone, because the centre may move only `A(1−I)`.
+`MaxPelletCount` is `UWDGameSettings.ProjectileSystemSettings` `+0x18C` (settings `+0x5E4`, read through `0x6C03540`); its value is **16** (packed `DefaultGame.ini`, [Hit Registration §4.6](Wardogs_HitRegistration_v1.md)). With `N` = 8 pellets (7mm Buckshot) and `AmmunitionFactor` 0.8: M500 `P` = 0.5 x 0.8 x 0.5 = **0.20**, MP43 `P` = 0.5 x 0.8 x 0.35 = **0.14**. The M500 choke attachments carry their own `ShotgunData` (`bOverrideShotgunData` true): Improved Cylinder Choke ([`ID_MUZL_044`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_044/Content/Data/ID_MUZL_044.json)) choke 0.65, outer half-angle 1.36 degrees, random limit 0 to 1.75, inner multiplier 0.55, so `P` = 0.26; Full Choke ([`ID_MUZL_045`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_045/Content/Data/ID_MUZL_045.json)) choke 0.85, outer 0.95 degrees, random limit 0 to 1.55, inner multiplier 0.6, so `P` = 0.34. The 54 other muzzle devices that have the field set it to false. The inner cone always fits inside the outer cone, because the centre may move only `A(1−I)`.
 Each pellet then goes to `0x6B96580` with speed `InitialBulletSpeed × component+0x114`; the id of every spawned pellet is collected for the RPC.
 
-**Data.** Native defaults (constructor `0x699E6C0`): `ChokeFactor` 0.8, outer half-angle 10 degrees (horizontal and vertical 10), inner multiplier 0.5, random ranges (0, 0). `7mm Buckshot` has `NumberOfPellets` 8 and `AmmunitionFactor` 0.8; the rifled slug has no pellet count (one projectile). Cooked shotguns are in §12: M500 (`DA_M12G_Stats`: choke 0.5, outer 1.56 degrees, random limit 0 to 2 degrees, inner multiplier default 0.5) and MP43 (choke 0.35, outer 1.85 degrees, random limit 0 to 3, inner 0.6). The Judge has no `ShotgunData` block, so it uses the defaults if its ammunition has more than one pellet.
+**Data.** Native defaults (constructor `0x699E6C0`): `ChokeFactor` 0.8, outer half-angle 10 degrees (horizontal and vertical 10), inner multiplier 0.5, random ranges (0, 0). `7mm Buckshot` has `NumberOfPellets` 8 and `AmmunitionFactor` 0.8; the rifled slug has no pellet count (one projectile). Cooked shotguns are in §12: M500 ([`DA_M12G_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/DA_M12G_Stats.json): choke 0.5, outer 1.56 degrees, random limit 0 to 2 degrees, inner multiplier default 0.5) and MP43 (choke 0.35, outer 1.85 degrees, random limit 0 to 3, inner 0.6). The Judge has no `ShotgunData` block, so it uses the defaults if its ammunition has more than one pellet.
 
 ---
 
@@ -291,7 +291,7 @@ Each pellet then goes to `0x6B96580` with speed `InitialBulletSpeed × component
 
 Generated by [`_tools/spread_table.py`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/_tools/spread_table.py) from `data/`
 (`python _tools/spread_table.py --write`). `†` marks a value the asset omits, taken from the native default
-(the accuracy **unit** is the omitted field and the value is cooked; `GrenadeLauncher` and `Launcher_04` have no `WeaponAccuracy` block, so both unit and value are the defaults, 1 mrad). Hip half-angle is `S` before
+(the accuracy **unit** is the omitted field and the value is cooked; [`GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) and [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json) have no `WeaponAccuracy` block, so both unit and value are the defaults, 1 mrad). Hip half-angle is `S` before
 `SpreadMultiplier`; the cone also carries the accuracy half-angle (column 3). Attachment multipliers are not applied.
 
 <!-- spread_table -->
@@ -300,42 +300,42 @@ Generated by [`_tools/spread_table.py`](https://github.com/Kiyogitpy/wardogs-dat
 | `A91` | 1.5 mrad† | 0.0430 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
 | `AK74M` | 0.825 mrad† | 0.0236 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
 | `CGM4` | 2.5 mrad† | 0.0716 | Launcher | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `CombatBow` | 0 mrad† | 0.0000 | Bow | 1 → 2 | 0.5 → 1 | 0.5 → 0.5 | — |
+| [`CombatBow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/CombatBow.json) | 0 mrad† | 0.0000 | Bow | 1 → 2 | 0.5 → 1 | 0.5 → 0.5 | — |
 | `Glock17` | 3.49 mrad† | 0.1000 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
-| `GrenadeLauncher` | 1 mrad† | 0.0286 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
+| [`GrenadeLauncher`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/UnderbarrelGrenadeLauncher/Content/Data/GrenadeLauncher.json) | 1 mrad† | 0.0286 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
 | `Judge` | 3.49 mrad† | 0.1000 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
 | `KH2002` | 1.5 mrad† | 0.0430 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
-| `Launcher_04` | 1 mrad† | 0.0286 | Launcher | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `LMG_02` | 2.5 mrad† | 0.0716 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
+| [`Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Launcher_04.json) | 1 mrad† | 0.0286 | Launcher | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
+| [`LMG_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/LMG_02.json) | 2.5 mrad† | 0.0716 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
 | `M249` | 4.3 mrad† | 0.1232 | LMG | 3 → 6 | 2 → 4 | 1 → 2 | — |
 | `M4` | 0.84 mrad† | 0.0241 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
 | `M500` | 1.5 mrad† | 0.0430 | Shotgun | 3 → 6 | 2 → 4 | 1 → 2 | choke 0.5, outer 1.56°, inner ×0.5, centre jitter 0…2° |
-| `MK22` | 0.16 mrad† | 0.0046 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
+| [`MK22`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/MK22.json) | 0.16 mrad† | 0.0046 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
 | `MMGL` | 20 mrad† | 0.5730 | Launcher | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `MP43` | 3.08 mrad† | 0.0882 | Shotgun | 3 → 6 | 2 → 4 | 1 → 2 | choke 0.35, outer 1.85°, inner ×0.6, centre jitter 0…3° |
-| `MP9` | 2.1 mrad† | 0.0602 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `RFB` | 0.69 mrad† | 0.0198 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
-| `RPG7` | 3 mrad† | 0.0859 | Launcher | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
+| [`MP43`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/MP43.json) | 3.08 mrad† | 0.0882 | Shotgun | 3 → 6 | 2 → 4 | 1 → 2 | choke 0.35, outer 1.85°, inner ×0.6, centre jitter 0…3° |
+| [`MP9`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/MP9/Content/MP9.json) | 2.1 mrad† | 0.0602 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
+| [`RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/RFB.json) | 0.69 mrad† | 0.0198 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
+| [`RPG7`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/RPG7.json) | 3 mrad† | 0.0859 | Launcher | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
 | `SKS` | 0.73 MOA | 0.0061 | DMR | 3 → 6 | 2 → 4 | 1 → 2 | — |
-| `SMG_03` | 1.3 mrad† | 0.0372 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `SR_04` | 0.11 mrad† | 0.0032 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
+| [`SMG_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/SMG_03.json) | 1.3 mrad† | 0.0372 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
+| [`SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/SR_04.json) | 0.11 mrad† | 0.0032 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
 | `SV98` | 0.56 mrad† | 0.0160 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
-| `SVDM` | 0.45 mrad† | 0.0129 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | zeroed (choke 0, outer 0) |
+| [`SVDM`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/SVDM.json) | 0.45 mrad† | 0.0129 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | zeroed (choke 0, outer 0) |
 | `TAR21` | 0.87 mrad† | 0.0249 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
 | `Vector` | 2 mrad† | 0.0573 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `WEPN_017` | 0.78 mrad† | 0.0223 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
-| `WEPN_026` | 2 mrad† | 0.0573 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
-| `WEPN_027` | 0.84 MOA | 0.0070 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
-| `WEPN_028` | 1.16 mrad† | 0.0332 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `WEPN_029` | 0.73 mrad† | 0.0209 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
-| `WEPN_030` | 0.58 mrad† | 0.0166 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
-| `WEPN_031` | 1.3 mrad† | 0.0372 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
-| `WEPN_032` | 2 mrad† | 0.0573 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
-| `WEPN_033` | 1.5 mrad† | 0.0430 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
-| `WEPN_034` | 0.73 mrad† | 0.0209 | DMR | 3 → 6 | 2 → 4 | 1 → 2 | zeroed (choke 0, outer 0) |
-| `WEPN_035` | 1.5 mrad† | 0.0430 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
-| `WEPN_036` | 0.73 mrad† | 0.0209 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
-| `WEPN_037` | 0.58 mrad† | 0.0166 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | zeroed (choke 0, outer 0) |
+| [`WEPN_017`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/WEPN_017.json) | 0.78 mrad† | 0.0223 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
+| [`WEPN_026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/WEPN_026.json) | 2 mrad† | 0.0573 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
+| [`WEPN_027`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/WEPN_027.json) | 0.84 MOA | 0.0070 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
+| [`WEPN_028`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/WEPN_028.json) | 1.16 mrad† | 0.0332 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
+| [`WEPN_029`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/WEPN_029.json) | 0.73 mrad† | 0.0209 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
+| [`WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/WEPN_030.json) | 0.58 mrad† | 0.0166 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
+| [`WEPN_031`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/WEPN_031.json) | 1.3 mrad† | 0.0372 | SMG | 2 → 4 | 1.5 → 3 | 1 → 2 | — |
+| [`WEPN_032`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/WEPN_032.json) | 2 mrad† | 0.0573 | Pistol | 3 → 6 | 2 → 4 | 1 → 2 | — |
+| [`WEPN_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/WEPN_033.json) | 1.5 mrad† | 0.0430 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
+| [`WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/WEPN_034.json) | 0.73 mrad† | 0.0209 | DMR | 3 → 6 | 2 → 4 | 1 → 2 | zeroed (choke 0, outer 0) |
+| [`WEPN_035`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/WEPN_035.json) | 1.5 mrad† | 0.0430 | Sniper | 4 → 7 | 3 → 6 | 2 → 4 | — |
+| [`WEPN_036`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/WEPN_036.json) | 0.73 mrad† | 0.0209 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | — |
+| [`WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/WEPN_037.json) | 0.58 mrad† | 0.0166 | AR | 3 → 6 | 2 → 4 | 1.5 → 3 | zeroed (choke 0, outer 0) |
 <!-- /spread_table -->
 
 **Worked example.** AK74M (`0.825 mrad†`, class AR), standing, no attachments, moving at 200 cm/s:
@@ -409,7 +409,7 @@ All RVAs are file RVAs. "Same" means byte-identical in the static-analysis image
 6. **Vehicle and mounted weapons.** Closed in round 42. Both actor classes implement the same weapon-owner interface at actor `+0x2B8`, and `GetSpreadAngle` is its slot 21 (`+0xA8`). `AWDVehicleWeaponExtension`: slot `0x7646C90` returns 0 unless the data asset has `bDoesWeaponUseSpread` (`+0x88`), else the float at actor `+0x440`; the updater `0x764BED0` (every tick, from `0x764A780`) sets it to 0 when the operator's ADS blend (`UWDWeaponBehaviorComponent +0x3E4`) is exactly 1.0, otherwise moves it toward `SpreadValue` (data asset `+0x90`, level 0) by `clamp(dt x 25, 0, 1)` of the gap each tick. `AWDMountedWeapon`: slot 21 is `0x15B83B0` (`return 0.0`), so its native spread is always 0. The infantry updater `0x6C9FEE0` is not theirs. Evidence: [round 42](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-weapons.md). Earlier round 41 assumption (float at actor `+0x574`) was wrong.
 7. **Character virtuals** `+0x360` (2D velocity), `+0x720` (eye point), `+0x818` (gate), `+0x840` (view rotation) are named by role only.
 8. **Frame `+0x270` echo** (`θ` in degrees). Round 41: the loop at `0x6B94480` in the shot function `0x6B93610` calls virtual slot `+0x60` on every registered listener of the global list `0xCEB6D70`, passing the frame; the listeners are registered by **`UWDAnybrainSubsystem`** (list references in `0x6DF3430`, `0x6DF4AB0`, and its vtable slots 87 and 88 `0x6E00470` / `0x6DFEB50`). So the echo is a per-shot report to the Anybrain subsystem, not a gameplay input (the subsystem's purpose was not read). The snapshot `0x6C9DB60` is a block inside the 3 KB function `0x6C9D170`; it packs `+0x360`, `+0x370`, `+0x378`, the stance byte and the two spread values into a record; the consumer of that record was not found.
-9. **`component+0x114`** (muzzle-speed scale, default 1.0). Round 40: the only writer is the exposed function `SetInitialBulletSpeedModifier` (`0x6B99A30`); the readers are the spawn wrapper `0x6B959E0` and the shot function `0x6B93610` (`0x6B9412B`). The callers found are the bow actions `B_Action_BowDraw.TryActivateFire` and `B_Action_BowFireTestNew.OnReleased`, which pass `DrawVelocityCurve(draw alpha)`: the `CombatBow` curve `CF_DrawVelocityReleaseCurve` runs from 0.05 at 0 to 1.0 at 0.4 (`FullDrawTime` 1.4 s). No firearm Blueprint was found calling it.
+9. **`component+0x114`** (muzzle-speed scale, default 1.0). Round 40: the only writer is the exposed function `SetInitialBulletSpeedModifier` (`0x6B99A30`); the readers are the spawn wrapper `0x6B959E0` and the shot function `0x6B93610` (`0x6B9412B`). The callers found are the bow actions `B_Action_BowDraw.TryActivateFire` and `B_Action_BowFireTestNew.OnReleased`, which pass `DrawVelocityCurve(draw alpha)`: the [`CombatBow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/CombatBow.json) curve [`CF_DrawVelocityReleaseCurve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/Curves/CF_DrawVelocityReleaseCurve.json) runs from 0.05 at 0 to 1.0 at 0.4 (`FullDrawTime` 1.4 s). No firearm Blueprint was found calling it.
 10. **AI shooters** (`AIWeaponData`, `AEB_EnemyAccuracyScaling`) were not traced; they may use a different direction path. Round 39: `AEB_EnemyAccuracyScaling` is an audio-event behaviour (`EnemyAccuracyScaling_Vehicle` in the vehicle weapon fire events), not an accuracy value. `AIWeaponData` on 12 stats assets holds `MinAIRange`, `MaxAIRange` (150 to 650) and `ShootCountOfBurst` (1 to 8) only; no AI spread value exists ([round 36 AI](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md)).
 11. **`srand` seed.** Round 41: closed. `0x46CF6AA`-`0x46CF6E8`: unless the command line carries `-Deterministic`, `-UseFixedTimeStep` or `-FixedSeed` (wide strings at `0xA77A640`, `0xA77A660`, `0xA77A68E`), both seeds are `QueryPerformanceCounter` low dwords (IAT `0x9A27628`, two calls): the first goes to the C runtime `srand` (IAT `0x9A28ED0`), the second to the engine seeder `0x15C48B0`. With one of those flags both are the fixed value in `r15d` (the register is zero in the usual start-up; not verified). So the seed is not a constant.
 12. **Cooked effects only.** Attribute changes made at runtime by Blueprint or by effects outside the 341 exported ones are not visible.

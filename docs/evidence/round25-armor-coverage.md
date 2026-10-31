@@ -98,7 +98,7 @@ columns. The three independent verifier values are re-derived for M4 FMJ:
 
 Pilot and Tank helmets are new relative to round 24, which listed only None to SuperHeavy.
 Their R values (30 and 55) are in the item data; the armor rule table
-`DT_GlobalDamage_ArmorData` and the ammo-effectiveness rows key on the `Meta.Damage.Helmet`
+[`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) and the ammo-effectiveness rows key on the `Meta.Damage.Helmet`
 parent, so they apply to those tags through the tag hierarchy as for the other helmets. I did not
 verify this against a live game hit.
 

@@ -27,6 +27,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import link_generated  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "data", "vehicle-spawns.json")
 INI = os.path.join(ROOT, "data", "Wardogs", "Plugins", "GameFeatures", "Vehicles", "VehicleUtility", "Config",
@@ -525,7 +528,7 @@ def render_page(data):
     w("")
     w("Extractor arguments are in [`tools/cue4parse_extractor/README.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/tools/cue4parse_extractor/README.md). The wiki articles for each map summarise this page.")
     w("")
-    return "\n".join(o) + "\n"
+    return link_generated("\n".join(o) + "\n")
 
 
 def main():

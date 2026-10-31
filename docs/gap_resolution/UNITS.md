@@ -55,4 +55,4 @@ Resolution strategy: one authoritative units table in `docs/UNITS.md` that maps 
 ### [Wardogs_Weapons_v2.md](Wardogs_Weapons_v2.html)
 
 - **6. Still Not Pulled / Limitations**  →  _**Units are not stated** in the export. Speeds are assumed to be cm/s and ranges to be metres, based on the falloff-curve and EffectiveRange check. That is an inference._
-- **6. Still Not Pulled / Limitations**  →  _`CF_*_ADS_Curve` and `ADS_Blur_Curve` have no stated output meaning._
+- **6. Still Not Pulled / Limitations**  →  _`CF_*_ADS_Curve` and [`ADS_Blur_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/ADS_Blur_Curve.json) have no stated output meaning._

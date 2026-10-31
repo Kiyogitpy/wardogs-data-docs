@@ -25,7 +25,7 @@ description: "A low cover wall built with any hammer from 15 Build Supplies, wit
 | Rockets | +650% |
 | C4 | +200% |
 | IEDs | +500% |
-| Internal name | `DA_Buildable_SandbagWall` |
+| Internal name | [`DA_Buildable_SandbagWall`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/SandbagWall/DA_Buildable_SandbagWall.json) |
 {: .wiki-infobox }
 
 The Sandbag Wall is a low cover wall that any of the three hammers can build. It is cheap and has 735 HP. Bullets do little to it, but rockets, C4 and IEDs do much more damage than they do to most other walls.

@@ -12,7 +12,7 @@ description: "How a projectile moves from muzzle to hit: launch velocity, gravit
 How a projectile moves between the muzzle and the hit: launch velocity, the
 per-step force model (gravity, drag, thrust, wind), the integrator, and the
 conditions that end the flight. It answers one question first raised by an
-outside review: `DA_155mm_Standard_ProjectileData` sets
+outside review: [`DA_155mm_Standard_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData.json) sets
 `bActorHandlesProjectileMovement: true`, so does an artillery shell fly by
 different rules, and is drag modelled at all?
 
@@ -117,9 +117,9 @@ and `0x6BBA900` returns the base stats when the tag is 0. Constructor defaults o
 
 | Quantity | Value | Source |
 |---|---:|---|
-| 155 mm artillery `InitialBulletSpeed` | 30000 cm/s (300 m/s) | **Data**, `DA_TNK_01_Artillery_Weapon_Stats` |
-| `ArtilleryBarrelTest` `InitialBulletSpeed` | 46400 cm/s | **Data**, `DA_ArtilleryBarrelTest_Stats` |
-| 155 mm `TypicalSpeed` | 15000 cm/s (150 m/s) | **Data**, `DA_155mm_Standard_ProjectileData` |
+| 155 mm artillery `InitialBulletSpeed` | 30000 cm/s (300 m/s) | **Data**, [`DA_TNK_01_Artillery_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json) |
+| `ArtilleryBarrelTest` `InitialBulletSpeed` | 46400 cm/s | **Data**, [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json) |
+| 155 mm `TypicalSpeed` | 15000 cm/s (150 m/s) | **Data**, [`DA_155mm_Standard_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData.json) |
 | 155 mm `ThrustSpeed` | 22000 (unused, see §6.1) | **Data** |
 
 So the artillery shell leaves the barrel at 300 m/s while its own
@@ -281,7 +281,7 @@ Cd(v) = DragModel.Value * Curve[row](|v| in m/s)
 ```
 
 The row is `DragModel.Curve.RowName` in
-`CT_Projectile_DragCoefficients`,
+[`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json),
 whose `Time` axis is therefore **m/s** (the G7 and G1 rows rise sharply at 274–366
 on that axis, which is where the speed of sound sits). The 155 mm assets use
 row `GC (Cylinder)`: 0.71 at 0, 0.66 at 150, 1.10 at 300, 1.60 at 600.
@@ -337,7 +337,7 @@ The cooked 155 mm assets set `ThrustSpeed: 22000` but never set
 | `DA_93mm` | true | 17000 | 100 | 40 | 0.04 s | 22000 | 2.5 s |
 | `DA_122_mm_HAVOC` | true | 20000 | 1000 (default) | 10 (default) | 0 | 0 | 100 s (defaults) |
 
-All from **Data** plus the defaults above. `DA_DebugHomingRocketData` sets
+All from **Data** plus the defaults above. [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) sets
 20 s, fuel 100, burn rate 1.0 (see [Items §7c](../content/Wardogs_Items_v2.md)).
 
 ### 6.2 Fuel burn
@@ -584,7 +584,7 @@ WARDOGS_ANALYSIS_EXE=<analysis image> python _tools/projectile_flight_check.py
    The Blueprint export (see
    [Artillery shell flight data](../game-features/Wardogs_ArtilleryShellFlight_v1.md))
    shows `BP_155mm_Standard` uses mode `Mover.Mode.Projectile.Standard`
-   (`WDProjectileMove`, empty `DA_DummyMovement`) and its bytecode only spins
+   (`WDProjectileMove`, empty [`DA_DummyMovement`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/MoverTesting/Settings/DA_DummyMovement.json)) and its bytecode only spins
    the mesh and computes travel-time fractions, so §7 applies to it.
    `BP_155mm_Expensive` uses the `Artillery` mode (`WDArtilleryProjectileMove`)
    with `InputMultiplier` 0.02, whose rotation step is not traced. If the actor's Blueprint calls

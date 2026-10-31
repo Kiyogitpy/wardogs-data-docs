@@ -26,6 +26,8 @@ import re
 import struct
 import sys
 
+from raw_source_links import source_link, link_generated
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = "content/Wardogs_PlayerMovement_v1.md"
 PLAYER = "Wardogs/Content/GameMechanics/Player/"
@@ -83,7 +85,7 @@ def exports(rel):
 
 
 def link(rel, label=None):
-    return f"`{label or os.path.basename(rel)[:-5]}`"
+    return source_link("data/" + rel, label or os.path.basename(rel)[:-5])
 
 
 def n(x, nd=4):
@@ -452,7 +454,7 @@ def main():
     if arg == "--check":
         with open(os.path.join(ROOT, PAGE), encoding="utf-8") as f:
             text = f.read().replace("\r\n", "\n")
-        new = BLOCK.sub(lambda m: f"<!-- movement_tables {m.group(1)} -->\n{BLOCKS[m.group(1)]()}\n<!-- /movement_tables -->", text)
+        new = BLOCK.sub(lambda m: f"<!-- movement_tables {m.group(1)} -->\n{link_generated(BLOCKS[m.group(1)]())}\n<!-- /movement_tables -->", text)
         if new != text:
             print(f"stale: {PAGE}")
             sys.exit(1)
@@ -466,14 +468,14 @@ def main():
 
         def sub(m):
             count[0] += 1
-            return f"<!-- movement_tables {m.group(1)} -->\n{BLOCKS[m.group(1)]()}\n<!-- /movement_tables -->"
+            return f"<!-- movement_tables {m.group(1)} -->\n{link_generated(BLOCKS[m.group(1)]())}\n<!-- /movement_tables -->"
         new = BLOCK.sub(sub, text)
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             f.write(new)
         print(f"{count[0]} blocks refreshed in {PAGE}")
         return
     if arg in BLOCKS:
-        print(BLOCKS[arg]())
+        print(link_generated(BLOCKS[arg]()))
         return
     print(__doc__)
 

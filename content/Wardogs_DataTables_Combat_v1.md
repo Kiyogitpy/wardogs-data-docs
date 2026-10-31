@@ -13,7 +13,7 @@ description: "Combat, vehicle and scene tables: damage reduction, seat modifiers
 
 ## WDVehicleSeatDamageReductionData
 
-Tables: `DT_InfantryData_VehicleSeatDamageReduction`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDVehicleSeatDamageReductionData -->
 *1 table(s), 11 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -35,7 +35,7 @@ Tables: `DT_InfantryData_VehicleSeatDamageReduction`. Each name is linked in the
 
 ## FVehiclePropEntry
 
-Tables: `DT_VehiclePropList`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_VehiclePropList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Environment/Blueprints/VehiclePropTooling/DT_VehiclePropList.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct FVehiclePropEntry -->
 *1 table(s), 29 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -75,7 +75,7 @@ Tables: `DT_VehiclePropList`. Each name is linked in the [index](Wardogs_DataTab
 
 ## WDAmmoModifierTableRow
 
-Tables: `DT_AmmoModifiers`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_AmmoModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DT_AmmoModifiers.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDAmmoModifierTableRow -->
 *1 table(s), 5 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -91,7 +91,7 @@ Tables: `DT_AmmoModifiers`. Each name is linked in the [index](Wardogs_DataTable
 
 ## WDDeathmatchWeaponData
 
-Tables: `DT_DeathmatchWeaponSelect`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDDeathmatchWeaponData -->
 *1 table(s), 20 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -122,7 +122,7 @@ Tables: `DT_DeathmatchWeaponSelect`. Each name is linked in the [index](Wardogs_
 
 ## WDSceneDataTableRow
 
-Tables: `DT_DeathmatchSceneData_Match`, `DT_SceneData_DefaultPvEScenario`, `DT_SceneData_Frontend`, `DT_SceneData_Frontend_Gunsmith`, `DT_SceneData_Frontend_Itemsmith`, `DT_SceneData_Frontend_Vehiclesmith`, `DT_SceneData_Match`, `DT_SceneData_Match_Buildables`, `DT_SceneData_Match_STN_05`, `DT_SceneData_Match_ShootingRange`, `DT_SceneData_Match_SniperShowdown`, `DT_SceneData_Match_SupplyCrates` (+2 more). Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json), [`DT_SceneData_DefaultPvEScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/DT_SceneData_DefaultPvEScenario.json), [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json), [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json), [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json), [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json), [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json), [`DT_SceneData_Match_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.json), [`DT_SceneData_Match_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/UI/DT_SceneData_Match_STN_05.json), [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json), [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json), [`DT_SceneData_Match_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/UI/Data/DT_SceneData_Match_SupplyCrates.json) (+2 more). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDSceneDataTableRow -->
 *14 table(s), 68 rows, 22 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -131,298 +131,298 @@ Columns 1-7 of 22:
 
 | Table | Row | `InputMode` | `bResetFocusOnEnter` | `bShouldBlockBack` | `bIsFocusable` | `bShouldPreload` | `Group` | `SceneRules` |
 |---|---|---|---|---|---|---|---|---|
-| `DT_DeathmatchSceneData_Match` | `UI.Scene.Deathmatch.WeaponSelect` | UI | true | false | true | false |  |  |
-| `DT_SceneData_DefaultPvEScenario` | `UI.Scene.Match.Scenario.Results` | UI | true | true | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Logo` | UI | true | true | true | true |  | {FallbackSceneTag=UI.Scene.Frontend.Photosensitivity} |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Photosensitivity` | UI | true | true | true | true |  | {FallbackSceneTag=UI.Scene.Frontend.Start} |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Start` | UI | true | true | true | true |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.InitialSettings` | UI | true | true | true | false |  | {FallbackSceneTag=UI.Scene.Frontend.Home} |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Home` | UI | true | false | true | true | UI.SceneGroup.Frontend.TopBar |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Career` | UI | true | false | true | false | UI.SceneGroup.Frontend.TopBar |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Customize` | UI | true | false | true | false | UI.SceneGroup.Frontend.TopBar |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Collection` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.GoldMarket` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Orientation` | UI | true | true | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.FindMatch` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DevMenu` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket` | UI | true | false | true | false | UI.SceneGroup.Frontend.TopBar |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Missions` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Unlocks` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Investments` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Customize` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Vault` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Platforms` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Roles` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.LearnToPlay` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Tutorials` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.ContextDrawer` | UI | true | false | true | true |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Mailbox` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DeploymentSelect` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend_Gunsmith` | `UI.Scene.Frontend.Gunsmith` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend_Itemsmith` | `UI.Scene.Itemsmith.TestingGround.Pause` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Frontend_Vehiclesmith` | `UI.Scene.Frontend.Vehiclesmith` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Map` | GameAndUI | true | false | true | true |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Inventory` | UI | true | false | true | true | UI.SceneGroup.Session | {_aaabogpkidlhgbejcobka=OnlyShowWhenGameIsNotOver} |
-| `DT_SceneData_Match` | `UI.Scene.Match.Scoreboard` | UI | true | false | true | false | UI.SceneGroup.Session |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.FactionSelect` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver` | UI | true | false | true | false | UI.SceneGroup.GameOver |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.XPProgression` | UI | true | false | true | false | UI.SceneGroup.GameOver |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock.Garage` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Vehicles` | UI | true | false | true | true |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Garage` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeploymentBoard` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.WaitingToDeploy` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Looting` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.EndgameMovie` | UI | true | true | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.PingWheel` | GameAndUI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.RadialWheel` | GameAndUI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Missile` | Game | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Weapon` | Game | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.Internal.AdminPanel` | Game | false | false | false | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeathRecap` | GameAndUI | true | false | true | true |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.AdminPanel` | GameAndUI | true | false | true | false |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.ContextDrawer` | UI | true | false | true | true |  |  |
-| `DT_SceneData_Match` | `UI.Scene.Frontend.Progression` | UI | true | false | true | false | UI.SceneGroup.Session |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.Scoreboard` | UI | true | false | true | false | UI.SceneGroup.GameOver |  |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Wagers` | UI | true | false | true | true |  |  |
-| `DT_SceneData_Match_Buildables` | `UI.Scene.Match.FobRefuelRepair` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match_STN_05` | `UI.Scene.Match.DroneReload` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Match_ShootingRange` | `UI.Scene.Match.ContextDrawer` | UI | true | false | true | true |  |  |
-| `DT_SceneData_Match_SniperShowdown` | `UI.Scene.Match.EndgameMovie` | UI | true | true | true | false |  |  |
-| `DT_SceneData_Match_SupplyCrates` | `UI.Scene.Match.VehicleSupplyCrate` | UI | true | false | true | true |  |  |
-| `DT_SceneData_Match_Wagers` | `UI.Scene.Match.WagerStatus` | UI | true | false | true | false | UI.SceneGroup.Session | {_aaabogpkidlhgbejcobka=OnlyShowWhenGameIsNotOver} |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Popups` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Settings` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Shared` | `UI.Scene.Frontend.Loadouts` | UI | true | false | true | false |  |  |
-| `DT_SceneData_Shared` | `UI.Scene.Match.Vendor.Equipment` | UI | true | false | true | true |  |  |
+| [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json) | `UI.Scene.Deathmatch.WeaponSelect` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_DefaultPvEScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/DT_SceneData_DefaultPvEScenario.json) | `UI.Scene.Match.Scenario.Results` | UI | true | true | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Logo` | UI | true | true | true | true |  | {FallbackSceneTag=UI.Scene.Frontend.Photosensitivity} |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Photosensitivity` | UI | true | true | true | true |  | {FallbackSceneTag=UI.Scene.Frontend.Start} |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Start` | UI | true | true | true | true |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.InitialSettings` | UI | true | true | true | false |  | {FallbackSceneTag=UI.Scene.Frontend.Home} |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Home` | UI | true | false | true | true | UI.SceneGroup.Frontend.TopBar |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Career` | UI | true | false | true | false | UI.SceneGroup.Frontend.TopBar |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Customize` | UI | true | false | true | false | UI.SceneGroup.Frontend.TopBar |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Collection` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.GoldMarket` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Orientation` | UI | true | true | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.FindMatch` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DevMenu` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket` | UI | true | false | true | false | UI.SceneGroup.Frontend.TopBar |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Missions` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Unlocks` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Investments` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Customize` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Vault` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Platforms` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Roles` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.LearnToPlay` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Tutorials` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.ContextDrawer` | UI | true | false | true | true |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Mailbox` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DeploymentSelect` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | `UI.Scene.Frontend.Gunsmith` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json) | `UI.Scene.Itemsmith.TestingGround.Pause` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) | `UI.Scene.Frontend.Vehiclesmith` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Map` | GameAndUI | true | false | true | true |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Inventory` | UI | true | false | true | true | UI.SceneGroup.Session | {_aaabogpkidlhgbejcobka=OnlyShowWhenGameIsNotOver} |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Scoreboard` | UI | true | false | true | false | UI.SceneGroup.Session |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.FactionSelect` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver` | UI | true | false | true | false | UI.SceneGroup.GameOver |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.XPProgression` | UI | true | false | true | false | UI.SceneGroup.GameOver |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock.Garage` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Vehicles` | UI | true | false | true | true |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Garage` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeploymentBoard` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.WaitingToDeploy` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Looting` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.EndgameMovie` | UI | true | true | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.PingWheel` | GameAndUI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.RadialWheel` | GameAndUI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Missile` | Game | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Weapon` | Game | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.Internal.AdminPanel` | Game | false | false | false | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeathRecap` | GameAndUI | true | false | true | true |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.AdminPanel` | GameAndUI | true | false | true | false |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.ContextDrawer` | UI | true | false | true | true |  |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Frontend.Progression` | UI | true | false | true | false | UI.SceneGroup.Session |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.Scoreboard` | UI | true | false | true | false | UI.SceneGroup.GameOver |  |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Wagers` | UI | true | false | true | true |  |  |
+| [`DT_SceneData_Match_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.json) | `UI.Scene.Match.FobRefuelRepair` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/UI/DT_SceneData_Match_STN_05.json) | `UI.Scene.Match.DroneReload` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | `UI.Scene.Match.ContextDrawer` | UI | true | false | true | true |  |  |
+| [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json) | `UI.Scene.Match.EndgameMovie` | UI | true | true | true | false |  |  |
+| [`DT_SceneData_Match_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/UI/Data/DT_SceneData_Match_SupplyCrates.json) | `UI.Scene.Match.VehicleSupplyCrate` | UI | true | false | true | true |  |  |
+| [`DT_SceneData_Match_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) | `UI.Scene.Match.WagerStatus` | UI | true | false | true | false | UI.SceneGroup.Session | {_aaabogpkidlhgbejcobka=OnlyShowWhenGameIsNotOver} |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Popups` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Settings` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Frontend.Loadouts` | UI | true | false | true | false |  |  |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Match.Vendor.Equipment` | UI | true | false | true | true |  |  |
 
 Columns 8-14 of 22:
 
 | Table | Row | `OpenSceneActions` | `CloseSceneActions` | `Params.Layer` | `Params.ZOrder` | `Params.WidgetClass` | `Params.ViewModelParams.ViewModelClass` | `Params.ViewModelParams.Data` |
 |---|---|---|---|---|---|---|---|---|
-| `DT_DeathmatchSceneData_Match` | `UI.Scene.Deathmatch.WeaponSelect` |  |  | Normal | 0 | W_DeathmatchWeaponSelectScene.W_DeathmatchWeaponSelectScene_C | DeathmatchRuntime.WDUIDeathmatchWeaponSelectViewModel | DA_WeaponSelectData |
-| `DT_SceneData_DefaultPvEScenario` | `UI.Scene.Match.Scenario.Results` |  |  | Normal | 0 | W_ScenarioResultsScene.W_ScenarioResultsScene_C | BaseScenarioRuntime.WDUIScenarioResultsSceneViewModel | DA_DefaultScenarioResultsSceneData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Logo` |  |  | Upper | 0 | W_LogoScene.W_LogoScene_C | WDGame.WDUILogoMovieViewModel | DA_LogoScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Photosensitivity` |  |  | Upper | 0 | W_PhotosensitivityScene.W_PhotosensitivityScene_C | WDGame.WDUIPhotosensitivityViewModel | DA_PhotosensitivityScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Start` |  |  | Upper | 1 | W_StartScene.W_StartScene_C | WDGame.WDUIStartViewModel | DA_StartScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.InitialSettings` | {WidgetClass=W_AccountBar_C} | {WidgetClass=W_AccountBar_C} | Normal | 0 | W_InitialSettingsScene.W_InitialSettingsScene_C | WDGame.WDUIInitialSettingsViewModel | DA_InitialSettingsScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Home` |  |  | Normal | 0 | W_HomeScene.W_HomeScene_C | WDGame.WDUIHomeViewModel | DA_HomeScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Career` |  |  | Normal | 0 | W_Progression_Scene.W_Progression_Scene_C | WDGame.WDUIProgressionSceneViewModel | DA_Progression_Scene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Customize` |  |  | Normal | 0 | W_CustomiseScene.W_CustomiseScene_C | WDGame.WDUISceneViewModel | DA_CustomizeScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Collection` |  |  | Normal | 0 | W_CollectionScene.W_CollectionScene_C | WDGame.WDUICollectionViewModel | DA_CollectionScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.GoldMarket` |  |  | Normal | 0 | W_GoldMarketScene.W_GoldMarketScene_C | WDGame.WDUIGoldMarketViewModel | DA_GoldMarketScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Orientation` |  |  | Normal | 0 | W_OrientationScene.W_OrientationScene_C | WDGame.WDUIOrientationViewModel | DA_OrientationScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.FindMatch` |  |  | Normal | 0 | W_FindMatchScene.W_FindMatchScene_C | WDGame.WDUIFindMatchViewModel | DA_FindMatchScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DevMenu` |  |  | Normal | 0 | W_DevMenuScene.W_DevMenuScene_C | WDGame.WDUIDevMenuViewModel | DA_DevMenuScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog` |  |  | Normal | 0 | W_WardogScene.W_WardogScene_C | WDGame.WDUIWardogViewModel | DA_WardogScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket` |  |  | Normal | 0 | W_BlackMarketScene.W_BlackMarketScene_C | WDGame.WDUIBlackMarketViewModel | DA_BlackMarketScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Missions` |  |  | Normal | 0 | W_MissionsScene.W_MissionsScene_C | WDGame.WDUISceneViewModel | DA_MissionsScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Unlocks` |  |  | Normal | 0 | W_UnlocksScene.W_UnlocksScene_C | WDGame.WDUIUnlocksSceneViewModel | DA_UnlocksScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Investments` |  |  | Normal | 0 | W_InvestmentsScene.W_InvestmentsScene_C | WDGame.WDUIInvestmentsViewModel | DA_InvestmentsScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Customize` |  |  | Normal | 0 | W_CustomizeScene.W_CustomizeScene_C | WDGame.WDUICustomizeViewModel | DA_CustomizeScene |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Vault` |  |  | Normal | 0 | W_VaultScene.W_VaultScene_C | WDGame.WDUIVaultViewModel | DA_VaultSceneData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Platforms` |  |  | Normal | 0 | W_PlatformMastery_Scene.W_PlatformMastery_Scene_C | WDGame.WDUIPlatformMasterySceneViewModel | DA_UI_PlatformMastery_SceneData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` |  |  | Normal | 0 | W_PlatformMastery_ProgressScene.W_PlatformMastery_ProgressScene_C | WDGame.WDUIPlatformMasteryProgressSceneViewModel | DA_UI_PlatformMastery_ProgressSceneData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Roles` |  |  | Normal | 0 | W_RoleMastery_Scene.W_RoleMastery_Scene_C | WDGame.WDUISceneViewModel | DA_UI_RoleMastery_SceneData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` |  |  | Normal | 0 | W_RoleSkillTree_Scene.W_RoleSkillTree_Scene_C | WDGame.WDUIRoleSkillTreeSceneViewModel | DA_UI_RoleSkillTree_SceneData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.LearnToPlay` |  |  | Normal | 0 | W_LearnToPlayScene.W_LearnToPlayScene_C | WDGame.WDUILearnToPlayViewModel | DA_LearnToPlay |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Tutorials` |  |  | Normal | 0 | W_TutorialsScene.W_TutorialsScene_C | WDGame.WDUITutorialsViewModel | DA_TutorialsContent |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.ContextDrawer` |  |  | Upper | 3 | W_ContextDrawer.W_ContextDrawer_C | WDGame.WDUIContextDrawerViewModel | DA_Frontend_ContextDrawer |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Mailbox` |  |  | Normal | 0 | W_MailboxScene.W_MailboxScene_C | WDGame.WDUISceneViewModel | DA_MailboxData |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DeploymentSelect` |  |  | Normal | 0 | W_DeploymentSelectScene.W_DeploymentSelectScene_C | WDGame.WDUIDeploymentSelectViewModel | DA_DeploymentSelectScene |
-| `DT_SceneData_Frontend_Gunsmith` | `UI.Scene.Frontend.Gunsmith` |  |  | Normal | 1 | W_GunsmithScene.W_GunsmithScene_C | GunsmithRuntime.WDUIGunsmithSceneViewModel | DA_GunsmithScene |
-| `DT_SceneData_Frontend_Itemsmith` | `UI.Scene.Itemsmith.TestingGround.Pause` |  |  | Normal | 1 | W_TestingGroundPauseScene.W_TestingGroundPauseScene_C | ItemsmithRuntime.WDUIItemsmithTestingGroundPauseViewModel | DA_TestingGroundSceneData |
-| `DT_SceneData_Frontend_Vehiclesmith` | `UI.Scene.Frontend.Vehiclesmith` |  |  | Normal | 1 | W_VehiclesmithScene.W_VehiclesmithScene_C | VehiclesmithRuntime.WDUIVehiclesmithSceneViewModel | DA_Vehiclesmith_Scene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Map` |  |  | Normal | 0 | W_MapScene.W_MapScene_C | WDGame.WDUIMapViewModel | DA_MapScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Inventory` | {WidgetClass=W_Chatbox_C}, {_aaaapgcbaljpbdjjghoii=Audio.Event.UI.Inventory.SceneEnter} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_InventoryScene_2_0.W_InventoryScene_2_0_C | WDGame.WDUIInventoryViewModel | DA_InventoryScene_2_0 |
-| `DT_SceneData_Match` | `UI.Scene.Match.Scoreboard` | {WidgetClass=W_Chatbox_C}, {_aaaapgcbaljpbdjjghoii=Audio.Event.UI.Scoreboard.Enter} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_ScoreboardScene.W_ScoreboardScene_C | WDGame.WDUIScoreboardSceneViewModel | DA_ScoreboardScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.FactionSelect` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Upper | 0 | W_FactionSelectScene.W_FactionSelectScene_C | WDGame.WDUIFactionSelectViewModel | DA_FactionSelectScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver` | {bEnableNavigationRibbon=true} |  | Normal | 0 | W_GameOverScene.W_GameOverScene_C | WDGame.WDUIGameOverViewModel | DA_GameOverScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.XPProgression` |  |  | Normal | 0 | W_XPProgressionScene.W_XPProgressionScene_C | WDGame.WDUIXPProgressionViewModel | DA_XPProgressionScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock` |  |  | Normal | 0 | W_QuickRestockScene.W_QuickRestockScene_C | WDGame.WDUIQuickRestockViewModel | DA_QuickRestockScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock.Garage` |  |  | Normal | 0 | W_QuickRestockScene.W_QuickRestockScene_C | WDGame.WDUIGarageQuickRestockViewModel | DA_GarageQuickRestockScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Vehicles` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_VehicleVendorScene_Rework.W_VehicleVendorScene_Rework_C | WDGame.WDUIVehicleVendorViewModel | DA_VehicleVendor |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Garage` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_VendorScene_Garage_Rework.W_VendorScene_Garage_Rework_C | WDGame.WDUIGarageVendorViewModel_Rework | DA_GarageVendorRework |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeploymentBoard` |  |  | Normal | 0 | W_DeploymentBoardScene.W_DeploymentBoardScene_C | WDGame.WDUIDeploymentBoardViewModel | DA_DeploymentBoardScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.WaitingToDeploy` | {WidgetClass=W_AccountBar_C} | {WidgetClass=W_AccountBar_C} | Normal | 0 | W_WaitingToDeployScene.W_WaitingToDeployScene_C | WDGame.WDUIWaitingToDeployViewModel | DA_WaitingToDeployScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Looting` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_LootingScene_2_0.W_LootingScene_2_0_C | WDGame.WDUILootingViewModel | DA_LootingScene_2_0 |
-| `DT_SceneData_Match` | `UI.Scene.Match.EndgameMovie` | {bEnableNavigationRibbon=false} |  | Normal | 0 | W_EndgameMovieScene.W_EndgameMovieScene_C | WDGame.WDUIEndgameMovieViewModel | DA_EndgameMovie |
-| `DT_SceneData_Match` | `UI.Scene.Match.PingWheel` |  |  | Normal | 0 | W_PingWheelScene.W_PingWheelScene_C | WDGame.WDUIPingWheelViewModel | DA_PingWheelScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.RadialWheel` |  |  | Normal | 0 | W_RadialWheelScene.W_RadialWheelScene_C | WDGame.WDUIRadialWheelSceneViewModel | DA_RadialWheelScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Missile` |  |  | Normal | 0 | W_TVGuidedScene_Missile.W_TVGuidedScene_Missile_C | WDGame.WDUITVGuidedMissileViewModel | DA_TVGuidedScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Weapon` |  |  | Normal | 0 | W_TVGuidedScene_Weapon.W_TVGuidedScene_Weapon_C | WDGame.WDUITVGuidedWeaponViewModel | DA_TVGuidedScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.Internal.AdminPanel` |  |  | Normal | 0 | W_WardogsInteractionAdminScene.W_WardogsInteractionAdminScene_C | WDGame.WDUIVehicleInteractionAdminViewModel | DA_VehicleInteractionAdminData |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeathRecap` |  |  | Normal | 0 | W_DeathRecapScene.W_DeathRecapScene_C | WDGame.WDUIDeathRecapViewModel | DA_DeathRecapScene |
-| `DT_SceneData_Match` | `UI.Scene.Match.AdminPanel` |  |  | Normal | 0 | W_AdminPanelScene.W_AdminPanelScene_C | WDGame.WDUIAdminPanelSceneViewModel | DA_AdminPanel |
-| `DT_SceneData_Match` | `UI.Scene.Match.ContextDrawer` |  |  | Upper | 3 | W_ContextDrawer.W_ContextDrawer_C | WDGame.WDUIContextDrawerViewModel | DA_Match_ContextDrawer |
-| `DT_SceneData_Match` | `UI.Scene.Frontend.Progression` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_Progression_Scene.W_Progression_Scene_C | WDGame.WDUIProgressionSceneViewModel | DA_Progression_Scene_Match |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.Scoreboard` |  |  | Normal | 0 | W_ScoreboardScene.W_ScoreboardScene_C | WDGame.WDUIScoreboardSceneViewModel | DA_ScoreboardScene_GameOver |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Wagers` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_WagerVendorScene.W_WagerVendorScene_C | WDGame.WDUIWagerVendorViewModel | DA_WagerVendor |
-| `DT_SceneData_Match_Buildables` | `UI.Scene.Match.FobRefuelRepair` |  |  | Normal | 0 | W_FobRefuelAndRepair.W_FobRefuelAndRepair_C | BuildablesRuntime.WDUIFobRefuelRepairViewModel | DA_Scene_FobRefuelRepair |
-| `DT_SceneData_Match_STN_05` | `UI.Scene.Match.DroneReload` |  |  | Normal | 0 | W_DroneReloadScene.W_DroneReloadScene_C | BuildablesRuntime.WDUIDroneReloadSceneViewModel | DA_Scene_DroneReload |
-| `DT_SceneData_Match_ShootingRange` | `UI.Scene.Match.ContextDrawer` |  |  | Upper | 3 | W_ContextDrawer.W_ContextDrawer_C | WDGame.WDUIContextDrawerViewModel | DA_ShootingRange_ContextDrawer |
-| `DT_SceneData_Match_SniperShowdown` | `UI.Scene.Match.EndgameMovie` | {bEnableNavigationRibbon=false} |  | Normal | 0 | W_SniperShowdown_GameOverScene.W_SniperShowdown_GameOverScene_C | SniperShowdownRuntime.WDSniperShowdownGameOverSceneViewModel | DA_SniperShowdown_GameOverScene |
-| `DT_SceneData_Match_SupplyCrates` | `UI.Scene.Match.VehicleSupplyCrate` |  |  | Normal | 0 | W_SupplyCrateScene_2_0.W_SupplyCrateScene_2_0_C | WDGame.WDUIVehicleSupplyCrateViewModel | DA_SupplyCrateScene |
-| `DT_SceneData_Match_Wagers` | `UI.Scene.Match.WagerStatus` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_WagerStatusScene.W_WagerStatusScene_C | WDGame.WDUIWagerStatusSceneViewModel | DA_WagerStatusScene |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Popups` |  |  | Popup | 0 | W_PopupsScene.W_PopupsScene_C | WDGame.WDUIPopupsViewModel | DA_PopupsScene |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Settings` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_SettingsScene.W_SettingsScene_C | WDGame.WDUISettingsViewModel | DA_SettingsScene |
-| `DT_SceneData_Shared` | `UI.Scene.Frontend.Loadouts` |  |  | Normal | 0 | W_LoadoutsScene.W_LoadoutsScene_C | WDGame.WDUILoadoutsViewModel | DA_LoadoutsScene |
-| `DT_SceneData_Shared` | `UI.Scene.Match.Vendor.Equipment` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_VendorScene_New.W_VendorScene_New_C | WDGame.WDUIVendorViewModel_Rework | DA_VendorScene_New |
+| [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json) | `UI.Scene.Deathmatch.WeaponSelect` |  |  | Normal | 0 | W_DeathmatchWeaponSelectScene.W_DeathmatchWeaponSelectScene_C | DeathmatchRuntime.WDUIDeathmatchWeaponSelectViewModel | DA_WeaponSelectData |
+| [`DT_SceneData_DefaultPvEScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/DT_SceneData_DefaultPvEScenario.json) | `UI.Scene.Match.Scenario.Results` |  |  | Normal | 0 | W_ScenarioResultsScene.W_ScenarioResultsScene_C | BaseScenarioRuntime.WDUIScenarioResultsSceneViewModel | DA_DefaultScenarioResultsSceneData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Logo` |  |  | Upper | 0 | W_LogoScene.W_LogoScene_C | WDGame.WDUILogoMovieViewModel | DA_LogoScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Photosensitivity` |  |  | Upper | 0 | W_PhotosensitivityScene.W_PhotosensitivityScene_C | WDGame.WDUIPhotosensitivityViewModel | DA_PhotosensitivityScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Start` |  |  | Upper | 1 | W_StartScene.W_StartScene_C | WDGame.WDUIStartViewModel | DA_StartScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.InitialSettings` | {WidgetClass=W_AccountBar_C} | {WidgetClass=W_AccountBar_C} | Normal | 0 | W_InitialSettingsScene.W_InitialSettingsScene_C | WDGame.WDUIInitialSettingsViewModel | DA_InitialSettingsScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Home` |  |  | Normal | 0 | W_HomeScene.W_HomeScene_C | WDGame.WDUIHomeViewModel | DA_HomeScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Career` |  |  | Normal | 0 | W_Progression_Scene.W_Progression_Scene_C | WDGame.WDUIProgressionSceneViewModel | DA_Progression_Scene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Customize` |  |  | Normal | 0 | W_CustomiseScene.W_CustomiseScene_C | WDGame.WDUISceneViewModel | DA_CustomizeScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Collection` |  |  | Normal | 0 | W_CollectionScene.W_CollectionScene_C | WDGame.WDUICollectionViewModel | DA_CollectionScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.GoldMarket` |  |  | Normal | 0 | W_GoldMarketScene.W_GoldMarketScene_C | WDGame.WDUIGoldMarketViewModel | DA_GoldMarketScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Orientation` |  |  | Normal | 0 | W_OrientationScene.W_OrientationScene_C | WDGame.WDUIOrientationViewModel | DA_OrientationScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.FindMatch` |  |  | Normal | 0 | W_FindMatchScene.W_FindMatchScene_C | WDGame.WDUIFindMatchViewModel | DA_FindMatchScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DevMenu` |  |  | Normal | 0 | W_DevMenuScene.W_DevMenuScene_C | WDGame.WDUIDevMenuViewModel | DA_DevMenuScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog` |  |  | Normal | 0 | W_WardogScene.W_WardogScene_C | WDGame.WDUIWardogViewModel | DA_WardogScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket` |  |  | Normal | 0 | W_BlackMarketScene.W_BlackMarketScene_C | WDGame.WDUIBlackMarketViewModel | DA_BlackMarketScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Missions` |  |  | Normal | 0 | W_MissionsScene.W_MissionsScene_C | WDGame.WDUISceneViewModel | DA_MissionsScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Unlocks` |  |  | Normal | 0 | W_UnlocksScene.W_UnlocksScene_C | WDGame.WDUIUnlocksSceneViewModel | DA_UnlocksScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Investments` |  |  | Normal | 0 | W_InvestmentsScene.W_InvestmentsScene_C | WDGame.WDUIInvestmentsViewModel | DA_InvestmentsScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Customize` |  |  | Normal | 0 | W_CustomizeScene.W_CustomizeScene_C | WDGame.WDUICustomizeViewModel | DA_CustomizeScene |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Vault` |  |  | Normal | 0 | W_VaultScene.W_VaultScene_C | WDGame.WDUIVaultViewModel | DA_VaultSceneData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Platforms` |  |  | Normal | 0 | W_PlatformMastery_Scene.W_PlatformMastery_Scene_C | WDGame.WDUIPlatformMasterySceneViewModel | DA_UI_PlatformMastery_SceneData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` |  |  | Normal | 0 | W_PlatformMastery_ProgressScene.W_PlatformMastery_ProgressScene_C | WDGame.WDUIPlatformMasteryProgressSceneViewModel | DA_UI_PlatformMastery_ProgressSceneData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Roles` |  |  | Normal | 0 | W_RoleMastery_Scene.W_RoleMastery_Scene_C | WDGame.WDUISceneViewModel | DA_UI_RoleMastery_SceneData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` |  |  | Normal | 0 | W_RoleSkillTree_Scene.W_RoleSkillTree_Scene_C | WDGame.WDUIRoleSkillTreeSceneViewModel | DA_UI_RoleSkillTree_SceneData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.LearnToPlay` |  |  | Normal | 0 | W_LearnToPlayScene.W_LearnToPlayScene_C | WDGame.WDUILearnToPlayViewModel | DA_LearnToPlay |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Tutorials` |  |  | Normal | 0 | W_TutorialsScene.W_TutorialsScene_C | WDGame.WDUITutorialsViewModel | DA_TutorialsContent |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.ContextDrawer` |  |  | Upper | 3 | W_ContextDrawer.W_ContextDrawer_C | WDGame.WDUIContextDrawerViewModel | DA_Frontend_ContextDrawer |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Mailbox` |  |  | Normal | 0 | W_MailboxScene.W_MailboxScene_C | WDGame.WDUISceneViewModel | DA_MailboxData |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DeploymentSelect` |  |  | Normal | 0 | W_DeploymentSelectScene.W_DeploymentSelectScene_C | WDGame.WDUIDeploymentSelectViewModel | DA_DeploymentSelectScene |
+| [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | `UI.Scene.Frontend.Gunsmith` |  |  | Normal | 1 | W_GunsmithScene.W_GunsmithScene_C | GunsmithRuntime.WDUIGunsmithSceneViewModel | DA_GunsmithScene |
+| [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json) | `UI.Scene.Itemsmith.TestingGround.Pause` |  |  | Normal | 1 | W_TestingGroundPauseScene.W_TestingGroundPauseScene_C | ItemsmithRuntime.WDUIItemsmithTestingGroundPauseViewModel | DA_TestingGroundSceneData |
+| [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) | `UI.Scene.Frontend.Vehiclesmith` |  |  | Normal | 1 | W_VehiclesmithScene.W_VehiclesmithScene_C | VehiclesmithRuntime.WDUIVehiclesmithSceneViewModel | DA_Vehiclesmith_Scene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Map` |  |  | Normal | 0 | W_MapScene.W_MapScene_C | WDGame.WDUIMapViewModel | DA_MapScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Inventory` | {WidgetClass=W_Chatbox_C}, {_aaaapgcbaljpbdjjghoii=Audio.Event.UI.Inventory.SceneEnter} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_InventoryScene_2_0.W_InventoryScene_2_0_C | WDGame.WDUIInventoryViewModel | DA_InventoryScene_2_0 |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Scoreboard` | {WidgetClass=W_Chatbox_C}, {_aaaapgcbaljpbdjjghoii=Audio.Event.UI.Scoreboard.Enter} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_ScoreboardScene.W_ScoreboardScene_C | WDGame.WDUIScoreboardSceneViewModel | DA_ScoreboardScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.FactionSelect` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Upper | 0 | W_FactionSelectScene.W_FactionSelectScene_C | WDGame.WDUIFactionSelectViewModel | DA_FactionSelectScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver` | {bEnableNavigationRibbon=true} |  | Normal | 0 | W_GameOverScene.W_GameOverScene_C | WDGame.WDUIGameOverViewModel | DA_GameOverScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.XPProgression` |  |  | Normal | 0 | W_XPProgressionScene.W_XPProgressionScene_C | WDGame.WDUIXPProgressionViewModel | DA_XPProgressionScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock` |  |  | Normal | 0 | W_QuickRestockScene.W_QuickRestockScene_C | WDGame.WDUIQuickRestockViewModel | DA_QuickRestockScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock.Garage` |  |  | Normal | 0 | W_QuickRestockScene.W_QuickRestockScene_C | WDGame.WDUIGarageQuickRestockViewModel | DA_GarageQuickRestockScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Vehicles` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_VehicleVendorScene_Rework.W_VehicleVendorScene_Rework_C | WDGame.WDUIVehicleVendorViewModel | DA_VehicleVendor |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Garage` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_VendorScene_Garage_Rework.W_VendorScene_Garage_Rework_C | WDGame.WDUIGarageVendorViewModel_Rework | DA_GarageVendorRework |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeploymentBoard` |  |  | Normal | 0 | W_DeploymentBoardScene.W_DeploymentBoardScene_C | WDGame.WDUIDeploymentBoardViewModel | DA_DeploymentBoardScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.WaitingToDeploy` | {WidgetClass=W_AccountBar_C} | {WidgetClass=W_AccountBar_C} | Normal | 0 | W_WaitingToDeployScene.W_WaitingToDeployScene_C | WDGame.WDUIWaitingToDeployViewModel | DA_WaitingToDeployScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Looting` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_LootingScene_2_0.W_LootingScene_2_0_C | WDGame.WDUILootingViewModel | DA_LootingScene_2_0 |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.EndgameMovie` | {bEnableNavigationRibbon=false} |  | Normal | 0 | W_EndgameMovieScene.W_EndgameMovieScene_C | WDGame.WDUIEndgameMovieViewModel | DA_EndgameMovie |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.PingWheel` |  |  | Normal | 0 | W_PingWheelScene.W_PingWheelScene_C | WDGame.WDUIPingWheelViewModel | DA_PingWheelScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.RadialWheel` |  |  | Normal | 0 | W_RadialWheelScene.W_RadialWheelScene_C | WDGame.WDUIRadialWheelSceneViewModel | DA_RadialWheelScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Missile` |  |  | Normal | 0 | W_TVGuidedScene_Missile.W_TVGuidedScene_Missile_C | WDGame.WDUITVGuidedMissileViewModel | DA_TVGuidedScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Weapon` |  |  | Normal | 0 | W_TVGuidedScene_Weapon.W_TVGuidedScene_Weapon_C | WDGame.WDUITVGuidedWeaponViewModel | DA_TVGuidedScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.Internal.AdminPanel` |  |  | Normal | 0 | W_WardogsInteractionAdminScene.W_WardogsInteractionAdminScene_C | WDGame.WDUIVehicleInteractionAdminViewModel | DA_VehicleInteractionAdminData |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeathRecap` |  |  | Normal | 0 | W_DeathRecapScene.W_DeathRecapScene_C | WDGame.WDUIDeathRecapViewModel | DA_DeathRecapScene |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.AdminPanel` |  |  | Normal | 0 | W_AdminPanelScene.W_AdminPanelScene_C | WDGame.WDUIAdminPanelSceneViewModel | DA_AdminPanel |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.ContextDrawer` |  |  | Upper | 3 | W_ContextDrawer.W_ContextDrawer_C | WDGame.WDUIContextDrawerViewModel | DA_Match_ContextDrawer |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Frontend.Progression` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_Progression_Scene.W_Progression_Scene_C | WDGame.WDUIProgressionSceneViewModel | DA_Progression_Scene_Match |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.Scoreboard` |  |  | Normal | 0 | W_ScoreboardScene.W_ScoreboardScene_C | WDGame.WDUIScoreboardSceneViewModel | DA_ScoreboardScene_GameOver |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Wagers` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_WagerVendorScene.W_WagerVendorScene_C | WDGame.WDUIWagerVendorViewModel | DA_WagerVendor |
+| [`DT_SceneData_Match_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.json) | `UI.Scene.Match.FobRefuelRepair` |  |  | Normal | 0 | W_FobRefuelAndRepair.W_FobRefuelAndRepair_C | BuildablesRuntime.WDUIFobRefuelRepairViewModel | DA_Scene_FobRefuelRepair |
+| [`DT_SceneData_Match_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/UI/DT_SceneData_Match_STN_05.json) | `UI.Scene.Match.DroneReload` |  |  | Normal | 0 | W_DroneReloadScene.W_DroneReloadScene_C | BuildablesRuntime.WDUIDroneReloadSceneViewModel | DA_Scene_DroneReload |
+| [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | `UI.Scene.Match.ContextDrawer` |  |  | Upper | 3 | W_ContextDrawer.W_ContextDrawer_C | WDGame.WDUIContextDrawerViewModel | DA_ShootingRange_ContextDrawer |
+| [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json) | `UI.Scene.Match.EndgameMovie` | {bEnableNavigationRibbon=false} |  | Normal | 0 | W_SniperShowdown_GameOverScene.W_SniperShowdown_GameOverScene_C | SniperShowdownRuntime.WDSniperShowdownGameOverSceneViewModel | DA_SniperShowdown_GameOverScene |
+| [`DT_SceneData_Match_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/UI/Data/DT_SceneData_Match_SupplyCrates.json) | `UI.Scene.Match.VehicleSupplyCrate` |  |  | Normal | 0 | W_SupplyCrateScene_2_0.W_SupplyCrateScene_2_0_C | WDGame.WDUIVehicleSupplyCrateViewModel | DA_SupplyCrateScene |
+| [`DT_SceneData_Match_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) | `UI.Scene.Match.WagerStatus` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_WagerStatusScene.W_WagerStatusScene_C | WDGame.WDUIWagerStatusSceneViewModel | DA_WagerStatusScene |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Popups` |  |  | Popup | 0 | W_PopupsScene.W_PopupsScene_C | WDGame.WDUIPopupsViewModel | DA_PopupsScene |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Settings` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 1 | W_SettingsScene.W_SettingsScene_C | WDGame.WDUISettingsViewModel | DA_SettingsScene |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Frontend.Loadouts` |  |  | Normal | 0 | W_LoadoutsScene.W_LoadoutsScene_C | WDGame.WDUILoadoutsViewModel | DA_LoadoutsScene |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Match.Vendor.Equipment` | {WidgetClass=W_Chatbox_C} | {WidgetClass=W_Chatbox_C} | Normal | 0 | W_VendorScene_New.W_VendorScene_New_C | WDGame.WDUIVendorViewModel_Rework | DA_VendorScene_New |
 
 Columns 15-21 of 22:
 
 | Table | Row | `Params._aaabkejhohfkdpglkgkep` | `bBlockTopBarUpdates` | `bShowSceneTitle` | `bShowBackButton` | `bShowSeasonalCountdown` | `bOpenOnTop` | `_aaabfeppjajiiglgbhgoo` |
 |---|---|---|---|---|---|---|---|---|
-| `DT_DeathmatchSceneData_Match` | `UI.Scene.Deathmatch.WeaponSelect` | false | false | false | false | false | false | false |
-| `DT_SceneData_DefaultPvEScenario` | `UI.Scene.Match.Scenario.Results` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Logo` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Photosensitivity` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Start` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.InitialSettings` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Home` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Career` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Customize` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Collection` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.GoldMarket` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Orientation` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.FindMatch` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DevMenu` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket` | false | false | false | false | true | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Missions` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Unlocks` | false | false | false | true | true | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Investments` | false | false | false | true | true | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Customize` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Vault` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Platforms` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Roles` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` | false | false | false | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.LearnToPlay` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Tutorials` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.ContextDrawer` | false | true | false | false | false | true | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Mailbox` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DeploymentSelect` | false | false | true | true | false | false | false |
-| `DT_SceneData_Frontend_Gunsmith` | `UI.Scene.Frontend.Gunsmith` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend_Itemsmith` | `UI.Scene.Itemsmith.TestingGround.Pause` | false | false | false | false | false | false | false |
-| `DT_SceneData_Frontend_Vehiclesmith` | `UI.Scene.Frontend.Vehiclesmith` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Map` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Inventory` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Scoreboard` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.FactionSelect` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.XPProgression` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock.Garage` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Vehicles` | false | false | true | true | false | false | true |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Garage` | false | false | true | true | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeploymentBoard` | false | false | false | false | false | false | true |
-| `DT_SceneData_Match` | `UI.Scene.Match.WaitingToDeploy` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Looting` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.EndgameMovie` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.PingWheel` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.RadialWheel` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Missile` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Weapon` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.Internal.AdminPanel` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeathRecap` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.AdminPanel` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.ContextDrawer` | false | false | false | false | false | true | true |
-| `DT_SceneData_Match` | `UI.Scene.Frontend.Progression` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.Scoreboard` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Wagers` | false | false | true | true | false | false | true |
-| `DT_SceneData_Match_Buildables` | `UI.Scene.Match.FobRefuelRepair` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match_STN_05` | `UI.Scene.Match.DroneReload` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match_ShootingRange` | `UI.Scene.Match.ContextDrawer` | false | false | false | false | false | true | true |
-| `DT_SceneData_Match_SniperShowdown` | `UI.Scene.Match.EndgameMovie` | false | false | false | false | false | false | false |
-| `DT_SceneData_Match_SupplyCrates` | `UI.Scene.Match.VehicleSupplyCrate` | false | false | true | true | false | false | false |
-| `DT_SceneData_Match_Wagers` | `UI.Scene.Match.WagerStatus` | false | false | false | false | false | false | false |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Popups` | false | true | false | false | false | false | false |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Settings` | false | false | true | true | false | false | false |
-| `DT_SceneData_Shared` | `UI.Scene.Frontend.Loadouts` | false | false | false | true | false | false | false |
-| `DT_SceneData_Shared` | `UI.Scene.Match.Vendor.Equipment` | false | false | true | true | false | false | true |
+| [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json) | `UI.Scene.Deathmatch.WeaponSelect` | false | false | false | false | false | false | false |
+| [`DT_SceneData_DefaultPvEScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/DT_SceneData_DefaultPvEScenario.json) | `UI.Scene.Match.Scenario.Results` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Logo` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Photosensitivity` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Start` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.InitialSettings` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Home` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Career` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Customize` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Collection` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.GoldMarket` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Orientation` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.FindMatch` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DevMenu` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket` | false | false | false | false | true | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Missions` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Unlocks` | false | false | false | true | true | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Investments` | false | false | false | true | true | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Customize` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Vault` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Platforms` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Roles` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.LearnToPlay` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Tutorials` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.ContextDrawer` | false | true | false | false | false | true | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Mailbox` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DeploymentSelect` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | `UI.Scene.Frontend.Gunsmith` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json) | `UI.Scene.Itemsmith.TestingGround.Pause` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) | `UI.Scene.Frontend.Vehiclesmith` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Map` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Inventory` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Scoreboard` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.FactionSelect` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.XPProgression` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock.Garage` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Vehicles` | false | false | true | true | false | false | true |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Garage` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeploymentBoard` | false | false | false | false | false | false | true |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.WaitingToDeploy` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Looting` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.EndgameMovie` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.PingWheel` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.RadialWheel` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Missile` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Weapon` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.Internal.AdminPanel` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeathRecap` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.AdminPanel` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.ContextDrawer` | false | false | false | false | false | true | true |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Frontend.Progression` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.Scoreboard` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Wagers` | false | false | true | true | false | false | true |
+| [`DT_SceneData_Match_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.json) | `UI.Scene.Match.FobRefuelRepair` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/UI/DT_SceneData_Match_STN_05.json) | `UI.Scene.Match.DroneReload` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | `UI.Scene.Match.ContextDrawer` | false | false | false | false | false | true | true |
+| [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json) | `UI.Scene.Match.EndgameMovie` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Match_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/UI/Data/DT_SceneData_Match_SupplyCrates.json) | `UI.Scene.Match.VehicleSupplyCrate` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Match_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) | `UI.Scene.Match.WagerStatus` | false | false | false | false | false | false | false |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Popups` | false | true | false | false | false | false | false |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Settings` | false | false | true | true | false | false | false |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Frontend.Loadouts` | false | false | false | true | false | false | false |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Match.Vendor.Equipment` | false | false | true | true | false | false | true |
 
 Columns 22-22 of 22:
 
 | Table | Row | `Tag` |
 |---|---|---|
-| `DT_DeathmatchSceneData_Match` | `UI.Scene.Deathmatch.WeaponSelect` | UI.Scene.Deathmatch.WeaponSelect |
-| `DT_SceneData_DefaultPvEScenario` | `UI.Scene.Match.Scenario.Results` | UI.Scene.Match.Scenario.Results |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Logo` | UI.Scene.Frontend.Logo |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Photosensitivity` | UI.Scene.Frontend.Photosensitivity |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Start` | UI.Scene.Frontend.Start |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.InitialSettings` | UI.Scene.Frontend.InitialSettings |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Home` | UI.Scene.Frontend.Home |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Career` | UI.Scene.Frontend.Career |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Customize` | UI.Scene.Frontend.Customize |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Collection` | UI.Scene.Frontend.Collection |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.GoldMarket` | UI.Scene.Frontend.GoldMarket |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Orientation` | UI.Scene.Frontend.Orientation |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.FindMatch` | UI.Scene.Frontend.FindMatch |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DevMenu` | UI.Scene.Frontend.DevMenu |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog` | UI.Scene.Frontend.Wardog |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket` | UI.Scene.Frontend.Blackmarket |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Missions` | UI.Scene.Frontend.Blackmarket.Missions |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Unlocks` | UI.Scene.Frontend.Blackmarket.Unlocks |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Blackmarket.Investments` | UI.Scene.Frontend.Blackmarket.Investments |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Customize` | UI.Scene.Frontend.Wardog.Customize |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Vault` | UI.Scene.Frontend.Vault |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Platforms` | UI.Scene.Frontend.Wardog.Mastery.Platforms |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` | UI.Scene.Frontend.Wardog.Mastery.PlatformProgress |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.Roles` | UI.Scene.Frontend.Wardog.Mastery.Roles |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` | UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.LearnToPlay` | UI.Scene.Frontend.LearnToPlay |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Tutorials` | UI.Scene.Frontend.Tutorials |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.ContextDrawer` | UI.Scene.Frontend.ContextDrawer |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.Mailbox` | UI.Scene.Frontend.Mailbox |
-| `DT_SceneData_Frontend` | `UI.Scene.Frontend.DeploymentSelect` | UI.Scene.Frontend.DeploymentSelect |
-| `DT_SceneData_Frontend_Gunsmith` | `UI.Scene.Frontend.Gunsmith` | UI.Scene.Frontend.Gunsmith |
-| `DT_SceneData_Frontend_Itemsmith` | `UI.Scene.Itemsmith.TestingGround.Pause` | UI.Scene.Itemsmith.TestingGround.Pause |
-| `DT_SceneData_Frontend_Vehiclesmith` | `UI.Scene.Frontend.Vehiclesmith` | UI.Scene.Frontend.Vehiclesmith |
-| `DT_SceneData_Match` | `UI.Scene.Match.Map` | UI.Scene.Match.Map |
-| `DT_SceneData_Match` | `UI.Scene.Match.Inventory` | UI.Scene.Match.Inventory |
-| `DT_SceneData_Match` | `UI.Scene.Match.Scoreboard` | UI.Scene.Match.Scoreboard |
-| `DT_SceneData_Match` | `UI.Scene.Match.FactionSelect` | UI.Scene.Match.FactionSelect |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver` | UI.Scene.Match.GameOver |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.XPProgression` | UI.Scene.Match.GameOver.XPProgression |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock` | UI.Scene.Match.QuickRestock |
-| `DT_SceneData_Match` | `UI.Scene.Match.QuickRestock.Garage` | UI.Scene.Match.QuickRestock.Garage |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Vehicles` | UI.Scene.Match.Vendor.Vehicles |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Garage` | UI.Scene.Match.Vendor.Garage |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeploymentBoard` | UI.Scene.Match.DeploymentBoard |
-| `DT_SceneData_Match` | `UI.Scene.Match.WaitingToDeploy` | UI.Scene.Match.WaitingToDeploy |
-| `DT_SceneData_Match` | `UI.Scene.Match.Looting` | UI.Scene.Match.Looting |
-| `DT_SceneData_Match` | `UI.Scene.Match.EndgameMovie` | UI.Scene.Match.EndgameMovie |
-| `DT_SceneData_Match` | `UI.Scene.Match.PingWheel` | UI.Scene.Match.PingWheel |
-| `DT_SceneData_Match` | `UI.Scene.Match.RadialWheel` | UI.Scene.Match.RadialWheel |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Missile` | UI.Scene.Match.Vehicle.TVGuided.Missile |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.TVGuided.Weapon` | UI.Scene.Match.Vehicle.TVGuided.Weapon |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vehicle.Internal.AdminPanel` | UI.Scene.Match.Vehicle.Internal.AdminPanel |
-| `DT_SceneData_Match` | `UI.Scene.Match.DeathRecap` | UI.Scene.Match.DeathRecap |
-| `DT_SceneData_Match` | `UI.Scene.Match.AdminPanel` | UI.Scene.Match.AdminPanel |
-| `DT_SceneData_Match` | `UI.Scene.Match.ContextDrawer` | UI.Scene.Match.ContextDrawer |
-| `DT_SceneData_Match` | `UI.Scene.Frontend.Progression` | UI.Scene.Frontend.Progression |
-| `DT_SceneData_Match` | `UI.Scene.Match.GameOver.Scoreboard` | UI.Scene.Match.GameOver.Scoreboard |
-| `DT_SceneData_Match` | `UI.Scene.Match.Vendor.Wagers` | UI.Scene.Match.Vendor.Wagers |
-| `DT_SceneData_Match_Buildables` | `UI.Scene.Match.FobRefuelRepair` | UI.Scene.Match.FobRefuelRepair |
-| `DT_SceneData_Match_STN_05` | `UI.Scene.Match.DroneReload` | UI.Scene.Match.DroneReload |
-| `DT_SceneData_Match_ShootingRange` | `UI.Scene.Match.ContextDrawer` | UI.Scene.Match.ContextDrawer |
-| `DT_SceneData_Match_SniperShowdown` | `UI.Scene.Match.EndgameMovie` | UI.Scene.Match.EndgameMovie |
-| `DT_SceneData_Match_SupplyCrates` | `UI.Scene.Match.VehicleSupplyCrate` | UI.Scene.Match.VehicleSupplyCrate |
-| `DT_SceneData_Match_Wagers` | `UI.Scene.Match.WagerStatus` | UI.Scene.Match.WagerStatus |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Popups` | UI.Scene.Shared.Popups |
-| `DT_SceneData_Shared` | `UI.Scene.Shared.Settings` | UI.Scene.Shared.Settings |
-| `DT_SceneData_Shared` | `UI.Scene.Frontend.Loadouts` | UI.Scene.Frontend.Loadouts |
-| `DT_SceneData_Shared` | `UI.Scene.Match.Vendor.Equipment` | UI.Scene.Match.Vendor.Equipment |
+| [`DT_DeathmatchSceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DT_DeathmatchSceneData_Match.json) | `UI.Scene.Deathmatch.WeaponSelect` | UI.Scene.Deathmatch.WeaponSelect |
+| [`DT_SceneData_DefaultPvEScenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/DT_SceneData_DefaultPvEScenario.json) | `UI.Scene.Match.Scenario.Results` | UI.Scene.Match.Scenario.Results |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Logo` | UI.Scene.Frontend.Logo |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Photosensitivity` | UI.Scene.Frontend.Photosensitivity |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Start` | UI.Scene.Frontend.Start |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.InitialSettings` | UI.Scene.Frontend.InitialSettings |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Home` | UI.Scene.Frontend.Home |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Career` | UI.Scene.Frontend.Career |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Customize` | UI.Scene.Frontend.Customize |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Collection` | UI.Scene.Frontend.Collection |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.GoldMarket` | UI.Scene.Frontend.GoldMarket |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Orientation` | UI.Scene.Frontend.Orientation |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.FindMatch` | UI.Scene.Frontend.FindMatch |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DevMenu` | UI.Scene.Frontend.DevMenu |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog` | UI.Scene.Frontend.Wardog |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket` | UI.Scene.Frontend.Blackmarket |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Missions` | UI.Scene.Frontend.Blackmarket.Missions |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Unlocks` | UI.Scene.Frontend.Blackmarket.Unlocks |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Blackmarket.Investments` | UI.Scene.Frontend.Blackmarket.Investments |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Customize` | UI.Scene.Frontend.Wardog.Customize |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Vault` | UI.Scene.Frontend.Vault |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Platforms` | UI.Scene.Frontend.Wardog.Mastery.Platforms |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.PlatformProgress` | UI.Scene.Frontend.Wardog.Mastery.PlatformProgress |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.Roles` | UI.Scene.Frontend.Wardog.Mastery.Roles |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree` | UI.Scene.Frontend.Wardog.Mastery.RoleSkillTree |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.LearnToPlay` | UI.Scene.Frontend.LearnToPlay |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Tutorials` | UI.Scene.Frontend.Tutorials |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.ContextDrawer` | UI.Scene.Frontend.ContextDrawer |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.Mailbox` | UI.Scene.Frontend.Mailbox |
+| [`DT_SceneData_Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Frontend.json) | `UI.Scene.Frontend.DeploymentSelect` | UI.Scene.Frontend.DeploymentSelect |
+| [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | `UI.Scene.Frontend.Gunsmith` | UI.Scene.Frontend.Gunsmith |
+| [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json) | `UI.Scene.Itemsmith.TestingGround.Pause` | UI.Scene.Itemsmith.TestingGround.Pause |
+| [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) | `UI.Scene.Frontend.Vehiclesmith` | UI.Scene.Frontend.Vehiclesmith |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Map` | UI.Scene.Match.Map |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Inventory` | UI.Scene.Match.Inventory |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Scoreboard` | UI.Scene.Match.Scoreboard |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.FactionSelect` | UI.Scene.Match.FactionSelect |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver` | UI.Scene.Match.GameOver |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.XPProgression` | UI.Scene.Match.GameOver.XPProgression |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock` | UI.Scene.Match.QuickRestock |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.QuickRestock.Garage` | UI.Scene.Match.QuickRestock.Garage |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Vehicles` | UI.Scene.Match.Vendor.Vehicles |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Garage` | UI.Scene.Match.Vendor.Garage |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeploymentBoard` | UI.Scene.Match.DeploymentBoard |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.WaitingToDeploy` | UI.Scene.Match.WaitingToDeploy |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Looting` | UI.Scene.Match.Looting |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.EndgameMovie` | UI.Scene.Match.EndgameMovie |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.PingWheel` | UI.Scene.Match.PingWheel |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.RadialWheel` | UI.Scene.Match.RadialWheel |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Missile` | UI.Scene.Match.Vehicle.TVGuided.Missile |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.TVGuided.Weapon` | UI.Scene.Match.Vehicle.TVGuided.Weapon |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vehicle.Internal.AdminPanel` | UI.Scene.Match.Vehicle.Internal.AdminPanel |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.DeathRecap` | UI.Scene.Match.DeathRecap |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.AdminPanel` | UI.Scene.Match.AdminPanel |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.ContextDrawer` | UI.Scene.Match.ContextDrawer |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Frontend.Progression` | UI.Scene.Frontend.Progression |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.GameOver.Scoreboard` | UI.Scene.Match.GameOver.Scoreboard |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | `UI.Scene.Match.Vendor.Wagers` | UI.Scene.Match.Vendor.Wagers |
+| [`DT_SceneData_Match_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.json) | `UI.Scene.Match.FobRefuelRepair` | UI.Scene.Match.FobRefuelRepair |
+| [`DT_SceneData_Match_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/UI/DT_SceneData_Match_STN_05.json) | `UI.Scene.Match.DroneReload` | UI.Scene.Match.DroneReload |
+| [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | `UI.Scene.Match.ContextDrawer` | UI.Scene.Match.ContextDrawer |
+| [`DT_SceneData_Match_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_SceneData_Match_SniperShowdown.json) | `UI.Scene.Match.EndgameMovie` | UI.Scene.Match.EndgameMovie |
+| [`DT_SceneData_Match_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/UI/Data/DT_SceneData_Match_SupplyCrates.json) | `UI.Scene.Match.VehicleSupplyCrate` | UI.Scene.Match.VehicleSupplyCrate |
+| [`DT_SceneData_Match_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_Wagers.json) | `UI.Scene.Match.WagerStatus` | UI.Scene.Match.WagerStatus |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Popups` | UI.Scene.Shared.Popups |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Shared.Settings` | UI.Scene.Shared.Settings |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Frontend.Loadouts` | UI.Scene.Frontend.Loadouts |
+| [`DT_SceneData_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Shared.json) | `UI.Scene.Match.Vendor.Equipment` | UI.Scene.Match.Vendor.Equipment |
 <!-- /datatable_catalog -->
 
 ## BHGameplayEffectTaggedTableRow
 
-Tables: `DT_Meta_ResourceEffects`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_Meta_ResourceEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Resources/Effects/DT_Meta_ResourceEffects.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct BHGameplayEffectTaggedTableRow -->
 *1 table(s), 1 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -434,7 +434,7 @@ Tables: `DT_Meta_ResourceEffects`. Each name is linked in the [index](Wardogs_Da
 
 ## WDAssistanceRequestData
 
-Tables: `DT_AssistanceRequests`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_AssistanceRequests`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/AssistanceRequests/DT_AssistanceRequests.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDAssistanceRequestData -->
 *1 table(s), 12 rows, 20 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -493,7 +493,7 @@ Columns 15-20 of 20:
 
 ## WDPingTypeData
 
-Tables: `DT_PingTypes`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_PingTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/Pings/DT_PingTypes.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDPingTypeData -->
 *1 table(s), 4 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -508,7 +508,7 @@ Tables: `DT_PingTypes`. Each name is linked in the [index](Wardogs_DataTables_v1
 
 ## WDVoxBase
 
-Tables: `DT_VoxData`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDVoxBase -->
 *1 table(s), 81 rows, 9 non-empty columns. Source: the `Rows` of each table export (**Data**).*

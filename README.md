@@ -77,6 +77,11 @@ For extraction requirements, configuration and the update procedure, see
 requires local inputs that are not included in a clone, including the game
 files, the matching keys and mappings, and the SDK dump used by some generators.
 
+The update pipeline restores source links after generation. For pages generated
+by hand, run `python _tools/link_sources.py --write`, then
+`python _tools/link_sources.py --check`. The linker only uses tracked JSON
+exports and leaves ambiguous names unchanged.
+
 ## Documented build
 
 | Attribute | Value |

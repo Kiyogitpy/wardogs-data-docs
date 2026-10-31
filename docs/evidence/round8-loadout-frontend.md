@@ -6,9 +6,9 @@ nav_exclude: true
 # Frontend Loadouts assets do not identify a saved-preset source
 
 Six installed CL516586 packages under
-`/Game/UI/Features/Frontend/Loadouts/` were freshly exported offline on
-2026-10-19, with zero failures: `DA_LoadoutsScene`, `W_LoadoutsScene`,
-`DA_InventoryComponent_Loadouts`, `W_InventoryComponent_Loadouts`,
+[`/Game/UI/Features/Frontend/Loadouts/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/Loadouts) were freshly exported offline on
+2026-10-19, with zero failures: [`DA_LoadoutsScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Loadouts/Data/DA_LoadoutsScene.json), `W_LoadoutsScene`,
+[`DA_InventoryComponent_Loadouts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Loadouts/Widgets/InventoryComponent/Data/DA_InventoryComponent_Loadouts.json), `W_InventoryComponent_Loadouts`,
 `W_Loadout`, and `W_Button_Loadout`. The last four were followed from
 the scene/data references. This is a bounded cooked-asset inspection,
 not a claim about all native UI behavior.
@@ -41,7 +41,7 @@ entries and a generic inventory display, an interpretation rather than
 proof that a preset feature is absent elsewhere.
 
 `DA_LoadoutsScene.InventoryComponentViewModelParams` selects
-`WDUIInventoryComponentViewModel` with `DA_InventoryComponent_Loadouts`.
+`WDUIInventoryComponentViewModel` with [`DA_InventoryComponent_Loadouts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Loadouts/Widgets/InventoryComponent/Data/DA_InventoryComponent_Loadouts.json).
 That data asset configures `WDUIContainerGridViewModel_Vendor` for
 primary, specialist and sidearm slots, fallback slots/containers, and
 backpack/vest containers. Its overview data and backpack layout reuse

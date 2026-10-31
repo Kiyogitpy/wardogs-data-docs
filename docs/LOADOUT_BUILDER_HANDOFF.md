@@ -35,10 +35,10 @@ shop or weapon tables, rerun in this order: `weapon_attributes.py --json`, `load
 Sources behind the builder data:
 
 - **Slot membership**: the `Inventory.Slot.*` tag in each item definition's `ItemContext` (`ID_*.json`). Not inferred from names. Spec. Item (`Inventory.Slot.Specialist`) = 4 launchers + 16 tools; grenades and mines are quick-slot items, not here.
-- **Class level gates**: `DT_MetaTree_Roles` (Infantry, Medic, Recon, Support, Wardog). An item in no tree is always available. With a class chosen only that class's tree counts; with "Any class" the lowest level across trees.
+- **Class level gates**: [`DT_MetaTree_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json) (Infantry, Medic, Recon, Support, Wardog). An item in no tree is always available. With a class chosen only that class's tree counts; with "Any class" the lowest level across trees.
 - **Prices**: the generators behind `game-features/Wardogs_WeaponShop_v1.md` and `Wardogs_ItemShop_v1.md`.
 - **Weights**: `BHInventoryFragment_Weight`. **Magazine capacity**: the `Item.Ammo` container's `MaxSlotAmountStackSize` (same rule as `weapon_capacity_tables.py`).
-- **Names**: shop FriendlyName. 70 parts have none; they get `nameDerived: true` and a name like "AK74 barrel" (the weapon that starts with the part) or "Alternative barrel 3". Dev codes inside real names (`WEPN_037` and similar) are stripped.
+- **Names**: shop FriendlyName. 70 parts have none; they get `nameDerived: true` and a name like "AK74 barrel" (the weapon that starts with the part) or "Alternative barrel 3". Dev codes inside real names ([`WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/WEPN_037.json) and similar) are stripped.
 
 ## 3. Page behaviour and decisions
 

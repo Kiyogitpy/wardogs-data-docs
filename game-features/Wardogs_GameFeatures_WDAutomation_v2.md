@@ -6,7 +6,7 @@ description: "The automation pack, which registers the logic-sequence asset type
 ---
 
 # Wardogs — GameFeatures: WDAutomation
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/WDAutomation/` — 1 JSON file (`Content/WDAutomation.json`).*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/WDAutomation/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/WDAutomation) — 1 JSON file ([`Content/WDAutomation.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDAutomation/Content/WDAutomation.json)).*
 
 ---
 

@@ -32,7 +32,7 @@ Full filterable list: [Game Modes & Maps in the change browser]({{ '/season-2-ch
 
 These two map files list shader and pipeline warm-up entries (graphics and compute pipeline states, vertex factories) and material paths. They are compiled data and are not tabulated. Browse them in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=game-modes-maps&q=PSOWarmup).
 
-`Kavkazi_Bakurani_KOTH_01` is listed as modified, but it was not compared. The Season 1 copy is truncated in the source, so it could not be read and compared with Season 2. The asset carries a note in the data to that effect.
+[`Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) is listed as modified, but it was not compared. The Season 1 copy is truncated in the source, so it could not be read and compared with Season 2. The asset carries a note in the data to that effect.
 
 ### Shooting range and gym
 

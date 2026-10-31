@@ -2,7 +2,7 @@
 
 Static analysis only. Nothing was run. Evidence level: cooked data read (extractor `dump` of the 110 World Partition cell packages of the PvE external data layers in the Kavkazi world, every placed actor with its root component position; actors attached to another actor take the parent transform). No decompilation, nothing behind the protection layer was touched (PROTECTED items are listed where they apply). Method follows rounds 65 and 66 ([round66-map-actors.md](round66-map-actors.md)). Raw output and scripts are under `E:/Reverse_Engineer/wardogs_analysis/round71_re/` (outside the repository): `pve_cells.txt` (cell list), `dump/` (extractor output), `build.py` (actor extraction), `analyse.py` (distances, regions, clusters), `build_json.py` (writes the summary). The committed summary is [`assets/data/pve-layouts.json`](../../assets/data/pve-layouts.json); the data page section is [`content/Wardogs_Maps_v2.md`](../../content/Wardogs_Maps_v2.md) section 15.
 
-Coordinates are metres in the world frame (cm / 100), the frame of `map-magnets-extents.json`. Distances are straight lines on the ground plane, not route lengths. Reference frame for the Bakurani map: zone area centre (-8301, -11201); play box x -9967..-6634, y -12925..-9477 (zone regions plus 500 m, round 67); named regions are the polygons of `DA_ControlZoneRegionsConfig_Kavkazi` (Riverside Forest, Lumber Farmlands, Green Farmland and others).
+Coordinates are metres in the world frame (cm / 100), the frame of `map-magnets-extents.json`. Distances are straight lines on the ground plane, not route lengths. Reference frame for the Bakurani map: zone area centre (-8301, -11201); play box x -9967..-6634, y -12925..-9477 (zone regions plus 500 m, round 67); named regions are the polygons of [`DA_ControlZoneRegionsConfig_Kavkazi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/Config/DA_ControlZoneRegionsConfig_Kavkazi.json) (Riverside Forest, Lumber Farmlands, Green Farmland and others).
 
 ## Statuses
 
@@ -20,7 +20,7 @@ Coordinates are metres in the world frame (cm / 100), the frame of `map-magnets-
 
 ## Layout per scenario
 
-### VIP Escort (`VIPEscort_01`, 65 cells)
+### VIP Escort ([`VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/VIPEscort_01.json), 65 cells)
 
 Placed (gameplay): AI spawners 95, patrol routes 16, vehicle spawners 6, loot markers 21, equipment vendor 1, spawn manager 1, trigger box 1, quest points 2 (helicopter spawn point and scenario end), helicopter paths 2 (entry 4 path points, exit 3), navmesh bounds 1, navigation invokers 4, pre-placed buildables 69 (62 H-barriers, 5 tank traps, 1 bunker, 1 forward operating base), 18 hidden developer text labels (Hay Bales 6, Road Block 1, Patrol 1, 10 blank).
 
@@ -39,7 +39,7 @@ Loot markers (shared tags only, see 1e): Spawn area 1 (a Bandage, 50 m from the 
 
 Vehicle spawners (distance from the player spawn): Bobcat 350 m, Bobcat 628 m, Kodiak 646 m, Bobcat 1,467 m, Kodiak pickup 1,827 m, Kodiak pickup 2,196 m. No faction tag is placed on them.
 
-### Strike and Disarm (`StrikeDisarm_01`, 16 cells)
+### Strike and Disarm ([`StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/StrikeDisarm_01.json), 16 cells)
 
 Placed (gameplay): AI spawners 53, wave trigger 1, patrol routes 4, vehicle spawners 5, laptop objective 1, quest points 2, compound and end marker actors 2, helicopter paths 2, tether volume 1, target-area volume 1, spawn volume 1, navmesh bounds 1, ladder blockout 1, equipment vendor 1, vehicle vendor 1, spawn manager 1, navigation invoker 1. No loot marker.
 
@@ -57,7 +57,7 @@ AI: 49 riflemen and 4 snipers. Start group 27 (23 riflemen, 4 snipers), wave 26 
 
 Vehicles: 1 Kodiak pickup at the player spawn (47 m), 4 Kodiak pickups tagged Alpha (the Lonestar side) 99 to 143 m from the laptop. The ladder blockout mover is 485 m west of the laptop.
 
-### Hunter Killer (`HunterKiller_01`, 28 cells)
+### Hunter Killer ([`HunterKiller_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/HunterKiller_01/Content/HunterKiller_01.json), 28 cells)
 
 16 hidden text labels and 9 auto-instanced mesh actors; nothing else. Labels: Deploy Location 1 (-10709, -11254), HVT Location 1 (-10103, -10397), Lieutenant Location 2 (-10566, -10492 and -9761, -10783), Guards 4, Patrol 7, Exfil Location 1 (-9999, -10236). Deploy to HVT 1,050 m, HVT to exfil 192 m, deploy to exfil 1,242 m. The layout sits in the same compound as Strike and Disarm: the HVT label is 78 m from that laptop, the exfil label 79 m from that helicopter point, a Guards label 49 m from the laptop, a Lieutenant label 88 m from that wave trigger (inferred reuse of the blockout; not stated in the data). Status: placed layer FOUND (labels), gameplay actors ABSENT, AI ABSENT, player spawn ABSENT.
 

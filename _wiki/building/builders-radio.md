@@ -25,7 +25,7 @@ description: "A music radio built with any hammer from 20 Build Supplies, with 1
 | Rockets | +1,000% |
 | C4 | +400% |
 | IEDs | +800% |
-| Internal name | `DA_Buildable_Radio` |
+| Internal name | [`DA_Buildable_Radio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Radio/DA_Buildable_Radio.json) |
 {: .wiki-infobox }
 
 The Builder's Radio is a music radio that any hammer can build. It has a power switch and seven stations. It counts toward the limit of four radios per Forward Operating Base.

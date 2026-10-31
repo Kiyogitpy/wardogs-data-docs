@@ -25,7 +25,7 @@ description: "A fuel-powered rig built with the Large Hammer from 2,750 Build Su
 | Rockets | +850% |
 | C4 | +500% |
 | IEDs | +1,500% |
-| Internal name | `DA_Buildable_HotzoneMagnet` |
+| Internal name | [`DA_Buildable_HotzoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet.json) |
 {: .wiki-infobox }
 
 The Drill Rig is the most expensive structure that a player can build with a hammer. It only works inside a placement zone within a control zone, and it runs on Fuel Supplies. Once started, it runs for a set time that depends on the fuel added to it, and while it runs it pulls the hot zone toward it.

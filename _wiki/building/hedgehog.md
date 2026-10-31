@@ -25,7 +25,7 @@ description: "A heavy obstacle built with any hammer from 22 Build Supplies, wit
 | Rockets | +450% |
 | C4 | +500% |
 | IEDs | +1,000% |
-| Internal name | `DA_Buildable_TankTrap` |
+| Internal name | [`DA_Buildable_TankTrap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/TankTrap/DA_Buildable_TankTrap.json) |
 {: .wiki-infobox }
 
 The Hedgehog is an obstacle that any hammer can build. It costs 22 Build Supplies and has 4,500 HP. Grenades do half their normal damage to it, but rockets, C4 and IEDs do a lot more.

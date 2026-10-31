@@ -109,7 +109,7 @@ pointer belongs to a different struct, `FBHGameplayEffectTaggedTableRow.Gameplay
 `: public UBHGameplayEffect`. **Data:** 332 distinct `GE_*_C` class names
 are referenced somewhere in the export. One of them,
 `GE_GrantSkill_Lockpicking` (from the Lockpicking feature's
-`DT_Skills_Lockpicking.json`), has no SDK header, and eight SDK classes are
+[`DT_Skills_Lockpicking.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Lockpicking/Content/Data/Skills/DT_Skills_Lockpicking.json)), has no SDK header, and eight SDK classes are
 never referenced.
 
 Grouped by filename prefix. Each effect's actual modifiers are on
@@ -136,7 +136,7 @@ from the paks: 341 packages, the 338 SDK classes plus
 | `GE_Spotting_*` | 3 | `CustomDepthStencilValue`, `IncreasedSpottedTime`, `IncreasedSpottingDuration` |
 | `GE_TankHelmet_*` | 2 | Tank helmet |
 | `GE_Stanag_*` | 2 | STANAG magazine |
-| `GE_RK6_*` | 2 | RK6 foregrip (`ID_RK6_Grip.json`) |
+| `GE_RK6_*` | 2 | RK6 foregrip ([`ID_RK6_Grip.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Foregrips/RK6/ID_RK6_Grip.json)) |
 | `GE_PilotHelmet_*` | 2 | Pilot helmet |
 | `GE_GrantSkill_*` | 2 | Skill grants |
 | `GE_6xScope_*` | 2 | 6× scope |
@@ -148,12 +148,12 @@ from the paks: 341 packages, the 338 SDK classes plus
 
 **Data.**
 
-- `DA_CharacterEffectPresets`:
+- [`DA_CharacterEffectPresets`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_CharacterEffectPresets.json):
   one row, `GameplayCue.Door.Breach` → `GE_DoorBreach_C`, 1 stack.
-- `DA_DefaultPlayerEffects`:
+- [`DA_DefaultPlayerEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/GameplayEffects/Presets/DA_DefaultPlayerEffects.json):
   one row, `Skill.DoorBreach` → `GE_GrantSkill_DoorBreach_C`, 1 stack.
   When it is applied (for example on spawn) is not traced.
-- `DA_CharacterModifierState_StimulantEffects`
+- [`DA_CharacterModifierState_StimulantEffects`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DA_CharacterModifierState_StimulantEffects.json)
   is not an effect catalog. It is a `WDCharacterModifierStateDefinition`:
   an FOV camera modifier (×1.05) gated on
   `State.Player.Stimulant.UnlimitedTacSprint` and ignored while
@@ -341,7 +341,7 @@ is fired by a direct call (`0x6E75620` → `0x4C45DC0`).
 
 ## 7. Example: a scope attachment
 
-**Data.** `ID_6xScope.json` lists `GE_6xScope_C` in
+**Data.** [`ID_6xScope.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/6x_Scope/ID_6xScope.json) lists `GE_6xScope_C` in
 `AttachmentData.AppliedEffects`, and `GE_6xScope_MainSight_C` per sight.
 From the effect export ([Gameplay Effect Values](Wardogs_GameplayEffect_Values_v1.md)):
 `GE_6xScope` sets `Weapon.AdsZoomMultiplier = 3`, adds 0.2 to
@@ -369,8 +369,8 @@ These rules give a weapon's final attributes for an attachment set. [Weapon Attr
 - **Not on the weapon.** `AppliedCharacterEffects` and the bipod's `+0x148` list go to the owning character's component (`WDMoverCharacter` `+0x740`), following the equip state.
 - **Evaluation.** Each application is its own instance; the stacking policies act only in `0x52317F0` and on duration expiry (`0x522D260`), and weapon effects have no duration. Every modifier `Filter` is empty, and no weapon-related effect has requirements, a duration or `MaxStacks`. So every modifier counts with `n = 1`, and the §4.4 formula applies with no hook.
 - **Data exceptions.**
-  - `ID_MAGZ_065` and `ID_MAGZ_066` list the same effect in `AppliedEffects` and `AppliedCharacterEffects`.
-  - The stance maps are keyed by stance, and two use mismatched effects: `ID_A91` maps Stand to `AR_Prone` (×c 0.7) and Crouch and Prone to `AR_Standing`, and `ID_WEPN_037` maps Prone to `AR_Standing`.
+  - [`ID_MAGZ_065`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_065/Content/Data/ID_MAGZ_065.json) and [`ID_MAGZ_066`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_066/Content/Data/ID_MAGZ_066.json) list the same effect in `AppliedEffects` and `AppliedCharacterEffects`.
+  - The stance maps are keyed by stance, and two use mismatched effects: [`ID_A91`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json) maps Stand to `AR_Prone` (×c 0.7) and Crouch and Prone to `AR_Standing`, and [`ID_WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json) maps Prone to `AR_Standing`.
   - Seven sight effects override `MaxZeroingRange` with the current `MinZeroingRange` (an attribute-backed modifier).
 
 **Attribute-backed magnitudes are live.** `FBHAttributeMod_Attribute`

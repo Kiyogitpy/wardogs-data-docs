@@ -14,7 +14,7 @@ These tables turn internal gameplay tags, such as calibers, archetypes, ammuniti
 <!-- tag_text_tables all -->
 ### DT_Ext_GameplayTagToText_Calibers
 
-Source: `data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTable/DT_Ext_GameplayTagToText_Calibers.json` (1 rows)
+Source: [`data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTable/DT_Ext_GameplayTagToText_Calibers.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTable/DT_Ext_GameplayTagToText_Calibers.json) (1 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -22,7 +22,7 @@ Source: `data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTabl
 
 ### DT_GameplayTagToText_Ammunition
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ammunition.json` (14 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ammunition.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ammunition.json) (14 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -43,7 +43,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Am
 
 ### DT_GameplayTagToText_Archetypes
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json` (16 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json) (16 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -66,7 +66,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ar
 
 ### DT_GameplayTagToText_Calibers
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json` (31 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json) (31 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -104,7 +104,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ca
 
 ### DT_GameplayTagToText_Categories
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Categories.json` (112 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Categories.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Categories.json) (112 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -223,7 +223,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ca
 
 ### DT_GameplayTagToText_Components
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Components.json` (7 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Components.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Components.json) (7 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -237,7 +237,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Co
 
 ### DT_GameplayTagToText_Damage
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Damage.json` (9 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Damage.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Damage.json) (9 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -253,7 +253,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Da
 
 ### DT_GameplayTagToText_EventLog
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_EventLog.json` (6 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_EventLog.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_EventLog.json) (6 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -266,7 +266,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ev
 
 ### DT_GameplayTagToText_InventorySlots
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_InventorySlots.json` (37 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_InventorySlots.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_InventorySlots.json) (37 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -310,7 +310,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_In
 
 ### DT_GameplayTagToText_Itemsmith
 
-Source: `data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_GameplayTagToText_Itemsmith.json` (36 rows)
+Source: [`data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_GameplayTagToText_Itemsmith.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_GameplayTagToText_Itemsmith.json) (36 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -353,7 +353,7 @@ Source: `data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_Gameplay
 
 ### DT_GameplayTagToText_PlayerStates
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_PlayerStates.json` (5 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_PlayerStates.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_PlayerStates.json) (5 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -365,7 +365,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Pl
 
 ### DT_GameplayTagToText_Prompts
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Prompts.json` (4 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Prompts.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Prompts.json) (4 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -376,7 +376,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Pr
 
 ### DT_GameplayTagToText_Roles
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Roles.json` (13 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Roles.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Roles.json) (13 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -396,7 +396,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ro
 
 ### DT_GameplayTagToText_SceneNames
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_SceneNames.json` (38 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_SceneNames.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_SceneNames.json) (38 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -441,7 +441,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Sc
 
 ### DT_GameplayTagToText_ServerTags
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json` (24 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json) (24 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -472,7 +472,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Se
 
 ### DT_GameplayTagToText_TeamOffence
 
-Source: `data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/UI/Data/DT_GameplayTagToText_TeamOffence.json` (7 rows)
+Source: [`data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/UI/Data/DT_GameplayTagToText_TeamOffence.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/UI/Data/DT_GameplayTagToText_TeamOffence.json) (7 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -486,7 +486,7 @@ Source: `data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/UI/Data/DT_Gamepl
 
 ### DT_GameplayTagToText_Tooltips
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tooltips.json` (10 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tooltips.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tooltips.json) (10 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -503,7 +503,7 @@ Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_To
 
 ### DT_GameplayTagToText_Tutorials
 
-Source: `data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tutorials.json` (5 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tutorials.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tutorials.json) (5 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|

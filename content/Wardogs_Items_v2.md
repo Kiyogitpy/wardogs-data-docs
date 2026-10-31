@@ -6,7 +6,7 @@ description: "Item data: how an item is built, plus its attachments, clothing, e
 ---
 
 # Wardogs — Items Reference
-*Extracted from cooked game data exported to JSON, source `Wardogs/Content/Items/` (259 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
+*Extracted from cooked game data exported to JSON, source [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 files). Every number below comes from the exported properties; anything the dump does not contain is marked as such.*
 
 > **Shop and entity data for non-weapon items** (armor, helmets, vests, backpacks, medical items, throwables, explosives, tools, vehicle items; price, unlock level, buy limit, description, weight and key stats) is in [Item Shop](../game-features/Wardogs_ItemShop_v1.md). Weapon parts are in [Weapon Shop](../game-features/Wardogs_WeaponShop_v1.md).
 
@@ -17,7 +17,7 @@ description: "Item data: how an item is built, plus its attachments, clothing, e
 ## Season 02 update (2026-10-15)
 
 - **New ammo:** `125x570mm` (1 round, grid 3x2, max stack 5, weight 24.0), with a new vehicle turret that accepts it.
-- **New vehicle weapons (4):** `ID_MountedMachineGun_TNK_04` (50Cal, stack 60), `ID_VehicleTurretMachineGun_TNK_04` (762x54mm, stack 150), `ID_VehicleTurret_TNK_04` (125x570mm, stack 1), and `ID_WHL_08_RingTurret` (50Cal, stack 60).
+- **New vehicle weapons (4):** [`ID_MountedMachineGun_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_04/ID_MountedMachineGun_TNK_04.json) (50Cal, stack 60), [`ID_VehicleTurretMachineGun_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurretMachineGun_TNK_04.json) (762x54mm, stack 150), [`ID_VehicleTurret_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/TNK_04/ID_VehicleTurret_TNK_04.json) (125x570mm, stack 1), and [`ID_WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Vehicles/Weapons/WHL_08/ID_WHL_08_RingTurret.json) (50Cal, stack 60).
 - **Removed:** no items or files were removed.
 - **Stack overrides:** 30mm gains a `Vehicle.Storage` override of 200. The .50 Cal tracer gains `Vehicle.Storage` and `Type.Vehicle` at 50. The 762x54mm tracer variants gain both overrides at 150.
 - **Ammo context:** 84mm and 93mm no longer carry `Item.Context.ForceToStorage`.
@@ -38,29 +38,29 @@ Full before/after list: [Season 2 Changes → Items & Equipment]({{ '/season-2-c
 
 | Folder | Primary assets | Main type(s) | Notes |
 |---|---|---|---|
-| `Resources/Ammo` | 98 (94 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
+| [`Resources/Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo) | 98 (94 items) | BHInventoryItemDefinition | Every caliber and round variant, plus 3 audio assets and 1 debug projectile |
 | `Attachments/Magazines` | 23 | BHInventoryItemDefinition | Magazines, drums, and internal cylinders/boxes (internal ones have no gunsmith entry) |
 | `Vehicles/Weapons` | 16 | BHInventoryItemDefinition | Vehicle turrets, mounted MGs, helicopter cannon/rocket pods |
-| `Clothing/Backpacks` | 10 | BHInventoryItemDefinition | Storage bags, pouch, and sling variants |
+| [`Clothing/Backpacks`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Backpacks) | 10 | BHInventoryItemDefinition | Storage bags, pouch, and sling variants |
 | `Attachments/Sights` | 8 | BHInventoryItemDefinition | Optics, iron sights |
-| `Attachments/Muzzle_Devices` | 7 | BHInventoryItemDefinition | Suppressors and brakes |
+| [`Attachments/Muzzle_Devices`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices) | 7 | BHInventoryItemDefinition | Suppressors and brakes |
 | `Weapons/AR` | 5 | BHInventoryItemDefinition | Components only (barrels, grip, handguard, stock) |
 | `Attachments/Foregrips` | 4 | BHInventoryItemDefinition | Foregrips and the Grip Pod bipod |
-| `Vehicles/Storage` | 4 | BHInventoryItemDefinition | Vehicle cargo containers |
+| [`Vehicles/Storage`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Vehicles/Storage) | 4 | BHInventoryItemDefinition | Vehicle cargo containers |
 | `Weapons/Pistol` | 4 | BHInventoryItemDefinition | Pistol components |
-| `Clothing/Vests` | 3 | BHInventoryItemDefinition | Tac vests (quick-slot providers) |
+| [`Clothing/Vests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Vests) | 3 | BHInventoryItemDefinition | Tac vests (quick-slot providers) |
 | `Weapons/SMG` | 3 | BHInventoryItemDefinition | SMG components |
-| `Consumables/Bandage` | 2 items + 4 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Bandage and IFAK |
-| `Throwable/Grenades` | 2 items + 3 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | M67 frag and gold variant |
-| `Weapons/Launcher` | 2 items + 2 anim sets | BHInventoryItemDefinition | Two artillery/tank barrel test items |
-| `Attachments/Grips`, `Handguards`, `Stocks` | 1 each | BHInventoryItemDefinition | Single components |
-| `Placeables/AmmoCrate` | 1 | BHInventoryItemDefinition | Ammo Crate |
+| [`Consumables/Bandage`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Consumables/Bandage) | 2 items + 4 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Bandage and IFAK |
+| [`Throwable/Grenades`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Grenades) | 2 items + 3 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | M67 frag and gold variant |
+| [`Weapons/Launcher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Launcher) | 2 items + 2 anim sets | BHInventoryItemDefinition | Two artillery/tank barrel test items |
+| [`Attachments/Grips`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Grips), `Handguards`, `Stocks` | 1 each | BHInventoryItemDefinition | Single components |
+| [`Placeables/AmmoCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Placeables/AmmoCrate) | 1 | BHInventoryItemDefinition | Ammo Crate |
 | `Weapons/Fists` | 1 item + 2 support | BHInventoryItemDefinition, BHAnimationSet, WDAudioData | Unarmed |
 | `Weapons/LMG` | 1 | BHInventoryItemDefinition | LMG barrel component |
-| `Attachments/Archetypes` | 12 | WDAttachmentArchetype | Slot-type definitions (bone, tag) |
-| `Attachments/Utilities` | 1 | BHAnimationSet | Grip Pod animation set |
+| [`Attachments/Archetypes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Archetypes) | 12 | WDAttachmentArchetype | Slot-type definitions (bone, tag) |
+| [`Attachments/Utilities`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Utilities) | 1 | BHAnimationSet | Grip Pod animation set |
 | `Weapons/` (root) | 8 aim-assist settings + 1 filter | BHAimAssistSettingsData, BHAimAssistFilterData | One per weapon class |
-| `Resources/Ammo/Curves`, `Throwable/Curves`, `Weapons/Curves` | 28 | CurveFloat, CurveTable | See section 11 |
+| [`Resources/Ammo/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo/Curves), [`Throwable/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Curves), `Weapons/Curves` | 28 | CurveFloat, CurveTable | See section 11 |
 
 **Totals:** 193 item definitions (`BHInventoryItemDefinition`), 230 primary assets in all, 259 files. 
 
@@ -110,7 +110,7 @@ An item is a `BHInventoryItemDefinition` with an `ItemId` tag, `ItemContext` tag
 
 ## 3. Attachments
 
-### 3a. Attachment Archetypes (`Attachments/Archetypes`)
+### 3a. Attachment Archetypes ([`Attachments/Archetypes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Attachments/Archetypes))
 
 Twelve `WDAttachmentArchetype` assets define each slot's `AttachmentId` tag, the skeletal bone it attaches to, and (in two cases) a bone offset.
 
@@ -163,7 +163,7 @@ Capacity is taken from the magazine's `MaxSlotAmountStackSize` (section 2a).
 | ID_M12G_Mag_Internal | M500 Internal Mag | - | 6 | - | 12g | No |
 | ID_MMGL_Mag_Internal | MMGL Internal Mag | - | 6 | - | 40mm | No |
 
-Notes: "Internal" magazines have no gunsmith entry and no grid. Two different items are both labelled "M4 Extended Mag" (`ID_M4_Mag_Extended` at 45 and `ID_STANAG_Mag_Extended90rd` at 90), and the two SV98 mags share one name. Display names are not unique keys; use the asset name.
+Notes: "Internal" magazines have no gunsmith entry and no grid. Two different items are both labelled "M4 Extended Mag" ([`ID_M4_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/ID_M4_Mag_Extended.json) at 45 and [`ID_STANAG_Mag_Extended90rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/STANAG_Mag_Drum_90rd/ID_STANAG_Mag_Extended90rd.json) at 90), and the two SV98 mags share one name. Display names are not unique keys; use the asset name.
 
 ### 3c. Optics and Muzzle Devices
 
@@ -191,7 +191,7 @@ Notes: "Internal" magazines have no gunsmith entry and no grid. Two different it
 |---|---|---|---|---|
 | ID_FGP_02 | TDG Vertical Foregrip | 0.13 | Grip | - |
 | ID_FGP_03 | AFG Angled Foregrip | 0.08 | Grip | - |
-| ID_FGP_04 | Grip Pod | 0.26 | Bipod | Grid 1x2; uses `AnimSet_FGP_04` (Attachments/Utilities) |
+| ID_FGP_04 | Grip Pod | 0.26 | Bipod | Grid 1x2; uses [`AnimSet_FGP_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Utilities/Bipod/AnimSet_FGP_04.json) (Attachments/Utilities) |
 | ID_RK6_Grip | RK6 Tactical Foregrip | 1.05 | Grip | - |
 | ID_AK74MIMIEGGrip | (no display) | - | Grip | ItemId `ID.Item.AK74MIMIEGGrip` |
 | ID_ZenitHandguard | (no display) | - | Handguard | Child slot accepts `Item.Attachment.Underbarrel` (BlockPriority) |
@@ -212,7 +212,7 @@ These are the sub-parts a weapon is built from. The base weapon definitions (e.g
 
 ## 4. Clothing and Equipment
 
-### 4a. Backpacks and Pouch (`Clothing/Backpacks`, 10 items)
+### 4a. Backpacks and Pouch ([`Clothing/Backpacks`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Backpacks), 10 items)
 
 Container grid is listed as `X x Y` cells, and `Filter` is shown where present. "Sling" variants add a weapon-slot container (BlockPriority on Primary, Secondary, Sidearm, Specialist) with capacity 1.
 
@@ -231,7 +231,7 @@ Container grid is listed as `X x Y` cells, and `Filter` is shown where present. 
 
 Note: Medium Backpack + Sling reads 4.0 weight against 0.88 for the plain Medium. The sling variants' weight is far higher than the bag alone; the dump does not explain why.
 
-### 4b. Tac Vests (`Clothing/Vests`, 3 items)
+### 4b. Tac Vests ([`Clothing/Vests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Clothing/Vests), 3 items)
 
 | Asset | Display | Weight | Grid | Extra quick slots | Equipped effect |
 |---|---|---|---|---|---|
@@ -245,7 +245,7 @@ Vests give no container of their own; their capacity comes from the quick-slot c
 
 ## 5. Consumables and Medical Items
 
-| Property | Bandage (`ID_Bandage`) | Individual First Aid Kit (`ID_SuperBandage`) |
+| Property | Bandage ([`ID_Bandage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Consumables/Bandage/ID_Bandage.json)) | Individual First Aid Kit ([`ID_SuperBandage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Consumables/Bandage/ID_SuperBandage.json)) |
 |---|---|---|
 | Display | Bandage | Individual First Aid Kit |
 | ItemId | Id.Item.Bandage | Id.Item.SuperBandage |
@@ -263,24 +263,24 @@ Vests give no container of their own; their capacity comes from the quick-slot c
 | Audio | ID_Bandage_Audio | ID_IFAK_Audio |
 | Spatial tracker | Applies only to friendlies (`bShouldOnlyApplyToFriendly` = True); checks WorldGrid.Layer.Character | Same class, same friendly-only setting |
 
-Input behaviour is shared: the primary-use input (`Input.NamedActions.Appliable.PrimaryUse`) maps to `WDItemInputBehavior_ActivateAppliableAction` with `Action.Appliable.Bandage.PrimaryUse`, secondary use maps to `...SecondaryUse`, and the completion action is bound to the same two uses. Inspection (`Action.Item.Inspect`) is bound on the item too. The shared key set is `IMC_Appliable` (section 11).
+Input behaviour is shared: the primary-use input (`Input.NamedActions.Appliable.PrimaryUse`) maps to `WDItemInputBehavior_ActivateAppliableAction` with `Action.Appliable.Bandage.PrimaryUse`, secondary use maps to `...SecondaryUse`, and the completion action is bound to the same two uses. Inspection (`Action.Item.Inspect`) is bound on the item too. The shared key set is [`IMC_Appliable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/ItemExtensionDefaults/IMC_Appliable.json) (section 11).
 
-Placeable item: `Placeables/AmmoCrate/ID_AmmoCrate` (2x2 grid, a `WDItemExtensionData_Placeable`). Collision size 0.85 x 0.85 x 0.85, placeable class `B_AmmoCrate_C`, init data start and maximum health 100 and lifetime 20 s (round 91; see [Fire, Smoke and Mines section 5.1b](../game-features/Wardogs_FireAndUtility_v1.md)).
+Placeable item: [`Placeables/AmmoCrate/ID_AmmoCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Placeables/AmmoCrate/ID_AmmoCrate.json) (2x2 grid, a `WDItemExtensionData_Placeable`). Collision size 0.85 x 0.85 x 0.85, placeable class `B_AmmoCrate_C`, init data start and maximum health 100 and lifetime 20 s (round 91; see [Fire, Smoke and Mines section 5.1b](../game-features/Wardogs_FireAndUtility_v1.md)).
 
 ---
 
-## 6. Throwables (`Throwable/Grenades`)
+## 6. Throwables ([`Throwable/Grenades`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Grenades))
 
 | Asset | Display | Weight | ThrowableClass | Throw velocity | Resource used |
 |---|---|---|---|---|---|
 | ID_M67Grenade | M67 Frag Grenade | 0.4 | B_FragGrenade | 2500 | Id.Item.M67Grenade x1 |
 | ID_M67Grenade_Gold | Golden Grenade | - | B_GoldFragGrenade | 2200 | Id.Item.GoldM67Grenade x1 |
 
-Both throws use `Action.Throw.Primary`. Pitch and velocity curves: `CRV_ThrowPitch_Overarm`, `CRV_ThrowPitch_OverarmStrong`, `CRV_ThrowPitch_Underarm` (pitch), and `CRV_ThrowVelocity_OverarmStrong`, `CRV_ThrowVelocity_Underarm` (velocity). `DropSpawnOffset` is (0, 0, -40) on the M67. The gold variant has no `Weight` property. Its drop and throw data share the M67 audio (`ID_M67Grenade_Audio`). Full throw action fields (VelocityCurve reference, bUseConsistentVelocity) are present in the dump but only partly decoded here.
+Both throws use `Action.Throw.Primary`. Pitch and velocity curves: [`CRV_ThrowPitch_Overarm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowPitch_Overarm.json), [`CRV_ThrowPitch_OverarmStrong`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowPitch_OverarmStrong.json), [`CRV_ThrowPitch_Underarm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowPitch_Underarm.json) (pitch), and [`CRV_ThrowVelocity_OverarmStrong`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowVelocity_OverarmStrong.json), [`CRV_ThrowVelocity_Underarm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Curves/CRV_ThrowVelocity_Underarm.json) (velocity). `DropSpawnOffset` is (0, 0, -40) on the M67. The gold variant has no `Weight` property. Its drop and throw data share the M67 audio ([`ID_M67Grenade_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Throwable/Grenades/M67_Grenade/ID_M67Grenade_Audio.json)). Full throw action fields (VelocityCurve reference, bUseConsistentVelocity) are present in the dump but only partly decoded here.
 
 ---
 
-## 7. Ammunition (`Resources/Ammo`)
+## 7. Ammunition ([`Resources/Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo))
 
 ### 7a. Calibers
 
@@ -317,7 +317,7 @@ Max stack is the inventory stack limit (`MaxStackSize`). Overrides apply to a sl
 | DebugHomingRocket | 2 | RocketTesting 84mm | 99 | - | not set | DA_DebugHomingRocketData (see 7c) |
 | Rockets | 1 | (no display) | not set | - | not set | not set |
 
-Variant naming: the base round has no suffix, and the others add `_ArmorPiercing`, `_HollowPoint`, and `_Tracer`. Items with `Sandbox` in the ItemId (e.g. `ID.Item.155mm.Sandbox`, `ID_155mm_SB`) are test variants.
+Variant naming: the base round has no suffix, and the others add `_ArmorPiercing`, `_HollowPoint`, and `_Tracer`. Items with `Sandbox` in the ItemId (e.g. `ID.Item.155mm.Sandbox`, [`ID_155mm_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_SB.json)) are test variants.
 
 Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x570mm 24.0, 125x570mm 24.0, 35x228mm 1.56, 40mm 0.28, 155mm Expensive 42.0. The rest have no weight property. The unit is not stated.
 
@@ -325,7 +325,7 @@ Weight (`BHInventoryFragment_Weight`) is set on only a handful of rounds: 120x57
 
 Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackable`, a `WDInventoryFragment_Projectile` (pointing to a `WDProjectileData` in `GameMechanics`), a `WDInventoryFragment_Audio`, and a `CustomShape`. The projectile asset is **outside** this folder, so ballistics for ordinary rounds are not in this category.
 
-### 7c. The One Decoded Projectile (`DA_DebugHomingRocketData`)
+### 7c. The One Decoded Projectile ([`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json))
 
 | Field | Value |
 |---|---|
@@ -333,7 +333,7 @@ Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackabl
 | BaseDamage | 47 |
 | Damage tag | Meta.Damage.Bullet.545mm |
 | Length / Diameter / Mass | 37 / 4 / 1 |
-| Drag model | `CT_Projectile_DragCoefficients` row "GC (Cylinder)" |
+| Drag model | [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json) row "GC (Cylinder)" |
 | Typical speed / thrust speed | 100000 / 20000 |
 | Max lifetime / total fuel / burn rate | 20 s / 100 / 1.0 |
 | Guidance | Guided, MaxTurnAngle 2.0 |
@@ -344,7 +344,7 @@ Each round is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Stackabl
 
 ## 8. Vehicle Items
 
-### 8a. Vehicle Cargo (`Vehicles/Storage`)
+### 8a. Vehicle Cargo ([`Vehicles/Storage`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Vehicles/Storage))
 
 | Asset | Display | Container slot | Container grid | Filter |
 |---|---|---|---|---|
@@ -378,18 +378,18 @@ Each turret item is a `BHInventoryItemDefinition` with a `BHInventoryFragment_Su
 | ID_VehicleTurret_TNK_04 | Heavy Turret | 125x570mm | 1 |
 | ID_WHL_08_RingTurret | Machine Gun | 50Cal | 60 |
 
-### 8c. Launcher Test Barrels (`Weapons/Launcher`)
+### 8c. Launcher Test Barrels ([`Weapons/Launcher`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Launcher))
 
 | Asset | Display | Weight | Notes |
 |---|---|---|---|
-| ID_ArtilleryBarrelTest | Artillery Barrel Test | 50 | Ranged-weapon extension: default `Attribute.Gameplay.Weapon.AimTime` 0.5, damage tag `Meta.Damage.Weapon.Vehicle.Turret.Artillery`, weapon stats asset `DA_ArtilleryBarrelTest_Stats` (not in dump) |
+| ID_ArtilleryBarrelTest | Artillery Barrel Test | 50 | Ranged-weapon extension: default `Attribute.Gameplay.Weapon.AimTime` 0.5, damage tag `Meta.Damage.Weapon.Vehicle.Turret.Artillery`, weapon stats asset [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json) (not in dump) |
 | ID_TankBarrelTest | Tank Barrel Test (ItemId Id.Item.LeapordBarrel) | 50 | Chamber and muzzle child slots, AllowList |
 
 These two are the only items with a `WDItemExtensionData_RangedWeapon`, and their stats are in an external asset.
 
 ### 8d. Fists (`Weapons/Fists`)
 
-ID_Fists (ItemId Id.Item.Fists). Melee damage tag `Meta.Damage.Utility.Fists`. Player effect `GE_Player_Fists`. Input context `IMC_Fists`. Animation set `AnimSet_Fists`. Aim-assist extension references `DA_AimAssistSettings_Melee` and `DA_AimAssistFilter`. The two test barrels in section 8c carry the same extension type.
+ID_Fists (ItemId Id.Item.Fists). Melee damage tag `Meta.Damage.Utility.Fists`. Player effect `GE_Player_Fists`. Input context [`IMC_Fists`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IMC_Fists.json). Animation set [`AnimSet_Fists`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Fists/AnimSet_Fists.json). Aim-assist extension references [`DA_AimAssistSettings_Melee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistSettings_Melee.json) and [`DA_AimAssistFilter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/DA_AimAssistFilter.json). The two test barrels in section 8c carry the same extension type.
 
 ---
 
@@ -426,7 +426,7 @@ Eight weapon-class settings and one shared filter. Values are as stored, with no
 | PullModeADS | - | - | - | - | - | Off | - | - | - |
 | TargetWeightCurve | - | C_AimAssistTargetWeightCurve (shared) | | | | | | | |
 
-Curves referenced per class (values not in this category): the hipfire `PullStrengthDistanceCurve` and `SlowStrengthDistanceCurve` now point to the shared `C_AimAssistPullStrengthDistanceCurve_Default` and `C_AimAssistSlowStrengthDistanceCurve_Default` for AR, LMG, Melee, Pistol, SMG and Shotgun. The ADS variants stay per class, and SR keeps its `_Sniper` curves. Every class except RPG now uses `C_AimAssistReticleEdgeFalloff_Default` for its reticle edge falloff. The SR uses `C_AimAssistPullStrengthDistanceCurve_Sniper` for ADS. Two curve names have a missing underscore: `C_AimAssistSlowStrengthDistanceCurvePistol_ADS` and `C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`. These are the names as stored.
+Curves referenced per class (values not in this category): the hipfire `PullStrengthDistanceCurve` and `SlowStrengthDistanceCurve` now point to the shared [`C_AimAssistPullStrengthDistanceCurve_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Default.json) and [`C_AimAssistSlowStrengthDistanceCurve_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurve_Default.json) for AR, LMG, Melee, Pistol, SMG and Shotgun. The ADS variants stay per class, and SR keeps its `_Sniper` curves. Every class except RPG now uses [`C_AimAssistReticleEdgeFalloff_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistReticleEdgeFalloff_Default.json) for its reticle edge falloff. The SR uses [`C_AimAssistPullStrengthDistanceCurve_Sniper`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistPullStrengthDistanceCurve_Sniper.json) for ADS. Two curve names have a missing underscore: [`C_AimAssistSlowStrengthDistanceCurvePistol_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurvePistol_ADS.json) and [`C_AimAssistSlowStrengthDistanceCurveShotgun_ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHAimAssist/Content/AimAssist/C_AimAssistSlowStrengthDistanceCurveShotgun_ADS.json). These are the names as stored.
 
 The RPG setting is zero across most fields, and RPG has `PullMode` set to `Off`. SR no longer sets `PullMode`, and Melee no longer sets `PullModeADS`. Whether assist is intentionally disabled for those classes cannot be confirmed from the dump.
 
@@ -448,11 +448,11 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 
 | Group | Count | Assets |
 |---|---|---|
-| Throw curves (`Throwable/Curves`) | 5 CurveFloat | CRV_ThrowPitch_Overarm (4 keys), CRV_ThrowPitch_OverarmStrong (4), CRV_ThrowPitch_Underarm (8), CRV_ThrowVelocity_OverarmStrong (3), CRV_ThrowVelocity_Underarm (4) |
-| ADS curves (`Weapons/Curves/ADS`) | 6 CurveFloat | CF_Animation_ADSIn_Curve, CF_Animation_ADSIn_Linear, CF_Animation_ADSOut_Curve, CF_Animation_ADSOut_Linear, CF_Animation_ADSIn_WEPN_029_Curve, and one more not listed in this pass |
-| Aim sway (`Weapons/Curves/AimSway/*`) | 15 CurveFloat | Per-class sway multipliers (`CRV_WeaponAnimSwayMultiplier_AR_Harsh`, `_AR_Moderate`, `_Bow`, `_DMR_Harsh`, `_LMG_Harsh`, `_Launcher`, `_SMG`, `_Shotgun`, and others), plus `CF_AimSway_Stabilization_PlayerSpeed` and `_SR` |
-| Curve tables | 2 | `CT_Weapon_Spread` (`Weapons/Curves`), with rows per stance: `Launcher.Stand`, `Launcher.Crouch`, `Launcher.Prone`. `CT_Projectile_DragCoefficients` (`Resources/Ammo/Curves`), with rows such as "GC (Cylinder)". |
-| Input mapping | 1 | `IMC_Appliable` (UDataAsset; primary-use, secondary-use and inspect keys for consumables) |
+| Throw curves ([`Throwable/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Throwable/Curves)) | 5 CurveFloat | CRV_ThrowPitch_Overarm (4 keys), CRV_ThrowPitch_OverarmStrong (4), CRV_ThrowPitch_Underarm (8), CRV_ThrowVelocity_OverarmStrong (3), CRV_ThrowVelocity_Underarm (4) |
+| ADS curves ([`Weapons/Curves/ADS`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Weapons/Curves/ADS)) | 6 CurveFloat | CF_Animation_ADSIn_Curve, CF_Animation_ADSIn_Linear, CF_Animation_ADSOut_Curve, CF_Animation_ADSOut_Linear, CF_Animation_ADSIn_WEPN_029_Curve, and one more not listed in this pass |
+| Aim sway (`Weapons/Curves/AimSway/*`) | 15 CurveFloat | Per-class sway multipliers ([`CRV_WeaponAnimSwayMultiplier_AR_Harsh`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/AR/CRV_WeaponAnimSwayMultiplier_AR_Harsh.json), `_AR_Moderate`, `_Bow`, `_DMR_Harsh`, `_LMG_Harsh`, `_Launcher`, `_SMG`, `_Shotgun`, and others), plus [`CF_AimSway_Stabilization_PlayerSpeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/AimSway/CF_AimSway_Stabilization_PlayerSpeed.json) and `_SR` |
+| Curve tables | 2 | [`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json) (`Weapons/Curves`), with rows per stance: `Launcher.Stand`, `Launcher.Crouch`, `Launcher.Prone`. [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json) ([`Resources/Ammo/Curves`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources/Ammo/Curves)), with rows such as "GC (Cylinder)". |
+| Input mapping | 1 | [`IMC_Appliable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/ItemExtensionDefaults/IMC_Appliable.json) (UDataAsset; primary-use, secondary-use and inspect keys for consumables) |
 
 ---
 
@@ -469,7 +469,7 @@ Other settings: `bFOVReticleScaling` is False for every class that sets it. `bAp
 ## 13. Still Not Pulled / Limitations
 
 - **Base weapon definitions are absent.** `Weapons/AR` holds only components. The receiver and full gun items (M4, AK74-M, Glock 17, Vector, M249, and so on) are not in this folder, so per-weapon fire rate, damage, and recoil are not here.
-- **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. `DA_ArtilleryBarrelTest_Stats`) and every `WDProjectileData` except `DA_DebugHomingRocketData` live in other folders, so damage and velocity for ordinary rounds are not in this category.
+- **Weapon stats and projectile ballistics are external.** `WDWeaponStatsData` (e.g. [`DA_ArtilleryBarrelTest_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/RocketLauncher/ArtilleryBarrelTest/Data/DA_ArtilleryBarrelTest_Stats.json)) and every `WDProjectileData` except [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) live in other folders, so damage and velocity for ordinary rounds are not in this category.
 - **Weight unit not stated.** The dump gives values (0.08 to 42.0) without a unit. Assume it is the game's internal weight unit until confirmed.
   - **See [`docs/UNITS.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/UNITS.md)** for the project-wide units reference (UE 5.7 defaults + Wardogs-specific suffixes).
 - **Weight missing on most items.** Only 47 of 193 items have a weight value. The other items carry the fragment but no property, so the default is unknown.
@@ -497,111 +497,111 @@ The `Resources` folder holds 94 item definitions, almost all ammunition, plus 5 
 <!-- resource_tables items -->
 | Asset | Folder | Item tag | Display name | Kind | Max stack | Inventory (X x Y) | Weight | Caliber tag | Vendor price |
 |---|---|---|---|---|---|---|---|---|---|
-| `ID_120x570mm` | Ammo/120x570mm | `ID.Item.120x570mm` | 120mm HEAT-MP Shell | ammo | 5 | 3 x 2 | 24 | Item.Caliber.120x570mm | 210 |
-| `ID_120x800mm` | Ammo/120x800mm | `Id.Item.120x800mm` | 81mm | ammo | 10 | 3 x 2 | — | Item.Caliber.120x800mm | 600 |
-| `ID_122mm` | Ammo/122mm | `Id.Item.122mm` | 122mm HE Rocket | ammo | 3 | 6 x 2 | — | Item.Caliber.122mm | 450 |
-| `ID_125x570mm` | Ammo/125x570mm | `ID.Item.125x570mm` | 125mm HEAT-MP Shell | ammo | 5 | 3 x 2 | 24 | Item.Caliber.125x570mm | 210 |
-| `ID_12g` | Ammo/12Guage | `Id.Item.12g` | 12g | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | — |
-| `ID_7mmBuckshot` | Ammo/12Guage/7mmBuck | `Id.Item.12g.7mmBuck` | 12g 7mm Buckshot  | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | 60 |
-| `ID_12g_RifledSlug` | Ammo/12Guage/Slug | `Id.Item.12g.RifledSlug` | 12g Rifled Slug | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | 200 |
-| `ID_155mm` | Ammo/155mm | `ID.Item.155mm` | 155mm HE Shell | ammo | — | 3 x 2 | — | Item.Caliber.155mm | 200 |
-| `ID_155mm_Expensive` | Ammo/155mm | `ID.Item.155mm.Expensive` | 155mm HE Shell | ammo | — | 3 x 2 | 42 | Item.Caliber.155mm.Expensive | 120 |
-| `ID_155mm_Expensive_SB` | Ammo/155mm | `ID.Item.155mm.Expensive.Sandbox` | 155mm Expensive (SB) | ammo | 30 | 3 x 2 | — | Item.Caliber.155mm.Expensive | 600 |
-| `ID_155mm_SB` | Ammo/155mm | `ID.Item.155mm.Sandbox` | 155mm (SB) | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm | 600 |
-| `ID_155mm_Standard` | Ammo/155mm | `ID.Item.155mm.Standard` | 155mm HE Shell | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm.Standard | 120 |
-| `ID_155mm_Standard_SB` | Ammo/155mm | `ID.Item.155mm.Standard.Sandbox` | 155mm Standard (SB) | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm.Standard | 600 |
-| `ID_20x102mm` | Ammo/20x102mm | `Id.Item.20x102mm` | 20x102mm | ammo | 100 | 2 x 2 | — | Item.Caliber.20x102mm | 600 |
-| `ID_308` | Ammo/308 | `Id.Item.308Win` | .308 Win  | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 40 |
-| `ID_308_ArmorPiercing` | Ammo/308 | `Id.Item.308Win.ArmorPiercing` | .308 Win Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 180 |
-| `ID_308_ArmorPiercing_Tracer` | Ammo/308 | `Id.Item.308Win.ArmorPiercing.Tracer` | .308 Win Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 180 |
-| `ID_308_HollowPoint` | Ammo/308 | `Id.Item.308Win.HollowPoint` | .308 Win  | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 70 |
-| `ID_308_HollowPoint_Tracer` | Ammo/308 | `Id.Item.308Win.HollowPoint.Tracer` | .308 Win Flesh Damage (HP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 70 |
-| `ID_308_Tracer` | Ammo/308 | `Id.Item.308Win.Tracer` | .308 Win Standard (FMJ) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 40 |
-| `ID_30mm` | Ammo/30mm | `Id.Item.30mm` | 30mm HE Cannon | ammo | 50 (overrides: Inventory.Slot.Vehicle.Storage 200) | 2 x 2 | — | Item.Caliber.30mm | 500 |
-| `ID_338Nor_ArmorPiercing` | Ammo/338NormaMagnum | `Id.Item.338Nor.ArmourPiercing` | .338 AP | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
-| `ID_338Nor_HollowPoint` | Ammo/338NormaMagnum | `Id.Item.338Nor.HollowPoint` | .338 HP | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
-| `ID_338Nor_HollowPoint_Tracer` | Ammo/338NormaMagnum | `Id.Item.338Nor.HollowPoint.Tracer` | .338 HP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
-| `ID_338Nor_Tracer` | Ammo/338NormaMagnum | `Id.Item.338Nor.Tracer` | .338 (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
-| `ID_338Norm_ArmorPiercing_Tracer` | Ammo/338NormaMagnum | `Id.Item.338Nor.ArmourPiercing.Tracer` | .338 AP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
-| `ID_338NormaMagnum` | Ammo/338NormaMagnum | `Id.Item.338Nor` | .338 | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
-| `ID_35x228mm` | Ammo/35x228mm | `ID.Item.35x228mm` | 35x228mm Anti-Air Cannon | ammo | 75 | 2 x 2 | 1.56 | Item.Caliber.35x228mm | 200 |
-| `ID_40mm` | Ammo/40mm | `Id.Item.40mm` | 40mm  | ammo | 1 | 2 x 1 | 0.28 | Item.Caliber.40mm | 100 |
-| `ID_45ACP` | Ammo/45ACP | `Id.Item.45ACP` | .45 ACP | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 10 |
-| `ID_45ACP_ArmorPiercing` | Ammo/45ACP | `Id.Item.45ACP.ArmorPiercing` | .45 ACP Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 20 |
-| `ID_45ACP_ArmorPiercingTracer` | Ammo/45ACP | `Id.Item.45ACP.ArmorPiercing.Tracer` | .45 ACP Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 20 |
-| `ID_45ACP_HollowPoint` | Ammo/45ACP | `Id.Item.45ACP.HollowPoint` | .45 ACP Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 15 |
-| `ID_45ACP_HollowPointTracer` | Ammo/45ACP | `Id.Item.45ACP.HollowPoint.Tracer` | .45 ACP Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 15 |
-| `ID_45ACP_Tracer` | Ammo/45ACP | `Id.Item.45ACP.Tracer` | .45 ACP Standard (FMJ) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 10 |
-| `ID_45Colt` | Ammo/45Colt | `Id.Item.45Colt` | .45 Colt | ammo | 30 | — | — | Item.Caliber.45Colt | 33 |
-| `ID_45Colt_ArmorPiercing` | Ammo/45Colt | `Id.Item.45Colt.ArmorPiercing` | .45 Colt Armor Piercing (AP) | ammo | 30 | — | — | Item.Caliber.45Colt | 66 |
-| `ID_45Colt_ArmorPiercing_Tracer` | Ammo/45Colt | `Id.Item.45Colt.ArmorPiercing.Tracer` | .45 Colt Armor Piercing (AP) | ammo | 30 | — | — | Item.Caliber.45Colt | 66 |
-| `ID_45Colt_HollowPoint` | Ammo/45Colt | `Id.Item.45Colt.HollowPoint` | .45 Colt Flesh Damage (HP) | ammo | 30 | — | — | Item.Caliber.45Colt | 50 |
-| `ID_45Colt_HollowPoint_Tracer` | Ammo/45Colt | `Id.Item.45Colt.HollowPoint.Tracer` | .45 Colt Flesh Damage (HP) | ammo | 30 | — | — | Item.Caliber.45Colt | 50 |
-| `ID_45Colt_Tracer` | Ammo/45Colt | `Id.Item.45Colt.Tracer` | .45 Colt Standard (FMJ) | ammo | 30 | — | — | Item.Caliber.45Colt | 33 |
-| `ID_50AE` | Ammo/50AE | `Id.Item.50AE` | 50AE | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 20 |
-| `ID_50AE_ArmorPiercing` | Ammo/50AE | `Id.Item.50AE.ArmorPiercing` | 50AE Armor Piercing (AP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 90 |
-| `ID_50AE_ArmorPiercing_Tracer` | Ammo/50AE | `Id.Item.50AE.ArmorPiercing.Tracer` | 50AE Armor Piercing (AP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 90 |
-| `ID_50AE_HollowPoint` | Ammo/50AE | `Id.Item.50AE.HollowPoint` | 50AE Flesh Damage (HP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 35 |
-| `ID_50AE_HollowPoint_Tracer` | Ammo/50AE | `Id.Item.50AE.HollowPoint.Tracer` | 50AE Flesh Damage (HP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 35 |
-| `ID_50AE_Tracer` | Ammo/50AE | `Id.Item.50AE.Tracer` | 50AE Standard (FMJ) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 20 |
-| `ID_50Cal` | Ammo/50Cal | `Id.Item.50Cal` | .50Cal | ammo | 20 | 2 x 1 | — | Item.Caliber.50Cal | 250 |
-| `ID_50Cal_ArmorPiercing` | Ammo/50Cal | `Id.Item.50Cal.ArmorPiercing` | .50 Cal AP | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 500 |
-| `ID_50Cal_ArmorPiercing_Tracer` | Ammo/50Cal | `Id.Item.50Cal.ArmorPiercing.Tracer` | .50 Cal AP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 500 |
-| `ID_50Cal_HollowPoint` | Ammo/50Cal | `Id.Item.50Cal.HollowPoint` | .50 Cal HP | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 375 |
-| `ID_50Cal_HollowPoint_Tracer` | Ammo/50Cal | `Id.Item.50Cal.HollowPoint.Tracer` | .50 Cal HP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 375 |
-| `ID_50Cal_Tracer` | Ammo/50Cal | `Id.Item.50Cal.Tracer` | .50Cal Standard (FMJ) | ammo | 20 (overrides: Inventory.Slot.Vehicle.Storage 50, Inventory.Type.Vehicle 50) | 2 x 1 | — | Item.Caliber.50Cal | 250 |
-| `ID_545mm` | Ammo/545mm | `Id.Item.545mm` | 5.45x39mm | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 15 |
-| `ID_545mm_ArmorPiercing` | Ammo/545mm | `Id.Item.545mm.ArmorPiercing` | 5.45mm Armor Piercing (AP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 40 |
-| `ID_545mm_ArmorPiercing_Tracer` | Ammo/545mm | `Id.Item.545mm.ArmorPiercing.Tracer` | 5.45mm Armor Piercing (AP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 40 |
-| `ID_545mm_HollowPoint` | Ammo/545mm | `Id.Item.545mm.HollowPoint` | 5.45mm Flesh Damage (HP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 25 |
-| `ID_545mm_HollowPoint_Tracer` | Ammo/545mm | `Id.Item.545mm.HollowPoint.Tracer` | 5.45mm Flesh Damage (HP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 25 |
-| `ID_545mm_Tracer` | Ammo/545mm | `Id.Item.545mm.Tracer` | 5.45mm Standard (FMJ) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 15 |
-| `ID_556mm` | Ammo/556mm | `Id.Item.556mm` | 5.56x45mm | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 15 |
-| `ID_556mm_ArmorPiercing` | Ammo/556mm | `Id.Item.556mm.ArmorPiercing` | 5.56mm Armor Piercing (AP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 40 |
-| `ID_556mm_ArmorPiercing_Tracer` | Ammo/556mm | `Id.Item.556mm.ArmorPiercing.Tracer` | 5.56mm Armor Piercing (AP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 40 |
-| `ID_556mm_HollowPoint` | Ammo/556mm | `Id.Item.556mm.HollowPoint` | 5.56mm Flesh Damage (HP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 25 |
-| `ID_556mm_HollowPoint_Tracer` | Ammo/556mm | `Id.Item.556mm.HollowPoint.Tracer` | 5.56mm Flesh Damage (HP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 25 |
-| `ID_556mm_Tracer` | Ammo/556mm | `Id.Item.556mm.Tracer` | 5.56mm Standard (FMJ) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 15 |
-| `ID_70mm` | Ammo/70mm | `ID.Item.70mm` | 70mm | ammo | — | 3 x 1 | — | Item.Caliber.70mm | — |
-| `ID_72mm` | Ammo/72mm | `Id.Item.72mm` | 72mm | ammo | — | 2 x 1 | — | Item.Caliber.72mm | 600 |
-| `ID_762mm` | Ammo/762mm | `Id.Item.762mm` | 7.62x39mm | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 40 |
-| `ID_762mm_ArmorPiercing` | Ammo/762mm | `Id.Item.762mm.ArmorPiercing` | 7.62mm Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 150 |
-| `ID_762mm_ArmorPiercing_Tracer` | Ammo/762mm | `Id.Item.762mm.ArmorPiercing.Tracer` | 7.62mm Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 150 |
-| `ID_762mm_HollowPoint` | Ammo/762mm | `Id.Item.762mm.HollowPoint` | 7.62mm Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 90 |
-| `ID_762mm_HollowPoint_Tracer` | Ammo/762mm | `Id.Item.762mm.HollowPoint.Tracer` | 7.62mm Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 90 |
-| `ID_762mm_Tracer` | Ammo/762mm | `Id.Item.762mm.Tracer` | 7.62mm Standard (FMJ) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 40 |
-| `ID_762x51mm` | Ammo/762x51mm | `Id.Item.762x51mm` | 7.62x51mm | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 300 |
-| `ID_762x51mm_ArmorPiercing` | Ammo/762x51mm | `Id.Item.762x51mm.ArmorPiercing` | 7.62x51mm Armor Piercing (AP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
-| `ID_762x51mm_ArmorPiercing_Tracer` | Ammo/762x51mm | `Id.Item.762x51mm.ArmorPiercing.Tracer` | 7.62x51mm Armor Piercing (AP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 250 |
-| `ID_762x51mm_HollowPoint` | Ammo/762x51mm | `Id.Item.762x51mm.HollowPoint` | 762x51mm Flesh Damage (HP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
-| `ID_762x51mm_HollowPoint_Tracer` | Ammo/762x51mm | `Id.Item.762x51mm.HollowPoint.Tracer` | 762x51mm Flesh Damage (HP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
-| `ID_762x51mm_Tracer` | Ammo/762x51mm | `Id.Item.762x51mm.Tracer` | 7.62x51mm Standard (FMJ) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 200 |
-| `ID_762x54mm` | Ammo/762x54mm | `Id.Item.762x54mm` | 7.62x54mm | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 30 |
-| `ID_762x54mm_ArmorPiercing` | Ammo/762x54mm | `Id.Item.762x54mm.ArmorPiercing` | 7.62x54mm Armor Piercing (AP) | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 90 |
-| `ID_762x54mm_ArmorPiercing_Tracer` | Ammo/762x54mm | `Id.Item.762x54mm.ArmorPiercing.Tracer` | 7.62x54mm Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 90 |
-| `ID_762x54mm_HollowPoint` | Ammo/762x54mm | `Id.Item.762x54mm.HollowPoint` | 7.62x54mm Flesh Damage (HP) | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 55 |
-| `ID_762x54mm_HollowPoint_Tracer` | Ammo/762x54mm | `Id.Item.762x54mm.HollowPoint.Tracer` | 7.62x54mm Flesh Damage (HP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 55 |
-| `ID_762x54mm_Tracer` | Ammo/762x54mm | `Id.Item.762x54mm.Tracer` | 7.62x54mm Standard (FMJ) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 30 |
-| `ID_84mm` | Ammo/84mm | `Id.Item.84mm` | 84mm | ammo | — | 2 x 1 | 3.5 | Item.Caliber.84mm | 200 |
-| `ID_93mm` | Ammo/93mm | `Id.Item.93mm` | 93mm | ammo | — | 3 x 1 | 2.6 | Item.Caliber.93mm | 200 |
-| `ID_9mm` | Ammo/9mm | `Id.Item.9mm` | 9x19mm | ammo | 80 | 2 x 1 | — | Item.Caliber.9mm | 10 |
-| `ID_9mm_ArmorPiercing` | Ammo/9mm | `Id.Item.9mm.ArmorPiercing` | 9mm Armor Piercing (AP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 20 |
-| `ID_9mm_ArmorPiercing_Tracer` | Ammo/9mm | `Id.Item.9mm.ArmorPiercing.Tracer` | 9mm Armor Piercing (AP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 20 |
-| `ID_9mm_HollowPoint` | Ammo/9mm | `Id.Item.9mm.HollowPoint` | 9mm Flesh Damage (HP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 15 |
-| `ID_9mm_HollowPoint_Tracer` | Ammo/9mm | `Id.Item.9mm.HollowPoint.Tracer` | 9mm Flesh Damage (HP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 15 |
-| `ID_9mm_Tracer` | Ammo/9mm | `Id.Item.9mm.Tracer` | 9mm Standard (FMJ) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 10 |
-| `ID_DebugHomingRocket_Ammo` | Ammo/DebugHomingRocket | `Id.Item.DebugHomingRocketAmmo` | RocketTesting 84mm | ammo | 99 | — | — | Item.Caliber.84mm | — |
+| [`ID_120x570mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/120x570mm/ID_120x570mm.json) | Ammo/120x570mm | `ID.Item.120x570mm` | 120mm HEAT-MP Shell | ammo | 5 | 3 x 2 | 24 | Item.Caliber.120x570mm | 210 |
+| [`ID_120x800mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/120x800mm/ID_120x800mm.json) | Ammo/120x800mm | `Id.Item.120x800mm` | 81mm | ammo | 10 | 3 x 2 | — | Item.Caliber.120x800mm | 600 |
+| [`ID_122mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/122mm/ID_122mm.json) | Ammo/122mm | `Id.Item.122mm` | 122mm HE Rocket | ammo | 3 | 6 x 2 | — | Item.Caliber.122mm | 450 |
+| [`ID_125x570mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/125x570mm/ID_125x570mm.json) | Ammo/125x570mm | `ID.Item.125x570mm` | 125mm HEAT-MP Shell | ammo | 5 | 3 x 2 | 24 | Item.Caliber.125x570mm | 210 |
+| [`ID_12g`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/12Guage/ID_12g.json) | Ammo/12Guage | `Id.Item.12g` | 12g | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | — |
+| [`ID_7mmBuckshot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/12Guage/7mmBuck/ID_7mmBuckshot.json) | Ammo/12Guage/7mmBuck | `Id.Item.12g.7mmBuck` | 12g 7mm Buckshot  | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | 60 |
+| [`ID_12g_RifledSlug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/12Guage/Slug/ID_12g_RifledSlug.json) | Ammo/12Guage/Slug | `Id.Item.12g.RifledSlug` | 12g Rifled Slug | ammo | 24 | 2 x 1 | — | Item.Caliber.12g | 200 |
+| [`ID_155mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm.json) | Ammo/155mm | `ID.Item.155mm` | 155mm HE Shell | ammo | — | 3 x 2 | — | Item.Caliber.155mm | 200 |
+| [`ID_155mm_Expensive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_Expensive.json) | Ammo/155mm | `ID.Item.155mm.Expensive` | 155mm HE Shell | ammo | — | 3 x 2 | 42 | Item.Caliber.155mm.Expensive | 120 |
+| [`ID_155mm_Expensive_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_Expensive_SB.json) | Ammo/155mm | `ID.Item.155mm.Expensive.Sandbox` | 155mm Expensive (SB) | ammo | 30 | 3 x 2 | — | Item.Caliber.155mm.Expensive | 600 |
+| [`ID_155mm_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_SB.json) | Ammo/155mm | `ID.Item.155mm.Sandbox` | 155mm (SB) | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm | 600 |
+| [`ID_155mm_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_Standard.json) | Ammo/155mm | `ID.Item.155mm.Standard` | 155mm HE Shell | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm.Standard | 120 |
+| [`ID_155mm_Standard_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/155mm/ID_155mm_Standard_SB.json) | Ammo/155mm | `ID.Item.155mm.Standard.Sandbox` | 155mm Standard (SB) | ammo | 10 | 3 x 2 | — | Item.Caliber.155mm.Standard | 600 |
+| [`ID_20x102mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/20x102mm/ID_20x102mm.json) | Ammo/20x102mm | `Id.Item.20x102mm` | 20x102mm | ammo | 100 | 2 x 2 | — | Item.Caliber.20x102mm | 600 |
+| [`ID_308`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/308/ID_308.json) | Ammo/308 | `Id.Item.308Win` | .308 Win  | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 40 |
+| [`ID_308_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/308/ID_308_ArmorPiercing.json) | Ammo/308 | `Id.Item.308Win.ArmorPiercing` | .308 Win Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 180 |
+| [`ID_308_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/308/ID_308_ArmorPiercing_Tracer.json) | Ammo/308 | `Id.Item.308Win.ArmorPiercing.Tracer` | .308 Win Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 180 |
+| [`ID_308_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/308/ID_308_HollowPoint.json) | Ammo/308 | `Id.Item.308Win.HollowPoint` | .308 Win  | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 70 |
+| [`ID_308_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/308/ID_308_HollowPoint_Tracer.json) | Ammo/308 | `Id.Item.308Win.HollowPoint.Tracer` | .308 Win Flesh Damage (HP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 70 |
+| [`ID_308_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/308/ID_308_Tracer.json) | Ammo/308 | `Id.Item.308Win.Tracer` | .308 Win Standard (FMJ) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.308Win | 40 |
+| [`ID_30mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/30mm/ID_30mm.json) | Ammo/30mm | `Id.Item.30mm` | 30mm HE Cannon | ammo | 50 (overrides: Inventory.Slot.Vehicle.Storage 200) | 2 x 2 | — | Item.Caliber.30mm | 500 |
+| [`ID_338Nor_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_ArmorPiercing.json) | Ammo/338NormaMagnum | `Id.Item.338Nor.ArmourPiercing` | .338 AP | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| [`ID_338Nor_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_HollowPoint.json) | Ammo/338NormaMagnum | `Id.Item.338Nor.HollowPoint` | .338 HP | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| [`ID_338Nor_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_HollowPoint_Tracer.json) | Ammo/338NormaMagnum | `Id.Item.338Nor.HollowPoint.Tracer` | .338 HP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| [`ID_338Nor_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/338NormaMagnum/ID_338Nor_Tracer.json) | Ammo/338NormaMagnum | `Id.Item.338Nor.Tracer` | .338 (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| [`ID_338Norm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/338NormaMagnum/ID_338Norm_ArmorPiercing_Tracer.json) | Ammo/338NormaMagnum | `Id.Item.338Nor.ArmourPiercing.Tracer` | .338 AP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| [`ID_338NormaMagnum`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/338NormaMagnum/ID_338NormaMagnum.json) | Ammo/338NormaMagnum | `Id.Item.338Nor` | .338 | ammo | 30 | 2 x 1 | — | Item.Caliber.338Nor | — |
+| [`ID_35x228mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/35x228mm/ID_35x228mm.json) | Ammo/35x228mm | `ID.Item.35x228mm` | 35x228mm Anti-Air Cannon | ammo | 75 | 2 x 2 | 1.56 | Item.Caliber.35x228mm | 200 |
+| [`ID_40mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/40mm/ID_40mm.json) | Ammo/40mm | `Id.Item.40mm` | 40mm  | ammo | 1 | 2 x 1 | 0.28 | Item.Caliber.40mm | 100 |
+| [`ID_45ACP`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45ACP/ID_45ACP.json) | Ammo/45ACP | `Id.Item.45ACP` | .45 ACP | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 10 |
+| [`ID_45ACP_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45ACP/ID_45ACP_ArmorPiercing.json) | Ammo/45ACP | `Id.Item.45ACP.ArmorPiercing` | .45 ACP Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 20 |
+| [`ID_45ACP_ArmorPiercingTracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45ACP/ID_45ACP_ArmorPiercingTracer.json) | Ammo/45ACP | `Id.Item.45ACP.ArmorPiercing.Tracer` | .45 ACP Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 20 |
+| [`ID_45ACP_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPoint.json) | Ammo/45ACP | `Id.Item.45ACP.HollowPoint` | .45 ACP Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 15 |
+| [`ID_45ACP_HollowPointTracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45ACP/ID_45ACP_HollowPointTracer.json) | Ammo/45ACP | `Id.Item.45ACP.HollowPoint.Tracer` | .45 ACP Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 15 |
+| [`ID_45ACP_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45ACP/ID_45ACP_Tracer.json) | Ammo/45ACP | `Id.Item.45ACP.Tracer` | .45 ACP Standard (FMJ) | ammo | 60 | 2 x 1 | — | Item.Caliber.45ACP | 10 |
+| [`ID_45Colt`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45Colt/ID_45Colt.json) | Ammo/45Colt | `Id.Item.45Colt` | .45 Colt | ammo | 30 | — | — | Item.Caliber.45Colt | 33 |
+| [`ID_45Colt_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45Colt/ID_45Colt_ArmorPiercing.json) | Ammo/45Colt | `Id.Item.45Colt.ArmorPiercing` | .45 Colt Armor Piercing (AP) | ammo | 30 | — | — | Item.Caliber.45Colt | 66 |
+| [`ID_45Colt_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45Colt/ID_45Colt_ArmorPiercing_Tracer.json) | Ammo/45Colt | `Id.Item.45Colt.ArmorPiercing.Tracer` | .45 Colt Armor Piercing (AP) | ammo | 30 | — | — | Item.Caliber.45Colt | 66 |
+| [`ID_45Colt_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45Colt/ID_45Colt_HollowPoint.json) | Ammo/45Colt | `Id.Item.45Colt.HollowPoint` | .45 Colt Flesh Damage (HP) | ammo | 30 | — | — | Item.Caliber.45Colt | 50 |
+| [`ID_45Colt_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45Colt/ID_45Colt_HollowPoint_Tracer.json) | Ammo/45Colt | `Id.Item.45Colt.HollowPoint.Tracer` | .45 Colt Flesh Damage (HP) | ammo | 30 | — | — | Item.Caliber.45Colt | 50 |
+| [`ID_45Colt_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/45Colt/ID_45Colt_Tracer.json) | Ammo/45Colt | `Id.Item.45Colt.Tracer` | .45 Colt Standard (FMJ) | ammo | 30 | — | — | Item.Caliber.45Colt | 33 |
+| [`ID_50AE`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50AE/ID_50AE.json) | Ammo/50AE | `Id.Item.50AE` | 50AE | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 20 |
+| [`ID_50AE_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50AE/ID_50AE_ArmorPiercing.json) | Ammo/50AE | `Id.Item.50AE.ArmorPiercing` | 50AE Armor Piercing (AP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 90 |
+| [`ID_50AE_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50AE/ID_50AE_ArmorPiercing_Tracer.json) | Ammo/50AE | `Id.Item.50AE.ArmorPiercing.Tracer` | 50AE Armor Piercing (AP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 90 |
+| [`ID_50AE_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50AE/ID_50AE_HollowPoint.json) | Ammo/50AE | `Id.Item.50AE.HollowPoint` | 50AE Flesh Damage (HP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 35 |
+| [`ID_50AE_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50AE/ID_50AE_HollowPoint_Tracer.json) | Ammo/50AE | `Id.Item.50AE.HollowPoint.Tracer` | 50AE Flesh Damage (HP) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 35 |
+| [`ID_50AE_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50AE/ID_50AE_Tracer.json) | Ammo/50AE | `Id.Item.50AE.Tracer` | 50AE Standard (FMJ) | ammo | 30 | 2 x 1 | — | Item.Caliber.50AE | 20 |
+| [`ID_50Cal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50Cal/ID_50Cal.json) | Ammo/50Cal | `Id.Item.50Cal` | .50Cal | ammo | 20 | 2 x 1 | — | Item.Caliber.50Cal | 250 |
+| [`ID_50Cal_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing.json) | Ammo/50Cal | `Id.Item.50Cal.ArmorPiercing` | .50 Cal AP | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 500 |
+| [`ID_50Cal_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50Cal/ID_50Cal_ArmorPiercing_Tracer.json) | Ammo/50Cal | `Id.Item.50Cal.ArmorPiercing.Tracer` | .50 Cal AP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 500 |
+| [`ID_50Cal_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50Cal/ID_50Cal_HollowPoint.json) | Ammo/50Cal | `Id.Item.50Cal.HollowPoint` | .50 Cal HP | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 375 |
+| [`ID_50Cal_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50Cal/ID_50Cal_HollowPoint_Tracer.json) | Ammo/50Cal | `Id.Item.50Cal.HollowPoint.Tracer` | .50 Cal HP (T) | ammo | 30 | 2 x 1 | — | Item.Caliber.50Cal | 375 |
+| [`ID_50Cal_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/50Cal/ID_50Cal_Tracer.json) | Ammo/50Cal | `Id.Item.50Cal.Tracer` | .50Cal Standard (FMJ) | ammo | 20 (overrides: Inventory.Slot.Vehicle.Storage 50, Inventory.Type.Vehicle 50) | 2 x 1 | — | Item.Caliber.50Cal | 250 |
+| [`ID_545mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/545mm/ID_545mm.json) | Ammo/545mm | `Id.Item.545mm` | 5.45x39mm | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 15 |
+| [`ID_545mm_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/545mm/ID_545mm_ArmorPiercing.json) | Ammo/545mm | `Id.Item.545mm.ArmorPiercing` | 5.45mm Armor Piercing (AP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 40 |
+| [`ID_545mm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/545mm/ID_545mm_ArmorPiercing_Tracer.json) | Ammo/545mm | `Id.Item.545mm.ArmorPiercing.Tracer` | 5.45mm Armor Piercing (AP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 40 |
+| [`ID_545mm_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/545mm/ID_545mm_HollowPoint.json) | Ammo/545mm | `Id.Item.545mm.HollowPoint` | 5.45mm Flesh Damage (HP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 25 |
+| [`ID_545mm_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/545mm/ID_545mm_HollowPoint_Tracer.json) | Ammo/545mm | `Id.Item.545mm.HollowPoint.Tracer` | 5.45mm Flesh Damage (HP) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 25 |
+| [`ID_545mm_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/545mm/ID_545mm_Tracer.json) | Ammo/545mm | `Id.Item.545mm.Tracer` | 5.45mm Standard (FMJ) | ammo | 80 | 2 x 1 | — | Item.Caliber.545mm | 15 |
+| [`ID_556mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/556mm/ID_556mm.json) | Ammo/556mm | `Id.Item.556mm` | 5.56x45mm | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 15 |
+| [`ID_556mm_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/556mm/ID_556mm_ArmorPiercing.json) | Ammo/556mm | `Id.Item.556mm.ArmorPiercing` | 5.56mm Armor Piercing (AP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 40 |
+| [`ID_556mm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/556mm/ID_556mm_ArmorPiercing_Tracer.json) | Ammo/556mm | `Id.Item.556mm.ArmorPiercing.Tracer` | 5.56mm Armor Piercing (AP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 40 |
+| [`ID_556mm_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/556mm/ID_556mm_HollowPoint.json) | Ammo/556mm | `Id.Item.556mm.HollowPoint` | 5.56mm Flesh Damage (HP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 25 |
+| [`ID_556mm_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/556mm/ID_556mm_HollowPoint_Tracer.json) | Ammo/556mm | `Id.Item.556mm.HollowPoint.Tracer` | 5.56mm Flesh Damage (HP) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 25 |
+| [`ID_556mm_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/556mm/ID_556mm_Tracer.json) | Ammo/556mm | `Id.Item.556mm.Tracer` | 5.56mm Standard (FMJ) | ammo | 80 (overrides: Inventory.Slot.Vehicle.Storage 150) | 2 x 1 | — | Item.Caliber.556mm | 15 |
+| [`ID_70mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/70mm/ID_70mm.json) | Ammo/70mm | `ID.Item.70mm` | 70mm | ammo | — | 3 x 1 | — | Item.Caliber.70mm | — |
+| [`ID_72mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/72mm/ID_72mm.json) | Ammo/72mm | `Id.Item.72mm` | 72mm | ammo | — | 2 x 1 | — | Item.Caliber.72mm | 600 |
+| [`ID_762mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762mm/ID_762mm.json) | Ammo/762mm | `Id.Item.762mm` | 7.62x39mm | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 40 |
+| [`ID_762mm_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762mm/ID_762mm_ArmorPiercing.json) | Ammo/762mm | `Id.Item.762mm.ArmorPiercing` | 7.62mm Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 150 |
+| [`ID_762mm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762mm/ID_762mm_ArmorPiercing_Tracer.json) | Ammo/762mm | `Id.Item.762mm.ArmorPiercing.Tracer` | 7.62mm Armor Piercing (AP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 150 |
+| [`ID_762mm_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762mm/ID_762mm_HollowPoint.json) | Ammo/762mm | `Id.Item.762mm.HollowPoint` | 7.62mm Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 90 |
+| [`ID_762mm_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762mm/ID_762mm_HollowPoint_Tracer.json) | Ammo/762mm | `Id.Item.762mm.HollowPoint.Tracer` | 7.62mm Flesh Damage (HP) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 90 |
+| [`ID_762mm_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762mm/ID_762mm_Tracer.json) | Ammo/762mm | `Id.Item.762mm.Tracer` | 7.62mm Standard (FMJ) | ammo | 60 | 2 x 1 | — | Item.Caliber.762mm | 40 |
+| [`ID_762x51mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x51mm/ID_762x51mm.json) | Ammo/762x51mm | `Id.Item.762x51mm` | 7.62x51mm | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 300 |
+| [`ID_762x51mm_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x51mm/ID_762x51mm_ArmorPiercing.json) | Ammo/762x51mm | `Id.Item.762x51mm.ArmorPiercing` | 7.62x51mm Armor Piercing (AP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
+| [`ID_762x51mm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x51mm/ID_762x51mm_ArmorPiercing_Tracer.json) | Ammo/762x51mm | `Id.Item.762x51mm.ArmorPiercing.Tracer` | 7.62x51mm Armor Piercing (AP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 250 |
+| [`ID_762x51mm_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x51mm/ID_762x51mm_HollowPoint.json) | Ammo/762x51mm | `Id.Item.762x51mm.HollowPoint` | 762x51mm Flesh Damage (HP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
+| [`ID_762x51mm_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x51mm/ID_762x51mm_HollowPoint_Tracer.json) | Ammo/762x51mm | `Id.Item.762x51mm.HollowPoint.Tracer` | 762x51mm Flesh Damage (HP) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | — |
+| [`ID_762x51mm_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x51mm/ID_762x51mm_Tracer.json) | Ammo/762x51mm | `Id.Item.762x51mm.Tracer` | 7.62x51mm Standard (FMJ) | ammo | 100 (overrides: Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x51mm | 200 |
+| [`ID_762x54mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x54mm/ID_762x54mm.json) | Ammo/762x54mm | `Id.Item.762x54mm` | 7.62x54mm | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 30 |
+| [`ID_762x54mm_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing.json) | Ammo/762x54mm | `Id.Item.762x54mm.ArmorPiercing` | 7.62x54mm Armor Piercing (AP) | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 90 |
+| [`ID_762x54mm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x54mm/ID_762x54mm_ArmorPiercing_Tracer.json) | Ammo/762x54mm | `Id.Item.762x54mm.ArmorPiercing.Tracer` | 7.62x54mm Armor Piercing (AP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 90 |
+| [`ID_762x54mm_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x54mm/ID_762x54mm_HollowPoint.json) | Ammo/762x54mm | `Id.Item.762x54mm.HollowPoint` | 7.62x54mm Flesh Damage (HP) | ammo | 40 | 2 x 1 | — | Item.Caliber.762x54mm | 55 |
+| [`ID_762x54mm_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x54mm/ID_762x54mm_HollowPoint_Tracer.json) | Ammo/762x54mm | `Id.Item.762x54mm.HollowPoint.Tracer` | 7.62x54mm Flesh Damage (HP) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 55 |
+| [`ID_762x54mm_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/762x54mm/ID_762x54mm_Tracer.json) | Ammo/762x54mm | `Id.Item.762x54mm.Tracer` | 7.62x54mm Standard (FMJ) | ammo | 40 (overrides: Inventory.Slot.Vehicle.Storage 150, Inventory.Type.Vehicle 150) | 2 x 1 | — | Item.Caliber.762x54mm | 30 |
+| [`ID_84mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/84mm/ID_84mm.json) | Ammo/84mm | `Id.Item.84mm` | 84mm | ammo | — | 2 x 1 | 3.5 | Item.Caliber.84mm | 200 |
+| [`ID_93mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/93mm/ID_93mm.json) | Ammo/93mm | `Id.Item.93mm` | 93mm | ammo | — | 3 x 1 | 2.6 | Item.Caliber.93mm | 200 |
+| [`ID_9mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/9mm/ID_9mm.json) | Ammo/9mm | `Id.Item.9mm` | 9x19mm | ammo | 80 | 2 x 1 | — | Item.Caliber.9mm | 10 |
+| [`ID_9mm_ArmorPiercing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/9mm/ID_9mm_ArmorPiercing.json) | Ammo/9mm | `Id.Item.9mm.ArmorPiercing` | 9mm Armor Piercing (AP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 20 |
+| [`ID_9mm_ArmorPiercing_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/9mm/ID_9mm_ArmorPiercing_Tracer.json) | Ammo/9mm | `Id.Item.9mm.ArmorPiercing.Tracer` | 9mm Armor Piercing (AP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 20 |
+| [`ID_9mm_HollowPoint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/9mm/ID_9mm_HollowPoint.json) | Ammo/9mm | `Id.Item.9mm.HollowPoint` | 9mm Flesh Damage (HP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 15 |
+| [`ID_9mm_HollowPoint_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/9mm/ID_9mm_HollowPoint_Tracer.json) | Ammo/9mm | `Id.Item.9mm.HollowPoint.Tracer` | 9mm Flesh Damage (HP) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 15 |
+| [`ID_9mm_Tracer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/9mm/ID_9mm_Tracer.json) | Ammo/9mm | `Id.Item.9mm.Tracer` | 9mm Standard (FMJ) | ammo | 100 | 2 x 1 | — | Item.Caliber.9mm | 10 |
+| [`ID_DebugHomingRocket_Ammo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/ID_DebugHomingRocket_Ammo.json) | Ammo/DebugHomingRocket | `Id.Item.DebugHomingRocketAmmo` | RocketTesting 84mm | ammo | 99 | — | — | Item.Caliber.84mm | — |
 <!-- /resource_tables -->
 
-*Source: `Wardogs/Content/Items/Resources/` (99 `.json`, 94 item definitions). Display names from `Wardogs/Content/UI/Data/Entities/` and prices from the vendor tables under `NPCs/Vendor/`. Generated by `_tools/resource_tables.py`.*
+*Source: [`Wardogs/Content/Items/Resources/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources) (99 `.json`, 94 item definitions). Display names from [`Wardogs/Content/UI/Data/Entities/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Entities) and prices from the vendor tables under [`NPCs/Vendor/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor). Generated by `_tools/resource_tables.py`.*
 
 ---
 
-*Source files: `Wardogs/Content/Items/` (259 `.json`).*
+*Source files: [`Wardogs/Content/Items/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items) (259 `.json`).*
 
 ### Other assets (round 73)
 
-- `CF_Animation_ADSOut_WEPN_029_Curve`: the Galil (WEPN_029) ADS-out blend. Two linear keys: time 0.55 gives 0, time 1.0 gives 1, so the blend does not start moving until 55 percent of the way through.
+- [`CF_Animation_ADSOut_WEPN_029_Curve`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/ADS/WEPN_029/CF_Animation_ADSOut_WEPN_029_Curve.json): the Galil (WEPN_029) ADS-out blend. Two linear keys: time 0.55 gives 0, time 1.0 gives 1, so the blend does not start moving until 55 percent of the way through.
 - The M67 grenade, gold M67 and vehicle-barrel launcher test animation sets, and the Fists, Super Bandage and Rockets audio sets, are listed in [Animation](Wardogs_Animation_v2.md) (section 8) and [Audio](Wardogs_Audio_v2.md). The launcher ones live in a `VehicleBarrelLaunchersTests` folder and are test leftovers.
 
 ## Change log
@@ -610,5 +610,5 @@ The `Resources` folder holds 94 item definitions, almost all ammunition, plus 5 
 |---|---|
 | 2026-10-18 | `data/` re-exported with the v2 usmap (names only; values unchanged): the aim-assist rows in §9 and the Season 02 notes use the corrected `Pull`/`Slow` `Inner`/`Outer` `Hip`/`Ads` names. The values did not move; the first export had put the wrong names on them. |
 | 2026-10-22 | Linked the new [Item Shop](../game-features/Wardogs_ItemShop_v1.md) page (shop and entity tables for every non-weapon item, generated by `_tools/item_shop_tables.py`). |
-| 2026-10-22 | Added the Resources and ammunition section: one row per item definition in `Items/Resources/`, generated by `_tools/resource_tables.py`. |
+| 2026-10-22 | Added the Resources and ammunition section: one row per item definition in [`Items/Resources/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Items/Resources), generated by `_tools/resource_tables.py`. |
 | 2026-10-18 | Round-6 verifier corrections: `SupportFilter` has a fourth mode, `AllowPriority` (unused in data); `DefaultItems` is used only when `DefaultContainerItems` is empty (`0x6784010`), so the M4 Standard Mag loads `Id.Item.556mm.Tracer`. |

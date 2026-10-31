@@ -22,7 +22,7 @@ description: "Vehicle-use helmet: 55% reduction for the head and neck, removes s
 | Price | Not sold (hidden in the shop; a price of 5,000 cash is listed) |
 | Unlock | Not applicable |
 | **Reference** | |
-| Internal name | `ID_TankHelmet` (item `Id.Item.TankHelmet`) |
+| Internal name | [`ID_TankHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_TankHelmet.json) (item `Id.Item.TankHelmet`) |
 {: .wiki-infobox }
 
 The Tank Helmet has a 55% reduction for the head and neck, which is between the [Level 3 Helmet](level-3-helmet.md) (50%) and the [Level 4 Helmet](level-4-helmet.md) (60%). It also muffles vehicle and infantry audio, and removes suppression and tinnitus. The shop data marks it as hidden, so it is not sold in the shop.

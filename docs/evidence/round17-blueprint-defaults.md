@@ -10,7 +10,7 @@ A cooked Blueprint stores only the values that differ from its parent. To settle
 ## Method
 
 1. List and dump packages with `tools/cue4parse_extractor` (`list`, then `dump <files.txt>`), reading the game's own paks. Nothing was run or contacted. The dumps (174 packages, grouped below) stay outside the repository.
-2. For each wanted value, read the class default object (`Default__X_C`) or the item instance export. If the property is absent, follow the Blueprint parent (`Super` of the generated class) until a Blueprint sets it. Item instances fall back to the class Blueprint behind them (for example `ID_AT_Mine` to `BH_AT_MineExtensionData`).
+2. For each wanted value, read the class default object (`Default__X_C`) or the item instance export. If the property is absent, follow the Blueprint parent (`Super` of the generated class) until a Blueprint sets it. Item instances fall back to the class Blueprint behind them (for example [`ID_AT_Mine`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/AT_mine/Content/Data/ID_AT_Mine.json) to `BH_AT_MineExtensionData`).
 3. If no Blueprint sets it, there are two cases. A variable the Blueprint declares itself (listed in its `ChildProperties`) takes its type default (0, false, empty). A property that belongs to a native class takes the constructor default from `assets/data/native-defaults.json`, joined by class and SDK offset.
 4. Montage values (length, notify times, section starts) are read from the cooked `AnimMontage` exports. A missing `RateScale` is the engine default 1.0.
 5. Blueprint bytecode was listed with `tools/cue4parse_extractor/kismet_listing.py` to check how each value is used (for example how the appliable base action turns an animation into a use time).
@@ -24,7 +24,7 @@ Each JSON entry has: `topic` (page), `asset`, `class` (the export read), `proper
 | Actions and the appliable base | `B_Action_Appliable_Base`, `B_Action_Bandage_Use`, `B_Action_MedKit_*`, `B_Action_Enox_Use`, `B_Action_StimPen`, `B_Action_Defibrillator`, `B_Action_Resuscitator`, `B_Action_Revive`, `B_Action_RequestRevive`, `B_Action_ThrowExplosive`, `B_Action_PlaceItem`, build-tool actions |
 | Items and extension data | `BH_Defibrillator_WattsExtensionData`/`Component`, `BH_AT_MineExtensionData`, `BH_ClaymoreExtensionData`, `BH_C4_Data`, the `ID_` definitions of the defibrillator, mines, C4, IED, Molotov, smoke, Medical Bag and the three hammers |
 | Actors | `B_FragGrenade`, `B_GoldFragGrenade`, `B_Molotov` (+ fire field, trigger volume), `B_SmokeGrenade_*`, `B_WorldSmokeGrenade_*`, `BP_SmokeGrenadeVFX`, `PDA_SmokeGrenade`, `DA_SmokeGrenade_*`, `B_AT_Mine`, `B_Claymore`, `B_ThrowableC4`, `B_ThrowableIED`, `B_PlaceableIED`, `GE_MolotovBurning` |
-| Player | `B_WDMoverPlayerCharacter`, `B_WDCore_MoverPlayerCharacter` (the player data asset `WDCore_PlayerData` names the second as the pawn class), `B_WDPlayerVitalityState_Critical` |
+| Player | `B_WDMoverPlayerCharacter`, `B_WDCore_MoverPlayerCharacter` (the player data asset [`WDCore_PlayerData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WDCore/Content/Character/WDCore_PlayerData.json) names the second as the pawn class), `B_WDPlayerVitalityState_Critical` |
 | Montages | 12 medical, 8 throw, 8 place and trigger, 3 hammer use montages, plus equip and holster montages that are not used in the JSON |
 
 ## Counts

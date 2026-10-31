@@ -24,7 +24,7 @@ description: "A shelter built with a Medium or Large Hammer from 250 Build Suppl
 | Rockets | +80% |
 | C4 | +150% |
 | IEDs | +300% |
-| Internal name | `DA_Buildable_Shelter` |
+| Internal name | [`DA_Buildable_Shelter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/SV_Shelter/DA_Buildable_Shelter.json) |
 {: .wiki-infobox }
 
 The Shelter is a single-piece shelter that a Medium or Large Hammer can build. It costs 250 Build Supplies, the most of any structure that a Medium Hammer can build, and it has 2,250 HP. It is a different structure from the [Indirect Fire Shelter](indirect-fire-shelter.md).

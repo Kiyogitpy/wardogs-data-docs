@@ -12,6 +12,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
 import challenge_tables as ct  # noqa: E402
 
 ROOT, DATA, N = ct.ROOT, ct.DATA, ct.n
@@ -98,6 +99,7 @@ def main():
         return 0
     text = open(PAGE, encoding="utf-8", newline="").read().replace("\r\n", "\n")
     new = BLOCK.sub(lambda m: "<!-- aim_assist %s -->\n%s\n<!-- /aim_assist -->" % (m.group(1), b[m.group(1)]), text)
+    new = link_source_output(new)
     if "--check" in a:
         if new != text:
             print("stale: " + PAGE)

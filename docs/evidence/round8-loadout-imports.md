@@ -37,7 +37,7 @@ scan is not limited to class imports. The independent exact-name positive
 control found 15 `WDWeaponOwner` import slots, matching the earlier audit.
 
 The loadouts scene/data imports belong to `W_LoadoutsScene` and
-`DA_LoadoutsScene`. Vendor binding imports belong to `W_VendorSummary` and
+[`DA_LoadoutsScene`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Loadouts/Data/DA_LoadoutsScene.json). Vendor binding imports belong to `W_VendorSummary` and
 `W_VendorSummary_Overview`. They establish native UI dependencies, not a
 saved-preset representation or a call to the apply-loadout RPC.
 

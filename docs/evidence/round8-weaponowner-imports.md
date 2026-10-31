@@ -105,9 +105,9 @@ chain reached any of the three named native owners:
 package/class parse failures. This remains scoped to those named native owners.
 
 A fresh typed CUE4Parse load of
-`Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget` provides a positive
+[`Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) provides a positive
 control for the `UClass.Interfaces` parser: its exported
-`B_MovingTarget_C` class resolves the superclass
+[`B_MovingTarget_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) class resolves the superclass
 `/Script/WDGame.WDMovingTarget` and one interface,
 `/Script/WDGame.WDDamageable`, with `bImplementedByK2=true`. The decoded array
 is therefore populated for a cooked Blueprint class under this mapping and

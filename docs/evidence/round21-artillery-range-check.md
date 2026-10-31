@@ -17,10 +17,10 @@ Labels: **Derived** is arithmetic on documented data; **Measured** is a number t
 
 | Term | Value | Label |
 |---|---|---|
-| Muzzle speed | 30000 cm/s (`InitialBulletSpeed` of `DA_TNK_01_Artillery_Weapon_Stats`) | Derived (data) |
+| Muzzle speed | 30000 cm/s (`InitialBulletSpeed` of [`DA_TNK_01_Artillery_Weapon_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/DA_TNK_01_Artillery_Weapon_Stats.json)) | Derived (data) |
 | Gravity | -980 cm/s^2 (`BaseEngine.ini`) | Derived (data) |
 | Drag | `-(100/m) * 0.5 * 1.2 * Cd * (pi/4) * (D/100)^2 * (v/100)^2`, `Cd = DragModel.Value * Curve(v in m/s)` | Derived (native) |
-| Curve | `GC (Cylinder)` row of `CT_Projectile_DragCoefficients`, linear, clamped beyond 600 m/s | Derived (data) |
+| Curve | `GC (Cylinder)` row of [`CT_Projectile_DragCoefficients`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/Curves/CT_Projectile_DragCoefficients.json), linear, clamped beyond 600 m/s | Derived (data) |
 | Standard shell | `Value` 80, mass 70 kg, diameter 8.4 cm | Derived (data) |
 | Expensive shell | `Value` 2.5, mass 19 kg, diameter 10.5 cm | Derived (data) |
 | Thrust, wind | none (`bShouldThrust` never set on 155 mm; wind taken as zero) | Derived / Assumed |
@@ -29,7 +29,7 @@ Labels: **Derived** is arithmetic on documented data; **Measured** is a number t
 
 **Step length (assumed).** The native step is `floor(1000/Rate)` ms and `Rate` was never located when this was written (open item 3 on the flight page). Round 23 found it: `SimulationFrameRate` is 30, a 33 ms step, which is inside the tested range. Results are given at 4 ms for the exploration and tested from 1 ms to 33 ms (Rate 30 to 1000). The step does not move any conclusion (section 4, last block).
 
-**Mil to elevation (assumed).** The calculator's dial range runs 20 to 1390 mil; the artillery's pitch limits are 2 to 80 degrees (`MinWeaponPitchAngle`, `MaxWeaponPitchAngle` of `W_TNK_01_Artillery`). Three conventions are tested, none fitted: NATO (6400 per turn), Warsaw (6000 per turn) and the true milliradian (2000*pi per turn, 1 mil = 0.0573 degrees). The elevation is the barrel elevation above horizontal.
+**Mil to elevation (assumed).** The calculator's dial range runs 20 to 1390 mil; the artillery's pitch limits are 2 to 80 degrees (`MinWeaponPitchAngle`, `MaxWeaponPitchAngle` of [`W_TNK_01_Artillery`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/Artillery/W_TNK_01_Artillery.json)). Three conventions are tested, none fitted: NATO (6400 per turn), Warsaw (6000 per turn) and the true milliradian (2000*pi per turn, 1 mil = 0.0573 degrees). The elevation is the barrel elevation above horizontal.
 
 **Impact log.** 170 logged impacts of the self-propelled gun. 89 record a dial value and a fired arc; two of those show an exactly zero error (impact equal to plan) and are dropped as likely logger artefacts, leaving N = 87 usable shots (79 distinct plan/dial combinations; 18 with no recorded height difference, treated as 0). The residual is `predicted impact distance - measured impact distance` in metres, with the target height above the gun taken as the logged height difference (positive = target higher, **assumed**; the opposite sign is tested). The muzzle sits 0 to 3 m above the gun's ground in the tests; muzzle height is not in the exported data.
 

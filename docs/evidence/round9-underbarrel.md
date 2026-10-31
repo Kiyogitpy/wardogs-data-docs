@@ -6,7 +6,7 @@ nav_exclude: true
 # Underbarrel: the shipped default activation path is unbound
 
 Offline CL-516586 research, 2026-10-19. The named
-`IA_Weapon_ToggleAncillaryFire` / **H** mapping does not have an executable
+[`IA_Weapon_ToggleAncillaryFire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IA_Weapon_ToggleAncillaryFire.json) / **H** mapping does not have an executable
 binding through the verified M4/default weapon-input configuration. The
 test launcher supplies attachment data, but no replacement input extension
 or action. No underbarrel firing component, owner or projectile source tag
@@ -27,7 +27,7 @@ each completed with `ok=1 fail=0`, mounting 32 VFSs / 149,124 files.
 The M4's `WDInventoryFragment_ItemActor.ExtensionDataFragments` explicitly
 selects its instanced `B_DefaultWeaponInputData_C_0`. Its template is
 `Default__B_DefaultWeaponInputData_C`; that class directly derives from
-native `WDItemExtensionData_Input`. The default selects `IMC_BaseWeapon`,
+native `WDItemExtensionData_Input`. The default selects [`IMC_BaseWeapon`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/Input/IMC_BaseWeapon.json),
 whose H mapping was established in [Round 8](round8-ancillary-sights.md).
 The host has an `Item.Attachment.Underbarrel` container: its BlockPriority
 filter allows that context and blocks `Item.Attachment.Bipod.Attached`.

@@ -19,6 +19,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "assets", "data", "ai-eqs.json")
 PAGE = os.path.join(ROOT, "game-features", "Wardogs_GameFeatures_AI_v2.md")
@@ -92,7 +95,7 @@ def block():
 
 
 def main():
-    new = block()
+    new = link_source_output(block())
     if "--write" in sys.argv or "--check" in sys.argv:
         with open(PAGE, encoding="utf-8", newline="") as f:
             t = f.read()

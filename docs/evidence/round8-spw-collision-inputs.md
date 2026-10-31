@@ -44,9 +44,9 @@ Each radar render mesh below has a fresh `ComplexCollisionMesh` reference to the
 
 | Directory below `/SPW_01/ComplexCollision/` | Exact render mesh basenames |
 |---|---|
-| `Valkyra/` | `SPW_01_Antenna`, `SPW_01_Base`, `SPW_01_Flap_01`, `SPW_01_Flap_02`, `SPW_01_Flap_03`, `SPW_01_Rotator`, `SPW_01_RotatorCore` |
-| `Manticore/` | `SPW_02_Antenna`, `SPW_02_Base`, `SPW_02_Rotator_01`, `SPW_02_Rotator_02`, `SPW_02_Rotator_03` |
-| `Lonestar/` | `SPW_03_Antenna`, `SPW_03_Base`, `SPW_03_Flap_01`, `SPW_03_Flap_02`, `SPW_03_Rotator_01`, `SPW_03_Rotator_02` |
+| [`Valkyra/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Convo/Valkyra) | `SPW_01_Antenna`, `SPW_01_Base`, `SPW_01_Flap_01`, `SPW_01_Flap_02`, `SPW_01_Flap_03`, `SPW_01_Rotator`, `SPW_01_RotatorCore` |
+| [`Manticore/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/AIConfigs/Manticore) | `SPW_02_Antenna`, `SPW_02_Base`, `SPW_02_Rotator_01`, `SPW_02_Rotator_02`, `SPW_02_Rotator_03` |
+| [`Lonestar/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/AIConfigs/Lonestar) | `SPW_03_Antenna`, `SPW_03_Base`, `SPW_03_Flap_01`, `SPW_03_Flap_02`, `SPW_03_Rotator_01`, `SPW_03_Rotator_02` |
 
 For example, the exact Lonestar antenna pair is `/SPW_01/ComplexCollision/Lonestar/SPW_03_Antenna` and `/SPW_01/ComplexCollision/Lonestar/CC_SPW_03_Antenna`. The static-mesh package files under `dump-v2/` and `dump-followup/` retain material slots, CC references and BodySetup metadata.
 

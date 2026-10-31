@@ -25,7 +25,7 @@ description: "A large wall built only with the Large Hammer, from 32 Build Suppl
 | Rockets | +250% |
 | C4 | +280% |
 | IEDs | +350% |
-| Internal name | `DA_Buildable_BremmerWall` |
+| Internal name | [`DA_Buildable_BremmerWall`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/BremmerWall/DA_Buildable_BremmerWall.json) |
 {: .wiki-infobox }
 
 The Bremer Wall has 6,500 HP, the most of any wall, and only the Large Hammer can build it. Bullets and melee do 20% of their normal damage to it.

@@ -6,7 +6,7 @@ description: "The smoke screen cue: its file map and timing values, including fa
 ---
 
 # Wardogs: GameplayCues Data Reference
-*Extracted from cooked game data (`Wardogs/Content/GameplayCues`, 1 file). Values are raw asset values.*
+*Extracted from cooked game data ([`Wardogs/Content/GameplayCues`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameplayCues), 1 file). Values are raw asset values.*
 
 > **Scope:** one VFX data asset for the vehicle countermeasure smoke screen. The folder name says gameplay cue, but the asset is a smoke-grenade VFX configuration instance.
 
@@ -20,7 +20,7 @@ description: "The smoke screen cue: its file map and timing values, including fa
 
 ---
 
-## 2. Smoke Screen Values (`DA_SmokeScreen`)
+## 2. Smoke Screen Values ([`DA_SmokeScreen`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameplayCues/Vehicles/Countermeasures/DA_SmokeScreen.json))
 
 | Property | Value | Note |
 |---|---|---|

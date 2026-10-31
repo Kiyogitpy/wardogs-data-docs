@@ -63,7 +63,7 @@ weapon), [§4.2](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers
   differs. The order across the weapon and its attachments is not traced.
 - **Data: initial sight.** §1 and §2 use the `SightsData` entry `S_Aim01`, per
   [Effects §7.1](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#71-what-applies-to-a-weapon); §3 lists every entry.
-  `ID_CantedIrons`, whose only entry is `S_AimCanted1`, has no `S_Aim01`. Natively there is no first-entry
+  [`ID_CantedIrons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/CantedIronsTest/ID_CantedIrons.json), whose only entry is `S_AimCanted1`, has no `S_Aim01`. Natively there is no first-entry
   fallback: its `AppliedEffects` apply only when it replaces another attachment in the slot (`0x6C9D170`),
   and its sight effects come from the weapon's sight table entry for `S_Aim01` (`+0x438`, left by another
   sight), or none (`0x6C9E190`). The tool applies no sight effects for it; no weapon accepts the item, so
@@ -72,9 +72,9 @@ weapon), [§4.2](../pipelines/Wardogs_GameplayEffectsPipeline_v1.md#42-modifiers
   when `DefaultContainerItems` is empty, and the defaults of the sub-slots that item brings. `None` leaves
   the slot empty. The tool takes the first real item; natively every entry is added, and no weapon or
   attachment sub-slot lists more than one. Ammunition in chamber and magazine slots carries no effects and
-  is left out. Among attachment sub-slots the lists differ only in `ID_CGM4`'s sight (`DefaultItems`
-  `BasicRedDot` = `ID_RedDot`; `DefaultContainerItems` `ID_SGHT_033`), whose `AllowList` admits only `SGHT_033`;
-  with `ID_RedDot` the MAAWS AimTime would be 0.45. Sixteen magazine ammo slots also differ (the plain round in
+  is left out. Among attachment sub-slots the lists differ only in [`ID_CGM4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json)'s sight (`DefaultItems`
+  `BasicRedDot` = [`ID_RedDot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_013/Content/Data/ID_RedDot.json); `DefaultContainerItems` [`ID_SGHT_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_033/Content/Data/ID_SGHT_033.json)), whose `AllowList` admits only [`SGHT_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_033/Content/SGHT_033.json);
+  with [`ID_RedDot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_013/Content/Data/ID_RedDot.json) the MAAWS AimTime would be 0.45. Sixteen magazine ammo slots also differ (the plain round in
   `DefaultItems`, its `.Tracer` round in `DefaultContainerItems`), which changes no attribute.
 - **Native: sub-slot filters** (`0x67A2B40`, run per container by `0x67A2790`). `ItemId` is matched exactly
   against the item lists; context tags hierarchically (`HasAny`, `0x395BE30`: the item's tag or a child of
@@ -156,9 +156,9 @@ Each weapon's default loadout (sub-slot: item), the effects applied to it in the
 
 #### A-91 (ID_A91)
 
-Item `Id.Item.A91`, `ID_A91.json`.
+Item `Id.Item.A91`, [`ID_A91.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json).
 
-- **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_A91Barrel`.
+- **Loadout:** Magazine: [`ID_STANAG_Mag_20rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_053/Content/Data/ID_STANAG_Mag_20rd.json); Barrel: [`ID_A91Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_009/Content/Data/ID_A91Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Prone`.
 - **Character effects:** `GE_MAGZ_053_CharacterEffects`.
 
@@ -178,9 +178,9 @@ Item `Id.Item.A91`, `ID_A91.json`.
 
 #### AK74 (ID_AK74M)
 
-Item `Id.Item.AK74M`, `ID_AK74M.json`.
+Item `Id.Item.AK74M`, [`ID_AK74M.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/ID_AK74M.json).
 
-- **Loadout:** Magazine: `ID_AK74M_Mag_Standard`; Stock: `ID_AK74MStock`; Grip: `ID_AK74MPistolGrip`; Barrel: `ID_AK74MBarrel`.
+- **Loadout:** Magazine: [`ID_AK74M_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/AK74M_Mag_30rd/ID_AK74M_Mag_Standard.json); Stock: [`ID_AK74MStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_002/Content/Data/ID_AK74MStock.json); Grip: [`ID_AK74MPistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_002/Content/Data/ID_AK74MPistolGrip.json); Barrel: [`ID_AK74MBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_002/Content/Data/ID_AK74MBarrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_AK74_Mag_30rd_CharacterEffects`.
 
@@ -200,9 +200,9 @@ Item `Id.Item.AK74M`, `ID_AK74M.json`.
 
 #### Bushmaster M17S (ID_WEPN_033)
 
-Item `Id.Item.WEPN_033`, `ID_WEPN_033.json`.
+Item `Id.Item.WEPN_033`, [`ID_WEPN_033.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_033/Content/Data/ID_WEPN_033.json).
 
-- **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_BARL_044`.
+- **Loadout:** Magazine: [`ID_STANAG_Mag_20rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_053/Content/Data/ID_STANAG_Mag_20rd.json); Barrel: [`ID_BARL_044`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_044/Content/Data/ID_BARL_044.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_MAGZ_053_CharacterEffects`.
 
@@ -222,9 +222,9 @@ Item `Id.Item.WEPN_033`, `ID_WEPN_033.json`.
 
 #### FAL (ID_WEPN_030)
 
-Item `Id.Item.WEPN_030`, `ID_WEPN_030.json`.
+Item `Id.Item.WEPN_030`, [`ID_WEPN_030.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_006`; Barrel: `ID_BARL_007`; Grip: `ID_PGRP_003`; Stock: `ID_STOK_005`.
+- **Loadout:** Magazine: [`ID_MAGZ_006`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_006/Content/Data/ID_MAGZ_006.json); Barrel: [`ID_BARL_007`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_007/Content/Data/ID_BARL_007.json); Grip: [`ID_PGRP_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_003/Content/Data/ID_PGRP_003.json); Stock: [`ID_STOK_005`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_005/Content/Data/ID_STOK_005.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** none.
 
@@ -242,13 +242,13 @@ Item `Id.Item.WEPN_030`, `ID_WEPN_030.json`.
 | EquipSpeedMultiplier | 0.95 | — | 0.95 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
-† Sight default `Id.Item.IRNS_002` (on `ID_WEPN_030`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Sight default `Id.Item.IRNS_002` (on [`ID_WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### Galil (ID_WEPN_029)
 
-Item `Id.Item.WEPN_029`, `ID_WEPN_029.json`.
+Item `Id.Item.WEPN_029`, [`ID_WEPN_029.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_029/Content/Data/ID_WEPN_029.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_005`; Stock: `ID_STOK_013`; Grip: `ID_PGRP_010`; Barrel: `ID_BARL_006`.
+- **Loadout:** Magazine: [`ID_MAGZ_005`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_005/Content/Data/ID_MAGZ_005.json); Stock: [`ID_STOK_013`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_013/Content/Data/ID_STOK_013.json); Grip: [`ID_PGRP_010`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_010/Content/Data/ID_PGRP_010.json); Barrel: [`ID_BARL_006`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_006/Content/Data/ID_BARL_006.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_MAGZ_005_CharacterEffects`.
 
@@ -268,9 +268,9 @@ Item `Id.Item.WEPN_029`, `ID_WEPN_029.json`.
 
 #### KH-2002 (ID_KH2002)
 
-Item `Id.Item.KH2002`, `ID_KH2002.json`.
+Item `Id.Item.KH2002`, [`ID_KH2002.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/ID_KH2002.json).
 
-- **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_KH2002Barrel`.
+- **Loadout:** Magazine: [`ID_STANAG_Mag_20rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_053/Content/Data/ID_STANAG_Mag_20rd.json); Barrel: [`ID_KH2002Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_008/Content/Data/ID_KH2002Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_MAGZ_053_CharacterEffects`.
 
@@ -290,9 +290,9 @@ Item `Id.Item.KH2002`, `ID_KH2002.json`.
 
 #### M4 (ID_M4)
 
-Item `Id.Item.M4`, `ID_M4.json`.
+Item `Id.Item.M4`, [`ID_M4.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json).
 
-- **Loadout:** Magazine: `ID_556STANAG_Mag_Standard`; Grip: `ID_M4Grip`; Stock: `ID_M4Stock`; Barrel: `ID_M4Barrel`.
+- **Loadout:** Magazine: [`ID_556STANAG_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/Stanag/ID_556STANAG_Mag_Standard.json); Grip: [`ID_M4Grip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_001/Content/Data/ID_M4Grip.json); Stock: [`ID_M4Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_001/Content/Data/ID_M4Stock.json); Barrel: [`ID_M4Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_001/Content/Data/ID_M4Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_Stanag_30Rounds_CharacterEffects`.
 
@@ -310,13 +310,13 @@ Item `Id.Item.M4`, `ID_M4.json`.
 | EquipSpeedMultiplier | 0.95 | ×c 0.98 `GE_Stanag_30Rounds` | 0.931 |
 | HolsterSpeedMultiplier | 1.1 | — | 1.1 |
 
-† Sight default `Id.Item.IRNS_006` (on `ID_M4`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Sight default `Id.Item.IRNS_006` (on [`ID_M4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### T-21 (ID_TAR21)
 
-Item `Id.Item.TAR21`, `ID_TAR21.json`.
+Item `Id.Item.TAR21`, [`ID_TAR21.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_005/Content/Data/ID_TAR21.json).
 
-- **Loadout:** Magazine: `ID_STANAG_Mag_20rd`; Barrel: `ID_Tar21Barrel`.
+- **Loadout:** Magazine: [`ID_STANAG_Mag_20rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_053/Content/Data/ID_STANAG_Mag_20rd.json); Barrel: [`ID_Tar21Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_012/Content/Data/ID_Tar21Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_MAGZ_053_CharacterEffects`.
 
@@ -338,7 +338,7 @@ Item `Id.Item.TAR21`, `ID_TAR21.json`.
 
 #### Compound Bow (ID_CombatBow)
 
-Item `Id.Item.CombatBow`, `ID_CombatBow.json`.
+Item `Id.Item.CombatBow`, [`ID_CombatBow.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/ID_CombatBow.json).
 
 - **Loadout:** no attachments.
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
@@ -360,9 +360,9 @@ Item `Id.Item.CombatBow`, `ID_CombatBow.json`.
 
 #### BMR-308 (ID_RFB)
 
-Item `Id.Item.RFB`, `ID_RFB.json`.
+Item `Id.Item.RFB`, [`ID_RFB.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json).
 
-- **Loadout:** Magazine: `ID_RFB_Mag_Standard`; Barrel: `ID_RFBBarrel`.
+- **Loadout:** Magazine: [`ID_RFB_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB_Mag_Standard.json); Barrel: [`ID_RFBBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/Components/ID_RFBBarrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
 - **Character effects:** `GE_MAG_FAL_10rd_CharacterEffects`.
 
@@ -380,13 +380,13 @@ Item `Id.Item.RFB`, `ID_RFB.json`.
 | EquipSpeedMultiplier | 0.92 | ×c 1.24 `GE_MAG_FAL_10rd` | 1.1408 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
-† Sight default `Id.Item.ARMIrons` (on `ID_RFB`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Sight default `Id.Item.ARMIrons` (on [`ID_RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### M14 (ID_WEPN_034)
 
-Item `Id.Item.WEPN_034`, `ID_WEPN_034.json`.
+Item `Id.Item.WEPN_034`, [`ID_WEPN_034.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/ID_WEPN_034.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_068`; Stock: `ID_STOK_059`; Barrel: `ID_BARL_047`.
+- **Loadout:** Magazine: [`ID_MAGZ_068`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_068/Content/Data/ID_MAGZ_068.json); Stock: [`ID_STOK_059`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_059/Content/Data/ID_STOK_059.json); Barrel: [`ID_BARL_047`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_047/Content/Data/ID_BARL_047.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
 - **Character effects:** `GE_MAGZ_068_CharacterEffects`.
 
@@ -406,9 +406,9 @@ Item `Id.Item.WEPN_034`, `ID_WEPN_034.json`.
 
 #### SKS (ID_SKS)
 
-Item `Id.Item.SKS`, `ID_SKS.json`.
+Item `Id.Item.SKS`, [`ID_SKS.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json).
 
-- **Loadout:** Magazine: `ID_SKS_Mag_Internal`; Handguard: `ID_SKSHandguard`; Barrel: `ID_SKSBarrel`.
+- **Loadout:** Magazine: [`ID_SKS_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/DMR/ID_SKS_Mag_Internal.json); Handguard: [`ID_SKSHandguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_020/Content/Data/ID_SKSHandguard.json); Barrel: [`ID_SKSBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_014/Content/Data/ID_SKSBarrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
 - **Character effects:** none.
 
@@ -426,13 +426,13 @@ Item `Id.Item.SKS`, `ID_SKS.json`.
 | EquipSpeedMultiplier | 1.15 | — | 1.15 |
 | HolsterSpeedMultiplier | 1.1 | — | 1.1 |
 
-† Grip default `Id.Item.SKSPistolGrip` (on `ID_SKS`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Grip default `Id.Item.SKSPistolGrip` (on [`ID_SKS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### SVD (ID_SVDM)
 
-Item `Id.Item.SVDM`, `ID_SVDM.json`.
+Item `Id.Item.SVDM`, [`ID_SVDM.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM.json).
 
-- **Loadout:** Magazine: `ID_SVDM_Mag_Standard`; Handguard: `ID_SVDMHandguard`; Stock: `ID_SVDMStock`; Barrel: `ID_SVDMBarrel`.
+- **Loadout:** Magazine: [`ID_SVDM_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM_Mag_Standard.json); Handguard: [`ID_SVDMHandguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/Components/ID_SVDMHandguard.json); Stock: [`ID_SVDMStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/Components/ID_SVDMStock.json); Barrel: [`ID_SVDMBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/Components/ID_SVDMBarrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_DMR_Standing`.
 - **Character effects:** none.
 
@@ -452,9 +452,9 @@ Item `Id.Item.SVDM`, `ID_SVDM.json`.
 
 #### TCX-SPR (ID_WEPN_037)
 
-Item `Id.Item.WEPN_037`, `ID_WEPN_037.json`.
+Item `Id.Item.WEPN_037`, [`ID_WEPN_037.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_069`; Handguard: `ID_HNDG_054`; Grip: `ID_PGRP_043`; Stock: `ID_STOK_060`; Barrel: `ID_BARL_048`.
+- **Loadout:** Magazine: [`ID_MAGZ_069`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_069/Content/Data/ID_MAGZ_069.json); Handguard: [`ID_HNDG_054`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_054/Content/Data/ID_HNDG_054.json); Grip: [`ID_PGRP_043`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_043/Content/Data/ID_PGRP_043.json); Stock: [`ID_STOK_060`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_060/Content/Data/ID_STOK_060.json); Barrel: [`ID_BARL_048`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_048/Content/Data/ID_BARL_048.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_MAGZ_069_CharacterEffects`.
 
@@ -476,9 +476,9 @@ Item `Id.Item.WEPN_037`, `ID_WEPN_037.json`.
 
 #### Evo-3 Ultra (ID_WEPN_036)
 
-Item `Id.Item.WEPN_036`, `ID_WEPN_036.json`.
+Item `Id.Item.WEPN_036`, [`ID_WEPN_036.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/Data/ID_WEPN_036.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_067`; Grip: `ID_PGRP_042`; Stock: `ID_STOK_058`; Barrel: `ID_BARL_046`.
+- **Loadout:** Magazine: [`ID_MAGZ_067`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_067/Content/Data/ID_MAGZ_067.json); Grip: [`ID_PGRP_042`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_042/Content/Data/ID_PGRP_042.json); Stock: [`ID_STOK_058`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_058/Content/Data/ID_STOK_058.json); Barrel: [`ID_BARL_046`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_046/Content/Data/ID_BARL_046.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
 - **Character effects:** `GE_MAGZ_067_CharacterEffects`.
 
@@ -498,9 +498,9 @@ Item `Id.Item.WEPN_036`, `ID_WEPN_036.json`.
 
 #### M249 SAW (ID_M249)
 
-Item `Id.Item.M249`, `ID_M249.json`.
+Item `Id.Item.M249`, [`ID_M249.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json).
 
-- **Loadout:** Magazine: `ID_M249_Mag_Standard`; Stock: `ID_M249Stock`; Barrel: `ID_M249Barrel`.
+- **Loadout:** Magazine: [`ID_M249_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.json); Stock: [`ID_M249Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_014/Content/Data/ID_M249Stock.json); Barrel: [`ID_M249Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_016/Content/Data/ID_M249Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_LMG_Standing`.
 - **Character effects:** `GE_MAG_M249_200rd_CharacterEffects`.
 
@@ -518,13 +518,13 @@ Item `Id.Item.M249`, `ID_M249.json`.
 | EquipSpeedMultiplier | 0.95 | ×c 0.93 `GE_MAG_M249_200rd` | 0.8835 |
 | HolsterSpeedMultiplier | 0.95 | — | 0.95 |
 
-† Grip default `Id.Item.RK3PistolGrip` (on `ID_M249`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Grip default `Id.Item.RK3PistolGrip` (on [`ID_M249`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### PKM (ID_LMG_02)
 
-Item `Id.Item.LMG_02`, `ID_LMG_02.json`.
+Item `Id.Item.LMG_02`, [`ID_LMG_02.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02.json).
 
-- **Loadout:** Magazine: `ID_LMG_02_Magazine_Standard`; Grip: `ID_LMG_02PistolGrip`; Stock: `ID_LMG_02Stock`; Barrel: `ID_LMG_02Barrel`.
+- **Loadout:** Magazine: [`ID_LMG_02_Magazine_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02_Magazine_Standard.json); Grip: [`ID_LMG_02PistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/Components/ID_LMG_02PistolGrip.json); Stock: [`ID_LMG_02Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/Components/ID_LMG_02Stock.json); Barrel: [`ID_LMG_02Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/Components/ID_LMG_02Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_LMG_Standing`.
 - **Character effects:** `GE_MAG_LMG_02_100rd_CharacterEffects`.
 
@@ -546,7 +546,7 @@ Item `Id.Item.LMG_02`, `ID_LMG_02.json`.
 
 #### 9K333 Verba (ID_Launcher_04)
 
-Item `Id.Item.Launcher_04`, `ID_Launcher_04.json`.
+Item `Id.Item.Launcher_04`, [`ID_Launcher_04.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json).
 
 - **Loadout:** no attachments.
 - **Stance (Stand):** no stance effect.
@@ -567,10 +567,10 @@ Item `Id.Item.Launcher_04`, `ID_Launcher_04.json`.
 
 #### MAAWS (ID_CGM4)
 
-Item `Id.Item.CGM4`, `ID_CGM4.json`.
+Item `Id.Item.CGM4`, [`ID_CGM4.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_013/Content/Data/ID_CGM4.json).
 
-- **Loadout:** Sight: `ID_SGHT_033`.
-- **Sight:** `ID_SGHT_033` `S_Aim01`.
+- **Loadout:** Sight: [`ID_SGHT_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_033/Content/Data/ID_SGHT_033.json).
+- **Sight:** [`ID_SGHT_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_033/Content/Data/ID_SGHT_033.json) `S_Aim01`.
 - **Stance (Stand):** no stance effect.
 - **Character effects:** none.
 
@@ -590,10 +590,10 @@ Item `Id.Item.CGM4`, `ID_CGM4.json`.
 
 #### MGL-40 (ID_MMGL)
 
-Item `Id.Item.MMGL`, `ID_MMGL.json`.
+Item `Id.Item.MMGL`, [`ID_MMGL.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_012/Content/Data/ID_MMGL.json).
 
-- **Loadout:** Sight: `ID_SGHT_037`; Magazine: `ID_MMGL_Mag_Internal`; Barrel: `ID_MMGLBarrel`; Handguard: `ID_MMGLHandguard`; Grip: `ID_MMGLGrip`; Stock: `ID_MMGLStock`.
-- **Sight:** `ID_SGHT_037` `S_Aim01`.
+- **Loadout:** Sight: [`ID_SGHT_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_037/Content/Data/ID_SGHT_037.json); Magazine: [`ID_MMGL_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Launcher/ID_MMGL_Mag_Internal.json); Barrel: [`ID_MMGLBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_019/Content/Data/ID_MMGLBarrel.json); Handguard: [`ID_MMGLHandguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_022/Content/Data/ID_MMGLHandguard.json); Grip: [`ID_MMGLGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_011/Content/Data/ID_MMGLGrip.json); Stock: [`ID_MMGLStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_016/Content/Data/ID_MMGLStock.json).
+- **Sight:** [`ID_SGHT_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_037/Content/Data/ID_SGHT_037.json) `S_Aim01`.
 - **Stance (Stand):** no stance effect.
 - **Character effects:** none.
 
@@ -613,7 +613,7 @@ Item `Id.Item.MMGL`, `ID_MMGL.json`.
 
 #### RPG-7 (ID_RPG7)
 
-Item `Id.Item.RPG7`, `ID_RPG7.json`.
+Item `Id.Item.RPG7`, [`ID_RPG7.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/RPG7/Content/Data/ID_RPG7.json).
 
 - **Loadout:** no attachments.
 - **Stance (Stand):** no stance effect.
@@ -637,9 +637,9 @@ Item `Id.Item.RPG7`, `ID_RPG7.json`.
 
 #### Deagle (ID_WEPN_027)
 
-Item `Id.Item.WEPN_027`, `ID_WEPN_027.json`.
+Item `Id.Item.WEPN_027`, [`ID_WEPN_027.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_027/Content/Data/ID_WEPN_027.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_003`; Barrel: `ID_BARL_004`.
+- **Loadout:** Magazine: [`ID_MAGZ_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_003/Content/Data/ID_MAGZ_003.json); Barrel: [`ID_BARL_004`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_004/Content/Data/ID_BARL_004.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
 - **Character effects:** none.
 
@@ -659,9 +659,9 @@ Item `Id.Item.WEPN_027`, `ID_WEPN_027.json`.
 
 #### GGX 17 (ID_Glock17)
 
-Item `Id.Item.Glock17`, `ID_Glock17.json`.
+Item `Id.Item.Glock17`, [`ID_Glock17.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_010/Content/Data/ID_Glock17.json).
 
-- **Loadout:** Magazine: `ID_Glock17_Mag_Standard`; Barrel: `ID_Glock17Barrel`.
+- **Loadout:** Magazine: [`ID_Glock17_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Pistol/ID_Glock17_Mag_Standard.json); Barrel: [`ID_Glock17Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_017/Content/Data/ID_Glock17Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
 - **Character effects:** none.
 
@@ -681,9 +681,9 @@ Item `Id.Item.Glock17`, `ID_Glock17.json`.
 
 #### GGX 18 (ID_WEPN_032)
 
-Item `Id.Item.WEPN_032`, `ID_WEPN_032.json`.
+Item `Id.Item.WEPN_032`, [`ID_WEPN_032.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_032/Content/Data/ID_WEPN_032.json).
 
-- **Loadout:** Magazine: `ID_Glock17_Mag_Standard`; Barrel: `ID_Glock17Barrel`.
+- **Loadout:** Magazine: [`ID_Glock17_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Pistol/ID_Glock17_Mag_Standard.json); Barrel: [`ID_Glock17Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_017/Content/Data/ID_Glock17Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
 - **Character effects:** none.
 
@@ -703,9 +703,9 @@ Item `Id.Item.WEPN_032`, `ID_WEPN_032.json`.
 
 #### Judge (ID_Judge)
 
-Item `Id.Item.Judge`, `ID_Judge.json`.
+Item `Id.Item.Judge`, [`ID_Judge.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/ID_Judge.json).
 
-- **Loadout:** Magazine: `ID_Judge_Mag_Internal`; Grip: `ID_JudgePistolgrip`; Barrel: `ID_JudgeBarrel`.
+- **Loadout:** Magazine: [`ID_Judge_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.json); Grip: [`ID_JudgePistolgrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/Components/ID_JudgePistolgrip.json); Barrel: [`ID_JudgeBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/Components/ID_JudgeBarrel.json).
 - **Stance (Stand):** no stance effect.
 - **Character effects:** none.
 
@@ -725,9 +725,9 @@ Item `Id.Item.Judge`, `ID_Judge.json`.
 
 #### M1911 (ID_WEPN_026)
 
-Item `Id.Item.WEPN_026`, `ID_WEPN_026.json`.
+Item `Id.Item.WEPN_026`, [`ID_WEPN_026.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_026/Content/Data/ID_WEPN_026.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_002`; Barrel: `ID_BARL_003`.
+- **Loadout:** Magazine: [`ID_MAGZ_002`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_002/Content/Data/ID_MAGZ_002.json); Barrel: [`ID_BARL_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_003/Content/Data/ID_BARL_003.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Pistol_Standing`.
 - **Character effects:** none.
 
@@ -749,9 +749,9 @@ Item `Id.Item.WEPN_026`, `ID_WEPN_026.json`.
 
 #### AMP-9 (ID_MP9)
 
-Item `Id.Item.MP9`, `ID_MP9.json`.
+Item `Id.Item.MP9`, [`ID_MP9.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_014/Content/Data/ID_MP9.json).
 
-- **Loadout:** Magazine: `ID_MP9_Mag_Standard`; Barrel: `ID_MP9Barrel`; Stock: `ID_MP9Stock`.
+- **Loadout:** Magazine: [`ID_MP9_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_043/Content/Data/ID_MP9_Mag_Standard.json); Barrel: [`ID_MP9Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_020/Content/Data/ID_MP9Barrel.json); Stock: [`ID_MP9Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_017/Content/Data/ID_MP9Stock.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
 - **Character effects:** `GE_MAGZ_043_CharacterEffects`.
 
@@ -771,9 +771,9 @@ Item `Id.Item.MP9`, `ID_MP9.json`.
 
 #### MP5 (ID_WEPN_028)
 
-Item `Id.Item.WEPN_028`, `ID_WEPN_028.json`.
+Item `Id.Item.WEPN_028`, [`ID_WEPN_028.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_028/Content/Data/ID_WEPN_028.json).
 
-- **Loadout:** Magazine: `ID_MAGZ_004`; Stock: `ID_STOK_003`; Barrel: `ID_BARL_005`.
+- **Loadout:** Magazine: [`ID_MAGZ_004`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_004/Content/Data/ID_MAGZ_004.json); Stock: [`ID_STOK_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_003/Content/Data/ID_STOK_003.json); Barrel: [`ID_BARL_005`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_005/Content/Data/ID_BARL_005.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
 - **Character effects:** `GE_MAGZ_004_CharacterEffects`.
 
@@ -793,9 +793,9 @@ Item `Id.Item.WEPN_028`, `ID_WEPN_028.json`.
 
 #### PP-19 Bizon (ID_WEPN_031)
 
-Item `Id.Item.WEPN_031`, `ID_WEPN_031.json`.
+Item `Id.Item.WEPN_031`, [`ID_WEPN_031.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/ID_WEPN_031.json).
 
-- **Loadout:** Handguard: `ID_HNDG_055`; Magazine: `ID_MAGZ_051`; Grip: `ID_SMG_03PistolGrip`; Stock: `ID_SMG_03Stock`; Barrel: `ID_BARL_049`.
+- **Loadout:** Handguard: [`ID_HNDG_055`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_055/Content/Data/ID_HNDG_055.json); Magazine: [`ID_MAGZ_051`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_051/Content/Data/ID_MAGZ_051.json); Grip: [`ID_SMG_03PistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03PistolGrip.json); Stock: [`ID_SMG_03Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03Stock.json); Barrel: [`ID_BARL_049`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_049/Content/Data/ID_BARL_049.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
 - **Character effects:** `GE_MAGZ_051_CharacterEffects`.
 
@@ -815,9 +815,9 @@ Item `Id.Item.WEPN_031`, `ID_WEPN_031.json`.
 
 #### PP-19 Vityaz (ID_SMG_03)
 
-Item `Id.Item.SMG_03`, `ID_SMG_03.json`.
+Item `Id.Item.SMG_03`, [`ID_SMG_03.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03.json).
 
-- **Loadout:** Magazine: `ID_SMG_03_Mag_Standard`; Grip: `ID_SMG_03PistolGrip`; Stock: `ID_SMG_03Stock`; Barrel: `ID_SMG_03Barrel`.
+- **Loadout:** Magazine: [`ID_SMG_03_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03_Mag_Standard.json); Grip: [`ID_SMG_03PistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03PistolGrip.json); Stock: [`ID_SMG_03Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03Stock.json); Barrel: [`ID_SMG_03Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
 - **Character effects:** `GE_MAG_SMG_03_CharacterEffects`.
 
@@ -837,9 +837,9 @@ Item `Id.Item.SMG_03`, `ID_SMG_03.json`.
 
 #### Super-45 (ID_Vector)
 
-Item `Id.Item.Vector`, `ID_Vector.json`.
+Item `Id.Item.Vector`, [`ID_Vector.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_006/Content/Data/ID_Vector.json).
 
-- **Loadout:** Magazine: `ID_Vector_Mag_Standard`; Stock: `ID_VectorStock`; Barrel: `ID_VectorBarrel`.
+- **Loadout:** Magazine: [`ID_Vector_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_008/Content/Data/ID_Vector_Mag_Standard.json); Stock: [`ID_VectorStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_004/Content/Data/ID_VectorStock.json); Barrel: [`ID_VectorBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_013/Content/Data/ID_VectorBarrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SMG_Standing`.
 - **Character effects:** `GE_MAGZ_008_CharacterEffects`.
 
@@ -861,9 +861,9 @@ Item `Id.Item.Vector`, `ID_Vector.json`.
 
 #### M500 (ID_M500)
 
-Item `Id.Item.M500`, `ID_M500.json`.
+Item `Id.Item.M500`, [`ID_M500.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_011/Content/Data/ID_M500.json).
 
-- **Loadout:** Magazine: `ID_M12G_Mag_Internal`; Stock: `ID_M500Stock`; Barrel: `ID_M500Barrel`.
+- **Loadout:** Magazine: [`ID_M12G_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.json); Stock: [`ID_M500Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_015/Content/Data/ID_M500Stock.json); Barrel: [`ID_M500Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_018/Content/Data/ID_M500Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Shotgun_Standing`.
 - **Character effects:** none.
 
@@ -883,9 +883,9 @@ Item `Id.Item.M500`, `ID_M500.json`.
 
 #### MP43 (ID_MP43)
 
-Item `Id.Item.MP43`, `ID_MP43.json`.
+Item `Id.Item.MP43`, [`ID_MP43.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/ID_MP43.json).
 
-- **Loadout:** Handguard: `ID_MP43Handguard`; Stock: `ID_MP43Stock`; Barrel: `ID_MP43Barrel`.
+- **Loadout:** Handguard: [`ID_MP43Handguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/Components/ID_MP43Handguard.json); Stock: [`ID_MP43Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/Components/ID_MP43Stock.json); Barrel: [`ID_MP43Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/Components/ID_MP43Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_Shotgun_Standing`.
 - **Character effects:** none.
 
@@ -907,9 +907,9 @@ Item `Id.Item.MP43`, `ID_MP43.json`.
 
 #### AMR 50 (ID_SR_04)
 
-Item `Id.Item.SR_04`, `ID_SR_04.json`.
+Item `Id.Item.SR_04`, [`ID_SR_04.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json).
 
-- **Loadout:** Magazine: `ID_SR_04_Mag_Standard`; Handguard: `ID_SR_04Handguard`; Stock: `ID_SR_04Stock`; Barrel: `ID_SR_04Barrel`.
+- **Loadout:** Magazine: [`ID_SR_04_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04_Mag_Standard.json); Handguard: [`ID_SR_04Handguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/Components/ID_SR_04Handguard.json); Stock: [`ID_SR_04Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/Components/ID_SR_04Stock.json); Barrel: [`ID_SR_04Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/Components/ID_SR_04Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
 - **Character effects:** none.
 
@@ -927,13 +927,13 @@ Item `Id.Item.SR_04`, `ID_SR_04.json`.
 | EquipSpeedMultiplier | 0.9 | — | 0.9 |
 | HolsterSpeedMultiplier | 1.15 | — | 1.15 |
 
-† Sight default `Id.Item.ARMIrons` (on `ID_SR_04`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Sight default `Id.Item.ARMIrons` (on [`ID_SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### MK22 (ID_MK22)
 
-Item `Id.Item.MK22`, `ID_MK22.json`.
+Item `Id.Item.MK22`, [`ID_MK22.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json).
 
-- **Loadout:** Magazine: `ID_MK22_Mag_Standard`; Grip: `ID_MK22Grip`; Stock: `ID_MK22Stock`; Barrel: `ID_MK22Barrel`.
+- **Loadout:** Magazine: [`ID_MK22_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22_Mag_Standard.json); Grip: [`ID_MK22Grip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/Components/ID_MK22Grip.json); Stock: [`ID_MK22Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/Components/ID_MK22Stock.json); Barrel: [`ID_MK22Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/Components/ID_MK22Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
 - **Character effects:** `GE_MAG_MK22_10rd_CharacterEffects`.
 
@@ -951,13 +951,13 @@ Item `Id.Item.MK22`, `ID_MK22.json`.
 | EquipSpeedMultiplier | 1.05 | ×c 0.9 `GE_MAG_MK22_10rd` | 0.945 |
 | HolsterSpeedMultiplier | 1.17 | — | 1.17 |
 
-† Sight default `Id.Item.ARMIrons` (on `ID_MK22`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Sight default `Id.Item.ARMIrons` (on [`ID_MK22`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### Mosin Nagant (ID_WEPN_017)
 
-Item `Id.Item.Mosin`, `ID_WEPN_017.json`.
+Item `Id.Item.Mosin`, [`ID_WEPN_017.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_WEPN_017.json).
 
-- **Loadout:** Magazine: `ID_Mosin_MagInternal`; Barrel: `ID_MosinBarrel`; Stock: `ID_MosinStock`.
+- **Loadout:** Magazine: [`ID_Mosin_MagInternal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_Mosin_MagInternal.json); Barrel: [`ID_MosinBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinBarrel.json); Stock: [`ID_MosinStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinStock.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
 - **Character effects:** none.
 
@@ -977,9 +977,9 @@ Item `Id.Item.Mosin`, `ID_WEPN_017.json`.
 
 #### Scout Rifle TD (ID_WEPN_035)
 
-Item `Id.Item.WEPN_035`, `ID_WEPN_035.json`.
+Item `Id.Item.WEPN_035`, [`ID_WEPN_035.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json).
 
-- **Loadout:** Stock: `ID_STOK_057`; Barrel: `ID_BARL_045`.
+- **Loadout:** Stock: [`ID_STOK_057`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_057/Content/Data/ID_STOK_057.json); Barrel: [`ID_BARL_045`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_045/Content/Data/ID_BARL_045.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
 - **Character effects:** none.
 
@@ -997,13 +997,13 @@ Item `Id.Item.WEPN_035`, `ID_WEPN_035.json`.
 | EquipSpeedMultiplier | 1 | — | 1 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
-† Sight default `Id.Item.IRNS_008` (on `ID_WEPN_035`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+† Sight default `Id.Item.IRNS_008` (on [`ID_WEPN_035`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 
 #### SV98 (ID_SV98)
 
-Item `Id.Item.SV98`, `ID_SV98.json`.
+Item `Id.Item.SV98`, [`ID_SV98.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98.json).
 
-- **Loadout:** Magazine: `ID_SV98_Mag_Standard`; Stock: `ID_SV98Stock`; Barrel: `ID_SV98Barrel`.
+- **Loadout:** Magazine: [`ID_SV98_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98_Mag_Standard.json); Stock: [`ID_SV98Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_021/Content/Data/ID_SV98Stock.json); Barrel: [`ID_SV98Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_015/Content/Data/ID_SV98Barrel.json).
 - **Stance (Stand):** `GE_Weapon_StanceRecoil_SR_Standing`.
 - **Character effects:** `GE_MAG_SV98_10rd_CharacterEffects`.
 
@@ -1029,309 +1029,309 @@ The 246 attachment items at least one weapon accepts, grouped by `AttachmentType
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| `ID_A91Barrel` | — | — | A91 |
-| `ID_AK74MBarrel` | — | — | AK74M |
-| `ID_AR_01_BRL_02` | — | — | AK74M |
-| `ID_AR_02_BRL_01` | — | — | M4 |
-| M1911 Barrel (`ID_BARL_003`) | — | — | WEPN_026 |
-| Deagle Barrel (`ID_BARL_004`) | — | — | WEPN_027 |
-| MP5 Barrel (`ID_BARL_005`) | — | — | WEPN_028 |
-| Galil Barrel (`ID_BARL_006`) | — | — | WEPN_029 |
-| `ID_BARL_007` | — | — | WEPN_030 |
-| `ID_BARL_044` | — | — | WEPN_033 |
-| Scout Rifle Standard Barrel (`ID_BARL_045`) | — | — | WEPN_035 |
-| WEPN_036 Evoly Standard Barrel (`ID_BARL_046`) | — | — | WEPN_036 |
-| WEPN_034 M14 Standard Barrel (`ID_BARL_047`) | — | — | WEPN_034 |
-| Sig Spear (WEPN_037) Standard Barrel (`ID_BARL_048`) | — | — | WEPN_037 |
-| WEPN_031 Bizon Standard Barrel (`ID_BARL_049`) | — | — | WEPN_031 |
-| `ID_Glock17Barrel` | — | — | Glock17, WEPN_032 |
-| `ID_JudgeBarrel` | — | — | Judge |
-| `ID_KH2002Barrel` | — | — | KH2002 |
-| `ID_LMG_02Barrel` | — | — | LMG_02 |
-| `ID_M249Barrel` | — | — | M249 |
-| M4 Barrel (`ID_M4Barrel`) | — | — | M4 |
-| `ID_M500Barrel` | — | — | M500 |
-| `ID_MK22Barrel` | — | — | MK22 |
-| `ID_MMGLBarrel` | — | — | MMGL |
-| `ID_MosinBarrel` | — | — | WEPN_017 |
-| `ID_MP43Barrel` | — | — | MP43 |
-| `ID_MP9Barrel` | — | — | MP9 |
-| `ID_Pistol_01_BRL_07` | — | — | Glock17, WEPN_032 |
-| `ID_RFBBarrel` | — | — | RFB |
-| `ID_SKSBarrel` | — | — | SKS |
-| `ID_SMG_03Barrel` | — | — | SMG_03 |
-| `ID_SR_04Barrel` | — | — | SR_04 |
-| `ID_SV98Barrel` | — | — | SV98 |
-| `ID_SVDMBarrel` | — | — | SVDM |
-| `ID_Tar21Barrel` | — | — | TAR21 |
-| `ID_VectorBarrel` | — | — | Vector |
+| [`ID_A91Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_009/Content/Data/ID_A91Barrel.json) | — | — | A91 |
+| [`ID_AK74MBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_002/Content/Data/ID_AK74MBarrel.json) | — | — | AK74M |
+| [`ID_AR_01_BRL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/AR/AK74-M/Assets/Components/Barrels/CQB/Mutable/ID_AR_01_BRL_02.json) | — | — | AK74M |
+| [`ID_AR_02_BRL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/AR/M4/Assets/Components/Barrels/CQB/ID_AR_02_BRL_01.json) | — | — | M4 |
+| M1911 Barrel ([`ID_BARL_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_003/Content/Data/ID_BARL_003.json)) | — | — | WEPN_026 |
+| Deagle Barrel ([`ID_BARL_004`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_004/Content/Data/ID_BARL_004.json)) | — | — | WEPN_027 |
+| MP5 Barrel ([`ID_BARL_005`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_005/Content/Data/ID_BARL_005.json)) | — | — | WEPN_028 |
+| Galil Barrel ([`ID_BARL_006`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_006/Content/Data/ID_BARL_006.json)) | — | — | WEPN_029 |
+| [`ID_BARL_007`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_007/Content/Data/ID_BARL_007.json) | — | — | WEPN_030 |
+| [`ID_BARL_044`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_044/Content/Data/ID_BARL_044.json) | — | — | WEPN_033 |
+| Scout Rifle Standard Barrel ([`ID_BARL_045`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_045/Content/Data/ID_BARL_045.json)) | — | — | WEPN_035 |
+| WEPN_036 Evoly Standard Barrel ([`ID_BARL_046`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_046/Content/Data/ID_BARL_046.json)) | — | — | WEPN_036 |
+| WEPN_034 M14 Standard Barrel ([`ID_BARL_047`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_047/Content/Data/ID_BARL_047.json)) | — | — | WEPN_034 |
+| Sig Spear (WEPN_037) Standard Barrel ([`ID_BARL_048`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_048/Content/Data/ID_BARL_048.json)) | — | — | WEPN_037 |
+| WEPN_031 Bizon Standard Barrel ([`ID_BARL_049`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_049/Content/Data/ID_BARL_049.json)) | — | — | WEPN_031 |
+| [`ID_Glock17Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_017/Content/Data/ID_Glock17Barrel.json) | — | — | Glock17, WEPN_032 |
+| [`ID_JudgeBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/Components/ID_JudgeBarrel.json) | — | — | Judge |
+| [`ID_KH2002Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_008/Content/Data/ID_KH2002Barrel.json) | — | — | KH2002 |
+| [`ID_LMG_02Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/Components/ID_LMG_02Barrel.json) | — | — | LMG_02 |
+| [`ID_M249Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_016/Content/Data/ID_M249Barrel.json) | — | — | M249 |
+| M4 Barrel ([`ID_M4Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_001/Content/Data/ID_M4Barrel.json)) | — | — | M4 |
+| [`ID_M500Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_018/Content/Data/ID_M500Barrel.json) | — | — | M500 |
+| [`ID_MK22Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/Components/ID_MK22Barrel.json) | — | — | MK22 |
+| [`ID_MMGLBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_019/Content/Data/ID_MMGLBarrel.json) | — | — | MMGL |
+| [`ID_MosinBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinBarrel.json) | — | — | WEPN_017 |
+| [`ID_MP43Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/Components/ID_MP43Barrel.json) | — | — | MP43 |
+| [`ID_MP9Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_020/Content/Data/ID_MP9Barrel.json) | — | — | MP9 |
+| [`ID_Pistol_01_BRL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Pistol/Glock17/Assets/Components/Barrels/ThreadedBarrel/Meshes/Mutable/ID_Pistol_01_BRL_07.json) | — | — | Glock17, WEPN_032 |
+| [`ID_RFBBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/Components/ID_RFBBarrel.json) | — | — | RFB |
+| [`ID_SKSBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_014/Content/Data/ID_SKSBarrel.json) | — | — | SKS |
+| [`ID_SMG_03Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03Barrel.json) | — | — | SMG_03 |
+| [`ID_SR_04Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/Components/ID_SR_04Barrel.json) | — | — | SR_04 |
+| [`ID_SV98Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_015/Content/Data/ID_SV98Barrel.json) | — | — | SV98 |
+| [`ID_SVDMBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/Components/ID_SVDMBarrel.json) | — | — | SVDM |
+| [`ID_Tar21Barrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_012/Content/Data/ID_Tar21Barrel.json) | — | — | TAR21 |
+| [`ID_VectorBarrel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_013/Content/Data/ID_VectorBarrel.json) | — | — | Vector |
 
 ### Bipod (9)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| Grip Pod (`ID_FGP_04`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.94, AimTime ×c 1.1, EquipSpeedMultiplier ×c 0.98<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.25, HorizontalRecoilMultiplier ×c 0.28, SpreadMultiplier ×c 0.45, AimTime ×c 0.92 | `GE_FGP_04_NonBipodState_CharacterEffects`, `GE_FGP_04_UnfoldedBipodState_CharacterEffects`, `GE_FGP_04_BipodState_CharacterEffects` | AK74M, M249, M4, MP9, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| PKM Bipod (`ID_FGRP_008`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.2, HorizontalRecoilMultiplier ×c 0.22, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_008_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_008_BipodState_CharacterEffects` | LMG_02 |
-| SV98 Bipod (`ID_FGRP_009`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.45, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 0.45, AimTime ×c 0.84 | `GE_FGRP_009_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_009_BipodState_CharacterEffects` | SV98 |
-| SKS Bipod (`ID_FGRP_010`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.4, SpreadMultiplier ×c 0.45, AimTime ×c 0.86 | `GE_FGRP_010_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_010_BipodState_CharacterEffects` | SKS |
-| SVD Bipod (`ID_FGRP_011`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 0.45, AimTime ×c 0.86 | `GE_FGRP_011_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_011_BipodState_CharacterEffects` | SVDM |
-| M249 Bipod (`ID_FGRP_012`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.2, HorizontalRecoilMultiplier ×c 0.25, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_012_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_012_BipodState_CharacterEffects` | M249 |
-| Pro Tilt Bipod (`ID_FGRP_013`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.5, SpreadMultiplier ×c 0.45, AimTime ×c 0.83 | `GE_FGRP_013_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_013_BipodState_CharacterEffects` | MK22, RFB, SR_04 |
-| Evo-3 Ultra Bipod (`ID_FGRP_019`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.4, HorizontalRecoilMultiplier ×c 0.3, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_019_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_019_BipodState_CharacterEffects` | WEPN_036 |
-| M14 Bipod (`ID_FGRP_020`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.6, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_020_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_020_BipodState_CharacterEffects` | WEPN_034 |
+| Grip Pod ([`ID_FGP_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Foregrips/FGP_04/ID_FGP_04.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.94, AimTime ×c 1.1, EquipSpeedMultiplier ×c 0.98<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.25, HorizontalRecoilMultiplier ×c 0.28, SpreadMultiplier ×c 0.45, AimTime ×c 0.92 | `GE_FGP_04_NonBipodState_CharacterEffects`, `GE_FGP_04_UnfoldedBipodState_CharacterEffects`, `GE_FGP_04_BipodState_CharacterEffects` | AK74M, M249, M4, MP9, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| PKM Bipod ([`ID_FGRP_008`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_008/Content/Data/ID_FGRP_008.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.2, HorizontalRecoilMultiplier ×c 0.22, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_008_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_008_BipodState_CharacterEffects` | LMG_02 |
+| SV98 Bipod ([`ID_FGRP_009`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_009/Content/Data/ID_FGRP_009.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.45, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 0.45, AimTime ×c 0.84 | `GE_FGRP_009_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_009_BipodState_CharacterEffects` | SV98 |
+| SKS Bipod ([`ID_FGRP_010`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_010/Content/Data/ID_FGRP_010.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.4, SpreadMultiplier ×c 0.45, AimTime ×c 0.86 | `GE_FGRP_010_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_010_BipodState_CharacterEffects` | SKS |
+| SVD Bipod ([`ID_FGRP_011`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_011/Content/Data/ID_FGRP_011.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 0.45, AimTime ×c 0.86 | `GE_FGRP_011_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_011_BipodState_CharacterEffects` | SVDM |
+| M249 Bipod ([`ID_FGRP_012`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_012/Content/Data/ID_FGRP_012.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.2, HorizontalRecoilMultiplier ×c 0.25, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_012_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_012_BipodState_CharacterEffects` | M249 |
+| Pro Tilt Bipod ([`ID_FGRP_013`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_013/Content/Data/ID_FGRP_013.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.65, HorizontalRecoilMultiplier ×c 0.5, SpreadMultiplier ×c 0.45, AimTime ×c 0.83 | `GE_FGRP_013_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_013_BipodState_CharacterEffects` | MK22, RFB, SR_04 |
+| Evo-3 Ultra Bipod ([`ID_FGRP_019`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_019/Content/Data/ID_FGRP_019.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.4, HorizontalRecoilMultiplier ×c 0.3, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_019_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_019_BipodState_CharacterEffects` | WEPN_036 |
+| M14 Bipod ([`ID_FGRP_020`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_020/Content/Data/ID_FGRP_020.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1<br>**Bipod unfolded:** VerticalRecoilMultiplier ×c 1.15, HorizontalRecoilMultiplier ×c 1.15, SpreadMultiplier ×c 1.15, AimTime ×c 1.05<br>**Bipod mounted:** VerticalRecoilMultiplier ×c 0.6, HorizontalRecoilMultiplier ×c 0.35, SpreadMultiplier ×c 1, AimTime ×c 0.88 | `GE_FGRP_020_UnfoldedBipodState_CharacterEffects`, `GE_FGRP_020_BipodState_CharacterEffects` | WEPN_034 |
 
 ### Grip (26)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| `ID_AK74MIMIEGGrip` | — | — | AK74M |
-| AK74M Grip (`ID_AK74MPistolGrip`) | — | — | AK74M |
-| `ID_AR_02_GRP_05` | **On the weapon:** HorizontalRecoilMultiplier = 0, VerticalRecoilMultiplier = 0 | — | M4 |
-| TDG Vertical Foregrip (`ID_FGP_02`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.7, HorizontalRecoilMultiplier ×c 0.85, SpreadMultiplier ×c 0.83, AimTime ×c 1.1, EquipSpeedMultiplier ×c 0.92 | `GE_FGP_02_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| AFG Angled Foregrip (`ID_FGP_03`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.75, SpreadMultiplier ×c 0.78, AimTime ×c 0.85, EquipSpeedMultiplier ×c 1.1 | `GE_FGP_03_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| RVG Vertical Foregrip (`ID_FGRP_006`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.75, HorizontalRecoilMultiplier ×c 0.87, SpreadMultiplier ×c 0.81, AimTime ×c 0.9, EquipSpeedMultiplier ×c 1.07 | `GE_FGRP_006_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| Shift Foregrip (`ID_FGRP_007`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.92, HorizontalRecoilMultiplier ×c 0.71, SpreadMultiplier ×c 0.76, AimTime ×c 0.87, EquipSpeedMultiplier ×c 1.15 | `GE_FGRP_007_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| CQR Tactical Front Rail Grip (`ID_FGRP_014`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.7, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.91, AimTime ×c 1.15, EquipSpeedMultiplier ×c 1.09 | `GE_FGRP_014_CharacterEffects` | AK74M, M249, M4, M500, WEPN_029, WEPN_030, WEPN_036 |
-| Rubberized Ergonomic Foregrip (`ID_FGRP_015`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.93, SpreadMultiplier ×c 0.84, AimTime ×c 1.02, EquipSpeedMultiplier ×c 0.98 | `GE_FGRP_015_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| 45° Angled Foregrip (`ID_FGRP_016`) | **On the weapon:** VerticalRecoilMultiplier ×c 1.05, HorizontalRecoilMultiplier ×c 0.82, SpreadMultiplier ×c 0.82, AimTime ×c 0.83, EquipSpeedMultiplier ×c 1.13 | `GE_FGRP_016_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| Angled Tactical Foregrip (`ID_FGRP_017`) | **On the weapon:** VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 0.84, SpreadMultiplier ×c 0.84, AimTime ×c 0.88, EquipSpeedMultiplier ×c 1.09 | `GE_FGRP_017_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| Mini Angled Foregrip (`ID_FGRP_018`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.95, HorizontalRecoilMultiplier ×c 0.77, SpreadMultiplier ×c 0.8, AimTime ×c 0.86, EquipSpeedMultiplier ×c 1.1 | `GE_FGRP_018_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| `ID_JudgePistolgrip` | — | — | Judge |
-| `ID_LMG_02PistolGrip` | — | — | LMG_02 |
-| M4 Pistol Grip (`ID_M4Grip`) | — | — | M4 |
-| `ID_MK22Grip` | — | — | MK22 |
-| `ID_MMGLGrip` | — | — | MMGL |
-| FAL Pistol Grip (`ID_PGRP_003`) | — | — | WEPN_030 |
-| Galil Pistol Grip (`ID_PGRP_010`) | — | — | WEPN_029 |
-| `ID_PGRP_041` | — | — | WEPN_035 |
-| WEPN_36 Evoly Grip (`ID_PGRP_042`) | — | — | WEPN_036 |
-| Sig Spear (WEPN_037) Standard Pistol Grip (`ID_PGRP_043`) | — | — | WEPN_037 |
-| Kungfu (`ID_PGRP_044`) | — | — | WEPN_037 |
-| `ID_Pistol_01_GRP_01` | — | — | Glock17, WEPN_032 |
-| RK6 Tactical Foregrip (`ID_RK6_Grip`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.85, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.85, AimTime ×c 1.1, EquipSpeedMultiplier ×c 1 | `GE_RK6_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
-| `ID_SMG_03PistolGrip` | — | — | SMG_03, WEPN_031 |
+| [`ID_AK74MIMIEGGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Grips/ID_AK74MIMIEGGrip.json) | — | — | AK74M |
+| AK74M Grip ([`ID_AK74MPistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_002/Content/Data/ID_AK74MPistolGrip.json)) | — | — | AK74M |
+| [`ID_AR_02_GRP_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/AR/M4/Assets/Components/PistolGrip/GRP_05/ID_AR_02_GRP_05.json) | **On the weapon:** HorizontalRecoilMultiplier = 0, VerticalRecoilMultiplier = 0 | — | M4 |
+| TDG Vertical Foregrip ([`ID_FGP_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Foregrips/FGP_02/ID_FGP_02.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.7, HorizontalRecoilMultiplier ×c 0.85, SpreadMultiplier ×c 0.83, AimTime ×c 1.1, EquipSpeedMultiplier ×c 0.92 | `GE_FGP_02_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| AFG Angled Foregrip ([`ID_FGP_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Foregrips/FGP_03/ID_FGP_03.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.75, SpreadMultiplier ×c 0.78, AimTime ×c 0.85, EquipSpeedMultiplier ×c 1.1 | `GE_FGP_03_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| RVG Vertical Foregrip ([`ID_FGRP_006`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_006/Content/Data/ID_FGRP_006.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.75, HorizontalRecoilMultiplier ×c 0.87, SpreadMultiplier ×c 0.81, AimTime ×c 0.9, EquipSpeedMultiplier ×c 1.07 | `GE_FGRP_006_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| Shift Foregrip ([`ID_FGRP_007`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_007/Content/Data/ID_FGRP_007.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.92, HorizontalRecoilMultiplier ×c 0.71, SpreadMultiplier ×c 0.76, AimTime ×c 0.87, EquipSpeedMultiplier ×c 1.15 | `GE_FGRP_007_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| CQR Tactical Front Rail Grip ([`ID_FGRP_014`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_014/Content/Data/ID_FGRP_014.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.7, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.91, AimTime ×c 1.15, EquipSpeedMultiplier ×c 1.09 | `GE_FGRP_014_CharacterEffects` | AK74M, M249, M4, M500, WEPN_029, WEPN_030, WEPN_036 |
+| Rubberized Ergonomic Foregrip ([`ID_FGRP_015`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_015/Content/Data/ID_FGRP_015.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.93, SpreadMultiplier ×c 0.84, AimTime ×c 1.02, EquipSpeedMultiplier ×c 0.98 | `GE_FGRP_015_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| 45° Angled Foregrip ([`ID_FGRP_016`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_016/Content/Data/ID_FGRP_016.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1.05, HorizontalRecoilMultiplier ×c 0.82, SpreadMultiplier ×c 0.82, AimTime ×c 0.83, EquipSpeedMultiplier ×c 1.13 | `GE_FGRP_016_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| Angled Tactical Foregrip ([`ID_FGRP_017`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_017/Content/Data/ID_FGRP_017.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 0.84, SpreadMultiplier ×c 0.84, AimTime ×c 0.88, EquipSpeedMultiplier ×c 1.09 | `GE_FGRP_017_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| Mini Angled Foregrip ([`ID_FGRP_018`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Foregrips/FGRP_018/Content/Data/ID_FGRP_018.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.95, HorizontalRecoilMultiplier ×c 0.77, SpreadMultiplier ×c 0.8, AimTime ×c 0.86, EquipSpeedMultiplier ×c 1.1 | `GE_FGRP_018_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| [`ID_JudgePistolgrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Pistols/Pistol_02/Content/Data/Components/ID_JudgePistolgrip.json) | — | — | Judge |
+| [`ID_LMG_02PistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/Components/ID_LMG_02PistolGrip.json) | — | — | LMG_02 |
+| M4 Pistol Grip ([`ID_M4Grip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_001/Content/Data/ID_M4Grip.json)) | — | — | M4 |
+| [`ID_MK22Grip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/Components/ID_MK22Grip.json) | — | — | MK22 |
+| [`ID_MMGLGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_011/Content/Data/ID_MMGLGrip.json) | — | — | MMGL |
+| FAL Pistol Grip ([`ID_PGRP_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_003/Content/Data/ID_PGRP_003.json)) | — | — | WEPN_030 |
+| Galil Pistol Grip ([`ID_PGRP_010`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_010/Content/Data/ID_PGRP_010.json)) | — | — | WEPN_029 |
+| [`ID_PGRP_041`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_041/Content/Data/ID_PGRP_041.json) | — | — | WEPN_035 |
+| WEPN_36 Evoly Grip ([`ID_PGRP_042`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_042/Content/Data/ID_PGRP_042.json)) | — | — | WEPN_036 |
+| Sig Spear (WEPN_037) Standard Pistol Grip ([`ID_PGRP_043`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_043/Content/Data/ID_PGRP_043.json)) | — | — | WEPN_037 |
+| Kungfu ([`ID_PGRP_044`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_044/Content/Data/ID_PGRP_044.json)) | — | — | WEPN_037 |
+| [`ID_Pistol_01_GRP_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Pistol/Glock17/Assets/Components/Grips/Overmold/Mutable/ID_Pistol_01_GRP_01.json) | — | — | Glock17, WEPN_032 |
+| RK6 Tactical Foregrip ([`ID_RK6_Grip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Foregrips/RK6/ID_RK6_Grip.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.85, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.85, AimTime ×c 1.1, EquipSpeedMultiplier ×c 1 | `GE_RK6_CharacterEffects` | AK74M, M249, M4, M500, MP9, RFB, SMG_03, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_036, WEPN_037 |
+| [`ID_SMG_03PistolGrip`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03PistolGrip.json) | — | — | SMG_03, WEPN_031 |
 
 ### Handguard (6)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| `ID_MMGLHandguard` | — | — | MMGL |
-| `ID_MP43Handguard` | — | — | MP43 |
-| `ID_SKSHandguard` | — | — | SKS |
-| `ID_SMG_01_HGD_01` | — | — | Vector |
-| `ID_SR_04Handguard` | — | — | SR_04 |
-| `ID_SVDMHandguard` | — | — | SVDM |
+| [`ID_MMGLHandguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_022/Content/Data/ID_MMGLHandguard.json) | — | — | MMGL |
+| [`ID_MP43Handguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/Components/ID_MP43Handguard.json) | — | — | MP43 |
+| [`ID_SKSHandguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_020/Content/Data/ID_SKSHandguard.json) | — | — | SKS |
+| [`ID_SMG_01_HGD_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/SMG/Vector/Assets/Components/Handguards/G22ShortHandguard/Meshes/Mutable/ID_SMG_01_HGD_01.json) | — | — | Vector |
+| [`ID_SR_04Handguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/Components/ID_SR_04Handguard.json) | — | — | SR_04 |
+| [`ID_SVDMHandguard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/Components/ID_SVDMHandguard.json) | — | — | SVDM |
 
 ### Magazine (57)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| STANAG 30 RND Magazine (`ID_556STANAG_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.98 | `GE_Stanag_30Rounds_CharacterEffects` | A91, KH2002, M249, M4, TAR21, WEPN_033 |
-| AK74 75 RND Drum Magazine (`ID_AK74M_Mag_75rnd`) | **On the weapon:** AimTime ×c 1.26, VerticalRecoilMultiplier ×c 1.22, HorizontalRecoilMultiplier ×c 1.24, EquipSpeedMultiplier ×c 0.93 | `GE_AK74_Mag_Drum75rd_CharacterEffects` | AK74M |
-| AK74 60 RND Magazine (`ID_AK74M_Mag_Extended`) | **On the weapon:** AimTime ×c 1.19, VerticalRecoilMultiplier ×c 1.19, HorizontalRecoilMultiplier ×c 1.21, EquipSpeedMultiplier ×c 0.93 | `GE_AK74_Mag_Ext60rd_CharacterEffects` | AK74M |
-| AK74 30 RND Magazine (`ID_AK74M_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_AK74_Mag_30rd_CharacterEffects` | AK74M |
-| AR Extended Mag (`ID_AR_Mag_Extended`) | — | — | A91, KH2002, M4, TAR21, WEPN_033 |
-| Glock 17 Extended Mag (`ID_Glock17_Mag_Extended`) | — | — | Glock17, WEPN_032 |
-| GGX 17 RND Magazine (`ID_Glock17_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | Glock17, WEPN_032 |
-| Judge Bullet Cylinder (`ID_Judge_Mag_Internal`) | — | — | Judge |
-| PKM 100 RND Box  (`ID_LMG_02_Magazine_Standard`) | **On the weapon:** AimTime ×c 1.1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAG_LMG_02_100rd_CharacterEffects` | LMG_02 |
-| M500 Internal Mag (`ID_M12G_Mag_Internal`) | — | — | M500 |
-| M249 200 RND Box (`ID_M249_Mag_Standard`) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.17, HorizontalRecoilMultiplier ×c 1.17, EquipSpeedMultiplier ×c 0.93 | `GE_MAG_M249_200rd_CharacterEffects` | M249 |
-| M4 Standard Mag (`ID_M4_Mag_Standard`) | — | — | A91, KH2002, M4, TAR21, WEPN_033 |
-| M1911 7 RND Magazine (`ID_MAGZ_002`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | WEPN_026 |
-| Deagle 7 RND Magazine (`ID_MAGZ_003`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | WEPN_027 |
-| MP5 30 RND Magazine (`ID_MAGZ_004`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_004_CharacterEffects` | WEPN_028 |
-| Galil 35 RND Magazine (`ID_MAGZ_005`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_005_CharacterEffects` | WEPN_029 |
-| FAL 20 RND Magazine (`ID_MAGZ_006`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | RFB, WEPN_030 |
-| GGX 50 RND Drum Magazine (`ID_MAGZ_011`) | **On the weapon:** AimTime ×c 1.1, VerticalRecoilMultiplier ×c 1.04, HorizontalRecoilMultiplier ×c 1.07, EquipSpeedMultiplier ×c 0.95 | `GE_MAGZ_011_CharacterEffects` | Glock17, WEPN_032 |
-| GGX 33 RND Magazine (`ID_MAGZ_012`) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 1.04, EquipSpeedMultiplier ×c 0.98 | `GE_MAGZ_012_CharacterEffects` | Glock17, WEPN_032 |
-| FAL 30 RND Magazine (`ID_MAGZ_024`) | **On the weapon:** AimTime ×c 1.26, VerticalRecoilMultiplier ×c 1.22, HorizontalRecoilMultiplier ×c 1.24, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_024_CharacterEffects` | RFB, WEPN_030 |
-| AMR 50 10 RND Magazine (`ID_MAGZ_026`) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.9 | `GE_MAGZ_026_CharacterEffects` | SR_04 |
-| MK22 5 RND Magazine (`ID_MAGZ_034`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_034_CharacterEffects` | MK22 |
-| PP-19 50 RND Vityaz Drum Magazine (`ID_MAGZ_046`) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_046_CharacterEffects` | SMG_03 |
-| PP-19 Bizon 53 RND Magazine (`ID_MAGZ_051`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_051_CharacterEffects` | WEPN_031 |
-| AMP-9 20 RND Magazine (`ID_MAGZ_052`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_052_CharacterEffects` | MP9 |
-| Super-45 40 RND Drum Magazine (`ID_MAGZ_055`) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_055_CharacterEffects` | Vector |
-| MP5 50 RND Drum Magazine (`ID_MAGZ_056`) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_056_CharacterEffects` | WEPN_028 |
-| Super-45 13 RND Magazine (`ID_MAGZ_057`) | **On the weapon:** AimTime ×c 0.83, VerticalRecoilMultiplier ×c 0.83, HorizontalRecoilMultiplier ×c 0.83, EquipSpeedMultiplier ×c 1.21 | `GE_MAGZ_057_CharacterEffects` | Vector |
-| PP-19 Vityaz 10 RND Magazine (`ID_MAGZ_059`) | **On the weapon:** AimTime ×c 0.86, VerticalRecoilMultiplier ×c 0.83, HorizontalRecoilMultiplier ×c 0.83, EquipSpeedMultiplier ×c 1.2 | `GE_MAGZ_059_CharacterEffects` | SMG_03 |
-| Galil 50 RND Magazine (`ID_MAGZ_060`) | **On the weapon:** AimTime ×c 1.19, VerticalRecoilMultiplier ×c 1.19, HorizontalRecoilMultiplier ×c 1.21, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_060_CharacterEffects` | WEPN_029 |
-| AMP-9 15 RND Magazine (`ID_MAGZ_061`) | **On the weapon:** AimTime ×c 0.86, VerticalRecoilMultiplier ×c 0.83, HorizontalRecoilMultiplier ×c 0.83, EquipSpeedMultiplier ×c 1.2 | — | MP9 |
-| M249 100 RND Fabric Magazine (`ID_MAGZ_062`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_062_CharacterEffects` | M249 |
-| M1911 10 RND Magazine (`ID_MAGZ_063`) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 1.04, EquipSpeedMultiplier ×c 0.98 | `GE_MAGZ_063_CharacterEffects` | WEPN_026 |
-| MP5 20 RND Magazine (`ID_MAGZ_064`) | **On the weapon:** AimTime ×c 0.87, VerticalRecoilMultiplier ×c 0.87, HorizontalRecoilMultiplier ×c 0.88, EquipSpeedMultiplier ×c 1.1 | `GE_MAGZ_064_CharacterEffects` | WEPN_028 |
-| SVD 5 RND Magazine (`ID_MAGZ_065`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_065` | SVDM |
-| AMP-9 50 RND Drum Magazine (`ID_MAGZ_066`) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_066` | MP9 |
-| Evo-3 Ultra 50 RND Box (`ID_MAGZ_067`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_067_CharacterEffects` | WEPN_036 |
-| M14 10 RND Magazine (`ID_MAGZ_068`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_068_CharacterEffects` | WEPN_034 |
-| SIG Spear (WEPN_037) Standard Mag (`ID_MAGZ_069`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_069_CharacterEffects` | WEPN_037 |
-| M14 30 RND Magazine (`ID_MAGZ_070`) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.22, HorizontalRecoilMultiplier ×c 1.24, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_070_CharacterEffects` | WEPN_034 |
-| M14 20 RND Magazine (`ID_MAGZ_071`) | **On the weapon:** AimTime ×c 1.08, VerticalRecoilMultiplier ×c 1.07, HorizontalRecoilMultiplier ×c 1.05, EquipSpeedMultiplier ×c 0.95 | `GE_MAGZ_071_CharacterEffects` | WEPN_034 |
-| MK22 Standard Mag (`ID_MK22_Mag_Standard`) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.9 | `GE_MAG_MK22_10rd_CharacterEffects` | MK22 |
-| MMGL Internal Mag (`ID_MMGL_Mag_Internal`) | — | — | MMGL |
-| Mosin Standard Mag (`ID_Mosin_MagInternal`) | — | — | WEPN_017 |
-| MP9 Extended Mag (`ID_MP9_Mag_Extended`) | — | — | MP9 |
-| AMP-9 30 RND Magazine (`ID_MP9_Mag_Standard`) | **On the weapon:** AimTime ×c 1.11, VerticalRecoilMultiplier ×c 1.12, HorizontalRecoilMultiplier ×c 1.14, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_043_CharacterEffects` | MP9 |
-| FAL 10 RND Magazine (`ID_RFB_Mag_Standard`) | **On the weapon:** AimTime ×c 0.85, VerticalRecoilMultiplier ×c 0.84, HorizontalRecoilMultiplier ×c 0.85, EquipSpeedMultiplier ×c 1.24 | `GE_MAG_FAL_10rd_CharacterEffects` | RFB, WEPN_030 |
-| SKS Extended Mag (`ID_SKS_Mag_Extended`) | — | — | SKS |
-| SKS Internal Mag (`ID_SKS_Mag_Internal`) | — | — | SKS |
-| PP-19 Vityaz 30 RND Magazine (`ID_SMG_03_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAG_SMG_03_CharacterEffects` | SMG_03 |
-| AMR 50 5 RND Magazine (`ID_SR_04_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | SR_04 |
-| STANAG 20 RND Magazine (`ID_STANAG_Mag_20rd`) | **On the weapon:** AimTime ×c 0.85, VerticalRecoilMultiplier ×c 0.84, HorizontalRecoilMultiplier ×c 0.85, EquipSpeedMultiplier ×c 1.16 | `GE_MAGZ_053_CharacterEffects` | A91, KH2002, M249, M4, TAR21, WEPN_033 |
-| STANAG 60 RND Magazine (`ID_STANAG_Mag_Extended_60rd`) | **On the weapon:** AimTime ×c 1.19, VerticalRecoilMultiplier ×c 1.19, HorizontalRecoilMultiplier ×c 1.21, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_054_CharacterEffects` | A91, KH2002, M249, M4, TAR21, WEPN_033 |
-| SV98 Extended Mag (`ID_SV98_Mag_Extended`) | — | — | SV98 |
-| SV98 10 RND Magazine (`ID_SV98_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAG_SV98_10rd_CharacterEffects` | SV98 |
-| SVDM Standard Magazine (`ID_SVDM_Mag_Standard`) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.9 | — | SVDM |
-| Super-45 30 RND Magazine (`ID_Vector_Mag_Standard`) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_008_CharacterEffects` | Vector |
+| STANAG 30 RND Magazine ([`ID_556STANAG_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/Stanag/ID_556STANAG_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.98 | `GE_Stanag_30Rounds_CharacterEffects` | A91, KH2002, M249, M4, TAR21, WEPN_033 |
+| AK74 75 RND Drum Magazine ([`ID_AK74M_Mag_75rnd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/AK74M_Mag_Drum_75rnd/Data/ID_AK74M_Mag_75rnd.json)) | **On the weapon:** AimTime ×c 1.26, VerticalRecoilMultiplier ×c 1.22, HorizontalRecoilMultiplier ×c 1.24, EquipSpeedMultiplier ×c 0.93 | `GE_AK74_Mag_Drum75rd_CharacterEffects` | AK74M |
+| AK74 60 RND Magazine ([`ID_AK74M_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/AK74M_Mag_Extended_60rd/ID_AK74M_Mag_Extended.json)) | **On the weapon:** AimTime ×c 1.19, VerticalRecoilMultiplier ×c 1.19, HorizontalRecoilMultiplier ×c 1.21, EquipSpeedMultiplier ×c 0.93 | `GE_AK74_Mag_Ext60rd_CharacterEffects` | AK74M |
+| AK74 30 RND Magazine ([`ID_AK74M_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/AK74M_Mag_30rd/ID_AK74M_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_AK74_Mag_30rd_CharacterEffects` | AK74M |
+| AR Extended Mag ([`ID_AR_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/ID_AR_Mag_Extended.json)) | — | — | A91, KH2002, M4, TAR21, WEPN_033 |
+| Glock 17 Extended Mag ([`ID_Glock17_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Pistol/ID_Glock17_Mag_Extended.json)) | — | — | Glock17, WEPN_032 |
+| GGX 17 RND Magazine ([`ID_Glock17_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Pistol/ID_Glock17_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | Glock17, WEPN_032 |
+| Judge Bullet Cylinder ([`ID_Judge_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Pistol/ID_Judge_Mag_Internal.json)) | — | — | Judge |
+| PKM 100 RND Box  ([`ID_LMG_02_Magazine_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/ID_LMG_02_Magazine_Standard.json)) | **On the weapon:** AimTime ×c 1.1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAG_LMG_02_100rd_CharacterEffects` | LMG_02 |
+| M500 Internal Mag ([`ID_M12G_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Shotgun/ID_M12G_Mag_Internal.json)) | — | — | M500 |
+| M249 200 RND Box ([`ID_M249_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/LMG/ID_M249_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.17, HorizontalRecoilMultiplier ×c 1.17, EquipSpeedMultiplier ×c 0.93 | `GE_MAG_M249_200rd_CharacterEffects` | M249 |
+| M4 Standard Mag ([`ID_M4_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/AR/ID_M4_Mag_Standard.json)) | — | — | A91, KH2002, M4, TAR21, WEPN_033 |
+| M1911 7 RND Magazine ([`ID_MAGZ_002`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_002/Content/Data/ID_MAGZ_002.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | WEPN_026 |
+| Deagle 7 RND Magazine ([`ID_MAGZ_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_003/Content/Data/ID_MAGZ_003.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | WEPN_027 |
+| MP5 30 RND Magazine ([`ID_MAGZ_004`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_004/Content/Data/ID_MAGZ_004.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_004_CharacterEffects` | WEPN_028 |
+| Galil 35 RND Magazine ([`ID_MAGZ_005`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_005/Content/Data/ID_MAGZ_005.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_005_CharacterEffects` | WEPN_029 |
+| FAL 20 RND Magazine ([`ID_MAGZ_006`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_006/Content/Data/ID_MAGZ_006.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | RFB, WEPN_030 |
+| GGX 50 RND Drum Magazine ([`ID_MAGZ_011`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_011/Content/Data/ID_MAGZ_011.json)) | **On the weapon:** AimTime ×c 1.1, VerticalRecoilMultiplier ×c 1.04, HorizontalRecoilMultiplier ×c 1.07, EquipSpeedMultiplier ×c 0.95 | `GE_MAGZ_011_CharacterEffects` | Glock17, WEPN_032 |
+| GGX 33 RND Magazine ([`ID_MAGZ_012`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_012/Content/Data/ID_MAGZ_012.json)) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 1.04, EquipSpeedMultiplier ×c 0.98 | `GE_MAGZ_012_CharacterEffects` | Glock17, WEPN_032 |
+| FAL 30 RND Magazine ([`ID_MAGZ_024`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_024/Content/Data/ID_MAGZ_024.json)) | **On the weapon:** AimTime ×c 1.26, VerticalRecoilMultiplier ×c 1.22, HorizontalRecoilMultiplier ×c 1.24, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_024_CharacterEffects` | RFB, WEPN_030 |
+| AMR 50 10 RND Magazine ([`ID_MAGZ_026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_026/Content/Data/ID_MAGZ_026.json)) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.9 | `GE_MAGZ_026_CharacterEffects` | SR_04 |
+| MK22 5 RND Magazine ([`ID_MAGZ_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_034/Content/Data/ID_MAGZ_034.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_034_CharacterEffects` | MK22 |
+| PP-19 50 RND Vityaz Drum Magazine ([`ID_MAGZ_046`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_046/Content/Data/ID_MAGZ_046.json)) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_046_CharacterEffects` | SMG_03 |
+| PP-19 Bizon 53 RND Magazine ([`ID_MAGZ_051`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_051/Content/Data/ID_MAGZ_051.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_051_CharacterEffects` | WEPN_031 |
+| AMP-9 20 RND Magazine ([`ID_MAGZ_052`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_052/Content/Data/ID_MAGZ_052.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_052_CharacterEffects` | MP9 |
+| Super-45 40 RND Drum Magazine ([`ID_MAGZ_055`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_055/Content/Data/ID_MAGZ_055.json)) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_055_CharacterEffects` | Vector |
+| MP5 50 RND Drum Magazine ([`ID_MAGZ_056`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_056/Content/Data/ID_MAGZ_056.json)) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_056_CharacterEffects` | WEPN_028 |
+| Super-45 13 RND Magazine ([`ID_MAGZ_057`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_057/Content/Data/ID_MAGZ_057.json)) | **On the weapon:** AimTime ×c 0.83, VerticalRecoilMultiplier ×c 0.83, HorizontalRecoilMultiplier ×c 0.83, EquipSpeedMultiplier ×c 1.21 | `GE_MAGZ_057_CharacterEffects` | Vector |
+| PP-19 Vityaz 10 RND Magazine ([`ID_MAGZ_059`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_059/Content/Data/ID_MAGZ_059.json)) | **On the weapon:** AimTime ×c 0.86, VerticalRecoilMultiplier ×c 0.83, HorizontalRecoilMultiplier ×c 0.83, EquipSpeedMultiplier ×c 1.2 | `GE_MAGZ_059_CharacterEffects` | SMG_03 |
+| Galil 50 RND Magazine ([`ID_MAGZ_060`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_060/Content/Data/ID_MAGZ_060.json)) | **On the weapon:** AimTime ×c 1.19, VerticalRecoilMultiplier ×c 1.19, HorizontalRecoilMultiplier ×c 1.21, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_060_CharacterEffects` | WEPN_029 |
+| AMP-9 15 RND Magazine ([`ID_MAGZ_061`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_061/Content/Data/ID_MAGZ_061.json)) | **On the weapon:** AimTime ×c 0.86, VerticalRecoilMultiplier ×c 0.83, HorizontalRecoilMultiplier ×c 0.83, EquipSpeedMultiplier ×c 1.2 | — | MP9 |
+| M249 100 RND Fabric Magazine ([`ID_MAGZ_062`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_062/Content/Data/ID_MAGZ_062.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_062_CharacterEffects` | M249 |
+| M1911 10 RND Magazine ([`ID_MAGZ_063`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_063/Content/Data/ID_MAGZ_063.json)) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 1.04, EquipSpeedMultiplier ×c 0.98 | `GE_MAGZ_063_CharacterEffects` | WEPN_026 |
+| MP5 20 RND Magazine ([`ID_MAGZ_064`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_064/Content/Data/ID_MAGZ_064.json)) | **On the weapon:** AimTime ×c 0.87, VerticalRecoilMultiplier ×c 0.87, HorizontalRecoilMultiplier ×c 0.88, EquipSpeedMultiplier ×c 1.1 | `GE_MAGZ_064_CharacterEffects` | WEPN_028 |
+| SVD 5 RND Magazine ([`ID_MAGZ_065`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_065/Content/Data/ID_MAGZ_065.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_065` | SVDM |
+| AMP-9 50 RND Drum Magazine ([`ID_MAGZ_066`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_066/Content/Data/ID_MAGZ_066.json)) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.2, HorizontalRecoilMultiplier ×c 1.18, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_066` | MP9 |
+| Evo-3 Ultra 50 RND Box ([`ID_MAGZ_067`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_067/Content/Data/ID_MAGZ_067.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_067_CharacterEffects` | WEPN_036 |
+| M14 10 RND Magazine ([`ID_MAGZ_068`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_068/Content/Data/ID_MAGZ_068.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_068_CharacterEffects` | WEPN_034 |
+| SIG Spear (WEPN_037) Standard Mag ([`ID_MAGZ_069`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_069/Content/Data/ID_MAGZ_069.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 1 | `GE_MAGZ_069_CharacterEffects` | WEPN_037 |
+| M14 30 RND Magazine ([`ID_MAGZ_070`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_070/Content/Data/ID_MAGZ_070.json)) | **On the weapon:** AimTime ×c 1.2, VerticalRecoilMultiplier ×c 1.22, HorizontalRecoilMultiplier ×c 1.24, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_070_CharacterEffects` | WEPN_034 |
+| M14 20 RND Magazine ([`ID_MAGZ_071`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_071/Content/Data/ID_MAGZ_071.json)) | **On the weapon:** AimTime ×c 1.08, VerticalRecoilMultiplier ×c 1.07, HorizontalRecoilMultiplier ×c 1.05, EquipSpeedMultiplier ×c 0.95 | `GE_MAGZ_071_CharacterEffects` | WEPN_034 |
+| MK22 Standard Mag ([`ID_MK22_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.9 | `GE_MAG_MK22_10rd_CharacterEffects` | MK22 |
+| MMGL Internal Mag ([`ID_MMGL_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/Launcher/ID_MMGL_Mag_Internal.json)) | — | — | MMGL |
+| Mosin Standard Mag ([`ID_Mosin_MagInternal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/ID_Mosin_MagInternal.json)) | — | — | WEPN_017 |
+| MP9 Extended Mag ([`ID_MP9_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_044/Content/Data/ID_MP9_Mag_Extended.json)) | — | — | MP9 |
+| AMP-9 30 RND Magazine ([`ID_MP9_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_043/Content/Data/ID_MP9_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1.11, VerticalRecoilMultiplier ×c 1.12, HorizontalRecoilMultiplier ×c 1.14, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_043_CharacterEffects` | MP9 |
+| FAL 10 RND Magazine ([`ID_RFB_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB_Mag_Standard.json)) | **On the weapon:** AimTime ×c 0.85, VerticalRecoilMultiplier ×c 0.84, HorizontalRecoilMultiplier ×c 0.85, EquipSpeedMultiplier ×c 1.24 | `GE_MAG_FAL_10rd_CharacterEffects` | RFB, WEPN_030 |
+| SKS Extended Mag ([`ID_SKS_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/DMR/ID_SKS_Mag_Extended.json)) | — | — | SKS |
+| SKS Internal Mag ([`ID_SKS_Mag_Internal`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Magazines/DMR/ID_SKS_Mag_Internal.json)) | — | — | SKS |
+| PP-19 Vityaz 30 RND Magazine ([`ID_SMG_03_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/ID_SMG_03_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAG_SMG_03_CharacterEffects` | SMG_03 |
+| AMR 50 5 RND Magazine ([`ID_SR_04_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | — | SR_04 |
+| STANAG 20 RND Magazine ([`ID_STANAG_Mag_20rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_053/Content/Data/ID_STANAG_Mag_20rd.json)) | **On the weapon:** AimTime ×c 0.85, VerticalRecoilMultiplier ×c 0.84, HorizontalRecoilMultiplier ×c 0.85, EquipSpeedMultiplier ×c 1.16 | `GE_MAGZ_053_CharacterEffects` | A91, KH2002, M249, M4, TAR21, WEPN_033 |
+| STANAG 60 RND Magazine ([`ID_STANAG_Mag_Extended_60rd`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_054/Content/Data/ID_STANAG_Mag_Extended_60rd.json)) | **On the weapon:** AimTime ×c 1.19, VerticalRecoilMultiplier ×c 1.19, HorizontalRecoilMultiplier ×c 1.21, EquipSpeedMultiplier ×c 0.93 | `GE_MAGZ_054_CharacterEffects` | A91, KH2002, M249, M4, TAR21, WEPN_033 |
+| SV98 Extended Mag ([`ID_SV98_Mag_Extended`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98_Mag_Extended.json)) | — | — | SV98 |
+| SV98 10 RND Magazine ([`ID_SV98_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_008/Content/Data/ID_SV98_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAG_SV98_10rd_CharacterEffects` | SV98 |
+| SVDM Standard Magazine ([`ID_SVDM_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/ID_SVDM_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1.06, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, EquipSpeedMultiplier ×c 0.9 | — | SVDM |
+| Super-45 30 RND Magazine ([`ID_Vector_Mag_Standard`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_008/Content/Data/ID_Vector_Mag_Standard.json)) | **On the weapon:** AimTime ×c 1, VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1 | `GE_MAGZ_008_CharacterEffects` | Vector |
 
 ### Muzzle (56)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| 3 Prong Flash Hider (`ID_MUZL_013`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | M249, M4, TAR21, WEPN_029 |
-| TopComp Brake (`ID_MUZL_014`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.96, AimTime × 1.05 | — | M249, M4, TAR21, WEPN_029 |
-| Dual Port Brake (`ID_MUZL_019`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.95, AimTime ×c 1.05 | — | Glock17, MP9, SMG_03, WEPN_028, WEPN_031, WEPN_032 |
-| Ballista Brake (`ID_MUZL_020`) | **On the weapon:** VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 0.8, SpreadMultiplier ×c 0.95, AimTime ×c 1.04 | — | AK74M, Glock17, M4, MP9, SMG_03, TAR21, WEPN_028, WEPN_029, WEPN_031, WEPN_032 |
-| Constrictor Brake (`ID_MUZL_022`) | **On the weapon:** VerticalRecoilMultiplier ×c 1.01, HorizontalRecoilMultiplier ×c 0.83, SpreadMultiplier ×c 0.97, AimTime ×c 1.03 | — | LMG_02, MK22, RFB, SKS, SV98, WEPN_017, WEPN_030, WEPN_036, WEPN_037 |
-| Tread Brake (`ID_MUZL_023`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.86, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.97, AimTime ×c 1.03 | — | M249 |
-| Hexagon Brake (`ID_MUZL_024`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.99, HorizontalRecoilMultiplier ×c 0.78, SpreadMultiplier ×c 0.96, AimTime ×c 1.05 | — | M4, TAR21, WEPN_029 |
-| Slicktap Brake (`ID_MUZL_025`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 1.03, SpreadMultiplier ×c 0.96, AimTime ×c 1.08 | — | SKS |
-| 3-Chamber Brake (`ID_MUZL_027`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.96, AimTime ×c 1.06 | — | M249, M4, TAR21, WEPN_029 |
-| DTK-1 Brake (`ID_MUZL_028`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.95, AimTime ×c 1.06 | — | SKS |
-| Orpheus Max Brake (`ID_MUZL_029`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.74, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.98, AimTime ×c 1.07 | — | LMG_02, M249 |
-| Three Port Brake (`ID_MUZL_030`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.78, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.96, AimTime ×c 1.06 | — | MK22, RFB, WEPN_030, WEPN_036, WEPN_037 |
-| M500 Sabre Brake (`ID_MUZL_031`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 1.02, SpreadMultiplier ×c 0.95, AimTime ×c 1.07 | — | M500 |
-| RC-556 Suppressor (`ID_MUZL_032`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.88, AimTime ×c 1.12 | — | M249, M4, TAR21, WEPN_029 |
-| Eclipse Flash Hider (`ID_MUZL_037`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | Glock17, MP9, SMG_03, WEPN_028, WEPN_031, WEPN_032 |
-| Slotted Flash Hider (`ID_MUZL_038`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | LMG_02 |
-| Birdcage Flash Hider (`ID_MUZL_039`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | AK74M |
-| SVD 7.62x54R Brake (`ID_MUZL_040`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.97, AimTime ×c 1.03 | — | SVDM |
-| SRVV Brake (`ID_MUZL_041`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.82, SpreadMultiplier ×c 0.95, AimTime ×c 1.05 | — | LMG_02, SV98, SVDM, WEPN_017 |
-| Deadeye Flash Hider (`ID_MUZL_042`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1 | — | LMG_02, MK22, RFB, SKS, SV98, SVDM, WEPN_017, WEPN_030, WEPN_035, WEPN_036, WEPN_037 |
-| Improved Cylinder Choke (`ID_MUZL_044`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1.02 | — | M500 |
-| Full Choke (`ID_MUZL_045`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1.02 | — | M500 |
-| Super-45 Flash Hider (`ID_MUZL_046`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | Vector |
-| Ghost LITE Muzzle Brake (`ID_MUZL_047`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.78, HorizontalRecoilMultiplier ×c 0.88, SpreadMultiplier ×c 0.98, AimTime ×c 1.04 | — | Vector |
-| AMR 50 Cal Muzzle Brake (`ID_MUZL_048`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.99, AimTime ×c 1.05 | — | SR_04 |
-| .50 Cal Heavy Suppressor (`ID_MUZL_049`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.12 | — | SR_04 |
-| .45 ACP Pistol Compensator (`ID_MUZL_050`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.86, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.98, AimTime ×c 1.03 | — | WEPN_026 |
-| AMP-9 9x19 Suppressor (`ID_MUZL_051`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.92, AimTime ×c 1.08 | — | MP9 |
-| AMP-9 Tactical Flash Hider (`ID_MUZL_052`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | MP9 |
-| PP-19-01 Vityaz 9x19 Suppressor (`ID_MUZL_053`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.97, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.95, AimTime ×c 1.1 | — | SMG_03 |
-| PP-19 Vityaz Flash Hider (`ID_MUZL_054`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | SMG_03 |
-| BMR-308 Flash Hider (`ID_MUZL_055`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | RFB |
-| BMR-308 Suppressor (`ID_MUZL_056`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.95, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.92, AimTime ×c 1.08 | — | RFB |
-| Flow-Through .308 Suppressor (`ID_MUZL_057`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.96, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.9, AimTime ×c 1.05 | — | MK22 |
-| QD-5 Suppressor (`ID_MUZL_058`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_028 |
-| MP5 Flash Hider (`ID_MUZL_059`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.92, AimTime ×c 0.98 | — | WEPN_028 |
-| Suppressor T8L1 Scout (`ID_MUZL_060`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.96, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.93, AimTime ×c 1.07 | — | WEPN_030 |
-| FAL Flash Hider (`ID_MUZL_061`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.97, AimTime ×c 0.98 | — | WEPN_030 |
-| STRELIX Suppressor (`ID_MUZL_062`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.96, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.93, AimTime ×c 1.04 | — | WEPN_035 |
-| WEPN_033 (M14) standard muzzle (`ID_MUZL_064`) | — | — | WEPN_034 |
-| QD-5 Suppressor (`ID_MUZL_065`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_036 |
-| Sig Default (`ID_MUZL_066`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_037 |
-| Cross Rifle Muzzle Brake (`ID_MUZL_067`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.92, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_037 |
-| Clutch Lok Muzzle Brake (`ID_MUZL_068`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 1.05, SpreadMultiplier ×c 0.9, AimTime ×c 1.02 | — | WEPN_037 |
-| SRD762TI-QD (`ID_MUZL_069`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.93, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.1 | — | WEPN_037 |
-| SL7i-BL Suppressor (`ID_MUZL_070`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.95, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.1 | — | WEPN_036 |
-| .30 Cal SS Phosphate Muzzle Brake (`ID_MUZL_071`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.85, HorizontalRecoilMultiplier ×c 1.05, SpreadMultiplier ×c 0.88, AimTime ×c 1.05 | — | WEPN_034 |
-| .30 Cal Steel Black Flash Hider  (`ID_MUZL_072`) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 0.97 | — | WEPN_034 |
-| GOL Multi-Caliber Suppressor (`ID_MZL_04`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.84, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.88, AimTime ×c 1.15 | — | MK22, RFB, SKS, SR_04, SV98, SVDM, WEPN_017 |
-| SG Multi-Caliber Suppressor (`ID_MZL_05`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.91, AimTime ×c 1.08 | — | Glock17, MP9, SMG_03, Vector, WEPN_026, WEPN_028, WEPN_031, WEPN_032 |
-| 12 Gauge Suppressor (`ID_MZL_06`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.92, AimTime ×c 1.1 | — | M500 |
-| AR Multi-Caliber Suppressor (`ID_MZL_07`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.93, SpreadMultiplier ×c 0.9, AimTime ×c 1.1 | — | M249, M4, TAR21, WEPN_029, WEPN_030 |
-| Hexagon 762 Suppressor (`ID_MZL_08`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.89, AimTime ×c 1.12 | — | LMG_02, SKS, SV98, SVDM, WEPN_017 |
-| PBS-4 Suppressor (`ID_MZL_09`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.86, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.88, AimTime ×c 1.12 | — | AK74M |
-| TGP-A Suppressor 5.45 (`ID_MZL_10`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.91, AimTime ×c 1.1 | — | AK74M |
-| CQB 74 Brake (`ID_PWSCQB74`) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.96, AimTime ×c 1.04 | — | AK74M |
+| 3 Prong Flash Hider ([`ID_MUZL_013`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_013/Content/Data/ID_MUZL_013.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | M249, M4, TAR21, WEPN_029 |
+| TopComp Brake ([`ID_MUZL_014`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_014/Content/Data/ID_MUZL_014.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.96, AimTime × 1.05 | — | M249, M4, TAR21, WEPN_029 |
+| Dual Port Brake ([`ID_MUZL_019`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_019/Content/Data/ID_MUZL_019.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.95, AimTime ×c 1.05 | — | Glock17, MP9, SMG_03, WEPN_028, WEPN_031, WEPN_032 |
+| Ballista Brake ([`ID_MUZL_020`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_020/Content/Data/ID_MUZL_020.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1.02, HorizontalRecoilMultiplier ×c 0.8, SpreadMultiplier ×c 0.95, AimTime ×c 1.04 | — | AK74M, Glock17, M4, MP9, SMG_03, TAR21, WEPN_028, WEPN_029, WEPN_031, WEPN_032 |
+| Constrictor Brake ([`ID_MUZL_022`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_022/Content/Data/ID_MUZL_022.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1.01, HorizontalRecoilMultiplier ×c 0.83, SpreadMultiplier ×c 0.97, AimTime ×c 1.03 | — | LMG_02, MK22, RFB, SKS, SV98, WEPN_017, WEPN_030, WEPN_036, WEPN_037 |
+| Tread Brake ([`ID_MUZL_023`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_023/Content/Data/ID_MUZL_023.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.86, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.97, AimTime ×c 1.03 | — | M249 |
+| Hexagon Brake ([`ID_MUZL_024`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_024/Content/Data/ID_MUZL_024.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.99, HorizontalRecoilMultiplier ×c 0.78, SpreadMultiplier ×c 0.96, AimTime ×c 1.05 | — | M4, TAR21, WEPN_029 |
+| Slicktap Brake ([`ID_MUZL_025`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_025/Content/Data/ID_MUZL_025.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 1.03, SpreadMultiplier ×c 0.96, AimTime ×c 1.08 | — | SKS |
+| 3-Chamber Brake ([`ID_MUZL_027`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_027/MUZL_027/Content/Data/ID_MUZL_027.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.96, AimTime ×c 1.06 | — | M249, M4, TAR21, WEPN_029 |
+| DTK-1 Brake ([`ID_MUZL_028`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_028/Content/Data/ID_MUZL_028.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.95, AimTime ×c 1.06 | — | SKS |
+| Orpheus Max Brake ([`ID_MUZL_029`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_029/Content/Data/ID_MUZL_029.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.74, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.98, AimTime ×c 1.07 | — | LMG_02, M249 |
+| Three Port Brake ([`ID_MUZL_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_030/Content/Data/ID_MUZL_030.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.78, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.96, AimTime ×c 1.06 | — | MK22, RFB, WEPN_030, WEPN_036, WEPN_037 |
+| M500 Sabre Brake ([`ID_MUZL_031`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_031/Content/Data/ID_MUZL_031.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 1.02, SpreadMultiplier ×c 0.95, AimTime ×c 1.07 | — | M500 |
+| RC-556 Suppressor ([`ID_MUZL_032`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_032/Content/Data/ID_MUZL_032.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.88, AimTime ×c 1.12 | — | M249, M4, TAR21, WEPN_029 |
+| Eclipse Flash Hider ([`ID_MUZL_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_037/Content/Data/ID_MUZL_037.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | Glock17, MP9, SMG_03, WEPN_028, WEPN_031, WEPN_032 |
+| Slotted Flash Hider ([`ID_MUZL_038`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_038/Content/Data/ID_MUZL_038.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | LMG_02 |
+| Birdcage Flash Hider ([`ID_MUZL_039`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_039/Content/Data/ID_MUZL_039.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | AK74M |
+| SVD 7.62x54R Brake ([`ID_MUZL_040`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_040/Content/Data/ID_MUZL_040.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.97, AimTime ×c 1.03 | — | SVDM |
+| SRVV Brake ([`ID_MUZL_041`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_041/Content/Data/ID_MUZL_041.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.82, SpreadMultiplier ×c 0.95, AimTime ×c 1.05 | — | LMG_02, SV98, SVDM, WEPN_017 |
+| Deadeye Flash Hider ([`ID_MUZL_042`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_037/Content/Data/ID_MUZL_042.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1 | — | LMG_02, MK22, RFB, SKS, SV98, SVDM, WEPN_017, WEPN_030, WEPN_035, WEPN_036, WEPN_037 |
+| Improved Cylinder Choke ([`ID_MUZL_044`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_044/Content/Data/ID_MUZL_044.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1.02 | — | M500 |
+| Full Choke ([`ID_MUZL_045`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_045/Content/Data/ID_MUZL_045.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 1.02 | — | M500 |
+| Super-45 Flash Hider ([`ID_MUZL_046`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_046/Content/Data/ID_MUZL_046.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | Vector |
+| Ghost LITE Muzzle Brake ([`ID_MUZL_047`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_047/Content/Data/ID_MUZL_047.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.78, HorizontalRecoilMultiplier ×c 0.88, SpreadMultiplier ×c 0.98, AimTime ×c 1.04 | — | Vector |
+| AMR 50 Cal Muzzle Brake ([`ID_MUZL_048`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_048/Content/Data/ID_MUZL_048.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.99, AimTime ×c 1.05 | — | SR_04 |
+| .50 Cal Heavy Suppressor ([`ID_MUZL_049`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_049/Content/Data/ID_MUZL_049.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.12 | — | SR_04 |
+| .45 ACP Pistol Compensator ([`ID_MUZL_050`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_050/Content/Data/ID_MUZL_050.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.86, HorizontalRecoilMultiplier ×c 0.98, SpreadMultiplier ×c 0.98, AimTime ×c 1.03 | — | WEPN_026 |
+| AMP-9 9x19 Suppressor ([`ID_MUZL_051`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_051/Content/Data/ID_MUZL_051.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.92, AimTime ×c 1.08 | — | MP9 |
+| AMP-9 Tactical Flash Hider ([`ID_MUZL_052`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_052/Content/Data/ID_MUZL_052.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | MP9 |
+| PP-19-01 Vityaz 9x19 Suppressor ([`ID_MUZL_053`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_053/Content/Data/ID_MUZL_053.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.97, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.95, AimTime ×c 1.1 | — | SMG_03 |
+| PP-19 Vityaz Flash Hider ([`ID_MUZL_054`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_054/Content/Data/ID_MUZL_054.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | SMG_03 |
+| BMR-308 Flash Hider ([`ID_MUZL_055`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_055/Content/Data/ID_MUZL_055.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.99, AimTime ×c 0.98 | — | RFB |
+| BMR-308 Suppressor ([`ID_MUZL_056`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_056/Content/Data/ID_MUZL_056.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.95, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.92, AimTime ×c 1.08 | — | RFB |
+| Flow-Through .308 Suppressor ([`ID_MUZL_057`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_057/Content/Data/ID_MUZL_057.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.96, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.9, AimTime ×c 1.05 | — | MK22 |
+| QD-5 Suppressor ([`ID_MUZL_058`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_058/Content/Data/ID_MUZL_058.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_028 |
+| MP5 Flash Hider ([`ID_MUZL_059`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_059/Content/Data/ID_MUZL_059.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.92, AimTime ×c 0.98 | — | WEPN_028 |
+| Suppressor T8L1 Scout ([`ID_MUZL_060`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_060/Content/Data/ID_MUZL_060.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.96, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.93, AimTime ×c 1.07 | — | WEPN_030 |
+| FAL Flash Hider ([`ID_MUZL_061`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_061/Content/Data/ID_MUZL_061.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 0.97, AimTime ×c 0.98 | — | WEPN_030 |
+| STRELIX Suppressor ([`ID_MUZL_062`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_062/Content/Data/ID_MUZL_062.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.96, HorizontalRecoilMultiplier ×c 0.96, SpreadMultiplier ×c 0.93, AimTime ×c 1.04 | — | WEPN_035 |
+| WEPN_033 (M14) standard muzzle ([`ID_MUZL_064`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_064/Content/Data/ID_MUZL_064.json)) | — | — | WEPN_034 |
+| QD-5 Suppressor ([`ID_MUZL_065`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_065/Content/Data/ID_MUZL_065.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_036 |
+| Sig Default ([`ID_MUZL_066`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_066/Content/Data/ID_MUZL_066.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.94, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_037 |
+| Cross Rifle Muzzle Brake ([`ID_MUZL_067`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_067/Content/Data/ID_MUZL_067.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.92, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.08 | — | WEPN_037 |
+| Clutch Lok Muzzle Brake ([`ID_MUZL_068`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_068/Content/Data/ID_MUZL_068.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 1.05, SpreadMultiplier ×c 0.9, AimTime ×c 1.02 | — | WEPN_037 |
+| SRD762TI-QD ([`ID_MUZL_069`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_069/Content/Data/ID_MUZL_069.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.93, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.1 | — | WEPN_037 |
+| SL7i-BL Suppressor ([`ID_MUZL_070`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_070/Content/Data/ID_MUZL_070.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.95, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.9, AimTime ×c 1.1 | — | WEPN_036 |
+| .30 Cal SS Phosphate Muzzle Brake ([`ID_MUZL_071`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_071/Content/Data/ID_MUZL_071.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.85, HorizontalRecoilMultiplier ×c 1.05, SpreadMultiplier ×c 0.88, AimTime ×c 1.05 | — | WEPN_034 |
+| .30 Cal Steel Black Flash Hider  ([`ID_MUZL_072`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_072/Content/Data/ID_MUZL_072.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 1, HorizontalRecoilMultiplier ×c 1, SpreadMultiplier ×c 1, AimTime ×c 0.97 | — | WEPN_034 |
+| GOL Multi-Caliber Suppressor ([`ID_MZL_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/MZL_04/ID_MZL_04.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.84, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.88, AimTime ×c 1.15 | — | MK22, RFB, SKS, SR_04, SV98, SVDM, WEPN_017 |
+| SG Multi-Caliber Suppressor ([`ID_MZL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/MZL_05/ID_MZL_05.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.91, AimTime ×c 1.08 | — | Glock17, MP9, SMG_03, Vector, WEPN_026, WEPN_028, WEPN_031, WEPN_032 |
+| 12 Gauge Suppressor ([`ID_MZL_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/MZL_06/ID_MZL_06.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.95, SpreadMultiplier ×c 0.92, AimTime ×c 1.1 | — | M500 |
+| AR Multi-Caliber Suppressor ([`ID_MZL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_012/Content/Data/ID_MZL_07.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.88, HorizontalRecoilMultiplier ×c 0.93, SpreadMultiplier ×c 0.9, AimTime ×c 1.1 | — | M249, M4, TAR21, WEPN_029, WEPN_030 |
+| Hexagon 762 Suppressor ([`ID_MZL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/MZL_08/ID_MZL_08.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.82, HorizontalRecoilMultiplier ×c 0.9, SpreadMultiplier ×c 0.89, AimTime ×c 1.12 | — | LMG_02, SKS, SV98, SVDM, WEPN_017 |
+| PBS-4 Suppressor ([`ID_MZL_09`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/MZL_09/ID_MZL_09.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.86, HorizontalRecoilMultiplier ×c 0.92, SpreadMultiplier ×c 0.88, AimTime ×c 1.12 | — | AK74M |
+| TGP-A Suppressor 5.45 ([`ID_MZL_10`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/MZL_10/ID_MZL_10.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.9, HorizontalRecoilMultiplier ×c 0.94, SpreadMultiplier ×c 0.91, AimTime ×c 1.1 | — | AK74M |
+| CQB 74 Brake ([`ID_PWSCQB74`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Muzzle_Devices/PWSCQB74/ID_PWSCQB74.json)) | **On the weapon:** VerticalRecoilMultiplier ×c 0.8, HorizontalRecoilMultiplier ×c 0.97, SpreadMultiplier ×c 0.96, AimTime ×c 1.04 | — | AK74M |
 
 ### Sight (28)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| 6-10x Scope MRAD (`ID_10xScope`) | **On the weapon:** AimTime × 1.15, AdsZoomMultiplier = 6, MaxZeroingRange = 1000, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_10xScope_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| 6-10x Scope MOA (`ID_10xScopeMoa`) | **On the weapon:** AimTime × 1.15, AdsZoomMultiplier = 6, MaxZeroingRange = 1000, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_10xScope_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| Spitfire 3X (`ID_3xScope`) | **On the weapon:** AdsZoomMultiplier = 3, MinZeroingRange = 100, MaxZeroingRange = 300, AimTime ×c 1.1<br>**Sight `S_Aim01`:** no effects | `GE_3xScope_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 4x Elcan Spectr (`ID_4xElcanSpectr`) | **On the weapon:** MaxZeroingRange = 400, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AimTime ×c 1.1, AdsZoomMultiplier = 4<br>**Sight `S_Aim02`:** AimTime ×c 1.05, AdsZoomMultiplier = 1.2 | `GE_4xElcanSpectr_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 4x Hybrid (`ID_4xHybrid`) | **On the weapon:** AdsZoomMultiplier = 4, AimTime + 0.35<br>**Sight `S_Aim01`:** no effects | — | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| 3-6x Scope (`ID_6xScope`) | **On the weapon:** AdsZoomMultiplier = 3, AimTime + 0.2, MaxZeroingRange = 500, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 3 | — | MK22, RFB, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| Holographic Sight (`ID_EotechHoloSight`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.9, MinZeroingRange = 100, MaxZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 2.5x Combat Optic (`ID_OPT_08`) | **On the weapon:** AimTime ×c 1.05, AdsZoomMultiplier = 2.5, MinZeroingRange = 100, MaxZeroingRange = 300<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| Compact T-2 Red Dot (`ID_RedDot`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.9, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| Kobra Reflex (`ID_SGHT_009`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.85, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 1x-6x LPVO Short Dot (`ID_SGHT_011`) | **On the weapon:** AdsZoomMultiplier = 3, AimTime ×c 1.12, MaxZeroingRange = 600, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 3 | `GE_SGHT_011_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| Four Reticle Reflex (`ID_SGHT_016`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.85, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_027, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| OKP 7 Reflex (`ID_SGHT_023`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.85, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| Mini Reflex Sight (`ID_SGHT_025`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1.02, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | WEPN_032 |
-| Tricon 1.5x Compact Prism Scope (`ID_SGHT_026`) | **On the weapon:** AimTime ×c 0.97, AdsZoomMultiplier = 1.5, MinZeroingRange = 100, MaxZeroingRange = 200<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| Vektor Frenix-X Micro Reflex Sight (`ID_SGHT_027`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.87, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| CQ-2x Prism Combat Scope (`ID_SGHT_028`) | **On the weapon:** AimTime ×c 1.05, AdsZoomMultiplier = 2, MinZeroingRange = 100, MaxZeroingRange = 300<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 3x Tactical Prism Scope (`ID_SGHT_029`) | **On the weapon:** AdsZoomMultiplier = 3, MinZeroingRange = 100, MaxZeroingRange = 300, AimTime ×c 1.1<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_029_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 4x Combat Prism Scope with Reflex (`ID_SGHT_030`) | **On the weapon:** MaxZeroingRange = 400, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AimTime ×c 1.1, AdsZoomMultiplier = 4<br>**Sight `S_Aim02`:** AimTime ×c 1.05, AdsZoomMultiplier = 1.2 | `GE_SGHT_030_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| 6x Precision Rifle Scope (`ID_SGHT_031`) | **On the weapon:** AdsZoomMultiplier = 6, AimTime ×c 1.15, MaxZeroingRange = 600, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 6 | `GE_SGHT_031_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| Frontier 2.5x-10x Precision Scope (`ID_SGHT_032`) | **On the weapon:** AimTime × 1.2, AdsZoomMultiplier = 2.5, MaxZeroingRange = 1000, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_032_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| CGM4 Scope (`ID_SGHT_033`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1<br>**Sight `S_Aim01`:** no effects | — | AK74M, CGM4, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| PGO-7 (`ID_SGHT_034`) | **On the weapon:** AdsZoomMultiplier = 2.8, AimTime ×c 1.15, MinZeroingRange = 10, MaxZeroingRange = 10<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_034_CharacterEffects` | RPG7 |
-| 6x Marksman Scope + Reflex (`ID_SGHT_036`) | **On the weapon:** AimTime × 1<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 6, AimTime ×c 1.12, MaxZeroingRange = 600, MinZeroingRange = 100<br>**Sight `S_Aim02`:** AimTime ×c 1.05, AdsZoomMultiplier = 1.2 | `GE_SGHT_036_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
-| MMGL Sight (`ID_SGHT_037`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MMGL, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| Compact P-1 Red Dot (`ID_SGHT_038`) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
-| Leatherwood ART II (`ID_SGHT_039`) | **On the weapon:** AdsZoomMultiplier = 3, AimTime ×c 1.15, MaxZeroingRange = 800, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_039_CharacterEffects` | WEPN_034 |
-| PU 91/30 Scope (`ID_SGHT_040`) | **On the weapon:** AdsZoomMultiplier = 3.5, AimTime ×c 1.15, MaxZeroingRange = 800, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_040_CharacterEffects` | WEPN_017 |
+| 6-10x Scope MRAD ([`ID_10xScope`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/10x_Scope/ID_10xScope.json)) | **On the weapon:** AimTime × 1.15, AdsZoomMultiplier = 6, MaxZeroingRange = 1000, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_10xScope_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| 6-10x Scope MOA ([`ID_10xScopeMoa`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/10x_Scope/ID_10xScopeMoa.json)) | **On the weapon:** AimTime × 1.15, AdsZoomMultiplier = 6, MaxZeroingRange = 1000, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_10xScope_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| Spitfire 3X ([`ID_3xScope`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_024/Content/Data/ID_3xScope.json)) | **On the weapon:** AdsZoomMultiplier = 3, MinZeroingRange = 100, MaxZeroingRange = 300, AimTime ×c 1.1<br>**Sight `S_Aim01`:** no effects | `GE_3xScope_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 4x Elcan Spectr ([`ID_4xElcanSpectr`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.json)) | **On the weapon:** MaxZeroingRange = 400, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AimTime ×c 1.1, AdsZoomMultiplier = 4<br>**Sight `S_Aim02`:** AimTime ×c 1.05, AdsZoomMultiplier = 1.2 | `GE_4xElcanSpectr_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 4x Hybrid ([`ID_4xHybrid`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/4x_Hybrid/ID_4xHybrid.json)) | **On the weapon:** AdsZoomMultiplier = 4, AimTime + 0.35<br>**Sight `S_Aim01`:** no effects | — | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| 3-6x Scope ([`ID_6xScope`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/6x_Scope/ID_6xScope.json)) | **On the weapon:** AdsZoomMultiplier = 3, AimTime + 0.2, MaxZeroingRange = 500, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 3 | — | MK22, RFB, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| Holographic Sight ([`ID_EotechHoloSight`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/Eotech_Holo/ID_EotechHoloSight.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.9, MinZeroingRange = 100, MaxZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 2.5x Combat Optic ([`ID_OPT_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/2x_Prism/ID_OPT_08.json)) | **On the weapon:** AimTime ×c 1.05, AdsZoomMultiplier = 2.5, MinZeroingRange = 100, MaxZeroingRange = 300<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| Compact T-2 Red Dot ([`ID_RedDot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_013/Content/Data/ID_RedDot.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.9, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| Kobra Reflex ([`ID_SGHT_009`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_009/Content/Data/ID_SGHT_009.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.85, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 1x-6x LPVO Short Dot ([`ID_SGHT_011`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_011/Content/Data/ID_SGHT_011.json)) | **On the weapon:** AdsZoomMultiplier = 3, AimTime ×c 1.12, MaxZeroingRange = 600, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 3 | `GE_SGHT_011_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| Four Reticle Reflex ([`ID_SGHT_016`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_016/Content/Data/ID_SGHT_016.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.85, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_027, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| OKP 7 Reflex ([`ID_SGHT_023`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_023/Content/Data/ID_SGHT_023.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.85, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| Mini Reflex Sight ([`ID_SGHT_025`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_025/Content/Data/ID_SGHT_025.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1.02, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | WEPN_032 |
+| Tricon 1.5x Compact Prism Scope ([`ID_SGHT_026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_026/Content/Data/ID_SGHT_026.json)) | **On the weapon:** AimTime ×c 0.97, AdsZoomMultiplier = 1.5, MinZeroingRange = 100, MaxZeroingRange = 200<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| Vektor Frenix-X Micro Reflex Sight ([`ID_SGHT_027`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_027/Content/Data/ID_SGHT_027.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 0.87, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| CQ-2x Prism Combat Scope ([`ID_SGHT_028`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_028/Content/Data/ID_SGHT_028.json)) | **On the weapon:** AimTime ×c 1.05, AdsZoomMultiplier = 2, MinZeroingRange = 100, MaxZeroingRange = 300<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 3x Tactical Prism Scope ([`ID_SGHT_029`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_029/Content/Data/ID_SGHT_029.json)) | **On the weapon:** AdsZoomMultiplier = 3, MinZeroingRange = 100, MaxZeroingRange = 300, AimTime ×c 1.1<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_029_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 4x Combat Prism Scope with Reflex ([`ID_SGHT_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_030/Content/Data/ID_SGHT_030.json)) | **On the weapon:** MaxZeroingRange = 400, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AimTime ×c 1.1, AdsZoomMultiplier = 4<br>**Sight `S_Aim02`:** AimTime ×c 1.05, AdsZoomMultiplier = 1.2 | `GE_SGHT_030_CharacterEffects` | AK74M, LMG_02, M249, M4, M500, MK22, RFB, SKS, SR_04, SV98, SVDM, TAR21, WEPN_029, WEPN_030, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| 6x Precision Rifle Scope ([`ID_SGHT_031`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_031/Content/Data/ID_SGHT_031.json)) | **On the weapon:** AdsZoomMultiplier = 6, AimTime ×c 1.15, MaxZeroingRange = 600, MinZeroingRange = 100<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 6 | `GE_SGHT_031_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| Frontier 2.5x-10x Precision Scope ([`ID_SGHT_032`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_032/Content/Data/ID_SGHT_032.json)) | **On the weapon:** AimTime × 1.2, AdsZoomMultiplier = 2.5, MaxZeroingRange = 1000, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_032_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| CGM4 Scope ([`ID_SGHT_033`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_033/Content/Data/ID_SGHT_033.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1<br>**Sight `S_Aim01`:** no effects | — | AK74M, CGM4, LMG_02, M249, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| PGO-7 ([`ID_SGHT_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_034/Content/Data/ID_SGHT_034.json)) | **On the weapon:** AdsZoomMultiplier = 2.8, AimTime ×c 1.15, MinZeroingRange = 10, MaxZeroingRange = 10<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_034_CharacterEffects` | RPG7 |
+| 6x Marksman Scope + Reflex ([`ID_SGHT_036`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_036/Content/Data/ID_SGHT_036.json)) | **On the weapon:** AimTime × 1<br>**Sight `S_Aim01`:** AdsZoomMultiplier = 6, AimTime ×c 1.12, MaxZeroingRange = 600, MinZeroingRange = 100<br>**Sight `S_Aim02`:** AimTime ×c 1.05, AdsZoomMultiplier = 1.2 | `GE_SGHT_036_CharacterEffects` | MK22, SKS, SR_04, SV98, SVDM, WEPN_034, WEPN_035 |
+| MMGL Sight ([`ID_SGHT_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_037/Content/Data/ID_SGHT_037.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M249, M4, M500, MK22, MMGL, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| Compact P-1 Red Dot ([`ID_SGHT_038`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_038/Content/Data/ID_SGHT_038.json)) | **On the weapon:** AdsZoomMultiplier = 1.2, AimTime ×c 1, MaxZeroingRange = current MinZeroingRange<br>**Sight `S_Aim01`:** no effects | — | AK74M, LMG_02, M4, M500, MK22, MP9, RFB, SKS, SMG_03, SR_04, SV98, SVDM, TAR21, Vector, WEPN_028, WEPN_029, WEPN_030, WEPN_031, WEPN_034, WEPN_035, WEPN_036, WEPN_037 |
+| Leatherwood ART II ([`ID_SGHT_039`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_039/Content/Data/ID_SGHT_039.json)) | **On the weapon:** AdsZoomMultiplier = 3, AimTime ×c 1.15, MaxZeroingRange = 800, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_039_CharacterEffects` | WEPN_034 |
+| PU 91/30 Scope ([`ID_SGHT_040`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_040/Content/Data/ID_SGHT_040.json)) | **On the weapon:** AdsZoomMultiplier = 3.5, AimTime ×c 1.15, MaxZeroingRange = 800, MinZeroingRange = 100<br>**Sight `S_Aim01`:** no effects | `GE_SGHT_040_CharacterEffects` | WEPN_017 |
 
 ### Stock (28)
 
 | Attachment | Weapon-side modifiers | Character | Accepted by |
 |---|---|---|---|
-| AK74M Stock (`ID_AK74MStock`) | — | — | AK74M |
-| `ID_AR_02_STK_04` | — | — | M4 |
-| `ID_HNDG_053` | — | — | WEPN_034 |
-| `ID_HNDG_054` | — | — | WEPN_037 |
-| `ID_HNDG_055` | — | — | WEPN_031 |
-| `ID_LMG_02Stock` | — | — | LMG_02 |
-| `ID_M249Stock` | — | — | M249 |
-| M4 Stock (`ID_M4Stock`) | — | — | M4 |
-| `ID_M500Stock` | — | — | M500 |
-| `ID_MK22Stock` | — | — | MK22 |
-| `ID_MMGLStock` | — | — | MMGL |
-| `ID_MosinStock` | — | — | WEPN_017 |
-| `ID_MP43Stock` | — | — | MP43 |
-| `ID_MP9Stock` | — | — | MP9 |
-| `ID_Pistol_01_STK_01` | — | — | Glock17, WEPN_032 |
-| `ID_SMG_03Stock` | — | — | SMG_03, WEPN_031 |
-| `ID_SR_04Stock` | — | — | SR_04 |
-| MP5 Stock (`ID_STOK_003`) | — | — | WEPN_028 |
-| FAL Stock (`ID_STOK_005`) | — | — | WEPN_030 |
-| Galil Stock (`ID_STOK_013`) | — | — | WEPN_029 |
-| Scout Rifle Stock (`ID_STOK_057`) | — | — | WEPN_035 |
-| Evoly stock (`ID_STOK_058`) | — | — | WEPN_036 |
-| M14 Stock (`ID_STOK_059`) | — | — | WEPN_034 |
-| Sig Spear Standard Stock (`ID_STOK_060`) | — | — | WEPN_037 |
-| `ID_SV98Stock` | — | — | SV98 |
-| `ID_SVDMStock` | — | — | SVDM |
-| `ID_VectorStock` | — | — | Vector |
-| `ID_ZenitStock` | — | — | AK74M |
+| AK74M Stock ([`ID_AK74MStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_002/Content/Data/ID_AK74MStock.json)) | — | — | AK74M |
+| [`ID_AR_02_STK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/AR/M4/Assets/Components/Stocks/STK_04/ID_AR_02_STK_04.json) | — | — | M4 |
+| [`ID_HNDG_053`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_053/Content/Data/ID_HNDG_053.json) | — | — | WEPN_034 |
+| [`ID_HNDG_054`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_054/Content/Data/ID_HNDG_054.json) | — | — | WEPN_037 |
+| [`ID_HNDG_055`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_055/Content/Data/ID_HNDG_055.json) | — | — | WEPN_031 |
+| [`ID_LMG_02Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/LMG/LMG_02/Content/Data/Components/ID_LMG_02Stock.json) | — | — | LMG_02 |
+| [`ID_M249Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_014/Content/Data/ID_M249Stock.json) | — | — | M249 |
+| M4 Stock ([`ID_M4Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_001/Content/Data/ID_M4Stock.json)) | — | — | M4 |
+| [`ID_M500Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_015/Content/Data/ID_M500Stock.json) | — | — | M500 |
+| [`ID_MK22Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/Components/ID_MK22Stock.json) | — | — | MK22 |
+| [`ID_MMGLStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_016/Content/Data/ID_MMGLStock.json) | — | — | MMGL |
+| [`ID_MosinStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_017/Content/Data/Components/ID_MosinStock.json) | — | — | WEPN_017 |
+| [`ID_MP43Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Shotgun/MP43/Content/Data/Components/ID_MP43Stock.json) | — | — | MP43 |
+| [`ID_MP9Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_017/Content/Data/ID_MP9Stock.json) | — | — | MP9 |
+| [`ID_Pistol_01_STK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Pistol/Glock17/Assets/Components/Stock/Mutable/ID_Pistol_01_STK_01.json) | — | — | Glock17, WEPN_032 |
+| [`ID_SMG_03Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/Components/ID_SMG_03Stock.json) | — | — | SMG_03, WEPN_031 |
+| [`ID_SR_04Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/Components/ID_SR_04Stock.json) | — | — | SR_04 |
+| MP5 Stock ([`ID_STOK_003`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_003/Content/Data/ID_STOK_003.json)) | — | — | WEPN_028 |
+| FAL Stock ([`ID_STOK_005`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_005/Content/Data/ID_STOK_005.json)) | — | — | WEPN_030 |
+| Galil Stock ([`ID_STOK_013`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_013/Content/Data/ID_STOK_013.json)) | — | — | WEPN_029 |
+| Scout Rifle Stock ([`ID_STOK_057`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_057/Content/Data/ID_STOK_057.json)) | — | — | WEPN_035 |
+| Evoly stock ([`ID_STOK_058`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_058/Content/Data/ID_STOK_058.json)) | — | — | WEPN_036 |
+| M14 Stock ([`ID_STOK_059`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_059/Content/Data/ID_STOK_059.json)) | — | — | WEPN_034 |
+| Sig Spear Standard Stock ([`ID_STOK_060`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_060/Content/Data/ID_STOK_060.json)) | — | — | WEPN_037 |
+| [`ID_SV98Stock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_021/Content/Data/ID_SV98Stock.json) | — | — | SV98 |
+| [`ID_SVDMStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/SVDM/Content/Data/Components/ID_SVDMStock.json) | — | — | SVDM |
+| [`ID_VectorStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_004/Content/Data/ID_VectorStock.json) | — | — | Vector |
+| [`ID_ZenitStock`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Stocks/ZenitStock/ID_ZenitStock.json) | — | — | AK74M |
 
 ## 4. Flagged cases
 
 Results above that rest on something not traced or on an odd piece of data.
 
-- **Several sights.** `ID_4xElcanSpectr` (S_Aim01, S_Aim02); `ID_SGHT_030` (S_Aim01, S_Aim02); `ID_SGHT_036` (S_Aim01, S_Aim02). §1 and §2 use `S_Aim01`, per Effects §7.1; §3 lists each.
-- **No `S_Aim01` sight** (natively no first-entry fallback; the tool applies no sight effects): `ID_CantedIrons` (S_AimCanted1).
-- **No weapon accepts these attachments** that carry effects: `ID_CantedIrons`.
-- **Same effect on the weapon and the character:** `ID_MAGZ_065` lists `GE_MAGZ_065` in both `AppliedEffects` and `AppliedCharacterEffects`; `ID_MAGZ_066` lists `GE_MAGZ_066` in both `AppliedEffects` and `AppliedCharacterEffects`.
-- **Attribute-backed** (7 effects, evaluated live, Effects §4.2): `GE_RedDot` on `ID_RedDot`; `GE_SGHT_009` on `ID_SGHT_009`; `GE_SGHT_016` on `ID_SGHT_016`; `GE_SGHT_023` on `ID_SGHT_023`; `GE_SGHT_025` on `ID_SGHT_025`; `GE_SGHT_027` on `ID_SGHT_027`; `GE_SGHT_038` on `ID_SGHT_038`. Each overrides `MaxZeroingRange` with the current `MinZeroingRange`; the tool uses the final `MinZeroingRange`. None is in a default loadout.
-- **Repeated `DefaultAttributes` keys** on 9K333 Verba (`ID_Launcher_04`): 9 keys appear twice, with different values for `Length` 100 then 80. The map load keeps both pairs (`FMapProperty::SerializeItem` adds each entry without a lookup when the archetype's map is empty), and `OnRegister` (`0x6C692E0`) installs them in order with overwrite off (`0x522F8F0`), so the first value is used: `Length` 100.
-- **Empty effect references** (skipped): `ID_MUZL_064`.
-- **Stance map** of A-91 (`ID_A91`): Stand → `GE_Weapon_StanceRecoil_AR_Prone`, Crouch → `GE_Weapon_StanceRecoil_AR_Standing`, Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
-- **Stance map** of TCX-SPR (`ID_WEPN_037`): Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
-- FAL (`ID_WEPN_030`): Sight default `Id.Item.IRNS_002` (on `ID_WEPN_030`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- M4 (`ID_M4`): Sight default `Id.Item.IRNS_006` (on `ID_M4`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- BMR-308 (`ID_RFB`): Sight default `Id.Item.ARMIrons` (on `ID_RFB`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- SKS (`ID_SKS`): Grip default `Id.Item.SKSPistolGrip` (on `ID_SKS`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- M249 SAW (`ID_M249`): Grip default `Id.Item.RK3PistolGrip` (on `ID_M249`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- AMR 50 (`ID_SR_04`): Sight default `Id.Item.ARMIrons` (on `ID_SR_04`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- MK22 (`ID_MK22`): Sight default `Id.Item.ARMIrons` (on `ID_MK22`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
-- Scout Rifle TD (`ID_WEPN_035`): Sight default `Id.Item.IRNS_008` (on `ID_WEPN_035`) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- **Several sights.** [`ID_4xElcanSpectr`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/4x_Elcan_Spectr/ID_4xElcanSpectr.json) (S_Aim01, S_Aim02); [`ID_SGHT_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_030/Content/Data/ID_SGHT_030.json) (S_Aim01, S_Aim02); [`ID_SGHT_036`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_036/Content/Data/ID_SGHT_036.json) (S_Aim01, S_Aim02). §1 and §2 use `S_Aim01`, per Effects §7.1; §3 lists each.
+- **No `S_Aim01` sight** (natively no first-entry fallback; the tool applies no sight effects): [`ID_CantedIrons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/CantedIronsTest/ID_CantedIrons.json) (S_AimCanted1).
+- **No weapon accepts these attachments** that carry effects: [`ID_CantedIrons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/CantedIronsTest/ID_CantedIrons.json).
+- **Same effect on the weapon and the character:** [`ID_MAGZ_065`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_065/Content/Data/ID_MAGZ_065.json) lists `GE_MAGZ_065` in both `AppliedEffects` and `AppliedCharacterEffects`; [`ID_MAGZ_066`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_066/Content/Data/ID_MAGZ_066.json) lists `GE_MAGZ_066` in both `AppliedEffects` and `AppliedCharacterEffects`.
+- **Attribute-backed** (7 effects, evaluated live, Effects §4.2): `GE_RedDot` on [`ID_RedDot`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_013/Content/Data/ID_RedDot.json); `GE_SGHT_009` on [`ID_SGHT_009`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_009/Content/Data/ID_SGHT_009.json); `GE_SGHT_016` on [`ID_SGHT_016`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_016/Content/Data/ID_SGHT_016.json); `GE_SGHT_023` on [`ID_SGHT_023`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_023/Content/Data/ID_SGHT_023.json); `GE_SGHT_025` on [`ID_SGHT_025`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_025/Content/Data/ID_SGHT_025.json); `GE_SGHT_027` on [`ID_SGHT_027`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_027/Content/Data/ID_SGHT_027.json); `GE_SGHT_038` on [`ID_SGHT_038`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Sights/SGHT_038/Content/Data/ID_SGHT_038.json). Each overrides `MaxZeroingRange` with the current `MinZeroingRange`; the tool uses the final `MinZeroingRange`. None is in a default loadout.
+- **Repeated `DefaultAttributes` keys** on 9K333 Verba ([`ID_Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json)): 9 keys appear twice, with different values for `Length` 100 then 80. The map load keeps both pairs (`FMapProperty::SerializeItem` adds each entry without a lookup when the archetype's map is empty), and `OnRegister` (`0x6C692E0`) installs them in order with overwrite off (`0x522F8F0`), so the first value is used: `Length` 100.
+- **Empty effect references** (skipped): [`ID_MUZL_064`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_064/Content/Data/ID_MUZL_064.json).
+- **Stance map** of A-91 ([`ID_A91`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json)): Stand → `GE_Weapon_StanceRecoil_AR_Prone`, Crouch → `GE_Weapon_StanceRecoil_AR_Standing`, Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
+- **Stance map** of TCX-SPR ([`ID_WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json)): Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
+- FAL ([`ID_WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json)): Sight default `Id.Item.IRNS_002` (on [`ID_WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- M4 ([`ID_M4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json)): Sight default `Id.Item.IRNS_006` (on [`ID_M4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- BMR-308 ([`ID_RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json)): Sight default `Id.Item.ARMIrons` (on [`ID_RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- SKS ([`ID_SKS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json)): Grip default `Id.Item.SKSPistolGrip` (on [`ID_SKS`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_007/Content/Data/ID_SKS.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- M249 SAW ([`ID_M249`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json)): Grip default `Id.Item.RK3PistolGrip` (on [`ID_M249`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/ID_M249.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- AMR 50 ([`ID_SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json)): Sight default `Id.Item.ARMIrons` (on [`ID_SR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/SR_04/Content/Data/ID_SR_04.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- MK22 ([`ID_MK22`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json)): Sight default `Id.Item.ARMIrons` (on [`ID_MK22`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/ID_MK22.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
+- Scout Rifle TD ([`ID_WEPN_035`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json)): Sight default `Id.Item.IRNS_008` (on [`ID_WEPN_035`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_035/Content/Data/ID_WEPN_035.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 <!-- END weapon_attributes -->
 
 ## 5. Not traced
@@ -1351,8 +1351,8 @@ Results above that rest on something not traced or on an odd piece of data.
 | Date | Change |
 |---|---|
 | 2026-10-17 | v1: generated per-weapon base and final values with the default loadout, per-attachment weapon-side modifiers and accepting weapons, from the §7.1 rules; `_tools/weapon_attributes.py` added. |
-| 2026-10-17 | Round-5 verifier pass: the initial sight is `S_Aim01` (Effects §7.1), with a fallback to the first entry for `ID_CantedIrons`; `--mounted` models a mounted bipod (`MountedAppliedEffects` on the weapon, `MountedAppliedCharacterEffects` on the character, unfolded lists removed), and §3 lists the mounted lists. No §1 value changed. |
-| 2026-10-18 | Round-6 verifier corrections: a repeated `DefaultAttributes` key keeps its first value (`OnRegister` installs with overwrite off), so the 9K333 Verba `Length` is 100, not 80 (the only §1 change); no native first-entry sight fallback, so the tool applies no sight effects for `ID_CantedIrons`; Override order, default loadout (`0x6784010`, `DefaultItems` only when `DefaultContainerItems` is empty) and sub-slot filters (`0x67A2B40`) are now traced and labelled Data / Native; stance effect and equip path wording; attribute-backed magnitudes are evaluated live (Effects §4.2); missing default items are absent from the paks too; the tool detects the bipod struct by `MountedAppliedEffects` and drops a missing-default flag when `--with` replaces that slot. |
+| 2026-10-17 | Round-5 verifier pass: the initial sight is `S_Aim01` (Effects §7.1), with a fallback to the first entry for [`ID_CantedIrons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/CantedIronsTest/ID_CantedIrons.json); `--mounted` models a mounted bipod (`MountedAppliedEffects` on the weapon, `MountedAppliedCharacterEffects` on the character, unfolded lists removed), and §3 lists the mounted lists. No §1 value changed. |
+| 2026-10-18 | Round-6 verifier corrections: a repeated `DefaultAttributes` key keeps its first value (`OnRegister` installs with overwrite off), so the 9K333 Verba `Length` is 100, not 80 (the only §1 change); no native first-entry sight fallback, so the tool applies no sight effects for [`ID_CantedIrons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Attachments/Sights/CantedIronsTest/ID_CantedIrons.json); Override order, default loadout (`0x6784010`, `DefaultItems` only when `DefaultContainerItems` is empty) and sub-slot filters (`0x67A2B40`) are now traced and labelled Data / Native; stance effect and equip path wording; attribute-backed magnitudes are evaluated live (Effects §4.2); missing default items are absent from the paks too; the tool detects the bipod struct by `MountedAppliedEffects` and drops a missing-default flag when `--with` replaces that slot. |
 | 2026-10-18 | Round-7 correction: 16 magazine ammo slots also differ between the two default lists (no attribute change). |
 | 2026-10-18 | Interactive loadout calculator page added (`loadout-calculator.md`): choose a weapon, attachments, sight, stance and bipod state and see base, modifiers and final for every `Attribute.Gameplay.Weapon.*` value. It runs `assets/js/loadout-eval.js`, a port of this tool's evaluation over `assets/data/weapon-loadouts.json` (`--json`); `--check` compares the two on every default loadout and 400 seeded random loadouts. No §1 value changed. |
 | 2026-10-18 | Round 8: §5 distinguishes the known defaults-helper call from the unestablished top-level spawn caller and saved-preset replacement order. |

@@ -26,7 +26,7 @@ description: "The base that players place to anchor building, costing 7,500 cash
 | Rockets | +1,400% |
 | C4 | +1,250% |
 | IEDs | +5,000% |
-| Internal name | `DA_Buildable_FOB`, item `ID_ForwardOperatingBase` |
+| Internal name | [`DA_Buildable_FOB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/ForwardOperatingBase/DA_Buildable_FOB.json), item [`ID_ForwardOperatingBase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/ID_ForwardOperatingBase.json) |
 {: .wiki-infobox }
 
 The Forward Operating Base, or FOB, is the anchor for most other structures. Most structures must be placed inside its radius. It has 15,000 HP, the most of any structure, and it is placed from its own item rather than a hammer. It also holds items and resources for players to use.

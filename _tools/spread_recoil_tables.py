@@ -29,6 +29,9 @@ import re
 import struct
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import source_link, link_generated  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = "content/Wardogs_WeaponSpreadRecoilData_v1.md"
 JSON_OUT = "assets/data/weapon-spread-recoil.json"
@@ -500,7 +503,7 @@ def fmt_keys(keys):
 
 
 def link(w):
-    return f"`{w['label']}`"
+    return source_link(w["path"], w["label"])
 
 
 def table(head, rows, align=None):
@@ -770,7 +773,7 @@ def render(spec, defaults, weapons, spread_rows, sight_rows, unmapped, native):
     rows = []
     for s in sight_rows:
         sd, st, co = s["swayDistance"], s["stabilisation"], s["cameraOffset"]
-        rows.append([f"`{s['item']}`", f"`{s['sight']}`",
+        rows.append([source_link(s["path"], s["item"]), f"`{s['sight']}`",
                      (num(sd["value"]) if sd["override"] else "—") + (" (per weapon: " + ", ".join(f"{k.split('.')[-1]} {num(v)}" for k, v in sd["perWeapon"].items()) + ")" if sd["perWeapon"] else ""),
                      ", ".join(f"{k.split('.')[-1]}: translation {num(v['WeaponTranslationStabilizationSwayCurveMultiplier'])}, rotation {num(v['WeaponRotationStabilizationSwayCurveMultiplier'])}"
                                for k, v in st["perArchetype"].items()) or ("override, no multipliers" if st["override"] else "—"),
@@ -797,7 +800,7 @@ def payload(spec, defaults, weapons, spread_rows, sight_rows):
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     spec, defaults, weapons, spread_rows, sight_rows, unmapped, native = build()
-    body = render(spec, defaults, weapons, spread_rows, sight_rows, unmapped, native)
+    body = link_generated(render(spec, defaults, weapons, spread_rows, sight_rows, unmapped, native))
     if "--write" not in sys.argv:
         print(body)
         return

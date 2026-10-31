@@ -15,32 +15,32 @@ Each wheeled vehicle names one `MWheeledVehicleArcadeDataAsset`. The names are t
 
 | Asset | Understeer recover | Oversteer recover | Recover min speed | Recover full speed | Drift assist | Drift front | Drift rear | Front anti-roll | Rear anti-roll | Anti-roll spring | Damper smooth | Traction ratio | Traction max speed | Torque splitter | Balance assist | Lean min speed | Max lean angle | Max pitch angle | Lean in air | Predictive landing | Predict time (s) | Extra time buffer (s) | Air roll torque | Air pitch torque | Airborne damping |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| `DA_ArcadeControls_WHL_01` | - | 50 | - | 35 | - | -1 | 3 | 100 | 100 | 1250 | 0.1 | 200 | 50 | 100 | True | 5 | 50 | 50 | - | True | - | - | - | - | 1 |
-| `DA_ArcadeControls_WHL_02` | 100 | 100 | 0 | 200 | True | 5 | 60 | - | - | - | - | - | - | - | - | - | - | - | - | True | - | - | 0 | 400000 | 1 |
-| `DA_ArcadeControls_WHL_05_Humvee` | 100 | 100 | 0 | 120 | - | - | - | 40 | 40 | - | - | - | - | - | - | - | - | - | - | True | 1 | - | 0 | 400000 | 1 |
-| `DA_ArcadeControls_WHL_06_DuneBuggy` | 100 | 100 | 0 | 120 | - | 1 | 1 | 35 | - | 1 | 0.1 | - | - | - | - | 5 | 15 | 20 | False | True | 3.5 | 0.2 | - | - | 1.5 |
-| `DA_ArcadeControls_WHL_07` | 100 | 100 | 0 | 200 | - | 2.5 | 30 | - | - | - | - | - | - | - | - | - | - | - | False | - | - | - | 0 | 400000 | 1 |
-| `DA_ArcadeControls_WHL_08` | 100 | 100 | 0 | 120 | - | - | - | 40 | 40 | - | - | - | - | - | - | - | - | - | - | True | 1 | - | 0 | 400000 | 1 |
+| [`DA_ArcadeControls_WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_ArcadeControls_WHL_01.json) | - | 50 | - | 35 | - | -1 | 3 | 100 | 100 | 1250 | 0.1 | 200 | 50 | 100 | True | 5 | 50 | 50 | - | True | - | - | - | - | 1 |
+| [`DA_ArcadeControls_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_ArcadeControls_WHL_02.json) | 100 | 100 | 0 | 200 | True | 5 | 60 | - | - | - | - | - | - | - | - | - | - | - | - | True | - | - | 0 | 400000 | 1 |
+| [`DA_ArcadeControls_WHL_05_Humvee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_ArcadeControls_WHL_05_Humvee.json) | 100 | 100 | 0 | 120 | - | - | - | 40 | 40 | - | - | - | - | - | - | - | - | - | - | True | 1 | - | 0 | 400000 | 1 |
+| [`DA_ArcadeControls_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_ArcadeControls_WHL_06_DuneBuggy.json) | 100 | 100 | 0 | 120 | - | 1 | 1 | 35 | - | 1 | 0.1 | - | - | - | - | 5 | 15 | 20 | False | True | 3.5 | 0.2 | - | - | 1.5 |
+| [`DA_ArcadeControls_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_ArcadeControls_WHL_07.json) | 100 | 100 | 0 | 200 | - | 2.5 | 30 | - | - | - | - | - | - | - | - | - | - | - | False | - | - | - | 0 | 400000 | 1 |
+| [`DA_ArcadeControls_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_ArcadeControls_WHL_08.json) | 100 | 100 | 0 | 120 | - | - | - | 40 | 40 | - | - | - | - | - | - | - | - | - | - | True | 1 | - | 0 | 400000 | 1 |
 
-Fields set by no asset appear nowhere in the table. The Kodiak/SUV (`WHL_02`) and Ural (`WHL_07`) set no anti-roll power; the Wolf-110 (`WHL_08`) and Humvee (`WHL_05`) share the same values.
+Fields set by no asset appear nowhere in the table. The Kodiak/SUV ([`WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/WHL_02.json)) and Ural ([`WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/WHL_07.json)) set no anti-roll power; the Wolf-110 ([`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json)) and Humvee ([`WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/WHL_05.json)) share the same values.
 
 ## 2. Wheeled tyre models (`MWheeledVehicleTireModelSimpleDataAsset`)
 
-Only three wheeled vehicles name a simple tyre model asset: `WHL_01`, `WHL_02` (Kodiak and Pickup) and `WHL_07` (Ural). The eight coefficients are the engine's own names (`Ln*` longitudinal, `Lt*` lateral; b, c, d, e follow the stiffness, shape, peak and curvature pattern of a Pacejka-style magic formula; that reading comes from the names, it is not confirmed in code). The asset also stores two editor preview curves (force against slip); the largest magnitude and the slip it occurs at are listed.
+Only three wheeled vehicles name a simple tyre model asset: [`WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/WHL_01.json), [`WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/WHL_02.json) (Kodiak and Pickup) and [`WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/WHL_07.json) (Ural). The eight coefficients are the engine's own names (`Ln*` longitudinal, `Lt*` lateral; b, c, d, e follow the stiffness, shape, peak and curvature pattern of a Pacejka-style magic formula; that reading comes from the names, it is not confirmed in code). The asset also stores two editor preview curves (force against slip); the largest magnitude and the slip it occurs at are listed.
 
 | Asset | Lnb | Lnc | Lnd | Lne | Ltb | Ltc | Ltd | Lte | Longitudinal preview peak | Lateral preview peak |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `DA_WHL_01_TireModelSimple` | 14 | 1.9 | 1.35 | 1 | 10 | 1.2 | 1.65 | 0.97 | -4049.8 at slip -0.14 | -4776.5 at slip -1.492 |
-| `DA_SimpleTireModel_WHL_02` | 10 | 1.15 | 1.55 | 0.7 | 8.8 | 1.15 | 1.3 | 0.65 | -4645.5 at slip -1 | -3900 at slip -1.253 |
-| `DA_SimpleTireModel_WHL_07` | 10 | 1.65 | 0.9 | 0.85 | 9.5 | 1.35 | 1.32 | 0.65 | -2700 at slip -0.26 | -3960 at slip -0.433 |
+| [`DA_WHL_01_TireModelSimple`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_TireModelSimple.json) | 14 | 1.9 | 1.35 | 1 | 10 | 1.2 | 1.65 | 0.97 | -4049.8 at slip -0.14 | -4776.5 at slip -1.492 |
+| [`DA_SimpleTireModel_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_SimpleTireModel_WHL_02.json) | 10 | 1.15 | 1.55 | 0.7 | 8.8 | 1.15 | 1.3 | 0.65 | -4645.5 at slip -1 | -3900 at slip -1.253 |
+| [`DA_SimpleTireModel_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_SimpleTireModel_WHL_07.json) | 10 | 1.65 | 0.9 | 0.85 | 9.5 | 1.35 | 1.32 | 0.65 | -2700 at slip -0.26 | -3960 at slip -0.433 |
 
-The other wheeled vehicles (`WHL_05`, `WHL_06`, `WHL_08`) name no tyre model asset in the exported data.
+The other wheeled vehicles ([`WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/WHL_05.json), [`WHL_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/WHL_06.json), [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json)) name no tyre model asset in the exported data.
 
 ## 3. Helicopter flight assists
 
 Each helicopter has one `BHRotaryFlightDataAsset`. The pitch, roll, yaw and collective controls each hold a list of assists. An assist is on or off in the data (`Enabled`), belongs to a category (`Core`, `Stability`, `AutoHover`, `EnvelopeLimits`, `TurnCoordination`), runs when all its conditions are true, and its body computes the control value (a PID loop, a damping interpolation, or a fixed value). Speeds are km/h, angular rates deg/s, as the condition names state.
 
-### ROT_02 (`DA_ROT_02_FlightCharacteristics`)
+### ROT_02 ([`DA_ROT_02_FlightCharacteristics`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_FlightCharacteristics.json))
 
 Rotor: MaxLiftCoeff 1.8, BladeAngleOfAttackForStall_deg 40, RotorRadius 600, LiftForcesAppliedAtRadius 1000, LowAltitude_m 40, HighAltitude_m 200, MaxAltitude_m 280, HighAltitudeRotorEfficiency 0.65, MaxAltitudeRotorEfficiency 0.4, TailRotorNeutralTorque 6e+08.  
 Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRotorBladeAngleDelta 1.3; RollControlForce Type RotorBladeAngle, MaxTorque 1.5e+09, MaxRotorBladeAngleDelta 0.42; YawControlForce MaxTorque 3.3e+08; CollectiveControlForce Type RotorBladeAngle, MinForce 400000, MaxForce 2.8e+06, MinRotorBladeAngleDelta -0.5, MaxRotorBladeAngleDelta 10.
@@ -94,7 +94,7 @@ Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRot
 | Hover assist | AutoHover | yes | input Collective = 0; has pilot | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
 | Dampen released inputs | Core | yes | input Collective = 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
 
-### ROT_03 (`DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight`)
+### ROT_03 ([`DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.json))
 
 Rotor: MaxLiftCoeff 1.25, LowAltitude_m 75, HighAltitude_m 250, MaxAltitude_m 325, HighAltitudeRotorEfficiency 0.75, MaxAltitudeRotorEfficiency 0.45, TailRotorNeutralTorque 6e+08.  
 Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRotorBladeAngleDelta 2; RollControlForce Type RotorBladeAngle, MaxTorque 1.5e+09, MaxRotorBladeAngleDelta 0.6; YawControlForce MaxTorque 3.7e+07; CollectiveControlForce Type RotorBladeAngle, MinForce 400000, MaxForce 2.8e+06, MinRotorBladeAngleDelta -3, MaxRotorBladeAngleDelta 14.5.
@@ -138,7 +138,7 @@ Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRot
 | Hover assist | AutoHover | yes | input Collective = 0; has pilot | PID P 0.555556 I 0 D 0.555556 on WorldVelocity_KmPerH Z |
 | Dampen released inputs | Core | yes | input Collective = 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
 
-### ROT_04 (`DA_ROT_04_FlightCharacteristicsDataAsset`)
+### ROT_04 ([`DA_ROT_04_FlightCharacteristicsDataAsset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_FlightCharacteristicsDataAsset.json))
 
 Rotor: MaxLiftCoeff 5.75, StallLiftCoeff 3, RotorRadius 800, LiftForcesAppliedAtRadius 275, LowAltitude_m 50, HighAltitude_m 250, MaxAltitude_m 350, HighAltitudeRotorEfficiency 0.65, MaxAltitudeRotorEfficiency 0.4, TailRotorNeutralTorque 6e+08.  
 Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRotorBladeAngleDelta 6; RollControlForce Type RotorBladeAngle, MaxTorque 1.5e+09, MaxRotorBladeAngleDelta 0.85; YawControlForce MaxTorque 5e+08; CollectiveControlForce Type RotorBladeAngle, MinForce 400000, MaxForce 3.4e+06, MinRotorBladeAngleDelta -1.9, MaxRotorBladeAngleDelta 10.67.

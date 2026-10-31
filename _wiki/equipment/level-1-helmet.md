@@ -22,7 +22,7 @@ description: "Entry helmet: 30% head damage reduction, 80 durability, 200 cash, 
 | Price | 200 cash |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_LightHelmet` (item `Id.Item.LightHelmet`) |
+| Internal name | [`ID_LightHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_LightHelmet.json) (item `Id.Item.LightHelmet`) |
 {: .wiki-infobox }
 
 Level 1 Helmet is the first of the four helmet tiers. It protects the head and cuts head damage by 30%. It is the cheapest helmet, at 200 cash, and needs no unlock.

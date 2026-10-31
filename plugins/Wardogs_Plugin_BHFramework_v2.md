@@ -6,7 +6,7 @@ description: "The game's user-setting definitions: each one is an option the pla
 ---
 
 # Wardogs — Plugin: BHFramework
-*Extracted from cooked game data (UE 5.7 export JSON). Source folder: `Plugins/BHFramework/` — 47 JSON files, all under `Content/Settings/`. These are user-setting definitions (`BHUserSetting*`). Values are the export's defaults and ranges.*
+*Extracted from cooked game data (UE 5.7 export JSON). Source folder: [`Plugins/BHFramework/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHFramework) — 47 JSON files, all under [`Content/Settings/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/BHFramework/Content/Settings). These are user-setting definitions (`BHUserSetting*`). Values are the export's defaults and ranges.*
 
 ---
 

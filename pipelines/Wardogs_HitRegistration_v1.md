@@ -500,43 +500,43 @@ Ricochet angle 91 (or more) can never be met (§4.3), so those rounds never rico
 
 | Asset | Penetrate | Force thin | PenEff | ExitSpd | Ricochet min deg | Actor proj | Pellets | Ignore own vehicle s |
 |---|---|---|---:|---:|---:|---|---:|---:|
-| `DA_120x570mm_ProjectileData` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_120x800mm_Standard_ProjectileData` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_122_mm_HAVOC_ProjectileData` | F | T | 2 | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_122mm_ProjectileData` | F | T | 2 | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_125x570mm_ProjectileData` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_12g_RifledSlug_ProjectileData` | T* | F* | 1* | 0.12 | 10* | F | 1* | 0* |
-| `DA_155mm_Expensive_ProjectileData` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_155mm_Expensive_ProjectileData_SB` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_155mm_Standard_ProjectileData` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_155mm_Standard_ProjectileData_SB` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_20x102mm` | T* | F* | 1.8 | 0* | 91 | F | 1* | 0.5 |
-| `DA_308Winchester_ProjectileData` | T* | F* | 1* | 0.13 | 10* | F | 1* | 0* |
-| `DA_30mm_ProjectileData` | T* | F* | 2 | 0* | 85 | F | 1* | 0.5 |
-| `DA_338Norman_ProjectileData` | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
-| `DA_35x228mm_ProjectileData` | T* | F* | 0.75 | 0* | 91 | F | 1* | 0.5 |
-| `DA_40mm_ProjectileData` | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_45ACP_ProjectileData` | T* | F* | 1* | 0.32 | 10* | F | 1* | 0* |
-| `DA_45Colt_ProjectileData` | T* | F* | 1* | 0.3 | 10* | F | 1* | 0* |
-| `DA_50AE_ProjectileData` | T* | F* | 1* | 0.08 | 10* | F | 1* | 0* |
-| `DA_50Cal_ProjectileData` | T* | F* | 3.5 | 0.05 | 10* | F | 1* | 0* |
-| `DA_545mm_ProjectileData` | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
-| `DA_556mm_ProjectileData` | T* | F* | 1* | 0.18 | 10* | F | 1* | 0* |
-| `DA_70mm_ProjectileData` | F | F* | 1* | 0* | 100 | F | 1* | 0.5 |
-| `DA_72mm_ProjectileData` | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_762mm_ProjectileData` | T* | F* | 1* | 0.15 | 10* | F | 1* | 0* |
-| `DA_762x51mm_ProjectileData` | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
-| `DA_762x54mm_ProjectileData` | T* | F* | 1* | 0.14 | 10* | F | 1* | 0* |
-| `DA_7mmBuckshot_ProjectileData` | T* | F* | 1* | 0.28 | 10* | F | 8 | 0* |
-| `DA_84mm_ProjectileData` | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_93mm_ProjectileData` | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_9mm_ProjectileData` | T* | F* | 1* | 0.35 | 10* | F | 1* | 0* |
-| `DA_Arrow_Combat_ProjectileData` | T* | T | 0.5 | 0.55 | 30 | F | 1* | 0* |
-| `DA_Arrow_Explosive_ProjectileData` | F | T | 1* | 0* | 50 | F | 1* | 0.5 |
-| `DA_BatteryCharge_ProjectileData` | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
-| `DA_DebugHomingRocketData` | F | F* | 1* | 0* | 91 | F | 1* | 0* |
-| `DA_Drone_ProjectileData` | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
-| `DA_TVGuidedMissile_Data` | F | F* | 1* | 0* | 85 | T/T | 1* | 0.5 |
+| [`DA_120x570mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/120x570mm/DA_120x570mm_ProjectileData.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_120x800mm_Standard_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/120x800mm/DA_120x800mm_Standard_ProjectileData.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_122_mm_HAVOC_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData.json) | F | T | 2 | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_122mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData.json) | F | T | 2 | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_125x570mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/125x570mm/DA_125x570mm_ProjectileData.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_12g_RifledSlug_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_12g_RifledSlug_ProjectileData.json) | T* | F* | 1* | 0.12 | 10* | F | 1* | 0* |
+| [`DA_155mm_Expensive_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_155mm_Expensive_ProjectileData_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData_SB.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_155mm_Standard_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_155mm_Standard_ProjectileData_SB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData_SB.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_20x102mm`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/20x102mm/DA_20x102mm.json) | T* | F* | 1.8 | 0* | 91 | F | 1* | 0.5 |
+| [`DA_308Winchester_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/308Winchester/DA_308Winchester_ProjectileData.json) | T* | F* | 1* | 0.13 | 10* | F | 1* | 0* |
+| [`DA_30mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/30mm/DA_30mm_ProjectileData.json) | T* | F* | 2 | 0* | 85 | F | 1* | 0.5 |
+| [`DA_338Norman_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/338NormanMagnum/DA_338Norman_ProjectileData.json) | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
+| [`DA_35x228mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/35x228mm/DA_35x228mm_ProjectileData.json) | T* | F* | 0.75 | 0* | 91 | F | 1* | 0.5 |
+| [`DA_40mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/40mm/DA_40mm_ProjectileData.json) | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_45ACP_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/45ACP/DA_45ACP_ProjectileData.json) | T* | F* | 1* | 0.32 | 10* | F | 1* | 0* |
+| [`DA_45Colt_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/45Colt/DA_45Colt_ProjectileData.json) | T* | F* | 1* | 0.3 | 10* | F | 1* | 0* |
+| [`DA_50AE_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/50AE/DA_50AE_ProjectileData.json) | T* | F* | 1* | 0.08 | 10* | F | 1* | 0* |
+| [`DA_50Cal_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/50Cal/DA_50Cal_ProjectileData.json) | T* | F* | 3.5 | 0.05 | 10* | F | 1* | 0* |
+| [`DA_545mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/545mm/DA_545mm_ProjectileData.json) | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
+| [`DA_556mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/556mm/DA_556mm_ProjectileData.json) | T* | F* | 1* | 0.18 | 10* | F | 1* | 0* |
+| [`DA_70mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/70mm/DA_70mm_ProjectileData.json) | F | F* | 1* | 0* | 100 | F | 1* | 0.5 |
+| [`DA_72mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/72mm/DA_72mm_ProjectileData.json) | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_762mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762mm/DA_762mm_ProjectileData.json) | T* | F* | 1* | 0.15 | 10* | F | 1* | 0* |
+| [`DA_762x51mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/726x51mm/DA_762x51mm_ProjectileData.json) | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
+| [`DA_762x54mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762x54mm/DA_762x54mm_ProjectileData.json) | T* | F* | 1* | 0.14 | 10* | F | 1* | 0* |
+| [`DA_7mmBuckshot_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_7mmBuckshot_ProjectileData.json) | T* | F* | 1* | 0.28 | 10* | F | 8 | 0* |
+| [`DA_84mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/84mm/DA_84mm_ProjectileData.json) | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_93mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/93mm/DA_93mm_ProjectileData.json) | F | T | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_9mm_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/9mm/DA_9mm_ProjectileData.json) | T* | F* | 1* | 0.35 | 10* | F | 1* | 0* |
+| [`DA_Arrow_Combat_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Combat_ProjectileData.json) | T* | T | 0.5 | 0.55 | 30 | F | 1* | 0* |
+| [`DA_Arrow_Explosive_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Explosive_ProjectileData.json) | F | T | 1* | 0* | 50 | F | 1* | 0.5 |
+| [`DA_BatteryCharge_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Battery/Content/Data/DA_BatteryCharge_ProjectileData.json) | T* | F* | 1* | 0* | 10* | F | 1* | 0* |
+| [`DA_DebugHomingRocketData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData.json) | F | F* | 1* | 0* | 91 | F | 1* | 0* |
+| [`DA_Drone_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/Projectile/DA_Drone_ProjectileData.json) | F | F* | 1* | 0* | 91 | T/T | 1* | 0.5 |
+| [`DA_TVGuidedMissile_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/DA_TVGuidedMissile_Data.json) | F | F* | 1* | 0* | 85 | T/T | 1* | 0.5 |
 
 ---
 
@@ -623,7 +623,7 @@ becomes **3 (`Friendly`)**. `Neutral` (1) is never produced by this function. An
 and would therefore be `Friendly` (**Derived**).
 
 **Data.** The infantry rule table
-`DT_GlobalDamage_InfantryData` has two entries with a required
+[`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) has two entries with a required
 alignment of `Friendly` (of 146):
 
 | Entry | Source requirement | Operation |
@@ -643,7 +643,7 @@ itself was not resolved (O-12).
 ### 6.5 Bone and section resolution
 
 **Infantry.** The damage event carries the hit's `BoneName` (`FHitResult +0xF0`, event `+0x90`+). The hit-location tag is the exact `FName` match in
-`DA_GlobalDamage_HitLocations_Player` (`0x6F01BB0`, config `ClassToHitLocations` maps `BHMoverPawn` and `WDTargetDummy` to it); an unmapped
+[`DA_GlobalDamage_HitLocations_Player`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/HitLocationDataAssets/DA_GlobalDamage_HitLocations_Player.json) (`0x6F01BB0`, config `ClassToHitLocations` maps `BHMoverPawn` and `WDTargetDummy` to it); an unmapped
 bone gives no hit location ([Damage Pipeline §7.6](Wardogs_DamagePipeline_v2.md#76-the-bullet-event); data in
 [`infantry-hitboxes.json`](../assets/data/infantry-hitboxes.json)). The 22 mapped bones:
 

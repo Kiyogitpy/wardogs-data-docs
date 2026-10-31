@@ -25,7 +25,7 @@ description: "A closeable door built with a Medium or Large Hammer from 80 Build
 | Rockets | +650% |
 | C4 | +200% |
 | IEDs | +800% |
-| Internal name | `DA_Buildable_Door`, with parts `DA_Buildable_Door_DoorOnly` and `DA_Buildable_Door_TopSegment` |
+| Internal name | [`DA_Buildable_Door`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/BarrierDoor/DA_Buildable_Door.json), with parts [`DA_Buildable_Door_DoorOnly`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/BarrierDoor/DA_Buildable_Door_DoorOnly.json) and [`DA_Buildable_Door_TopSegment`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/BarrierDoor/DA_Buildable_Door_TopSegment.json) |
 {: .wiki-infobox }
 
 The Door is a closeable barrier that a Medium or Large Hammer can build. It has 2,200 HP. It is built with two extra parts, a door section and a top section, and it has a breach effect when it is destroyed.

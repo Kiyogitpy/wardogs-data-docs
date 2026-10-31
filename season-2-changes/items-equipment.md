@@ -175,7 +175,7 @@ Showing 34 of 34 rows. Browser link: {{ '/season-2-changes/all-changes.html' | r
 
 ### Other numeric changes
 
-One unnamed value in the audio event `AE_Player_Item_Defibrillator_DryFire` goes from 0.505 to 50.5. That looks like a rescale from a 0–1 range to 0–100, not a balance change.
+One unnamed value in the audio event [`AE_Player_Item_Defibrillator_DryFire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Defibrillator/Content/Audio/Events/AE_Player_Item_Defibrillator_DryFire.json) goes from 0.505 to 50.5. That looks like a rescale from a 0–1 range to 0–100, not a balance change.
 
 ### Non-numeric changes
 
@@ -196,7 +196,7 @@ One unnamed value in the audio event `AE_Player_Item_Defibrillator_DryFire` goes
 | ThirdPersonPlayerAnimation | 1 | AnimSet_CombatBow | — | {"ObjectName":"AnimMontage'AM_TP_Bow_Door_Interact'","ObjectPath":"/Game/Animation/Charac… |
 | unnamed property (`_aaabeinmoolajgaldgo`) | 1 | DA_Buildable_Gate | Id.Buildable.Gate | Id.Buildable.Gate.Ramp |
 
-`DT_EmoteData` has 120 change records: every one of the 24 emotes adds the same 5 items (`WEPN_031`, `WEPN_034`, `WEPN_036`, `WEPN_037`, `Molotov`) to the end of its unnamed item-tag list. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
+[`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json) has 120 change records: every one of the 24 emotes adds the same 5 items ([`WEPN_031`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/WEPN_031.json), [`WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/WEPN_034.json), [`WEPN_036`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_036/Content/WEPN_036.json), [`WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/WEPN_037.json), [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json)) to the end of its unnamed item-tag list. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=items-equipment&q=DT_EmoteData
 
 ## New in Season 2
 

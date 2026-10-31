@@ -25,7 +25,7 @@ description: "A large closeable gate built with a Medium or Large Hammer from 20
 | Rockets | +850% |
 | C4 | +1,000% |
 | IEDs | +2,000% |
-| Internal name | `DA_Buildable_Gate`, with parts `DA_Buildable_Gate_Left`, `DA_Buildable_Gate_Right` and `DA_Buildable_Gate_Ramp` |
+| Internal name | [`DA_Buildable_Gate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/HBlock_Gate_6x2/DA_Buildable_Gate.json), with parts [`DA_Buildable_Gate_Left`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/HBlock_Gate_6x2/DA_Buildable_Gate_Left.json), [`DA_Buildable_Gate_Right`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/HBlock_Gate_6x2/DA_Buildable_Gate_Right.json) and [`DA_Buildable_Gate_Ramp`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/HBlock_Gate_6x2/DA_Buildable_Gate_Ramp.json) |
 {: .wiki-infobox }
 
 The Gate is a closeable barrier made of two halves and a ramp. A Medium or Large Hammer can build it. Rockets, C4 and IEDs all do many times their normal damage to it.

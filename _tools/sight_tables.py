@@ -26,6 +26,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
 import weapon_attributes as wa  # noqa: E402
 
 ROOT = wa.ROOT
@@ -327,7 +328,7 @@ def main():
         print(BLOCKS[a.mode](d))
         return 0
     page = read(PAGE)
-    new_page = render(page, d) if page is not None else None
+    new_page = link_source_output(render(page, d)) if page is not None else None
     new_json = dump(d)
     if a.write:
         for path, text in ((OUT, new_json), (PAGE, new_page)):

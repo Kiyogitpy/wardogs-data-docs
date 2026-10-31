@@ -22,7 +22,7 @@ description: "Vehicle-use helmet: 30% head damage reduction, halves vehicle soun
 | Price | Not sold (hidden in the shop; a price of 6,400 cash is listed) |
 | Unlock | Not applicable |
 | **Reference** | |
-| Internal name | `ID_PilotHelmet` (item `Id.Item.PilotHelmet`) |
+| Internal name | [`ID_PilotHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_PilotHelmet.json) (item `Id.Item.PilotHelmet`) |
 {: .wiki-infobox }
 
 The Pilot Helmet protects the head with a 30% reduction, the same as the [Level 1 Helmet](level-1-helmet.md). It also has two vehicle effects: it muffles vehicle audio and highlights target vehicles. The shop marks it as hidden, so it is not sold in the shop.

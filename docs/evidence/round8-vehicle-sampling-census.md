@@ -28,19 +28,19 @@ Static assets and socket counts are counted once per distinct reference within e
 | `ROT_03_RocketPods` | 11 | 16 | Sockets present |
 | `ROT_04_Default` | 8 | 114 | Sockets present |
 | `ROT_04_MountedMachineGuns` | 8 | 114 | Sockets present |
-| `SPW_01` | 9 | 0 | No matching sockets |
+| [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json) | 9 | 0 | No matching sockets |
 | `SPW_02` | 7 | 0 | No matching sockets |
 | `SPW_03` | 8 | 0 | No matching sockets |
-| `STN_01` | 3 | 0 | No matching sockets |
-| `STN_02` | 3 | 0 | No matching sockets |
-| `STN_03` | 2 | 0 | No matching sockets |
-| `STN_04` | 1 | 0 | No matching sockets |
-| `STN_05` | 1 | 0 | No matching sockets |
-| `STN_06` | 4 | 0 | No matching sockets |
+| [`STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/STN_01.json) | 3 | 0 | No matching sockets |
+| [`STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/STN_02.json) | 3 | 0 | No matching sockets |
+| [`STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/STN_03.json) | 2 | 0 | No matching sockets |
+| [`STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/STN_04.json) | 1 | 0 | No matching sockets |
+| [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) | 1 | 0 | No matching sockets |
+| [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) | 4 | 0 | No matching sockets |
 | `TNK_01_AntiAir` | 5 | 89 | Sockets present |
 | `TNK_01_Artillery` | 6 | 96 | Sockets present |
 | `TNK_01_Heavy` | 7 | 98 | Sockets present |
-| `TNK_04` | 4 | 147 | Sockets present |
+| [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) | 4 | 147 | Sockets present |
 | `WHL_01_Default` | 3 | 7 | Sockets present |
 | `WHL_02_Default` | 3 | 24 | Sockets present |
 | `WHL_02_Pickup` | 3 | 22 | Sockets present |
@@ -51,9 +51,9 @@ Static assets and socket counts are counted once per distinct reference within e
 | `WHL_06_DuneBuggy_Default` | 3 | 19 | Sockets present |
 | `WHL_07_Battle` | 9 | 8 | Sockets present |
 | `WHL_07_Default` | 6 | 8 | Sockets present |
-| `WHL_07_ArmouredBattle` | 12 | 8 | Sockets present |
+| [`WHL_07_ArmouredBattle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/WHL_07_ArmouredBattle.json) | 12 | 8 | Sockets present |
 | `WHL_08_Default` | 3 | 33 | Sockets present |
-| `WHL_08_RingTurret` | 5 | 33 | Sockets present |
+| [`WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/WHL_08_RingTurret.json) | 5 | 33 | Sockets present |
 
 ## What reaches the viewer
 

@@ -25,7 +25,7 @@ description: "A small wire obstacle built with any hammer from 7 Build Supplies,
 | Rockets | +200% |
 | C4 | +150% |
 | IEDs | +400% |
-| Internal name | `DA_Buildable_BarbedWire` |
+| Internal name | [`DA_Buildable_BarbedWire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/BarbedWire/DA_Buildable_BarbedWire.json) |
 {: .wiki-infobox }
 
 Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure. It takes more melee damage than most walls, and only 15% of bullet damage gets through. Anyone standing in it is slowed and hurt.

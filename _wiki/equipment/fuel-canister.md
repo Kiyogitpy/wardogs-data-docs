@@ -23,7 +23,7 @@ description: "The 40 L Fuel Canister: a 150 cash fuel can that refuels vehicles 
 | Price | 150 cash |
 | Unlock level | 0 |
 | **Data** | |
-| Internal name | `Id.Item.FuelCan` (the 20 L version is `ID_FuelCan_20L`) |
+| Internal name | `Id.Item.FuelCan` (the 20 L version is [`ID_FuelCan_20L`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/FuelCanister/Content/Data/ID_FuelCan_20L.json)) |
 {: .wiki-infobox }
 
 The 40 L Fuel Canister is the portable fuel supply for vehicles. It holds 40 L and can refuel a vehicle. The shop text says it is used for refueling vehicles.

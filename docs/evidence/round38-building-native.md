@@ -43,7 +43,7 @@ On the hammer path: `UWDItemExtensionData_BuildTool` derives from it; the hammer
 
 ## 5. FOB `DoNotTakeDamage`
 
-Not resolved. `_aaaaoiekbaalgokkaahpa` is an `FName` at `WDBuildableDataAsset +0x2F0` set only on the FOB. `ReceiveDamage` (`0x8594C70` -> `0x858FF60`) has no read of it and no tag check (unfinished: lowers progress; finished: passes damage to the vitality component). A scan of the buildables functions for readers of `+0x2F0` found none; Blueprint or unmodelled paths are not excluded. Also: the FOB Blueprint default object overrides `WDVitalityComponent` `BaseHealth`/`MaxHealth` to 300 (generic `B_Buildable` has no override); how the vitality gets its health from the 15,000 data value is not decoded.
+Not resolved. `_aaaaoiekbaalgokkaahpa` is an `FName` at `WDBuildableDataAsset +0x2F0` set only on the FOB. [`ReceiveDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) (`0x8594C70` -> `0x858FF60`) has no read of it and no tag check (unfinished: lowers progress; finished: passes damage to the vitality component). A scan of the buildables functions for readers of `+0x2F0` found none; Blueprint or unmodelled paths are not excluded. Also: the FOB Blueprint default object overrides `WDVitalityComponent` `BaseHealth`/`MaxHealth` to 300 (generic `B_Buildable` has no override); how the vitality gets its health from the 15,000 data value is not decoded.
 
 ## Wiki updates
 

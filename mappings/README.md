@@ -90,9 +90,9 @@ Checked for v2:
 
 - All 341 GE assets re-dump byte-identical to the v1 dump.
 - `ge_summary.py` over them reproduces `assets/data/ge-values.json` byte for byte.
-- `DA_SKS_Stats` and `DA_MK22_Stats` now show `AdsStabilizeCooldownRate` and
+- [`DA_SKS_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json) and [`DA_MK22_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Sniper/MK22/Content/Data/DA_MK22_Stats.json) now show `AdsStabilizeCooldownRate` and
   `AdsStabilizeExitGracePeriod`, and the corrected Min/Max offsets.
-- `DA_TNK_01_WheelData` shows `DampingCompress`.
+- [`DA_TNK_01_WheelData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/DA_TNK_01_WheelData.json) shows `DampingCompress`.
 
 What stays hashed (2,698): for 2,692 of them the SDK prints the same token, so this build's dump
 has no name either. Examples: `WDWeaponADSAimSwayStabilizeData` indexes 7–9 (the sight-sway
@@ -147,7 +147,7 @@ WdExtract - - <mappings>\5.7.4-516586+++Wardogs+Live-Wardogs.usmap <log dir> - d
 CueDump <Paks> <keyfile> <mappings>\5.7.4-516586+++Wardogs+Live-Wardogs.deobfuscated.v2.export.usmap <out>
 ```
 
-Then copy `<out>\Wardogs\` over `data/Wardogs/`. Keep `data/Wardogs/Config`, which the dump does not
+Then copy `<out>\Wardogs\` over [`data/Wardogs/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs). Keep [`data/Wardogs/Config`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config), which the dump does not
 write, and the checked-in directory spelling `WAVs`. `tools/cuedump` is the original exporter with
 its inputs (paks, key file, usmap, output folder) turned into arguments; the export code is
 unchanged.
@@ -169,7 +169,7 @@ SDK-corrected keys per struct: `WDAttributeThresholdEffectTrigger` 251, `WDBipod
 `WDCharacterMovementEffect` 176, `MWheeledVehicleWheelDataAsset` 54, `BHAimAssistSettingsData` 53,
 `WDWeaponStats` 47, `WDVehicleWeaponExtensionDataAsset` 35, `MVehicleSpringArmDataAsset` 10,
 `MTrackedVehicleWheelData` 3, `BHRotaryFlightDataAsset` 1. The SKS `MinimumRandomFiringAnimationOffset`
-is now −0.2 (`+0xCF0`) and `DA_TNK_01_WheelData` `DampingCompress` is 12,000. The dump usmap had the
+is now −0.2 (`+0xCF0`) and [`DA_TNK_01_WheelData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/DA_TNK_01_WheelData.json) `DampingCompress` is 12,000. The dump usmap had the
 same swaps as v1, including the `WDCharacterMovementEffect` cue and flag pairs and
 `WDVehicleWeaponExtensionDataAsset` `OperatorIdleSequence` / `FireCameraShakeClass`.
 

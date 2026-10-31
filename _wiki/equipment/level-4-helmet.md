@@ -22,7 +22,7 @@ description: "Top helmet tier: 60% reduction for the head and neck, 200 durabili
 | Price | 4,500 cash (3,000 in Season 1) |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_SuperHeavyHelmet` (item `Id.Item.SuperHeavyHelmet`) |
+| Internal name | [`ID_SuperHeavyHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_SuperHeavyHelmet.json) (item `Id.Item.SuperHeavyHelmet`) |
 {: .wiki-infobox }
 
 Level 4 Helmet is the top helmet tier. It protects the head and neck and cuts damage there by 60%. It also strongly muffles the sounds around the wearer. It costs 4,500 cash in Season 2 and needs no unlock.

@@ -15,7 +15,7 @@ sorting and arithmetic described in
 [`Wardogs_DamagePipeline_v2.md`](Wardogs_DamagePipeline_v2.md) §1–6.
 There are two differences. Vehicle rows contain no custom operations,
 and the modified amount goes to a section-based health model instead of
-`TakeDamage`.
+[`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json).
 
 Offline native replay now covers event conversion, configured system
 activation and ModifyDamage dispatch for all 63 retained critical blast
@@ -80,7 +80,7 @@ stopping before `RootDamageTag`, which is `Meta.Damage` (set in the
 system's constructor `0x6BB6160`). Vehicle tables use the same
 `FWDDamageableEntityTableRow` and are added to the `GlobalDamageData`
 registry by each vehicle's GameFeature (for example
-`Vehicles/ROT_02/Content/ROT_02.json`, `RegistryToAddTo: GlobalDamageData`).
+[`Vehicles/ROT_02/Content/ROT_02.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/ROT_02.json), `RegistryToAddTo: GlobalDamageData`).
 So a Havoc hit evaluates its own row (`…Air.Rotary.Havoc`), then any
 parent rows, then the generic `Meta.Damage.Vehicle` row, since the walk
 runs up to the root `Meta.Damage` above it. The generic
@@ -93,7 +93,7 @@ change nothing. Supply crates use several levels:
 
 **Arithmetic** (damage doc §6). `Percentage_Ongoing` multiplies the
 running amount by `1 + Amount/100`: −95 leaves 5 %, +400 gives ×5. Within
-a level, entries sort by category index (`DA_GlobalDamage_Categories`,
+a level, entries sort by category index ([`DA_GlobalDamage_Categories`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DA_GlobalDamage_Categories.json),
 no tie-breaker; `PriorityIndex` is overwritten, so array order decides
 nothing). Because five vehicle entries use `Add` (§2.1), **order
 matters for those rows**: entries sorting after the `Add` scale the flat
@@ -106,37 +106,37 @@ the end.
 
 **Data.** 21 files under `Plugins/GameFeatures/Vehicles/<CODE>/Content/DataTables/`
 (`DataTable/` for STN_03 and STN_05), plus the generic
-`DT_GlobalDamage_VehicleData`.
+[`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json).
 "Selectable" excludes entries the collector skips (no requirements and
 amount 0, damage doc §4).
 
 | File (`DT_GlobalDamage_VehicleData_…`) | Row key (`Meta.Damage.Vehicle.` omitted) | Entries | Selectable | Ongoing amount range | Other ops |
 |---|---|---:|---:|---|---|
-| `ROT_02` | `Air.Rotary.Havoc` | 35 | 31 | −95 … +450 | — |
-| `ROT_03` | `Air.Rotary.LittleBird` | 33 | 30 | −95 … +500 | — |
-| `ROT_04` | `Air.Rotary.ROT_04` | 33 | 29 | −95 … +450 | — |
-| `SPW_01` | `Land.Tracked.Leopard.Spawn` | 32 | 27 | −100 … +500 | — |
-| `STN_01` | `Stationary.Mistral` | 26 | 22 | −100 … +1500 | 1 Add |
-| `STN_02` | `Stationary.Phalanx` | 26 | 22 | −100 … +2000 | 1 Add |
-| `STN_03` | `Stationary.Mortar` | 24 | 20 | −100 … +650 | 1 Add |
-| `STN_04` | `Stationary.RadioTower` | 27 | 24 | −95 … +250 | — |
-| `STN_05` | `Stationary.STN_05` | 24 | 20 | −100 … +650 | 1 Add |
-| `STN_06` | `Stationary.STN_05` | 24 | 20 | −100 … +650 | 1 Add |
-| `TNK_01` | `Land.Tracked.TNK_01.AntiAir` | 29 | 24 | −100 … +450 | — |
-| `TNK_01` | `Land.Tracked.TNK_01.Artillery` | 29 | 24 | −100 … +500 | — |
-| `TNK_01` | `Land.Tracked.TNK_01.Heavy` | 29 | 24 | −100 … +450 | — |
-| `TNK_04` | `Land.Tracked.TNK_04.Default` | 30 | 25 | −100 … +450 | — |
-| `WHL_01` | `Land.Wheeled.Bobcat` | 20 | 19 | −95 … +500 | — |
-| `WHL_02` | `Land.Wheeled.Patriot.Kodiak` | 29 | 26 | −95 … +700 | — |
+| [`ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/ROT_02.json) | `Air.Rotary.Havoc` | 35 | 31 | −95 … +450 | — |
+| [`ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/ROT_03.json) | `Air.Rotary.LittleBird` | 33 | 30 | −95 … +500 | — |
+| [`ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/ROT_04.json) | `Air.Rotary.ROT_04` | 33 | 29 | −95 … +450 | — |
+| [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json) | `Land.Tracked.Leopard.Spawn` | 32 | 27 | −100 … +500 | — |
+| [`STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/STN_01.json) | `Stationary.Mistral` | 26 | 22 | −100 … +1500 | 1 Add |
+| [`STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/STN_02.json) | `Stationary.Phalanx` | 26 | 22 | −100 … +2000 | 1 Add |
+| [`STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/STN_03.json) | `Stationary.Mortar` | 24 | 20 | −100 … +650 | 1 Add |
+| [`STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/STN_04.json) | `Stationary.RadioTower` | 27 | 24 | −95 … +250 | — |
+| [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) | `Stationary.STN_05` | 24 | 20 | −100 … +650 | 1 Add |
+| [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) | `Stationary.STN_05` | 24 | 20 | −100 … +650 | 1 Add |
+| [`TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/TNK_01.json) | `Land.Tracked.TNK_01.AntiAir` | 29 | 24 | −100 … +450 | — |
+| [`TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/TNK_01.json) | `Land.Tracked.TNK_01.Artillery` | 29 | 24 | −100 … +500 | — |
+| [`TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/TNK_01.json) | `Land.Tracked.TNK_01.Heavy` | 29 | 24 | −100 … +450 | — |
+| [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) | `Land.Tracked.TNK_04.Default` | 30 | 25 | −100 … +450 | — |
+| [`WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/WHL_01.json) | `Land.Wheeled.Bobcat` | 20 | 19 | −95 … +500 | — |
+| [`WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/WHL_02.json) | `Land.Wheeled.Patriot.Kodiak` | 29 | 26 | −95 … +700 | — |
 | `WHL_05_Humvee` | `Land.Wheeled.Humvee.Default` | 31 | 28 | −95 … +500 | — |
-| `WHL_05_Minigun` | `Land.Wheeled.Humvee.Minigun` | 31 | 28 | −97.5 … +800 | — |
-| `WHL_05_RingTurret` | `Land.Wheeled.Humvee.MachineGun` | 31 | 28 | −96 … +650 | — |
+| [`WHL_05_Minigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/WHL_05_Minigun.json) | `Land.Wheeled.Humvee.Minigun` | 31 | 28 | −97.5 … +800 | — |
+| [`WHL_05_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/WHL_05_RingTurret.json) | `Land.Wheeled.Humvee.MachineGun` | 31 | 28 | −96 … +650 | — |
 | `WHL_06_DuneBuggy` | `Land.Wheeled.DuneBuggy` | 30 | 27 | −95 … +500 | — |
 | `WHL_07_Ural` | `Land.Wheeled.Ural` | 30 | 27 | −95 … +500 | — |
-| `WHL_08` | `Land.Wheeled.WHL_08.Default` | 31 | 28 | −95 … +600 | — |
-| `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.MachineGun` | 31 | 28 | −95.5 … +600 | — |
+| [`WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/WHL_08.json) | `Land.Wheeled.WHL_08.Default` | 31 | 28 | −95 … +600 | — |
+| [`WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/WHL_08_RingTurret.json) | `Land.Wheeled.WHL_08.MachineGun` | 31 | 28 | −95.5 … +600 | — |
 
-The table above names files by their suffix. The full names of two that are easy to miss are `DT_GlobalDamage_VehicleData_STN_06` (the copy keyed `…Stationary.STN_05`, see section 2.2) and `DT_GlobalDamage_VehicleData_WHL_08_RingTurret` (row `…Wheeled.WHL_08.MachineGun`). `_tools/damage_tables.py` reads both: it globs `DT_GlobalDamage_VehicleData_*.json` under `Plugins`, so their rows are in the generated tables below (the STN_06 row under its STN_05 key).
+The table above names files by their suffix. The full names of two that are easy to miss are [`DT_GlobalDamage_VehicleData_STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/DataTables/DT_GlobalDamage_VehicleData_STN_06.json) (the copy keyed `…Stationary.STN_05`, see section 2.2) and [`DT_GlobalDamage_VehicleData_WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_08_RingTurret.json) (row `…Wheeled.WHL_08.MachineGun`). `_tools/damage_tables.py` reads both: it globs `DT_GlobalDamage_VehicleData_*.json` under `Plugins`, so their rows are in the generated tables below (the STN_06 row under its STN_05 key).
 
 Totals: 665 entries, 581 selectable. Operations: 576 `Percentage_Ongoing`,
 84 `None`, **5 `Add` +1000** (STN_01, 02, 03, 05, 06; source
@@ -151,10 +151,10 @@ category sorts first (index −1).
 - **STN_06 is wrongly keyed.** Its table is a byte-identical copy of
   STN_05's (row `…Stationary.STN_05`), but its `VehicleDamageTag` is
   `Meta.Damage.Vehicle.Stationary.MGNest`
-  (`DA_GameplaySystems_STN_06.json`). The tag is registered: the shipped
+  ([`DA_GameplaySystems_STN_06.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Data/DA_GameplaySystems_STN_06.json)). The tag is registered: the shipped
   `DefaultGameplayTags.ini` (in the paks) lists it, together with
   `…WHL_08.Default` and `…TNK_04.Default`. The exported copy under
-  `data/Wardogs/Config/` is a different version of that file (3622 lines
+  [`data/Wardogs/Config/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config) is a different version of that file (3622 lines
   against 3897) and lacks all three. No table has a `…Stationary` or
   `…MGNest` row, so STN_06's walk is `…Stationary.MGNest` →
   `…Stationary` → `Meta.Damage.Vehicle`. It never reaches the STN_05
@@ -235,7 +235,7 @@ rotors are placed by an `MVF_DestructibleMeshes` fragment
 skeleton's `mainRotorSpin_J` and `rearRotorSpin_J` bones. The rotor hub
 and blade meshes register in `ComplexSurface.Group.Default`, so
 `CC_MainRotor` / `CC_TailRotor` use the same map; the spinning meshes do
-not register (`VP_ROT_02.json`, `bRegisterComplexSurface`). The hubs
+not register ([`VP_ROT_02.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Platforms/VP_ROT_02.json), `bRegisterComplexSurface`). The hubs
 use `MVCT_QueryProxy`, which always applies the `VehicleQueryProxy`
 profile (`0x50EEE90`; the entry's `NoCollision` name is ignored):
 query-only, blocking Visibility and projectile traces. So hub hits
@@ -459,7 +459,7 @@ searches of `data/` for `ERA` (whole word), `Kontakt`, `Relikt` and
 `ReactiveArmo` find nothing, and neither does the same search of the GObjects
 dump (`GObjects-Dump-WithProperties.txt`: 0 hits for `ERA` as a whole word,
 `Kontakt`, `Relikt`, `ReactiveArmor`). The only `Reactive` strings under the
-vehicle plugin are a wheeled steering curve (`CRV_SteerSpeed_Reactive`) and a
+vehicle plugin are a wheeled steering curve ([`CRV_SteerSpeed_Reactive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/Curves/CRV_SteerSpeed_Reactive.json)) and a
 dune-buggy input asset that names it. The tank has no armor-brick component,
 attribute or section: its sections are the six in the TNK_04 rows of the table
 above. So any ERA bricks on the model are cosmetic for damage.
@@ -477,7 +477,7 @@ modelled either way (§3.2: a hit picks a section from its triangle).
 
 **Data.** The tank's protection is the 30-entry row
 `Meta.Damage.Vehicle.Land.Tracked.TNK_04.Default` in
-`DT_GlobalDamage_VehicleData_TNK_04`, keyed by damage type, not by where the
+[`DT_GlobalDamage_VehicleData_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/DataTables/DT_GlobalDamage_VehicleData_TNK_04.json), keyed by damage type, not by where the
 tank is hit. Selected entries (percent amount, then the factor 1 + amount / 100):
 
 | Source tag | Amount (%) | Factor |
@@ -491,7 +491,7 @@ tank is hit. Selected entries (percent amount, then the factor 1 + amount / 100)
 | `Explosive.Rocket.155mm` | +80 | ×1.8 |
 | `Explosive.Rocket.120mm` / `.125mm` / `.93mm` | +47.5 / +47.5 / +45.5 | ×1.475 / ×1.475 / ×1.455 |
 | `Explosive.Rocket.122mm` / `.120x800mm` | −25 / −10 | ×0.75 / ×0.9 |
-| `Explosive.Utility.ATMine` / `IED` / `C4` / `Claymore` | +145 / +30 / −25 / −95 | ×2.45 / ×1.3 / ×0.75 / ×0.05 |
+| `Explosive.Utility.ATMine` / [`IED`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/IED.json) / [`C4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/C4/Content/C4.json) / [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json) | +145 / +30 / −25 / −95 | ×2.45 / ×1.3 / ×0.75 / ×0.05 |
 
 The factors multiply (§4.1). The generated tables in §3.1 and §5.3 hold the
 results per caliber.
@@ -842,7 +842,7 @@ rocket.
 The amount then goes to a section. For example, TNK_01's
 `Body.StrongArea` first pre-routes 0.4 × D to the main health, takes the
 rest itself, and once depleted overflows ×1.0 to the main health
-(`VP_TNK_01_Heavy.json`).
+([`VP_TNK_01_Heavy.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Platforms/VP_TNK_01_Heavy.json)).
 
 ### 5.3 Caliber factors by vehicle
 
@@ -945,19 +945,19 @@ section-requirement filter, repair and regeneration are ignored.
 | `ROT_03_RocketPods` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
 | `ROT_04_Default` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
 | `ROT_04_MountedMachineGuns` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
-| `SPW_01` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
+| [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json) | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
 | `SPW_02` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
 | `SPW_03` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
-| `STN_01` | `Stationary.Mistral` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
-| `STN_02` | `Stationary.Phalanx` | 5000 | 1191 | 758 | 741 | 371 | 278 | 100 |
-| `STN_03` | `Stationary.Mortar` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
-| `STN_04` | `Stationary.RadioTower` | 1000 | 715 | 455 | 445 | 223 | 56 | 12 |
-| `STN_05` | `Stationary.STN_05` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
-| `STN_06` | `Stationary.MGNest` | 1800 | 65 | 41 | 40 | 20 | 30 | 18 |
+| [`STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/STN_01.json) | `Stationary.Mistral` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
+| [`STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/STN_02.json) | `Stationary.Phalanx` | 5000 | 1191 | 758 | 741 | 371 | 278 | 100 |
+| [`STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/STN_03.json) | `Stationary.Mortar` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
+| [`STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/STN_04.json) | `Stationary.RadioTower` | 1000 | 715 | 455 | 445 | 223 | 56 | 12 |
+| [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) | `Stationary.STN_05` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
+| [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) | `Stationary.MGNest` | 1800 | 65 | 41 | 40 | 20 | 30 | 18 |
 | `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | — | — | 312 | 47 |
 | `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | — | — | 254 | 39 |
 | `TNK_01_Heavy` | `Land.Tracked.TNK_01.Heavy` | 800 | — | — | — | — | 312 | 47 |
-| `TNK_04` | `Land.Tracked.TNK_04.Default` | 750 | — | — | — | — | 176 | 38 |
+| [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) | `Land.Tracked.TNK_04.Default` | 750 | — | — | — | — | 176 | 38 |
 | `WHL_01_Default` | `Land.Wheeled.Bobcat` | 200 | 96 / 64 (Wheel.Left.Front) | 61 / 40 (Wheel.Left.Front) | 170 / 113 (Wheel.Left.Front) | 30 / 20 (Wheel.Left.Front) | 14 | 2 |
 | `WHL_02_Default` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 364 / 91 (Wheel.Left.Front) | 712 / 178 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
 | `WHL_02_Pickup` | `Land.Wheeled.Patriot.Kodiak` | 400 | 572 / 143 (Wheel.Left.Front) | 364 / 91 (Wheel.Left.Front) | 712 / 178 (Wheel.Left.Front) | 178 / 45 (Wheel.Left.Front) | 39 | 8 |
@@ -968,9 +968,9 @@ section-requirement filter, repair and regeneration are ignored.
 | `WHL_06_DuneBuggy_Default` | `Land.Wheeled.DuneBuggy` | 400 | 286 / 84 (FuelTank) | 182 / 54 (FuelTank) | 324 / 95 (FuelTank) | 89 / 26 (FuelTank) | 27 | 10 |
 | `WHL_07_Battle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
 | `WHL_07_Default` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
-| `WHL_07_ArmouredBattle` | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
+| [`WHL_07_ArmouredBattle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/WHL_07_ArmouredBattle.json) | `Land.Wheeled.Ural` | 700 | 1000 / 175 (FuelTank) | 637 / 112 (FuelTank) | 1778 / 311 (FuelTank) | 312 / 55 (FuelTank) | 94 | 12 |
 | `WHL_08_Default` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 455 / 130 (Wheel.Left.Front) | 889 / 254 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
-| `WHL_08_RingTurret` | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 455 / 130 (Wheel.Left.Front) | 889 / 254 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
+| [`WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/WHL_08_RingTurret.json) | `Land.Wheeled.WHL_08.Default` | 500 | 715 / 204 (Wheel.Left.Front) | 455 / 130 (Wheel.Left.Front) | 889 / 254 (Wheel.Left.Front) | 223 / 63 (Wheel.Left.Front) | 53 | 13 |
 <!-- /damage_tables -->
 
 ## 6. Top damage source tags

@@ -22,7 +22,7 @@ description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Sui
 | Price | 2,500 cash |
 | Unlock | None (unlock level 0) |
 | **Reference** | |
-| Internal name | `ID_GhillieHelmet` (item `Id.Item.GhillieHelmet`) |
+| Internal name | [`ID_GhillieHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_GhillieHelmet.json) (item `Id.Item.GhillieHelmet`) |
 {: .wiki-infobox }
 
 Ghillie Headwear is camouflage for the head. It must be worn with the [Ghillie Body Suit](ghillie-body-suit.md). Like the suit, it removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. It gives no protection and has no durability.

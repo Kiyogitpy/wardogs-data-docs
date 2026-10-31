@@ -13,7 +13,7 @@ description: "Every weapon skin in Seasons 1 and 2, grouped by weapon, with its 
 | Weapon skins | 18 rows across Seasons 1 and 2 (17 priced) |
 | Faction logos | 3 weapon logos, not priced in the data |
 | Currency | Gold Bars, sold on the Gold Market |
-| Internal name | Skin tables for Season 1, Season 2 and faction logos (`DT_Cosmetics_Season01_Skins`, `DT_Cosmetics_Season02_Skins`, `DT_Cosmetics_FactionLogo`) |
+| Internal name | Skin tables for Season 1, Season 2 and faction logos ([`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json), [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json), [`DT_Cosmetics_FactionLogo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/FactionLogo_SkinsData/Content/Data/DT_Cosmetics_FactionLogo.json)) |
 {: .wiki-infobox }
 
 A weapon skin repaints one weapon with a pattern and colour set. Each skin belongs to a set, and a set can cover several weapons. Most weapon skins are bought on the Gold Market for 5 to 15 Gold Bars, and the Season 2 Chocolate Chip set costs 10 each.

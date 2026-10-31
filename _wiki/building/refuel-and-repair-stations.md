@@ -24,7 +24,7 @@ description: "Two vehicle service stations built with the Large Hammer from 200 
 | Rockets | +1,500% |
 | C4 | +600% |
 | IEDs | +1,000% (Repair Station); +0% (Refuel Station) |
-| Internal name | `DA_Buildable_RefuelStation`, `DA_Buildable_RepairStation` |
+| Internal name | [`DA_Buildable_RefuelStation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/RefuelStation/DA_Buildable_RefuelStation.json), [`DA_Buildable_RepairStation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/RepairStation/DA_Buildable_RepairStation.json) |
 {: .wiki-infobox }
 
 The Refuel Station and the Repair Station are vehicle service structures that only the Large Hammer can build. The Refuel Station uses Fuel Supplies and the Repair Station uses Mechanical Supplies. Each can be placed once per Forward Operating Base. They take much more rocket and C4 damage than most structures.

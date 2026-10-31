@@ -25,7 +25,7 @@ description: "A large multi-part tower built only with the Large Hammer from 200
 | Rockets | +45% |
 | C4 | +50% |
 | IEDs | +200% |
-| Internal name | `DA_Buildable_CrowsNest`, with parts `DA_Buildable_CrowsNest_BaseFloor`, `DA_Buildable_CrowsNest_FirstFloor` and `DA_Buildable_CrowsNest_Roof` |
+| Internal name | [`DA_Buildable_CrowsNest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest.json), with parts [`DA_Buildable_CrowsNest_BaseFloor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_BaseFloor.json), [`DA_Buildable_CrowsNest_FirstFloor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_FirstFloor.json) and [`DA_Buildable_CrowsNest_Roof`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/CrowsNest/DA_Buildable_CrowsNest_Roof.json) |
 {: .wiki-infobox }
 
 The Recon Tower is a large tower built from a base floor, a first floor and a roof. Only the Large Hammer can build it. It has 5,000 HP and takes the same damage as the [Bunker](bunker.md).

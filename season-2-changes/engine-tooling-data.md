@@ -20,9 +20,9 @@ Season 1 to Season 2 changes for this area, from the area diff file. Audio and U
 
 ## Gameplay-relevant changes
 
-- High ping kick: a new `HighPingKick` game feature (GameFeatureData) is added.
-- Wagers: 8 UI assets for the wager HUD, receipt, status, toast, vendor panel and objective selector are added. The wager data itself is in `Meta/Wagers` (see the rewards page).
-- Vehicle countermeasures: `DA_VehicleCountermeasure` moved from the flares folder to the countermeasures folder (UI data).
+- High ping kick: a new [`HighPingKick`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HighPingKick/Content/HighPingKick.json) game feature (GameFeatureData) is added.
+- Wagers: 8 UI assets for the wager HUD, receipt, status, toast, vendor panel and objective selector are added. The wager data itself is in [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) (see the rewards page).
+- Vehicle countermeasures: [`DA_VehicleCountermeasure`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json) moved from the flares folder to the countermeasures folder (UI data).
 
 Other added assets are listed by folder below. Audio and UI are counted in the next table.
 
@@ -33,13 +33,13 @@ Other added assets are listed by folder below. Audio and UI are counted in the n
 | Audio | 0 | 1 | 0 | 0 | [audio changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_SettingsPanel_Audio) |
 | UI widgets | 19 | 142 | 79 | 3 | [ui widgets changes]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=UI) |
 
-1 moved asset (ui class, count only): `DA_VehicleCountermeasure` moved from `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Flares/Data/DA_VehicleFlares.json` → `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json`. Browse it in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_VehicleCountermeasure).
+1 moved asset (ui class, count only): [`DA_VehicleCountermeasure`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json) moved from `Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Flares/Data/DA_VehicleFlares.json` → [`Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Vehicles/NEWHUD/Countermeasures/Data/DA_VehicleCountermeasure.json). Browse it in the [change browser]({{ '/season-2-changes/all-changes.html' | relative_url }}#area=engine-tooling-data&q=DA_VehicleCountermeasure).
 
 ## Added in Season 2 (gameplay and visual assets)
 
 | Folder | Type | Added assets |
 |---|---|---|
-| `Plugins/GameFeatures/HighPingKick/Content` | GameFeatureData (1) | `HighPingKick` |
+| [`Plugins/GameFeatures/HighPingKick/Content`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/HighPingKick/Content) | GameFeatureData (1) | [`HighPingKick`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HighPingKick/Content/HighPingKick.json) |
 
 Total in this table: 1 asset. Audio and UI added assets are counted above and are not listed.
 

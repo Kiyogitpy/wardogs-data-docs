@@ -13,7 +13,7 @@ description: "Meta-progression and cosmetic tables: skill nodes, unlock trees an
 
 ## WDMetaTreeNodeData_UI
 
-Tables: `DT_CharacterSkillNodes_Data`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_CharacterSkillNodes_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CharacterSkillNodes_Data.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDMetaTreeNodeData_UI -->
 *1 table(s), 131 rows, 4 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -155,7 +155,7 @@ Tables: `DT_CharacterSkillNodes_Data`. Each name is linked in the [index](Wardog
 
 ## WDMetaTreeTableRow
 
-Tables: `DT_MetaTree_Roles`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_MetaTree_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDMetaTreeTableRow -->
 *1 table(s), 7 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -173,7 +173,7 @@ Tables: `DT_MetaTree_Roles`. Each name is linked in the [index](Wardogs_DataTabl
 
 ## WDMetaMasteryDefinitionTableRow
 
-Tables: `DT_RoleMasteryDefinitions`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_RoleMasteryDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/Roles/DT_RoleMasteryDefinitions.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDMetaMasteryDefinitionTableRow -->
 *1 table(s), 6 rows, 3 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -190,7 +190,7 @@ Tables: `DT_RoleMasteryDefinitions`. Each name is linked in the [index](Wardogs_
 
 ## WDMetaSeasonDefinitionTableRow
 
-Tables: `DT_SeasonDefinitions`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDMetaSeasonDefinitionTableRow -->
 *1 table(s), 1 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -202,7 +202,7 @@ Tables: `DT_SeasonDefinitions`. Each name is linked in the [index](Wardogs_DataT
 
 ## WDCosmeticSetData
 
-Tables: `DT_CosmeticSets_Debug`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDCosmeticSetData -->
 *1 table(s), 12 rows, 5 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -225,7 +225,7 @@ Tables: `DT_CosmeticSets_Debug`. Each name is linked in the [index](Wardogs_Data
 
 ## WDEmoteData
 
-Tables: `DT_EmoteData`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDEmoteData -->
 *1 table(s), 27 rows, 8 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -297,7 +297,7 @@ Columns 8-8 of 8:
 
 ## WDPlayerIdentityRow
 
-Tables: `DT_PlayerIdentities`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDPlayerIdentityRow -->
 *1 table(s), 5 rows, 9 non-empty columns. Source: the `Rows` of each table export (**Data**).*
@@ -325,7 +325,7 @@ Columns 8-9 of 9:
 
 ## WDFactionDataTableRow
 
-Tables: `DT_FactionData`. Each name is linked in the [index](Wardogs_DataTables_v1.md).
+Tables: [`DT_FactionData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_FactionData.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDFactionDataTableRow -->
 *1 table(s), 4 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*

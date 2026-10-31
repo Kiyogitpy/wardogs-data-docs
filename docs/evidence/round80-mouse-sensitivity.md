@@ -34,7 +34,7 @@ Important correction to the premise: the slider is a masked value. The data defa
 
 ## 1. The BH axis modifier (FOUND, NATIVE)
 
-`DA_Player_InputAxisConfig` (`BHAxisConfigDataAsset`) holds the wiring only. The code that applies it is the Enhanced Input modifier `UWDApplyAxisConfig`, whose vtable is `0xB338C68`. Its `ModifyRaw` (vtable slot 86) is `0x6BF2B70`. It:
+[`DA_Player_InputAxisConfig`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Controls/DA_Player_InputAxisConfig.json) (`BHAxisConfigDataAsset`) holds the wiring only. The code that applies it is the Enhanced Input modifier `UWDApplyAxisConfig`, whose vtable is `0xB338C68`. Its `ModifyRaw` (vtable slot 86) is `0x6BF2B70`. It:
 
 - accepts only a valid player-controlled input (checks around `0x6BF2B70` to `0x6BF2C00`);
 - builds two lists of `FBHAxisSettingModifier` entries (12 bytes each: axis byte, bGamepad byte, ModifierType byte, then the property FName), the `DefaultAxisConfig` list first (`0x144D06260`) and the matching `StateAxisConfigs` after it (`0x144D06290`, entries whose gameplay tag requirements match the pawn);
@@ -53,7 +53,7 @@ So the whole axis step for the mouse is: `v -> sign(v)*|v|^(1+MouseAcceleration)
 
 `MouseVerticalAxisSensitivityMultiplier` is not in the axis config. It is a real property (`BHUserSettings +0x444`, getter at `0x4E39210`, no direct caller; the only references are the property registration stubs near `0x4E2F764`). No reader of it was found (ABSENT as a mouse-look factor). The wiki setting "Vertical axis multiplier" (default 1, 0.01 to 5) therefore has no static effect link here; this round treats it as 1. It is the one open item that could change the pitch factor.
 
-Mouse acceleration: `DA_Setting_Controls_MouseAcceleration` has Maximum 0.05, DisplayMaximum 5.0, bMaskValue, no Default (so 0). The stored value is 0 to 0.05, shown 0 to 5; the exponent is `1 + stored`, so the default is exponent 1.0 (off) and the largest is 1.05. FOUND (data) plus the Exponent branch above. The power is applied to the value after the engine axis step (section 4), before the sensitivity multiply.
+Mouse acceleration: [`DA_Setting_Controls_MouseAcceleration`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHFramework/Content/Settings/Controls/DA_Setting_Controls_MouseAcceleration.json) has Maximum 0.05, DisplayMaximum 5.0, bMaskValue, no Default (so 0). The stored value is 0 to 0.05, shown 0 to 5; the exponent is `1 + stored`, so the default is exponent 1.0 (off) and the largest is 1.05. FOUND (data) plus the Exponent branch above. The power is applied to the value after the engine axis step (section 4), before the sensitivity multiply.
 
 ## 2. The input chain from mouse counts to the view (per link)
 
@@ -61,8 +61,8 @@ Mouse acceleration: `DA_Setting_Controls_MouseAcceleration` has Maximum 0.05, Di
 |---|---|---|---|
 | 1 | Raw `Mouse2D` counts per frame (dx, dy) | engine, inferred | UE input |
 | 2 | Project axis config for `Mouse2D`: DeadZone 0, Exponent 1, Sensitivity 0.07 | FOUND (config), applied by the engine: inferred | `Engine/Config/BaseInput.ini` lines 27 to 29 (`MouseX`, `MouseY`, `Mouse2D` all 0.07); `Wardogs/Config/DefaultInput.ini` re-adds only the four gamepad stick entries (neutralised to 1/0/1), so the mouse entries stay at 0.07 |
-| 3 | IMC mapping: `IMC_PlayerController` entry `Mouse2D -> IA_Look`, modifiers: `WDApplyAxisConfig_0` only (no Scalar, no Negate, no swizzle, no ScaleByDeltaTime) | FOUND | `data/.../PlayerController/IMC_PlayerController.json` lines 530 to 545 |
-| 4 | `IA_Look` is Axis2D with one action modifier `WDAimAssistInputModifier` | FOUND; its effect on mouse input not traced | `IA_Look.json` |
+| 3 | IMC mapping: [`IMC_PlayerController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IMC_PlayerController.json) entry `Mouse2D -> IA_Look`, modifiers: `WDApplyAxisConfig_0` only (no Scalar, no Negate, no swizzle, no ScaleByDeltaTime) | FOUND | `data/.../PlayerController/IMC_PlayerController.json` lines 530 to 545 |
+| 4 | [`IA_Look`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.json) is Axis2D with one action modifier `WDAimAssistInputModifier` | FOUND; its effect on mouse input not traced | [`IA_Look.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.json) |
 | 5 | Axis modifier (section 1) | FOUND, NATIVE | `0x6BF2B70`, `0x6BF0090`, `0x6BF0260` |
 | 6 | Look handler: scales the 2D value by the field of view factor and calls AddYawInput (x) and AddPitchInput (y) | NATIVE | `0x6D4F700` (the call `0x6D4DEB0` at `0x6D4FC2F`, virtual slot 425 at `+0xD48` for yaw, slot 424 at `+0xD40` for pitch; the engine's own `AddYawInput` thunk `0x42E5140` calls the same slot). Bound through an action callback thunk at `0x6D591F8` (binding of the thunk to IA_Look not traced: inferred) |
 | 7 | `AddYawInput` / `AddPitchInput` (slots 425 and 424 are the unmodified engine `0x42B43E0` and `0x42B3F40`) | NATIVE | `RotationInput.Yaw += Val * scale` where `scale = (UInputSettings.bEnableLegacyInputScales ? controller.InputYawScale : 1.0)`; the false branch constant is 1.0 for both (`0x57F95E3`, `0x57F9A83`) |
@@ -75,9 +75,9 @@ Why link 2 is "inferred": that Enhanced Input applies the project `AxisConfig` p
 
 ## 3. The slider-to-stored mapping (FOUND data, mask rule derived)
 
-`DA_Setting_Controls_Sensitivity` (BHFramework): Minimum 0.1, Default 0.4, bMaskValue true, DisplayMinimum 0.1, DisplayMaximum 2.0, Increment 0.01; no Maximum, so the struct default applies. `bMaskValue` maps the stored range [Minimum, Maximum] linearly onto [DisplayMinimum, DisplayMaximum]. The struct default Maximum is 1.0 and Minimum 0, shown by:
+[`DA_Setting_Controls_Sensitivity`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHFramework/Content/Settings/Controls/DA_Setting_Controls_Sensitivity.json) (BHFramework): Minimum 0.1, Default 0.4, bMaskValue true, DisplayMinimum 0.1, DisplayMaximum 2.0, Increment 0.01; no Maximum, so the struct default applies. `bMaskValue` maps the stored range [Minimum, Maximum] linearly onto [DisplayMinimum, DisplayMaximum]. The struct default Maximum is 1.0 and Minimum 0, shown by:
 
-- `DA_Setting_Audio_Volumes`: only Default 1.0 and DisplayMaximum 100 are stored; the volume default displays as 100 only if Maximum is 1.0;
+- [`DA_Setting_Audio_Volumes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHFramework/Content/Settings/Audio/DA_Setting_Audio_Volumes.json): only Default 1.0 and DisplayMaximum 100 are stored; the volume default displays as 100 only if Maximum is 1.0;
 - the weapon view model scale: stored default 0.3333 (setting `FirstPersonMeshFieldOfViewScale`), display 1 to 10 with Increment 1; in an installed config the stored value 0.666667 maps to exactly 7.0 under `1 + stored * 9`, a whole number on the Increment 1 grid;
 - the mouse sensitivity stored in the same config, 0.407895, maps to exactly 0.75 under `0.1 + (S - 0.1) * 1.9 / 0.9`, a value on the 0.01 grid (for other maxima it does not land on the grid).
 
@@ -99,7 +99,7 @@ See section 1: exponent `1 + MouseAcceleration`, default stored 0, so off by def
 
 The caller multiplies the 2D look value by `R` (and by a gamepad-only look acceleration factor that is 1 for the mouse: it is gated by the gamepad-input check `0x6C04740` and the gamepad look acceleration setting) before `AddYawInput` / `AddPitchInput`. So the FOV factor does not touch hip fire (alpha 0 gives `w = 0` for the default type, and the other types also give 0 outside aiming).
 
-Default constants: `AimingFovMode` Affected (0), `AimingFovSensitivityMode` Relative (0), `AimingSensitivityRelativeCoefficient` 100 (the settings constructor `0x6EAE210` stores 0 at `+0x654` and the float `0x42C80000` = 100.0 at `+0x65C`); the transition default is the DA default index 1 = AimingAlpha. The `MouseADSSensitivityMultiplier` (aiming tag state config) has no data row in this dump (BHFramework setting `DA_Setting_Controls_SensitivityMultiplier`: 0.01 to 5, default 1.0 is the matching template); treated as default 1.0.
+Default constants: `AimingFovMode` Affected (0), `AimingFovSensitivityMode` Relative (0), `AimingSensitivityRelativeCoefficient` 100 (the settings constructor `0x6EAE210` stores 0 at `+0x654` and the float `0x42C80000` = 100.0 at `+0x65C`); the transition default is the DA default index 1 = AimingAlpha. The `MouseADSSensitivityMultiplier` (aiming tag state config) has no data row in this dump (BHFramework setting [`DA_Setting_Controls_SensitivityMultiplier`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/BHFramework/Content/Settings/Controls/DA_Setting_Controls_SensitivityMultiplier.json): 0.01 to 5, default 1.0 is the matching template); treated as default 1.0.
 
 How the ADS multiplier combines: it multiplies inside the axis step (section 1); `R` multiplies after it, in the look handler. They are independent factors: `ADS = hip * MouseADSMultiplier * R`.
 
@@ -122,7 +122,7 @@ How the ADS multiplier combines: it multiplies inside the axis step (section 1);
 - Link 2 (Sensitivity 0.07 on `Mouse2D`) is inferred from engine behaviour and the project's gamepad re-adds; if wrong, every figure here is 14.29 times slower than the true value.
 - The mask rule in section 3 is derived from data patterns, not from the mask code. If the true Maximum were not 1.0 the slider labels would shift but the stored-value formulas would not.
 - `MouseVerticalAxisSensitivityMultiplier` has no found reader; treated as 1.
-- `WDAimAssistInputModifier` on `IA_Look` was not traced; it is an aim assist (target pull and slowdown) and is assumed to be a gamepad feature.
+- `WDAimAssistInputModifier` on [`IA_Look`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Inputs/PlayerController/IA_Look.json) was not traced; it is an aim assist (target pull and slowdown) and is assumed to be a gamepad feature.
 - Mouse smoothing (`bEnableMouseSmoothing=true` in the engine base config) belongs to the legacy axis path; whether it touches Enhanced Input mouse values was not traced. It would change timing, not the total rotation per count.
 - The first-person camera's own `FOV` and view model FOV do not feed this formula; only the camera manager's `DefaultFOV` does.
 - Vehicle and helicopter mouse sensitivities use other multipliers (`LandVehicleSensitivityMultiplier`, `AirVehicleSensitivityMultiplier`, the rotary mouse settings) and are not covered here.

@@ -20,6 +20,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import source_link, link_generated  # noqa: E402
 import bp_defaults as bpd  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -45,7 +46,7 @@ def n(x):
 
 
 def link(rel, label=None):
-    return f"`{label or os.path.basename(rel)[:-5]}`"
+    return source_link("data/" + rel, label or os.path.basename(rel)[:-5])
 
 
 def cls(obj):
@@ -420,7 +421,7 @@ def write(d):
     nl = "\r\n" if "\r\n" in text else "\n"
 
     def regen(m):
-        body = MODES[m.group(1)](d).split("\n")
+        body = link_generated(MODES[m.group(1)](d)).split("\n")
         return nl.join([f"<!-- buildable_tables {m.group(1)} -->"] + body + ["<!-- /buildable_tables -->"])
     new, count = BLOCK.subn(regen, text)
     if new != text:
@@ -436,7 +437,7 @@ def main():
     if "--write" in args:
         write(d)
     else:
-        print(MODES[next((a for a in args if a in MODES), "inventory")](d))
+        print(link_generated(MODES[next((a for a in args if a in MODES), "inventory")](d)))
 
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ Derived `AWDMoverCharacter` constructor `0x6E67160` applies additional changes:
 
 A fresh export of `Wardogs/Content/MoverTesting/B_WDMoverPlayerCharacter` succeeded. Its CharacterMesh subobject has BodyInstance CollisionEnabled **QueryOnly** and CollisionProfileName **Custom**; it serializes no response-channel container. Component transform remains Z -96 cm, Yaw -90 degrees. The old statement that the absent responses are simply native class defaults is too strong: the native constructor explicitly applies a named profile before the Blueprint's Custom/QueryOnly override. Configuration resolution and archetype serialization must be considered.
 
-No complete CharacterMesh profile definition was found in the repository's exported `data/Wardogs/Config` files. This pass did not extract packed engine configuration, execute class-default construction or resolve runtime modifications. Keep `collision-channels` open, narrowed to that profile/config question. The capsule changes above do not prove which projectile channels hit the mesh bodies.
+No complete CharacterMesh profile definition was found in the repository's exported [`data/Wardogs/Config`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config) files. This pass did not extract packed engine configuration, execute class-default construction or resolve runtime modifications. Keep `collision-channels` open, narrowed to that profile/config question. The capsule changes above do not prove which projectile channels hit the mesh bodies.
 
 ## Tapered capsules: metadata verified, query construction still open
 

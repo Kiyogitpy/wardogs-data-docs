@@ -6,7 +6,7 @@ description: "The player's own health bar on the HUD: one widget under a health 
 ---
 
 # Wardogs — GameFeatures: PlayerHealthBar
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: `Plugins/GameFeatures/PlayerHealthBar/` — 2 JSON files.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/PlayerHealthBar/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/PlayerHealthBar) — 2 JSON files.*
 
 ---
 
@@ -16,8 +16,8 @@ The player's own health bar on the HUD. A small pack: a GameFeatureData that add
 
 | File | Type | Role |
 |---|---|---|
-| `Content/PlayerHealthBar.json` | GameFeatureData + widget actions | Adds the health widget (6 exports: 1 pack, 1 action, 4 instances) |
-| `Content/Data/DA_PlayerHealthBar.json` | `WDUIPlayerHealthBarData` | Armour display setting |
+| [`Content/PlayerHealthBar.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PlayerHealthBar/Content/PlayerHealthBar.json) | GameFeatureData + widget actions | Adds the health widget (6 exports: 1 pack, 1 action, 4 instances) |
+| [`Content/Data/DA_PlayerHealthBar.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PlayerHealthBar/Content/Data/DA_PlayerHealthBar.json) | `WDUIPlayerHealthBarData` | Armour display setting |
 
 ---
 

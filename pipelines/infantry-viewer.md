@@ -245,7 +245,7 @@ Every source of character damage: the rule entries it meets, whether the hit loc
 | Explosives and launchers | AT mine | `Explosive.Utility.ATMine`, `Explosive.Utility.ATMine` | no | — | 105 | 105 | — |
 | Explosives and launchers | Claymore | `Explosive.Utility.Claymore`, `DamageType.Explosive` | no | — | 105 | 105 | — |
 | Explosives and launchers | IED | `Explosive.Utility.IED`, `Explosive.Utility.IED`, `DamageType.Explosive` | no | — | 105 | 105 | — |
-| Explosives and launchers | Molotov | `Molotov`, `Molotov`, `DamageType.Explosive` | no | — | 105 | 105 | — |
+| Explosives and launchers | Molotov | [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json), [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json), `DamageType.Explosive` | no | — | 105 | 105 | — |
 | Explosives and launchers | CGM4 back-blast | `Weapon.Launcher.AT4`, `DamageType.BackBlast` | no | — | — | — | — |
 | Explosives and launchers | Launcher_04 back-blast | `Weapon.Launcher.AT4`, `DamageType.BackBlast` | no | — | — | — | — |
 | Explosives and launchers | RPG7 back-blast | `Weapon.Launcher.AT4`, `DamageType.BackBlast` | no | — | — | — | — |
@@ -318,20 +318,20 @@ Each item's context tag, durability, reduction and the hit locations it covers.
 <!-- infantry_tables --armor -->
 | Item | Context tag | Kind | Max durability | `R` (%) | Covered hit locations | Entries (custom in bold) |
 |---|---|---|---:|---:|---|---|
-| `ID_GhillieArmor` | `Meta.Damage.Armor.Ghillie` | armor | — | 0 (no stages) | — | 21, 83, 89, 133, **138**, **139**, **143**, **144** |
-| `ID_GhillieArmorDry` | `Meta.Damage.Armor.Ghillie` | armor | — | 0 (no stages) | — | 21, 83, 89, 133, **138**, **139**, **143**, **144** |
-| `ID_GhillieHelmet` | `Meta.Damage.Helmet.Ghillie` | helmet | — | 0 (no stages) | — | 20, 28, 82, 87, 134, **140**, **141**, **142** |
-| `ID_GhillieHelmetDry` | `Meta.Damage.Helmet.Ghillie` | helmet | — | 0 (no stages) | — | 20, 28, 82, 87, 134, **140**, **141**, **142** |
-| `ID_HeavyArmor` | `Meta.Damage.Armor.Heavy` | armor | 250 | 50 | Torso.Upper, Torso.Middle, Torso.Lower | 21, 26, 83, 89, 104, 128, 133, **138**, **139**, **143**, **144** |
-| `ID_HeavyHelmet` | `Meta.Damage.Helmet.Heavy` | helmet | 180 | 50 | Head, Neck | 20, 28, 30, 82, 87, 130, 134, **140**, **141**, **142** |
-| `ID_LightArmor` | `Meta.Damage.Armor.Light` | armor | 200 | 30 | Torso.Upper, Torso.Middle, Torso.Lower | 21, 83, 89, 102, 133, **138**, **139**, **143**, **144** |
-| `ID_LightHelmet` | `Meta.Damage.Helmet.Light` | helmet | 80 | 30 | Head | 20, 28, 29, 82, 87, 134, **140**, **141**, **142** |
-| `ID_MediumArmor` | `Meta.Damage.Armor.Medium` | armor | 220 | 40 | Torso.Upper, Torso.Middle, Torso.Lower | 21, 83, 89, 103, 133, **138**, **139**, **143**, **144** |
-| `ID_MediumHelmet` | `Meta.Damage.Helmet.Medium` | helmet | 100 | 40 | Head | 20, 28, 82, 87, 134, **140**, **141**, **142** |
-| `ID_PilotHelmet` | `Meta.Damage.Helmet.Pilot` | helmet | 180 | 30 | Head | 20, 28, 82, 87, 134, **140**, **141**, **142** |
-| `ID_SuperHeavyArmor` | `Meta.Damage.Armor.SuperHeavy` | armor | 300 | 60 | Torso.Upper, Torso.Middle, Torso.Lower, Pelvis, Arm.Upper | 21, 27, 83, 84, 89, 105, 106, 129, 133, **138**, **139**, **143**, **144** |
-| `ID_SuperHeavyHelmet` | `Meta.Damage.Helmet.SuperHeavy` | helmet | 200 | 60 | Head, Neck | 20, 28, 31, 82, 87, 88, 131, 134, 136, **140**, **141**, **142** |
-| `ID_TankHelmet` | `Meta.Damage.Helmet.Tank` | helmet | 180 | 55 | Head, Neck | 20, 28, 82, 87, 134, **140**, **141**, **142** |
+| [`ID_GhillieArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_GhillieArmor.json) | `Meta.Damage.Armor.Ghillie` | armor | — | 0 (no stages) | — | 21, 83, 89, 133, **138**, **139**, **143**, **144** |
+| [`ID_GhillieArmorDry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_GhillieArmorDry.json) | `Meta.Damage.Armor.Ghillie` | armor | — | 0 (no stages) | — | 21, 83, 89, 133, **138**, **139**, **143**, **144** |
+| [`ID_GhillieHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_GhillieHelmet.json) | `Meta.Damage.Helmet.Ghillie` | helmet | — | 0 (no stages) | — | 20, 28, 82, 87, 134, **140**, **141**, **142** |
+| [`ID_GhillieHelmetDry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_GhillieHelmetDry.json) | `Meta.Damage.Helmet.Ghillie` | helmet | — | 0 (no stages) | — | 20, 28, 82, 87, 134, **140**, **141**, **142** |
+| [`ID_HeavyArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_HeavyArmor.json) | `Meta.Damage.Armor.Heavy` | armor | 250 | 50 | Torso.Upper, Torso.Middle, Torso.Lower | 21, 26, 83, 89, 104, 128, 133, **138**, **139**, **143**, **144** |
+| [`ID_HeavyHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_HeavyHelmet.json) | `Meta.Damage.Helmet.Heavy` | helmet | 180 | 50 | Head, Neck | 20, 28, 30, 82, 87, 130, 134, **140**, **141**, **142** |
+| [`ID_LightArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_LightArmor.json) | `Meta.Damage.Armor.Light` | armor | 200 | 30 | Torso.Upper, Torso.Middle, Torso.Lower | 21, 83, 89, 102, 133, **138**, **139**, **143**, **144** |
+| [`ID_LightHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_LightHelmet.json) | `Meta.Damage.Helmet.Light` | helmet | 80 | 30 | Head | 20, 28, 29, 82, 87, 134, **140**, **141**, **142** |
+| [`ID_MediumArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_MediumArmor.json) | `Meta.Damage.Armor.Medium` | armor | 220 | 40 | Torso.Upper, Torso.Middle, Torso.Lower | 21, 83, 89, 103, 133, **138**, **139**, **143**, **144** |
+| [`ID_MediumHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_MediumHelmet.json) | `Meta.Damage.Helmet.Medium` | helmet | 100 | 40 | Head | 20, 28, 82, 87, 134, **140**, **141**, **142** |
+| [`ID_PilotHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_PilotHelmet.json) | `Meta.Damage.Helmet.Pilot` | helmet | 180 | 30 | Head | 20, 28, 82, 87, 134, **140**, **141**, **142** |
+| [`ID_SuperHeavyArmor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_SuperHeavyArmor.json) | `Meta.Damage.Armor.SuperHeavy` | armor | 300 | 60 | Torso.Upper, Torso.Middle, Torso.Lower, Pelvis, Arm.Upper | 21, 27, 83, 84, 89, 105, 106, 129, 133, **138**, **139**, **143**, **144** |
+| [`ID_SuperHeavyHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_SuperHeavyHelmet.json) | `Meta.Damage.Helmet.SuperHeavy` | helmet | 200 | 60 | Head, Neck | 20, 28, 31, 82, 87, 88, 131, 134, 136, **140**, **141**, **142** |
+| [`ID_TankHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_TankHelmet.json) | `Meta.Damage.Helmet.Tank` | helmet | 180 | 55 | Head, Neck | 20, 28, 82, 87, 134, **140**, **141**, **142** |
 <!-- /infantry_tables -->
 
 ### Traced since the docs

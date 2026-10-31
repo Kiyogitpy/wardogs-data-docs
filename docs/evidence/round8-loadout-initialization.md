@@ -159,7 +159,7 @@ The separate [Deathmatch native handler](round8-loadout-deathmatch.md)
 attempts to grant a supplied item and four magazines from its default tag
 data. A native weapon-selection button callback now supplies its item tag
 through the component's RPC delegate. Its `DeathmatchWeaponsData` registry
-now resolves to `DT_DeathmatchWeaponSelect`, and the component's registration
+now resolves to [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json), and the component's registration
 requests its selection scene according to the PreMatch/Playing.Deathmatch
 state checks. Automatic item granting at spawn remains unproved; this is
 another mode-specific route,
@@ -207,7 +207,7 @@ control. The only six matches import
 
 | Package suffix | Context identified by asset path |
 |---|---|
-| `TargetDummy/B_TargetDummy` | Target dummy |
+| [`TargetDummy/B_TargetDummy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/Objects/EnvironmentalObjects/TargetDummy/B_TargetDummy.json) | Target dummy |
 | `InteractionContexts/WIC_InteractionContext_DeployablePickUp` | Deployable pickup |
 | `InteractionContexts/WIC_InteractionContext_ThrowablePickUp` | Throwable pickup |
 | `Experiences/SniperShowdown/Content/Data/B_SniperShowdown_LoadoutComponent` | Separate mode loadout, examined above |

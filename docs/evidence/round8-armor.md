@@ -126,7 +126,7 @@ the projectile wrapper carries it in event `AdditionalData` for the
 later slot-5 queue hook (`0x6E74970`, queue call `0x6E74A00`).
 
 The cooked
-`DT_GlobalDamage_ArmorData`
+[`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json)
 has four rows and 29 entries. All use `Percentage_Ongoing` and category
 Armor; all hit-location and instigator requirements are empty. The
 following indices are zero-based **within each armor-table row**, not

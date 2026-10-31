@@ -79,7 +79,7 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 
 ### Phalanx and Mistral stage tables
 
-`DA_Phalanx_Stages` has 1,894 change records and `DA_Mistral_AA_Stages` has 559. Most are `CriticalHitSpots` array entries compared by index. That is array churn, not a balance change, so these rows are not tabulated. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=DA_Phalanx_Stages
+[`DA_Phalanx_Stages`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/BuildableData/DA_Phalanx_Stages.json) has 1,894 change records and [`DA_Mistral_AA_Stages`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/BuildableData/DA_Mistral_AA_Stages.json) has 559. Most are `CriticalHitSpots` array entries compared by index. That is array churn, not a balance change, so these rows are not tabulated. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=DA_Phalanx_Stages
 
 ### Countermeasures
 
@@ -215,13 +215,13 @@ Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=veh
 | W_WHL_07_Ural_RingTurret_L | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 | W_WHL_07_Ural_RingTurret_R | GamepadRotationSensitivity | 35.0 | 80.0 | +45.0 (+128.6%) |
 
-Showing 40 of 45 rows. The 2 rows with Season 1 values near 1e-38 or below have no percentage: `W_STN_01_MountedMachineGun`. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
+Showing 40 of 45 rows. The 2 rows with Season 1 values near 1e-38 or below have no percentage: [`W_STN_01_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/Weapon/W_STN_01_MountedMachineGun.json). Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Properties
 
-The audio event `AE_Vehicle_Exit_ROT_Littlebird` also has one unnamed value that goes from 0.505 to 50.5. That looks like a rescale from a 0–1 range to 0–100, so it is not in the table.
+The audio event [`AE_Vehicle_Exit_ROT_Littlebird`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Audio/Events/AE_Vehicle_Exit_ROT_Littlebird.json) also has one unnamed value that goes from 0.505 to 50.5. That looks like a rescale from a 0–1 range to 0–100, so it is not in the table.
 
 ### Skin values
 
-`Skin_DigitalWood` has 59 numeric changes (UV and pattern values). They are not tabulated here. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Skin_DigitalWood
+[`Skin_DigitalWood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/Skin_DigitalWood.json) has 59 numeric changes (UV and pattern values). They are not tabulated here. Browser link: {{ '/season-2-changes/all-changes.html' | relative_url }}#area=vehicles&q=Skin_DigitalWood
 
 ### Non-numeric changes
 

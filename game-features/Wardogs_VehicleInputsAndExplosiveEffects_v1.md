@@ -15,62 +15,62 @@ Each wheeled vehicle names one `MWheeledVehicleInputDataAsset`. The names are th
 
 | Asset | Steer sensitivity | Steer input gravity | Steer deadzone | Steering assist | Throttle sensitivity | Braking sensitivity |
 |---|---|---|---|---|---|---|
-| `DA_WHL_01_Input` | 1.3 | 1 | 0.05 | 20 | 2 | 1 |
-| `DA_Input_WHL_02` | - | 2 | - | - | - | - |
-| `DA_Input_WHL_05` | 2.5 | 2 | - | - | 2 | 6.5 |
-| `DA_Input_WHL_06_DuneBuggy` | 1.25 | 2 | - | - | 1.75 | 1.25 |
-| `DA_Input_WHL_07` | - | 2 | - | - | 1 | - |
-| `DA_Input_WHL_08` | - | 2.6 | - | - | 1.5 | 6.5 |
+| [`DA_WHL_01_Input`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Input.json) | 1.3 | 1 | 0.05 | 20 | 2 | 1 |
+| [`DA_Input_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_Input_WHL_02.json) | - | 2 | - | - | - | - |
+| [`DA_Input_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_Input_WHL_05.json) | 2.5 | 2 | - | - | 2 | 6.5 |
+| [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | 1.25 | 2 | - | - | 1.75 | 1.25 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | - | 2 | - | - | 1 | - |
+| [`DA_Input_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_Input_WHL_08.json) | - | 2.6 | - | - | 1.5 | 6.5 |
 
 The curves each asset names, as (input: output) keys:
 
 | Asset | Slot | Curve | Keys |
 |---|---|---|---|
-| `DA_WHL_01_Input` | SteerSpeedCurve | `CRV_SteerSpeed_3` | 0: 2.5; 41.5: 2.5; 59.4: 2.125; 75: 1 |
-| `DA_WHL_01_Input` | SteerLimitCurve | `CRV_SteerLimit_1` | 0: 100; 80: 80 |
-| `DA_WHL_01_Input` | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
-| `DA_WHL_01_Input` | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
-| `DA_WHL_01_Input` | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
-| `DA_Input_WHL_02` | SteerSpeedCurve | `CRV_SteerSpeedVariant` | 0: 1.425; 40: 1.4; 50: 1.2; 113.6: 0.6; 160: 0.5 |
-| `DA_Input_WHL_02` | SteerLimitCurve | `CRV_SteerLimitVariant` | 2.1: 97.5; 32.5: 95; 66.4: 66.25; 107.9: 51.25 |
-| `DA_Input_WHL_02` | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
-| `DA_Input_WHL_02` | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
-| `DA_Input_WHL_02` | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
-| `DA_Input_WHL_05` | SteerSpeedCurve | `CRV_SteerSpeedVariant_WHL_05` | 0.6: 2.138; 38.5: 1.4; 90: 1 |
-| `DA_Input_WHL_05` | SteerLimitCurve | `CRV_SteerLimitVariant_WHL_05` | 2.1: 97.5; 32.5: 95; 66: 72; 113: 62 |
-| `DA_Input_WHL_05` | ThrottleEngagement | `CRV_ThrottleEngagement_WHL_05` | 0: 0; 1: 1 |
-| `DA_Input_WHL_05` | BrakeEngagement | `CRV_BrakeEngagement_WHL_05` | 0: 0; 0.1: 1 |
-| `DA_Input_WHL_05` | ClutchEngagement | `CRV_ClutchEngagement_WHL_05` | 0: 0; 0.1: 0; 1: 1 |
-| `DA_Input_WHL_06_DuneBuggy` | SteerSpeedCurve | `CRV_SteerSpeed_Reactive` | 0: 1.5; 100: 1 |
-| `DA_Input_WHL_06_DuneBuggy` | SteerLimitCurve | `CRV_SteerLimitVariant` | 0: 100; 35: 80; 55.002: 61.855; 88: 32; 130: 20 |
-| `DA_Input_WHL_06_DuneBuggy` | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
-| `DA_Input_WHL_06_DuneBuggy` | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
-| `DA_Input_WHL_06_DuneBuggy` | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
-| `DA_Input_WHL_07` | SteerSpeedCurve | `CRV_SteerSpeedVariant_WHL_07` | 0: 1.425; 21: 1; 42.1: 0.65; 80: 0.5 |
-| `DA_Input_WHL_07` | SteerLimitCurve | `CRV_SteerLimitVariant_WHL_07` | 2.1: 97.5; 23.2: 90; 48.8: 67.5; 80: 51.25 |
-| `DA_Input_WHL_07` | ThrottleEngagement | `CRV_ThrottleEngagement_WHL_07` | 0: 0; 1: 1 |
-| `DA_Input_WHL_07` | BrakeEngagement | `CRV_BrakeEngagement_WHL_07` | 0: 0; 1: 1 |
-| `DA_Input_WHL_07` | ClutchEngagement | `CRV_ClutchEngagement_WHL_07` | 0: 0; 0.1: 0; 1: 1 |
-| `DA_Input_WHL_08` | SteerSpeedCurve | `CRV_SteerSpeedVariant_WHL_08` | 0.6: 2.138; 45: 1.25; 85: 0.9 |
-| `DA_Input_WHL_08` | SteerLimitCurve | `CRV_SteerLimitVariant_WHL_08` | 2.1: 97.5; 32.5: 95; 66.4: 66.25; 107.9: 51.25 |
-| `DA_Input_WHL_08` | ThrottleEngagement | `CRV_ThrottleEngagement_WHL_08` | 0: 0; 1: 1 |
-| `DA_Input_WHL_08` | BrakeEngagement | `CRV_BrakeEngagement_WHL_08` | 0: 0; 0.1: 1 |
-| `DA_Input_WHL_08` | ClutchEngagement | `CRV_ClutchEngagement_WHL_08` | 0: 0; 0.1: 0; 1: 1 |
+| [`DA_WHL_01_Input`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Input.json) | SteerSpeedCurve | [`CRV_SteerSpeed_3`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Curves/CRV_SteerSpeed_3.json) | 0: 2.5; 41.5: 2.5; 59.4: 2.125; 75: 1 |
+| [`DA_WHL_01_Input`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Input.json) | SteerLimitCurve | [`CRV_SteerLimit_1`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Curves/CRV_SteerLimit_1.json) | 0: 100; 80: 80 |
+| [`DA_WHL_01_Input`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Input.json) | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
+| [`DA_WHL_01_Input`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Input.json) | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
+| [`DA_WHL_01_Input`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/Data/DA_WHL_01_Input.json) | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
+| [`DA_Input_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_Input_WHL_02.json) | SteerSpeedCurve | [`CRV_SteerSpeedVariant`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/Curves/CRV_SteerSpeedVariant.json) | 0: 1.425; 40: 1.4; 50: 1.2; 113.6: 0.6; 160: 0.5 |
+| [`DA_Input_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_Input_WHL_02.json) | SteerLimitCurve | `CRV_SteerLimitVariant` | 2.1: 97.5; 32.5: 95; 66.4: 66.25; 107.9: 51.25 |
+| [`DA_Input_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_Input_WHL_02.json) | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
+| [`DA_Input_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_Input_WHL_02.json) | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
+| [`DA_Input_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/Data/DA_Input_WHL_02.json) | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
+| [`DA_Input_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_Input_WHL_05.json) | SteerSpeedCurve | [`CRV_SteerSpeedVariant_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Curves/CRV_SteerSpeedVariant_WHL_05.json) | 0.6: 2.138; 38.5: 1.4; 90: 1 |
+| [`DA_Input_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_Input_WHL_05.json) | SteerLimitCurve | [`CRV_SteerLimitVariant_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Curves/CRV_SteerLimitVariant_WHL_05.json) | 2.1: 97.5; 32.5: 95; 66: 72; 113: 62 |
+| [`DA_Input_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_Input_WHL_05.json) | ThrottleEngagement | [`CRV_ThrottleEngagement_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Curves/CRV_ThrottleEngagement_WHL_05.json) | 0: 0; 1: 1 |
+| [`DA_Input_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_Input_WHL_05.json) | BrakeEngagement | [`CRV_BrakeEngagement_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Curves/CRV_BrakeEngagement_WHL_05.json) | 0: 0; 0.1: 1 |
+| [`DA_Input_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Data/DA_Input_WHL_05.json) | ClutchEngagement | [`CRV_ClutchEngagement_WHL_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/Curves/CRV_ClutchEngagement_WHL_05.json) | 0: 0; 0.1: 0; 1: 1 |
+| [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | SteerSpeedCurve | [`CRV_SteerSpeed_Reactive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/Curves/CRV_SteerSpeed_Reactive.json) | 0: 1.5; 100: 1 |
+| [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | SteerLimitCurve | `CRV_SteerLimitVariant` | 0: 100; 35: 80; 55.002: 61.855; 88: 32; 130: 20 |
+| [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
+| [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
+| [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | SteerSpeedCurve | [`CRV_SteerSpeedVariant_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_SteerSpeedVariant_WHL_07.json) | 0: 1.425; 21: 1; 42.1: 0.65; 80: 0.5 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | SteerLimitCurve | [`CRV_SteerLimitVariant_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_SteerLimitVariant_WHL_07.json) | 2.1: 97.5; 23.2: 90; 48.8: 67.5; 80: 51.25 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | ThrottleEngagement | [`CRV_ThrottleEngagement_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_ThrottleEngagement_WHL_07.json) | 0: 0; 1: 1 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | BrakeEngagement | [`CRV_BrakeEngagement_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_BrakeEngagement_WHL_07.json) | 0: 0; 1: 1 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | ClutchEngagement | [`CRV_ClutchEngagement_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_ClutchEngagement_WHL_07.json) | 0: 0; 0.1: 0; 1: 1 |
+| [`DA_Input_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_Input_WHL_08.json) | SteerSpeedCurve | [`CRV_SteerSpeedVariant_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Curves/CRV_SteerSpeedVariant_WHL_08.json) | 0.6: 2.138; 45: 1.25; 85: 0.9 |
+| [`DA_Input_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_Input_WHL_08.json) | SteerLimitCurve | [`CRV_SteerLimitVariant_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Curves/CRV_SteerLimitVariant_WHL_08.json) | 2.1: 97.5; 32.5: 95; 66.4: 66.25; 107.9: 51.25 |
+| [`DA_Input_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_Input_WHL_08.json) | ThrottleEngagement | [`CRV_ThrottleEngagement_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Curves/CRV_ThrottleEngagement_WHL_08.json) | 0: 0; 1: 1 |
+| [`DA_Input_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_Input_WHL_08.json) | BrakeEngagement | [`CRV_BrakeEngagement_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Curves/CRV_BrakeEngagement_WHL_08.json) | 0: 0; 0.1: 1 |
+| [`DA_Input_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Data/DA_Input_WHL_08.json) | ClutchEngagement | [`CRV_ClutchEngagement_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/Curves/CRV_ClutchEngagement_WHL_08.json) | 0: 0; 0.1: 0; 1: 1 |
 
 ## 2. Vehicle smoke screen (tanks and the M113)
 
-Four vehicle assets carry the smoke block (`TNK_01` Heavy, `TNK_03` Gepard, `TNK_04` T-72B3, `SPW` M113). In the native handler (`0x766F240`) the first float starts a timer that clears the "smoke active" flag and the second float starts a timer that marks the smoke ready again, so they read as a **16 s active window** and a **90 s cooldown**. The byte is the starting number of smoke charges (`SPW` 255, the tanks 1), by analogy with the flare struct's starting amount (the load path was not traced). The vector (0, 400, 200) is stored with the effect and is read as a spawn offset (not traced).
+Four vehicle assets carry the smoke block ([`TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/TNK_01.json) Heavy, `TNK_03` Gepard, [`TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/TNK_04.json) T-72B3, `SPW` M113). In the native handler (`0x766F240`) the first float starts a timer that clears the "smoke active" flag and the second float starts a timer that marks the smoke ready again, so they read as a **16 s active window** and a **90 s cooldown**. The byte is the starting number of smoke charges (`SPW` 255, the tanks 1), by analogy with the flare struct's starting amount (the load path was not traced). The vector (0, 400, 200) is stored with the effect and is read as a spawn offset (not traced).
 
 | Gameplay systems asset | Starting charges | Active window (s) | Cooldown (s) | Offset (X, Y, Z) |
 |---|---|---|---|---|
-| `DA_GameplaySystems_SPW` | 255 | 16 | 90 | 0, 400, 200 |
-| `DA_GameplaySystems_TNK_03` | 1 | 16 | 90 | 0, 400, 200 |
-| `DA_GameplaySystems_TNK_01_Heavy` | 1 | 16 | 90 | 0, 400, 200 |
-| `DA_GameplaySystems_TNK_04` | 1 | 16 | 90 | 0, 400, 200 |
+| [`DA_GameplaySystems_SPW`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/Data/DA_GameplaySystems_SPW.json) | 255 | 16 | 90 | 0, 400, 200 |
+| [`DA_GameplaySystems_TNK_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/AntiAir/DA_GameplaySystems_TNK_03.json) | 1 | 16 | 90 | 0, 400, 200 |
+| [`DA_GameplaySystems_TNK_01_Heavy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Heavy/DA_GameplaySystems_TNK_01_Heavy.json) | 1 | 16 | 90 | 0, 400, 200 |
+| [`DA_GameplaySystems_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/Data/DA_GameplaySystems_TNK_04.json) | 1 | 16 | 90 | 0, 400, 200 |
 
-## 3. Stingray drone (`STN_05`) projectile
+## 3. Stingray drone ([`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json)) projectile
 
-The drone is a projectile actor (`BP_Drone_Projectile`). Projectile asset `DA_Drone_ProjectileData`: base damage 120, explosive radius 1000, effective radius 500, minimum explosive damage 15, falloff 0.45, blunt damage 100, impulse 2500 / Z 3500, length 130, diameter 10, mass 10, arming delay 0.1 s, maximum lifetime 500, typical speed 15000, thrust speed 22000, damage tag `Meta.Damage.Explosive.Drone`. The Blueprint holds a box collision of half extents 46.6431 x 46 x 18.7716 (cm), a camera of field of view 50 and a skeletal mesh at scale 0.7.
+The drone is a projectile actor (`BP_Drone_Projectile`). Projectile asset [`DA_Drone_ProjectileData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/Projectile/DA_Drone_ProjectileData.json): base damage 120, explosive radius 1000, effective radius 500, minimum explosive damage 15, falloff 0.45, blunt damage 100, impulse 2500 / Z 3500, length 130, diameter 10, mass 10, arming delay 0.1 s, maximum lifetime 500, typical speed 15000, thrust speed 22000, damage tag `Meta.Damage.Explosive.Drone`. The Blueprint holds a box collision of half extents 46.6431 x 46 x 18.7716 (cm), a camera of field of view 50 and a skeletal mesh at scale 0.7.
 
 ## 4. Explosives against each vehicle row
 
@@ -101,7 +101,7 @@ Every entry in `DT_GlobalDamage_VehicleData*` whose source tag is the listed exp
 | `Stationary.RadioTower` | +200 | +0 | -50 | +150 | +100 (+Inner) | - | - |
 | `Stationary.STN_05` | - | +300 / +300 | - | +400 / +400 | +0 / +0 | - | - |
 
-## 5. Weapon spread curves (`CT_Weapon_Spread`)
+## 5. Weapon spread curves ([`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json))
 
 One curve table, 29 rows named `<class>.<stance>` (or a mounted-gun name). Each row is a two-key linear curve from input 0 to input 1; the output values are spread numbers whose unit and the meaning of the 0 to 1 input (read as the share of the weapon's maximum spread buildup) are native and not traced. The last column counts the item and weapon-extension assets that name the row.
 
@@ -154,8 +154,8 @@ The airplane and helicopter body data assets (`UBHAirplaneBodyDataAsset`) can ov
 
 | Body asset | Override enabled | Mass (kg) |
 |---|---|---|
-| `DA_FWG_01_Body` | yes | 10000 |
-| `DA_ROT_02_Body` | yes | 7500 |
-| `DA_ROT_03_BodyDataAsset` | yes | 722 |
-| `DA_ROT_03_RocketPods_BodyDataAsset` | yes | 722 |
-| `DA_ROT_04_Body` | yes | 9500 |
+| [`DA_FWG_01_Body`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/DA_FWG_01_Body.json) | yes | 10000 |
+| [`DA_ROT_02_Body`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/Data/DA_ROT_02_Body.json) | yes | 7500 |
+| [`DA_ROT_03_BodyDataAsset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_BodyDataAsset.json) | yes | 722 |
+| [`DA_ROT_03_RocketPods_BodyDataAsset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03_WeaponVariants/Content/Data/WeaponVariants/DA_ROT_03_RocketPods_BodyDataAsset.json) | yes | 722 |
+| [`DA_ROT_04_Body`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_Body.json) | yes | 9500 |
