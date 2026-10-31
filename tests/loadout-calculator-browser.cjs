@@ -110,6 +110,20 @@ test('calculator compares three recoil goals, applies a build, and shares it', {
       assert.ok(await page.$eval('#lc-recommendation-status', e => e.textContent.length > 0), 'explicit result or no-data state for ' + id);
     }
     assert.equal(weaponIds.length, 38, 'exercise every weapon in the current dataset');
+    await page.evaluate(() => { location.hash = '#w=ID_M4'; });
+    await page.waitForFunction(() => document.querySelector('#lc-weapon').value === 'ID_M4' && document.querySelector('#lc-recommendations').getAttribute('aria-busy') === 'false');
+    const m4Parts = await page.$$eval('[data-recoil-goal] .lc-recoil-parts', lists => lists.map(list => Object.fromEntries(Array.from(list.children, row => [row.querySelector('dt').textContent, row.querySelector('dd').title]))));
+    assert.equal(m4Parts.length, 3);
+    for (const parts of m4Parts) {
+      assert.ok(parts['Barrel/Muzzle'], 'M4 shows its recommended muzzle');
+      assert.ok(parts.Underbarrel, 'M4 shows its recommended foregrip');
+      assert.notEqual(parts.Grip, 'ID_AR_02_GRP_05');
+    }
+    assert.match(await page.$eval('#lc-recommendation-status', e => e.textContent), /zero-recoil override/i);
+    await page.click('[data-recoil-goal="overall"] button');
+    await page.waitForFunction(() => document.querySelector('#lc-recommendations').getAttribute('aria-busy') === 'false');
+    assert.equal(await page.$eval('#lc-slots select[data-key="Barrel/Muzzle"]', e => e.value), m4Parts[2]['Barrel/Muzzle']);
+    assert.equal(await page.$eval('#lc-slots select[data-key="Underbarrel"]', e => e.value), m4Parts[2].Underbarrel);
     // Applying a build must not silently rewrite an unfolded/mounted setting.
     await page.evaluate(() => { location.hash = '#w=ID_AK74M'; });
     await page.waitForFunction(() => document.querySelector('#lc-weapon').value === 'ID_AK74M' && document.querySelector('#lc-recommendations').getAttribute('aria-busy') === 'false');

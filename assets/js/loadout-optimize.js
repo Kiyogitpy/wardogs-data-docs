@@ -17,6 +17,8 @@
    No handling/speed stats enter the objective. Ties preserve equipment, then prefer
    slot defaults. Zero default axes disable only overall; unreliable default recoil
    disables all goals. Unknown effects are conservatively considered unreliable.
+   Recommendation policy excludes explicit zero-recoil Overrides: they erase every
+   attachment tradeoff. The raw evaluator and source data are never changed.
 
    Compatible parent and child combinations are searched together. Ordered relevant
    effect sequences (including all transitive attribute backing dependencies) are
@@ -66,12 +68,19 @@
       return checked[tag];
     }
     if (!reliable(V) || !reliable(H) || byTag[V].final < 0 || byTag[H].final < 0) return null;
-    return {vertical: byTag[V].final, horizontal: byTag[H].final};
+    var zeroOverrides = [];
+    [V, H].forEach(function (tag) {
+      if (byTag[tag].final !== 0) return;
+      byTag[tag].steps.forEach(function (s) {
+        if (s.stacks !== 0 && s.op === 'Override' && s.magnitude === 0 && zeroOverrides.indexOf(s.effect) < 0) zeroOverrides.push(s.effect);
+      });
+    });
+    return {vertical: byTag[V].final, horizontal: byTag[H].final, zeroOverrides: zeroOverrides};
   }
   function optimize(model, loadout, options) {
     var allowed = options && options.allowed || function () { return true; };
     var current = E.normalize(model, loadout).loadout;
-    var result = {vertical: null, horizontal: null, overall: null, count: 0, evaluated: 0, rejected: 0, baseline: null, notes: []};
+    var result = {vertical: null, horizontal: null, overall: null, count: 0, evaluated: 0, rejected: 0, excludedZeroOverrides: 0, baseline: null, notes: []};
     if (!allowed(current.weapon)) { result.locked = true; result.notes.push('The weapon is not allowed.'); return result; }
     var baseline = E.defaultLoadout(model, current.weapon);
     baseline.stance = current.stance; baseline.bipod = current.bipod;
@@ -88,15 +97,21 @@
     E.slots(model, current).forEach(function (s) {
       if (/sight|optic/i.test(s.label) || (s.choice && model.items[s.choice].hasSights)) fixed[s.key] = s.choice;
     });
+    var excludedEffects = new Set();
     function score(items, nonDefaults) {
       if (Object.keys(fixed).some(function (k) { return items[k] !== fixed[k]; })) return;
       var lo = Object.assign({}, current, {items: items}), r = recoil(model, lo);
       result.evaluated++;
       if (!r) { result.rejected++; return; }
+      if (r.zeroOverrides.length) {
+        result.excludedZeroOverrides++;
+        r.zeroOverrides.forEach(function (name) { excludedEffects.add(name); });
+        return;
+      }
       var changedSlots = Array.from(new Set(Object.keys(items).concat(Object.keys(current.items)))).filter(function (k) {
         return (items[k] || null) !== (current.items[k] || null);
       });
-      var candidate = Object.assign({loadout: lo, changes: changedSlots.length, changedSlots: changedSlots, nonDefaults: nonDefaults}, r);
+      var candidate = Object.assign({loadout: lo, changes: changedSlots.length, changedSlots: changedSlots, nonDefaults: nonDefaults}, {vertical: r.vertical, horizontal: r.horizontal});
       candidate.score = result.normalizationUnavailable ? null : Math.sqrt((Math.pow(r.vertical / defaults.vertical, 2) + Math.pow(r.horizontal / defaults.horizontal, 2)) / 2);
       result.count++;
       function better(previous, keys) {
@@ -184,6 +199,7 @@
     model.items[current.weapon].slots.forEach(function (c) { variants = combine(variants, branch(c, c.label)); });
     variants.forEach(function (o) { score(o.items, o.nonDefaults); });
     if (result.rejected) result.notes.push(result.rejected + ' recoil-distinct candidates were excluded for missing or unresolved recoil.');
+    if (result.excludedZeroOverrides) result.notes.push(result.excludedZeroOverrides + ' zero-recoil override combinations excluded from recommendations (' + Array.from(excludedEffects).sort().join(', ') + '); raw values remain available in the manual evaluator.');
     if (!result.count) result.notes.push('No legal, reliable loadout preserves the chosen sight and required parts.');
     return result;
   }

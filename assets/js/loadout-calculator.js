@@ -656,6 +656,9 @@
     els.recommendationStatus.textContent = recommendationScope() + ". Compared " + Number(result.count || 0).toLocaleString("en-US") +
       " recoil-distinct combinations; effect-equivalent parts are represented by the fewest-change build.";
     if (result.rejected) els.recommendationStatus.appendChild(document.createTextNode(" Excluded " + result.rejected + " combinations with unresolved recoil values."));
+    if (result.excludedZeroOverrides) {
+      els.recommendationStatus.appendChild(document.createTextNode(" Zero-recoil override combinations are excluded from recommendations so they cannot hide useful muzzle and foregrip choices. Their exported values remain available in the manual editor."));
+    }
     var slotsNow = L.slots(model, lo), currentItems = {};
     slotsNow.forEach(function (s) { currentItems[s.key] = s.choice; });
     RECOIL_GOALS.forEach(function (goal, i) {

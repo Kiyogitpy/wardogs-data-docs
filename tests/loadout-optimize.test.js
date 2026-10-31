@@ -263,6 +263,25 @@ test('AK74M with RedDot and Crouch matches real-data exhaustive search and prese
   assert.equal(actual.overall.loadout.items['Barrel/Muzzle'], 'ID_MUZL_020');
   assert.equal(actual.overall.loadout.items.Underbarrel, 'ID_FGP_02');
 });
+test('M4 recommendations fit real recoil attachments instead of letting zero overrides erase every tradeoff', () => {
+  const model = E.model(require('../assets/data/weapon-loadouts.json'));
+  const lo = E.defaultLoadout(model, 'ID_M4');
+  const expected = brute(model, lo, id => id !== 'ID_AR_02_GRP_05');
+  const result = O.optimize(model, lo);
+  for (const goal of ['vertical', 'horizontal', 'overall']) {
+    const candidate = result[goal];
+    assert.ok(candidate.vertical > 0 && candidate.horizontal > 0, goal + ': meaningful nonzero recoil');
+    assert.ok(candidate.loadout.items['Barrel/Muzzle'], goal + ': muzzle attachment is displayed');
+    assert.ok(candidate.loadout.items.Underbarrel, goal + ': foregrip is displayed');
+    for (const key of ['vertical', 'horizontal', 'score', 'changes', 'nonDefaults']) assert.equal(candidate[key], expected[goal][key], goal + '.' + key);
+  }
+  assert.ok(result.excludedZeroOverrides > 0);
+  assert.ok(result.notes.some(note => /zero-recoil override/i.test(note)));
+  const raw = E.evaluate(model, E.setItem(model, lo, 'Grip', 'ID_AR_02_GRP_05'));
+  assert.equal(raw.weapon.find(row => row.tag === V).final, 0, 'manual evaluator preserves exported data');
+  assert.equal(raw.weapon.find(row => row.tag === H).final, 0);
+});
+
 test('locked weapons have no candidates', () => {
   const model = fixture();
   const result = O.optimize(model, E.defaultLoadout(model, 'w'), {allowed: id => id !== 'w'});
