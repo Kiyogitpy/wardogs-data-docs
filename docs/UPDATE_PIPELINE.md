@@ -10,7 +10,7 @@ every `_tools` script is [`_tools/pipeline_registry.json`](../_tools/pipeline_re
 
 1. Run `python -I _tools/update_pipeline.py preflight`. It must exit 0. Exit 5 names each missing input. It also checks
    that the Season 1 and Season 2 exports `season_diff.py` compares (`season1_export`, `season2_export`) each hold
-   `Wardogs/Content`.
+   [`Wardogs/Content`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content).
 2. Check the AES key file holds the key of the new build. Preflight only checks that the file exists.
 3. Keep the Season 2 export (`season2_export`, `E:/wardogs_builds/s2-cl516586/data` by default) and the Season 1 export
    (`season1_export`, `E:/wardogs_builds/season1/data`). `regen` compares them; with either one missing or empty it stops
@@ -51,8 +51,8 @@ far smaller than the baseline, it stops with a truncated-export message (see [Tr
 | WdExtract | `E:/Reverse_Engineer/wardogs_analysis/round76_icons/bin/WdExtract.exe` | `WD_PIPELINE_WDEXTRACT_EXE` |
 | Oodle DLL (passed to WdExtract) | `E:/Steam/steamapps/common/Wardogs/Wardogs/Content/Paks/oo2core_9_win64.dll` | `WD_PIPELINE_OO2CORE` |
 | CUE4Parse checkout (builds `tools/cuedump`; needed only when CueDump must be rebuilt, see below) | `E:/WardogsConversion/CUE4Parse/CUE4Parse/CUE4Parse.csproj` (commit `0415fe2`) | `WD_PIPELINE_CUE4PARSE_PROJECT` |
-| Season 2 export (`season_diff.py` in regen; needs `Wardogs/Content`) | `E:/wardogs_builds/s2-cl516586/data` | `WD_PIPELINE_SEASON2_EXPORT` |
-| Season 1 export (`season_diff.py` in regen; needs `Wardogs/Content`) | `E:/wardogs_builds/season1/data` | `WD_PIPELINE_SEASON1_EXPORT` |
+| Season 2 export (`season_diff.py` in regen; needs [`Wardogs/Content`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content)) | `E:/wardogs_builds/s2-cl516586/data` | `WD_PIPELINE_SEASON2_EXPORT` |
+| Season 1 export (`season_diff.py` in regen; needs [`Wardogs/Content`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content)) | `E:/wardogs_builds/season1/data` | `WD_PIPELINE_SEASON1_EXPORT` |
 | .NET SDK 10, Python 3.13 (stdlib only) | on PATH | |
 | Output root | `E:/wardogs_builds` | `WD_PIPELINE_BUILDS_ROOT` |
 | `sdk/raw` (Dumper-7 SDK headers; `spread_recoil_tables.py` reads `WDGame_structs.hpp`) | the lead's checkout | `WD_PIPELINE_SDK_RAW` |
@@ -85,7 +85,7 @@ Each step is a sub-command; `run` chains them. Labels name a build, for example 
 `extract`, `regen` and `run` run `preflight` first. Preflight only checks paths: it never reads the key file. It checks the
 inputs `extract` needs (`paks`, `aes_key_file`, `usmap_cuedump`, `usmap_wdextract`, `wdextract_exe`, `oo2core`, `builds_root`,
 and `cue4parse_project` only when CueDump has to be rebuilt). `--step regen` checks `season2_export` and `season1_export`,
-each of which must hold `Wardogs/Content` (a regen that skips `season_diff` with `--skip` or `--only` does not need them).
+each of which must hold [`Wardogs/Content`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content) (a regen that skips `season_diff` with `--skip` or `--only` does not need them).
 `run` checks all of these plus `sdk_raw`. Without `--step`, `preflight` checks what `run` needs.
 When something is missing it prints one line per input, with the registry key and the `WD_PIPELINE_` name to set:
 
@@ -217,7 +217,7 @@ Even when CUE4Parse reads without warnings, a patch that adds properties shows u
 baseline. It checks four things:
 
 - exported files, or packages read, more than 1% below the baseline (`cuedump_exported_files`, `cuedump_packages`);
-- JSON bytes under `data/` more than 5% below `cuedump_exported_bytes` (the `Wardogs/Config` files are not counted);
+- JSON bytes under `data/` more than 5% below `cuedump_exported_bytes` (the [`Wardogs/Config`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Config) files are not counted);
 - fewer containers mounted than `cuedump_mounted_vfs`, once that key is set;
 - containers that did not mount, as CueDump reports them. This check is **inert**: CueDump does not print the `Unmounted`
   line yet, and `extract` honours it only once CueDump does.

@@ -641,7 +641,7 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 
 ## 4. Full property export (`WDVehicleStatsDataAsset`)
 
-What each of the 15 vehicle stat assets holds beyond the six values in section 1: the vendor stat rows it shows, in its own order, and the string-table keys behind its Weaponry and Countermeasures names (`STRINGS_VehicleVendor_Stats`, without the `VehicleStats.Equipment.` prefix). The stat rows are `W_VehicleVendor_Stat_*` widgets with no values of their own.
+What each of the 15 vehicle stat assets holds beyond the six values in section 1: the vendor stat rows it shows, in its own order, and the string-table keys behind its Weaponry and Countermeasures names (`STRINGS_VehicleVendor_Stats`, without the `VehicleStats.Equipment.` prefix). The stat rows are `W_VehicleVendor_Stat_*` widgets with no values of their own. Asset names link to the full export.
 
 | Asset | Vendor stat rows, in order | Weaponry keys | Countermeasure keys |
 |---|---|---|---|
