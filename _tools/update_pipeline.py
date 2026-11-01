@@ -2,6 +2,7 @@
 
     python -I _tools/update_pipeline.py snapshot [--label L]        manifest of the installed paks -> <root>/L/manifest.json
     python -I _tools/update_pipeline.py status   [--against L]      is a new build installed? (compares with the last manifest)
+    python -I _tools/update_pipeline.py preflight [--step extract|run]  check that every machine input the step needs exists
     python -I _tools/update_pipeline.py extract  --label L [--assets]   CueDump + WdExtract passes -> <root>/L/{data,wdextract}
     python -I _tools/update_pipeline.py diff     --old A --new B    patch-diff.md / patch-diff.json in <root>/B
     python -I _tools/update_pipeline.py regen    --data DIR         run every generator against DIR, then the checks, then report
@@ -12,12 +13,18 @@
 Standard library only. The game is never run and nothing is downloaded. The AES key is read from its file by the
 extractor and is never printed or copied. The pipeline cannot make a usmap: when the extraction shows the usmap is stale
 it stops and tells you to regenerate it with Dumper-7 (docs/UPDATE_PIPELINE.md). `regen` and `run` refuse to work in the
-main checkout: they swap the worktree's data/ junction, which must never happen there.
+main checkout: they mirror the export into the worktree's tracked data/ (the update branch carries the new raw JSON) and
+junction the untracked sdk/raw, which must never happen there.
+
+Exit codes: 0 ok; 1 generators failed (regen/run); 3 extraction not trustworthy (stale usmap, canary values missing or of the
+wrong type, or an export far smaller than the baseline: likely a rotated AES key); 4 checks failed (regen/run); 5 preflight:
+a machine input is missing (nothing was run); 10 status: a new build is installed.
 """
 import argparse
 import collections
 import concurrent.futures
 import datetime
+import filecmp
 import fnmatch
 import hashlib
 import importlib.util
@@ -197,6 +204,48 @@ class LinkSwap:
         return False
 
 
+def _files(root):
+    """{relative path: full path} of every file under root; links inside the tree are not entered."""
+    out = {}
+    for dp, dn, fn in os.walk(root):
+        dn[:] = [d for d in dn if not is_link(os.path.join(dp, d))]
+        for f in fn:
+            p = os.path.join(dp, f)
+            out[os.path.relpath(p, root).replace("\\", "/")] = p
+    return out
+
+
+def mirror_tree(src, dst):
+    """Make the real directory `dst` an exact copy of `src`: files absent from src are deleted, new ones added, differing
+    ones overwritten (byte compare; data/ is `-text`, so no line-ending conversion hides a change). Returns the counts."""
+    if os.path.lexists(dst) and is_link(dst):
+        raise SystemExit("refusing to mirror into %s: it is a link (a mirror through it would write into the export)" % dst)
+    a, b = os.path.normcase(os.path.realpath(src)), os.path.normcase(os.path.realpath(dst))
+    if a == b or a.startswith(b + os.sep) or b.startswith(a + os.sep):
+        raise SystemExit("refusing to mirror %s into %s: one contains the other" % (src, dst))
+    want, have = _files(src), (_files(dst) if os.path.isdir(dst) else {})
+    stat = {"added": 0, "removed": 0, "changed": 0, "unchanged": 0}
+    for rel in sorted(set(have) - set(want)):         # deletions first: a case-only rename must not delete the file just written
+        os.remove(have[rel])
+        stat["removed"] += 1
+        d = os.path.dirname(have[rel])
+        while os.path.normcase(os.path.realpath(d)) != b and not os.listdir(d):
+            os.rmdir(d)
+            d = os.path.dirname(d)
+    for rel in sorted(want):
+        out = os.path.join(dst, rel)
+        if rel not in have:
+            stat["added"] += 1
+        elif os.path.getsize(want[rel]) == os.path.getsize(out) and filecmp.cmp(want[rel], out, shallow=False):
+            stat["unchanged"] += 1
+            continue
+        else:
+            stat["changed"] += 1
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        shutil.copyfile(want[rel], out)
+    return stat
+
+
 def exe_paths(env):
     return env["wdextract_exe"], env["paks"], env["aes_key_file"], env["usmap_wdextract"], env["oo2core"]
 
@@ -205,6 +254,45 @@ def wdextract(env, out, mode_args, log=None, timeout=1800):
     exe, paks, key, usmap, oo2 = exe_paths(env)
     os.makedirs(out, exist_ok=True)
     return run_cmd([exe, paks, key, usmap, out, oo2] + list(mode_args), log=log, timeout=timeout)
+
+
+# ------------------------------------------------------------------------------------------------ preflight
+PREFLIGHT_RC = 5
+EXTRACT_INPUTS = (("paks", "dir"), ("aes_key_file", "file"), ("usmap_cuedump", "file"), ("usmap_wdextract", "file"),
+                  ("wdextract_exe", "file"), ("oo2core", "file"), ("cue4parse_project", "file"), ("builds_root", "dir"))
+STEP_INPUTS = {"extract": EXTRACT_INPUTS, "run": EXTRACT_INPUTS + (("sdk_raw", "dir"),)}
+
+
+def missing_inputs(env, step):
+    """[(registry key, path, problem)] for every path input `step` needs that is absent or of the wrong kind."""
+    out = []
+    for key, want in STEP_INPUTS[step]:
+        p = env.get(key)
+        if not p:
+            out.append((key, p, "not set"))
+        elif not os.path.exists(p):
+            out.append((key, p, "missing"))
+        elif not (os.path.isdir(p) if want == "dir" else os.path.isfile(p)):
+            out.append((key, p, "is not a %s" % want))
+    return out
+
+
+def preflight(env, step):
+    """0 when every input exists, else PREFLIGHT_RC after naming each missing one. Only paths are looked at: the key file is never read."""
+    miss = missing_inputs(env, step)
+    if miss:
+        say("PREFLIGHT FAILED (%s): %d required input(s) missing, nothing was run." % (step, len(miss)))
+        for key, p, why in miss:
+            say("  %-18s %s  (%s; set WD_PIPELINE_%s or pass --config FILE)" % (key, p, why, key.upper()))
+    return PREFLIGHT_RC if miss else 0
+
+
+def cmd_preflight(args):
+    env = config(args)
+    rc = preflight(env, args.step)
+    if not rc:
+        say("preflight %s: all %d required inputs are present" % (args.step, len(STEP_INPUTS[args.step])))
+    return rc
 
 
 # ------------------------------------------------------------------------------------------------ snapshot / status
@@ -350,8 +438,60 @@ The data written to {data} is KEPT for inspection but must not be used for the s
 """
 
 
+SHRUNK_MSG = """
+================================================================================
+EXPORT TRUNCATED: far less was exported than the baseline.
+  {why}
+Likeliest cause: the patch ROTATED THE AES KEY. Containers encrypted with the new key do not mount, so their packages
+silently drop out of the export. Check, in this order:
+  1. {key} (WD_PIPELINE_AES_KEY_FILE) must hold the key of THIS build. Replace it with the new key (never print or commit it).
+  2. The Paks folder must be complete: Steam finished updating ({paks}).
+  3. Only if the build really removed that much content: update `baseline` in _tools/pipeline_registry.json.
+Also seen in this run:
+  {also}
+The data written to {data} is KEPT for inspection but must not be used for the site.
+================================================================================
+"""
+SHRINK_COUNT_TOL, SHRINK_BYTES_TOL = 0.01, 0.05      # fraction below the baseline that still passes; growth always passes
+
+
+def shrink_gate(base, cur):
+    """Reasons an export looks truncated (rotated AES key, unmounted containers), [] when it is fine.
+    base: the registry `baseline`; cur: {exported, candidates, bytes, mounted, unmounted}, None = not measured."""
+    why = []
+    for key, bkey, tol, label in (("exported", "cuedump_exported_files", SHRINK_COUNT_TOL, "exported files"),
+                                  ("candidates", "cuedump_packages", SHRINK_COUNT_TOL, "packages read"),
+                                  ("bytes", "cuedump_exported_bytes", SHRINK_BYTES_TOL, "exported bytes")):
+        b, c = base.get(bkey), cur.get(key)
+        if b and c is not None and c < b * (1 - tol):
+            why.append("%s: %s, baseline %s (%.1f%% fewer; tolerance %.0f%%)" % (label, format(c, ","), format(b, ","), 100.0 * (b - c) / b, 100 * tol))
+    if base.get("cuedump_mounted_vfs") and cur.get("mounted") is not None and cur["mounted"] < base["cuedump_mounted_vfs"]:
+        why.append("containers mounted: %d, baseline %d" % (cur["mounted"], base["cuedump_mounted_vfs"]))
+    if cur.get("unmounted"):
+        why.append("CueDump reports %d container(s) that did not mount" % cur["unmounted"])
+    return why
+
+
+def export_bytes(data_dir):
+    """Total size of the CueDump JSON under data_dir (the config copies come later and are excluded)."""
+    total = 0
+    for dp, _, fn in os.walk(data_dir):
+        if os.path.relpath(dp, data_dir).replace("\\", "/").startswith("Wardogs/Config"):
+            continue
+        total += sum(os.path.getsize(os.path.join(dp, f)) for f in fn if f.endswith(".json"))
+    return total
+
+
+def run_canaries(data_dir):
+    """_tools/canary_values_check.py against a fresh export -> {checked, missing, wrong_type, changed}."""
+    spec = importlib.util.spec_from_file_location("canary_values_check", os.path.join(HERE, "canary_values_check.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.summarize(mod.evaluate(data_dir, mod.load_canaries()["canaries"]))
+
+
 def parse_progress(log_path):
-    res = {"warnings": 0, "errors": 0, "done": None, "samples": []}
+    res = {"warnings": 0, "errors": 0, "done": None, "samples": [], "mounted": None, "unmounted": None}
     if not os.path.exists(log_path):
         return res
     with open(log_path, encoding="utf-8", errors="replace") as f:
@@ -364,6 +504,12 @@ def parse_progress(log_path):
                 res["errors"] += 1
                 if len(res["samples"]) < 8:
                     res["samples"].append(line.strip()[:240])
+            elif line.startswith("Mounted "):
+                m = re.match(r"Mounted (\d+) vfs", line)
+                res["mounted"] = int(m.group(1)) if m else None
+            elif line.startswith("Unmounted "):       # not printed by tools/cuedump yet; honoured once it is
+                m = re.match(r"Unmounted (\d+)", line)
+                res["unmounted"] = int(m.group(1)) if m else None
             elif line.startswith("DONE."):
                 res["done"] = {k: int(v) for k, v in re.findall(r"(\w+)=(\d+)", line)}
     return res
@@ -415,6 +561,9 @@ def copy_config(env, label_dir, raw_dir, data_dir, reg):
 
 def cmd_extract(args):
     env = config(args)
+    rc = preflight(env, "extract")
+    if rc:
+        return rc
     reg = load_registry()
     label = args.label
     ldir = os.path.join(env["builds_root"], label)
@@ -434,9 +583,6 @@ def cmd_extract(args):
     if not os.path.exists(os.path.join(ldir, "manifest.json")):
         say("no manifest for %s yet: taking one" % label)
         write_json(os.path.join(ldir, "manifest.json"), build_manifest(env, label, quick=True))
-    for k in ("paks", "aes_key_file", "usmap_cuedump", "usmap_wdextract", "wdextract_exe"):
-        if not os.path.exists(env[k]):
-            raise SystemExit("missing input %s = %s (override with WD_PIPELINE_%s or --config)" % (k, env[k], k.upper()))
     cd = ensure_cuedump(env, os.path.join(env["builds_root"], "_bin", "cuedump"))
 
     # 1. CueDump -> data/
@@ -455,6 +601,19 @@ def cmd_extract(args):
         why.append("%d packages errored (baseline %d)" % (prog["errors"], base["cuedump_errored"]))
     if prog["done"] is None:
         why.append("the progress log has no DONE line")
+    done = prog["done"] or {}
+    cur = {"exported": done.get("ok"), "candidates": done.get("processed"), "mounted": prog["mounted"], "unmounted": prog["unmounted"],
+           "bytes": export_bytes(data) if os.path.isdir(data) else None}
+    shrunk = shrink_gate(base, cur)
+    meta["gate"] = {"measured": cur, "shrunk": shrunk}
+    if os.path.isdir(data):
+        can = run_canaries(data)
+        meta["canaries"] = can
+        if can["missing"] or can["wrong_type"]:
+            bad = can["missing"] + can["wrong_type"]
+            why.append("%d of %d canary values missing or of the wrong type (a misread export), e.g. %s" % (len(bad), can["checked"], ", ".join(bad[:5])))
+        for c in can["changed"]:
+            say("canary changed, review: %s %r -> %r (a balance patch, or a misread)" % (c["id"], c["old"], c["new"]))
     say("CueDump: rc=%d %.0fs  %s  warnings=%d errors=%d" % (rc, secs, prog["done"], prog["warnings"], prog["errors"]))
     ntok = hashed_tokens(data) if os.path.isdir(data) else set()
     meta["hashed_tokens"] = len(ntok)
@@ -466,11 +625,14 @@ def cmd_extract(args):
         say("hashed property names: %d distinct, %d not present in %s" % (len(ntok), newt, prev[-1]))
         if newt:
             say("  (new unnamed properties: new fields in the patch; names come from Dumper-7 + `WdExtract deobfuscate`)")
-    if why:
-        meta["status"] = "usmap-stale"
-        meta["why"] = why
+    if why or shrunk:
+        meta["status"] = "export-shrunk" if shrunk else "usmap-stale"
+        meta["why"] = shrunk + why
         write_json(os.path.join(ldir, "extract-meta.json"), meta)
-        say(STALE_MSG.format(why="\n  ".join(why), dumper=env["dumper7_dir"], label=label, data=data))
+        if shrunk:      # a rotated key also makes every canary vanish: do not blame the usmap for it
+            say(SHRUNK_MSG.format(why="\n  ".join(shrunk), also="\n  ".join(why) or "nothing else", key=env["aes_key_file"], paks=env["paks"], data=data))
+        else:
+            say(STALE_MSG.format(why="\n  ".join(why), dumper=env["dumper7_dir"], label=label, data=data))
         return 3
 
     # 2. raw config -> data/
@@ -540,11 +702,14 @@ def cmd_extract(args):
 
 
 def run_item_icons_list(env, data, files_txt, out_list, log):
-    """`item_icons.py list` reads <repo>/data. Run it in a throwaway link swap; only allowed outside the main checkout."""
-    if is_main_checkout(REPO):
-        return 1, 0, "icons pass needs a linked worktree (it swaps data/); run `run` or `regen` from a worktree"
-    with LinkSwap(os.path.join(REPO, "data"), data):
-        return run_cmd([sys.executable, "-I", os.path.join(HERE, "item_icons.py"), "list", files_txt, out_list], cwd=REPO, log=log)
+    """`item_icons.py list` reads <its repo>/data. Run a copy of it in a scratch dir whose data/ is a junction to the new
+    export, so no checkout (tracked data/ included) is touched."""
+    import tempfile
+    with tempfile.TemporaryDirectory(prefix="wd-icons-") as tmp:
+        os.makedirs(os.path.join(tmp, "_tools"))
+        shutil.copyfile(os.path.join(HERE, "item_icons.py"), os.path.join(tmp, "_tools", "item_icons.py"))
+        with LinkSwap(os.path.join(tmp, "data"), data):
+            return run_cmd([sys.executable, "-I", os.path.join(tmp, "_tools", "item_icons.py"), "list", files_txt, out_list], cwd=tmp, log=log)
 
 
 # ------------------------------------------------------------------------------------------------ diff
@@ -567,7 +732,8 @@ def area_of(rel, rules):
     return "/".join(parts[:3])
 
 
-def split_exports(text):
+def split_exports(text, bad=None):
+    """{export name: parsed JSON}. A segment that does not parse (truncated file) is stored as None and its name appended to `bad`."""
     ms = list(HEADER.finditer(text))
     out = {}
     for i, m in enumerate(ms):
@@ -581,6 +747,8 @@ def split_exports(text):
             out[k] = json.loads(text[m.end():end])
         except ValueError:
             out[k] = None
+            if bad is not None:
+                bad.append(k)
     return out
 
 
@@ -599,9 +767,109 @@ def flatten(o, path="", out=None, depth=0):
 
 
 def field_key(path):
-    comps = [re.sub(r"\[\d+\]", "", c) for c in path.split("/") if c]
+    comps = [re.sub(r"\[(?:\d+|\*)\]", "", c) for c in path.split("/") if c]
     comps = [c for c in comps if c and not HASHED.fullmatch(c)]
     return ".".join(comps[-3:]) if comps else path
+
+
+INDEX = re.compile(r"\[\d+\]")
+
+
+def collapse(path):
+    """Array indices folded: /Heights[17] and /Heights[18] are one field, `/Heights[*]`."""
+    return INDEX.sub("[*]", path)
+
+
+def value_sig(v):
+    """Hashable fingerprint of a value that ignores object key names (a renamed property keeps its value) and float noise."""
+    if isinstance(v, dict):
+        return ("d", tuple(sorted(value_sig(x) for x in v.values())))
+    if isinstance(v, list):
+        return ("l", tuple(value_sig(x) for x in v))
+    if isinstance(v, (int, float)) and not isinstance(v, bool):
+        return ("n", "%.7g" % v)
+    return ("v", repr(v))
+
+
+def hashed_in(v):
+    """Hashed property names used as keys anywhere inside v."""
+    out = set()
+    if isinstance(v, dict):
+        for k, x in v.items():
+            out.update(HASHED.findall(str(k)))
+            out |= hashed_in(x)
+    elif isinstance(v, list):
+        for x in v:
+            out |= hashed_in(x)
+    return out
+
+
+class Delta:
+    """What differs between two parsed exports: distinct changed fields (indices collapsed), hashed names seen, rename pairs."""
+
+    def __init__(self, example_limit=3):
+        self.fields, self.examples, self.names, self.renames, self.limit = {}, [], set(), 0, example_limit
+
+    def change(self, path, a, b):
+        key = collapse(path)
+        if key not in self.fields:
+            self.fields[key] = 1
+            if len(self.examples) < self.limit:
+                self.examples.append("%s: %s -> %s" % (path.lstrip("/")[:140], str(a)[:40], str(b)[:40]))
+
+    def one_sided(self, value, path, old_side):
+        """A subtree present on one side only. Under a hashed name it is usmap noise; otherwise every leaf is a change."""
+        for p, v in flatten(value, path).items():
+            if HASHED.search(p):
+                self.names.update(HASHED.findall(p))
+            else:
+                self.change(p, v if old_side else "<absent>", "<absent>" if old_side else v)
+
+
+def pair_renames(a, b, only_a, only_b):
+    """{old key: new key} for keys present on one side only whose value is the same on the other side, when at least one of
+    the two names is hashed (a hashed token against a named key, or two different tokens)."""
+    bucket = collections.defaultdict(list)
+    for kb in only_b:
+        bucket[value_sig(b[kb])].append(kb)
+    pairs, used = {}, set()
+    for ka in only_a:
+        for kb in bucket.get(value_sig(a[ka]), ()):
+            if kb not in used and (HASHED.search(ka) or HASHED.search(kb)):
+                pairs[ka] = kb
+                used.add(kb)
+                break
+    return pairs
+
+
+def diff_values(a, b, path, d):
+    if isinstance(a, dict) and isinstance(b, dict):
+        for k, v in a.items():
+            if k in b:
+                diff_values(v, b[k], path + "/" + str(k), d)
+        oa, ob = [k for k in a if k not in b], [k for k in b if k not in a]
+        pairs = pair_renames(a, b, oa, ob)
+        for ka, kb in pairs.items():
+            d.renames += 1
+            d.names.update(HASHED.findall(ka) + HASHED.findall(kb))
+            d.names |= hashed_in(a[ka]) | hashed_in(b[kb])
+        done = set(pairs.values())
+        for k in oa:
+            if k not in pairs:
+                d.one_sided(a[k], path + "/" + str(k), True)
+        for k in ob:
+            if k not in done:
+                d.one_sided(b[k], path + "/" + str(k), False)
+    elif isinstance(a, list) and isinstance(b, list):
+        for i in range(max(len(a), len(b))):
+            if i < len(a) and i < len(b):
+                diff_values(a[i], b[i], "%s[%d]" % (path, i), d)
+            elif i < len(a):
+                d.one_sided(a[i], "%s[%d]" % (path, i), True)
+            else:
+                d.one_sided(b[i], "%s[%d]" % (path, i), False)
+    elif num_changed(a, b):
+        d.change(path, a, b)
 
 
 def file_digest(p):
@@ -631,11 +899,13 @@ def num_changed(a, b):
 
 
 def diff_trees(old, new, rules, example_limit=3):
+    """(added, removed, changed, areas). Each `changed` entry has kind: values (some field's value differs), rename_only (only
+    hashed property names differ), unparseable (nothing comparable, a truncated export) or bytes_only (formatting)."""
     oi, ni = tree_index(old), tree_index(new)
     added = sorted(ni[k][0] for k in set(ni) - set(oi))
     removed = sorted(oi[k][0] for k in set(oi) - set(ni))
     changed = []
-    areas = collections.defaultdict(lambda: {"added": 0, "removed": 0, "changed": 0, "fields": collections.Counter(), "hashed_renames": 0})
+    areas = collections.defaultdict(lambda: {"added": 0, "removed": 0, "changed": 0, "fields": collections.Counter(), "hashed_names": set(), "renamed_files": 0})
     for rel in added:
         areas[area_of(rel, rules)]["added"] += 1
     for rel in removed:
@@ -645,37 +915,36 @@ def diff_trees(old, new, rules, example_limit=3):
         (rel, po), (_, pn) = oi[k], ni[k]
         if os.path.getsize(po) == os.path.getsize(pn) and file_digest(po) == file_digest(pn):
             return None
-        res = {"file": rel, "area": area_of(rel, rules), "fields": collections.Counter(), "examples": [], "hashed_renames": 0, "nchanges": 0}
+        res = {"file": rel, "area": area_of(rel, rules), "fields": collections.Counter(), "examples": [], "hashed_names": set(), "renames": 0,
+               "nchanges": 0, "unparseable": [], "kind": "values"}
         if not rel.endswith(".json"):
             res["nchanges"] = 1
             res["fields"]["(text file)"] += 1
             return res
+        bo, bn = [], []
         try:
-            eo = split_exports(open(po, encoding="utf-8", errors="replace").read())
-            en = split_exports(open(pn, encoding="utf-8", errors="replace").read())
+            eo = split_exports(open(po, encoding="utf-8", errors="replace").read(), bo)
+            en = split_exports(open(pn, encoding="utf-8", errors="replace").read(), bn)
         except Exception as ex:
             res["fields"]["(unreadable: %s)" % ex] += 1
             return res
+        res["unparseable"] = ["old: " + n for n in bo] + ["new: " + n for n in bn]
+        d = Delta(example_limit)
         for name in sorted(set(eo) | set(en)):
-            if name not in eo or name not in en:
-                res["fields"]["(export %s)" % ("added" if name in en else "removed")] += 1
-                res["nchanges"] += 1
-                if len(res["examples"]) < example_limit:
-                    res["examples"].append("%s export %s" % ("+" if name in en else "-", name))
+            if name in bo or name in bn:
                 continue
-            fo, fn_ = flatten(eo[name]), flatten(en[name])
-            for p in set(fo) | set(fn_):
-                a, b = fo.get(p, "<absent>"), fn_.get(p, "<absent>")
-                if not num_changed(a, b):
-                    continue
-                if HASHED.search(p) and ("<absent>" in (a, b)):
-                    res["hashed_renames"] += 1
-                    continue
-                res["nchanges"] += 1
-                res["fields"][field_key(p)] += 1
-                if len(res["examples"]) < example_limit:
-                    res["examples"].append("%s: %s -> %s" % (p.lstrip("/")[:140], str(a)[:40], str(b)[:40]))
-        return res if (res["nchanges"] or res["hashed_renames"]) else {"file": rel, "area": res["area"], "fields": collections.Counter(), "examples": [], "hashed_renames": 0, "nchanges": 0, "bytes_only": True}
+            if name not in eo or name not in en:
+                d.fields["/(export %s) %s" % ("added" if name in en else "removed", name)] = 1
+                if len(d.examples) < example_limit:
+                    d.examples.append("%s export %s" % ("+" if name in en else "-", name))
+                continue
+            diff_values(eo[name], en[name], "", d)
+        res["nchanges"], res["examples"], res["hashed_names"], res["renames"] = len(d.fields), d.examples, d.names, d.renames
+        for path in d.fields:
+            res["fields"][path[1:path.index(")") + 1] if path.startswith("/(export") else field_key(path)] += 1
+        if not res["nchanges"]:
+            res["kind"] = "unparseable" if res["unparseable"] else "rename_only" if (d.names or d.renames) else "bytes_only"
+        return res
 
     with concurrent.futures.ThreadPoolExecutor(8) as ex:
         for r in ex.map(cmp, sorted(set(oi) & set(ni))):
@@ -683,12 +952,12 @@ def diff_trees(old, new, rules, example_limit=3):
                 changed.append(r)
     for r in changed:
         a = areas[r["area"]]
-        if r.get("bytes_only"):
-            continue
-        if r["nchanges"]:
+        a["hashed_names"] |= r["hashed_names"]
+        if r["kind"] == "values":
             a["changed"] += 1
-        a["fields"].update(r["fields"])
-        a["hashed_renames"] += r["hashed_renames"]
+            a["fields"].update(r["fields"])
+        elif r["kind"] == "rename_only":
+            a["renamed_files"] += 1
     return added, removed, changed, areas
 
 
@@ -708,40 +977,61 @@ def cmd_diff(args):
     t = time.time()
     rules = load_area_rules()
     added, removed, changed, areas = diff_trees(od, nd, rules)
-    real = [c for c in changed if not c.get("bytes_only")]
-    bytes_only = [c for c in changed if c.get("bytes_only")]
+    kinds = collections.defaultdict(list)
+    for c in changed:
+        kinds[c["kind"]].append(c)
+    real, renamed, bytes_only, unparse = kinds["values"], kinds["rename_only"], kinds["bytes_only"], kinds["unparseable"] + [c for c in kinds["values"] if c["unparseable"]]
+    names = set().union(*(c["hashed_names"] for c in changed)) if changed else set()
     secs = round(time.time() - t, 1)
     summary = {"old": od, "new": nd, "created": now(), "seconds": secs, "added": added, "removed": removed,
-               "changed": [{"file": c["file"], "area": c["area"], "nchanges": c["nchanges"], "hashed_renames": c["hashed_renames"],
+               "changed": [{"file": c["file"], "area": c["area"], "nchanges": c["nchanges"], "hashed_renames": len(c["hashed_names"]),
                             "top_fields": c["fields"].most_common(6), "examples": c["examples"]} for c in sorted(real, key=lambda c: -c["nchanges"])],
+               "rename_only_changed": [c["file"] for c in renamed],
                "bytes_only_changed": [c["file"] for c in bytes_only],
-               "areas": {a: {"added": v["added"], "removed": v["removed"], "changed": v["changed"], "hashed_renames": v["hashed_renames"],
+               "unparseable": [{"file": c["file"], "exports": c["unparseable"]} for c in unparse],
+               "hashed_property_names": len(names),
+               "areas": {a: {"added": v["added"], "removed": v["removed"], "changed": v["changed"], "hashed_renames": len(v["hashed_names"]),
                              "top_fields": v["fields"].most_common(12)} for a, v in sorted(areas.items())}}
     write_json(os.path.join(outdir, "patch-diff.json"), summary)
     L = ["# Patch diff: %s -> %s" % (args.old, args.new), "",
          "Generated by `_tools/update_pipeline.py diff` (%s, %.1fs). Old: `%s`; new: `%s`." % (summary["created"], secs, od, nd), "",
          "| | Files |", "|---|---:|", "| Added | %d |" % len(added), "| Removed | %d |" % len(removed),
-         "| Changed values | %d |" % len(real), "| Changed bytes only (renamed/hashed property names, formatting) | %d |" % len(bytes_only), ""]
-    if not (added or removed or real or bytes_only):
+         "| Changed values | %d |" % len(real), "| Renamed hashed property names only (no value changed) | %d |" % len(renamed),
+         "| Changed bytes only (formatting) | %d |" % len(bytes_only), "| Unparseable or truncated (not compared) | %d |" % len(unparse), ""]
+    if not (added or removed or changed):
         L += ["No differences: the two exports are identical.", ""]
-    L += ["## By area", "", "| Area | Added | Removed | Changed | Top changed fields |", "|---|---:|---:|---:|---|"]
+    L += ["## By area", "", "Fields are distinct changed fields: array indices are folded (`Heights[*]`), hashed property names ignored.", "",
+          "| Area | Added | Removed | Changed | Top changed fields |", "|---|---:|---:|---:|---|"]
     for a, v in sorted(areas.items(), key=lambda kv: -(kv[1]["added"] + kv[1]["removed"] + kv[1]["changed"])):
         L.append("| %s | %d | %d | %d | %s |" % (a, v["added"], v["removed"], v["changed"], ", ".join("`%s` (%d)" % kv for kv in v["fields"].most_common(5)) or "-"))
     L.append("")
     if real:
-        L += ["## Most changed assets", ""]
+        L += ["## Most changed assets", "", "Ranked by distinct changed fields (array indices folded).", ""]
         for c in sorted(real, key=lambda c: -c["nchanges"])[:40]:
-            L.append("- `%s` (%s): %d value changes. %s" % (c["file"], c["area"], c["nchanges"], "; ".join(c["examples"][:2])))
+            L.append("- `%s` (%s): %d changed fields. %s" % (c["file"], c["area"], c["nchanges"], "; ".join(c["examples"][:2])))
         L.append("")
     for tag, lst in (("Added assets", added), ("Removed assets", removed)):
         if lst:
             L += ["## %s (%d)" % (tag, len(lst)), ""] + ["- `%s`" % x for x in lst[:80]] + (["- ... %d more (see patch-diff.json)" % (len(lst) - 80)] if len(lst) > 80 else []) + [""]
-    hr = sum(v["hashed_renames"] for v in areas.values())
-    if hr:
-        L += ["## Property-name noise", "", "%d property names appear/disappear as hashed tokens (`_aaa...`): a usmap name change, not a game change. A large number after an update means new fields the usmap cannot name yet." % hr, ""]
+    if unparse:
+        L += ["## Unparseable or truncated files (%d, not compared)" % len(unparse), "",
+              "An export in these files is not valid JSON on one side (a truncated file). Their changes, if any, are not in the counts above.", ""]
+        L += ["- `%s`: %s" % (c["file"], ", ".join(c["unparseable"][:4]) + (" ..." if len(c["unparseable"]) > 4 else "")) for c in unparse[:80]] + [""]
+    if names:
+        L += ["## Property-name noise", "", "%d distinct hashed property names (`_aaa...`) appear, disappear or are renamed against a named property of the same value: a usmap name change, not a game change (%d files differ only by this). A large number after an update means new fields the usmap cannot name yet." % (len(names), len(renamed)), ""]
     with open(os.path.join(outdir, "patch-diff.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(L) + "\n")
-    say("diff %s -> %s: +%d -%d ~%d (bytes-only %d) in %.1fs; wrote %s" % (args.old, args.new, len(added), len(removed), len(real), len(bytes_only), secs, os.path.join(outdir, "patch-diff.md")))
+    say("diff %s -> %s: +%d -%d ~%d (rename-only %d, bytes-only %d, unparseable %d) in %.1fs; wrote %s" % (
+        args.old, args.new, len(added), len(removed), len(real), len(renamed), len(bytes_only), len(unparse), secs, os.path.join(outdir, "patch-diff.md")))
+    # Pages that name a changed asset; needs the old/new data dirs, so it runs here and not later.
+    rc, s, out = run_cmd([sys.executable, "-I", os.path.join(HERE, "review_pages.py"), os.path.join(outdir, "patch-diff.json")], timeout=600)
+    lines = out.strip().splitlines() or ["review_pages rc=%d" % rc]
+    if rc != 0:
+        say("review_pages FAILED (rc=%d); last lines of output:" % rc)
+        for l in lines[-5:]:
+            say("  " + l)
+    else:
+        say(lines[-1])
     if args.full:
         sdir = os.path.join(outdir, "season-diff")
         rc, s, out = run_cmd([sys.executable, "-I", os.path.join(HERE, "season_diff.py"), "--s1", od, "--s2", nd, "--out", sdir, "--write"], timeout=3600)
@@ -780,13 +1070,26 @@ def git_status_paths(repo):
     return [(x[:2], x[3:]) for x in items]
 
 
+DATA_DIR = "data/"
+
+
+def data_changes(repo):
+    """{added, removed, changed} file counts of the tracked data/ tree against HEAD: the mirrored export, one line in the report."""
+    out = {"added": 0, "removed": 0, "changed": 0}
+    for st, p in git_status_paths(repo):
+        if p.startswith(DATA_DIR):
+            out["added" if "?" in st or "A" in st else "removed" if "D" in st else "changed"] += 1
+    return out
+
+
 def real_diff(repo):
-    """Return (real_changed, eol_only, noise_only, untracked) after `regen`. EOL-only and noise-only files are restored."""
+    """Return (real_changed, eol_only, noise_only, untracked, data) after `regen`. EOL-only and noise-only files are restored.
+    data/ holds the mirrored export, not generator output: its files are only counted ({added, removed, changed}), never listed."""
     git("update-index", "-q", "--refresh", cwd=repo)
     _, names = git("diff", "--name-only", "-z", cwd=repo)
-    names = [n for n in names.split("\0") if n]
+    names = [n for n in names.split("\0") if n and not n.startswith(DATA_DIR)]
     # `git status` lists CRLF-checkout files rewritten with LF as modified although `git diff` sees nothing: restore those too
-    dirty = [p for st, p in git_status_paths(repo) if st.strip() == "M" and p not in names]
+    dirty = [p for st, p in git_status_paths(repo) if st.strip() == "M" and p not in names and not p.startswith(DATA_DIR)]
     real, eol, noise = [], list(dirty), []
     for n in names:
         rc, _ = git("diff", "--ignore-cr-at-eol", "--quiet", "--", n, cwd=repo)
@@ -803,7 +1106,7 @@ def real_diff(repo):
         for i in range(0, len(lst), 50):
             git("checkout", "--", *lst[i:i + 50], cwd=repo)
     _, un = git("ls-files", "--others", "--exclude-standard", "-z", cwd=repo)
-    return real, eol, noise, [u for u in un.split("\0") if u]
+    return real, eol, noise, [u for u in un.split("\0") if u and not u.startswith(DATA_DIR)], data_changes(repo)
 
 
 def suspicious(repo, files):
@@ -862,6 +1165,57 @@ def shrunk(repo, files, ratio=0.9):
     return out
 
 
+EXC_LINE = re.compile(r"^(\w+(?:\.\w+)*(?:Error|Exception|Exit|Interrupt)):\s*(.*)$")
+QUOTED = re.compile(r"""['"]([^'"]+)['"]""")
+
+
+def error_signature(tail):
+    """Exception type plus the missing file or key from the end of a script's output ('FileNotFoundError .../Kenya_KOTH_01.json');
+    the last line when no exception is printed. Used to group failures that share one cause."""
+    lines = [l.strip() for l in (tail or "").splitlines() if l.strip()]
+    for l in reversed(lines):
+        m = EXC_LINE.match(l)
+        if m:
+            typ, msg = m.groups()
+            q = QUOTED.search(msg)
+            what = q.group(1) if q else msg
+            if q and re.search(r"[/\\]", what):
+                what = ".../" + re.split(r"[/\\]+", what.rstrip("/\\"))[-1]
+            return ("%s %s" % (typ, what.strip())).strip()[:120]
+    if not lines:
+        return "(no output)"
+    last = re.sub(r"[\w./\\-]+\.(?:md|json|py|js)", "<file>", lines[-1])      # '--check' lines name the stale page: one group per cause
+    return "exit: " + re.sub(r"\d+", "N", last)[:100]
+
+
+def group_failures(items):
+    """[(signature, [labels])] for (label, output tail) pairs, the biggest group first."""
+    groups = collections.defaultdict(list)
+    for label, tail in items:
+        groups[error_signature(tail)].append(label)
+    return sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0]))
+
+
+HASHED_LINE = re.compile(r"^(\S+:\d+)\s+(\S+)")
+
+
+def sig_text(sig):
+    typ, _, what = sig.partition(" ")
+    return "%s `%s`" % (typ, what) if what else typ
+
+
+def hashed_names_missing(repo, data, outdir):
+    """Run _tools/hashed_names_check.py against the export. Returns None when the checker is absent, else
+    {"missing": [(script:line, name)], "rc": rc}. It only warns: a hard-coded hashed name the export lacks is a usmap rename."""
+    script = os.path.join(repo, "_tools", "hashed_names_check.py")
+    if not os.path.exists(script):
+        return None
+    p = subprocess.run([sys.executable, "-I", script, "--data", data, "--json", os.path.join(outdir, "hashed-names.json")], cwd=repo, capture_output=True)
+    out = p.stdout.decode("utf-8", "replace")
+    found = [m.groups() for m in (HASHED_LINE.match(l.strip()) for l in out.splitlines()) if m]
+    return {"missing": found, "rc": p.returncode, "tail": (out + p.stderr.decode("utf-8", "replace"))[-300:]}
+
+
 def run_generator(repo, entry, mode, extra_env, fills, log, timeout=1800):
     args = entry["write"] if mode == "write" else entry["check"]
     if args is None:
@@ -891,16 +1245,26 @@ def cmd_regen(args):
     t0 = time.time()
     extra_env = {"AMMO_AVAILABILITY": os.path.join(repo, "assets", "data", "ammo-availability.json")}
     results = collections.defaultdict(list)
-    swaps = [LinkSwap(os.path.join(repo, "data"), data)]
+    swaps = []
     if env.get("sdk_raw") and os.path.isdir(env["sdk_raw"]) and not os.path.lexists(os.path.join(repo, "sdk", "raw")):
         swaps.append(LinkSwap(os.path.join(repo, "sdk", "raw"), env["sdk_raw"]))
     wd = os.path.join(os.path.dirname(data), "wdextract")
-    fills = {"files": os.path.join(wd, "files", "files.txt"), "out": os.path.join(wd, "icons"), "dump": "", "png": "", "report": outdir}
+    fills = {"files": os.path.join(wd, "files", "files.txt"), "out": os.path.join(wd, "icons"), "dump": "", "png": "", "report": outdir,
+             "season2_export": env.get("season2_export") or ""}
     ran_assets, skipped_assets = [], []
+    # data/ is tracked (the raw JSON is published): the update branch carries the new export, so it is mirrored, not junctioned
+    tm = time.time()
+    mstat = mirror_tree(data, os.path.join(repo, "data"))
+    say("data/: mirrored %s (+%d -%d ~%d files, %d identical, %.0fs)" % (data, mstat["added"], mstat["removed"], mstat["changed"], mstat["unchanged"], time.time() - tm))
     stacks = []
     for s in swaps:
         stacks.append(s.__enter__())
     try:
+        hn = hashed_names_missing(repo, data, outdir)
+        if hn is not None:
+            say("hard-coded hashed names missing from this export: %d%s" % (len(hn["missing"]), "" if hn["rc"] in (0, 1) else "   (checker rc=%d)" % hn["rc"]))
+            for where, name in hn["missing"][:20]:
+                say("  %s %s" % (where, name))
         say("regen: %d core generators against %s (%d passes)" % (len(gens), data, args.passes))
         pass_changed = []
         for p in range(1, args.passes + 1):
@@ -910,7 +1274,7 @@ def cmd_regen(args):
                 if r is None:
                     continue
                 rc, secs, tail = r
-                results[e["script"]].append({"pass": p, "rc": rc, "seconds": secs, "tail": tail[-300:]})
+                results[e["script"]].append({"pass": p, "rc": rc, "seconds": secs, "tail": tail[-1500:]})
                 say("  %-34s rc=%d %5.1fs%s" % (e["script"], rc, secs, "" if rc == 0 else "   <-- FAILED"))
             if p == 1:
                 snap1 = real_diff_snapshot(repo)
@@ -923,7 +1287,7 @@ def cmd_regen(args):
             if e["class"] == "generator" and e["tier"] == "assets" and e["script"][:-3] not in skip:
                 if e["script"] == "item_icons.py" and icons_ok and not args.no_assets:
                     rc, secs, tail = run_generator(repo, e, "write", extra_env, fills, log)
-                    results[e["script"]].append({"pass": 1, "rc": rc, "seconds": secs, "tail": tail[-300:]})
+                    results[e["script"]].append({"pass": 1, "rc": rc, "seconds": secs, "tail": tail[-1500:]})
                     ran_assets.append(e["script"])
                     say("  %-34s rc=%d %5.1fs (assets)" % (e["script"], rc, secs))
                 else:
@@ -949,7 +1313,7 @@ def cmd_regen(args):
             rc, secs, tail = run_cmd(
                 [sys.executable, "-I", os.path.join(repo, "_tools", "link_sources.py"), "--write"],
                 cwd=repo, log=log, timeout=1800, env=extra_env)
-            results["link_sources.py"].append({"pass": 1, "rc": rc, "seconds": secs, "tail": tail[-300:]})
+            results["link_sources.py"].append({"pass": 1, "rc": rc, "seconds": secs, "tail": tail[-1500:]})
             say("  %-34s rc=%d %5.1fs (source links)" % ("link_sources.py", rc, secs))
         # checks
         say("--- checks")
@@ -966,9 +1330,8 @@ def cmd_regen(args):
             if e["class"] == "report" and e["check"] is not None and not only:
                 rc, secs, tail = run_generator(repo, e, "check", extra_env, fills, log)
                 (open(os.path.join(outdir, e["script"][:-3] + ".txt"), "w", encoding="utf-8")).write(tail)
-        real, eol, noise, untracked = real_diff(repo)
-        stat = git("diff", "--ignore-cr-at-eol", "--stat", cwd=repo)[1]
-        numstat = git("diff", "--ignore-cr-at-eol", "--numstat", cwd=repo)[1]
+        real, eol, noise, untracked, dchg = real_diff(repo)
+        stat = git("diff", "--ignore-cr-at-eol", "--stat", "--", ".", ":(exclude)data", cwd=repo)[1]
         sus = suspicious(repo, real)
         shr = shrunk(repo, real)
         # link check last
@@ -976,26 +1339,41 @@ def cmd_regen(args):
         for s in reversed(stacks):
             s.__exit__(None, None, None)
     fails = [(k, v[-1]) for k, v in results.items() if v[-1]["rc"] != 0]
+    fail_groups = group_failures([(k, v["tail"]) for k, v in fails])
     known = {e["script"]: e["known_fail"] for e in reg["scripts"] if e.get("known_fail")}
     bad_checks = [c for c in checks if c["rc"] != 0 and c["script"] not in known]
     known_hit = [c for c in checks if c["rc"] != 0 and c["script"] in known]
     secs = round(time.time() - t0, 1)
     nocheck = [e["script"] for e in gens if e["check"] is None]
     parsers = [e["script"] for e in reg["scripts"] if e.get("parses_pages")]
-    rep = {"data": data, "repo": repo, "seconds": secs, "generators": len(gens), "failed": [k for k, _ in fails],
+    check_groups = group_failures([(c["script"], c["tail"]) for c in bad_checks])
+    rep = {"data": data, "repo": repo, "data_changes": dchg, "data_mirror": mstat, "failure_groups": dict(fail_groups), "check_failure_groups": dict(check_groups),
+           "hashed_names_missing": None if hn is None else [list(x) for x in hn["missing"]], "seconds": secs, "generators": len(gens), "failed": [k for k, _ in fails],
            "checks_failed": [c["script"] for c in bad_checks], "real_changed": real, "eol_only_restored": len(eol), "noise_only_restored": noise,
            "untracked": untracked, "suspicious": [(n, w) for n, w in sus], "shrunk": shr, "second_pass_changes": pass_changed,
            "no_check": nocheck, "unclassified": unclassified, "skipped_assets": [e["script"] for e in skipped_assets], "ge": ge_state}
     write_json(os.path.join(outdir, "regen-report.json"), rep)
     L = ["# Regen report", "", "Data: `%s`. Worktree: `%s`. %d core generators, %d passes, %.0fs total." % (data, repo, len(gens), args.passes, secs), "",
          "## Summary", "", "| | |", "|---|---:|", "| Generator failures | %d |" % len(fails), "| Check failures | %d |" % len(bad_checks),
-         "| Files with real changes | %d |" % len(real), "| New (untracked) files | %d |" % len(untracked),
+         "| data/ (mirrored export) | +%d -%d ~%d files |" % (dchg["added"], dchg["removed"], dchg["changed"]),
+         "| Files with real changes (outside data/) | %d |" % len(real), "| New (untracked) files | %d |" % len(untracked),
          "| EOL-only rewrites restored | %d |" % len(eol), "| Noise-only rewrites restored (git tree id) | %d |" % len(noise),
-         "| Files that changed again in pass 2 (order dependency) | %d |" % len(pass_changed), ""]
+         "| Files that changed again in pass 2 (order dependency) | %d |" % len(pass_changed)]
+    if hn is not None:
+        L += ["| Hard-coded hashed names missing from this export | %d |" % len(hn["missing"])]
+    L += ["", "data/: +%d -%d ~%d files (the export mirrored into the tracked data/; commit it with the regenerated site)" % (dchg["added"], dchg["removed"], dchg["changed"]), ""]
+    if hn is not None:
+        L += ["## Hard-coded hashed names missing from this export", "",
+              "hard-coded hashed names missing from this export: %d%s" % (len(hn["missing"]), "" if hn["rc"] in (0, 1) else " (hashed_names_check.py exited %d: %s)" % (hn["rc"], hn["tail"].strip().splitlines()[-1] if hn["tail"].strip() else "")), ""]
+        if hn["missing"]:
+            L += ["A script names a hashed property the export no longer has: the usmap changed that name. Warning only; nothing was stopped.", ""]
+            L += ["- `%s` `%s`" % x for x in hn["missing"][:100]] + (["- ... %d more (hashed-names.json)" % (len(hn["missing"]) - 100)] if len(hn["missing"]) > 100 else []) + [""]
     if fails:
-        L += ["## Generator failures", ""] + ["- `%s` rc=%d: `%s`" % (k, v["rc"], v["tail"].strip().splitlines()[-1] if v["tail"].strip() else "") for k, v in fails] + [""]
+        L += ["## Generator failures", ""] + ["By error (%d groups):" % len(fail_groups), ""] + ["- %d script%s: %s" % (len(v), "" if len(v) == 1 else "s", sig_text(k)) for k, v in fail_groups] + ["", "Per script:", ""]
+        L += ["- `%s` rc=%d: `%s`" % (k, v["rc"], v["tail"].strip().splitlines()[-1] if v["tail"].strip() else "") for k, v in fails] + [""]
     if bad_checks:
-        L += ["## Check failures", ""] + ["- `%s %s` rc=%d: `%s`" % (c["script"], " ".join(c["args"]), c["rc"], c["tail"].strip().splitlines()[-1] if c["tail"].strip() else "") for c in bad_checks] + [""]
+        L += ["## Check failures", ""] + ["By error (%d groups):" % len(check_groups), ""] + ["- %d script%s: %s" % (len(v), "" if len(v) == 1 else "s", sig_text(k)) for k, v in check_groups] + ["", "Per script:", ""]
+        L += ["- `%s %s` rc=%d: `%s`" % (c["script"], " ".join(c["args"]), c["rc"], c["tail"].strip().splitlines()[-1] if c["tail"].strip() else "") for c in bad_checks] + [""]
     if known_hit:
         L += ["## Known failing checks (baseline, not counted)", ""] + ["- `%s`: %s" % (c["script"], known[c["script"]]) for c in known_hit] + [""]
     if pass_changed:
@@ -1020,11 +1398,11 @@ def cmd_regen(args):
     L += ["Manual-tier generators/checkers (exe analysis, Season 1 export): " + ", ".join("`%s`" % e["script"] for e in man), ""]
     if unclassified:
         L += ["## Unclassified scripts", ""] + ["- `%s`" % u for u in unclassified] + [""]
-    L += ["## Review and merge", "", "```", "cd %s" % repo, "git status --short", "git diff --ignore-cr-at-eol --stat", "git add -A && git commit -m \"Update to build <label>: regenerated site data\"", "# then, from the main checkout: git merge <branch>", "```", ""]
+    L += ["## Review and merge", "", "```", "cd %s" % repo, "git status --short", "git diff --ignore-cr-at-eol --stat -- . ':(exclude)data'", "git add -A && git commit -m \"Update to build <label>: regenerated site data\"", "# then, from the main checkout: git merge <branch>", "```", ""]
     with open(os.path.join(outdir, "regen-report.md"), "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(L) + "\n")
-    say("regen done in %.0fs: %d generator failures, %d check failures, %d files changed, %d new, %d EOL-only restored. Report: %s" % (
-        secs, len(fails), len(bad_checks), len(real), len(untracked), len(eol), os.path.join(outdir, "regen-report.md")))
+    say("regen done in %.0fs: %d generator failures, %d check failures, data/: +%d -%d ~%d files, %d other files changed, %d new, %d EOL-only restored. Report: %s" % (
+        secs, len(fails), len(bad_checks), dchg["added"], dchg["removed"], dchg["changed"], len(real), len(untracked), len(eol), os.path.join(outdir, "regen-report.md")))
     return 1 if fails else (4 if bad_checks else 0)
 
 
@@ -1033,7 +1411,7 @@ def real_diff_snapshot(repo):
     git("update-index", "-q", "--refresh", cwd=repo)
     _, names = git("diff", "--name-only", "-z", cwd=repo)
     out = {}
-    for n in [x for x in names.split("\0") if x]:
+    for n in [x for x in names.split("\0") if x and not x.startswith(DATA_DIR)]:
         p = os.path.join(repo, n)
         if os.path.exists(p):
             with open(p, "rb") as f:
@@ -1044,6 +1422,9 @@ def real_diff_snapshot(repo):
 # ------------------------------------------------------------------------------------------------ run
 def cmd_run(args):
     env = config(args)
+    rc = preflight(env, "run")
+    if rc:
+        return rc
     label = args.label
     root = env["builds_root"]
     ldir = os.path.join(root, label)
@@ -1158,6 +1539,7 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("snapshot"); p.add_argument("--label"); p.add_argument("--quick", action="store_true", help="size and mtime only, no hashes")
     p = sub.add_parser("status"); p.add_argument("--against"); p.add_argument("--quick", action="store_true")
+    p = sub.add_parser("preflight"); p.add_argument("--step", choices=("extract", "run"), default="run")
     p = sub.add_parser("extract"); p.add_argument("--label", required=True); p.add_argument("--force", action="store_true"); p.add_argument("--assets", action="store_true", help="also run the asset passes (icons)")
     p = sub.add_parser("diff"); p.add_argument("--old", required=True); p.add_argument("--new", required=True); p.add_argument("--out"); p.add_argument("--full", action="store_true", help="also run season_diff.py --write into <out>/season-diff")
     p = sub.add_parser("regen"); p.add_argument("--data", required=True); p.add_argument("--repo"); p.add_argument("--label"); p.add_argument("--report-dir"); p.add_argument("--passes", type=int, default=1, help="2 re-runs every generator to expose order dependencies")
@@ -1167,7 +1549,7 @@ def main(argv=None):
     p = sub.add_parser("clean"); p.add_argument("--label"); p.add_argument("--worktree")
     sub.add_parser("audit")
     a = ap.parse_args(argv)
-    return {"snapshot": cmd_snapshot, "status": cmd_status, "extract": cmd_extract, "diff": cmd_diff, "regen": cmd_regen, "run": cmd_run, "audit": cmd_audit, "clean": cmd_clean}[a.cmd](a)
+    return {"snapshot": cmd_snapshot, "status": cmd_status, "preflight": cmd_preflight, "extract": cmd_extract, "diff": cmd_diff, "regen": cmd_regen, "run": cmd_run, "audit": cmd_audit, "clean": cmd_clean}[a.cmd](a)
 
 
 if __name__ == "__main__":
