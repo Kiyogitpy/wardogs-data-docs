@@ -1,7 +1,8 @@
 """Compare exported hit locations and compiler boundaries with a native receipt."""
-import argparse,json
+import argparse,json,os,sys
 from pathlib import Path
-import damage_tables as d
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import damage_tables as d  # noqa: E402
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
