@@ -18,6 +18,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
 import challenge_tables as ct  # noqa: E402
 
 ROOT, DATA = ct.ROOT, ct.DATA
@@ -292,6 +293,7 @@ def main():
         with open(path, encoding="utf-8", newline="") as f:
             text = f.read()
         new, count = regenerate(d, text)
+        new = link_source_output(new)
         if "--check" in args:
             print(f"{PAGE}: {count} tables, {'stale' if new != text else 'current'}")
             return 1 if new != text else 0

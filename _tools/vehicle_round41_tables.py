@@ -24,6 +24,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 VEH = os.path.join(DATA, "Wardogs", "Plugins", "GameFeatures", "Vehicles")
@@ -296,7 +299,7 @@ def render_page(inp, vs, sp, smoke, drone, tb, mass):
 def main():
     b = build()
     smoke, drone = smoke_and_drone()
-    page = render_page(b["vehicle-input-controls.json"], b["explosive-vs-vehicles.json"], b["weapon-spread-curves.json"], smoke, drone, b["grenade-throwback-gate.json"], b["air-vehicle-mass-override.json"])
+    page = link_source_output(render_page(b["vehicle-input-controls.json"], b["explosive-vs-vehicles.json"], b["weapon-spread-curves.json"], smoke, drone, b["grenade-throwback-gate.json"], b["air-vehicle-mass-override.json"]))
     if "--write" in sys.argv:
         for name, obj in b.items():
             with open(os.path.join(OUT, name), "w", encoding="utf8", newline="\n") as fh:
@@ -307,8 +310,8 @@ def main():
         return 0
     if "--check" in sys.argv:
         bad = [n for n, o in b.items() if not os.path.exists(os.path.join(OUT, n))
-               or open(os.path.join(OUT, n), encoding="utf8", newline="").read() != dumps(o)]
-        if not os.path.exists(PAGE) or open(PAGE, encoding="utf8", newline="").read() != page:
+               or open(os.path.join(OUT, n), encoding="utf8", newline="").read().replace("\r\n", "\n") != dumps(o)]
+        if not os.path.exists(PAGE) or open(PAGE, encoding="utf8", newline="").read().replace("\r\n", "\n") != page:
             bad.append(rel(PAGE))
         print("stale:", bad or "none")
         return 1 if bad else 0

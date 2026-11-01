@@ -934,7 +934,8 @@
    "class": "generator",
    "tier": "core",
    "write": [
-    "--write"
+    "--write",
+    "--json"
    ],
    "check": [
     "--check"
@@ -943,7 +944,7 @@
     "data",
     "assets/data/ge-values.json"
    ],
-   "notes": "--check round-trips the page values through compute()"
+   "notes": "--json refreshes assets/data/weapon-loadouts.json (a data_tree-only change is not a change); --check round-trips the page values through compute()"
   },
   {
    "script": "weapon_misc_tables.py",

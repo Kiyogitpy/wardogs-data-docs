@@ -111,6 +111,31 @@ class GeneratorSourceLinks(unittest.TestCase):
             self.assertIn(BLOB + "data/", generated)
             self.assertEqual(render(generated), generated)
 
+    def test_committed_pages_pass_their_generators_check(self):
+        """The regen link pass runs before the checks, so a generator whose --check ignores source links calls every linked page stale."""
+        for name in ("ammo_packing_tables", "demolition_tables", "misc_gameplay_tables", "pve_settings_tables",
+                     "vehicle_asset_tables", "vehicle_curve_tables", "vehicle_round39_tables", "vehicle_round40_tables",
+                     "vehicle_round41_tables", "weapon_misc_tables"):
+            with self.subTest(generator=name):
+                done = subprocess.run([sys.executable, "-I", str(ROOT / "_tools" / f"{name}.py"), "--check"],
+                                      capture_output=True, text=True, encoding="utf-8")
+                self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
+
+    def test_weapon_attributes_json_ignores_only_the_data_tree_stamp(self):
+        import weapon_attributes as wa
+        a = '{"meta":{"source":{"data_tree":"aaa","ge_values_blob":"x"}},\n"items":[1]}\n'
+        self.assertTrue(wa.same_but_stamp(a, a.replace("aaa", "bbb+dirty").replace("\n", "\r\n")))
+        self.assertFalse(wa.same_but_stamp(a, a.replace("[1]", "[2]")))
+        self.assertFalse(wa.same_but_stamp(a, a.replace('"x"', '"y"')))
+
+    def test_weapon_attributes_page_keeps_its_reviewed_header_links(self):
+        import weapon_attributes as wa
+        header = wa.page(wa.Data()).split("\n", 1)[0]
+        self.assertIn(f"]({BLOB}_tools/weapon_attributes.py)", header)
+        self.assertIn("](../assets/data/ge-values.json)", header)
+        doc = (ROOT / "content/Wardogs_WeaponAttributes_v1.md").read_text(encoding="utf-8")
+        self.assertIn(header, doc)
+
 
 if __name__ == "__main__":
     unittest.main()
