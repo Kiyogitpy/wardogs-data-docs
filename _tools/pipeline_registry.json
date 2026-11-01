@@ -13,17 +13,37 @@
   "steam_manifest": "E:/Steam/steamapps/appmanifest_1867240.acf",
   "sdk_raw": "E:/Reverse_Engineer/wardogs_analysis/data_docs_clone/wardogs-data-docs/sdk/raw",
   "dumper7_dir": "E:/Reverse_Engineer/tools/Dumper-7",
-  "season2_export": "E:/wardogs_builds/s2-cl516586/data"
+  "season2_export": "E:/wardogs_builds/s2-cl516586/data",
+  "season1_export": "E:/wardogs_builds/season1/data"
  },
  "baseline": {
-  "_comment": "CueDump on build 5.7.4-516586 with the v2 export usmap: 66,550 packages, 6,830 exported, 0 warnings, 0 errors. More warnings or errors than this on a new build means the usmap is stale. An export more than 1% below cuedump_exported_files or cuedump_packages, or more than 5% below cuedump_exported_bytes, fails extract with exit 3 and names the AES key as the likely cause (a rotated key leaves encrypted containers unmounted). cuedump_mounted_vfs is the 'Mounted N vfs' count of a clean run: null until a clean extract records it (extract-meta.json, gate.measured.mounted); the gate skips it while null.",
+  "_comment": "CueDump on build 5.7.4-516586 with the v2 export usmap: 66,550 packages, 6,830 exported, 0 warnings, 0 errors. More warnings or errors than this on a new build means the usmap is stale. An export more than 1% below cuedump_exported_files or cuedump_packages, or more than 5% below cuedump_exported_bytes, fails extract with exit 3 and names the AES key as the likely cause (a rotated key leaves encrypted containers unmounted). cuedump_mounted_vfs is the 'Mounted N vfs' count of the clean run on this build (32); fewer containers mounted fails the gate, and the gate skips it when null.",
   "usmap_build": "5.7.4-516586",
   "cuedump_warnings": 0,
   "cuedump_errored": 0,
   "cuedump_exported_files": 6830,
   "cuedump_packages": 66550,
   "cuedump_exported_bytes": 337079676,
-  "cuedump_mounted_vfs": null
+  "cuedump_mounted_vfs": 32
+ },
+ "hashed_names_expected_missing": {
+  "_comment": "Hard-coded hashed property names that the good Season 2 export lacks on purpose, matched by script and name (not line). regen prints and reports only the misses NOT listed here, plus the count of listed ones. Add a name only after checking why the export lacks it.",
+  "names": [
+   {"script": "bp_defaults.py", "name": "_aaaamejojopeijafgdjkf", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaakffacidhmniagfchm", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaakmpdngpdcdjfoghgn", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabefnnihkojobdfojbk", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaamiahcncilelhidghh", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabclpkjcpbbjcpncgfa", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaalampbnfacakccbbcd", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabdgioabebpkhhmcglm", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabknhhcfikfkdfeephh", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabakopnbgagdbajfflp", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "spray_patterns.py", "name": "_aaabgocclgplfdmmfjefm", "reason": "Season 1 legacy bipod key, kept for the Season 1 export; the v2 usmap names it"},
+   {"script": "spray_patterns.py", "name": "_aaabpgfgnkcdbhhlgdhmb", "reason": "Season 1 legacy bipod key, kept for the Season 1 export; the v2 usmap names it"},
+   {"script": "spread_recoil_tables.py", "name": "_aaacclfeejhodkalcagid", "reason": "SDK dump name (WDGame_structs.hpp), aliased to the key the cooked asset uses; not a key of the export"},
+   {"script": "spread_recoil_tables.py", "name": "_aaabpoakjgapligblioee", "reason": "SDK dump name (WDGame_structs.hpp), aliased to the key the cooked asset uses; not a key of the export"}
+  ]
  },
  "config_keep": {
   "_comment": "Raw files copied from the paks into data/ next to the CueDump JSON (the curated set the generators read). DefaultGame.ini is never copied: its whitelisted excerpt is written by default_game_ini.py. Config files in the paks that are not listed here are reported as 'new, not copied'.",
@@ -1075,15 +1095,19 @@
    "write": [
     "--s2",
     "{season2_export}",
+    "--s1",
+    "{season1_export}",
     "--write"
    ],
    "check": [
     "--s2",
     "{season2_export}",
+    "--s1",
+    "{season1_export}",
     "--check"
    ],
    "inputs": [
-    "Season 1 export (E:/wardogs_builds/season1/data)",
+    "Season 1 export (environment season1_export)",
     "Season 2 export (environment season2_export)"
    ],
    "notes": "PINNED to the Season 2 export (environment key season2_export, WD_PIPELINE_SEASON2_EXPORT), not data/: regen at a later build must keep reproducing the committed Season 2 Changes data in assets/data/season-diff (Wardogs/Config JSON is skipped). A new build's diff is not written here: use `diff --old A --new B --full` into <label>/season-diff/"

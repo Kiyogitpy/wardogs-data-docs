@@ -87,14 +87,14 @@ class Env:
     def __init__(self, tmp):
         self.tmp = tmp
         j = lambda *p: os.path.join(tmp, *p)
-        for d in ("paks", "builds", "sdk"):
-            os.makedirs(j(d))
+        for d in ("paks", "builds", "sdk", "s1/Wardogs/Content", "s2/Wardogs/Content"):
+            os.makedirs(j(*d.split("/")))
         for f, text in (("paks/a.pak", "x"), ("aes.txt", KEY_SENTINEL), ("v2.usmap", "m"), ("n.usmap", "m"), ("wd.exe", "x"), ("oo2.dll", "x"), ("c.csproj", "x")):
             with open(j(*f.split("/")), "w") as fh:
                 fh.write(text)
         self.env = {"paks": j("paks"), "aes_key_file": j("aes.txt"), "usmap_cuedump": j("v2.usmap"), "usmap_wdextract": j("n.usmap"),
                     "wdextract_exe": j("wd.exe"), "oo2core": j("oo2.dll"), "cue4parse_project": j("c.csproj"), "builds_root": j("builds"),
-                    "sdk_raw": j("sdk")}
+                    "sdk_raw": j("sdk"), "season1_export": j("s1"), "season2_export": j("s2")}
         self.cfg = j("cfg.json")
         self.write_cfg()
 
@@ -148,6 +148,38 @@ class Preflight(unittest.TestCase):
         self.assertEqual(up.missing_inputs(self.m.env, "extract"), [])
         self.assertEqual([k for k, _, _ in up.missing_inputs(self.m.env, "run")], ["sdk_raw"])
 
+    def test_run_needs_both_season_exports_with_wardogs_content_but_extract_does_not(self):
+        shutil.rmtree(os.path.join(self.m.env["season2_export"], "Wardogs"))
+        self.m.env["season1_export"] = os.path.join(self.m.tmp, "gone")
+        self.assertEqual(up.missing_inputs(self.m.env, "extract"), [])
+        self.assertEqual([(k, w) for k, _, w in up.missing_inputs(self.m.env, "run")],
+                         [("season2_export", "no Wardogs/Content inside"), ("season1_export", "missing")])
+        self.assertEqual([k for k, _, _ in up.missing_inputs(self.m.env, "regen")], ["season2_export", "season1_export"])
+        self.m.write_cfg()
+        rc, out = run(up.cmd_preflight, self.m.args(step="regen"))
+        self.assertEqual(rc, up.PREFLIGHT_RC)
+        self.assertIn("WD_PIPELINE_SEASON2_EXPORT", out)
+        self.assertIn("WD_PIPELINE_SEASON1_EXPORT", out)
+
+    def test_cue4parse_is_required_only_when_cuedump_must_be_rebuilt(self):
+        bin_dir = up.cuedump_bin_dir(self.m.env)
+        exe, stamp = up.cuedump_paths(bin_dir)
+        os.makedirs(bin_dir)
+        os.remove(self.m.env["cue4parse_project"])
+        names = lambda: [k for k, _, _ in up.missing_inputs(self.m.env, "extract")]
+        self.assertEqual(names(), ["cue4parse_project"])                  # no built exe
+        with open(exe, "w") as f:
+            f.write("x")
+        self.assertEqual(names(), [])                                     # exe without a stored hash is accepted
+        with open(stamp, "w") as f:
+            f.write("0" * 64)
+        self.assertEqual(names(), ["cue4parse_project"])                  # sources changed since the build
+        with open(stamp, "w") as f:
+            f.write(up.cuedump_source_hash())
+        self.assertEqual(names(), [])
+        rc, out = run(up.cmd_preflight, self.m.args(step="extract"))
+        self.assertEqual(rc, 0, out)
+
     def test_extract_and_run_stop_before_doing_anything(self):
         self.m.env["aes_key_file"] = os.path.join(self.m.tmp, "gone")
         self.m.write_cfg()
@@ -169,22 +201,30 @@ class ExtractGates(unittest.TestCase):
         self.addCleanup(self._tmp.cleanup)
         self.canaries = cv.load_canaries()["canaries"]
 
-    def extract(self, ok=1000, processed=10000, mounted=120, mutate=None, base_bytes=None, force=False):
+    def extract(self, ok=1000, processed=10000, mounted=120, mutate=None, base_bytes=None, force=False, crash=None, write_log=True, stale_log=None):
+        """crash: (rc, output, wrote_data) makes the fake CueDump fail; stale_log: text of a progress log left by an earlier run."""
         files = sorted({c["file"] for c in self.canaries})
+        if stale_log:
+            os.makedirs(os.path.join(self.m.env["builds_root"], "t"))
+            with open(os.path.join(self.m.env["builds_root"], "t", "data_progress.log"), "w") as f:
+                f.write(stale_log)
 
         def fake_run_cmd(cmd, cwd=None, log=None, timeout=None, env=None, echo=False):
             if cmd[0] != "fake-cuedump":
                 return 0, 0.0, ""
             data = cmd[-1]
+            if crash and not crash[2]:
+                return crash[0], 0.1, crash[1]
             for rel in files:
                 dst = os.path.join(data, rel)
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 shutil.copyfile(os.path.join(ROOT, "data", rel), dst)
             if mutate:
                 mutate(data)
-            with open(data + "_progress.log", "w") as f:
-                f.write("Mounted %d vfs, 70000 files\nDONE. processed=%d ok=%d skipped=0 errored=0 warnings=0\n" % (mounted, processed, ok))
-            return 0, 0.1, ""
+            if write_log:
+                with open(data + "_progress.log", "w") as f:
+                    f.write("Mounted %d vfs, 70000 files\nDONE. processed=%d ok=%d skipped=0 errored=0 warnings=0\n" % (mounted, processed, ok))
+            return (crash[0], 0.1, crash[1]) if crash else (0, 0.1, "")
 
         reg = copy.deepcopy(up.load_registry())
         data = os.path.join(self.m.env["builds_root"], "t", "data")
@@ -225,6 +265,41 @@ class ExtractGates(unittest.TestCase):
         self.assertNotIn("USMAP IS STALE", out)
         self.assertNotIn(KEY_SENTINEL, out)
 
+    def test_cuedump_stopping_on_too_few_containers_is_a_truncated_export_not_a_stale_usmap(self):
+        # tools/cuedump aborts with rc 1 before it creates data/ or writes the progress log: nothing to compare, so the output decides
+        rc, out, meta = self.extract(crash=(1, "Only 5 containers mounted - wrong key or unsupported format. Aborting.", False), write_log=False)
+        self.assertEqual((rc, meta["status"]), (3, "export-shrunk"))
+        self.assertIn("AES KEY", out)
+        self.assertIn("Only 5 containers mounted", out)
+        self.assertNotIn("USMAP IS STALE", out)
+        self.assertNotIn(KEY_SENTINEL, out)
+
+    def test_cuedump_failing_before_creating_data_is_a_truncated_export(self):
+        rc, out, meta = self.extract(crash=(1, "unhandled exception", False), write_log=False)
+        self.assertEqual((rc, meta["status"]), (3, "export-shrunk"))
+
+    def test_cuedump_failing_after_it_exported_stays_a_usmap_problem(self):
+        rc, out, meta = self.extract(crash=(1, "System.Exception: boom", True))
+        self.assertEqual((rc, meta["status"]), (3, "usmap-stale"))
+        self.assertIn("CueDump exited 1", " ".join(meta["why"]))
+
+    def test_a_progress_log_from_an_earlier_run_is_never_read(self):
+        old = "Mounted 120 vfs, 70000 files\nDONE. processed=10000 ok=1000 skipped=0 errored=0 warnings=0\n"
+        rc, out, meta = self.extract(write_log=False, stale_log=old)
+        self.assertEqual((rc, meta["status"]), (3, "usmap-stale"))
+        self.assertIn("no DONE line", " ".join(meta["why"]))
+        self.assertIsNone(meta["steps"]["cuedump"]["progress"]["done"])
+
+    def test_a_failed_extraction_is_replaced_by_the_retry_but_a_good_one_is_not(self):
+        rc, out, meta = self.extract(ok=400, processed=4000, mounted=60)
+        self.assertEqual(rc, 3)
+        rc, out, meta = self.extract()                                   # same label, no --force: the failed data/ is replaced
+        self.assertEqual((rc, meta["status"]), (0, "ok"))
+        self.assertIn("holds a failed extraction", out)
+        with self.assertRaises(SystemExit) as cm:                       # a verified extraction still needs --force
+            self.extract()
+        self.assertIn("--force", str(cm.exception))
+
     def test_byte_drop_alone_fails(self):
         rc, out, meta = self.extract(base_bytes=2 * sum(os.path.getsize(os.path.join(ROOT, "data", c["file"])) for c in {c["file"]: c for c in self.canaries}.values()))
         self.assertEqual((rc, meta["status"]), (3, "export-shrunk"))
@@ -246,6 +321,169 @@ class ExtractGates(unittest.TestCase):
         self.assertEqual((rc, meta["status"]), (0, "ok"))
         self.assertEqual(meta["canaries"]["changed"], [{"id": "infantry-m4-rpm", "old": 800.0, "new": 900.0}])
         self.assertIn("canary changed, review: infantry-m4-rpm", out)
+
+
+class CueDumpBuild(unittest.TestCase):
+    """ensure_cuedump rebuilds when the sources' hash differs from the one stored next to the exe, never because of file times."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.bin = os.path.join(self._tmp.name, "bin")
+        os.makedirs(self.bin)
+        self.exe, self.stamp = up.cuedump_paths(self.bin)
+        self.env = {"cue4parse_project": "C4P"}
+        self.builds = []
+
+    def fake_build(self, cmd, **kw):
+        self.builds.append(cmd)
+        with open(self.exe, "w") as f:
+            f.write("built")
+        return 0, 0.0, ""
+
+    def ensure(self):
+        with mock.patch.object(up, "run_cmd", side_effect=self.fake_build):
+            rc, out = run(up.ensure_cuedump, self.env, self.bin)
+        return rc, out
+
+    def test_no_exe_builds_and_stores_the_hash(self):
+        exe, out = self.ensure()
+        self.assertEqual(len(self.builds), 1)
+        self.assertEqual(read(self.stamp).strip(), up.cuedump_source_hash())
+
+    def test_a_fresh_checkout_with_a_current_hash_does_not_rebuild_whatever_the_file_times(self):
+        self.ensure()
+        os.utime(self.exe, (0, 0))                  # older than every source file, as after a fresh clone or worktree
+        self.builds.clear()
+        self.ensure()
+        self.assertEqual(self.builds, [])
+
+    def test_changed_sources_rebuild(self):
+        self.ensure()
+        with open(self.stamp, "w") as f:
+            f.write("0" * 64)
+        self.builds.clear()
+        self.ensure()
+        self.assertEqual(len(self.builds), 1)
+        self.assertEqual(read(self.stamp).strip(), up.cuedump_source_hash())
+
+    def test_an_existing_exe_without_a_hash_is_accepted_stamped_and_announced(self):
+        with open(self.exe, "w") as f:
+            f.write("built elsewhere")
+        exe, out = self.ensure()
+        self.assertEqual(self.builds, [])
+        self.assertEqual(read(self.stamp).strip(), up.cuedump_source_hash())
+        self.assertIn("no source hash was stored", out)
+
+    def test_the_hash_ignores_line_endings_but_not_content(self):
+        def with_sources(program, csproj):
+            d = tempfile.mkdtemp(dir=self._tmp.name)
+            os.makedirs(os.path.join(d, "tools", "cuedump"))
+            for n, b in (("Program.cs", program), ("CueDump.csproj", csproj)):
+                with open(os.path.join(d, "tools", "cuedump", n), "wb") as f:
+                    f.write(b)
+            with mock.patch.object(up, "REPO", d):
+                return up.cuedump_source_hash()
+        lf = with_sources(b"a\nb\n", b"<P/>\n")
+        self.assertEqual(lf, with_sources(b"a\r\nb\r\n", b"<P/>\r\n"))
+        self.assertNotEqual(lf, with_sources(b"a\nc\n", b"<P/>\n"))
+        self.assertNotEqual(lf, with_sources(b"a\nb\n", b"<Q/>\n"))
+
+
+class LabelSelection(unittest.TestCase):
+    """Only labels whose extraction passed (extract-meta.json status ok) count as the previous build."""
+
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.m = Env(self._tmp.name)
+        self.addCleanup(self._tmp.cleanup)
+        self.root = self.m.env["builds_root"]
+        self.cur = up.build_manifest(self.m.env, "cur", quick=True)
+        # good: an older build (one more pak than is installed now); bad: the installed paks, but their extraction failed
+        self.label("good", "2026-01-01T00:00:00+00:00", "ok", extra=True)
+        self.label("bad", "2026-02-01T00:00:00+00:00", "export-shrunk")
+
+    def label(self, name, created, status, extra=False, data=True):
+        m = dict(self.cur, label=name, created=created)
+        if extra:
+            m["files"] = m["files"] + [{"name": "old.pak", "size": 1, "mtime": 0, "hash": None}]
+        up.write_json(os.path.join(self.root, name, "manifest.json"), m)
+        if status:
+            up.write_json(os.path.join(self.root, name, "extract-meta.json"), {"status": status})
+        if data:
+            os.makedirs(os.path.join(self.root, name, "data"))
+
+    def test_a_failed_extraction_does_not_hide_the_next_detection(self):
+        rc, out = run(up.cmd_status, self.m.args(against=None))
+        self.assertEqual(rc, 10, out)
+        self.assertIn("last manifest: good", out)
+
+    def test_manifests_skip_failed_labels_only_on_request_and_keep_snapshot_only_labels(self):
+        self.label("snap", "2026-03-01T00:00:00+00:00", None, data=False)
+        names = lambda **k: [d for _, d, _ in up.manifests(self.root, **k)]
+        self.assertEqual(names(), ["good", "bad", "snap"])
+        self.assertEqual(names(skip_failed=True), ["good", "snap"])
+
+    def test_extract_ok_needs_the_ok_status_and_a_data_dir(self):
+        self.label("nodata", "2026-04-01T00:00:00+00:00", "ok", data=False)
+        self.assertEqual([d for d in ("good", "bad", "nodata", "missing") if up.extract_ok(self.root, d)], ["good"])
+
+    def run_run(self, **k):
+        diffs = []
+        wt = os.path.join(self.m.tmp, "wt")
+        os.makedirs(wt)
+        with mock.patch.object(up, "cmd_extract", return_value=0), mock.patch.object(up, "cmd_diff", side_effect=lambda a: diffs.append(a) or 0), \
+                mock.patch.object(up.subprocess, "run", return_value=Namespace(returncode=0)):
+            rc, out = run(up.cmd_run, self.m.args(label="new", force=True, worktree=wt, **k))
+        return rc, out, diffs
+
+    def test_run_diffs_against_the_last_good_extraction_not_a_failed_one(self):
+        rc, out, diffs = self.run_run()
+        self.assertEqual(rc, 0, out)
+        self.assertEqual([a.old for a in diffs], ["good"])
+        self.assertIn("vs good:", out)
+
+    def baseline(self, rcb, report, stale=False):
+        rep = os.path.join(self.root, "new-baseline", "regen-report.json")
+        if stale:
+            up.write_json(rep, {"from": "an earlier run"})
+        git_calls = []
+
+        def fake(cmd, **kw):
+            if "new-baseline" in cmd:
+                if report:
+                    up.write_json(rep, {})
+                return Namespace(returncode=rcb)
+            return Namespace(returncode=0)
+        wt = os.path.join(self.m.tmp, "wt")
+        os.makedirs(wt, exist_ok=True)
+        with mock.patch.object(up, "cmd_extract", return_value=0), mock.patch.object(up, "cmd_diff", return_value=0), \
+                mock.patch.object(up.subprocess, "run", side_effect=fake), \
+                mock.patch.object(up, "git", side_effect=lambda *a, **k: (git_calls.append(a), (0, ""))[1]):
+            try:
+                rc, out = run(up.cmd_run, self.m.args(label="new", force=True, worktree=wt, no_baseline=False))
+            except SystemExit as e:
+                return str(e.code), git_calls
+        return rc, git_calls
+
+    def test_the_baseline_is_committed_only_with_a_report_from_this_pass(self):
+        res, calls = self.baseline(1, report=True)                       # generators failed, but regen ran and reported
+        self.assertEqual(res, 0)
+        self.assertIn(("commit", "-q", "-m", "Baseline: regenerate with the previous export (good); no data change"), calls)
+        for rcb, stale in ((1, False), (1, True), (6, True), (5, False)):  # regen never started; a stale report must not stand in
+            res, calls = self.baseline(rcb, report=False, stale=stale)
+            self.assertIn("baseline regen could not run", res, (rcb, stale))
+            self.assertFalse([c for c in calls if c[0] == "commit"], (rcb, stale))
+
+
+class JenkinsfileBranches(unittest.TestCase):
+    def test_exit_3_reads_the_status_and_exit_5_has_its_own_branch(self):
+        text = read(os.path.join(ROOT, "jenkins", "patch-watch.Jenkinsfile"))
+        self.assertIn("extract-meta.json", text.split("rc == 3")[1].split("rc == 5")[0])
+        for needle in ("'export-shrunk'", "'usmap-stale'", "truncated export", "stale usmap", "rc == 5", "preflight", "def metaStatus"):
+            self.assertIn(needle, text)
+        self.assertLess(text.index("rc == 3"), text.index("rc == 5"))
+        self.assertLess(text.index("rc == 5"), text.index("rc in [1, 4]"))
 
 
 class Canaries(unittest.TestCase):

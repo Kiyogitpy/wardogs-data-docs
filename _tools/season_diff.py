@@ -1021,6 +1021,9 @@ def accept_rename(old, new):
 
 def build(s1_dir, s2_dir, log=print):
     files1, files2 = list_json(s1_dir), list_json(s2_dir)
+    for side, d, files in (("Season 1", s1_dir, files1), ("Season 2", s2_dir, files2)):
+        if not files:       # a missing export would list every asset of the other side as added or removed
+            raise SystemExit("season_diff: no JSON files under the %s export %r; refusing to compare against nothing" % (side, d))
     # Windows paths are case-insensitive and the exporter takes the spelling from the paks (Audio/Wavs) while older
     # exports spell it Audio/WAVs: pair on the case-folded path and keep the Season 1 spelling.
     low1 = {k.lower(): k for k in files1}

@@ -1,6 +1,6 @@
 // Watches for a new Wardogs build and runs the patch update pipeline on it (docs/UPDATE_PIPELINE.md#running-it-from-jenkins).
 // Runs on the lead's PC through the agent labelled `wardogs`. It only reads the game files: it never starts or stops
-// the game, never pushes, and stops for a human when the usmap is stale.
+// the game, never pushes, and stops for a human when the usmap is stale or the export is truncated.
 pipeline {
     agent { label 'wardogs' }
 
@@ -61,9 +61,24 @@ pipeline {
                     if (rc == 0) {
                         currentBuild.description = "${label}: branch update-${label} ready to review"
                     } else if (rc == 3) {
-                        currentBuild.description = "${label}: stale usmap"
-                        error("The usmap is stale. Regenerate it with Dumper-7 (docs/UPDATE_PIPELINE.md#stale-usmap), then run: " +
-                              "python -I _tools/update_pipeline.py run --label ${label} --assets --force")
+                        // extract-meta.json says why: usmap-stale or export-shrunk (a rotated AES key)
+                        def metaFile = "${buildsRoot()}/${label}/extract-meta.json"
+                        def status = fileExists(metaFile) ? metaStatus(readFile(metaFile)) : null
+                        def rerun = "python -I _tools/update_pipeline.py run --label ${label} --assets --force"
+                        if (status == 'export-shrunk') {
+                            currentBuild.description = "${label}: truncated export"
+                            error("The export is far smaller than the baseline: likely a rotated AES key. Put this build's key in the key file " +
+                                  "and check that Steam finished updating (docs/UPDATE_PIPELINE.md#truncated-export), then run: ${rerun}")
+                        } else if (status == 'usmap-stale') {
+                            currentBuild.description = "${label}: stale usmap"
+                            error("The usmap is stale. Regenerate it with Dumper-7 (docs/UPDATE_PIPELINE.md#stale-usmap), then run: ${rerun}")
+                        } else {
+                            currentBuild.description = "${label}: extraction not trustworthy"
+                            error("The extraction is not trustworthy (extract-meta.json status: ${status}); read it, then run: ${rerun}")
+                        }
+                    } else if (rc == 5) {
+                        currentBuild.description = "${label}: machine inputs missing"
+                        error("A machine input is missing and nothing ran. Run: python -I _tools/update_pipeline.py preflight, fix what it names, then rebuild.")
                     } else if (rc in [1, 4] && fileExists(report)) {
                         // The worktree and reports exist; some generators or checks failed and need a look.
                         currentBuild.description = "${label}: review generator/check failures"
@@ -111,5 +126,12 @@ def buildsRoot() {
 @NonCPS
 def acfValue(String acf, String key) {
     def m = acf =~ /"${key}"\s+"([^"]*)"/
+    return m.find() ? m.group(1) : null
+}
+
+// The top-level "status" of extract-meta.json.
+@NonCPS
+def metaStatus(String json) {
+    def m = json =~ /"status"\s*:\s*"([^"]*)"/
     return m.find() ? m.group(1) : null
 }

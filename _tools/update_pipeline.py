@@ -2,10 +2,10 @@
 
     python -I _tools/update_pipeline.py snapshot [--label L]        manifest of the installed paks -> <root>/L/manifest.json
     python -I _tools/update_pipeline.py status   [--against L]      is a new build installed? (compares with the last manifest)
-    python -I _tools/update_pipeline.py preflight [--step extract|run]  check that every machine input the step needs exists
+    python -I _tools/update_pipeline.py preflight [--step extract|regen|run]  check that every machine input the step needs exists
     python -I _tools/update_pipeline.py extract  --label L [--assets]   CueDump + WdExtract passes -> <root>/L/{data,wdextract}
     python -I _tools/update_pipeline.py diff     --old A --new B    patch-diff.md / patch-diff.json in <root>/B
-    python -I _tools/update_pipeline.py regen    --data DIR         run every generator against DIR, then the checks, then report
+    python -I _tools/update_pipeline.py regen    --data DIR         run every generator against DIR, then the checks, then report (--allow-shrink: accept a much smaller export)
     python -I _tools/update_pipeline.py run      --label L          snapshot -> extract -> diff -> regen in a dedicated worktree
     python -I _tools/update_pipeline.py clean    --label L          remove a run worktree safely (junctions first, no --force)
     python -I _tools/update_pipeline.py audit                       every _tools script is classified in pipeline_registry.json
@@ -18,7 +18,8 @@ junction the untracked sdk/raw, which must never happen there.
 
 Exit codes: 0 ok; 1 generators failed (regen/run); 3 extraction not trustworthy (stale usmap, canary values missing or of the
 wrong type, or an export far smaller than the baseline: likely a rotated AES key); 4 checks failed (regen/run); 5 preflight:
-a machine input is missing (nothing was run); 10 status: a new build is installed.
+a machine input is missing (nothing was run); 6 regen could not start (bad data dir, mirror refused, main checkout or foreign
+worktree: nothing was regenerated); 10 status: a new build is installed.
 """
 import argparse
 import collections
@@ -143,6 +144,12 @@ def is_main_checkout(repo):
     return os.path.normcase(os.path.normpath(gd.strip())) == os.path.normcase(os.path.normpath(cd.strip()))
 
 
+def same_repo(a, b):
+    """True when worktrees a and b share one git common dir (are checkouts of the same repository)."""
+    cd = lambda r: os.path.normcase(os.path.normpath(git("rev-parse", "--path-format=absolute", "--git-common-dir", cwd=r)[1].strip()))
+    return cd(a) == cd(b)
+
+
 def is_link(p):
     return os.path.islink(p) or (hasattr(os.path, "isjunction") and os.path.isjunction(p))
 
@@ -215,19 +222,45 @@ def _files(root):
     return out
 
 
-def mirror_tree(src, dst):
+MIRROR_MIN_RATIO = 0.9       # a source with fewer JSON files than this share of the destination's is refused (empty or truncated export)
+
+
+def mirror_tree(src, dst, allow_shrink=False):
     """Make the real directory `dst` an exact copy of `src`: files absent from src are deleted, new ones added, differing
-    ones overwritten (byte compare; data/ is `-text`, so no line-ending conversion hides a change). Returns the counts."""
+    ones overwritten (byte compare; data/ is `-text`, so no line-ending conversion hides a change). Returns the counts:
+    added/removed/changed/unchanged over every file, json_* over the .json files only (data/ ignores the rest, so these are
+    what git sees) and case_renames (names that differ only by case: a case-insensitive checkout does not see those)."""
     if os.path.lexists(dst) and is_link(dst):
         raise SystemExit("refusing to mirror into %s: it is a link (a mirror through it would write into the export)" % dst)
     a, b = os.path.normcase(os.path.realpath(src)), os.path.normcase(os.path.realpath(dst))
     if a == b or a.startswith(b + os.sep) or b.startswith(a + os.sep):
         raise SystemExit("refusing to mirror %s into %s: one contains the other" % (src, dst))
     want, have = _files(src), (_files(dst) if os.path.isdir(dst) else {})
-    stat = {"added": 0, "removed": 0, "changed": 0, "unchanged": 0}
-    for rel in sorted(set(have) - set(want)):         # deletions first: a case-only rename must not delete the file just written
+    n_want, n_have = (sum(1 for r in f if r.endswith(".json")) for f in (want, have))
+    if not allow_shrink and n_have and n_want < MIRROR_MIN_RATIO * n_have:
+        raise SystemExit("refusing to mirror %s into %s: it holds %d JSON files, %.0f%% of the %d in the destination (minimum %.0f%%); "
+                         "an empty or truncated export would empty data/. Pass --allow-shrink if the build really removed that much."
+                         % (src, dst, n_want, 100.0 * n_want / n_have, n_have, 100 * MIRROR_MIN_RATIO))
+    seen = {}
+    for rel in sorted(want):                          # nothing may be written through a link inside dst (copyfile follows links)
+        out = os.path.join(dst, rel)
+        d = os.path.dirname(out)
+        if d not in seen:
+            seen[d] = os.path.normcase(os.path.realpath(d))
+        real = os.path.normcase(os.path.realpath(out)) if rel in have and is_link(out) else seen[d]
+        if not (real == b or real.startswith(b + os.sep)):
+            raise SystemExit("refusing to mirror into %s: %s resolves to %s, outside it (a link inside the destination)" % (dst, rel, real))
+    stat = {"added": 0, "removed": 0, "changed": 0, "unchanged": 0, "json_added": 0, "json_removed": 0, "json_changed": 0, "json_unchanged": 0}
+
+    def bump(k, rel):
+        stat[k] += 1
+        if rel.endswith(".json"):
+            stat["json_" + k] += 1
+    gone, new = sorted(set(have) - set(want)), set(want) - set(have)
+    stat["case_renames"] = len({r.lower() for r in gone} & {r.lower() for r in new})
+    for rel in gone:                                  # deletions first: a case-only rename must not delete the file just written
         os.remove(have[rel])
-        stat["removed"] += 1
+        bump("removed", rel)
         d = os.path.dirname(have[rel])
         while os.path.normcase(os.path.realpath(d)) != b and not os.listdir(d):
             os.rmdir(d)
@@ -235,12 +268,12 @@ def mirror_tree(src, dst):
     for rel in sorted(want):
         out = os.path.join(dst, rel)
         if rel not in have:
-            stat["added"] += 1
+            bump("added", rel)
         elif os.path.getsize(want[rel]) == os.path.getsize(out) and filecmp.cmp(want[rel], out, shallow=False):
-            stat["unchanged"] += 1
+            bump("unchanged", rel)
             continue
         else:
-            stat["changed"] += 1
+            bump("changed", rel)
         os.makedirs(os.path.dirname(out), exist_ok=True)
         shutil.copyfile(want[rel], out)
     return stat
@@ -260,13 +293,19 @@ def wdextract(env, out, mode_args, log=None, timeout=1800):
 PREFLIGHT_RC = 5
 EXTRACT_INPUTS = (("paks", "dir"), ("aes_key_file", "file"), ("usmap_cuedump", "file"), ("usmap_wdextract", "file"),
                   ("wdextract_exe", "file"), ("oo2core", "file"), ("cue4parse_project", "file"), ("builds_root", "dir"))
-STEP_INPUTS = {"extract": EXTRACT_INPUTS, "run": EXTRACT_INPUTS + (("sdk_raw", "dir"),)}
+REGEN_INPUTS = (("season2_export", "dir", "Wardogs/Content"), ("season1_export", "dir", "Wardogs/Content"))     # season_diff.py's two sides
+STEP_INPUTS = {"extract": EXTRACT_INPUTS, "regen": REGEN_INPUTS, "run": EXTRACT_INPUTS + (("sdk_raw", "dir"),) + REGEN_INPUTS}
+
+
+def required_inputs(env, step):
+    """STEP_INPUTS[step], without the CUE4Parse checkout when the built CueDump is current (it is only needed to rebuild)."""
+    return [t for t in STEP_INPUTS[step] if t[0] != "cue4parse_project" or cuedump_needs_build(cuedump_bin_dir(env))]
 
 
 def missing_inputs(env, step):
     """[(registry key, path, problem)] for every path input `step` needs that is absent or of the wrong kind."""
     out = []
-    for key, want in STEP_INPUTS[step]:
+    for key, want, *sub in required_inputs(env, step):
         p = env.get(key)
         if not p:
             out.append((key, p, "not set"))
@@ -274,6 +313,8 @@ def missing_inputs(env, step):
             out.append((key, p, "missing"))
         elif not (os.path.isdir(p) if want == "dir" else os.path.isfile(p)):
             out.append((key, p, "is not a %s" % want))
+        elif sub and not os.path.isdir(os.path.join(p, sub[0])):
+            out.append((key, p, "no %s inside" % sub[0]))
     return out
 
 
@@ -291,7 +332,7 @@ def cmd_preflight(args):
     env = config(args)
     rc = preflight(env, args.step)
     if not rc:
-        say("preflight %s: all %d required inputs are present" % (args.step, len(STEP_INPUTS[args.step])))
+        say("preflight %s: all %d required inputs are present" % (args.step, len(required_inputs(env, args.step))))
     return rc
 
 
@@ -347,12 +388,27 @@ def build_manifest(env, label, quick=False):
             "seconds": round(time.time() - t, 1), "quick": quick}
 
 
-def manifests(root):
+def label_status(root, d):
+    """`status` of <root>/<d>/extract-meta.json (ok, usmap-stale, export-shrunk), None when there is no such file."""
+    try:
+        return read_json(os.path.join(root, d, "extract-meta.json")).get("status")
+    except (OSError, ValueError):
+        return None
+
+
+def extract_ok(root, d):
+    """True for a label whose extraction passed the gates and left a data/ to diff against."""
+    return label_status(root, d) == "ok" and os.path.isdir(os.path.join(root, d, "data"))
+
+
+def manifests(root, skip_failed=False):
+    """[(created, label, manifest)] oldest first. skip_failed drops labels whose extraction failed (stale usmap, truncated
+    export): their paks are not an analysed build, so they must not hide the next detection. A snapshot-only label stays."""
     out = []
     if os.path.isdir(root):
         for d in sorted(os.listdir(root)):
             p = os.path.join(root, d, "manifest.json")
-            if os.path.exists(p):
+            if os.path.exists(p) and not (skip_failed and label_status(root, d) not in (None, "ok")):
                 m = read_json(p)
                 out.append((m.get("created", ""), d, m))
     out.sort()
@@ -387,7 +443,7 @@ def cmd_snapshot(args):
 
 def cmd_status(args):
     env = config(args)
-    ms = manifests(env["builds_root"])
+    ms = manifests(env["builds_root"], skip_failed=True)
     if args.against:
         prev = [m for _, d, m in ms if d == args.against]
         if not prev:
@@ -515,16 +571,53 @@ def parse_progress(log_path):
     return res
 
 
+def cuedump_bin_dir(env):
+    return os.path.join(env.get("builds_root") or "", "_bin", "cuedump")
+
+
+def cuedump_paths(bin_dir):
+    """(built exe, file next to it holding the SHA-256 of the sources it was built from)."""
+    return os.path.join(bin_dir, "CueDump.exe" if os.name == "nt" else "CueDump"), os.path.join(bin_dir, "CueDump.sources.sha256")
+
+
+def cuedump_source_hash():
+    """SHA-256 of tools/cuedump's sources with line endings normalised (a CRLF and an LF checkout hash the same)."""
+    h = hashlib.sha256()
+    for n in ("Program.cs", "CueDump.csproj"):
+        with open(os.path.join(REPO, "tools", "cuedump", n), "rb") as f:
+            h.update(n.encode() + b"\0" + f.read().replace(b"\r\n", b"\n") + b"\0")
+    return h.hexdigest()
+
+
+def cuedump_needs_build(bin_dir):
+    """True when there is no built CueDump, or the sources changed since it was built. An exe with no stored hash is accepted."""
+    exe, stamp = cuedump_paths(bin_dir)
+    if not os.path.exists(exe):
+        return True
+    if not os.path.exists(stamp):
+        return False
+    with open(stamp, encoding="utf-8") as f:
+        return f.read().strip() != cuedump_source_hash()
+
+
+def write_cuedump_stamp(bin_dir):
+    with open(cuedump_paths(bin_dir)[1], "w", encoding="utf-8", newline="\n") as f:
+        f.write(cuedump_source_hash() + "\n")
+
+
 def ensure_cuedump(env, bin_dir):
-    exe = os.path.join(bin_dir, "CueDump.exe" if os.name == "nt" else "CueDump")
-    src = os.path.join(REPO, "tools", "cuedump", "Program.cs")
-    if os.path.exists(exe) and os.path.getmtime(exe) >= os.path.getmtime(src):
+    exe, stamp = cuedump_paths(bin_dir)
+    if not cuedump_needs_build(bin_dir):
+        if not os.path.exists(stamp):
+            write_cuedump_stamp(bin_dir)
+            say("using the existing %s: no source hash was stored next to it, recorded the current sources' hash" % exe)
         return exe
     say("building tools/cuedump (CUE4Parse at %s) ..." % env["cue4parse_project"])
     rc, secs, out = run_cmd(["dotnet", "build", os.path.join(REPO, "tools", "cuedump"), "-c", "Release",
                              "-p:CUE4ParseProject=" + env["cue4parse_project"], "-o", bin_dir], timeout=900)
     if rc or not os.path.exists(exe):
         raise SystemExit("cuedump build failed:\n" + out)
+    write_cuedump_stamp(bin_dir)
     return exe
 
 
@@ -572,7 +665,9 @@ def cmd_extract(args):
     log = os.path.join(ldir, "extract.log")
     meta = {"label": label, "started": now(), "steps": {}, "status": "running"}
     os.makedirs(ldir, exist_ok=True)
-    if os.path.exists(data) and not args.force:
+    if os.path.exists(data) and not args.force and label_status(env["builds_root"], label) in ("usmap-stale", "export-shrunk"):
+        say("%s holds a failed extraction (%s): replacing it" % (data, label_status(env["builds_root"], label)))
+    elif os.path.exists(data) and not args.force:
         raise SystemExit("%s exists: pass --force to overwrite (a full extraction is ~80 s)" % data)
     if os.path.exists(data):
         # only ever a real directory inside builds_root; never recurse through a link or outside the builds root
@@ -583,13 +678,16 @@ def cmd_extract(args):
     if not os.path.exists(os.path.join(ldir, "manifest.json")):
         say("no manifest for %s yet: taking one" % label)
         write_json(os.path.join(ldir, "manifest.json"), build_manifest(env, label, quick=True))
-    cd = ensure_cuedump(env, os.path.join(env["builds_root"], "_bin", "cuedump"))
+    cd = ensure_cuedump(env, cuedump_bin_dir(env))
 
     # 1. CueDump -> data/
     say("CueDump -> %s" % data)
     t = time.time()
+    plog = data + "_progress.log"
+    if os.path.exists(plog):
+        os.remove(plog)         # CueDump may stop before it writes a new one: an old log must not pass for this run's
     rc, secs, out = run_cmd([cd, env["paks"], env["aes_key_file"], env["usmap_cuedump"], data], log=log, timeout=7200)
-    prog = parse_progress(data + "_progress.log")
+    prog = parse_progress(plog)
     meta["steps"]["cuedump"] = {"rc": rc, "seconds": secs, "progress": prog}
     base = reg["baseline"]
     why = []
@@ -605,6 +703,9 @@ def cmd_extract(args):
     cur = {"exported": done.get("ok"), "candidates": done.get("processed"), "mounted": prog["mounted"], "unmounted": prog["unmounted"],
            "bytes": export_bytes(data) if os.path.isdir(data) else None}
     shrunk = shrink_gate(base, cur)
+    if rc and ("containers mounted" in out or not os.path.isdir(data)):
+        # CueDump quit before it exported or logged anything (too few containers mounted: a rotated key): no counts to compare
+        shrunk.append("CueDump stopped before it exported anything (rc=%d): %s" % (rc, out.strip().splitlines()[-1] if out.strip() else "no output"))
     meta["gate"] = {"measured": cur, "shrunk": shrunk}
     if os.path.isdir(data):
         can = run_canaries(data)
@@ -617,7 +718,7 @@ def cmd_extract(args):
     say("CueDump: rc=%d %.0fs  %s  warnings=%d errors=%d" % (rc, secs, prog["done"], prog["warnings"], prog["errors"]))
     ntok = hashed_tokens(data) if os.path.isdir(data) else set()
     meta["hashed_tokens"] = len(ntok)
-    prev = [d for _, d, m in manifests(env["builds_root"]) if d != label and os.path.isdir(os.path.join(env["builds_root"], d, "data"))]
+    prev = [d for _, d, m in manifests(env["builds_root"]) if d != label and extract_ok(env["builds_root"], d)]
     if prev:
         old = hashed_tokens(os.path.join(env["builds_root"], prev[-1], "data"))
         newt = len(ntok - old)
@@ -1065,7 +1166,7 @@ def cmd_audit(args):
 
 
 def git_status_paths(repo):
-    _, out = git("status", "--porcelain", "-z", cwd=repo)
+    _, out = git("status", "--porcelain", "-uall", "-z", cwd=repo)
     items = [x for x in out.split("\0") if x]
     return [(x[:2], x[3:]) for x in items]
 
@@ -1204,16 +1305,36 @@ def sig_text(sig):
     return "%s `%s`" % (typ, what) if what else typ
 
 
-def hashed_names_missing(repo, data, outdir):
+def hashed_names_missing(repo, data, outdir, expected=()):
     """Run _tools/hashed_names_check.py against the export. Returns None when the checker is absent, else
-    {"missing": [(script:line, name)], "rc": rc}. It only warns: a hard-coded hashed name the export lacks is a usmap rename."""
+    {"missing": [(script:line, name)], "expected": [...], "rc": rc}. `expected` is a set of (script, name) the registry
+    allowlists: those go to "expected", the rest to "missing". It only warns: a hard-coded hashed name the export lacks is a usmap rename."""
     script = os.path.join(repo, "_tools", "hashed_names_check.py")
     if not os.path.exists(script):
         return None
     p = subprocess.run([sys.executable, "-I", script, "--data", data, "--json", os.path.join(outdir, "hashed-names.json")], cwd=repo, capture_output=True)
     out = p.stdout.decode("utf-8", "replace")
     found = [m.groups() for m in (HASHED_LINE.match(l.strip()) for l in out.splitlines()) if m]
-    return {"missing": found, "rc": p.returncode, "tail": (out + p.stderr.decode("utf-8", "replace"))[-300:]}
+    known = [x for x in found if (x[0].split(":")[0], x[1]) in expected]
+    return {"missing": [x for x in found if x not in known], "expected": known, "rc": p.returncode, "tail": (out + p.stderr.decode("utf-8", "replace"))[-300:]}
+
+
+def hashed_summary(hn):
+    """The one line for stdout and the report: new misses, the allowlisted count, a checker failure."""
+    return "hard-coded hashed names missing from this export: %d%s%s" % (
+        len(hn["missing"]), " (+%d expected, allowlisted in the registry)" % len(hn["expected"]) if hn["expected"] else "",
+        "" if hn["rc"] in (0, 1) else "   (checker rc=%d)" % hn["rc"])
+
+
+def mirror_report(data, m, secs):
+    """Lines for stdout: the tracked-JSON counts (what git will see) apart from the raw copy counts (every file), and case-only renames."""
+    out = ["data/: mirrored %s in %.0fs" % (data, secs),
+           "  tracked JSON (what git will see): +%d -%d ~%d, %d identical" % (m["json_added"], m["json_removed"], m["json_changed"], m["json_unchanged"]),
+           "  raw copy (every file, the ignored non-JSON config included): +%d -%d ~%d, %d identical" % (m["added"], m["removed"], m["changed"], m["unchanged"])]
+    if m["case_renames"]:
+        out.append("  %d file(s) differ from data/ only by letter case: a case-insensitive checkout does not see the new spelling as a change; "
+                   "commit it with `git -c core.ignorecase=false add -A data`" % m["case_renames"])
+    return out
 
 
 def run_generator(repo, entry, mode, extra_env, fills, log, timeout=1800):
@@ -1224,12 +1345,28 @@ def run_generator(repo, entry, mode, extra_env, fills, log, timeout=1800):
     return run_cmd([sys.executable, "-I", os.path.join(repo, "_tools", entry["script"])] + args, cwd=repo, log=log, timeout=timeout, env=extra_env)
 
 
+REGEN_FATAL_RC = 6
+
+
 def cmd_regen(args):
+    """Exit 6 (not 1, which means generators failed) when regen cannot start: bad data dir, mirror refused, main checkout, foreign worktree."""
+    try:
+        return regen(args)
+    except SystemExit as e:
+        if e.code is None or isinstance(e.code, int):
+            raise
+        print(e.code, file=sys.stderr, flush=True)
+        return REGEN_FATAL_RC
+
+
+def regen(args):
     env = config(args)
     reg = load_registry()
     repo = os.path.abspath(args.repo or REPO)
     if is_main_checkout(repo):
         raise SystemExit("refusing to run in the main checkout %s: regen swaps data/ and rewrites site files. Use a linked worktree (`run` makes one)." % repo)
+    if not same_repo(repo, REPO):
+        raise SystemExit("refusing to run in %s: it is not a worktree of the repository that holds this script (%s)" % (repo, REPO))
     data = os.path.abspath(args.data)
     if not os.path.isdir(os.path.join(data, "Wardogs", "Content")):
         raise SystemExit("%s does not look like a data export (no Wardogs/Content)" % data)
@@ -1240,6 +1377,10 @@ def cmd_regen(args):
     present, by, unclassified, stale = classify_scripts(reg)
     only = set(args.only.split(",")) if args.only else None
     skip = set(args.skip.split(",")) if args.skip else set()
+    if "season_diff" not in skip and (only is None or "season_diff" in only):
+        rc = preflight(env, "regen")        # season_diff.py compares the two pinned exports: an empty side would rewrite its data as all removed
+        if rc:
+            return rc
     gens = [e for e in reg["scripts"] if e["class"] == "generator" and e["tier"] == "core" and e["script"][:-3] not in skip
             and (only is None or e["script"][:-3] in only)]
     t0 = time.time()
@@ -1250,19 +1391,20 @@ def cmd_regen(args):
         swaps.append(LinkSwap(os.path.join(repo, "sdk", "raw"), env["sdk_raw"]))
     wd = os.path.join(os.path.dirname(data), "wdextract")
     fills = {"files": os.path.join(wd, "files", "files.txt"), "out": os.path.join(wd, "icons"), "dump": "", "png": "", "report": outdir,
-             "season2_export": env.get("season2_export") or ""}
+             "season2_export": env.get("season2_export") or "", "season1_export": env.get("season1_export") or ""}
     ran_assets, skipped_assets = [], []
     # data/ is tracked (the raw JSON is published): the update branch carries the new export, so it is mirrored, not junctioned
     tm = time.time()
-    mstat = mirror_tree(data, os.path.join(repo, "data"))
-    say("data/: mirrored %s (+%d -%d ~%d files, %d identical, %.0fs)" % (data, mstat["added"], mstat["removed"], mstat["changed"], mstat["unchanged"], time.time() - tm))
+    mstat = mirror_tree(data, os.path.join(repo, "data"), allow_shrink=args.allow_shrink)
+    for line in mirror_report(data, mstat, time.time() - tm):
+        say(line)
     stacks = []
     for s in swaps:
         stacks.append(s.__enter__())
     try:
-        hn = hashed_names_missing(repo, data, outdir)
+        hn = hashed_names_missing(repo, data, outdir, {(x["script"], x["name"]) for x in reg.get("hashed_names_expected_missing", {}).get("names", [])})
         if hn is not None:
-            say("hard-coded hashed names missing from this export: %d%s" % (len(hn["missing"]), "" if hn["rc"] in (0, 1) else "   (checker rc=%d)" % hn["rc"]))
+            say(hashed_summary(hn))
             for where, name in hn["missing"][:20]:
                 say("  %s %s" % (where, name))
         say("regen: %d core generators against %s (%d passes)" % (len(gens), data, args.passes))
@@ -1348,7 +1490,8 @@ def cmd_regen(args):
     parsers = [e["script"] for e in reg["scripts"] if e.get("parses_pages")]
     check_groups = group_failures([(c["script"], c["tail"]) for c in bad_checks])
     rep = {"data": data, "repo": repo, "data_changes": dchg, "data_mirror": mstat, "failure_groups": dict(fail_groups), "check_failure_groups": dict(check_groups),
-           "hashed_names_missing": None if hn is None else [list(x) for x in hn["missing"]], "seconds": secs, "generators": len(gens), "failed": [k for k, _ in fails],
+           "hashed_names_missing": None if hn is None else [list(x) for x in hn["missing"]],
+           "hashed_names_expected": None if hn is None else [list(x) for x in hn["expected"]], "seconds": secs, "generators": len(gens), "failed": [k for k, _ in fails],
            "checks_failed": [c["script"] for c in bad_checks], "real_changed": real, "eol_only_restored": len(eol), "noise_only_restored": noise,
            "untracked": untracked, "suspicious": [(n, w) for n, w in sus], "shrunk": shr, "second_pass_changes": pass_changed,
            "no_check": nocheck, "unclassified": unclassified, "skipped_assets": [e["script"] for e in skipped_assets], "ge": ge_state}
@@ -1364,7 +1507,12 @@ def cmd_regen(args):
     L += ["", "data/: +%d -%d ~%d files (the export mirrored into the tracked data/; commit it with the regenerated site)" % (dchg["added"], dchg["removed"], dchg["changed"]), ""]
     if hn is not None:
         L += ["## Hard-coded hashed names missing from this export", "",
-              "hard-coded hashed names missing from this export: %d%s" % (len(hn["missing"]), "" if hn["rc"] in (0, 1) else " (hashed_names_check.py exited %d: %s)" % (hn["rc"], hn["tail"].strip().splitlines()[-1] if hn["tail"].strip() else "")), ""]
+              hashed_summary(hn) + ("" if hn["rc"] in (0, 1) else " (hashed_names_check.py exited %d: %s)" % (hn["rc"], hn["tail"].strip().splitlines()[-1] if hn["tail"].strip() else "")), ""]
+        if hn["expected"]:
+            exp = {(x["script"], x["name"]): x["reason"] for x in reg.get("hashed_names_expected_missing", {}).get("names", [])}
+            by_script = collections.Counter(w.split(":")[0] for w, _ in hn["expected"])
+            L += ["Expected misses (allowlisted in `hashed_names_expected_missing` in the registry):", ""]
+            L += ["- `%s`: %d (%s)" % (s, n, next(r for (sc, _), r in exp.items() if sc == s)) for s, n in sorted(by_script.items())] + [""]
         if hn["missing"]:
             L += ["A script names a hashed property the export no longer has: the usmap changed that name. Warning only; nothing was stopped.", ""]
             L += ["- `%s` `%s`" % x for x in hn["missing"][:100]] + (["- ... %d more (hashed-names.json)" % (len(hn["missing"]) - 100)] if len(hn["missing"]) > 100 else []) + [""]
@@ -1430,7 +1578,7 @@ def cmd_run(args):
     ldir = os.path.join(root, label)
     t0 = time.time()
     steps = []
-    prior = [d for _, d, m in manifests(root) if d != label]
+    prior = [d for _, d, m in manifests(root, skip_failed=True) if d != label]
     say("== 1/5 snapshot")
     cmd_snapshot(argparse.Namespace(label=label, quick=args.quick, config=args.config))
     steps.append(("snapshot", round(time.time() - t0, 1)))
@@ -1449,7 +1597,8 @@ def cmd_run(args):
     if rc:
         say("stopped: extract failed (rc=%d)" % rc)
         return rc
-    old = args.old or (prior[-1] if prior else None)
+    good = [d for d in prior if extract_ok(root, d)]        # a failed extraction keeps a truncated data/: never diff against it
+    old = args.old or (good[-1] if good else None)
     if old and os.path.isdir(os.path.join(root, old, "data")):
         say("== 3/5 diff %s -> %s" % (old, label))
         t = time.time()
@@ -1473,10 +1622,13 @@ def cmd_run(args):
         # generation, and generators that are ahead of their committed output, show up in this baseline commit instead.
         say("== 5a/5 baseline regen on the old export %s (so the final diff holds only the patch)" % old)
         t = time.time()
+        rep0 = os.path.join(root, label + "-baseline", "regen-report.json")
+        if os.path.exists(rep0):
+            os.remove(rep0)         # only a report written by THIS pass shows that the generators ran
         rcb = subprocess.run([sys.executable, "-I", script] + cfgarg + ["regen", "--data", os.path.join(root, old, "data"), "--repo", wt,
                              "--label", label + "-baseline", "--passes", "1"]).returncode
-        if rcb not in (0, 1, 4):
-            raise SystemExit("baseline regen could not run (rc=%d)" % rcb)
+        if rcb not in (0, 1, 4) or not os.path.exists(rep0):
+            raise SystemExit("baseline regen could not run (rc=%d%s)" % (rcb, "" if os.path.exists(rep0) else ", no regen-report.json from this pass"))
         git("add", "-A", cwd=wt)
         rc0, _ = git("commit", "-q", "-m", "Baseline: regenerate with the previous export (%s); no data change" % old, cwd=wt)
         steps.append(("baseline regen", round(time.time() - t, 1)))
@@ -1486,6 +1638,9 @@ def cmd_run(args):
     rc = subprocess.run([sys.executable, "-I", script] + cfgarg + ["regen", "--data", os.path.join(ldir, "data"),
                          "--repo", wt, "--label", label, "--passes", str(args.passes)]).returncode
     steps.append(("regen", round(time.time() - t, 1)))
+    if rc in (PREFLIGHT_RC, REGEN_FATAL_RC):
+        say("stopped: regen could not run (rc=%d); the worktree holds nothing from this build" % rc)
+        return rc
     say("")
     say("== done in %.0fs: %s" % (time.time() - t0, ", ".join("%s %.0fs" % s for s in steps)))
     say("Reports: %s, %s" % (os.path.join(ldir, "patch-diff.md"), os.path.join(ldir, "regen-report.md")))
@@ -1539,11 +1694,12 @@ def main(argv=None):
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("snapshot"); p.add_argument("--label"); p.add_argument("--quick", action="store_true", help="size and mtime only, no hashes")
     p = sub.add_parser("status"); p.add_argument("--against"); p.add_argument("--quick", action="store_true")
-    p = sub.add_parser("preflight"); p.add_argument("--step", choices=("extract", "run"), default="run")
+    p = sub.add_parser("preflight"); p.add_argument("--step", choices=("extract", "regen", "run"), default="run")
     p = sub.add_parser("extract"); p.add_argument("--label", required=True); p.add_argument("--force", action="store_true"); p.add_argument("--assets", action="store_true", help="also run the asset passes (icons)")
     p = sub.add_parser("diff"); p.add_argument("--old", required=True); p.add_argument("--new", required=True); p.add_argument("--out"); p.add_argument("--full", action="store_true", help="also run season_diff.py --write into <out>/season-diff")
     p = sub.add_parser("regen"); p.add_argument("--data", required=True); p.add_argument("--repo"); p.add_argument("--label"); p.add_argument("--report-dir"); p.add_argument("--passes", type=int, default=1, help="2 re-runs every generator to expose order dependencies")
     p.add_argument("--only"); p.add_argument("--skip"); p.add_argument("--no-assets", action="store_true")
+    p.add_argument("--allow-shrink", action="store_true", help="mirror an export with fewer than 90%% of the JSON files data/ holds (a build that really removed content)")
     p = sub.add_parser("run"); p.add_argument("--label", required=True); p.add_argument("--old"); p.add_argument("--base", default="main"); p.add_argument("--worktree"); p.add_argument("--quick", action="store_true")
     p.add_argument("--force", action="store_true"); p.add_argument("--assets", action="store_true"); p.add_argument("--full", action="store_true"); p.add_argument("--passes", type=int, default=1); p.add_argument("--no-baseline", action="store_true", help="skip the baseline regen on the old export")
     p = sub.add_parser("clean"); p.add_argument("--label"); p.add_argument("--worktree")

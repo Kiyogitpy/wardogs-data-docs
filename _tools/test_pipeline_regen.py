@@ -17,6 +17,7 @@ from argparse import Namespace
 from unittest import mock
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import update_pipeline as up  # noqa: E402
@@ -95,9 +96,14 @@ class Fixture:
         os.remove(os.path.join(self.new, "Wardogs", "Content", "B.json"))
         put(self.new, "Wardogs/Content/D.json", export("D", {"Value": 4}))
         put(self.new, "Wardogs/Config/Tags.ini", "[b]\n")
+        self.s1, self.s2 = os.path.join(tmp, "s1"), os.path.join(tmp, "s2")      # the two pinned exports of season_diff.py
+        for d in (self.s1, self.s2):
+            put(d, "Wardogs/Content/X.json", export("X", {"v": 1}))
+        self.extra = {}                                                          # more top-level registry keys
 
     def registry(self, scripts):
-        return {"environment": {"builds_root": os.path.join(self.tmp, "builds"), "season2_export": "S2DIR"}, "scripts": scripts, "chains": []}
+        return dict({"environment": {"builds_root": os.path.join(self.tmp, "builds"), "season2_export": self.s2, "season1_export": self.s1},
+                     "scripts": scripts, "chains": []}, **self.extra)
 
     def gen(self, name="gen.py", **k):
         e = {"script": name, "class": "generator", "tier": "core", "write": [], "check": None, "inputs": []}
@@ -105,10 +111,11 @@ class Fixture:
         return e
 
     def regen(self, data, scripts=None, repo=None, **k):
-        args = Namespace(data=data, repo=repo or self.wt, label="t", report_dir=self.report, passes=1, only=None, skip="link_sources", no_assets=False, config=None)
+        args = Namespace(data=data, repo=repo or self.wt, label="t", report_dir=self.report, passes=1, only=None, skip="link_sources", no_assets=False,
+                         allow_shrink=False, config=None)
         for key, v in k.items():
             setattr(args, key, v)
-        with mock.patch.object(up, "load_registry", return_value=self.registry(scripts or [self.gen()])):
+        with mock.patch.object(up, "load_registry", return_value=self.registry(scripts or [self.gen()])), mock.patch.object(up, "REPO", self.main):
             return run(up.cmd_regen, args)
 
     def report_md(self):
@@ -174,9 +181,11 @@ class DataMirror(Base):
 
     def test_regen_still_refuses_the_main_checkout(self):
         fx = Fixture(self.tmp)
-        with self.assertRaises(SystemExit) as cm:
-            fx.regen(fx.new, repo=fx.main)
-        self.assertIn("main checkout", str(cm.exception))
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            rc, out = fx.regen(fx.new, repo=fx.main)
+        self.assertEqual(rc, up.REGEN_FATAL_RC)
+        self.assertIn("main checkout", err.getvalue())
         self.assertIn('"Value": 1', read(fx.main, "data/Wardogs/Content/A.json"))
 
     def test_mirror_refuses_links_and_overlapping_trees(self):
@@ -204,7 +213,8 @@ class DataMirror(Base):
         put(dst, "keep.json", "1")
         put(dst, "chg.json", "old")
         put(dst, "gone/deep/g.json", "4")
-        self.assertEqual(up.mirror_tree(src, dst), {"added": 1, "removed": 1, "changed": 1, "unchanged": 1})
+        stat = up.mirror_tree(src, dst)
+        self.assertEqual({k: stat[k] for k in ("added", "removed", "changed", "unchanged")}, {"added": 1, "removed": 1, "changed": 1, "unchanged": 1})
         self.assertFalse(os.path.exists(os.path.join(dst, "gone")))
         self.assertEqual(read(dst, "chg.json"), "2")
 
@@ -232,10 +242,11 @@ class PinnedSeasonDiff(Base):
         e = next(x for x in reg["scripts"] if x["script"] == "season_diff.py")
         seen = []
         with mock.patch.object(up, "run_cmd", side_effect=lambda cmd, **k: seen.append(cmd) or (0, 0.0, "")):
-            up.run_generator("R", e, "write", {}, {"season2_export": "E:/s2/data"}, None)
-            up.run_generator("R", e, "check", {}, {"season2_export": "E:/s2/data"}, None)
+            up.run_generator("R", e, "write", {}, {"season2_export": "E:/s2/data", "season1_export": "E:/s1/data"}, None)
+            up.run_generator("R", e, "check", {}, {"season2_export": "E:/s2/data", "season1_export": "E:/s1/data"}, None)
         for cmd in seen:
             self.assertEqual(cmd[cmd.index("--s2") + 1], "E:/s2/data")
+            self.assertEqual(cmd[cmd.index("--s1") + 1], "E:/s1/data")
         self.assertEqual([c[-1] for c in seen], ["--write", "--check"])
 
     def test_env_var_overrides_the_pin(self):
@@ -249,7 +260,246 @@ class PinnedSeasonDiff(Base):
         scripts = [fx.gen(write=["--s2", "{season2_export}"])]
         with mock.patch.object(up, "run_generator", side_effect=lambda repo, e, mode, ee, fills, log, **k: (seen.append(fills["season2_export"]), orig(repo, e, mode, ee, fills, log, **k))[1]):
             fx.regen(fx.old, scripts=scripts)
-        self.assertEqual(seen[0], "S2DIR")
+        self.assertEqual(seen[0], fx.s2)
+
+
+class SeasonDiffGuard(Base):
+    """A missing or empty export on either side must stop season_diff.py, not turn every asset of the other side into added/removed."""
+
+    def season_diff(self, s1, s2, mode):
+        out = os.path.join(self.tmp, "season-diff")
+        p = subprocess.run([sys.executable, "-I", os.path.join(HERE, "season_diff.py"), "--s1", s1, "--s2", s2, "--out", out, mode], capture_output=True)
+        return p.returncode, p.stderr.decode("utf-8", "replace"), out
+
+    def test_an_empty_or_missing_side_exits_non_zero_and_writes_nothing(self):
+        full = os.path.join(self.tmp, "full")
+        put(full, "Wardogs/Content/A.json", export("A", {"v": 1}))
+        empty = os.path.join(self.tmp, "empty")
+        os.makedirs(empty)
+        for s1, s2, side in ((full, empty, "Season 2"), (full, "", "Season 2"), (empty, full, "Season 1"), (full, os.path.join(self.tmp, "gone"), "Season 2")):
+            for mode in ("--write", "--check"):
+                rc, err, out = self.season_diff(s1, s2, mode)
+                self.assertNotEqual(rc, 0, (s1, s2, mode))
+                self.assertIn(side, err)
+                self.assertFalse(os.path.exists(out))
+
+    def test_two_populated_sides_still_compare(self):
+        a, b = os.path.join(self.tmp, "a"), os.path.join(self.tmp, "b")
+        put(a, "Wardogs/Content/A.json", export("A", {"v": 1}))
+        put(b, "Wardogs/Content/A.json", export("A", {"v": 2}))
+        rc, err, out = self.season_diff(a, b, "--write")
+        self.assertEqual(rc, 0, err)
+        self.assertTrue(os.path.exists(os.path.join(out, "index.json")))
+
+
+class RegenInputs(Base):
+    def test_regen_names_a_missing_season_2_export_and_does_nothing(self):
+        fx = Fixture(self.tmp)
+        shutil.rmtree(fx.s2)
+        rc, out = fx.regen(fx.new)
+        self.assertEqual(rc, up.PREFLIGHT_RC)
+        self.assertIn("season2_export", out)
+        self.assertIn("WD_PIPELINE_SEASON2_EXPORT", out)
+        self.assertIn('"Value": 1', read(fx.wt, "data/Wardogs/Content/A.json"))          # nothing was mirrored
+        self.assertFalse(os.path.exists(os.path.join(fx.report, "regen-report.json")))
+
+    def test_an_export_folder_without_wardogs_content_counts_as_missing(self):
+        fx = Fixture(self.tmp)
+        shutil.rmtree(os.path.join(fx.s1, "Wardogs"))
+        rc, out = fx.regen(fx.new)
+        self.assertEqual(rc, up.PREFLIGHT_RC)
+        self.assertIn("season1_export", out)
+        self.assertIn("no Wardogs/Content inside", out)
+        self.assertNotIn("season2_export", out)
+
+    def test_step_regen_and_run_require_both_exports(self):
+        env = {"season2_export": os.path.join(self.tmp, "gone2"), "season1_export": os.path.join(self.tmp, "gone1")}
+        self.assertEqual([k for k, _, _ in up.missing_inputs(env, "regen")], ["season2_export", "season1_export"])
+        run_keys = [k for k, _, _ in up.missing_inputs(dict(env, builds_root=self.tmp), "run")]
+        self.assertTrue({"season2_export", "season1_export"} <= set(run_keys))
+
+    def test_a_regen_that_skips_season_diff_does_not_need_the_exports(self):
+        fx = Fixture(self.tmp)
+        shutil.rmtree(fx.s2)
+        rc, out = fx.regen(fx.new, only="gen")
+        self.assertEqual(rc, 0, out)
+
+
+class MirrorSafety(Base):
+    def test_a_source_far_smaller_than_the_destination_is_refused(self):
+        src, dst = os.path.join(self.tmp, "src"), os.path.join(self.tmp, "dst")
+        for i in range(10):
+            put(dst, "d/%d.json" % i, "1")
+        os.makedirs(src)
+        with self.assertRaises(SystemExit) as cm:                       # empty export
+            up.mirror_tree(src, dst)
+        self.assertIn("--allow-shrink", str(cm.exception))
+        for i in range(8):                                              # 80%: still below 90%
+            put(src, "d/%d.json" % i, "1")
+        with self.assertRaises(SystemExit):
+            up.mirror_tree(src, dst)
+        self.assertEqual(len(up._files(dst)), 10)
+        put(src, "d/8.json", "1")                                       # 90% passes
+        up.mirror_tree(src, dst)
+        self.assertEqual(len(up._files(dst)), 9)
+
+    def test_allow_shrink_overrides_the_refusal(self):
+        src, dst = os.path.join(self.tmp, "src"), os.path.join(self.tmp, "dst")
+        for i in range(10):
+            put(dst, "%d.json" % i, "1")
+        put(src, "0.json", "1")
+        up.mirror_tree(src, dst, allow_shrink=True)
+        self.assertEqual(sorted(up._files(dst)), ["0.json"])
+
+    def test_non_json_files_do_not_count_toward_the_ratio(self):
+        src, dst = os.path.join(self.tmp, "src"), os.path.join(self.tmp, "dst")
+        for i in range(10):
+            put(dst, "%d.json" % i, "1")
+        for i in range(30):
+            put(src, "c/%d.ini" % i, "x")
+        with self.assertRaises(SystemExit):
+            up.mirror_tree(src, dst)
+
+    def test_regen_with_an_empty_export_stops_with_the_fatal_code_and_keeps_data(self):
+        fx = Fixture(self.tmp)
+        empty = os.path.join(self.tmp, "emptyexport")
+        os.makedirs(os.path.join(empty, "Wardogs", "Content"))
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            rc, out = fx.regen(empty)
+        self.assertEqual(rc, up.REGEN_FATAL_RC)
+        self.assertIn("refusing to mirror", err.getvalue())
+        self.assertTrue(os.path.exists(os.path.join(fx.wt, "data", "Wardogs", "Content", "A.json")))
+        self.assertFalse(os.path.exists(os.path.join(fx.report, "regen-report.json")))
+        rc, out = fx.regen(empty, allow_shrink=True)                    # the explicit override
+        self.assertNotEqual(rc, up.REGEN_FATAL_RC)          # data/Wardogs/Content is gone, so gen.py itself fails: exit 1
+        self.assertFalse(os.path.exists(os.path.join(fx.wt, "data", "Wardogs", "Content", "A.json")))
+
+    def test_a_bad_data_dir_is_a_fatal_setup_error_not_a_generator_failure(self):
+        fx = Fixture(self.tmp)
+        with contextlib.redirect_stderr(io.StringIO()) as err:
+            rc, out = fx.regen(os.path.join(self.tmp, "nothing"))
+        self.assertEqual(rc, up.REGEN_FATAL_RC)
+        self.assertIn("does not look like a data export", err.getvalue())
+        rc, out = fx.regen(fx.old, scripts=[fx.gen("fail.py")])        # a failing generator is still exit 1
+        self.assertEqual(rc, 1)
+
+    def test_a_worktree_of_another_repository_is_refused(self):
+        fx = Fixture(self.tmp)
+        other = os.path.join(self.tmp, "other")
+        os.makedirs(other)
+        git(other, "init", "-q", "-b", "main")
+        put(other, "data/Wardogs/Content/A.json", export("A", {"Value": 1}))
+        git(other, "add", "-A")
+        git(other, "commit", "-q", "-m", "init")
+        owt = os.path.join(self.tmp, "other-wt")
+        git(other, "worktree", "add", "-q", "-b", "upd", owt)
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            rc, out = fx.regen(fx.new, repo=owt)
+        self.assertEqual(rc, up.REGEN_FATAL_RC)
+        self.assertIn("not a worktree of the repository", err.getvalue())
+        self.assertIn('"Value": 1', read(owt, "data/Wardogs/Content/A.json"))
+
+    def test_mirror_never_writes_through_a_link_inside_the_destination(self):
+        src, dst, outside = (os.path.join(self.tmp, n) for n in ("src", "dst", "outside"))
+        put(src, "sub/x.json", "1")
+        put(src, "keep.json", "1")
+        put(dst, "keep.json", "1")
+        os.makedirs(outside)
+        up.make_link(os.path.join(dst, "sub"), outside)
+        try:
+            with self.assertRaises(SystemExit) as cm:
+                up.mirror_tree(src, dst)
+            self.assertIn("outside", str(cm.exception))
+            self.assertEqual(os.listdir(outside), [])
+        finally:
+            up.remove_link(os.path.join(dst, "sub"))
+
+
+class MirrorReporting(Base):
+    def test_json_counts_are_apart_from_the_raw_copy_counts_and_case_renames_are_reported(self):
+        src, dst = os.path.join(self.tmp, "src"), os.path.join(self.tmp, "dst")
+        put(src, "Audio/WAVs/a.json", "1")
+        put(src, "Config/x.ini", "[a]")
+        put(src, "Config/y.ini", "[a]")
+        put(src, "k.json", "same")
+        put(dst, "Audio/Wavs/a.json", "1")
+        put(dst, "k.json", "same")
+        m = up.mirror_tree(src, dst)
+        self.assertEqual((m["json_added"], m["json_removed"], m["json_changed"], m["json_unchanged"]), (1, 1, 0, 1))
+        self.assertEqual((m["added"], m["removed"], m["changed"], m["unchanged"]), (3, 1, 0, 1))
+        self.assertEqual(m["case_renames"], 1)
+        text = "\n".join(up.mirror_report("D", m, 1.0))
+        self.assertIn("tracked JSON (what git will see): +1 -1 ~0, 1 identical", text)
+        self.assertIn("raw copy", text)
+        self.assertIn("+3 -1 ~0", text)
+        self.assertIn("1 file(s) differ from data/ only by letter case", text)
+        self.assertIn("core.ignorecase=false", text)
+
+    def test_no_case_note_without_case_renames(self):
+        src, dst = os.path.join(self.tmp, "src"), os.path.join(self.tmp, "dst")
+        put(src, "a.json", "1")
+        put(dst, "b.json", "1")
+        m = up.mirror_tree(src, dst, allow_shrink=True)
+        self.assertEqual(m["case_renames"], 0)
+        self.assertNotIn("letter case", "\n".join(up.mirror_report("D", m, 1.0)))
+
+    def test_regen_prints_the_json_line(self):
+        fx = Fixture(self.tmp)
+        rc, out = fx.regen(fx.new)
+        self.assertEqual(rc, 0, out)
+        self.assertIn("tracked JSON (what git will see): +1 -1 ~1, 0 identical", out)
+        self.assertIn("raw copy (every file", out)
+
+    def test_new_directories_are_counted_file_by_file(self):
+        fx = Fixture(self.tmp)
+        for i in range(3):
+            put(fx.old, "Wardogs/Content/NewDir/%d.json" % i, export("N", {"v": i}))
+        rc, out = fx.regen(fx.old)
+        self.assertEqual(rc, 0, out)
+        self.assertEqual(fx.report_json()["data_changes"], {"added": 3, "removed": 0, "changed": 0})
+        self.assertEqual(up.data_changes(fx.wt)["added"], 3)
+
+
+class HashedAllowlist(Base):
+    CHECKER = '''import sys
+print("bp.py:12 %s")
+print("bp.py:40 %s")
+print("new.py:7 %s")
+print("3 hashed names hard-coded in scripts are missing from the export")
+sys.exit(1)
+''' % (HASHED_A, HASHED_B, HASHED_A)
+
+    def fx(self):
+        fx = Fixture(self.tmp)
+        put(fx.wt, "_tools/hashed_names_check.py", self.CHECKER)
+        fx.extra["hashed_names_expected_missing"] = {"names": [{"script": "bp.py", "name": HASHED_A, "reason": "Blueprint dump"},
+                                                                 {"script": "bp.py", "name": HASHED_B, "reason": "Blueprint dump"}]}
+        return fx
+
+    def test_only_new_misses_are_listed_and_the_allowlisted_count_is_still_shown(self):
+        fx = self.fx()
+        rc, out = fx.regen(fx.old)
+        self.assertEqual(rc, 0, out)
+        self.assertIn("hard-coded hashed names missing from this export: 1 (+2 expected, allowlisted in the registry)", out)
+        self.assertEqual(fx.report_json()["hashed_names_missing"], [["new.py:7", HASHED_A]])       # same name, other script: still new
+        self.assertEqual(fx.report_json()["hashed_names_expected"], [["bp.py:12", HASHED_A], ["bp.py:40", HASHED_B]])
+        md = fx.report_md()
+        self.assertIn("- `new.py:7` `%s`" % HASHED_A, md)
+        self.assertNotIn("- `bp.py:12`", md)
+        self.assertIn("Expected misses", md)
+        self.assertIn("- `bp.py`: 2 (Blueprint dump)", md)
+
+    def test_the_shipped_allowlist_covers_every_miss_of_the_season_2_export(self):
+        reg = up.load_registry()
+        names = reg["hashed_names_expected_missing"]["names"]
+        self.assertEqual(len(names), 14)
+        for x in names:
+            self.assertTrue(x["reason"])
+        hn = up.hashed_names_missing(ROOT, os.path.join(ROOT, "data"), self.tmp, {(x["script"], x["name"]) for x in names})
+        self.assertEqual(hn["missing"], [])
+        self.assertEqual(len(hn["expected"]), 14)
 
 
 class QuickDiff(Base):
