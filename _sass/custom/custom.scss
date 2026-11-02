@@ -425,6 +425,15 @@ div.highlighter-rouge {
   font-size: 0.95rem;
 }
 
+// The theme sets .search to height: 100% in the header, which collapses to 0 here
+// (the header has no fixed height), hiding the search box. Give it a real height.
+@media (min-width: 50rem) {
+  .main-header .search {
+    height: 2.5rem !important;
+    align-self: center;
+  }
+}
+
 .search-results {
   border-radius: 0 0 $radius-panel $radius-panel;
 }
