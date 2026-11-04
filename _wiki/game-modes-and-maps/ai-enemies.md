@@ -67,8 +67,8 @@ Each soldier keeps a detection level from 0 to 1 for each player it knows about.
 - **Footsteps.** Footsteps barely register. Running adds about 0.75 per second at 10 m and under 0.01 per second at 100 m.
 - **Hits.** A hit on a soldier adds a fixed amount (1.0) to its detection. The detection level is capped at 1.0, so one hit takes a soldier to full detection in one step (derived from the perception code, not tested in play).
 - **Fading.** A soldier that loses sight keeps its level for 5 s. After that the level falls by 0.25 per second, so a full level is gone about 4 seconds later.
-- **Vehicle noise.** Vehicles have three configured noise ranges: engine 100 m, horn 500 m and a destroyed vehicle 800 m. Which game events make these noises count for the AI is not confirmed.
-- **Other hearing.** Which other events create hearing signals is not confirmed. Hearing is zero beyond 1,000 m.
+- **Vehicle noise.** Native defaults cap engine noise at 100 m, horn noise at 500 m and attributed destruction noise at 800 m; these are not guaranteed detection radii. In the compiled server-only component path, engine and horn state changes control repeating emissions, attributed to the first valid occupant or recent-occupancy candidate rather than necessarily the driver. Destruction emission requires valid damage attribution. The selected range reaches the hearing system and Wardogs' perception consumer, but listener, affiliation, range and validity gates still apply. [Event-path evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-ai-rewards.md#g5-continuation--vehicle-producerconfigconsumer-route-recovered).
+- **Other hearing.** Emitters beyond the traced vehicle events are not comprehensively mapped. The base AI controller's recovered hearing configuration has a 1,000 m range; individual event caps and eligibility gates still apply. The detection-rate calculations above assume an accepted stimulus, not that every listed action reaches that range.
 
 ## Firing and aim
 

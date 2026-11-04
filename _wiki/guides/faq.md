@@ -78,7 +78,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 **Which hammer builds a Bunker, and how many rockets kill one?** Only the Large Hammer builds a Bunker, for 200 Build Supplies and 134 hits. Rockets do 45% more damage to it, and about 33 120 mm rockets destroy it at point blank. That count is derived from the damage table, not measured in play ([Bunker](../building/bunker.md), [Buildables](../building.md)).
 
-**What does the Drill Rig do?** It is a fuel-powered rig built with the Large Hammer for 2,750 Build Supplies, with 2,500 HP. It runs on Fuel Supplies and pulls the Hot Zone toward it, at 3 m/s by the game's default. The rig's own stats list 5 m/s, which is not confirmed ([Drill Rig](../building/drill-rig.md)).
+**What does the Drill Rig do?** It is a fuel-powered rig built with the Large Hammer for 2,750 Build Supplies, with 2,500 HP. It runs on Fuel Supplies and pulls the Hot Zone toward it. The shipped rig path uses 5 m/s to calculate travel duration and targets half the cached width and length, or 25% of the planar area (static code and cooked defaults, not measured match behavior). An optional curve can shape the movement ([Drill Rig](../building/drill-rig.md)).
 
 **Do sandbags stop bullets?** A Sandbag Wall, with 735 HP, takes 15% of bullet damage. It takes 650% more from rockets and 500% more from IEDs ([Buildables](../building.md#damage-by-source), [Sandbag Wall](../building/sandbag-wall.md)).
 

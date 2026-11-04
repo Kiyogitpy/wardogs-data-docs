@@ -524,6 +524,14 @@ def settings_data():
                                               "counter_force_multiplier": P.get("CounterForceMultiplier"), "velocity_offset_multiplier": P.get("VelocityOffsetMultiplier"),
                                               "player_customizable": P.get("bPlayerCustomizable")}
     return {"gameplay_systems": sysrows, "interactions": introws, "destruction_invoker": rams,
+            "field_metadata": {
+                "inactivity_lifetime_out_of_safe_zone_s": {
+                    "unit": None,
+                    "verification": "unverified",
+                    "legacy_key": True,
+                    "note": "The _s suffix is a legacy name, not verified seconds. These are stored values; their consumer and removal behavior remain untraced.",
+                }
+            },
             "note": "Read from cooked exports; null means the asset does not set the field (a native default applies)."}
 
 
@@ -540,13 +548,13 @@ def settings_section():
     for n, r in d["gameplay_systems"].items():
         fam = _family(n)[1]
         life = r["inactivity_lifetime_out_of_safe_zone_s"]
-        rows.append([f"`{n}`", fam, (num(life) + (" (about 8.3 hours)" if life >= 30000 else "")) if life is not None else "-",
+        rows.append([f"`{n}`", fam, num(life) if life is not None else "-",
                      num(r["inventory_accessible"]) if r["inventory_accessible"] is not None else "-",
                      num(r["should_faction_change"]) if r["should_faction_change"] is not None else "-", num(r["set_neutral_faction_time_s"])])
-    o.append(table(["Asset", "Vehicle", "Inactivity lifetime outside a safe zone (s)", "Inventory accessible", "Faction changes", "Neutral after (s)"], rows))
+    o.append(table(["Asset", "Vehicle", "Inactivity setting (stored value; unit unverified)", "Inventory accessible", "Faction changes", "Neutral after (s)"], rows))
     same = [n for n, r in d["interactions"].items() if r["same_faction_occupants_only"]]
     noinv = [_family(n)[1] for n, r in d["gameplay_systems"].items() if r["inventory_accessible"] is None]
-    o.append("\n\n`InactivityLifetimeOutSafeZone` is the only inactivity field any asset sets: Havoc 90 s, the MH-6 family 10 s, the stationary emplacements 30,000 s. The other vehicles keep the native default, which is not in the data. Reading the name, an unoccupied vehicle outside a safe zone is removed after that time (**Derived**). The client executable only copies the value into the vehicle's gameplay-systems component at start-up (offset 1884, `0x767BC40`) and has no function that reads it back, so the timer runs on the server and could not be traced; the vehicle lifetime manager (`UBHVehicleLifetimeManager`) holds separate server-side lifetime settings. Every asset that sets `InventorySettings` makes the vehicle inventory accessible; the assets without it are " + ", ".join(noinv) + ". The M113 APC SV also sets an unnamed float of 0.1 there. `FactionSettings` appears only on the stationary emplacements: none changes faction (`bShouldFactionChange` false), and STN_04 turns neutral after 36,000 s. Every asset sets the same lock cue tag `GameplayCue.Vehicle.LockStateChange`, so locking has no per-vehicle setting here.\n")
+    o.append("\n\n`InactivityLifetimeOutSafeZone` is the only inactivity field any asset sets: Havoc 90, the MH-6 family 10 and stationary emplacements 30,000 (stored values, unit unverified). The native constructor default is 300 (`0x766B080`, store at `0x766B3DF`), not a demonstrated 300-second despawn time. [Round 92](" + GH + "docs/evidence/round92-modes-economy.md#5-inactivitylifetimeoutsafezone) found a copy into the vehicle's gameplay-systems component at start-up (`+0x75C`, `0x767BC40`) but no reader in its examined client code. That bounded negative finding does not establish a server timer, the unit, an occupancy condition or vehicle removal. `UBHVehicleLifetimeManager` has separate lifetime settings; they must not be substituted for this field without a traced connection. The JSON retains its legacy `_s` key for compatibility, with explicit unverified-unit metadata. Every asset that sets `InventorySettings` makes the vehicle inventory accessible; the assets without it are " + ", ".join(noinv) + ". The M113 APC SV also sets an unnamed float of 0.1 there. `FactionSettings` appears only on the stationary emplacements: none changes faction (`bShouldFactionChange` false), and STN_04 turns neutral after 36,000 s. Every asset sets the same lock cue tag `GameplayCue.Vehicle.LockStateChange`, so locking has no per-vehicle setting here.\n")
     o.append("\n**Same-faction-only occupants** (`bAllowSameFactionOccupantsOnly` true on the `WDVehicleInteractionsDataAsset`): " + ", ".join(f"`{n}`" for n in same) + f" ({len(same)} of {len(d['interactions'])} interaction assets). **Native** (the enter check of the vehicle operator component, `0x7693880`): with the flag set, a player may enter only when the vehicle's faction equals the player's faction or the vehicle is neutral, and every player already seated must also match the vehicle's faction; otherwise the enter is denied. Without the flag the check is skipped, and a separate rule (a vehicle state test, not decoded) still denies enemy-faction entry to a non-neutral vehicle. Every other vehicle leaves the flag unset. `MaxInteractDistanceRadius` is set on one asset only.\n")
     o.append("\n### Ramming (`WD_MVF_DestructionInvokerFragment`, one per platform asset)\n\n")
     rows = []

@@ -14,7 +14,7 @@ description: "How long it takes to load rounds into a magazine, take them out an
 | Time set by | Caliber and round count |
 | **Magazines** | |
 | Quicker magazines | 3 of 69 (factor 0.6 to 0.8) |
-| Time unit | Seconds (inferred) |
+| Time unit | Seconds (native timer clock) |
 {: .wiki-infobox }
 
 Filling a magazine, emptying one and combining loose rounds all take time. The time depends on the caliber and on how many rounds are moved, and a few magazines work faster.
@@ -28,8 +28,8 @@ Each caliber has its own time curve for each operation. A curve lists a time for
 - **Caliber.** The game looks up the curve for the round's caliber. If the ammunition has no curve of its own, such as a tracer, it uses the curve of its parent caliber, so tracer rounds use the plain caliber's curve. Only when the whole chain has no curve does a default curve apply.
 - **Round count.** The time is read at the number of rounds being moved.
 - **Magazine factor.** Each magazine has a load factor and an extract factor, and the curve's time is multiplied by the factor. Most magazines use 1.0, which leaves the curve's time unchanged.
-- **Combining.** Combining loose rounds adds two of these times together (derived from how the game calls the curves). In a static reading of the code, the magazine rounds are taken from (the source) supplies the extract factor and the magazine they go into (the target) supplies the load factor.
-- **Unit.** The times are treated as seconds. This is inferred from how the game uses them as operation durations and has not been checked in play.
+- **Combining.** Moving rounds between magazines adds the source magazine's extract term and the target magazine's load term. Loose rounds use a separate combine-loose curve; they do not necessarily add those two magazine terms (native code trace).
+- **Unit.** The curve-derived duration is in seconds on the native game-time timer clock. The result is passed unchanged through the inventory operation to the timer deadline. This establishes the unit, not exact elapsed time from a UI click; queues, validation and other gates can add delay. No in-play timing was measured.
 
 ## Numbers
 
@@ -60,7 +60,7 @@ The round counts are examples. The magazine's capacity is not stored on the maga
 
 ## What is not yet known
 
-- Whether the times are seconds in play. The unit is inferred from how the game uses them.
+- Exact elapsed time in a match, including queue, animation and network delays. The native timer unit is established as seconds; wall-clock completion was not measured.
 - How many rounds each magazine holds is set by the weapon's magazine slot, not by the magazine item, so this page does not list capacities. Each weapon article gives its own.
 
 ## See also
@@ -72,4 +72,5 @@ The round counts are examples. The magazine's capacity is not stored on the maga
 ## Sources
 
 - [Ammo Packing](../../game-features/Wardogs_AmmoPacking_v1.md): the curves, the magazine factors and the derived examples
+- [Round 93 input and ammo evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-sensitivity-ammo.md#g4--curves-become-seconds-on-the-native-timer-clock): round-count selection, separate loose-ammo curve and native seconds clock
 - [Round 41 weapon evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round41-weapons.md): the curve lookup with the parent caliber, the factors and the round-count input

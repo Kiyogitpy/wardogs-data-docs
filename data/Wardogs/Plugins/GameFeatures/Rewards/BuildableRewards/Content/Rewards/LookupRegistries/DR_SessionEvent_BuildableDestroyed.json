@@ -1,0 +1,42 @@
+[
+  {
+    "Type": "DataRegistry",
+    "Name": "DR_SessionEvent_BuildableDestroyed",
+    "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'DataRegistry'",
+    "Package": "/BuildableRewards/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed",
+    "Properties": {
+      "RegistryType": "Challenges.SessionEvents.DestroyedBuildable",
+      "ItemStruct": {
+        "ObjectName": "Class'WDVariantRewardLookupRow'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      "DataSources": [
+        {
+          "ObjectName": "DataRegistrySource_DataTable'DR_SessionEvent_BuildableDestroyed:DataRegistrySource_DataTable_0'",
+          "ObjectPath": "/BuildableRewards/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed.1"
+        }
+      ]
+    }
+  },
+  {
+    "Type": "DataRegistrySource_DataTable",
+    "Name": "DataRegistrySource_DataTable_0",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'DataRegistrySource_DataTable'",
+    "Outer": {
+      "ObjectName": "DataRegistry'DR_SessionEvent_BuildableDestroyed'",
+      "ObjectPath": "/BuildableRewards/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed.0"
+    },
+    "Properties": {
+      "SourceTable": {
+        "AssetPathName": "/BuildableRewards/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.DT_RewardLookup_SessionEvent_BuildableDestroyed",
+        "SubPathString": ""
+      },
+      "PreloadTable": {
+        "ObjectName": "DataTable'DT_RewardLookup_SessionEvent_BuildableDestroyed'",
+        "ObjectPath": "/BuildableRewards/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.0"
+      }
+    }
+  }
+]

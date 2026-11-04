@@ -20,6 +20,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import challenge_tables as ct  # noqa: E402
+from link_sources import link_source_output  # noqa: E402
 
 ROOT, DATA = ct.ROOT, ct.DATA
 PAGE = "game-features/Wardogs_AmmoPacking_v1.md"
@@ -176,7 +177,8 @@ def regenerate(c, text):
     def regen(m):
         body = MODES[m.group(1)](c).split("\n")
         return nl.join([f"<!-- ammo_packing_tables {m.group(1)} -->"] + body + ["<!-- /ammo_packing_tables -->"])
-    return BLOCK.subn(regen, text)
+    updated, count = BLOCK.subn(regen, text)
+    return link_source_output(updated), count
 
 
 def main():

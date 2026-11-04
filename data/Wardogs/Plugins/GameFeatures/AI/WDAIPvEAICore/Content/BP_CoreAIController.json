@@ -1,0 +1,1065 @@
+[
+  {
+    "Type": "AISenseConfig_Damage",
+    "Name": "AISenseConfig_Damage_0",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'AISenseConfig_Damage'",
+    "Outer": {
+      "ObjectName": "WDAIPerceptionComponent'Default__BP_CoreAIController_C:AIPerception'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.30"
+    },
+    "Properties": {
+      "MaxAge": 10.0
+    }
+  },
+  {
+    "Type": "AISenseConfig_Hearing",
+    "Name": "AISenseConfig_Hearing_3",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'AISenseConfig_Hearing'",
+    "Outer": {
+      "ObjectName": "WDAIPerceptionComponent'Default__BP_CoreAIController_C:AIPerception'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.30"
+    },
+    "Properties": {
+      "HearingRange": 100000.0,
+      "MaxAge": 30.0
+    }
+  },
+  {
+    "Type": "AISenseConfig_Sight",
+    "Name": "AISenseConfig_Sight_1",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'AISenseConfig_Sight'",
+    "Outer": {
+      "ObjectName": "WDAIPerceptionComponent'Default__BP_CoreAIController_C:AIPerception'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.30"
+    },
+    "Properties": {
+      "SightRadius": 200000.0,
+      "LoseSightRadius": 210000.0,
+      "MaxAge": 30.0
+    }
+  },
+  {
+    "Type": "BlueprintGeneratedClass",
+    "Name": "BP_CoreAIController_C",
+    "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'BlueprintGeneratedClass'",
+    "Package": "/WDAIPvEAICore/BP_CoreAIController",
+    "Properties": {
+      "ComponentClassOverrides": [
+        {
+          "ComponentName": "PathFollowingComponent",
+          "ComponentClass": {
+            "ObjectName": "Class'WDPathFollowingComponent'",
+            "ObjectPath": "/Script/WDGame"
+          }
+        },
+        {
+          "ComponentName": "AIPerception",
+          "ComponentClass": {
+            "ObjectName": "Class'WDAIPerceptionComponent'",
+            "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+          }
+        }
+      ],
+      "SimpleConstructionScript": {
+        "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+      },
+      "UberGraphFunction": {
+        "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+      }
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'WDCoreAIController'",
+      "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+    },
+    "Children": [
+      {
+        "ObjectName": "Function'BP_CoreAIController_C:ReceiveBeginPlay'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.6"
+      },
+      {
+        "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+      }
+    ],
+    "ChildProperties": [
+      {
+        "Type": "StructProperty",
+        "Name": "UberGraphFrame",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 16,
+        "PropertyFlags": "Transient | DuplicateTransient",
+        "Struct": {
+          "ObjectName": "Class'PointerToUberGraphFrame'",
+          "ObjectPath": "/Script/Engine"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAIMovementLocation",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAIMovementLocationComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAIBTInjection",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAIBTInjectionComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAIPointOfInterest",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAIPointOfInterestComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAIThreatDetectionMonitor",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAIThreatDetectionMonitorComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAITarget",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAITargetComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAIAlertState",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAIAlertStateComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAICharacterConfigData",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAICharacterConfigDataComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAITacticalPathfindingEvaluator",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAITacticalPathfindingEvaluatorComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "WDAIInfluence",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'WDAIInfluenceComponent'",
+          "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SDAIJob",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SDAIJobComponent'",
+          "ObjectPath": "/Script/SDAIGoalsRuntime"
+        }
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "SDAICoverActor",
+        "Flags": "RF_Public | RF_LoadCompleted",
+        "ElementSize": 8,
+        "PropertyFlags": "BlueprintVisible | InstancedReference | NonTransactional",
+        "PropertyClass": {
+          "ObjectName": "Class'SDAICoverActorComponent'",
+          "ObjectPath": "/Script/SDAICover"
+        }
+      }
+    ],
+    "FuncMap": {
+      "ExecuteUbergraph_BP_CoreAIController": {
+        "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+      },
+      "ReceiveBeginPlay": {
+        "ObjectName": "Function'BP_CoreAIController_C:ReceiveBeginPlay'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.6"
+      }
+    },
+    "ClassFlags": "CLASS_Config | CLASS_NotPlaceable | CLASS_CompiledFromBlueprint | CLASS_HasInstancedReference",
+    "ClassWithin": {
+      "ObjectName": "Class'Object'",
+      "ObjectPath": "/Script/CoreUObject"
+    },
+    "ClassConfigName": "Engine",
+    "bCooked": true,
+    "ClassDefaultObject": {
+      "ObjectName": "BP_CoreAIController_C'Default__BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.4"
+    },
+    "EditorTags": {
+      "BlueprintType": "BPTYPE_Normal"
+    }
+  },
+  {
+    "Type": "BP_CoreAIController_C",
+    "Name": "Default__BP_CoreAIController_C",
+    "Flags": "RF_Public | RF_Transactional | RF_ClassDefaultObject | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "BlueprintGeneratedClass'/WDAIPvEAICore/BP_CoreAIController.BP_CoreAIController_C'",
+    "Package": "/WDAIPvEAICore/BP_CoreAIController",
+    "Properties": {
+      "UberGraphFrame": {},
+      "BehaviorTree": {
+        "ObjectName": "BehaviorTree'BT_Enemy'",
+        "ObjectPath": "/Game/GameMechanics/AI/BT_Enemy.0"
+      },
+      "CanSeePlayerBlackboardKeyName": "HasLineOfSight",
+      "InventoryManagerComponent": {
+        "ObjectName": "WDInventoryManagerComponent'Default__BP_CoreAIController_C:InventoryManagerComponent'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.35"
+      },
+      "AIBodyStanceComponent": {
+        "ObjectName": "WDAIBodyStanceComponent'Default__BP_CoreAIController_C:AIBodyStanceComponent'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.25"
+      },
+      "bWantsPlayerState": true,
+      "PathFollowingComponent": {
+        "ObjectName": "WDPathFollowingComponent'Default__BP_CoreAIController_C:PathFollowingComponent'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.36"
+      },
+      "PerceptionComponent": {
+        "ObjectName": "WDAIPerceptionComponent'Default__BP_CoreAIController_C:AIPerception'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.30"
+      },
+      "TransformComponent": {
+        "ObjectName": "SceneComponent'Default__BP_CoreAIController_C:TransformComponent0'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.8"
+      },
+      "bAttachToPawn": true,
+      "RootComponent": {
+        "ObjectName": "SceneComponent'Default__BP_CoreAIController_C:TransformComponent0'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.8"
+      }
+    }
+  },
+  {
+    "Type": "Function",
+    "Name": "ExecuteUbergraph_BP_CoreAIController",
+    "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'Function'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    },
+    "ChildProperties": [
+      {
+        "Type": "IntProperty",
+        "Name": "EntryPoint",
+        "Flags": "RF_Public",
+        "ElementSize": 4,
+        "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+      },
+      {
+        "Type": "ObjectProperty",
+        "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
+        "Flags": "RF_Public",
+        "ElementSize": 8,
+        "PropertyClass": {
+          "ObjectName": "Class'GameFrameworkComponentManager'",
+          "ObjectPath": "/Script/ModularGameplay"
+        }
+      }
+    ],
+    "ScriptBytecode": [
+      {
+        "Token": "EX_ComputedJump",
+        "StatementIndex": 0,
+        "CodeOffsetExpression": {
+          "Token": "EX_LocalVariable",
+          "Variable": {
+            "Owner": {
+              "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+              "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+            },
+            "Property": {
+              "Type": "IntProperty",
+              "Name": "EntryPoint",
+              "Flags": "RF_Public",
+              "ElementSize": 4,
+              "PropertyFlags": "BlueprintVisible | BlueprintReadOnly | Parm"
+            }
+          }
+        }
+      },
+      {
+        "Token": "EX_LetObj",
+        "StatementIndex": 10,
+        "Variable": {
+          "Token": "EX_LocalVariable",
+          "Variable": {
+            "Owner": {
+              "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+              "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+            },
+            "Property": {
+              "Type": "ObjectProperty",
+              "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
+              "Flags": "RF_Public",
+              "ElementSize": 8,
+              "PropertyClass": {
+                "ObjectName": "Class'GameFrameworkComponentManager'",
+                "ObjectPath": "/Script/ModularGameplay"
+              }
+            }
+          }
+        },
+        "Expression": {
+          "Token": "EX_CallMath",
+          "Function": {
+            "ObjectName": "Class'SubsystemBlueprintLibrary:GetGameInstanceSubsystem'",
+            "ObjectPath": "/Script/Engine"
+          },
+          "Parameters": [
+            {
+              "Token": "EX_Self"
+            },
+            {
+              "Token": "EX_ObjectConst",
+              "Value": {
+                "ObjectName": "Class'GameFrameworkComponentManager'",
+                "ObjectPath": "/Script/ModularGameplay"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Token": "EX_Context",
+        "StatementIndex": 40,
+        "ObjectExpression": {
+          "Token": "EX_LocalVariable",
+          "Variable": {
+            "Owner": {
+              "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+              "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+            },
+            "Property": {
+              "Type": "ObjectProperty",
+              "Name": "CallFunc_GetGameInstanceSubsystem_ReturnValue",
+              "Flags": "RF_Public",
+              "ElementSize": 8,
+              "PropertyClass": {
+                "ObjectName": "Class'GameFrameworkComponentManager'",
+                "ObjectPath": "/Script/ModularGameplay"
+              }
+            }
+          }
+        },
+        "Offset": 12,
+        "RValuePointer": null,
+        "ContextExpression": {
+          "Token": "EX_FinalFunction",
+          "Function": {
+            "ObjectName": "Class'GameFrameworkComponentManager:AddReceiver'",
+            "ObjectPath": "/Script/ModularGameplay"
+          },
+          "Parameters": [
+            {
+              "Token": "EX_Self"
+            },
+            {
+              "Token": "EX_True"
+            }
+          ]
+        }
+      },
+      {
+        "Token": "EX_Return",
+        "StatementIndex": 74,
+        "Expression": {
+          "Token": "EX_Nothing"
+        }
+      },
+      {
+        "Token": "EX_EndOfScript",
+        "StatementIndex": 76
+      }
+    ],
+    "FunctionFlags": "FUNC_Final | FUNC_UbergraphFunction"
+  },
+  {
+    "Type": "Function",
+    "Name": "ReceiveBeginPlay",
+    "Flags": "RF_Public | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'Function'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    },
+    "SuperStruct": {
+      "ObjectName": "Class'Actor:ReceiveBeginPlay'",
+      "ObjectPath": "/Script/Engine"
+    },
+    "ScriptBytecode": [
+      {
+        "Token": "EX_LocalFinalFunction",
+        "StatementIndex": 0,
+        "Function": {
+          "ObjectName": "Function'BP_CoreAIController_C:ExecuteUbergraph_BP_CoreAIController'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.5"
+        },
+        "Parameters": [
+          {
+            "Token": "EX_IntConst",
+            "Value": 10
+          }
+        ],
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.ExecuteUbergraph_BP_CoreAIController[10]"
+      },
+      {
+        "Token": "EX_Return",
+        "StatementIndex": 15,
+        "Expression": {
+          "Token": "EX_Nothing"
+        }
+      },
+      {
+        "Token": "EX_EndOfScript",
+        "StatementIndex": 17
+      }
+    ],
+    "FunctionFlags": "FUNC_Event | FUNC_Protected | FUNC_BlueprintEvent"
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "DefaultSceneRoot_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SceneComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "SceneComponent",
+    "Name": "TransformComponent0",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SceneComponent'",
+    "Outer": {
+      "ObjectName": "BP_CoreAIController_C'Default__BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.4"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_0",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SceneComponent'",
+        "ObjectPath": "/Script/Engine"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SceneComponent'BP_CoreAIController_C:DefaultSceneRoot_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.7"
+      },
+      "VariableGuid": "60A73886-4E7B0EAB-037F7B9E-8C227931",
+      "InternalVariableName": "DefaultSceneRoot"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_1",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SDAICoverActorComponent'",
+        "ObjectPath": "/Script/SDAICover"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SDAICoverActorComponent'BP_CoreAIController_C:SDAICoverActor_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.21"
+      },
+      "VariableGuid": "A442322C-43F96187-87A6B0AC-B8D3A20C",
+      "InternalVariableName": "SDAICoverActor"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_10",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAIBTInjectionComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAIBTInjectionComponent'BP_CoreAIController_C:WDAIBTInjection_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.26"
+      },
+      "VariableGuid": "ECDB7610-4BF693F4-DFA8B19B-E97D3C1D",
+      "InternalVariableName": "WDAIBTInjection"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_11",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAIMovementLocationComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAIMovementLocationComponent'BP_CoreAIController_C:WDAIMovementLocation_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.29"
+      },
+      "VariableGuid": "3D7F9B54-4C0059C2-073361A1-4A843BC1",
+      "InternalVariableName": "WDAIMovementLocation"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_2",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'SDAIJobComponent'",
+        "ObjectPath": "/Script/SDAIGoalsRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "SDAIJobComponent'BP_CoreAIController_C:SDAIJob_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.22"
+      },
+      "VariableGuid": "2436A740-4CC5B635-D5B95384-EDE574C5",
+      "InternalVariableName": "SDAIJob"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_3",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAIInfluenceComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAIInfluenceComponent'BP_CoreAIController_C:WDAIInfluence_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.28"
+      },
+      "VariableGuid": "41EBE980-48CE487F-938179B3-B1319553",
+      "InternalVariableName": "WDAIInfluence"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_4",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAITacticalPathfindingEvaluatorComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAITacticalPathfindingEvaluatorComponent'BP_CoreAIController_C:WDAITacticalPathfindingEvaluator_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.32"
+      },
+      "VariableGuid": "9217E3E6-4F1E7AD1-FB370BA7-DEC0C9AA",
+      "InternalVariableName": "WDAITacticalPathfindingEvaluator"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_5",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAICharacterConfigDataComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAICharacterConfigDataComponent'BP_CoreAIController_C:WDAICharacterConfigData_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.27"
+      },
+      "VariableGuid": "676BC21A-45EABE4D-383E08B1-6DC167F4",
+      "InternalVariableName": "WDAICharacterConfigData"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_6",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAIAlertStateComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAIAlertStateComponent'BP_CoreAIController_C:WDAIAlertState_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.24"
+      },
+      "VariableGuid": "6A64CE2A-486892AD-F992B792-9544E99A",
+      "InternalVariableName": "WDAIAlertState"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_7",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAITargetComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAITargetComponent'BP_CoreAIController_C:WDAITarget_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.33"
+      },
+      "VariableGuid": "F56D6208-4B4C5A53-02B36D98-ABF2304B",
+      "InternalVariableName": "WDAITarget"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_8",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAIThreatDetectionMonitorComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAIThreatDetectionMonitorComponent'BP_CoreAIController_C:WDAIThreatDetectionMonitor_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.34"
+      },
+      "VariableGuid": "DE223D46-47B4A770-6708E3AA-FF9A7B03",
+      "InternalVariableName": "WDAIThreatDetectionMonitor"
+    }
+  },
+  {
+    "Type": "SCS_Node",
+    "Name": "SCS_Node_9",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SCS_Node'",
+    "Outer": {
+      "ObjectName": "SimpleConstructionScript'BP_CoreAIController_C:SimpleConstructionScript_0'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.23"
+    },
+    "Properties": {
+      "ComponentClass": {
+        "ObjectName": "Class'WDAIPointOfInterestComponent'",
+        "ObjectPath": "/Script/WDAIPvEAICoreRuntime"
+      },
+      "ComponentTemplate": {
+        "ObjectName": "WDAIPointOfInterestComponent'BP_CoreAIController_C:WDAIPointOfInterest_GEN_VARIABLE'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.31"
+      },
+      "VariableGuid": "D80420CD-4053D9A8-3FF6CA92-6A58733B",
+      "InternalVariableName": "WDAIPointOfInterest"
+    }
+  },
+  {
+    "Type": "SDAICoverActorComponent",
+    "Name": "SDAICoverActor_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SDAICoverActorComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "SDAIJobComponent",
+    "Name": "SDAIJob_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SDAIJobComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "SimpleConstructionScript",
+    "Name": "SimpleConstructionScript_0",
+    "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'SimpleConstructionScript'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    },
+    "Properties": {
+      "RootNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.10"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_8'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_9'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.11"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_11'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.12"
+        }
+      ],
+      "AllNodes": [
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_1'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.10"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_2'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.13"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_3'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.14"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_4'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.15"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_5'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.16"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_6'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.17"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_7'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.18"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_8'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.19"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_9'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.20"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_10'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.11"
+        },
+        {
+          "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_11'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.12"
+        }
+      ],
+      "DefaultSceneRootNode": {
+        "ObjectName": "SCS_Node'BP_CoreAIController_C:SimpleConstructionScript_0.SCS_Node_0'",
+        "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.9"
+      }
+    }
+  },
+  {
+    "Type": "WDAIAlertStateComponent",
+    "Name": "WDAIAlertState_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIAlertStateComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAIBodyStanceComponent",
+    "Name": "AIBodyStanceComponent",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIBodyStanceComponent'",
+    "Outer": {
+      "ObjectName": "BP_CoreAIController_C'Default__BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.4"
+    }
+  },
+  {
+    "Type": "WDAIBTInjectionComponent",
+    "Name": "WDAIBTInjection_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIBTInjectionComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAICharacterConfigDataComponent",
+    "Name": "WDAICharacterConfigData_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAICharacterConfigDataComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAIInfluenceComponent",
+    "Name": "WDAIInfluence_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIInfluenceComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAIMovementLocationComponent",
+    "Name": "WDAIMovementLocation_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIMovementLocationComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAIPerceptionComponent",
+    "Name": "AIPerception",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIPerceptionComponent'",
+    "Outer": {
+      "ObjectName": "BP_CoreAIController_C'Default__BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.4"
+    },
+    "Properties": {
+      "VisionRangeMultiplier": 0.02,
+      "HearingRangeMultiplier": 0.05,
+      "SightSense": {
+        "ObjectName": "Class'AISense_Sight'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "HearingSense": {
+        "ObjectName": "Class'AISense_Hearing'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "DamageSense": {
+        "ObjectName": "Class'AISense_Damage'",
+        "ObjectPath": "/Script/AIModule"
+      },
+      "SensesConfig": [
+        {
+          "ObjectName": "AISenseConfig_Sight'Default__BP_CoreAIController_C:AIPerception.AISenseConfig_Sight_1'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.2"
+        },
+        {
+          "ObjectName": "AISenseConfig_Hearing'Default__BP_CoreAIController_C:AIPerception.AISenseConfig_Hearing_3'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.1"
+        },
+        {
+          "ObjectName": "AISenseConfig_Damage'Default__BP_CoreAIController_C:AIPerception.AISenseConfig_Damage_0'",
+          "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.0"
+        }
+      ],
+      "DominantSense": {
+        "ObjectName": "Class'AISense_Sight'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    }
+  },
+  {
+    "Type": "WDAIPointOfInterestComponent",
+    "Name": "WDAIPointOfInterest_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIPointOfInterestComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAITacticalPathfindingEvaluatorComponent",
+    "Name": "WDAITacticalPathfindingEvaluator_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAITacticalPathfindingEvaluatorComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    }
+  },
+  {
+    "Type": "WDAITargetComponent",
+    "Name": "WDAITarget_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAITargetComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    },
+    "Properties": {
+      "CombatTargetBlackboardKey": "TargetActor"
+    }
+  },
+  {
+    "Type": "WDAIThreatDetectionMonitorComponent",
+    "Name": "WDAIThreatDetectionMonitor_GEN_VARIABLE",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDAIThreatDetectionMonitorComponent'",
+    "Outer": {
+      "ObjectName": "BlueprintGeneratedClass'BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.3"
+    },
+    "Properties": {
+      "DetectionDecayRate": 0.25,
+      "TimeBeforeStartDecay": 5.0,
+      "DamageSense": {
+        "ObjectName": "Class'AISense_Damage'",
+        "ObjectPath": "/Script/AIModule"
+      }
+    }
+  },
+  {
+    "Type": "WDInventoryManagerComponent",
+    "Name": "InventoryManagerComponent",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDInventoryManagerComponent'",
+    "Outer": {
+      "ObjectName": "BP_CoreAIController_C'Default__BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.4"
+    }
+  },
+  {
+    "Type": "WDPathFollowingComponent",
+    "Name": "PathFollowingComponent",
+    "Flags": "RF_Public | RF_Transactional | RF_ArchetypeObject | RF_DefaultSubObject | RF_WasLoaded | RF_LoadCompleted",
+    "Class": "UScriptClass'WDPathFollowingComponent'",
+    "Outer": {
+      "ObjectName": "BP_CoreAIController_C'Default__BP_CoreAIController_C'",
+      "ObjectPath": "/WDAIPvEAICore/BP_CoreAIController.4"
+    }
+  }
+]

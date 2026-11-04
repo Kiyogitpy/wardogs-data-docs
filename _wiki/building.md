@@ -188,7 +188,7 @@ The hit counts in the structure articles assume every hit is a normal hit, and t
 
 The Drill Rig is the buildable form of the map's hot zone magnet. It needs fuel to run. After placement it waits 15 s before it can start. It needs at least 2,000 fuel to run, each fuel unit buys 0.03 s of run time, and it holds up to 10,000 fuel. The run time is therefore 60 s at the minimum and 300 s on a full tank. The recharge after a run is 900 s. Starting it is a 10 s hold within 2 m. These seconds are **Derived**: the numbers are the game's settings, and the timers in the game's scripts use them as seconds.
 
-While it runs, the Drill Rig pulls the hot zone toward it at a speed in metres per second: 3 m/s by the game's default, while the rig's own setting lists 5 (not confirmed to replace it). The travel time, distance divided by speed, is added to the run time. See the [Drill Rig](building/drill-rig.md) article.
+While it runs, the Drill Rig pulls the hot zone toward it. Its shipped activation path selects the rig's own 5 m/s speed parameter and half-width/half-length target, rather than the world magnet's separate defaults (static code and cooked binding). Travel duration is distance in metres divided by that speed and is added to the run time; an optional curve can shape the movement. See the [Drill Rig](building/drill-rig.md) article.
 
 ### Refuel and repair
 

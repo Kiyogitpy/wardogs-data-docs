@@ -83,7 +83,7 @@ After a Medic revives a teammate, the Medic gets a faster sprint and tactical sp
 
 ## Falling and landing
 
-A hard landing causes damage that rises with fall speed. The game's curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 6.95 m/s and reaches 100 at 17 m/s. A landing also briefly changes weapon sway and dips the weapon, for about 0.6 s.
+A hard landing causes damage that rises with fall speed. The game's curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 6.95 m/s and reaches 100 at 17 m/s. Landing also changes weapon sway (see Movement sway below). A separate curve with a roughly 0.6 s key range belongs to walk gun-bob rotation; that range does not establish a landing-dip duration. Its final use has not been traced; see [Player Movement](../../content/Wardogs_PlayerMovement_v1.md#3-fall-landing-and-vehicle-exit-damage).
 
 ## Movement sway
 

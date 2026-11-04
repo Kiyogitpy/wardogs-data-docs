@@ -6,7 +6,7 @@ description: "The PvE AI stack and its example packs: the core AI preset, alert 
 ---
 
 # Wardogs — GameFeatures: AI
-*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/AI/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/AI) — 39 JSON files. Each file was parsed as a sequence of `--- export:` blocks; the first block is the asset, later blocks are sub-objects (EQS options, tests, generators, data providers, goals). Values below are raw export values.*
+*Extracted from cooked game data (UE 5.7 export JSON, read-only dump). Source folder: [`Plugins/GameFeatures/AI/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Plugins/GameFeatures/AI) — 40 JSON files. Raw exports include header-separated `--- export:` streams and ordinary JSON arrays of exports; later exports hold sub-objects such as EQS options, tests, generators, data providers and controller sense configuration. Values below are raw export values unless explicitly traced through native consumers.*
 
 ---
 
@@ -20,7 +20,7 @@ The AI folder is the PvE AI stack plus several example/test feature packs. It is
 
 | Metric | Value |
 |---|---|
-| Files | 39 |
+| Files | 40 |
 | GameFeatureData assets (across all files, including sub-exports) | 10 |
 | EQS query assets (`EQS_*.json` with an EnvQuery or equivalent root) | 22 |
 | Blackboard assets | 1 ([`BB_PVEAI`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BB_PVEAI.json)) |
@@ -31,7 +31,7 @@ The AI folder is the PvE AI stack plus several example/test feature packs. It is
 
 | Subfolder | Files | Contents |
 |---|---|---|
-| `WDAIPvEAICore/` | 16 | Core AI: [`DefaultAIPreset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/DefaultAIPreset.json), [`BB_PVEAI`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BB_PVEAI.json), alert thresholds, influence data, influence-map config, [`EQS_FindTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/EQS/EQS_FindTarget.json), 8 cover/position EQS, 2 action defs, the core GFD |
+| `WDAIPvEAICore/` | 17 | Core AI and recovered controller defaults: [`DefaultAIPreset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/DefaultAIPreset.json), [`BB_PVEAI`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BB_PVEAI.json), alert thresholds, influence data, influence-map config, [`EQS_FindTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/EQS/EQS_FindTarget.json), 8 cover/position EQS, 2 action defs, the core GFD |
 | `Behavior_Besiege/` | 7 | GFD + 6 besiege EQS (cover and point search around a besiege target) |
 | `SquadExample/` | 4 | GFD + goal `Goal_Example_AttackPlayer` + 3 squad EQS (closest cover, cover toward goal, leap-frog token handling) |
 | `Behavior_Patrol/` | 3 | GFD + goal `Goal_Patrol` + 2 patrol-point EQS |
@@ -156,8 +156,8 @@ Feature actions in [`WDAIPvEAICore`](https://github.com/Kiyogitpy/wardogs-data-d
 | Player character (`B_WDCore_MoverPlayerCharacter`) | `SDAISmartObjectActorComponent` | SDUESmartObject |
 | Player character | `BP_PlayerCharacterDetectabilityComponent` | WDAIPvEAICore |
 | Player character | `WDAISightTargetComponent` | WDAIPvEAICoreRuntime |
-| `BP_CoreAIController` | `WDAITetherComponent` | WDAIPvEAICoreRuntime |
-| `BHBaseVehiclePawn` | `WDVehicleDetectabilityComponent` | WDAIPvEAICoreRuntime |
+| [`BP_CoreAIController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json) | `WDAITetherComponent` | WDAIPvEAICoreRuntime |
+| `BHBaseVehiclePawn` | `WDVehicleDetectabilityComponent` (server-only) | WDAIPvEAICoreRuntime |
 
 It also activates `SDGameFeatureAction_ActivateSubsystem`.
 
@@ -255,7 +255,7 @@ These are general UE EQS semantics. The dump gives the test settings, but this p
 
 ## 12. Round 36: controller senses, detectability, firing, health
 
-Source: `BP_CoreAIController`, `BP_PlayerCharacterDetectabilityComponent`, `BTS_FireWeapon`, `BTS_AimAtTarget`, the `BT_*` trees and native constructors `0x8863540`, `0x8863AB0`, `0x8863090`, `0x8864400` (static reading). Full table and method: [`docs/evidence/round36-ai.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md).
+Source: [`BP_CoreAIController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json), `BP_PlayerCharacterDetectabilityComponent`, `BTS_FireWeapon`, `BTS_AimAtTarget`, the `BT_*` trees and native constructors `0x8863540`, `0x8863AB0`, `0x8863090`, `0x8864400` (static reading). Full table and method: [`docs/evidence/round36-ai.md`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md).
 
 | Item | Value |
 |---|---|
@@ -270,3 +270,19 @@ Source: `BP_CoreAIController`, `BP_PlayerCharacterDetectabilityComponent`, `BTS_
 | Firing (`BTS_FireWeapon`) | burst of 3 shots, `BurstDuration` 0.2, `BurstInterval` 1.0, `ShotInterval` 0.2, `TriggerPullDuration` 0.05; `WDBTTask_ShootAtTarget.RoundOfBursts` 3 |
 | Aim | `BTS_AimAtTarget` focuses on the target's `Head` bone every 0.1 s; no AI-specific spread or accuracy value in any asset |
 | Goals that ship in missions | `Goal_Patrol` (VIP Escort), `Goal_Search` and `Goal_BesiegeTarget` (Strike and Disarm, plugin dependencies; Besiege and `Goal_StopHack` added by the hack quest). `Goal_Example_Flee` and `Goal_Example_AttackPlayer` have no dependent plugin |
+
+## 13. Vehicle-noise event path (round 93)
+
+The compiled server-only `UWDVehicleDetectabilityComponent` path consumes the configured ranges; they are no longer merely unjoined constructor fields. Initialization at RVA `0x8869A80` copies vehicle-config fields `+0x2A0/+0x2A4/+0x2A8` into component `+0xF0/+0xF4/+0xF8`. These are DWORD copies, so the earlier float-only search missed them.
+
+| Event | Selected cached range | Actual trigger and qualification |
+|---|---|---|
+| Engine | `+0xF0`; native default 10,000 cm (100 m) | Engine state broadcasts control a looping timer; entry `0x8873CB0` forwards to `0x887EC80` |
+| Horn | `+0xF4`; native default 50,000 cm (500 m) | Horn state broadcasts control a looping timer; entry `0x8873F80` forwards to `0x887EC80` |
+| Attributed destruction | `+0xF8`; native default 80,000 cm (800 m) | Depletion/destruction multicast reaches `0x8875970`; valid damage causer/controller attribution is required |
+
+Engine/horn emissions use loudness 1 at the vehicle location, attributing actor and instigator to the first valid occupant/occupancy-history candidate, not necessarily the driver. No eligible candidate means no emission. Destruction uses the damage causer as actor and the damage controller's pawn as instigator; null-attribution replicated destruction does not pass those gates.
+
+The hearing sense queues and delivers the event (`0x488E140 -> 0x4878650 -> 0x4888470 -> 0x48858E0`); Wardogs reads that same perception storage (`0x8876C80 -> 0x8876A40 -> 0x8861ED0`). The recovered [controller CDO](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json) explicitly binds its perception component to `AISense_Hearing` and a hearing configuration with range 100,000 cm. See the [exact cooked binding](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-ai-controller-config.md).
+
+This is a verified **conditional static path**, not guaranteed 100/500/800 m detection: feature activation, valid attribution, listener/sense eligibility, affiliation, distance and the Wardogs scoring gates still matter. No live activation, successful detection or final per-variant override was measured. [Native producer/consumer evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-ai-rewards.md#g5-continuation--vehicle-producerconfigconsumer-route-recovered). Generated contract metadata: [r42-modes.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/r42-modes.json), `static.vehicle_noise_defaults`.

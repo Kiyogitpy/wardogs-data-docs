@@ -18,7 +18,25 @@
    "AIEngineLoudnessMaxRange_cm": 10000.0,
    "AIHornLoudnessMaxRange_cm": 50000.0,
    "AIVehicleDestroyedLoudnessMaxRange_cm": 80000.0,
-   "overrides_in_cooked_data": 0
+   "overrides_in_cooked_data": 0,
+   "verification": "verified-static-conditional",
+   "emitter_contract": {
+    "reader": "0x8869A80",
+    "component": "UWDVehicleDetectabilityComponent; feature installation is server-only",
+    "config_cache": "vehicle config +0x2A0/+0x2A4/+0x2A8 copied as DWORDs to +0xF0/+0xF4/+0xF8",
+    "engine": "0x8873CB0 -> 0x887EC80; cached range +0xF0",
+    "horn": "0x8873F80 -> 0x887EC80; cached range +0xF4",
+    "destruction": "0x8875970; cached range +0xF8",
+    "engine_horn_attribution": "first valid occupant/occupancy-history candidate as actor and instigator; no eligible candidate means no emission",
+    "destruction_attribution": "valid damage causer as actor and damage controller's pawn as instigator; null-attribution replicated destruction fails the gates",
+    "emission": "loudness 1; vehicle location; selected max range; engine/horn use state-controlled looping timers",
+    "delivery": "0x488E140 -> 0x4878650 -> 0x4888470 -> 0x48858E0; Wardogs 0x8876C80 -> 0x8876A40 -> 0x8861ED0",
+    "qualification": "conditional compiled path, not observed live activation, successful listener eligibility or unconditional detection radii; per-variant final overrides not established",
+    "evidence": [
+     "docs/evidence/round93-ai-rewards.md",
+     "docs/evidence/round93-ai-controller-config.md"
+    ]
+   }
   },
   "significance_rules": {
    "sphere_0x50D30B0": "per object, squared distance d2 to the nearest viewer; level = highest index i whose squared threshold is at or below d2 (0 when none; also 0 when d2 <= LowestNonZeroSignificanceDistance squared); the object keeps the lower of its stored level and the new one",
