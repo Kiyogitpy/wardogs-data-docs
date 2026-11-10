@@ -333,3 +333,13 @@ changing the designated map requires an explicit user instruction.
 - SDK: [`../sdk/`](../sdk/) — class declarations derived from these mappings
 - Methodology: [`../docs/UPDATE_PIPELINE.md`](../docs/UPDATE_PIPELINE.md)
 - Tools: [`../tools/`](../tools/)
+
+## Native Array Inner metadata (issue #4)
+
+[Source-bound native metadata](../docs/evidence/native-array-inner-cl516586.md)
+resolves the 34 exact fields requested for Steam build 25937608 / CL516586.
+The [JSON export](../docs/evidence/native-array-inner-cl516586.json) distinguishes
+direct compiled-in records from historical donor fills and records the qualified
+shipped/restored-image provenance chain. A separate local-only usmap changes
+exactly those 34 Inner descriptors; this does not replace the original mapping,
+change the existing `data/` exports, or resolve unknown types outside that cohort.

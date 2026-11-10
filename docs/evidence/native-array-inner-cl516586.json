@@ -1,0 +1,3830 @@
+{
+  "schema": 1,
+  "issue": "https://github.com/Kiyogitpy/wardogs-data-docs/issues/4",
+  "build": {
+    "steam_build_id": "25937608",
+    "unreal_changelist": "516586",
+    "image_base": "0x140000000",
+    "address_convention": "All record addresses are file RVAs for the named image hashes, never live addresses."
+  },
+  "producer": {
+    "name": "offline native-array registration decoder",
+    "version": 1,
+    "tool": "recover.py",
+    "tool_sha256": "5b56aefac44f93602edfae6641a7e749fd789dca0fb981774d597b29356f0e0d",
+    "tool_commit": null,
+    "tool_commit_note": "New local tool, not committed or published at export time.",
+    "repository_base_commit": "a8297f3414fc4cd1d27a21a83ac389ee4543ffcf",
+    "original_mapping_producer_commit": null,
+    "original_mapping_producer_note": "Not established; no Dumper-7 producer commit is inferred from the build label."
+  },
+  "source_identities": {
+    "original_usmap_sha256": "8fe8d2b8e6e3c496d7a32f52d2b9cb94ecd1ae71ee2bc091ea97ecddf1cc6207",
+    "canonical_idmap_sha256": "f4b2942331061187454b625821f8a6119b267551d22dc1cabbdf1a4f3ee1afdb",
+    "restored_image_sha256": "a5c3db107c29bfd92c3b5f317033f698a0c3a84dad712f32990ae302b4f0cc37",
+    "preserved_shipped_image_sha256": "1090559a81a9dda972f86c3d1c13577b747fa337d91ee300f70ad07f1900fea1",
+    "independently_reconstructed_image_sha256": "925998359846a8b07d01ab70ce79e4be801d14ee7558bd9a7e5675ffa6967884",
+    "reconstruction_receipt_sha256": "235e8c866e49a69a12ee850bfef9624379073633131392ce0ba1b4428794811b",
+    "idmap_decoder_schema_sha256": "348ed75288c4beecc9e7cfcdaef3331824e895f6377f9ddf890d7ffcfcdd787e"
+  },
+  "provenance": [
+    "The retained Steam manifest records build 25937608. The preserved shipped-image hash differs from the third-party restored image.",
+    "Native records and their resolver/name dependencies were read from the restored image and byte-compared at the same RVAs with a separately reconstructed memory image.",
+    "The retained reconstruction receipt binds that memory image to the preserved shipped-image hash. Historical reconstruction used conditional guest fixtures; this task read its saved outputs and did not rerun it.",
+    "The original third-party restoration producer remains unknown. Agreement of these selected ranges does not establish provenance, correctness or runnability of the complete restored executable."
+  ],
+  "method": {
+    "array_inner_link": "Builder decrements the property-pointer cursor before each dispatch. Array dispatch sets one recursive child, so its immediately preceding descriptor is the Inner. Struct construction calls the resolver stored at descriptor+0x50 and installs that UScriptStruct.",
+    "old_donor_types_used": false,
+    "sdk_tarray_types_used_as_inner_evidence": false,
+    "readable_property_name_binding": "Readable fields are joined through the exact canonical idmap owner/member offset and native name length. No hash inversion or plaintext native name recovery is claimed for those fields.",
+    "native_type_dispatch": {
+      "3": {
+        "case_rva": "0x191b24b",
+        "constructor_rva": "0x19102c0",
+        "field_class_rva": "0x18da490",
+        "field_class_name": "FIntProperty"
+      },
+      "10": {
+        "case_rva": "0x191b2cd",
+        "constructor_rva": "0x190fc00",
+        "field_class_rva": "0x18da1d0",
+        "field_class_name": "FFloatProperty"
+      },
+      "22": {
+        "case_rva": "0x191b432",
+        "constructor_rva": "0x190ef30",
+        "field_class_rva": "0x18b5e50",
+        "field_class_name": "FArrayProperty"
+      }
+    }
+  },
+  "validation": {
+    "requested_fields": 34,
+    "resolved_fields": 34,
+    "struct_fields": 31,
+    "integer_fields": 1,
+    "float_fields": 2,
+    "consumer": "CUE4Parse.UsmapParser",
+    "consumer_assembly_sha256": "af44fb254957e6f2007f4311795996f73ede987972a4438698df6e5269104429",
+    "native_only_supplemental_usmap_sha256": "6cda31b36ab64750fc04b2fd52a0ccd748c0593471f7d2c0409fce6393b87157",
+    "supplemental_map_changes": "Exactly these 34 Inner descriptors; original names, schema slots and dimensions retained.",
+    "not_validated": [
+      "No cooked package extraction was rerun.",
+      "No game process, driver, server, live reflection walk or runtime behavior was tested.",
+      "Unlisted unknown Inner descriptors remain outside this cohort."
+    ]
+  },
+  "records": [
+    {
+      "owner": "/Script/Niagara.NiagaraSystem",
+      "property": "_aaaaokkekonalookipena",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/Niagara.NiagaraEmitterHandle",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0xc0",
+      "original_usmap_slot": 27,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xaa4aed0beea8f4d0",
+      "native_name_length": 14,
+      "record_linkage": {
+        "owner_params_rva": "0xa8f0860",
+        "property_pointer_array_rva": "0xa8f06a0",
+        "property_pointer_count": 52,
+        "array_pointer_index": 31,
+        "array_descriptor_rva": "0xa8eff30",
+        "inner_descriptor_rva": "0xa8efed0",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x4b35f40",
+        "struct_params_rva": "0xcdd5200"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xa8f0860",
+            "length": 64,
+            "sha256": "60803ee29adffbf82d6d7f0895443f06fc37415fe204cef156efea257f1a4343",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa8f06a0",
+            "length": 416,
+            "sha256": "8001994545a5c8613cd2e9c1eebc3fd6fc155d0d9c0f0b41dffc74018387a8f5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa8eff30",
+            "length": 80,
+            "sha256": "02e32b29964e51e9c73d4399875db081ea3f2e9ef2fd8164def1e922783d483b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa8efed0",
+            "length": 96,
+            "sha256": "c2a472070ec12bf1055edd2848c3c9ffb31defc30c3a4840e7f9e5c83e4e23d0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x4b35f40",
+            "length": 47,
+            "sha256": "9bba30ebe1b343ba588befecfeb6137c1eee4e9886ec7b7e44b0a632bbead0f0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcdd5200",
+            "length": 80,
+            "sha256": "b9ef4e695909e06edcf81454ff468f3678ead3c57872787f53025ad8016e9058",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x490bcf0",
+            "length": 47,
+            "sha256": "e8743e5682a62c6adf75cdae2dcc1c1221cc90180048e4ef0ff90e7783d5edca",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa832320",
+            "length": 48,
+            "sha256": "09abfdfe832acdea9d84b4607df8a89940419d81c443fb28bdcf62677d35a200",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa8aeb50",
+            "length": 21,
+            "sha256": "674bc242486c9300b5a6bc5dcb1fa1b65dfd48138132128b1be31b84d5b5343d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa832358",
+            "length": 16,
+            "sha256": "e45a3feb32b971a81bdb761eedd6552257aad411ae90601a31066a967600a652",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa8f2b40",
+            "length": 28,
+            "sha256": "c7dc04415243a2394571fd7cf13c0dc51936ae64700bf7613c12248dfdb98b29",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa82e5c8",
+            "length": 32,
+            "sha256": "147c7c5b6357ed95ec797246e26da88119fde31293601cffcac4f3caa4f369fe",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x4bbe5b0",
+            "length": 176,
+            "sha256": "c18888552b5db3bbded73f7813e7bf2437df5252a9c64e056b4cd153d5bdb9c4",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/Engine.SkeletalMesh",
+      "property": "_aaaamokfccjfgfaagkalp",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/Engine.SkeletalMeshSourceModel",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x100",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xea5229565006a0bf",
+      "native_name_length": 12,
+      "record_linkage": {
+        "owner_params_rva": "0xa6a1140",
+        "property_pointer_array_rva": "0xa6a0a60",
+        "property_pointer_count": 45,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xa69faa0",
+        "inner_descriptor_rva": "0xa69fa40",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x44798a0",
+        "struct_params_rva": "0xcdb1350"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xa6a1140",
+            "length": 64,
+            "sha256": "a917a06d19fd66c59a481d09adf1010ee8ef073b27b623126587a2e1969e1155",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa6a0a60",
+            "length": 360,
+            "sha256": "2007e0e9f55939095f0bb62ecbb6cbba8d71c2bab5db62ccad04226d508c5480",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa69faa0",
+            "length": 80,
+            "sha256": "b1e5c24404499b3c865191643f0914609e63f8bc8ee73340160537b018525cf2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa69fa40",
+            "length": 96,
+            "sha256": "464a95b9a752244f11cb438c7d842303271d7fd65a48f0d00bf52aedd41adef5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x44798a0",
+            "length": 47,
+            "sha256": "af10dd7f49f3b5b751ca91b3a12e047d10401f065855e919974802e5c7eb1276",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcdb1350",
+            "length": 80,
+            "sha256": "5035658079a0de66bd65c626c47ac9a4e3fb830b6d80a9de4b636fb5b2518232",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3a34ff0",
+            "length": 47,
+            "sha256": "09191e0a4150e2740e2b2d742409734fc9c2135782530812b7da5fe991ae9a76",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f690",
+            "length": 48,
+            "sha256": "867380e2335d216d78ad0bb82923722976abd1261d46c76f0b601f152c50a954",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa6a9498",
+            "length": 24,
+            "sha256": "4d7cff7da632be2f27fa7c96a359acfb16da065bf9a5b05d17ff72d3e7bd85fd",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f6c8",
+            "length": 15,
+            "sha256": "fcf8b66e4790d37b3b624f1b2742cd5e16605b7b17d19d17d9b28e4372308fc2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa08bc10",
+            "length": 26,
+            "sha256": "937cc6911cc086c48d7dde52c838547e7b2adac2353dc4b38b2b5fe951626dc7",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b004c8",
+            "length": 30,
+            "sha256": "09440904e400a7f35d29e337004e533a47d6ee85a53b2ee72bb64a6a1bad979f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x43f99f0",
+            "length": 176,
+            "sha256": "2f8a6e783d86f89eaa8948411d2c84878563ef213075ad6254de372a3cc83532",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/Engine.StaticMesh",
+      "property": "StaticMaterials",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/Engine.StaticMaterial",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x170",
+      "original_usmap_slot": 3,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x24d9d356ed302bf4",
+      "native_name_length": 15,
+      "record_linkage": {
+        "owner_params_rva": "0xa6d2e30",
+        "property_pointer_array_rva": "0xa6d2540",
+        "property_pointer_count": 34,
+        "array_pointer_index": 4,
+        "array_descriptor_rva": "0xa6d1a80",
+        "inner_descriptor_rva": "0xa6d1a20",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x44ad3d0",
+        "struct_params_rva": "0xcdb3e70"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xa6d2e30",
+            "length": 64,
+            "sha256": "a012c3efa3cbda1e44b1e5edccc23a7bbdde3109e2f12f85b6e1c0d212334c22",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa6d2540",
+            "length": 272,
+            "sha256": "0fa700362f8586778ab1de0e13e00c85286fcf6f50cae6e296693078663fd5bb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa6d1a80",
+            "length": 80,
+            "sha256": "358affaf78c5685535efb3832ba1f3adcc4a387fd69e54a103f34c5602f0dce6",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa6d1a20",
+            "length": 96,
+            "sha256": "f3af90b3279974552201fbb479ce37a3042883d2279693ad05820a4d89690a85",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x44ad3d0",
+            "length": 47,
+            "sha256": "7af774a0a4adb3889b91cdb14956b3090f37e5a8c10d675860e3aae5cc45d07a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcdb3e70",
+            "length": 80,
+            "sha256": "b3822d2e1ea3397c8abda7ba8a1046011590a54c2728d0cbb41bf4e9cf01b297",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3a34ff0",
+            "length": 47,
+            "sha256": "09191e0a4150e2740e2b2d742409734fc9c2135782530812b7da5fe991ae9a76",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f690",
+            "length": 48,
+            "sha256": "867380e2335d216d78ad0bb82923722976abd1261d46c76f0b601f152c50a954",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa6d4240",
+            "length": 15,
+            "sha256": "ce643da3ba010cdbf99cf490d6dba6ab2544fd6b12429e437bb9a1af321bb52a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f6c8",
+            "length": 15,
+            "sha256": "fcf8b66e4790d37b3b624f1b2742cd5e16605b7b17d19d17d9b28e4372308fc2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9f6bfa0",
+            "length": 22,
+            "sha256": "0d3002415ad40dc11f3974ca93661f5af0dfb86f8dbedefd6e26056261c28025",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b004c8",
+            "length": 30,
+            "sha256": "09440904e400a7f35d29e337004e533a47d6ee85a53b2ee72bb64a6a1bad979f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x44acec0",
+            "length": 176,
+            "sha256": "f3868595266640da637dd5a1c097564bb49832df459e2635d16952767a98f0e7",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDAutomatedTestClientProfile",
+      "property": "_aaaapnghcaefkcjpidkkn",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDAutomatedTestInput",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x58",
+      "original_usmap_slot": 2,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xd672045a29f83aad",
+      "native_name_length": 15,
+      "record_linkage": {
+        "owner_params_rva": "0xcec5100",
+        "property_pointer_array_rva": "0xb3aeba0",
+        "property_pointer_count": 9,
+        "array_pointer_index": 3,
+        "array_descriptor_rva": "0xb3ae990",
+        "inner_descriptor_rva": "0xb3ae930",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6d28980",
+        "struct_params_rva": "0xcec5010"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcec5100",
+            "length": 80,
+            "sha256": "0c712b8003bdbd731344547d0e0e0554bb059af07c22d51d4e6c23c96d98f7c4",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3aeba0",
+            "length": 72,
+            "sha256": "4042fcdfa4d6acab230a94197a1274d40ed2e11fc9ce6890d6608de782c5457c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3ae990",
+            "length": 80,
+            "sha256": "83955216b6928b1eadf361d041341841cb332e4e56f536a9819667a6fee54273",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3ae930",
+            "length": 96,
+            "sha256": "f68efa49567f97f28eb39e63a0cbca5ef7b4fbacc610954583c74334ee39c55b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6d28980",
+            "length": 47,
+            "sha256": "dc8ffc00f4ec2a9c8cb6b1998f93d07f5afa7e86cd73817210d039e9ffc65bb4",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcec5010",
+            "length": 80,
+            "sha256": "bb35b4458b87263fa1389c32e3b9dcf125946027b0686bd2bf6c748ac4cacc18",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3ae5d8",
+            "length": 21,
+            "sha256": "5f8499df2452d37c5a0f3b0c598e8d94f58c8d3ca37a205217ee8a9338e8ad5f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3aec28",
+            "length": 29,
+            "sha256": "517bbac7ad9aadc5cd3197a8a4026d4863adf463d22746be3badfbc142cf81fb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDChallengeDefinition",
+      "property": "Rewards",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDReward",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x30",
+      "original_usmap_slot": 2,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x428dfee79d8d0f74",
+      "native_name_length": 7,
+      "record_linkage": {
+        "owner_params_rva": "0xce98c70",
+        "property_pointer_array_rva": "0xb13d860",
+        "property_pointer_count": 13,
+        "array_pointer_index": 3,
+        "array_descriptor_rva": "0xb13d4d0",
+        "inner_descriptor_rva": "0xb13d470",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x69e9c30",
+        "struct_params_rva": "0xcea1e40"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce98c70",
+            "length": 80,
+            "sha256": "72e1500476d3cd2029dde9d82febad865ff236957bd88a642d8cc9bbe7bf11ac",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13d860",
+            "length": 104,
+            "sha256": "65e191f9edee9bc8149dad0540908da0cd97fbcc4091fa273be25f7297c19872",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13d4d0",
+            "length": 80,
+            "sha256": "b791b9896e4201adb436da510a877f216d59ff416b96245834c80fb931b3a92d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13d470",
+            "length": 96,
+            "sha256": "4638c8e0db280b1c9d6db28c35113770f43191e6931b0f7e102e733c47602a81",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69e9c30",
+            "length": 47,
+            "sha256": "73bba469c895200a79794790812793ce6945083ca5c1cae9c6ec201c728ac8d5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcea1e40",
+            "length": 80,
+            "sha256": "b48fbb89abdec307f9c714a911ee7050c3de288b3bb2a40e1318c45babce5b97",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1b1bd0",
+            "length": 9,
+            "sha256": "cd31b24f0c3c52c4c9072b412a4c21438fdde4477fdf0a784d890c1b470d36e4",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13dfb0",
+            "length": 22,
+            "sha256": "c03fe3dc249e6dbabeb85a762238fc09b47bd0a8d82261cde692fd93c134e333",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/StateTreeModule.StateTreeReference",
+      "property": "_aaabblfhomhcablpcafje",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.Guid",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x18",
+      "original_usmap_slot": 2,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xb57ec7201bf20594",
+      "native_name_length": 17,
+      "record_linkage": {
+        "owner_params_rva": "0xcde5700",
+        "property_pointer_array_rva": "0xa979440",
+        "property_pointer_count": 4,
+        "array_pointer_index": 3,
+        "array_descriptor_rva": "0xa9793f0",
+        "inner_descriptor_rva": "0xa979390",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1887690",
+        "struct_params_rva": "0xccb3d80"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcde5700",
+            "length": 80,
+            "sha256": "a24c32d7527c3d77f7b43e03a3c487bd3f6db43b5eca580717a2bda3877f7e24",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa979440",
+            "length": 32,
+            "sha256": "40ef320d7df6521e9308b65e08dafb712175da200343fc1dec58b42fd64e4a00",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa9793f0",
+            "length": 80,
+            "sha256": "e8bf2dc95c4c400f5ba1ae94b8ccb4613652d25f27d8410562c5284277a0c62d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa979390",
+            "length": 96,
+            "sha256": "e80b1269fbeededde672c71d5fe39e1fdb773221981ad122d1bcc680c8c21ffd",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1887690",
+            "length": 47,
+            "sha256": "512ccf02c7a22e3750b073800b77f9553a647d90946e2cadf8f69cdddd323ad6",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccb3d80",
+            "length": 80,
+            "sha256": "012410f196d6479ed4712f909b73919dac385576c103c4885eea2d27dc6ddec2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b31c6c",
+            "length": 5,
+            "sha256": "621aa55b7c0f5a791b5f3cc96a8a05eb3e61f0143d1ca7d23a4e62d1b02ca799",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa979688",
+            "length": 19,
+            "sha256": "7bc48226fbd1896e16468af1523984d18791bd00734c9ba1341b5e350d2d40da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa96eb80",
+            "length": 24,
+            "sha256": "0a82850da65d5da86ac7bc27c11c650f8ac8ee4d5c09520a2a86fb09a21e1354",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x4d14810",
+            "length": 47,
+            "sha256": "fe6f068fd7886ff56379a355e85c049734f70b716226080eb306f9be8d4a156f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa96eb48",
+            "length": 48,
+            "sha256": "9a2cd88c05038d1e5a591012c996d47be1b8a3989187ac0ab90877ade3ce178e",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDRewardCalculatorCompiledExpression",
+      "property": "_aaaaminlajpfohiefcapn",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDRewardCalculatorInstruction",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x0",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x8db09f5e784520fd",
+      "native_name_length": 12,
+      "record_linkage": {
+        "owner_params_rva": "0xcec3e60",
+        "property_pointer_array_rva": "0xb3a18a0",
+        "property_pointer_count": 11,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb3a1570",
+        "inner_descriptor_rva": "0xb3a1510",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6cc8640",
+        "struct_params_rva": "0xcec3dc0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcec3e60",
+            "length": 80,
+            "sha256": "4f5d3676cdfce7e2e4acaddb6c2208d9b2d807fe3a5a19dbb31cac925afa41b2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a18a0",
+            "length": 88,
+            "sha256": "2cf698a1e72fab0c5f47a8c948c34eb106c2a246016555216d2058b91e13697b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a1570",
+            "length": 80,
+            "sha256": "744c4eab5cf70a754c292ceadc2f03f9064eecb84b9d34742c61ef17ae257066",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a1510",
+            "length": 96,
+            "sha256": "8f3463a98f6e8e1db4675441265bcebb5a87a937571361fbdb26516c1fbf90fe",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6cc8640",
+            "length": 47,
+            "sha256": "d35bad593ac2a0bb97e37ada785ca92313462783f5090afce7dbe6bf6b7eae3b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcec3dc0",
+            "length": 80,
+            "sha256": "0a5494fd3203508a9fd7912f6b6ee3e66ce6a3950a5a012abbd31e54c731138e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a12e8",
+            "length": 30,
+            "sha256": "49ac4da701ed018aa1443f38f336dfc66e79a7e2e146ed932ffdd8e8bbd3e240",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a1980",
+            "length": 37,
+            "sha256": "3a71e93ef8c1f4f34b1b89988ea83aeaec3f5e34f6b182c7e6152f50eb0aecdc",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDDamageableEntityTableRow",
+      "property": "_aaabjamopmbiblfggnbbj",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDDamageModificationEntry",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xcefc181b566d119",
+      "native_name_length": 25,
+      "record_linkage": {
+        "owner_params_rva": "0xceb89c0",
+        "property_pointer_array_rva": "0xb320180",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb320130",
+        "inner_descriptor_rva": "0xb3200d0",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6bb3a30",
+        "struct_params_rva": "0xceb8970"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceb89c0",
+            "length": 80,
+            "sha256": "cb9acaac49a3eacc1d3327c23ac7ebb1c9084b4bb0176856672f0323a0a02c42",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb320180",
+            "length": 16,
+            "sha256": "cfd6e2c1d7f78bc941ee6b5a1ec69280b091d7a7ea36e75009b69aed98836b7e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb320130",
+            "length": 80,
+            "sha256": "cf1a5ce5a828a42c87d85fd1f9be38ed98f10d4e32fbcc4c6e0d620ba991e964",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3200d0",
+            "length": 96,
+            "sha256": "f097a4a55b8fdb072af81ddf9f6a68744be203e64a891bbdac8030f5c4a42bd1",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6bb3a30",
+            "length": 47,
+            "sha256": "517f681a5258481892fde408e06cb975f88323b78f4890990848600cae9b1bfb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xceb8970",
+            "length": 80,
+            "sha256": "c4cca98f07f34f52bd8b01ff5ac2a9cf62e142757f0a64a5267ecafc50177abd",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3200a8",
+            "length": 26,
+            "sha256": "1e0fdc9aaa1559c7492422285b55d37bca4073d2a65c3143699e6bf82ec5991d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3201c8",
+            "length": 27,
+            "sha256": "a30c71e84fe6cd8da68e4841c54f61b77b478a97ab6550f551acd470f52ae599",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/DeathmatchRuntime.WDDeathmatchWeaponData",
+      "property": "_aaabkbjahhefhcbbfnikb",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/DeathmatchRuntime.WDDeathmatchWeaponVariationData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x190774572115d8a1",
+      "native_name_length": 26,
+      "record_linkage": {
+        "owner_params_rva": "0xcf32270",
+        "property_pointer_array_rva": "0xba24e40",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xba24df0",
+        "inner_descriptor_rva": "0xba24d90",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x8489020",
+        "struct_params_rva": "0xcf32220"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcf32270",
+            "length": 80,
+            "sha256": "9bf34e6cb057bf7aa40adac62dd4d4c56c668eba7a267cad140586dd58d25a3f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba24e40",
+            "length": 16,
+            "sha256": "e8624cb8c5c9735ce97118be82d633a32c264be0503df911954f7349567d8ab5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba24df0",
+            "length": 80,
+            "sha256": "79281cd9abe03eeddd0fdc3e1648f4bd40203a2813ffb0e13c939c36b8b513b9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba24d90",
+            "length": 96,
+            "sha256": "0c6c95f6b296c379f9d6b800e206e068993bedc0ddb197656ce9e9ef46abc7b0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x8489020",
+            "length": 47,
+            "sha256": "b54a97c0b0471b2712a6081cc055b8a871d661f9c0aa02ab947d6ef5674a0a64",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcf32220",
+            "length": 80,
+            "sha256": "d4fdda82185242c36ba99e3b28fc3deb849b86e3d717d2ffda16c9aebb5cf6a1",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x8489870",
+            "length": 47,
+            "sha256": "b163ddbf611cd90327a2f8a261c652261c2f150c2a8e1cef6d498b6c5282bce8",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba26080",
+            "length": 48,
+            "sha256": "7d3725ade585ee87813b9623013904f892cba1b08ebb0761556840dce368de8f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba24ca0",
+            "length": 32,
+            "sha256": "8b5e50880e60ee77fe87c4a25b260985e798eef235163a8f12e47629eafb7d0e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba260b8",
+            "length": 26,
+            "sha256": "25c6e65989f1ef71c88e7f2075f3d66fb1a05a89f656c5235149a1579327f76d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba24f58",
+            "length": 23,
+            "sha256": "1cddb49e8eb59c556d67556376177bc9f7fd40b2c68c971806204329cb05700b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba260b8",
+            "length": 26,
+            "sha256": "25c6e65989f1ef71c88e7f2075f3d66fb1a05a89f656c5235149a1579327f76d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x8489870",
+            "length": 47,
+            "sha256": "b163ddbf611cd90327a2f8a261c652261c2f150c2a8e1cef6d498b6c5282bce8",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba26080",
+            "length": 48,
+            "sha256": "7d3725ade585ee87813b9623013904f892cba1b08ebb0761556840dce368de8f",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/LootableRuntime.LootableData",
+      "property": "_aaaamgelanhbjfogonmop",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/LootableRuntime.LootableItemSpawnData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x0",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x64b0d7195e6edcef",
+      "native_name_length": 12,
+      "record_linkage": {
+        "owner_params_rva": "0xcf375e0",
+        "property_pointer_array_rva": "0xba88fa0",
+        "property_pointer_count": 10,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xba88c90",
+        "inner_descriptor_rva": "0xba88c30",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x8558fa0",
+        "struct_params_rva": "0xcf37590"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcf375e0",
+            "length": 80,
+            "sha256": "26aa8ecdb49e379ee542e971cb19db2e97acbf4938ebfc9bc2a08b51668d8897",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba88fa0",
+            "length": 80,
+            "sha256": "51ca3fdf197ab120c51ab06f8a5297bd8f627169cbd24d074d26e64a5b251d57",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba88c90",
+            "length": 80,
+            "sha256": "0b2c40d6ca39aa9e37e1a5c63fd83caa7d54327f07a98d81f748fc91e0a38a4c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba88c30",
+            "length": 96,
+            "sha256": "da998b1307918002ec3462aa504d299fb134f4953d823e7dd67c048c506b7485",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x8558fa0",
+            "length": 47,
+            "sha256": "31e5cc885d185a6b5a8fb117454b5a30e1e9bcfe89306db5c2b1c7910f9bffbe",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcf37590",
+            "length": 80,
+            "sha256": "428d5dbde25ce354874f62b9fc0e3c669ce9e07c92129c07d2e231daa4b4d55d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x8559490",
+            "length": 47,
+            "sha256": "3aae8a6ee57db6649dc43f2c1f932736bdb54ea756d123cd501bed75f9cfec22",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba89530",
+            "length": 48,
+            "sha256": "aee2a87c21958238eaef15d78e30f5a83d403c42c3fa1cf7990d2fb7a4ed9d2c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba88c18",
+            "length": 22,
+            "sha256": "52f0dd0f9b96fdd3749a6de26a158e614b1b8517d96b9c33141f4795889d998a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba89568",
+            "length": 24,
+            "sha256": "c2237348dfa31c3d6c2545ef899b5debb83d67dd14221cc5dc0460fd90bf304e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba89040",
+            "length": 13,
+            "sha256": "eebfd14aa1898f4c7f86d2d7b18f5612e777cb2290cc1c2e73466a7cdc33a0de",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba89568",
+            "length": 24,
+            "sha256": "c2237348dfa31c3d6c2545ef899b5debb83d67dd14221cc5dc0460fd90bf304e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x8559490",
+            "length": 47,
+            "sha256": "3aae8a6ee57db6649dc43f2c1f932736bdb54ea756d123cd501bed75f9cfec22",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xba89530",
+            "length": 48,
+            "sha256": "aee2a87c21958238eaef15d78e30f5a83d403c42c3fa1cf7990d2fb7a4ed9d2c",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDMetaMasteryDefinitionTableRow",
+      "property": "LevelDefinitions",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDMetaLevelDefinition",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x38",
+      "original_usmap_slot": 2,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x6252c97c75a1e9bc",
+      "native_name_length": 16,
+      "record_linkage": {
+        "owner_params_rva": "0xce9e400",
+        "property_pointer_array_rva": "0xb18a020",
+        "property_pointer_count": 4,
+        "array_pointer_index": 3,
+        "array_descriptor_rva": "0xb189fd0",
+        "inner_descriptor_rva": "0xb189f70",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x69ce870",
+        "struct_params_rva": "0xce9e310"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce9e400",
+            "length": 80,
+            "sha256": "4779fa1693e56805c58cecacd4dac2bb9d1a25430cb08516f3919f1f84cd7a3a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18a020",
+            "length": 32,
+            "sha256": "ba0e4c52995b72ae9bb54d3f78aa46a65588205ea7a6bc71a2d99f6fb8dc8ffd",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb189fd0",
+            "length": 80,
+            "sha256": "c1e0fcaeb55d5d487ad7144cbd981dc81a4fb30f29be58c03427f0b447e3d139",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb189f70",
+            "length": 96,
+            "sha256": "2a4b659942aa27c83a560b28781752bf2f2b27a359603efe40935dca40f0a461",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69ce870",
+            "length": 47,
+            "sha256": "f6cab047c29e93f6f086700422abc05ebb0d61a6e42c0e0f76090a98197a8ad4",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xce9e310",
+            "length": 80,
+            "sha256": "5829f28156d31bb1e762345147b12b19aed39b8f7fb0f8ac2149146a466af987",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb189390",
+            "length": 22,
+            "sha256": "e549f17a8239c7ba29ae4456d326803741330001e2f7430166d85fc19b453150",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18a310",
+            "length": 32,
+            "sha256": "13f163939889f433f3e548c9eddffeaf83480ba6f5b1c4d80e8dc9cd385676b5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDMetaSkillEffectsData",
+      "property": "_aaaamdfihkhbhmleilblo",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDMetaSkillEffectPresetData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x0",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x3587a717cb48b1be",
+      "native_name_length": 12,
+      "record_linkage": {
+        "owner_params_rva": "0xce9e0e0",
+        "property_pointer_array_rva": "0xb187e40",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb187df0",
+        "inner_descriptor_rva": "0xb187d90",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x69cd3a0",
+        "struct_params_rva": "0xce9e090"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce9e0e0",
+            "length": 80,
+            "sha256": "fd2baaa3a658a50d3ae9e91da94fa5cdcfdef8431f9b99173f3ae16e153a3a7e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb187e40",
+            "length": 16,
+            "sha256": "c04532e47d313b0bf540c2eb70e5d798c77734ad633dbbc1bde6dc3e44e71f3b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb187df0",
+            "length": 80,
+            "sha256": "30014f15614a814762f1a03ed47a4b2ced3e945464304cdd59b26748c5aeac95",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb187d90",
+            "length": 96,
+            "sha256": "ee33470a50236c91452e20fdf9f47fcd8e64ae3f06762f0b672d52400fb33dcf",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69cd3a0",
+            "length": 47,
+            "sha256": "d1c2635772a2327cb5cea600ba14cd676d51a480b9d579cd56f7b166677a0939",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xce9e090",
+            "length": 80,
+            "sha256": "7d7b1ff5800e222f335260df8493ac4098a6e4e5deb1e39d90acc0915f756e51",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb187d68",
+            "length": 28,
+            "sha256": "f6046a3a7fe812d2a5cff3a6d6706437ace9bea3fe49a15560c35cabfffe1483",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb187e80",
+            "length": 23,
+            "sha256": "f1ba6f12e5b2cfd58fffefbb53ece16d2c31784edf836a69f1a25b2ac0b936f5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDMetaTreeTableRow",
+      "property": "Nodes",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDMetaTreeNodeData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x166b7f2beac55fce",
+      "native_name_length": 5,
+      "record_linkage": {
+        "owner_params_rva": "0xce9e860",
+        "property_pointer_array_rva": "0xb18b9f0",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb18b9a0",
+        "inner_descriptor_rva": "0xb18b940",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x69cf980",
+        "struct_params_rva": "0xce9e770"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce9e860",
+            "length": 80,
+            "sha256": "2145e6ff0fb16bc98d5741662bed64b457fba7dfa9a77e331b7e30d63034c536",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18b9f0",
+            "length": 16,
+            "sha256": "946d55f4b43eb750ed3f97926c4b90a67c0c85749e699992186f1975262dc3c5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18b9a0",
+            "length": 80,
+            "sha256": "62ce394c1cbab5cbf2a859ac41c6c7370be71cc5313b7f1eb96f0c423b0aee3e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18b940",
+            "length": 96,
+            "sha256": "ac616400eabd26cca44ac40ebf169f72a41c5cd36521af29d5404e4584f558f7",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69cf980",
+            "length": 47,
+            "sha256": "f48ac0d9131964b7938ed2cd62006e948e5ef064fd427da8265ab79d242e359f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xce9e770",
+            "length": 80,
+            "sha256": "8d9f88970652042c687cdd6970051b01f713e640c448b5719312a0e22c67604c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18b2c0",
+            "length": 19,
+            "sha256": "84ac8a1d94a29666ba7f5a787c445e9a171ca8adaa3fc938eaf2bff4a4482655",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb18bae0",
+            "length": 19,
+            "sha256": "2d634c230104daf19ab2651cc4291b8bb56acd2f3044ab638f9fa59a10051d82",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDMissionDefinition",
+      "property": "Challenges",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/GameplayTags.GameplayTag",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x68",
+      "original_usmap_slot": 1,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x1d1f2a2317ba843",
+      "native_name_length": 10,
+      "record_linkage": {
+        "owner_params_rva": "0xce9e950",
+        "property_pointer_array_rva": "0xb1922c0",
+        "property_pointer_count": 5,
+        "array_pointer_index": 2,
+        "array_descriptor_rva": "0xb1921c0",
+        "inner_descriptor_rva": "0xb192160",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x3950070",
+        "struct_params_rva": "0xcd2c880"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce9e950",
+            "length": 80,
+            "sha256": "e593d340a07c48327baea1e69fe32f491521b46ea1dc21fa43dabc49abdd86ad",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1922c0",
+            "length": 40,
+            "sha256": "ea205bcdb6e84977004bccd47df22d59a82c21f5739c8c9fb98e9262cb27b860",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1921c0",
+            "length": 80,
+            "sha256": "dcf51237b6ae21adda95f1791aeeb4818a8bf8f997ac0b0ab8e9f04ff24eaed3",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb192160",
+            "length": 96,
+            "sha256": "0f642b42e1da47697450fe7457ca587e45a80cd3eafb16649b5cf71d2be81c4f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3950070",
+            "length": 47,
+            "sha256": "c541db751d9635d75752683e330197ef681120988a0f02eb97512f298f03b853",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcd2c880",
+            "length": 80,
+            "sha256": "038ed40cbbe02e69270626450c4d04fa1ff25a5f7558d19219a8307a52b18eed",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3951b30",
+            "length": 47,
+            "sha256": "c4c1a71fa2e261bf06d8580dd3be00491cc3117176bf3fac1ddb74df766782ad",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa1db578",
+            "length": 48,
+            "sha256": "83061a7828455cfb9e5d3740152ddf9a4fc75033e1f846a2859a4ae49dcb249e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa1d5a60",
+            "length": 12,
+            "sha256": "3290d67defccc7ad4fd946e868aa29d5e34efaac72e2e42a28096fb59aa6f60e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa1db5b0",
+            "length": 21,
+            "sha256": "299ca4ea346df0d277a020b3e386f673b6c16bb89d014005a4440f074d77ee15",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1924a0",
+            "length": 20,
+            "sha256": "7a02a124340a66926b9d59fb5d9183512e2167d3e4118c73af9b7a6a5343c892",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDMockInvestmentItemTableRow",
+      "property": "ActiveInvestmentIds",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/GameplayTags.GameplayTag",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x2d328a5694b66a4b",
+      "native_name_length": 19,
+      "record_linkage": {
+        "owner_params_rva": "0xce9eb80",
+        "property_pointer_array_rva": "0xb193f10",
+        "property_pointer_count": 5,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb193db0",
+        "inner_descriptor_rva": "0xb193d50",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x3950070",
+        "struct_params_rva": "0xcd2c880"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce9eb80",
+            "length": 80,
+            "sha256": "a7f196fe29f5d8d5a95a8373a43ff55f598b9cd4d1af536d35f7b0bb79006c3b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb193f10",
+            "length": 40,
+            "sha256": "d3bb007f3c7db830f953e67a5a8aae15e7dae1d5239c0b338b891bc5c6b2803f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb193db0",
+            "length": 80,
+            "sha256": "52a0cb2252da508377b71497101488196b2d86bebf475da238cbce7762508f98",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb193d50",
+            "length": 96,
+            "sha256": "fb0ae8c2df9de696c67a62126776ee54be5505c22aa180f32bb7d31231600e8a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3950070",
+            "length": 47,
+            "sha256": "c541db751d9635d75752683e330197ef681120988a0f02eb97512f298f03b853",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcd2c880",
+            "length": 80,
+            "sha256": "038ed40cbbe02e69270626450c4d04fa1ff25a5f7558d19219a8307a52b18eed",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3951b30",
+            "length": 47,
+            "sha256": "c4c1a71fa2e261bf06d8580dd3be00491cc3117176bf3fac1ddb74df766782ad",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa1db578",
+            "length": 48,
+            "sha256": "83061a7828455cfb9e5d3740152ddf9a4fc75033e1f846a2859a4ae49dcb249e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa1d5a60",
+            "length": 12,
+            "sha256": "3290d67defccc7ad4fd946e868aa29d5e34efaac72e2e42a28096fb59aa6f60e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa1db5b0",
+            "length": 21,
+            "sha256": "299ca4ea346df0d277a020b3e386f673b6c16bb89d014005a4440f074d77ee15",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb194130",
+            "length": 29,
+            "sha256": "a4d71f9c2e80b2f742e93852aedf64f5fa48536584a749046b8d3eabf6aa1a9c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDPostProcessEffect",
+      "property": "_aaaaobmlacemogiinmkif",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDPostProcessProgress",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x20",
+      "original_usmap_slot": 2,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x1cb024ce688dca85",
+      "native_name_length": 14,
+      "record_linkage": {
+        "owner_params_rva": "0xceb5260",
+        "property_pointer_array_rva": "0xb307180",
+        "property_pointer_count": 15,
+        "array_pointer_index": 3,
+        "array_descriptor_rva": "0xb306d60",
+        "inner_descriptor_rva": "0xb306d00",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6b6b0c0",
+        "struct_params_rva": "0xceb5210"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceb5260",
+            "length": 80,
+            "sha256": "6504bd832c4b212b1b0e69161e1491eabcab6c36deab64af9a803ba353739885",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb307180",
+            "length": 120,
+            "sha256": "6395154f8a27ef88997b90e6383b0b7765a6c98882d40aae97c7ba5e7c8c9b4c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb306d60",
+            "length": 80,
+            "sha256": "ba12742ce40ab37cf138e56b9859dbd3b7b05c464d3864b83c830cd00dab337c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb306d00",
+            "length": 96,
+            "sha256": "ea97b00d5fac7e5ff87d44387e530c010b397f338cb9119cf5fddcfa7fed6982",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6b6b0c0",
+            "length": 47,
+            "sha256": "3518a7616079b75a5714414fcc8f8cab6db47ba6d5cda37a84a29f685c38e079",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xceb5210",
+            "length": 80,
+            "sha256": "e53606f040fb6e7f33f8a114a7187b355b0c1483c7e1df33fdcf867ffe86e885",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb306c38",
+            "length": 22,
+            "sha256": "b9aa7b56cdf2fa1b4fdee03efcb31fa2b203dd867cb702a9a8699b07c124af52",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb307220",
+            "length": 20,
+            "sha256": "e80235281c4f9bd4782e9af3beb2c2d8ac33abec71714be6141f37338e733df7",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDPostProcessEffect",
+      "property": "_aaaccbacmddgfjdaipmpg",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.InstancedStruct",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x30",
+      "original_usmap_slot": 3,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x102c33659308fcf6",
+      "native_name_length": 34,
+      "record_linkage": {
+        "owner_params_rva": "0xceb5260",
+        "property_pointer_array_rva": "0xb307180",
+        "property_pointer_count": 15,
+        "array_pointer_index": 5,
+        "array_descriptor_rva": "0xb306e10",
+        "inner_descriptor_rva": "0xb306db0",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1800e50",
+        "struct_params_rva": "0xccadac0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceb5260",
+            "length": 80,
+            "sha256": "6504bd832c4b212b1b0e69161e1491eabcab6c36deab64af9a803ba353739885",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb307180",
+            "length": 120,
+            "sha256": "6395154f8a27ef88997b90e6383b0b7765a6c98882d40aae97c7ba5e7c8c9b4c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb306e10",
+            "length": 80,
+            "sha256": "22644f5fbd08c15231800767cde0255de90b49e2299d4f488e169703e90db312",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb306db0",
+            "length": 96,
+            "sha256": "5ea2a091c5754ecb1111719aacb113dfde7a8c0b49c17ad60d4c47eee2cef61b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1800e50",
+            "length": 47,
+            "sha256": "db81b142c53ccde6faf273ab7bb324df0f66a436b4e6671186ff5eabb3ade842",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccadac0",
+            "length": 80,
+            "sha256": "e2b0713e8179b1ad73cce341ff7f14dd8f6080f4bc95b8f5f0701e3c6f95db67",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b0aa90",
+            "length": 16,
+            "sha256": "5c4bc8ab17e85db25274ae08f1e4befb1c80191161c5dbfa099778a8fa5b77eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb307220",
+            "length": 20,
+            "sha256": "e80235281c4f9bd4782e9af3beb2c2d8ac33abec71714be6141f37338e733df7",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDRainSpotEntry",
+      "property": "_aaaanahobnpmkphmpcdgh",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDRainLocalEmitter",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x40",
+      "original_usmap_slot": 4,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x7e1dfcaf7cf2367",
+      "native_name_length": 13,
+      "record_linkage": {
+        "owner_params_rva": "0xcea1a80",
+        "property_pointer_array_rva": "0xb1ad880",
+        "property_pointer_count": 9,
+        "array_pointer_index": 5,
+        "array_descriptor_rva": "0xb1ad6f0",
+        "inner_descriptor_rva": "0xb1ad690",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x69e2c20",
+        "struct_params_rva": "0xcea1a30"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea1a80",
+            "length": 80,
+            "sha256": "bd4e884621d554a2cae6328cf4dc056b44105f67f3970a2873ae33f6bd0e2d6c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1ad880",
+            "length": 72,
+            "sha256": "39792083c3e77f0a72bbbe18f1435710c6952fe485d1cfbd40ba0ecb5b5fd644",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1ad6f0",
+            "length": 80,
+            "sha256": "eb6e0c4f6c58ff287ea75c60e053f34e09e5c429fa61682342baf50f7d55f53a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1ad690",
+            "length": 96,
+            "sha256": "bd8b8c0dd62e2620c103d5e9273b7157a4d6e293b021b2bf26b067c54776b634",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69e2c20",
+            "length": 47,
+            "sha256": "d10c875fdef878ba31f706b7480f399124bbbeade48470ff86d69687af3107bf",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcea1a30",
+            "length": 80,
+            "sha256": "c1046ee2f66d140369ec2cacf369852b3f871b0b6e56650fc941f6beb6c1da8f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1ad4f0",
+            "length": 19,
+            "sha256": "840991faa3de1baebd8390e745676c79f0aea028646e2299429f4532024332c9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1ade98",
+            "length": 16,
+            "sha256": "74ef7f3c1e2fe6305053382a6e7f8972866e2e61ad651d3d65a1f08e5680e517",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDRewardResourceDefinition",
+      "property": "_aaaajolkekdchpijcmgll",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDRewardResourceModifier",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x8",
+      "original_usmap_slot": 1,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xeba4a327f892c6bb",
+      "native_name_length": 9,
+      "record_linkage": {
+        "owner_params_rva": "0xce98d60",
+        "property_pointer_array_rva": "0xb13e7e0",
+        "property_pointer_count": 3,
+        "array_pointer_index": 2,
+        "array_descriptor_rva": "0xb13e760",
+        "inner_descriptor_rva": "0xb13e700",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x69a9760",
+        "struct_params_rva": "0xce98d10"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xce98d60",
+            "length": 80,
+            "sha256": "f4e3b1c99e960ae00a318cb30f882cddd8457992287e1eba1b689ebacc6641c4",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13e7e0",
+            "length": 24,
+            "sha256": "d69e5e78319737f09e9435b00066dcea55edb4a4bef98728711fd455276d6970",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13e760",
+            "length": 80,
+            "sha256": "cb6259aa0e34dc6efad156b757a802f672d9b699646cb128d68efe32ebe3cdb0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13e700",
+            "length": 96,
+            "sha256": "fe2d4c387637af16edb75473828b682f30f9eed6832076f475bf7517d5e2e8d3",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69a9760",
+            "length": 47,
+            "sha256": "aada3f4c9f14ef683680c49f7d1bcbd30e96fa4c5f19dba4440ce2bc87124f3b",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xce98d10",
+            "length": 80,
+            "sha256": "925c766dbd543df4c98e4cc60aec3c6a03fbda9712ac4824ff637a1e629b3883",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13e690",
+            "length": 25,
+            "sha256": "e0a0e195ed78428ee13552c17020fa1344b6876ffc16e9cfd4a35aff86d072f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb13ea60",
+            "length": 27,
+            "sha256": "e9595484f2dcf386edf55eac56b2888e9a5b1639464186e8b4a4997789cb3d45",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDRewardFeedActionDataTableRow",
+      "property": "ConditionalExpressions",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDRewardFeedActionConditionData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x705d3f5823d1e14b",
+      "native_name_length": 22,
+      "record_linkage": {
+        "owner_params_rva": "0xced8490",
+        "property_pointer_array_rva": "0xb4fff48",
+        "property_pointer_count": 5,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb4ffdf0",
+        "inner_descriptor_rva": "0xb4ffd90",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x71f3d80",
+        "struct_params_rva": "0xced8440"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xced8490",
+            "length": 80,
+            "sha256": "14237f155e0d98e71814c20b4dfc749226e882d5e3cfe200a8f9239bfd5779c5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb4fff48",
+            "length": 40,
+            "sha256": "c646357ea0cc80ea689dedefb9c21a1a5b11ad738eeca5039f62d487fdee51cd",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb4ffdf0",
+            "length": 80,
+            "sha256": "6c27be485fe33ee61950779b7ac8509432eaaa4895310e536b472b50082980df",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb4ffd90",
+            "length": 96,
+            "sha256": "75dfcac2ac10449cf20e393b263483ca11e62398d04b65ea63bc61e895c3395e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x71f3d80",
+            "length": 47,
+            "sha256": "cb2ae424f9bb01ecd1bc7cb4198e7f9639320c623046ca1eea0ee577a893ffc1",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xced8440",
+            "length": 80,
+            "sha256": "374ebc4065eb8325676006672bdadc7ea40805cff4b9a5cb85754ddd52bb81bb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb4ffd70",
+            "length": 32,
+            "sha256": "6dcf2a7ca1324d1de3e0f77de9d0a845a9a035ab6d548a99240bad2615ea570c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb4fffb0",
+            "length": 31,
+            "sha256": "3351c9495086df352dc4cc090637c6c162979a2c277d47d36406c653146edbf2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDRewardTableRow",
+      "property": "_aaaanepakckidoddhnopj",
+      "inner_kind": "IntProperty",
+      "qualified_struct_name": null,
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x28",
+      "original_usmap_slot": 5,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x4f0a2a83e337def9",
+      "native_name_length": 13,
+      "record_linkage": {
+        "owner_params_rva": "0xcea2020",
+        "property_pointer_array_rva": "0xb1b2be0",
+        "property_pointer_count": 7,
+        "array_pointer_index": 6,
+        "array_descriptor_rva": "0xb1b2b90",
+        "inner_descriptor_rva": "0xb1b2b40",
+        "inner_genflag": "0x3",
+        "struct_resolver_rva": null,
+        "struct_params_rva": null
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea2020",
+            "length": 80,
+            "sha256": "47fc0c0a50be2593357522b5155843ee4edb56cb9daec7df2c73f5d3783af8c9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1b2be0",
+            "length": 56,
+            "sha256": "5239acd5ee341d620814f307e3eec35db8e6d1d96874e66c08129af20a0dcde9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1b2b90",
+            "length": 80,
+            "sha256": "0631e158876d67b7665357a1b651cc50e9302ed257c902bb36ca49c9d7894997",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1b2b40",
+            "length": 96,
+            "sha256": "0ead6bc7ac68a692a6280ae000069d984b80e71e9120265d1d81b6a62fab8c93",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1b2ec8",
+            "length": 17,
+            "sha256": "9e22c1c82e8daf7c47a7748b6a1b1597e9f790c9e742ebcd9ab909138ac194f2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDSceneDataTableRow",
+      "property": "_aaaakflggmgofcfhobngi",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.InstancedStruct",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x20",
+      "original_usmap_slot": 6,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x5b66c6e5257e1d68",
+      "native_name_length": 10,
+      "record_linkage": {
+        "owner_params_rva": "0xcea41a0",
+        "property_pointer_array_rva": "0xb1e0f10",
+        "property_pointer_count": 20,
+        "array_pointer_index": 8,
+        "array_descriptor_rva": "0xb1e0a60",
+        "inner_descriptor_rva": "0xb1e0a00",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1800e50",
+        "struct_params_rva": "0xccadac0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea41a0",
+            "length": 80,
+            "sha256": "23a3f5ddcc5d1b21fc07116266bad4aa913b97adfc8b2bcbb1e9730449252b0c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0f10",
+            "length": 160,
+            "sha256": "806fe3b19fa2896cbb857410422150a52e1406f710a93445268a4debedf9a804",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0a60",
+            "length": 80,
+            "sha256": "667cb443dd7128e41551259173af438dabb669998d27a769a9b12817d9606882",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0a00",
+            "length": 96,
+            "sha256": "0e9186d9eeb2383cb54aa1d1c7eeddf3b867c3ed2fc49c3ce3e674da9c7af327",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1800e50",
+            "length": 47,
+            "sha256": "db81b142c53ccde6faf273ab7bb324df0f66a436b4e6671186ff5eabb3ade842",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccadac0",
+            "length": 80,
+            "sha256": "e2b0713e8179b1ad73cce341ff7f14dd8f6080f4bc95b8f5f0701e3c6f95db67",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b0aa90",
+            "length": 16,
+            "sha256": "5c4bc8ab17e85db25274ae08f1e4befb1c80191161c5dbfa099778a8fa5b77eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dbfb8",
+            "length": 20,
+            "sha256": "7d9a2714e7a8f73375e8b6cff3759440a7dbfc06af7e35b9f69a4f1c71412fa0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDSceneDataTableRow",
+      "property": "_aaabaolmglmbdpcnpijff",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.InstancedStruct",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x30",
+      "original_usmap_slot": 7,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xebc6bc13f2df8955",
+      "native_name_length": 16,
+      "record_linkage": {
+        "owner_params_rva": "0xcea41a0",
+        "property_pointer_array_rva": "0xb1e0f10",
+        "property_pointer_count": 20,
+        "array_pointer_index": 10,
+        "array_descriptor_rva": "0xb1e0b10",
+        "inner_descriptor_rva": "0xb1e0ab0",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1800e50",
+        "struct_params_rva": "0xccadac0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea41a0",
+            "length": 80,
+            "sha256": "23a3f5ddcc5d1b21fc07116266bad4aa913b97adfc8b2bcbb1e9730449252b0c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0f10",
+            "length": 160,
+            "sha256": "806fe3b19fa2896cbb857410422150a52e1406f710a93445268a4debedf9a804",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0b10",
+            "length": 80,
+            "sha256": "fa9dd0c46b796b915e18afae7ad25b931d361236e6b25d286cef05919ba0b73f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0ab0",
+            "length": 96,
+            "sha256": "345773706064d36615e9078ad03a4d5605c35e870321c4d654601329c307affe",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1800e50",
+            "length": 47,
+            "sha256": "db81b142c53ccde6faf273ab7bb324df0f66a436b4e6671186ff5eabb3ade842",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccadac0",
+            "length": 80,
+            "sha256": "e2b0713e8179b1ad73cce341ff7f14dd8f6080f4bc95b8f5f0701e3c6f95db67",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b0aa90",
+            "length": 16,
+            "sha256": "5c4bc8ab17e85db25274ae08f1e4befb1c80191161c5dbfa099778a8fa5b77eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dbfb8",
+            "length": 20,
+            "sha256": "7d9a2714e7a8f73375e8b6cff3759440a7dbfc06af7e35b9f69a4f1c71412fa0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDSceneDataTableRow",
+      "property": "_aaabbklldbhcoflhgmeek",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.InstancedStruct",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x40",
+      "original_usmap_slot": 8,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xabb3172e5b76c44a",
+      "native_name_length": 17,
+      "record_linkage": {
+        "owner_params_rva": "0xcea41a0",
+        "property_pointer_array_rva": "0xb1e0f10",
+        "property_pointer_count": 20,
+        "array_pointer_index": 12,
+        "array_descriptor_rva": "0xb1e0bc0",
+        "inner_descriptor_rva": "0xb1e0b60",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1800e50",
+        "struct_params_rva": "0xccadac0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea41a0",
+            "length": 80,
+            "sha256": "23a3f5ddcc5d1b21fc07116266bad4aa913b97adfc8b2bcbb1e9730449252b0c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0f10",
+            "length": 160,
+            "sha256": "806fe3b19fa2896cbb857410422150a52e1406f710a93445268a4debedf9a804",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0bc0",
+            "length": 80,
+            "sha256": "dffb551fd43029b5e06d23d6275fe115da7cfec78415553d1e28093a37a1f2cd",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1e0b60",
+            "length": 96,
+            "sha256": "03c63ffaeaee33c61200a47038e2f890e5a0c94bcb0856396f5db757cd2b5e90",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1800e50",
+            "length": 47,
+            "sha256": "db81b142c53ccde6faf273ab7bb324df0f66a436b4e6671186ff5eabb3ade842",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccadac0",
+            "length": 80,
+            "sha256": "e2b0713e8179b1ad73cce341ff7f14dd8f6080f4bc95b8f5f0701e3c6f95db67",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b0aa90",
+            "length": 16,
+            "sha256": "5c4bc8ab17e85db25274ae08f1e4befb1c80191161c5dbfa099778a8fa5b77eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dbfb8",
+            "length": 20,
+            "sha256": "7d9a2714e7a8f73375e8b6cff3759440a7dbfc06af7e35b9f69a4f1c71412fa0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/Engine.RichCurve",
+      "property": "Keys",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/Engine.RichCurveKey",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x70",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xd946b442446a98de",
+      "native_name_length": 4,
+      "record_linkage": {
+        "owner_params_rva": "0xcd6c6a0",
+        "property_pointer_array_rva": "0xa449ad0",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xa449a80",
+        "inner_descriptor_rva": "0xa449a20",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x3df1250",
+        "struct_params_rva": "0xcd6c650"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcd6c6a0",
+            "length": 80,
+            "sha256": "f2374401e12a471c79a1e67c26093028d6bf051cd26ab5292d64f41a6f461751",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa449ad0",
+            "length": 16,
+            "sha256": "ba64902e539a476f32a2051658c43dbdd480286f6a42f7029fab9fcbb68552f3",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa449a80",
+            "length": 80,
+            "sha256": "93fc8a124e02c07ddfcd6399a34b44be48b0f7717b763e45c11352817d621277",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa449a20",
+            "length": 96,
+            "sha256": "ed047d3f33d853ea988927952a3ffeee5e9ea4dd7f677743410988705e496c5c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3df1250",
+            "length": 47,
+            "sha256": "735a5893c7064eddb39bf1a3cd20399e87f08dcaed2108bc7a079acc8f72a77c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcd6c650",
+            "length": 80,
+            "sha256": "7f40e4526cef6c55038a172f0d35440d73423cda62980bff8bceecfa3e9fe35f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3a34ff0",
+            "length": 47,
+            "sha256": "09191e0a4150e2740e2b2d742409734fc9c2135782530812b7da5fe991ae9a76",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f690",
+            "length": 48,
+            "sha256": "867380e2335d216d78ad0bb82923722976abd1261d46c76f0b601f152c50a954",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa449980",
+            "length": 13,
+            "sha256": "67aa1ed834b7806d744e30f2491f632b8a634bd355f77683a3153d7054c060eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f6c8",
+            "length": 15,
+            "sha256": "fcf8b66e4790d37b3b624f1b2742cd5e16605b7b17d19d17d9b28e4372308fc2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa05d1e8",
+            "length": 10,
+            "sha256": "c86abfbf2b79ae3aa84036368f4a62e47661f19860acf830f1d4956c648cfa12",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f6c8",
+            "length": 15,
+            "sha256": "fcf8b66e4790d37b3b624f1b2742cd5e16605b7b17d19d17d9b28e4372308fc2",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x3a34ff0",
+            "length": 47,
+            "sha256": "09191e0a4150e2740e2b2d742409734fc9c2135782530812b7da5fe991ae9a76",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xa23f690",
+            "length": 48,
+            "sha256": "867380e2335d216d78ad0bb82923722976abd1261d46c76f0b601f152c50a954",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDUIInteractionContextDataTableRow",
+      "property": "_aaacfhpjlmfimkcmfkcji",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDUIInteractionContextActionConditionData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x20",
+      "original_usmap_slot": 1,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x7f9bc58ca2c5a298",
+      "native_name_length": 37,
+      "record_linkage": {
+        "owner_params_rva": "0xcea4880",
+        "property_pointer_array_rva": "0xb1dfe00",
+        "property_pointer_count": 3,
+        "array_pointer_index": 2,
+        "array_descriptor_rva": "0xb1dfdb0",
+        "inner_descriptor_rva": "0xb1dfd50",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6a00c10",
+        "struct_params_rva": "0xcea4830"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea4880",
+            "length": 80,
+            "sha256": "c7c6046cf7b63c679a942f4a284b9eea27aba6478465994dce0c7531f45afd31",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dfe00",
+            "length": 24,
+            "sha256": "386f8cfcba4afb98e27614e9df87cedccdb9f48833de37928ac691b546c47462",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dfdb0",
+            "length": 80,
+            "sha256": "2331c832a59654dfee249b87abcc65cf5e0ece7302d629cc9ab458bb302b6c90",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dfd50",
+            "length": 96,
+            "sha256": "824e6e8530e2729a42256c3af5d036dbbbd678fad8ebc22bdfb45b31e19528e4",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6a00c10",
+            "length": 47,
+            "sha256": "7ffd67023c376fae2eec10d2b0f61843df0b674b5ea8b7f90ec4a559dc6e4932",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcea4830",
+            "length": 80,
+            "sha256": "cfa65e1b3c139dadf6a12f3fa30214a8960b8cc837d1fdb5d28230d1dc25e0d3",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dfcd0",
+            "length": 42,
+            "sha256": "3b1895a05311eb9f87b644e77fa14a8a455051f21ca34b4e01e23a1fb16d03f0",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1dfff8",
+            "length": 35,
+            "sha256": "8e3fbadb4d6f2ea08558feee506dd64cad6daf672c58694357edb7d677ce257c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDUIVendorType",
+      "property": "_aaaamkpdnojbndcdnlldn",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDUIButtonParameters",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x20",
+      "original_usmap_slot": 2,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xaf3de91d323dbb3d",
+      "native_name_length": 12,
+      "record_linkage": {
+        "owner_params_rva": "0xcea46a0",
+        "property_pointer_array_rva": "0xb1de780",
+        "property_pointer_count": 7,
+        "array_pointer_index": 3,
+        "array_descriptor_rva": "0xb1de620",
+        "inner_descriptor_rva": "0xb1de5c0",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x75867e0",
+        "struct_params_rva": "0xcee21c0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcea46a0",
+            "length": 80,
+            "sha256": "026f553a26a96b481464c4ff02cd24985a7400f03a87011df4ecd4049c7f4f68",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1de780",
+            "length": 56,
+            "sha256": "ebcfca8704dd50ba1f5e38ad15ee2d07f72eac078a0b1cfc22dc83b080a3042a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1de620",
+            "length": 80,
+            "sha256": "fcf3af76ee5a283e8952fe8b76bccd62b9a5e37b686414ea92cf366ba2fae6fb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1de5c0",
+            "length": 96,
+            "sha256": "9557031da6a3e022b6dd6f4832f9878c6d7dd0d5034a416bdb77df301fcce321",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x75867e0",
+            "length": 47,
+            "sha256": "2b41d4163238278e3408c3e4a1be74449794d0bca24be71d1e727c811962b11d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcee21c0",
+            "length": 80,
+            "sha256": "872a906104d5cb65b438df45455be45ceeb1a56594c332400d029ffe90f26a53",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb607280",
+            "length": 21,
+            "sha256": "708fe69f769b726f48104b03c36237fe52e0ccc388f32bb7c5b64919dd06a537",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb1de8d0",
+            "length": 15,
+            "sha256": "0bfb3f41ae6c642ef717915643231ed3c04f5c344baac4057a19c87ff02cd844",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDVehicleSeatDamageReductionData",
+      "property": "_aaabcpelbmpimhadngldm",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDVehicleSeatDamageSourceEntry",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xf4b1cf8c703d6b3c",
+      "native_name_length": 18,
+      "record_linkage": {
+        "owner_params_rva": "0xceb8f60",
+        "property_pointer_array_rva": "0xb31ea30",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb31e9e0",
+        "inner_descriptor_rva": "0xb31e980",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6bb3a90",
+        "struct_params_rva": "0xceb8f10"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceb8f60",
+            "length": 80,
+            "sha256": "f9fd2500e8ed2012fe8441655a7aa18667281796b3c7600c6500a8de5f4bef9a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb31ea30",
+            "length": 16,
+            "sha256": "f4ffe9ea06737c83f50710096f6d3a4f097c6079ae4c063fd044963a0ee57544",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb31e9e0",
+            "length": 80,
+            "sha256": "3cac6f3721a708908dd22677549ec9efdfc18178d109edd92695a943085093ce",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb31e980",
+            "length": 96,
+            "sha256": "cf2ecb2e329df232ef327b3bce51427d6289baec7430063e0c6416d8bcd5cece",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6bb3a90",
+            "length": 47,
+            "sha256": "67010175219d9db76fdadd402d071258b3974ccb224b29c404b5c57df1610690",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xceb8f10",
+            "length": 80,
+            "sha256": "fd83b08a261bbf1a208bd84f5210ecfd8d4d08a6fbf4b57fc411a453f8150e00",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb31e960",
+            "length": 31,
+            "sha256": "f8df820286d354e5c7e461168d81242c980d746c9f2b153b4b1fed79e49eae56",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb31eab8",
+            "length": 33,
+            "sha256": "dc84bafed667bf039b4a3b55e38be35723a922d8eb61be15e31972e2938f7438",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDVehicleSlotPartRow",
+      "property": "Selectors",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.InstancedStruct",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x60",
+      "original_usmap_slot": 3,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x83172b32c1d44afd",
+      "native_name_length": 9,
+      "record_linkage": {
+        "owner_params_rva": "0xceaab40",
+        "property_pointer_array_rva": "0xb2893c0",
+        "property_pointer_count": 5,
+        "array_pointer_index": 4,
+        "array_descriptor_rva": "0xb289370",
+        "inner_descriptor_rva": "0xb289310",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1800e50",
+        "struct_params_rva": "0xccadac0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceaab40",
+            "length": 80,
+            "sha256": "2a22845c7c4c4c14995276dea365709ef9b0e3336f7566e09acc155dc6262a7f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb2893c0",
+            "length": 40,
+            "sha256": "daa80ca1354ebf78ee5d8f0ecd4a2d48b2afd261f24f621515db68096474cc63",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb289370",
+            "length": 80,
+            "sha256": "f74bc6b8a5252f97207dd3d7fe5d895c5026cf2e3df0f994da5a6f1f08e2a1b6",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb289310",
+            "length": 96,
+            "sha256": "3413dd51ae308c5273a948baa853a4e25a4eac96b854ebeccfa4c148c38fdd5c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1800e50",
+            "length": 47,
+            "sha256": "db81b142c53ccde6faf273ab7bb324df0f66a436b4e6671186ff5eabb3ade842",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccadac0",
+            "length": 80,
+            "sha256": "e2b0713e8179b1ad73cce341ff7f14dd8f6080f4bc95b8f5f0701e3c6f95db67",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b0aa90",
+            "length": 16,
+            "sha256": "5c4bc8ab17e85db25274ae08f1e4befb1c80191161c5dbfa099778a8fa5b77eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb289418",
+            "length": 21,
+            "sha256": "943294706cdab591ce4585b6f302799d09aa40be18cf2b7ddb498d75c6ca12fe",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDVendorData",
+      "property": "_aaabeopgecgeeooodlllf",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDVendorItemVariationData",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x30",
+      "original_usmap_slot": 1,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xef642644eee3bbb5",
+      "native_name_length": 20,
+      "record_linkage": {
+        "owner_params_rva": "0xceba1b0",
+        "property_pointer_array_rva": "0xb3363e8",
+        "property_pointer_count": 6,
+        "array_pointer_index": 2,
+        "array_descriptor_rva": "0xb336280",
+        "inner_descriptor_rva": "0xb336220",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6bea920",
+        "struct_params_rva": "0xceba160"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceba1b0",
+            "length": 80,
+            "sha256": "0efeb95c31d3cc1ea2405178fbdc70d5484e4818b90396511b1ee62100637dbe",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3363e8",
+            "length": 48,
+            "sha256": "78ff25174f4916ca0030cf1b729054138917af7b214373155061c7583d9bdecf",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb336280",
+            "length": 80,
+            "sha256": "7863091ed4dec1c36b4330d07582d9ecb0a9b2a7a6b068572aeac6d490b06fa5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb336220",
+            "length": 96,
+            "sha256": "5bd55f01841c914e657d6c5f2390cfc2ae081caadd248f7c7cb2ed2bed9f5384",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6bea920",
+            "length": 47,
+            "sha256": "d1ad85d7849da778a485c7c0d0498eee1fbc561bdbb45663776efdb73df4ea4a",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xceba160",
+            "length": 80,
+            "sha256": "6edd97dd35955930121ceaf7aa2789744d2767a9ef34774632c9b1dff9d9f195",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb336198",
+            "length": 26,
+            "sha256": "c20c5971e1564581d9384080e4ebd0c258c1aa2acfc0fb7c6234e82bf68ff075",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb336438",
+            "length": 13,
+            "sha256": "21fc420bfa87998e3f0baef8124fb208398d157422e3f7f1cafd31be9515efe8",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDWagerActionDefinition",
+      "property": "Odds",
+      "inner_kind": "FloatProperty",
+      "qualified_struct_name": null,
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x98",
+      "original_usmap_slot": 11,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x255157133b0d0a9a",
+      "native_name_length": 4,
+      "record_linkage": {
+        "owner_params_rva": "0xceab900",
+        "property_pointer_array_rva": "0xb29d100",
+        "property_pointer_count": 17,
+        "array_pointer_index": 12,
+        "array_descriptor_rva": "0xb29cf60",
+        "inner_descriptor_rva": "0xb29cf10",
+        "inner_genflag": "0xa",
+        "struct_resolver_rva": null,
+        "struct_params_rva": null
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xceab900",
+            "length": 80,
+            "sha256": "c14b970124b62b9f47327625c3c8c04c2e995ca15d2cf9089ec039bbf60e32e9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb29d100",
+            "length": 136,
+            "sha256": "3c32f7a4a9d21e947527fc14410a381decf60e2a73ac6371183c408263e3c87f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb29cf60",
+            "length": 80,
+            "sha256": "706092ab8d703938b1f7d0ec979b748bb978d2e2a56ede981764d553e0f5cfd3",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb29cf10",
+            "length": 96,
+            "sha256": "d34b48ffce3511858eabcf7205fead9230acaeceaa0491cc3c6958e01302e8f3",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb29dc88",
+            "length": 24,
+            "sha256": "9426ddb323b3ee0a7c759a5774e59a695223b9cf51cb24a378633805bd80f514",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDWagerConditionDefinition",
+      "property": "_aaaajmjanbcelolelfcda",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/CoreUObject.InstancedStruct",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "exact_binary_name_hash_and_owner",
+      "canonical_idmap_member_offset": "0x190",
+      "original_usmap_slot": 18,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0xc90d124beb4b5230",
+      "native_name_length": 9,
+      "record_linkage": {
+        "owner_params_rva": "0xcec46a0",
+        "property_pointer_array_rva": "0xb3a9c90",
+        "property_pointer_count": 20,
+        "array_pointer_index": 19,
+        "array_descriptor_rva": "0xb3a9c40",
+        "inner_descriptor_rva": "0xb3a9be0",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x1800e50",
+        "struct_params_rva": "0xccadac0"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcec46a0",
+            "length": 80,
+            "sha256": "ad3a9930634868b1f9de0d60f675c94a26ed58b18be36d9c30fb8c73eefda93f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a9c90",
+            "length": 160,
+            "sha256": "42ad9080b5e3a0dc2060148f7ea21580ba700c0b8a72fd0b1e16fc1f9daa3f5e",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a9c40",
+            "length": 80,
+            "sha256": "f8e270ff061394c900afcaf67f10dea3b266099ddcf6363caea44483ae80aa1f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a9be0",
+            "length": 96,
+            "sha256": "9fbda06f56e8668ae3d532a5f2ef40376190e9ff1077472e1346d0627952c646",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x1800e50",
+            "length": 47,
+            "sha256": "db81b142c53ccde6faf273ab7bb324df0f66a436b4e6671186ff5eabb3ade842",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xccadac0",
+            "length": 80,
+            "sha256": "e2b0713e8179b1ad73cce341ff7f14dd8f6080f4bc95b8f5f0701e3c6f95db67",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x17a4c20",
+            "length": 47,
+            "sha256": "5f20d06de4a78744a29c5000eedcba07304fdb80697694db51dcadb6ff11c795",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb38",
+            "length": 48,
+            "sha256": "f10581c23657b648f6df56e0be9921101146e1e3e694323bb83a78873d5366f9",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9b0aa90",
+            "length": 16,
+            "sha256": "5c4bc8ab17e85db25274ae08f1e4befb1c80191161c5dbfa099778a8fa5b77eb",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x9afdb70",
+            "length": 20,
+            "sha256": "4a5103ea96ca9a0a1ebe2c5db13a2f8cc33683830f88b4e482eed0e266829045",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a9dc8",
+            "length": 27,
+            "sha256": "48274fef0faeee5143b97db40c8dc6f8f1b77db17d3ee5c427c00d50720be214",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDWagerObjectiveCatalogDefinition",
+      "property": "Objectives",
+      "inner_kind": "StructProperty",
+      "qualified_struct_name": "/Script/WDGame.WDWagerPrebuiltObjective",
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 0,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x3e8432bc53e98e9b",
+      "native_name_length": 10,
+      "record_linkage": {
+        "owner_params_rva": "0xcec44c0",
+        "property_pointer_array_rva": "0xb3a7e10",
+        "property_pointer_count": 2,
+        "array_pointer_index": 1,
+        "array_descriptor_rva": "0xb3a7dc0",
+        "inner_descriptor_rva": "0xb3a7d60",
+        "inner_genflag": "0x19",
+        "struct_resolver_rva": "0x6d1b970",
+        "struct_params_rva": "0xcec4470"
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcec44c0",
+            "length": 80,
+            "sha256": "607ef8901803c86706e19993386d0f14bfeade338e3d59fcec7cb3890d4b1772",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a7e10",
+            "length": 16,
+            "sha256": "6bcb55fef49c9926212d6114847de0889e7bafaf6b9164f5816d147aa49b37aa",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a7dc0",
+            "length": 80,
+            "sha256": "68e097df02a6b897777d5dc2a74c7767147971bf2b10ef4deee96029eebb5c9d",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a7d60",
+            "length": 96,
+            "sha256": "b6d2b8914867a58aa24e72a0650c88a44b6450809df50f071ef43723d227d474",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x6d1b970",
+            "length": 47,
+            "sha256": "6d91a9091c5df01247efc1b6c4c166d17b843df286a2c499d478846e2bd0df05",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xcec4470",
+            "length": 80,
+            "sha256": "116c4bf2a352483b8da11d23f199f55dd2622635d53f7a5ef0ff4b88a82eafa5",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a7d40",
+            "length": 25,
+            "sha256": "6aa60c415a7930fa64e4361aa9d414b1ec2fb04c092165052a12e49a643d72f6",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a7e68",
+            "length": 34,
+            "sha256": "d18da17800f10f90877c677467f2e71cfb27649dbf744d734ad877fc2d6e1c64",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    },
+    {
+      "owner": "/Script/WDGame.WDWagerPricing",
+      "property": "LivesOdds",
+      "inner_kind": "FloatProperty",
+      "qualified_struct_name": null,
+      "evidence_class": "static",
+      "derivation": "direct_compiled_registration",
+      "property_identity_join": "canonical_idmap_owner_and_member_offset_plus_native_name_length",
+      "canonical_idmap_member_offset": "0x10",
+      "original_usmap_slot": 4,
+      "original_type_bytes": "08ff",
+      "native_name_hash": "0x34e98a377af21c7f",
+      "native_name_length": 9,
+      "record_linkage": {
+        "owner_params_rva": "0xcec4510",
+        "property_pointer_array_rva": "0xb3a87c0",
+        "property_pointer_count": 6,
+        "array_pointer_index": 5,
+        "array_descriptor_rva": "0xb3a8770",
+        "inner_descriptor_rva": "0xb3a8720",
+        "inner_genflag": "0xa",
+        "struct_resolver_rva": null,
+        "struct_params_rva": null
+      },
+      "independent_image_comparison": {
+        "all_selected_ranges_equal": true,
+        "ranges": [
+          {
+            "rva": "0xcec4510",
+            "length": 80,
+            "sha256": "cc0f72dedb4335a0595188baeed057eb55b5dce20b769bd7c14e253ba5da8406",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a87c0",
+            "length": 48,
+            "sha256": "f002176fe8fa3cbd29553b9e9c4d54222a5b78a4ff877c94afa34cdb9d6bc553",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a8770",
+            "length": 80,
+            "sha256": "10796c8b01439cba3f43acb098f2faae969eb646822632faa6c8fb22ab95c96c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a8720",
+            "length": 96,
+            "sha256": "1bf841b16738ec38cffcb089f8d6f4191d28a023ec8c45ecf27693dd498f0a12",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb3a8810",
+            "length": 15,
+            "sha256": "c7fa3554e8001f69efb82b027e3f24f1e99abc7933bf461109d20e413ff7a82c",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17ab08",
+            "length": 15,
+            "sha256": "3a24c71813918e462d0a53c7a30ab9669fd23706e7f44c9f142073045743888f",
+            "independent_equal": true
+          },
+          {
+            "rva": "0x69c62c0",
+            "length": 47,
+            "sha256": "5904cc0bf6437954edc66cd5c5e0fa22e86bf446db6ea2c49d305c902603ac40",
+            "independent_equal": true
+          },
+          {
+            "rva": "0xb17aad0",
+            "length": 48,
+            "sha256": "97682c6ca4c3958915adf0185ba2343269c5314b8ecff032bff3c9c1584246da",
+            "independent_equal": true
+          }
+        ]
+      }
+    }
+  ]
+}
