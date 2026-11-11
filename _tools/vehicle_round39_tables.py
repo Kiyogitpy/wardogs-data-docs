@@ -23,6 +23,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from link_sources import link_source_output  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "Wardogs")
 OUT = os.path.join(ROOT, "assets", "data")
@@ -328,13 +331,13 @@ def main():
             with open(os.path.join(OUT, name), "w", encoding="utf8", newline="\n") as fh:
                 fh.write(dumps(obj))
         with open(PAGE, "w", encoding="utf8", newline="\n") as fh:
-            fh.write(render_page(built))
+            fh.write(link_source_output(render_page(built)))
         print("wrote", ", ".join(built), "and", rel(PAGE))
         return 0
     if "--check" in sys.argv:
         bad = [n for n, o in built.items() if not os.path.exists(os.path.join(OUT, n))
-               or open(os.path.join(OUT, n), encoding="utf8", newline="").read() != dumps(o)]
-        if not os.path.exists(PAGE) or open(PAGE, encoding="utf8", newline="").read() != render_page(built):
+               or open(os.path.join(OUT, n), encoding="utf8", newline="").read().replace("\r\n", "\n") != dumps(o)]
+        if not os.path.exists(PAGE) or open(PAGE, encoding="utf8", newline="").read().replace("\r\n", "\n") != link_source_output(render_page(built)):
             bad.append(rel(PAGE))
         print("stale:", bad or "none")
         return 1 if bad else 0

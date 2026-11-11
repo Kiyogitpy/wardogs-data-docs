@@ -12,14 +12,38 @@
   "builds_root": "E:/wardogs_builds",
   "steam_manifest": "E:/Steam/steamapps/appmanifest_1867240.acf",
   "sdk_raw": "E:/Reverse_Engineer/wardogs_analysis/data_docs_clone/wardogs-data-docs/sdk/raw",
-  "dumper7_dir": "E:/Reverse_Engineer/tools/Dumper-7"
+  "dumper7_dir": "E:/Reverse_Engineer/tools/Dumper-7",
+  "season2_export": "E:/wardogs_builds/s2-cl516586/data",
+  "season1_export": "E:/wardogs_builds/season1/data"
  },
  "baseline": {
-  "_comment": "CueDump on build 5.7.4-516586 with the v2 export usmap: 66,550 packages, 6,830 exported, 0 warnings, 0 errors. More warnings or errors than this on a new build means the usmap is stale.",
+  "_comment": "CueDump on build 5.7.4-516586 with the v2 export usmap: 66,550 packages, 6,830 exported, 0 warnings, 0 errors. More warnings or errors than this on a new build means the usmap is stale. An export more than 1% below cuedump_exported_files or cuedump_packages, or more than 5% below cuedump_exported_bytes, fails extract with exit 3 and names the AES key as the likely cause (a rotated key leaves encrypted containers unmounted). cuedump_mounted_vfs is the 'Mounted N vfs' count of the clean run on this build (32); fewer containers mounted fails the gate, and the gate skips it when null.",
   "usmap_build": "5.7.4-516586",
   "cuedump_warnings": 0,
   "cuedump_errored": 0,
-  "cuedump_exported_files": 6830
+  "cuedump_exported_files": 6830,
+  "cuedump_packages": 66550,
+  "cuedump_exported_bytes": 337079676,
+  "cuedump_mounted_vfs": 32
+ },
+ "hashed_names_expected_missing": {
+  "_comment": "Hard-coded hashed property names that the good Season 2 export lacks on purpose, matched by script and name (not line). regen prints and reports only the misses NOT listed here, plus the count of listed ones. Add a name only after checking why the export lacks it.",
+  "names": [
+   {"script": "bp_defaults.py", "name": "_aaaamejojopeijafgdjkf", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaakffacidhmniagfchm", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaakmpdngpdcdjfoghgn", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabefnnihkojobdfojbk", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaamiahcncilelhidghh", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabclpkjcpbbjcpncgfa", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaaalampbnfacakccbbcd", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabdgioabebpkhhmcglm", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabknhhcfikfkdfeephh", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "bp_defaults.py", "name": "_aaabakopnbgagdbajfflp", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "spray_patterns.py", "name": "_aaabgocclgplfdmmfjefm", "reason": "Season 1 legacy bipod key, kept for the Season 1 export; the v2 usmap names it"},
+   {"script": "spray_patterns.py", "name": "_aaabpgfgnkcdbhhlgdhmb", "reason": "Season 1 legacy bipod key, kept for the Season 1 export; the v2 usmap names it"},
+   {"script": "spread_recoil_tables.py", "name": "_aaacclfeejhodkalcagid", "reason": "SDK dump name (WDGame_structs.hpp), aliased to the key the cooked asset uses; not a key of the export"},
+   {"script": "spread_recoil_tables.py", "name": "_aaabpoakjgapligblioee", "reason": "SDK dump name (WDGame_structs.hpp), aliased to the key the cooked asset uses; not a key of the export"}
+  ]
  },
  "config_keep": {
   "_comment": "Raw files copied from the paks into data/ next to the CueDump JSON (the curated set the generators read). DefaultGame.ini is never copied: its whitelisted excerpt is written by default_game_ini.py. Config files in the paks that are not listed here are reported as 'new, not copied'.",
@@ -910,7 +934,8 @@
    "class": "generator",
    "tier": "core",
    "write": [
-    "--write"
+    "--write",
+    "--json"
    ],
    "check": [
     "--check"
@@ -919,7 +944,7 @@
     "data",
     "assets/data/ge-values.json"
    ],
-   "notes": "--check round-trips the page values through compute()"
+   "notes": "--json refreshes assets/data/weapon-loadouts.json (a data_tree-only change is not a change); --check round-trips the page values through compute()"
   },
   {
    "script": "weapon_misc_tables.py",
@@ -1069,21 +1094,29 @@
    "class": "generator",
    "tier": "core",
    "write": [
+    "--s2",
+    "{season2_export}",
+    "--s1",
+    "{season1_export}",
     "--write"
    ],
    "check": [
+    "--s2",
+    "{season2_export}",
+    "--s1",
+    "{season1_export}",
     "--check"
    ],
    "inputs": [
-    "data",
-    "Season 1 export (E:/wardogs_builds/season1/data)"
+    "Season 1 export (environment season1_export)",
+    "Season 2 export (environment season2_export)"
    ],
-   "notes": "compares the Season 1 export with data/ (Wardogs/Config JSON is skipped); output assets/data/season-diff and spray-patterns.json. For a new patch, season_diff.py --s1 <old> --s2 <new> --out DIR via `diff --full`"
+   "notes": "PINNED to the Season 2 export (environment key season2_export, WD_PIPELINE_SEASON2_EXPORT), not data/: regen at a later build must keep reproducing the committed Season 2 Changes data in assets/data/season-diff (Wardogs/Config JSON is skipped). A new build's diff is not written here: use `diff --old A --new B --full` into <label>/season-diff/"
   },
   {
    "script": "spray_patterns.py",
    "class": "generator",
-   "tier": "core",
+   "tier": "manual",
    "write": [
     "--write"
    ],
@@ -1094,7 +1127,7 @@
     "data",
     "Season 1 export (E:/wardogs_builds/season1/data)"
    ],
-   "notes": "compares the Season 1 export with data/ (Wardogs/Config JSON is skipped); output assets/data/season-diff and spray-patterns.json. For a new patch, season_diff.py --s1 <old> --s2 <new> --out DIR via `diff --full`"
+   "notes": "MANUAL: it hard-codes Season 2 = the repo's data/ (no --s2 option), so regen at a later build would overwrite assets/data/spray-patterns.json with a Season 1 vs new-build comparison. Run it by hand after deciding what the spray page should show"
   },
   {
    "script": "ai_detection.py",
@@ -1691,6 +1724,24 @@
    "notes": "Exact-path source links shared by generators; no writes"
   },
   {
+   "script": "review_pages.py",
+   "class": "report",
+   "tier": "core",
+   "write": null,
+   "check": null,
+   "inputs": ["patch-diff.json", "pages"],
+   "notes": "Run by `diff`: pages naming each changed or removed asset, hand-written first; writes review-pages.md/.json"
+  },
+  {
+   "script": "test_review_pages.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic fixture repo"],
+   "notes": "review_pages.py regression tests"
+  },
+  {
    "script": "test_generator_source_links.py",
    "class": "checker",
    "tier": "core",
@@ -1698,6 +1749,65 @@
    "check": [],
    "inputs": ["data", "tracked generator source"],
    "notes": "Source-link regression tests; temporary page copies only"
+  },
+  {
+   "script": "canary_values_check.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [
+    "--check"
+   ],
+   "inputs": [
+    "data",
+    "_tools/canary_values.json"
+   ],
+   "notes": "curated known values (weapons, vehicle, SPH-2 table, prices, reward formulas, movement); missing or mistyped = misread export, changed = review (a balance patch), then --accept. extract runs it on the fresh export"
+  },
+  {
+   "script": "test_pipeline_gates.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["data", "_tools/canary_values.json"],
+   "notes": "Preflight, shrink/mount gate and canary tests; synthetic exports in a temp dir, no external inputs"
+  },
+  {
+   "script": "test_pipeline_regen.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic git repo and exports in a temp dir"],
+   "notes": "regen's data/ mirror, data/ reported on its own, the pinned Season 2 diff, the quick diff's hashed-name handling and the failure grouping"
+  },
+  {
+   "script": "hashed_names_check.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": null,
+   "inputs": ["data"],
+   "notes": "Hashed property names hard-coded in _tools/*.py that the export lacks. Run by regen before the generators (a warning in regen-report.md, not a stop): python -I _tools/hashed_names_check.py --data DIR [--json OUT]"
+  },
+  {
+   "script": "test_hashed_names_check.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic fixtures"],
+   "notes": "hashed_names_check.py regression tests"
+  },
+  {
+   "script": "test_isolated_imports.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["_tools/*.py source"],
+   "notes": "Static check: a script with a __main__ guard that imports a sibling module puts its own folder on sys.path first (python -I)"
   }
  ],
  "script_globs": [

@@ -18,8 +18,10 @@ anchors. Rerun after a data update:
 import json
 import os
 import re
+import sys
 
-from raw_source_links import source_link, tracked_json, link_generated
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import source_link, tracked_json, link_generated  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOC = os.path.join(ROOT, "content/Wardogs_AllVehicles_Stats_Damage_v1.md")

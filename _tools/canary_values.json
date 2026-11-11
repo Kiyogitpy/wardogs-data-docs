@@ -1,0 +1,206 @@
+{
+ "_comment": "Known values for _tools/canary_values_check.py (see its docstring). expected is the Season 2 value; `--accept` rewrites it after a reviewed patch.",
+ "version": 1,
+ "canaries": [
+  {
+   "id": "infantry-556-base-damage",
+   "area": "infantry weapons",
+   "file": "Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/556mm/DA_556mm_ProjectileData.json",
+   "export": "DA_556mm_ProjectileData",
+   "path": "Properties/ProjectileStats/DamageValues/BaseDamage",
+   "expected": 28.0
+  },
+  {
+   "id": "infantry-762-base-damage",
+   "area": "infantry weapons",
+   "file": "Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/762mm/DA_762mm_ProjectileData.json",
+   "export": "DA_762mm_ProjectileData",
+   "path": "Properties/ProjectileStats/DamageValues/BaseDamage",
+   "expected": 34.0
+  },
+  {
+   "id": "infantry-9mm-base-damage",
+   "area": "infantry weapons",
+   "file": "Wardogs/Content/GameMechanics/Inventory/Equipment/Caliber/9mm/DA_9mm_ProjectileData.json",
+   "export": "DA_9mm_ProjectileData",
+   "path": "Properties/ProjectileStats/DamageValues/BaseDamage",
+   "expected": 22.0
+  },
+  {
+   "id": "infantry-m4-rpm",
+   "area": "infantry weapons",
+   "file": "Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/DA_M4_Stats.json",
+   "export": "DA_M4_Stats",
+   "path": "Properties/WeaponStats/RoundsPerMinute",
+   "expected": 800.0
+  },
+  {
+   "id": "infantry-ak74m-rpm",
+   "area": "infantry weapons",
+   "file": "Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_001/Content/Data/DA_AK74M_Stats.json",
+   "export": "DA_AK74M_Stats",
+   "path": "Properties/WeaponStats/RoundsPerMinute",
+   "expected": 650.0
+  },
+  {
+   "id": "infantry-m249-rpm",
+   "area": "infantry weapons",
+   "file": "Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DA_M249_Stats.json",
+   "export": "DA_M249_Stats",
+   "path": "Properties/WeaponStats/RoundsPerMinute",
+   "expected": 850.0
+  },
+  {
+   "id": "armor-heavy-durability",
+   "area": "armor",
+   "file": "Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_HeavyArmor.json",
+   "export": "WDInventoryFragment_Armor_0",
+   "path": "Properties/ReplicatedData/Durability",
+   "expected": 250.0
+  },
+  {
+   "id": "armor-heavy-damage-reduction",
+   "area": "armor",
+   "file": "Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_HeavyArmor.json",
+   "export": "WDInventoryFragment_Armor_0",
+   "path": "Properties/DurabilityStagesSetupData/0/DamagePercentageReduction",
+   "expected": 50.0
+  },
+  {
+   "id": "vehicle-tnk01-heavy-mainbody-health",
+   "area": "vehicles",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Platforms/VP_TNK_01_Heavy.json",
+   "export": "MVF_HealthSections_0",
+   "path": "Properties/HealthSections/0/Value/MaxHealth",
+   "expected": 800.0
+  },
+  {
+   "id": "vehicle-tnk01-heavy-engine-health",
+   "area": "vehicles",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Platforms/VP_TNK_01_Heavy.json",
+   "export": "MVF_HealthSections_0",
+   "path": "Properties/HealthSections/2/Value/MaxHealth",
+   "expected": 150.0
+  },
+  {
+   "id": "vehicle-tnk01-heavy-engine-tag",
+   "area": "vehicles",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Platforms/VP_TNK_01_Heavy.json",
+   "export": "MVF_HealthSections_0",
+   "path": "Properties/HealthSections/2/Key/TagName",
+   "expected": "Attribute.Gameplay.Health.Engine"
+  },
+  {
+   "id": "sph2-range-0-impact-m",
+   "area": "artillery range table",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json",
+   "export": "WE_TNK_01_Artillery",
+   "path": "Properties/ArtilleryRangeData/0/ImpactDistance",
+   "expected": 600.0
+  },
+  {
+   "id": "sph2-range-0-mrad",
+   "area": "artillery range table",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json",
+   "export": "WE_TNK_01_Artillery",
+   "path": "Properties/ArtilleryRangeData/0/Milliradians",
+   "expected": 20.0
+  },
+  {
+   "id": "sph2-range-10-mrad",
+   "area": "artillery range table",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json",
+   "export": "WE_TNK_01_Artillery",
+   "path": "Properties/ArtilleryRangeData/10/Milliradians",
+   "expected": 157.0
+  },
+  {
+   "id": "sph2-range-20-impact-m",
+   "area": "artillery range table",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json",
+   "export": "WE_TNK_01_Artillery",
+   "path": "Properties/ArtilleryRangeData/20/ImpactDistance",
+   "expected": 2600.0
+  },
+  {
+   "id": "sph2-range-20-travel-s",
+   "area": "artillery range table",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json",
+   "export": "WE_TNK_01_Artillery",
+   "path": "Properties/ArtilleryRangeData/20/TravelTime",
+   "expected": 23.73
+  },
+  {
+   "id": "sph2-range-39-mrad",
+   "area": "artillery range table",
+   "file": "Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/WeaponExtensions/Artillery/WE_TNK_01_Artillery.json",
+   "export": "WE_TNK_01_Artillery",
+   "path": "Properties/ArtilleryRangeData/39/Milliradians",
+   "expected": 1400.0
+  },
+  {
+   "id": "vendor-heavy-armor-price",
+   "area": "vendor prices",
+   "file": "Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/DT_VendorData_Ext_Armor.json",
+   "export": "DT_VendorData_Ext_Armor",
+   "path": "Rows/Id.Item.HeavyArmor/VendorItemVariations/0/Price",
+   "expected": 2500.0
+  },
+  {
+   "id": "vendor-medium-helmet-price",
+   "area": "vendor prices",
+   "file": "Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/DT_VendorData_Ext_Armor.json",
+   "export": "DT_VendorData_Ext_Armor",
+   "path": "Rows/Id.Item.MediumHelmet/VendorItemVariations/0/Price",
+   "expected": 500.0
+  },
+  {
+   "id": "vendor-556mm-ammo-price",
+   "area": "vendor prices",
+   "file": "Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_WeaponMarket.json",
+   "export": "DT_WeaponMarket",
+   "path": "Rows/Id.Item.556mm/VendorItemVariations/0/Price",
+   "expected": 15.0
+  },
+  {
+   "id": "reward-crew-assist-formula",
+   "area": "challenge rewards",
+   "file": "Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json",
+   "export": "DT_ChallengeRewards_SessionEvents_Shared",
+   "path": "Rows/Challenges.Rewards.PlayerKill.CrewAssist/Resources/0/Value/DefaultExpression/ExpressionString",
+   "expected": "BaseReward * CrewModifier"
+  },
+  {
+   "id": "reward-playerkill-formula",
+   "area": "challenge rewards",
+   "file": "Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json",
+   "export": "DT_ChallengeRewards_SessionEvents_Shared",
+   "path": "Rows/Challenges.Rewards.PlayerKill/Resources/0/Value/DefaultExpression/ExpressionString",
+   "expected": "(1 - (clamp(LastVictimCount, 0, LastVictimCountMax) * LastVictimReductionModifier)) * ((((BaseReward + (clamp(KillStreak - 1, 0, KillStreakMax) * KillStreakValue)) * InstigatorZoneModifier * InstigatorWeight) + ((BaseReward + (clamp(KillStreak - 1, 0, KillStreakMax) * KillStreakValue)) * TargetZoneModifier * TargetWeight)) * DistanceToTarget * RevengeModifier * KillStreakStoppedModifier) * FriendlyModifier * pow(CrewPenaltyModifier, clamp(CrewCount - 1, 0, CrewCountMax))"
+  },
+  {
+   "id": "movement-min-speed",
+   "area": "movement",
+   "file": "Wardogs/Content/MoverTesting/Settings/DA_GroundMovement.json",
+   "export": "DA_GroundMovement",
+   "path": "Properties/MinSpeed",
+   "expected": 80.0
+  },
+  {
+   "id": "movement-jump-velocity",
+   "area": "movement",
+   "file": "Wardogs/Content/MoverTesting/Settings/DA_GroundMovement.json",
+   "export": "DA_GroundMovement",
+   "path": "Properties/JumpVelocity",
+   "expected": 320.0
+  },
+  {
+   "id": "movement-back-max-speed-scale",
+   "area": "movement",
+   "file": "Wardogs/Content/MoverTesting/Settings/DA_GroundMovement.json",
+   "export": "DA_GroundMovement",
+   "path": "Properties/BackMaxSpeedScale",
+   "expected": 0.7
+  }
+ ]
+}

@@ -26,7 +26,8 @@ import re
 import struct
 import sys
 
-from raw_source_links import source_link, link_generated
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from raw_source_links import source_link, link_generated  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = "content/Wardogs_PlayerMovement_v1.md"
