@@ -95,15 +95,17 @@ WATER_HEIGHT = {
 
 HOTZONE_MAGNET = {
     "worldComponent": "WDHotZoneMagnetGameStateComponent (native constructor 0x8566570)",
-    "sizeMultiplierFieldOffset": "+0xF8 (vector); speed +0xF0 (float, read only through the Blueprint getter 0x8573ED0)",
+    "sizeMultiplierFieldOffset": "+0xF8 (world vector); speed +0xF0 (world float); rig data uses +0x3A0 and +0x39C instead",
     "nativeDefaults": {"speed": 3.0, "sizeMultiplier": [0.6, 0.6, 1.0]},
-    "activationHandler": "0x85674A0 (authority-side activation handler; it reads as the rig or tower activation) and client function 0x8571F80: the hot-zone cache "
-                         "extents are multiplied component-wise by the world component's size multiplier and the "
-                         "result is handed to the control-zone component callback 0x8571E20; the tower number, "
-                         "durations and location are stored by 0x856FE50 and replicated",
+    "activationHandler": "0x85674A0 is the tower activation caller; it uses the world component's pair. "
+                         "The rig has a separate caller 0x85EB820; both forward explicit inputs through "
+                         "0x856FE50 -> 0x85731A0 -> 0x776DDD0. Round 93 supersedes the earlier shared-caller inference.",
     "rigDataAssetValues": {"ActivatedHotZoneMagnetSpeed": 5.0, "SizeMultiplier": [0.5, 0.5, 1.0],
-                           "note": "The rig data asset carries its own pair; the two activation functions read the "
-                                   "world component's pair at +0xF8 (0.6, 0.6, 1.0 by default), not the rig's."},
+                           "note": "Inherited native rig defaults, not explicit JSON overrides. The cooked spawner/CDO "
+                                   "binds the rig data asset, and 0x85EB820 passes its own speed and size to explicit "
+                                   "relocation; it does not need to copy them into world defaults. Speed defines travel "
+                                   "duration; an optional curve can shape interpolation. Static CL-516586 evidence: "
+                                   "docs/evidence/round93-rig-lifetime.md."},
 }
 
 

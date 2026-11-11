@@ -70,9 +70,9 @@ After it is placed, the rig waits 15 s before it can start. Starting it is a hol
 | Run time per fuel unit | 0.03 s (Derived) |
 | Recharge after a run | 900 s (Derived) |
 
-While it runs, the Drill Rig pulls the hot zone toward it. Once activated, the rig shrinks the hot zone to 0.6 of its width and length with the world default, which is 36 percent of the area. The rig's own setting lists 0.5 instead, but the code reads the world default, and which value a live server uses is not shown.
+While it runs, the Drill Rig pulls the hot zone toward it. The shipped rig activation path uses the rig's own inherited defaults: half the cached width and length, with unchanged height. That is 25% of the original planar area. The separate world magnet default of 0.6 width and length is not the pair selected by this rig path.
 
-**Movement.** The hot zone moves toward the activated rig at a speed given in metres per second. The game's default for this is 3 m/s, which the code reads. The rig's own setting lists 5 m/s; whether that replaces the 3 m/s in play is not confirmed. The time to arrive is the distance in metres divided by the speed, and that time is added to how long the rig stays active. Derived example: a hot zone 300 m away takes 100 s at 3 m/s and 60 s at 5 m/s.
+**Movement.** The rig uses a speed parameter of 5 m/s to calculate travel time: centre distance in metres divided by speed. That travel time is added to the fuel-derived active duration. An optional curve can shape the interpolation, so this is not a claim of constant instantaneous velocity. Derived example: 300 m gives a 60 s travel duration at the shipped rig default. These values are established from the cooked rig binding and native code, not measured on a live server; see [Round 93 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-rig-lifetime.md#1-g2--the-rig-has-a-separate-activation-caller).
 
 ## Durability
 
