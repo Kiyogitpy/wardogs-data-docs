@@ -93,8 +93,10 @@ exports and leaves ambiguous names unchanged.
 | Build | `++Wardogs+Live-CL-516586` |
 | Season | Season 02 |
 
-Values describe this build, not necessarily a later patch or a server-side
-override. A stored asset value alone does not establish how it behaves in a match.
+The tables and tools have not been updated or validated for the S3 / 0.3 build.
+See the [S3 / 0.3 coverage note](_wiki/patch-notes/season-3.md). Values describe
+the build above, not necessarily a later patch or a server-side override. A stored
+asset value alone does not establish how it behaves in a match.
 
 ## Corrections and contributions
 
