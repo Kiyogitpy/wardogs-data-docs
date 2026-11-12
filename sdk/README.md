@@ -88,6 +88,7 @@ The class dump stays local. Generation steps:
 
 ## Related
 
+- [Supplied SDK declaration comparison](../docs/SDK_DECLARATION_COMPARISON.md) (build unverified)
 - Data reference docs (what the SDK structures contain at runtime):
   all `../Wardogs_*.md` files at the repo root
 - IDA mappings (what the compiled binary looks like):
