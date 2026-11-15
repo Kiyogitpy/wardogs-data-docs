@@ -38,7 +38,7 @@ The 149 instances are probably placement slots (inferred). Their individual posi
 
 `RandomizePositionRate` is the value that moves the watermark. Its unit and meaning are inferred from the name only (5.0 is likely a rate in seconds or per-second; not confirmed).
 
-The formatting string points at the `Account.Watermark` entry in the watermark string table. The source-string value is empty in the export, so the text is filled from the table at runtime.
+The formatting string points at the `Account.Watermark` entry in the watermark string table. The S3 export has SourceString null and LocalizedString empty. It stores a table/key reference; that alone does not establish the runtime text or resolution path.
 
 ---
 
@@ -46,4 +46,4 @@ The formatting string points at the `Account.Watermark` entry in the watermark s
 
 - **Instance positions.** The 149 instances export with no data. Their positions and sizes are not known.
 - **Randomisation unit.** `RandomizePositionRate` is not confirmed.
-- **Runtime text.** The formatted text comes from the string table at runtime.
+- **Runtime text.** The data references a string-table key; the runtime text and resolver have not been checked.

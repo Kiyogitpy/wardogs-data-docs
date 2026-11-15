@@ -57,13 +57,13 @@ Medical items heal the player who uses them, a teammate, or both, and some bring
 
 Healing stops if the user moves away, according to the in-game tutorial text. The game charges the durability once per action, as a fixed amount (read from the game code), so the uses per bag below assume one cost per use.
 
-**Enox.** Gives 40 HP as decaying health, which is health above the normal 100 that fades over time. The pool holds 40 HP. It fades 5 HP every 5 s until the pool is empty, so a full pool is gone after 40 s (read from the game code).
+**Enox.** Gives 40 HP as decaying health, which is health above the normal 100 that fades over time. The pool holds 40 HP. The historical round 40 consumer/default model removes up to 5 HP every 5 s, giving 40 s for a full pool; that rate is not reverified S3 native behavior.
 
 **Adrenaline Pen.** Gives no healing. It gives unlimited tactical sprint stamina for 60 seconds and reduces the equipment weight class of what you carry. The item can be used on yourself in 2 s, and a teammate use takes 1.3 s. A teammate who is alive gets the same 60 s unlimited tactical sprint.
 
 **Defibrillator.** Revives a downed teammate to 35 HP at once. It needs a battery: one discharge uses 25 battery charges, and the charge-up takes 4 s. It cannot be used while you yourself are downed. Batteries are in [Utility Items](utility-items.md).
 
-**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate to 10 HP. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The use animation is 2.2 s, and the revive is applied once at its end, so the use takes about 4 s (derived).
+**Emergency Resuscitator and Field Resuscitator.** Revive a downed teammate to 10 HP. The shop text says each is a single-use item, and the Emergency Resuscitator is limited to one per life. The historical montage is about 2.2 s; the separate four-second interaction estimate comes from the round 39 container-action trace, not the animation length. The S3 consumer has not been reverified.
 
 ### Downed and revive
 
@@ -81,13 +81,13 @@ Max health is 100 HP. No natural health regeneration for infantry was found in t
 
 The Medic skill tree changes some of these numbers. Four skills have listed values, covering three effects:
 
-- **Medkits have more uses.** The bag's usage rate multiplier drops from 1.0 to 0.6 as the skill levels up. The game code never reads it, so it does not appear to change the bag's durability cost.
+- **Medkits have more uses.** The bag's usage rate multiplier drops from 1.0 to 0.6 as the skill levels up. The historical round 39 search found no consumer in the code it read; whether S3 applies the multiplier remains unresolved.
 - **Medical item swap speed.** Switching to a medical item gets faster, with the equip speed multiplied by 1.2 or 1.4 at the higher levels. It covers the items tagged as medical, all of the list above except the Enox.
 - **Revive sprint boost.** After a revive, the reviver and the revived teammate each get a sprint and tactical sprint boost, at 1.2 or 1.4 times speed, for 5 s.
 
-The other Medic skills, such as faster healing and a longer bleed-out timer, have a description in the skill tree but no number in the game files, and no game code reads them, so their effect is not known.
+The other Medic skills, such as faster healing and a longer bleed-out timer, have a description in the skill tree but no number in the game files, and the historical search found no consumer; their S3 effect is not known.
 
-With the fixed durability costs, the bag gives the same counts at every skill level: 6 self heals, 75 teammate heals or 15 revives (derived from the 150 durability and the cost per action).
+Without skill scaling, 150 durability allows 6 self-heal steps, 75 teammate-heal steps or 15 revives at costs 25, 2 and 10. These count successful applications, not entire continuous healing sessions; equal counts at every S3 skill level are unverified.
 
 ## Use and timing
 

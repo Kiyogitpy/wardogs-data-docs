@@ -208,7 +208,7 @@ Display strings come from `STRINGS_Itemsmith_PersistentActions` and `STRINGS_Veh
 
 | Field | Value |
 |---|---|
-| Entry view model | `WDUIItemsmithBrowserEntryViewModel` on [`DA_Vehiclesmith_BrowserEntry`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserEntry.json) |
+| Entry view model | `WDUIItemsmithBrowserEntryViewModel` in [`DA_Vehiclesmith_BrowserList`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/UI/ItemSelect/Data/DA_Vehiclesmith_BrowserList.json) |
 | Entry width x height | **270 x 125** |
 | Items per page | **6** |
 | Entry widget | `W_ItemsmithBrowserEntry` |

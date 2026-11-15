@@ -16,7 +16,7 @@ description: "Four-seat light armored SUV with no weapons, built for off-road tr
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-humvee-default) |
 | Internal name | WHL_05 (default variant) |
 {: .wiki-infobox }
@@ -42,7 +42,7 @@ The Humvee is sold in the vehicle vendor under land transport, for 3,000 cash, a
 
 Main health is 500 HP. The Humvee has separate health for its engine (400 HP), fuel tank (400 HP) and each wheel (75 HP).
 
-Rifle rounds do 5% of their damage against the hull. The fuel tank takes an extra 400% from bullets, so it is the fastest route to destroy the vehicle.
+The documented model gives 5.56 mm FMJ hull damage at 2.5% of base damage, including the main-body ×0.5 modifier; S3 native equivalence remains unverified. The fuel tank takes an extra 400% from bullets, so it is the fastest route to destroy the vehicle.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -61,6 +61,8 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 
 ## Handling
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Humvee reverse speed at ~57 km/h (previously 35 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
+
 - Driving assists: anti-roll 40 on both axles and a full-recovery speed of 120. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 
 - Mass 7,250, hand brake 80, ABS 50 and traction control 45, as set.
@@ -70,7 +72,7 @@ The Humvee has no weapons. Its four seats are a driver and three passengers.
 
 **Steering and pedal tuning.** Its settings are steer sensitivity 2.5, steer input gravity 2, throttle sensitivity 2 and brake sensitivity 6.5, the highest brake value of any vehicle, and the brake reaches full at a tenth of pedal travel. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
-- No torque scale is set; the game default of 1.0 applies.
+- No torque scale is explicitly stored. The earlier CL516586 native default was 1.0; the S3 native initializer and handling consumer have not been checked, so omission alone does not establish the current scale.
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes

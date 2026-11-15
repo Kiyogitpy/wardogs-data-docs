@@ -14,7 +14,7 @@ description: "Tracked artillery vehicle that fires 155 mm shells from a long-ran
 | Type | Artillery armored vehicle |
 | Seats | 3 on the stats sheet (2 seat setups in the seat data) |
 | Price | 8,000 cash |
-| Unlock level | 1 |
+| Stored vendor level | 1 (not the role-track unlock; see S3 note) |
 | **Gun** | |
 | Main gun | L52 cannon, 155 mm |
 | Shell | 155mm HE Shell |
@@ -34,7 +34,7 @@ The SPH-2 is a tracked artillery vehicle built for long-range indirect fire. Its
 
 ## Overview
 
-The SPH-2 is sold in the vehicle vendor under land artillery, for 8,000 cash, and unlocks at level 1. It shares its tracks, suspension and rifle protection with the other tracked tanks in the family.
+The SPH-2 is sold in the vehicle vendor under land artillery, for 8,000 cash, and has a stored vendor level of 1 (not its role-track unlock). It shares its tracks, suspension and rifle protection with the other tracked tanks in the family.
 
 ## The gun
 
@@ -124,6 +124,10 @@ The SPH-2 is placed by the ground vehicle yards of all four main maps: [Bakurani
 - [L2A6](l2a6.md) and [Flakpanzer Gepard](flakpanzer-gepard.md), the other tanks of this family
 - [T-72B3](t-72b3.md), a separate tank
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) move tank unlocks from Driver levels 20–35 to 35–50 and from WARDOG level 145 to 200. The announcement gives a class range, not a per-variant Driver level; the saved vendor level 1 above does not resolve that progression requirement.
 
 ## Sources
 

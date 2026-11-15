@@ -12,12 +12,12 @@ description: "The three passive missions with five tiers each: cash earned, role
 | **General** | |
 | Kind | Tiered totals tracked over time |
 | Missions | 3, with 5 tiers each (15 in total) |
-| Reward | Intel per tier |
+| Stored reward | Intel amounts; effective payout unverified |
 | Auto-activate | No |
 | Internal name | DT_PassiveMissionChallenges |
 {: .wiki-infobox }
 
-Passive missions track a total that builds up over play, not a single event. There are three missions, and each has five tiers. Each tier pays Intel when its goal is reached.
+Passive missions track a total that builds up over play, not a single event. There are three missions, and each has five tiers. Each tier names an Intel amount, but all 15 reward entries carry an invalid reward-type setting. The current reward consumer and activation path must be checked before treating these amounts as payouts.
 
 ## Overview
 
@@ -28,12 +28,12 @@ Passive missions track a total that builds up over play, not a single event. The
 ## How it works
 
 - **Not automatic.** The game marks passive missions as not auto-activated.
-- **Tiers.** Each tier is a separate challenge with its own reward. The Earn Role XP and Time Played tiers differ only in their reward.
+- **Tiers.** Each tier is a separate configured challenge with its own reward entry. The Earn Role XP and Time Played tiers differ only in their reward.
 - **Time Played** records the real time elapsed every 5 seconds, so progress moves in 5-second steps.
 
 ## Missions
 
-| Mission | Tier | Goal | Reward |
+| Mission | Tier | Stored goal | Stored Intel amount |
 |---|---|---|---|
 | Earn Cash | 1 | 5,000 cash earned | 100 Intel |
 | Earn Cash | 2 | 12,000 cash earned | 200 Intel |
@@ -53,7 +53,7 @@ Passive missions track a total that builds up over play, not a single event. The
 
 ## Intel
 
-Intel is the currency these missions pay. The game gives it no display name, and the game shows no way to spend it.
+Intel is the resource named in these mission reward entries; the invalid reward-type setting leaves actual payment unresolved. The game gives it no display name, and the game shows no way to spend it.
 
 ## Season 2 changes
 
@@ -67,6 +67,8 @@ Intel is the currency these missions pay. The game gives it no display name, and
 - [Cash and Rewards](cash-and-rewards.md)
 
 ## Sources
+
+- [Current passive-mission rows](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json)
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md)
 - [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)

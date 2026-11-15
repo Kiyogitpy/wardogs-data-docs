@@ -16,7 +16,7 @@ description: "Six-seat pickup version of the Kodiak SUV with no weapons, sold fo
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-patriot-kodiak/WHL_02_Pickup) |
 | Internal name | WHL_02 (pickup variant) |
 {: .wiki-infobox }
@@ -59,11 +59,13 @@ The pickup has no weapons. Its seats are the driver, three inside passengers and
 
 ## Handling
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Kodiak reverse speed at ~57 km/h (previously 33 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
+
 Handling matches the base Kodiak: mass 2,750, hand brake 50, front steering of 30 degrees, and the same engine and transmission.
 
 **Steering and pedal tuning.** The pickup uses the same input set as the Kodiak, which is set to steer input gravity 2 and no other sensitivity values. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
-- No steering sensitivity is set; the game default of 5.0 applies.
+- The shared S3 input asset omits steering sensitivity. The earlier CL516586 default was 5.0; its current initializer has not been verified.
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes

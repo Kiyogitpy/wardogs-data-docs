@@ -129,7 +129,7 @@ Prices come from the Weapon Shop data. The sight with no weapon is listed in the
 
 ## Parts that fit no weapon
 
-1 part can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+The table reports 1 part with no fitting weapon in its loadout association. That is a bounded catalog result, not proof that their modifiers never apply in S3. They are still listed in the table above with "No weapon" in the Fits column.
 
 CantedIrons.
 

@@ -12,17 +12,17 @@ description: "Two-seat attack helicopter with a 30 mm autocannon and B-13 rocket
 | ![Havoc]({{ '/assets/img/icons/vehicles-3d/T_UI_Vendor_Havoc.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Combat helicopter |
 | Seats | 2 (pilot and gunner) |
-| Price | 28,000 cash |
+| Price | 26,000 cash |
 | Unlock level | 0 |
 | Main health | 800 HP |
 | Top speed | 400 (as stored) |
 | Mass | 7,500 kg |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-havoc) |
 | Internal name | ROT_02 |
 {: .wiki-infobox }
 
-The Havoc is a two-seat attack helicopter. It carries a 30 mm autocannon and a pair of B-13 rocket pods, and it is the most expensive air vehicle in the vehicle vendor at 28,000 cash.
+The Havoc is a two-seat attack helicopter. It carries a 30 mm autocannon and a pair of B-13 rocket pods, and it is the most expensive air vehicle in the vehicle vendor at 26,000 cash.
 
 ## Overview
 
@@ -51,7 +51,7 @@ Main health is 800 HP. The helicopter also has separate health for each of these
 | Tail rotor | 300 |
 | Front landing wheels (each) | 100 |
 
-Rifle rounds do 5% of their damage against the hull. A round that hits the fuel tank gets an extra 300% on top of that, so it does about a fifth of its full damage. Rocket blasts that burst within the inner radius are multiplied by five.
+Under the documented model, 5.56 mm FMJ does 2.5% of base damage to the hull: the 5% vehicle factor also receives the main-body ×0.5 modifier. These percentages are conditional on the earlier damage model, not a measurement of S3 native behavior; other calibers can have additional rules. The fuel-tank route instead applies the 5% vehicle factor and ×4 tank modifier, giving 20% for 5.56 mm FMJ; it does not also take the hull-only ×0.5 modifier. Rocket blasts that burst within the inner radius are multiplied by five.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -99,6 +99,12 @@ The Havoc is covered by the air vehicle yards (inferred). Each side normally has
 - [Vehicle damage](vehicle-damage.md)
 - [MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md) and [AH-6R [Rockets]](ah-6r-rockets.md), the smaller Little Bird family helicopters
 - [Vehicles](../vehicles.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce this variant from 28,000 to 26,000 cash. The saved vehicle market export agrees. This is the undiscounted price; mode restrictions and progression still affect availability.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also retune 20×102 mm damage: each round hits a vehicle section once, and this helicopter takes roughly the same damage as in Season 2. Retained hit-count tables are conditional calculations, not a new verification of that section-contact behavior.
 
 ## Sources
 

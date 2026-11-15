@@ -7,21 +7,23 @@ description: "The waiting time before a King of the Hill match: the ways to earn
 
 # Pre-lobby
 
+S3 seeding now supplies a few **free unarmed vehicles per team**, and **all vehicles are cleared when the match starts**, according to the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). This is an announced change beyond the bounded historical subscriber search below; it does not establish that player inventories are also cleared.
+
 | Pre-lobby | |
 |---|---|
 | What it is | The wait in your team's spawn area before a match starts |
 | Where it is used | King of the Hill (the only mode that turns it on in the game files) |
-| Points to Cash | 1 point = 1 Cash, paid when the match starts |
-| Normal starting Cash | 10,000 in the game's currency table, with the points paid on top (see Starting Cash below) |
-| Most you can bank | 5,000 points |
-| Free points | 150 when you arrive, then 250 every 60 seconds |
+| Historical points-to-Cash path | CL516586: 1 point = 1 Cash at match start; S3 consumer unverified |
+| Stored starting Cash | 10,000 in the current currency table; current initialization/persistence unresolved |
+| Historical point cap | 5,000 in the CL516586 analysis |
+| Historical arrival/wait awards | CL516586: 150 on arrival, then 250 every 60 seconds |
 | Ways to earn more | Hot Potato, the soccer pitch, the moving practice targets |
-| Minimum time in the lobby to be paid | 15 seconds |
+| Historical payment eligibility | CL516586 trace: 15 seconds; S3 consumer unverified |
 {: .wiki-infobox }
 
-While a match is filling up, players wait in their team's spawn area. The game gives them things to do and counts what they earn as pre-lobby points. When the match starts, the points are paid out as extra starting Cash.
+While a match is filling up, players wait in their team's spawn area. The game gives them things to do and counts what they earn as pre-lobby points. The CL516586 analysis traced conversion of pre-lobby points into extra Cash at match start; that conversion and its eligibility conditions have not been re-established for S3.
 
-## How points become Cash
+## Historical CL516586 point conversion
 
 - **Rate.** One point is one Cash. There is no multiplier.
 - **Timing.** The whole amount is paid in one go at the moment the match starts. It is added to your normal starting Cash, not instead of it (see [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
@@ -30,7 +32,7 @@ While a match is filling up, players wait in their team's spawn area. The game g
 - **Time in the lobby.** You are only paid if you have been in the lobby for at least 15 seconds when the match starts. Points that would arrive in your first 15 seconds are refused. This is read from the game code, not seen in play.
 - **Late arrivals.** A player who joins when the lobby is already full or already declared ready does not get the arrival points and is not paid. A player who joins a match that is already running has no pre-lobby at all.
 
-## Where points come from
+## Historical CL516586 point sources
 
 | Source | Points |
 |---|---|
@@ -41,11 +43,11 @@ While a match is filling up, players wait in their team's spawn area. The game g
 | Soccer assist | 25 to the last player who passed it to the scorer |
 | Moving practice target | The damage of your hit, rounded down. Melee blows and fists do not count |
 
-These are the only sources in the game. The pitch and the targets are described in [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The game's text and sounds for the awards know exactly three reasons: the potato, shooting and soccer.
+These are the sources identified by the earlier pre-lobby investigation; that search does not exclude other current producers. The pitch and the targets are described in [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The game's text and sounds for the awards know exactly three reasons: the potato, shooting and soccer.
 
-## How long it lasts
+## Stored wait settings and historical timer behavior
 
-The lobby ends in two steps, and each one has a countdown that starts only once its condition is met (see [King of the Hill](king-of-the-hill.md)).
+The current config stores two wait stages. In the CL516586 trace, each countdown started only once its condition was met (see [King of the Hill](king-of-the-hill.md)).
 
 1. **Player count.** The match waits until 60 players have been placed on a team. Until then this step has no time limit at all. When the 60th player is on a team, a 10 second countdown starts.
 2. **Ready-up.** This step needs at least 9 players and every one of them ready. When that holds, a 5 second countdown starts.
@@ -54,18 +56,18 @@ So the wait has no fixed length: it lasts as long as it takes to fill the lobby,
 
 Points stop being accepted when the lobby is declared ready, or once 60 or more players are in it. After that, new points are refused. Because the wait for players has no time limit, the 250-points-per-minute award can pay out for as long as the lobby stays open and unfilled; in a lobby that fills in under a minute it never fires.
 
-## What happens at match start
+## Match-start behavior traced for CL516586
 
 - The soccer pitch, with its ball, and the moving practice targets are removed from the spawn areas. Goals and target hits cannot score once the match has begun.
 - The Hot Potato mini-game switches off. Whether a potato you are still holding is taken away was not checked; its fuse ends the chain anyway.
 - Your pre-lobby points are paid as Cash (above).
-- Nothing in the game moves you when the match starts. The pre-lobby is played in your own team's spawn area, and the match begins with you where you stand (inferred from the absence of any such step; not seen in play).
-- Nothing heals you, refills your health or empties your inventory at that moment. Gear, ammunition and anything else you bought or picked up in the pre-lobby stay with you (inferred from the absence of any such step).
-- The other things that switch on with the start are the zone and its music, the on-screen match display, wagers, refunds and call-for-help requests, which only work once the match is playing. None of them changes the player.
+- No teleport was found among the CL516586 MatchState.Playing subscribers examined in round 70. That bounded search does not establish whether S3 moves the player.
+- The same historical subscriber search found no health restore or inventory clear; it did not cover every callee or establish S3 behavior. Current gear, ammunition and inventory persistence remain unresolved.
+- The other things that switch on with the start are the zone and its music, the on-screen match display, refunds and call-for-help requests, which only work once the match is playing. This subscriber inventory does not exclude player changes in untraced callees.
 
 ### Starting Cash
 
-The starting balance in the game's currency table is 10,000 Cash. It is the same in every mode that uses the normal currency; the only different starting amounts are the two co-operative missions (3,000 for Strike and Disarm, 2,000 for VIP Escort; see [Strike and Disarm](strike-and-disarm.md) and [VIP Escort](vip-escort.md)). The game applies this balance when you join, as your player profile is set up, not when the match starts, so it is already there before the pre-lobby begins. It is applied only when the game mode does not keep Cash between matches. A networked server keeps it by default, so on those servers your Cash when you join comes from your saved player profile on the online service, which the game does not show; the 10,000 is then the table value and the first-time balance (inferred), not something the client hands out each match. The server settings file has an entry for overriding the starting Cash, but this version of the game has no such setting, so it does nothing. The pre-lobby points are the only Cash the start of the match adds.
+The current currency table stores 10,000 Cash, and sanitized game-mode settings store OverrideStartingCash=-1. Neither field establishes current initialization, first-login balance or persistence. CL516586 analysis described mode overrides of 3,000 for Strike and Disarm and 2,000 for VIP Escort, profile-based persistent cash, and pre-lobby awards at match start. Those native consumers and any other S3 starting-Cash producers remain unresolved.
 
 ## See also
 

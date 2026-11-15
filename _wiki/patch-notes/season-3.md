@@ -1,7 +1,7 @@
 ---
 title: "Season 3 / 0.3 Changes"
 parent: "Patch Notes"
-description: "Season 2 to S3 / 0.3: stored weapon, damage-rule, buildable and curve changes, with the current coverage gaps."
+description: "Official S3 balance and progression numbers, current saved-data comparisons, and their evidence limits."
 ---
 
 # Season 2 → Season 3 / 0.3
@@ -15,6 +15,82 @@ description: "Season 2 to S3 / 0.3: stored weapon, damage-rule, buildable and cu
 {: .wiki-infobox }
 
 The core reference tables now use the CL-533731 / hotfix 533689 snapshot. These notes compare saved values with Season 2. The [S2→S3 browser](../../season-3-changes/all-changes.md) includes the literal exported-field differences; the [S1→S2 browser](../../season-2-changes/all-changes.md) remains separate.
+
+## Official Season 3 changes
+
+The [developer's Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221), published 11 November 2026, announce the changes below. Announced values and approximate speeds/heights are distinct from measured results or verification of a particular native consumer. The saved-data comparisons later on this page retain their own source and model limits.
+
+**Availability matters:** S3 adds the Sabatulo city map and Limited mode. Limited excludes HP/AP ammunition, level 3/4 armor, attack vehicles, CIWS, Stingray, MG Nest, Drill Rig and anti-tank mines. The Infrared Range Finder leaves the vendor. **The Wager Vendor is removed**; remaining wager definitions are configuration, not evidence of an active S3 earning method.
+
+### Weapons and equipment
+
+| Announced change | S3 value or comparison |
+| --- | --- |
+| AR/LMG torso damage versus S2 | Upper +13%; middle/lower +3%, with the armor reduction percentages unchanged |
+| Unarmored DMR hits | Two body shots; one headshot. Neck remains two shots |
+| SVD/BMR-308/M14 against level-3 helmets | Two headshots, previously three |
+| Compound Bow arrow speed | +50% announced; stored weapon settings and projectile fields are distinguished in the [bow article](../weapons/compound-bow.md) |
+| Basic Parachute price | 500 → 1,250 cash |
+| Sport Parachute price | 700 → 2,250 cash |
+| Basic practical jump heights | About 100 m recommended; about 60 m may be survivable with a fast reaction; deployment blocked within about 20 m of the ground |
+| Sport practical jump heights | About 60 m recommended; about 40 m may be survivable with a fast reaction |
+| AMP-9 20-round magazine weight | 1 → 0.3 kg |
+| IED / trigger weights | IED 1.5 → 2.7 kg; trigger 1.5 → 0.2 kg |
+| Molotov unlock cost | 25,000 → 12,500 cash |
+
+The notes also announce reduced TCX-SPR climb/drift and a prone-recoil fix; Molotov ignition with held-item dropping; a Halligan supply-crate interaction; and altered Sport Parachute controls. These behavioral announcements are not inferred solely from field presence. Current weapon recoil tables now use S3 settings with the historical calculation assumptions, while the older viewer retains S1/S2 history.
+
+### Vehicles and supply drops
+
+| Vehicle | Announced reverse speed, km/h |
+| --- | --- |
+| Bobcat | 16 → about 25 |
+| Kodiak | 33 → about 57 |
+| Humvee | 35 → about 57 |
+| Dune Buggy | 43 → about 50 |
+| Ural | 15 → 27 |
+| Wolf-110 | 27 → about 40 |
+
+| Specific variant | Vendor price, cash |
+| --- | --- |
+| Wolf-110 [M2 Browning] | 7,800 → 6,800 |
+| Kodiak [M249] | 6,750 → 6,250 |
+| AH-6M Littlebird [Miniguns] | 12,000 → 10,480 |
+| Havoc | 28,000 → 26,000 |
+
+Mounted minigun infantry multipliers increase by 50% at the head, 78% at the neck, 64% upper torso, 55% middle torso, 50% lower torso and 56% at pelvis/limbs. AH-6R rocket pods switch from 122 mm to their own 70 mm rockets. The CIWS change limits each 20×102 mm round to one hit per vehicle section and reduces maximum elevation 65°→60°; old multi-hit calculations are not evidence of the new consumer. The announced grenade-launcher fix changes tank-track destruction from one to three hits and engine disabling from three to five–six hits.
+
+Announced approximate safe drop heights change to 35 m for standard and armored supply crates (previously about 60/80 m), and 40 m for pallets (previously about 90 m). Velocity also matters: about 80 km/h at those heights is guidance, not a guaranteed survival boundary.
+
+### Progression, rewards and servers
+
+| Unlock track / item | Level before → S3 |
+| --- | --- |
+| Assault: C4 / Molotov | C4 4→5; Molotov 13→8 |
+| Support: Large Hammer / Verba | Hammer 8→14; Verba 14→8 |
+| Recon: AMR 50 | 35→41 |
+| Driver: tanks | 20–35→35–50 |
+| Wardog: tanks | 145→200 |
+
+Shared armor, backpacks, tactical vests and parachutes become multi-track unlocks. The announced seasonal cadence is roughly three months; role-based catch-up XP and vendor discounts grow week by week. The notes do not specify a universal fixed catch-up percentage. Losing-faction discounts now compare against the leading faction.
+
+The announcement's broad Wardog tank statement should not replace every saved vehicle gate: current nodes list L2A6 at 200, T-72B3 at 155, SPH-2 at 145 and Vanguard AA at 165. The [current unlock tables](../progression-and-economy/currencies.md) retain those individual values alongside the announcement.
+
+Announced cash for destroying L81 Mortar, Talon 9K-SAM, MG Nest or Stingray doubles 650→1,300; CIWS doubles 1,200→2,400. A vehicle kill using your own vehicle within 1,000 m of a control zone earns the full zone reward. The official spotted-target changes are:
+
+| Target | Cash before → S3 |
+| --- | --- |
+| AH-6M [Miniguns] / AH-6R [Rockets] | 1,000→850 |
+| Z20 Lakota [Miniguns] | 1,400→1,200 |
+| L2A6 | 3,300→3,000 |
+| T-72B3 | 2,400→2,000 |
+| Hot Zone Magnet | 1,650→1,500 |
+
+Spotted-target XP becomes 125 for players (was 150), 200 for FOBs (250), 200 for the Hot Zone Magnet (225), and 400 for spawn vehicles (500). Other announced reward changes cover air-vehicle kill streaks, lower-value supply drops, drill-activating fuel deposits and parachuting into enemy FOBs.
+
+Official-server ping limits become 250 ms; community administrators retain their own limits. Squad invitations and join requests each queue up to five. The new seeding behavior supplies some free unarmed vehicles and clears vehicles at match start. These are developer-announced S3 rules, separate from the older subscriber/code searches preserved in the reference pages.
+
+The [article fact-check record](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/S3_FACT_CHECK.md) tracks corrected examples and remaining source/model obligations. The full official article also covers cosmetics, controller bindings, Twitch Drops and fixes; announcement coverage is separate from the literal exported-field diff.
 
 ## Weapons and damage rules
 
@@ -40,7 +116,9 @@ The updated tables account for 32 buildable item definitions and six separately 
 
 ## Progression and coverage
 
-The current snapshot lists **14 achievement entries versus ten** in the saved Season 2 table, with reviewed current condition trees and freshly decoded thresholds. The current wager tables list **11 actions versus four**, and **90 conditions versus 50**. The stored kill-count maximum rises **25→50**, and the revive-count maximum **50→75**. The [achievements](../progression-and-economy/achievements.md) and [wagers](../progression-and-economy/wagers.md) articles now show the current entries and count/odds tables.
+The official notes name three added achievements: He's Behind You, Car Jacker and Slot Machine. The saved table also contains Sound The Horn; its growth is a configuration comparison, not an official count of newly released achievements.
+
+The current snapshot lists **14 achievement entries versus ten** in the saved Season 2 table, with reviewed current condition trees and freshly decoded thresholds. Retained wager configuration lists **11 actions versus four**, and **90 conditions versus 50**. Its kill-count maximum rises **25→50**, and revive-count maximum **50→75**. These definitions remain stored even though the official S3 notes remove the Wager Vendor. The [achievements](../progression-and-economy/achievements.md) and [wagers](../progression-and-economy/wagers.md) articles distinguish current entries from retained, inactive vendor configuration.
 
 All 90 wager-condition rows lack the old `Category` field, so their category remains unknown. An omitted price multiplier also remains unknown rather than becoming an invented default. Listing an entry does not prove that it is offered in every mode or on the current server.
 

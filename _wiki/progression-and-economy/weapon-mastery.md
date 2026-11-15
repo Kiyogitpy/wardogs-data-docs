@@ -30,7 +30,7 @@ Each weapon type and vehicle type has its own mastery progress. The mastery scre
 
 - **Per type.** Progress is kept for each type, not for each weapon or vehicle. The screen lists which weapons and vehicles belong to each type.
 - **Two tabs.** The platform mastery screen has a Progression tab and a Challenges tab.
-- **XP.** The game gives no XP for any weapon or vehicle. No item in this build has a platform XP tag set (it is empty on all 628 item rows), so how mastery XP is earned is not in the game, and the backend has no record type for it.
+- **XP.** In the current selected entity exports, all 629 rows that serialize a platform-XP tag leave it unset. This does not establish that weapons cannot earn mastery XP or that the backend has no record type; the XP producer and progression consumer remain unverified.
 - **Separate from role mastery.** Role mastery is a different track for the six roles, with its own XP curve. See [Cash and Rewards](cash-and-rewards.md#role-mastery-xp).
 
 ## Weapon types
@@ -89,7 +89,7 @@ The game has a mastery paint title and a mastery texture slot for paints, but it
 
 ### XP and rewards per level
 
-Not in the game. The mastery screen has text, colours and icon settings. It has no XP figures and no reward for any level, and the backend has no platform mastery content type. The level and XP thresholds that would gate the track do not appear in the client.
+The selected mastery-screen configuration does not supply level thresholds or XP rewards. The backend progression schema and current XP consumer have not been verified; absence from these UI settings does not establish their absence from the game.
 
 ## Season 2 changes
 

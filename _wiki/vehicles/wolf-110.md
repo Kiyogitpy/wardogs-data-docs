@@ -16,7 +16,7 @@ description: "Four-seat SUV added in Season 2, with the strongest torque curve o
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 129 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-whl-08-default) |
 | Internal name | WHL_08 (default variant) |
 {: .wiki-infobox }
@@ -42,7 +42,7 @@ The Wolf-110 is sold in the vehicle vendor under land transport, for 2,200 cash,
 
 Main health is 500 HP. The Wolf-110 has separate health for its engine (400 HP) and fuel tank (400 HP) and each wheel (75 HP).
 
-Rifle rounds do 5% of their damage against the hull. Hits to a wheel can destroy the vehicle faster than hits to the body.
+The documented model gives 5.56 mm FMJ hull damage at 2.5% of base damage, including the main-body ×0.5 modifier. This is a conditional calculation, not S3 native verification. Hits to a wheel can destroy the vehicle faster than hits to the body.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -60,6 +60,8 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 The Wolf-110 has no weapons. Its four seats are a driver and three active passengers.
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Wolf-110 reverse speed at ~40 km/h (previously 27 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
 
 - Driving assists: anti-roll 40 on both axles and a full-recovery speed of 120, the same as the Humvee. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 

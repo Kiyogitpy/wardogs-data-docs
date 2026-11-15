@@ -15,7 +15,7 @@ description: "Two vehicle service stations built with the Large Hammer from 200 
 | Hammer | Large |
 | **Building** | |
 | Build cost | 200 Build Supplies each |
-| Build time | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 1,600 HP each |
 | **Damage** | |
 | Bullets | -80% |
@@ -23,7 +23,7 @@ description: "Two vehicle service stations built with the Large Hammer from 200 
 | Grenades | +50% |
 | Rockets | +1,500% |
 | C4 | +600% |
-| IEDs | +1,000% (Repair Station); +0% (Refuel Station) |
+| IEDs | +1,000% (both stations) |
 | Internal name | [`DA_Buildable_RefuelStation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/RefuelStation/DA_Buildable_RefuelStation.json), [`DA_Buildable_RepairStation`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/RepairStation/DA_Buildable_RepairStation.json) |
 {: .wiki-infobox }
 
@@ -39,7 +39,7 @@ Destroying an enemy Refuel Station or Repair Station pays 200 cash and 50 Role X
 
 ## Building it
 
-- **Cost:** 200 Build Supplies each, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 200 Build Supplies each, whichever hammer builds it. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Large only.
 - **Limit:** One Refuel Station and one Repair Station per Forward Operating Base. Each counts toward the base's limit.
 - **Placement:** Each must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
@@ -47,13 +47,13 @@ Destroying an enemy Refuel Station or Repair Station pays 200 cash and 50 Role X
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The Refuel Station has 15, 14, 27 and 14 weak spots in its first four stages. The Repair Station has 16, 16, 16 and 15. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | cannot place | cannot place | 134 (about 118.3 s) |
 | Hits to repair from zero health | 31 | 16 | 11 |
 | Hits to dismantle (your own) | 11 | 8 | 7 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Large Hammer is the only one that can place a station. The repair and dismantle hits for the other hammers are what their hits do; they have not been verified for this structure. The build count assumes normal hits, and hitting weak spots brings it down. The repair hits are for a finished station; the repair multiplier is 13.3.
 
@@ -61,14 +61,14 @@ The Large Hammer is the only one that can place a station. The repair and disman
 
 The stations refuel and repair vehicles in the Forward Operating Base radius. Each has a Fast and a Max restock:
 
-| Station | Restock | Amount per restock | Time | Cost | Supplies per restock |
+| Station | Restock | Amount per restock | Time | Cost | Stored item-cost factor |
 |---|---|---:|---:|---:|---:|
-| Refuel Station | Fast | 5% of the tank | 3 s | 75 cash | 5 Fuel Supplies |
-| Refuel Station | Max | up to 100% of the tank | 9 s | 1,500 cash | 5 Fuel Supplies |
-| Repair Station | Fast | 5% of health | 3 s | 100 cash | 5 Mechanical Supplies |
-| Repair Station | Max | up to 100% of health | 9 s | 2,000 cash | 5 Mechanical Supplies |
+| Refuel Station | Fast | 5% of the tank | 3 s | 75 cash | 5 (Fuel Supplies cost factor) |
+| Refuel Station | Max | up to 100% of the tank | 9 s | 1,500 cash | 5 (Fuel Supplies cost factor) |
+| Repair Station | Fast | 5% of health | 3 s | 100 cash | 5 (Mechanical Supplies cost factor) |
+| Repair Station | Max | up to 100% of health | 9 s | 2,000 cash | 5 (Mechanical Supplies cost factor) |
 
-The times are the stored values. A Max restock most likely takes its full 9 s even when the tank or health is nearly full: the game code that starts a restock works out the amount, the supplies and the cash from the share restored, but it never uses the stored time and does not shorten it for a smaller share (inferred from the code; the step that applies the time was not found). The charge is different: a Max restock is charged for the share it restores. The cash cost in the table is the full-tank or full-health price, scaled by the share restored and rounded up to a multiple of 50. The supplies used are the item's cost times the amount restored, so a nearly full target costs little, and a restock cannot give more than the FOB has in stock. This is a static reading of the restock code (round 41), not checked in play. The Refuel Station has a refuel start and stop sound, and the Repair Station has a repair start and stop sound.
+The times are the stored values. A Max restock most likely takes its full 9 s even when the tank or health is nearly full: the game code that starts a restock works out the amount, the supplies and the cash from the share restored, but it never uses the stored time and does not shorten it for a smaller share (inferred from the code; the step that applies the time was not found). The charge is different: a Max restock is charged for the share it restores. The cash cost in the table is the full-tank or full-health price, scaled by the share restored and rounded up to a multiple of 50. The supplies used are the item's cost times the amount restored, so a nearly full target costs little, and a restock cannot give more than the FOB has in stock. This is a static reading of the CL516586 restock code (round 41), not a verified S3 consumer. The stored item-cost factor of 5 is not a fixed five-supply charge for every partial restock. The Refuel Station has a refuel start and stop sound, and the Repair Station has a repair start and stop sound.
 
 ## Durability
 
@@ -79,9 +79,9 @@ The times are the stored values. A Max restock most likely takes its full 9 s ev
 | Grenades | +50% | +50% |
 | Rockets | +1,500% | +1,500% |
 | C4 | +600% | +600% |
-| IEDs | +0% (300 per hit) | +1,000% |
+| IEDs | +1,000% | +1,000% |
 
-Rockets do 16 times their normal damage to either station. The Refuel Station has no IED entry of its own, so an IED does its base 300 damage to it: 6 IED hits destroy it. The Repair Station has its own IED entry (+1,000%), so 1 IED hit destroys it. The other hits either station takes to destroy are derived in the table below. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+Rockets do 16 times their normal damage to either station. Both S3 damage rows have an IED entry of +1,000%. Under the documented model, 300 base damage becomes 3,300 damage, so one full-damage IED hit exceeds either station's 1,600 HP. The other hits either station takes to destroy are derived in the table below. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
@@ -89,7 +89,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Refuel Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 6 |
+| Refuel Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 1 |
 | Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 1 |
 
 ## Season 2 changes

@@ -2,7 +2,7 @@
 title: "Crowbar Challenges"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The one crowbar challenge, Door Forced Open, and the base amounts it pays."
+description: "The one crowbar challenge, Door Forced Open, and its stored cash expression."
 ---
 
 # Crowbar Challenges
@@ -12,19 +12,19 @@ description: "The one crowbar challenge, Door Forced Open, and the base amounts 
 | **General** | |
 | Kind | Event reward |
 | Challenges | 1 |
-| Auto-activate | Yes |
+| Auto-activate | Stored flag: true; live activation unverified |
 | Internal name | DT_Challenges_SessionEvents_Crowbar |
 {: .wiki-infobox }
 
-The crowbar challenge pays when a player forces a door open. The crowbar is the [Halligan Bar](../equipment/halligan-bar.md).
+The crowbar challenge definition associates forcing a door open with a stored cash expression; current payout eligibility is unverified. The crowbar is the [Halligan Bar](../equipment/halligan-bar.md).
 
 ## Challenges
 
 | Challenge | What earns it | Cash (base) | Role XP (base) |
 |---|---|---|---|
-| Door Forced Open | Breaching a door | Base 0.5, owner assist 0.25 | Base 0.25, owner assist 0.1 |
+| Door Forced Open | Breaching a door | 100 × zone factor × repeat factor | No Role XP resource in this row |
 
-The sources give the base numbers but not the formula that combines them with the event, so they are shown as the game lists them.
+The current cash row stores `(1 - clamp(LastVictimCount, 0, 1)) * (100 * InstigatorZoneModifier)`. The zone selector stores 2 in a Hot Zone, 1 in a Control Zone and 0 otherwise: with a repeat count of zero, the expression gives 200, 100 or 0 cash respectively. A repeat count of one or more makes it zero. This is a calculation from the saved expression, not a measured payout; the current native evaluator, repeat-counter lifetime and live activation remain unverified. There is no owner-assist multiplier or Role XP resource in this row.
 
 ## Season 2 changes
 
@@ -39,4 +39,4 @@ The sources list no Season 2 changes for this challenge.
 ## Sources
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md), sections 3 and 6
-- Crowbar challenge table (JSON)
+- [Crowbar challenge definition](../../data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_Challenges_SessionEvents_Crowbar.json) and [current reward expression](../../data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_ChallengeRewards_SessionEvents_Crowbar.json)

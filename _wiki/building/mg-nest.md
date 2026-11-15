@@ -16,8 +16,8 @@ description: "A buildable stationary machine gun firing .50 cal tracer rounds, b
 | **Weapon** | |
 | Gun | Mounted machine gun |
 | Ammunition | .50 cal tracer |
-| Rate | 600 rounds/min (game default) |
-| Effective range | 1,000 m |
+| Rate | 600 rounds/min (historical default; S3 unverified) |
+| Stored EffectiveRange | 1,000; interpretation unresolved |
 | Reload | 8.0 s |
 | Starting ammunition | 60 rounds |
 | Restock | 200 Ammo Supplies for 60 rounds |
@@ -33,13 +33,13 @@ The MG Nest is a buildable stationary machine gun that fires .50 cal tracer roun
 
 ## Overview
 
-The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock takes 200 Ammo Supplies and gives 60 rounds. The gun fires 600 rounds/min out to 1,000 m. The weapon does not set a rate, so 600 rounds/min is the game's default.
+The MG Nest starts with 60 rounds and is restocked with Ammo Supplies. A restock takes 200 Ammo Supplies and gives 60 rounds. The model assumes 600 rounds/min from the historical default; the stored EffectiveRange is 1,000 (its interpretation is under review). The S3 stats export omits the rate; 600 rounds/min is the CL516586 default used by the model, not a verified S3 default.
 
 ## Effects
 
 ### Weapon
 
-The gun fires 600 rounds/min out to an effective range of 1,000 m. It holds 60 rounds and reloads in 8.0 s. The rate is not set on the weapon, so 600 rounds/min is the game's default rate. The weapon data carries the same lock-on setup as the other stationary guns: a 2.0 s lock, a 0.5 s delay after the lock, and a target list of air vehicles only (the Little Bird family, the Havoc, the [Huey](../vehicles/huey.md) and the fixed-wing airplane), with fire allowed only while locked on. It is not known how a gun that a player operates uses it.
+The model uses the historical 600 rounds/min default and stores EffectiveRange 1,000; neither a current rate initializer nor that field’s range interpretation is established here. It holds 60 rounds and reloads in 8.0 s. The rate is omitted in the S3 stats export; 600 rounds/min remains a historical default assumption. The weapon data carries the same lock-on setup as the other stationary guns: a 2.0 s lock, a 0.5 s delay after the lock, and a target list of air vehicles only (the Little Bird family, the Havoc, the [Huey](../vehicles/huey.md) and the fixed-wing airplane), with fire allowed only while locked on. It is not known how a gun that a player operates uses it.
 
 ### Health
 
@@ -73,6 +73,12 @@ The Season 2 changes page lists no value changes for the MG Nest's build cost or
 - [Talon 9K-SAM](talon-9k-sam.md), [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [Loudspeaker](loudspeaker.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 - [Vehicle weapons](../vehicles/vehicle-weapons.md): the machine guns mounted on vehicles
 
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) raise the reward for destroying this enemy emplacement from 650 to 1,300 cash. This reward is separate from construction supplies. Limited Mode excludes this emplacement.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also fix MG Nest repair and items snapping onto it, unsupported buildables remaining suspended, and stuck or missing build-tool prompts.
+
 ## Sources
 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): Build Supplies cost, health, hammer and placement conditions
@@ -83,6 +89,6 @@ The Season 2 changes page lists no value changes for the MG Nest's build cost or
 - [Round 36 combat evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-combat.md): health of the finished MG Nest and of the build plot.
 - [Round 38 building evidence, native](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-native.md): the build, repair and dismantle arithmetic
 - [Round 38 building evidence, data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md): weak spots, placement checks and the buildable settings
-- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the gun's rate, range, magazine and reload, and the absence of a target list in the stats and actor data.
+- [Round 42 buildables and economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md): the gun's rate, range, magazine and reload, and its superseded target-list search (corrected by round 55); the current extension does store a target list.
 - [Round 39 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md): MG Nest gun rate and range.
 - [Round 40 vehicles and explosives evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md): the same topics, with the round 40 values where they differ.

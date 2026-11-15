@@ -23,7 +23,7 @@ Practical guides for playing Wardogs, written from the numbers in the game. Each
 | [Helicopter Guide](guides/helicopter-guide.md) | Flying and fighting in helicopters: health and seats, who fires the miniguns, the weapons that lock on to aircraft, flares, fuel and repair, and what pilots earn |
 | [PvE Guide](guides/pve-guide.md) | What the three PvE missions ask, how the AI soldiers fight, and what each mission starts with and drops |
 | [Aiming the SPH-2](guides/aiming-the-sph-2.md) | Every gun-sight instrument with its numbers, a fire mission step by step, and correcting your aim |
-| [Making Money](guides/making-money.md) | Where cash comes from by role, passive missions and wagers, the Gold Exchange, the best-value gear, and the costs that drain cash |
+| [Making Money](guides/making-money.md) | Where cash comes from by role, passive missions and the removed Wager Vendor, the Gold Exchange, the best-value gear, and the costs that drain cash |
 | [King of the Hill Guide](guides/king-of-the-hill-guide.md) | How to win King of the Hill, capture and hold the zone, the spawn areas and vehicles on the four main maps, and what each zone action pays |
 | [Infantry Combat Guide](guides/infantry-combat-guide.md) | Fighting on foot: movement speeds, spread and recoil, armor and time to kill, shooting through cover, suppression, aim assist, and going down and getting revived |
 | [Choosing a Role](guides/choosing-a-role.md) | The six roles side by side: what each does, its signature unlocks, the first and most expensive unlock costs, and how each earns Role XP |

@@ -1,12 +1,12 @@
 ---
 title: "Making Money"
 parent: "Guides"
-description: "Where cash comes from and which roles earn the most, what passive missions and wagers really pay, the Gold Exchange, the best-value gear by price, and the costs that drain cash."
+description: "Where cash comes from and which roles earn the most, passive-mission limits and the removed Wager Vendor, the Gold Exchange, the best-value gear by price, and the costs that drain cash."
 ---
 
 # Making Money
 
-Cash pays for nearly everything in Wardogs: gear, weapons, vehicles, role unlocks and factory investments. Every action in a match pays some cash, and the end-of-match bonus adds more. This guide shows which actions pay most, what the side routes (passive missions, wagers and the Gold Exchange) actually return, which gear is worth buying early, and which running costs take cash back out. Each figure is taken from the article linked next to it.
+Cash pays for nearly everything in Wardogs: gear, weapons, vehicles, role unlocks and factory investments. Rewarded actions in a match pay cash, and the end-of-match bonus adds more. This guide shows which actions pay most, what the side routes (passive missions and the Gold Exchange) actually return, which gear is worth buying early, and which running costs take cash back out. Each figure is taken from the article linked next to it.
 
 ## Where cash comes from
 
@@ -27,12 +27,14 @@ The game's table gives a player 10,000 cash to start (3,000 in Strike and Disarm
 | Support | Destroy an enemy forward operating base | 2,500, plus up to 7,500 by its supplies |
 | Support | Place a forward operating base | 1,000 |
 | Support | Deploy a large supply crate | 150 |
-| Recon | Destroy a target the player spotted | 50 to 500 |
-| Recon | Spot a target | 15 to 275 |
+| Recon | Spotted target destroyed | Target-specific; see the S3 table below |
+| Recon | Spot a target | Saved challenge bases 5–750, before modifiers |
 | Any role | Hot Zone event (contested or owned) | 600 |
 | Any role | Control Zone event (contested or owned) | 150 |
 
 Sources for this table: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), with the role pages [Assault](../progression-and-economy/assault.md), [Driver](../progression-and-economy/driver.md), [Pilot](../progression-and-economy/pilot.md), [Medic](../progression-and-economy/medic.md), [Support](../progression-and-economy/support.md) and [Recon](../progression-and-economy/recon.md).
+
+The separate match-score ranges 15–275 and 50–500 are not universal spotting payouts. The [official S3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) specify spotted-target kill cash of 850 for AH-6M [Miniguns] / AH-6R [Rockets], 1,200 for Z20 Lakota [Miniguns], 3,000 for L2A6, 2,000 for T-72B3 and 1,500 for Hot Zone Magnet. See [Spotting Challenges](../progression-and-economy/spotting-challenges.md#announced-s3-spotted-target-rewards) for XP and the saved-resource distinction. Enemy emplacement destruction pays 1,300 cash for L81 Mortar, Talon 9K-SAM, MG Nest or Stingray, and 2,400 for Vanguard CIWS.
 
 ### What changes the amount
 
@@ -56,39 +58,20 @@ The winning faction is paid the most at match end. First place gets 0.30 times t
 
 ## Passive missions and wagers
 
-### Passive missions pay Intel, not cash
+### Passive missions list Intel amounts
 
-The three passive missions (Earn Cash, Earn Role XP and Time Played) have five tiers each. Every tier pays Intel, and the game gives Intel no use, so passive missions add nothing to a player's cash. The tier goals are 5,000, 12,000, 30,000, 80,000 and 200,000 cash earned for Earn Cash, 500 role XP for each Earn Role XP tier and 1,800 seconds played for each Time Played tier ([Passive Missions](../progression-and-economy/passive-missions.md), [Currencies](../progression-and-economy/currencies.md#intel)).
+The three passive missions (Earn Cash, Earn Role XP and Time Played) have five tiers each. Each tier lists an Intel amount rather than cash. All 15 entries have an invalid reward-type setting; the reward consumer and activation path must be checked before assuming any payment. The tier goals are 5,000, 12,000, 30,000, 80,000 and 200,000 cash earned for Earn Cash, 500 role XP for each Earn Role XP tier and 1,800 seconds played for each Time Played tier ([Passive Missions](../progression-and-economy/passive-missions.md), [Currencies](../progression-and-economy/currencies.md#intel)).
 
-### Wagers
+### Wagers are unavailable in S3
 
-A wager is a goal a player takes on with a stake of cash. The stake is between 2,500 and 100,000 cash, and a single payout is capped at 5,000,000 cash ([Wagers](../progression-and-economy/wagers.md)).
-
-These are four examples from the current 11 stored actions. The full list and saved restrictions are in [current wager actions](../progression-and-economy/wagers.md#current-actions); offering and settlement behavior remain unverified.
-
-| Wager | Count range (default) | Odds at the lowest count | Odds at the highest count |
-|---|---|---:|---:|
-| Get Kills | 1 to 50 (1) | 1.001 | 1.5018 |
-| Dropoff People | 1 to 20 (1) | 1.001 | 1.0771 |
-| Revive Teammates | 1 to 75 (5) | 1.001 | 1.4147 |
-| Destroy Occupied Vehicles | 1 to 20 (1) | 1.001 | 1.1479 |
-
-Each action stores a 24-hour (86,400 s) cooldown, but its runtime scope is not established ([current actions](../progression-and-economy/wagers.md#current-actions)).
-
-The stored payout cap is 5,000,000 cash, but the effective settlement formula is not established. This guide therefore gives no expected return ([payout limits and unknowns](../progression-and-economy/wagers.md#payout-limits-and-unknowns)).
-
-### Tips that follow from the numbers
-
-- The stored kill table rises from 1.001 at one to three kills to 1.5018 at 50 kills. That is about 0.501 more in the stored odds figure; it is not an expected-return calculation ([current actions](../progression-and-economy/wagers.md#current-actions)).
-- Stored condition odds include Deathwish 10.0, Time limit 4.0 and No vehicles 3.0. Current categories are unknown, and absent action restrictions do not establish universal applicability ([current conditions](../progression-and-economy/wagers.md#current-conditions)).
-- The payout formula and how multiple conditions combine remain unverified. Do not treat their product as a promised payout ([payout limits and unknowns](../progression-and-economy/wagers.md#payout-limits-and-unknowns)).
+The Wager Vendor was removed, according to the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). Do not budget wager income. The [wager reference](../progression-and-economy/wagers.md) retains the saved 11 actions and 90 conditions for data comparison only.
 
 ## The Gold Exchange
 
 The Gold Exchange turns cash into Gold Bars, which buy cosmetics only ([Currencies](../progression-and-economy/currencies.md#gold-bars)).
 
-- **Unlock.** The exchange unlocks at Wardog level 35 and costs 150,000 cash to unlock.
-- **Rate.** The server sets the rate and it changes over time. The client holds no rate (its exchange table is empty), so the cash price of a Gold Bar is set by the server and cannot be read from the game.
+- **Unlock.** The current unlock node requires Wardog level 35 and lists a cost of 100,000 cash.
+- **Rate.** The server sets the rate and it changes over time. The current exchange table has a Gold Bars row with an empty rate list. It gives no usable conversion rate; the active rate producer remains unverified.
 - **No resale.** The exchange text says a gold exchange cannot be resold or refunded.
 - **Season end.** At the end of a major update cycle, level progression and cash are reset. Any cash left over is exchanged for Gold Bars automatically on the server ([Currencies](../progression-and-economy/currencies.md#gold-bars)).
 - **Cost of cosmetics.** The Gold Market entries cost 5 to 30 Gold Bars each ([Currencies](../progression-and-economy/currencies.md#gold-market)).
@@ -114,11 +97,11 @@ Armor and helmets are the clearest value question in the shop. Each tier cuts da
 
 The last column is derived here by dividing the price by the damage cut. It is a ratio, not a figure from the game.
 
-With M4 full-metal-jacket rounds, an upper-torso hit does 27.3 HP with no armor, 19.1 HP with Level 1 Armor, 16.4 HP with Level 2, 13.6 HP with Level 3 and 10.9 HP with Level 4 ([Body Armor](../equipment/body-armor.md#what-the-reduction-does), [Level 1 Armor](../equipment/level-1-armor.md), [Level 2 Armor](../equipment/level-2-armor.md), [Level 3 Armor](../equipment/level-3-armor.md), [Level 4 Armor](../equipment/level-4-armor.md)).
+Using the historical damage formula with current S3 inputs, an M4 full-metal-jacket upper-torso hit calculates to 30.8 HP with no armor, 21.6 HP with Level 1 Armor, 18.5 HP with Level 2, 15.4 HP with Level 3 and 12.3 HP with Level 4. These are model outputs; the current native calculation and live damage have not been independently verified ([Body Armor](../equipment/body-armor.md#what-the-reduction-does), [Level 1 Armor](../equipment/level-1-armor.md), [Level 2 Armor](../equipment/level-2-armor.md), [Level 3 Armor](../equipment/level-3-armor.md), [Level 4 Armor](../equipment/level-4-armor.md)).
 
 ### Tips that follow from the numbers
 
-- The first vest removes half of the damage cut that the top vest removes, for 8% of its price. Level 1 Armor takes 8.2 HP off that upper-torso hit (derived from 27.3 and 19.1), and Level 4 takes 16.4 HP off it. Level 1 costs 400 and Level 4 costs 5,000 ([Body Armor](../equipment/body-armor.md)).
+- The first vest removes half of the damage cut that the top vest removes, for 8% of its price. In that model, Level 1 Armor takes 9.2 HP off the upper-torso hit (30.8 minus 21.6), and Level 4 takes 18.5 HP off it (30.8 minus 12.3). Level 1 costs 400 and Level 4 costs 5,000 ([Body Armor](../equipment/body-armor.md)).
 - The Level 1 Helmet is the cheapest protection per point of cut in the shop, at 200 cash for 30% ([Level 1 Helmet](../equipment/level-1-helmet.md)).
 - The Pilot and Tank helmets are not sold in the shop, so they are not a purchase option ([Body Armor](../equipment/body-armor.md)).
 
@@ -141,7 +124,7 @@ A selection of vendor prices, lowest first (the full list is on each weapon arti
 
 Three weapons show a vendor price of 0: A-91, KH-2002 and Bushmaster M17S. They are the three faction rifles. The weapon vendor lists each one for a single faction (Valkyra, Manticore and Lonestar in that order), at price 0, from level 1, with a buy limit of one per life (the same limit field that the Emergency Resuscitator uses for its one per life), and the economy settings also price each at 0 for its own faction. So a player of that faction takes the rifle from the vendor for free, one at a time; it is not a missing price (inferred from the vendor and economy settings, not run in the game; whether a player of another faction can buy it is not shown, so the faction match is assumed). See [A-91](../weapons/a-91.md), [KH-2002](../weapons/kh-2002.md) and [Bushmaster M17S](../weapons/bushmaster-m17s.md).
 
-Discounts stack. A Wardog level 8 or lower player pays half of the listed price, a first purchase costs 90%, and the faction that trails by 40 points pays 80% (inferred from field names). Derived: a first purchase by a player at level 8 or lower costs 45% of the listed price (0.5 x 0.9). See [Shops](../progression-and-economy/shops.md#how-it-works).
+The S3 settings store first-purchase and losing-faction modifiers of 90 and 80, but omit the vendor-discount multiplier. The earlier percentage model interprets the stored values as 90% and 80%; current applicability and stacking remain unverified. The old level-8 half-price claim and its derived 45% first-purchase price are not supported by this snapshot. See [Shops](../progression-and-economy/shops.md#how-it-works).
 
 ### Factory recipes
 

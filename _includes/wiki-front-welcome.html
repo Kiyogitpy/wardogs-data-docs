@@ -1,15 +1,15 @@
 <section class="wf-box wf-welcome">
   <h1>Wardogs Wiki</h1>
-  <p>Plain-language articles on every weapon, piece of gear, vehicle, mode and game rule in Wardogs, written from the numbers on the <a href="{{ '/reference/' | relative_url }}">Wardogs Data Reference</a>. Every article lists the data pages it was written from, so any number can be checked at its source.</p>
+  <p>Articles on Wardogs weapons, gear, vehicles, modes and mechanics, with links to the underlying <a href="{{ '/reference/' | relative_url }}">data reference</a> and known limits.</p>
   <p class="wf-facts">{{ site.wiki | where_exp: "p", "p.wiki_hub != true" | where_exp: "p", "p.permalink != '/'" | size }} articles, S3 / 0.3 data snapshot <span class="wf-nowrap">CL-533731</span>; earlier native findings retain their stated scope</p>
   <div class="wf-patch" aria-labelledby="wf-patch">
     <h2 id="wf-patch">Latest data: Season 3 / 0.3</h2>
     <ul>
       <li>DMR caliber modifiers: .308 Winchester 0.85 → 0.91; 7.62x54 mm 0.8 → 0.9.</li>
-      <li>Stored wager actions grow from 4 to 11; kill and revive count caps rise to 50 and 75.</li>
-      <li>The drill's damage data is in a separate GameFeature table; it was not removed from the snapshot.</li>
-      <li>Browse the stored-field comparison and the remaining coverage gaps.</li>
+      <li>Season 3 introduces Sabatulo and Limited mode; the Wager Vendor was removed.</li>
+      <li>Basic and Sport Parachute listed prices are now 1,250 and 2,250 cash.</li>
+      <li>Browse the announced changes, stored-field comparison and remaining coverage gaps.</li>
     </ul>
-    <p><a href="{{ '/wiki/patch-notes/season-3/' | relative_url }}">Read the S2 → S3 notes</a> · <a href="{{ '/season-3-changes/all-changes.html' | relative_url }}">Browse the comparison</a></p>
+    <p><a href="{{ '/wiki/patch-notes/season-3/' | relative_url }}">Read the S2 → S3 notes</a> · <a href="{{ '/season-3-changes/all-changes.html' | relative_url }}">Browse the comparison</a> · <a href="https://store.steampowered.com/news/app/1867240/view/688648135317127221">Official patch notes</a></p>
   </div>
 </section>

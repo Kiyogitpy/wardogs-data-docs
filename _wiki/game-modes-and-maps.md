@@ -22,6 +22,10 @@ The server browser lists one more mode, Tank Town. It uses the King of the Hill 
 ## Server options
 
 Hosts can set options that apply across modes. The game names these server options: Hardcore, Infantry Only, No Rebuy, No Return To Spawn, No Vault, No Player Looting, No Team Change, No Give Up, Reduced HUD, Persistent Cash and XP (on or off), and minimum or maximum cash and player level limits. For most of them the game gives only the names. The two variants whose rules are stored are described in [Hardcore and Infantry Only](game-modes-and-maps/hardcore-and-infantry-only.md).
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) introduce the city map Sabatulo and Limited Mode. Limited vendors exclude attack vehicles, CIWS, Stingray, MG Nest, Drill Rig, anti-tank mines, HP/AP ammunition and level 3/4 armor. Progression and cash carry across modes. Some unarmed vehicles spawn free while a server seeds, then are cleared at match start.
+
 ## Sources
 
 - [Season 2 changes: Game Modes & Maps](../season-2-changes/game-modes-maps.md)

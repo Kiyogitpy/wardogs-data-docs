@@ -18,7 +18,7 @@ description: "The Light and Heavy Drills: the battery-powered vehicle repair too
 | Repair speed | Light: moderate. Heavy: fastest |
 | Repair per application | 14.5 vehicle health (both) |
 | Repair rate | Light 19.3 per second (every 0.75 s); Heavy 29 per second (every 0.5 s) |
-| Battery use | 1 charge per repair swing that lands (both). The game files also list 1.25 per second, but no part of the game reads it, so there is no per-second drain |
+| Battery use | 1 charge per use stored for both; actual S3 charging behavior unverified |
 | **Availability** | |
 | Price | 600 (Light), 1,300 cash (Heavy) |
 | Unlock level | 1 (shop) |
@@ -35,7 +35,7 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 ## How it works
 
 - Using a drill repairs a vehicle. The use continues until the drill's power is spent or the vehicle is full.
-- The 1.25 battery use per second listed for both drills is not read by anything in the game. The repair action spends 1 battery charge for each repair swing that lands (a Battery holds 100 charges, a High Capacity Battery 250). No per-second drain exists: the part of the game that handles batteries has no code that reads the per-second figure, and the game's built-in value for it is 5 (so the 1.25 is a leftover setting, not a rule). Drills drain a battery only by swing. See [Batteries](batteries.md).
+- Earlier CL516586 analysis found no reader for the listed 1.25 battery use per second. The repair action spends 1 battery charge for each repair swing that lands (a Battery holds 100 charges, a High Capacity Battery 250). That historical code read cannot exclude a per-second drain in S3. The current battery and repair-action consumers must be traced before treating swing-only charging as current behavior. See [Batteries](batteries.md).
 - Both have a reload action. It swaps in a fresh battery from the drill's single battery slot.
 - Each drill has a melee value: 5 for the Light Drill and 10 for the Heavy Drill.
 - The Light Drill repairs 14.5 health every 0.75 seconds (about 19.3 per second). The Heavy Drill repairs 14.5 health every 0.5 seconds (29 per second). The drills have no durability value.
@@ -45,7 +45,7 @@ The shop text says the Light Drill has a moderate repair speed and the Heavy Dri
 | Light Drill | 600 | 1.5 | 2 x 2 | 5 |
 | Heavy Drill | 1,300 | 6.9 | 3 x 2 | 10 |
 
-The weights are in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it.
+The S3 weight fields store 1.5 for the Light Drill and 6.9 for the Heavy Drill directly; these exports do not require division by 1,000.
 
 ## Season 2 changes
 

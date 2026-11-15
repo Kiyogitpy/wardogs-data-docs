@@ -43,7 +43,7 @@ The MH-6 is sold in the vehicle vendor under air transport, for 6,250 cash, and 
 
 Main health is 400 HP. The helicopter has separate health for its engine (200 HP), fuel tank (200 HP), main rotor (400 HP) and tail rotor (300 HP).
 
-Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
+Rifle rounds do 7.5% of their damage against the hull. The saved +200% fuel-tank bullet rule names Attribute.Gameplay.Health.FuelTank, whereas the current hitbox model uses Meta.Damage.HitLocation.Vehicle.FuelTank. That model does not apply this bonus (5.56 mm remains at 7.5%); whether S3 native code bridges those tags is unresolved. Rockets that hit the tail or tail rotor take an extra 200%.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -83,6 +83,12 @@ The MH-6 is covered by the air vehicle yards (inferred). Each side normally has 
 - [AH-6M [Miniguns]](ah-6m-miniguns.md) and [AH-6R [Rockets]](ah-6r-rockets.md), the armed versions
 - [Havoc](havoc.md) and [Z20 Lakota](z20-lakota.md), the other helicopters
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce stronger ballistic protection for Littlebird pilots and co-pilots. This concerns occupants, not the hull percentages above. They also fix body repair on the armed Littlebird variants and make their repair points reachable.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also retune 20×102 mm damage: each round hits a vehicle section once, and this helicopter takes slightly less damage than in Season 2. Retained hit-count tables are conditional calculations, not a new verification of that section-contact behavior.
 
 ## Sources
 

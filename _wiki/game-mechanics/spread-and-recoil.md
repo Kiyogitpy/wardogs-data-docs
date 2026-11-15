@@ -1,42 +1,42 @@
 ---
 title: "Spread and Recoil"
 parent: "Game Mechanics"
-description: "How each shot's direction is chosen, why aiming down sights removes hip spread, how movement and stance widen the cone, and how recoil moves the aim."
+description: "How each shot's direction is chosen, the historical model in which aiming down sights removes hip spread, how movement and stance widen the cone, and how recoil moves the aim."
 ---
 
 # Spread and Recoil
 
 | Spread and recoil | |
 |---|---|
-| Spread when fully aimed | 0 (no hip spread) |
-| Spread from firing | None: firing does not widen the cone |
-| Spread from moving | Yes, scales with speed and stance |
-| Recoil | Kicks the view after each shot; does not widen the cone |
+| Fully aimed hip spread | Historical CL516586 model: 0; S3 consumer unresolved |
+| Spread from firing | No bloom found in the historical examined path; S3 unresolved |
+| Spread from moving | Historical model: scales with speed and stance; S3 consumer unresolved |
+| Recoil | Historical model: view kick after each shot, separate from hip spread |
 | Buckshot | 8 pellets per shell |
 {: .wiki-infobox }
 
-No shot in Wardogs goes exactly where the crosshair points. Each shot is sent in a random direction inside a small cone around the aim, and the size of that cone depends on how the player is aiming, moving and standing. Recoil is a separate effect: it moves the view after a shot, so the next shots start from a different point.
+In the documented CL516586 shot-direction model, nonzero spread chooses a random direction in a cone around the aim. Cone size depends on aiming, movement and stance; zero hip spread is a separate branch. Recoil moves the view after the shot. Those consumer rules have not been independently re-established for S3.
 
 ## Overview
 
-Two things decide where a shot goes. The first is the **spread cone**, which is always centred on the aim point and changes with how you move and aim. The second is **recoil**, which pushes the aim up or sideways after each shot and so changes where the next shots are aimed. Firing does not make the spread grow over a burst, so a long burst does not get wider by itself.
+The historical model separates the **spread cone** around the aim from **recoil**, which moves that aim for later shots. The examined historical path did not add spread from firing. This is not evidence that every current S3 firing path lacks bloom.
 
 ## How it works
 
-- **Aiming down sights removes hip spread.** Once the weapon is fully aimed down the sights, the hip spread is zero. Partly aimed counts as hip fire at full value.
-- **Moving widens the cone.** Hip spread scales with your speed compared with a reference speed for your stance. Standing and running make the cone widest, lying prone keeps it narrowest.
-- **Stance matters.** Prone and crouch give smaller spread than standing for the same speed.
-- **Air.** A shot fired while airborne uses a separate spread value of 10 degrees (half-angle) for every weapon. The stance and speed multipliers do not apply while airborne.
-- **Aim sway moves the shot.** In the game's default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../attachments/sights-and-optics.md)). No weapon changes this mode (derived from the game's code).
-- **Vehicle-mounted guns.** A gun on a vehicle with its own spread setting eases toward that spread at about 25 per second rather than jumping to it. When the gunner is fully aimed down sights, the spread is zero. Plain mounted weapons have no spread of their own (a static reading of the game code, not checked in play).
+- **Historical ADS branch.** The CL516586 consumer returns zero hip spread only at full aim; partial aim uses the hip-fire contribution. Current S3 branch behavior is unresolved.
+- **Moving widens the cone in the historical model.** Hip spread scales with speed compared with a reference speed for the stance. Standing and running make the cone widest, lying prone keeps it narrowest.
+- **Saved stance curves differ.** Prone and crouch generally have lower endpoint values; applying them to movement assumes the historical consumer.
+- **Air.** The historical CL516586 consumer/default model uses a separate 10-degree airborne half-angle; that default is not reverified for every S3 weapon. That historical airborne branch bypasses the stance and speed multipliers; S3 parity is unresolved.
+- **Historical aim-sway path.** In the examined CL516586 default camera mode, the sway of the weapon as you aim is added to the view's rotation, and the bullet leaves along that view. So sway changes where the shot goes, not only what the camera shows. Sway is divided by the sight's magnification, so a higher-magnification sight steadies it (see [Sights and Optics](../attachments/sights-and-optics.md)). No override was found in that historical review; current weapon-mode coverage is unresolved.
+- **Historical vehicle-mounted path.** The CL516586 trace eases vehicle spread at about 25 per second and returns zero hip spread at full ADS; plain mounted weapons had no separate contribution in that examined path. Neither the defaults nor those branch rules are verified S3 behavior.
 - **Attachments.** Bipods, muzzle devices and foregrips change the spread. Their multipliers are listed below.
-- **Zeroing.** The game does not list the zero angle for each sight range. The game works it out while it runs. At each zeroing range it predicts the bullet's drop over that distance and stores the angle that drop implies, in degrees, for each ammunition type (derived from the game's code).
-- **Recoil is applied after the shot.** The bullet leaves along the view as it was before that shot's kick. Earlier kicks have already moved the view, and they are part of the next shot's aim.
+- **Historical zeroing model.** The examined consumer computes zero angles at runtime. At each zeroing range it predicts the bullet's drop over that distance and stores the angle that drop implies, in degrees, for each ammunition type (derived from the game's code).
+- **Historical recoil ordering.** The examined CL516586 path uses the view before the current kick; earlier kicks affect later shots. Current S3 ordering is unresolved.
 - **Shotguns.** Each buckshot shell fires 8 pellets. Each pellet has its own random direction inside a cone, and the pellets all land at a small spread around the aim. Part of the pattern is a tight inner cluster: about 20 percent of pellets on the M500 and 14 percent on the MP43 (derived), rising to 26 and 34 percent on the M500 with the Improved Cylinder and Full Choke.
 
 ## Numbers
 
-Hip spread in degrees (half-angle), from standing still to full speed. Full speed is the reference speed for the stance: 4.0 m/s standing, 2.5 m/s crouched and 0.5 m/s prone.
+Current saved spread-curve endpoints are below. Degrees (half-angle), normalized speed, and reference speeds of 4.0/2.5/0.5 m/s follow the historical standing/crouched/prone consumer model; those bindings remain conditional for S3.
 
 | Weapon class | Stand | Crouch | Prone |
 |---|---|---|---|
@@ -45,29 +45,29 @@ Hip spread in degrees (half-angle), from standing still to full speed. Full spee
 | Sniper | 4 to 7 | 3 to 6 | 2 to 4 |
 | Bow | 1 to 2 | 0.5 to 1 | 0.5 |
 
-The PKM uses the sniper values. Fully aimed, all of these are 0.
+The PKM uses the sniper values. The historical shot-direction model makes these hip-spread contributions zero at full aim; the current S3 consumer has not been reverified.
 
-The game stores these as one spread curve for each class and stance (29 curves in all, including the mounted machine guns and the stable mount). Each curve is a straight line from input 0 to input 1, and the stored numbers carry no unit. The degree reading above comes from the spread pipeline page, not from this table. The 0 to 1 input is your current speed as a share of the full speed for your stance (4.0 m/s standing, 2.5 m/s crouched, 0.5 m/s prone), capped at 1: 0 when you are still, 1 at full speed or faster. A gun on a vehicle uses the first point of its row (input 0).
+The game stores these as one spread curve for each class and stance (29 curves in all, including the mounted machine guns and the stable mount). Each curve is a straight line from input 0 to input 1, and the stored numbers carry no unit. The degree reading above comes from the spread pipeline page, not from this table. In the historical consumer model, the 0 to 1 input is current speed as a share of the reference speed for the stance (4.0 m/s standing, 2.5 m/s crouched, 0.5 m/s prone), capped at 1: 0 when you are still, 1 at full speed or faster. The historical vehicle path uses the first point (input 0); current vehicle consumers are unresolved.
 
 Attachment multipliers on the spread:
 
 | Attachment | Multiplier |
 |---|---|
-| Bipod, mounted | 0.45 |
+| Bipod, mounted | 0.45 on Grip Pod, SV98, SKS, SVD and Pro Tilt; 1.0 on PKM, M249, Evo-3 Ultra and M14 |
 | Bipod, unfolded | 1.15 |
 | Muzzle devices | 0.88 to 0.99 |
 | Foregrips | 0.76 to 0.94 |
 
 Shotgun pellet spread for the two shotguns: the outer edge of the M500's pellet cone is about 1.6 degrees from the centre, and the MP43's about 1.9 degrees. Both add a random shift to the centre of the pattern, up to 2 degrees on the M500 and 3 degrees on the MP43.
 
-## Tips that follow from the numbers
+## Tips conditional on the historical consumer model
 
-- **Aim down sights for accuracy.** Aiming removes the hip spread entirely, which is 3 to 7 degrees on a standing player.
-- **Crouch or go prone before a long shot.** Standing still, crouching cuts a rifle's hip spread from 3 to 2 degrees, and going prone cuts it to 1.5 degrees.
-- **Stopping helps the cone shrink.** Spread depends on your current speed, so a player who stops quickly gets back to the smaller cone.
-- **Bursts do not get wider.** Because firing does not add bloom, the 5th shot of a burst has the same spread as the 1st, as long as speed and stance stay the same.
-- **Recoil moves the aim, it does not widen the cone.** Compensate for the kick by moving the crosshair back, not by expecting a wider spread.
-- **Bipods help a lot.** A mounted bipod cuts spread to 45% of its base.
+- **Full ADS:** the historical branch removes hip spread; this advice depends on that branch remaining applicable in S3.
+- **Stance in the historical model:** at rest, the current rifle curve endpoints give 3 degrees standing, 2 crouched and 1.5 prone if the historical consumer still applies.
+- **Stopping in the historical model:** lower speed selects a smaller cone from the stance curve. The current S3 speed-to-spread binding remains unresolved.
+- **Burst spread:** the historical no-bloom model predicts equal cone size on shots 1 and 5 at equal stance and speed. Current S3 firing consumers remain unresolved.
+- **Recoil compensation:** the historical model treats view kick separately from cone size; it does not establish every S3 recoil/spread interaction.
+- **Check the bipod.** Five mounted bipod effects store spread ×0.45; the PKM, M249, Evo-3 Ultra and M14 effects store ×1.0. Their recoil modifiers still differ.
 
 ## Recoil figures
 
@@ -75,7 +75,7 @@ Recoil patterns (the points that set each shot's kick) are different for each we
 
 ## Spread in the air
 
-While a player is airborne, hip-fire spread uses the game's in-air value of 10.0 degrees. Only the grenade launcher sets that value itself, to the same 10.0 degrees, and the weapon's spread multiplier is not applied on this path. The game has no per-shot bloom setting, so spread does not build up with each shot.
+The historical CL516586 path uses an in-air hip-spread value of 10 degrees; current S3 default and consumer parity remain unresolved. The historical review found an explicit 10-degree grenade-launcher value and a branch that skipped the weapon spread multiplier; neither finding is a complete current-weapon census. The historical search found no per-shot bloom setting in the examined path; it does not establish absence across current S3 code.
 
 ## See also
 
@@ -84,6 +84,12 @@ While a player is airborne, hip-fire spread uses the game's in-air value of 10.0
 - [Movement](movement.md)
 - [Beginner's Guide](../guides/beginners-guide.md)
 - [Weapon attachments](../attachments.md)
+
+## Season 3 announcement
+
+The TCX-SPR has less full-auto climb and less lateral drift. A separate fix makes prone fire use the appropriate recoil rather than standing recoil. No percentage reduction is announced; retained Season 2 spray paths are historical, not current TCX-SPR predictions.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Sources
 

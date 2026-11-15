@@ -100,13 +100,15 @@ Most vehicle data follows one chain. Read it top-down to find any value.
 
 ## 3. Vehicle Market (Purchase Prices)
 
+The four Season 3 price cuts below match the saved market exports and the [official announcement](https://store.steampowered.com/news/app/1867240/view/688648135317127221): Havoc 26,000; AH-6M [Miniguns] 10,480; Kodiak [M249] 6,250; Wolf-110 [M2 Browning] 6,800 cash. The Season 02 summary above remains historical.
+
 Source: `DT_VehicleMarket_*` (one per family) and [`DT_GarageMarket_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_GarageMarket_SupplyCrates.json). Each row is a `WDVendorData` with `VendorItemVariations`. Price is the stored purchase price; LevelToUnlock is the stored unlock level (its exact meaning is not confirmed, see section 15). All entries have Amount 1, LifeTimeBuyLimit 0 and bRequiresAccountEntitlement False.
 
 | Variant tag | Price | LevelToUnlock | Vendor subcategory | Stats asset |
 |---|---|---|---|---|
-| Vehicle.Variant.Air.Rotary.Havoc.Default | 28,000 | 0 | Air.Combat | DA_ROT_02_Stats |
+| Vehicle.Variant.Air.Rotary.Havoc.Default | 26,000 | 0 | Air.Combat | DA_ROT_02_Stats |
 | Vehicle.Variant.Air.Rotary.Littlebird.Default | 6,250 | 1 | Air.Transport | DA_ROT_03_Stats |
-| Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns | 12,000 | 1 | Air.Combat | DA_ROT_03_MachineGuns_Stats |
+| Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns | 10,480 | 1 | Air.Combat | DA_ROT_03_MachineGuns_Stats |
 | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods | 18,800 | 1 | Air.Combat | DA_ROT_03_RocketPods_Stats |
 | Vehicle.Variant.Air.Rotary.ROT_04.Default | 7,400 | 0 | Air.Transport | DA_ROT_04_Stats |
 | Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns | 15,000 | 0 | Air.Combat | DA_ROT_04_MachineGun_Stats |
@@ -117,7 +119,7 @@ Source: `DT_VehicleMarket_*` (one per family) and [`DT_GarageMarket_SupplyCrates
 | Vehicle.Variant.Land.Wheeled.Bobcat.Default | 500 | 0 | Land.Transport | DA_WHL_01_Stats |
 | Vehicle.Variant.Land.Wheeled.Kodiak.Default | 2,500 | 0 | Land.Transport | DA_WHL_02_Stats |
 | Vehicle.Variant.Land.Wheeled.Kodiak.Pickup | 3,000 | 0 | Land.Transport | DA_WHL_02_Pickup_Stats |
-| Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun | 6,750 | 0 | Land.Transport | DA_WHL_02_SUV_Stats |
+| Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun | 6,250 | 0 | Land.Transport | DA_WHL_02_SUV_Stats |
 | Vehicle.Variant.Land.Wheeled.Humvee.Default | 3,000 | 0 | Land.Transport | DA_WHL_05_Humvee_Stats |
 | Vehicle.Variant.Land.Wheeled.Humvee.Minigun | 10,000 | 0 | Land.Transport | DA_WHL_05_Humvee_MinigunStats |
 | Vehicle.Variant.Land.Wheeled.Humvee.MachineGun | 8,500 | 0 | Land.Transport | DA_WHL_05_Humvee_RingTurretStats |
@@ -126,7 +128,7 @@ Source: `DT_VehicleMarket_*` (one per family) and [`DT_GarageMarket_SupplyCrates
 | Vehicle.Variant.Land.Wheeled.Ural.Battle | 7,200 | 0 | Land.Transport | **DA_WHL_07_Stats** (see note) |
 | Vehicle.Variant.Land.Wheeled.Ural.Attack | 9,500 | 0 | Land.Transport | DA_WHL_07_Battle_Stats |
 | Vehicle.Variant.Land.Wheeled.WHL_08.Default | 2,200 | 0 | Land.Transport | DA_WHL_08_Stats |
-| Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun | 7,800 | 0 | Land.Transport | DA_WHL_08_RingTurretStats |
+| Vehicle.Variant.Land.Wheeled.WHL_08.MachineGun | 6,800 | 0 | Land.Transport | DA_WHL_08_RingTurretStats |
 
 > **Note:** `Ural.Battle` points at [`DA_WHL_07_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_WHL_07_Stats.json), while `Ural.Attack` (the ArmouredBattle asset) uses [`DA_WHL_07_Battle_Stats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07_ArmouredBattle/Content/Data/ArmouredBattleUral/DA_WHL_07_Battle_Stats.json). Both have identical numbers in the stats table, so this has no visible effect in this export. It may be a leftover reference.
 

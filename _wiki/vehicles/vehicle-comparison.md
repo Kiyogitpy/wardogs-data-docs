@@ -19,6 +19,8 @@ This page puts the numbers from every vehicle article side by side, so two vehic
 
 The tables are for comparing, not for ranking. A vehicle with fewer hit points or fewer guns can still be the right choice for a job, such as moving people or carrying cargo.
 
+The L2A6 smoke count is one stored starting charge; its S3 activation and consumption are unresolved, as described in [Countermeasures and flares](countermeasures-and-flares.md).
+
 ## Reading the tables
 
 - **As stored** means the number is copied from the game's settings without conversion. The vendor stats label speed as km/h; the fuel unit is not labelled. Both are shown as stored. Main health is in HP, prices are in cash, and the aircraft masses are in kilograms.
@@ -29,36 +31,36 @@ The tables are for comparing, not for ranking. A vehicle with fewer hit points o
 
 ## Main comparison
 
-| Vehicle | Type | Seats | Price (cash) | Unlock level | Main health (HP) | Top speed (as stored) | Fuel capacity (as stored) | Armed with | Countermeasures | Rifle damage taken (derived) | Mass (aircraft, kg) |
+| Vehicle | Type | Seats | Price (cash) | Stored vendor level | Main health (HP) | Top speed (as stored) | Fuel capacity (as stored) | Armed with | Countermeasures | Rifle damage taken (derived) | Mass (aircraft, kg) |
 |---|---|---:|---:|---:|---:|---:|---:|---|---|---:|---:|
-| [Havoc](havoc.md) | Combat helicopter | 2 | 28,000 | 0 | 800 | 400 | 130 | 2A42 Autocannon (30 mm), B-13 Rocket Pods (122 mm) | Flares, 2 | 5% | 7,500 |
+| [Havoc](havoc.md) | Combat helicopter | 2 | 26,000 | 0 | 800 | 400 | 130 | 2A42 Autocannon (30 mm), B-13 Rocket Pods (122 mm) | Flares, 2 | 2.5% | 7,500 |
 | [MH-6](mh-6.md) | Transport helicopter | 6 | 6,250 | 1 | 400 | 350 | 105 | None | Flares, 2 | 7.5% | 722 |
-| [AH-6M [Miniguns]](ah-6m-miniguns.md) | Combat helicopter (miniguns) | 2 | 12,000 | 1 | 400 | 350 | 105 | M134D Minigun (two) | Flares, 2 | 7.5% | 722 |
-| [AH-6R [Rockets]](ah-6r-rockets.md) | Combat helicopter (rockets) | 2 | 18,800 | 1 | 400 | 350 | 105 | B-13 Rocket Pods (two, 122 mm) | Flares, 2 | 7.5% | 722 |
-| [Z20 Lakota](z20-lakota.md) | Transport helicopter | 13 | 7,400 | 0 | 600 | 445 | 120 | None | Flares, 2 | 5% | 9,500 |
-| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Combat helicopter | 13 | 15,000 | 0 | 600 | 445 | 120 | M134D Minigun (two) | Flares, 2 | 5% | 9,500 |
+| [AH-6M [Miniguns]](ah-6m-miniguns.md) | Combat helicopter (miniguns) | 2 | 10,480 | 1 | 400 | 350 | 105 | M134D Minigun (two) | Flares, 2 | 7.5% | 722 |
+| [AH-6R [Rockets]](ah-6r-rockets.md) | Combat helicopter (rockets) | 2 | 18,800 | 1 | 400 | 350 | 105 | Rocket Pods (two, 70 mm; S3 announced) | Flares, 2 | 7.5% | 722 |
+| [Z20 Lakota](z20-lakota.md) | Transport helicopter | 13 | 7,400 | 0 | 600 | 445 | 120 | None | Flares, 2 | 2.5% | 9,500 |
+| [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Combat helicopter | 13 | 15,000 | 0 | 600 | 445 | 120 | M134D Minigun (two) | Flares, 2 | 2.5% | 9,500 |
 | [Huey](huey.md) | Helicopter (not in the shop) | Not stored | Not sold | Not applicable | Not stored | Not stored | Not stored | Mounted machine gun (second variant, no stats) | Not stored | Not stored | Not stored |
 | [SPH-2](sph-2.md) | Artillery armored vehicle | 3 | 8,000 | 1 | 650 | 65 | 105 | L52 Cannon (155 mm artillery) | None stated | 0% | - |
-| [L2A6](l2a6.md) | Heavy armored vehicle | 3 | 22,000 | 1 | 800 | 65 | 110 | L55A1 Cannon (120×570 mm), MG3A1 Coaxial Gun (.308 Win), M249 Machine Gun (mounted) | Smoke, count not stated | 0% | - |
+| [L2A6](l2a6.md) | Heavy armored vehicle | 3 | 22,000 | 1 | 800 | 65 | 110 | L55A1 Cannon (120×570 mm), MG3A1 Coaxial Gun (.308 Win), M249 Machine Gun (mounted) | Smoke, 1 starting (stored) | 0% | - |
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | Anti-air armored vehicle | 2 | 14,000 | 1 | 800 | 65 | 110 | Duel 35 mm Oerlikon GDF cannons (twin) | Smoke, 1 | 0% | - |
 | [T-72B3](t-72b3.md) | Heavy armored vehicle | 3 | 16,000 | 1 | 750 | 60 | 110 | 2A46M-5 Cannon (125 mm), PKTM Coaxial Gun, M2 Browning Machine Gun (mounted) | Smoke, 1 | 0% | - |
 | [M113 APC SV](m113-apc-sv.md) | Armored personnel carrier | 10 | Not sold | Not applicable | 1,000 | 71 | 100 | None | Smoke, 255 | 0% on hull and tracks | - |
 | [Bobcat](bobcat.md) | Light utility vehicle (quad bike) | 2 | 500 | 0 | 200 | 75 | 18 | None | None stated | 7.5% | - |
-| [Dune Buggy](dune-buggy.md) | Buggy (ATV) | 3 | 1,500 | 0 | 400 | 130 | 68 | None | None stated | 10% | - |
-| [Kodiak](kodiak.md) | SUV | 4 | 2,500 | 0 | 400 | 154 | 50 | None | None stated | 5% | - |
-| [Kodiak [Pickup]](kodiak-pickup.md) | Pickup | 6 | 3,000 | 0 | 400 | 154 | 50 | None | None stated | 5% | - |
-| [Kodiak [M249]](kodiak-m249.md) | SUV with machine gun | 5 | 6,750 | 0 | 400 | 154 | 50 | M249 Machine Gun (ring turret) | None stated | 5% | - |
-| [Humvee](humvee.md) | Light armored SUV | 4 | 3,000 | 0 | 500 | 113.2 | 65 | None | None stated | 5% | - |
-| [Humvee [Minigun]](humvee-minigun.md) | Light armored SUV with minigun | 5 | 10,000 | 0 | 500 | 113.2 | 65 | M134D Minigun (ring mount) | None stated | 2.5% | - |
-| [Humvee [M249]](humvee-m249.md) | Light armored SUV with machine gun | 5 | 8,500 | 0 | 500 | 113.2 | 65 | M249 Machine Gun (ring turret) | None stated | 4% | - |
-| [Ural](ural.md) | Truck | 3 | 5,000 | 0 | 700 | 79 | 85 | None | None stated | 5% | - |
-| [Ural Defender](ural-defender.md) | Heavy truck (protected) | 3 | 7,200 | 0 | 700 | 79 | 85 | None | None stated | 5% | - |
-| [Ural Defender [M249]](ural-defender-m249.md) | Heavy truck with machine gun | 3 | 9,500 | 0 | 700 | 79 | 85 | M249 Machine Gun (mounted) | None stated | 5% | - |
-| [Wolf-110](wolf-110.md) | SUV | 4 | 2,200 | 0 | 500 | 129 | 60 | None | None stated | 5% | - |
-| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | SUV with machine gun | 5 | 7,800 | 0 | 500 | 129 | 60 | M2 Browning Machine Gun (ring turret) | None stated | 4.5% | - |
-| [Fixed-wing airplane](fixed-wing-airplane.md) | Airplane | 2 | Not sold | Not applicable | 150 at start | Not stored | Not stated | None | Flares, 3 | 7.5% | 10,000 |
+| [Dune Buggy](dune-buggy.md) | Buggy (ATV) | 3 | 1,500 | 0 | 400 | 130 | 68 | None | None stated | 5% | - |
+| [Kodiak](kodiak.md) | SUV | 4 | 2,500 | 0 | 400 | 154 | 50 | None | None stated | 2.5% | - |
+| [Kodiak [Pickup]](kodiak-pickup.md) | Pickup | 6 | 3,000 | 0 | 400 | 154 | 50 | None | None stated | 2.5% | - |
+| [Kodiak [M249]](kodiak-m249.md) | SUV with machine gun | 5 | 6,250 | 0 | 400 | 154 | 50 | M249 Machine Gun (ring turret) | None stated | 2.5% | - |
+| [Humvee](humvee.md) | Light armored SUV | 4 | 3,000 | 0 | 500 | 113.2 | 65 | None | None stated | 2.5% | - |
+| [Humvee [Minigun]](humvee-minigun.md) | Light armored SUV with minigun | 5 | 10,000 | 0 | 500 | 113.2 | 65 | M134D Minigun (ring mount) | None stated | 1.25% | - |
+| [Humvee [M249]](humvee-m249.md) | Light armored SUV with machine gun | 5 | 8,500 | 0 | 500 | 113.2 | 65 | M249 Machine Gun (ring turret) | None stated | 2% | - |
+| [Ural](ural.md) | Truck | 3 | 5,000 | 0 | 700 | 79 | 85 | None | None stated | 2.5% | - |
+| [Ural Defender](ural-defender.md) | Heavy truck (protected) | 3 | 7,200 | 0 | 700 | 79 | 85 | None | None stated | 2.5% | - |
+| [Ural Defender [M249]](ural-defender-m249.md) | Heavy truck with machine gun | 3 | 9,500 | 0 | 700 | 79 | 85 | M249 Machine Gun (mounted) | None stated | 2.5% | - |
+| [Wolf-110](wolf-110.md) | SUV | 4 | 2,200 | 0 | 500 | 129 | 60 | None | None stated | 2.5% | - |
+| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | SUV with machine gun | 5 | 6,800 | 0 | 500 | 129 | 60 | M2 Browning Machine Gun (ring turret) | None stated | 2.5% | - |
+| [Fixed-wing airplane](fixed-wing-airplane.md) | Airplane | 2 | Not sold | Not applicable | 150 at start | Not stored | Not stated | None | Flares, 3 | Unresolved | 10,000 |
 
-Unlock levels and prices are the shop values. The M113 APC SV, the fixed-wing airplane and the Huey have no shop listing, and the Huey has no stats at all, so it is left out of the hits-to-destroy and value tables. The SPH-2 article gives no countermeasure for its variant, and the Kodiak family, Humvee family, Ural family, Wolf-110 family, Bobcat and Dune Buggy have none listed.
+The level column contains stored vendor values, not S3 role-track requirements. Official tank unlocks moved from Driver levels 20–35 to 35–50 and from WARDOG 145 to 200; the notes do not assign an individual Driver level to each tank. Prices are the shop values. The M113 APC SV, the fixed-wing airplane and the Huey have no shop listing, and the Huey has no stats at all, so it is left out of the hits-to-destroy and value tables. The SPH-2 article gives no countermeasure for its variant, and the Kodiak family, Humvee family, Ural family, Wolf-110 family, Bobcat and Dune Buggy have none listed.
 
 ## Hits to destroy
 
@@ -148,10 +150,10 @@ How to read the table:
 - **Outside the inner radius the counts rise sharply.** A rocket or grenade that bursts beyond its inner radius loses the large inner-radius bonus that most vehicles have, and its damage also falls off with distance. For example, a Humvee takes 2 MAAWS rockets inside 4 m, and about 8 when the blast is halfway out between the inner and outer radius (derived). Aim for the vehicle itself.
 - **The RPG-7 is never stronger than the MAAWS here, and often much weaker.** Its rocket takes 6 hits on a Humvee where the MAAWS takes 2. The Humvee's rule keeps about 0.9 of the RPG-7 rocket's damage and multiplies the MAAWS rocket's damage by 3.9.
 - **Armor angle and thickness play no part.** The damage rules for tanks look only at the type of damage and at the part that was hit, not at the angle, the thickness or the side of the armor. See [Vehicle damage](vehicle-damage.md).
-- **The B-13 rocket is a helicopter pod rocket.** The Havoc and the AH-6R [Rockets] fire it. No hand-carried launcher is listed for it.
+- **The B-13 rocket is a helicopter pod rocket.** The Havoc fires it. The AH-6R switched to dedicated 70 mm rockets in Season 3; these retained B-13 model counts are not a separate reconstruction of that new rocket. No hand-carried launcher is listed for it.
 - **The 9K333 Verba is listed with the launchers because its rocket is an explosive round.** It fires only while locked on, and it can lock on to helicopters and the airplane only. Its counts against ground vehicles show what the rocket would do, but in play it cannot be fired at them.
 
-The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts: it has no damage zones, so hits to it do nothing.
+The Z20 Lakota [Miniguns] article says its rifle damage works as on the Z20 Lakota and gives no separate table. The Fixed-wing airplane article lists no hit counts. Its S3 platform export has no damage-section fragment; the earlier CL516586 missing-section path returned zero, but this does not establish S3 immunity or exclude scripted health.
 
 ## Value for money
 
@@ -159,9 +161,9 @@ Price per seat and price per 100 HP are simple division of the shop price (deriv
 
 | Vehicle | Price (cash) | Seats | Main health (HP) | Price per seat (derived) | Price per 100 HP (derived) |
 |---|---:|---:|---:|---:|---:|
-| [Havoc](havoc.md) | 28,000 | 2 | 800 | 14,000 | 3,500 |
+| [Havoc](havoc.md) | 26,000 | 2 | 800 | 13,000 | 3,250 |
 | [MH-6](mh-6.md) | 6,250 | 6 | 400 | 1,042 | 1,563 |
-| [AH-6M [Miniguns]](ah-6m-miniguns.md) | 12,000 | 2 | 400 | 6,000 | 3,000 |
+| [AH-6M [Miniguns]](ah-6m-miniguns.md) | 10,480 | 2 | 400 | 5,240 | 2,620 |
 | [AH-6R [Rockets]](ah-6r-rockets.md) | 18,800 | 2 | 400 | 9,400 | 4,700 |
 | [Z20 Lakota](z20-lakota.md) | 7,400 | 13 | 600 | 569 | 1,233 |
 | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | 15,000 | 13 | 600 | 1,154 | 2,500 |
@@ -173,7 +175,7 @@ Price per seat and price per 100 HP are simple division of the shop price (deriv
 | [Dune Buggy](dune-buggy.md) | 1,500 | 3 | 400 | 500 | 375 |
 | [Kodiak](kodiak.md) | 2,500 | 4 | 400 | 625 | 625 |
 | [Kodiak [Pickup]](kodiak-pickup.md) | 3,000 | 6 | 400 | 500 | 750 |
-| [Kodiak [M249]](kodiak-m249.md) | 6,750 | 5 | 400 | 1,350 | 1,688 |
+| [Kodiak [M249]](kodiak-m249.md) | 6,250 | 5 | 400 | 1,250 | 1,563 |
 | [Humvee](humvee.md) | 3,000 | 4 | 500 | 750 | 600 |
 | [Humvee [Minigun]](humvee-minigun.md) | 10,000 | 5 | 500 | 2,000 | 2,000 |
 | [Humvee [M249]](humvee-m249.md) | 8,500 | 5 | 500 | 1,700 | 1,700 |
@@ -181,9 +183,9 @@ Price per seat and price per 100 HP are simple division of the shop price (deriv
 | [Ural Defender](ural-defender.md) | 7,200 | 3 | 700 | 2,400 | 1,029 |
 | [Ural Defender [M249]](ural-defender-m249.md) | 9,500 | 3 | 700 | 3,167 | 1,357 |
 | [Wolf-110](wolf-110.md) | 2,200 | 4 | 500 | 550 | 440 |
-| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 7,800 | 5 | 500 | 1,560 | 1,560 |
+| [Wolf-110 [M2 Browning]](wolf-110-m2-browning.md) | 6,800 | 5 | 500 | 1,360 | 1,360 |
 
-The Bobcat is lowest on both measures, at 250 cash per seat and 250 cash per 100 HP. The Havoc has the highest price per seat (14,000 cash), and the AH-6R [Rockets] has the highest price per 100 HP (4,700 cash).
+The Bobcat is lowest on both measures, at 250 cash per seat and 250 cash per 100 HP. The Havoc has the highest price per seat (13,000 cash), and the AH-6R [Rockets] has the highest price per 100 HP (4,700 cash).
 
 ## See also
 
@@ -193,6 +195,27 @@ The Bobcat is lowest on both measures, at 250 cash per seat and 250 cash per 100
 - [Countermeasures and flares](countermeasures-and-flares.md): which vehicles carry flares or smoke
 - [Fuel and refueling](fuel-and-refueling.md): the fuel tank and how to refill it
 - [Seats and passengers](seats-and-passengers.md): seat roles and switching
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce the following reverse speeds. Approximate values retain the ~ sign; these are not calculated from gear ratios or measured here.
+
+| Vehicle family | Previous reverse speed (km/h) | S3 announced reverse speed (km/h) |
+|---|---:|---:|
+| Bobcat | 16 | ~25 |
+| Kodiak | 33 | ~57 |
+| Humvee | 35 | ~57 |
+| Dune Buggy | 43 | ~50 |
+| Ural | 15 | 27 |
+| Wolf-110 | 27 | ~40 |
+
+Wheeled vehicles now coast downhill off throttle. Ural and Humvee rear-wheel traction improves; the Ural, Kodiak, Humvee, Dune Buggy and Wolf-110 lose grip above their normal powered top speed. The Ural's backward downhill speed is capped at its forward speed.
+
+The price cuts apply to the armed Kodiak [M249], Wolf-110 [M2 Browning], AH-6M [Miniguns], and the Havoc. Unarmed Kodiak and Wolf prices are unchanged in these tables.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) say a 20×102 mm round now damages each vehicle section only once while passing through. Damage was retuned: Havoc and Z20 Lakota take roughly their Season 2 damage, while Littlebirds take slightly less. Existing calculated hit counts remain conditional and do not independently verify the changed section-contact behavior.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase tank resistance to grenades and fix grenade-launcher damage: tracks take 3 hits instead of 1, and the rear engine takes 5–6 instead of 3, matching grenades. These developer-announced part-disable counts are distinct from the conditional whole-vehicle destruction models. Tanks and artillery can also break stone walls in Season 3.
 
 ## Sources
 

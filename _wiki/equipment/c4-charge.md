@@ -51,7 +51,7 @@ The C4 Charge is sold as a Lethal, Resource item. It does nothing on its own. Th
 
 ### To players
 
-The blast does its full 250 HP from the centre out to 2.5 m. Beyond 2.5 m the damage falls in a straight line to zero at 6 m. Examples:
+The historical CL516586 actor-input model starts at 250 damage through 2.5 m, then falls linearly with a 20-damage floor inside 6 m; it cuts to zero at 6 m. These are starting amounts before hit filtering and damage rules, not guaranteed HP loss. Examples:
 
 - At 5 m: about 71 HP
 - At 6 m and beyond: nothing
@@ -72,6 +72,12 @@ The table gives the number of centre hits a vehicle needs to lose its main healt
 Against armour the C4 is weak on the tanks and the Humvee family, and very strong on stationary weapons. Its table entry is -25 % on the tanks and -15 to -52.5 % on the Humvee family and the Havoc. On stationary weapons it is +1,500 % on the Mistral, +700 % on the Phalanx and +300 % on the Mortar and the Stingray. Other entries on the same row also apply.
 
 See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
+
+## Season 3 announcement
+
+The Assault unlock moved from level 4 to level 5 to accommodate shared items in the role track.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

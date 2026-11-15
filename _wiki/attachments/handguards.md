@@ -66,7 +66,7 @@ The Weapon Shop data has no handguard rows, so the price column reads Not in sho
 
 ## Parts that fit no weapon
 
-19 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+The table reports 19 parts with no fitting weapon in its loadout association. That is a bounded catalog result, not proof that their modifiers never apply in S3. They are still listed in the table above with "No weapon" in the Fits column.
 
 AK74 Archangel OPFOR Forend, AK74 CMC Flat Trigger, AK74 M-LOK Dong Grip, AK74 MI Universal Handguard, AK74 Polymer Handguard, AK74 Sharkfin Dong Grip, AK74 TI Battlerail, AK74 Timney Drop-in Trigger, AK74 Wooden Dong Grip, AK74 ZenitCo B-13 Side Mount, AK74u Polymer Handguard, AK74u Wooden Handguard, LVOA Handguard, M4 Handguard, MP5 Handguard, RPK74 Polymer Handguard, RPK74 Wooden Handguard, Unnamed handguard, Unnamed handguard.
 

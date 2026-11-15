@@ -50,7 +50,7 @@ Base multiplier per body part, before the weapon class is added:
 | Calf | 0.50 |
 | Foot | 0.30 |
 
-Head multiplier added by each weapon class: assault rifles 2.35, SMGs 2.1, LMGs 2.35, shotguns 1.5, DMRs 2.45 and sniper rifles about 4.27.
+Head multiplier added by each weapon class: assault rifles 2.35, SMGs 2.1, LMGs 2.35, shotguns 1.5, DMRs 3.00 and sniper rifles about 4.27.
 
 **Arm damage class.** Each bullet also has an arm damage class, set by its caliber. It belongs to the bullet, not to the armour the target wears.
 
@@ -65,9 +65,9 @@ Damage per hit with the M4 (full metal jacket ammo, no armor) and the number of 
 |---|---:|---:|
 | Head | 65.8 | 2 |
 | Neck | 49.4 | 3 |
-| Upper torso | 27.3 | 4 |
-| Middle torso | 27.2 | 4 |
-| Lower torso | 25.8 | 4 |
+| Upper torso | 30.8 | 4 |
+| Middle torso | 28.0 | 4 |
+| Lower torso | 26.6 | 4 |
 | Pelvis | 25.2 | 4 |
 | Upper arm | 15.1 | 7 |
 | Lower arm | 12.6 | 8 |
@@ -76,15 +76,15 @@ Damage per hit with the M4 (full metal jacket ammo, no armor) and the number of 
 | Calf | 12.6 | 8 |
 | Foot | 7.6 | 14 |
 
-These values are calculated from the game's multipliers and the M4's base damage. The full table for every weapon and ammo type is on [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md).
+These are point-blank model results using S3 multipliers and the M4's base damage with the historical damage formula: hostile target, outside a vehicle, no penetration or falloff. Current native damage behavior has not been verified. The full table for every weapon and ammo type is on [Damage by Weapon and Ammo](../../game-features/Wardogs_WeaponDamage_v1.md).
 
 The same bullet does different damage to different weapons. A sniper rifle such as the MK22 does 118.8 to the upper torso and 192.0 to the head, so one hit kills an unarmored player in either place. A pistol such as the GGX 17 does 25.4 to the upper torso and 46.2 to the head, so it takes four body shots or three headshots.
 
 ## Rules that depend on the weapon or the round
 
-Besides the body-part multiplier, the damage table has rules that match a weapon type, a round or an explosive. They multiply with everything else. Values are for Season 2.
+Besides the body-part multiplier, the damage table has rules that match a weapon type, a round or an explosive. They multiply with everything else. The weapon/caliber factors below are current S3 stored values; the remaining rules describe the historical damage model.
 
-- **Weapon type and round.** Assault rifles do x0.75 with .308 Winchester (FAL) and x0.88 with 7.62x39 mm (TCX-SPR). Marksman rifles do x0.85 with .308 Winchester (BMR-308, M14) and x0.80 with 7.62x54R (SVD). Machine guns do x0.75 with 7.62x54R (PKM) and .308 Winchester (Evo-3 Ultra). All other weapons are x1.00. The weapon articles already include this.
+- **Weapon type and round.** Assault rifles do x0.75 with .308 Winchester (FAL) and x0.88 with 7.62x39 mm (TCX-SPR). Marksman rifles do x0.91 with .308 Winchester (BMR-308, M14) and x0.90 with 7.62x54R (SVD), up from x0.85 and x0.80 respectively in Season 2. Machine guns do x0.75 with 7.62x54R (PKM) and .308 Winchester (Evo-3 Ultra). All other weapons are x1.00. The weapon articles already include this.
 - **Autocannons.** The Flakpanzer Gepard's 35 mm and the 20 mm cannon of the Vanguard CIWS and other stationary guns do x0.70 to a player on any body part.
 - **Outer blast ring.** An explosion's outer ring does x0.50 for the 84, 93, 120, 125 and 40 mm weapons (RPG-7, MAAWS, the L2A6 and T-72B3 guns, the MGL-40) and x0.45 for the 155 mm shell, on top of the distance falloff. The 40 mm grenade and the 125 mm shell gained this in Season 2. Inside the inner ring the rule does not apply. C4 has x0.60 in its outer ring.
 - **Rifled slug and arrows.** The 12 gauge rifled slug does x0.70 on a body part covered by a vest. Compound Bow arrows do x0.90 against Heavy gear and x0.66 against Super heavy gear. See [Armor](armor.md).
@@ -95,7 +95,7 @@ Besides the body-part multiplier, the damage table has rules that match a weapon
 
 - **Aim high.** With the M4, two headshots kill an unarmored player, while four torso hits are needed. Head and neck hits matter most.
 - **Limbs are a poor target.** Hands and feet take 14 hits from an M4, and arms and legs 7 to 8 hits.
-- **Armor changes the count.** Covering the torso with heavy armor raises the M4 torso hits to kill from 4 to 8. See [Armor](armor.md) for the full effect.
+- **Armor changes the count.** Covering the torso with heavy armor raises the modeled M4 upper-torso hits to kill from 4 to 7. See [Armor](armor.md) for the full effect.
 - **Teammates are not a safe target.** Bullets that hit a teammate do half damage, so friendly fire still hurts, just less.
 
 ## See also
@@ -107,6 +107,14 @@ Besides the body-part multiplier, the damage table has rules that match a weapon
 - [Hit Registration](hit-registration.md)
 - [Body armor](../equipment/body-armor.md)
 - [Medical Items](../equipment/medical-items.md)
+
+## Season 3 announcement
+
+Compared with Season 2, assault rifles and LMGs gain 13% upper-torso damage and 3% middle- and lower-torso damage. AR torso damage returns to Season 1 values; LMG torso damage matches ARs. The change applies to armored and unarmored targets, with the armor reduction percentage unchanged.
+
+The announced DMR bounds are: unarmored body kills take 2 shots instead of 3; unhelmeted head kills take 1 instead of 2. SVD, BMR-308 and M14 require 1–2 fewer body shots at every armor level and 2 headshots instead of 3 through a level 3 helmet. SKS requires 1 fewer body shot against level 2 and level 4 armor. Neck damage increases but still takes 2 shots; arm and leg damage is unchanged. These are the announcement's bounds, not a guarantee for every ammunition, range, penetration or hit-location combination.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Sources
 

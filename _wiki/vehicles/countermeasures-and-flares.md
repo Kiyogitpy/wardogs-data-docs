@@ -19,11 +19,11 @@ description: "Which Wardogs vehicles carry flares or smoke, how many they get, h
 | Smoke price | 750 cash, unlock level 1 |
 {: .wiki-infobox }
 
-Countermeasures are launched from a vehicle to draw off or confuse incoming attacks. In Wardogs they are flares for aircraft and smoke for the L2A6. Each vehicle's vendor stats list its countermeasure, and most ground vehicles list none.
+Countermeasures are launched from a vehicle to draw off or confuse incoming attacks. The saved setups list flares for aircraft and smoke for the L2A6, T-72B3, Gepard and M113 APC SV. Each vehicle's vendor stats list its countermeasure, and most ground vehicles list none.
 
 ## Overview
 
-Flares are an anti-air countermeasure. The item text says a flare use "deploys 3x bursts of flares", but each press uses one flare (see Amounts and reloading). Smoke is a newer countermeasure that Season 2 added. It lays a sustained trail of smoke around the vehicle rather than a burst of flares.
+Flares are an anti-air countermeasure. The item text says a flare use "deploys 3x bursts of flares", while the historical CL516586 fire handler removed one inventory item per press (see Amounts and reloading). Smoke is a newer countermeasure that Season 2 added. It lays a sustained trail of smoke around the vehicle rather than a burst of flares.
 
 ## How it works
 
@@ -31,31 +31,33 @@ Flares are an anti-air countermeasure. The item text says a flare use "deploys 3
 
 The in-game tip says flares "can be used to momentarily prevent heat-seeking projectiles from locking onto your helicopter". The same tip set gives a second way to stay hidden from some launchers: "flying low stops certain launchers being able to lock on to your vehicle".
 
-The game's code shows a different job for flares than clearing a lock. A lock-on only decides whether the launcher may fire. The flares work on the missile after it has been fired (read from the game's code, not tested in play):
+The CL516586 static reading traced flare diversion in guidance after a missile was fired. The following behavior belongs to that historical reader; the S3 saved distances are still present, but current guidance and lock behavior have not been traced:
 
 - While a helicopter's flares are active, a homing missile that is between the minimum and maximum flare distance (5 to 300 m on the Havoc, 10 to 300 m on the MH-6 and AH-6 family, 15 to 300 m on the Z20 Lakota) stops aiming at the helicopter. It aims at one of two flare points instead, one on each side of the helicopter, and picks whichever is closer to the missile. The points sit about 7 m to the side and 2 m up on the Havoc, 4 m and 2 m on the MH-6 and AH-6 family, and 5 m and 3.5 m on the Z20 Lakota.
 - While the flares are active, a missile that gets within about 100 m of the point it is chasing gives up its target and flies on without steering.
 - A missile inside the minimum distance, or outside the maximum distance, ignores the flares and keeps aiming at the helicopter.
 - Only guided missiles steer at all, and only while their rocket motor burns.
-- The airplane carries flares with the same rules. It sets no flare distances of its own, so it uses the game's default band of 25 to 100 m. It sets no flare points either, and the game's built-in points are the same for both: 2 m to the right of the airplane and 0.5 m below it. So a missile chasing the airplane's flares is always pulled to that one spot on the right side, not to a point on each side as with the helicopters (read from the game's code, not tested in play).
+- The S3 airplane asset sets no flare distances. The CL516586 initializer supplied 25 to 100 m; the current initializer is unverified. It sets no flare points either, and the game's built-in points are the same for both: 2 m to the right of the airplane and 0.5 m below it. So a missile chasing the airplane's flares is always pulled to that one spot on the right side, not to a point on each side as with the helicopters (read from the game's code, not tested in play).
 
-A helicopter also reports itself as "cannot be locked on to" while its flares are active, and the airplane never does. This matches the in-game tip, but nothing in the game's code reads it. The lock-on rules never ask the target whether it can be locked on to, so burning flares neither stop a new lock nor drop one you already have (read from the game's code, not tested in play; the part of the program that is hidden by the game's protection was not read, so keep this as inferred). Flares only work on a missile that is already in the air. The Talon 9K-SAM is a fixed emplacement rather than a vehicle weapon; it fires the same guided 72 mm rocket as the 9K333 Verba, so the flare rules above apply to its missiles as well (inferred). See the [Talon 9K-SAM](../building/talon-9k-sam.md) article for the emplacement itself.
+In the CL516586 analysis, helicopters reported “cannot be locked on to” while flares were active, whereas the airplane did not. Rounds 58–59 found no reader in the searched statically readable client paths, and protected paths were not read. Their inference that flares neither prevented nor cleared a lock is historical, not an S3 finding. The same historical guidance model covers the guided 72 mm rocket used by the Talon 9K-SAM; current native behavior remains unresolved. See [Talon 9K-SAM](../building/talon-9k-sam.md).
 
-### Smoke
+### Smoke settings and historical consumer
 
-Smoke is a sustained countermeasure. A vehicle's smoke screen stays active for 16 seconds after it is fired, and the vehicle can use it again 90 seconds after that first use. The 6 seconds that appear in the smoke effect settings are the look of the grenade-style smoke cloud (a 2 second fade in, a 2 second hold at full density and a 2 second fade out). They are not the screen's active time, and it is not stated how long a vehicle's cloud is drawn. The game code for the smoke screen has no link to lock-on or to missile steering, so smoke does not affect lock-on weapons as far as the known settings show.
+The S3 smoke setups retain the values 16 and 90. The CL516586 consumer interpreted them as a 16-second active window and reuse 90 seconds after firing; this timing has not been re-established in S3 native code. The 6 seconds that appear in the smoke effect settings are the look of the grenade-style smoke cloud (a 2 second fade in, a 2 second hold at full density and a 2 second fade out). They are not the screen's active time, and it is not stated how long a vehicle's cloud is drawn. The searched CL516586 smoke handler had no targeting calls. That bounded negative result does not exclude other paths or establish S3 lock-on behavior.
 
 ### Amounts and reloading
 
-Each flare-carrying vehicle has a starting count, and each burst stays active for 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. Each press of the countermeasure key uses one flare and then starts a 5 second cooldown before the next press. The "3x bursts" line is item text only; no number in the game is 3 bursts.
+Each S3 flare setup stores a starting count and FlaresActiveTime 3.5 seconds. The fixed-wing airplane starts with 3 flares, the Havoc with 2, the MH-6 and AH-6 family with 2, and the Z20 Lakota with 2. The CL516586 handler removed one flare per press and started a 5-second cooldown; the current handler and cooldown default are unverified. The "3x bursts" line is item text only; the inspected saved flare settings do not specify three bursts.
 
-Flares are also an inventory item. The vehicle vendor sells them for 750 cash, one per purchase. A vehicle's flare count follows its inventory: buying or being given the item adds that many flares, and taking the item out removes them. Pressing the countermeasure key takes one Flares item out of the vehicle, and nothing fires if there is none. Smoke works the same way with the smoke item (see the table notes below).
+Flares are also an inventory item. The vehicle vendor sells them for 750 cash, one per purchase. In the traced CL516586 handlers, a vehicle's flare count followed its inventory: buying or being given the item adds that many flares, and taking the item out removes them. Pressing the countermeasure key takes one Flares item out of the vehicle, and nothing fires if there is none. Smoke works the same way with the smoke item (see the table notes below).
 
 ### Season 2 changes
 
 Season 2 renamed the flares input to Fire Countermeasures. The key stays the same, and the flares item itself did not change. Smoke was added as a new countermeasure at 750 cash, unlock level 1.
 
 ## Numbers
+
+These are saved counts and timing parameters; their behavior follows the historical consumer described above.
 
 | Vehicle | Countermeasure | Amount | Notes |
 |---|---|---|---|
@@ -66,7 +68,7 @@ Season 2 renamed the flares input to Fire Countermeasures. The key stays the sam
 | [Z20 Lakota](z20-lakota.md) | Flares | 2 starting | Active 3.5 s; range band 15 to 300 m |
 | [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | Flares | 2 starting | Active 3.5 s; range band 15 to 300 m |
 | [Fixed-wing airplane](fixed-wing-airplane.md) | Flares | 3 starting | Active for 3.5 seconds; no range band set |
-| [L2A6](l2a6.md) | Smoke | Not stated | Smoke screen active for 16 s, usable again after 90 s |
+| [L2A6](l2a6.md) | Smoke | 1 starting (stored) | Smoke screen active for 16 s, usable again after 90 s |
 | [Flakpanzer Gepard](flakpanzer-gepard.md) | Smoke | 1 charge | Smoke screen active for 16 s, usable again after 90 s |
 | [T-72B3](t-72b3.md) | Smoke | 1 charge | Smoke screen active for 16 s, usable again after 90 s |
 | [M113 APC SV](m113-apc-sv.md) | Smoke | 255 charges | Smoke screen active for 16 s, usable again after 90 s |
@@ -75,10 +77,10 @@ The Flakpanzer Gepard, the T-72B3 and the M113 APC SV have a smoke countermeasur
 
 ## Tips that follow from the numbers
 
-- Flares are the only countermeasure for the helicopter and airplane group. They do not clear a lock. They pull a guided missile that is already in flight toward a flare point, so fire them when the missile is inside the flare distance, and they last 3.5 seconds.
-- A smoke screen is active for 16 seconds, then the vehicle must wait until 90 seconds after the first use before it can use smoke again. Use it as a short cover, and plan the next one around the 90 second wait.
-- Because the airplane's flares are a fixed count of 3, use them when they matter most rather than as a routine.
-- Each helicopter starts with 2 flares. Each press uses one and then waits 5 seconds before the next, so plan a flight around that count. The "3 bursts" in the item text is not a count.
+- The saved helicopter and airplane setups list flares. CL516586 traced diversion of an airborne guided missile, not lock clearing; whether that remains the S3 behavior is unresolved.
+- The saved smoke values are 16 and 90; interpreting them as active and reuse seconds follows the historical consumer, not a current timing test.
+- The airplane stores a starting count of 3, not an established fixed lifetime limit; the historical inventory handler allowed additions.
+- The inspected helicopter setups store 2 starting flares. One item per press and the 5-second cooldown are historical handler results; the item text does not establish a three-use inventory count.
 
 ## See also
 

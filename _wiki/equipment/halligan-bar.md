@@ -43,6 +43,12 @@ The shop text says the Halligan Bar pries open doors but is ineffective against 
 
 While you are forcing a door open, the game ignores your look input, so you cannot turn the camera until the action ends. A player in the critical state is excluded from this lock.
 
+## Season 3 announcement
+
+A Halligan Bar can now force open an enemy supply crate, causing a random item to drop onto the ground. The announcement does not specify a crate-opening durability cost; the door/vehicle costs below must not be assumed to apply.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
+
 ## Season 2 changes
 
 | Item | Season 1 | Season 2 |

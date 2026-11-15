@@ -115,9 +115,15 @@ Each row is one magazine. Fits lists the weapons that accept it. Prices come fro
 
 ## Parts that fit no weapon
 
-12 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+The table reports 12 parts with no fitting weapon in its loadout association. That is a bounded catalog result, not proof that their modifiers never apply in S3. Batteries, for example, are used by equipment outside the firearm compatibility table. They are still listed in the table above with "No weapon" in the Fits column.
 
 A91 Standard Mag, Battery, C4 Charge, Combat Bow Standard Mag, High Capacity Battery, KH2002 Extended Mag, KH2002 Standard Mag, 9K333 Verba Standard Mag, M4 Extended Mag, MP43 Internal Mag, TAR21 Standard Mag, Unnamed magazine.
+
+## Season 3 announcement
+
+The AMP-9 20 RND Magazine weight changed from 1 kg to 0.3 kg. The AK74 drum magazine also received a corrected inspect animation.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

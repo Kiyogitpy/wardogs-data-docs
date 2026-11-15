@@ -16,7 +16,7 @@ description: "A low cover wall built with any hammer from 15 Build Supplies, wit
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 15 Build Supplies |
-| Build time | 30 hits Small (17.0 s), 15 hits Medium (8.5 s), 10 hits Large (8.8 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 30 hits Small (17.0 s), 15 hits Medium (8.5 s), 10 hits Large (8.8 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 735 HP |
 | **Damage** | |
 | Bullets | -85% |
@@ -38,20 +38,20 @@ Destroying an enemy Sandbag Wall pays 15 cash and 5 Role XP.
 
 ## Building it
 
-- **Cost:** 15 Build Supplies, whichever hammer builds it. Nothing is charged at placement. See [Building](../building.md) for how Build Supplies are bought.
+- **Cost:** 15 Build Supplies, whichever hammer builds it. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default. See [Building](../building.md) for how Build Supplies are bought.
 - **Hammers:** Small, Medium or Large.
 - **Placement:** The Sandbag Wall is one of the four small structures (with the [Barbed Wire](barbed-wire.md), [Recon Tent](recon-tent.md) and [Hedgehog](hedgehog.md)). It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 14, 12, 10 and 8 weak spots, in that order. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | 30 (about 17.0 s) | 15 (about 8.5 s) | 10 (about 8.8 s) |
 | Hits to repair from zero health | 30 | 15 | 10 |
 | Hits to dismantle (your own) | 5 | 4 | 3 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md#building) for how the hit amounts work.
 

@@ -13,7 +13,7 @@ description: "Vehicle-use helmet: 55% reduction for the head and neck, removes s
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 1 kg |
+| Weight | Not serialized; current default unverified |
 | **Protection** | |
 | Damage reduction | 55% |
 | Body parts covered | Head and neck |
@@ -31,7 +31,7 @@ The Tank Helmet has a 55% reduction for the head and neck, which is between the 
 
 The Item Shop describes the Tank Helmet as "High Damage Reduction", and lists the audio and suppression effects. The shop files it under "Vehicle Use" rather than "Armor". It goes in the Helmet slot.
 
-The weight is not listed, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The weight is not serialized. Earlier code supplied a default of 1; the current S3 default has not been verified. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
@@ -51,7 +51,7 @@ With M4 full-metal-jacket rounds:
 | [Pilot Helmet](pilot-helmet.md) | 30% | Head | 180 |
 | **Tank Helmet** | 55% | Head and neck | 180 |
 
-Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
+The S3 item lists the same reduction at all four durability stages. Earlier CL516586 code removed 0.4 times incoming bullet damage from durability and broke the piece at zero. That wear and break behavior has not been traced in the current S3 build; equal stored stages alone do not establish protection until breakage.
 
 Suppression on the wearer is set per bullet class (0.2 for small pistol rounds to 0.9 for 120 mm and larger), and the shop text says the Tank Helmet removes it. The audio muffling is set in the game's audio mixes. In the driver or gunner seat of a tracked vehicle, vehicle sound is turned down to a volume setting of 0.63 (about 4 dB quieter) with a low-pass filter setting of 0.6, other players' footsteps get a filter setting of 0.6, other players' gunfire 0.7, and the ringing in the ears (tinnitus) sound is set to 0.50 (about 6 dB quieter). Anywhere else the helmet muffles everything a little, with a low-pass setting of 0.45 on most sounds and 0.5 on your own weapon, the same as the [Pilot Helmet](pilot-helmet.md) does. The filter settings run from 0 (most muffled) to 1 (not muffled) as far as the control names show, and the frequency they work out to is not in the files (inferred).
 

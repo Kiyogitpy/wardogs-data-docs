@@ -2,7 +2,7 @@
 title: "King of the Hill Challenges"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The 60 King of the Hill event challenges: kills, revives, heals, vehicles, supply crates, tips and zone play, with the base cash and role XP each pays."
+description: "The 62 King of the Hill event challenges: kills, revives, heals, vehicles, supply crates, tips and zone play, with configured reward expressions and selected base values."
 ---
 
 # King of the Hill Challenges
@@ -10,26 +10,26 @@ description: "The 60 King of the Hill event challenges: kills, revives, heals, v
 | King of the Hill Challenges | |
 |---|---|
 | **General** | |
-| Kind | Event rewards, paid each time the event happens |
-| Challenges | 60 |
-| Auto-activate | 59 of 60 |
+| Kind | Event reward definitions; eligibility and active payout path unresolved |
+| Challenges | 62 |
+| Auto-activate | 61 of 62 (stored flags) |
 | Internal name | DT_Challenges_SessionEvents_KOTH |
 {: .wiki-infobox }
 
-The King of the Hill set is the largest challenge category, with 60 rows. Each row is one event, or one assist version of an event, and pays when it happens. Most pay cash and role XP to the player who did the action, and smaller shares to the players who helped.
+The King of the Hill set is the largest challenge category, with 62 rows. Each row is one event, or one assist version of an event, with configured reward rules. Event occurrence alone does not establish eligibility, recipient selection or payment in S3.
 
 ## Overview
 
-The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections, supply crates, zone entry, tips, air time and fly-through bonuses, and a few other events. Many rows come in groups: a base event, then a crew, logistic, revive, FOB-supplied or supply crate version.
+The 62 rows cover player kills, revives, heals, vehicle kills, vehicle sections, supply crates, zone entry, tips, air time and fly-through bonuses, and a few other events. Many rows come in groups: a base event, then a crew, logistic, revive, FOB-supplied or supply crate version.
 
 ## How it works
 
-- **No target.** These challenges have no number to reach. The matching rule pays each time its event happens.
+- **No target.** These challenges have no number to reach. The state tree defines the event and its additional eligibility checks; the event alone does not guarantee payment.
 - **Assist versions.** An assist row pays a player who helped. A crew row pays the pilot, driver or gunner of a vehicle that took part.
 - **Friendly events.** Several rows list a friendly value of 0, so they pay nothing when the event is friendly.
-- **Auto-activate.** All rows start automatically except Supply Pallet Dropped.
-- **Amounts.** The cash and role XP columns show the base amount of each reward row. These are the shared challenge reward rows that the challenges of every mode use. They differ from the cash tables on [Cash and Rewards](cash-and-rewards.md), which give other bases for the same actions (a default kill 250, a defibrillator revive 1,000, a Bandage heal 400), and the game server, not the files on your PC, decides which set a match pays out. The zone, kill-streak and last-victim terms then multiply the base (see [Cash and Rewards](cash-and-rewards.md)). Smaller amounts in the same rule are assist, owner or friendly shares.
-- **No reward.** The reward table has no entry for that reward, so the event pays nothing from it.
+- **Auto-activate.** All rows store bAutoActivate=true except Supply Pallet Dropped. Runtime activation is not established by that flag alone.
+- **Amounts.** The cash and role XP columns show the base amount of each reward row. These are the shared challenge reward rows that the challenges of every mode use. They differ from the cash tables on [Cash and Rewards](cash-and-rewards.md), which give other bases for the same actions (a default kill 250, a defibrillator revive 1,000, a Bandage heal 400), and the active registry and current payout path have not been established. Where present in a row, zone, kill-streak and last-victim terms modify its base (see [Cash and Rewards](cash-and-rewards.md)). Smaller amounts in the same rule are assist, owner or friendly shares.
+- **No reward.** The reward table has no entry for that reward, which does not exclude a reward through another row or registry.
 - **Not known.** No base amount was found for that reward in the sources, so its amount is not yet known.
 - **Duplicate name.** The game has two rows named Vehicle Destroyed Assist Revive Assist. One is the revive assist and the other is the FOB-supplied assist.
 
@@ -38,20 +38,20 @@ The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections,
 | Challenge | What earns it | Cash (base) | Role XP (base) |
 |---|---|---|---|
 | Player Kill | Award resources to (or take from) a player when they kill another player. | 300 | 250 |
-| Player Kill Crew Assist | Award resources to (or take from) a crew player when their pilot/driver/gunner kills another player. | Calculated share of the kill | 100 |
-| Player Kill Logistic Assist | Logistic credit for a player kill. | 300 | 250 |
-| Player Kill Revive Assist | Revive credit for a player kill. | 300 | 250 |
-| Player Kill FOB Supplied Assist | FOB-supplied credit for a player kill. | 300 | 250 |
+| Player Kill Crew Assist | Award resources to (or take from) a crew player when their pilot/driver/gunner kills another player. | Calculated share of the kill | 250 default |
+| Player Kill Logistic Assist | Logistic credit for a player kill. | Calculated share of the underlying reward | 50 default; context-dependent |
+| Player Kill Revive Assist | Revive credit for a player kill. | Calculated share of the underlying reward | 50 default |
+| Player Kill FOB Supplied Assist | FOB-supplied credit for a player kill. | Calculated share of the underlying reward | 50 default |
 | Player Kill Supply Crate Assist | Award resources to the player who sold the damage causer. | Not known | Not known |
-| Player Kill Assist | Award resources to (or take from) a player when they assisted in the death of another player. | 300 | 250 |
-| Player Kill Assist Crew Assist | Award resources to (or take from) a crew player when their pilot/driver/gunner assists in the death of another player. | Not known | Not known |
-| Player Kill Assist Logistic Assist | Logistic credit on a player kill assist. | 300 | 250 |
-| Player Kill Assist Revive Assist | Revive credit on a player kill assist. | 300 | 250 |
-| Player Kill Assist FOB Supplied Assist | FOB-supplied credit on a player kill assist. | 300 | 250 |
+| Player Kill Assist | Award resources to (or take from) a player when they assisted in the death of another player. | Calculated KillReward × (0.9 × curve input + 0.1) | 200 default |
+| Player Kill Assist Crew Assist | Award resources to (or take from) a crew player when their pilot/driver/gunner assists in the death of another player. | Calculated reward × crew modifier | 100 default |
+| Player Kill Assist Logistic Assist | Logistic credit on a player kill assist. | Calculated reward × logistic modifier | 25 default; context-dependent |
+| Player Kill Assist Revive Assist | Revive credit on a player kill assist. | Calculated reward × revive modifier | 25 default |
+| Player Kill Assist FOB Supplied Assist | FOB-supplied credit on a player kill assist. | Calculated reward × FOB modifier / NumberOfAssisters | 25 default / NumberOfAssisters |
 | Player Kill Assist Supply Crate Assist | Award resources to the player who sold the damage causer. | Not known | Not known |
 | Revive Player | Award resources to a player when they revive another player. | 600 (500 with a Resuscitator) | 250 |
-| Revive Player Logistic Assist | Logistic credit for a revive. | 400 | 200 |
-| Revive Player Revive Assist | Revive credit for a revive. | 400 | 200 |
+| Revive Player Logistic Assist | Logistic credit for a revive. | Calculated reward × logistic modifier | 25 default |
+| Revive Player Revive Assist | Revive credit for a revive. | Calculated reward × revive modifier | 25 default |
 | Revive Player Supply Crate Assist | Award resources to the player who sold the revive causer. | Not known | Not known |
 | Revive Player Contributor | Award resources to a player when they're mid-process of reviving another player. | 400 | 200 |
 | Heal Player | Award resources to a player when they heal another player. | 200 with a bandage | 80 |
@@ -60,9 +60,9 @@ The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections,
 | Heal Player Supply Crate Assist | Award resources to the player who sold the heal causer. | Not known | Not known |
 | Destroy Vehicle | Award resources to a player when they destroy a vehicle. | 250 (Kodiak) to 7,000 (Havoc) | 150 (Kodiak) to 750 (heavy tank) |
 | Destroy Vehicle Crew Assist | Award resources to a crew player when their pilot/driver/gunner destroys a vehicle. | Calculated share of the kill | 250 |
-| Destroy Vehicle Logistic Assist | Logistic credit for a vehicle destroyed. | 400 | 200 |
-| Destroy Vehicle Revive Assist | Revive credit for a vehicle destroyed. | 400 | 200 |
-| Destroy Vehicle FOB Supplied Assist | FOB-supplied credit for a vehicle destroyed. | 400 | 200 |
+| Destroy Vehicle Logistic Assist | Logistic credit for a vehicle destroyed. | Calculated reward × logistic modifier | 50 default; context-dependent |
+| Destroy Vehicle Revive Assist | Revive credit for a vehicle destroyed. | Calculated reward × revive modifier | 50 default |
+| Destroy Vehicle FOB Supplied Assist | FOB-supplied credit for a vehicle destroyed. | Calculated reward × FOB modifier / NumberOfAssisters | 50 default / NumberOfAssisters |
 | Destroy Vehicle Supply Crate Assist | Award resources to the player who sold the damage causer. | Not known | 50 |
 | Destroy Vehicle Assist | Award resources to players who assisted in the destruction of a vehicle by damaging it. | Not known | Not known |
 | Destroy Vehicle Assist Crew Assist | Award resources to crew players whos pilot/driver/gunner assisted in the destruction of a vehicle by damaging it. | Not known | 250 |
@@ -80,7 +80,7 @@ The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections,
 | Destroy Vehicle Section Assist Logistic Assist | Logistic credit on a vehicle section assist. | 400 | 200 |
 | Destroy Vehicle Section Assist Revive Assist | Revive credit on a vehicle section assist. | 400 | 200 |
 | Destroy Vehicle Section Assist Supply Crate Assist | Award resources to the player who sold the damage causer. | Not known | 50 |
-| Zone Entry | Award resources to a player when entering the zone. | None | None |
+| Zone Entry | Award resources to a player when entering the zone. | Selector values: 250 ControlZoneValue, 3,000 SpawnVehicleValue, or 0 | 0 default, 500 SpawnVehicleValue |
 | Destroy Throwable | Award resources or take them when the player destroys a throwable | 100 | 75 |
 | Refuel Vehicle | Award resources to a player when they refuel a vehicle. | 15 | 15 |
 | Deploy On Vehicle | Award resources when a player is deployed on a vehicle | 50 | None |
@@ -91,11 +91,13 @@ The 60 rows cover player kills, revives, heals, vehicle kills, vehicle sections,
 | Destroy a Supply Crate | Award resources when a player destroys a supply crate. | 150 | 150 |
 | Deliver Teammate to Zone | Delivering a teammate to the zone. The game gives no description. | 100 | 12.5 |
 | Survived Trip | A passenger survives the trip. | 500 | 100 |
-| Safe Zone Entered after successful logistics run | Entering the safe zone after a successful logistics run. | 500 | 100 |
+| Safe Zone Entered after successful logistics run | Entering the safe zone after a successful logistics run. | 150 | 50 |
 | Send & Receive Tip | Remove resources from one player and give it to another when they tip. | Tip amount (a game value) | None |
 | Send & Receive Pre Tip | Remove resources from one player and give it to another after they pre tip. | Tip amount (a game value) | None |
-| Vehicle Air Time Bonus | Award resources to the vehicle driver after a long duration of air time. | Not known | Not known |
-| Vehicle Fly Through Bonus | Award resources to the vehicle pilot after flying through a fly through trigger | Not known | Not known |
+| Vehicle Air Time Bonus | Award resources to the vehicle driver after a long duration of air time. | 15 × ElapsedAirTime (input unit unverified) | No Role XP resource in this row |
+| Vehicle Fly Through Bonus | Award resources to the vehicle pilot after flying through a fly through trigger | 30 × clamp(RepeatActionCount, 0, 5) | No Role XP resource in this row |
+| Hot Zone Magnet Activated FOB Supplied Assist | FOB-supplied assist definition | 2,500 / NumberOfAssisters | Default 250 / NumberOfAssisters; friendly 0 |
+| Freefall | Freefall event definition; exact qualifying path unresolved | Three stored kill-related rows each have base 500; stacking unverified | Each has base 100; stacking unverified |
 | Test Reward | A test entry. The game gives no goal. | Not known | Not known |
 
 ## Season 2 changes

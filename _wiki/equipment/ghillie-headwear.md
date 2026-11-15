@@ -2,7 +2,7 @@
 title: Ghillie Headwear
 parent: "Equipment"
 group: "Armor"
-description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Suit. It has no durability and gives no protection."
+description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Suit. Its protection and effective durability are not established for S3."
 ---
 
 # Ghillie Headwear
@@ -13,11 +13,11 @@ description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Sui
 | **General** | |
 | Type | Camouflage headwear |
 | Slot | Helmet |
-| Weight | 1 kg |
+| Weight | Not serialized; current default unverified |
 | **Protection** | |
-| Damage reduction | None |
-| Body parts covered | None |
-| Durability | None (no durability fragment) |
+| Damage reduction | Not established for S3 |
+| Body parts covered | Not serialized |
+| Durability | No durability fragment exported; effective behavior unknown |
 | **Availability** | |
 | Price | 2,500 cash |
 | Unlock | None (unlock level 0) |
@@ -25,26 +25,26 @@ description: "Camouflage headwear for 2,500 cash, worn with the Ghillie Body Sui
 | Internal name | [`ID_GhillieHelmet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Armor/Content/Data/ID_GhillieHelmet.json) (item `Id.Item.GhillieHelmet`) |
 {: .wiki-infobox }
 
-Ghillie Headwear is camouflage for the head. It must be worn with the [Ghillie Body Suit](ghillie-body-suit.md). Like the suit, it removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. It gives no protection and has no durability.
+Ghillie Headwear is camouflage for the head. It must be worn with the [Ghillie Body Suit](ghillie-body-suit.md). Like the suit, it removes the death cam after the wearer kills an enemy, and it hides the wearer from infrared range finders. Its exported definition does not establish protection or effective durability.
 
 ## Overview
 
 The shop groups the Ghillie Headwear under "Camouflage" and lists it as armor. It goes in the Helmet slot.
 
-The Item Shop also lists a "Ghillie Headwear (Dead)" at 2,800 cash. It is a separate item with the same effects. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. The game files omit the weight, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The Item Shop also lists a "Ghillie Headwear (Dead)" at 2,800 cash. It is a separate item with the same effects. It differs in its look: its material is a dead-plant (dry) camouflage, and it costs more. The game files omit the weight; the earlier default of 1 has not been verified for S3. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
-The headwear has no durability, covers no body parts and gives no protection. The game's armor damage table sets the armor damage of this piece to zero, so it never reduces a hit and takes no armor damage (read from the game data; the game was not run to confirm it). The Weapon Damage page therefore treats it as no armor.
+The S3 item omits armor stages and covered locations but references armor and set effects whose definitions are not available in the exported data. Missing fields do not prove zero protection or zero durability. The damage model treats this piece as no armor as an explicit assumption; its actual S3 protection remains unresolved.
 
 | Piece | Damage reduction | Body parts covered | Durability |
 |---|---:|---|---:|
-| **Ghillie Headwear** | None | None | None |
+| **Ghillie Headwear** | Unknown | Not serialized | Unknown |
 | [Level 1 Helmet](level-1-helmet.md) | 30% | Head | 80 |
 
 ## Effects when worn together
 
-The suit and the headwear work as a pair. The effects below apply only when both pieces are worn:
+The suit and the headwear work as a pair. Earlier CL516586 analysis attributed the following effects to wearing both pieces. Their application in S3 remains unverified:
 
 | Effect | Change |
 |---|---|
@@ -54,7 +54,7 @@ The suit and the headwear work as a pair. The effects below apply only when both
 | Move speed | 5% slower (multiplier 0.95) |
 | Jump velocity | 5% lower (multiplier 0.95) |
 
-The armor damage table has rows for the suit and headwear tags that take their armor damage to zero, so the set takes no armor damage and gives no reduction.
+Armor-damage rules for the camouflage tags do not by themselves establish player-health damage reduction. Resolving protection requires the referenced effects and the current armor application path.
 
 ## Season 2 changes
 
@@ -72,7 +72,7 @@ No Season 2 change to the Ghillie Headwear is listed.
 - [Item Shop for Non-Weapon Items](../../game-features/Wardogs_ItemShop_v1.md): price, unlock and effects
 - [Items data](../../content/Wardogs_Items_v2.md): item id
 - [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): how the damage tables treat the Ghillie items
-- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): no reduction and no covered body parts for this item
+- [Weapon damage locations data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/weapon-damage-locations.json): model treatment of omitted coverage, with unresolved protection
 - [Items and Equipment changes, Season 2](../../season-2-changes/items-equipment.md)
 - [Tag Display Text](../../content/Wardogs_TagDisplayText_v1.md): category names
 - [Body Armor](body-armor.md): the overview of all armor

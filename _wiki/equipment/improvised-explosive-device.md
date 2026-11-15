@@ -2,7 +2,7 @@
 title: Improvised Explosive Device
 parent: "Equipment"
 group: "Explosives and throwables"
-description: "The Improvised Explosive Device: a placed charge that a player sets off from anywhere with its trigger, 3 s after the trigger is pressed."
+description: "The Improvised Explosive Device: a placed charge that a player sets off with a trigger; the historical model has a 3 s delay and no identified range limit."
 ---
 
 # Improvised Explosive Device
@@ -13,14 +13,14 @@ description: "The Improvised Explosive Device: a placed charge that a player set
 | **General** | |
 | Type | Lethal, placed explosive with a remote trigger |
 | How it is used | Placed on the ground, then set off with its trigger |
-| Fuse | 3 s after the trigger is pressed |
+| Historical fuse model | 3 s after trigger; current S3 consumer unresolved |
 | **Blast** | |
 | Damage at centre | 300 HP |
 | Full damage out to | 4 m |
 | No damage beyond | 8 m |
 | Minimum blast damage | 60 HP |
 | Thrown contact | 10 HP |
-| Remote range | No limit |
+| Remote range | No limit found in the historical trace; S3 unverified |
 | **Availability** | |
 | Price | 300 cash |
 | Shop unlock level | 0 |
@@ -28,7 +28,7 @@ description: "The Improvised Explosive Device: a placed charge that a player set
 | Internal name | `Id.Item.IED.Trigger` (trigger), `Id.Item.IED.Explosive` (charge) |
 {: .wiki-infobox }
 
-The Improvised Explosive Device is a placed charge with a long-range trigger. The player places it, then presses the trigger once the target is close enough to be caught by the blast. It has no range limit, and it does 300 HP at its centre, the same as the AT Mine.
+The Improvised Explosive Device is a placed charge with a long-range trigger. The player places it, then presses the trigger once the target is close enough to be caught by the blast. The historical model has no identified remote-range limit and starts its blast at 300 damage, the same as the AT Mine; current activation remains unverified.
 
 ## Overview
 
@@ -40,7 +40,7 @@ The IED uses a C4-style detonation, so a blast from another C4 or IED sets it of
 
 **Placing.** The IED is placed on the ground. It cannot be placed in a safe zone (Alpha, Bravo, Charlie or the hostile safe zone), and it has no set placement distance.
 
-**Trigger.** Pressing the IED trigger starts a 3 s delay. After the delay the IED goes off. Nothing limits the distance from the player to the trigger.
+**Historical trigger model.** The examined path starts a 3 s delay before detonation. The historical trace found no distance limit; that is not a verified S3 network or activation guarantee.
 
 **Chain reactions.** Another C4 or IED blast sets it off.
 
@@ -52,7 +52,7 @@ Held, the IED uses the left mouse button (right trigger on a gamepad) for its ma
 
 ### To players
 
-The blast does its full 300 HP from the centre out to 4 m. Beyond 4 m the damage falls in a straight line to zero at 8 m. Examples:
+The historical CL516586 actor-input model starts at 300 damage through 4 m, then falls linearly with a 60-damage floor inside 8 m; it cuts to zero at 8 m. These are starting amounts before hit filtering and damage rules, not guaranteed HP loss. Examples:
 
 - At 5 m: 225 HP
 - At 7.5 m: 60 HP
@@ -72,6 +72,12 @@ The table gives the number of centre hits a vehicle needs to lose its main healt
 | [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 2 |
 
 See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
+
+## Season 3 announcement
+
+The charge weight changed from 1.5 kg to 2.7 kg; the separate trigger changed from 1.5 kg to 0.2 kg. On controller, detonation was corrected to a hold interaction rather than an uncontrollable toggle.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

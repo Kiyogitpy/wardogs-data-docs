@@ -2,7 +2,7 @@
 title: "Kodiak [M249]"
 parent: "Vehicles"
 group: "Cars and trucks"
-description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold for 6,750 cash."
+description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold for 6,250 cash."
 ---
 
 # Kodiak [M249]
@@ -12,11 +12,11 @@ description: "Five-seat Kodiak SUV with a ring-mounted M249 machine gun, sold fo
 | ![Kodiak M249]({{ '/assets/img/icons/vehicles-3d/T_UI_Vehicle_Kodiak_MachineGun.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | SUV with machine gun |
 | Seats | 5 |
-| Price | 6,750 cash |
+| Price | 6,250 cash |
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
-| Rifle damage taken (derived) | 5% (from the Kodiak damage rules) |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-patriot-kodiak/WHL_02_SUV_RingTurret) |
 | Internal name | WHL_02 (machine gun variant) |
 {: .wiki-infobox }
@@ -25,7 +25,7 @@ The Kodiak [M249] is the Kodiak SUV with an M249 machine gun on a ring turret. I
 
 ## Overview
 
-The Kodiak [M249] is sold in the vehicle vendor under land transport, for 6,750 cash, and unlocks at level 0. Its Season 2 price went up from 3,750.
+The Kodiak [M249] is sold in the vehicle vendor under land transport, for 6,250 cash, and unlocks at level 0. Its Season 2 price went up from 3,750.
 
 ## Stats
 
@@ -60,6 +60,8 @@ The gun fires 850 rounds/min out to 700 m. The reload time and the starting ammu
 
 ## Handling
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Kodiak reverse speed at ~57 km/h (previously 33 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
+
 Handling matches the base Kodiak: mass 2,750, hand brake 50, and front steering of 30 degrees.
 
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
@@ -78,6 +80,10 @@ The Kodiak [M249] is placed by the ground vehicle yards of all four main maps: [
 - [Kodiak](kodiak.md) and [Kodiak [Pickup]](kodiak-pickup.md), the other Kodiak variants
 - [Humvee [M249]](humvee-m249.md), a similar machine gun SUV
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce this variant from 6,750 to 6,250 cash. The saved vehicle market export agrees. This is the undiscounted price; mode restrictions and progression still affect availability.
 
 ## Sources
 

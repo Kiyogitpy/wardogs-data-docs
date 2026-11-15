@@ -40,7 +40,7 @@ This page lists every gun mounted on a vehicle in Wardogs, from the miniguns on 
 | Duel 35 mm Oerlikon GDF cannons (twin) | [Flakpanzer Gepard](flakpanzer-gepard.md) | 35 mm | 1,100 rounds/min | 1,000 m | 4.0 s | None |
 | 2A42 Autocannon (30 mm) | [Havoc](havoc.md) | 30 mm | 250 rounds/min | 600 m | 8.0 s | None |
 | B-13 Rocket Pods (122 mm) | [Havoc](havoc.md) | 122 mm | 500 rounds/min | 1,000 m | 6.0 s | None |
-| B-13 Rocket Pods (two, 122 mm) | [AH-6R [Rockets]](ah-6r-rockets.md) | 122 mm | 350 rounds/min | 1,000 m | 6.0 s | 0 |
+| Rocket Pods (two, 70 mm; S3 announced) | [AH-6R [Rockets]](ah-6r-rockets.md) | 70 mm | 350 rounds/min | 1,000 m | 6.0 s | 0 |
 | L52 Cannon (155 mm artillery) | [SPH-2](sph-2.md) | 155 mm | 50 rounds/min | 10,000 m | 25.0 s | 10 Expensive, 0 Standard |
 
 Reload times and starting ammunition come from each weapon's own settings. A starting ammunition of 0 means no rounds are loaded at the start. "None" means the article records no starting rounds. The 600 rounds/min shown for the M2 Browning and the PKTM is the game's default rate, because their own settings do not set one.
@@ -67,7 +67,7 @@ Season 2 raised the gamepad rotation sensitivity for the ring turrets of the Kod
 
 ## Rocket pods
 
-The B-13 is a 122 mm rocket pod. The Havoc carries it at 500 rounds/min with a 6.0 s reload and a 1,000 m range. The AH-6R [Rockets] carries two pods at 350 rounds/min, also with a 1,000 m range. The AH-6R [Rockets] pod also reloads in 6.0 s, and its starting rocket count is 0.
+The B-13 is a 122 mm rocket pod. The Havoc carries it at 500 rounds/min with a 6.0 s reload and a 1,000 m range. The AH-6R [Rockets] now fires dedicated 70 mm rockets; its saved pod rate is 350 rounds/min, also with a 1,000 m range. The AH-6R [Rockets] pod also reloads in 6.0 s, and its starting rocket count is 0.
 
 Season 2 changed one Havoc damage table entry, from 87.5 to -46.0, as the [Vehicles changes page](../../season-2-changes/vehicles.md) shows.
 
@@ -93,6 +93,16 @@ The SPH-2's L52 fires 155 mm shells at 50 rounds/min with a 10,000 m range. The 
 - [Building](../building.md): the stationary guns, which are built rather than driven
 - [Vehicle damage](vehicle-damage.md): how the damage tables work
 - [Artillery](../game-mechanics/artillery.md): the SPH-2's gun in detail
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase vehicle-mounted minigun infantry damage multipliers relative to Season 2: head +50%, neck +78%, upper torso +64%, middle torso +55%, lower torso +50%, and pelvis, arms and legs +56%. These are relative increases, not percentage-point additions or fresh hit-count measurements.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) replace the AH-6R's shared 122 mm rocket with a dedicated 70 mm rocket. Announced damage to infantry and vehicles is unchanged, but thrust instability makes its flight wobble and reduces its practical effectiveness against infantry. The other pod settings below remain saved settings, not a newly measured firing test.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) say a 20×102 mm round now damages each vehicle section only once while passing through. Damage was retuned: Havoc and Z20 Lakota take roughly their Season 2 damage, while Littlebirds take slightly less. Existing calculated hit counts remain conditional and do not independently verify the changed section-contact behavior.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also fix mounted-weapon reload-menu flicker, vehicle hits using the player's held-weapon damage/credit, and gunners being unable to buy ammunition at the garage. These are announced fixes, not new native-path verification.
 
 ## Sources
 

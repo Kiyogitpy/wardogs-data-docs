@@ -35,9 +35,9 @@ The shop text lists two sizes. The Battery is a medium 20 V, 5 AH cell. The High
 | Battery | 150 | 0.63 | 20 V, 5 AH |
 | High Capacity Battery | 300 | 2 | 20 V, 15 AH |
 
-The weights are in kilograms. The game stores item weight as a whole number 1,000 times the kilogram figure, so the kilogram value here is derived from it.
+The S3 weight fields store 0.63 for the Battery and 2 for the High Capacity Battery directly; these exports do not require division by 1,000.
 
-- The drills spend 1 charge per repair swing. The game files also list 1.25 per second for them, but no part of the game reads that figure, so drills have no per-second drain. The Infrared Range Finder is different: its scope code drains charges over time on its own.
+- The drill items store 1 charge per use. Earlier CL516586 analysis attributed charging to repair swings and found no reader for a listed 1.25-per-second value; the S3 battery and repair-action consumers have not been traced, so a per-second drain cannot currently be ruled out. The Infrared Range Finder is different: its scope code drains charges over time on its own.
 - The Defibrillator needs a battery to charge and to use, according to its shop text. See [Medical Items](medical-items.md).
 - A battery is a small magazine of charges. The Battery holds 100 charges and the High Capacity Battery holds 250, and a new one is full. Tools spend charges, and the Defibrillator uses 25 per discharge, so a Battery covers four discharges and a High Capacity Battery ten.
 - Each tool and the Defibrillator have one battery slot. Their reload action swaps in a new battery from your inventory, the same way a gun swaps a magazine, and a new tool comes with a battery loaded.

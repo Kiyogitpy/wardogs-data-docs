@@ -7,6 +7,8 @@ description: "The Zestafona King of the Hill map: a 500 m zone whose Hot Zone is
 
 # Zestafona
 
+The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) remove the Wager Vendor. Any wager-vendor actor mentioned in the saved spawn inventory below is retained data, not an active service.
+
 | Zestafona | |
 |---|---|
 | **General** | |
@@ -25,7 +27,7 @@ description: "The Zestafona King of the Hill map: a 500 m zone whose Hot Zone is
 | Internal name | Server browser Detroit_KOTH_01; zone config NorthAmerica; region config NorthAmerica |
 {: .wiki-infobox }
 
-Zestafona is a King of the Hill map whose Control Zone is 500 m across and 500 m tall. Its Hot Zone is 85 m across but 850 m tall, much taller than the zone around it. The zone has no cylinder shape in the game, so it is stored as a tall box (inferred from the missing field). It has four placements and 56 named zone regions, mostly industrial sites and rail sheds.
+Zestafona is a King of the Hill map whose Control Zone is 500 m across and 500 m tall. Its Hot Zone is 85 m across but 850 m tall, much taller than the zone around it. The base ZoneData omits ZoneShape, so its resolved default is unknown here; omission does not prove a box. All four alternatives explicitly store Ellipse and a Hot Zone Z extent of 50,000, unlike the base Hot Zone Z extent of 85,000. The effective selection and interpretation of those extents remain unverified. It has four placements and 56 named zone regions, mostly industrial sites and rail sheds.
 
 ![Zestafona map]({{ '/assets/img/maps/zestafona.jpg' | relative_url }})
 
@@ -131,7 +133,7 @@ The map names its zone regions, and each tower stands inside one of them. "The m
 
 ### In each team spawn area
 
-The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a free fuel point, a small soccer pitch, 3 moving practice targets and a safe zone. None of these areas lies inside the zone area. The invisible safe zone boxes are about 480 m tall; each safe zone is 480 m by 480 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 10.5 km by 9.2 km.
+The file places 3 team spawn areas for this map (identified in the historical inventory by a retained wager-vendor actor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a retained wager-vendor actor (the vendor was removed in S3), and also a free fuel point, a small soccer pitch, 3 moving practice targets and a safe zone. None of these areas lies inside the zone area. The invisible safe zone boxes are about 480 m tall; each safe zone is 480 m by 480 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 10.5 km by 9.2 km.
 
 The fuel point refuels vehicles without cost and does not run out (the game marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
 

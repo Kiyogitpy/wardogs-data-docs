@@ -57,8 +57,8 @@ A parachute is a single-use item that must be deployed by hand. It has a minimum
 
 | Item | Weight (kg) | Price (cash) | Can steer | Notes |
 |---|---:|---:|---|---|
-| Basic Parachute | 2.5 | 500 | no | No glide; no pull-up |
-| Sport Parachute | 9 | 700 | yes | Glide, pull-up and speed caps; pull-up uses stamina |
+| Basic Parachute | 2.5 | 1,250 | no | No glide; no pull-up |
+| Sport Parachute | 9 | 2,250 | yes | Glide, pull-up and speed caps; pull-up uses stamina |
 
 ### Backpacks
 
@@ -98,7 +98,7 @@ These optics spot enemy infantry and vehicles at a distance. The shop text descr
 | Binoculars | 180 | low |
 | Monocular | 350 | medium, variable |
 | Range Finder | 1,450 | high, variable; shows an accurate distance |
-| Infrared Range Finder | 3,200 | infrared, variable; shows an accurate distance |
+| Infrared Range Finder | 3,200 (hidden S3 vendor row) | infrared, variable; shows an accurate distance |
 
 ### Tools
 
@@ -122,7 +122,7 @@ The 40 L Fuel Canister costs 150 cash. It has 40 durability, and each use adds 2
 
 ### Build tools
 
-Hammers are the build tools. The Small Hammer costs 100 cash, the Medium Hammer 800 and the Large Hammer 2,400. Each one needs Build Supplies to build, and the Large Hammer can place every structure. See [Hammers](hammers.md).
+Hammers are the build tools. The Small Hammer costs 100 cash, the Medium Hammer 800 and the Large Hammer 2,400. Each one needs Build Supplies to build; the allowed placement list depends on the hammer and does not establish access to every S3 structure. See [Hammers](hammers.md).
 
 ### Supplies
 
@@ -131,6 +131,12 @@ Supplies are used up by structures and the Forward Operating Base, and the FOB s
 ## Cost
 
 Prices are listed in each table above and in each item's article.
+
+## Season 3 announcement
+
+The Infrared Range Finder is removed from the vendor pending redesign. Any retained price or unlock row is reference data, not current purchase availability. See [Infrared Range Finder](infrared-range-finder.md).
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

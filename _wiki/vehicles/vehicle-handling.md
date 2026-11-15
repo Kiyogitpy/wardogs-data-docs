@@ -30,7 +30,7 @@ Each vehicle has a top speed from its vendor stats. Its drive comes from a torqu
 
 The torque curve is the engine's pull at each engine speed. A peak of 475 at 5,500 means the engine pulls hardest at 5,500 RPM on that vehicle. Gears multiply that pull. A low first gear (a big ratio) gives more push when starting, and a high top gear gives more speed. Tracked vehicles use the same kind of torque curve against engine RPM, with the curve running up to 5,000 RPM. The torque values carry no unit label.
 
-In a wheeled vehicle's gear list, the last ratio is the reverse gear, applied in the opposite direction (confirmed in the game code). The other entries are the forward gears, in order. The Bobcat's list, 4.2, 2.8, 1.9, 1.5, 1.3 and 6, therefore gives five forward gears with a reverse ratio of 6.0. The Humvee's list ends in 3.6, which is its reverse, so it also has five forward gears. Tracked vehicles read their list differently: the entry with a ratio of 0 is neutral, so they have 1 reverse and 3 forward gears (see the tracked section below).
+In a wheeled vehicle's gear list, the last ratio is the reverse gear, applied in the opposite direction (confirmed in the game code). The other entries are the forward gears, in order. The Bobcat's S3 list is 4.2, 2.8, 1.9, 1.5, 1.3 and 3.89. Under the earlier CL516586 reader, that is five forward gears and a reverse ratio of 3.89; the S3 native reader has not been verified. The Humvee's list ends in 3.6, which is its reverse, so it also has five forward gears. Tracked vehicles read their list differently: the entry with a ratio of 0 is neutral, so they have 1 reverse and 3 forward gears (see the tracked section below).
 
 No 0 to top speed time is set, so acceleration is shown here only through the torque and first gear numbers. No acceleration time is given.
 
@@ -168,6 +168,23 @@ Helicopters have a drag coefficient of 0.006 on every variant. Their steering, b
 - [Vehicle Parts and Handling](../../game-features/Wardogs_VehicleHandling_v1.md): the full per-variant drivetrain, suspension and brake tables
 - [Repair and vehicle parts](repair-and-vehicle-parts.md): tyre and track states, which change how a vehicle drives
 - [Vehicles](../vehicles.md): the full list of vehicles
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce the following reverse speeds. Approximate values retain the ~ sign; these are not calculated from gear ratios or measured here.
+
+| Vehicle family | Previous reverse speed (km/h) | S3 announced reverse speed (km/h) |
+|---|---:|---:|
+| Bobcat | 16 | ~25 |
+| Kodiak | 33 | ~57 |
+| Humvee | 35 | ~57 |
+| Dune Buggy | 43 | ~50 |
+| Ural | 15 | 27 |
+| Wolf-110 | 27 | ~40 |
+
+Wheeled vehicles now coast downhill off throttle. Ural and Humvee rear-wheel traction improves; the Ural, Kodiak, Humvee, Dune Buggy and Wolf-110 lose grip above their normal powered top speed. The Ural's backward downhill speed is capped at its forward speed.
+
+The price cuts apply to the armed Kodiak [M249], Wolf-110 [M2 Browning], AH-6M [Miniguns], and the Havoc. Unarmed Kodiak and Wolf prices are unchanged in these tables.
 
 ## Sources
 

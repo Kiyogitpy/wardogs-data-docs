@@ -9,7 +9,7 @@ description: "Every weapon's recoil spray pattern, shot by shot, Season 1 agains
 
 *Data: [`assets/data/spray-patterns.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/spray-patterns.json)*
 
-The recoil spray of every weapon: where the view ends up after each shot of a sustained burst. Pick a weapon, then Season 1, Season 2 or Compare to overlay both. Stance, focus and default-attachment multipliers rescale the spray, and a distance turns degrees into metres on a target. The overview at the bottom shows all the sprays at once; click a tile to open it. The recoil rules are in [Weapons §5a](../content/Wardogs_Weapons_v2.md#5a-recoil), and each weapon's inputs are in the [spread and recoil data](../content/Wardogs_WeaponSpreadRecoilData_v1.md).
+The viewer models cumulative recoil for the weapons in its historical Season 1/Season 2 payload; Season 2 is labelled CL516586. It does not display independently verified S3 recoil. Pick a weapon, then Season 1, Season 2 or Compare to overlay both. Stance, focus and default-attachment multipliers rescale the spray, and a distance turns degrees into metres on a target. The overview at the bottom shows all the sprays at once; click a tile to open it. The recoil rules are in [Weapons §5a](../content/Wardogs_Weapons_v2.md#5a-recoil), and each weapon's inputs are in the [spread and recoil data](../content/Wardogs_WeaponSpreadRecoilData_v1.md).
 
 <div class="vv sv" id="sv" markdown="0" data-json="{{ '/assets/data/spray-patterns.json' | relative_url }}?v={{ site.time | date: '%s' }}" data-base="{{ '/' | relative_url }}">
   <p class="sv-provisional" id="sv-prov" role="note" hidden>Provisional data: Season 1 values are not loaded yet, so only Season 2 is shown.</p>
@@ -59,7 +59,7 @@ The recoil spray of every weapon: where the view ends up after each shot of a su
   </div>
   <div class="vv-legend" id="sv-legend"></div>
   <h2 class="vv-slots-title no_anchor">Fire rate</h2>
-  <p>Each marker is a shot at the weapon's rounds per minute. The shaded block after the last shot is the pattern reset time: pause longer than that and the pattern starts again from shot 1. A dashed tick marks where the fixed pattern ends and the random section begins.</p>
+  <p>Each marker uses the selected historical payload's rounds per minute; entries without an authored RPM use the historical 600-RPM assumption. The shaded block marks that payload's pattern reset time. Restarting from shot 1 after this pause follows the historical consumer model; S3 parity is unresolved. A dashed tick marks where the fixed pattern ends and the random section begins.</p>
   <div class="sv-tl-box" id="sv-timeline"></div>
   <h2 class="vv-slots-title no_anchor">All weapons</h2>
   <p>Every weapon's spray in the selected category, grouped by class, using the season choice above. <label class="vv-check"><input type="checkbox" id="sv-c-sameScale" checked> Same scale for every tile</label></p>
@@ -76,10 +76,10 @@ The viewer needs JavaScript. The same numbers are in [`spray-patterns.json`](htt
 
 ## How to read it
 
-- **The plot** is the view offset in degrees after each shot, starting from the aim point (white dot). Firearms do not pull the view back by themselves, so the sprays only keep climbing until you pull down.
+- **The plot** is the view offset in degrees after each shot, starting from the aim point (white dot). The historical model sums kicks without self-recovery; this describes the plotted path, not a verified absence of recovery in current S3 firearms.
 - **Pattern shots** are filled markers; once the fixed pattern ends, each shot's kick is random inside a yaw range and a pitch range. Those shots are hollow markers on a path through the middle of the ranges, with a box around each (10th to 90th percentile).
 - **Random-turn fan.** Each shot inside the pattern is turned by a random angle up to the weapon's deviation setting; the wedge shows that spread.
-- **Multipliers.** Stance scales the whole kick (stand, crouch, prone). Focus removes the weapon's focus reduction percentage. Default attachments apply the weapon's horizontal and vertical recoil multipliers with its default attachments fitted. The weapon's own view-kick magnitude multiplier always applies.
+- **Multipliers.** Stance scales the whole kick (stand, crouch, prone). Focus removes the weapon's focus reduction percentage. Default attachments apply the payload's horizontal and vertical recoil multipliers. Season 1 item data uses Season 2 effect values for these multipliers, as disclosed in the payload metadata. The weapon's own view-kick magnitude multiplier always applies.
 - **Metres.** The extra axis converts a view offset to the sideways or upward miss on a target at the chosen distance, distance × tan(angle).
 - **Compare.** Season 1 is blue with round markers and a dashed line; Season 2 is green with square markers and a solid line. A weapon missing from one season is shown with the other only.
 - Evidence and method: [Weapons §5a](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/content/Wardogs_Weapons_v2.md#5a-recoil) and the [spread and recoil data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/content/Wardogs_WeaponSpreadRecoilData_v1.md).

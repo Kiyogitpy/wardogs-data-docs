@@ -16,19 +16,19 @@ description: "A large multi-part structure built only with the Large Hammer from
 | Hammer | Large |
 | **Building** | |
 | Build cost | 200 Build Supplies (100 in Season 1) |
-| Build time | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 5,000 HP |
 | **Damage** | |
 | Bullets | -80% |
 | Melee | -10% |
 | Grenades | -50% |
 | Rockets | +45% |
-| C4 | +50% |
-| IEDs | +200% |
+| C4 | -25% |
+| IEDs | +50% |
 | Internal name | [`DA_Buildable_Bunker`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Bunker/DA_Buildable_Bunker.json), with parts [`DA_Buildable_Bunker_Floor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Bunker/DA_Buildable_Bunker_Floor.json) and [`DA_Buildable_Bunker_Roof`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Bunker/DA_Buildable_Bunker_Roof.json) |
 {: .wiki-infobox }
 
-The Bunker is a large structure that only the Large Hammer can build. It has 5,000 HP and two parts, a floor and a roof. It takes less grenade damage than most structures, and rockets, C4 and IEDs still do more damage to it than normal.
+The Bunker is a large structure that only the Large Hammer can build. It has 5,000 HP and two parts, a floor and a roof. It takes less grenade damage than most structures, and the generic rocket and IED modifiers increase damage, while C4 does 75% of base damage after the utility modifier is included.
 
 ## Overview
 
@@ -40,21 +40,21 @@ Destroying an enemy Bunker pays 200 cash and 50 Role XP. Each of its floor and r
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the Bunker, whichever hammer builds it. Each part costs 10 Build Supplies, but the parts are not added on top: the 200 is the whole price of the Bunker, and a part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
+- **Cost:** 200 Build Supplies for the Bunker, whichever hammer builds it. Each part costs 10 Build Supplies, but the parts are not added on top: the 200 is the whole price of the Bunker, and a part's own price most likely applies only when that part is repaired by itself (inferred). The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Large only.
 - **Placement:** The Bunker must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
-- **Stack limit:** 2.
+- **Stack limit:** The earlier model used 2. The S3 asset omits `MaxStack`, so that current default is unverified.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 29, 39, 60 and 99 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Parts:** When the Bunker is finished, it turns into separate parts: a floor, a roof, and the Hesco Blocks and sandbag wall around them. Each part is its own buildable with its own health. The floor and roof each have 2,250 HP and use the Bunker's damage numbers. This is Derived from the stage data (see [Buildables](../building.md#building)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | cannot place | cannot place | 134 (about 118.3 s) |
 | Hits to repair from zero health | 60 | 30 | 20 |
 | Hits to dismantle (your own) | 34 | 25 | 20 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Large Hammer is the only one that can place the Bunker. The repair and dismantle hits for the other hammers are what their hits do; they have not been verified for this structure. The build count assumes normal hits, and hitting weak spots brings it down. A floor or roof on its own, once separated, takes 10 Large Hammer repair hits from zero and 9 dismantle hits.
 
@@ -70,10 +70,10 @@ The Bunker is a shelter with a floor and a roof. What a player can do inside it 
 | Melee | -10% | 90% |
 | Grenades | -50% | 50% |
 | Rockets | +45% | 1.45 times |
-| C4 | +50% | 1.5 times |
-| IEDs | +200% | 3 times |
+| C4 | -25% | 0.75 times |
+| IEDs | +50% | 1.5 times |
 
-The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+C4 and IED totals include the parent utility-explosive modifier: 0.5 × 1.5 = 0.75 for C4 and 0.5 × 3 = 1.5 for IEDs, under the documented damage model. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 

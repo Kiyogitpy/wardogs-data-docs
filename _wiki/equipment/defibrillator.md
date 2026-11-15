@@ -2,7 +2,7 @@
 title: Defibrillator
 parent: "Equipment"
 group: "Medical"
-description: "The revive item that brings a downed teammate back at 35 HP after a 4 s charge, powered by a battery."
+description: "The revive item that brings a downed teammate back at 35 HP powered by a battery; its historical charge model uses 4 s."
 ---
 
 # Defibrillator
@@ -16,9 +16,9 @@ description: "The revive item that brings a downed teammate back at 35 HP after 
 | Power | A battery, which is its magazine |
 | **Effect** | |
 | Revives | A downed teammate, to 35 HP, instantly once charged |
-| Charge time | 4 s |
-| Battery use | 25 battery charges per discharge |
-| Use time | 9.2 s use animation |
+| Historical charge time | 4 s; S3 consumer unverified |
+| Historical battery cost | 25 charges per discharge; S3 consumer unverified |
+| Historical montage length | 9.2 s |
 | **Availability** | |
 | Price | 1,600 cash |
 | Unlock level | 0 (shop) |
@@ -35,10 +35,10 @@ The shop describes the Defibrillator as reviving a teammate instantly, and says 
 ## Effects
 
 - **Revive:** a downed teammate is revived to 35 HP at once when the discharge completes.
-- **Charge:** the charge takes 4 s.
-- **Battery:** each discharge uses 25 battery charges. A standard battery holds up to 100 charges and a large battery holds up to 250, so a standard battery covers four discharges.
+- **Charge:** the historical Blueprint/default trace uses 4 s; current S3 charge timing is unresolved.
+- **Battery:** the historical discharge trace spends 25 charges. The saved battery capacities are 100 and 250 charges. Four standard-battery discharges assumes the historical 25-charge discharge cost and no other consumption; current charge/discharge consumers remain unverified.
 - **Blocking:** the item cannot be used while you are downed.
-- **Movement and bleeding:** this item has no movement slow. The Defibrillator does not cure bleeding, because the game has no damage-over-time bleeding.
+- **Movement and bleeding:** no movement-slow effect is listed in the reviewed item data; that is not a complete S3 consumer search. No bleeding-cure effect is listed on this item. The cited CL516586-era search found the downed bleed-out timer, not a damage-over-time bleeding system; that negative search does not establish absence in S3.
 
 ### Medic skills
 
@@ -50,10 +50,10 @@ The revive speed boost skills apply after you revive a teammate. Your sprint and
 
 | Step | Time |
 |---|---:|
-| Charge | 4 s |
-| Use animation | 9.2 s |
+| Charge (historical Blueprint/default model) | 4 s |
+| Use animation (historical montage) | 9.2 s |
 
-The use animation is 9.15 s long, and it loops in its middle part. The 4 s charge is the timer the item runs before the discharge. You need a teammate who is downed for it to revive, and you must be alive and not downed. It has its own reload action, and its magazine is a battery.
+The historical montage is 9.15 s long and loops in its middle part. The 4 s charge and 25-charge discharge cost come from historical Blueprint defaults and their consumer trace, not an S3 timing measurement. You need a teammate who is downed for it to revive, and you must be alive and not downed. It has its own reload action, and its magazine is a battery.
 
 ## Default controls
 

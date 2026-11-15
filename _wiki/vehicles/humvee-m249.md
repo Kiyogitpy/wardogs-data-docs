@@ -16,7 +16,7 @@ description: "Five-seat Humvee with a ring-mounted M249 machine gun, sold for 8,
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
-| Rifle damage taken (derived) | 4% |
+| 5.56 mm hull damage (derived) | 2% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-humvee-machinegun) |
 | Internal name | WHL_05 (machine gun variant) |
 {: .wiki-infobox }
@@ -40,7 +40,7 @@ The Humvee [M249] is sold in the vehicle vendor under land transport, for 8,500 
 
 ## Armor and damage
 
-Main health is 500 HP, with the same engine, fuel tank and wheel health as the [Humvee](humvee.md). Rifle rounds do 4% of their damage against the hull.
+Main health is 500 HP, with the same engine, fuel tank and wheel health as the [Humvee](humvee.md). Under the documented model, 5.56 mm FMJ does 2% of base damage to the hull: the 4% vehicle factor also receives the main-body ×0.5 modifier. These percentages are conditional on the earlier damage model, not a measurement of S3 native behavior; other calibers can have additional rules.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -62,6 +62,8 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 The gun fires 850 rounds/min out to 700 m. The reload time and the starting ammunition are listed too (none loaded at the start, tracer rounds).
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Humvee reverse speed at ~57 km/h (previously 35 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
 
 Handling matches the base Humvee: mass 7,250, hand brake 80, front steering of 35 degrees, and the same torque split.
 

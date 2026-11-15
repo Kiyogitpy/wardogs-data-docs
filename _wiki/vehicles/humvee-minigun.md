@@ -16,7 +16,7 @@ description: "Five-seat Humvee with a ring-mounted M134D minigun, the lowest rif
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 113.2 (as stored) |
-| Rifle damage taken (derived) | 2.5% |
+| 5.56 mm hull damage (derived) | 1.25% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-humvee-minigun) |
 | Internal name | WHL_05 (minigun variant) |
 {: .wiki-infobox }
@@ -40,7 +40,7 @@ The Humvee [Minigun] is sold in the vehicle vendor under land transport, for 10,
 
 ## Armor and damage
 
-Main health is 500 HP, with the same engine, fuel tank and wheel health as the [Humvee](humvee.md). Rifle rounds do 2.5% of their damage against the hull.
+Main health is 500 HP, with the same engine, fuel tank and wheel health as the [Humvee](humvee.md). Under the documented model, 5.56 mm FMJ does 1.25% of base damage to the hull: the 2.5% vehicle factor also receives the main-body ×0.5 modifier. These percentages are conditional on the earlier damage model, not a measurement of S3 native behavior; other calibers can have additional rules.
 
 The fuel tank takes an extra 400% from bullets, and the wheels take an extra 800%. Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -62,6 +62,8 @@ The fuel tank takes an extra 400% from bullets, and the wheels take an extra 800
 The five seats are the driver, one gunner and three passengers. The gunner seat is the second seat. It is an exterior standing seat at the ring mount, and the player who takes it is the one who fires the minigun. Taking that seat puts the player on the gun automatically. The driver and the three passengers do not fire it.
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Humvee reverse speed at ~57 km/h (previously 35 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
 
 Handling matches the base Humvee: mass 7,250, hand brake 80, front steering of 35 degrees, and the same torque split.
 
@@ -86,6 +88,10 @@ The Humvee [Minigun] is placed by the ground vehicle yards of all four main maps
 - [Humvee](humvee.md), the base model
 - [Humvee [M249]](humvee-m249.md), the machine gun variant
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase vehicle-mounted minigun infantry damage multipliers relative to Season 2: head +50%, neck +78%, upper torso +64%, middle torso +55%, lower torso +50%, and pelvis, arms and legs +56%. These are relative increases, not percentage-point additions or fresh hit-count measurements.
 
 ## Sources
 

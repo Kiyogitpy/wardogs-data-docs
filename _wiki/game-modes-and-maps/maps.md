@@ -7,6 +7,8 @@ description: "Every map the game names, the modes that use it, and its zone layo
 
 # Maps
 
+Season 3 officially introduces [Sabatulo](sabatulo.md), a city map with a hospital, swimming pool, power station and river embankment ([official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221)). [Limited Mode](limited-mode.md) is also available. The inventory below describes saved map entries; an entry or older warm-up asset does not establish when a map became playable. Sabatulo and the saved Saburtulo spelling are kept distinct pending an exact asset identity match.
+
 | Maps | |
 |---|---|
 | Maps named in the data | Bakurani, Ozeti, Zestafona, Saburtulo, Bakurani Outskirts - Jutari, and Kenya (its zone layout is labelled Africa in the data) |
@@ -35,7 +37,7 @@ Every zone layout in the game, including the unnamed Africa, Sniper Showdown and
 |---|---|---|---|---|
 | Bakurani | King of the Hill | 500 m, 3 placements | 60 | Two King of the Hill entries use this name. |
 | Ozeti | King of the Hill | 550 m, 4 placements | 55 | |
-| Zestafona | King of the Hill | 500 m, 4 placements | 56 | Its Hot Zone is 850 m tall. |
+| Zestafona | King of the Hill | 500 m, 4 placements | 56 | Base Hot Zone Z extent 85,000; alternatives store 50,000. |
 | Saburtulo | King of the Hill | 550 m, 4 placements | Not known | Its shader warm-up list was added in Season 2. |
 | Bakurani Outskirts - Jutari | Sniper Showdown | 350 m, fixed spot | Not known | Sniper Showdown's own map entry. |
 | [Kenya (Africa layout)](unnamed-africa-layout.md) | King of the Hill | 550 m, 4 placements | Not known | Added in Season 2. The zone set is labelled Africa. |
@@ -58,11 +60,11 @@ A King of the Hill map. Its Control Zone is 550 m across and 150 m tall, with fo
 
 ### Zestafona
 
-A King of the Hill map. Its Control Zone is 500 m across and 500 m tall. Its Hot Zone is 85 m across and 850 m tall, which is much taller than the zone around it. The game does not say whether that is intended. Its Small Factory placement has weight 0. Its 56 zone regions use weight 0 or 1.
+A King of the Hill map. Its Control Zone is 500 m across and 500 m tall. Its base Hot Zone stores extents 8,500 / 8,500 / 85,000, while all four alternatives store 8,500 / 8,500 / 50,000 and shape Ellipse. These stored extents do not establish the dimensions of the active selected zone. Its Small Factory placement has weight 0. Its 56 zone regions use weight 0 or 1.
 
 ### Saburtulo
 
-A King of the Hill map. Its Control Zone is 550 m across and 150 m tall, with four placements. The Hospital placement is the only one with weight 1. Bazaar, River and Hillside have weight 0. The game does not include its zone region list.
+A King of the Hill map. Its Control Zone is 550 m across and 150 m tall, with four placements. Hospital stores weight 2; Bazaar, River and Hillside each store weight 1. Under the historical weighted draw all four are eligible; current selection and server overrides remain unverified. The game does not include its zone region list.
 
 ### Bakurani Outskirts - Jutari
 

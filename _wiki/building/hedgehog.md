@@ -16,15 +16,15 @@ description: "A heavy obstacle built with any hammer from 22 Build Supplies, wit
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 22 Build Supplies |
-| Build time | 44 hits Small (24.9 s), 22 hits Medium (12.5 s), 15 hits Large (13.2 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 44 hits Small (24.9 s), 22 hits Medium (12.5 s), 15 hits Large (13.2 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 4,500 HP |
 | **Damage** | |
 | Bullets | -85% |
 | Melee | -80% |
 | Grenades | -50% |
 | Rockets | +450% |
-| C4 | +500% |
-| IEDs | +1,000% |
+| C4 | +200% |
+| IEDs | +450% |
 | Internal name | [`DA_Buildable_TankTrap`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/TankTrap/DA_Buildable_TankTrap.json) |
 {: .wiki-infobox }
 
@@ -38,20 +38,20 @@ Destroying an enemy Hedgehog pays 20 cash and 5 Role XP.
 
 ## Building it
 
-- **Cost:** 22 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 22 Build Supplies, whichever hammer builds it. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Small, Medium or Large.
 - **Placement:** The Hedgehog is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 3, 5, 6 and 7 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | 44 (about 24.9 s) | 22 (about 12.5 s) | 15 (about 13.2 s) |
 | Hits to repair from zero health | 30 | 15 | 10 |
 | Hits to dismantle (your own) | 30 | 23 | 18 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md#building) for how the hit amounts work.
 
@@ -67,10 +67,10 @@ The Hedgehog is an obstacle. It has no effect beyond its health and how it takes
 | Melee | -80% | 20% |
 | Grenades | -50% | 50% |
 | Rockets | +450% | 5.5 times |
-| C4 | +500% | 6 times |
-| IEDs | +1,000% | 11 times |
+| C4 | +200% | 3 times |
+| IEDs | +450% | 5.5 times |
 
-The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+C4 and IED totals include the parent utility-explosive modifier: 0.5 × 6 = 3 for C4 and 0.5 × 11 = 5.5 for IEDs, under the documented damage model. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 

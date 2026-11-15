@@ -2,7 +2,7 @@
 title: Infrared Range Finder
 parent: "Equipment"
 group: "Utility"
-description: "The Infrared Range Finder: the most expensive recon optic, with infrared variable magnification, an accurate distance readout and a reload action."
+description: "The Infrared Range Finder: a recon optic with a hidden S3 vendor row, infrared variable magnification, an accurate distance readout and a reload action."
 ---
 
 # Infrared Range Finder
@@ -20,26 +20,32 @@ description: "The Infrared Range Finder: the most expensive recon optic, with in
 | Battery use | 0 per second |
 | Movement while in use | Maximum speed halved |
 | **Availability** | |
-| Price | 3,200 cash |
+| Listed price | 3,200 cash; hidden in the S3 vendor row |
 | Unlock level | 0 |
 | **Data** | |
 | Internal name | `ID.Item.InfraredRangeFinder` |
 {: .wiki-infobox }
 
-The Infrared Range Finder is the most expensive optic in the shop. It uses infrared magnification and shows an accurate distance. The Ghillie suit and headwear hide a player from infrared range finders, according to their shop text.
+The Infrared Range Finder has the highest listed recon-optic price, but its S3 vendor row sets `bShowInVendor` false; the official Season 3 notes confirm that it was removed from the vendor pending redesign. It uses infrared magnification and shows an accurate distance. The Ghillie suit and headwear hide a player from infrared range finders, according to their shop text.
 
 ## Overview
 
-The shop text lists the Infrared Range Finder as a variable infrared magnification optic with an accurate distance indicator. It is the most expensive recon item sold. There is no spotting range. Spotting works by timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
+The shop text lists the Infrared Range Finder as a variable infrared magnification optic with an accurate distance indicator. Its vendor row is hidden. A maximum spotting range has not been established. The saved spotting extension supplies timing values: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
 
 ## How it works
 
 - It is used by aiming, with the item's secondary input.
 - Its reload action swaps in a new [Battery](batteries.md). The range finder has one battery slot and comes with a Battery loaded.
-- The item's own battery line says 0 per second, but the scope has its own drain rule. Raising the scope costs 3 charges, and then it costs 1 charge every 0.8 s (1.25 a second) while the scope stays up. A full Battery (100 charges) lasts about 78 s of use and a full High Capacity Battery (250 charges) about 198 s. These times come from the game's default settings and were not timed in play.
-- The low battery warning sound plays once, when 20 charges or fewer are left while the scope is up. That is about 16 s before the battery runs out. When the charges reach 0 the scope loses power (inferred).
+- The item's own battery line says 0 per second, but the scope has its own drain rule. The historical consumer model charges 3 on raising, then 1 every 0.8 s (1.25 per second) while scoped. A full Battery (100 charges) lasts about 78 s of use and a full High Capacity Battery (250 charges) about 198 s. These are historical round 58 consumer/default calculations, not verified S3 runtime lifetimes. The current scope export retains an obfuscated 0.8 value, but its S3 native field binding has not been established.
+- In the historical round 58 model, the warning fires once at 20 or fewer positive charges while scoped, about 16 s before depletion under the stated drain. The historical path stops the scope at zero. Current S3 thresholds and stop behavior are unresolved.
 - While it is in use, maximum movement speed is halved.
 - The [Ghillie Body Suit](ghillie-body-suit.md) and [Ghillie Headwear](ghillie-headwear.md) hide the player from infrared range finders, according to their shop text.
+
+## Season 3 announcement
+
+The Infrared Range Finder was removed from the vendor pending a redesign. The retained 3,200-cash row and historical unlock information do not make it purchasable.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

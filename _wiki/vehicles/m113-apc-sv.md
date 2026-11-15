@@ -92,6 +92,10 @@ The "moving" message looks like a warning only, because the deploy check still a
 - [T-72B3](t-72b3.md), another tracked vehicle
 - [Vehicle damage](vehicle-damage.md)
 
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) lower the spotted spawn-vehicle kill reward from 500 to 400 XP. That is a class-wide spotting reward, not a change to vehicle health.
+
 ## Sources
 
 - [Vehicle Spawns](../../game-features/Wardogs_VehicleSpawns_v1.md): which maps place this vehicle

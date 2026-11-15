@@ -11,7 +11,7 @@ description: "The zone objective behind King of the Hill and Sniper Showdown: zo
 |---|---|
 | Type | Zone objective |
 | Used by | King of the Hill, Sniper Showdown |
-| Zone shape | Cylinder, with a Hot Zone inside |
+| Stored shapes | Cylinder in most base configs; Ellipse in Africa, Russia and NorthAmerica alternatives; NorthAmerica base shape omitted |
 | Hot Zone movement | Moves on a timer; speed set per map |
 | Internal name | ControlZone (game feature) |
 {: .wiki-infobox }
@@ -61,8 +61,8 @@ The Zestafona Hot Zone is 850 m tall against a 500 m tall Control Zone. The game
 | Zestafona | Small Factory | 0.0 |
 | Kenya (Africa layout) | Default | 1.0 |
 | Kenya (Africa layout) | North, East, West | 0.0 each |
-| Saburtulo | Hospital | 1.0 |
-| Saburtulo | Bazaar, River, Hillside | 0.0 each |
+| Saburtulo | Hospital | 2.0 |
+| Saburtulo | Bazaar, River, Hillside | 1.0 each |
 
 ## Rewards
 

@@ -51,7 +51,7 @@ For the mine that is aimed at vehicles, see [AT Mine](at-mine.md). Both are desc
 
 **Being shot.** An explosion nearby sets the Claymore off. Other damage destroys it, because its health is 1 HP.
 
-**Detonation.** The mine goes off once it has taken 50 damage. That is the default for placed explosives, and neither the Claymore nor the AT mine overrides it (static reading). Once it has gone off it is removed. Whether the 50 counts each hit or the running total was not checked in play.
+**Detonation.** Round 41 identified a historical placed-explosive default threshold of 50 damage. Its interaction with the separate damage-trigger and 1 HP destruction paths was not resolved here; it must not be read as a verified S3 rule that every mine survives until it accumulates 50 damage.
 
 **Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the game files do not show.
 
@@ -59,7 +59,7 @@ For the mine that is aimed at vehicles, see [AT Mine](at-mine.md). Both are desc
 
 ### To players
 
-The blast does its full 150 HP from the centre out to 1.5 m. Beyond 1.5 m the damage falls in a straight line to zero at 3 m. Examples:
+The historical CL516586 actor-input model starts at 150 damage through 1.5 m, then decreases linearly toward 75 just inside 3 m; it cuts to zero at 3 m. These are starting amounts before hit filtering and damage rules, not guaranteed HP loss. Examples:
 
 - At 2.5 m: 100 HP
 - At 3 m and beyond: nothing

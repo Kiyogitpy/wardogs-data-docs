@@ -61,6 +61,8 @@ The Bobcat has no weapons. Its two seats are a driver and a passenger.
 
 ## Handling
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Bobcat reverse speed at ~25 km/h (previously 16 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
+
 - Mass 250, hand brake 8, and front steering of 35 degrees.
 - Torque split of 0.6 to the front and 0.4 to the rear.
 - Engine idle 1,200 RPM, rev limit 7,000 RPM.
@@ -68,7 +70,7 @@ The Bobcat has no weapons. Its two seats are a driver and a passenger.
 
 **Steering and pedal tuning.** Its settings are steer sensitivity 1.3, steer input gravity 1, a steering deadzone of 0.05, a steering assist of 20, throttle sensitivity 2 and brake sensitivity 1. It is the only wheeled set with a deadzone and an assist. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
-- No torque scale is set; the game default of 1.0 applies.
+- `EngineData.TorqueScale` is omitted in the S3 engine asset. The earlier CL516586 default was 1.0; the current initializer has not been verified.
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes

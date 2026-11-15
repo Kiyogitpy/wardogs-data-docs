@@ -8,29 +8,31 @@ description: "The Assault role: 17 skills for assault rifles and SMGs, faster ai
 
 # Assault
 
+S3 announcement: C4 moves from level 4 to 5; Molotov from 13 to 8. Molotov unlock cash falls from 25,000 to 12,500. See the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221); the current saved table below gives individual costs and prerequisites.
+
 | Assault | |
 |---|---|
 | **General** | |
 | Skills | 17 |
 | Focus | Assault rifles, SMGs and movement |
 | **Mastery** | |
-| XP to level 10 | 25,000 |
-| XP to level 50 | 1,150,000 |
-| XP to level 100 | 5,132,500 |
+| Stored XP at level 10 | 36,750 |
+| Stored XP at level 50 | 1,950,000 |
+| Stored XP at level 100 | 6,600,000 |
 | Internal name | Meta.Role.Infantry, DT_InfantrySkills |
 {: .wiki-infobox }
 
-Assault is one of the six roles. Each role has its own skill set and its own mastery level. The 17 Assault skills mostly tune assault rifles and submachine guns: how fast they come up to the sights, how much they kick, and how fast they switch. The role also has movement skills for crouching, proning and tac-sprinting, and one ability, breaching doors by sprinting into them. The game calls it the Assault role internally.
+Assault has 17 saved skill-effect rows for assault rifles, SMGs, movement and sprint breaching. The rows identify effects, application tags and curves; they do not establish that the current game activates those effects. The internal role tag is Meta.Role.Infantry.
 
 ## Overview
 
-Most Assault skills apply to one weapon archetype. A skill for assault rifles helps only assault rifles, and a skill for SMGs helps only SMGs. The movement and handling skills apply to the player or to the held weapon in general.
+The skill table below summarizes the configured effect targets and intended changes. Application requirements are saved filters, not evidence that the S3 consumer applies an effect. Historical application details are identified separately.
 
-Each skill's value comes from its curve at the skill's level. The game has no unlock cost or skill points for the skill levels (see [Skills](skills.md)).
+The reviewed skill-effect and curve exports do not supply per-level unlock costs. Earning, spending and upgrade consumers remain unresolved; this is not proof that costs or skill points are absent from the game (see [Skills](skills.md)).
 
 ## Skills
 
-| Skill | What it does | Curve values | Notes |
+| Skill | Configured effect / historical interpretation | Stored curve values | Notes |
 |---|---|---|---|
 | Aim down sights time (assault rifles) | Less time to raise the sights. | 1, 0.8, 0.7, 0.6 | Assault rifles only |
 | Aim down sights time (SMGs) | Less time to raise the sights. | 1, 0.8, 0.7, 0.6 | SMGs only |
@@ -50,73 +52,100 @@ Each skill's value comes from its curve at the skill's level. The game has no un
 | Vertical recoil (SMGs) | Less upward kick. | 1, 0.8, 0.7, 0.6 | SMGs only |
 | Weapon switch speed | Faster switching to assault rifles and SMGs. | 1, 1.2, 1.4 | Assault rifles and SMGs |
 
-Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values. For the multiplier skills, a lower value gives a faster or less disruptive result, and the game's skill descriptions say so for aiming and recoil.
+The stored curve keys are at Time 0, 2, 3 and 4, or 0, 2 and 4 for three-value curves; their interpolation mode is Linear and the Time-0 value is 1. The CL516586 round 45 trace used the node upgrade level as Time. Applying that interpretation and interpolation to S3 remains conditional: the current activation, input level and native arithmetic have not been established. For the multiplier skills, a lower value gives a faster or less disruptive result, and the game's skill descriptions say so for aiming and recoil.
 
 ## Mastery and rewards
 
-All six roles share one mastery XP curve. The milestones for Assault are the total XP needed to reach each level, not the step from the level before:
+The six current role definitions store the same XP values. These are the S3 values at selected levels; interpreting them as cumulative thresholds requires the level consumer:
 
 | Level | XP needed |
 |---|---|
 | 1 | 200 |
 | 5 | 6,250 |
-| 10 | 25,000 |
-| 20 | 111,500 |
-| 50 | 1,150,000 |
-| 75 | 2,218,000 |
-| 100 | 5,132,500 |
+| 10 | 36,750 |
+| 20 | 275,000 |
+| 50 | 1,950,000 |
+| 75 | 3,320,500 |
+| 100 | 6,600,000 |
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
-- **Unlock tree.** 40 items and vehicles, from level 2 to level 50, with 1,270,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+- **Rewards per level.** The current level definitions have empty reward lists. This does not rule out server grants; the separate unlock tree stores level prerequisites and cash costs.
+- **Current unlock tree.** 65 saved nodes, with level requirements from 2 to 50 and 2,802,500 cash in listed costs. These are stored requirements, not a test of server unlock behavior. The full current list is in the [economy data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json).
 
-## Unlocks
+## Current S3 unlock list
 
-Each row is one item, vehicle or attachment in the Assault unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
+These 65 rows reproduce the CL533731 saved role tree: level prerequisites and cash **unlock costs**, not vendor purchase prices. Shared items can be unlocked through multiple roles in S3, as announced in the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). Mode restrictions and removed vendors still govern availability; a retained node alone is not an active shop offer.
 
-| Role level | Item | Cash |
-|---|---:|---:|
+| Role level | Item | Unlock cash |
+|---:|---|---:|
 | 2 | Birdcage Flash Hider | 5,000 |
-| 3 | STANAG 30 RND Magazine | 0 |
 | 3 | T-21 | 10,000 |
-| 4 | C4 explosive | 0 |
-| 4 | C4 detonator | 15,000 |
-| 5 | Hexagon Brake | 12,500 |
-| 8 | 3 Prong Flash Hider | 7,500 |
-| 10 | Galil 35 RND Magazine | 0 |
+| 3 | STANAG 30 RND Magazine | 0 |
+| 4 | Level 1 Helmet | 7,500 |
+| 4 | Level 1 Armor | 10,000 |
+| 5 | Remote Detonator | 15,000 |
+| 5 | C4 Charge | 0 |
+| 6 | Field Backpack | 20,000 |
+| 6 | 5.45mm Flesh Damage (HP) | 15,000 |
+| 7 | Hexagon Brake | 12,500 |
+| 7 | 3 Prong Flash Hider | 7,500 |
+| 8 | Molotov | 12,500 |
+| 8 | Medium Tac Vest | 10,000 |
+| 9 | 5.56mm Flesh Damage (HP) | 15,000 |
 | 10 | Galil | 35,000 |
-| 11 | Rubberized Ergonomic Foregrip | 7,500 |
+| 10 | Galil 35 RND Magazine | 0 |
+| 11 | Operator Backpack | 25,000 |
 | 12 | CQ-2x Prism Combat Scope | 15,000 |
-| 13 | Molotov | 25,000 |
-| 14 | CQR Tactical Front Rail Grip | 10,000 |
-| 15 | Galil 50 RND Magazine | 25,000 |
-| 16 | CQB 74 Brake | 15,000 |
+| 12 | Rubberized Ergonomic Foregrip | 7,500 |
+| 13 | CQR Tactical Front Rail Grip | 10,000 |
+| 14 | Level 2 Helmet | 37,500 |
+| 14 | Level 2 Armor | 50,000 |
+| 15 | Sport Parachute | 25,000 |
+| 16 | Galil 50 RND Magazine | 25,000 |
 | 17 | 2.5x Combat Optic | 10,000 |
+| 17 | CQB 74 Brake | 15,000 |
+| 18 | Large Tac Vest | 25,000 |
+| 18 | Assault Backpack | 50,000 |
 | 19 | PBS-4 Suppressor | 25,000 |
-| 20 | SIG Spear Standard Mag | 0 |
 | 20 | TCX-SPR | 100,000 |
+| 20 | TCX-SPR 28 RND Magazine | 0 |
 | 21 | TopComp Brake | 20,000 |
+| 21 | 7.62mm Flesh Damage (HP) | 15,000 |
 | 22 | Four Reticle Reflex | 10,000 |
+| 22 | Clutch Lok Muzzle Brake | 37,500 |
+| 23 | Ruck Backpack | 100,000 |
 | 24 | RC-556 Suppressor | 30,000 |
 | 25 | AK74 60 RND Magazine | 30,000 |
 | 26 | OKP 7 Reflex | 30,000 |
 | 27 | TGP-A Suppressor 5.45 | 17,500 |
+| 27 | 5.45mm Armor Piercing (AP) | 75,000 |
 | 28 | M4 | 150,000 |
 | 29 | AR Multi-Caliber Suppressor | 22,500 |
-| 30 | STANAG extended magazine | 25,000 |
-| 32 | Cross Rifle Muzzle Brake | 35,000 |
+| 29 | Gunner Backpack + Sling | 125,000 |
+| 30 | STANAG 60 RND Magazine | 25,000 |
+| 31 | Cross Rifle Muzzle Brake | 35,000 |
+| 31 | 5.56mm Armor Piercing (AP) | 75,000 |
+| 32 | Level 3 Helmet | 75,000 |
+| 32 | Level 3 Armor | 100,000 |
 | 33 | 3x Tactical Prism Scope | 15,000 |
-| 35 | FAL 20 RND Magazine | 0 |
 | 35 | FAL | 250,000 |
+| 35 | FAL 20 RND Magazine | 0 |
 | 36 | AK74 75 RND Drum Magazine | 75,000 |
-| 37 | Clutch Lok Muzzle Brake | 37,500 |
+| 37 | .308 Win Flesh Damage (HP) | 15,000 |
 | 38 | RVG Vertical Foregrip | 25,000 |
-| 40 | SRD762TI-QD | 40,000 |
+| 39 | 7.62mm Armor Piercing (AP) | 75,000 |
+| 40 | Level 4 Helmet | 150,000 |
+| 40 | Level 4 Armor | 200,000 |
+| 41 | .308 Win Armor Piercing (AP) | 75,000 |
+| 42 | SRD762TI-QD | 40,000 |
 | 43 | Spectr 4x | 15,000 |
 | 45 | 3-Chamber Brake | 45,000 |
-| 48 | Shift Foregrip | 30,000 |
+| 46 | Shift Foregrip | 30,000 |
+| 48 | Arsenal Backpack + 2 Slings | 175,000 |
 | 50 | FAL 30 RND Magazine | 50,000 |
+
+Source: [current role tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json), `Meta.Role.Infantry`; [economy output](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json). The [pinned earlier role article](https://github.com/Kiyogitpy/wardogs-data-docs/blob/d3cf6f2bf54541b8389b9327aab933e1e8488b9b/_wiki/progression-and-economy/assault.md) retains the earlier table for historical comparison.
 
 ## How the role earns cash and XP
 

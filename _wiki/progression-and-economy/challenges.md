@@ -2,18 +2,18 @@
 title: "Challenges"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The challenges that pay out during and across matches: in-match actions, achievements, passive missions, wagers and tips."
+description: "The challenges that pay out during and across matches: in-match actions, achievements, passive missions, retained wager data and tips."
 ---
 
 # Challenges
 
 | Challenges | |
 |---|---|
-| Kinds | In-match action challenges, achievements, passive missions, wagers, tips |
-| In-match action challenges | 60 for King of the Hill, plus buildable, spotting, Hot Zone Magnet, crowbar and Team Offence challenges |
-| Achievements | 10 |
+| Kinds | In-match challenges, achievements, passive missions, retained wager configuration, tips |
+| In-match action challenges | 62 for King of the Hill, plus buildable, spotting, Hot Zone Magnet, crowbar and Team Offence challenges |
+| Achievements | 13 in the shared challenge table, plus the shooting-range horn challenge |
 | Passive missions | 15 (earn cash, earn role XP, time played) |
-| Wagers | 4 (get kills, drop off people, revive teammates, destroy occupied vehicles) |
+| Wagers | Removed vendor in S3; 11 goals retained in data, categories unresolved |
 | Internal name | Challenges (game feature) |
 {: .wiki-infobox }
 
@@ -21,7 +21,7 @@ A challenge is a small rule that waits for one thing to happen in a match, then 
 
 ## Overview
 
-The sources list 108 challenge definitions in nine tables. Each table is one category, and each category has its own article, listed under Categories below. Most are in-match action challenges that run automatically as the match goes on.
+The sources list 122 challenge definitions in ten tables. Each table is one category, and each category has its own article, listed under Categories below. The auto-activate flags are stored per row; they do not by themselves establish which challenges run in a live match.
 
 ## How it works
 
@@ -29,15 +29,15 @@ The sources list 108 challenge definitions in nine tables. Each table is one cat
 - **Assist versions.** Most action challenges have assist versions. A player who helped with a kill, a revive or a vehicle kill gets credit under the assist version, with its own split.
 - **Tips.** A tip is a reward for passing help to a teammate, such as sending or receiving a tip for healing or delivering a player. Pre-tips are a separate challenge.
 - **Passive missions.** These track a total over time. They do not depend on one event.
-- **Wagers.** A wager is a goal taken on with a stake. The four wager goals and their numbers are described on the Wagers article.
+- **Wagers.** The vendor was removed in S3 ([official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221)). Its retained goals are documented on the Wagers article, not offered as current earning advice.
 
 ## Categories
 
-- [Achievements](achievements.md): 10 one-time goals
+- [Achievements](achievements.md): 13 shared definitions; Shooting Range adds a separate Sound the Horn definition
 - [Passive Missions](passive-missions.md): 15 tiered totals (cash earned, role XP earned, time played)
-- [Wagers](wagers.md): 4 goals taken on with a stake
-- [King of the Hill Challenges](king-of-the-hill-challenges.md): 60 event rewards, including assist versions
-- [Buildable Challenges](buildable-challenges.md): 11 rewards for buildables and FOBs
+- [Wagers](wagers.md): 11 stored goals, including drill towers, FOB hacking, three freefall goals, spawn radars and supply pallets
+- [King of the Hill Challenges](king-of-the-hill-challenges.md): 62 event rewards, including assist versions
+- [Buildable Challenges](buildable-challenges.md): 12 rewards for buildables and FOBs
 - [Crowbar Challenges](crowbar-challenges.md): 1 reward for forcing a door open
 - [Spotting Challenges](spotting-challenges.md): 2 rewards for spotting and for destroying a spotted target
 - [Team Offence Challenges](team-offence-challenges.md): 2 rewards for punishing a kill and voting on a teamkill

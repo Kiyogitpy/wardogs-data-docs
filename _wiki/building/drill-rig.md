@@ -38,10 +38,10 @@ Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. It pays the same 
 
 ## Building it
 
-- **Cost:** 2,750 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 2,750 Build Supplies. The zero placement charge in the earlier model is a native-default assumption: the S3 export omits the placement-cost field.
 - **Hammers:** Large only.
 - **Placement:** It must be inside a friendly Forward Operating Base radius, inside a placement zone, and that zone must be inside a control zone. Unlike most structures, it has no ladder check and no safe zone check.
-- **Stack limit:** 0, so it cannot be placed on top of another buildable. Nothing can be placed on top of it either.
+- **Stack limit setting:** 0. The earlier placement interpretation forbids stacking the rig or building on top of it; the current native placement checks have not been verified.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 70, 79, 98 and 95 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
@@ -51,7 +51,7 @@ Destroying an enemy Drill Rig pays 2,750 cash and 700 Role XP. It pays the same 
 | Hits to repair from zero health | 19 | 10 | 7 |
 | Hits to dismantle (your own) | 17 | 13 | 10 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The hit counts apply the CL516586 building formula with build-cost scale 1 and normal hits. Seconds additionally assume one hit per swing: 0.567 s for Small and Medium and 0.883 s for Large, derived from the use animation. The S3 native building consumer and live cost scale have not been verified.
 
 The Drill Rig is Large only, so the Small and Medium columns for building say "cannot place". The repair and dismantle hits are what each hammer's hit does; they are not checked for this structure. The build count assumes normal hits. The rig's build factor is 2, so each Large Hammer hit counts double: 3 build amount instead of 1.5. Hitting its weak spots brings the count down.
 
@@ -70,9 +70,9 @@ After it is placed, the rig waits 15 s before it can start. Starting it is a hol
 | Run time per fuel unit | 0.03 s (Derived) |
 | Recharge after a run | 900 s (Derived) |
 
-While it runs, the Drill Rig pulls the hot zone toward it. The shipped rig activation path uses the rig's own inherited defaults: half the cached width and length, with unchanged height. That is 25% of the original planar area. The separate world magnet default of 0.6 width and length is not the pair selected by this rig path.
+The earlier CL516586 activation path pulled the hot zone toward the rig using its own inherited defaults: half the cached width and length, with unchanged height. That is 25% of the original planar area. The separate world magnet default of 0.6 width and length was not the pair selected by that rig path. These size and speed defaults are not explicitly stored in the S3 rig export; their current native initialization and activation consumer have not been verified.
 
-**Movement.** The rig uses a speed parameter of 5 m/s to calculate travel time: centre distance in metres divided by speed. That travel time is added to the fuel-derived active duration. An optional curve can shape the interpolation, so this is not a claim of constant instantaneous velocity. Derived example: 300 m gives a 60 s travel duration at the shipped rig default. These values are established from the cooked rig binding and native code, not measured on a live server; see [Round 93 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-rig-lifetime.md#1-g2--the-rig-has-a-separate-activation-caller).
+**Movement in CL516586.** The earlier native path used a speed parameter of 5 m/s to calculate travel time: centre distance in metres divided by speed. That travel time was added to the fuel-derived active duration. An optional curve could shape the interpolation, so this is not a claim of constant instantaneous velocity. Derived historical example: 300 m gives a 60 s travel duration at that default. The cooked rig binding and native code supporting this finding belong to CL516586, not the S3 hotfix; see [Round 93 evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-rig-lifetime.md#1-g2--the-rig-has-a-separate-activation-caller).
 
 ## Durability
 
@@ -89,7 +89,7 @@ For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardo
 
 ## Hits to destroy (point blank, derived)
 
-The counts below use the Drill Rig's own damage table, the same way as every other structure. The other structures' counts are in the [Buildables](../building.md#hits-to-destroy-point-blank-derived) article.
+The counts below use the Drill Rig's S3 stored damage table under the earlier native arithmetic: point-blank full damage, every matching source rule applied, no falloff or repair. They assume the rig's stored damage rules are active; current activation and native compatibility have not been verified. The other structures' counts are in the [Buildables](../building.md#hits-to-destroy-point-blank-derived) article.
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -110,6 +110,10 @@ The counts below use the Drill Rig's own damage table, the same way as every oth
 - [Utility Items](../equipment/utility-items.md): the Fuel Supplies that the rig runs on
 - [Forward Operating Base](forward-operating-base.md): the base that the rig must be placed inside
 - [Hot Zone Magnet Towers](../game-modes-and-maps/hot-zone-magnet-towers.md): the numbered towers on each map that pull the Hot Zone with a code
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce Hot Zone Magnet spotted-target kill rewards from 1,650 to 1,500 cash and from 225 to 200 XP; these are separate from direct destruction rewards. A new kickback rewards depositing fuel into a FOB when it activates a drill, with no amount stated. Limited Mode excludes the Drill Rig.
 
 ## Sources
 

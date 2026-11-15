@@ -30,14 +30,14 @@ The 40 L Fuel Canister is the portable fuel supply for vehicles. It holds 40 L a
 
 ## Overview
 
-The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The game files also list a 20 L version. The Item Shop does not sell that version, and nothing else hands it out: the 20 L item has no item name of its own (it carries only the generic item tag), so no shop row, loot table or starting kit can point at it. Players cannot get it in the game as shipped (inferred; it looks like an unfinished item).
+The canister is sold for 150 cash and has 40 durability. The shop lists 25 fuel per use, but that figure is not what the refuel action uses. The action adds 2.0 fuel every 0.75 seconds, about 2.7 per second. The game files also list a 20 L version. The Item Shop does not sell that version, the exported 20 L item carries a generic item tag, and no acquisition route is established here. The historical round 59 search did not establish an acquisition route. A generic item tag alone does not rule out every direct S3 asset reference or grant path.
 
 ## How it works
 
 The canister has two uses, both of which continue until the canister is empty or the target is full.
 
 - **Fill** adds fuel to the canister from a world refuel point, a fuel pump placed in the world. The pump charges cash for each step of fuel, at its price per litre. Pumps flagged as free in spawn areas do not charge in safe zones. The Refuel Station at a base does not fill canisters.
-- **Refuel** adds fuel to a vehicle in 2.0 unit steps every 0.75 s, which is 2.67 units per second. A full 40 L can empties in about 15 s (derived). The 20 L version adds 1.0 every 1.5 s, about 30 s for a full can (derived), but players cannot obtain it (inferred).
+- **Refuel** adds fuel to a vehicle in 2.0 unit steps every 0.75 s, which is 2.67 units per second. Twenty 2-unit transfer steps account for 40 units, or 15 s at 0.75 s per step; this model excludes startup, final-step and network delays. The 20 L version adds 1.0 every 1.5 s, about 30 s for a full can (derived), but its S3 acquisition route is unresolved.
 
 Refueling stations at a Forward Operating Base use Fuel Supplies, which are described on the [Supplies](supplies.md) page.
 

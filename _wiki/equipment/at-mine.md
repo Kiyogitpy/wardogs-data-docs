@@ -18,7 +18,7 @@ description: "The AT Mine: a placed anti-vehicle mine that fires when a moving v
 | Health | 1 HP |
 | **Blast** | |
 | Damage at centre | 300 HP |
-| Full damage out to | 3.8 m |
+| Full starting amount out to | 3.75 m (historical actor model) |
 | No damage beyond | 7.5 m |
 | Minimum blast damage | 50 HP |
 | **Availability** | |
@@ -48,7 +48,7 @@ For the mine that goes off on people, see [Claymore](claymore.md).
 
 **Being shot.** Any damage sets the mine off except a thrown impact, so shooting an AT Mine detonates it.
 
-**Detonation.** The mine goes off once it has taken 50 damage. That is the default for placed explosives, and neither the Claymore nor the AT mine overrides it (static reading). Once it has gone off it is removed. Whether the 50 counts each hit or the running total was not checked in play.
+**Detonation.** Round 41 identified a historical placed-explosive default threshold of 50 damage. Its interaction with the separate damage-trigger and 1 HP destruction paths was not resolved here; it must not be read as a verified S3 rule that every mine survives until it accumulates 50 damage.
 
 **Friendly fire.** The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %). Explosives and fire have no friendly-fire reduction in the tables. Any limit on hitting teammates with this item would have to come from the item itself or from native code, which the game files do not show.
 
@@ -56,7 +56,7 @@ For the mine that goes off on people, see [Claymore](claymore.md).
 
 ### To players
 
-The mine does not trigger on players, but its blast does harm people near it when it goes off. The blast does its full 300 HP from the centre out to 3.8 m. Beyond 3.8 m the damage falls in a straight line to zero at 7.5 m. Examples:
+The mine does not trigger on players, but its blast does harm people near it when it goes off. The historical CL516586 actor-input model starts at 300 damage through 3.75 m, then decreases linearly toward 150 just inside 7.5 m; it cuts to zero at 7.5 m. These are starting amounts before hit filtering and damage rules, not guaranteed HP loss. Examples:
 
 - At 2.5 m: 300 HP
 - At 5 m: 250 HP

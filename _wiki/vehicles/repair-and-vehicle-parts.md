@@ -106,7 +106,7 @@ Health pools per vehicle, as set for each one. Sort by any column with the heade
 | [Heavy repair drill](../equipment/drills.md) | Vehicles | 14.5 HP | 0.5 s (29 HP per second) | 1,300 cash |
 | [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) | Vehicles in the FOB radius | Fast: 5%; Max: up to 100% | Fast: 3 s; Max: 9 s | Fast: 100 cash; Max: 2,000 cash. Building a station costs 200 Build Supplies |
 
-Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. A full restock uses 5 of them. A Max restock is charged only for the share of health it restores: the 2,000 cash price is the full-health price, scaled down for a partial repair and rounded up to a multiple of 50 (static reading of the restock code, not checked in play). The station's own 13.33 figure is the structure's hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
+Each repair tool is used until it is empty or the target is full. Each tool repairs a fixed amount per application: 10 HP for the Wrench and 14.5 HP for each drill, at the rates in the table. A Repair Station uses Mechanical Supplies, which cost 10 cash per lot of 50. The S3 station scene stores ItemCostPerSingleRestock = 5; that field alone does not establish a flat five-supply charge for a full repair. A Max restock is charged only for the share of health it restores: the 2,000 cash price is the full-health price, scaled down for a partial repair and rounded up to a multiple of 50 (historical CL516586 restock interpretation, not a verified S3 consumer). The station's own 13.33 figure is the structure's hammer repair-speed multiplier. Every buildable has one, and most are the structure's Build Supplies cost divided by 15. It is not a vehicle repair rate.
 
 The in-game tips say that high impact damage zones on a vehicle can be repaired with repair tools, and that returning to base for repairs is not free.
 
@@ -123,6 +123,12 @@ The in-game tips say that high impact damage zones on a vehicle can be repaired 
 - [Fuel and refueling](fuel-and-refueling.md): the fuel tank and refilling
 - [Vehicle handling](vehicle-handling.md): how wheel and track state affects movement, where the sources document it
 - [Wrench](../equipment/wrench.md), [Drills](../equipment/drills.md) and [Supplies](../equipment/supplies.md)
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase tank resistance to grenades and fix grenade-launcher damage: tracks take 3 hits instead of 1, and the rear engine takes 5–6 instead of 3, matching grenades. These developer-announced part-disable counts are distinct from the conditional whole-vehicle destruction models. Tanks and artillery can also break stone walls in Season 3.
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) fix body repair on the Littlebird gun and rocket variants and make their repair interaction points reachable.
 
 ## Sources
 

@@ -7,6 +7,8 @@ description: "The Bakurani King of the Hill map: zone sizes, the three zone plac
 
 # Bakurani
 
+The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) remove the Wager Vendor. Any wager-vendor actor mentioned in the saved spawn inventory below is retained data, not an active service.
+
 | Bakurani | |
 |---|---|
 | **General** | |
@@ -155,7 +157,7 @@ The map names its zone regions, and each tower stands inside one of them. "The m
 
 ### In each team spawn area
 
-The file places 6 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a free fuel point, a small soccer pitch, 3 moving practice targets and a safe zone (all 6 areas; one lies 166 m from its spawn point, just beyond the 150 m radius used here). None of these areas lies inside the zone area. The invisible safe zone boxes are about 480 m tall; three safe zones are 640 m by 640 m and three are 480 m by 480 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 11.0 km by 11.0 km.
+The file places 6 team spawn areas for this map (identified in the historical inventory by a retained wager-vendor actor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a retained wager-vendor actor (the vendor was removed in S3), and also a free fuel point, a small soccer pitch, 3 moving practice targets and a safe zone (all 6 areas; one lies 166 m from its spawn point, just beyond the 150 m radius used here). None of these areas lies inside the zone area. The invisible safe zone boxes are about 480 m tall; three safe zones are 640 m by 640 m and three are 480 m by 480 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 11.0 km by 11.0 km.
 
 The fuel point refuels vehicles without cost and does not run out (the game marks its fuel as unlimited and free in spawn). See [Fuel and refueling](../vehicles/fuel-and-refueling.md). Vehicle yards and spawn spots are on the Vehicle spawns section above.
 

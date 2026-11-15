@@ -2,7 +2,7 @@
 title: Fire, Smoke and Flash
 parent: "Equipment"
 group: "Explosives and throwables"
-description: "Molotov fire, smoke and signal grenades, mine and Claymore triggers, and throwing. Flash and stun grenades are not in this build."
+description: "Molotov fire, smoke and signal grenades, mine and Claymore triggers, and throwing. Flash/stun absence is historical; current S3 coverage is unresolved."
 ---
 
 # Fire, Smoke and Flash
@@ -10,16 +10,16 @@ description: "Molotov fire, smoke and signal grenades, mine and Claymore trigger
 | Fire, smoke and flash | |
 |---|---|
 | Fire | Molotov (burning area for 45 s) |
-| Smoke | White and Black smoke; eight coloured signal grenades; vehicle smoke |
+| Smoke | White and Black smoke; six coloured signal grenades; vehicle smoke |
 | Triggered | AT Mine, Claymore, C4 and Improvised Explosive Device (detail below) |
-| Flash and stun | not in this build |
+| Flash and stun | Not found in the historical search; S3 unresolved |
 {: .wiki-infobox }
 
 This article covers the throwables and placed gear that do something other than a direct blast: the Molotov's burning area, the smoke and signal grenades, the triggers of the mines and Claymore, and how throwables are thrown. Blast damage and radius for every explosive are on [Grenades and Explosives](grenades-and-explosives.md).
 
 ## Overview
 
-Flash and stun grenades are not in this build. There is no flashbang item, no shop listing and no effect. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached.
+The cited historical search found no flashbang item, shop listing or effect in its examined build; this is not a complete S3 absence proof. The only remnants are three sound effects and a Medic skill that reduces the effect of flash and stun, which has no number attached.
 
 Destroyed vehicles, the fixed guns and a destroyed forward operating base also set off explosions of their own. See [Destruction](../game-mechanics/destruction.md#wreck-explosions).
 
@@ -40,11 +40,11 @@ The Molotov bursts on detonation, dealing 40 HP at its centre out to 2.5 m and n
 - **Vehicles.** Each tick deals 2 health, which is 5 per second.
 - **Burning status.** A player in the fire gets a "burning" status, shown with a screen effect that darkens and blurs the view. The status ends when the player leaves the patch (a static reading of the game code, not checked in play). No timer for it is given.
 
-The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play). Armor reduces the burst but not the fire, since no armor rule applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
+The Molotov bursts on its first impact. Its 5 s fuse is only a backstop, and it is the only throwable set to burst on impact. Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play). That historical no-armor-fire claim is superseded: Season 3 reduces Molotov damage against heavy armor and armored vehicles. The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so a teammate's Molotov fire has no reduction in the tables.
 
 ### Smoke grenades
 
-Smoke grenades make a cloud of smoke. The length of each cloud is given, but there is no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing found in the game makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
+Smoke grenades make a cloud of smoke. The listed cloud durations come from the historical smoke/default evidence. Smoke has documented visual and aim-assist behavior; absence of a gameplay-effect entry does not mean no effect on play. No item applies a game effect through smoke, so smoke does not hurt, heal or slow anyone. In the code found, the only thing that reads a smoke cloud is the aim-assist target picker, so smoke blocks aim assist. Spotting, lock-on and the minimap do not read it. Nothing found in the game makes smoke block enemy soldiers' sight: the smoke has no collision or sight-blocker, so the AI sight is not blocked as far as the data shows.
 
 | Item | Cloud length | Cost (cash) |
 |---|---:|---:|
@@ -83,7 +83,7 @@ The AT Mine, Claymore and Improvised Explosive Device are placed on the ground, 
 | Speed rule | Vehicle moving above 0.1 km/h | Vehicle moving above 0 km/h | none | none |
 | Arming delay | 1 s after placement | 2 s after placement | none | none |
 | Delay after trigger | none | none | none (charge 0.2 s) | 3 s |
-| Team rule | Triggers on friendly vehicles | Triggers on teammates | none | none |
+| Team rule | Historical trace: friendly vehicles trigger | Historical faction check; teammate behavior unresolved | none recorded here | none recorded here |
 | Line of sight | not used | yes, to the target | none | none |
 | Range | placed up to 4 m away | placed up to 4 m away | 200 m (remote) | no limit |
 | Shot | any damage except thrown impacts sets it off | an explosion sets it off; other damage destroys it | a C4 or Improvised Explosive Device blast sets it off; it has 30 HP | same as C4 |
@@ -128,6 +128,12 @@ The aim curve sets the speed in place of a fixed value. A static reading of the 
 | AT Mine | 650 |
 | Claymore | 900 |
 | Improvised Explosive Device trigger | 300 |
+
+## Season 3 announcement
+
+Molotov fire now ignites players and forces them to drop their held item. Damage against heavy armor and armored vehicles is reduced. The historical tick, lifetime and exit-status calculations on this page are not measured S3 damage or a verification of the new burning lifecycle.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

@@ -65,12 +65,12 @@ Two things move your shots. **Spread** sends each shot into a small random cone 
 
 Each body part has a base multiplier. The head is 1.00, the neck 0.75, the upper torso 1.10, the middle torso 1.00, the lower torso 0.95 and the pelvis 0.90. The thigh and upper arm are 0.60, the lower arm and calf 0.50, and the hand and foot 0.30. Each weapon class has its own figure for each part, so the same hit does different damage with different guns. Use the [Health and Damage](../game-mechanics/health-and-damage.md) page for the full result.
 
-**Headshots and limbs.** The M4 with full metal jacket and no armor shows the gap:
+**Headshots and limbs.** The current M4 FMJ point-blank model, against an unarmored hostile target outside a vehicle, shows the gap. Hit counts are ceilings of 100 divided by unrounded damage; they do not distinguish downing from immediate death. The historical damage formula has not been re-established for S3 native code:
 
-| Hit | Damage per hit | Hits to kill |
+| Hit | Damage per hit | Modeled hits to reach 100 damage |
 |---|---:|---:|
 | Head | 65.8 | 2 |
-| Upper torso | 27.3 | 4 |
+| Upper torso | 30.8 | 4 |
 | Thigh or upper arm | 15.1 | 7 |
 | Hand or foot | 7.6 | 14 |
 
@@ -80,19 +80,19 @@ Aim high. Head and neck hits matter most, and hands and feet are a poor target.
 
 The M4 to the upper torso shows what each vest level costs you:
 
-| Armor | Damage per hit | Hits to kill |
+| Armor | Damage per hit | Modeled hits to reach 100 damage |
 |---|---:|---:|
-| None | 27.3 | 4 |
-| Light vest | 19.1 | 6 |
-| Medium vest | 16.4 | 7 |
-| Heavy vest | 13.6 | 8 |
-| Super heavy vest | 10.9 | 10 |
+| None | 30.8 | 4 |
+| Light vest | 21.6 | 5 |
+| Medium vest | 18.5 | 6 |
+| Heavy vest | 15.4 | 7 |
+| Super heavy vest | 12.3 | 9 |
 
-**Ammo.** Hollow point is for unarmored targets. Against a Super heavy vest, the M4 does 1.5 with hollow point, 10.9 with full metal jacket and 14.0 with armor-piercing. For the full comparison, see [Choosing Ammo](choosing-ammo.md).
+**Ammo.** Hollow point is for unarmored targets. Against a Super heavy vest, the M4 does 1.7 with hollow point, 12.3 with full metal jacket and 15.8 with armor-piercing. For the full comparison, see [Choosing Ammo](choosing-ammo.md).
 
 **Teammates.** A bullet that hits a teammate does half damage. A Large Hammer hit does 70% less.
 
-**Time to kill.** The table below is from [Weapon Comparison](../weapons/weapon-comparison.md). It uses upper-torso hits at 100 m with full metal jacket. A Level 3 vest cuts upper-torso damage by 50%, the same figure the armor page gives for a Heavy vest.
+**Time to kill.** The following 100 m comparison is retained from the earlier [Weapon Comparison](../weapons/weapon-comparison.md). It uses upper-torso hits at 100 m with full metal jacket and has not been recalculated here against current inputs; it must not be treated as the current point-blank model above. A Level 3 vest cuts upper-torso damage by 50%, the same figure the armor page gives for a Heavy vest.
 
 | Weapon | Shots, no armor | Time to kill, no armor | Shots, Level 3 vest | Time to kill, Level 3 vest |
 |---|---:|---:|---:|---:|
@@ -176,7 +176,7 @@ How strong the pull feels in play has not been measured.
 
 ## Going down and getting revived
 
-At 0 HP you are downed, not dead. Health stops falling. The bleed-out timer is the only clock. Outside Deathmatch, no health comes back on its own, so you need a revive or a healing item.
+A downed state at 0 HP is not guaranteed: the current sanitized game-mode config stores bSkipDownedState=true, with its scope and overrides still unresolved. The bleed-out and revive timings below describe the historical downed path, not proof that S3 uses that path in every mode.
 
 - **Bleed-out timer:** starts at 360 s and drains at half speed, so you last about 720 s (12 minutes) unless helped.
 - **Giving up:** ends the wait in 1.5 s. Choose it only when no help is coming.
@@ -187,7 +187,7 @@ At 0 HP you are downed, not dead. Health stops falling. The bleed-out timer is t
 - **Medical Bag:** revives to 50 HP and costs 10 durability.
 - **Going down again after a revive:** the timer is at least 30 s, which is about 60 s at half drain.
 
-**No Value Kill.** If an enemy revives you with a resuscitator, you get a 60 s effect. Killing you during it pays 1% of the normal cash and no Role XP. Assists on you pay no Role XP, the kill feed shows "No Value Kill", and wagers do not count the kill. The effect does not change your health or movement. Do not count on cash for a player an enemy has just revived.
+**No Value Kill.** If an enemy revives you with a resuscitator, you get a 60 s effect. Killing you during it pays 1% of the normal cash and no Role XP. Assists on you pay no Role XP, the kill feed shows "No Value Kill", and historical wager filtering excluded the kill (the Wager Vendor is removed in S3). The effect does not change your health or movement. Do not count on cash for a player an enemy has just revived.
 
 ## See also
 

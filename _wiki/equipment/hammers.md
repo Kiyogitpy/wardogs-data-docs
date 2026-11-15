@@ -49,6 +49,12 @@ There are three hammers, each for a different size of structure. The Small Hamme
 
 The hammer's actions let the player rotate the structure being placed, toggle snapping and toggle placement mode.
 
+## Season 3 announcement
+
+The Large Hammer unlock moved from Support level 8 to level 14.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
+
 ## Season 2 changes
 
 | Item | Season 1 | Season 2 |

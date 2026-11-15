@@ -6,28 +6,30 @@ description: "How spotting marks enemies on the map, how much cash spotting and 
 
 # Spotting
 
+S3 reduces several spotted-target kill rewards, including Player XP from 150 to **125** and FOB XP from 250 to **200**. The full announced cash/XP table is on [Spotting Challenges](../progression-and-economy/spotting-challenges.md#announced-s3-spotted-target-rewards), sourced to the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). The older match-score ranges below are not the announced target-specific payouts.
+
 | Spotting | |
 |---|---|
 | Spot a target | Shows it on the map and in the world |
-| Spotting pays | 15 to 275 cash for a spot |
-| Destroying a spotted target pays | 50 to 500 cash |
-| Spotter's share of the top amount | 20% for a spot, 75% for a destroy |
+| Stored match-score range | 15 to 275 cash for a spot; active payout path unresolved |
+| Stored removal match-score range | 50 to 500 cash; distinct challenge bases below |
+| Match-score spotter-share fields | 20% for a spot, 75% for a destroy; current application unresolved |
 | Recon skills | Increased time to be spotted; increased spotted duration |
 {: .wiki-infobox }
 
-Spotting lets a player mark an enemy so that the whole team can see it on the map and in the world. A spotted target is also worth cash, and destroying a spotted target pays more. This article covers how the marking works and what it pays. Base payouts for each kind of target are in the challenge tables, which are not summarised here.
+Spotting lets a player mark an enemy so that the whole team can see it on the map and in the world. The saved reward tables configure cash and Role XP for spotting and target removal, but disagree on their bases and do not establish the active payout path. This article separates those stored reward values from marking behavior. Base payouts for each kind of target are in the challenge tables, which are not summarised here.
 
 ## Overview
 
-Spotting has two events. A **target spotted** event happens when an enemy is marked. A **spotted target destroyed** event happens when a marked enemy is removed, usually by being destroyed. Both events pay cash, and both pay different amounts for each kind of target: a player, a vehicle, a buildable, a supply crate or a stationary weapon. Assists, the teammates who helped, get a separate share of the pay.
+Spotting has two events. A **target spotted** event happens when an enemy is marked. A **spotted target destroyed** event happens when a marked enemy is removed, usually by being destroyed. Both have stored cash expressions with target-specific amounts for a player, a vehicle, a buildable, a supply crate or a stationary weapon. Assists, the teammates who helped, get a separate share of the pay.
 
 ## How it works
 
 - **Marking.** A spotted target shows on the team map and as a marker in the world, so the team can see where it is.
 - **How long a spot lasts.** On infantry a spot takes 0.5 s to register, fades over 30 s and is kept for up to 180 s. Rotary and wheeled vehicles take 0.75 s to spot and stay spotted 60 s (180 s kept); tracked vehicles take 1.25 s and stay 90 s. Bases and buildings stay spotted for up to 3,600 s.
-- **Pay on spot.** Spotting pays between 15 and 275 cash. The spotter gets a share of the top amount, which is 20% of the 275 maximum.
-- **Pay on destroy.** Destroying a spotted target pays between 50 and 500 cash. The spotter gets 75% of the 500 maximum for the destroy.
-- **Role XP.** A spot pays 5 to 100 Role XP (25 for a player). Destroying a spotted target pays 5 to 500 (150 for a player). A target destroyed by the enemy pays a quarter of its cash and half its Role XP.
+- **Pay on spot.** The separate match-score table stores 15–275 cash and a 20% spotter-share field; current application is unresolved. Challenge rows instead store target-specific bases of 5–750.
+- **Pay on destroy.** The separate match-score table stores 50–500 cash and a 75% spotter-share field; current application is unresolved. Challenge removal rows instead store bases of 10–5,000.
+- **Role XP.** Challenge rows store bases of 5 to 100 Role XP for a spot (25 for a player). Removal rows store 5 to 400 (125 for a player). The removal expressions store a quarter-cash factor for destruction by the enemy; Role XP uses a target-specific value (75 instead of 125 for a player), not a universal half.
 - **Assists.** Teammates who help with the spot or the destroy get their own share, set by a separate modifier.
 - **Repeats.** Spotting has its own repeat rule, harsher than the one for kills. Each repeat of the same kind of target pays 50% less than the one before, counted up to two repeats. The pay is the base times (1 minus 0.5 for each repeat counted), so by the reward formula the second spot of the same kind of target pays half and the third and later spots pay nothing. The same cut applies to the Role XP, to spotting and to the destroy that follows. The game keeps a 180 s cooldown with the repeat counter, which most likely means a repeat count starts again after 180 s without a repeat (inferred from the setting's name). Kills use a different rule (24% less per repeat, up to four repeats).
 - **Buildables.** In Season 2, buildable and stationary targets pay in proportion to how much they were built, so an unfinished buildable pays less.
@@ -49,14 +51,14 @@ Share of the top amount for the spotter:
 | Target spotted | 20% |
 | Spotted target destroyed | 75% |
 
-The challenge tables give the base payout for each kind of target. For a player the base is 100 cash and 25 Role XP for a spot (half of that, 50 cash and 12.5 Role XP, when the spot only refreshes an existing one), and 400 cash and 150 Role XP when the spotted player is destroyed. Other targets run from 5 to 1,000 cash and 5 to 100 Role XP on a spot, and from 10 to 5,000 cash and 5 to 500 Role XP on a destroy; the rest are not repeated here. These challenge values differ from the match-score table above, and the files do not show which of the two the payout uses. The Season 2 change to them is listed on the [Season 2 Game Modes and Maps page](../../season-2-changes/game-modes-maps.md).
+The challenge tables store target-specific bases before modifiers; these are not verified payouts. For a player the base is 100 cash and 25 Role XP for a spot (half of that, 50 cash and 12.5 Role XP, when the spot only refreshes an existing one), and 400 cash and 125 Role XP when the spotted player is destroyed. Other targets run from 5 to 750 cash and 5 to 100 Role XP on a spot, and from 10 to 5,000 cash and 5 to 400 Role XP on a destroy; the rest are not repeated here. These challenge values differ from the match-score table above, and the files do not show which of the two the payout uses. The Season 2 change to them is listed on the [Season 2 Game Modes and Maps page](../../season-2-changes/game-modes-maps.md).
 
 ## Tips that follow from the numbers
 
-- **Spot first, then destroy.** The destroy event pays far more than the spot (a 75% share against 20%), so spotting a target and then destroying it earns the most.
+- **Reward comparison.** The separate match-score fields favor removal over spotting, but their activation is unresolved; they do not establish which sequence earns the most in S3.
 - **Spot high-value targets for the team.** Because the team sees the marker, a spot helps everyone even when the spotter does not get the kill.
 - **Pick the Recon skills that fit your role.** The increased time for enemies to spot you helps stay hidden, and the longer spotted time keeps targets on the map.
-- **Expect smaller pay for repeats.** Spotting the same kind of target again halves the pay, and the third spot pays nothing, so spread your spots over different kinds of target.
+- **Repeat expression.** The stored 50% reduction gives half the base at count 1 and zero at count 2. Which events increment that count and when it resets remain unresolved.
 
 ## Not yet known
 

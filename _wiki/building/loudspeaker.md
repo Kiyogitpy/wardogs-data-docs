@@ -26,9 +26,9 @@ The Loudspeaker is the one stationary emplacement with no weapon. It is built wi
 
 ## Overview
 
-Destroying an enemy Loudspeaker pays 200 cash and 50 Role XP. It still has no function.
+Destroying an enemy Loudspeaker is listed at 200 cash and 50 Role XP. Its gameplay function has not been established.
 
-The Loudspeaker is listed on the [Building](../building.md) page with the other stationary emplacements, but no gun, ammunition, rate or range is given for it. The game files have no buildable data or weapon for the Loudspeaker, so what it does is not in the data.
+The Loudspeaker is listed on the [Building](../building.md) page with the other stationary emplacements, but no gun, ammunition, rate or range is given for it. Its S3 buildable definition stores the 200 Build Supplies cost, 1,000 HP, build stages and placement conditions. Having no listed weapon does not establish that it has no gameplay function.
 
 ## Effects
 
@@ -71,6 +71,7 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 ## Sources
 
 - [Buildables](../../game-features/Wardogs_Buildables_v1.md): Build Supplies cost, health, hammers and placement conditions
+- [S3 Loudspeaker buildable definition](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/BuildableData/DA_Buildable_STN_04.json): cost, health, stage reference and placement conditions
 - [All vehicles stat and damage sheet](../../content/Wardogs_AllVehicles_Stats_Damage_v1.md): the damage table for this emplacement
 - [Vehicles changes, Season 2](../../season-2-changes/vehicles.md): cost and damage table changes
 - [Vehicle hitboxes](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/vehicle-hitboxes.json): the 3D hitbox set used by the viewer link

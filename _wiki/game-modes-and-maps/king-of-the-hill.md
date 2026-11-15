@@ -12,8 +12,8 @@ description: "The main three-team zone-capture mode: hold the Control Zone and i
 | Type | Three-team zone capture |
 | Teams | Three factions: Lonestar, Valkyra and Manticore |
 | Objective | Hold the Control Zone and the Hot Zone inside it |
-| Win condition | First team to 100 points; no time limit |
-| Maps | Bakurani, Ozeti, Zestafona, Saburtulo, and four more (see [Maps](maps.md)) |
+| Win condition | ScoreLimit=100; stored hard-cap/inactivity values are 0 (runtime meaning unverified) |
+| Saved browser listings | Bakurani, Ozeti, Zestafona, Saburtulo, and four more; active availability unverified (see [Maps](maps.md)) |
 | Server browser label | KOTH |
 | Internal name | KOTH (experience) |
 {: .wiki-infobox }
@@ -22,28 +22,28 @@ King of the Hill (KOTH) is the main team mode. Three factions fight over a Contr
 
 ## Overview
 
-King of the Hill is the mode most of the maps are built for. The server browser lists it on four main maps (Bakurani, Ozeti, Zestafona and Saburtulo) and on four further entries (Berlin, Paris, Mindori and Tevza) that have no zone data in the game. Tank Town, a separate server browser entry, uses these same rules. Every KOTH match uses the Control Zone runtime and three factions.
+King of the Hill is the mode most of the maps are built for. The saved server-browser table lists it on four main maps (Bakurani, Ozeti, Zestafona and Saburtulo) and on four further entries (Berlin, Paris, Mindori and Tevza) that have no zone data in the game. Tank Town, a separate server browser entry, uses these same rules. The experience configuration references the Control Zone feature and three factions; current server availability is not established by that configuration.
 
-Players earn cash and XP from the zone and from fights around it. Challenges such as kills, revives and vehicle kills run during the match, and there are 60 KOTH-specific challenge rows; see [Challenges](../progression-and-economy/challenges.md).
+Players earn cash and XP from the zone and from fights around it. Challenges such as kills, revives and vehicle kills run during the match, and there are 62 KOTH-specific challenge rows; see [Challenges](../progression-and-economy/challenges.md).
 
 ## Rules and objectives
 
 - **Factions.** Three teams are set up at the start of the match. The factions are named in the game as Lonestar, Valkyra and Manticore.
-- **Match flow.** A match goes through four stages: waiting for the world to load, waiting for enough players, playing, then post-match. The lobby needs 60 players and waits up to 10 seconds for them. If that does not fill, a 5 second ready-up step needs at least 9 players. The post-match screen lasts 45 seconds. The wait before the match is the [Pre-lobby](pre-lobby.md), where points earned turn into starting Cash.
-- **At the start of the match.** Nothing moves you: you stay in your team's spawn area, and your health, gear and Cash carry on from the pre-lobby (inferred from the absence of any reset in the game). The soccer pitch, the practice targets and the Hot Potato game are removed, the zone and its music switch on, and your pre-lobby points are paid as extra Cash on top of your starting Cash (10,000 in the currency table, applied when you join). See [Pre-lobby](pre-lobby.md).
+- **Match flow.** A match goes through four stages: waiting for the world to load, waiting for enough players, playing, then post-match. The current config stores 60 players / 10 seconds for PlayerCount and 9 players / 5 seconds for ReadyUpKOTH. The CL516586 native trace starts each countdown only after its readiness condition holds; it does not give the lobby ten seconds to fill and then fall back to nine players. S3 timer activation remains unverified. The current post-match setting stores 45 seconds. The wait before the match is the [Pre-lobby](pre-lobby.md), where points earned turn into starting Cash.
+- **At the start of the match.** CL516586 round 70 identified removal of lobby activities and activation of match systems. Its selected-subscriber search found no teleport, health restore or inventory clear, but left callees untraced. S3 reset, persistence and pre-lobby Cash conversion remain unresolved; see [Pre-lobby](pre-lobby.md).
 - **Scoring the zone.** A player counts toward capturing the zone only while alive. A critically wounded or dead player adds nothing. See [Control Zone](control-zone.md).
 - **Hot Zone.** Each Control Zone has a Hot Zone in its centre. The Hot Zone moves during the match. Kills and captures inside it pay more than in the outer zone.
 - **Hot Zone Magnet.** Players can build and activate a Hot Zone Magnet. While it is active, kills in the Hot Zone pay the highest multiplier in the game. Capturing hostile or neutral towers also counts. Each map also has numbered towers: a team captures towers to learn a secret code and types it on a tower keypad to pull the Hot Zone to that tower. See [Hot Zone Magnet Towers](hot-zone-magnet-towers.md).
 - **Spawning.** KOTH has its own spawn manager. Your first spawn is in your faction's spawn area. The game picks a random start point in that area and, if it is taken, moves on to the next free point. There is no forward operating base step, and no enemy-distance rule like the one Deathmatch uses. Which spawn area a player gets on the maps other than Bakurani is not confirmed. The game does not describe a starting kit for KOTH players.
-- **Win condition.** The first team to reach 100 points wins, which is the game's default score limit. A point is added every 22 seconds (the example server file uses 24 seconds). There is no time limit.
+- **Win condition.** The first team to reach 100 points wins, which is the game's default score limit. A point is added every 22 seconds (the example server file uses 24 seconds). The current config stores MatchHardCapSeconds=0 and InactivityTimeoutSeconds=0; their S3 runtime interpretation has not been verified.
 - **Team balance.** A team may be at most 2 players larger than the smallest team. The game's default leaves this lock off; the example server file turns it on.
 - **Player cap.** The maximum number of players is a server setting, which can be set between 60 and 100.
 
 ## Rewards
 
-King of the Hill challenge rewards use the shared challenge reward rows that every mode's challenges use. In that table a player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 and 250, and a bandage heal 200 and 80 (base amounts, before the zone and assist terms). The cash tables on [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) list different bases for the same actions (a default kill 250, a defibrillator revive 1,000, a Bandage heal 400), and the game server, not the files on your PC, decides which set a match pays out, so the amounts here are base values rather than a promise of what you will see. The full list is on [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
+King of the Hill challenge rewards use the shared challenge reward rows that every mode's challenges use. In that table a player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 and 250, and a bandage heal 200 and 80 (base amounts, before the zone and assist terms). The cash tables on [Cash and Rewards](../progression-and-economy/cash-and-rewards.md) list different bases for the same actions (a default kill 250, a defibrillator revive 1,000, a Bandage heal 400), and the active registry and payout path have not been established, so the amounts here are stored bases rather than verified match payouts. The full list is on [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
 
-Cash for the zone, from the cash tables:
+Stored zone cash values from the separate match cash table; current activation and effective payment remain unresolved:
 
 | Event | Base cash |
 |---|---|
@@ -58,7 +58,7 @@ Cash for the zone, from the cash tables:
 
 Kills in the zones are multiplied. A kill inside a Hot Zone counts with a weight of 10, a kill in a Control Zone with a weight of 5, and a kill in the enemy's own Hot Zone with a weight of 4. The full kill formula is on [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
 
-At the end of the match, factions are ranked and paid a flat placement bonus: 200 cash for first, 150 for second and 100 for third. Separately, Season 2 added a 10,000 cash bonus for the Lonestar faction only; the other two factions get none. Earned cash and XP also get a percentage bonus by placement, described on [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
+The placement table stores flat faction bonuses: 200 cash for first, 150 for second and 100 for third. Separately, Season 2 added a 10,000 cash entry for Lonestar and zero entries for the other two factions; this does not establish current payments. Earned cash and XP also get a percentage bonus by placement, described on [Cash and Rewards](../progression-and-economy/cash-and-rewards.md).
 
 ## See also
 

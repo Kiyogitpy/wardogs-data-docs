@@ -42,6 +42,7 @@ Only these names are given. Only the M113 APC SV's nine rear seats are passive p
 
 - **Enter.** Approach the vehicle and use the interaction prompt for Enter Vehicle.
 - **Switch seats.** Seats are chosen with F1 to F12 by default. The in-game tip says switching is not instant and takes a moment.
+- **S3 controller bindings.** Tap A to change seats or hold A to move directly to the driver seat. B handles handbrake / pilot fire. The [official S3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also report that passengers can change fire mode within garage-vendor range.
 - **Exit.** Open the interaction menu and press and hold the Exit Vehicle option. Leaving a moving vehicle can hurt you: the damage depends on the speed in km/h when you leave, and is applied on landing. There is no damage at 40 km/h or below, 40 at 50 km/h, 85 at 60 km/h and 100 at 75 km/h and above, with a straight line between those points. The minimum speed for damage is not known.
 - **Unlock.** Purchased vehicles start locked. The owner can unlock them for a squad or for everyone, and teammates cannot enter until they are unlocked.
 
@@ -49,23 +50,25 @@ Ejecting a player from a vehicle is not described.
 
 ### Seat protection
 
+The [official S3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce increased cockpit protection for MH-6, AH-6R and AH-6M pilots/co-pilots, without specifying a percentage. The stored seat-reduction model below is a separate source; it does not independently verify the current native application.
+
 Seats set a reduction for seated players against two main groups of arms: small and medium arms, and high-calibre arms. A value of -25 means the seated player takes 75% of the damage, which is 25% protection. A value of -90 means the player takes 10% of the damage.
 
-Seat protection is listed only for these vehicles:
+The S3 seat-damage helper table stores the following variant rules. These are saved modifiers; application by the current native reader has not been re-established:
 
-| Vehicle group | Small and medium arms | High-calibre arms | Season 2 |
+| Vehicle group | Small and medium arms (S3) | High-calibre arms (S3) | Scope |
 |---|---|---|---|
-| Little Bird family ([MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md), [AH-6R [Rockets]](ah-6r-rockets.md)) | -50% in Season 1, -25% in Season 2 | -20% in Season 1, -15% in Season 2 | Halved |
-| Venom helicopter | -50% in Season 1, -25% in Season 2 | -20% in Season 1, -15% in Season 2 | Halved |
-| [Z20 Lakota](z20-lakota.md) and [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | None in Season 1, -25% in Season 2 | None in Season 1, -15% in Season 2 | Added |
+| Little Bird family ([MH-6](mh-6.md), [AH-6M [Miniguns]](ah-6m-miniguns.md), [AH-6R [Rockets]](ah-6r-rockets.md)) | -40% | -17.5% | Three explicit Littlebird variant rows |
+| Venom helicopter | No row in this S3 helper | No row in this S3 helper | Historical Season 2 row only |
+| [Z20 Lakota](z20-lakota.md) and [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md) | -40% | -17.5% | Two explicit ROT_04 variant rows |
 | [Havoc](havoc.md) | -90% | -50%, plus -60% in a third group the data labels only as Special | Unchanged |
 | Humvee family ([Humvee](humvee.md), [Minigun](humvee-minigun.md), [M249](humvee-m249.md)) | -70% | -40% | Unchanged |
 
-The Season 2 values are the ones shown now. The Season 2 notes say the Havoc and Humvee rows did not change. No seat protection is listed for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
+The Littlebird and ROT_04 rows differ from the historical Season 2 values below. Havoc and Humvee retain the listed values in this S3 helper. No seat protection is listed for the other vehicles, including the Kodiak, Ural, Wolf-110, Bobcat, Dune Buggy, M113, the tanks and the airplane.
 
 ### Season 2 changes
 
-- The Little Bird family's seat protection was halved: 50% to 25% against small and medium arms, and 20% to 15% against high-calibre arms.
+- The historical Season 2 notes report Little Bird protection changing from 50% to 25% against small and medium arms (halved), and from 20% to 15% against high-calibre arms (a 25% relative reduction). These are not the S3 values above.
 - The Z20 Lakota gained a seat rule of 25% against small and medium arms and 15% against high-calibre arms.
 - The Havoc and Humvee rules did not change.
 
@@ -109,10 +112,10 @@ Some vehicles have more seat setups than seats in the vendor stats. The Ural Def
 
 ## Tips that follow from the numbers
 
-- On a Little Bird, a seated player takes 75% of small and medium arms damage in Season 2. In Season 1 the seated player took 50%.
+- The S3 Littlebird modifiers imply 60% of small/medium-arms damage and 82.5% of high-arms damage if the documented seat-reduction calculation applies.
 - On a Havoc, a seated player takes 10% of small and medium arms damage. That is the strongest seat protection.
-- The Z20 Lakota gets seat protection for the first time in Season 2, with 25% against small and medium arms.
-- A vehicle with no seat protection listed, such as the Kodiak or the Ural, has no seat reduction.
+- The S3 Lakota modifiers match the Littlebird values: −40% for small/medium arms and −17.5% for high arms.
+- This S3 helper has no Kodiak or Ural row; that absence alone does not exclude protection from another path.
 - The in-game tip says the passenger list shows who has a parachute.
 - The Havoc, M113 APC SV, Flakpanzer Gepard, SPH-2, L2A6 and T-72B3 are flagged as seating players of one faction only. No other vehicle sets that flag. With it set, the enter check only lets a player in when the vehicle belongs to the player's faction or is neutral, and every player already seated must match the vehicle's faction.
 

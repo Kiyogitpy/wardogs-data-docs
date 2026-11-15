@@ -10,10 +10,10 @@ King of the Hill (KOTH) is the main team mode. Three factions fight over a Contr
 
 ## How a match is won
 
-- The first team to reach 100 points wins. There is no time limit.
+- The current config stores ScoreLimit=100 and zero for MatchHardCapSeconds and InactivityTimeoutSeconds; zero's runtime meaning remains unverified.
 - A point is added every 22 seconds. The example server file uses 24 seconds.
 - The wiki does not say which actions add points, so the timer is the only point rule it lists.
-- The lobby needs 60 players and waits up to 10 seconds for them. If that does not fill, a 5 second ready-up step needs at least 9 players.
+- The current config stores 60 players / 10 seconds for PlayerCount and 9 players / 5 seconds for ReadyUpKOTH. In the CL516586 trace each countdown started only after its readiness condition held, not as a ten-second fallback to nine players. S3 activation remains unverified.
 - A team may have at most 2 more players than the smallest team. The game's default leaves this lock off, and the example server file turns it on.
 - The server sets the player cap, from 60 to 100 players.
 
@@ -107,7 +107,7 @@ Read [Forward Operating Base](../building/forward-operating-base.md) for the ful
 
 ## Earning in King of the Hill
 
-Zone events pay these base amounts:
+The separate match cash table stores these bases; current activation and payout path remain unresolved:
 
 | Event | Base cash |
 |---|---|
@@ -125,7 +125,7 @@ Zone events pay these base amounts:
 - A Hot Zone Magnet, once active, makes kills in the Hot Zone pay the highest multiplier in the game. Capturing towers also counts.
 - Each repeat kill on the same player pays 24% less, up to four repeats.
 - Revives in a zone are multiplied by 1.2 to 2.0.
-- Challenge rewards: a player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 cash and 250 Role XP, and a Bandage heal 200 cash and 80 Role XP. These are base amounts from the challenge table. The cash tables list other bases for the same actions, and the game server decides which set a match pays. See [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
+- Challenge rewards: a player kill pays 300 cash and 250 Role XP, a defibrillator revive 600 cash and 250 Role XP, and a Bandage heal 200 cash and 80 Role XP. These are base amounts from the challenge table. The cash tables list other bases for the same actions, and the active registry and current payout path have not been established. See [King of the Hill Challenges](../progression-and-economy/king-of-the-hill-challenges.md).
 - End of match: the top three factions get a flat 200, 150 and 100 cash. They also get 0.30, 0.25 and 0.20 times the match cash. In Season 2, the Lonestar faction gets an extra 10,000 cash. The other two factions get nothing from that bonus.
 
 Sources: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), [King of the Hill](../game-modes-and-maps/king-of-the-hill.md).
@@ -152,7 +152,7 @@ Sources: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md), [Ki
 
 ### Saburtulo
 
-- Hospital is the only placement drawn at random, since it has weight 1. Bazaar, River and Hillside have weight 0 and are used only when named.
+- Hospital stores weight 2, and Bazaar, River and Hillside store 1 each. All four have nonzero weight; applying the historical weighted draw makes Hospital twice as likely as each other entry, but current selection and overrides remain unverified.
 - The wiki has no region list for this map, so where the zone can sit beyond its four placements is not known.
 - Besides its three spawn areas, Saburtulo has one more air yard. The map article places it in the Rostokino area and tags it for the Lonestar side.
 

@@ -18,7 +18,7 @@ description: "A buildable stationary emplacement with a heavy mounted machine gu
 | Ammunition | 72 mm |
 | Fire mode | Semi-automatic |
 | Rate | 100 rounds/min |
-| Effective range | 1,000 m |
+| Stored EffectiveRange | 1,000; unit/consumer unresolved here |
 | Reload | 5.0 s |
 | Starting ammunition | 1 |
 | **Building** | |
@@ -33,7 +33,7 @@ The Talon 9K-SAM is a stationary emplacement that players build with a Large Ham
 
 ## Overview
 
-Destroying an enemy Talon 9K-SAM pays 650 cash and 175 Role XP.
+Destroying an enemy Talon 9K-SAM pays 1,300 cash and 175 Role XP.
 
 The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six stationary weapons listed on the [Building](../building.md) page, and it is placed with the same rules as the other stationary weapons.
 
@@ -41,11 +41,11 @@ The Talon is built from 650 Build Supplies and has 3,000 HP. It is one of six st
 
 ### Weapon
 
-The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigger pull. An effective range of 1,000 m is listed. The game gives a reload time of 5.0 s and a starting count of 1 round. The gun is restocked with Ammo Supplies, and a full restock takes 200 of them. No restock amount is set, so the engine default of one round is used (derived).
+The gun fires 100 rounds/min in semi-automatic mode, which is one shot per trigger pull. The stats export stores EffectiveRange 1,000; this field alone does not establish a 1,000 m firing limit. The game gives a reload time of 5.0 s and a starting count of 1 round. The gun is restocked with Ammo Supplies, and a full restock takes 200 of them. `ResultingAmmoAmount` is omitted in the S3 export; one round was the earlier default assumption, not a verified current restock quantity.
 
 ### Targeting
 
-The emplacement has 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. A lock only decides whether the weapon can fire. Flares do not clear a lock; they pull a missile that is already in flight toward a flare point beside the helicopter (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
+The emplacement has 2.0 s to lock onto a target, and a 0.5 s delay after the lock before it fires. In the earlier CL516586 analysis, the lock gated firing and flares redirected an airborne missile toward a point beside the helicopter rather than clearing the lock. That consumer behavior has not been re-established for S3 (see [Countermeasures and flares](../vehicles/countermeasures-and-flares.md)).
 
 ## Use and timing
 
@@ -78,6 +78,10 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [MG Nest](mg-nest.md), [Loudspeaker](loudspeaker.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 - [Vehicle weapons](../vehicles/vehicle-weapons.md): the guns mounted on vehicles
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) raise the reward for destroying this enemy emplacement from 650 to 1,300 cash. This reward is separate from construction supplies.
 
 ## Sources
 

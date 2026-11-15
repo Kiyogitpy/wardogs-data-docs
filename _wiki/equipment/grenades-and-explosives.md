@@ -20,9 +20,9 @@ Grenades and explosives deal damage in a blast around the point where they go of
 
 ## Overview
 
-The table lists the blast numbers. These are the starting amounts before armor and before the game's rules for each body part, so they are not the final damage a player takes. Armor reduction is explained on [Body Armor](body-armor.md).
+The table lists model starting amounts; thrown/placed actor defaults are historical CL516586 inputs, while the projectile rows use current saved exports. These are the starting amounts before armor and before the game's rules for each body part, so they are not the final damage a player takes. Armor reduction is explained on [Body Armor](body-armor.md).
 
-Blast damage falls evenly from the full amount at the inner radius to zero at the outer radius. Where a value is shown as "full to", the blast does its full amount out to that distance.
+In the documented radial model, damage falls toward `BaseDamage × (1 − falloff)` just inside the outer radius, subject to a minimum floor, then cuts to zero at the outer radius. AT Mine and Claymore use falloff 0.5, so their amounts remain at half base immediately before that cutoff. Where a value is shown as "full to", the blast does its full amount out to that distance.
 
 ## Individual items
 
@@ -36,11 +36,13 @@ Blast damage falls evenly from the full amount at the inner radius to zero at th
 
 ### Thrown and placed explosives
 
+The actor inputs in this table come from the CL516586 historical snapshot (`explosive-actors.json`), not fresh S3 actor defaults.
+
 | Item | Blast at centre | Full damage out to | No damage beyond | Thrown contact |
 |---|---:|---:|---:|---|
 | M67 Frag Grenade | 100 HP | 5 m | 10 m | 10 HP on thrown contact |
 | C4 Charge | 250 HP | 2.5 m | 6 m | 10 HP |
-| AT Mine | 300 HP | 3.8 m | 7.5 m | placed, not thrown |
+| AT Mine | 300 HP | 3.75 m | 7.5 m | placed, not thrown |
 | Claymore | 150 HP | 1.5 m | 3 m | placed, not thrown |
 | Improvised Explosive Device | 300 HP | 4 m | 8 m | 10 HP |
 
@@ -72,7 +74,7 @@ The vehicle cannons, artillery and drone shells are on the [Explosives](../../ga
 |---|---|---|---|
 | M67 Frag Grenade | 4 s after the throw | none | Thrown. Can be cooked (held before throwing). Throwing it back never applies as shipped (from the game code, not tested in play) |
 | C4 Charge | Set off by the Remote Detonator; the charge adds a 0.2 s delay | sticks to what it hits | Thrown, then detonated remotely |
-| Improvised Explosive Device | 3 s after the trigger is pressed | none | Placed, then detonated remotely; no range limit |
+| Improvised Explosive Device | 3 s after the trigger is pressed | none | Placed, then detonated remotely; historical search found no range limit |
 | AT Mine | when a vehicle moves over the trigger area | 1 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
 | Claymore | when a player or vehicle enters the trigger area | 2 s after placement | Placed; see [Fire, Smoke and Flash](fire-smoke-and-flash.md) for trigger details |
 
@@ -82,7 +84,7 @@ The M67 Frag Grenade has three throws: an overarm throw at 22 to 27.5 m/s and an
 
 ### Remote detonators
 
-The Remote Detonator sets off placed C4 charges. The detonator's range is set to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The Improvised Explosive Device trigger has no range limit.
+The Remote Detonator sets off placed C4 charges. The detonator's range is set to 20,000 units. Units are centimetres in this game, so that is 200 m. A Support skill raises the range to 240 m and then 280 m. The historical IED trace found no range limit; current S3 activation and network limits remain unverified.
 
 ## Cost
 
@@ -107,6 +109,12 @@ No Season 2 change to the blast damage, radius or fuse of any grenade, C4 charge
 - [Building](../building.md), which take damage from grenades and explosives
 - [Body Armor](body-armor.md)
 - [Vehicle damage](../vehicles/vehicle-damage.md)
+
+## Season 3 announcement
+
+The announced tank-hit correction changes grenade-launcher track destruction from 1 hit to 3 hits and rear-engine disabling from 3 hits to 5–6 hits, matching grenades. The notes do not name the test underbarrel attachment. These counts describe the announced fix; they are not a reconstruction of section routing for every launcher or impact position.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221).
 
 ## Sources
 

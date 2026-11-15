@@ -39,7 +39,7 @@ The shop describes the pen as unlimited tactical sprint for a short time, with a
 - **Equipment weight:** the item reduces the equipment weight class by one step while the effect lasts.
 - **Camera:** the field of view widens by 5% while the effect is held. The widening is ignored while you are downed.
 - **Movement:** maximum movement speed is halved while the pen is in use.
-- **Stacking:** a second pen used during the 60 s does not add a second stack. The effect keeps one stack, and the second pen restarts the 60 s (derived from the effect's default settings in the game code).
+- **Stacking:** the historical model predicts that a second pen used during the 60 s does not add a second stack. Earlier CL516586 default analysis predicts one stack and a refreshed 60 s duration. Current S3 stacking defaults and the effect application path have not been verified.
 
 ### Medic skills
 

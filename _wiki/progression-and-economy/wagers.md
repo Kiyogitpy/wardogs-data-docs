@@ -2,16 +2,20 @@
 title: "Wagers"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The S3 / 0.3 snapshot's 11 wager actions, 90 conditions, current count ranges, stored odds and unresolved categories."
+description: "The S3 / 0.3 snapshot's 11 wager actions, 90 conditions, retained count ranges, stored odds and unresolved categories."
 ---
 
 # Wagers
 
-The current saved snapshot contains **11 actions, 90 conditions and 52 objective-catalog entries**. The saved Season 2 table had four actions and 50 conditions. The kill-count maximum rises from **25 to 50**, and the revive-count maximum from **50 to 75**. Availability, unlocks and effective settlement remain separate from these saved settings.
+**Unavailable in Season 3: the Wager Vendor has been removed.** The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) say it is returning to development after exploit concerns and a redesign that weakened its intended rewards. The tables below document retained configuration only; they are not current offers or advice for earning cash.
+
+The current saved snapshot contains **11 actions, 90 conditions and 52 objective-catalog entries**. The saved Season 2 table had four actions and 50 conditions. The kill-count maximum rises from **25 to 50**, and the revive-count maximum from **50 to 75**. The official removal establishes availability; retained unlock and settlement settings do not override it.
 
 The stored stake range is **2,500–100,000 cash**, with a **5,000,000 cash payout cap**. All eleven actions store an **86,400-second (24-hour) cooldown**; the export does not establish its runtime scope. These are configuration values, not independently verified server behavior.
 
 ## Current actions
+
+Retained configuration; the vendor is removed.
 
 Ranges show minimum–maximum (default). Odds are the first and last entries of each stored count table; the full per-count lists remain in the [economy JSON](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json).
 
@@ -32,6 +36,8 @@ Ranges show minimum–maximum (default). Odds are the first and last entries of 
 The rules summarize saved challenge conditions and descriptions. They do not prove current event filtering or that every action is offered in every mode.
 
 ## Current conditions
+
+Retained configuration; these conditions are not current offers.
 
 **All 90 categories are unresolved:** the current rows lack the former Category field. No nearby tag is substituted. A missing required-action list means **not specified in this export**, rather than proven applicability to every action. Lists that are present are retained below.
 

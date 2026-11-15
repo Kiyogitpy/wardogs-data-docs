@@ -17,7 +17,7 @@ description: "Every Control Zone layout in the game: the named maps, the unnamed
 | **Zones** | |
 | Control Zone | 350 to 550 m across |
 | Hot Zone | 75 to 85 m across |
-| Shape | Cylinder. Two Africa and Russia alternatives are ellipses. |
+| Shape | Cylinder in most base configs; all four alternatives in each of Africa, Russia and NorthAmerica store Ellipse. NorthAmerica base shape is omitted. |
 {: .wiki-infobox }
 
 A zone layout is one Control Zone configuration: the size of the zone and its Hot Zone, how the Hot Zone moves, and which alternative spots the zone can appear in. King of the Hill and Sniper Showdown both play on these layouts. Six layouts are linked to a map in the server browser. The Africa layout is the Kenya King of the Hill map. The Sniper Showdown layouts for North America and Russia match the Detroit and Moscow Sniper Showdown entries by name only, and the link from Saburtulo to Moscow is by name and folder only, so neither is confirmed in game.
@@ -42,7 +42,7 @@ A zone layout is one Control Zone configuration: the size of the zone and its Ho
 
 - **Placements.** A layout with alternatives has a selection weight on each placement. The layout a match uses is chosen in this order. First, the server's map rotation can name the placement for that map, and a named placement is used even if its weight is 0. Second, if nothing is named, a server queue of placements can be used, one per map load. Third, a placement is drawn at random by weight, and a placement with weight 0 is never drawn this way. On Bakurani the default has weight 2 and the other two have weight 1, so with the random draw the default is twice as likely. The example server rotation lists every placement the same number of times, including the weight 0 ones.
 - **Region sets.** Three layouts also have a list of named zone regions: Bakurani (60), Ozeti (55) and Zestafona (56). Each region has a weight, and the Hot Zone moves to a region drawn at random by weight. A region with weight 0 (the towers) is never drawn that way. The region just used gives away half its weight, so it is unlikely to come up again at once. Regions overlap in places, which does not affect the draw. Saburtulo, Africa and the Sniper Showdown layouts have no region list in the game. The map files agree for the maps that exist: the zone object placed in the Saburtulo map and the Sniper Showdown zone objects placed in the Bakurani, North America and Russia maps have an empty region slot. For Kenya the game holds no map at all.
-- **Hot Zone movement.** On the King of the Hill layouts the Hot Zone is placed at once at the start and then moves about every 25 seconds (the game's value; a runtime factor scales it, and that factor's source was not identified). The default speed is 1.0 and the speed table runs from 0.75 to 2.0. On the Sniper Showdown layouts the first move and the delay between moves are both 0 seconds, the default speed is 1.5, and the speed table runs from 1.25 to 3.0. On the Sniper Showdown layouts the game gives no delay, so no timer holds the zone back; how often it moves in play was not measured.
+- **Hot Zone movement.** On the King of the Hill layouts the Hot Zone is placed at once at the start and then moves about every 25 seconds (the game's value; a runtime factor scales it, and that factor's source was not identified). The default speed is 1.0 and the speed table runs from 0.75 to 2.0. On the Sniper Showdown layouts the first move and the delay between moves are both 0 seconds, the default speed is 1.5, and the speed table runs from 1.25 to 3.0. Those zero-valued fields do not establish whether a current timer is disabled or fires immediately; the S3 scheduling consumer remains unverified.
 - **Hot Zone size.** The effective inner size of the Hot Zone is 95 percent of its listed extent on every layout except the test area. This is inferred from the field name.
 - **Spawn areas.** Vehicle deployment boards place vehicles in spawn areas that are set per faction in each world. The minimal test area has one player spawn area per faction, with 15 points spaced 1,200 apart (12 m if the unit is centimetres). Which spawn area a player uses on the main maps is not confirmed; see [King of the Hill](king-of-the-hill.md).
 
@@ -79,7 +79,7 @@ A zone layout is one Control Zone configuration: the size of the zone and its Ho
 
 - **Mode:** King of the Hill.
 - **Control Zone:** 550 m across, 150 m tall. **Hot Zone:** 85 m across, 150 m tall.
-- **Placements:** Hospital (weight 1), Bazaar, River and Hillside (weight 0 each). The game spells the placement names with "Sabartulo".
+- **Placements:** Hospital (weight 2), Bazaar, River and Hillside (weight 1 each). The game spells the placement names with "Sabartulo".
 - **Region set:** none in the game (the zone object placed in the map has an empty region slot).
 - **Hot Zone movement:** every 25 s, default speed 1.0.
 - **Internal name:** zone config Russia, server browser Moscow_KOTH_01, world Russia. Added in Season 2. The link to Moscow is by name and folder only (an inference from the names, not checked in game).

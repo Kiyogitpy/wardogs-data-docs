@@ -7,6 +7,8 @@ description: "The three factions in the game, Lonestar, Valkyra and Manticore, a
 
 # Factions
 
+S3 applies the tactical-map team-switch penalty only if you previously connected to that server while its current match was already in progress. The restriction lasts until you enter the control zone. The losing-faction vendor discount now compares with the first-place faction ([official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221)).
+
 | Factions | |
 |---|---|
 | **Overview** | |

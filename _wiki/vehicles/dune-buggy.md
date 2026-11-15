@@ -16,7 +16,7 @@ description: "Light three-seat buggy with a rear-biased drive and no weapons, so
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 130 (as stored) |
-| Rifle damage taken (derived) | 10% |
+| 5.56 mm hull damage (derived) | 5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-dunebuggy) |
 | Internal name | WHL_06 |
 {: .wiki-infobox }
@@ -42,7 +42,7 @@ The Dune Buggy is sold in the vehicle vendor under land transport, for 1,500 cas
 
 Main health is 400 HP. The buggy has separate health for its engine (400 HP), fuel tank (300 HP) and each wheel (75 HP).
 
-Rifle rounds do 10% of their damage against the hull, the highest share of any truck or SUV. The fuel tank takes an extra 200% from bullets.
+Under the documented model, 5.56 mm FMJ does 5% of base damage to the hull: the 10% vehicle factor also receives the main-body ×0.5 modifier. These percentages are conditional on the earlier damage model, not a measurement of S3 native behavior; other calibers can have additional rules. The fuel tank takes an extra 200% from bullets.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -60,6 +60,8 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 The Dune Buggy has no weapons. Its three seats are a driver and two passengers.
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Dune Buggy reverse speed at ~50 km/h (previously 43 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
 
 - Driving assists: lean up to 15 degrees and pitch up to 20 degrees, with drift values of 1 at the front and 1 at the rear. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 

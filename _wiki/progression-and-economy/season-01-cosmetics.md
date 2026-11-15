@@ -12,12 +12,12 @@ description: "Every Season 1 cosmetic: three skin sets and three emotes, their G
 | Skin sets | Black and Gold (1 row), Digital Wood (4 rows), Two-Tone Desert (12 rows) |
 | Emotes | 3 |
 | Priced | 19 of 20 rows on the Gold Market, 5 to 15 Gold Bars each |
-| Reward track | None in the data. The season schedule is a server value |
+| Reward track | Empty SeasonDefinitions array; other grant paths and current schedule unresolved |
 | Currency | Gold Bars, sold on the Gold Market |
 | Internal name | Season 1 cosmetic tables and the Season 1 season definition table ([`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json), [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json), [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_SeasonDefinitions.json)) |
 {: .wiki-infobox }
 
-Season 1 added three skin sets and three emotes. Every Season 1 cosmetic that has a price is sold on the Gold Market. The game does not say when a Season 1 cosmetic could be obtained, because there is no season reward track and the season schedule is a server value.
+Season 1 added three skin sets and three emotes. The priced entries below are saved Gold Market listings, not confirmation of current availability. The empty season-definition array does not exclude other reward or unlock paths; acquisition dates and active scheduling remain unresolved.
 
 ## Overview
 
@@ -25,9 +25,9 @@ The list below is the full Season 1 cosmetic set. Each row is one item, vehicle 
 
 ## Season 1 list
 
-| Cosmetic | Type | Skin set | Price (Gold Bars) | How it was earned |
+| Cosmetic | Type | Skin set | Price (Gold Bars) | Saved listing / acquisition evidence |
 |---|---|---|---|---|
-| AK74 | Weapon skin | Black and Gold | Not sold | No Gold Market listing and no price |
+| AK74 | Weapon skin | Black and Gold | No listed price | No row in the cited Gold Market table; acquisition unresolved |
 | GGX 17 | Weapon skin | Digital Wood | 5 | Gold Market |
 | M4 | Weapon skin | Digital Wood | 10 | Gold Market |
 | SV98 | Weapon skin | Digital Wood | 10 | Gold Market |
@@ -52,9 +52,9 @@ The 19 Gold Market rows are worth 170 Gold Bars in total: 16 skins worth 155, an
 
 ## How they were earned
 
-- **Gold Market.** This is the only purchase route the game shows. Gold Bars are covered in [Currencies](currencies.md).
-- **No reward track.** The client's season definition has a current season number of 1 and an empty list of season levels. The season's dates and names come from the server. No level, date or achievement unlocks a Season 1 cosmetic.
-- **AK74 Black and Gold.** This is the one Season 1 weapon skin with no Gold Market row. The game gives it no price, so it can only come from a server grant, and which grants are made is not known.
+- **Gold Market.** This is the purchase route identified in the reviewed listings. Gold Bars are covered in [Currencies](currencies.md).
+- **Season definition.** The client's season definition has a current season number of 1 and an empty SeasonDefinitions array. This export supplies no active dates or names. The empty SeasonDefinitions array does not establish whether another grant or unlock path exists.
+- **AK74 Black and Gold.** This is the one Season 1 weapon skin with no Gold Market row. No price is listed in the cited Gold Market table. That absence does not establish a server-only grant route; its acquisition path remains unresolved.
 
 ## Season 2 changes
 

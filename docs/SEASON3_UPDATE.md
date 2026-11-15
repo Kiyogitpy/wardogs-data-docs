@@ -13,6 +13,8 @@ The current JSON data tree is `592912092880ffb3e02a5a8e9f5e4b6e79bc8116`, introd
 
 The [S1→S2 dataset](../season-2-changes/all-changes.md) stays separate and byte-identical. Its source links pin the S2 revision, as do the historical curve links in the S3 notes.
 
+The [S3 article fact-check](S3_FACT_CHECK.md) records additional corrected examples and unsupported defaults found in manual prose. Its partial review coverage is distinct from the saved-export comparison and from current native verification.
+
 ## Reproduce the comparison
 
 Use a fresh checkout containing only committed inputs. Local extraction directories can contain ignored configs outside the public Git snapshot. The comparator rejects extra files; never force-add private full configs to make a comparison pass.

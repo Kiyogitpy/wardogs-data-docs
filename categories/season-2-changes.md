@@ -10,7 +10,7 @@ description: "Every change between Season 1 and Season 2 (build ++Wardogs+Live-C
 
 {{ page.description }}
 
-Each change is shown as **before → after**: the Season 1 value, then the Season 2 value, with the difference for numbers. The data is the same game files as the rest of this site, compared asset by asset and property by property.
+Each change is shown as **before → after**: the Season 1 value, then the Season 2 value, with the difference for numbers. This is the preserved historical S1→S2 comparison, not the current S3 snapshot. For the newer update, see [Season 3 Changes](season-3-changes.md).
 
 Two terms appear in the totals. An asset is **noise-only** when the only differences are bookkeeping that does not change behaviour (for example a property renamed internally or an object reference that moved). An asset is an **inferred pairing** when its file was renamed or moved in Season 2 and the comparison matched it to its Season 1 copy by content rather than by a clear identifier, so treat that match as likely rather than certain.
 

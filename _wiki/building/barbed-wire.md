@@ -28,7 +28,7 @@ description: "A small wire obstacle built with any hammer from 7 Build Supplies,
 | Internal name | [`DA_Buildable_BarbedWire`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/BarbedWire/DA_Buildable_BarbedWire.json) |
 {: .wiki-infobox }
 
-Barbed Wire is a cheap wire obstacle that any hammer can build. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure. It takes more melee damage than most walls, and only 15% of bullet damage gets through. Anyone standing in it is slowed and hurt.
+Barbed Wire is a cheap wire obstacle listed for all three hammers. It costs 7 Build Supplies and has 250 HP, the lowest health of any structure. Under the earlier damage formula, its stored bullet entry leaves 15% damage. The earlier trigger implementation damaged players and named a slowing effect; its current S3 behavior has not been verified.
 
 ## Overview
 
@@ -38,7 +38,7 @@ Destroying an enemy Barbed Wire pays 5 cash and 5 Role XP.
 
 ## Building it
 
-- **Cost:** 7 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 7 Build Supplies. The zero placement charge in the earlier model is a native-default assumption: the S3 export omits the placement-cost field.
 - **Hammers:** Small, Medium or Large.
 - **Placement:** Barbed Wire is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
@@ -52,9 +52,11 @@ Destroying an enemy Barbed Wire pays 5 cash and 5 Role XP.
 | Hits to repair from zero health | 9 | 5 | 3 |
 | Hits to dismantle (your own) | 2 | 2 | 1 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The hit counts apply the CL516586 building formula with build-cost scale 1 and normal hits. Seconds additionally assume one hit per swing: 0.567 s for Small and Medium and 0.883 s for Large, derived from the use animation. The S3 native building consumer and live cost scale have not been verified.
 
 ## What it does
+
+**Earlier trigger behavior (CL516586).** The following trigger dimensions, timer, damage and tag checks come from the earlier Blueprint review in Round 57. The S3 buildable asset still names a Barbed Wire spawner, but that reference alone does not verify the spawned trigger's current bytecode or its native effect application.
 
 Barbed Wire is more than an obstacle. A built wire has a narrow trigger box around it (roughly 0.8 m thick, 2.7 m long and 1.4 m high, worked out from the box size). Anything that enters the box is tracked until it leaves, and a check runs every 0.4 s while at least one thing is inside.
 
@@ -79,7 +81,7 @@ Barbed Wire's 250 HP is the lowest of any structure. The table below gives the h
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
+Derived from the S3 source damage and stored damage table under the earlier native arithmetic, whose S3 consumer has not been verified. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (the model selects rocket rules against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied.
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|

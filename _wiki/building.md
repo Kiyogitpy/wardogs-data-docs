@@ -115,20 +115,20 @@ Each structure has a damage table that changes how much damage each source does 
 | Hesco Block (Small) | 1,600 | -80% | -80% | +50% | +120% | +220% | +500% |
 | Hesco Wall | 4,600 | +0% | -80% | +0% | +200% | +150% | +400% |
 | Barbed Wire | 250 | -28% | -85% | +0% | +200% | +150% | +400% |
-| Bunker | 5,000 | -10% | -80% | -50% | +45% | +50% | +200% |
-| Recon Tower | 5,000 | -10% | -80% | -50% | +45% | +50% | +200% |
+| Bunker | 5,000 | -10% | -80% | -50% | +45% | -25% | +50% |
+| Recon Tower | 5,000 | -10% | -80% | -50% | +45% | -25% | +50% |
 | Door | 2,200 | -80% | -85% | +0% | +650% | +200% | +800% |
 | Gate | 5,320 | -80% | -85% | +0% | +850% | +1,000% | +2,000% |
-| Hedgehog | 4,500 | -80% | -85% | -50% | +450% | +500% | +1,000% |
+| Hedgehog | 4,500 | -80% | -85% | -50% | +450% | +200% | +450% |
 | Drill Rig | 2,500 | -80% | -85% | +0% | +850% | +500% | +1,500% |
-| Builder's Radio | 1,000 | +70% | -85% | +500% | +1,000% | +400% | +800% |
+| Builder's Radio | 1,000 | +70% | -85% | +500% | +1,000% | +1,900% | +3,500% |
 | Forward Operating Base | 15,000 | -80% | -80% | +200% | +1,400% | +1,250% | +5,000% |
 
-Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do their normal damage plus 45%. Rockets, C4 and IEDs multiply the damage to most structures. The Forward Operating Base is the most exposed to IEDs, at +5,000%, which is 51 times the normal damage. These are the damage entries that match one source on its own. Other entries, for particular weapons and ammunition, can also apply, so these figures are a first estimate. The hits each structure takes to destroy are derived in the table below.
+Plain reading: a Bunker takes about a fifth of the bullet damage, and rockets do their normal damage plus 45%. Rockets, C4 and IEDs multiply the damage to most structures. The Forward Operating Base is the most exposed to IEDs, at +5,000%, which is 51 times the normal damage. The C4 and IED columns combine their utility-parent and source-specific modifiers. Other entries, for particular weapons and ammunition, can also apply, so these figures are a first estimate. The hits each structure takes to destroy are derived in the table below.
 
 The full table for every structure is on the [Buildables](../game-features/Wardogs_Buildables_v1.md) data page.
 
-The Forward Operating Base has a "do not take damage" setting that no game code reads, so it appears to be unused, and the hit counts above treat the base like any other structure.
+The FOB retains the Buildable.Damage.DoNotTakeDamage name. The CL516586 search found no reader in its searched paths; that does not prove it unused in S3. The conditional hit-count model treats the FOB like other structures.
 
 ### Build stages
 
@@ -148,7 +148,7 @@ Building needs Build Supplies and a hammer. Each hammer hit adds progress: a nor
 | Medium | 1 | 5 | 6 became 5 |
 | Large | 1.5 | 8 | 10 became 8 |
 
-The number of hits to build, repair or dismantle each structure is in its article, in a "Building it" table, for each hammer. The total Build Supplies to finish a structure is its cost, whichever hammer builds it. Build Supplies are used up a little with each hit, so a finished structure has taken its full cost. Nothing is charged when the structure is placed.
+The number of hits to build, repair or dismantle each structure is in its article, in a "Building it" table, for each hammer. The total Build Supplies to finish a structure is its cost, whichever hammer builds it. Build Supplies are used up a little with each hit, so a finished structure has taken its full cost. PlacementCost is omitted for many S3 structures; omission does not establish a zero current charge. The FOB explicitly stores 0.
 
 Some structures change the hit amount: Barbed Wire and Recon Tent count a hit 3.5 times as much, the Drill Rig 2 times and the Vanguard CIWS 1.25 times. The hit counts in the articles already include this.
 
@@ -192,17 +192,17 @@ While it runs, the Drill Rig pulls the hot zone toward it. Its shipped activatio
 
 ### Refuel and repair
 
-The Refuel Station and Repair Station work with Fuel Supplies and Mechanical Supplies. Each has a Fast restock (5% in 3 s, for 75 or 100 cash) and a Max restock (up to 100% in 9 s, for 1,500 or 2,000 cash), using 5 supplies per restock. See [Refuel and Repair Stations](building/refuel-and-repair-stations.md).
+The Refuel Station and Repair Station work with Fuel Supplies and Mechanical Supplies. Each has a Fast restock (5% in 3 s, for 75 or 100 cash) and a Max restock (up to 100% in 9 s, for 1,500 or 2,000 cash), with a stored item-cost factor of 5, not a flat charge of 5 supplies per restock (the consumer reading is historical CL516586). See [Refuel and Repair Stations](building/refuel-and-repair-stations.md).
 
 ## Cost
 
-The cost column in the Structures table is the Build Supplies cost, and it is the total a structure uses up, whichever hammer builds it. Build Supplies are used while the structure is built, not when it is placed. Build Supplies are sold in lots of 50 for 10 cash a lot (0.2 cash per unit).
+The cost column in the Structures table is the Build Supplies cost, and it is the total a structure uses up, whichever hammer builds it. The historical CL516586 reader consumes Build Supplies during construction; current placement charging is unresolved where PlacementCost is omitted. Build Supplies are sold in lots of 50 for 10 cash a lot (0.2 cash per unit).
 
 Hammers cost 2,400 cash (Large), 800 (Medium) and 100 (Small). The Forward Operating Base costs 7,500 cash.
 
 ## Hits to destroy (point blank, derived)
 
-Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied. Parts of larger structures (floors, roofs, door sections) have less health and take fewer hits. Each structure's article gives its parts. The Drill Rig is not in the structure data, so it has no hit counts here.
+Derived from each source's base damage and the damage table. It is not a count from play: each figure assumes every shot lands at point blank for full damage, with no falloff and no other rules, so real fights can differ. Base damage used: M4 5.56 mm FMJ 28, .50 cal FMJ 90, 120 mm rocket 150, M67 frag grenade 100 (it counts as a rocket against structures), C4 charge 250, IED 300. Each figure is the number of hits needed after every matching damage entry is applied. Parts of larger structures (floors, roofs, door sections) have less health and take fewer hits. Each structure's article gives its parts. The conditional model includes the Drill Rig row shown below.
 
 | Structure | HP | M4 5.56 mm FMJ | .50 cal FMJ | 120 mm rocket | M67 frag grenade | C4 charge | IED |
 |---|---:|---:|---:|---:|---:|---:|---:|
@@ -220,7 +220,7 @@ Derived from each source's base damage and the damage table. It is not a count f
 | Gate | 5,320 | 1,267 | 395 | 5 | 6 | 2 | 1 |
 | Bremer Wall | 6,500 | 1,161 | 362 | 11 | 19 | 7 | 5 |
 | Bunker, Recon Tower or Indirect Fire Shelter | 5,000 | 893 | 278 | 33 | 35 | 27 | 12 |
-| Refuel Station or Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 6 |
+| Refuel Station or Repair Station | 1,600 | 286 | 89 | 1 | 1 | 1 | 1 |
 | Drill Rig | 2,500 | 596 | 186 | 3 | 3 | 2 | 1 |
 | Forward Operating Base | 15,000 | 2,679 | 834 | 5 | 10 | 5 | 1 |
 
@@ -255,6 +255,12 @@ See the [Season 2 patch notes](patch-notes/season-2.md) for the values.
 - [Utility Items](equipment/utility-items.md), for the Fuel and Mechanical Supplies, and the Light and Heavy Drills
 - [Vehicles data page](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), for the vehicles that the Refuel and Repair Stations serve
 - [Vehicle damage](vehicles/vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) move the Large Hammer from Support level 8 to 14. Enemy-emplacement destruction rewards rise from 650 to 1,300 cash for the L81 Mortar, Talon 9K-SAM, MG Nest and Stingray, and from 1,200 to 2,400 for the Vanguard CIWS; these are cash rewards, not Build Supplies costs. Limited Mode excludes the CIWS, Stingray, MG Nest and Drill Rig. Vehicles other than the Bobcat can flatten box hedges, and tanks and artillery can destroy stone walls.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) lower safe drop heights for ordinary crates from ~60 to ~35 m, armored crates from ~80 to ~35 m, and pallets from ~90 to ~40 m. These are approximate announced heights, with deployment at up to ~80 km/h around those heights; impact speed and obstacles still matter. Crates can no longer be deployed inside safe zones. Armored crates retain bullet/explosion protection, not extra drop height.
 
 ## Sources
 
