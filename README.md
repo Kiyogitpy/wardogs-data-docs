@@ -102,6 +102,8 @@ See the [hotfix evidence and remaining work](docs/evidence/hotfix-cl533731.md).
 Native formulas retain their individual evidence and build limits; this asset
 refresh does not establish their compatibility with CL533731. A stored asset
 value alone does not establish how it behaves in a match or a server-side override.
+See the [S3 / 0.3 coverage note](_wiki/patch-notes/season-3.md) for the comparison
+scope and remaining gaps.
 
 ## Corrections and contributions
 
